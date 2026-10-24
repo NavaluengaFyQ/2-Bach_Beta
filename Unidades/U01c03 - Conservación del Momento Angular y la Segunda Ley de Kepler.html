@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conservación del Momento Angular y la Segunda Ley de Kepler</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            display: flex;
+            justify-content: center;
+        }
+        /* Contenedor principal */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        /* Subtexto de cabecera */
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .header-sub .texto {
+            font-style: italic;
+        }
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                    <span class="codigo">#T01.03.-</span>
+                    <span class="texto">Conservación del Momento Angular y la Segunda Ley de Kepler</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+
+        <div class="section enunciado">
+            <h2>Enunciado</h2>
+            <p>Partiendo de la definición de momento angular \(\vec{L} = \vec{r} \times m\vec{v}\) y considerando que la fuerza gravitatoria es una fuerza central (paralela al vector de posición), demostrar que el momento angular de un planeta se conserva y que, como consecuencia, su velocidad areolar es constante.</p>
+            <div class="formula-box">
+                \[ \frac{dA}{dt} = \frac{L}{2m} = \text{constante} \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>Objetivo</h2>
+            <p>Demostrar formalmente la Segunda Ley de Kepler (ley de las áreas), entendiendo que es una consecuencia directa de la conservación del momento angular en un campo de fuerzas centrales. Esto explica por qué los planetas se mueven más rápido en el perihelio que en el afelio.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span><strong>Definir el momento de fuerza (torque):</strong> La variación del momento angular respecto al tiempo es igual al torque neto aplicado.
+                <div class="formula-box">
+                    \[ \frac{d\vec{L}}{dt} = \vec{\tau} = \vec{r} \times \vec{F} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span><strong>Aplicar la condición de fuerza central:</strong> En el campo gravitatorio, la fuerza \(\vec{F}\) está dirigida a lo largo de la línea que une el planeta y el Sol, es decir, es paralela al vector de posición \(\vec{r}\). Por tanto, el producto vectorial es nulo.
+                <div class="formula-box">
+                    \[ \vec{\tau} = \vec{r} \times \vec{F} = 0 \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span><strong>Concluir la conservación:</strong> Si la derivada temporal del momento angular es cero, el momento angular es una constante del movimiento.
+                <div class="formula-box">
+                    \[ \frac{d\vec{L}}{dt} = 0 \quad \Rightarrow \quad \vec{L} = \text{constante} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span><strong>Relacionar con la velocidad areolar:</strong> El área barrida por el radio vector en un tiempo \(dt\) es \(dA = \frac{1}{2} |\vec{r} \times \vec{v}| dt\). Derivando respecto al tiempo, obtenemos la velocidad areolar.
+                <div class="formula-box">
+                    \[ \frac{dA}{dt} = \frac{1}{2} |\vec{r} \times \vec{v}| \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span><strong>Sustituir en la expresión del momento angular:</strong> Como \(\vec{L} = m(\vec{r} \times \vec{v})\), podemos reescribir la velocidad areolar en función del módulo de \(\vec{L}\).
+                <div class="formula-box">
+                    \[ \frac{dA}{dt} = \frac{L}{2m} \]
+                </div>
+            </div>
+        </div>
+
+        <div class="section resultado">
+            <h2>Resultado</h2>
+            <p>Puesto que \(L\) y \(m\) son constantes, la velocidad areolar es constante. El planeta barre áreas iguales en tiempos iguales.</p>
+            <div class="formula-box" style="border: 2px solid #3182ce; background-color: #ebf8ff;">
+                \[ \frac{dA}{dt} = \frac{L}{2m} = \text{constante} \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica para el profesorado:</strong> Es importante que los estudiantes visualicen que la constancia de la velocidad areolar implica que, al acercarse al Sol (perihelio), el radio vector \(r\) disminuye y, para mantener el mismo ritmo de área barrida, la velocidad \(v\) debe aumentar necesariamente. Esto se puede ejemplificar con patinadores sobre hielo cerrando los brazos.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

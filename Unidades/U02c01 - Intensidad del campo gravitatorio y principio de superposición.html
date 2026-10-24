@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración 1: Intensidad del campo gravitatorio</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .header {
+            padding: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            border-left: 8px solid #764ba2;
+            background-color: #f8fafc;
+        }
+        .header h2 {
+            margin: 0;
+            color: #4a5568;
+            font-size: 1.5rem;
+        }
+        .content {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .enunciado {
+            background-color: #f7fafc;
+            border-left: 5px solid #a0aec0;
+            border: 1px solid #e2e8f0;
+        }
+        .objetivo {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+            border: 1px solid #feebc8;
+        }
+        .procedimiento {
+            background-color: #f0fff4;
+            border-left: 5px solid #48bb78;
+            border: 1px solid #c6f6d5;
+        }
+        .resultado {
+            background-color: #ebf8ff;
+            border-left: 5px solid #4299e1;
+            border: 1px solid #bee3f8;
+        }
+        .section-title {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .enunciado .section-title { color: #718096; }
+        .objetivo .section-title { color: #dd6b20; }
+        .procedimiento .section-title { color: #38a169; }
+        .resultado .section-title { color: #3182ce; }
+
+        .formula-box {
+            background-color: #edf2f7;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1rem;
+            margin: 15px 0;
+            border: 1px dashed #cbd5e0;
+        }
+        .step {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #cbd5e0;
+        }
+        .step-number {
+            color: #2b6cb0;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #4a5568;
+            font-style: italic;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #bee3f8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="header">
+        <h2>Demostración 1: Intensidad del campo gravitatorio y principio de superposición</h2>
+    </div>
+    <div class="content">
+
+        <div class="section enunciado">
+            <div class="section-title">Enunciado</div>
+            <p>Partiendo de la definición de campo gravitatorio como la fuerza por unidad de masa y de la ley de gravitación universal de Newton, demostrar la expresión vectorial del campo creado por una masa puntual. A su vez, establecer cómo se aplica el principio de superposición para determinar el campo total generado por un sistema de varias masas.</p>
+            <div class="formula-box">
+                \[ \vec{g} = -G \frac{M}{r^2} \vec{u}_r \quad \text{y} \quad \vec{g}_{\text{total}} = \sum_{i=1}^{n} \vec{g}_i \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <div class="section-title">Objetivo</div>
+            <p>Comprender que el campo gravitatorio es una magnitud vectorial y cómo se construye a partir de la interacción entre masas. Además, entender que el campo total en un punto es la suma vectorial independiente de los campos generados por cada masa por separado (principio de superposición).</p>
+        </div>
+
+        <div class="section procedimiento">
+            <div class="section-title">Procedimiento</div>
+
+            <div class="step">
+                <span class="step-number">1.</span> Definimos la intensidad del campo gravitatorio \(\vec{g}\) en un punto del espacio como la fuerza gravitatoria \(\vec{F}\) que experimenta una masa de prueba \(m'\) colocada en dicho punto, dividida por el valor de dicha masa:
+                <div class="formula-box">
+                    \[ \vec{g} = \frac{\vec{F}}{m'} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2.</span> Sustituimos la fuerza gravitatoria \(\vec{F}\) por la expresión de la Ley de Gravitación Universal, donde \(M\) es la masa que crea el campo y \(r\) es la distancia entre los centros de las masas:
+                <div class="formula-box">
+                    \[ \vec{F} = -G \frac{M m'}{r^2} \vec{u}_r \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3.</span> Introducimos la expresión de la fuerza en la definición del campo. La masa de prueba \(m'\) se cancela tanto en el numerador como en el denominador:
+                <div class="formula-box">
+                    \[ \vec{g} = \frac{-G \frac{M m'}{r^2} \vec{u}_r}{m'} = -G \frac{M}{r^2} \vec{u}_r \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4.</span> Para un sistema de varias masas (\(M_1, M_2, \dots, M_n\)), el campo total en un punto \(P\) es la suma vectorial de los campos individuales creados por cada masa en ese punto, ya que las fuerzas se suman vectorialmente:
+                <div class="formula-box">
+                    \[ \vec{g}_{\text{total}} = \vec{g}_1 + \vec{g}_2 + \dots + \vec{g}_n = \sum_{i=1}^{n} \vec{g}_i \]
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section resultado">
+            <div class="section-title">Resultado</div>
+            <div class="formula-box" style="background-color: #ebf8ff; border: 2px solid #4299e1; font-weight: bold;">
+                \[ \vec{g} = -G \frac{M}{r^2} \vec{u}_r \quad ; \quad \vec{g}_{\text{total}} = \sum \vec{g}_i \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica:</strong> Es fundamental insistir en el carácter vectorial del campo. El signo negativo indica que el campo siempre apunta hacia la masa que lo crea (carácter atractivo). Al resolver problemas de superposición, es muy recomendable dibujar primero los vectores \(\vec{g}_i\) en el punto de estudio y luego descomponerlos en sus ejes cartesianos (\(x, y\)).
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variación de la gravedad efectiva (altitud, latitud y profundidad)</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+        }
+        /* Contenedor principal (opcional, da fondo blanco y sombra) */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        /* Zona izquierda de la cabecera */
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        /* Zona derecha de la cabecera */
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        /* Variantes de color para cada tipo de sección */
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <!-- Subtexto: logo + #T01.02 + Título de la capsula de información-->
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                    <span class="codigo">#T01.02.- </span>
+                    <span class="texto">Variación de la gravedad efectiva (altitud, latitud y profundidad)</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+        <!-- SECCIONES TRANSFORMADAS -->
+
+        <div class="section enunciado">
+            <h2>Enunciado</h2>
+            <p>Partiendo de la ley de gravitación universal, de la expresión del campo en el interior de una esfera maciza y del concepto de aceleración centrífuga debida a la rotación terrestre, demostrar cómo varía la intensidad del campo gravitatorio efectivo en función de la altitud, la profundidad y la latitud.</p>
+            <div class="formula-box">
+                \[ g_h \approx g_0 \left(1 - \frac{2h}{R}\right) \quad ; \quad g_d = g_0 \left(1 - \frac{d}{R}\right) \quad ; \quad g_{\text{ef}} = g_0 - \omega^2 R \cos^2 \varphi \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>Objetivo</h2>
+            <p>Comprender que el valor de la gravedad \(g\) no es constante en toda la superficie terrestre ni en su interior, sino que depende de la posición del cuerpo. Esto es crucial para entender desde la variación del peso de un objeto en una montaña hasta las correcciones necesarias en los sistemas de navegación satelital.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span> <strong>Variación con la altitud (\(h\)):</strong> A una altura \(h\) sobre la superficie terrestre, la distancia al centro de la Tierra es \(R+h\). Aplicando la ley de gravitación:
+                <div class="formula-box">
+                    \[ g_h = G \frac{M}{(R+h)^2} \]
+                </div>
+                Si \(h\) es mucho menor que \(R\) (\(h \ll R\)), podemos extraer \(R^2\) como factor común y aplicar la aproximación binomial \((1+x)^{-2} \approx 1-2x\):
+                <div class="formula-box">
+                    \[ g_h = G \frac{M}{R^2 \left(1+\frac{h}{R}\right)^2} = g_0 \left(1 + \frac{h}{R}\right)^{-2} \approx g_0 \left(1 - \frac{2h}{R}\right) \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span> <strong>Variación con la profundidad (\(d\)):</strong> A una profundidad \(d\) (distancia \(r = R-d\) al centro), solo la masa contenida en la esfera de radio \(r\) ejerce fuerza neta. Usando la expresión demostrada en el concepto anterior (\(g = G \frac{M}{R^3} r\)):
+                <div class="formula-box">
+                    \[ g_d = G \frac{M}{R^3} (R-d) = G \frac{M}{R^2} \left(1 - \frac{d}{R}\right) = g_0 \left(1 - \frac{d}{R}\right) \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span> <strong>Variación con la latitud (\(\varphi\)):</strong> Debido a la rotación terrestre, un cuerpo en reposo en la superficie experimenta una aceleración centrífuga \(\vec{a}_c = \omega^2 \vec{r}\) (donde \(r = R \cos \varphi\)). La gravedad efectiva \(\vec{g}_{\text{ef}}\) es la resultante de la gravedad gravitatoria \(\vec{g}_0\) y la aceleración centrífuga (de sentido opuesto).
+                <div class="formula-box">
+                    \[ \vec{g}_{\text{ef}} = \vec{g}_0 - \vec{a}_c \]
+                </div>
+                Para latitudes medias, la componente radial (vertical) de esta aceleración centrífuga es \(\omega^2 R \cos^2 \varphi\). Por tanto, el módulo de la gravedad efectiva se puede aproximar como:
+                <div class="formula-box">
+                    \[ g_{\text{ef}} = g_0 - \omega^2 R \cos^2 \varphi \]
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section resultado">
+            <h2>Resultado</h2>
+            <div class="formula-box">
+                \[ g_h \approx g_0 \left(1 - \frac{2h}{R}\right) \quad ; \quad g_d = g_0 \left(1 - \frac{d}{R}\right) \quad ; \quad g_{\text{ef}} \approx g_0 - \omega^2 R \cos^2 \varphi \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica:</strong> La gravedad efectiva es máxima en los polos (donde \(\varphi = 90^\circ\) y la aceleración centrífuga es nula) y mínima en el ecuador (donde \(\varphi = 0^\circ\) y el radio terrestre es ligeramente mayor). Por eso, un cuerpo pesa menos en el ecuador que en los polos. En el interior de la Tierra, el peso disminuye linealmente a medida que descendemos, siendo nulo en el centro.
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

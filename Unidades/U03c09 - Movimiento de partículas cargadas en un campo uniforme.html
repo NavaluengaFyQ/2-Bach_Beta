@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimiento de partículas cargadas en un campo uniforme</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        /* Contenedor principal (opcional, da fondo blanco y sombra) */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        /* Zona izquierda de la cabecera */
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        /* Subtexto de cabecera */
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 1em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .header-sub .texto {
+            opacity: 0.95;
+        }
+        /* Zona derecha de la cabecera */
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        /* Variantes de color para cada tipo de sección */
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        ul {
+            margin: 10px 0 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <!-- Subtexto: logo + #T01.09 + Título de la cápsula de información -->
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                    <span class="codigo">#T01.09.- </span>
+                    <span class="texto">Concepto 9: Movimiento de partículas cargadas en un campo uniforme</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+
+        <!-- SECCIONES TRANSFORMADAS -->
+        <div class="section enunciado">
+            <h2>📌 Enunciado</h2>
+            <p>Partiendo de la segunda ley de Newton y de la definición de campo eléctrico uniforme, <strong>demostrar que una partícula cargada que penetra oblicuamente en un campo eléctrico uniforme describe una trayectoria parabólica</strong>, de manera análoga a como lo haría un proyectil bajo la acción de la gravedad.</p>
+            <div class="formula-box">
+                \[ y(x) = y_0 + \frac{v_{0y}}{v_{0x}} x + \frac{1}{2} \frac{qE}{m v_{0x}^2} x^2 \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>🎯 Objetivo</h2>
+            <p>El objetivo es comprender la dinámica de las cargas en el seno de un campo eléctrico constante. Este estudio es fundamental para entender el funcionamiento de dispositivos como los tubos de rayos catódicos (antiguos televisores), los osciloscopios, los aceleradores de partículas y los espectrómetros de masas.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>🛠️ Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span> <strong>Fuerza y aceleración:</strong> Una partícula de masa \(m\) y carga \(q\) en un campo eléctrico uniforme \(\vec{E}\) experimenta una fuerza constante \(\vec{F} = q\vec{E}\). Por la segunda ley de Newton, su aceleración es constante:
+                <div class="formula-box">
+                    \[ \vec{a} = \frac{q\vec{E}}{m} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span> <strong>Sistema de referencia:</strong> Elegimos el eje \(X\) perpendicular al campo (dirección de la velocidad inicial horizontal) y el eje \(Y\) en la dirección del campo eléctrico. La aceleración solo tiene componente \(Y\): \(a_x = 0\), \(a_y = \frac{qE}{m}\).
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span> <strong>Descomposición de la velocidad inicial:</strong> Si la partícula entra con una velocidad inicial \(\vec{v}_0\) formando un ángulo \(\theta\) con el eje \(X\):
+                <div class="formula-box">
+                    \[ v_{0x} = v_0 \cos \theta \quad \text{y} \quad v_{0y} = v_0 \sin \theta \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span> <strong>Movimiento en el eje X (MRU):</strong> Al no haber fuerza en la dirección \(X\), la velocidad es constante. La posición en \(X\) viene dada por:
+                <div class="formula-box">
+                    \[ x = v_{0x} t \implies t = \frac{x}{v_{0x}} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span> <strong>Movimiento en el eje Y (MRUA):</strong> En la dirección \(Y\), el movimiento es uniformemente acelerado. La posición en \(Y\) es:
+                <div class="formula-box">
+                    \[ y = v_{0y} t + \frac{1}{2} a_y t^2 = v_{0y} t + \frac{1}{2} \frac{qE}{m} t^2 \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">6</span> <strong>Ecuación de la trayectoria:</strong> Sustituimos la expresión del tiempo \(t = \frac{x}{v_{0x}}\) en la ecuación de \(Y\) para obtener la trayectoria \(y(x)\):
+                <div class="formula-box">
+                    \[ y(x) = v_{0y} \left(\frac{x}{v_{0x}}\right) + \frac{1}{2} \frac{qE}{m} \left(\frac{x}{v_{0x}}\right)^2 \]
+                </div>
+            </div>
+        </div>
+
+        <div class="section resultado">
+            <h2>✅ Resultado</h2>
+            <p>La ecuación de la trayectoria es una parábola:</p>
+            <div class="formula-box">
+                \[ y(x) = \left(\frac{v_{0y}}{v_{0x}}\right) x + \frac{qE}{2m v_{0x}^2} x^2 \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica para el profesorado:</strong> Es muy útil hacer la analogía con el tiro parabólico de la unidad de cinemática. En este caso, la "gravedad" efectiva es \(g_{\text{efectiva}} = \frac{qE}{m}\). Si la carga es positiva, la parábola se curva en el sentido del campo; si es negativa, en sentido contrario. Si \(v_{0y} = 0\) (entra paralela al campo), la trayectoria es una parábola con vértice en el origen.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

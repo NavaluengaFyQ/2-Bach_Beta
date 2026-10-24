@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U99c01 - Formulario de U01 - Gravitación universal</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 24px 16px;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 28px 36px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .header .subtitulo {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .header .codigo {
+            display: inline-block;
+            background: rgba(255,255,255,0.22);
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+
+        .header .badge-centro {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 6px;
+            font-size: 1em;
+            flex-wrap: wrap;
+        }
+        .header-sub img {
+            max-height: 28px;
+            width: auto;
+            border-radius: 4px;
+        }
+        .texto {
+            font-weight: 500;
+        }
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
+            gap: 22px;
+            padding: 28px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px 22px 22px 22px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+            border-left: 5px solid #667eea;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .card.c-1 { border-left-color: #667eea; }
+        .card.c-2 { border-left-color: #ed8936; }
+        .card.c-3 { border-left-color: #4299e1; }
+        .card.c-4 { border-left-color: #48bb78; }
+        .card.c-5 { border-left-color: #38b2ac; }
+
+        .card .cabecera {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 8px;
+        }
+
+        .card .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            height: 32px;
+            padding: 0 8px;
+            background: #667eea;
+            color: #fff;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .card.c-1 .num { background: #667eea; }
+        .card.c-2 .num { background: #ed8936; }
+        .card.c-3 .num { background: #4299e1; }
+        .card.c-4 .num { background: #48bb78; }
+        .card.c-5 .num { background: #38b2ac; }
+
+        .card h2 {
+            font-size: 1.12rem;
+            color: #2d3748;
+            font-weight: 700;
+        }
+
+        .card .cabecera .badge-centro {
+            padding: 3px 10px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            background: #edf2f7;
+            border: 1px solid #cbd5e0;
+            color: #4a5568;
+            border-radius: 20px;
+            white-space: nowrap;
+            line-height: 1.4;
+        }
+
+        /* === CABECERA INTRODUCTORIA DE CADA FÓRMULA === */
+        .intro {
+            background: #faf5ff;
+            border-left: 4px solid #b794f4;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 0.9rem;
+            color: #44337a;
+            line-height: 1.5;
+        }
+        .intro .etiqueta {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #6b46c1;
+            margin-bottom: 3px;
+        }
+        .intro .etiqueta::before {
+            content: "🎯 ";
+            font-size: 0.85em;
+        }
+
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 14px 12px;
+            text-align: center;
+            font-size: 1.08rem;
+            overflow-x: auto;
+        }
+
+        .note {
+            background: #fffbeb;
+            border-left: 4px solid #f6e05e;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 0.9rem;
+            color: #744210;
+        }
+
+        .note .pregunta {
+          display: block;
+          font-weight: 700;
+          color: #975a16;
+          margin-bottom: 4px;
+          font-size: 0.95rem;
+        }
+        .note .pregunta::before { content: "❓ "; }
+        .note .respuesta {
+          display: block;
+          color: #744210;
+          padding-left: 18px;
+        }
+        .note .respuesta::before { content: "💡 "; }
+
+        .ejemplo {
+            background: #ebf8ff;
+            border-left: 4px solid #4299e1;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 0.9rem;
+            color: #2a4365;
+        }
+
+        .ejemplo strong { color: #2b6cb0; }
+
+        .obs {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 0.9rem;
+            color: #22543d;
+        }
+        .obs strong { color: #276749; }
+        .obs ul {
+            margin: 6px 0 0 18px;
+            padding: 0;
+        }
+        .obs li {
+            margin-bottom: 4px;
+        }
+        .obs .titulo-obs {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #276749;
+            letter-spacing: 0.3px;
+        }
+
+        .mag-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        .mag-table thead th {
+            background: #667eea;
+            color: #fff;
+            padding: 8px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.88rem;
+            letter-spacing: 0.3px;
+        }
+
+        .mag-table tbody td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        .mag-table tbody tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+        .mag-table tbody td:first-child {
+            font-weight: 600;
+            color: #2b6cb0;
+            white-space: nowrap;
+        }
+
+        .span-all {
+            grid-column: 1 / -1;
+        }
+
+        .footer-cta {
+            text-align: center;
+            padding: 22px 20px 30px 20px;
+        }
+
+        .footer-cta a {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            box-shadow: 0 6px 18px rgba(102,126,234,0.45);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .footer-cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(102,126,234,0.6);
+        }
+
+        @media (max-width: 620px) {
+            .header {
+                padding: 22px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header h1 { font-size: 1.5rem; }
+            .grid { padding: 18px 14px; gap: 16px; }
+            .card { padding: 16px 16px 18px 16px; }
+            .mag-table thead { display: none; }
+            .mag-table, .mag-table tbody, .mag-table tr, .mag-table td {
+                display: block;
+                width: 100%;
+            }
+            .mag-table tr {
+                margin-bottom: 12px;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 6px 0;
+                background: #f7fafc;
+            }
+            .mag-table td {
+                border: none;
+                padding: 6px 12px;
+                text-align: left;
+            }
+            .mag-table td::before {
+                content: attr(data-label);
+                display: block;
+                font-size: 0.75rem;
+                font-weight: 700;
+                color: #4a5568;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#U100c04</span>
+                <span class="texto">Formulación orgánica: Cicloalcanos (Problemas)</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <div class="grid">
+
+        <!-- 1. Ley de Gravitación Universal -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Ley de Gravitación Universal</h2>
+                <span class="badge-centro">Gravitación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo de la fuerza de atracción gravitatoria entre dos cuerpos de masas conocidas separados una distancia dada. Es la fórmula básica de la que se derivan casi todas las demás del tema.
+            </div>
+            <div class="formula-box">
+                \[ F = G\,\frac{m_1\,m_2}{r^2} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Qué va!!! si es sólo la ley enunciada por Newton: la fuerza de atracción entre dos masas puntuales es directamente proporcional al producto de sus masas e inversamente proporcional al cuadrado de la distancia entre sus centros.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(F\)</td>
+                        <td data-label="Significado">Módulo de la fuerza gravitatoria</td>
+                        <td data-label="Unidades">N</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(G\)</td>
+                        <td data-label="Significado">Constante de gravitación universal</td>
+                        <td data-label="Unidades">N·m²/kg²</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(m_1,\,m_2\)</td>
+                        <td data-label="Significado">Masas de los dos cuerpos</td>
+                        <td data-label="Unidades">kg</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(r\)</td>
+                        <td data-label="Significado">Distancia entre los centros de las masas</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(m_1 = 2{,}0\ \text{kg}\), \(m_2 = 3{,}0\ \text{kg}\) y \(r = 1{,}0\ \text{m}\): \(F = 6{,}674\times10^{-11}\cdot 6{,}0/1{,}0 = 4{,}0\times10^{-10}\ \text{N}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El carácter \(1/r^2\) implica que al <strong>duplicar la distancia</strong> la fuerza se reduce a la cuarta parte; al <strong>triplicarla</strong>, a la novena parte.</li>
+                    <li>La ley es válida para <strong>masas puntuales</strong> o para cuerpos con <strong>simetría esférica</strong>, midiendo \(r\) entre sus centros (teorema de la capa esférica de Newton).</li>
+                    <li>\(G\) es una <strong>constante universal</strong>: idéntica en todo el cosmos. No confundir con \(g\), que es local.</li>
+                    <li>La fuerza gravitatoria es <strong>siempre atractiva</strong>, nunca repulsiva.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 2. Expresión vectorial -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Expresión vectorial</h2>
+                <span class="badge-centro">Gravitación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El vector fuerza gravitatoria que una masa ejerce sobre otra, incluyendo no sólo su módulo sino también su dirección y sentido. Se emplea cuando interesa trabajar con el carácter vectorial de la fuerza.
+            </div>
+            <div class="formula-box">
+                \[ \vec{F}_{12} = -\,G\,\frac{m_1\,m_2}{r^2}\,\hat{u}_r \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Qué va!!! si es sólo la Ley de Gravitación Universal escrita en forma vectorial: \(\vec{F}_{12} = -G\,\dfrac{m_1\,m_2}{r^2}\,\hat{u}_r\). El signo negativo indica que la fuerza es siempre atractiva, apuntando hacia la otra masa.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(\vec{F}_{12}\)</td>
+                        <td data-label="Significado">Fuerza sobre \(m_1\) debida a \(m_2\)</td>
+                        <td data-label="Unidades">N</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(\hat{u}_r\)</td>
+                        <td data-label="Significado">Vector unitario dirigido de \(m_1\) a \(m_2\)</td>
+                        <td data-label="Unidades">adimensional</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(G\)</td>
+                        <td data-label="Significado">Constante de gravitación universal</td>
+                        <td data-label="Unidades">N·m²/kg²</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(m_1,\,m_2\)</td>
+                        <td data-label="Significado">Masas de los dos cuerpos</td>
+                        <td data-label="Unidades">kg</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(r\)</td>
+                        <td data-label="Significado">Distancia entre centros</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(m_1 = 5{,}0\ \text{kg}\), \(m_2 = 10\ \text{kg}\) y \(r = 2{,}0\ \text{m}\): \(|\vec{F}_{12}| = 6{,}674\times10^{-11}\cdot 50/4{,}0 = 8{,}34\times10^{-10}\ \text{N}\), dirigida de \(m_1\) hacia \(m_2\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El <strong>signo negativo</strong> es esencial: codifica que la gravedad es atractiva. Sin él, la expresión describiría una fuerza repulsiva.</li>
+                    <li>\(\vec{F}_{12} = -\vec{F}_{21}\): se cumple la <strong>tercera ley de Newton</strong> (acción-reacción).</li>
+                    <li>La fuerza es <strong>central</strong>: actúa siempre sobre la línea que une los centros de los dos cuerpos.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 3. Principio de superposición -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Principio de superposición</h2>
+                <span class="badge-centro">Gravitación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La fuerza gravitatoria neta que actúa sobre un cuerpo cuando varias masas ejercen simultáneamente su atracción. Se suman vectorialmente las fuerzas individuales, no sus módulos.
+            </div>
+            <div class="formula-box">
+                \[ \vec{F}_{\text{neta}} = \sum_{i} \vec{F}_i \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Qué va!!! si es sólo el principio de superposición: la fuerza gravitatoria neta sobre un cuerpo es la suma vectorial de las fuerzas individuales ejercidas por cada uno de los demás cuerpos, \(\vec{F}_{\text{neta}} = \sum_i \vec{F}_i\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(\vec{F}_{\text{neta}}\)</td>
+                        <td data-label="Significado">Fuerza gravitatoria neta sobre el cuerpo</td>
+                        <td data-label="Unidades">N</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(\vec{F}_i\)</td>
+                        <td data-label="Significado">Fuerza individual ejercida por el cuerpo \(i\)</td>
+                        <td data-label="Unidades">N</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si sobre un cuerpo actúan dos fuerzas gravitatorias perpendiculares de \(3{,}0\ \text{N}\) y \(4{,}0\ \text{N}\): \(|\vec{F}_{\text{neta}}| = \sqrt{3{,}0^2 + 4{,}0^2} = 5{,}0\ \text{N}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La <strong>suma es vectorial</strong>, no algebraica: hay que descomponer cada fuerza en componentes.</li>
+                    <li>Gracias a este principio puede calcularse el campo de un cuerpo extenso sumando el de sus partes.</li>
+                    <li>El <strong>teorema de la capa esférica</strong> de Newton demuestra que el campo gravitatorio en el interior de una corteza esférica uniforme es nulo.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 4. Aceleración de la gravedad en la superficie -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Gravedad en la superficie</h2>
+                <span class="badge-centro">Gravitación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La aceleración de la gravedad en la superficie de un astro a partir de su masa y su radio. Permite comparar la gravedad de distintos planetas, satélites o estrellas.
+            </div>
+            <div class="formula-box">
+                \[ g = \frac{G\,M}{R^2} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Si es solo despejar de igualar la fuerza gravitatoria \(F_g = \dfrac{G\,M\,m}{R^2}\) con la expresión del peso \(P = m\,g\): \(g = \dfrac{G\,M}{R^2}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(g\)</td>
+                        <td data-label="Significado">Aceleración de la gravedad en la superficie</td>
+                        <td data-label="Unidades">m/s²</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(G\)</td>
+                        <td data-label="Significado">Constante de gravitación universal</td>
+                        <td data-label="Unidades">N·m²/kg²</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(M\)</td>
+                        <td data-label="Significado">Masa del planeta</td>
+                        <td data-label="Unidades">kg</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(R\)</td>
+                        <td data-label="Significado">Radio del planeta</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para la Tierra (\(M = 5{,}97\times10^{24}\ \text{kg}\), \(R = 6{,}37\times10^{6}\ \text{m}\)): \(g = 6{,}674\times10^{-11}\cdot 5{,}97\times10^{24}/(6{,}37\times10^{6})^2 \approx 9{,}81\ \text{m/s}^2\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La masa \(m\) del cuerpo que cae <strong>se cancela</strong>: todos los cuerpos caen con la misma aceleración (principio de equivalencia).</li>
+                    <li>\(g\) <strong>no es una constante universal</strong>: depende del astro. En la Luna, \(g \approx 1{,}62\ \text{m/s}^2\); en Marte, \(\approx 3{,}71\ \text{m/s}^2\).</li>
+                    <li>La expresión es válida en el <strong>exterior</strong> del planeta, considerando toda su masa concentrada en el centro.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 5. Tercera Ley de Kepler -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Tercera Ley de Kepler</h2>
+                <span class="badge-centro">Órbitas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El período orbital \(T\) de un cuerpo que gira alrededor de otro (o la relación entre radio y período), conocidos el radio de la órbita y la masa del cuerpo central. Aplicable a planetas, satélites y estrellas binarias.
+            </div>
+            <div class="formula-box">
+                \[ T^2 = \frac{4\pi^2}{GM}\,r^3 \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Es resolver igualando la fuerza gravitatoria con la fuerza centrípeta en una órbita circular \(\dfrac{G\,M\,m}{r^2} = m\,\omega^2\,r\) y sustituyendo \(\omega = \dfrac{2\pi}{T}\): \(T^2 = \dfrac{4\pi^2}{G\,M}\,r^3\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(T\)</td>
+                        <td data-label="Significado">Período orbital</td>
+                        <td data-label="Unidades">s</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(r\)</td>
+                        <td data-label="Significado">Radio de la órbita</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(G\)</td>
+                        <td data-label="Significado">Constante de gravitación universal</td>
+                        <td data-label="Unidades">N·m²/kg²</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(M\)</td>
+                        <td data-label="Significado">Masa del cuerpo central</td>
+                        <td data-label="Unidades">kg</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para un satélite a \(r = 7{,}0\times10^{6}\ \text{m}\) en torno a la Tierra: \(T = 2\pi\sqrt{r^3/(GM)} \approx 5{,}8\times10^{3}\ \text{s} \approx 1{,}6\ \text{h}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La constante \(4\pi^2/(GM)\) es <strong>idéntica para todos los planetas</strong> que orbitan el mismo cuerpo central; ese es el contenido empírico de la 3.ª ley de Kepler.</li>
+                    <li>La masa del <strong>satélite no aparece</strong>: el período orbital no depende de la masa del cuerpo que orbita.</li>
+                    <li>La ley de Kepler se cumple estrictamente para <strong>órbitas elípticas</strong> usando el semieje mayor \(a\) en lugar de \(r\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 6. Velocidad areolar (2.ª Ley de Kepler) -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Velocidad areolar</h2>
+                <span class="badge-centro">Órbitas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La velocidad con que un cuerpo en órbita barre áreas (área barrida por unidad de tiempo) a partir de su momento angular. Es la magnitud que permanece constante en toda órbita kepleriana (2.ª ley de Kepler).
+            </div>
+            <div class="formula-box">
+                \[ \frac{dA}{dt} = \frac{L}{2m} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Qué va!!! si es sólo la definición de velocidad areolar \(\dfrac{dA}{dt} = \tfrac{1}{2}\,|\vec{r}\times\vec{v}|\) junto con la conservación del momento angular \(\vec{L} = m(\vec{r}\times\vec{v})\) en un campo de fuerzas centrales.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(dA/dt\)</td>
+                        <td data-label="Significado">Velocidad areolar (área barrida por unidad de tiempo)</td>
+                        <td data-label="Unidades">m²/s</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(L\)</td>
+                        <td data-label="Significado">Módulo del momento angular</td>
+                        <td data-label="Unidades">kg·m²/s</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(m\)</td>
+                        <td data-label="Significado">Masa del planeta</td>
+                        <td data-label="Unidades">kg</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(L = 4{,}0\times10^{10}\ \text{kg·m}^2/\text{s}\) y \(m = 1{,}0\times10^{3}\ \text{kg}\): \(dA/dt = 4{,}0\times10^{10}/(2{,}0\times10^{3}) = 2{,}0\times10^{7}\ \text{m}^2/\text{s}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La constancia de \(dA/dt\) es la <strong>segunda ley de Kepler</strong>: el planeta barre áreas iguales en tiempos iguales.</li>
+                    <li>Es consecuencia directa de que la fuerza gravitatoria es <strong>central</strong>: el momento angular se conserva.</li>
+                    <li>Explica por qué los planetas van <strong>más rápido en el perihelio</strong> que en el afelio.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 7. Velocidad orbital -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Velocidad orbital</h2>
+                <span class="badge-centro">Órbitas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La velocidad lineal de un satélite en órbita circular alrededor de un cuerpo central, conocidos el radio de la órbita y la masa del cuerpo central. No depende de la masa del satélite.
+            </div>
+            <div class="formula-box">
+                \[ v = \sqrt{\frac{G\,M}{r}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Si es solo despejar de igualar la fuerza gravitatoria con la fuerza centrípeta \(\dfrac{G\,M\,m}{r^2} = \dfrac{m\,v^2}{r}\): \(v = \sqrt{\dfrac{G\,M}{r}}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(v\)</td>
+                        <td data-label="Significado">Velocidad orbital del satélite</td>
+                        <td data-label="Unidades">m/s</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(G\)</td>
+                        <td data-label="Significado">Constante de gravitación universal</td>
+                        <td data-label="Unidades">N·m²/kg²</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(M\)</td>
+                        <td data-label="Significado">Masa del cuerpo central</td>
+                        <td data-label="Unidades">kg</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(r\)</td>
+                        <td data-label="Significado">Radio de la órbita</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para un satélite a \(r = 7{,}0\times10^{6}\ \text{m}\) en torno a la Tierra: \(v = \sqrt{3{,}98\times10^{14}/7{,}0\times10^{6}} \approx 7{,}5\times10^{3}\ \text{m/s}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La velocidad orbital <strong>no depende de la masa del satélite</strong>: solo de \(M\) y \(r\).</li>
+                    <li><strong>Primera velocidad cósmica</strong> (órbita rasante, \(r \approx R_{\oplus}\)): \(v \approx 7{,}9\ \text{km/s}\).</li>
+                    <li><strong>Paradoja aparente:</strong> a mayor altura, el satélite necesita <em>menos</em> velocidad para mantenerse en órbita, aunque requiere más energía para llegar allí.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 8. Período orbital y densidad -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Período y densidad</h2>
+                <span class="badge-centro">Órbitas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El período orbital de un satélite en órbita rasante (\(r \approx R\)) a partir únicamente de la densidad media del cuerpo central. Herramienta astrofísica para estimar densidades planetarias a partir de períodos observados.
+            </div>
+            <div class="formula-box">
+                \[ T = \sqrt{\frac{3\pi}{G\rho}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Es resolver sustituyendo \(M = \tfrac{4}{3}\pi\,R^3\rho\) en la Tercera Ley de Kepler \(T^2 = \dfrac{4\pi^2}{G\,M}\,r^3\) y considerando una órbita rasante (\(r \approx R\)): \(T = \sqrt{\dfrac{3\pi}{G\rho}}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(T\)</td>
+                        <td data-label="Significado">Período orbital (en órbita rasante)</td>
+                        <td data-label="Unidades">s</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(G\)</td>
+                        <td data-label="Significado">Constante de gravitación universal</td>
+                        <td data-label="Unidades">N·m²/kg²</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(\rho\)</td>
+                        <td data-label="Significado">Densidad media del cuerpo central</td>
+                        <td data-label="Unidades">kg/m³</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para la Tierra (\(\rho \approx 5{,}5\times10^{3}\ \text{kg/m}^3\)): \(T = \sqrt{3\pi/(6{,}674\times10^{-11}\cdot 5{,}5\times10^{3})} \approx 5{,}1\times10^{3}\ \text{s} \approx 85\ \text{min}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El período <strong>no depende del radio</strong> del planeta: dos astros con la misma densidad, aunque tengan tamaños muy distintos, tienen satélites rasantes con el mismo período.</li>
+                    <li>Herramienta astrofísica: <strong>midiendo el período</strong> de un satélite rasante se puede estimar la densidad media del cuerpo central.</li>
+                    <li>A <strong>mayor densidad</strong>, menor período orbital.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 9. Aceleración de marea -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Aceleración de marea</h2>
+                <span class="badge-centro">Mareas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La aceleración diferencial que un cuerpo perturbador (Luna, Sol, etc.) produce entre los extremos de un planeta, responsable de las mareas. No es la gravedad absoluta, sino el gradiente del campo gravitatorio.
+            </div>
+            <div class="formula-box">
+                \[ a_{\text{marea}} \approx \frac{2GMR}{d^3} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Es resolver calculando la diferencia entre la aceleración gravitatoria en el extremo del planeta más cercano al cuerpo perturbador y en el centro, aplicando la aproximación binomial \((1-R/d)^{-2} \approx 1 + 2R/d\) para \(d \gg R\): \(a_{\text{marea}} \approx \dfrac{2GMR}{d^3}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(a_{\text{marea}}\)</td>
+                        <td data-label="Significado">Aceleración de marea</td>
+                        <td data-label="Unidades">m/s²</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(G\)</td>
+                        <td data-label="Significado">Constante de gravitación universal</td>
+                        <td data-label="Unidades">N·m²/kg²</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(M\)</td>
+                        <td data-label="Significado">Masa del cuerpo perturbador</td>
+                        <td data-label="Unidades">kg</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(R\)</td>
+                        <td data-label="Significado">Radio del planeta perturbado</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(d\)</td>
+                        <td data-label="Significado">Distancia entre los centros de ambos cuerpos</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para la Luna (\(M = 7{,}35\times10^{22}\ \text{kg}\)) sobre la Tierra (\(R = 6{,}37\times10^{6}\ \text{m}\), \(d = 3{,}84\times10^{8}\ \text{m}\)): \(a_{\text{marea}} \approx 1{,}1\times10^{-6}\ \text{m/s}^2\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La dependencia con \(1/d^3\) (no \(1/d^2\)) explica por qué la <strong>Luna</strong>, pese a su menor masa, ejerce mayor influencia de marea que el Sol sobre la Tierra.</li>
+                    <li>Las mareas no se deben a la gravedad absoluta, sino al <strong>gradiente</strong> (diferencia de atracción entre los extremos).</li>
+                    <li>En el lado <strong>opuesto</strong> del planeta, la aceleración de marea tiene el mismo valor y apunta hacia afuera (de ahí las dos pleamares diarias).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 10. Límite de Roche (masas) -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Límite de Roche (masas)</h2>
+                <span class="badge-centro">Mareas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La distancia crítica a la que un satélite puede orbitar sin ser desintegrado por las fuerzas de marea del planeta. Si se acerca más, las fuerzas de marea superan la gravedad propia del satélite y lo fragmentan.
+            </div>
+            <div class="formula-box">
+                \[ d = r\left(\frac{2M}{m}\right)^{1/3} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Es resolver igualando la aceleración de marea del planeta sobre una masa en la superficie del satélite, \(a_{\text{marea}} \approx \dfrac{2GMR}{d^3}\), con la gravedad propia del satélite, \(\dfrac{Gm}{r^2}\): \(d = r\left(\dfrac{2M}{m}\right)^{1/3}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(d\)</td>
+                        <td data-label="Significado">Límite de Roche (distancia crítica)</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(r\)</td>
+                        <td data-label="Significado">Radio del satélite</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(M\)</td>
+                        <td data-label="Significado">Masa del planeta</td>
+                        <td data-label="Unidades">kg</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(m\)</td>
+                        <td data-label="Significado">Masa del satélite</td>
+                        <td data-label="Unidades">kg</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para un satélite de \(m = 1{,}0\times10^{21}\ \text{kg}\), \(r = 1{,}0\times10^{5}\ \text{m}\) en torno a un planeta de \(M = 8{,}0\times10^{21}\ \text{kg}\): \(d = 1{,}0\times10^{5}\cdot(16)^{1/3} \approx 2{,}5\times10^{5}\ \text{m}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Este modelo supone un satélite <strong>rígido mantenido únicamente por su gravedad</strong>; los cuerpos con cohesión mecánica (como las rocas) resisten algo más allá del límite.</li>
+                    <li>Si el satélite es <strong>muy pequeño</strong> (\(m \to 0\)), el límite de Roche se aleja considerablemente.</li>
+                    <li>Explica la <strong>formación de anillos</strong> planetarios (Saturno) y la fragmentación de cometas.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 11. Límite de Roche (densidades) -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">11</span>
+                <h2>Límite de Roche (densidades)</h2>
+                <span class="badge-centro">Mareas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El mismo límite de Roche pero expresado en función de las densidades medias del planeta y del satélite. Es la forma más útil en astrofísica, porque radios y densidades se miden más fácilmente que las masas absolutas.
+            </div>
+            <div class="formula-box">
+                \[ d = R\left(\frac{2\rho_{\text{planeta}}}{\rho_{\text{satélite}}}\right)^{1/3} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Es resolver sustituyendo en \(d = r\left(\dfrac{2M}{m}\right)^{1/3}\) las masas por sus expresiones en función de las densidades: \(M = \tfrac{4}{3}\pi\,R^3\rho_{\text{planeta}}\) y \(m = \tfrac{4}{3}\pi\,r^3\rho_{\text{satélite}}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(d\)</td>
+                        <td data-label="Significado">Límite de Roche</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(R\)</td>
+                        <td data-label="Significado">Radio del planeta</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(\rho_{\text{planeta}}\)</td>
+                        <td data-label="Significado">Densidad media del planeta</td>
+                        <td data-label="Unidades">kg/m³</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(\rho_{\text{satélite}}\)</td>
+                        <td data-label="Significado">Densidad media del satélite</td>
+                        <td data-label="Unidades">kg/m³</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(R = 6{,}37\times10^{6}\ \text{m}\), \(\rho_{\text{planeta}} = 5{,}5\times10^{3}\ \text{kg/m}^3\) y \(\rho_{\text{satélite}} = 3{,}0\times10^{3}\ \text{kg/m}^3\): \(d \approx 9{,}8\times10^{6}\ \text{m}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Para <strong>densidades similares</strong> (roca orbitando roca), \(d \approx 1{,}26\,R\) (pues \(2^{1/3} \approx 1{,}26\)).</li>
+                    <li>Si el satélite es <strong>menos denso</strong> (como los anillos helados de Saturno), el límite se aleja del planeta.</li>
+                    <li>Esta forma (en función de densidades) es la <strong>más utilizada en astrofísica</strong>, porque es más fácil medir radios y densidades que masas absolutas.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 12. Punto nulo de campo gravitatorio -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">12</span>
+                <h2>Punto nulo entre dos masas</h2>
+                <span class="badge-centro">Gravitación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La posición del punto donde el campo gravitatorio neto creado por dos masas se anula. Sirve para comprender el concepto de punto de Lagrange y de equilibrio gravitatorio.
+            </div>
+            <div class="formula-box">
+                \[ \frac{M_1}{x^2} = \frac{M_2}{(d-x)^2} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Es resolver igualando los módulos de los campos gravitatorios generados por ambas masas, \(G\,\dfrac{M_1}{x^2} = G\,\dfrac{M_2}{(d-x)^2}\), en el punto donde el campo neto es nulo.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(M_1,\,M_2\)</td>
+                        <td data-label="Significado">Masas de los dos cuerpos</td>
+                        <td data-label="Unidades">kg</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(x\)</td>
+                        <td data-label="Significado">Distancia desde \(M_1\) al punto nulo</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(d\)</td>
+                        <td data-label="Significado">Distancia entre las dos masas</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(M_1 = 4M_2\) y \(d = 3{,}0\ \text{m}\): \(4/x^2 = 1/(3-x)^2\), de donde \(x = 2{,}0\ \text{m}\) (más cerca de la masa menor).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El punto nulo está <strong>siempre más cerca de la masa menor</strong>.</li>
+                    <li>Si las masas son <strong>iguales</strong> (\(M_1 = M_2\)), el punto se sitúa exactamente en el <strong>punto medio</strong> (\(x = d/2\)).</li>
+                    <li>Es un <strong>equilibrio inestable</strong> a lo largo de la línea que une las masas y <strong>estable</strong> en la dirección perpendicular.</li>
+                    <li>Concepto clave para entender los <strong>puntos de Lagrange</strong> (como los del sistema Tierra-Sol).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 13. Despeje de x en el punto nulo -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">13</span>
+                <h2>Despeje de \(x\) en el punto nulo</h2>
+                <span class="badge-centro">Despeje</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                Directamente la distancia \(x\) desde una de las masas al punto nulo de campo, sin necesidad de resolver la ecuación cuadrática original. Es una versión "ya despejada" de la fórmula 12.
+            </div>
+            <div class="formula-box">
+                \[ x = \frac{d\sqrt{M_1}}{\sqrt{M_1}+\sqrt{M_2}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Si es solo despejar \(x\) de \(\dfrac{M_1}{x^2} = \dfrac{M_2}{(d-x)^2}\) tomando la raíz cuadrada en ambos miembros: \(x = \dfrac{d\,\sqrt{M_1}}{\sqrt{M_1}+\sqrt{M_2}}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(x\)</td>
+                        <td data-label="Significado">Distancia desde \(M_1\) al punto nulo</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(d\)</td>
+                        <td data-label="Significado">Distancia entre las dos masas</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(M_1,\,M_2\)</td>
+                        <td data-label="Significado">Masas de los dos cuerpos</td>
+                        <td data-label="Unidades">kg</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(M_1 = 9{,}0\times10^{24}\ \text{kg}\), \(M_2 = 1{,}0\times10^{24}\ \text{kg}\) y \(d = 4{,}0\times10^{8}\ \text{m}\): \(x = 4{,}0\times10^{8}\cdot 3/(3+1) = 3{,}0\times10^{8}\ \text{m}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Esta expresión <strong>evita resolver la ecuación cuadrática</strong> original: más rápida y con menos errores algebraicos.</li>
+                    <li>Al tomar la raíz cuadrada hay que elegir el signo: como \(x\) debe estar <strong>entre las dos masas</strong>, se toma el signo positivo.</li>
+                    <li>Comprobación: si \(M_1 \gg M_2\), entonces \(x \to d\) (el punto se acerca a la masa menor).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 14. Conservación del momento angular en elipses -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">14</span>
+                <h2>Momento angular en elipses</h2>
+                <span class="badge-centro">Órbitas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación entre las velocidades y las distancias al cuerpo central en los dos puntos extremos de una órbita elíptica: perihelio y afelio. Es consecuencia directa de la conservación del momento angular.
+            </div>
+            <div class="formula-box">
+                \[ v_{\text{perihelio}}\,r_{\text{perihelio}} = v_{\text{afelio}}\,r_{\text{afelio}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Qué va!!! si es sólo la conservación del momento angular \(L = m\,r\,v\) en los puntos de perihelio y afelio, donde \(\vec{r}\perp\vec{v}\) (es decir, \(\sin 90^\circ = 1\)): \(v_{\text{perihelio}}\,r_{\text{perihelio}} = v_{\text{afelio}}\,r_{\text{afelio}}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(v_{\text{perihelio}}\)</td>
+                        <td data-label="Significado">Velocidad en el perihelio</td>
+                        <td data-label="Unidades">m/s</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(r_{\text{perihelio}}\)</td>
+                        <td data-label="Significado">Distancia en el perihelio</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(v_{\text{afelio}}\)</td>
+                        <td data-label="Significado">Velocidad en el afelio</td>
+                        <td data-label="Unidades">m/s</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(r_{\text{afelio}}\)</td>
+                        <td data-label="Significado">Distancia en el afelio</td>
+                        <td data-label="Unidades">m</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(r_{\text{perihelio}} = 1{,}0\times10^{11}\ \text{m}\), \(v_{\text{perihelio}} = 3{,}0\times10^{4}\ \text{m/s}\) y \(r_{\text{afelio}} = 1{,}5\times10^{11}\ \text{m}\): \(v_{\text{afelio}} = 3{,}0\times10^{4}\cdot 1{,}0/1{,}5 = 2{,}0\times10^{4}\ \text{m/s}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Solo es válido en el <strong>perihelio y el afelio</strong>, puntos donde \(\vec{r}\perp\vec{v}\). En un punto arbitrario de la elipse hay que usar el módulo completo del producto vectorial.</li>
+                    <li>Como \(L\) y \(m\) son constantes, el producto \(r\cdot v\) también lo es: <strong>a menor distancia, mayor velocidad</strong>.</li>
+                    <li>Es la versión matemática de la <strong>segunda ley de Kepler</strong> para órbitas elípticas.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 15. Relación de velocidades con la excentricidad -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">15</span>
+                <h2>Velocidades y excentricidad</h2>
+                <span class="badge-centro">Órbitas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El cociente entre la velocidad en el perihelio y la velocidad en el afelio a partir de la excentricidad de la órbita. Permite cuantificar cuánto varía la velocidad a lo largo de una elipse.
+            </div>
+            <div class="formula-box">
+                \[ \frac{v_{\text{perihelio}}}{v_{\text{afelio}}} = \frac{1+\varepsilon}{1-\varepsilon} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">Es resolver sustituyendo \(r_{\text{perihelio}} = a(1-\varepsilon)\) y \(r_{\text{afelio}} = a(1+\varepsilon)\) en \(v_{\text{perihelio}}\,r_{\text{perihelio}} = v_{\text{afelio}}\,r_{\text{afelio}}\) y simplificando el semieje mayor \(a\): \(\dfrac{v_{\text{perihelio}}}{v_{\text{afelio}}} = \dfrac{1+\varepsilon}{1-\varepsilon}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(v_{\text{perihelio}}\)</td>
+                        <td data-label="Significado">Velocidad en el perihelio</td>
+                        <td data-label="Unidades">m/s</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(v_{\text{afelio}}\)</td>
+                        <td data-label="Significado">Velocidad en el afelio</td>
+                        <td data-label="Unidades">m/s</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(\varepsilon\)</td>
+                        <td data-label="Significado">Excentricidad de la órbita (\(0 \leq \varepsilon < 1\))</td>
+                        <td data-label="Unidades">adimensional</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para el cometa Halley (\(\varepsilon \approx 0{,}967\)): \(v_{\text{perihelio}}/v_{\text{afelio}} = 1{,}967/0{,}033 \approx 59{,}6\), es decir, casi 60 veces mayor en el perihelio.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Para la <strong>Tierra</strong> (\(\varepsilon \approx 0{,}0167\)) la diferencia es pequeña; para el <strong>cometa Halley</strong> (\(\varepsilon \approx 0{,}967\)) es enorme, lo que explica el desarrollo de su cola al acercarse al Sol.</li>
+                    <li>Si \(\varepsilon \to 0\) (órbita circular), el cociente tiende a 1: misma velocidad en todos los puntos.</li>
+                    <li>Si \(\varepsilon \to 1\) (órbita muy excéntrica), el cociente tiende a infinito.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 16. Constantes y datos numéricos -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">16</span>
+                <h2>Constantes y datos numéricos</h2>
+                <span class="badge-centro">Constantes</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No es una fórmula de cálculo, sino la recopilación de los valores numéricos de las constantes universales y de los datos astronómicos más habituales que se emplean en los problemas de gravitación del tema.
+            </div>
+            <div class="formula-box">
+                \[ G = 6{,}674\times10^{-11}\ \text{N·m}^2/\text{kg}^2 \qquad g_{\oplus} \approx 9{,}81\ \text{m/s}^2 \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta">En general, son valores aceptados por la IUPAC y la IAU: \(G\) fue determinado experimentalmente por Cavendish (1798) mediante una balanza de torsión, y el resto son datos astronómicos de uso habitual en los cálculos del tema.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades / valor</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Símbolo">\(G\)</td>
+                        <td data-label="Significado">Constante de gravitación universal</td>
+                        <td data-label="Unidades / valor">\(6{,}674\times10^{-11}\ \text{N·m}^2/\text{kg}^2\)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(g_{\oplus}\)</td>
+                        <td data-label="Significado">Gravedad en la superficie terrestre</td>
+                        <td data-label="Unidades / valor">\(9{,}81\ \text{m/s}^2\)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(M_{\oplus}\)</td>
+                        <td data-label="Significado">Masa de la Tierra</td>
+                        <td data-label="Unidades / valor">\(5{,}97\times10^{24}\ \text{kg}\)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(R_{\oplus}\)</td>
+                        <td data-label="Significado">Radio medio de la Tierra</td>
+                        <td data-label="Unidades / valor">\(6{,}37\times10^{6}\ \text{m}\)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(M_{\odot}\)</td>
+                        <td data-label="Significado">Masa del Sol</td>
+                        <td data-label="Unidades / valor">\(1{,}99\times10^{30}\ \text{kg}\)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(M_{\text{Luna}}\)</td>
+                        <td data-label="Significado">Masa de la Luna</td>
+                        <td data-label="Unidades / valor">\(7{,}35\times10^{22}\ \text{kg}\)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(d_{\oplus\text{–Luna}}\)</td>
+                        <td data-label="Significado">Distancia media Tierra–Luna</td>
+                        <td data-label="Unidades / valor">\(3{,}84\times10^{8}\ \text{m}\)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(1\ \text{ua}\)</td>
+                        <td data-label="Significado">Unidad astronómica</td>
+                        <td data-label="Unidades / valor">\(1{,}496\times10^{11}\ \text{m}\)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Símbolo">\(1\ \text{año}\)</td>
+                        <td data-label="Significado">Año juliano</td>
+                        <td data-label="Unidades / valor">\(3{,}156\times10^{7}\ \text{s}\)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> usa \(G = 6{,}674\times10^{-11}\ \text{N·m}^2/\text{kg}^2\) al sustituir en las fórmulas 1, 4, 5, 7, 8, 9, 10 y 11; usa \(M_{\oplus}\) y \(R_{\oplus}\) al aplicar las fórmulas 4 y 8 al caso terrestre.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li><strong>No confundir</strong> \(G\) (constante universal, idéntica en todo el cosmos) con \(g\) (local, dependiente del astro).</li>
+                    <li>Cavendish determinó \(G\) en 1798 con una <strong>balanza de torsión</strong>, más de un siglo después de que Newton formulara la ley.</li>
+                    <li>Conviene recordar las equivalencias: \(1\ \text{ua} \approx 1{,}496\times10^{11}\ \text{m}\); \(1\ \text{año} \approx 3{,}156\times10^{7}\ \text{s}\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- LEYENDA DE COLORES -->
+        <article class="card span-all">
+            <div class="cabecera">
+                <span class="num">★</span>
+                <h2>Leyenda de colores</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Color</th><th>Clase</th><th>Categoría</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Color"><span style="display:inline-block; width:14px; height:14px; border-radius:3px; background-color: #667eea;"></span></td>
+                        <td data-label="Clase">c-1</td>
+                        <td data-label="Categoría">Gravitación</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Color"><span style="display:inline-block; width:14px; height:14px; border-radius:3px; background-color: #ed8936;"></span></td>
+                        <td data-label="Clase">c-2</td>
+                        <td data-label="Categoría">Órbitas</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Color"><span style="display:inline-block; width:14px; height:14px; border-radius:3px; background-color: #4299e1;"></span></td>
+                        <td data-label="Clase">c-3</td>
+                        <td data-label="Categoría">Mareas</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Color"><span style="display:inline-block; width:14px; height:14px; border-radius:3px; background-color: #48bb78;"></span></td>
+                        <td data-label="Clase">c-4</td>
+                        <td data-label="Categoría">Despeje</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Color"><span style="display:inline-block; width:14px; height:14px; border-radius:3px; background-color: #38b2ac;"></span></td>
+                        <td data-label="Clase">c-5</td>
+                        <td data-label="Categoría">Constantes</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Color"><span style="display:inline-block; width:14px; height:14px; border-radius:3px; background-color: #48bb78; border: 1px dashed #276749;"></span></td>
+                        <td data-label="Clase">—</td>
+                        <td data-label="Categoría">Observaciones de interés (recuadro verde dentro de cada tarjeta)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Color"><span style="display:inline-block; width:14px; height:14px; border-radius:3px; background-color: #b794f4;"></span></td>
+                        <td data-label="Clase">—</td>
+                        <td data-label="Categoría">Cabecera introductoria «¿Qué se calcula?» (recuadro violeta al inicio de cada tarjeta)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+
+    </div>
+
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> la distancia \(r\) o \(d\) se mide siempre entre centros de masas (no entre superficies). \(G\) es una constante universal, mientras que \(g\) es local y depende del astro. Las fórmulas 5 a 8 describen órbitas circulares; para órbitas elípticas, utilícense las fórmulas 14 y 15. En todos los cálculos, emplea unidades del SI y decimales con coma.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+</body>
+</html>

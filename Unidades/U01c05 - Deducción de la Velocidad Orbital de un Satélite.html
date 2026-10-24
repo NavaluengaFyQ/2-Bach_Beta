@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deducción de la Velocidad Orbital de un Satélite</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            display: flex;
+            justify-content: center;
+        }
+        /* Contenedor principal */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        /* Subtexto de cabecera */
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .header-sub .texto {
+            font-style: italic;
+        }
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                    <span class="codigo">#T01.05.-</span>
+                    <span class="texto">Deducción de la Velocidad Orbital de un Satélite</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+
+        <!-- SECCIONES TRANSFORMADAS -->
+        <div class="section enunciado">
+            <h2>Enunciado</h2>
+            <p>Partiendo de la Ley de Gravitación Universal y considerando que un satélite describe una órbita circular de radio \(r\) alrededor de un planeta de masa \(M\), demostrar que su velocidad orbital \(v\) depende únicamente de la masa del planeta y del radio de la órbita, según la expresión:</p>
+            <div class="formula-box">
+                \[ v = \sqrt{\frac{G M}{r}} \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>Objetivo</h2>
+            <p>Determinar la condición dinámica que permite a un satélite mantenerse en órbita. Se busca demostrar que la velocidad necesaria para orbitar no depende de la masa del satélite, sino de la altura a la que se encuentre y de la masa del cuerpo central.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span><strong>Establecer la condición de órbita circular:</strong> Para que un satélite describa una órbita circular, la fuerza gravitatoria debe actuar como la fuerza centrípeta necesaria para cambiar continuamente la dirección de su velocidad.
+                <div class="formula-box">
+                    \[ F_g = F_c \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span><strong>Expresar ambas fuerzas:</strong> Sustituimos la Ley de Gravitación Universal y la expresión de la fuerza centrípeta en función de la velocidad lineal.
+                <div class="formula-box">
+                    \[ G \frac{M m}{r^2} = m \frac{v^2}{r} \]
+                </div>
+                <p>Donde \(M\) es la masa del planeta, \(m\) la del satélite, \(r\) el radio de la órbita y \(v\) la velocidad orbital.</p>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span><strong>Simplificar la masa del satélite:</strong> Al igual que en la gravedad superficial, la masa del satélite \(m\) se cancela.
+                <div class="formula-box">
+                    \[ G \frac{M}{r^2} = \frac{v^2}{r} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span><strong>Despejar la velocidad al cuadrado:</strong> Multiplicamos ambos lados por \(r\) para aislar \(v^2\).
+                <div class="formula-box">
+                    \[ v^2 = \frac{G M}{r} \]
+                </div>
+            </div>
+        </div>
+
+        <div class="section resultado">
+            <h2>Resultado</h2>
+            <p>La velocidad orbital es independiente de la masa del satélite y disminuye a medida que aumenta el radio de la órbita (la altura).</p>
+            <div class="formula-box" style="border: 2px solid #3182ce; background-color: #ebf8ff;">
+                \[ v = \sqrt{\frac{G M}{r}} \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica para el profesorado:</strong> Es un buen momento para reflexionar sobre la paradoja aparente de que, a mayor altura, el satélite necesita <em>menos</em> velocidad para mantenerse en órbita, aunque requiera más energía para llegar hasta allí. También se puede introducir el concepto de <em>primera velocidad cósmica</em> (velocidad orbital rasante, donde \(r \approx R\)).
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Líneas de campo y superficies equipotenciales</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        /* Contenedor principal (opcional, da fondo blanco y sombra) */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        /* Zona izquierda de la cabecera */
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        /* Subtexto de cabecera */
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 1em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .header-sub .texto {
+            opacity: 0.95;
+        }
+        /* Zona derecha de la cabecera */
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        /* Variantes de color para cada tipo de sección */
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <!-- Subtexto: logo + #T01.10 + Título de la cápsula de información -->
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                    <span class="codigo">#T01.10.- </span>
+                    <span class="texto">Concepto 10: Líneas de campo y superficies equipotenciales</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+
+        <!-- SECCIONES TRANSFORMADAS -->
+        <div class="section enunciado">
+            <h2>📌 Enunciado</h2>
+            <p>Partiendo de la definición de potencial eléctrico y de la relación entre trabajo y diferencia de potencial, <strong>demostrar que las líneas de campo eléctrico son siempre perpendiculares a las superficies equipotenciales</strong> en cualquier punto del espacio.</p>
+            <div class="formula-box">
+                \[ \vec{E} \perp \text{Superficie equipotencial} \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>🎯 Objetivo</h2>
+            <p>El objetivo es comprender la representación gráfica del campo eléctrico y la relación geométrica entre el campo (vector) y el potencial (escalar). Esta propiedad es fundamental para dibujar mapas de campo y para entender el movimiento de las cargas, que siempre tienden a moverse hacia potenciales menores (si son positivas) o mayores (si son negativas).</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>🛠️ Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span> <strong>Definición de superficie equipotencial:</strong> Una superficie equipotencial es el lugar geométrico de todos los puntos que tienen el mismo valor de potencial eléctrico \(V\). Por tanto, cualquier desplazamiento \(d\vec{r}\) a lo largo de una superficie equipotencial cumple que la variación de potencial es nula (\(dV = 0\)).
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span> <strong>Trabajo en una superficie equipotencial:</strong> El trabajo realizado por el campo eléctrico para mover una carga \(q\) entre dos puntos de una misma superficie equipotencial es cero, ya que la diferencia de potencial es nula:
+                <div class="formula-box">
+                    \[ W = -q \Delta V = 0 \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span> <strong>Trabajo como producto escalar:</strong> El trabajo también se define como la integral de línea de la fuerza eléctrica \(\vec{F} = q\vec{E}\) a lo largo del desplazamiento \(d\vec{r}\):
+                <div class="formula-box">
+                    \[ W = \int \vec{F} \cdot d\vec{r} = q \int \vec{E} \cdot d\vec{r} = 0 \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span> <strong>Relación diferencial:</strong> Para un desplazamiento infinitesimal \(d\vec{r}\) sobre la superficie equipotencial, la relación entre potencial y campo es:
+                <div class="formula-box">
+                    \[ dV = -\vec{E} \cdot d\vec{r} = 0 \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span> <strong>Conclusión geométrica:</strong> Para que el producto escalar de dos vectores (\(\vec{E}\) y \(d\vec{r}\)) sea cero, y sabiendo que ninguno de los dos es nulo, los vectores deben ser perpendiculares entre sí. Dado que \(d\vec{r}\) es un vector tangente a la superficie equipotencial, el campo eléctrico \(\vec{E}\) debe ser perpendicular a dicha superficie.
+            </div>
+        </div>
+
+        <div class="section resultado">
+            <h2>✅ Resultado</h2>
+            <p>Las líneas de campo eléctrico cortan perpendicularmente a las superficies equipotenciales:</p>
+            <div class="formula-box">
+                \[ \vec{E} \cdot d\vec{r} = 0 \implies \vec{E} \perp d\vec{r} \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica para el profesorado:</strong> Es muy útil mostrar ejemplos visuales: en una carga puntual, las líneas de campo son radiales y las superficies equipotenciales son esferas concéntricas. En un campo uniforme (placas paralelas), las líneas de campo son rectas paralelas y las equipotenciales son planos perpendiculares a ellas. Recuerda al alumnado que las líneas de campo nunca se cruzan y que las superficies equipotenciales tampoco pueden cortarse.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

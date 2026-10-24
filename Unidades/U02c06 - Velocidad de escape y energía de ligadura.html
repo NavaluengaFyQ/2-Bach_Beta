@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocidad de escape y energía de ligadura</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+        }
+        /* Contenedor principal (opcional, da fondo blanco y sombra) */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        /* Zona izquierda de la cabecera */
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        /* Zona derecha de la cabecera */
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        /* Variantes de color para cada tipo de sección */
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <!-- Subtexto: logo + #T01.07 + Título de la capsula de información-->
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                    <span class="codigo">#T01.07.- </span>
+                    <span class="texto">Velocidad de escape y energía de ligadura</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+        <!-- SECCIONES TRANSFORMADAS -->
+
+        <div class="section enunciado">
+            <h2>Enunciado</h2>
+            <p>Partiendo del principio de conservación de la energía mecánica en un campo gravitatorio y de las expresiones de la energía cinética y potencial, demostrar la velocidad mínima que debe adquirir un cuerpo para escapar de la atracción gravitatoria de un astro (velocidad de escape). A su vez, definir la energía de ligadura de un cuerpo en el campo gravitatorio.</p>
+            <div class="formula-box">
+                \[ v_e = \sqrt{\frac{2GM}{R}} \quad \text{y} \quad E_{\text{ligadura}} = G \frac{Mm}{R} \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>Objetivo</h2>
+            <p>Comprender la energía necesaria para vencer completamente un campo gravitatorio. La velocidad de escape es un concepto fundamental en astronáutica (para el lanzamiento de cohetes y sondas espaciales) y en astrofísica (como la base teórica de los agujeros negros, donde la velocidad de escape supera la de la luz).</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span> Consideramos un cuerpo de masa \(m\) situado en la superficie de un astro de masa \(M\) y radio \(R\). Su energía mecánica inicial es la suma de su energía cinética y su energía potencial gravitatoria:
+                <div class="formula-box">
+                    \[ E_{m1} = E_{c1} + E_{p1} = \frac{1}{2} m v_e^2 - G \frac{Mm}{R} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span> Para que el cuerpo escape completamente del campo gravitatorio, debe llegar al infinito con velocidad nula (o infinitesimal). Por tanto, su energía mecánica final en el infinito será cero:
+                <div class="formula-box">
+                    \[ E_{m2} = E_{c2} + E_{p2} = 0 + 0 = 0 \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span> Aplicamos el principio de conservación de la energía mecánica (ya que solo actúa la fuerza conservativa gravitatoria), igualando la energía inicial y final:
+                <div class="formula-box">
+                    \[ \frac{1}{2} m v_e^2 - G \frac{Mm}{R} = 0 \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span> Despejamos la velocidad de escape \(v_e\). Observamos que la masa \(m\) del cuerpo se cancela, lo que significa que la velocidad de escape no depende del objeto lanzado:
+                <div class="formula-box">
+                    \[ \frac{1}{2} v_e^2 = G \frac{M}{R} \implies v_e = \sqrt{\frac{2GM}{R}} \]
+                </div>
+                <p>Si utilizamos la relación \(g_0 = \frac{GM}{R^2}\) en la superficie, también podemos expresarla como \(v_e = \sqrt{2g_0R}\).</p>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span> La <strong>energía de ligadura</strong> se define como la energía que hay que comunicar a un cuerpo para que escape del campo gravitatorio. Es igual al valor absoluto de su energía mecánica en la superficie:
+                <div class="formula-box">
+                    \[ E_{\text{ligadura}} = |E_m| = \left| -\frac{1}{2} m v_e^2 \right| = G \frac{Mm}{R} \]
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section resultado">
+            <h2>Resultado</h2>
+            <div class="formula-box">
+                \[ v_e = \sqrt{\frac{2GM}{R}} = \sqrt{2g_0R} \quad ; \quad E_{\text{ligadura}} = G \frac{Mm}{R} \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica:</strong> Es importante destacar que la velocidad de escape es independiente de la dirección de lanzamiento (despreciando la fricción atmosférica) y de la masa del proyectil. La energía de ligadura por unidad de masa se conoce como potencial gravitatorio en la superficie, cambiado de signo.
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

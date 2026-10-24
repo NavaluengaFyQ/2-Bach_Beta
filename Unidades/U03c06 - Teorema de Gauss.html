@@ -1,0 +1,239 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teorema de Gauss</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        /* Contenedor principal (opcional, da fondo blanco y sombra) */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        /* Zona izquierda de la cabecera */
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        /* Subtexto de cabecera */
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 1em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .header-sub .texto {
+            opacity: 0.95;
+        }
+        /* Zona derecha de la cabecera */
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        /* Variantes de color para cada tipo de sección */
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <!-- Subtexto: logo + #T01.06 + Título de la cápsula de información -->
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                    <span class="codigo">#T01.06.- </span>
+                    <span class="texto">Concepto 6: Teorema de Gauss</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+
+        <!-- SECCIONES TRANSFORMADAS -->
+        <div class="section enunciado">
+            <h2>📌 Enunciado</h2>
+            <p>Partiendo de la definición de flujo eléctrico y de la Ley de Coulomb, <strong>demostrar que el flujo eléctrico neto</strong> a través de cualquier superficie cerrada (superficie gaussiana) es directamente proporcional a la carga neta encerrada en su interior e inversamente proporcional a la permitividad eléctrica del vacío \(\varepsilon_0\):</p>
+            <div class="formula-box">
+                \[ \Phi_E = \oint \vec{E} \cdot d\vec{S} = \frac{Q_{\text{int}}}{\varepsilon_0} \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>🎯 Objetivo</h2>
+            <p>El objetivo es presentar una de las leyes fundamentales del electromagnetismo. El teorema de Gauss proporciona una herramienta extremadamente potente para calcular campos eléctricos en distribuciones de carga con alta simetría (esferas, cilindros, placas), evitando la necesidad de realizar integrales de campo complejas.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>🛠️ Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span> <strong>Definición de flujo eléctrico:</strong> El flujo eléctrico \(\Phi_E\) a través de una superficie \(S\) se define como la integral del producto escalar del campo eléctrico \(\vec{E}\) por el vector diferencial de área \(d\vec{S}\):
+                <div class="formula-box">
+                    \[ \Phi_E = \int_S \vec{E} \cdot d\vec{S} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span> <strong>Superficie esférica alrededor de una carga puntual:</strong> Consideramos una carga puntual \(Q\) situada en el centro de una superficie esférica imaginaria de radio \(r\). El campo eléctrico en cualquier punto de la superficie es radial y tiene módulo constante \(E = k \frac{Q}{r^2}\).
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span> <strong>Cálculo del flujo para la esfera:</strong> En este caso, \(\vec{E}\) y \(d\vec{S}\) son paralelos en todos los puntos, por lo que \(\vec{E} \cdot d\vec{S} = E \, dS\). La integral se simplifica:
+                <div class="formula-box">
+                    \[ \Phi_E = \oint E \, dS = E \oint dS = E (4\pi r^2) \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span> <strong>Sustitución del campo eléctrico:</strong> Sustituimos la expresión del campo creado por la carga puntual:
+                <div class="formula-box">
+                    \[ \Phi_E = \left( k \frac{Q}{r^2} \right) (4\pi r^2) = 4\pi k Q \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span> <strong>Relación con la permitividad:</strong> La constante de Coulomb \(k\) se relaciona con la permitividad eléctrica del vacío \(\varepsilon_0\) mediante \(k = \frac{1}{4\pi\varepsilon_0}\). Sustituyendo:
+                <div class="formula-box">
+                    \[ \Phi_E = 4\pi \left( \frac{1}{4\pi\varepsilon_0} \right) Q = \frac{Q}{\varepsilon_0} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">6</span> <strong>Generalización:</strong> Aunque hemos partido de una superficie esférica y una carga puntual, el teorema se cumple para cualquier superficie cerrada y cualquier distribución de carga: el flujo neto solo depende de la carga encerrada \(Q_{\text{int}}\).
+            </div>
+        </div>
+
+        <div class="section resultado">
+            <h2>✅ Resultado</h2>
+            <p>El Teorema de Gauss establece que el flujo eléctrico neto a través de una superficie cerrada es:</p>
+            <div class="formula-box">
+                \[ \Phi_E = \oint \vec{E} \cdot d\vec{S} = \frac{Q_{\text{int}}}{\varepsilon_0} \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica para el profesorado:</strong> Es crucial que el alumnado comprenda que la superficie gaussiana es imaginaria y puede tener cualquier forma. La elección de una superficie con alta simetría (esférica, cilíndrica o plana) es la clave para simplificar el cálculo del campo eléctrico. Las cargas situadas fuera de la superficie no contribuyen al flujo neto, ya que el número de líneas de campo que entran es igual al que sale.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```

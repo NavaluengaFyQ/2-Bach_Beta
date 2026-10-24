@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relación entre el Período Orbital y la Densidad del Cuerpo Central</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            display: flex;
+            justify-content: center;
+        }
+        /* Contenedor principal */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        /* Subtexto de cabecera */
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .header-sub .texto {
+            font-style: italic;
+        }
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                    <span class="codigo">#T01.06.-</span>
+                    <span class="texto">Relación entre el Período Orbital y la Densidad del Cuerpo Central</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+
+        <!-- SECCIONES TRANSFORMADAS -->
+        <div class="section enunciado">
+            <h2>Enunciado</h2>
+            <p>Partiendo de la Tercera Ley de Kepler, de la expresión de la densidad de un cuerpo esférico y considerando un satélite que orbita muy cerca de la superficie de un planeta, demostrar que el período orbital \(T\) depende únicamente de la densidad media \(\rho\) del planeta según la expresión:</p>
+            <div class="formula-box">
+                \[ T = \sqrt{\frac{3\pi}{G \rho}} \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>Objetivo</h2>
+            <p>Comprender cómo las propiedades orbitales de un satélite pueden revelar información intrínseca del cuerpo celeste que orbita. Esta relación es fundamental en astrofísica para determinar la densidad de planetas o estrellas simplemente midiendo el período de un cuerpo que orbita cerca de ellos.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span><strong>Partir de la Tercera Ley de Kepler:</strong> Expresamos el período orbital al cuadrado en función de la masa del cuerpo central \(M\) y del radio de la órbita \(r\).
+                <div class="formula-box">
+                    \[ T^2 = \frac{4\pi^2}{G M} r^3 \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span><strong>Expresar la masa en función de la densidad:</strong> Para un planeta esférico de radio \(R\) y densidad media \(\rho\), su masa es el producto de su volumen por su densidad.
+                <div class="formula-box">
+                    \[ M = \rho \cdot V = \rho \cdot \frac{4}{3}\pi R^3 \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span><strong>Considerar una órbita rasante:</strong> Si el satélite orbita muy cerca de la superficie, podemos aproximar el radio orbital \(r\) como el radio del planeta \(R\).
+                <div class="formula-box">
+                    \[ r \approx R \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span><strong>Sustituir la masa en la ley de Kepler:</strong> Reemplazamos \(M\) por su expresión en función de la densidad.
+                <div class="formula-box">
+                    \[ T^2 = \frac{4\pi^2}{G \left( \rho \cdot \frac{4}{3}\pi R^3 \right)} R^3 \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span><strong>Simplificar la expresión:</strong> Cancelamos el término \(R^3\) y simplificamos las fracciones.
+                <div class="formula-box">
+                    \[ T^2 = \frac{4\pi^2}{\frac{4}{3}\pi G \rho} = \frac{3\pi}{G \rho} \]
+                </div>
+            </div>
+        </div>
+
+        <div class="section resultado">
+            <h2>Resultado</h2>
+            <p>El período orbital de un satélite en órbita rasante es inversamente proporcional a la raíz cuadrada de la densidad del planeta. A mayor densidad, menor período orbital.</p>
+            <div class="formula-box" style="border: 2px solid #3182ce; background-color: #ebf8ff;">
+                \[ T = \sqrt{\frac{3\pi}{G \rho}} \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica para el profesorado:</strong> Es interesante destacar que esta fórmula es independiente del radio del planeta. Dos planetas con la misma densidad, pero tamaños muy diferentes, tendrían satélites rasantes con el mismo período orbital. Además, el período mínimo teórico (para la máxima densidad posible) está limitado por el tiempo de caída libre, conocido como el tiempo dinámico.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

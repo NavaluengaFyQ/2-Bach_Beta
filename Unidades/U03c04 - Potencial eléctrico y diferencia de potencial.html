@@ -1,0 +1,240 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potencial eléctrico y diferencia de potencial</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        /* Contenedor principal (opcional, da fondo blanco y sombra) */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        /* Zona izquierda de la cabecera */
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        /* Subtexto de cabecera */
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 1em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .header-sub .texto {
+            opacity: 0.95;
+        }
+        /* Zona derecha de la cabecera */
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        /* Variantes de color para cada tipo de sección */
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <!-- Subtexto: logo + #T01.04 + Título de la cápsula de información -->
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                    <span class="codigo">#T01.04.- </span>
+                    <span class="texto">Concepto 4: Potencial eléctrico y diferencia de potencial</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+
+        <!-- SECCIONES TRANSFORMADAS -->
+        <div class="section enunciado">
+            <h2>📌 Enunciado</h2>
+            <p>Partiendo de la definición de energía potencial electrostática y del concepto de campo eléctrico, <strong>demostrar que el potencial eléctrico</strong> en un punto \(V\) se define como la energía potencial por unidad de carga, y que la diferencia de potencial entre dos puntos \(A\) y \(B\) está relacionada con el trabajo externo realizado para mover una carga entre ellos mediante la expresión \(V_B - V_A = \frac{W_{\text{ext}}}{q}\).</p>
+            <div class="formula-box">
+                \[ V = \frac{E_p}{q} \quad \text{y} \quad V_B - V_A = \frac{W_{\text{ext}}}{q} \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>🎯 Objetivo</h2>
+            <p>El objetivo es introducir una magnitud escalar, el potencial eléctrico, que simplifica enormemente el estudio de los campos eléctricos. Al ser independiente de la carga testigo, el potencial permite describir el campo de forma más sencilla que el vector campo eléctrico, facilitando el cálculo de energías y trabajos en sistemas electrostáticos.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>🛠️ Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span> <strong>Definición de potencial:</strong> Se define el potencial eléctrico \(V\) en un punto de un campo eléctrico como la energía potencial electrostática \(E_p\) que adquiriría una carga testigo \(q\) colocada en dicho punto, dividida por el valor de dicha carga:
+                <div class="formula-box">
+                    \[ V = \frac{E_p}{q} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span> <strong>Potencial debido a una carga puntual:</strong> Si la carga fuente es una carga puntual \(Q\), la energía potencial de una carga testigo \(q\) situada a una distancia \(r\) es \(E_p = k \frac{Qq}{r}\). Sustituyendo en la definición:
+                <div class="formula-box">
+                    \[ V = \frac{k \frac{Qq}{r}}{q} = k \frac{Q}{r} \]
+                </div>
+                <p>El potencial es independiente de la carga testigo \(q\) y depende solo de la carga fuente \(Q\) y de la distancia \(r\).</p>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span> <strong>Trabajo externo y diferencia de potencial:</strong> Para mover una carga \(q\) desde un punto \(A\) hasta un punto \(B\) a velocidad constante, un agente externo debe realizar un trabajo \(W_{\text{ext}}\) igual a la variación de energía potencial del sistema:
+                <div class="formula-box">
+                    \[ W_{\text{ext}} = \Delta E_p = E_p(B) - E_p(A) \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span> <strong>Relación con el potencial:</strong> Sustituyendo la definición de potencial \(E_p = qV\) en la expresión anterior:
+                <div class="formula-box">
+                    \[ W_{\text{ext}} = qV_B - qV_A = q(V_B - V_A) \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span> <strong>Diferencia de potencial:</strong> Despejando la diferencia de potencial:
+                <div class="formula-box">
+                    \[ V_B - V_A = \frac{W_{\text{ext}}}{q} \]
+                </div>
+                <p>Esta expresión indica que la diferencia de potencial entre dos puntos es el trabajo externo necesario para mover una carga unitaria positiva de un punto a otro.</p>
+            </div>
+        </div>
+
+        <div class="section resultado">
+            <h2>✅ Resultado</h2>
+            <p>Las expresiones que definen el potencial y la diferencia de potencial son:</p>
+            <div class="formula-box">
+                \[ V = k \frac{Q}{r} \quad \text{y} \quad V_B - V_A = \frac{W_{\text{ext}}}{q} \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica para el profesorado:</strong> Es importante distinguir entre potencial (magnitud escalar con un valor asignado en cada punto) y diferencia de potencial (variación de potencial entre dos puntos, que es medible con un voltímetro). Además, conviene recordar que el potencial es negativo para cargas negativas y positivo para cargas positivas, y que las cargas positivas se mueven espontáneamente hacia potenciales menores, mientras que las negativas lo hacen hacia potenciales mayores.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```

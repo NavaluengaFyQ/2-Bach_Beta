@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración del Límite de Roche (en función de densidades)</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            display: flex;
+            justify-content: center;
+        }
+        /* Contenedor principal */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        /* Subtexto de cabecera */
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .header-sub .texto {
+            font-style: italic;
+        }
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                    <span class="codigo">#T01.09.-</span>
+                    <span class="texto">Demostración del Límite de Roche (en función de densidades)</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+
+        <!-- SECCIONES TRANSFORMADAS -->
+        <div class="section enunciado">
+            <h2>Enunciado</h2>
+            <p>Partiendo de la expresión del límite de Roche obtenida en el concepto anterior, \(d = r \left( \frac{2M}{m} \right)^{\frac{1}{3}}\), y expresando las masas del planeta (\(M\)) y del satélite (\(m\)) en función de sus densidades (\(\rho_{\text{planeta}}\) y \(\rho_{\text{satélite}}\)) y sus volúmenes, demostrar que el límite de Roche se puede expresar únicamente en función del radio del planeta \(R\) y de las densidades de ambos cuerpos:</p>
+            <div class="formula-box">
+                \[ d = R \left( \frac{2 \rho_{\text{planeta}}}{\rho_{\text{satélite}}} \right)^{\frac{1}{3}} \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>Objetivo</h2>
+            <p>Reformular el límite de Roche de una manera más práctica y útil. En astrofísica, a menudo es más sencillo medir el radio de un planeta y estimar las densidades de los materiales que medir las masas absolutas. Esta expresión revela que el límite de Roche no depende del tamaño del satélite, sino de la relación de densidades entre ambos cuerpos.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span><strong>Expresar la masa del planeta en función de su densidad:</strong> Considerando el planeta como una esfera de radio \(R\).
+                <div class="formula-box">
+                    \[ M = V_{\text{planeta}} \cdot \rho_{\text{planeta}} = \frac{4}{3} \pi R^3 \rho_{\text{planeta}} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span><strong>Expresar la masa del satélite en función de su densidad:</strong> Considerando el satélite como una esfera de radio \(r\).
+                <div class="formula-box">
+                    \[ m = V_{\text{satélite}} \cdot \rho_{\text{satélite}} = \frac{4}{3} \pi r^3 \rho_{\text{satélite}} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span><strong>Calcular el cociente entre las masas:</strong> Sustituimos las expresiones anteriores en el término \(\frac{M}{m}\) que aparece en la fórmula del límite de Roche.
+                <div class="formula-box">
+                    \[ \frac{M}{m} = \frac{\frac{4}{3} \pi R^3 \rho_{\text{planeta}}}{\frac{4}{3} \pi r^3 \rho_{\text{satélite}}} = \frac{R^3 \rho_{\text{planeta}}}{r^3 \rho_{\text{satélite}}} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span><strong>Sustituir en la expresión del Límite de Roche:</strong> Introducimos este cociente en la fórmula deducida en el concepto anterior.
+                <div class="formula-box">
+                    \[ d = r \left( 2 \cdot \frac{R^3 \rho_{\text{planeta}}}{r^3 \rho_{\text{satélite}}} \right)^{\frac{1}{3}} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span><strong>Simplificar la expresión:</strong> Distribuimos la raíz cúbica. El término \(r^3\) del denominador se cancela con el \(r\) que multiplica fuera de la raíz.
+                <div class="formula-box">
+                    \[ d = r \cdot \frac{R}{r} \left( \frac{2 \rho_{\text{planeta}}}{\rho_{\text{satélite}}} \right)^{\frac{1}{3}} = R \left( \frac{2 \rho_{\text{planeta}}}{\rho_{\text{satélite}}} \right)^{\frac{1}{3}} \]
+                </div>
+            </div>
+        </div>
+
+        <div class="section resultado">
+            <h2>Resultado</h2>
+            <p>El límite de Roche depende exclusivamente del radio del planeta principal y de la relación entre las densidades del planeta y del satélite, independientemente del tamaño del satélite.</p>
+            <div class="formula-box" style="border: 2px solid #3182ce; background-color: #ebf8ff;">
+                \[ d = R \left( \frac{2 \rho_{\text{planeta}}}{\rho_{\text{satélite}}} \right)^{\frac{1}{3}} \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica para el profesorado:</strong> Esta es la forma más utilizada en la práctica. Se puede comentar que, si el satélite y el planeta tienen densidades similares (como una roca orbitando un planeta rocoso), el límite de Roche es aproximadamente \(d \approx 1,26 R\) (ya que \(2^{1/3} \approx 1,26\)). Sin embargo, si el satélite es un cuerpo helado y menos denso (como los anillos de Saturno), el límite de Roche se aleja más del planeta.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

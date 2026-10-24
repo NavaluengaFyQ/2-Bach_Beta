@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo eléctrico y superposición</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        /* Contenedor principal (opcional, da fondo blanco y sombra) */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        /* Zona izquierda de la cabecera */
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        /* Subtexto de cabecera */
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 1em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .header-sub .texto {
+            opacity: 0.95;
+        }
+        /* Zona derecha de la cabecera */
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        /* Variantes de color para cada tipo de sección */
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <!-- Subtexto: logo + #T01.02 + Título de la cápsula de información -->
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                    <span class="codigo">#T01.02.- </span>
+                    <span class="texto">Concepto 2: Campo eléctrico y principio de superposición</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+
+        <!-- SECCIONES TRANSFORMADAS -->
+        <div class="section enunciado">
+            <h2>📌 Enunciado</h2>
+            <p>Partiendo de la definición de campo eléctrico como la fuerza ejercida por unidad de carga testigo y de la Ley de Coulomb, <strong>demostrar que el campo eléctrico total</strong> generado por un sistema de cargas puntuales en un punto del espacio es igual a la suma vectorial de los campos individuales creados por cada una de las cargas (Principio de Superposición).</p>
+            <div class="formula-box">
+                \[ \vec{E}_{\text{total}} = \sum_{i=1}^{n} \vec{E}_i = \sum_{i=1}^{n} k \frac{Q_i}{r_i^2} \hat{u}_i \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>🎯 Objetivo</h2>
+            <p>El objetivo es introducir el concepto de campo eléctrico como una propiedad del espacio que rodea a las cargas, independientemente de la carga que lo percibe. Además, se busca establecer una herramienta matemática que permita calcular el campo resultante en cualquier punto cuando actúan múltiples cargas, simplificando el estudio de sistemas complejos.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>🛠️ Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span> <strong>Definición de campo eléctrico:</strong> Se define la intensidad del campo eléctrico \(\vec{E}\) en un punto como la fuerza eléctrica \(\vec{F}\) que experimentaría una carga testigo positiva \(q_0\) colocada en dicho punto, dividida por el valor de dicha carga:
+                <div class="formula-box">
+                    \[ \vec{E} = \frac{\vec{F}}{q_0} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span> <strong>Campo de una carga puntual:</strong> Si sustituimos la fuerza \(\vec{F}\) por la Ley de Coulomb para una carga \(Q_i\) que actúa sobre la carga testigo \(q_0\), obtenemos:
+                <div class="formula-box">
+                    \[ \vec{E}_i = \frac{k \frac{Q_i q_0}{r_i^2} \hat{u}_i}{q_0} = k \frac{Q_i}{r_i^2} \hat{u}_i \]
+                </div>
+                <p>Observamos que el campo eléctrico es independiente de la carga testigo \(q_0\) y depende solo de la carga fuente \(Q_i\), la distancia \(r_i\) y la dirección \(\hat{u}_i\).</p>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span> <strong>Fuerza resultante sobre la carga testigo:</strong> Si tenemos un sistema de \(n\) cargas \(Q_1, Q_2, ..., Q_n\), la fuerza total que ejercen sobre la carga testigo \(q_0\) es la suma vectorial de las fuerzas individuales (debido a la propiedad aditiva de las fuerzas):
+                <div class="formula-box">
+                    \[ \vec{F}_{\text{total}} = \vec{F}_1 + \vec{F}_2 + \dots + \vec{F}_n = \sum_{i=1}^{n} \vec{F}_i \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span> <strong>Aplicación de la definición de campo:</strong> El campo total en el punto será la fuerza total dividida por la carga testigo \(q_0\):
+                <div class="formula-box">
+                    \[ \vec{E}_{\text{total}} = \frac{\vec{F}_{\text{total}}}{q_0} = \frac{\sum \vec{F}_i}{q_0} = \sum_{i=1}^{n} \frac{\vec{F}_i}{q_0} = \sum_{i=1}^{n} \vec{E}_i \]
+                </div>
+            </div>
+        </div>
+
+        <div class="section resultado">
+            <h2>✅ Resultado</h2>
+            <p>El campo eléctrico total en un punto debido a una distribución de cargas puntuales es la suma vectorial de los campos individuales:</p>
+            <div class="formula-box">
+                \[ \vec{E}_{\text{total}} = \sum_{i=1}^{n} k \frac{Q_i}{r_i^2} \hat{u}_i \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica para el profesorado:</strong> Es fundamental insistir en que la suma es <strong>vectorial</strong>, no algebraica. Los estudiantes suelen cometer errores al sumar los módulos de los campos en lugar de descomponerlos en sus componentes \(x\) e \(y\) y sumar estas por separado. El uso de diagramas de vectores para visualizar la superposición es altamente recomendable.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

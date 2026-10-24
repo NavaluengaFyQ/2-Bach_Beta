@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Examen resuelto — IES Valle del Alberche</title>
+
+<!-- ===== MathJax 3: CONFIGURACIÓN OBLIGATORIA antes del script ===== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath:  [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+/* ============================================
+   ESTILOS BASE (idénticos al formato IES)
+   ============================================ */
+.container {
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.header-left { display: flex; flex-direction: column; justify-content: center; }
+.header-left h1 { font-size: 1.8em; margin: 0; }
+.header-left p { margin: 6px 0 0 0; font-size: 1em; }
+.header-right img {
+    max-height: 70px; max-width: 180px;
+    object-fit: contain; display: block;
+}
+.section {
+    padding: 25px 30px;
+    margin: 15px;
+    border-radius: 12px;
+    border-left: 5px solid;
+}
+.enunciado     { background: #f7fafc; border-color: #a0aec0; }
+.objetivo      { background: #fffaf0; border-color: #ed8936; }
+.procedimiento { background: #f0fff4; border-color: #48bb78; }
+.resultado     { background: #ebf8ff; border-color: #4299e1; }
+.section h2 {
+    font-size: 1.3em; margin-bottom: 15px;
+    display: flex; align-items: center; gap: 10px;
+}
+.enunciado h2     { color: #4a5568; }
+.objetivo h2      { color: #c05621; }
+.procedimiento h2 { color: #276749; }
+.resultado h2     { color: #2b6cb0; }
+.formula-box {
+    background: #edf2f7;
+    border: 2px solid #cbd5e0;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 1.1em;
+}
+.step {
+    background: white;
+    border-left: 4px solid #a0aec0;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.step-num {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.note {
+    background: #fffbeb;
+    border: 1px solid #f6e05e;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 0.95em;
+    color: #744210;
+}
+p { line-height: 1.7; margin-bottom: 10px; }
+.header-sub {
+    display: flex; align-items: center; gap: 8px;
+    margin-top: 6px; flex-wrap: wrap;
+}
+.header-sub img {
+    height: 28px; width: auto; display: block; border-radius: 4px;
+}
+.header-sub .codigo {
+    font-weight: 700; font-size: 1.05em;
+    letter-spacing: 0.5px; color: #f0e6ff;
+}
+.header-sub .texto {
+    font-size: 1em; color: #f0e6ff; font-weight: 500;
+}
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: #f1f5f9;
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+    margin: 0;
+}
+
+/* ============================================
+   BLOQUE DESPLEGABLE
+   ============================================ */
+details.desmitificando {
+    margin: 30px 15px 20px 15px;
+    border: 2px solid #805ad5;
+    border-radius: 12px;
+    background: #faf5ff;
+    padding: 0.5rem 1rem 1rem 1rem;
+    transition: all 0.2s;
+}
+details.desmitificando summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.5rem 0;
+    user-select: none;
+}
+details.desmitificando summary::-webkit-details-marker { display: none; }
+details.desmitificando summary i.fa-chevron-circle-down {
+    transition: transform 0.3s ease;
+    color: #805ad5;
+    font-size: 1.6rem;
+}
+details.desmitificando[open] summary i.fa-chevron-circle-down {
+    transform: rotate(180deg);
+}
+details.desmitificando summary .pulsame {
+    font-size: 0.8rem;
+    color: #553c9a;
+    background: #e9d8fd;
+    padding: 0.15rem 0.6rem;
+    border-radius: 20px;
+    font-weight: 500;
+    margin-left: auto;
+    white-space: nowrap;
+}
+details.desmitificando .contenido-ejercicios {
+    margin-top: 0.5rem;
+    border-top: 1px solid #d6bcf0;
+    padding-top: 1rem;
+}
+
+.ejercicio-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 1.8rem;
+    overflow: hidden;
+    border: 1px solid #d6bcf0;
+}
+.ejercicio-header {
+    background: linear-gradient(135deg, #805ad5 0%, #6b46c1 100%);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.ejercicio-header .num {
+    background: rgba(255,255,255,0.25);
+    border-radius: 50%;
+    width: 32px; height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.ejercicio-header .materia {
+    font-size: 0.75rem;
+    background: rgba(255,255,255,0.15);
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.ejercicio-header .puntos {
+    margin-left: auto;
+    font-size: 0.75rem;
+    background: rgba(255,255,255,0.2);
+    padding: 0.2rem 0.55rem;
+    border-radius: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.ejercicio-body {
+    padding: 1rem 1.5rem 0.5rem 1.5rem;
+}
+.ejercicio-body .enunciado-ej {
+    font-weight: 600;
+    color: #553c9a;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+.ejercicio-body ul { margin-top: 0.3rem; padding-left: 1.5rem; }
+.ejercicio-body li { margin-bottom: 0.25rem; line-height: 1.6; }
+
+.resolucion {
+    background: #faf5ff;
+    border-left: 4px solid #805ad5;
+    border-radius: 0 8px 8px 0;
+    padding: 0.8rem 1.2rem;
+    margin: 0.8rem 0 0.5rem 0;
+    font-size: 0.98rem;
+}
+.resolucion .paso {
+    margin-bottom: 0.65rem;
+    line-height: 1.6;
+}
+.resolucion .paso:last-child { margin-bottom: 0; }
+.resolucion .paso strong { color: #553c9a; }
+.resolucion .resultado-final {
+    background: #e9d8fd;
+    border-radius: 6px;
+    padding: 0.5rem 0.8rem;
+    margin-top: 0.6rem;
+    font-weight: 600;
+    color: #44337a;
+}
+.pie-clave {
+    background: #fffbeb;
+    border: 1px solid #f6e05e;
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    margin: 0.5rem 0 0 0;
+    font-size: 0.95rem;
+    color: #744210;
+    line-height: 1.6;
+}
+.pie-clave i { margin-right: 8px; color: #d69e2e; }
+
+/* Tabla resumen */
+.tabla-resumen {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 0.9rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+.tabla-resumen th {
+    background: #4299e1;
+    color: white;
+    padding: 10px 8px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+.tabla-resumen td {
+    padding: 8px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+    line-height: 1.5;
+}
+.tabla-resumen tr:last-child td { border-bottom: none; }
+.tabla-resumen tr:nth-child(even) td { background: #f7fafc; }
+
+/* Estados de carga y error */
+.cargando {
+    color: #a0aec0;
+    font-style: italic;
+    animation: cargando-pulse 1.5s ease-in-out infinite;
+    margin: 0;
+}
+@keyframes cargando-pulse {
+    0%, 100% { opacity: 0.55; }
+    50%      { opacity: 1; }
+}
+.error-carga {
+    background: #fed7d7;
+    border: 2px solid #f56565;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 15px;
+    color: #742a2a;
+    line-height: 1.6;
+}
+.error-carga code {
+    background: rgba(0,0,0,0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: ui-monospace, monospace;
+    font-size: 0.9em;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    body { padding: 15px 10px; }
+    .header { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 20px; }
+    .header-right img { max-height: 55px; }
+    .section { padding: 18px 16px; margin: 10px; }
+    .ejercicio-header { font-size: 0.95rem; }
+    .ejercicio-body { padding: 0.8rem 1rem 0.4rem 1rem; }
+    details.desmitificando { margin: 20px 10px 15px 10px; }
+    .tabla-resumen { font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- ===== CABECERA (rellenada por JS) ===== -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo" id="header-codigo">#—.-</span>
+                <span class="texto" id="header-texto">Cargando…</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ===== SECCIÓN: ENUNCIADO ===== -->
+    <div class="section enunciado" id="sec-enunciado">
+        <h2>📋 Enunciado</h2>
+        <div class="cuerpo"><p class="cargando">Cargando contenido del examen…</p></div>
+    </div>
+
+    <!-- ===== SECCIÓN: OBJETIVO ===== -->
+    <div class="section objetivo" id="sec-objetivo">
+        <h2>🎯 Objetivo</h2>
+        <div class="cuerpo"><p class="cargando">Cargando contenido del examen…</p></div>
+    </div>
+
+    <!-- ===== SECCIÓN: PROCEDIMIENTO ===== -->
+    <div class="section procedimiento" id="sec-procedimiento">
+        <h2>🔧 Procedimiento</h2>
+        <div class="cuerpo"><p class="cargando">Cargando contenido del examen…</p></div>
+    </div>
+
+    <!-- ===== SECCIÓN: RESULTADO ===== -->
+    <div class="section resultado" id="sec-resultado">
+        <h2>✅ Resultado</h2>
+        <div class="cuerpo"><p class="cargando">Cargando contenido del examen…</p></div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- BLOQUE DESPLEGABLE: EJERCICIOS RESUELTOS -->
+    <!-- ======================================== -->
+    <details class="desmitificando" id="desplegable-ejercicios">
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span>🧪 DESMITIFICANDO — Problemas resueltos paso a paso</span>
+            <span class="pulsame">🖱️ Púlsame</span>
+        </summary>
+        <div class="contenido-ejercicios" id="lista-ejercicios">
+            <p class="cargando" style="padding:1rem;">Cargando ejercicios…</p>
+        </div>
+    </details>
+
+    <!-- ============================================
+         BLOQUE "ES HORA DE" (versión fija, sin desplegar)
+         ============================================ -->
+    <div style="padding: 25px 15px; text-align: center; background: white; margin: 20px;">
+        <div style="
+            max-width: 100%;
+            padding: 15px;
+            margin: 10px auto;
+            text-align: center;
+            background: #f8fafc;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        ">
+            <p style="
+                font-size: clamp(0.95rem, 3vw, 1.2rem);
+                color: #2d3748;
+                margin-top: 0;
+                margin-bottom: 12px;
+                padding: 0 10px;
+            ">
+                <br> Con constancia y repasando los conceptos clave, la PAU es más asequible de lo que parece.<br>
+                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
+            </p>
+
+            <div style="text-align:center;">
+                <a
+                    href="index.html"
+                    style="
+                        display:inline-block;
+                        padding:12px 24px;
+                        background:#0078D4;
+                        color:white;
+                        text-decoration:none;
+                        border-radius:12px;
+                        font-weight:bold;
+                    "
+                >
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- ===================FIN DE ES HORA DE ==================== -->
+
+</div> <!-- /container -->
+
+<!-- ==================================================================
+     SCRIPT DE RENDERIZADO
+     Uso: examen.html?id=fisica-cyl-2026-extraordinaria
+     ================================================================== -->
+<script>
+(function () {
+    'use strict';
+
+    /* --- Ruta a los JSON (ajusta si mueves el fichero) --- */
+    var DATOS_PATH = 'datos/';
+
+    /* --- 1. Obtener identificador del examen --- */
+    var params = new URLSearchParams(window.location.search);
+    var examId = params.get('id') || window.EXAM_ID || null;
+
+    if (!examId) {
+        mostrarError(
+            'Falta el parámetro <code>?id=</code> en la URL.<br>' +
+            'Ejemplo: <code>examen.html?id=fisica-cyl-2026-extraordinaria</code>'
+        );
+        return;
+    }
+
+    /* --- 2. Cargar JSON --- */
+    fetch(DATOS_PATH + examId + '.json')
+        .then(function (r) {
+            if (!r.ok) {
+                throw new Error(
+                    'No se encontró el examen <code>' + examId + '</code> ' +
+                    '(HTTP ' + r.status + '). Revisa que exista <code>' +
+                    DATOS_PATH + examId + '.json</code>.'
+                );
+            }
+            return r.json();
+        })
+        .then(render)
+        .catch(function (err) { mostrarError(err.message || String(err)); });
+
+    /* --- 3. Helpers --- */
+    function txt(s) { return s == null ? '' : String(s); }
+
+    function mostrarError(msgHtml) {
+        document.querySelectorAll('.cuerpo').forEach(function (el) { el.innerHTML = ''; });
+        var lista = document.getElementById('lista-ejercicios');
+        if (lista) lista.innerHTML = '';
+        var header = document.getElementById('header-texto');
+        if (header) header.textContent = 'Error';
+
+        var caja = document.createElement('div');
+        caja.className = 'error-carga';
+        caja.innerHTML = '<strong>⚠️ Error al cargar el examen</strong><br><br>' + msgHtml;
+        var container = document.querySelector('.container');
+        container.insertBefore(caja, container.children[1] || null);
+    }
+
+    /* --- 4. Render principal --- */
+    function render(data) {
+        var codigo = '#' + txt(data.codigo) + '.- ';
+        var titulo = txt(data.asignatura) + ' — ' + txt(data.comunidad) + ' ' +
+                     txt(data.convocatoria) + ' ' + txt(data.anio);
+        document.getElementById('header-codigo').textContent = codigo;
+        document.getElementById('header-texto').textContent = titulo;
+        document.title = '#' + txt(data.codigo) + ' · ' + titulo;
+
+        document.querySelector('#sec-enunciado .cuerpo').innerHTML =
+            txt(data.enunciado_general || data.enunciado || '');
+        document.querySelector('#sec-objetivo .cuerpo').innerHTML =
+            txt(data.objetivo || '');
+
+        var proc = document.querySelector('#sec-procedimiento .cuerpo');
+        proc.innerHTML = '';
+        (data.procedimiento || []).forEach(function (p, i) {
+            var div = document.createElement('div');
+            div.className = 'step';
+            div.innerHTML =
+                '<span class="step-num">' + (i + 1) + '</span>' +
+                '<strong>' + txt(p.titulo) + '.</strong> ' + txt(p.contenido);
+            proc.appendChild(div);
+        });
+
+        var res = document.querySelector('#sec-resultado .cuerpo');
+        res.innerHTML = '';
+        if (data.ejercicios && data.ejercicios.length) {
+            if (data.resultado_intro) {
+                var intro = document.createElement('p');
+                intro.innerHTML = txt(data.resultado_intro);
+                res.appendChild(intro);
+            }
+            var tabla = document.createElement('table');
+            tabla.className = 'tabla-resumen';
+            tabla.innerHTML =
+                '<thead><tr><th>#</th><th>Tema</th><th>Resultado principal</th></tr></thead>';
+            var tbody = document.createElement('tbody');
+            data.ejercicios.forEach(function (ej) {
+                var tr = document.createElement('tr');
+                tr.innerHTML =
+                    '<td><strong>' + txt(ej.numero) + '</strong></td>' +
+                    '<td>' + txt(ej.tema) + '</td>' +
+                    '<td>' + txt(ej.resultado) + '</td>';
+                tbody.appendChild(tr);
+            });
+            tabla.appendChild(tbody);
+            res.appendChild(tabla);
+            if (data.resultado_cierre) {
+                var cierre = document.createElement('p');
+                cierre.innerHTML = txt(data.resultado_cierre);
+                res.appendChild(cierre);
+            }
+        }
+
+        var cont = document.getElementById('lista-ejercicios');
+        cont.innerHTML = '';
+        (data.ejercicios || []).forEach(function (ej) {
+            cont.appendChild(buildEjercicio(ej));
+        });
+
+        if (data.pie_clave) {
+            var pie = document.createElement('div');
+            pie.className = 'pie-clave';
+            pie.innerHTML =
+                '<i class="fas fa-lightbulb"></i> ' +
+                '<strong>Observaciones clave:</strong> ' + txt(data.pie_clave);
+            cont.appendChild(pie);
+        }
+
+        if (data.titulo_desplegable) {
+            var span = document.querySelector('#desplegable-ejercicios summary span:nth-child(2)');
+            if (span) span.textContent = '🧪 ' + data.titulo_desplegable;
+        }
+
+        typesetMathJax();
+    }
+
+    function buildEjercicio(ej) {
+        var card = document.createElement('div');
+        card.className = 'ejercicio-card';
+
+        var head = document.createElement('div');
+        head.className = 'ejercicio-header';
+        var htmlHead =
+            '<span class="num">' + txt(ej.numero) + '</span>' +
+            '<span>' + txt(ej.titulo) + '</span>';
+        if (ej.tema)       htmlHead += '<span class="materia">' + txt(ej.tema) + '</span>';
+        if (ej.puntuacion) htmlHead += '<span class="puntos">' + txt(ej.puntuacion) + '</span>';
+        head.innerHTML = htmlHead;
+        card.appendChild(head);
+
+        var body = document.createElement('div');
+        body.className = 'ejercicio-body';
+
+        var html = '<div class="enunciado-ej">📌 Enunciado:</div>' +
+                   '<p>' + txt(ej.enunciado) + '</p>';
+
+        (ej.apartados || []).forEach(function (ap) {
+            html += '<p>' +
+                    '<strong>' + txt(ap.letra) + ')</strong> ' +
+                    txt(ap.enunciado) +
+                    (ap.puntuacion ? ' <em>(' + txt(ap.puntuacion) + ')</em>' : '') +
+                    '</p>';
+        });
+
+        html += '<div class="resolucion">';
+        (ej.resolucion || []).forEach(function (paso) {
+            html += '<div class="paso">' +
+                    '<strong>' + txt(paso.titulo) + '.</strong> ' +
+                    txt(paso.contenido) +
+                    '</div>';
+        });
+        html += '<div class="resultado-final">✔️ <strong>Resultado:</strong> ' +
+                txt(ej.resultado) + '</div>';
+        html += '</div>';
+
+        body.innerHTML = html;
+        card.appendChild(body);
+        return card;
+    }
+
+    /* --- 5. Tipografiar fórmulas (espera a que MathJax esté listo) --- */
+    function typesetMathJax() {
+        var tries = 0;
+        var interval = setInterval(function () {
+            tries++;
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                clearInterval(interval);
+                var ready = (window.MathJax.startup && window.MathJax.startup.promise)
+                    ? window.MathJax.startup.promise
+                    : Promise.resolve();
+                ready.then(function () {
+                    return window.MathJax.typesetPromise([document.body]);
+                }).catch(function (e) { console.warn('MathJax:', e); });
+            } else if (tries > 200) {   // ~20 s
+                clearInterval(interval);
+                console.warn('MathJax no se cargó a tiempo.');
+            }
+        }, 100);
+    }
+})();
+</script>
+</body>
+</html>

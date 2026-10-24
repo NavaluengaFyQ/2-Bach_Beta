@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energía potencial gravitatoria y trabajo</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+        }
+        /* Contenedor principal (opcional, da fondo blanco y sombra) */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        /* Zona izquierda de la cabecera */
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        /* Zona derecha de la cabecera */
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        /* Variantes de color para cada tipo de sección */
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <!-- Subtexto: logo + #T01.06 + Título de la capsula de información-->
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                    <span class="codigo">#T01.06.- </span>
+                    <span class="texto">Energía potencial gravitatoria y trabajo</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+        <!-- SECCIONES TRANSFORMADAS -->
+
+        <div class="section enunciado">
+            <h2>Enunciado</h2>
+            <p>Partiendo de la definición de trabajo mecánico realizado por una fuerza y de la ley de gravitación universal, demostrar la expresión del <strong>trabajo realizado por el campo gravitatorio</strong> para desplazar una masa entre dos puntos, así como la expresión de la energía potencial gravitatoria asociada a dicha interacción.</p>
+            <div class="formula-box">
+                \[ W_{\text{campo}} = GMm \left(\frac{1}{r_2} - \frac{1}{r_1}\right) \quad \text{y} \quad E_p = -G \frac{Mm}{r} \]
+            </div>
+            <div class="note">
+                <strong>Notación:</strong> a lo largo de esta demostración se emplea \(W_{\text{campo}}\) para designar exclusivamente el trabajo realizado <em>por la fuerza del campo gravitatorio</em>. No debe confundirse con el trabajo externo \(W_{\text{ext}}\) (el realizado por un agente exterior que mueve la masa), que cumple \(W_{\text{ext}} = -\,W_{\text{campo}}\) cuando el desplazamiento es cuasiestático.
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>Objetivo</h2>
+            <p>Demostrar que la fuerza gravitatoria es una fuerza conservativa, lo que significa que el trabajo que realiza el campo (\(W_{\text{campo}}\)) no depende del camino seguido, sino únicamente de las posiciones inicial y final. Esto justifica la existencia de una energía potencial asociada al campo gravitatorio.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span> Definimos el <strong>trabajo realizado por el campo gravitatorio</strong> \(W_{\text{campo}}\) a lo largo de un desplazamiento \(d\vec{r}\) como la integral de la fuerza del campo \(\vec{F}_g\) a lo largo de la trayectoria:
+                <div class="formula-box">
+                    \[ W_{\text{campo}} = \int_{r_1}^{r_2} \vec{F}_g \cdot d\vec{r} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span> Sustituimos la fuerza gravitatoria \(\vec{F}_g = -G \frac{Mm}{r^2} \vec{u}_r\) y el desplazamiento radial \(d\vec{r} = dr\, \vec{u}_r\):
+                <div class="formula-box">
+                    \[ W_{\text{campo}} = \int_{r_1}^{r_2} \left(-G \frac{Mm}{r^2} \vec{u}_r\right) \cdot (dr\, \vec{u}_r) = \int_{r_1}^{r_2} -G \frac{Mm}{r^2} \, dr \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span> Extraemos las constantes y resolvemos la integral inmediata de \(r^{-2}\):
+                <div class="formula-box">
+                    \[ W_{\text{campo}} = -GMm \int_{r_1}^{r_2} r^{-2} \, dr = -GMm \left[ -\frac{1}{r} \right]_{r_1}^{r_2} \]
+                </div>
+                Evaluando los límites obtenemos:
+                <div class="formula-box">
+                    \[ W_{\text{campo}} = GMm \left( \frac{1}{r_2} - \frac{1}{r_1} \right) \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span> Dado que la fuerza gravitatoria es conservativa, el trabajo que realiza el campo es igual a la variación negativa de la energía potencial:
+                <div class="formula-box">
+                    \[ W_{\text{campo}} = -\Delta E_p = -(E_{p2} - E_{p1}) = E_{p1} - E_{p2} \]
+                </div>
+                Equivalentemente, el trabajo externo necesario para trasladar la masa sin variar su energía cinética es:
+                <div class="formula-box">
+                    \[ W_{\text{ext}} = -W_{\text{campo}} = \Delta E_p = E_{p2} - E_{p1} \]
+                </div>
+                <div class="note">
+                    <strong>Atención al signo:</strong> si la masa se acerca (\(r_2 < r_1\)), el campo realiza trabajo positivo (\(W_{\text{campo}} > 0\)) y la energía potencial disminuye; si se aleja, \(W_{\text{campo}} < 0\) y es el agente externo quien realiza trabajo positivo (\(W_{\text{ext}} > 0\)).
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span> Si elegimos como origen de energía potencial el infinito, es decir, \(E_{p}(\infty) = 0\) (cuando \(r \to \infty\)), entonces para un punto a distancia \(r\):
+                <div class="formula-box">
+                    \[ E_p(r) - E_p(\infty) = -\, W_{\text{campo}}(\infty \to r) = - \left( GMm \left( \frac{1}{r} - \frac{1}{\infty} \right) \right) \implies E_p = -G \frac{Mm}{r} \]
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section resultado">
+            <h2>Resultado</h2>
+            <div class="formula-box">
+                \[ W_{\text{campo}} = GMm \left( \frac{1}{r_2} - \frac{1}{r_1} \right) \quad ; \quad E_p = -G \frac{Mm}{r} \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica:</strong> la energía potencial gravitatoria es negativa para cualquier distancia finita. Esto refleja el hecho de que el campo gravitatorio es atractivo: se necesita realizar un trabajo externo positivo (\(W_{\text{ext}} > 0\), es decir, \(W_{\text{campo}} < 0\)) para separar las masas hasta el infinito, donde la energía potencial es cero. Si el desplazamiento es en el sentido del campo (acercándose), el trabajo realizado por el campo es positivo (\(W_{\text{campo}} > 0\)) y la energía potencial disminuye. Distinguir siempre \(W_{\text{campo}}\) de \(W_{\text{ext}}\) evita los errores de signo más habituales en este tipo de problemas.
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

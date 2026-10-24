@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potencial gravitatorio y relación con la intensidad del campo</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+        }
+        /* Contenedor principal (opcional, da fondo blanco y sombra) */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        /* Zona izquierda de la cabecera */
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        /* Zona derecha de la cabecera */
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        /* Variantes de color para cada tipo de sección */
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <!-- Subtexto: logo + #T01.03 + Título de la capsula de información-->
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                    <span class="codigo">#T01.03.- </span>
+                    <span class="texto">Potencial gravitatorio y relación con la intensidad del campo</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+        <!-- SECCIONES TRANSFORMADAS -->
+
+        <div class="section enunciado">
+            <h2>Enunciado</h2>
+            <p>Partiendo de la definición de potencial gravitatorio como la energía potencial por unidad de masa en un punto de un campo gravitatorio, demostrar la expresión del potencial creado por una masa puntual. A su vez, deducir la relación matemática que vincula el potencial con la intensidad del campo gravitatorio.</p>
+            <div class="formula-box">
+                \[ V = -G \frac{M}{r} \quad \text{y} \quad \vec{g} = -\frac{dV}{dr} \vec{u}_r \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>Objetivo</h2>
+            <p>Comprender el potencial gravitatorio como una magnitud escalar que simplifica enormemente los cálculos frente al uso de magnitudes vectoriales (como el campo). Además, entender que el campo gravitatorio es el gradiente (derivada espacial) del potencial, lo que explica por qué el campo apunta siempre hacia donde el potencial disminuye más rápidamente.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span> Definimos el potencial gravitatorio \(V\) en un punto como el cociente entre la energía potencial gravitatoria \(E_p\) que adquiriría una masa de prueba \(m'\) situada en ese punto y el valor de dicha masa:
+                <div class="formula-box">
+                    \[ V = \frac{E_p}{m'} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span> Sustituimos la energía potencial gravitatoria por su expresión general para una masa puntual \(M\) a una distancia \(r\) (considerando el origen de energía potencial en el infinito):
+                <div class="formula-box">
+                    \[ E_p = -G \frac{M m'}{r} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span> Introducimos esta expresión en la definición de potencial. La masa de prueba \(m'\) vuelve a cancelarse:
+                <div class="formula-box">
+                    \[ V = \frac{-G \frac{M m'}{r}}{m'} = -G \frac{M}{r} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span> Para relacionar el campo \(\vec{g}\) con el potencial \(V\), consideramos el trabajo infinitesimal \(dW\) que realiza la fuerza gravitatoria para desplazar una masa \(m'\) una distancia infinitesimal \(d\vec{r}\):
+                <div class="formula-box">
+                    \[ dW = \vec{F} \cdot d\vec{r} = m'\vec{g} \cdot d\vec{r} \]
+                </div>
+                A su vez, este trabajo es igual a la variación negativa de la energía potencial:
+                <div class="formula-box">
+                    \[ dW = -dE_p = -m'dV \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span> Igualando ambas expresiones del trabajo y cancelando \(m'\):
+                <div class="formula-box">
+                    \[ m'\vec{g} \cdot d\vec{r} = -m'dV \implies \vec{g} \cdot d\vec{r} = -dV \]
+                </div>
+                Si el desplazamiento es radial, \(d\vec{r} = dr \vec{u}_r\). La componente radial del campo es:
+                <div class="formula-box">
+                    \[ g_r = -\frac{dV}{dr} \]
+                </div>
+                Vectorialmente, esto se expresa como el gradiente cambiado de signo: \(\vec{g} = -\nabla V\).
+            </div>
+
+        </div>
+
+        <div class="section resultado">
+            <h2>Resultado</h2>
+            <div class="formula-box">
+                \[ V = -G \frac{M}{r} \quad ; \quad \vec{g} = -\frac{dV}{dr} \vec{u}_r \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica:</strong> El potencial gravitatorio siempre es negativo (debido a que la interacción es atractiva) y tiende a cero en el infinito. La relación \(\vec{g} = -dV/dr\) nos indica que las líneas de campo gravitatorio son perpendiculares a las superficies equipotenciales (donde \(V\) es constante) y que apuntan en el sentido en que el potencial disminuye.
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

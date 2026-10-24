@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración del Límite de Roche (en función de masas y radios)</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            display: flex;
+            justify-content: center;
+        }
+        /* Contenedor principal */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        /* Subtexto de cabecera */
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .header-sub .texto {
+            font-style: italic;
+        }
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                    <span class="codigo">#T01.08.-</span>
+                    <span class="texto">Demostración del Límite de Roche (en función de masas y radios)</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+
+        <!-- SECCIONES TRANSFORMADAS -->
+        <div class="section enunciado">
+            <h2>Enunciado</h2>
+            <p>Partiendo de la expresión de la fuerza de marea que un planeta masivo de masa \(M\) ejerce sobre un satélite de masa \(m\) y radio \(r\) situado a una distancia \(d\), y de la fuerza de atracción gravitatoria que el propio satélite ejerce sobre una masa \(m'\) en su superficie, demostrar que la distancia crítica (límite de Roche) a la que ambas fuerzas se igualan es:</p>
+            <div class="formula-box">
+                \[ d = r \left( \frac{2M}{m} \right)^{\frac{1}{3}} \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>Objetivo</h2>
+            <p>Comprender el concepto de límite de Roche, que establece la distancia mínima a la que un satélite puede orbitar sin ser desintegrado por las fuerzas de marea del cuerpo principal. Es un concepto clave para entender la formación de anillos planetarios (como los de Saturno) o la fragmentación de cometas.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span><strong>Expresar la fuerza de marea:</strong> El planeta ejerce una fuerza diferencial sobre la masa \(m'\) situada en el punto del satélite más cercano al planeta. Esta fuerza tiende a arrancar la masa \(m'\) del satélite.
+                <div class="formula-box">
+                    \[ F_{\text{marea}} = \frac{2 G M m' r}{d^3} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span><strong>Expresar la fuerza gravitatoria propia del satélite:</strong> El satélite atrae a la masa \(m'\) hacia su centro con una fuerza que depende de su propia masa y radio.
+                <div class="formula-box">
+                    \[ F_{\text{gravitatoria}} = G \frac{m m'}{r^2} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span><strong>Establecer la condición del límite de Roche:</strong> El límite de Roche se alcanza cuando la fuerza de marea del planeta iguala a la fuerza de cohesión gravitatoria del satélite. En ese punto, el satélite está a punto de desintegrarse.
+                <div class="formula-box">
+                    \[ F_{\text{marea}} = F_{\text{gravitatoria}} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span><strong>Igualar las expresiones y simplificar:</strong> Sustituimos ambas fuerzas y cancelamos la masa de la partícula \(m'\) y la constante de gravitación \(G\).
+                <div class="formula-box">
+                    \[ \frac{2 G M m' r}{d^3} = G \frac{m m'}{r^2} \quad \Rightarrow \quad \frac{2 M r}{d^3} = \frac{m}{r^2} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span><strong>Despejar la distancia \(d\):</strong> Reorganizamos los términos para aislar \(d^3\).
+                <div class="formula-box">
+                    \[ d^3 = \frac{2 M r^3}{m} \quad \Rightarrow \quad d = \sqrt[3]{\frac{2 M r^3}{m}} \]
+                </div>
+            </div>
+        </div>
+
+        <div class="section resultado">
+            <h2>Resultado</h2>
+            <p>La distancia límite de Roche depende del radio del satélite y de la relación entre la masa del planeta y la masa del satélite.</p>
+            <div class="formula-box" style="border: 2px solid #3182ce; background-color: #ebf8ff;">
+                \[ d = r \left( \frac{2M}{m} \right)^{\frac{1}{3}} \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica para el profesorado:</strong> Es importante señalar que esta demostración asume un modelo simplificado de satélite (una esfera rígida mantenida solo por su gravedad). En la realidad, los satélites pueden tener cierta resistencia mecánica (como los rocosos) o ser fluidos (como los cometas o gotas), lo que modifica ligeramente el valor numérico del límite. Además, la fórmula muestra que si el satélite es muy pequeño (\(m \to 0\)), el límite de Roche se aleja considerablemente.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

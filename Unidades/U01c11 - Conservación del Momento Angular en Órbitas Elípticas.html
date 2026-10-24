@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conservación del Momento Angular en Órbitas Elípticas</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            display: flex;
+            justify-content: center;
+        }
+        /* Contenedor principal */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        /* Subtexto de cabecera */
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .header-sub .texto {
+            font-style: italic;
+        }
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                    <span class="codigo">#T01.11.-</span>
+                    <span class="texto">Conservación del Momento Angular en Órbitas Elípticas</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+
+        <div class="section enunciado">
+            <h2>Enunciado</h2>
+            <p>Partiendo de la conservación del momento angular para un planeta en órbita elíptica alrededor del Sol, y sabiendo que en el perihelio y en el afelio los vectores de posición y velocidad son perpendiculares, demostrar que la relación entre las velocidades y las distancias en ambos puntos es:</p>
+            <div class="formula-box">
+                \[ v_{\text{perihelio}} \cdot r_{\text{perihelio}} = v_{\text{afelio}} \cdot r_{\text{afelio}} \]
+            </div>
+            <p>Y que, expresada en función de la excentricidad \(\varepsilon\) de la órbita, se cumple:</p>
+            <div class="formula-box">
+                \[ \frac{v_{\text{perihelio}}}{v_{\text{afelio}}} = \frac{1 + \varepsilon}{1 - \varepsilon} \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>Objetivo</h2>
+            <p>Demostrar analíticamente por qué un planeta se mueve más rápido cuando está más cerca del Sol (perihelio) y más lento cuando está más lejos (afelio). Esta demostración conecta la conservación del momento angular con la Segunda Ley de Kepler y proporciona una herramienta matemática para calcular velocidades orbitales en cualquier punto de una elipse.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span><strong>Recordar la conservación del momento angular:</strong> Como la fuerza gravitatoria es central, el momento angular \(\vec{L} = \vec{r} \times m\vec{v}\) se conserva en módulo, dirección y sentido.
+                <div class="formula-box">
+                    \[ L_{\text{perihelio}} = L_{\text{afelio}} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span><strong>Analizar la geometría en el perihelio y afelio:</strong> En estos puntos extremos de la elipse, el vector de posición \(\vec{r}\) y el vector velocidad \(\vec{v}\) son perpendiculares. Por tanto, el módulo del producto vectorial es simplemente el producto de sus módulos.
+                <div class="formula-box">
+                    \[ L = m \cdot r \cdot v \cdot \sin(90^\circ) = m \cdot r \cdot v \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span><strong>Igualar el momento angular en ambos puntos:</strong> Sustituimos la expresión simplificada para el perihelio y el afelio.
+                <div class="formula-box">
+                    \[ m \cdot v_{\text{perihelio}} \cdot r_{\text{perihelio}} = m \cdot v_{\text{afelio}} \cdot r_{\text{afelio}} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span><strong>Simplificar y obtener la primera relación:</strong> La masa del planeta \(m\) se cancela.
+                <div class="formula-box">
+                    \[ v_{\text{perihelio}} \cdot r_{\text{perihelio}} = v_{\text{afelio}} \cdot r_{\text{afelio}} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span><strong>Introducir la excentricidad:</strong> Para una elipse de semieje mayor \(a\) y excentricidad \(\varepsilon\), las distancias en el perihelio y afelio son:
+                <div class="formula-box">
+                    \[ r_{\text{perihelio}} = a(1 - \varepsilon) \quad \text{y} \quad r_{\text{afelio}} = a(1 + \varepsilon) \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">6</span><strong>Sustituir y simplificar:</strong> Reemplazamos estas distancias en la relación de velocidades.
+                <div class="formula-box">
+                    \[ v_{\text{perihelio}} \cdot a(1 - \varepsilon) = v_{\text{afelio}} \cdot a(1 + \varepsilon) \]
+                </div>
+                <p>Cancelando el semieje mayor \(a\), obtenemos la relación final.</p>
+            </div>
+        </div>
+
+        <div class="section resultado">
+            <h2>Resultado</h2>
+            <p>La velocidad en el perihelio es mayor que en el afelio, y su relación depende exclusivamente de la excentricidad de la órbita.</p>
+            <div class="formula-box" style="border: 2px solid #3182ce; background-color: #ebf8ff;">
+                \[ \frac{v_{\text{perihelio}}}{v_{\text{afelio}}} = \frac{1 + \varepsilon}{1 - \varepsilon} \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica para el profesorado:</strong> Es útil comentar que para una órbita casi circular (como la de la Tierra, con \(\varepsilon \approx 0,0167\)), la diferencia de velocidades es muy pequeña (unos 3,4 km/s en el perihelio frente a 2,9 km/s en el afelio). Sin embargo, para cometas con órbitas muy excéntricas (como el cometa Halley, con \(\varepsilon \approx 0,967\)), la diferencia es enorme, llegando a ser decenas de veces mayor en el perihelio. Esta demostración también permite justificar por qué los cometas desarrollan sus colas solo cuando se acercan al Sol.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

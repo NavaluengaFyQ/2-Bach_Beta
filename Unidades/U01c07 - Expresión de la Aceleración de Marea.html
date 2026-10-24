@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresión de la Aceleración de Marea</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            display: flex;
+            justify-content: center;
+        }
+        /* Contenedor principal */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        /* Subtexto de cabecera */
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .header-sub .texto {
+            font-style: italic;
+        }
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                    <span class="codigo">#T01.07.-</span>
+                    <span class="texto">Expresión de la Aceleración de Marea</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+
+        <!-- SECCIONES TRANSFORMADAS -->
+        <div class="section enunciado">
+            <h2>Enunciado</h2>
+            <p>Partiendo de la Ley de Gravitación Universal, demostrar que la aceleración de marea que un cuerpo de masa \(M\) (como la Luna) ejerce sobre los extremos de un planeta de radio \(R\) situado a una distancia \(d\) (siendo \(d \gg R\)), se puede aproximar por la expresión:</p>
+            <div class="formula-box">
+                \[ a_{\text{marea}} \approx \frac{2 G M R}{d^3} \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>Objetivo</h2>
+            <p>Entender el origen físico de las mareas. Se busca demostrar que el fenómeno de las mareas no se debe a la gravedad absoluta, sino a la <em>diferencia</em> de atracción gravitatoria (gradiente) entre el lado más cercano y el centro del planeta. Esta diferencia es la que "estira" el planeta.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span><strong>Calcular la aceleración gravitatoria en el centro del planeta:</strong> Llamamos \(d\) a la distancia desde el centro del cuerpo perturbador \(M\) al centro del planeta.
+                <div class="formula-box">
+                    \[ g_0 = G \frac{M}{d^2} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span><strong>Calcular la aceleración en el punto más cercano:</strong> En el lado del planeta que mira hacia la masa \(M\), la distancia es \(d - R\).
+                <div class="formula-box">
+                    \[ g_1 = G \frac{M}{(d - R)^2} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span><strong>Definir la aceleración de marea:</strong> Es la diferencia entre la aceleración en el extremo y la aceleración en el centro.
+                <div class="formula-box">
+                    \[ a_{\text{marea}} = g_1 - g_0 = G M \left( \frac{1}{(d - R)^2} - \frac{1}{d^2} \right) \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span><strong>Aplicar la aproximación para distancias grandes:</strong> Dado que el radio del planeta es mucho menor que la distancia al cuerpo perturbador (\(R \ll d\)), podemos usar la aproximación binomial \((1 - x)^{-2} \approx 1 + 2x\).
+                <div class="formula-box">
+                    \[ \frac{1}{(d - R)^2} = \frac{1}{d^2 \left(1 - \frac{R}{d}\right)^2} \approx \frac{1}{d^2} \left( 1 + 2\frac{R}{d} \right) \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span><strong>Sustituir y simplificar:</strong> Reemplazamos esta aproximación en la expresión de la aceleración de marea.
+                <div class="formula-box">
+                    \[ a_{\text{marea}} \approx G M \left( \frac{1}{d^2} + \frac{2R}{d^3} - \frac{1}{d^2} \right) = \frac{2 G M R}{d^3} \]
+                </div>
+            </div>
+        </div>
+
+        <div class="section resultado">
+            <h2>Resultado</h2>
+            <p>La aceleración de marea es directamente proporcional a la masa del cuerpo perturbador y al radio del planeta, e inversamente proporcional al cubo de la distancia que los separa.</p>
+            <div class="formula-box" style="border: 2px solid #3182ce; background-color: #ebf8ff;">
+                \[ a_{\text{marea}} \approx \frac{2 G M R}{d^3} \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica para el profesorado:</strong> Es crucial hacer hincapié en la dependencia con el <em>cubo</em> de la distancia (frente al cuadrado de la gravedad normal). Esto explica por qué la Luna, a pesar de tener una masa mucho menor que el Sol, ejerce una influencia de marea mayor sobre la Tierra: su cercanía supera la desventaja de su masa. También se puede deducir que la aceleración de marea en el lado opuesto (el lado "lejano") tiene el mismo valor pero apunta hacia afuera del planeta.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

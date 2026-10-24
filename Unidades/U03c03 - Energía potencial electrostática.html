@@ -1,0 +1,242 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energía potencial electrostática</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        /* Contenedor principal (opcional, da fondo blanco y sombra) */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        /* Zona izquierda de la cabecera */
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        /* Subtexto de cabecera */
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 1em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .header-sub .texto {
+            opacity: 0.95;
+        }
+        /* Zona derecha de la cabecera */
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        /* Variantes de color para cada tipo de sección */
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <!-- Subtexto: logo + #T01.03 + Título de la cápsula de información -->
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                    <span class="codigo">#T01.03.- </span>
+                    <span class="texto">Concepto 3: Energía potencial electrostática</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+
+        <!-- SECCIONES TRANSFORMADAS -->
+        <div class="section enunciado">
+            <h2>📌 Enunciado</h2>
+            <p>Partiendo de la definición de trabajo realizado por una fuerza conservativa y de la Ley de Coulomb, <strong>demostrar que la energía potencial electrostática</strong> de un sistema de dos cargas puntuales \(Q_1\) y \(Q_2\) separadas una distancia \(r\) viene dada por la expresión:</p>
+            <div class="formula-box">
+                \[ E_p = k \frac{Q_1 Q_2}{r} \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>🎯 Objetivo</h2>
+            <p>El objetivo es comprender que el campo eléctrico, al ser conservativo, permite asociar una energía potencial al sistema de cargas en función de su configuración espacial. Esta energía representa el trabajo necesario para ensamblar dicho sistema desde el infinito y es clave para analizar procesos donde las cargas se mueven espontáneamente.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>🛠️ Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span> <strong>Trabajo y fuerzas conservativas:</strong> El trabajo \(W\) realizado por una fuerza conservativa (como la electrostática) es igual a la disminución de la energía potencial del sistema:
+                <div class="formula-box">
+                    \[ W = -\Delta E_p = -(E_p(r) - E_p(\infty)) \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span> <strong>Origen de energía potencial:</strong> Por convenio, se establece que la energía potencial es nula cuando las cargas están infinitamente separadas, es decir, \(E_p(\infty) = 0\). Por tanto:
+                <div class="formula-box">
+                    \[ W = -E_p(r) \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span> <strong>Cálculo del trabajo:</strong> Calculamos el trabajo realizado por el campo eléctrico para traer la carga \(Q_2\) desde el infinito hasta una distancia \(r\) de \(Q_1\) (suponiendo \(Q_1\) fija). La fuerza varía con la distancia según la Ley de Coulomb:
+                <div class="formula-box">
+                    \[ W = \int_{\infty}^{r} \vec{F} \cdot d\vec{r} = \int_{\infty}^{r} k \frac{Q_1 Q_2}{x^2} dx \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span> <strong>Resolución de la integral:</strong> Integrando la expresión anterior:
+                <div class="formula-box">
+                    \[ W = k Q_1 Q_2 \left[ -\frac{1}{x} \right]_{\infty}^{r} = k Q_1 Q_2 \left( -\frac{1}{r} - \left(-\frac{1}{\infty}\right) \right) \]
+                </div>
+                <p>Como \(\frac{1}{\infty} = 0\), el trabajo resulta:</p>
+                <div class="formula-box">
+                    \[ W = -k \frac{Q_1 Q_2}{r} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span> <strong>Obtención de la energía potencial:</strong> Sustituyendo el trabajo en la relación \(W = -E_p(r)\):
+                <div class="formula-box">
+                    \[ -k \frac{Q_1 Q_2}{r} = -E_p(r) \implies E_p(r) = k \frac{Q_1 Q_2}{r} \]
+                </div>
+            </div>
+        </div>
+
+        <div class="section resultado">
+            <h2>✅ Resultado</h2>
+            <p>La energía potencial electrostática de un sistema de dos cargas puntuales es:</p>
+            <div class="formula-box">
+                \[ E_p = k \frac{Q_1 Q_2}{r} \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica para el profesorado:</strong> Es fundamental que el alumnado interprete el signo de la energía potencial. Si las cargas tienen el mismo signo, \(E_p > 0\) (interacción repulsiva); si tienen signos opuestos, \(E_p < 0\) (interacción atractiva). Un valor negativo indica que el sistema está ligado y se requiere trabajo externo para separar las cargas hasta el infinito.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```

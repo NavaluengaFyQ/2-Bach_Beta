@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimiento de satélites en órbitas circulares</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO DE CAJAS PARA SECCIONES INFORMATIVAS
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+        }
+        /* Contenedor principal (opcional, da fondo blanco y sombra) */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Cabecera general */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        /* Zona izquierda de la cabecera */
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-left h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .header-left p {
+            margin: 6px 0 0 0;
+            font-size: 1em;
+        }
+        .header-sub {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .header-sub .codigo {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        /* Zona derecha de la cabecera */
+        .header-right img {
+            max-height: 70px;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+        /* ---------- SECCIONES PRINCIPALES ---------- */
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        /* Variantes de color para cada tipo de sección */
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        /* Títulos de sección */
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        /* ---------- CAJA DE FÓRMULA ---------- */
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        /* ---------- PASOS DEL PROCEDIMIENTO ---------- */
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* ---------- NOTA DESTACADA ---------- */
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        /* ---------- TEXTO BASE (párrafos) ---------- */
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>IES Valle del Alberche</h1>
+                <!-- Subtexto: logo + #T01.08 + Título de la capsula de información-->
+                <div class="header-sub">
+                    <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                    <span class="codigo">#T01.08.- </span>
+                    <span class="texto">Movimiento de satélites en órbitas circulares</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+            </div>
+        </div>
+        <!-- SECCIONES TRANSFORMADAS -->
+
+        <div class="section enunciado">
+            <h2>Enunciado</h2>
+            <p>Partiendo de la ley de gravitación universal y del principio fundamental de la dinámica (segunda ley de Newton), demostrar las expresiones para la velocidad orbital, el período de revolución y la energía mecánica total de un satélite que orbita en una trayectoria circular alrededor de un cuerpo celeste de masa \(M\).</p>
+            <div class="formula-box">
+                \[ v = \sqrt{\frac{GM}{r}} \quad ; \quad T = 2\pi\sqrt{\frac{r^3}{GM}} \quad ; \quad E_m = -\frac{GMm}{2r} \]
+            </div>
+        </div>
+
+        <div class="section objetivo">
+            <h2>Objetivo</h2>
+            <p>Comprender las leyes físicas que rigen el movimiento de los satélites artificiales y naturales. Determinar que la velocidad y el periodo orbital dependen únicamente de la masa del astro central y del radio de la órbita, y no de la masa del satélite. Además, comprender por qué la energía mecánica de una órbita ligada es negativa.</p>
+        </div>
+
+        <div class="section procedimiento">
+            <h2>Procedimiento</h2>
+
+            <div class="step">
+                <span class="step-num">1</span> <strong>Velocidad orbital:</strong> En una órbita circular, la única fuerza que actúa sobre el satélite es la gravitatoria, y esta actúa como fuerza centrípeta, manteniéndolo en su trayectoria:
+                <div class="formula-box">
+                    \[ F_g = F_c \implies G \frac{Mm}{r^2} = m \frac{v^2}{r} \]
+                </div>
+                Despejando la velocidad orbital \(v\) y cancelando la masa del satélite \(m\):
+                <div class="formula-box">
+                    \[ v = \sqrt{\frac{GM}{r}} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">2</span> <strong>Período de revolución (\(T\)):</strong> El periodo es el tiempo que tarda el satélite en completar una vuelta. Sabiendo que la velocidad es constante y la distancia recorrida en una vuelta es la longitud de la circunferencia (\(2\pi r\)):
+                <div class="formula-box">
+                    \[ v = \frac{2\pi r}{T} \implies T = \frac{2\pi r}{v} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span> Sustituimos la expresión de la velocidad orbital obtenida en el paso 1 dentro de la ecuación del periodo:
+                <div class="formula-box">
+                    \[ T = \frac{2\pi r}{\sqrt{\frac{GM}{r}}} = 2\pi \sqrt{\frac{r^3}{GM}} \]
+                </div>
+                Esta expresión es la Tercera Ley de Kepler para órbitas circulares, que establece que \(T^2 \propto r^3\).
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span> <strong>Energía mecánica total (\(E_m\)):</strong> La energía mecánica es la suma de la energía cinética y la energía potencial gravitatoria del satélite:
+                <div class="formula-box">
+                    \[ E_m = E_c + E_p = \frac{1}{2} m v^2 - G \frac{Mm}{r} \]
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span> Sustituimos el cuadrado de la velocidad (\(v^2 = \frac{GM}{r}\)) en la expresión de la energía mecánica:
+                <div class="formula-box">
+                    \[ E_m = \frac{1}{2} m \left( \frac{GM}{r} \right) - G \frac{Mm}{r} = \frac{GMm}{2r} - \frac{GMm}{r} = -\frac{GMm}{2r} \]
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section resultado">
+            <h2>Resultado</h2>
+            <div class="formula-box">
+                \[ v = \sqrt{\frac{GM}{r}} \quad ; \quad T = 2\pi\sqrt{\frac{r^3}{GM}} \quad ; \quad E_m = -\frac{GMm}{2r} \]
+            </div>
+            <div class="note">
+                <strong>Nota didáctica:</strong> El hecho de que la energía mecánica total sea negativa (\(E_m < 0\)) es una condición matemática que indica que el satélite está "ligado" al campo gravitatorio (no puede escapar). Observa también que la energía cinética es siempre la mitad del valor absoluto de la energía potencial (\(E_c = -E_p / 2\)). Si queremos subir un satélite a una órbita superior (aumentar \(r\)), debemos aumentar su energía mecánica (hacerla menos negativa), aunque su velocidad orbital disminuya.
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
