@@ -51,33 +51,6 @@
         .btn-limpiar { background: none; border: none; color: #2563eb; cursor: pointer; text-decoration: underline; }
         
         .lista-problemas { display: flex; flex-direction: column; gap: 12px; }
-
-        /* Estilos para los enlaces de PDF */
-        .pdf-links-box {
-            background: #f0f9ff;
-            border: 1px solid #bae6fd;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 10px;
-        }
-        .pdf-links-box strong { color: #0369a1; font-size: 14px; width: 100%; margin-bottom: 5px; }
-        .pdf-links-box a {
-            display: inline-block;
-            background: white;
-            padding: 8px 14px;
-            border-radius: 6px;
-            border: 1px solid #7dd3fc;
-            color: #0284c7;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 13px;
-            transition: all 0.2s;
-        }
-        .pdf-links-box a:hover { background: #e0f2fe; border-color: #38bdf8; }
         
         /* Estilos para los desplegables */
         .tarjeta-problema-desplegable {
@@ -115,8 +88,60 @@
         .badge { font-size: 11px; padding: 3px 8px; border-radius: 12px; font-weight: bold; }
         .badge-tema { background: #eff6ff; color: #1d4ed8; }
         .badge-examen { background: #f1f5f9; color: #475569; }
-        .tarjeta-problema-desplegable h4 { margin: 0; font-size: 16px; padding-right: 30px; line-height: 1.4; }
         
+        /* NUEVO: Fila para el título y el botón de examen */
+        .header-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-right: 25px; /* Espacio para la flecha del desplegable */
+            gap: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .tarjeta-problema-desplegable h4 { margin: 0; font-size: 16px; line-height: 1.4; }
+        
+        /* NUEVO: Botón para ir al examen completo */
+        .btn-ver-examen {
+            background: #2563eb;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+        .btn-ver-examen:hover {
+            background: #1d4ed8;
+        }
+        
+        /* NUEVOS ESTILOS: Botones pequeños de PDF dentro de la cabecera */
+        .pdf-mini-buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 5px;
+            position: relative;
+            z-index: 10;
+        }
+        .pdf-mini-buttons a {
+            font-size: 11px;
+            padding: 4px 8px;
+            background: #f0f9ff;
+            color: #0284c7;
+            border: 1px solid #bae6fd;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .pdf-mini-buttons a:hover {
+            background: #e0f2fe;
+            border-color: #38bdf8;
+        }
+
         /* Estilo para el resumen del enunciado */
         .resumen-enunciado { margin: 10px 0 0 0; font-size: 13px; color: #64748b; font-style: italic; padding-right: 25px; line-height: 1.5; display: none; }
         .mostrar-enunciado .resumen-enunciado { display: block; }
@@ -140,7 +165,6 @@
 
         <div class="filtros-panel">
             
-            <!-- NUEVO BUSCADOR -->
             <div class="grupo-filtro">
                 <h3>Buscar por palabra</h3>
                 <div class="busqueda-container">

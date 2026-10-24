@@ -189,22 +189,7 @@ function renderizarResultados() {
         return;
     }
 
-    // Caja de PDFs (solo muestra los de los exámenes visibles)
-    const examenesUnicos = [...new Map(filtrados.map(p => [p.examenId, p])).values()];
-    let pdfHtml = '';
-    if (examenesUnicos.length > 0) {
-        pdfHtml += '<div class="pdf-links-box"><strong>📄 Documentos oficiales:</strong>';
-        examenesUnicos.forEach(ex => {
-            const baseCode = ex.codigo ? ex.codigo.replace('.SOL', '') : ex.examenId;
-            pdfHtml += `
-                <a href="./PDF/${baseCode}.pdf" target="_blank">Ver Examen (${ex.anio} ${ex.convocatoria})</a>
-                <a href="./PDF/${baseCode}.CRI.pdf" target="_blank">Ver Criterios</a>
-            `;
-        });
-        pdfHtml += '</div>';
-    }
-
-    let html = pdfHtml;
+    let html = '';
     let temaActual = '';
     const claseMostrarEnunciado = mostrarEnunciado ? 'mostrar-enunciado' : '';
 
@@ -213,6 +198,18 @@ function renderizarResultados() {
             temaActual = p.tema;
             html += `<h2 class="grupo-tema-titulo">${p.tema}</h2>`;
         }
+
+        // Generar enlaces PDF para ESTE problema en concreto
+        const baseCode = p.codigo ? p.codigo.replace('.SOL', '') : p.examenId;
+        const pdfLinks = `
+            <div class="pdf-mini-buttons" onclick="event.stopPropagation()">
+                <a href="./PDF/${baseCode}.pdf" target="_blank" title="Descargar Examen Original">📄 PDF Examen</a>
+                <a href="./PDF/${baseCode}.CRI.pdf" target="_blank" title="Descargar Criterios de Corrección">📝 PDF Criterios</a>
+            </div>
+        `;
+
+        // Generar enlace al examen completo
+        const urlExamenCompleto = `examen.html?id=${p.examenId}#p${p.numero}`;
 
         let apartadosHtml = '';
         (p.apartados || []).forEach(ap => {
@@ -236,6 +233,7 @@ function renderizarResultados() {
             resumenEnunciado = `<p class="resumen-enunciado">${txt(textoCorto)}</p>`;
         }
 
+        // Insertamos la fila con el título y el botón de "Ver examen completo"
         html += `
             <details class="tarjeta-problema-desplegable ${claseMostrarEnunciado}">
                 <summary>
@@ -243,7 +241,13 @@ function renderizarResultados() {
                         <span class="badge badge-tema">${p.tema}</span>
                         <span class="badge badge-examen">${p.anio} · ${p.convocatoria}</span>
                     </div>
-                    <h4>Problema ${p.numero}: ${p.titulo}</h4>
+                    
+                    <div class="header-top-row">
+                        <h4>Problema ${p.numero}: ${p.titulo}</h4>
+                        <a href="${urlExamenCompleto}" class="btn-ver-examen" onclick="event.stopPropagation()">Ver examen completo ↗</a>
+                    </div>
+
+                    ${pdfLinks}
                     ${resumenEnunciado}
                 </summary>
                 <div class="detalle-problema">
