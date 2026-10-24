@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBAU Física - Castilla y León</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Cabecera */
+        header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #1e293b;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* Contenedor principal */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .intro h2 {
+            font-size: 32px;
+            margin: 0 0 15px 0;
+            color: #0f172a;
+        }
+
+        .intro p {
+            font-size: 16px;
+            color: #475569;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Rejilla de tarjetas */
+        .grid-botones {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        @media (min-width: 768px) {
+            .grid-botones {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Estilo de las Tarjetas */
+        .tarjeta {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            text-decoration: none;
+            color: inherit;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tarjeta:hover {
+            border-color: #2563eb;
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .icono {
+            font-size: 40px;
+            margin-bottom: 20px;
+            background: #eff6ff;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            color: #2563eb;
+        }
+
+        .tarjeta h3 {
+            margin: 0 0 10px 0;
+            font-size: 20px;
+            color: #1e293b;
+        }
+
+        .tarjeta p {
+            margin: 0 0 20px 0;
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .boton-falso {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+
+        .tarjeta:hover .boton-falso {
+            background: #1d4ed8;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #94a3b8;
+            font-size: 13px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>EBAU Física · Castilla y León</h1>
+        <p>Tu plataforma de estudio para la prueba de acceso a la universidad</p>
+    </header>
+
+    <main>
+        <div class="intro">
+            <h2>¿Qué quieres hacer hoy?</h2>
+            <p>Selecciona una de las dos herramientas para empezar a preparar tu examen con todos los problemas resueltos paso a paso.</p>
+        </div>
+
+        <div class="grid-botones">
+            
+            <!-- OJO: El enlace ahora lleva a "EBAU/problemas-inline.html" -->
+            <a href="EBAU/problemas-inline.html" class="tarjeta">
+                <div class="icono">📖</div>
+                <h3>Estudiar Problemas</h3>
+                <p>Filtra por año, convocatoria o tema. Utiliza nuestro buscador inteligente y despliega las soluciones paso a paso sin salir de la página.</p>
+                <span class="boton-falso">Ir al buscador →</span>
+            </a>
+
+            <!-- OJO: El enlace ahora lleva a "EBAU/problemas.html" -->
+            <a href="EBAU/problemas.html" class="tarjeta">
+                <div class="icono">📄</div>
+                <h3>Exámenes Completos</h3>
+                <p>Busca el examen exacto que necesitas. Accede a la estructura de la prueba, visualiza el examen entero y descarga los PDFs oficiales y criterios.</p>
+                <span class="boton-falso">Ver exámenes →</span>
+            </a>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Hecho con ❤️ para los estudiantes de la EBAU · Selectividad Academy</p>
+    </footer>
+
+</body>
+</html>
