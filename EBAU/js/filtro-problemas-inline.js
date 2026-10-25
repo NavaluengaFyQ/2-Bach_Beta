@@ -3,6 +3,7 @@ let todosLosProblemas = [];
 let aniosSeleccionados = [];
 let convocatoriasSeleccionadas = [];
 let temasSeleccionados = [];
+let comunidadesSeleccionadas = []; // NUEVO
 
 function txt(s) { return s == null ? '' : String(s); }
 
@@ -32,6 +33,8 @@ async function cargarDatos() {
                 .then(data => {
                     data.id = idLimpio; 
                     data.codigo = ex.codigo;
+                    // NUEVO: si la comunidad viene en el índice y no en el archivo, la usamos
+                    if (!data.comunidad && ex.comunidad) data.comunidad = ex.comunidad;
                     return data;
                 });
         });
@@ -46,6 +49,7 @@ async function cargarDatos() {
                 examenId: examen.id,
                 anio: examen.anio,
                 convocatoria: examen.convocatoria,
+                comunidad: examen.comunidad, // NUEVO
                 codigo: examen.codigo
             }));
         });
@@ -85,6 +89,39 @@ function inicializarFiltros() {
         btn.onclick = () => toggleFiltro(conv, 'convocatoria', btn);
         contenedorConvocatorias.appendChild(btn);
     });
+
+    // Comunidades Autónomas (NUEVO)
+    const comunidades = [...new Set(
+        todosLosProblemas.map(p => p.comunidad).filter(c => c)
+    )].sort((a, b) => a.localeCompare(b));
+
+    let contenedorComunidades = document.getElementById('filtros-comunidad');
+
+    // Fallback: si el contenedor no existe en el HTML, lo creamos dinámicamente
+    if (!contenedorComunidades && comunidades.length > 0) {
+        contenedorComunidades = document.createElement('div');
+        contenedorComunidades.id = 'filtros-comunidad';
+        contenedorComunidades.className = 'filtros-botones';
+        const ref = document.getElementById('filtros-convocatoria') || document.getElementById('filtros-tema');
+        if (ref && ref.parentNode) {
+            ref.parentNode.insertBefore(contenedorComunidades, ref.nextSibling);
+        }
+        console.warn(
+            'Añade <div id="filtros-comunidad"></div> (con su etiqueta) a tu HTML ' +
+            'para que el filtro por comunidad autónoma se integre visualmente como los demás.'
+        );
+    }
+
+    if (contenedorComunidades && comunidades.length > 0) {
+        contenedorComunidades.innerHTML = '';
+        comunidades.forEach(com => {
+            const btn = document.createElement('button');
+            btn.className = 'btn-filtro';
+            btn.textContent = com;
+            btn.onclick = () => toggleFiltro(com, 'comunidad', btn);
+            contenedorComunidades.appendChild(btn);
+        });
+    }
 
     // Temas
     const temas = [...new Set(todosLosProblemas.map(p => p.tema))].sort();
@@ -126,6 +163,14 @@ function toggleFiltro(valor, tipo, boton) {
             convocatoriasSeleccionadas.push(valor);
             boton.classList.add('activo');
         }
+    } else if (tipo === 'comunidad') {
+        if (comunidadesSeleccionadas.includes(valor)) {
+            comunidadesSeleccionadas = comunidadesSeleccionadas.filter(c => c !== valor);
+            boton.classList.remove('activo');
+        } else {
+            comunidadesSeleccionadas.push(valor);
+            boton.classList.add('activo');
+        }
     } else {
         if (temasSeleccionados.includes(valor)) {
             temasSeleccionados = temasSeleccionados.filter(t => t !== valor);
@@ -150,28 +195,28 @@ function renderizarResultados() {
     const palabrasBuscadas = query.split(/\s+/).filter(p => p.length > 0);
 
     let filtrados = todosLosProblemas.filter(p => {
-        // 1. Filtros de botones (Año, Convocatoria, Tema)
+        // 1. Filtros de botones (Año, Convocatoria, Tema, Comunidad)
         const cumpleAnio = aniosSeleccionados.length === 0 || aniosSeleccionados.includes(p.anio);
         const cumpleConv = convocatoriasSeleccionadas.length === 0 || convocatoriasSeleccionadas.includes(p.convocatoria);
         const cumpleTema = temasSeleccionados.length === 0 || temasSeleccionados.includes(p.tema);
+        const cumpleComunidad = comunidadesSeleccionadas.length === 0 || comunidadesSeleccionadas.includes(p.comunidad);
         
-        // 2. Filtro de Búsqueda de Texto
+        // 2. Filtro de Búsqueda de Texto (incluye ahora la comunidad)
         let cumpleBusqueda = true;
         if (palabrasBuscadas.length > 0) {
             const textoTitulo = normalizarTexto(p.titulo);
             const textoEnunciado = normalizarTexto(p.enunciado);
-            const textoCompleto = textoTitulo + ' ' + textoEnunciado;
+            const textoComunidad = normalizarTexto(p.comunidad); // NUEVO
+            const textoCompleto = textoTitulo + ' ' + textoEnunciado + ' ' + textoComunidad;
 
             if (logica === 'AND') {
-                // Todas las palabras deben estar presentes
                 cumpleBusqueda = palabrasBuscadas.every(palabra => textoCompleto.includes(palabra));
             } else {
-                // Al menos una palabra debe estar presente (OR)
                 cumpleBusqueda = palabrasBuscadas.some(palabra => textoCompleto.includes(palabra));
             }
         }
 
-        return cumpleAnio && cumpleConv && cumpleTema && cumpleBusqueda;
+        return cumpleAnio && cumpleConv && cumpleTema && cumpleComunidad && cumpleBusqueda;
     });
 
     filtrados.sort((a, b) => {
@@ -233,13 +278,16 @@ function renderizarResultados() {
             resumenEnunciado = `<p class="resumen-enunciado">${txt(textoCorto)}</p>`;
         }
 
+        // NUEVO: la comunidad también se muestra en el badge del examen
+        const badgeExamen = `${p.anio} · ${p.convocatoria}${p.comunidad ? ' · ' + p.comunidad : ''}`;
+
         // Insertamos la fila con el título y el botón de "Ver examen completo"
         html += `
             <details class="tarjeta-problema-desplegable ${claseMostrarEnunciado}">
                 <summary>
                     <div class="etiquetas">
                         <span class="badge badge-tema">${p.tema}</span>
-                        <span class="badge badge-examen">${p.anio} · ${p.convocatoria}</span>
+                        <span class="badge badge-examen">${badgeExamen}</span>
                     </div>
                     
                     <div class="header-top-row">
@@ -272,6 +320,7 @@ function limpiarFiltros() {
     aniosSeleccionados = [];
     convocatoriasSeleccionadas = [];
     temasSeleccionados = [];
+    comunidadesSeleccionadas = []; // NUEVO
     document.getElementById('check-mostrar-enunciado').checked = false;
     document.getElementById('input-busqueda').value = ''; // Limpiar buscador
     document.getElementById('select-logica').value = 'OR';
@@ -283,7 +332,11 @@ function limpiarFiltros() {
 
 function actualizarBotonLimpiar() {
     const btn = document.getElementById('btn-limpiar');
-    const hayFiltros = aniosSeleccionados.length > 0 || convocatoriasSeleccionadas.length > 0 || temasSeleccionados.length > 0 || document.getElementById('input-busqueda').value.trim() !== '';
+    const hayFiltros = aniosSeleccionados.length > 0 
+        || convocatoriasSeleccionadas.length > 0 
+        || temasSeleccionados.length > 0 
+        || comunidadesSeleccionadas.length > 0
+        || document.getElementById('input-busqueda').value.trim() !== '';
     btn.style.display = hayFiltros ? 'block' : 'none';
 }
 
