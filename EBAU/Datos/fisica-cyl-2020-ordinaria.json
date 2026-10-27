@@ -1,0 +1,467 @@
+{
+  "id": "fisica-cyl-2020-ordinaria",
+  "codigo": "EXA.FIS.CYL.2020.ORD.SOL",
+  "comunidad": "Castilla y León",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2020,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen resuelto de Física de la convocatoria Ordinaria de 2020 en Castilla y León, con 17 problemas de los bloques A y B. Incluye cuestiones y problemas de campo gravitatorio, campo electromagnético, vibraciones y ondas, óptica y física del siglo XX.",
+  "objetivo": "Evaluar la comprensión de conceptos y leyes fundamentales de la Física, así como la capacidad de aplicarlos a situaciones concretas mediante razonamientos, cálculo y representación gráfica.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "OPTATIVIDAD: se podrán elegir siete preguntas del bloque A y tres preguntas del bloque B. Todas las preguntas se evaluarán sobre un máximo de 1 punto, tanto las del bloque A como las del bloque B. La calificación final se obtendrá sumando las notas de las 10 preguntas elegidas. Las fórmulas empleadas en la resolución de los ejercicios deberán acompañarse de los razonamientos oportunos y los resultados numéricos obtenidos para las magnitudes físicas deberán escribirse con las unidades adecuadas."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "Se emplean las constantes físicas habituales: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$, $M_T=5{,}98\\cdot10^{24}\\,\\text{kg}$, $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$, $k=9{,}00\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$, $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$, $c=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$, $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$, $e=1{,}60\\cdot10^{-19}\\,\\text{C}$, $1\\,\\text{u}=931{,}5\\,\\text{MeV}/c^{2}$, $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "A.1 — Velocidad de lanzamiento con conservación de la energía",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "1 punto",
+      "enunciado": "A.1) Desde la superficie terrestre se lanza un objeto verticalmente hacia arriba. A una altura de 3630 km respecto a la superficie de la Tierra su velocidad es $2000\\,\\text{m}\\,\\text{s}^{-1}$. Despreciando todo tipo de rozamiento, determine la velocidad con la que se lanzó.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Planteamiento — conservación de la energía mecánica",
+          "contenido": "Como no hay rozamiento, la energía mecánica se conserva entre la superficie terrestre y el punto de altura $h=3{,}63\\cdot10^{6}\\,\\text{m}$:\n\n$$\\frac{1}{2}m v_0^{2}-\\frac{G M_T m}{R_T}=\\frac{1}{2}m v^{2}-\\frac{G M_T m}{R_T+h}.$$\n\nLa masa del objeto se cancela. Se toma $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$ y $G M_T=3{,}986\\cdot10^{14}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-1}$."
+        },
+        {
+          "titulo": "Despeje de $v_0$",
+          "contenido": "$$v_0^{2}=v^{2}+2G M_T\\left(\\frac{1}{R_T}-\\frac{1}{R_T+h}\\right).$$\n\nCon $R_T+h=6{,}37\\cdot10^{6}+3{,}63\\cdot10^{6}=1{,}000\\cdot10^{7}\\,\\text{m}$."
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "$$v_0^{2}=(2000)^{2}+2(3{,}986\\cdot10^{14})\\left(\\frac{1}{6{,}37\\cdot10^{6}}-\\frac{1}{1{,}000\\cdot10^{7}}\\right).$$\n\nEl término gravitatorio vale aproximadamente $4{,}54\\cdot10^{7}\\,\\text{m}^{2}\\,\\text{s}^{-2}$, por lo que $v_0^{2}\\approx4{,}94\\cdot10^{7}\\,\\text{m}^{2}\\,\\text{s}^{-2}$."
+        }
+      ],
+      "resultado": "$v_0\\approx7{,}03\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}\\approx7{,}0\\,\\text{km}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 2,
+      "titulo": "A.2 — Velocidad y periodo de un satélite en órbita circular",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "1 punto",
+      "enunciado": "A.2) Un satélite artificial se encuentra en una órbita circular de radio 7200 km alrededor de la Tierra. Calcule su velocidad y el tiempo que tarda en completar una vuelta a su órbita.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Velocidad orbital — gravedad = fuerza centrípeta",
+          "contenido": "En una órbita circular, la atracción gravitatoria proporciona toda la fuerza centrípeta:\n\n$$\\frac{G M_T m}{r^{2}}=\\frac{m v^{2}}{r}\\quad\\Rightarrow\\quad v=\\sqrt{\\frac{G M_T}{r}}.$$\n\nLa masa del satélite se cancela: depende solo de $M_T$ y del radio orbital medido al centro de la Tierra. Con $r=7{,}20\\cdot10^{6}\\,\\text{m}$."
+        },
+        {
+          "titulo": "Cálculo numérico de $v$",
+          "contenido": "$$v=\\sqrt{\\frac{3{,}986\\cdot10^{14}}{7{,}20\\cdot10^{6}}}\\approx7{,}44\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Periodo orbital",
+          "contenido": "El periodo es el cociente entre la longitud de la órbita y la velocidad:\n\n$$T=\\frac{2\\pi r}{v}=\\frac{2\\pi(7{,}20\\cdot10^{6})}{7{,}44\\cdot10^{3}}\\approx6{,}08\\cdot10^{3}\\,\\text{s}.$$\n\nEquivale a $T\\approx101\\,\\text{min}$."
+        }
+      ],
+      "resultado": "$v\\approx7{,}44\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$; $T\\approx6{,}08\\cdot10^{3}\\,\\text{s}\\approx101\\,\\text{min}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "A.3 — Trabajo de un dipolo eléctrico (configuración simétrica)",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "1 punto",
+      "enunciado": "A.3) Dos cargas puntuales, $q_1=3\\,\\mu\\text{C}$ y $q_2=-3\\,\\mu\\text{C}$, están situadas en los puntos $P_1(0,3)$ y $P_2(0,-3)$, respectivamente (unidades en el S.I.). Calcule el trabajo necesario para transportar otra carga $q_3=4\\,\\mu\\text{C}$ desde el punto $P_3(4,0)$ al punto $P_4(-4,0)$. Interprete el resultado.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Distancias y potencial en $P_3$ y $P_4$",
+          "contenido": "Las distancias de $P_3(4,0)$ a $P_1(0,3)$ y a $P_2(0,-3)$ son $\\sqrt{4^{2}+3^{2}}=5\\,\\text{m}$. Las distancias de $P_4(-4,0)$ a ambas cargas también son $5\\,\\text{m}$ por simetría. Por tanto:\n\n$$V(P_3)=k\\left(\\frac{q_1}{5}+\\frac{q_2}{5}\\right)=k\\frac{3\\,\\mu\\text{C}-3\\,\\mu\\text{C}}{5}=0.$$\n\n$$V(P_4)=k\\left(\\frac{q_1}{5}+\\frac{q_2}{5}\\right)=0.$$"
+        },
+        {
+          "titulo": "Trabajo del agente externo",
+          "contenido": "El trabajo del agente externo, en ausencia de fuerzas no conservativas, es la variación de energía potencial:\n\n$$W_{\\text{ext}}=q_3[V(P_4)-V(P_3)]=q_3(0-0)=0.$$\n\nEl trabajo es nulo porque $P_3$ y $P_4$ están sobre la mediatriz del dipolo, donde el potencial eléctrico creado por cargas iguales y opuestas se anula."
+        }
+      ],
+      "resultado": "$W_{\\text{ext}}=0\\,\\text{J}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "A.4 — Sentido e intensidad de corriente por la ley de Biot–Savart",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro",
+      "puntuacion": "1 punto",
+      "enunciado": "A.4) Por un alambre recto y muy largo, situado sobre el eje $x$, circula una corriente $I$ que crea un campo magnético de intensidad $(0,0,5\\cdot10^{-5})\\,\\text{T}$ en el punto $(0,6,0)\\,\\text{cm}$. Indique razonadamente el sentido de la corriente $I$ que circula por el alambre y determine su intensidad.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Sentido de la corriente",
+          "contenido": "El punto está en $(0,0{,}06,0)\\,\\text{m}$, es decir, sobre el semieje $y$ positivo. El campo observado es $(0,0,5\\cdot10^{-5})\\,\\text{T}$, dirigido en $+z$. Para un hilo sobre el eje $x$:\n\n$$\\vec B=\\frac{\\mu_0 I}{2\\pi r}(\\hat i\\times\\hat r).$$\n\nEn $\\hat r=\\hat j$, se cumple $\\hat i\\times\\hat j=\\hat k$. Por tanto, el sentido de la corriente es $+x$."
+        },
+        {
+          "titulo": "Intensidad de la corriente",
+          "contenido": "El módulo del campo de un hilo infinito es:\n\n$$B=\\frac{\\mu_0 I}{2\\pi r}\\quad\\Rightarrow\\quad I=\\frac{2\\pi r B}{\\mu_0}.$$\n\nCon $r=0{,}06\\,\\text{m}$, $B=5\\cdot10^{-5}\\,\\text{T}$ y $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$:\n\n$$I=\\frac{2\\pi(0{,}06)(5\\cdot10^{-5})}{4\\pi\\cdot10^{-7}}=15\\,\\text{A}.$$"
+        }
+      ],
+      "resultado": "Sentido: $+x$ (de izquierda a derecha según el eje $x$). $I=15\\,\\text{A}$."
+    },
+    {
+      "numero": 5,
+      "titulo": "A.5 — Fuerza electromotriz inducida (flujo cuadrático en t)",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "1 punto",
+      "enunciado": "A.5) El flujo que atraviesa una espira viene dado por $\\phi=(t^{2}-5t)\\cdot10^{-1}$, en unidades del S.I. Calcule el valor de la fuerza electromotriz inducida en el instante $t=2{,}5\\,\\text{s}$ y represente gráficamente la dependencia de la fem con el tiempo entre los instantes $t=0\\,\\text{s}$ y $t=10\\,\\text{s}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcule el valor de la fuerza electromotriz inducida en el instante $t=2{,}5\\,\\text{s}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Represente gráficamente la dependencia de la fem con el tiempo entre $t=0\\,\\text{s}$ y $t=10\\,\\text{s}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Ley de Faraday — derivar el flujo",
+          "contenido": "$$\\varepsilon=-\\frac{d\\phi}{dt}=-\\frac{d}{dt}\\left[(t^{2}-5t)\\cdot10^{-1}\\right]=-(2t-5)\\cdot10^{-1}=(5-2t)\\cdot10^{-1}\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Valor en $t=2{,}5\\,\\text{s}$",
+          "contenido": "$$\\varepsilon(2{,}5)=(5-2(2{,}5))\\cdot10^{-1}=0\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Gráfica $\\varepsilon(t)$ entre $0$ y $10\\,\\text{s}$",
+          "contenido": "La función a representar es una recta decreciente:\n\n$$\\varepsilon(t)=0{,}5-0{,}2t\\quad(\\text{V}).$$\n\nPasa por los puntos $(0;0{,}5)$, $(2{,}5;0)$, $(5;-0{,}5)$ y $(10;-1{,}5)$. El eje horizontal representa $t$ en segundos y el eje vertical $\\varepsilon$ en voltios."
+        }
+      ],
+      "resultado": "$\\varepsilon(2{,}5)=0\\,\\text{V}$. Gráfica: recta $\\varepsilon(t)=0{,}5-0{,}2t\\,\\text{V}$ entre $t=0$ y $t=10\\,\\text{s}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "A.6 — Elongación, velocidad y aceleración en una onda armónica",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "1 punto",
+      "enunciado": "A.6) Una onda armónica se desplaza por una cuerda y tiene la siguiente expresión en unidades del S.I.:\n\n$$y(x,t)=0{,}06\\,\\text{sen}\\left(4\\pi t-\\frac{\\pi}{6}x\\right).$$\n\nPara el instante $t=0{,}25\\,\\text{s}$, determine la elongación, la velocidad y la aceleración de un punto de la cuerda que se encuentra a $1{,}5\\,\\text{m}$ del extremo situado en el origen de coordenadas.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Fase en $(x=1{,}5,\\ t=0{,}25)$",
+          "contenido": "$$\\varphi=4\\pi(0{,}25)-\\frac{\\pi}{6}(1{,}5)=\\pi-\\frac{\\pi}{4}=\\frac{3\\pi}{4}.$$\n\n$\\text{sen}(3\\pi/4)=\\sqrt{2}/2$ y $\\cos(3\\pi/4)=-\\sqrt{2}/2$."
+        },
+        {
+          "titulo": "Elongación",
+          "contenido": "$$y=0{,}06\\,\\text{sen}\\left(\\frac{3\\pi}{4}\\right)=0{,}06\\frac{\\sqrt{2}}{2}\\approx4{,}24\\cdot10^{-2}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Velocidad transversal",
+          "contenido": "$$v_y=\\frac{\\partial y}{\\partial t}=0{,}06(4\\pi)\\cos\\left(4\\pi t-\\frac{\\pi}{6}x\\right).$$\n\n$$v_y=0{,}24\\pi\\left(-\\frac{\\sqrt{2}}{2}\\right)\\approx-0{,}533\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Aceleración transversal",
+          "contenido": "$$a_y=\\frac{\\partial^{2}y}{\\partial t^{2}}=-0{,}06(4\\pi)^{2}\\text{sen}\\left(4\\pi t-\\frac{\\pi}{6}x\\right).$$\n\n$$a_y=-0{,}06(16\\pi^{2})\\frac{\\sqrt{2}}{2}\\approx-6{,}70\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        }
+      ],
+      "resultado": "$y\\approx4{,}24\\cdot10^{-2}\\,\\text{m}$; $v_y\\approx-0{,}533\\,\\text{m}\\,\\text{s}^{-1}$; $a_y\\approx-6{,}70\\,\\text{m}\\,\\text{s}^{-2}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "A.7 — Nivel de intensidad sonora a distancia menor",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "1 punto",
+      "enunciado": "A.7) El nivel de intensidad sonora de una radio es 40 dB a una distancia de 10 m. ¿Cuál es su nivel de intensidad sonora a 3 m de distancia si la radio emite uniformemente en todas las direcciones?\n\nDato: Intensidad física umbral $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Intensidad a 10 m",
+          "contenido": "El nivel de intensidad sonora es:\n\n$$\\beta=10\\log\\left(\\frac{I}{I_0}\\right).$$\n\nCon $\\beta=40\\,\\text{dB}$:\n\n$$40=10\\log\\left(\\frac{I_{10}}{10^{-12}}\\right)\\quad\\Rightarrow\\quad I_{10}=10^{-8}\\,\\text{W}\\,\\text{m}^{-2}.$$"
+        },
+        {
+          "titulo": "Atenuación de la intensidad con la distancia",
+          "contenido": "Para una fuente puntual isótropa, $I\\propto1/r^{2}$. Por tanto:\n\n$$I_3=I_{10}\\left(\\frac{10}{3}\\right)^{2}=10^{-8}\\frac{100}{9}\\approx1{,}11\\cdot10^{-7}\\,\\text{W}\\,\\text{m}^{-2}.$$"
+        },
+        {
+          "titulo": "Nivel a 3 m",
+          "contenido": "$$\\beta_3=10\\log\\left(\\frac{1{,}11\\cdot10^{-7}}{10^{-12}}\\right)=10\\log(1{,}11\\cdot10^{5})\\approx50{,}5\\,\\text{dB}.$$"
+        }
+      ],
+      "resultado": "$\\beta(3\\,\\text{m})\\approx50{,}5\\,\\text{dB}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "A.8 — Ángulo límite de reflexión total agua–aire",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
+      "puntuacion": "1 punto",
+      "enunciado": "A.8) Un haz de luz viaja por el agua a una velocidad $v=2{,}25\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$. Determine el valor mínimo del ángulo de incidencia sobre la superficie de separación agua-aire, para que no emerja al aire. Realice un diagrama de la marcha de rayos para el ángulo calculado y para otro ángulo mayor.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Índice de refracción del agua",
+          "contenido": "$$n_{\\text{agua}}=\\frac{c}{v}=\\frac{3{,}00\\cdot10^{8}}{2{,}25\\cdot10^{8}}=1{,}333.$$"
+        },
+        {
+          "titulo": "Ley de Snell en el ángulo límite",
+          "contenido": "Para reflexión total, el rayo refractado debe salir rasante a la superficie, es decir, con ángulo de refracción $90^{\\circ}$:\n\n$$n_{\\text{agua}}\\text{sen}\\,\\theta_L=n_{\\text{aire}}\\text{sen}\\,90^{\\circ}=1.$$\n\n$$\\text{sen}\\,\\theta_L=\\frac{1}{1{,}333}=0{,}75\\quad\\Rightarrow\\quad\\theta_L\\approx48{,}6^{\\circ}.$$"
+        },
+        {
+          "titulo": "Diagrama de la marcha de rayos",
+          "contenido": "Caso 1 — Incidencia en $\\theta_L$: en la interfase agua-aire, el rayo refractado emerge rasante a la superficie, paralelo a ésta. Una fracción de la luz se refleja dentro del agua según la ley de la reflexión. Caso 2 — Incidencia con un ángulo mayor que $\\theta_L$: no existe ángulo de refracción que satisfaga la ley de Snell; el rayo se refleja totalmente en la interfase y se devuelve al interior del agua. Esa es la reflexión total interna."
+        }
+      ],
+      "resultado": "$\\theta_L\\approx48{,}6^{\\circ}$."
+    },
+    {
+      "numero": 9,
+      "titulo": "A.9 — Dos posiciones de una lente convergente entre objeto y pantalla",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "1 punto",
+      "enunciado": "A.9) Un objeto está situado a 25 cm de distancia de una pantalla. ¿En qué dos puntos comprendidos entre el objeto y la pantalla puede situarse una lente convergente de 4 cm de distancia focal para que se forme la imagen del objeto sobre la pantalla?",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Planteamiento con convenio cartesiano",
+          "contenido": "Sea $x$ la distancia objeto-lente. La imagen real se forma sobre la pantalla, a una distancia $25-x$ de la lente. Con $f=4\\,\\text{cm}$, la ecuación de Gauss para lentes delgadas es:\n\n$$\\frac{1}{x}+\\frac{1}{25-x}=\\frac{1}{4}.$$"
+        },
+        {
+          "titulo": "Ecuación cuadrática",
+          "contenido": "Multiplicando por $4x(25-x)$:\n\n$$\\frac{25}{x(25-x)}=\\frac{1}{4}\\quad\\Rightarrow\\quad x^{2}-25x+100=0.$$\n\nResolviendo:\n\n$$x=\\frac{25\\pm\\sqrt{625-400}}{2}=\\frac{25\\pm15}{2}.$$"
+        },
+        {
+          "titulo": "Las dos posiciones",
+          "contenido": "Posición 1: $x_1=20\\,\\text{cm}$ del objeto, es decir, a $5\\,\\text{cm}$ de la pantalla. Posición 2: $x_2=5\\,\\text{cm}$ del objeto, es decir, a $20\\,\\text{cm}$ de la pantalla. En ambos casos la imagen es real, invertida y se forma sobre la pantalla."
+        }
+      ],
+      "resultado": "La lente puede situarse a $20\\,\\text{cm}$ o a $5\\,\\text{cm}$ del objeto."
+    },
+    {
+      "numero": 10,
+      "titulo": "A.10 — Longitud de onda en el efecto fotoeléctrico",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica",
+      "puntuacion": "1 punto",
+      "enunciado": "A.10) Un metal, cuyo trabajo de extracción es 2,4 eV, se irradia con luz monocromática. Para cortar el flujo de electrones producidos por efecto fotoeléctrico se necesita un potencial de frenado de 0,7 V. Calcule la longitud de onda de la luz con que se irradia.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Ecuación de Einstein del efecto fotoeléctrico",
+          "contenido": "La energía del fotón se reparte entre el trabajo de extracción y la energía cinética máxima del fotoelectrón:\n\n$$E_f=W_{\\text{ext}}+eV_{\\text{frenado}}.$$\n\nPor tanto:\n\n$$E_f=2{,}4\\,\\text{eV}+0{,}7\\,\\text{eV}=3{,}1\\,\\text{eV}.$$"
+        },
+        {
+          "titulo": "Energía del fotón en julios",
+          "contenido": "$$E_f=3{,}1(1{,}60\\cdot10^{-19})=4{,}96\\cdot10^{-19}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Longitud de onda",
+          "contenido": "$$\\lambda=\\frac{hc}{E_f}=\\frac{(6{,}63\\cdot10^{-34})(3{,}00\\cdot10^{8})}{4{,}96\\cdot10^{-19}}\\approx4{,}01\\cdot10^{-7}\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$\\lambda\\approx4{,}0\\cdot10^{-7}\\,\\text{m}=400\\,\\text{nm}$."
+    },
+    {
+      "numero": 11,
+      "titulo": "A.11 — Energía de fisión del U-235",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares",
+      "puntuacion": "1 punto",
+      "enunciado": "A.11) Una reacción nuclear conocida por su aprovechamiento energético es:\n\n$$^{235}_{92}\\text{U}+^{1}_{0}\\text{n}\\rightarrow^{141}_{56}\\text{Ba}+^{92}_{36}\\text{Kr}+3\\,^{1}_{0}\\text{n}+\\text{energía}.$$\n\nIndique razonadamente si es una reacción de fusión o de fisión y determine la energía desprendida en la reacción por cada átomo de uranio. Exprese el resultado en eV.\n\nNota: $m(^{235}_{92}\\text{U})=235{,}0439\\,\\text{u}$; $m(^{141}_{56}\\text{Ba})=140{,}9162\\,\\text{u}$; $m(^{92}_{36}\\text{Kr})=91{,}9262\\,\\text{u}$; $m(^{1}_{0}\\text{n})=1{,}0087\\,\\text{u}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Indique razonadamente si es una reacción de fusión o de fisión."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Determine la energía desprendida por cada átomo de uranio y exprésela en eV."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Identificación del tipo de reacción",
+          "contenido": "Un núcleo pesado de uranio-235 se rompe, al absorber un neutrón, en dos núcleos de masas intermedias, $^{141}\\text{Ba}$ y $^{92}\\text{Kr}$, más tres neutrones, liberando energía. Es una reacción de fisión nuclear. Si fuese fusión, dos núcleos ligeros se unirían para formar uno más pesado."
+        },
+        {
+          "titulo": "Defecto de masa",
+          "contenido": "Masa de los reactivos:\n\n$$m_{\\text{reactivos}}=235{,}0439+1{,}0087=236{,}0526\\,\\text{u}.$$\n\nMasa de los productos:\n\n$$m_{\\text{productos}}=140{,}9162+91{,}9262+3(1{,}0087)=235{,}8685\\,\\text{u}.$$\n\nEl defecto de masa es:\n\n$$\\Delta m=236{,}0526-235{,}8685=0{,}1841\\,\\text{u}.$$"
+        },
+        {
+          "titulo": "Energía desprendida",
+          "contenido": "Mediante la equivalencia masa-energía de Einstein:\n\n$$E=\\Delta m\\,c^{2}=0{,}1841\\,\\text{u}\\cdot931{,}5\\,\\text{MeV}/\\text{u}\\approx171{,}5\\,\\text{MeV}.$$\n\nEn eV:\n\n$$E\\approx171{,}5\\cdot10^{6}\\,\\text{eV}=1{,}715\\cdot10^{8}\\,\\text{eV}.$$"
+        }
+      ],
+      "resultado": "Fisión nuclear. $E\\approx171{,}5\\,\\text{MeV}\\approx1{,}715\\cdot10^{8}\\,\\text{eV}$ por átomo de uranio."
+    },
+    {
+      "numero": 12,
+      "titulo": "B.1 — Velocidad de escape para misma masa y distinta densidad",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "1 punto",
+      "enunciado": "B.1) Razone si es verdadera o falsa la siguiente afirmación: “Para dos planetas de igual masa, pero diferente densidad media, la velocidad de escape desde la superficie es mayor para el planeta que tiene la menor densidad media”.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Velocidad de escape — definición",
+          "contenido": "La velocidad mínima que un objeto en la superficie de un planeta debe tener para escapar a infinito sin volver es:\n\n$$v_e=\\sqrt{\\frac{2GM}{R}},$$\n\ndonde $M$ es la masa del planeta y $R$ su radio. Se obtiene imponiendo que la energía mecánica total sea nula."
+        },
+        {
+          "titulo": "Relación entre $R$ y $\\rho$ con $M$ fija",
+          "contenido": "Si suponemos planetas esféricos con densidad media uniforme:\n\n$$\\rho=\\frac{M}{\\frac{4}{3}\\pi R^{3}}\\quad\\Rightarrow\\quad R=\\left(\\frac{3M}{4\\pi\\rho}\\right)^{1/3}.$$\n\nCon $M$ fija, $R$ disminuye cuando $\\rho$ aumenta. Es decir, un planeta más denso, con la misma masa, es más pequeño."
+        },
+        {
+          "titulo": "Cómo escala $v_e$ con $\\rho$",
+          "contenido": "Para $M$ fija:\n\n$$v_e\\propto\\sqrt{\\frac{M}{R}}\\propto\\rho^{1/3}.$$\n\nEl exponente es positivo: mayor densidad implica mayor velocidad de escape. Por tanto, la afirmación es falsa."
+        }
+      ],
+      "resultado": "Falso. Para igual masa, $v_e$ es mayor para el planeta de mayor densidad media."
+    },
+    {
+      "numero": 13,
+      "titulo": "B.2 — Radio de la trayectoria circular en un campo magnético",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz",
+      "puntuacion": "1 punto",
+      "enunciado": "B.2) Una partícula de masa $m$ y carga $q$ entra con velocidad $\\vec v$ en una zona donde existe un campo magnético uniforme $\\vec B$ (perpendicular a $\\vec v$) y describe una trayectoria circular de radio $R$, como se ve en la figura. Deduzca la expresión de $R$ en términos de $m$, $q$, $v$ y $B$ y determine razonadamente el signo de $q$.\n\nFigura: la región está rellena de cruces $\\otimes$ (campo $\\vec B$ entrando en el plano del papel, $\\vec B=-B\\hat k$). La partícula entra por la izquierda con $\\vec v$ inicialmente horizontal hacia la derecha y curva su trayectoria hacia ARRIBA.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Deduzca la expresión de $R$ en términos de $m$, $q$, $v$ y $B$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Determine razonadamente el signo de $q$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Fuerza de Lorentz como fuerza centrípeta",
+          "contenido": "La fuerza magnética sobre la partícula es:\n\n$$\\vec F=q\\,\\vec v\\times\\vec B.$$\n\nComo $\\vec v\\perp\\vec B$, su módulo es $|q|vB$ y es siempre perpendicular a $\\vec v$: no realiza trabajo y mantiene constante la rapidez. Al ser perpendicular y de módulo constante, actúa como fuerza centrípeta:\n\n$$|q|vB=\\frac{m v^{2}}{R}\\quad\\Rightarrow\\quad R=\\frac{m v}{|q|B}.$$"
+        },
+        {
+          "titulo": "Signo de $q$",
+          "contenido": "De la figura: $\\vec B$ entra en el papel, $\\vec B=-B\\hat k$, y en el instante de entrada $\\vec v=v\\hat i$ (hacia la derecha). La trayectoria curva hacia arriba, por lo que la fuerza neta apunta hacia arriba, $+\\hat j$. Calculamos:\n\n$$\\vec v\\times\\vec B=v\\hat i\\times(-B\\hat k)=vB\\hat j,$$\n\nque apunta hacia arriba. La fuerza observada también apunta hacia arriba. Como $\\vec F=q\\,\\vec v\\times\\vec B$, para que $\\vec F$ tenga el mismo sentido que $\\vec v\\times\\vec B$ debe ser $q>0$."
+        }
+      ],
+      "resultado": "$R=\\frac{mv}{qB}$; $q>0$."
+    },
+    {
+      "numero": 14,
+      "titulo": "B.3 — fem inducida nula con campo magnético variable",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "1 punto",
+      "enunciado": "B.3) Razone si es verdadera o falsa la siguiente afirmación: “La fuerza electromotriz inducida en una espira puede ser nula en todo momento, independientemente de cómo sea la variación temporal del campo magnético de su entorno”.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Ley de Faraday — magnitud relevante",
+          "contenido": "Lo que importa no es directamente $\\vec B$, sino el flujo magnético a través de la espira:\n\n$$\\varepsilon=-\\frac{d\\Phi}{dt},\\qquad \\Phi=\\vec B\\cdot\\vec S=BS\\cos\\theta.$$"
+        },
+        {
+          "titulo": "Cuándo puede mantenerse $\\varepsilon=0$ con $\\vec B$ variable",
+          "contenido": "Si la espira está orientada de modo que su normal sea perpendicular a $\\vec B$ (es decir, $\\vec B$ es paralelo al plano de la espira en todo punto y en todo instante), entonces $\\cos\\theta=0$ y $\\Phi=0$ siempre, no importa cómo varíe $\\vec B$ con el tiempo. Por tanto:\n\n$$\\varepsilon=-\\frac{d\\Phi}{dt}=0$$\n\nen todo momento."
+        }
+      ],
+      "resultado": "Verdadero, si la orientación de la espira anula el flujo magnético en todo instante."
+    },
+    {
+      "numero": 15,
+      "titulo": "B.4 — Doble periodicidad de una onda armónica",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "1 punto",
+      "enunciado": "B.4) Justifique la doble periodicidad de una onda a partir de su expresión matemática.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Expresión matemática general",
+          "contenido": "Una onda armónica unidimensional que viaja en el sentido positivo del eje $x$ se escribe:\n\n$$y(x,t)=A\\,\\text{sen}(\\omega t-kx+\\varphi),$$\n\ndonde $A$ es la amplitud, $\\omega$ la frecuencia angular, $k$ el número de onda y $\\varphi$ una fase inicial."
+        },
+        {
+          "titulo": "Periodicidad temporal — variable $t$ con $x$ fijo",
+          "contenido": "Fijando $x$ y aumentando $t$ en una cantidad $T=2\\pi/\\omega$:\n\n$$\\omega(t+T)-kx+\\varphi=\\omega t-kx+\\varphi+2\\pi.$$\n\nComo el seno es periódico de periodo $2\\pi$, la función se repite. Por tanto, cada punto oscila con periodo $T=2\\pi/\\omega$."
+        },
+        {
+          "titulo": "Periodicidad espacial — variable $x$ con $t$ fijo",
+          "contenido": "Fijando $t$ y desplazando $x$ una cantidad $\\lambda=2\\pi/k$:\n\n$$\\omega t-k(x+\\lambda)+\\varphi=\\omega t-kx+\\varphi-2\\pi.$$\n\nEl seno no cambia. Por tanto, en cada instante el perfil espacial de la onda se repite cada distancia $\\lambda=2\\pi/k$."
+        }
+      ],
+      "resultado": "Periodo temporal $T=2\\pi/\\omega$; longitud de onda $\\lambda=2\\pi/k$."
+    },
+    {
+      "numero": 16,
+      "titulo": "B.5 — Lentes y trazado de rayos del microscopio",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "1 punto",
+      "enunciado": "B.5) Indique el tipo y disposición de las lentes empleadas en un microscopio. Realice el correspondiente trazado de rayos para un objeto de tamaño $y_1$ que es observado a través de este instrumento.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Indique el tipo y disposición de las lentes empleadas en un microscopio."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Realice el trazado de rayos para un objeto de tamaño $y_1$ observado a través del microscopio."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Tipo y disposición de las lentes",
+          "contenido": "Un microscopio óptico compuesto está formado por dos lentes convergentes separadas y montadas coaxialmente. El objetivo es una lente convergente de distancia focal muy corta; se sitúa muy próximo al objeto, justo detrás de su foco objeto, de modo que el objeto queda un poco más allá del foco. El ocular es una lente convergente de distancia focal corta; se sitúa de modo que la imagen intermedia formada por el objetivo caiga un poco dentro del foco objeto del ocular, de manera que el ocular actúa como una lupa."
+        },
+        {
+          "titulo": "Trazado de rayos",
+          "contenido": "Objetivo: el rayo que sale paralelo al eje óptico desde la punta del objeto se refracta y pasa por el foco imagen del objetivo; el rayo que pasa por el centro óptico no se desvía; el rayo que pasa por el foco objeto sale paralelo al eje. Los tres rayos convergen en un punto al otro lado del objetivo, donde se forma la imagen intermedia, que es real, invertida y aumentada respecto al objeto. Ocular: la imagen intermedia actúa como objeto situado dentro del foco objeto del ocular. Los rayos refractados al salir del ocular son divergentes; prolongados hacia atrás, convergen en un punto del lado del objeto, donde se forma la imagen final, que es virtual, muy aumentada e invertida respecto al objeto original."
+        }
+      ],
+      "resultado": "Objetivo y ocular convergentes; la imagen final es virtual, muy aumentada e invertida."
+    },
+    {
+      "numero": 17,
+      "titulo": "B.6 — Desintegración β⁻ del carbono-14",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares",
+      "puntuacion": "1 punto",
+      "enunciado": "B.6) El carbono-14 ($^{14}_{6}\\text{C}$) es un emisor $\\beta^{-}$. Escriba la ecuación de desintegración correspondiente a dicho elemento y describa brevemente el tipo de radiactividad asociado.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Escriba la ecuación de desintegración correspondiente al carbono-14."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Describa brevemente el tipo de radiactividad asociado."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Ecuación de desintegración",
+          "contenido": "En la desintegración $\\beta^{-}$, un neutrón del núcleo se convierte en un protón emitiendo un electrón y un antineutrino electrónico. Aplicado al carbono-14:\n\n$$^{14}_{6}\\text{C}\\rightarrow^{14}_{7}\\text{N}+e^{-}+\\bar{\\nu}_e.$$"
+        },
+        {
+          "titulo": "Tipo de radiactividad",
+          "contenido": "La partícula emitida es un electrón, de carga negativa y masa muy pequeña frente a un nucleón. No es un electrón orbital, sino un electrón creado en el núcleo a partir de la conversión de un neutrón en protón mediante la interacción nuclear débil. El espectro de energía es continuo porque la energía liberada se reparte entre el electrón y el antineutrino. Su poder de penetración es intermedio: mayor que el de las partículas $\\alpha$ y menor que el de la radiación $\\gamma$. En el núcleo, $A$ permanece constante y $Z$ aumenta en una unidad, por lo que el elemento se desplaza un lugar a la derecha en la tabla periódica."
+        }
+      ],
+      "resultado": "$^{14}_{6}\\text{C}\\rightarrow^{14}_{7}\\text{N}+e^{-}+\\bar{\\nu}_e$; radiactividad $\\beta^{-}$."
+    }
+  ]
+}

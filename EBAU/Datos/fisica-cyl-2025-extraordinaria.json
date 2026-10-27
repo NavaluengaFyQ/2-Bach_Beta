@@ -7,80 +7,83 @@
   "anio": 2025,
   "nivel": "PAU",
   "curso": "2º Bachillerato",
-  "enunciado_general": "Examen resuelto de Física de Castilla y León, convocatoria Extraordinaria 2025. Incluye dos cuestiones obligatorias y nueve problemas u opciones resueltos.",
-  "objetivo": "Proporcionar soluciones razonadas paso a paso para facilitar el estudio y la autoevaluación de la PAU de Física.",
+  "enunciado_general": "Examen resuelto de Física de la PAU de Castilla y León, convocatoria extraordinaria de 2025. Consta de dos cuestiones obligatorias del apartado 1 y cuatro bloques optativos del apartado 2, con opciones A/B en cada bloque.",
+  "objetivo": "Evaluar la comprensión y aplicación de los contenidos de Física de 2º de Bachillerato: gravitación, electromagnetismo, vibraciones y ondas, óptica y física nuclear, con resolución razonada y manejo correcto de unidades.",
   "procedimiento": [
     {
       "titulo": "Estructura del examen",
-      "contenido": "El examen consta de dos apartados: uno obligatorio de 2 puntos con dos cuestiones y otro optativo de 8 puntos dividido en cuatro bloques, con opciones A/B. Se resuelven todas las opciones presentadas."
+      "contenido": "El ejercicio consta de dos apartados, uno obligatorio (2 puntos) y otro que presenta optatividad (8 puntos). Las cuestiones del apartado 1 son de respuesta obligatoria y están valoradas en 1 punto cada una. El apartado 2 se divide en cuatro bloques, ofreciéndose dos opciones en cada uno valoradas en 2 puntos, entre las que se debe elegir una para su realización (se elegirá, por tanto, una opción en cada uno de los bloques). La calificación final se obtendrá sumando las notas de las dos preguntas obligatorias (del apartado 1) y las cuatro opciones elegidas (una por bloque, del apartado 2). Las fórmulas empleadas en la resolución de los ejercicios deberán acompañarse de los razonamientos oportunos. Los resultados numéricos obtenidos para las magnitudes físicas deberán escribirse con las unidades adecuadas."
     },
     {
-      "titulo": "Criterios de resolución",
-      "contenido": "Se mantienen las fórmulas con MathJax, se justifican los razonamientos y se escriben los resultados con unidades."
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $R_T=6{,}38\\cdot10^{6}\\,\\text{m}$; $M_T=5{,}98\\cdot10^{24}\\,\\text{kg}$; $g_0=9{,}80\\,\\text{m}\\,\\text{s}^{-2}$; $K_0=9{,}00\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $c_0=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $N_A=6{,}022\\cdot10^{23}\\,\\text{mol}^{-1}$; $1\\,\\text{u}=1{,}66\\cdot10^{-27}\\,\\text{kg}$; $1\\,\\text{eV}=1{,}60\\cdot10^{-19}\\,\\text{J}$; período de semidesintegración del $^{99}\\text{Tc-m}$: $T_{1/2}=6\\,\\text{h}$; masas nucleares: $m_U=235{,}043931\\,\\text{u}$, $m_{Kr}=88{,}917835\\,\\text{u}$, $m_{Ba}=143{,}922955\\,\\text{u}$, $m_n=1{,}008665\\,\\text{u}$."
     }
   ],
   "ejercicios": [
     {
       "numero": 1,
       "titulo": "Relación geométrica entre líneas de campo y superficies equipotenciales",
-      "tema": "Campo gravitatorio",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A5. Potencial gravitatorio, equipotenciales y relación con el campo; A4. Intensidad de campo gravitatorio y líneas de campo",
       "puntuacion": "1 punto",
       "enunciado": "Razone si la siguiente afirmación es verdadera o falsa: «Las líneas del campo gravitatorio son tangentes en cada punto a las superficies equipotenciales».",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Definición de superficie equipotencial",
-          "contenido": "Una superficie equipotencial es el lugar geométrico de los puntos con el mismo potencial gravitatorio: $V=\\text{constante}$. Sobre ella, $dV=0$."
+          "contenido": "Una superficie equipotencial es el lugar geométrico de los puntos del espacio que tienen el mismo potencial gravitatorio: $V=\\text{cte}$. Sobre dicha superficie no hay variación de potencial, $dV=0$."
         },
         {
-          "titulo": "Relación entre campo y potencial",
-          "contenido": "El campo gravitatorio es menos el gradiente del potencial: $\\vec{g}=-\\nabla V$. Para un desplazamiento $d\\vec{r}$ sobre la equipotencial, $dV=-\\vec{g}\\cdot d\\vec{r}=0$, luego $\\vec{g}\\perp d\\vec{r}$: el campo es perpendicular a la superficie equipotencial."
+          "titulo": "Relación entre el campo y el gradiente de potencial",
+          "contenido": "El campo gravitatorio es menos el gradiente del potencial:\n\n$$\\vec{g}=-\\nabla V.$$\n\nPara un desplazamiento $d\\vec{r}$ sobre la superficie equipotencial, $dV=0$, así que $\\vec{g}\\cdot d\\vec{r}=0$. Por tanto, $\\vec{g}$ es perpendicular a $d\\vec{r}$, es decir, perpendicular a la superficie equipotencial, no tangente."
         },
         {
           "titulo": "Conclusión",
-          "contenido": "La afirmación es falsa. Si el campo fuese tangente a la equipotencial, al moverse a lo largo de una línea de campo no cambiaría el potencial, lo que contradice la definición de línea de campo."
+          "contenido": "La afirmación es falsa. Las líneas del campo gravitatorio son perpendiculares (no tangentes) a las superficies equipotenciales en cada punto. Si fueran tangentes, el desplazamiento a lo largo de la línea de campo se haría sobre la equipotencial y, sin embargo, una masa que se mueve a lo largo de la línea de campo cambia su potencial: $\\Delta V\\neq0$."
         }
       ],
-      "resultado": "**Falsa**: las líneas del campo gravitatorio son perpendiculares a las superficies equipotenciales, no tangentes."
+      "resultado": "Falsa: las líneas del campo gravitatorio son perpendiculares a las superficies equipotenciales, no tangentes."
     },
     {
       "numero": 2,
       "titulo": "¿Puede una lupa proyectar una imagen reducida sobre una pantalla?",
-      "tema": "Óptica",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
       "puntuacion": "1 punto",
       "enunciado": "Se desea proyectar un objeto sobre una pantalla y que su imagen sea más pequeña que dicho objeto. ¿Podría utilizarse una lupa para conseguirlo? Justifique la respuesta mediante el correspondiente diagrama de rayos.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Qué es una lupa",
-          "contenido": "Una lupa es una lente convergente usada con el objeto entre el foco y la lente. En esa configuración produce una imagen virtual, derecha y aumentada, situada al mismo lado que el objeto."
+          "contenido": "Una lupa es una lente convergente que se utiliza colocando el objeto entre el foco objeto y la lente, es decir, a una distancia $s<f$. En esa configuración, la lente produce una imagen virtual, derecha y aumentada, situada en el mismo lado que el objeto."
         },
         {
-          "titulo": "Imagen real reducida con lente convergente",
-          "contenido": "Si el objeto se coloca a una distancia mayor que el doble de la focal, $s>2f$, la lente convergente forma una imagen real, invertida y reducida, que sí puede recogerse en una pantalla."
+          "titulo": "Tipos de imagen producibles por una lente convergente",
+          "contenido": "Con una lente convergente de distancia focal $f$ y objeto a distancia $s$ delante de la lente, si $s>2f$ se obtiene una imagen real, invertida y reducida. Esta es la configuración necesaria para proyectar sobre una pantalla una imagen más pequeña que el objeto. Para ello, la lente convergente sí puede usarse, pero no en su modo lupa: hay que colocar el objeto a una distancia $s>2f$."
         },
         {
           "titulo": "Diagrama de rayos en modo lupa",
-          "contenido": "El rayo paralelo al eje sale por el foco imagen y el rayo que pasa por el centro óptico sigue recto. Los rayos emergen divergentes y sus prolongaciones hacia atrás forman una imagen virtual, derecha y aumentada, no proyectable."
+          "contenido": "En el modo lupa, $s<f$. El rayo paralelo al eje óptico sale refractado pasando por el foco imagen situado a la derecha de la lente. El rayo que pasa por el centro óptico sigue recto sin refractarse. Ambos rayos refractados divergen tras la lente y no se cortan en el lado real. Al prolongarlos hacia atrás, se cortan en un punto al mismo lado que el objeto: la imagen es virtual, derecha y aumentada. Como es virtual, no puede recogerse sobre una pantalla."
         },
         {
           "titulo": "Conclusión",
-          "contenido": "No se puede con una lupa usada como tal. Sí se podría con la misma lente convergente si se usa como objetivo de cámara, con el objeto a $s>2f$."
+          "contenido": "No, una lupa usada como tal, con el objeto entre el foco y la lente, no puede producir sobre una pantalla una imagen reducida del objeto: la imagen que forma es virtual, derecha y aumentada. Si se utiliza la misma lente convergente con el objeto a una distancia mayor que el doble de la focal, $s>2f$, entonces sí se obtiene una imagen real, invertida y reducida que podría recogerse en una pantalla, pero ese uso ya no es propio de una lupa."
         }
       ],
-      "resultado": "**No** como lupa: forma imagen virtual, derecha y aumentada. Para obtener imagen real reducida se necesita $s>2f$."
+      "resultado": "No en modo lupa: con $s<f$ la imagen es virtual, derecha y aumentada, no proyectable. Para obtener una imagen real reducida se necesita $s>2f$, pero entonces el sistema ya no funciona como lupa."
     },
     {
       "numero": 3,
       "titulo": "Energía potencial y velocidad orbital de un astronauta a 1000 km de altura",
-      "tema": "Campo gravitatorio",
-      "puntuacion": "2 puntos",
-      "enunciado": "En la película Gravity, el astronauta Matt Kowalski se encuentra orbitando la Tierra tras un accidente. Supongamos que su masa con el traje espacial es de $100\\,\\text{kg}$ y que su órbita está a una altura $h=1000\\,\\text{km}$ sobre la superficie terrestre. a) Determine su energía potencial gravitatoria. ¿Podría utilizarse $E=m\\,g\\,h$? Explique la respuesta. b) Calcule la velocidad de Kowalski mientras orbita. Datos: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^2\\,\\text{kg}^{-2}$; $R_T=6{,}38\\cdot10^6\\,\\text{m}$; $M_T=5{,}98\\cdot10^{24}\\,\\text{kg}$; $g_0=9{,}80\\,\\text{m}\\,\\text{s}^{-2}$.",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "En la película Gravity, el astronauta Matt Kowalski se encuentra orbitando la Tierra tras un accidente en el espacio. Supongamos que su masa con el traje espacial es de 100 kg y que su órbita se encuentra a una altura $h=1000\\,\\text{km}$ sobre la superficie terrestre.\na) Determine su energía potencial gravitatoria. Para este cálculo, ¿podría utilizarse la expresión $E=mgh$? Explique su respuesta.\nb) Calcule la velocidad de Kowalski mientras orbita.\nDatos: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $R_T=6{,}38\\cdot10^{6}\\,\\text{m}$; $M_T=5{,}98\\cdot10^{24}\\,\\text{kg}$; $g_0=9{,}80\\,\\text{m}\\,\\text{s}^{-2}$.",
       "apartados": [
         {
           "letra": "a",
           "puntuacion": "1 punto",
-          "enunciado": "Energía potencial gravitatoria y discusión sobre $E=m\\,g\\,h$."
+          "enunciado": "Energía potencial gravitatoria y discusión sobre $E=mgh$."
         },
         {
           "letra": "b",
@@ -90,72 +93,75 @@
       ],
       "resolucion": [
         {
-          "titulo": "Radio orbital y energía potencial",
-          "contenido": "El radio orbital es $r=R_T+h=6{,}38\\cdot10^6+1{,}00\\cdot10^6=7{,}38\\cdot10^6\\,\\text{m}$. La energía potencial gravitatoria, con origen en el infinito, es $E_p=-\\frac{G\\,M_T\\,m}{r}=-5{,}40\\cdot10^9\\,\\text{J}$."
+          "titulo": "Radio orbital y energía potencial gravitatoria",
+          "contenido": "El radio orbital es $r=R_T+h=6{,}38\\cdot10^{6}+1{,}00\\cdot10^{6}=7{,}38\\cdot10^{6}\\,\\text{m}$.\n\nLa energía potencial gravitatoria, con origen en el infinito, es:\n\n$$E_p=-\\frac{GM_Tm}{r}=-\\frac{6{,}67\\cdot10^{-11}\\cdot5{,}98\\cdot10^{24}\\cdot100}{7{,}38\\cdot10^{6}}=-5{,}41\\cdot10^{9}\\,\\text{J}.$$"
         },
         {
-          "titulo": "¿Es válida $E=m\\,g\\,h$?",
-          "contenido": "No. $E=m\\,g\\,h$ es una aproximación lineal válida cerca de la superficie, con $g$ constante y referencia en la superficie. A $1000\\,\\text{km}$ la gravedad ha disminuido de forma apreciable y la referencia correcta es el infinito."
+          "titulo": "¿Es válida la expresión $E=mgh$?",
+          "contenido": "No es válida para esta altura. La fórmula $E=mgh$ es una aproximación lineal del potencial gravitatorio cerca de la superficie terrestre, válida cuando $h\\ll R_T$, donde puede tomarse $g$ constante. A una altura $h=1000\\,\\text{km}$, $h/R_T\\approx0{,}157$, y la gravedad disminuye apreciablemente. Además, $E=mgh$ toma como referencia la superficie en lugar del infinito, lo que cambia la constante aditiva del potencial. La expresión correcta a esta altura es $E_p=-\\frac{GM_Tm}{r}$."
         },
         {
           "titulo": "Velocidad orbital circular",
-          "contenido": "Igualando fuerza gravitatoria y centrípeta: $\\frac{G\\,M_T\\,m}{r^2}=\\frac{m\\,v^2}{r}$, de donde $v=\\sqrt{\\frac{G\\,M_T}{r}}=7{,}35\\cdot10^3\\,\\text{m/s}$."
+          "contenido": "Para una órbita circular, la fuerza gravitatoria proporciona la fuerza centrípeta:\n\n$$\\frac{GM_Tm}{r^{2}}=\\frac{mv^{2}}{r}.$$\n\nPor tanto:\n\n$$v=\\sqrt{\\frac{GM_T}{r}}=\\sqrt{\\frac{6{,}67\\cdot10^{-11}\\cdot5{,}98\\cdot10^{24}}{7{,}38\\cdot10^{6}}}=7{,}35\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
         }
       ],
-      "resultado": "$E_p\\approx-5{,}40\\cdot10^9\\,\\text{J}$; $v\\approx7{,}35\\,\\text{km/s}$; $E=m\\,g\\,h$ no es válida a esa altura."
+      "resultado": "a) $E_p=-5{,}41\\cdot10^{9}\\,\\text{J}$; no es válida $E=mgh$ a esa altura.\nb) $v=7{,}35\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$."
     },
     {
       "numero": 4,
       "titulo": "Velocidad mínima de lanzamiento para alcanzar órbita a radio $5R_T$",
-      "tema": "Campo gravitatorio",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
       "puntuacion": "1 punto",
-      "enunciado": "Un satélite describe una órbita circular de radio $5R_T$ alrededor de la Tierra. Calcule la velocidad mínima con la que debe lanzarse verticalmente desde la superficie terrestre para situarlo en dicha órbita. Datos: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^2\\,\\text{kg}^{-2}$; $R_T=6{,}38\\cdot10^6\\,\\text{m}$; $M_T=5{,}98\\cdot10^{24}\\,\\text{kg}$.",
+      "enunciado": "Un satélite describe una órbita circular de radio $5R_T$ alrededor de la Tierra. Calcule la velocidad mínima con la que debe lanzarse verticalmente desde la superficie terrestre para situarlo en dicha órbita. Datos: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $R_T=6{,}38\\cdot10^{6}\\,\\text{m}$; $M_T=5{,}98\\cdot10^{24}\\,\\text{kg}$.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Balance de energía superficie-órbita",
-          "contenido": "En la superficie, justo tras el lanzamiento: $E_i=\\frac{1}{2}m\\,v^2-\\frac{G\\,M_T\\,m}{R_T}$. En la órbita circular de radio $5R_T$: $E_f=-\\frac{G\\,M_T\\,m}{2\\cdot5R_T}=-\\frac{G\\,M_T\\,m}{10R_T}$."
+          "contenido": "La energía mecánica se conserva en ausencia de rozamiento atmosférico. En la superficie, justo después del lanzamiento, el satélite tiene velocidad $v$:\n\n$$E_s=\\frac{1}{2}mv^{2}-\\frac{GM_Tm}{R_T}.$$\n\nEn la órbita circular de radio $r=5R_T$, la energía mecánica es:\n\n$$E_{\\text{orb}}=-\\frac{GM_Tm}{2r}=-\\frac{GM_Tm}{10R_T}.$$"
         },
         {
-          "titulo": "Velocidad mínima",
-          "contenido": "Conservando la energía mecánica: $\\frac{1}{2}v^2-\\frac{G\\,M_T}{R_T}=-\\frac{G\\,M_T}{10R_T}$, luego $v=\\sqrt{\\frac{1{,}8\\,G\\,M_T}{R_T}}$."
+          "titulo": "Velocidad mínima de lanzamiento",
+          "contenido": "Imponiendo $E_s=E_{\\text{orb}}$:\n\n$$\\frac{1}{2}mv^{2}-\\frac{GM_Tm}{R_T}=-\\frac{GM_Tm}{10R_T}.$$\n\nDividiendo por $m$ y despejando:\n\n$$\\frac{1}{2}v^{2}=\\frac{GM_T}{R_T}-\\frac{GM_T}{10R_T}=\\frac{9GM_T}{10R_T}.$$\n\nPor tanto:\n\n$$v=\\sqrt{\\frac{9GM_T}{5R_T}}.$$"
         },
         {
           "titulo": "Cálculo numérico",
-          "contenido": "$v=\\sqrt{\\frac{1{,}8\\cdot6{,}67\\cdot10^{-11}\\cdot5{,}98\\cdot10^{24}}{6{,}38\\cdot10^6}}=1{,}06\\cdot10^4\\,\\text{m/s}$."
+          "contenido": "$$v=\\sqrt{\\frac{9\\cdot6{,}67\\cdot10^{-11}\\cdot5{,}98\\cdot10^{24}}{5\\cdot6{,}38\\cdot10^{6}}}=1{,}06\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-1}.$$"
         }
       ],
-      "resultado": "$v_{\\min}\\approx1{,}06\\cdot10^4\\,\\text{m/s}\\approx10{,}6\\,\\text{km/s}$."
+      "resultado": "$v=1{,}06\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-1}$."
     },
     {
       "numero": 5,
       "titulo": "Velocidad de escape de un planeta con radio y $g$ mitad de los terrestres",
-      "tema": "Campo gravitatorio",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A7. Movimiento planetario, satélites y velocidades características",
       "puntuacion": "1 punto",
-      "enunciado": "Calcule la velocidad de escape desde la superficie de un planeta cuyo radio es la mitad del terrestre y cuya aceleración de la gravedad en su superficie también es la mitad de la terrestre. Datos: $g_0=9{,}80\\,\\text{m}\\,\\text{s}^{-2}$; $R_T=6{,}38\\cdot10^6\\,\\text{m}$.",
+      "enunciado": "Calcule la velocidad de escape desde la superficie de un planeta cuyo radio es la mitad del terrestre y cuya aceleración de la gravedad en su superficie también es la mitad de la terrestre. Datos: $g_0=9{,}80\\,\\text{m}\\,\\text{s}^{-2}$; $R_T=6{,}38\\cdot10^{6}\\,\\text{m}$.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Datos del planeta",
-          "contenido": "$R_p=\\frac{R_T}{2}$ y $g_p=\\frac{g_0}{2}$."
+          "contenido": "El radio del planeta es $R_p=\\frac{R_T}{2}$ y la gravedad en su superficie es $g_p=\\frac{g_0}{2}$."
         },
         {
-          "titulo": "Velocidad de escape",
-          "contenido": "La velocidad de escape es $v_e=\\sqrt{\\frac{2\\,G\\,M_p}{R_p}}=\\sqrt{2\\,g_p\\,R_p}=\\sqrt{\\frac{g_0\\,R_T}{2}}$."
+          "titulo": "Velocidad de escape en términos de $g$ y $R$",
+          "contenido": "La velocidad de escape desde la superficie de un astro es:\n\n$$v_e=\\sqrt{\\frac{2GM}{R}}=\\sqrt{2gR}.$$\n\nPara este planeta:\n\n$$v_e=\\sqrt{2g_pR_p}=\\sqrt{2\\cdot\\frac{g_0}{2}\\cdot\\frac{R_T}{2}}=\\sqrt{\\frac{g_0R_T}{2}}.$$"
         },
         {
           "titulo": "Cálculo numérico",
-          "contenido": "$v_e=\\sqrt{\\frac{9{,}80\\cdot6{,}38\\cdot10^6}{2}}=5{,}59\\cdot10^3\\,\\text{m/s}$."
+          "contenido": "$$v_e=\\sqrt{\\frac{9{,}80\\cdot6{,}38\\cdot10^{6}}{2}}=5{,}59\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
         }
       ],
-      "resultado": "$v_e\\approx5{,}59\\cdot10^3\\,\\text{m/s}\\approx5{,}6\\,\\text{km/s}$."
+      "resultado": "$v_e=5{,}59\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$."
     },
     {
       "numero": 6,
-      "titulo": "Flujo y fem inducida en una bobina con $B(t)=0{,}02+0{,}08\\,t^2$",
-      "tema": "Electromagnetismo",
-      "puntuacion": "2 puntos",
-      "enunciado": "Se dispone de una bobina formada por $30$ espiras de $7\\,\\text{cm}$ de radio que se coloca en el seno de un campo magnético uniforme que forma $30^\\circ$ con el eje de la bobina. Si el módulo del campo varía con el tiempo según $B(t)=0{,}02+0{,}08\\,t^2$ en unidades del S.I.: a) Calcule el flujo magnético a través de la bobina. b) Determine la variación temporal de la fuerza electromotriz inducida y represéntela.",
+      "titulo": "Flujo y fem inducida en una bobina con $B(t)=0{,}02+0{,}08\\,t^{2}$",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Se dispone de una bobina formada por 30 espiras de 7 cm de radio que se coloca en el seno de un campo magnético uniforme que forma 30º con el eje de la bobina. Si el módulo de dicho campo varía con el tiempo de acuerdo con la función $B(t)=0{,}02+0{,}08\\,t^{2}$ (unidades del S.I.):\na) Calcule el flujo magnético a través de la bobina.\nb) Determine la variación temporal de la fuerza electromotriz inducida en la bobina y represéntela.",
       "apartados": [
         {
           "letra": "a",
@@ -170,30 +176,27 @@
       ],
       "resolucion": [
         {
-          "titulo": "Área y ángulo",
-          "contenido": "El radio es $r=0{,}07\\,\\text{m}$, luego $A=\\pi\\,r^2=1{,}54\\cdot10^{-2}\\,\\text{m}^2$. El ángulo entre el campo y la normal al eje de la bobina es $30^\\circ$."
+          "titulo": "Área de cada espira y ángulo entre $\\vec{B}$ y la normal",
+          "contenido": "El eje de la bobina coincide con su vector normal, y el campo forma $30^{\\circ}$ con dicho eje. Por tanto, el ángulo entre $\\vec{B}$ y la normal es $30^{\\circ}$. El área de cada espira es:\n\n$$A=\\pi r^{2}=\\pi(0{,}07)^{2}=1{,}54\\cdot10^{-2}\\,\\text{m}^{2}.$$"
         },
         {
-          "titulo": "Flujo total",
-          "contenido": "$\\Phi=N\\,B\\,A\\cos30^\\circ=30\\,(0{,}02+0{,}08\\,t^2)\\,(1{,}54\\cdot10^{-2})\\,(0{,}866)=8{,}00\\cdot10^{-3}+3{,}20\\cdot10^{-2}\\,t^2\\,\\text{Wb}$."
+          "titulo": "Flujo total a través de las 30 espiras",
+          "contenido": "El flujo total es:\n\n$$\\Phi(t)=NBA\\cos30^{\\circ}=30(0{,}02+0{,}08t^{2})(1{,}54\\cdot10^{-2})\\frac{\\sqrt{3}}{2}.$$\n\nAgrupando el factor numérico:\n\n$$\\Phi(t)=0{,}008+0{,}032t^{2}\\,\\text{Wb}.$$"
         },
         {
-          "titulo": "Fuerza electromotriz inducida",
-          "contenido": "Aplicando la ley de Faraday: $\\varepsilon=-\\frac{d\\Phi}{dt}=-6{,}40\\cdot10^{-2}\\,t\\,\\text{V}$."
-        },
-        {
-          "titulo": "Representación",
-          "contenido": "$\\varepsilon(t)$ es una recta que pasa por el origen y desciende hacia valores negativos con pendiente constante $-6{,}40\\cdot10^{-2}\\,\\text{V/s}$."
+          "titulo": "Derivada del flujo y fuerza electromotriz",
+          "contenido": "Aplicando la ley de Faraday-Henry:\n\n$$\\varepsilon(t)=-\\frac{d\\Phi}{dt}=-0{,}064t\\,\\text{V}.$$\n\nLa fuerza electromotriz es una función lineal del tiempo, con ordenada en el origen nula y pendiente $-0{,}064\\,\\text{V}\\,\\text{s}^{-1}$. Su gráfica es una recta que pasa por el origen y desciende hacia valores negativos al aumentar $t$."
         }
       ],
-      "resultado": "$\\Phi(t)=8{,}00\\cdot10^{-3}+3{,}20\\cdot10^{-2}\\,t^2\\,\\text{Wb}$; $\\varepsilon(t)=-6{,}40\\cdot10^{-2}\\,t\\,\\text{V}$."
+      "resultado": "a) $\\Phi(t)=0{,}008+0{,}032t^{2}\\,\\text{Wb}$.\nb) $\\varepsilon(t)=-0{,}064t\\,\\text{V}$; recta que pasa por el origen con pendiente $-0{,}064\\,\\text{V}\\,\\text{s}^{-1}$."
     },
     {
       "numero": 7,
       "titulo": "Punto de campo eléctrico nulo entre dos cargas y trabajo asociado",
-      "tema": "Campo eléctrico",
-      "puntuacion": "2 puntos",
-      "enunciado": "Dos cargas eléctricas puntuales $q_A=8\\,\\mu\\text{C}$ y $q_B=2\\,\\mu\\text{C}$, situadas sobre el eje $X$, están separadas $60\\,\\text{cm}$. a) Calcule en qué punto entre ambas cargas el campo eléctrico es nulo. Razone si puede anularse fuera de dicho eje. b) Calcule el trabajo necesario para llevar $q_A$ desde su posición original hasta el punto calculado. Dato: $K_0=9{,}00\\cdot10^9\\,\\text{N}\\,\\text{m}^2\\,\\text{C}^{-2}$.",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Dos cargas eléctricas puntuales $q_A=8\\,\\mu\\text{C}$ y $q_B=2\\,\\mu\\text{C}$, situadas sobre el eje X, están separadas 60 cm.\na) Calcule en qué punto entre ambas cargas el valor del campo eléctrico es nulo. Razone si puede anularse en un punto que no esté en dicho eje.\nb) Calcule el trabajo necesario para llevar $q_A$ desde su posición original hasta el punto calculado previamente. Dato: $K_0=9{,}00\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$.",
       "apartados": [
         {
           "letra": "a",
@@ -208,30 +211,31 @@
       ],
       "resolucion": [
         {
-          "titulo": "Planteamiento del punto de campo nulo",
-          "contenido": "Sea $x$ la distancia desde $q_A$ al punto entre las cargas. Para que los campos se anulen: $\\frac{k\\,q_A}{x^2}=\\frac{k\\,q_B}{(0{,}60-x)^2}$. Como $\\frac{q_A}{q_B}=4$, resulta $\\frac{2}{x}=\\frac{1}{0{,}60-x}$, luego $x=0{,}40\\,\\text{m}$ desde $q_A$."
+          "titulo": "Planteamiento del punto de campo nulo entre las cargas",
+          "contenido": "Tomamos $q_A$ en el origen y $q_B$ a $0{,}60\\,\\text{m}$ sobre el eje X positivo. Ambas cargas son positivas, así que en el segmento entre ambas los campos se oponen. Sea $x$ la distancia desde $q_A$ al punto de campo nulo. Igualando módulos:\n\n$$K_0\\frac{q_A}{x^{2}}=K_0\\frac{q_B}{(0{,}60-x)^{2}}.$$\n\nSimplificando:\n\n$$\\frac{8}{x^{2}}=\\frac{2}{(0{,}60-x)^{2}}.$$\n\nTomando la raíz positiva:\n\n$$\\frac{\\sqrt{8}}{x}=\\frac{\\sqrt{2}}{0{,}60-x}\\quad\\Rightarrow\\quad\\frac{2}{x}=\\frac{1}{0{,}60-x}.$$\n\nResolviendo:\n\n$$2(0{,}60-x)=x\\quad\\Rightarrow\\quad1{,}20-2x=x\\quad\\Rightarrow\\quad x=0{,}40\\,\\text{m}.$$\n\nEl punto está a $0{,}40\\,\\text{m}$ de $q_A$ y a $0{,}20\\,\\text{m}$ de $q_B$."
         },
         {
-          "titulo": "¿Puede anularse fuera del eje?",
-          "contenido": "No. Fuera del eje, las componentes perpendiculares de los campos debidas a dos cargas positivas tienen el mismo signo y no pueden cancelarse. Solo puede anularse sobre el eje y entre las cargas."
+          "titulo": "¿Puede haber otro punto de campo nulo fuera del eje?",
+          "contenido": "No. Las dos cargas son positivas y están en el eje X. En cualquier punto fuera del eje, los dos vectores campo tienen componentes perpendiculares al eje del mismo signo, ya que ambos apuntan radialmente alejándose del eje. Esas componentes no pueden cancelarse y, por tanto, la resultante perpendicular al eje no es nula. La única posibilidad de campo nulo es sobre el eje y, además, entre las dos cargas."
         },
         {
           "titulo": "Energía potencial inicial y final",
-          "contenido": "Inicialmente, $U_i=\\frac{k\\,q_A\\,q_B}{0{,}60}=0{,}24\\,\\text{J}$. Al llevar $q_A$ al punto situado a $0{,}20\\,\\text{m}$ de $q_B$, la separación final es $0{,}20\\,\\text{m}$ y $U_f=\\frac{k\\,q_A\\,q_B}{0{,}20}=0{,}72\\,\\text{J}$."
+          "contenido": "Inicialmente, la separación entre $q_A$ y $q_B$ es $0{,}60\\,\\text{m}$:\n\n$$U_i=K_0\\frac{q_Aq_B}{0{,}60}.$$\n\nAl llevar $q_A$ hasta $x=0{,}40\\,\\text{m}$, la nueva separación entre las cargas es $0{,}20\\,\\text{m}$:\n\n$$U_f=K_0\\frac{q_Aq_B}{0{,}20}.$$"
         },
         {
           "titulo": "Trabajo del agente externo",
-          "contenido": "El trabajo externo cuasiestático es $W=U_f-U_i=0{,}72-0{,}24=0{,}48\\,\\text{J}$."
+          "contenido": "El trabajo que debe realizar un agente externo, cuasi-estáticamente, es la variación de energía potencial del sistema:\n\n$$W_{\\text{ext}}=\\Delta U=U_f-U_i=K_0q_Aq_B\\left(\\frac{1}{0{,}20}-\\frac{1}{0{,}60}\\right).$$\n\nSustituyendo:\n\n$$W_{\\text{ext}}=9{,}00\\cdot10^{9}\\cdot8\\cdot10^{-6}\\cdot2\\cdot10^{-6}\\left(5-\\frac{5}{3}\\right)=+0{,}48\\,\\text{J}.$$"
         }
       ],
-      "resultado": "Campo nulo a $0{,}40\\,\\text{m}$ de $q_A$ y $0{,}20\\,\\text{m}$ de $q_B$; no puede anularse fuera del eje; $W=0{,}48\\,\\text{J}$."
+      "resultado": "a) El campo se anula a $0{,}40\\,\\text{m}$ de $q_A$ y a $0{,}20\\,\\text{m}$ de $q_B$, sobre el segmento que une ambas cargas; no puede anularse fuera del eje.\nb) $W_{\\text{ext}}=+0{,}48\\,\\text{J}$."
     },
     {
       "numero": 8,
       "titulo": "Puenting: energías del MAS y masa a partir del periodo",
-      "tema": "Vibraciones y ondas",
-      "puntuacion": "2 puntos",
-      "enunciado": "Dos amigas hacen puenting y, tras lanzarse, oscilan verticalmente. Suponga una cuerda de masa despreciable que se comporta como un muelle y desprecie el rozamiento. a) La primera, de $50\\,\\text{kg}$, realiza 4 oscilaciones en $20\\,\\text{s}$. Si la amplitud es $2{,}8\\,\\text{m}$, determine las energías mecánica, cinética y potencial con la posición vertical y represéntelas. b) Si su amiga tarda $3\\,\\text{s}$ en realizar media oscilación, ¿cuál es su masa?",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía",
+      "puntuacion": "2 puntos (1,25 + 0,75)",
+      "enunciado": "Dos amigas han quedado para hacer puenting y, tras lanzarse, oscilan verticalmente. Suponga que para ello utilizan una cuerda de masa despreciable, que se comporta de forma similar a un muelle. Asimismo, desprecie el rozamiento.\na) La primera de ellas, de 50 kg de masa, realiza 4 oscilaciones en 20 s. Si la amplitud de la oscilación es 2,8 m, determine la variación de las energías mecánica, cinética y potencial con la posición vertical y represéntelas.\nb) Si su amiga, en cambio, tarda 3 s en realizar media oscilación, ¿cuál es su masa?",
       "apartados": [
         {
           "letra": "a",
@@ -246,34 +250,35 @@
       ],
       "resolucion": [
         {
-          "titulo": "Periodo y pulsación",
-          "contenido": "4 oscilaciones en $20\\,\\text{s}$ dan $T=5\\,\\text{s}$ y $\\omega=\\frac{2\\pi}{T}=1{,}26\\,\\text{rad/s}$."
+          "titulo": "Periodo y pulsación del MAS",
+          "contenido": "Cuatro oscilaciones en 20 s implican:\n\n$$T=\\frac{20}{4}=5\\,\\text{s},\\qquad \\omega=\\frac{2\\pi}{T}=\\frac{2\\pi}{5}=1{,}26\\,\\text{rad}\\,\\text{s}^{-1}.$$"
         },
         {
-          "titulo": "Energía mecánica",
-          "contenido": "La constante elástica es $k=m\\,\\omega^2=50\\,(1{,}26)^2=78{,}96\\,\\text{N/m}$. La energía mecánica es $E=\\frac{1}{2}k\\,A^2=309{,}5\\,\\text{J}$ y permanece constante."
+          "titulo": "Energía mecánica total",
+          "contenido": "La constante elástica equivalente es:\n\n$$k=m\\omega^{2}=50\\cdot(1{,}26)^{2}=78{,}96\\,\\text{N}\\,\\text{m}^{-1}.$$\n\nLa energía mecánica total del MAS es:\n\n$$E=\\frac{1}{2}kA^{2}=\\frac{1}{2}\\cdot78{,}96\\cdot(2{,}8)^{2}=309{,}5\\,\\text{J}.$$\n\nEste valor es constante, ya que se desprecia el rozamiento."
         },
         {
-          "titulo": "Energías potencial y cinética",
-          "contenido": "$E_p=\\frac{1}{2}k\\,x^2=39{,}5\\,x^2\\,\\text{J}$; $E_c=E-E_p=309{,}5-39{,}5\\,x^2\\,\\text{J}$. En $x=0$, $E_c=309{,}5\\,\\text{J}$ y $E_p=0$; en $x=\\pm2{,}8\\,\\text{m}$, $E_p=309{,}5\\,\\text{J}$ y $E_c=0$."
+          "titulo": "Energía potencial elástica y energía cinética en función de $x$",
+          "contenido": "Tomando $x$ como desplazamiento respecto a la posición de equilibrio:\n\n$$E_p=\\frac{1}{2}kx^{2}=39{,}48x^{2}.$$\n\nComo $E=E_c+E_p$:\n\n$$E_c=E-E_p=309{,}5-39{,}48x^{2}.$$"
         },
         {
-          "titulo": "Representación",
-          "contenido": "$E$ es una recta horizontal; $E_p$ es una parábola convexa hacia arriba; $E_c$ es una parábola convexa hacia abajo. Se cruzan en $x=\\pm1{,}98\\,\\text{m}$ con $154{,}8\\,\\text{J}$."
+          "titulo": "Representación gráfica",
+          "contenido": "La energía mecánica $E$ es una recta horizontal en $309{,}5\\,\\text{J}$. La energía potencial $E_p$ es una parábola convexa hacia arriba, simétrica respecto a $x=0$, con valor $0$ en el origen y $309{,}5\\,\\text{J}$ en los extremos $x=\\pm2{,}8\\,\\text{m}$. La energía cinética $E_c$ es una parábola convexa hacia abajo, con valor máximo $309{,}5\\,\\text{J}$ en $x=0$ y $0$ en los extremos. Las dos parábolas se cruzan en $x=\\pm\\frac{A}{\\sqrt{2}}=\\pm1{,}98\\,\\text{m}$, con $E_p=E_c=154{,}8\\,\\text{J}$."
         },
         {
           "titulo": "Masa de la amiga",
-          "contenido": "Media oscilación en $3\\,\\text{s}$ implica $T'=6\\,\\text{s}$. Como $T^2\\propto m$ y $k$ no cambia: $m'=50\\left(\\frac{6}{5}\\right)^2=72\\,\\text{kg}$."
+          "contenido": "La amiga tarda $3\\,\\text{s}$ en media oscilación, así que su periodo es $T'=6\\,\\text{s}$. Como la cuerda es la misma, $k$ no cambia. De $T=2\\pi\\sqrt{\\frac{m}{k}}$:\n\n$$m'=\\frac{kT'^{2}}{4\\pi^{2}}=\\frac{78{,}96\\cdot6^{2}}{4\\pi^{2}}=72\\,\\text{kg}.$$"
         }
       ],
-      "resultado": "$E=309{,}5\\,\\text{J}$; $E_p=39{,}5\\,x^2\\,\\text{J}$; $E_c=309{,}5-39{,}5\\,x^2\\,\\text{J}$; masa de la amiga $72\\,\\text{kg}$."
+      "resultado": "a) $E=309{,}5\\,\\text{J}$; $E_p=39{,}48x^{2}\\,\\text{J}$; $E_c=309{,}5-39{,}48x^{2}\\,\\text{J}$; representación con $E$ constante, $E_p$ parabólica creciente y $E_c$ parabólica decreciente.\nb) $m'=72\\,\\text{kg}$."
     },
     {
       "numero": 9,
       "titulo": "Refracción en una piscina: velocidad en el agua y profundidad aparente",
-      "tema": "Óptica",
-      "puntuacion": "2 puntos",
-      "enunciado": "La esquina inferior de una piscina está a $2\\,\\text{m}$ bajo la superficie del agua ($n=1{,}33$). Desde esa esquina se emite un rayo hacia arriba que llega a la superficie formando $40^\\circ$ con la vertical. a) ¿Cuál es la velocidad de la luz en el agua? ¿Qué ángulo forma con la vertical el rayo que sale al aire? b) Si un observador percibe este rayo, ¿a qué profundidad le parece que está la esquina? Dato: $c_0=3{,}00\\cdot10^8\\,\\text{m}\\,\\text{s}^{-1}$.",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias; C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "La esquina inferior de una piscina se encuentra a 2 m bajo la superficie del agua ($n=1{,}33$). Desde esa esquina se emite un rayo de luz hacia arriba, que llega a la superficie del agua formando un ángulo de 40º con la vertical.\na) ¿Cuál es la velocidad de la luz en el agua? ¿Qué ángulo forma con la vertical el rayo que sale del agua?\nb) Si un observador percibe este rayo, ¿a qué profundidad le parece que está la esquina de la piscina? Dato: $c_0=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$.",
       "apartados": [
         {
           "letra": "a",
@@ -289,29 +294,30 @@
       "resolucion": [
         {
           "titulo": "Velocidad de la luz en el agua",
-          "contenido": "$v=\\frac{c_0}{n}=\\frac{3{,}00\\cdot10^8}{1{,}33}=2{,}26\\cdot10^8\\,\\text{m/s}$."
+          "contenido": "$$v=\\frac{c_0}{n}=\\frac{3{,}00\\cdot10^{8}}{1{,}33}=2{,}26\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}.$$"
         },
         {
-          "titulo": "Ángulo de refracción al aire",
-          "contenido": "Por la ley de Snell: $1{,}33\\,\\sin40^\\circ=\\sin\\theta_a$, luego $\\sin\\theta_a=0{,}855$ y $\\theta_a=58{,}8^\\circ$ con la vertical."
+          "titulo": "Ángulo de refracción al salir al aire",
+          "contenido": "El ángulo en el agua respecto a la vertical es el mismo que respecto a la normal a la superficie. Por la ley de Snell:\n\n$$n_{\\text{agua}}\\text{sen}\\,40^{\\circ}=n_{\\text{aire}}\\text{sen}\\,\\theta_{\\text{aire}}.$$\n\nCon $n_{\\text{aire}}\\approx1$:\n\n$$\\text{sen}\\,\\theta_{\\text{aire}}=1{,}33\\,\\text{sen}\\,40^{\\circ}=0{,}855\\quad\\Rightarrow\\quad\\theta_{\\text{aire}}=58{,}7^{\\circ}.$$"
         },
         {
-          "titulo": "Desplazamiento horizontal real",
-          "contenido": "El rayo recorre una distancia horizontal $x=d\\,\\tan40^\\circ=2\\,\\tan40^\\circ=1{,}68\\,\\text{m}$ desde la vertical de la esquina hasta el punto de emergencia."
+          "titulo": "Geometría: desplazamiento horizontal real",
+          "contenido": "El rayo parte de la esquina, a profundidad $d=2\\,\\text{m}$, y llega a la superficie tras recorrer una distancia horizontal:\n\n$$x=d\\tan40^{\\circ}=2\\cdot0{,}839=1{,}68\\,\\text{m}.$$"
         },
         {
-          "titulo": "Profundidad aparente",
-          "contenido": "El observador prolonga el rayo refractado hacia dentro del agua. La profundidad aparente es $d'=\\frac{x}{\\tan58{,}8^\\circ}=1{,}02\\,\\text{m}$, o equivalentemente $d'=\\frac{d\\,\\tan40^\\circ}{\\tan58{,}8^\\circ}$."
+          "titulo": "Profundidad aparente vista por el observador",
+          "contenido": "El observador prolonga el rayo refractado, que forma $58{,}7^{\\circ}$ con la vertical, hacia el interior del agua. La imagen aparente está donde esa prolongación cruza la vertical que pasa por la posición real de la esquina:\n\n$$d'=\\frac{x}{\\tan\\theta_{\\text{aire}}}=\\frac{d\\tan40^{\\circ}}{\\tan58{,}7^{\\circ}}=\\frac{2\\cdot0{,}839}{1{,}65}=1{,}02\\,\\text{m}.$$"
         }
       ],
-      "resultado": "$v=2{,}26\\cdot10^8\\,\\text{m/s}$; $\\theta_a=58{,}8^\\circ$; profundidad aparente $d'\\approx1{,}02\\,\\text{m}$."
+      "resultado": "a) $v=2{,}26\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $\\theta_{\\text{aire}}=58{,}7^{\\circ}$ con la vertical.\nb) Profundidad aparente $d'=1{,}02\\,\\text{m}$."
     },
     {
       "numero": 10,
       "titulo": "Tecnecio-99 metaestable: masa inyectada y tiempo hasta una actividad dada",
-      "tema": "Física nuclear",
-      "puntuacion": "2 puntos",
-      "enunciado": "Se inyecta tecnecio-99 metaestable ($^{99\\text{m}}\\text{Tc}$), con periodo de semidesintegración de $6\\,\\text{h}$, a un paciente. La actividad inicial debe ser $5\\cdot10^8\\,\\text{Bq}$. Calcule: a) la masa de isótopo radiactivo a inyectar; b) el tiempo para que la actividad sea $10^4\\,\\text{Bq}$. Dato: $N_A=6{,}022\\cdot10^{23}\\,\\text{mol}^{-1}$.",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un paciente se somete a una prueba diagnóstica en la que se le inyecta un fármaco que contiene tecnecio-99 metaestable ($^{99}\\text{Tc-m}$), cuyo periodo de semidesintegración es de 6 h. Este se fija en el órgano de interés y se detecta la emisión radiactiva que produce. La actividad inicial de la sustancia inyectada debe ser $5\\cdot10^{8}\\,\\text{Bq}$. Calcule:\na) La masa de isótopo radiactivo que hay que inyectarle.\nb) El tiempo que ha de transcurrir para que la actividad del isótopo sea de $10^{4}\\,\\text{Bq}$. Dato: $N_A=6{,}022\\cdot10^{23}\\,\\text{mol}^{-1}$.",
       "apartados": [
         {
           "letra": "a",
@@ -321,35 +327,36 @@
         {
           "letra": "b",
           "puntuacion": "1 punto",
-          "enunciado": "Tiempo hasta $A=10^4\\,\\text{Bq}$."
+          "enunciado": "Tiempo hasta $A=10^{4}\\,\\text{Bq}$."
         }
       ],
       "resolucion": [
         {
           "titulo": "Constante de desintegración",
-          "contenido": "$T_{1/2}=6\\,\\text{h}=21\\,600\\,\\text{s}$. $\\lambda=\\frac{\\ln 2}{T_{1/2}}=3{,}21\\cdot10^{-5}\\,\\text{s}^{-1}$."
+          "contenido": "El periodo de semidesintegración es $T_{1/2}=6\\,\\text{h}=21600\\,\\text{s}$. La constante de desintegración es:\n\n$$\\lambda=\\frac{\\ln2}{T_{1/2}}=\\frac{0{,}693}{21600}=3{,}21\\cdot10^{-5}\\,\\text{s}^{-1}.$$"
         },
         {
-          "titulo": "Número de núcleos iniciales",
-          "contenido": "$A_0=\\lambda\\,N_0$, luego $N_0=\\frac{A_0}{\\lambda}=\\frac{5\\cdot10^8}{3{,}21\\cdot10^{-5}}=1{,}56\\cdot10^{13}$ núcleos."
+          "titulo": "Número de núcleos y masa correspondiente",
+          "contenido": "Para la actividad inicial:\n\n$$N_0=\\frac{A_0}{\\lambda}=\\frac{5\\cdot10^{8}}{3{,}21\\cdot10^{-5}}=1{,}56\\cdot10^{13}\\ \\text{núcleos}.$$\n\nCon masa molar $M\\approx99\\,\\text{g}\\,\\text{mol}^{-1}$:\n\n$$m=\\frac{N_0M}{N_A}=\\frac{1{,}56\\cdot10^{13}\\cdot99}{6{,}022\\cdot10^{23}}=2{,}56\\cdot10^{-9}\\,\\text{g}=2{,}56\\cdot10^{-12}\\,\\text{kg}.$$"
         },
         {
-          "titulo": "Masa de isótopo",
-          "contenido": "Tomando $M\\approx99\\,\\text{g/mol}$: $m=\\frac{N_0\\,M}{N_A}=\\frac{1{,}56\\cdot10^{13}\\cdot99}{6{,}022\\cdot10^{23}}=2{,}56\\cdot10^{-9}\\,\\text{g}=2{,}56\\,\\text{ng}$."
+          "titulo": "Ley exponencial de desintegración",
+          "contenido": "La actividad varía según:\n\n$$A=A_0e^{-\\lambda t}.$$\n\nPara $A=10^{4}\\,\\text{Bq}$:\n\n$$\\frac{A}{A_0}=\\frac{10^{4}}{5\\cdot10^{8}}=2\\cdot10^{-5}.$$\n\nPor tanto:\n\n$$t=-\\frac{\\ln(2\\cdot10^{-5})}{\\lambda}.$$"
         },
         {
-          "titulo": "Tiempo hasta $A=10^4\\,\\text{Bq}$",
-          "contenido": "$A=A_0\\,e^{-\\lambda\\,t}$, luego $t=\\frac{\\ln(A_0/A)}{\\lambda}=\\frac{\\ln(5\\cdot10^8/10^4)}{3{,}21\\cdot10^{-5}}=3{,}37\\cdot10^5\\,\\text{s}\\approx93{,}7\\,\\text{h}\\approx3{,}90\\,\\text{días}$."
+          "titulo": "Cálculo numérico",
+          "contenido": "$$t=-\\frac{\\ln(2\\cdot10^{-5})}{3{,}21\\cdot10^{-5}}=3{,}37\\cdot10^{5}\\,\\text{s}=93{,}7\\,\\text{h}\\approx3{,}9\\,\\text{días}.$$"
         }
       ],
-      "resultado": "$m\\approx2{,}56\\cdot10^{-9}\\,\\text{g}=2{,}56\\,\\text{ng}$; $t\\approx93{,}7\\,\\text{h}\\approx3{,}90\\,\\text{días}$."
+      "resultado": "a) $m=2{,}56\\cdot10^{-9}\\,\\text{g}=2{,}56\\cdot10^{-12}\\,\\text{kg}$.\nb) $t=93{,}7\\,\\text{h}\\approx3{,}9\\,\\text{días}$."
     },
     {
       "numero": 11,
-      "titulo": "Fisión del $^{235}_{92}\\text{U}$: energía liberada y masa para 25 000 kWh",
-      "tema": "Física nuclear",
-      "puntuacion": "2 puntos",
-      "enunciado": "Considere la fisión $^{235}_{92}\\text{U}+^{1}_{0}\\text{n}\\rightarrow^{89}_{36}\\text{Kr}+^{144}_{56}\\text{Ba}+3\\,^{1}_{0}\\text{n}$. a) Calcule la energía liberada en MeV. b) Calcule la masa de U, en gramos, necesaria para suministrar $25\\,000\\,\\text{kW}\\cdot\\text{h}$. Datos: $m_{\\text{U}}=235{,}043931\\,\\text{u}$; $m_{\\text{Kr}}=88{,}917835\\,\\text{u}$; $m_{\\text{Ba}}=143{,}922955\\,\\text{u}$; $m_n=1{,}008665\\,\\text{u}$; $1\\,\\text{u}=1{,}66\\cdot10^{-27}\\,\\text{kg}$; $c_0=3{,}00\\cdot10^8\\,\\text{m}\\,\\text{s}^{-1}$; $1\\,\\text{eV}=1{,}60\\cdot10^{-19}\\,\\text{J}$; $N_A=6{,}022\\cdot10^{23}\\,\\text{mol}^{-1}$.",
+      "titulo": "Fisión del $^{235}$U: energía liberada y masa para 25 000 kWh",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Considere la siguiente reacción de fisión: $^{235}_{92}\\text{U}+^{1}_{0}\\text{n}\\rightarrow^{89}_{36}\\text{Kr}+^{144}_{56}\\text{Ba}+3\\,^{1}_{0}\\text{n}$.\na) Calcule la energía liberada en el proceso. Exprese el resultado en MeV.\nb) Durante un partido de fútbol se estima que el consumo de energía es próximo a $25\\,000\\,\\text{kW}\\cdot\\text{h}$. Calcule la cantidad de U expresada en gramos que sería necesaria para suministrar esta energía.\nDatos: $m_U=235{,}043931\\,\\text{u}$; $m_{Kr}=88{,}917835\\,\\text{u}$; $m_{Ba}=143{,}922955\\,\\text{u}$; $m_n=1{,}008665\\,\\text{u}$; $1\\,\\text{u}=1{,}66\\cdot10^{-27}\\,\\text{kg}$; $c_0=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $1\\,\\text{eV}=1{,}60\\cdot10^{-19}\\,\\text{J}$; $N_A=6{,}022\\cdot10^{23}\\,\\text{mol}^{-1}$.",
       "apartados": [
         {
           "letra": "a",
@@ -365,22 +372,26 @@
       "resolucion": [
         {
           "titulo": "Defecto de masa",
-          "contenido": "Masa inicial: $m_i=235{,}043931+1{,}008665=236{,}052596\\,\\text{u}$. Masa final: $m_f=88{,}917835+143{,}922955+3\\,(1{,}008665)=235{,}866785\\,\\text{u}$. Defecto: $\\Delta m=0{,}185811\\,\\text{u}$."
+          "contenido": "Masa total inicial:\n\n$$m_{\\text{inicial}}=m_U+m_n=235{,}043931+1{,}008665=236{,}052596\\,\\text{u}.$$\n\nMasa total final:\n\n$$m_{\\text{final}}=m_{Kr}+m_{Ba}+3m_n=88{,}917835+143{,}922955+3\\cdot1{,}008665=235{,}866785\\,\\text{u}.$$\n\nDefecto de masa:\n\n$$\\Delta m=m_{\\text{inicial}}-m_{\\text{final}}=0{,}185811\\,\\text{u}.$$"
         },
         {
-          "titulo": "Energía liberada",
-          "contenido": "$E=\\Delta m\\cdot931{,}5\\approx173\\,\\text{MeV}$. En julios: $E\\approx2{,}78\\cdot10^{-11}\\,\\text{J}$ por fisión."
+          "titulo": "Conversión a kg y energía liberada",
+          "contenido": "$$\\Delta m=0{,}185811\\cdot1{,}66\\cdot10^{-27}=3{,}084\\cdot10^{-28}\\,\\text{kg}.$$\n\n$$E=\\Delta m\\,c_0^{2}=3{,}084\\cdot10^{-28}\\cdot(3{,}00\\cdot10^{8})^{2}=2{,}77\\cdot10^{-11}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Conversión a MeV",
+          "contenido": "$$E=\\frac{2{,}77\\cdot10^{-11}}{1{,}60\\cdot10^{-19}}\\,\\text{eV}\\cdot10^{-6}=173\\,\\text{MeV}.$$"
         },
         {
           "titulo": "Energía total y número de fisiones",
-          "contenido": "$25\\,000\\,\\text{kW}\\cdot\\text{h}=25\\,000\\cdot3{,}6\\cdot10^6=9{,}00\\cdot10^{10}\\,\\text{J}$. Número de fisiones: $N=\\frac{9{,}00\\cdot10^{10}}{2{,}78\\cdot10^{-11}}=3{,}24\\cdot10^{21}$."
+          "contenido": "La energía del partido es:\n\n$$E_{\\text{total}}=25\\,000\\,\\text{kW}\\cdot\\text{h}=25\\,000\\cdot3{,}6\\cdot10^{6}=9{,}0\\cdot10^{10}\\,\\text{J}.$$\n\nEl número de fisiones necesarias es:\n\n$$N=\\frac{9{,}0\\cdot10^{10}}{2{,}77\\cdot10^{-11}}=3{,}25\\cdot10^{21}.$$"
         },
         {
           "titulo": "Masa de uranio",
-          "contenido": "$m=\\frac{N\\,M}{N_A}=\\frac{3{,}24\\cdot10^{21}\\cdot235}{6{,}022\\cdot10^{23}}=1{,}27\\,\\text{g}$."
+          "contenido": "Cada fisión consume un núcleo de $^{235}\\text{U}$. La masa correspondiente es:\n\n$$m=\\frac{N}{N_A}M_U=\\frac{3{,}25\\cdot10^{21}}{6{,}022\\cdot10^{23}}\\cdot235{,}043931=1{,}27\\,\\text{g}.$$"
         }
       ],
-      "resultado": "$E\\approx173\\,\\text{MeV}$ por fisión; masa de U-235 necesaria $\\approx1{,}27\\,\\text{g}$."
+      "resultado": "a) $E=173\\,\\text{MeV}$ por fisión.\nb) $m=1{,}27\\,\\text{g}$ de $^{235}\\text{U}$."
     }
   ]
 }

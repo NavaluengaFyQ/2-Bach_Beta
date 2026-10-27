@@ -1,0 +1,422 @@
+{
+  "id": "fisica-madrid-2023-extraordinaria",
+  "codigo": "EXA.FIS.MAD.2023.EXT.SOL",
+  "comunidad": "Madrid",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2023,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen oficial de Física de la PAU de Madrid, convocatoria Extraordinaria 2023, con diez problemas resueltos de gravitación, ondas, electricidad, óptica, física nuclear, magnetismo y física cuántica.",
+  "objetivo": "Evaluar la aplicación de los principios de la Física a problemas de gravitación, ondas, campo eléctrico y magnético, óptica, radiactividad y efecto fotoeléctrico, manteniendo el rigor matemático y la interpretación física de los resultados.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "El examen consta de diez preguntas. El alumno debe responder a cinco preguntas cualesquiera a elegir entre las diez propuestas. Cada pregunta se valora sobre 2 puntos (1 punto por apartado). Tiempo: 90 minutos."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $M_T=5{,}97\\cdot10^{24}\\,\\text{kg}$; $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$; $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $n_{\\text{aire}}=1$; $\\tau=109{,}7\\,\\text{min}$ para $^{18}\\text{F}$; $M_F=18\\,\\text{g}\\,\\text{mol}^{-1}$; $N_A=6{,}02\\cdot10^{23}\\,\\text{mol}^{-1}$; $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$; $e=1{,}6\\cdot10^{-19}\\,\\text{C}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "UPM-Sat2: altura, energía de puesta en órbita y aceleración",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A2. Leyes de Kepler y relación con la gravitación; A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "El satélite UPM-Sat2 se lanzó el día 3 de septiembre de 2020 a una órbita circular alrededor de la Tierra con un período de $5710\\,\\text{s}$. Sabiendo que el satélite tiene una masa de $50\\,\\text{kg}$, calcule: a) La altura a la que orbita y la energía que hubo que transmitirle para ponerlo en órbita desde la superficie de la Tierra. b) La velocidad y la aceleración centrípeta en su órbita. Datos: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $M_T=5{,}97\\cdot10^{24}\\,\\text{kg}$; $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Altura orbital y energía de puesta en órbita."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad y aceleración centrípeta."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Radio de la órbita (3ª ley de Kepler)",
+          "contenido": "Para una órbita circular, la tercera ley de Kepler relaciona el período con el radio orbital:\n\n$$\\frac{4\\pi^{2}}{T^{2}}=\\frac{GM_T}{r^{3}}.$$\n\nDespejando $r$:\n\n$$r=\\left(\\frac{GM_T T^{2}}{4\\pi^{2}}\\right)^{1/3}=\\left(\\frac{6{,}67\\cdot10^{-11}\\cdot5{,}97\\cdot10^{24}\\cdot5710^{2}}{4\\pi^{2}}\\right)^{1/3}=6{,}90\\cdot10^{6}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Altura sobre la superficie",
+          "contenido": "La altura sobre la superficie terrestre es:\n\n$$h=r-R_T=6{,}90\\cdot10^{6}-6{,}37\\cdot10^{6}=5{,}3\\cdot10^{5}\\,\\text{m}.$$\n\nResultado: $h\\approx5{,}3\\cdot10^{5}\\,\\text{m}$."
+        },
+        {
+          "titulo": "Energía mecánica en órbita y en superficie",
+          "contenido": "En la órbita circular, la energía mecánica es:\n\n$$E_{\\text{orb}}=-\\frac{GM_Tm}{2r}.$$\n\nEn la superficie terrestre, en reposo:\n\n$$E_{\\text{sup}}=-\\frac{GM_Tm}{R_T}.$$"
+        },
+        {
+          "titulo": "Energía aportada",
+          "contenido": "La energía que hay que transmitirle es la diferencia de energía mecánica:\n\n$$W_{\\text{ext}}=E_{\\text{orb}}-E_{\\text{sup}}=GM_Tm\\left(\\frac{1}{R_T}-\\frac{1}{2r}\\right)=1{,}68\\cdot10^{10}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Velocidad orbital",
+          "contenido": "La velocidad orbital se obtiene de igualar la fuerza gravitatoria a la fuerza centrípeta:\n\n$$v=\\sqrt{\\frac{GM_T}{r}}=\\sqrt{\\frac{6{,}67\\cdot10^{-11}\\cdot5{,}97\\cdot10^{24}}{6{,}90\\cdot10^{6}}}=7{,}59\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Aceleración centrípeta",
+          "contenido": "La aceleración centrípeta en la órbita es:\n\n$$a_c=\\frac{v^{2}}{r}=\\frac{GM_T}{r^{2}}=8{,}35\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        }
+      ],
+      "resultado": "$h\\approx5{,}3\\cdot10^{5}\\,\\text{m}$; $W_{\\text{ext}}\\approx1{,}68\\cdot10^{10}\\,\\text{J}$; $v\\approx7{,}59\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$; $a_c\\approx8{,}35\\,\\text{m}\\,\\text{s}^{-2}$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Onda transversal sentido -x: amplitud, frecuencia y elongación",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Por una cuerda dispuesta a lo largo del eje $x$ viaja una onda armónica transversal con velocidad de propagación $\\vec v=-400\\,\\hat i\\,\\text{m}\\,\\text{s}^{-1}$. La onda produce en la cuerda una aceleración máxima de $2\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-2}$. En un instante cualquiera, los puntos con elongación nula se repiten cada $0{,}4\\,\\text{m}$ a lo largo del eje $x$. a) Determine la frecuencia y la amplitud de la onda. b) Si en el instante inicial y en el origen de coordenadas la elongación es $+1\\,\\text{mm}$ y la velocidad es positiva, calcule la elongación en $x=1{,}2\\,\\text{m}$ para $t=2\\,\\text{s}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Frecuencia y amplitud."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Elongación en $x=1{,}2\\,\\text{m}$, $t=2\\,\\text{s}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Longitud de onda y frecuencia",
+          "contenido": "Los puntos con elongación nula se repiten cada media longitud de onda:\n\n$$\\frac{\\lambda}{2}=0{,}4\\,\\text{m}\\Rightarrow\\lambda=0{,}8\\,\\text{m}.$$\n\nCon $v=400\\,\\text{m}\\,\\text{s}^{-1}$:\n\n$$f=\\frac{v}{\\lambda}=\\frac{400}{0{,}8}=500\\,\\text{Hz}.$$"
+        },
+        {
+          "titulo": "Amplitud",
+          "contenido": "La aceleración máxima es $a_{\\max}=A\\omega^{2}$, con $\\omega=2\\pi f=1000\\pi\\,\\text{rad}\\,\\text{s}^{-1}$:\n\n$$A=\\frac{a_{\\max}}{\\omega^{2}}=\\frac{2\\cdot10^{4}}{(1000\\pi)^{2}}=2{,}03\\cdot10^{-3}\\,\\text{m}\\approx2{,}0\\,\\text{mm}.$$"
+        },
+        {
+          "titulo": "Forma de la onda (sentido -x)",
+          "contenido": "Para una onda que viaja en sentido $-x$:\n\n$$y(x,t)=A\\,\\text{sen}(\\omega t+kx+\\varphi),$$\n\ncon $k=\\frac{2\\pi}{\\lambda}=2{,}5\\pi\\,\\text{rad}\\,\\text{m}^{-1}$."
+        },
+        {
+          "titulo": "Determinación de la fase inicial",
+          "contenido": "En $t=0$, $x=0$: $y=+1\\,\\text{mm}=A\\,\\text{sen}\\varphi$ y $v=A\\omega\\cos\\varphi>0$. Por tanto $\\varphi$ está en el primer cuadrante:\n\n$$\\text{sen}\\varphi=\\frac{1\\cdot10^{-3}}{2{,}03\\cdot10^{-3}}=0{,}493,\\qquad\\varphi\\approx0{,}516\\,\\text{rad}.$$"
+        },
+        {
+          "titulo": "Elongación en $x=1{,}2\\,\\text{m}$, $t=2\\,\\text{s}$",
+          "contenido": "El argumento de la sinusoide es:\n\n$$\\omega t+kx+\\varphi=1000\\pi\\cdot2+2{,}5\\pi\\cdot1{,}2+0{,}516=2003\\pi+0{,}516.$$\n\nMódulo $2\\pi$ equivale a $\\pi+0{,}516$. Por tanto:\n\n$$y=A\\,\\text{sen}(\\pi+\\varphi)=-A\\,\\text{sen}\\varphi=-1{,}0\\cdot10^{-3}\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$f=500\\,\\text{Hz}$; $A\\approx2{,}0\\,\\text{mm}$; $y(1{,}2\\,\\text{m},2\\,\\text{s})=-1{,}0\\,\\text{mm}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Carga puntual: localización y trabajo de traer una segunda carga",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una carga situada en un punto del plano $xy$ da lugar a un potencial de $54\\,\\text{V}$ y a un campo eléctrico $\\vec E=-180\\,\\hat j\\,\\text{V}\\,\\text{m}^{-1}$ en el origen de coordenadas. a) Determine el valor de la carga y su posición. b) Se trae una segunda carga desde el infinito hasta el origen de coordenadas, proceso en el que la fuerza ejercida por la primera carga realiza un trabajo de $-270\\,\\text{nJ}$. Determine el valor de la segunda carga. Dato: $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Valor y posición de la primera carga."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Valor de la segunda carga."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Posición y signo de la carga",
+          "contenido": "El campo en el origen apunta en $-\\hat j$. Si la carga es positiva, el campo apunta desde la carga hacia el origen; por tanto la carga está en el eje $y$ positivo: $(0,d)$. El potencial es positivo, $54\\,\\text{V}$, luego $Q>0$."
+        },
+        {
+          "titulo": "Cálculo de $d$ y $Q$",
+          "contenido": "En el origen:\n\n$$E=\\frac{KQ}{d^{2}}=180\\,\\text{V}\\,\\text{m}^{-1},\\qquad V=\\frac{KQ}{d}=54\\,\\text{V}.$$\n\nDividiendo:\n\n$$\\frac{E}{V}=\\frac{1}{d}=\\frac{180}{54}\\Rightarrow d=0{,}30\\,\\text{m}.$$\n\n$$Q=\\frac{Vd}{K}=\\frac{54\\cdot0{,}30}{9\\cdot10^{9}}=1{,}8\\cdot10^{-9}\\,\\text{C}.$$"
+        },
+        {
+          "titulo": "Trabajo de la fuerza electrostática y energía potencial",
+          "contenido": "El trabajo de la fuerza electrostática al traer $q_2$ desde el infinito al origen es:\n\n$$W_{\\text{el}}=-\\Delta U=-(q_2V_{\\text{origen}}-q_2V_{\\infty})=-q_2V_{\\text{origen}}.$$\n\nCon $W_{\\text{el}}=-270\\,\\text{nJ}$:\n\n$$-270\\cdot10^{-9}=-q_2\\cdot54\\Rightarrow q_2=\\frac{270\\cdot10^{-9}}{54}=5{,}0\\cdot10^{-9}\\,\\text{C}.$$"
+        }
+      ],
+      "resultado": "$Q=1{,}8\\cdot10^{-9}\\,\\text{C}$ en $(0;0{,}30\\,\\text{m})$; $q_2=5{,}0\\cdot10^{-9}\\,\\text{C}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Estanque: índice del agua y posición del foco",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias; C5. Naturaleza de la luz y óptica física básica",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un observador está situado al borde de un estanque de profundidad $H=2\\,\\text{m}$. Su visual está a una altura $H'=1{,}6\\,\\text{m}$ sobre la superficie del agua. En el fondo del estanque hay un foco puntual de luz. El observador lo ve cuando mira hacia el punto A de la superficie a una distancia $d=1{,}2\\,\\text{m}$ del borde. Calcule: a) El índice de refracción del agua del estanque si la longitud de onda de la luz del foco vale $375\\,\\text{nm}$ en ella y $500\\,\\text{nm}$ en el aire. b) La distancia $D$ del foco a la pared del estanque. Datos: $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $n_{\\text{aire}}=1$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Índice de refracción del agua."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Distancia $D$ del foco al borde."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Relación entre longitudes de onda e índices",
+          "contenido": "La frecuencia no cambia al pasar de un medio a otro; solo cambian la velocidad y la longitud de onda:\n\n$$\\lambda_{\\text{aire}}n_{\\text{aire}}=\\lambda_{\\text{agua}}n_{\\text{agua}}.$$\n\nCon $n_{\\text{aire}}\\approx1$:\n\n$$n_{\\text{agua}}=\\frac{\\lambda_{\\text{aire}}}{\\lambda_{\\text{agua}}}=\\frac{500}{375}=1{,}33.$$"
+        },
+        {
+          "titulo": "Geometría: ángulo de la visual en el aire",
+          "contenido": "El ángulo de la visual respecto a la normal vertical es:\n\n$$\\tan\\theta_{\\text{aire}}=\\frac{d}{H'}=\\frac{1{,}2}{1{,}6}=0{,}75\\Rightarrow\\theta_{\\text{aire}}=36{,}87^{\\circ},\\quad\\text{sen}\\theta_{\\text{aire}}=0{,}60.$$"
+        },
+        {
+          "titulo": "Refracción en A: ángulo del rayo dentro del agua",
+          "contenido": "Aplicando la ley de Snell de aire a agua:\n\n$$n_{\\text{aire}}\\text{sen}\\theta_{\\text{aire}}=n_{\\text{agua}}\\text{sen}\\theta_{\\text{agua}}\\Rightarrow\\text{sen}\\theta_{\\text{agua}}=\\frac{0{,}60}{1{,}33}=0{,}45.$$\n\nPor tanto $\\tan\\theta_{\\text{agua}}=0{,}50$."
+        },
+        {
+          "titulo": "Posición horizontal del foco",
+          "contenido": "Dentro del agua, la distancia horizontal desde $A$ hasta el foco es:\n\n$$H\\tan\\theta_{\\text{agua}}=2\\cdot0{,}50=1{,}0\\,\\text{m}.$$\n\nEl foco está al otro lado de $A$ respecto del observador:\n\n$$D=d+H\\tan\\theta_{\\text{agua}}=1{,}2+1{,}0=2{,}2\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$n_{\\text{agua}}=1{,}33$; $D=2{,}2\\,\\text{m}$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Derrame de F-18: masa y tiempo de seguridad",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares; D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "En un laboratorio de preparación de radiofármacos se rompe accidentalmente una ampolla de una solución que contenía $^{18}\\text{F}$ con una actividad de $18{,}5\\,\\text{MBq}$. a) Calcule la masa de $^{18}\\text{F}$ derramada. b) Determine el tiempo que ha de transcurrir hasta que la actividad se reduzca a $37\\,\\text{kBq}$. Datos: Vida media del $^{18}\\text{F}$, $\\tau=109{,}7\\,\\text{min}$; masa molar del $^{18}\\text{F}$, $M_F=18\\,\\text{g}\\,\\text{mol}^{-1}$; $N_A=6{,}02\\cdot10^{23}\\,\\text{mol}^{-1}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Masa derramada."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Tiempo hasta $37\\,\\text{kBq}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Constante de desintegración",
+          "contenido": "Se interpreta $\\tau$ como vida media estadística, de modo que:\n\n$$\\lambda=\\frac{1}{\\tau}=\\frac{1}{109{,}7\\cdot60}=1{,}52\\cdot10^{-4}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Número de átomos y masa",
+          "contenido": "La actividad inicial es $A_0=\\lambda N$:\n\n$$N=\\frac{A_0}{\\lambda}=\\frac{18{,}5\\cdot10^{6}}{1{,}52\\cdot10^{-4}}=1{,}22\\cdot10^{11}.$$\n\nEl número de moles es:\n\n$$n=\\frac{N}{N_A}=\\frac{1{,}22\\cdot10^{11}}{6{,}02\\cdot10^{23}}=2{,}03\\cdot10^{-13}\\,\\text{mol}.$$\n\nLa masa derramada es:\n\n$$m=nM_F=2{,}03\\cdot10^{-13}\\cdot18=3{,}65\\cdot10^{-12}\\,\\text{g}=3{,}65\\cdot10^{-15}\\,\\text{kg}.$$"
+        },
+        {
+          "titulo": "Tiempo para reducir la actividad",
+          "contenido": "La actividad evoluciona según $A=A_0e^{-\\lambda t}$:\n\n$$t=\\frac{1}{\\lambda}\\ln\\frac{A_0}{A}=\\tau\\ln\\frac{18{,}5\\cdot10^{6}}{37\\cdot10^{3}}.$$\n\nEl cociente es $500$, por lo que:\n\n$$t=109{,}7\\ln500=6{,}82\\cdot10^{2}\\,\\text{min}=11{,}4\\,\\text{h}.$$"
+        }
+      ],
+      "resultado": "$m\\approx3{,}65\\cdot10^{-15}\\,\\text{kg}$; $t\\approx6{,}82\\cdot10^{2}\\,\\text{min}\\approx11{,}4\\,\\text{h}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Aproximación a Fomalhaut II: distancias al planeta y al satélite",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A1. Ley de la Gravitación Universal y superposición vectorial; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "En su aproximación al planeta Fomalhaut II, el astronauta Rocannon avista Fomalhautillo, satélite natural de Fomalhaut II, según un ángulo $\\alpha=53{,}13^{\\circ}$ con respecto de la radial hacia el planeta (eje $y$). La fuerza total que estos dos cuerpos ejercen sobre Rocannon y su nave, cuya masa conjunta asciende a $8000\\,\\text{kg}$, vale en ese momento $\\vec F=(9{,}5\\,\\hat i-66{,}4\\,\\hat j)\\,\\text{N}$. a) ¿A qué distancia $R'$ se encuentra Rocannon del satélite? b) ¿A qué distancia $R$ se encuentra Rocannon del planeta? Datos: masa del planeta, $M=4\\cdot10^{23}\\,\\text{kg}$; masa del satélite, $M'=2\\cdot10^{20}\\,\\text{kg}$; $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Distancia al satélite."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Distancia al planeta."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Descomposición de la fuerza gravitatoria",
+          "contenido": "La nave está sobre el planeta; la fuerza hacia el planeta es vertical y la fuerza hacia el satélite forma $53{,}13^{\\circ}$ con la vertical. Con $\\text{sen}\\alpha=0{,}8$ y $\\cos\\alpha=0{,}6$:\n\n$$F_x=\\frac{GM'm}{R'^{2}}\\text{sen}\\alpha=9{,}5\\,\\text{N},$$\n\n$$F_y=-\\frac{GMm}{R^{2}}-\\frac{GM'm}{R'^{2}}\\cos\\alpha=-66{,}4\\,\\text{N}.$$"
+        },
+        {
+          "titulo": "Distancia al satélite",
+          "contenido": "De la componente horizontal:\n\n$$\\frac{GM'm}{R'^{2}}=\\frac{F_x}{\\text{sen}\\alpha}=\\frac{9{,}5}{0{,}8}=11{,}875\\,\\text{N}.$$\n\n$$R'=\\sqrt{\\frac{GM'm}{11{,}875}}=\\sqrt{\\frac{6{,}67\\cdot10^{-11}\\cdot2\\cdot10^{20}\\cdot8000}{11{,}875}}=3{,}0\\cdot10^{6}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Distancia al planeta",
+          "contenido": "La componente vertical debida al satélite es $11{,}875\\cos\\alpha=7{,}125\\,\\text{N}$. Por tanto:\n\n$$\\frac{GMm}{R^{2}}=66{,}4-7{,}125=59{,}275\\,\\text{N}.$$\n\n$$R=\\sqrt{\\frac{GMm}{59{,}275}}=\\sqrt{\\frac{6{,}67\\cdot10^{-11}\\cdot4\\cdot10^{23}\\cdot8000}{59{,}275}}=6{,}0\\cdot10^{7}\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$R'=3{,}0\\cdot10^{6}\\,\\text{m}$; $R=6{,}0\\cdot10^{7}\\,\\text{m}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Dos focos sonoros: cociente de potencias e intensidad",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Dos focos sonoros puntuales $F_1$ y $F_2$ se encuentran respectivamente situados en los puntos $(-6,0)\\,\\text{m}$ y $(6,0)\\,\\text{m}$ del plano $xy$. Se sabe que en el punto $(2,0)\\,\\text{m}$ la intensidad debida a cada foco vale lo mismo, y que en el punto $(0,2)\\,\\text{m}$ el nivel de intensidad sonora es de $80\\,\\text{dB}$. Determine: a) El cociente entre la potencia del foco $F_1$ y la del foco $F_2$. b) La potencia del foco $F_1$ y la intensidad que se registraría en el punto $(0,8)\\,\\text{m}$ si solamente se recibiesen ondas del foco $F_1$. Dato: $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Cociente $P_1/P_2$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Potencia $P_1$ e intensidad en $(0,8)$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancias en el punto $(2,0)$",
+          "contenido": "Las distancias a los focos son:\n\n$$r_1=8\\,\\text{m},\\qquad r_2=4\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Cociente de potencias",
+          "contenido": "La igualdad de intensidades en $(2,0)$ implica:\n\n$$I_1=I_2\\Rightarrow\\frac{P_1}{4\\pi r_1^{2}}=\\frac{P_2}{4\\pi r_2^{2}}\\Rightarrow\\frac{P_1}{P_2}=\\frac{r_1^{2}}{r_2^{2}}=\\frac{64}{16}=4.$$"
+        },
+        {
+          "titulo": "Distancias en $(0,2)$",
+          "contenido": "Las distancias son iguales por simetría:\n\n$$r_1=r_2=\\sqrt{6^{2}+2^{2}}=\\sqrt{40}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Intensidad total y potencias",
+          "contenido": "A $80\\,\\text{dB}$:\n\n$$I_{\\text{tot}}=I_0 10^{80/10}=10^{-12}\\cdot10^{8}=10^{-4}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nLa intensidad total es la suma incoherente de las dos contribuciones:\n\n$$I_{\\text{tot}}=\\frac{P_1+P_2}{4\\pi r^{2}}.$$\n\nCon $P_1=4P_2$:\n\n$$P_2=\\frac{I_{\\text{tot}}4\\pi r^{2}}{5}=\\frac{10^{-4}\\cdot4\\pi\\cdot40}{5}=1{,}01\\cdot10^{-2}\\,\\text{W}.$$\n\n$$P_1=4P_2=4{,}02\\cdot10^{-2}\\,\\text{W}.$$"
+        },
+        {
+          "titulo": "Intensidad en $(0,8)$ sólo de $F_1$",
+          "contenido": "La distancia a $F_1$ es:\n\n$$r_1=\\sqrt{6^{2}+8^{2}}=10\\,\\text{m}.$$\n\nLa intensidad debida únicamente a $F_1$ es:\n\n$$I_1=\\frac{P_1}{4\\pi r_1^{2}}=\\frac{4{,}02\\cdot10^{-2}}{4\\pi\\cdot100}=3{,}20\\cdot10^{-5}\\,\\text{W}\\,\\text{m}^{-2}.$$"
+        }
+      ],
+      "resultado": "$P_1/P_2=4$; $P_1\\approx4{,}02\\cdot10^{-2}\\,\\text{W}$; $I(0,8)\\approx3{,}20\\cdot10^{-5}\\,\\text{W}\\,\\text{m}^{-2}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Dos hilos paralelos al eje y: corriente del segundo y fuerza sobre electrón",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Dos hilos rectilíneos indefinidos, paralelos al eje $y$, están respectivamente situados en $x=-0{,}1\\,\\text{m}$ y $x=0{,}1\\,\\text{m}$. El primero de ellos conduce una corriente de $10\\,\\text{A}$ en el sentido positivo del eje $y$. Si un electrón viaja en línea recta con velocidad $\\vec v=2\\cdot10^{6}\\,\\hat j\\,\\text{m}\\,\\text{s}^{-1}$ a lo largo de $x=0{,}4\\,\\text{m}$ sin desviarse, calcule: a) La intensidad de corriente en el segundo hilo, especificando su sentido. b) La fuerza que experimentaría un electrón que pasara por el origen de coordenadas con velocidad $\\vec v=2\\cdot10^{6}\\,\\hat j\\,\\text{m}\\,\\text{s}^{-1}$. Datos: $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$; $e=1{,}6\\cdot10^{-19}\\,\\text{C}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Intensidad y sentido del segundo hilo."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Fuerza sobre electrón en el origen."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Condición de no desviación",
+          "contenido": "Para que el electrón no se desvíe, la fuerza magnética neta debe ser nula. Como solo actúa el campo magnético, debe cumplirse $\\vec B=0$ en $x=0{,}4\\,\\text{m}$."
+        },
+        {
+          "titulo": "Campo del primer hilo en $x=0{,}4$",
+          "contenido": "El hilo 1 está en $x=-0{,}1\\,\\text{m}$ y el punto está a $0{,}5\\,\\text{m}$. Con corriente en $+y$, el campo en ese punto es $-\\hat k$:\n\n$$B_1=\\frac{\\mu_0 I_1}{2\\pi r}=\\frac{4\\pi\\cdot10^{-7}\\cdot10}{2\\pi\\cdot0{,}5}=4\\cdot10^{-6}\\,\\text{T}.$$"
+        },
+        {
+          "titulo": "Campo necesario del segundo hilo",
+          "contenido": "El hilo 2 debe producir $+4\\cdot10^{-6}\\,\\text{T}$ en $\\hat k$ para anular el campo anterior. Como está en $x=0{,}1\\,\\text{m}$ y el punto está a su derecha, la corriente debe circular en sentido $-y$:\n\n$$B_2=\\frac{\\mu_0 I_2}{2\\pi\\cdot0{,}3}=4\\cdot10^{-6}\\Rightarrow I_2=6\\,\\text{A}.$$"
+        },
+        {
+          "titulo": "Campo magnético en el origen",
+          "contenido": "En el origen, el hilo 1 produce:\n\n$$B_1=2\\cdot10^{-5}\\,\\text{T}\\quad\\text{en }-\\hat k.$$\n\nEl hilo 2 produce:\n\n$$B_2=1{,}2\\cdot10^{-5}\\,\\text{T}\\quad\\text{en }-\\hat k.$$\n\nEl campo total es:\n\n$$\\vec B=-3{,}2\\cdot10^{-5}\\,\\hat k\\,\\text{T}.$$"
+        },
+        {
+          "titulo": "Fuerza de Lorentz sobre el electrón",
+          "contenido": "La fuerza magnética es:\n\n$$\\vec F=q\\vec v\\times\\vec B=-e(2\\cdot10^{6}\\hat j)\\times(-3{,}2\\cdot10^{-5}\\hat k)=1{,}02\\cdot10^{-17}\\hat i\\,\\text{N}.$$"
+        }
+      ],
+      "resultado": "$I_2=6\\,\\text{A}$ en sentido $-y$; $\\vec F=1{,}02\\cdot10^{-17}\\hat i\\,\\text{N}$."
+    },
+    {
+      "numero": 9,
+      "titulo": "Lente y aumento lateral: imagen real y virtual",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un objeto situado $30\\,\\text{cm}$ a la izquierda de una lente produce una imagen con un aumento lateral de $-2$. a) Obtenga la potencia de la lente. b) ¿A qué distancia de la lente debe colocarse el objeto para que el aumento pase a ser $+2$? Efectúe el trazado de rayos correspondiente a esta nueva situación.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Potencia de la lente."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Distancia para aumento $+2$ y trazado de rayos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancias y aumento",
+          "contenido": "La distancia objeto es $s=30\\,\\text{cm}$. Para $M=-2$, la imagen es real e invertida, con $s'=60\\,\\text{cm}$."
+        },
+        {
+          "titulo": "Distancia focal y potencia",
+          "contenido": "Aplicando la ecuación de la lente:\n\n$$\\frac{1}{f}=\\frac{1}{s}+\\frac{1}{s'}=\\frac{1}{30}+\\frac{1}{60}=\\frac{1}{20}\\,\\text{cm}^{-1}\\Rightarrow f=20\\,\\text{cm}=0{,}20\\,\\text{m}.$$\n\nLa potencia es:\n\n$$P=\\frac{1}{f}=5\\,\\text{D}.$$"
+        },
+        {
+          "titulo": "Imagen virtual con $M=+2$",
+          "contenido": "Para $M=+2$ se tiene $s'=-2s$. Sustituyendo en la ecuación de la lente:\n\n$$\\frac{1}{f}=\\frac{1}{s}+\\frac{1}{s'}=\\frac{1}{s}-\\frac{1}{2s}=\\frac{1}{2s}.$$\n\nPor tanto:\n\n$$s=2f=10\\,\\text{cm}.$$\n\nEl objeto debe colocarse a $10\\,\\text{cm}$ a la izquierda de la lente, entre la lente y su foco objeto."
+        },
+        {
+          "titulo": "Trazado de rayos (lente convergente, $M=+2$)",
+          "contenido": "Con el objeto entre la lente y el foco objeto: el rayo paralelo al eje refracta pasando por el foco imagen; el rayo dirigido al centro óptico no se desvía; el rayo que parece provenir del foco objeto emerge paralelo al eje. Las prolongaciones de los rayos refractados convergen en el lado del objeto, formando una imagen virtual, derecha y de doble tamaño: el caso de la lente de aumento o lupa."
+        }
+      ],
+      "resultado": "$P=5\\,\\text{D}$; nueva distancia $s=10\\,\\text{cm}$; imagen virtual, derecha y de aumento $+2$."
+    },
+    {
+      "numero": 10,
+      "titulo": "Efecto fotoeléctrico: trabajo de extracción y energía recibida",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una placa metálica es irradiada con luz de $400\\,\\text{nm}$ de longitud de onda. La máxima corriente eléctrica que llega a obtenerse con ello, debido al efecto fotoeléctrico, es de $15\\,\\text{nA}$. a) Si el potencial de frenado que anula la corriente anterior es de $1\\,\\text{V}$, obtenga el trabajo de extracción del metal. b) Asumiendo que cada fotón incidente genera un fotoelectrón, calcule la energía que recibe la placa en el transcurso de $1\\,\\text{hora}$. Datos: $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $e=1{,}6\\cdot10^{-19}\\,\\text{C}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Trabajo de extracción."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Energía recibida por la placa en $1\\,\\text{hora}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Energía del fotón incidente",
+          "contenido": "La energía de cada fotón es:\n\n$$E_\\gamma=\\frac{hc}{\\lambda}=\\frac{6{,}63\\cdot10^{-34}\\cdot3\\cdot10^{8}}{400\\cdot10^{-9}}=4{,}97\\cdot10^{-19}\\,\\text{J}=3{,}11\\,\\text{eV}.$$"
+        },
+        {
+          "titulo": "Trabajo de extracción",
+          "contenido": "La ecuación de Einstein del efecto fotoeléctrico es:\n\n$$E_\\gamma=W_{\\text{ext}}+eV_{\\text{frenado}}.$$\n\nPor tanto:\n\n$$W_{\\text{ext}}=E_\\gamma-eV=3{,}11\\,\\text{eV}-1{,}00\\,\\text{eV}=2{,}11\\,\\text{eV}=3{,}38\\cdot10^{-19}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Número de fotones por segundo",
+          "contenido": "Si cada fotón genera un fotoelectrón y la corriente máxima es $15\\,\\text{nA}$, el número de fotones por segundo es:\n\n$$N=\\frac{I}{e}=\\frac{15\\cdot10^{-9}}{1{,}6\\cdot10^{-19}}=9{,}38\\cdot10^{10}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Energía total recibida en $1\\,\\text{hora}$",
+          "contenido": "La energía recibida en $1\\,\\text{hora}$ es:\n\n$$E_{\\text{total}}=N E_\\gamma t=9{,}38\\cdot10^{10}\\cdot4{,}97\\cdot10^{-19}\\cdot3600=1{,}68\\cdot10^{-4}\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$W_{\\text{ext}}\\approx2{,}11\\,\\text{eV}\\approx3{,}38\\cdot10^{-19}\\,\\text{J}$; $E_{\\text{recibida}}\\approx1{,}68\\cdot10^{-4}\\,\\text{J}$."
+    }
+  ]
+}

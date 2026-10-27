@@ -7,393 +7,454 @@
   "anio": 2023,
   "nivel": "PAU",
   "curso": "2º Bachillerato",
-  "enunciado_general": "Examen resuelto de Física de la PAU de Castilla y León, convocatoria Ordinaria 2023. Incluye 17 problemas resueltos paso a paso.",
-  "objetivo": "Practicar y comprender los contenidos de Física de 2º de Bachillerato evaluados en la PAU de Castilla y León.",
+  "enunciado_general": "Examen de Física de la PAU de Castilla y León, convocatoria Ordinaria 2023, con 17 problemas resueltos (bloque A y bloque B) y optatividad de 7 preguntas del bloque A y 3 del bloque B.",
+  "objetivo": "Evaluar la comprensión y aplicación de los contenidos de Física de 2º de Bachillerato: gravitación, electromagnetismo, ondas, óptica, física cuántica y nuclear, mediante problemas y cuestiones razonadas.",
   "procedimiento": [
     {
       "titulo": "Estructura del examen",
-      "contenido": "Bloque A: se eligen 7 preguntas de 11. Bloque B: se eligen 3 preguntas de 6. Todas las preguntas se puntúan sobre 1 punto. La calificación final suma las notas de las 10 preguntas elegidas."
+      "contenido": "OPTATIVIDAD: se podrán elegir siete preguntas del bloque A y tres preguntas del bloque B. Todas las preguntas se evaluarán sobre un máximo de 1 punto, tanto las del bloque A como las del bloque B. La calificación final se obtendrá sumando las notas de las 10 preguntas elegidas. Las fórmulas empleadas en la resolución de los ejercicios deberán acompañarse de los razonamientos oportunos y los resultados numéricos obtenidos para las magnitudes físicas deberán escribirse con las unidades adecuadas."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "Datos y constantes que aparecen en los enunciados: $T_T=365\\,\\text{días}$; $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$; $n=1{,}55$; $f=5\\,\\text{cm}$; $B=0{,}3\\,\\text{T}$; $r=15\\,\\text{cm}$; $\\Delta t=0{,}2\\,\\text{s}$; $\\lambda_{\\text{umbral}}=1{,}1\\cdot10^{-6}\\,\\text{m}$; $\\lambda=2{,}7\\cdot10^{-7}\\,\\text{m}$; $N_0=1000$ núcleos; $T_{1/2}\\approx10$ años según la gráfica. En las resoluciones simbólicas se emplean $G$, $g_0$, $R_T$, $k$, $\\mu_0$, $h$ y $c$ según corresponda."
     }
   ],
   "ejercicios": [
     {
       "numero": 1,
-      "titulo": "1A — Velocidad orbital de Marte y masa del Sol con la 3ª ley de Kepler",
-      "tema": "Campo gravitatorio",
+      "titulo": "Velocidad orbital de Marte y masa del Sol con la 3ª ley de Kepler",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A2. Leyes de Kepler y relación con la gravitación; A7. Movimiento planetario, satélites y velocidades características",
       "puntuacion": "1 punto",
-      "enunciado": "Las distancias al Sol desde la Tierra y desde Marte son $1{,}466\\cdot10^{8}\\,\\text{km}$ y $2{,}279\\cdot10^{8}\\,\\text{km}$, respectivamente. Calcule la velocidad orbital de Marte y la masa del Sol. Periodo de traslación terrestre $T=365$ días.",
+      "enunciado": "Las distancias al Sol desde la Tierra y desde Marte son $1{,}466\\cdot 10^{8}\\,\\text{km}$ y $2{,}279\\cdot 10^{8}\\,\\text{km}$, respectivamente. Calcule la velocidad orbital de Marte y la masa del Sol. Periodo de traslación terrestre $T = 365$ días.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Masa del Sol con la 3ª ley de Kepler aplicada a la Tierra",
-          "contenido": "Para una órbita circular alrededor del Sol, la 3ª ley de Kepler establece $T^{2}=\\frac{4\\pi^{2}}{G\\,M_{\\text{Sol}}}r^{3}$. Aplicado a la Tierra, con $r_T=1{,}466\\cdot10^{11}\\,\\text{m}$ y $T_T=365\\cdot86400=3{,}1536\\cdot10^{7}\\,\\text{s}$, se obtiene $M_{\\text{Sol}}=\\frac{4\\pi^{2}r_T^{3}}{G\\,T_T^{2}}\\approx1{,}87\\cdot10^{30}\\,\\text{kg}$."
+          "contenido": "Para una órbita circular alrededor del Sol, la 3ª ley de Kepler establece que\n\n$$T^{2}=\\frac{4\\pi^{2}}{GM_{\\odot}}r^{3}.$$\n\nAplicado a la Tierra, con $r_T=1{,}466\\cdot10^{8}\\,\\text{km}=1{,}466\\cdot10^{11}\\,\\text{m}$ y $T=365\\,\\text{días}=365\\cdot 86400\\,\\text{s}$, se obtiene\n\n$$M_{\\odot}=\\frac{4\\pi^{2}r_T^{3}}{G\\,T^{2}}.$$"
         },
         {
           "titulo": "Velocidad orbital de Marte",
-          "contenido": "Para una órbita circular se cumple $v=\\sqrt{\\frac{G\\,M_{\\text{Sol}}}{r_M}}$. Con $r_M=2{,}279\\cdot10^{11}\\,\\text{m}$ resulta $v_M\\approx2{,}34\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-1}$."
+          "contenido": "Para una órbita circular se cumple $v^{2}=\\frac{GM_{\\odot}}{r_M}$, así que\n\n$$v_M=\\sqrt{\\frac{GM_{\\odot}}{r_M}},$$\n\ncon $r_M=2{,}279\\cdot10^{8}\\,\\text{km}=2{,}279\\cdot10^{11}\\,\\text{m}$."
         }
       ],
-      "resultado": "$v_{\\text{Marte}}\\approx2{,}34\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-1}$; $M_{\\text{Sol}}\\approx1{,}87\\cdot10^{30}\\,\\text{kg}$."
+      "resultado": "$M_{\\odot}=\\frac{4\\pi^{2}r_T^{3}}{G\\,T^{2}}$; $v_M=\\sqrt{\\frac{GM_{\\odot}}{r_M}}$, con $r_T=1{,}466\\cdot10^{11}\\,\\text{m}$ y $r_M=2{,}279\\cdot10^{11}\\,\\text{m}$."
     },
     {
       "numero": 2,
-      "titulo": "2A — Energía cinética y potencial de un satélite en órbita con $g_{\\text{orbital}}=g_0/2$",
-      "tema": "Campo gravitatorio",
+      "titulo": "Energía cinética y potencial de un satélite en órbita con $g_{\\text{orbital}} = g_{0}/2$",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
       "puntuacion": "1 punto",
-      "enunciado": "Un satélite artificial de $100\\,\\text{kg}$ describe una órbita circular alrededor de la Tierra. La gravedad en un punto de su órbita es la mitad que la gravedad en la superficie terrestre. Determine el valor de su energía cinética y potencial.",
+      "enunciado": "Un satélite artificial de 100 kg describe una órbita circular alrededor de la Tierra. La gravedad en un punto de su órbita es la mitad que la gravedad en la superficie terrestre. Determine el valor de su energía cinética y potencial.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Radio de la órbita",
-          "contenido": "En la superficie, $g_0=\\frac{G\\,M_T}{R_T^{2}}$. En la órbita, $g_{\\text{orbital}}=\\frac{G\\,M_T}{r^{2}}$. La condición $g_{\\text{orbital}}=\\frac{g_0}{2}$ implica $\\frac{G\\,M_T}{r^{2}}=\\frac{G\\,M_T}{2R_T^{2}}$, de donde $r^{2}=2R_T^{2}$ y $r=\\sqrt{2}\\,R_T$."
+          "contenido": "Como $g=\\frac{GM_T}{r^{2}}$ y $g_0=\\frac{GM_T}{R_T^{2}}$, la condición $g_{\\text{orbital}}=\\frac{g_0}{2}$ implica\n\n$$r=R_T\\sqrt{2}.$$"
         },
         {
-          "titulo": "Velocidad orbital y energía cinética",
-          "contenido": "La velocidad orbital es $v=\\sqrt{\\frac{G\\,M_T}{r}}=\\sqrt{\\frac{g_0\\,R_T}{\\sqrt{2}}}\\approx6{,}65\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$. Por tanto, $E_c=\\frac{1}{2}m\\,v^{2}\\approx2{,}21\\cdot10^{9}\\,\\text{J}$."
+          "titulo": "Velocidad orbital",
+          "contenido": "La velocidad orbital cumple $v^{2}=\\frac{GM_T}{r}=g\\,r$, de modo que\n\n$$v=\\sqrt{g\\,r}.$$"
+        },
+        {
+          "titulo": "Energía cinética",
+          "contenido": "La energía cinética es\n\n$$E_c=\\frac{1}{2}m v^{2}=\\frac{GM_T m}{2r}=\\frac{1}{2}m g r.$$"
         },
         {
           "titulo": "Energía potencial",
-          "contenido": "En órbita circular, $v^{2}=\\frac{G\\,M_T}{r}$, luego $E_p=-\\frac{G\\,M_T\\,m}{r}=-m\\,v^{2}\\approx-4{,}42\\cdot10^{9}\\,\\text{J}$."
+          "contenido": "La energía potencial gravitatoria es\n\n$$E_p=-\\frac{GM_T m}{r}=-m g r.$$"
         }
       ],
-      "resultado": "$E_c\\approx2{,}21\\cdot10^{9}\\,\\text{J}$; $E_p\\approx-4{,}42\\cdot10^{9}\\,\\text{J}$."
+      "resultado": "$E_c=\\frac{GM_T m}{2r}=\\frac{1}{2}m g r$; $E_p=-\\frac{GM_T m}{r}=-m g r$, con $r=R_T\\sqrt{2}$ y $g=\\frac{g_0}{2}$."
     },
     {
       "numero": 3,
-      "titulo": "3A — Valor de dos cargas puntuales para producir un campo eléctrico dado",
-      "tema": "Campo eléctrico",
+      "titulo": "Valor de dos cargas puntuales para producir un campo eléctrico dado",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico",
       "puntuacion": "1 punto",
-      "enunciado": "Dos cargas puntuales $q_1$ y $q_2$ se encuentran en las posiciones $(0,1)$ y $(0,-1)$, respectivamente, en unidades del S.I. Halle el valor de las cargas para que el campo eléctrico en $(1,0)$ sea $\\vec{E}=4{,}5\\cdot10^{3}\\,\\vec{i}\\,\\text{N}\\,\\text{C}^{-1}$.",
+      "enunciado": "Dos cargas puntuales $q_1$ y $q_2$ se encuentran en la posición $(0, 1)$ y $(0, -1)$, respectivamente (unidades del S.I.). Halle el valor de las cargas para que el campo eléctrico en $(1, 0)$ sea $\\vec{E} = 4{,}5\\cdot 10^{3}\\,\\vec{i}$ (N·C$^{-1}$).",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Geometría de los vectores",
-          "contenido": "El punto de medida está a distancia $\\sqrt{2}\\,\\text{m}$ de cada carga. Los vectores unitarios desde cada carga hacia $(1,0)$ son $\\frac{1}{\\sqrt{2}}(\\vec{i}-\\vec{j})$ y $\\frac{1}{\\sqrt{2}}(\\vec{i}+\\vec{j})$."
+          "contenido": "El punto de medida está a distancia $\\sqrt{2}\\,\\text{m}$ de cada una de las cargas. Los vectores unitarios desde cada carga hacia $(1,0)$ son\n\n$$\\hat u_1=\\frac{(1,-1)}{\\sqrt{2}},\\qquad \\hat u_2=\\frac{(1,1)}{\\sqrt{2}}.$$"
         },
         {
           "titulo": "Campos creados en $(1,0)$",
-          "contenido": "Sumando los campos, $\\vec{E}=\\frac{k\\,q_1}{2\\sqrt{2}}(\\vec{i}-\\vec{j})+\\frac{k\\,q_2}{2\\sqrt{2}}(\\vec{i}+\\vec{j})$. La componente $y$ se anula si $q_1=q_2=q$. La componente $x$ vale entonces $E_x=\\frac{k\\,q}{\\sqrt{2}}$."
+          "contenido": "Los campos eléctricos son\n\n$$\\vec E_1=k\\,q_1\\frac{(1,-1)}{2\\sqrt{2}},\\qquad \\vec E_2=k\\,q_2\\frac{(1,1)}{2\\sqrt{2}}.$$\n\nSumando,\n\n$$\\vec E=\\frac{k}{2\\sqrt{2}}\\left(q_1+q_2,\\,-q_1+q_2\\right).$$"
         },
         {
-          "titulo": "Imposición del campo dado",
-          "contenido": "Igualando $\\frac{k\\,q}{\\sqrt{2}}=4{,}5\\cdot10^{3}$, se obtiene $q\\approx7{,}1\\cdot10^{-7}\\,\\text{C}$."
+          "titulo": "Imposición del campo dado y resolución",
+          "contenido": "Como $\\vec E=4{,}5\\cdot10^{3}\\,\\vec i$, igualando componentes:\n\n(i) Componente $x$: $\\frac{k(q_1+q_2)}{2\\sqrt{2}}=4{,}5\\cdot10^{3}$.\n\n(ii) Componente $y$: $\\frac{k(-q_1+q_2)}{2\\sqrt{2}}=0$, de donde $q_1=q_2=q$.\n\nDe (i) se sigue\n\n$$q=\\frac{4{,}5\\cdot10^{3}\\sqrt{2}}{k}\\approx 7{,}07\\cdot10^{-7}\\,\\text{C}=707\\,\\text{nC}.$$"
         }
       ],
-      "resultado": "$q_1=q_2\\approx7{,}1\\cdot10^{-7}\\,\\text{C}$."
+      "resultado": "$q_1=q_2=\\frac{4{,}5\\cdot10^{3}\\sqrt{2}}{k}\\approx 7{,}07\\cdot10^{-7}\\,\\text{C}=707\\,\\text{nC}$."
     },
     {
       "numero": 4,
-      "titulo": "4A — Fuerza por unidad de longitud sobre un hilo en un triángulo equilátero",
-      "tema": "Campo magnético",
+      "titulo": "Fuerza por unidad de longitud sobre un hilo en un triángulo equilátero con tres corrientes",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos",
       "puntuacion": "1 punto",
-      "enunciado": "Tres hilos conductores paralelos, rectilíneos e infinitos se sitúan perpendicularmente a un triángulo equilátero de $30\\,\\text{cm}$ de lado, uno en cada vértice. Por dos de ellos circulan corrientes de $2\\,\\text{A}$ en el mismo sentido. Determine la fuerza por unidad de longitud que experimenta el tercer hilo, si por él circula una corriente de $3\\,\\text{A}$ en sentido contrario. El hilo superior lleva $3\\,\\text{A}$ saliendo del plano y los dos inferiores llevan $2\\,\\text{A}$ cada uno entrando al plano.",
+      "enunciado": "Tres hilos conductores paralelos, rectilíneos y de longitud infinita se sitúan perpendicularmente a un triángulo equilátero de 30 cm de lado, uno en cada vértice. Por dos de ellos circulan corrientes eléctricas de 2 A en el mismo sentido (ver figura). Determine la fuerza por unidad de longitud que experimenta el tercer hilo, si por él circula una corriente eléctrica de 3 A en sentido contrario a las anteriores. Figura: el hilo superior (vértice $A = (0, h)$, con $h = 15\\sqrt{3}$ cm) lleva 3 A saliendo del plano ($\\odot$); los dos hilos inferiores (vértices $B = (-15, 0)$ cm y $C = (15, 0)$ cm) llevan 2 A cada uno entrando al plano ($\\otimes$).",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Fuerza por unidad de longitud entre dos hilos paralelos",
-          "contenido": "La fuerza por unidad de longitud entre dos hilos paralelos separados una distancia $d$ es $\\frac{F}{L}=\\frac{\\mu_0\\,I_1\\,I_2}{2\\pi d}$. Si las corrientes tienen sentidos contrarios, la fuerza es repulsiva."
+          "contenido": "La interacción entre dos hilos paralelos por los que circulan corrientes $I_1$ e $I_2$, separados una distancia $d$, tiene módulo por unidad de longitud\n\n$$\\frac{F}{L}=\\frac{\\mu_0 I_1 I_2}{2\\pi d}.$$\n\nSi las corrientes tienen el mismo sentido, la fuerza es atractiva; si tienen sentidos opuestos, la fuerza es repulsiva. En este problema, el hilo superior y cada uno de los inferiores llevan corrientes en sentidos contrarios, así que las fuerzas son repulsivas."
         },
         {
           "titulo": "Módulo de las fuerzas",
-          "contenido": "Para cada hilo inferior, $d=0{,}30\\,\\text{m}$, $I_1=3\\,\\text{A}$ e $I_2=2\\,\\text{A}$, de modo que $\\frac{F}{L}=\\frac{4\\pi\\cdot10^{-7}\\cdot3\\cdot2}{2\\pi\\cdot0{,}30}=4{,}0\\cdot10^{-6}\\,\\text{N}\\,\\text{m}^{-1}$."
+          "contenido": "La distancia entre los hilos es $d=30\\,\\text{cm}=0{,}30\\,\\text{m}$ (lado del triángulo). El módulo de cada fuerza por unidad de longitud es\n\n$$\\frac{F}{L}=\\frac{\\mu_0(3)(2)}{2\\pi(0{,}30)}.$$"
         },
         {
-          "titulo": "Suma vectorial",
-          "contenido": "Las fuerzas repulsivas sobre el hilo superior forman $30^{\\circ}$ con la vertical. Las componentes horizontales se anulan y las verticales se suman: $\\left(\\frac{F}{L}\\right)_{\\text{total}}=2\\cdot4{,}0\\cdot10^{-6}\\cdot\\cos30^{\\circ}\\approx6{,}9\\cdot10^{-6}\\,\\text{N}\\,\\text{m}^{-1}$, dirigida verticalmente hacia arriba."
+          "titulo": "Vectores y suma",
+          "contenido": "El hilo superior está en $A=(0,15\\sqrt{3})\\,\\text{cm}$. Las fuerzas repulsivas sobre $A$ apuntan desde cada hilo inferior hacia $A$. Desde $B=(-15,0)\\,\\text{cm}$: vector unitario $(1/2,\\sqrt{3}/2)$. Desde $C=(15,0)\\,\\text{cm}$: vector unitario $(-1/2,\\sqrt{3}/2)$. Las componentes $x$ se cancelan y las componentes $y$ se suman."
+        },
+        {
+          "titulo": "Resultante",
+          "contenido": "El módulo de la resultante es\n\n$$\\left(\\frac{F}{L}\\right)_{\\text{total}}=2\\frac{F}{L}\\frac{\\sqrt{3}}{2}=\\sqrt{3}\\,\\frac{\\mu_0(3)(2)}{2\\pi(0{,}30)}.$$"
         }
       ],
-      "resultado": "$\\frac{F}{L}\\approx6{,}9\\cdot10^{-6}\\,\\text{N}\\,\\text{m}^{-1}$ hacia arriba."
+      "resultado": "$\\left(\\frac{F}{L}\\right)_{\\text{total}}=\\sqrt{3}\\,\\frac{\\mu_0(3)(2)}{2\\pi(0{,}30)}$, dirigida verticalmente hacia arriba (alejándose del segmento $BC$, en sentido $+y$)."
     },
     {
       "numero": 5,
-      "titulo": "5A — F.e.m. inducida al invertir el campo magnético en una espira",
-      "tema": "Electromagnetismo",
+      "titulo": "Fem inducida al invertir el campo magnético en una espira",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
       "puntuacion": "1 punto",
-      "enunciado": "Una espira de $15\\,\\text{cm}$ de radio se encuentra situada perpendicularmente a un campo magnético de $0{,}3\\,\\text{T}$. Determine la fuerza electromotriz inducida en la espira si se invierte el sentido del campo magnético en un intervalo de $0{,}2\\,\\text{s}$.",
+      "enunciado": "Una espira de 15 cm de radio se encuentra situada perpendicularmente a un campo magnético de 0,3 T. Determine la fuerza electromotriz inducida en la espira si se invierte el sentido del campo magnético en un intervalo de 0,2 s.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Área de la espira",
-          "contenido": "$S=\\pi r^{2}=\\pi\\left(0{,}15\\right)^{2}\\approx7{,}07\\cdot10^{-2}\\,\\text{m}^{2}$."
+          "contenido": "El área es\n\n$$A=\\pi r^{2}=\\pi(0{,}15)^{2}\\approx 0{,}0707\\,\\text{m}^{2}.$$"
         },
         {
           "titulo": "Variación del flujo magnético",
-          "contenido": "El flujo inicial es $\\Phi_0=B\\,S\\approx2{,}12\\cdot10^{-2}\\,\\text{Wb}$. Al invertir el campo, $\\Phi_f=-B\\,S$, por lo que $\\Delta\\Phi=\\Phi_f-\\Phi_0=-4{,}24\\cdot10^{-2}\\,\\text{Wb}$."
+          "contenido": "Como la espira es perpendicular al campo, el flujo es $\\Phi_B=BA$ (con signo positivo si la normal apunta en el sentido de $\\vec B$ inicial). Al invertir el campo durante $0{,}2\\,\\text{s}$, el flujo pasa de $+BA$ a $-BA$:\n\n$$\\Delta\\Phi_B=-BA-BA=-2BA.$$"
         },
         {
-          "titulo": "Fuerza electromotriz inducida",
-          "contenido": "Aplicando la ley de Faraday-Lenz, $|\\varepsilon|=\\left|\\frac{\\Delta\\Phi}{\\Delta t}\\right|=\\frac{4{,}24\\cdot10^{-2}}{0{,}2}\\approx0{,}212\\,\\text{V}$."
+          "titulo": "Fuerza electromotriz inducida (módulo)",
+          "contenido": "Aplicando la ley de Faraday-Lenz,\n\n$$|\\varepsilon|=\\left|\\frac{\\Delta\\Phi_B}{\\Delta t}\\right|=\\frac{2BA}{\\Delta t}.$$\n\nSustituyendo,\n\n$$|\\varepsilon|=\\frac{2(0{,}3)(\\pi(0{,}15)^{2})}{0{,}2}\\approx 0{,}212\\,\\text{V}.$$"
         }
       ],
-      "resultado": "$|\\varepsilon|\\approx0{,}212\\,\\text{V}$."
+      "resultado": "$|\\varepsilon|=\\frac{2BA}{\\Delta t}\\approx 0{,}212\\,\\text{V}$."
     },
     {
       "numero": 6,
-      "titulo": "6A — Ecuación de una onda transversal en una cuerda",
-      "tema": "Vibraciones y ondas",
+      "titulo": "Ecuación de una onda transversal en una cuerda con velocidad de vibración máxima dada",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
       "puntuacion": "1 punto",
-      "enunciado": "Una onda transversal se propaga a lo largo de una cuerda tensa. La distancia entre dos máximos consecutivos es $1\\,\\text{m}$. Un punto de la cuerda pasa de una elongación máxima a nula en $0{,}125\\,\\text{s}$ y la velocidad de vibración máxima es $0{,}24\\pi\\,\\text{m}\\,\\text{s}^{-1}$. Si la onda se desplaza en el sentido positivo del eje $X$ y la fase inicial es nula, determine la ecuación de la onda.",
+      "enunciado": "Una onda transversal se propaga a lo largo de una cuerda tensa. En un cierto instante se observa que la distancia entre dos máximos consecutivos es 1 m. Además, se comprueba que un punto de la cuerda pasa de una elongación máxima a nula en 0,125 s y que la velocidad de vibración máxima de un punto de la cuerda es $0{,}24\\pi$ m·s$^{-1}$. Si la onda se desplaza en el sentido positivo del eje X y la fase inicial es nula, determine la ecuación de la onda.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Longitud de onda y periodo",
-          "contenido": "La distancia entre máximos consecutivos es $\\lambda=1\\,\\text{m}$. El paso de elongación máxima a cero corresponde a $T/4=0{,}125\\,\\text{s}$, luego $T=0{,}5\\,\\text{s}$ y $\\omega=\\frac{2\\pi}{T}=4\\pi\\,\\text{rad}\\,\\text{s}^{-1}$."
+          "contenido": "La distancia entre máximos consecutivos es $\\lambda$, así que $\\lambda=1\\,\\text{m}$. La transición “elongación máxima → cero” corresponde a un cuarto de periodo: $T/4=0{,}125\\,\\text{s}$, de donde $T=0{,}5\\,\\text{s}$ y\n\n$$f=\\frac{1}{T}=2\\,\\text{Hz},\\qquad \\omega=2\\pi f=4\\pi\\,\\text{rad/s}.$$"
         },
         {
           "titulo": "Amplitud",
-          "contenido": "La velocidad máxima de vibración es $v_{\\text{max}}=A\\,\\omega$. Por tanto, $A=\\frac{0{,}24\\pi}{4\\pi}=0{,}06\\,\\text{m}$."
+          "contenido": "La velocidad de vibración de un punto es $v_y=\\frac{\\partial y}{\\partial t}$. Para una onda armónica $y=A\\text{sen}(\\omega t-kx)$, $v_{y,\\text{max}}=A\\omega$. De aquí,\n\n$$A=\\frac{v_{y,\\text{max}}}{\\omega}=\\frac{0{,}24\\pi}{4\\pi}=0{,}06\\,\\text{m}.$$"
         },
         {
           "titulo": "Ecuación de la onda",
-          "contenido": "Con $k=\\frac{2\\pi}{\\lambda}=2\\pi\\,\\text{rad}\\,\\text{m}^{-1}$, propagación en $+X$ y fase inicial nula: $y(x,t)=0{,}06\\sin\\left(2\\pi x-4\\pi t\\right)$."
+          "contenido": "Con fase inicial nula y propagación en el sentido positivo del eje $X$,\n\n$$y(x,t)=0{,}06\\,\\text{sen}(4\\pi t-2\\pi x)\\ \\text{m}.$$"
         }
       ],
-      "resultado": "$y(x,t)=0{,}06\\sin\\left(2\\pi x-4\\pi t\\right)\\,\\text{m}$."
+      "resultado": "$y(x,t)=0{,}06\\,\\text{sen}(4\\pi t-2\\pi x)\\,\\text{m}$, equivalente a $y(x,t)=0{,}06\\,\\text{sen}[2\\pi(2t-x)]\\,\\text{m}$."
     },
     {
       "numero": 7,
-      "titulo": "7 — Potencia de un foco sonoro a partir de dos niveles sonoros",
-      "tema": "Ondas sonoras",
+      "titulo": "Potencia de un foco sonoro a partir de dos niveles sonoros",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
       "puntuacion": "1 punto",
-      "enunciado": "El nivel de intensidad sonora a una distancia $d$ de un foco emisor es $100\\,\\text{dB}$. A una distancia $100\\,\\text{m}$ mayor, el nivel se reduce a $80\\,\\text{dB}$. Determine la potencia del foco. Dato: $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$.",
+      "enunciado": "El nivel de intensidad sonora a una distancia $d$ de un foco emisor es 100 dB. A una distancia 100 m mayor, el nivel de intensidad sonora se reduce a 80 dB. Determine la potencia del foco. Dato: Intensidad física umbral $I_0 = 10^{-12}$ W·m$^{-2}$.",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Relación entre intensidades",
-          "contenido": "De $L=10\\log\\left(\\frac{I}{I_0}\\right)$, una diferencia de $20\\,\\text{dB}$ entre las dos posiciones implica $\\frac{I_1}{I_2}=10^{2}=100$."
+          "titulo": "Relación entre intensidades a las dos distancias",
+          "contenido": "De $L=10\\log(I/I_0)$, la diferencia de 20 dB se corresponde con\n\n$$\\frac{I_1}{I_2}=10^{20/10}=100.$$"
         },
         {
-          "titulo": "Cálculo de la distancia $d$",
-          "contenido": "Para un foco puntual, $I=\\frac{P}{4\\pi r^{2}}$, de modo que $\\frac{I_1}{I_2}=\\left(\\frac{d+100}{d}\\right)^{2}=100$. Tomando raíces cuadradas: $\\frac{d+100}{d}=10$, de donde $d=\\frac{100}{9}\\approx11{,}1\\,\\text{m}$."
+          "titulo": "Cálculo de $d$ a partir de la ley del inverso del cuadrado",
+          "contenido": "Para un foco puntual con ondas esféricas, $I_1/I_2=(d+100)^{2}/d^{2}$. Por tanto,\n\n$$\\frac{(d+100)^{2}}{d^{2}}=100\\Rightarrow d=\\frac{100}{9}\\,\\text{m}.$$"
         },
         {
           "titulo": "Potencia del foco",
-          "contenido": "Con $I_1=10^{-12}\\cdot10^{100/10}=10^{-2}\\,\\text{W}\\,\\text{m}^{-2}$ y $d=\\frac{100}{9}\\approx11{,}1\\,\\text{m}$, la potencia resulta $P=I_1\\,4\\pi d^{2}=10^{-2}\\cdot4\\pi\\cdot\\left(\\frac{100}{9}\\right)^{2}\\approx15{,}5\\,\\text{W}$."
+          "contenido": "La intensidad a la distancia $d$ es $I_1=I_0 10^{100/10}=10^{-12}\\cdot10^{10}=0{,}01\\,\\text{W}\\,\\text{m}^{-2}$. La potencia es\n\n$$P=I_1 4\\pi d^{2}=0{,}01\\cdot4\\pi\\left(\\frac{100}{9}\\right)^{2}\\approx 15{,}5\\,\\text{W}.$$"
         }
       ],
-      "resultado": "$P\\approx15{,}5\\,\\text{W}$."
+      "resultado": "$P=I_1 4\\pi d^{2}\\approx 15{,}5\\,\\text{W}$, con $d=\\frac{100}{9}\\,\\text{m}$ e $I_1=0{,}01\\,\\text{W}\\,\\text{m}^{-2}$."
     },
     {
       "numero": 8,
-      "titulo": "8 — Ángulo entre rayo refractado y rayo reflejado",
-      "tema": "Óptica",
+      "titulo": "Ángulo entre rayo refractado y rayo reflejado dado el ángulo entre incidente y reflejado",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
       "puntuacion": "1 punto",
-      "enunciado": "Un rayo láser incide desde el aire sobre la superficie plana de un material con índice de refracción $1{,}55$. El rayo incidente y el reflejado forman entre sí un ángulo de $60^{\\circ}$. Dibuje el diagrama de rayos y calcule el ángulo que formará el rayo refractado en el material con el rayo reflejado en el aire.",
+      "enunciado": "Un rayo láser incide desde el aire sobre la superficie plana de un material con un índice de refracción 1,55. El rayo incidente y el reflejado forman entre sí un ángulo de 60º. Dibuje el diagrama de rayos correspondiente y calcule el ángulo que formará el rayo refractado en el material con el rayo reflejado en el aire.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Ángulo de incidencia",
-          "contenido": "Por la ley de la reflexión, el ángulo de incidencia y el de reflexión, medidos respecto a la normal, son iguales. Si el ángulo entre incidente y reflejado es $60^{\\circ}$, entonces $2\\theta_i=60^{\\circ}$ y $\\theta_i=\\theta_r=30^{\\circ}$."
+          "contenido": "Por la ley de la reflexión, el ángulo de incidencia y el de reflexión (ambos medidos respecto a la normal) son iguales: $\\theta_i=\\theta_r$. El ángulo entre el rayo incidente y el reflejado es $2\\theta_i=60^{\\circ}$, así que\n\n$$\\theta_i=\\theta_r=30^{\\circ}.$$"
         },
         {
-          "titulo": "Ángulo del rayo refractado",
-          "contenido": "Aplicando la ley de Snell, $1\\cdot\\sin30^{\\circ}=1{,}55\\cdot\\sin\\theta_t$, de donde $\\theta_t\\approx18{,}8^{\\circ}$."
+          "titulo": "Ángulo del rayo refractado (Snell)",
+          "contenido": "Aplicando la ley de Snell,\n\n$$1\\cdot\\text{sen}\\,30^{\\circ}=1{,}55\\,\\text{sen}\\,\\theta_t,$$\n\nasí que\n\n$$\\text{sen}\\,\\theta_t=\\frac{0{,}5}{1{,}55}\\approx0{,}3226\\Rightarrow \\theta_t\\approx18{,}8^{\\circ}.$$"
         },
         {
-          "titulo": "Ángulo entre rayo refractado y reflejado",
-          "contenido": "El ángulo pedido es $180^{\\circ}-\\left(30^{\\circ}+18{,}8^{\\circ}\\right)\\approx131{,}2^{\\circ}$."
+          "titulo": "Ángulo entre rayo refractado y rayo reflejado",
+          "contenido": "Los rayos reflejado y refractado están en lados opuestos de la superficie y a lados opuestos de la normal. Medido en torno al punto de incidencia, el ángulo total entre ambos rayos es\n\n$$180^{\\circ}-\\theta_r-\\theta_t=180^{\\circ}-30^{\\circ}-18{,}8^{\\circ}=131{,}2^{\\circ}.$$"
+        },
+        {
+          "titulo": "Diagrama (descripción)",
+          "contenido": "Normal a la superficie vertical. Rayo incidente: viene del aire (arriba-derecha) con $\\theta_i=30^{\\circ}$ medido desde la normal. En el punto de incidencia, el rayo reflejado parte hacia arriba-izquierda con $\\theta_r=30^{\\circ}$ (simétrico respecto a la normal). El rayo refractado entra en el material (abajo-derecha) con $\\theta_t\\approx18{,}8^{\\circ}$ desde la normal, más cerca de ella que el incidente (medio más denso). El ángulo entre el rayo refractado y el reflejado, medido por el lado externo a la normal, es $131{,}2^{\\circ}$."
         }
       ],
-      "resultado": "$\\theta_t\\approx18{,}8^{\\circ}$; ángulo entre refractado y reflejado $\\approx131{,}2^{\\circ}$."
+      "resultado": "$\\theta_i=\\theta_r=30^{\\circ}$; $\\theta_t\\approx18{,}8^{\\circ}$; ángulo entre rayo refractado y reflejado $\\approx131{,}2^{\\circ}$."
     },
     {
       "numero": 9,
-      "titulo": "9 — Tamaño y características de un objeto en una lente convergente",
-      "tema": "Óptica",
+      "titulo": "Tamaño y características de un objeto a partir de su imagen en una lente convergente",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
       "puntuacion": "1 punto",
-      "enunciado": "Se dispone de una lente convergente de distancia focal $5\\,\\text{cm}$. Determine el tamaño de un objeto situado a $20\\,\\text{cm}$ de la lente que forma una imagen de $3\\,\\text{cm}$ de altura. Indique las características de la imagen.",
+      "enunciado": "Se dispone de una lente convergente de distancia focal 5 cm. Determine el tamaño de un objeto que está situado a 20 cm de la lente y forma una imagen de 3 cm de altura. Indique las características de la imagen (real o virtual, derecha o invertida, mayor o menor que el objeto).",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Posición de la imagen",
-          "contenido": "Con criterio DIN, $s=-20\\,\\text{cm}$ y $f=5\\,\\text{cm}$. De $\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f}$ se obtiene $\\frac{1}{s'}=\\frac{1}{5}+\\frac{1}{-20}=\\frac{3}{20}$, luego $s'\\approx6{,}67\\,\\text{cm}$, positiva: imagen real."
+          "titulo": "Cálculo de la posición de la imagen",
+          "contenido": "Criterio DIN: $s=20\\,\\text{cm}$, $f=5\\,\\text{cm}$. De la ecuación de las lentes,\n\n$$\\frac{1}{s'}+\\frac{1}{s}=\\frac{1}{f}\\Rightarrow \\frac{1}{s'}=\\frac{1}{5}-\\frac{1}{20}=\\frac{3}{20}\\Rightarrow s'=\\frac{20}{3}\\,\\text{cm}\\approx6{,}67\\,\\text{cm}.$$\n\nComo $s'>0$, la imagen está al lado opuesto del objeto respecto a la lente: es real."
         },
         {
-          "titulo": "Aumento lateral",
-          "contenido": "El aumento es $M=\\frac{s'}{s}\\approx-0{,}333$. La imagen es invertida y menor que el objeto."
+          "titulo": "Aumento lateral y características de la imagen",
+          "contenido": "El aumento lateral es\n\n$$M=-\\frac{s'}{s}=-\\frac{20/3}{20}=-\\frac{1}{3}.$$\n\nComo $|M|<1$, la imagen es menor que el objeto; el signo negativo indica que es invertida."
         },
         {
           "titulo": "Tamaño del objeto",
-          "contenido": "Si la imagen mide $3\\,\\text{cm}$ y está invertida, $y'=-3\\,\\text{cm}$. Como $y'=M\\,y$, resulta $y=\\frac{-3}{-1/3}=9\\,\\text{cm}$."
+          "contenido": "Si la imagen tiene altura $|y'|=3\\,\\text{cm}$, con la imagen invertida $y'=-3\\,\\text{cm}$ en convenio cartesiano. Como $M=y'/y$,\n\n$$y=\\frac{y'}{M}=\\frac{-3}{-1/3}=9\\,\\text{cm}.$$"
         }
       ],
-      "resultado": "$h_{\\text{objeto}}=9\\,\\text{cm}$; imagen real, invertida y menor."
+      "resultado": "Objeto: $y=9\\,\\text{cm}$. Imagen: real, invertida, menor que el objeto ($|y'|=3\\,\\text{cm}$)."
     },
     {
       "numero": 10,
-      "titulo": "10 — Periodo de semidesintegración y actividad a partir de una gráfica",
-      "tema": "Física nuclear",
+      "titulo": "Periodo de semidesintegración y actividad a partir de una gráfica de decaimiento",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares; D6. Leyes de desintegración radiactiva y actividad",
       "puntuacion": "1 punto",
-      "enunciado": "El número de núcleos de un isótopo radiactivo varía con el tiempo según una gráfica exponencial. Se lee $N_0=1000$ núcleos en $t=0$ y $N\\approx500$ en $t\\approx10$ años. Calcule el periodo de semidesintegración y la actividad después de $12$ años.",
+      "enunciado": "El número de núcleos de un isótopo radiactivo varía con el tiempo según se muestra en la gráfica adjunta. Calcule el periodo de semidesintegración del isótopo y la actividad después de 12 años. Lectura de la gráfica: $N_0 = 1000$ núcleos en $t=0$; la curva exponencial decae alcanzando $N \\approx 500$ en $t \\approx 10$ años (cruce con el semi-valor inicial).",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Periodo de semidesintegración",
-          "contenido": "El periodo de semidesintegración es el tiempo en que $N=N_0/2$. De la gráfica, $T_{1/2}=10\\,\\text{años}$."
+          "titulo": "Determinación de $T_{1/2}$",
+          "contenido": "El periodo de semidesintegración es el tiempo en que $N=N_0/2$. Según la gráfica, $N_0=1000$ núcleos y la curva alcanza $N\\approx500$ núcleos para $t\\approx10$ años; por tanto,\n\n$$T_{1/2}\\approx10\\,\\text{años}.$$"
         },
         {
-          "titulo": "Constante de desintegración y núcleos a $t=12$ años",
-          "contenido": "$\\lambda=\\frac{\\ln2}{T_{1/2}}\\approx0{,}0693\\,\\text{año}^{-1}$. Entonces $N(12)=1000\\,e^{-\\lambda\\cdot12}\\approx435$ núcleos."
+          "titulo": "Constante de desintegración",
+          "contenido": "La constante de desintegración es\n\n$$\\lambda=\\frac{\\ln2}{T_{1/2}}=\\frac{\\ln2}{10}\\approx0{,}0693\\,\\text{año}^{-1}.$$"
+        },
+        {
+          "titulo": "Número de núcleos a $t=12$ años",
+          "contenido": "Aplicando la ley de decaimiento,\n\n$$N(t)=N_0 e^{-\\lambda t}=1000\\,e^{-0{,}0693\\cdot12}\\approx436\\,\\text{núcleos}.$$"
         },
         {
           "titulo": "Actividad a $t=12$ años",
-          "contenido": "$A=\\lambda N(12)\\approx30{,}2\\,\\text{núcleos por año}$. Convirtiendo a becquerelios: $A\\approx\\frac{30{,}2}{365\\cdot86400}\\approx9{,}6\\cdot10^{-7}\\,\\text{Bq}$."
+          "contenido": "La actividad es\n\n$$A=\\lambda N\\approx0{,}0693\\cdot436\\approx30{,}2\\,\\text{año}^{-1}\\approx9{,}57\\cdot10^{-7}\\,\\text{Bq}.$$"
         }
       ],
-      "resultado": "$T_{1/2}=10\\,\\text{años}$; $N(12)\\approx4{,}35\\cdot10^{2}$ núcleos; $A(12)\\approx30{,}2\\,\\text{año}^{-1}\\approx9{,}6\\cdot10^{-7}\\,\\text{Bq}$."
+      "resultado": "$T_{1/2}\\approx10\\,\\text{años}$; $\\lambda\\approx0{,}0693\\,\\text{año}^{-1}$; $N(12)\\approx436$ núcleos; $A(12)=\\lambda N\\approx30{,}2\\,\\text{año}^{-1}\\approx9{,}57\\cdot10^{-7}\\,\\text{Bq}$."
     },
     {
       "numero": 11,
-      "titulo": "11 — Trabajo de extracción y energía cinética en el efecto fotoeléctrico",
-      "tema": "Física cuántica",
+      "titulo": "Trabajo de extracción y energía cinética en el efecto fotoeléctrico con $\\lambda_{\\text{umbral}}$ dada",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
       "puntuacion": "1 punto",
-      "enunciado": "Al iluminar una lámina metálica con luz de longitud de onda superior a $1{,}1\\cdot10^{-6}\\,\\text{m}$ deja de producirse el efecto fotoeléctrico. Calcule el trabajo de extracción y la energía cinética máxima de los fotoelectrones emitidos cuando se ilumina con luz de longitud de onda $2{,}7\\cdot10^{-7}\\,\\text{m}$.",
+      "enunciado": "Al iluminar una lámina metálica con luz de longitud de onda superior a $1{,}1\\cdot 10^{-6}$ m deja de producirse el efecto fotoeléctrico. Calcule el trabajo de extracción y la energía cinética máxima de los fotoelectrones emitidos cuando se ilumina dicha lámina con luz de longitud de onda $2{,}7\\cdot 10^{-7}$ m.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Trabajo de extracción",
-          "contenido": "La longitud de onda umbral es $\\lambda_0=1{,}1\\cdot10^{-6}\\,\\text{m}$. Así, $W_{\\text{ext}}=\\frac{h\\,c}{\\lambda_0}\\approx1{,}81\\cdot10^{-19}\\,\\text{J}\\approx1{,}13\\,\\text{eV}$."
+          "contenido": "La longitud de onda umbral $\\lambda_0=1{,}1\\cdot10^{-6}\\,\\text{m}$ corresponde a fotones cuya energía iguala exactamente al trabajo de extracción:\n\n$$W=\\frac{hc}{\\lambda_0}=\\frac{(6{,}63\\cdot10^{-34})(3{,}00\\cdot10^{8})}{1{,}1\\cdot10^{-6}}\\approx1{,}81\\cdot10^{-19}\\,\\text{J}\\approx1{,}13\\,\\text{eV}.$$"
         },
         {
           "titulo": "Energía del fotón incidente",
-          "contenido": "Para $\\lambda=2{,}7\\cdot10^{-7}\\,\\text{m}$, $E_{\\gamma}=\\frac{h\\,c}{\\lambda}\\approx7{,}36\\cdot10^{-19}\\,\\text{J}\\approx4{,}60\\,\\text{eV}$."
+          "contenido": "Para $\\lambda=2{,}7\\cdot10^{-7}\\,\\text{m}$,\n\n$$E=\\frac{hc}{\\lambda}=\\frac{(6{,}63\\cdot10^{-34})(3{,}00\\cdot10^{8})}{2{,}7\\cdot10^{-7}}\\approx7{,}37\\cdot10^{-19}\\,\\text{J}\\approx4{,}60\\,\\text{eV}.$$"
         },
         {
           "titulo": "Energía cinética máxima",
-          "contenido": "$K_{\\text{max}}=E_{\\gamma}-W_{\\text{ext}}\\approx5{,}56\\cdot10^{-19}\\,\\text{J}\\approx3{,}47\\,\\text{eV}$."
+          "contenido": "La energía cinética máxima es\n\n$$K_{\\text{max}}=E-W\\approx7{,}37\\cdot10^{-19}-1{,}81\\cdot10^{-19}=5{,}56\\cdot10^{-19}\\,\\text{J}\\approx3{,}47\\,\\text{eV}.$$"
         }
       ],
-      "resultado": "$W_{\\text{ext}}\\approx1{,}81\\cdot10^{-19}\\,\\text{J}\\approx1{,}13\\,\\text{eV}$; $K_{\\text{max}}\\approx5{,}56\\cdot10^{-19}\\,\\text{J}\\approx3{,}47\\,\\text{eV}$."
+      "resultado": "$W\\approx1{,}81\\cdot10^{-19}\\,\\text{J}\\approx1{,}13\\,\\text{eV}$; $K_{\\text{max}}\\approx5{,}56\\cdot10^{-19}\\,\\text{J}\\approx3{,}47\\,\\text{eV}$."
     },
     {
       "numero": 12,
-      "titulo": "1B — ¿Es $E_m=E_p/2$ para un satélite en órbita?",
-      "tema": "Campo gravitatorio",
+      "titulo": "Energía mecánica de un satélite frente a la potencial: ¿$E_{m} = E_{p}/2$?",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
       "puntuacion": "1 punto",
-      "enunciado": "Razone si es correcta la afirmación: “El valor de la energía mecánica de un satélite que orbita alrededor de un planeta es la mitad del valor de su energía potencial”.",
+      "enunciado": "Razone si la siguiente afirmación es correcta: “El valor de la energía mecánica de un satélite que orbita alrededor de un planeta es la mitad del valor de su energía potencial”.",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Energías en órbita circular",
-          "contenido": "Para un satélite en órbita circular de radio $r$: $E_p=-\\frac{G\\,M\\,m}{r}$ y, como $v^{2}=\\frac{G\\,M}{r}$, $E_c=\\frac{1}{2}m\\,v^{2}=\\frac{G\\,M\\,m}{2r}$."
+          "titulo": "Energía mecánica en órbita circular",
+          "contenido": "Para un satélite de masa $m$ en órbita circular de radio $r$ alrededor de un planeta de masa $M$, las energías son\n\n$$E_c=\\frac{GMm}{2r},\\qquad E_p=-\\frac{GMm}{r},\\qquad E_m=E_c+E_p=-\\frac{GMm}{2r}.$$"
         },
         {
-          "titulo": "Comparación",
-          "contenido": "$E_m=E_c+E_p=\\frac{G\\,M\\,m}{2r}-\\frac{G\\,M\\,m}{r}=-\\frac{G\\,M\\,m}{2r}=\\frac{E_p}{2}$."
+          "titulo": "Comparación de $E_m$ con $E_p$",
+          "contenido": "Tenemos $E_p=-\\frac{GMm}{r}$ y $E_m=-\\frac{GMm}{2r}$. La relación es\n\n$$E_m=\\frac{E_p}{2}.$$\n\nEs decir, en valor con su signo, la energía mecánica es la mitad de la energía potencial. Tanto $E_m$ como $E_p$ son negativas, y $E_m$ es la mitad de $E_p$ (en módulo también)."
+        },
+        {
+          "titulo": "Conclusión",
+          "contenido": "La afirmación es CIERTA para una órbita circular: $E_m=E_p/2$ (relación del virial). El resultado es consecuencia directa del teorema del virial aplicado al potencial newtoniano."
         }
       ],
-      "resultado": "La afirmación es cierta para una órbita circular: $E_m=\\frac{E_p}{2}$."
+      "resultado": "Cierta para órbita circular: $E_m=\\frac{E_p}{2}$ (consecuencia del teorema del virial)."
     },
     {
       "numero": 13,
-      "titulo": "2B — Radios y frecuencias de dos cargas en un campo magnético",
-      "tema": "Campo magnético",
+      "titulo": "Relación entre radios y frecuencias en trayectorias circulares de dos cargas en un campo magnético",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz",
       "puntuacion": "1 punto",
-      "enunciado": "Dos partículas $A$ y $B$, de igual carga y masa, entran perpendicularmente en un campo magnético uniforme. Si $v_B=2v_A$, ¿qué relación existe entre los radios de sus trayectorias? ¿Y entre las frecuencias de sus movimientos circulares?",
+      "enunciado": "Dos partículas $A$ y $B$, de igual carga y masa, se mueven en la misma dirección y entran perpendicularmente en un campo magnético uniforme. Si la relación entre sus velocidades es $v_B = 2 v_A$, ¿qué relación existe entre los radios de sus trayectorias? ¿Y entre las frecuencias de los respectivos movimientos circulares?",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Radio de la trayectoria",
-          "contenido": "La fuerza magnética es centrípeta: $q\\,v\\,B=\\frac{m\\,v^{2}}{r}$, de donde $r=\\frac{m\\,v}{q\\,B}$. Por tanto, $r_B=2r_A$."
+          "titulo": "Radio de la trayectoria circular en campo magnético",
+          "contenido": "Para una partícula cargada que entra perpendicularmente a $\\vec B$, la fuerza magnética es centrípeta:\n\n$$|q|vB=\\frac{mv^{2}}{r}\\Rightarrow r=\\frac{mv}{|q|B}.$$\n\nEl radio es proporcional a la velocidad (manteniendo $m$, $q$ y $B$ constantes)."
         },
         {
-          "titulo": "Frecuencia ciclotrónica",
-          "contenido": "El periodo es $T=\\frac{2\\pi m}{q\\,B}$ y la frecuencia $f=\\frac{q\\,B}{2\\pi m}$, independiente de la velocidad. Así, $f_B=f_A$."
+          "titulo": "Relación entre radios",
+          "contenido": "Como $v_B=2v_A$ y las partículas tienen igual carga y masa,\n\n$$\\frac{r_B}{r_A}=\\frac{v_B}{v_A}=2.$$\n\nEl radio de la trayectoria de $B$ es el doble que el de $A$."
+        },
+        {
+          "titulo": "Frecuencia (frecuencia ciclotrónica)",
+          "contenido": "El periodo del movimiento circular es\n\n$$T=\\frac{2\\pi r}{v}=\\frac{2\\pi m}{|q|B},$$\n\nindependiente de la velocidad. La frecuencia es también independiente de $v$. Para dos partículas con igual carga y masa en el mismo campo,\n\n$$f_A=f_B.$$"
         }
       ],
-      "resultado": "$r_B=2r_A$; $f_B=f_A$."
+      "resultado": "$\\frac{r_B}{r_A}=2$; $f_A=f_B$."
     },
     {
       "numero": 14,
-      "titulo": "3B — ¿Puede ser la f.e.m. no nula cuando el flujo es nulo?",
-      "tema": "Electromagnetismo",
+      "titulo": "¿Puede ser la fem inducida no nula cuando el flujo es nulo?",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
       "puntuacion": "1 punto",
       "enunciado": "¿Puede ser distinta de cero la fuerza electromotriz inducida sobre una espira en un instante en el que el flujo magnético sea nulo? Razone la respuesta.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Ley de Faraday-Lenz",
-          "contenido": "La f.e.m. inducida es $\\varepsilon=-\\frac{d\\Phi}{dt}$; depende de la variación del flujo, no de su valor instantáneo."
+          "contenido": "La fem inducida en una espira viene dada por\n\n$$\\varepsilon=-\\frac{d\\Phi_B}{dt},$$\n\nes decir, depende de la tasa de variación temporal del flujo magnético, no del valor instantáneo del flujo en sí."
         },
         {
-          "titulo": "Ejemplo",
-          "contenido": "En una espira que gira en un campo uniforme, $\\Phi=B\\,S\\cos\\omega t$ y $\\varepsilon=B\\,S\\,\\omega\\sin\\omega t$. Cuando $\\Phi=0$, se cumple $\\sin\\omega t=\\pm1$ y $|\\varepsilon|$ es máxima."
+          "titulo": "Sí es posible: ejemplo concreto",
+          "contenido": "Considérese una espira que gira en un campo magnético uniforme. El flujo es $\\Phi_B=BA\\cos(\\omega t)$ y la fem inducida es $\\varepsilon=BA\\omega\\,\\text{sen}(\\omega t)$. En los instantes en que $\\cos(\\omega t)=0$ (esto es, $\\Phi_B=0$), $\\text{sen}(\\omega t)=\\pm1$, así que $|\\varepsilon|$ es máxima. Conclusión: sí, la fem puede ser máxima exactamente cuando el flujo es cero."
+        },
+        {
+          "titulo": "Generalización",
+          "contenido": "Lo que cuenta es cómo cambia el flujo, no su valor absoluto. Otros ejemplos con $\\Phi_B=0$ y $\\varepsilon\\neq0$: (i) espira atravesada por un campo cuya intensidad acaba de invertirse y pasa por cero (cambio rápido grande); (ii) espira que se mueve atravesando una frontera donde cambia rápidamente."
         }
       ],
-      "resultado": "Sí; $\\varepsilon=-\\frac{d\\Phi}{dt}$ puede ser no nula aunque $\\Phi=0$."
+      "resultado": "Sí. La fem inducida depende de $\\frac{d\\Phi_B}{dt}$, no de $\\Phi_B$ en sí. Es posible que $\\Phi_B=0$ y $\\varepsilon\\neq0$ simultáneamente. Ejemplo canónico: una espira que gira en un campo uniforme tiene fem máxima cuando el flujo es cero."
     },
     {
       "numero": 15,
-      "titulo": "4B — Magnitudes características de la ecuación de una onda transversal",
-      "tema": "Vibraciones y ondas",
+      "titulo": "Cuatro magnitudes características de la ecuación de una onda transversal en una cuerda",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
       "puntuacion": "1 punto",
       "enunciado": "Indique cuatro magnitudes características de la ecuación de una onda transversal en una cuerda, defínalas y exprese sus unidades en el S.I.",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Amplitud $A$",
-          "contenido": "Es la elongación máxima respecto a la posición de equilibrio. Unidad: $\\text{m}$."
+          "titulo": "Forma típica de la ecuación de una onda armónica transversal",
+          "contenido": "La ecuación típica es\n\n$$y(x,t)=A\\,\\text{sen}(\\omega t-kx+\\varphi_0).$$\n\nDe aquí se identifican las cuatro magnitudes características principales: amplitud $A$, frecuencia angular $\\omega$ (o periodo $T$, o frecuencia $f$), número de onda $k$ (o longitud de onda $\\lambda$), y fase inicial $\\varphi_0$."
         },
         {
-          "titulo": "Frecuencia angular $\\omega$, periodo $T$ o frecuencia $f$",
-          "contenido": "$\\omega$ mide la rapidez de oscilación temporal, $\\omega=\\frac{2\\pi}{T}=2\\pi f$. Unidades: $\\text{rad}\\,\\text{s}^{-1}$, $\\text{s}$ o $\\text{Hz}$."
+          "titulo": "1) Amplitud $A$",
+          "contenido": "Definición: elongación máxima de un punto del medio respecto a su posición de equilibrio. Cuantifica la intensidad/energía de la onda (energía $\\propto A^{2}$). Unidad S.I.: metro (m)."
         },
         {
-          "titulo": "Número de onda $k$ o longitud de onda $\\lambda$",
-          "contenido": "$k=\\frac{2\\pi}{\\lambda}$; $\\lambda$ es la distancia entre dos puntos consecutivos en fase. Unidades: $\\text{rad}\\,\\text{m}^{-1}$ o $\\text{m}$."
+          "titulo": "2) Frecuencia angular $\\omega$ (equivalente: periodo $T$, frecuencia $f$)",
+          "contenido": "Definición: rapidez de oscilación temporal; $\\omega=2\\pi/T=2\\pi f$. Equivalentemente, $T$ es el tiempo que un punto tarda en completar una oscilación, y $f$ el número de oscilaciones por segundo. Unidades S.I.: $\\omega$ en rad/s, $T$ en s, $f$ en Hz."
         },
         {
-          "titulo": "Fase inicial $\\varphi_0$",
-          "contenido": "Fija el estado de oscilación en $t=0$. Unidad: $\\text{rad}$."
+          "titulo": "3) Número de onda $k$ (equivalente: longitud de onda $\\lambda$)",
+          "contenido": "Definición: medida espacial análoga a $\\omega$ en lo temporal; $k=2\\pi/\\lambda$. La longitud de onda $\\lambda$ es la distancia entre dos máximos consecutivos (o dos puntos en el mismo estado de oscilación). Unidades S.I.: $k$ en rad/m, $\\lambda$ en m."
+        },
+        {
+          "titulo": "4) Fase inicial $\\varphi_0$",
+          "contenido": "Definición: constante que fija el estado de oscilación del punto en el instante $t=0$. Es necesaria para describir la onda completa cuando $t=0$ no coincide con un nodo o un máximo. Unidad S.I.: radianes (rad), adimensional."
+        },
+        {
+          "titulo": "Relación entre ellas: velocidad de propagación",
+          "contenido": "Aunque no es una magnitud característica de la ecuación (es derivada), la velocidad de propagación se relaciona con las anteriores:\n\n$$v=\\frac{\\omega}{k}=\\frac{\\lambda}{T}=\\lambda f,$$\n\ny caracteriza la rapidez con que la perturbación viaja por el medio. Unidad S.I.: m/s."
         }
       ],
-      "resultado": "$A$ ($\\text{m}$), $\\omega$ ($\\text{rad}\\,\\text{s}^{-1}$) o $T$ ($\\text{s}$) o $f$ ($\\text{Hz}$), $k$ ($\\text{rad}\\,\\text{m}^{-1}$) o $\\lambda$ ($\\text{m}$), $\\varphi_0$ ($\\text{rad}$)."
+      "resultado": "Amplitud $A$ (m), frecuencia angular $\\omega$ (rad/s) o periodo $T$ (s) o frecuencia $f$ (Hz), número de onda $k$ (rad/m) o longitud de onda $\\lambda$ (m), fase inicial $\\varphi_0$ (rad). Relación derivada: $v=\\omega/k=\\lambda/T=\\lambda f$ (m/s)."
     },
     {
       "numero": 16,
-      "titulo": "5B — Signo del aumento lateral en lentes convergentes y divergentes",
-      "tema": "Óptica",
+      "titulo": "Signo del aumento lateral en lentes convergentes y divergentes",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
       "puntuacion": "1 punto",
-      "enunciado": "¿Por qué en las lentes convergentes el aumento lateral puede ser positivo o negativo y en las divergentes solo es positivo? Justifique la respuesta con el correspondiente diagrama de rayos.",
+      "enunciado": "¿Por qué en las lentes convergentes el aumento lateral puede ser positivo o negativo y en las divergentes solo es positivo? Justifique su respuesta con el correspondiente diagrama de rayos.",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Aumento lateral",
-          "contenido": "El aumento lateral es $M=\\frac{s'}{s}$. Con criterio cartesiano, el signo de $M$ depende de los signos de $s'$ y $s$."
+          "titulo": "Aumento lateral y su signo",
+          "contenido": "El aumento lateral es $M=y'/y=-s'/s$. Con el criterio cartesiano (objeto a la izquierda, $s<0$), el signo de $M$ depende del signo de $s'$. Si $s'>0$ (imagen real al otro lado de la lente), $M<0$ (imagen invertida). Si $s'<0$ (imagen virtual al mismo lado que el objeto), $M>0$ (imagen derecha)."
         },
         {
-          "titulo": "Lente convergente",
-          "contenido": "Si el objeto está fuera del foco, $s'>0$ y la imagen es real e invertida: $M<0$. Si el objeto está entre la lente y el foco, $s'<0$ y la imagen es virtual y derecha: $M>0$."
+          "titulo": "Lente convergente ($f>0$): doble comportamiento",
+          "contenido": "De $\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f}$ con $f>0$: (a) Si $|s|>f$ (objeto fuera del foco), entonces $s'>0$ y $M<0$. La imagen es real e invertida. (b) Si $|s|<f$ (objeto entre la lente y el foco), entonces $s'<0$ y $M>0$. La imagen es virtual, derecha y mayor. (c) Si $|s|=f$, la imagen se forma en el infinito. Conclusión: una lente convergente puede dar tanto $M<0$ como $M>0$ (objeto cerca, función “lupa”)."
         },
         {
-          "titulo": "Lente divergente",
-          "contenido": "En una lente divergente, $s'<0$ siempre para un objeto real, por lo que $M>0$ siempre: la imagen es virtual, derecha y menor."
+          "titulo": "Lente divergente ($f<0$)",
+          "contenido": "De $\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f}$ con $f<0$ y $s<0$, se obtiene siempre $s'<0$ y por tanto $M>0$ siempre. La imagen es siempre virtual, derecha y menor que el objeto, independientemente de la posición del objeto."
+        },
+        {
+          "titulo": "Diagrama de rayos (descripción)",
+          "contenido": "Convergente, $|s|>f$: dos rayos —uno paralelo al eje (refracta pasando por $F'$) y uno por el centro óptico— convergen al otro lado de la lente, formando imagen real e invertida. Convergente, $|s|<f$: los rayos divergen tras la lente; sus prolongaciones hacia atrás se cortan en el mismo lado del objeto, formando imagen virtual derecha y mayor. Divergente: los rayos siempre divergen tras la lente; sus prolongaciones hacia atrás se cortan en el mismo lado del objeto, formando imagen virtual derecha y menor."
         }
       ],
-      "resultado": "Convergente: $M$ puede ser positivo o negativo. Divergente: $M>0$ siempre."
+      "resultado": "Convergente: $M$ puede ser positivo (objeto entre lente y foco, lupa) o negativo (objeto fuera del foco, imagen real invertida). Divergente: $M>0$ siempre porque $s'<0$ siempre (imagen virtual al mismo lado del objeto)."
     },
     {
       "numero": 17,
-      "titulo": "6B — Relación entre energía cinética de un electrón y energía de un fotón con la misma longitud de onda",
-      "tema": "Física cuántica",
+      "titulo": "Relación entre la energía cinética de un electrón y la energía de un fotón con la misma longitud de onda",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
       "puntuacion": "1 punto",
       "enunciado": "Encuentre la relación entre la energía cinética de un electrón y la energía de un fotón si ambos tienen la misma longitud de onda.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Energía del fotón",
-          "contenido": "Para un fotón de longitud de onda $\\lambda$: $E_{\\gamma}=\\frac{h\\,c}{\\lambda}$."
+          "contenido": "Para un fotón de longitud de onda $\\lambda$,\n\n$$E_{\\text{fotón}}=\\frac{hc}{\\lambda}.$$"
         },
         {
-          "titulo": "Energía cinética del electrón",
-          "contenido": "Con la longitud de onda de de Broglie $\\lambda=\\frac{h}{p}$, la energía cinética no relativista es $K=\\frac{p^{2}}{2m_e}=\\frac{h^{2}}{2m_e\\lambda^{2}}$."
+          "titulo": "Energía cinética del electrón (de Broglie)",
+          "contenido": "Para un electrón no relativista con longitud de onda de de Broglie $\\lambda=h/p$, se tiene $p=h/\\lambda$ y\n\n$$K=\\frac{p^{2}}{2m}=\\frac{h^{2}}{2m\\lambda^{2}}.$$"
         },
         {
-          "titulo": "Cociente",
-          "contenido": "$\\frac{K}{E_{\\gamma}}=\\frac{h}{2m_e c\\lambda}=\\frac{E_{\\gamma}}{2m_e c^{2}}$."
+          "titulo": "Cociente y producto",
+          "contenido": "El cociente entre ambas energías es\n\n$$\\frac{K}{E_{\\text{fotón}}}=\\frac{h^{2}/(2m\\lambda^{2})}{hc/\\lambda}=\\frac{h}{2mc\\lambda}.$$\n\nEquivalentemente, $K=\\frac{h}{2mc\\lambda}E_{\\text{fotón}}$. Usando $\\lambda=h/p$, esto da una expresión que solo involucra a $p$ y constantes universales."
         }
       ],
-      "resultado": "$\\frac{K}{E_{\\gamma}}=\\frac{h}{2m_e c\\lambda}=\\frac{E_{\\gamma}}{2m_e c^{2}}$."
+      "resultado": "$\\frac{K}{E_{\\text{fotón}}}=\\frac{h}{2mc\\lambda}$; $K=\\frac{h^{2}}{2m\\lambda^{2}}$, $E_{\\text{fotón}}=\\frac{hc}{\\lambda}$."
     }
   ]
 }

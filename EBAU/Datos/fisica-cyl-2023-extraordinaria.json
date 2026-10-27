@@ -7,409 +7,406 @@
   "anio": 2023,
   "nivel": "PAU",
   "curso": "2º Bachillerato",
-  "enunciado_general": "Solución paso a paso del examen de Física de selectividad de Castilla y León, convocatoria Extraordinaria 2023. Incluye 17 problemas resueltos con explicaciones detalladas.",
-  "objetivo": "Facilitar el estudio autónomo y la preparación de la PAU mediante soluciones razonadas, con formulación matemática clara y resultados con unidades.",
+  "enunciado_general": "Examen de Física de la PAU de Castilla y León, convocatoria extraordinaria de 2023. Incluye 17 problemas resueltos: 11 preguntas del bloque A y 6 preguntas del bloque B.",
+  "objetivo": "Evaluar la comprensión y aplicación de los contenidos de gravitación, electromagnetismo, ondas, óptica, física cuántica y física nuclear, con resolución razonada y manejo correcto de unidades.",
   "procedimiento": [
     {
       "titulo": "Estructura del examen",
-      "contenido": "El examen consta de dos bloques: bloque A con 11 preguntas y bloque B con 6 preguntas. Se deben elegir 7 preguntas del bloque A y 3 del bloque B; cada pregunta vale 1 punto."
+      "contenido": "OPTATIVIDAD: se podrán elegir siete preguntas del bloque A y tres preguntas del bloque B. Todas las preguntas se evaluarán sobre un máximo de 1 punto, tanto las del bloque A como las del bloque B. La calificación final se obtendrá sumando las notas de las 10 preguntas elegidas. Las fórmulas empleadas en la resolución de los ejercicios deberán acompañarse de los razonamientos oportunos y los resultados numéricos obtenidos para las magnitudes físicas deberán escribirse con las unidades adecuadas."
     },
     {
-      "titulo": "Criterios de resolución",
-      "contenido": "Cada solución se presenta paso a paso, justificando las fórmulas empleadas, sustituyendo los datos y expresando los resultados con las unidades adecuadas."
+      "titulo": "Constantes y datos",
+      "contenido": "No se incluye una tabla explícita de constantes en el examen. En las resoluciones se emplean las constantes estándar necesarias: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$, $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$, $g_0=9{,}80\\,\\text{m}\\,\\text{s}^{-2}$, $k=9{,}00\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$, $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$ y $hc=1240\\,\\text{eV}\\,\\text{nm}$."
     }
   ],
   "ejercicios": [
     {
       "numero": 1,
       "titulo": "Distancia al centro de la Tierra desde dos puntos y velocidad mínima entre ellos",
-      "tema": "Campo gravitatorio",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo; A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
       "puntuacion": "1 punto",
       "enunciado": "En un cierto punto $A$ la intensidad de la gravedad es la mitad que en la superficie de la Tierra, mientras que en otro punto $B$ es la cuarta parte. Determine la distancia de ambos puntos al centro de la Tierra y la velocidad mínima que debe llevar un objeto en $A$ para poder alcanzar el punto $B$.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Cálculo del radio en A y B",
-          "contenido": "La gravedad a una distancia $r$ del centro de la Tierra es $g=\\frac{G\\,M_T}{r^2}$. Despejando $r=\\sqrt{\\frac{G\\,M_T}{g}}$. Punto $A$ ($g_A=g_0/2$): $r_A=\\sqrt{2}\\,R_T\\approx9{,}01\\cdot10^{6}\\,\\text{m}$. Punto $B$ ($g_B=g_0/4$): $r_B=2\\,R_T\\approx1{,}27\\cdot10^{7}\\,\\text{m}$."
+          "contenido": "La gravedad a una distancia $r$ del centro de la Tierra es $g=\\dfrac{GM_T}{r^{2}}$. Despejando $r$ se obtiene $r=\\sqrt{\\dfrac{GM_T}{g}}$.\n\nEn el punto $A$, $g_A=\\dfrac{g_0}{2}$, por lo que:\n\n$$r_A=R_T\\sqrt{2}=6{,}37\\cdot10^{6}\\sqrt{2}=9{,}01\\cdot10^{6}\\,\\text{m}.$$\n\nEn el punto $B$, $g_B=\\dfrac{g_0}{4}$, por lo que:\n\n$$r_B=2R_T=1{,}274\\cdot10^{7}\\,\\text{m}.$$"
         },
         {
           "titulo": "Velocidad mínima en A para alcanzar B",
-          "contenido": "Aplicando conservación de la energía mecánica entre $A$ y $B$, con $v_B=0$ como situación límite: $\\frac{1}{2}m v_A^2-\\frac{G\\,M_T\\,m}{r_A}=-\\frac{G\\,M_T\\,m}{r_B}$. Por tanto, $v_A=\\sqrt{2G\\,M_T\\left(\\frac{1}{r_A}-\\frac{1}{r_B}\\right)}\\approx5{,}09\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$."
+          "contenido": "Aplicando la conservación de la energía mecánica entre $A$ y $B$, con velocidad nula en $B$ como situación límite para alcanzar dicho punto:\n\n$$\\frac{1}{2}m v_A^{2}-\\frac{GM_Tm}{r_A}=-\\frac{GM_Tm}{r_B}.$$\n\nPor tanto:\n\n$$v_A=\\sqrt{2GM_T\\left(\\frac{1}{r_A}-\\frac{1}{r_B}\\right)}=\\sqrt{2g_0R_T^{2}\\left(\\frac{1}{R_T\\sqrt{2}}-\\frac{1}{2R_T}\\right)}.$$\n\nSustituyendo los datos:\n\n$$v_A=5{,}08\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
         }
       ],
-      "resultado": "$r_A\\approx9{,}01\\cdot10^{6}\\,\\text{m}$; $r_B\\approx1{,}27\\cdot10^{7}\\,\\text{m}$; $v_{A,\\text{mín}}\\approx5{,}09\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$."
+      "resultado": "$r_A=9{,}01\\cdot10^{6}\\,\\text{m}$; $r_B=1{,}274\\cdot10^{7}\\,\\text{m}$; $v_{A,\\min}=5{,}08\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$."
     },
     {
       "numero": 2,
       "titulo": "Radio de la órbita y masa de un satélite a partir de su energía mecánica y su velocidad",
-      "tema": "Campo gravitatorio",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
       "puntuacion": "1 punto",
       "enunciado": "Un satélite artificial describe una órbita circular alrededor de la Tierra. La energía mecánica del satélite en la órbita es $-4{,}5\\cdot10^{9}\\,\\text{J}$ y su velocidad $7610\\,\\text{m}\\,\\text{s}^{-1}$. Calcule el radio de la órbita y la masa del satélite.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Relación entre energía mecánica y energía cinética en órbita circular",
-          "contenido": "Para una órbita circular, $E_m=-\\frac{G\\,M_T\\,m}{2r}$ y $E_c=\\frac{1}{2}m v^2=\\frac{G\\,M_T\\,m}{2r}$, por lo que $E_m=-E_c$. Así, $E_c=4{,}5\\cdot10^{9}\\,\\text{J}$."
-        },
-        {
-          "titulo": "Cálculo de la masa",
-          "contenido": "$E_c=\\frac{1}{2}m v^2\\Rightarrow m=\\frac{2E_c}{v^2}=\\frac{2\\cdot4{,}5\\cdot10^{9}}{7610^2}\\approx1{,}55\\cdot10^{2}\\,\\text{kg}$."
+          "contenido": "Para una órbita circular se cumple $U=-2K$ y $E_m=K+U=-K$. Por tanto:\n\n$$K=-E_m=4{,}5\\cdot10^{9}\\,\\text{J}.$$\n\nComo $K=\\dfrac{1}{2}m v^{2}$, la masa del satélite es:\n\n$$m=\\frac{2K}{v^{2}}=\\frac{2\\cdot4{,}5\\cdot10^{9}}{7610^{2}}=1{,}55\\cdot10^{2}\\,\\text{kg}.$$"
         },
         {
           "titulo": "Cálculo del radio orbital",
-          "contenido": "De $v^2=\\frac{G\\,M_T}{r}$ se obtiene $r=\\frac{G\\,M_T}{v^2}\\approx6{,}88\\cdot10^{6}\\,\\text{m}$."
+          "contenido": "En una órbita circular, $v^{2}=\\dfrac{GM_T}{r}$, de donde:\n\n$$r=\\frac{GM_T}{v^{2}}=\\frac{6{,}67\\cdot10^{-11}\\cdot5{,}98\\cdot10^{24}}{7610^{2}}=6{,}88\\cdot10^{6}\\,\\text{m}.$$"
         }
       ],
-      "resultado": "$r\\approx6{,}88\\cdot10^{6}\\,\\text{m}$; $m\\approx1{,}55\\cdot10^{2}\\,\\text{kg}$."
+      "resultado": "$m=1{,}55\\cdot10^{2}\\,\\text{kg}$; $r=6{,}88\\cdot10^{6}\\,\\text{m}$."
     },
     {
       "numero": 3,
       "titulo": "Trabajo necesario para trasladar una carga entre dos puntos en un campo de Coulomb",
-      "tema": "Campo eléctrico",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
       "puntuacion": "1 punto",
-      "enunciado": "Se tiene una carga de $10\\,\\text{nC}$ situada en el punto $(0,0)$ del plano $XY$. En un punto $A$, el campo creado por dicha carga es $\\vec{E}=-25\\,\\vec{i}+25\\,\\vec{j}\\;\\text{N}\\,\\text{C}^{-1}$. Calcule el trabajo necesario para trasladar una carga de $2\\,\\text{nC}$ desde el punto $A$ al punto $(0,3)\\,\\text{m}$.",
+      "enunciado": "Se tiene una carga de $10\\,\\text{nC}$ situada en el punto $(0,0)$ del plano $XY$. En un punto $A$, el campo creado por dicha carga es $\\vec E=-25\\,\\vec i+25\\,\\vec j\\,\\text{N}\\,\\text{C}^{-1}$. Calcule el trabajo necesario para trasladar una carga de $2\\,\\text{nC}$ desde el punto $A$ al punto $(0,3)\\,\\text{m}$.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Determinación de la posición del punto A",
-          "contenido": "El módulo del campo en $A$ es $E=25\\sqrt{2}\\,\\text{N}\\,\\text{C}^{-1}$. Como $E=k\\frac{q}{r^2}$, $r_A=\\sqrt{\\frac{k q}{E}}\\approx1{,}595\\,\\text{m}$. La dirección de $\\vec{E}$ apunta desde el origen hacia $A$; por tanto, $A\\approx(-1{,}128,\\,1{,}128)\\,\\text{m}$."
+          "contenido": "El módulo del campo en $A$ es $E=\\sqrt{25^{2}+25^{2}}=25\\sqrt{2}=35{,}36\\,\\text{N}\\,\\text{C}^{-1}$. Como $E=\\dfrac{kq}{r^{2}}$, se tiene:\n\n$$r_A=\\sqrt{\\frac{kq}{E}}=\\sqrt{\\frac{9\\cdot10^{9}\\cdot10\\cdot10^{-9}}{35{,}36}}=1{,}60\\,\\text{m}.$$\n\nLa dirección del campo es la de $(-\\vec i+\\vec j)/\\sqrt{2}$ y, al ser la carga creadora positiva, apunta desde el origen hacia $A$. Por tanto:\n\n$$A=\\left(-\\frac{1{,}60}{\\sqrt{2}},\\frac{1{,}60}{\\sqrt{2}}\\right)\\approx(-1{,}13,\\,1{,}13)\\,\\text{m}.$$"
         },
         {
           "titulo": "Potencial eléctrico en A y B",
-          "contenido": "Con $k=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^2\\,\\text{C}^{-2}$ y $q=10\\cdot10^{-9}\\,\\text{C}$: $V_A=\\frac{k q}{r_A}\\approx56{,}4\\,\\text{V}$; $V_B=\\frac{k q}{3}\\approx30{,}0\\,\\text{V}$."
+          "contenido": "El potencial en $A$ es:\n\n$$V_A=\\frac{kq}{r_A}=\\frac{9\\cdot10^{9}\\cdot10\\cdot10^{-9}}{1{,}60}=56{,}3\\,\\text{V}.$$\n\nEl punto $B$ es $(0,3)\\,\\text{m}$, por lo que $r_B=3\\,\\text{m}$ y:\n\n$$V_B=\\frac{kq}{r_B}=\\frac{9\\cdot10^{9}\\cdot10\\cdot10^{-9}}{3}=30{,}0\\,\\text{V}.$$"
         },
         {
           "titulo": "Trabajo necesario para trasladar la carga",
-          "contenido": "El trabajo externo en cuasi-equilibrio es $W_{\\text{ext}}=q'(V_B-V_A)\\approx-5{,}28\\cdot10^{-8}\\,\\text{J}$. El trabajo realizado por el campo electrostático es $W_{\\text{campo}}=-W_{\\text{ext}}\\approx+5{,}28\\cdot10^{-8}\\,\\text{J}$."
+          "contenido": "El trabajo realizado por una fuerza externa que mueve la carga $q'=2\\,\\text{nC}$ en cuasi-equilibrio desde $A$ hasta $B$ es:\n\n$$W_{\\text{ext}}=q'(V_B-V_A)=2\\cdot10^{-9}(30{,}0-56{,}3)=-5{,}26\\cdot10^{-8}\\,\\text{J}.$$\n\nEquivalentemente, el trabajo realizado por el campo electrostático es $W_{\\text{campo}}=+5{,}26\\cdot10^{-8}\\,\\text{J}$."
         }
       ],
-      "resultado": "$W_{\\text{ext}}\\approx-5{,}28\\cdot10^{-8}\\,\\text{J}$; $W_{\\text{campo}}\\approx+5{,}28\\cdot10^{-8}\\,\\text{J}$."
+      "resultado": "$W_{\\text{ext}}=-5{,}26\\cdot10^{-8}\\,\\text{J}$; $W_{\\text{campo}}=+5{,}26\\cdot10^{-8}\\,\\text{J}$."
     },
     {
       "numero": 4,
       "titulo": "Campo magnético en el centro de la hipotenusa de un triángulo rectángulo con tres hilos",
-      "tema": "Campo magnético",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B8. Líneas de campo eléctrico y magnético en distribuciones sencillas",
       "puntuacion": "1 punto",
-      "enunciado": "Por tres hilos rectilíneos $A$, $B$ y $C$, muy largos y paralelos, circula la misma intensidad de $2\\,\\text{A}$. $A$ está en $(0,1)\\,\\text{m}$ con corriente saliente ($\\odot$), $B$ en $(1,0)\\,\\text{m}$ con corriente saliente ($\\odot$) y $C$ en $(0,0)\\,\\text{m}$ con corriente entrante ($\\otimes$). Los catetos $AC$ y $CB$ miden $1\\,\\text{m}$ y la hipotenusa $AB$ mide $\\sqrt{2}\\,\\text{m}$. $M$ es el punto medio de la hipotenusa, en $(0{,}5,\\,0{,}5)\\,\\text{m}$. Calcule el vector campo magnético generado en $M$ y realice un diagrama ilustrativo.",
+      "enunciado": "Por tres hilos rectilíneos $A$, $B$ y $C$, muy largos y paralelos, circula la misma intensidad de $2\\,\\text{A}$. Su posición y el sentido de la corriente se muestran en la figura. Calcule el vector campo magnético generado en el punto medio $M$ de la hipotenusa. Realice un diagrama ilustrativo que muestre el campo que produce cada hilo en ese punto, así como el campo total.\n\nFigura: $A$ en $(0,1)\\,\\text{m}$ con corriente saliente del plano ($\\odot$); $B$ en $(1,0)\\,\\text{m}$ con corriente saliente del plano ($\\odot$); $C$ en $(0,0)$ con corriente entrante al plano ($\\otimes$). Catetos $AC$ y $CB$ de $1\\,\\text{m}$, hipotenusa $AB$ de $\\sqrt{2}\\,\\text{m}$. $M$ es el punto medio de la hipotenusa, en $(0{,}5,\\,0{,}5)\\,\\text{m}$.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Distancias desde cada hilo a M",
-          "contenido": "Las distancias son $AM=BM=CM=\\frac{\\sqrt{2}}{2}\\,\\text{m}$."
+          "contenido": "El punto $M$ es $(0{,}5,\\,0{,}5)\\,\\text{m}$. Las distancias a los tres hilos son:\n\n$$r_A=r_B=r_C=\\sqrt{0{,}5^{2}+0{,}5^{2}}=\\sqrt{0{,}5}=0{,}707\\,\\text{m}.$$"
         },
         {
           "titulo": "Módulo del campo de cada hilo en M",
-          "contenido": "Aplicando $B=\\frac{\\mu_0 I}{2\\pi d}$, con $d=\\frac{\\sqrt{2}}{2}\\,\\text{m}$, resulta $B_A=B_B=B_C\\approx2{,}83\\cdot10^{-7}\\,\\text{T}$."
+          "contenido": "Aplicando $B=\\dfrac{\\mu_0I}{2\\pi r}$:\n\n$$B_A=B_B=B_C=\\frac{4\\pi\\cdot10^{-7}\\cdot2}{2\\pi\\cdot0{,}707}=5{,}66\\cdot10^{-7}\\,\\text{T}.$$"
         },
         {
           "titulo": "Direcciones y campo total",
-          "contenido": "Las contribuciones de $A$ y $B$ son opuestas y se cancelan. El campo total coincide con el creado por $C$, de dirección la bisectriz del cuarto cuadrante: $\\vec{B}_M\\approx2{,}83\\cdot10^{-7}\\left(\\frac{\\sqrt{2}}{2}\\vec{i}-\\frac{\\sqrt{2}}{2}\\vec{j}\\right)\\,\\text{T}$."
+          "contenido": "Para una corriente saliente del plano, $\\vec B=\\dfrac{\\mu_0I}{2\\pi r^{2}}\\,\\vec k\\times\\vec r$. En $M$:\n\n- El campo de $A$ apunta hacia el noreste, es decir, según $(\\vec i+\\vec j)/\\sqrt{2}$.\n- El campo de $B$ apunta hacia el suroeste, según $(-\\vec i-\\vec j)/\\sqrt{2}$.\n- El campo de $C$ apunta hacia el sureste, según $(\\vec i-\\vec j)/\\sqrt{2}$.\n\nLas contribuciones de $A$ y $B$ son opuestas y se cancelan. Por tanto, el campo total coincide con el de $C$:\n\n$$\\vec B_{\\text{total}}=5{,}66\\cdot10^{-7}\\left(\\frac{\\vec i-\\vec j}{\\sqrt{2}}\\right)\\,\\text{T}.$$\n\nSu módulo es $5{,}66\\cdot10^{-7}\\,\\text{T}$ y su dirección es la bisectriz del cuarto cuadrante, $45^{\\circ}$ por debajo del eje $X$."
         }
       ],
-      "resultado": "$\\vec{B}_M\\approx2{,}83\\cdot10^{-7}\\left(\\frac{\\sqrt{2}}{2}\\vec{i}-\\frac{\\sqrt{2}}{2}\\vec{j}\\right)\\,\\text{T}$; módulo $2{,}83\\cdot10^{-7}\\,\\text{T}$, dirección bisectriz del cuarto cuadrante."
+      "resultado": "$\\vec B_{\\text{total}}=5{,}66\\cdot10^{-7}\\left(\\dfrac{\\vec i-\\vec j}{\\sqrt{2}}\\right)\\,\\text{T}$; módulo $5{,}66\\cdot10^{-7}\\,\\text{T}$, dirección $45^{\\circ}$ por debajo del eje $X$."
     },
     {
       "numero": 5,
       "titulo": "Flujo magnético en una espira circular inclinada y fem inducida",
-      "tema": "Electromagnetismo",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
       "puntuacion": "1 punto",
       "enunciado": "Una espira circular de $4\\,\\text{cm}$ de radio forma un ángulo de $45^{\\circ}$ con un campo magnético uniforme. Durante un intervalo de tiempo de $0{,}2\\,\\text{s}$ el valor del campo magnético varía linealmente de $250\\,\\text{mT}$ a $310\\,\\text{mT}$. Determine la expresión del flujo en función del tiempo y calcule la fuerza electromotriz inducida en la espira.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Área y geometría",
-          "contenido": "$A=\\pi r^2=\\pi(0{,}04)^2\\approx5{,}03\\cdot10^{-3}\\,\\text{m}^2$. El plano de la espira forma $45^{\\circ}$ con $\\vec{B}$, por lo que el ángulo entre la normal y $\\vec{B}$ es $45^{\\circ}$ y $\\cos\\theta=\\frac{\\sqrt{2}}{2}$."
+          "contenido": "El área de la espira es:\n\n$$A=\\pi r^{2}=\\pi(0{,}04)^{2}=5{,}03\\cdot10^{-3}\\,\\text{m}^{2}.$$\n\nComo el plano de la espira forma $45^{\\circ}$ con $\\vec B$, el ángulo entre la normal a la espira y $\\vec B$ es $45^{\\circ}$, por lo que $\\cos\\theta=\\cos45^{\\circ}=\\dfrac{\\sqrt{2}}{2}$."
         },
         {
           "titulo": "Campo magnético en función del tiempo",
-          "contenido": "La variación es lineal: $B(t)=0{,}250+\\frac{0{,}310-0{,}250}{0{,}2}t=0{,}250+0{,}300t\\;\\text{T}$."
+          "contenido": "El campo varía linealmente de $0{,}250\\,\\text{T}$ a $0{,}310\\,\\text{T}$ en $0{,}2\\,\\text{s}$, por lo que:\n\n$$B(t)=0{,}250+\\frac{0{,}310-0{,}250}{0{,}2}\\,t=0{,}250+0{,}300\\,t\\,\\text{T}.$$"
         },
         {
-          "titulo": "Flujo en función del tiempo",
-          "contenido": "$\\Phi(t)=B(t)A\\cos\\theta\\approx(8{,}89\\cdot10^{-4}+1{,}07\\cdot10^{-3}t)\\,\\text{Wb}$."
-        },
-        {
-          "titulo": "Fuerza electromotriz inducida",
-          "contenido": "$\\varepsilon=-\\frac{d\\Phi}{dt}\\approx-1{,}07\\cdot10^{-3}\\,\\text{V}$. El signo negativo indica, según la ley de Lenz, oposición al aumento del flujo."
+          "titulo": "Flujo en función del tiempo y fuerza electromotriz",
+          "contenido": "El flujo magnético es:\n\n$$\\Phi(t)=BA\\cos\\theta=5{,}03\\cdot10^{-3}\\cdot\\frac{\\sqrt{2}}{2}(0{,}250+0{,}300\\,t).$$\n\nNuméricamente:\n\n$$\\Phi(t)=8{,}89\\cdot10^{-4}+1{,}07\\cdot10^{-3}\\,t\\,\\text{Wb}.$$\n\nLa fuerza electromotriz inducida es:\n\n$$\\varepsilon=-\\frac{d\\Phi}{dt}=-1{,}07\\cdot10^{-3}\\,\\text{V}.$$\n\nEl signo negativo indica, según la ley de Lenz, que la corriente inducida se opone al aumento del flujo."
         }
       ],
-      "resultado": "$\\Phi(t)\\approx(8{,}89\\cdot10^{-4}+1{,}07\\cdot10^{-3}t)\\,\\text{Wb}$; $\\varepsilon\\approx-1{,}07\\cdot10^{-3}\\,\\text{V}$."
+      "resultado": "$\\Phi(t)=8{,}89\\cdot10^{-4}+1{,}07\\cdot10^{-3}\\,t\\,\\text{Wb}$; $\\varepsilon=-1{,}07\\cdot10^{-3}\\,\\text{V}$, con $|\\varepsilon|=1{,}07\\,\\text{mV}$."
     },
     {
       "numero": 6,
       "titulo": "Velocidad de propagación a partir de la aceleración máxima y la longitud de onda",
-      "tema": "Vibraciones y ondas",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía; C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
       "puntuacion": "1 punto",
-      "enunciado": "Una onda transversal se propaga a lo largo de una cuerda horizontal, de forma que el primer punto que oscila en oposición de fase respecto de un extremo dista $20\\,\\text{cm}$ de este. Teniendo en cuenta que en dicho punto la aceleración máxima de vibración tiene un valor numérico 100 veces superior al de su elongación máxima (expresando ambas magnitudes en el S.I.), determine la velocidad de propagación de la onda.",
+      "enunciado": "Una onda transversal se propaga a lo largo de una cuerda horizontal, de forma que el primer punto que oscila en oposición de fase respecto de un extremo dista $20\\,\\text{cm}$ de este. Teniendo en cuenta que en dicho punto la aceleración máxima de vibración tiene un valor numérico $100$ veces superior al de su elongación máxima (expresando ambas magnitudes en el S.I.), determine la velocidad de propagación de la onda.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Longitud de onda a partir de la oposición de fase",
-          "contenido": "Dos puntos en oposición de fase están desfasados $\\pi\\,\\text{rad}$, lo que corresponde a $\\Delta x=\\frac{\\lambda}{2}$. Como $\\Delta x=0{,}20\\,\\text{m}$, entonces $\\lambda=0{,}40\\,\\text{m}$."
+          "contenido": "Dos puntos en oposición de fase están desfasados $\\pi\\,\\text{rad}$, lo que corresponde a una distancia $\\dfrac{\\lambda}{2}$. Como el primer punto en oposición de fase está a $20\\,\\text{cm}$ del extremo:\n\n$$\\frac{\\lambda}{2}=0{,}20\\,\\text{m}\\Rightarrow\\lambda=0{,}40\\,\\text{m}.$$"
         },
         {
-          "titulo": "Frecuencia angular a partir de la relación aceleración-elongación",
-          "contenido": "$a_{\\text{max}}=\\omega^2 A$ e $y_{\\text{max}}=A$. La condición $a_{\\text{max}}=100\\,y_{\\text{max}}$ implica $\\omega^2=100$ y $\\omega=10\\,\\text{rad}\\,\\text{s}^{-1}$; por tanto, $f=\\frac{\\omega}{2\\pi}\\approx1{,}59\\,\\text{Hz}$."
+          "titulo": "Frecuencia angular a partir de la relación entre aceleración y elongación",
+          "contenido": "Para una oscilación armónica simple, $a_{\\text{max}}=\\omega^{2}A$ e $y_{\\text{max}}=A$. La condición del enunciado, $a_{\\text{max}}=100\\,y_{\\text{max}}$, implica:\n\n$$\\omega^{2}=100\\Rightarrow\\omega=10\\,\\text{rad}\\,\\text{s}^{-1}.$$\n\nPor tanto, la frecuencia es $f=\\dfrac{\\omega}{2\\pi}=1{,}59\\,\\text{Hz}$."
         },
         {
           "titulo": "Velocidad de propagación",
-          "contenido": "$v=\\lambda f=0{,}40\\cdot1{,}59\\approx0{,}64\\,\\text{m}\\,\\text{s}^{-1}$."
+          "contenido": "La velocidad de propagación es:\n\n$$v=\\frac{\\omega\\lambda}{2\\pi}=\\frac{10\\cdot0{,}40}{2\\pi}=0{,}637\\,\\text{m}\\,\\text{s}^{-1}.$$"
         }
       ],
-      "resultado": "$v\\approx0{,}64\\,\\text{m}\\,\\text{s}^{-1}$."
+      "resultado": "$v=0{,}637\\,\\text{m}\\,\\text{s}^{-1}$."
     },
     {
       "numero": 7,
       "titulo": "Nivel de intensidad sonora producido por una explosión",
-      "tema": "Ondas sonoras",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
       "puntuacion": "1 punto",
-      "enunciado": "Una explosión libera $10^{6}\\,\\text{J}$ de energía en $0{,}5\\,\\text{s}$. Se sabe que el $50\\,\\%$ de esta energía se convierte en ondas sonoras. Si el sonido se propaga formando frentes de onda esféricos, ¿cuál es el nivel de intensidad sonora a una distancia de $120\\,\\text{m}$? Dato: $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$.",
+      "enunciado": "Una explosión libera $10^{6}\\,\\text{J}$ de energía en $0{,}5\\,\\text{s}$. Se sabe que el $50\\,\\%$ de esta energía se convierte en ondas sonoras. Si el sonido se propaga formando frentes de onda esféricos, ¿cuál es el nivel de intensidad sonora a una distancia de $120\\,\\text{m}$?\n\nDato: Intensidad física umbral $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Potencia sonora",
-          "contenido": "La energía sonora es $E_{\\text{son}}=0{,}5\\cdot10^{6}=5\\cdot10^{5}\\,\\text{J}$. La potencia sonora es $P=\\frac{E_{\\text{son}}}{t}=\\frac{5\\cdot10^{5}}{0{,}5}=1\\cdot10^{6}\\,\\text{W}$."
+          "contenido": "La energía sonora total es $E_{\\text{son}}=0{,}50\\cdot10^{6}=5{,}0\\cdot10^{5}\\,\\text{J}$. La potencia sonora emitida durante la explosión es:\n\n$$P=\\frac{E_{\\text{son}}}{t}=\\frac{5{,}0\\cdot10^{5}}{0{,}5}=1{,}0\\cdot10^{6}\\,\\text{W}.$$"
         },
         {
           "titulo": "Intensidad a 120 m",
-          "contenido": "Para frentes esféricos, $I=\\frac{P}{4\\pi r^2}=\\frac{1\\cdot10^{6}}{4\\pi(120)^2}\\approx5{,}53\\,\\text{W}\\,\\text{m}^{-2}$."
+          "contenido": "Para frentes de onda esféricos:\n\n$$I=\\frac{P}{4\\pi r^{2}}=\\frac{1{,}0\\cdot10^{6}}{4\\pi(120)^{2}}=5{,}53\\,\\text{W}\\,\\text{m}^{-2}.$$"
         },
         {
           "titulo": "Nivel de intensidad sonora",
-          "contenido": "$\\beta=10\\log_{10}\\left(\\frac{I}{I_0}\\right)=10\\log_{10}(5{,}53\\cdot10^{12})\\approx127{,}4\\,\\text{dB}$."
+          "contenido": "El nivel de intensidad sonora es:\n\n$$\\beta=10\\log_{10}\\left(\\frac{I}{I_0}\\right)=10\\log_{10}\\left(\\frac{5{,}53}{10^{-12}}\\right)=127\\,\\text{dB}.$$"
         }
       ],
-      "resultado": "$\\beta\\approx127{,}4\\,\\text{dB}$."
+      "resultado": "$\\beta=127\\,\\text{dB}$."
     },
     {
       "numero": 8,
       "titulo": "Dispersión cromática de un haz de luz blanca en un líquido",
-      "tema": "Óptica",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias; C5. Naturaleza de la luz y óptica física básica",
       "puntuacion": "1 punto",
       "enunciado": "El índice de refracción de un cierto líquido para la luz de color rojo es $1{,}32$ mientras que para el color violeta es $1{,}35$. Sobre un recipiente de $50\\,\\text{cm}$ de altura lleno de este líquido se hace incidir un rayo de luz blanca formando un ángulo de $60^{\\circ}$ con la superficie del líquido. Determine la separación entre los rayos rojo y violeta cuando alcancen el fondo del recipiente.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Ángulo de incidencia respecto a la normal",
-          "contenido": "El rayo forma $60^{\\circ}$ con la superficie horizontal, así que con la normal forma $i=90^{\\circ}-60^{\\circ}=30^{\\circ}$."
+          "contenido": "El rayo forma $60^{\\circ}$ con la superficie horizontal del líquido, así que con la normal vertical forma:\n\n$$i=90^{\\circ}-60^{\\circ}=30^{\\circ}.$$"
         },
         {
           "titulo": "Ángulos refractados para cada color",
-          "contenido": "Rojo: $\\sin r_R=\\frac{\\sin 30^{\\circ}}{1{,}32}\\approx0{,}3788\\Rightarrow r_R\\approx22{,}3^{\\circ}$. Violeta: $\\sin r_V=\\frac{\\sin 30^{\\circ}}{1{,}35}\\approx0{,}3704\\Rightarrow r_V\\approx21{,}7^{\\circ}$."
-        },
-        {
-          "titulo": "Desplazamiento horizontal en el fondo",
-          "contenido": "Con $h=0{,}50\\,\\text{m}$: $x_R=h\\tan r_R\\approx0{,}205\\,\\text{m}$; $x_V=h\\tan r_V\\approx0{,}199\\,\\text{m}$."
+          "contenido": "Aplicando la ley de Snell, $n_{\\text{aire}}\\text{sen}\\,i=n_{\\text{líquido}}\\text{sen}\\,r$, con $n_{\\text{aire}}=1$:\n\nPara el rojo:\n\n$$\\text{sen}\\,r_R=\\frac{\\text{sen}30^{\\circ}}{1{,}32}=0{,}3788\\Rightarrow r_R=22{,}3^{\\circ}.$$\n\nPara el violeta:\n\n$$\\text{sen}\\,r_V=\\frac{\\text{sen}30^{\\circ}}{1{,}35}=0{,}3704\\Rightarrow r_V=21{,}7^{\\circ}.$$"
         },
         {
           "titulo": "Separación entre rayos en el fondo",
-          "contenido": "$\\Delta x=x_R-x_V\\approx0{,}006\\,\\text{m}$."
+          "contenido": "Cada rayo recorre verticalmente $h=0{,}50\\,\\text{m}$. El desplazamiento horizontal es $x=h\\tan r$:\n\n$$x_R=0{,}50\\tan22{,}3^{\\circ}=0{,}205\\,\\text{m};$$\n\n$$x_V=0{,}50\\tan21{,}7^{\\circ}=0{,}199\\,\\text{m}.$$\n\nLa separación en el fondo es:\n\n$$\\Delta x=x_R-x_V=0{,}205-0{,}199=0{,}006\\,\\text{m}\\approx5{,}2\\,\\text{mm}.$$"
         }
       ],
-      "resultado": "$\\Delta x\\approx6\\cdot10^{-3}\\,\\text{m}$."
+      "resultado": "$\\Delta x\\approx5{,}2\\,\\text{mm}$."
     },
     {
       "numero": 9,
       "titulo": "Lente convergente con objeto entre el foco y la lente: imagen virtual",
-      "tema": "Óptica",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
       "puntuacion": "1 punto",
       "enunciado": "Se dispone de una lente convergente de distancia focal $120\\,\\text{mm}$. Un objeto de $4\\,\\text{mm}$ de altura se coloca a $40\\,\\text{mm}$ de dicha lente. Determine la distancia que existe entre el objeto y la imagen y calcule la altura de la imagen.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Aplicación de la ecuación de las lentes",
-          "contenido": "Criterio DIN: $s=-40\\,\\text{mm}$, $f'=120\\,\\text{mm}$. $\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f'}\\Rightarrow s'=-60\\,\\text{mm}$. El signo negativo indica que la imagen es virtual y está al mismo lado de la lente que el objeto."
+          "contenido": "Criterio DIN: $s=-40\\,\\text{mm}$ (objeto a la izquierda), $f=120\\,\\text{mm}$ (lente convergente). La ecuación es:\n\n$$\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f}.$$\n\nSustituyendo:\n\n$$\\frac{1}{s'}=\\frac{1}{120}+\\frac{1}{-40}=0{,}00833-0{,}025=-0{,}01667\\,\\text{mm}^{-1}.$$\n\nPor tanto:\n\n$$s'=-60\\,\\text{mm}.$$\n\nEl signo negativo indica que la imagen está al mismo lado de la lente que el objeto: es virtual."
         },
         {
-          "titulo": "Distancia objeto-imagen",
-          "contenido": "El objeto está en $s=-40\\,\\text{mm}$ y la imagen en $s'=-60\\,\\text{mm}$; por tanto, $d=|s'-s|=20\\,\\text{mm}$."
-        },
-        {
-          "titulo": "Tamaño de la imagen",
-          "contenido": "Aumento lateral: $m=\\frac{s'}{s}=1{,}5$. Altura de la imagen: $y'=m y=6\\,\\text{mm}$. El signo positivo indica que la imagen está derecha."
+          "titulo": "Distancia objeto-imagen y tamaño de la imagen",
+          "contenido": "El objeto está en $s=-40\\,\\text{mm}$ y la imagen en $s'=-60\\,\\text{mm}$, más alejada de la lente que el objeto. La distancia objeto-imagen es:\n\n$$d=|s'|-|s|=60-40=20\\,\\text{mm}.$$\n\nEl aumento lateral es:\n\n$$m=\\frac{s'}{s}=\\frac{-60}{-40}=1{,}5.$$\n\nLa altura de la imagen es:\n\n$$h'=m\\,h=1{,}5\\cdot4=6\\,\\text{mm}.$$\n\nEl signo positivo indica que la imagen está derecha respecto del objeto."
         }
       ],
-      "resultado": "$d\\approx20\\,\\text{mm}$; $y'\\approx6\\,\\text{mm}$."
+      "resultado": "$d=20\\,\\text{mm}$; $h'=6\\,\\text{mm}$, imagen virtual y derecha."
     },
     {
       "numero": 10,
       "titulo": "Tiempo necesario para que la actividad de una muestra alcance un valor dado",
-      "tema": "Física nuclear",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D6. Leyes de desintegración radiactiva y actividad",
       "puntuacion": "1 punto",
-      "enunciado": "Se dispone de una muestra de $10^{20}$ núcleos de un material radiactivo cuyo periodo de semidesintegración es $29\\,\\text{años}$. ¿Cuánto tiempo debe transcurrir para que su actividad sea $600\\,\\text{Bq}$?",
+      "enunciado": "Se dispone de una muestra de $10^{20}$ núcleos de un material radiactivo cuyo periodo de semidesintegración es $29$ años. ¿Cuánto tiempo debe transcurrir para que su actividad sea $600\\,\\text{Bq}$?",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Constante de desintegración",
-          "contenido": "$\\lambda=\\frac{\\ln 2}{T_{1/2}}=\\frac{0{,}693}{29\\cdot3{,}156\\cdot10^{7}}\\approx7{,}58\\cdot10^{-10}\\,\\text{s}^{-1}$."
+          "contenido": "La constante de desintegración es:\n\n$$\\lambda=\\frac{\\ln2}{T_{1/2}}=\\frac{0{,}693}{29\\cdot365\\cdot24\\cdot3600}=7{,}58\\cdot10^{-10}\\,\\text{s}^{-1}.$$"
         },
         {
           "titulo": "Número de núcleos para una actividad de 600 Bq",
-          "contenido": "Por definición, $A=\\lambda N$, así que $N=\\frac{A}{\\lambda}=\\frac{600}{7{,}58\\cdot10^{-10}}\\approx7{,}92\\cdot10^{11}$."
+          "contenido": "Por definición, $A=\\lambda N$, así que:\n\n$$N=\\frac{A}{\\lambda}=\\frac{600}{7{,}58\\cdot10^{-10}}=7{,}92\\cdot10^{11}\\ \\text{núcleos}.$$"
         },
         {
           "titulo": "Tiempo transcurrido",
-          "contenido": "La ley de desintegración da $N=N_0 e^{-\\lambda t}\\Rightarrow t=-\\frac{1}{\\lambda}\\ln\\left(\\frac{N}{N_0}\\right)$. Numéricamente, $t\\approx2{,}46\\cdot10^{10}\\,\\text{s}\\approx7{,}8\\cdot10^{2}\\,\\text{años}$."
+          "contenido": "La ley de desintegración da $N=N_0e^{-\\lambda t}$, de donde:\n\n$$t=\\frac{1}{\\lambda}\\ln\\left(\\frac{N_0}{N}\\right).$$\n\nNuméricamente:\n\n$$t=\\frac{1}{7{,}58\\cdot10^{-10}}\\ln\\left(\\frac{10^{20}}{7{,}92\\cdot10^{11}}\\right)=2{,}46\\cdot10^{10}\\,\\text{s}.$$\n\nExpresado en años:\n\n$$t\\approx780\\ \\text{años}.$$"
         }
       ],
-      "resultado": "$t\\approx2{,}46\\cdot10^{10}\\,\\text{s}\\approx7{,}8\\cdot10^{2}\\,\\text{años}$."
+      "resultado": "$t\\approx2{,}46\\cdot10^{10}\\,\\text{s}\\approx780\\ \\text{años}$."
     },
     {
       "numero": 11,
       "titulo": "Energía cinética en el efecto fotoeléctrico para dos longitudes de onda",
-      "tema": "Física cuántica",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
       "puntuacion": "1 punto",
       "enunciado": "Cuando se ilumina un metal con una radiación de longitud de onda $\\lambda_1=193\\,\\text{nm}$, la energía cinética máxima de los fotoelectrones emitidos es $4{,}14\\,\\text{eV}$. ¿Cuál sería esta energía si la longitud de onda de la radiación usada fuera $\\lambda_2=254\\,\\text{nm}$?",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Trabajo de extracción del metal",
-          "contenido": "Aplicando la ecuación de Einstein del efecto fotoeléctrico: $E_{\\text{fotón,1}}=\\frac{hc}{\\lambda_1}=\\frac{1240\\,\\text{eV}\\,\\text{nm}}{193\\,\\text{nm}}\\approx6{,}42\\,\\text{eV}$. Por tanto, $W_{\\text{ext}}=E_{\\text{fotón,1}}-K_{\\text{max,1}}\\approx2{,}28\\,\\text{eV}$."
+          "contenido": "Aplicando la ecuación de Einstein del efecto fotoeléctrico:\n\n$$K_{\\text{max}}=\\frac{hc}{\\lambda}-W.$$\n\nCon $hc=1240\\,\\text{eV}\\,\\text{nm}$ y $\\lambda_1=193\\,\\text{nm}$:\n\n$$E_1=\\frac{1240}{193}=6{,}42\\,\\text{eV}.$$\n\nPor tanto:\n\n$$W=E_1-K_{\\text{max},1}=6{,}42-4{,}14=2{,}28\\,\\text{eV}.$$"
         },
         {
-          "titulo": "Energía del fotón con λ2",
-          "contenido": "$E_{\\text{fotón,2}}=\\frac{1240}{254}\\approx4{,}88\\,\\text{eV}$."
-        },
-        {
-          "titulo": "Energía cinética máxima con λ2",
-          "contenido": "$K_{\\text{max,2}}=E_{\\text{fotón,2}}-W_{\\text{ext}}\\approx4{,}88-2{,}28=2{,}60\\,\\text{eV}$."
+          "titulo": "Energía del fotón y energía cinética máxima con λ2",
+          "contenido": "Para $\\lambda_2=254\\,\\text{nm}$:\n\n$$E_2=\\frac{1240}{254}=4{,}88\\,\\text{eV}.$$\n\nLa nueva energía cinética máxima es:\n\n$$K_{\\text{max},2}=E_2-W=4{,}88-2{,}28=2{,}60\\,\\text{eV}.$$"
         }
       ],
-      "resultado": "$K_{\\text{max,2}}\\approx2{,}60\\,\\text{eV}$."
+      "resultado": "$K_{\\text{max},2}=2{,}60\\,\\text{eV}$."
     },
     {
       "numero": 12,
       "titulo": "Signo de las energías cinética y potencial en una órbita ligada",
-      "tema": "Campo gravitatorio",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria",
       "puntuacion": "1 punto",
       "enunciado": "¿Puede ser negativa la energía cinética de un satélite en órbita? ¿Y su energía potencial gravitatoria? Razone la respuesta y, en caso afirmativo, explique el significado del signo.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Energía cinética",
-          "contenido": "La energía cinética es $E_c=\\frac{1}{2}m v^2$. Como $m$ y $v^2$ son no negativos, $E_c\\ge0$: nunca puede ser negativa."
+          "contenido": "La energía cinética es $E_c=\\dfrac{1}{2}m v^{2}$. Como $m$ y $v^{2}$ son no negativos, siempre $E_c\\ge0$: nunca puede ser negativa. Vale cero solo en reposo absoluto, lo que para un satélite en órbita no ocurre."
         },
         {
           "titulo": "Energía potencial gravitatoria",
-          "contenido": "Con el convenio de potencial nulo en el infinito, $E_p=-\\frac{G\\,M_T\\,m}{r}$. En una órbita ligada, $E_p<0$."
+          "contenido": "Con el convenio estándar de potencial nulo en el infinito:\n\n$$E_p=-\\frac{GM_Tm}{r}.$$\n\nComo $G$, $M_T$, $m$ y $r$ son positivos, $E_p<0$. Sí, la energía potencial gravitatoria es negativa en cualquier órbita."
         },
         {
           "titulo": "Significado del signo negativo",
-          "contenido": "El signo negativo indica que la fuerza gravitatoria es atractiva y que la órbita es un estado ligado. Para llevar la masa al infinito hay que aportar energía positiva al sistema."
+          "contenido": "El signo negativo del potencial gravitatorio refleja que la fuerza gravitatoria es atractiva: para llevar la masa al infinito hay que aportar energía positiva al sistema. Equivalentemente, los estados ligados tienen energía total negativa. El sistema gana estabilidad cuanto más profundo es el pozo de potencial."
         }
       ],
-      "resultado": "$E_c$ no puede ser negativa; $E_p$ sí es negativa en una órbita ligada."
+      "resultado": "$E_c$: NO puede ser negativa. $E_p$: SÍ, es negativa siempre en estado ligado. El signo negativo indica que la órbita es un estado ligado al pozo gravitatorio."
     },
     {
       "numero": 13,
       "titulo": "Distribución de carga que maximiza la fuerza electrostática entre dos puntuales",
-      "tema": "Campo eléctrico",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz",
       "puntuacion": "1 punto",
       "enunciado": "Una carga total $Q$ se divide en dos cargas $q_1$ y $q_2$, que se sitúan a una distancia fija $d$ entre ellas. ¿Qué valor debe tener cada carga para que la fuerza entre ambas sea máxima?",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Planteamiento",
-          "contenido": "Sea $q_1=x$ y $q_2=Q-x$, con $0\\le x\\le Q$. La fuerza electrostática entre ellas a distancia $d$ tiene módulo $F=\\frac{k x(Q-x)}{d^2}$."
+          "contenido": "Sea $q_1=x$ y $q_2=Q-x$, con $0\\le x\\le Q$ (se supone el caso de cargas del mismo signo; el resultado es el mismo por simetría). La fuerza electrostática entre ellas a distancia $d$ tiene módulo:\n\n$$F(x)=\\frac{k\\,x(Q-x)}{d^{2}}.$$"
         },
         {
           "titulo": "Optimización",
-          "contenido": "$\\frac{dF}{dx}=\\frac{k}{d^2}(Q-2x)=0\\Rightarrow x=\\frac{Q}{2}$. La segunda derivada es negativa, por lo que se trata de un máximo."
+          "contenido": "Derivando respecto a $x$ e igualando a cero:\n\n$$\\frac{dF}{dx}=\\frac{k}{d^{2}}(Q-2x)=0\\Rightarrow x=\\frac{Q}{2}.$$\n\nLa segunda derivada es $\\dfrac{d^{2}F}{dx^{2}}=-\\dfrac{2k}{d^{2}}<0$, por lo que se trata de un máximo."
         }
       ],
-      "resultado": "$q_1=q_2=\\frac{Q}{2}$; $F_{\\text{max}}=\\frac{k Q^2}{4d^2}$."
+      "resultado": "$q_1=q_2=\\dfrac{Q}{2}$; $F_{\\text{max}}=\\dfrac{kQ^{2}}{4d^{2}}$."
     },
     {
       "numero": 14,
       "titulo": "Signo de la carga y razón carga/masa según trayectorias en un campo magnético",
-      "tema": "Campo magnético",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B5. Magnetismo, experiencia de Oersted y carácter no conservativo del campo magnético",
       "puntuacion": "1 punto",
-      "enunciado": "Tres partículas $a$, $b$ y $c$, que se mueven con la misma velocidad, penetran en una zona en la que existe un campo magnético uniforme, según se muestra en la figura. Si sus trayectorias son las indicadas, ¿qué puede decir del signo de sus cargas? ¿Cuál de las partículas tiene mayor relación carga/masa? Justifique sus respuestas. Figura: el campo $\\vec{B}$ es uniforme y sale del plano ($\\odot$). Las partículas entran horizontalmente desde la izquierda. La trayectoria de $a$ se curva hacia abajo, la de $b$ continúa recta o se curva ligeramente hacia arriba (radio grande), y la de $c$ se curva fuertemente hacia arriba (radio pequeño).",
+      "enunciado": "Tres partículas $a$, $b$ y $c$, que se mueven con la misma velocidad, penetran en una zona en la que existe un campo magnético uniforme, según se muestra en la figura. Si sus trayectorias son las indicadas, ¿qué puede decir del signo de sus cargas? ¿Cuál de las partículas tiene mayor relación carga/masa? Justifique sus respuestas.\n\nFigura: el campo $\\vec B$ es uniforme y sale del plano ($\\odot$). Las partículas entran horizontalmente desde la izquierda. La trayectoria de $a$ se curva hacia abajo; la de $b$ continúa recta o se curva ligeramente hacia arriba, con radio grande; la de $c$ se curva fuertemente hacia arriba, con radio pequeño.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Fuerza de Lorentz y curvatura",
-          "contenido": "La fuerza magnética es $\\vec{F}=q\\,\\vec{v}\\times\\vec{B}$. Con $\\vec{v}=v\\vec{i}$ y $\\vec{B}=B\\vec{k}$, $\\vec{v}\\times\\vec{B}=-vB\\vec{j}$. Si $q>0$, la fuerza apunta hacia abajo; si $q<0$, hacia arriba."
+          "contenido": "La fuerza magnética sobre una partícula cargada es $\\vec F=q\\,\\vec v\\times\\vec B$. Con $\\vec v$ hacia la derecha y $\\vec B$ saliente al lector, $\\vec v\\times\\vec B$ apunta hacia abajo. Por tanto, si $q>0$ la fuerza apunta hacia abajo; si $q<0$, hacia arriba."
         },
         {
           "titulo": "Signo de cada carga",
-          "contenido": "La partícula $a$ se curva hacia abajo, luego $q_a>0$. La partícula $c$ se curva hacia arriba, luego $q_c<0$. La partícula $b$ continúa recta o se curva ligeramente hacia arriba: $q_b<0$ con $|q_b|$ pequeña, o neutra si no se curva."
+          "contenido": "La partícula $a$ se desvía hacia abajo, por lo que la fuerza inicial es hacia abajo: $q_a>0$.\n\nLa partícula $b$ continúa recta o se curva ligeramente hacia arriba: si se curva hacia arriba, $q_b<0$; si no se curva, $q_b=0$.\n\nLa partícula $c$ se curva fuertemente hacia arriba, por lo que $q_c<0$."
         },
         {
           "titulo": "Relación carga/masa por el radio de la trayectoria",
-          "contenido": "Para movimiento circular en campo magnético uniforme, $r=\\frac{m v}{|q|B}$, de donde $\\frac{|q|}{m}=\\frac{v}{B r}$. Con $v$ y $B$ iguales, menor radio implica mayor relación carga/masa. La partícula $c$ tiene el menor radio y, por tanto, la mayor relación carga/masa."
+          "contenido": "Para movimiento circular en un campo magnético uniforme:\n\n$$r=\\frac{mv}{|q|B}.$$\n\nCon $v$ y $B$ iguales para las tres partículas, $r$ es inversamente proporcional a $\\dfrac{|q|}{m}$. La partícula con menor radio es la de mayor relación carga/masa. Por tanto, $c$ tiene la mayor relación carga/masa."
         }
       ],
-      "resultado": "$q_a>0$, $q_c<0$, $q_b<0$ (o neutra); mayor $|q|/m$: partícula $c$."
+      "resultado": "Signos: $a$ positiva; $b$ negativa o neutra; $c$ negativa. Mayor relación carga/masa: partícula $c$, por tener el radio de curvatura más pequeño."
     },
     {
       "numero": 15,
       "titulo": "Pérdida de energía del sonido al alejarse de la fuente: ¿caída con $1/r^{2}$ implica disipación?",
-      "tema": "Ondas sonoras",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
       "puntuacion": "1 punto",
       "enunciado": "La intensidad del sonido procedente de una fuente puntual disminuye como la inversa del cuadrado de la distancia a la fuente. ¿Indica esto que el sonido pierde energía cuando viaja a grandes distancias? Razone su respuesta.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Origen de la dependencia",
-          "contenido": "Para una fuente puntual que emite isótropamente, la potencia total se reparte sobre frentes de onda esféricos de área $4\\pi r^2$. Por tanto, $I=\\frac{P}{4\\pi r^2}$. La caída como $1/r^2$ es un resultado geométrico, no disipativo."
+          "contenido": "Para una fuente puntual que emite isótropamente, la potencia total se reparte sobre frentes de onda esféricos. Como el área de cada frente esférico es $4\\pi r^{2}$ y la intensidad es la potencia por unidad de área perpendicular al frente:\n\n$$I=\\frac{P}{4\\pi r^{2}}.$$\n\nLa caída como $1/r^{2}$ es un resultado geométrico, no disipativo."
         },
         {
-          "titulo": "¿Implica pérdida de energía?",
-          "contenido": "No. En un medio ideal sin absorción, la energía total transportada a través de cualquier superficie esférica concéntrica con la fuente es la misma: $P=4\\pi r^2 I$ es constante. La energía se reparte sobre superficies cada vez mayores, pero no desaparece."
+          "titulo": "¿Implica eso pérdida de energía?",
+          "contenido": "No. En un medio ideal sin absorción, la energía total transportada a través de cualquier superficie esférica concéntrica con la fuente es la misma: $P=4\\pi r^{2}I$, independiente de $r$. Lo único que ocurre es que esa misma energía se reparte sobre superficies cada vez mayores, por lo que la densidad de energía por metro cuadrado disminuye, pero no desaparece energía."
         },
         {
           "titulo": "Disipación real",
-          "contenido": "En medios reales, como el aire, existe una pérdida adicional por absorción, pero es independiente de la ley $1/r^2$, que se cumpliría incluso en un medio ideal sin disipación."
+          "contenido": "En medios reales, como el aire, sí hay una pérdida adicional de energía por absorción (viscosidad, conducción térmica, relajación molecular), que añade un factor exponencial a la intensidad. Pero ese efecto es independiente de la ley $1/r^{2}$, que se cumpliría incluso en un medio ideal sin disipación."
         }
       ],
-      "resultado": "No; la caída $I\\propto1/r^2$ es una consecuencia geométrica del reparto de energía y no implica que el sonido pierda energía."
+      "resultado": "La caída con $1/r^{2}$ es una consecuencia geométrica del reparto de energía sobre superficies esféricas crecientes, NO una indicación de que el sonido pierda energía. En un medio ideal, la potencia total a través de cualquier esfera concéntrica con la fuente es constante."
     },
     {
       "numero": 16,
       "titulo": "Imágenes formadas por una lente divergente: ¿reales, derechas y mayores?",
-      "tema": "Óptica",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
       "puntuacion": "1 punto",
       "enunciado": "Razone si la siguiente afirmación es cierta o no: “Una lente divergente forma siempre imágenes reales, derechas y mayores que el objeto.” Justifique la respuesta mediante un diagrama de marcha de rayos.",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Ecuación de las lentes con lente divergente",
-          "contenido": "Para una lente divergente $f'<0$. Con $s<0$, la ecuación $\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f'}$ conduce a $s'<0$: la imagen es virtual y está al mismo lado de la lente que el objeto."
+          "titulo": "Ecuación de las lentes con f<0",
+          "contenido": "Para una lente divergente, $f<0$. Con el criterio DIN, la ecuación de las lentes es:\n\n$$\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f}.$$\n\nPara un objeto real, $s<0$. Entonces $\\dfrac{1}{s'}=\\dfrac{1}{f}+\\dfrac{1}{s}$ es negativo, de modo que $s'<0$: la imagen se forma al mismo lado de la lente que el objeto, es decir, es virtual, no real."
         },
         {
           "titulo": "Aumento lateral",
-          "contenido": "$m=\\frac{s'}{s}>0$ y $|m|<1$, por lo que la imagen es derecha y menor que el objeto."
+          "contenido": "El aumento lateral es:\n\n$$m=\\frac{s'}{s}.$$\n\nComo $s'$ y $s$ son ambos negativos, $m>0$: la imagen es derecha, no invertida. Además, $|s'|<|s|$, por lo que $|m|<1$: la imagen es menor que el objeto."
         },
         {
-          "titulo": "Conclusión",
-          "contenido": "La afirmación es falsa. Las lentes divergentes forman imágenes virtuales, derechas y menores que el objeto. Solo la palabra derechas es correcta; reales y mayores son incorrectas."
+          "titulo": "Diagrama de marcha de rayos",
+          "contenido": "Se traza el objeto como una flecha sobre el eje óptico. Un rayo paralelo al eje, tras la lente divergente, sale como si proviniera del foco objeto, situado al mismo lado del objeto. Otro rayo dirigido hacia el centro óptico continúa sin desviarse. Las prolongaciones de los rayos emergentes se cortan en una imagen virtual, derecha y de menor tamaño que el objeto."
         }
       ],
-      "resultado": "Falsa. Las lentes divergentes forman imágenes virtuales, derechas y menores que el objeto."
+      "resultado": "La afirmación es FALSA. Las lentes divergentes forman imágenes virtuales, derechas y menores que el objeto. Solo la palabra “derechas” es correcta; “reales” y “mayores” son incorrectas."
     },
     {
       "numero": 17,
-      "titulo": "Desintegración del I-131: parámetros y características de las radiaciones $\\beta^{-}$ y $\\gamma$",
-      "tema": "Física nuclear",
+      "titulo": "Desintegración del I-131: parámetros y características de las radiaciones β⁻ y γ",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares",
       "puntuacion": "1 punto",
-      "enunciado": "Determine los parámetros $x$ e $y$ en la siguiente reacción de desintegración del isótopo radiactivo I-131 e indique las características de la radiación $\\beta^{-}$ y $\\gamma$. $$^{131}_{53}I \\longrightarrow ^{y}_{x}Xe + \\beta^{-} + \\gamma$$",
+      "enunciado": "Determine los parámetros $x$ e $y$ en la siguiente reacción de desintegración del isótopo radiactivo I-131 e indique las características de la radiación $\\beta^{-}$ y $\\gamma$.\n\n$$^{131}_{53}I\\rightarrow{}^{y}_{x}Xe+\\beta^{-}+\\gamma$$",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Conservación del número atómico y másico",
-          "contenido": "En una desintegración $\\beta^{-}$ un neutrón se convierte en un protón y se emite un electrón y un antineutrino. El número másico no cambia y el número atómico aumenta en 1. Por tanto, $y=131$ y $x=53+1=54$. El producto es $^{131}_{54}Xe$."
+          "contenido": "En una desintegración $\\beta^{-}$, un neutrón se convierte en un protón y se emite un electrón y un antineutrino. Por tanto, el número atómico $Z$ aumenta en 1 y el número másico $A$ se conserva. Aplicado al I-131:\n\n$$x=53+1=54;$$\n\n$$y=131.$$\n\nEl xenón tiene $Z=54$, así que ${}^{131}_{54}Xe$ es un isótopo coherente de xenón."
         },
         {
-          "titulo": "Características de la radiación $\\beta^{-}$",
-          "contenido": "La radiación $\\beta^{-}$ consiste en electrones emitidos desde el núcleo. Sus propiedades principales son: carga eléctrica $-1$; masa muy pequeña; velocidades próximas a la de la luz; poder de penetración medio, se detiene con unos milímetros de aluminio; poder ionizante moderado; se desvía por campos eléctricos y magnéticos."
+          "titulo": "Características de la radiación β⁻",
+          "contenido": "La radiación $\\beta^{-}$ consiste en electrones emitidos desde el núcleo. Sus propiedades principales son: carga eléctrica $-1$; masa muy pequeña, del orden de $9{,}11\\cdot10^{-31}\\,\\text{kg}$; velocidades altas, próximas a la de la luz; poder de penetración medio, se detiene con unos pocos milímetros de aluminio; poder ionizante moderado, mayor que el de la radiación $\\gamma$ pero menor que el de la $\\alpha$; y se desvía por campos eléctricos y magnéticos."
         },
         {
-          "titulo": "Características de la radiación $\\gamma$",
-          "contenido": "La radiación $\\gamma$ es radiación electromagnética de alta frecuencia. Sus propiedades son: carga eléctrica nula; masa en reposo nula; viaja a la velocidad de la luz; poder de penetración muy alto, se atenúa con espesores significativos de plomo o hormigón; poder ionizante bajo e indirecto; no se desvía por campos eléctricos ni magnéticos."
+          "titulo": "Características de la radiación γ",
+          "contenido": "La radiación $\\gamma$ es radiación electromagnética de alta frecuencia. Sus propiedades principales son: carga eléctrica nula; masa en reposo nula, pues está formada por fotones; viaja a la velocidad de la luz; poder de penetración muy alto, solo se atenúa con espesores significativos de plomo o hormigón; poder ionizante bajo e indirecto, mediante electrones Compton o fotoeléctricos; y no se desvía por campos eléctricos ni magnéticos."
         }
       ],
-      "resultado": "$x=54$, $y=131$; $\\beta^{-}$: electrón, penetración media; $\\gamma$: fotón, muy penetrante."
+      "resultado": "$x=54$, $y=131$, es decir, ${}^{131}_{54}Xe$. $\\beta^{-}$: electrón, carga $-1$, ionizante medio y penetración media. $\\gamma$: fotón electromagnético, sin carga ni masa, ionizante bajo pero muy penetrante."
     }
   ]
 }

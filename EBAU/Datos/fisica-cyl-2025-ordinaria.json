@@ -7,319 +7,427 @@
   "anio": 2025,
   "nivel": "PAU",
   "curso": "2º Bachillerato",
-  "enunciado_general": "Examen resuelto de Física de Castilla y León, convocatoria Ordinaria 2025. Incluye dos cuestiones obligatorias y diez problemas u opciones resueltos.",
-  "objetivo": "Proporcionar soluciones razonadas paso a paso para facilitar el estudio y la autoevaluación de la PAU de Física.",
+  "enunciado_general": "Examen oficial de Física de la PAU de Castilla y León, convocatoria Ordinaria 2025. Incluye dos preguntas obligatorias del apartado 1 y cuatro bloques optativos del apartado 2, con opciones A/B, resueltos paso a paso.",
+  "objetivo": "Evaluar la comprensión y aplicación de los contenidos de Física de 2º de Bachillerato: gravitación, campo electromagnético, vibraciones y ondas, óptica, física cuántica, nuclear y de partículas, mediante cuestiones teóricas y problemas numéricos.",
   "procedimiento": [
     {
       "titulo": "Estructura del examen",
-      "contenido": "El examen consta de un apartado obligatorio de 2 puntos con dos cuestiones y un apartado optativo de 8 puntos dividido en cuatro bloques con opciones A/B. Se resuelven todas las opciones presentadas."
+      "contenido": "El ejercicio consta de dos apartados, uno obligatorio (2 puntos) y otro que presenta optatividad (8 puntos). Las cuestiones del apartado 1 son de respuesta obligatoria y están valoradas en 1 punto cada una. El apartado 2 se divide en cuatro bloques, ofreciéndose dos opciones en cada uno valoradas en 2 puntos, entre las que se debe elegir una para su realización (se elegirá, por tanto, una opción en cada uno de los bloques). La calificación final se obtendrá sumando las notas de las dos preguntas obligatorias del apartado 1 y las cuatro opciones elegidas, una por bloque, del apartado 2. Las fórmulas empleadas en la resolución de los ejercicios deberán acompañarse de los razonamientos oportunos. Los resultados numéricos obtenidos para las magnitudes físicas deberán escribirse con las unidades adecuadas."
     },
     {
-      "titulo": "Criterios de resolución",
-      "contenido": "Se conserva el formato matemático con MathJax, se justifican los razonamientos y se expresan los resultados con unidades."
+      "titulo": "Constantes y datos",
+      "contenido": "$g_0=9{,}80\\,\\text{m}\\,\\text{s}^{-2}$; $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $R_T=6{,}38\\cdot10^{6}\\,\\text{m}$; $M_T=5{,}98\\cdot10^{24}\\,\\text{kg}$; $K_0=9{,}00\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $N_A=6{,}022\\cdot10^{23}\\,\\text{mol}^{-1}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$; $e=1{,}60\\cdot10^{-19}\\,\\text{C}$; $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$."
     }
   ],
   "ejercicios": [
     {
       "numero": 1,
       "titulo": "Verdadero/falso sobre energía de un cuerpo en campo gravitatorio",
-      "tema": "Campo gravitatorio",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria",
       "puntuacion": "1 punto",
       "enunciado": "Considere un objeto que se mueve estando únicamente bajo el efecto de un campo gravitatorio. Razone cuáles de las siguientes afirmaciones son verdaderas: a) Aumenta su energía potencial. b) Conserva su energía mecánica. c) Disminuye su energía cinética.",
       "apartados": [
-        { "letra": "a", "puntuacion": "No especificada", "enunciado": "Aumenta su energía potencial." },
-        { "letra": "b", "puntuacion": "No especificada", "enunciado": "Conserva su energía mecánica." },
-        { "letra": "c", "puntuacion": "No especificada", "enunciado": "Disminuye su energía cinética." }
+        {
+          "letra": "a",
+          "puntuacion": "No especificada",
+          "enunciado": "Aumenta su energía potencial."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "No especificada",
+          "enunciado": "Conserva su energía mecánica."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "No especificada",
+          "enunciado": "Disminuye su energía cinética."
+        }
       ],
       "resolucion": [
         {
-          "titulo": "Apartado a",
-          "contenido": "Falsa en general. La energía potencial gravitatoria puede aumentar o disminuir según la trayectoria: en caída libre disminuye, mientras que en un lanzamiento vertical hacia arriba aumenta mientras sube."
+          "titulo": "Apartado a): Aumenta su energía potencial",
+          "contenido": "Falsa en general. Sin más información sobre la trayectoria, la energía potencial gravitatoria puede aumentar o disminuir.\n\nPor ejemplo, un cuerpo en caída libre tiene energía potencial decreciente, mientras que uno lanzado verticalmente hacia arriba tiene energía potencial creciente mientras sube. La afirmación no puede establecerse sin conocer el sentido del movimiento respecto al campo.\n\nResultado: falsa (depende del sentido del movimiento)."
         },
         {
-          "titulo": "Apartado b",
-          "contenido": "Verdadera. Si solo actúa el campo gravitatorio, que es conservativo, la energía mecánica $E_m=E_c+E_p$ se conserva."
+          "titulo": "Apartado b): Conserva su energía mecánica",
+          "contenido": "Verdadera. El campo gravitatorio es conservativo y, si es la única fuerza que actúa sobre el cuerpo, no hay rozamiento, no hay propulsión y no hay fuerzas externas, la energía mecánica se conserva.\n\nLas variaciones de energía potencial y cinética son iguales en módulo y de signo opuesto:\n\n$$\\Delta E_m=\\Delta E_c+\\Delta E_p=0.$$\n\nResultado: verdadera (campo conservativo, no hay fuerzas no conservativas)."
         },
         {
-          "titulo": "Apartado c",
-          "contenido": "Falsa en general. La energía cinética puede aumentar o disminuir según el cuerpo se acerque o se aleje; no puede afirmarse sin conocer el sentido del movimiento."
+          "titulo": "Apartado c): Disminuye su energía cinética",
+          "contenido": "Falsa en general. Como la energía mecánica se conserva, la energía cinética puede aumentar si el cuerpo cae hacia el centro del campo, ya que disminuye $E_p$ y aumenta $E_c$, o disminuir si se aleja, ya que aumenta $E_p$ y disminuye $E_c$.\n\nSin saber el sentido del movimiento, no puede afirmarse.\n\nResultado: falsa (depende del sentido del movimiento; es la opuesta complementaria de a)."
         }
       ],
-      "resultado": "a) Falsa en general; b) Verdadera; c) Falsa en general."
+      "resultado": "a) Falsa en general: $E_p$ puede aumentar o disminuir según el sentido del movimiento.\nb) Verdadera: $E_m$ se conserva si solo actúa el campo gravitatorio.\nc) Falsa en general: $E_c$ puede aumentar o disminuir según el sentido del movimiento."
     },
     {
       "numero": 2,
       "titulo": "Efecto fotoeléctrico: papel del color (frecuencia) y de la intensidad",
-      "tema": "Física cuántica",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica",
       "puntuacion": "1 punto",
       "enunciado": "Iluminamos un metal con el propósito de arrancarle electrones por efecto fotoeléctrico. Explique las diferencias que observaremos: a) Al iluminarlo con luz roja respecto a hacerlo con luz azul. b) Al iluminarlo con un haz de luz intenso respecto a iluminarlo con otro más débil.",
       "apartados": [
-        { "letra": "a", "puntuacion": "No especificada", "enunciado": "Luz roja frente a luz azul." },
-        { "letra": "b", "puntuacion": "No especificada", "enunciado": "Haz intenso frente a haz débil." }
+        {
+          "letra": "a",
+          "puntuacion": "No especificada",
+          "enunciado": "Luz roja frente a luz azul."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "No especificada",
+          "enunciado": "Haz intenso frente a haz débil."
+        }
       ],
       "resolucion": [
         {
-          "titulo": "Frecuencia y energía del fotón",
-          "contenido": "La energía de cada fotón es $E_f=h\\,f$. Solo hay emisión si $h\\,f\\ge W_0$, donde $W_0$ es el trabajo de extracción. La luz azul tiene mayor frecuencia que la roja, por lo que sus fotones son más energéticos y pueden arrancar electrones con mayor energía cinética máxima: $E_{c,\\text{max}}=h\\,f-W_0$. La luz roja puede no arrancar electrones si su frecuencia es menor que la umbral."
+          "titulo": "Apartado a): Frecuencia (color) y energía del fotón",
+          "contenido": "La ecuación de Einstein del efecto fotoeléctrico es:\n\n$$h\\nu=\\Phi+E_{c,\\max},$$\n\ndonde $\\Phi$ es el trabajo de extracción del metal y $h\\nu$ es la energía de cada fotón. Solo se emiten electrones si $h\\nu\\ge\\Phi$, es decir, si la frecuencia supera la frecuencia umbral $\\nu_0=\\frac{\\Phi}{h}$.\n\nLa luz azul tiene fotones más energéticos que la luz roja. Para la mayoría de los metales, $h\\nu_{\\text{azul}}>\\Phi$, así que se emiten electrones con energía cinética $E_{c,\\max}=h\\nu-\\Phi$. La luz roja tiene fotones menos energéticos; si $h\\nu_{\\text{rojo}}<\\Phi$, no se emiten electrones. En metales con bajo $\\Phi$, como cesio o sodio, los electrones emitidos con luz roja tienen menor $E_{c,\\max}$ que con luz azul.\n\nResultado: el color, es decir, la frecuencia, determina si hay emisión y la energía cinética máxima de los electrones emitidos. La luz azul produce electrones más energéticos y, en muchos metales, es la única que arranca electrones."
         },
         {
-          "titulo": "Intensidad y número de fotones",
-          "contenido": "La intensidad no cambia la energía de cada fotón, sino el número de fotones por segundo. Si $f\\ge f_0$, un haz más intenso produce más electrones por segundo, es decir, mayor corriente fotoeléctrica, pero no altera $E_{c,\\text{max}}$. Si $f<f_0$, no hay emisión aunque aumente la intensidad."
+          "titulo": "Apartado b): Intensidad y número de fotones",
+          "contenido": "La intensidad de la luz monocromática es proporcional al número de fotones por segundo que llegan al metal, no a la energía individual de cada fotón. Por tanto, manteniendo fijo el color, es decir, la frecuencia:\n\nUn haz más intenso entrega más fotones por segundo y, si la frecuencia es suficiente ($\\nu\\ge\\nu_0$), arranca más electrones por segundo, es decir, produce mayor corriente fotoeléctrica.\n\nUn haz más débil entrega menos fotones por segundo y produce menos electrones por segundo, es decir, menor corriente.\n\nSin embargo, la energía cinética máxima de cada electrón emitido no cambia con la intensidad: depende solo de la frecuencia, $E_{c,\\max}=h\\nu-\\Phi$. Aumentar la intensidad de una luz por debajo del umbral tampoco arranca electrones por mucho que se intensifique.\n\nResultado: la intensidad solo afecta al número de electrones emitidos, es decir, a la corriente fotoeléctrica, no a su energía cinética individual."
         }
       ],
-      "resultado": "El color o frecuencia determina si hay emisión y la energía cinética máxima; la intensidad solo afecta al número de electrones emitidos y a la corriente fotoeléctrica."
+      "resultado": "a) La frecuencia del color determina si hay emisión y la $E_{c,\\max}$ de los electrones; la luz azul es más energética que la roja.\nb) La intensidad determina el número de electrones emitidos por segundo, no su energía cinética máxima."
     },
     {
       "numero": 3,
       "titulo": "Satélite Swift: velocidad orbital, periodo y peso de un sensor",
-      "tema": "Campo gravitatorio",
-      "puntuacion": "2 puntos",
-      "enunciado": "El satélite artificial Swift describe una órbita circular a una altura de $290\\,\\text{km}$ sobre la superficie terrestre. a) Determine la velocidad orbital y el periodo de la órbita. b) Determine el peso de un sensor de rayos X que lleva acoplado, cuya masa es de $150\\,\\text{kg}$. Datos: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^2\\,\\text{kg}^{-2}$; $R_T=6{,}38\\cdot10^6\\,\\text{m}$; $M_T=5{,}98\\cdot10^{24}\\,\\text{kg}$.",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A7. Movimiento planetario, satélites y velocidades características; A4. Intensidad de campo gravitatorio y líneas de campo",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "El satélite artificial Swift se dedica al estudio de un fenómeno astrofísico conocido como explosiones de rayos gamma y describe una órbita circular a una altura de 290 km sobre la superficie terrestre. a) Determine la velocidad orbital y el periodo de la órbita. b) Determine el peso de un sensor de rayos X que lleva acoplado, cuya masa es de 150 kg. Datos: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $R_T=6{,}38\\cdot10^{6}\\,\\text{m}$; $M_T=5{,}98\\cdot10^{24}\\,\\text{kg}$.",
       "apartados": [
-        { "letra": "a", "puntuacion": "1 punto", "enunciado": "Velocidad orbital y periodo." },
-        { "letra": "b", "puntuacion": "1 punto", "enunciado": "Peso del sensor." }
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Determine la velocidad orbital y el periodo de la órbita."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Determine el peso de un sensor de rayos X que lleva acoplado, cuya masa es de 150 kg."
+        }
       ],
       "resolucion": [
         {
           "titulo": "Radio orbital",
-          "contenido": "El radio de la órbita es $r=R_T+h=6{,}38\\cdot10^6+2{,}90\\cdot10^5=6{,}67\\cdot10^6\\,\\text{m}$."
+          "contenido": "El radio de la órbita es la suma del radio terrestre y la altura:\n\n$$r=R_T+H=6{,}38\\cdot10^{6}+290\\cdot10^{3}=6{,}67\\cdot10^{6}\\,\\text{m}.$$"
         },
         {
           "titulo": "Velocidad orbital",
-          "contenido": "Para una órbita circular, $\\frac{G\\,M_T\\,m}{r^2}=\\frac{m\\,v^2}{r}$, luego $v=\\sqrt{\\frac{G\\,M_T}{r}}=\\sqrt{\\frac{6{,}67\\cdot10^{-11}\\cdot5{,}98\\cdot10^{24}}{6{,}67\\cdot10^6}}=7{,}73\\cdot10^3\\,\\text{m/s}$."
+          "contenido": "Para una órbita circular, la fuerza gravitatoria proporciona la fuerza centrípeta:\n\n$$\\frac{G\\,M_T\\,m}{r^{2}}=\\frac{m\\,v^{2}}{r}.$$\n\nSustituyendo:\n\n$$v=\\sqrt{\\frac{G\\,M_T}{r}}=\\sqrt{\\frac{6{,}67\\cdot10^{-11}\\cdot5{,}98\\cdot10^{24}}{6{,}67\\cdot10^{6}}}\\approx7{,}73\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
         },
         {
           "titulo": "Periodo orbital",
-          "contenido": "$T=\\frac{2\\pi\\,r}{v}=\\frac{2\\pi\\cdot6{,}67\\cdot10^6}{7{,}73\\cdot10^3}=5{,}42\\cdot10^3\\,\\text{s}\\approx90{,}3\\,\\text{min}$."
+          "contenido": "$$T=\\frac{2\\pi r}{v}=\\frac{2\\pi\\cdot6{,}67\\cdot10^{6}}{7{,}73\\cdot10^{3}}\\approx5{,}42\\cdot10^{3}\\,\\text{s}\\approx90{,}3\\,\\text{min}.$$"
+        },
+        {
+          "titulo": "Aceleración gravitatoria a la altura",
+          "contenido": "$$g'=\\frac{G\\,M_T}{r^{2}}=\\frac{6{,}67\\cdot10^{-11}\\cdot5{,}98\\cdot10^{24}}{(6{,}67\\cdot10^{6})^{2}}\\approx8{,}97\\,\\text{m}\\,\\text{s}^{-2}.$$"
         },
         {
           "titulo": "Peso del sensor",
-          "contenido": "La aceleración gravitatoria a esa altura es $g'=\\frac{G\\,M_T}{r^2}=8{,}97\\,\\text{m/s}^2$. El peso es $P=m\\,g'=150\\cdot8{,}97=1{,}35\\cdot10^3\\,\\text{N}$."
+          "contenido": "$$P=m\\,g'=150\\cdot8{,}97\\approx1{,}35\\cdot10^{3}\\,\\text{N}.$$"
         }
       ],
-      "resultado": "$v\\approx7{,}73\\,\\text{km/s}$; $T\\approx5{,}42\\cdot10^3\\,\\text{s}\\approx90{,}3\\,\\text{min}$; $P\\approx1{,}35\\cdot10^3\\,\\text{N}$."
+      "resultado": "a) $v\\approx7{,}73\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$; $T\\approx5{,}42\\cdot10^{3}\\,\\text{s}\\approx90{,}3\\,\\text{min}$.\nb) $P\\approx1{,}35\\cdot10^{3}\\,\\text{N}$."
     },
     {
       "numero": 4,
       "titulo": "Peso y velocidad de escape en un exoplaneta",
-      "tema": "Campo gravitatorio",
-      "puntuacion": "2 puntos",
-      "enunciado": "La intensidad de campo gravitatorio en la superficie de cierto exoplaneta tiene un valor de $9{,}72\\,\\text{m}\\,\\text{s}^{-2}$. Sabiendo que el radio del exoplaneta es $1{,}4$ veces el radio de la Tierra, calcule: a) El peso en dicho exoplaneta de un objeto cuyo peso en la Tierra es de $2500\\,\\text{N}$. b) La velocidad de escape desde la superficie del exoplaneta. Datos: $g_0=9{,}80\\,\\text{m}\\,\\text{s}^{-2}$; $R_T=6{,}38\\cdot10^6\\,\\text{m}$.",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A7. Movimiento planetario, satélites y velocidades características; A4. Intensidad de campo gravitatorio y líneas de campo",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "La intensidad de campo gravitatorio en la superficie de cierto exoplaneta tiene un valor de $9{,}72\\,\\text{m}\\,\\text{s}^{-2}$. Sabiendo que el radio del exoplaneta es $1{,}4$ veces el radio de la Tierra, calcule: a) El peso en dicho exoplaneta de un objeto cuyo peso en la Tierra es de 2500 N. b) La velocidad de escape desde la superficie del exoplaneta. Datos: $g_0=9{,}80\\,\\text{m}\\,\\text{s}^{-2}$; $R_T=6{,}38\\cdot10^{6}\\,\\text{m}$.",
       "apartados": [
-        { "letra": "a", "puntuacion": "1 punto", "enunciado": "Peso en el exoplaneta." },
-        { "letra": "b", "puntuacion": "1 punto", "enunciado": "Velocidad de escape." }
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Peso en el exoplaneta de un objeto cuyo peso en la Tierra es de 2500 N."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad de escape desde la superficie del exoplaneta."
+        }
       ],
       "resolucion": [
         {
-          "titulo": "Masa del objeto",
-          "contenido": "A partir de su peso en la Tierra: $m=\\frac{P_T}{g_0}=\\frac{2500}{9{,}80}=255\\,\\text{kg}$."
+          "titulo": "Masa del objeto a partir de su peso en la Tierra",
+          "contenido": "$$m=\\frac{P_T}{g_0}=\\frac{2500}{9{,}80}\\approx255{,}1\\,\\text{kg}.$$"
         },
         {
           "titulo": "Peso en el exoplaneta",
-          "contenido": "$P'=m\\,g_p=255\\cdot9{,}72=2{,}48\\cdot10^3\\,\\text{N}$."
+          "contenido": "$$P_{\\text{exo}}=m\\,g_{\\text{exo}}=255{,}1\\cdot9{,}72\\approx2{,}48\\cdot10^{3}\\,\\text{N}.$$"
         },
         {
           "titulo": "Radio del exoplaneta",
-          "contenido": "$R_p=1{,}4\\,R_T=1{,}4\\cdot6{,}38\\cdot10^6=8{,}93\\cdot10^6\\,\\text{m}$."
+          "contenido": "$$R_e=1{,}4\\,R_T=1{,}4\\cdot6{,}38\\cdot10^{6}\\approx8{,}93\\cdot10^{6}\\,\\text{m}.$$"
         },
         {
           "titulo": "Velocidad de escape",
-          "contenido": "$v_e=\\sqrt{2\\,g_p\\,R_p}=\\sqrt{2\\cdot9{,}72\\cdot8{,}93\\cdot10^6}=1{,}32\\cdot10^4\\,\\text{m/s}$."
+          "contenido": "Del balance energético entre la superficie y el infinito, con $v_{\\infty}=0$:\n\n$$\\frac{1}{2}m\\,v_e^{2}-\\frac{G\\,M_e\\,m}{R_e}=0,$$\n\nde donde:\n\n$$v_e=\\sqrt{\\frac{2\\,G\\,M_e}{R_e}}.$$\n\nComo $g_{\\text{exo}}=\\frac{G\\,M_e}{R_e^{2}}$, resulta $G\\,M_e=g_{\\text{exo}}R_e^{2}$ y:\n\n$$v_e=\\sqrt{2\\,g_{\\text{exo}}\\,R_e}=\\sqrt{2\\cdot9{,}72\\cdot8{,}93\\cdot10^{6}}\\approx1{,}32\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-1}.$$"
         }
       ],
-      "resultado": "$P'\\approx2{,}48\\cdot10^3\\,\\text{N}$; $v_e\\approx1{,}32\\cdot10^4\\,\\text{m/s}\\approx13{,}2\\,\\text{km/s}$."
+      "resultado": "a) $P_{\\text{exo}}\\approx2{,}48\\cdot10^{3}\\,\\text{N}$.\nb) $v_e\\approx1{,}32\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-1}$."
     },
     {
       "numero": 5,
       "titulo": "Energía de configuración y fuerza neta en tres cargas equiláteras",
-      "tema": "Campo eléctrico",
-      "puntuacion": "2 puntos",
-      "enunciado": "Tres cargas eléctricas negativas, de valor absoluto $20\\,\\text{nC}$, se sitúan sobre los vértices de un triángulo equilátero cuyos lados miden $3\\,\\text{cm}$. a) Determine el trabajo necesario para alcanzar esa configuración desde el infinito e interprete el signo. b) Calcule el módulo de la fuerza neta sobre cada carga y realice un esquema. ¿Es coherente con el apartado a)? Dato: $K_0=9{,}00\\cdot10^9\\,\\text{N}\\,\\text{m}^2\\,\\text{C}^{-2}$.",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Tres cargas eléctricas negativas, de valor absoluto 20 nC, se sitúan sobre los vértices de un triángulo equilátero cuyos lados miden 3 cm. a) Determine el trabajo que ha sido necesario para alcanzar esa configuración, teniendo en cuenta que inicialmente las cargas se encontraban muy alejadas entre sí. Interprete el signo del resultado. b) Calcule el módulo de la fuerza que experimenta cada una de las cargas por acción de las otras y realice un esquema ilustrativo en el que se muestren las fuerzas sobre cada una. ¿Es coherente este esquema con el resultado obtenido en el apartado anterior? Dato: $K_0=9{,}00\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$.",
       "apartados": [
-        { "letra": "a", "puntuacion": "1 punto", "enunciado": "Trabajo de configuración e interpretación del signo." },
-        { "letra": "b", "puntuacion": "1 punto", "enunciado": "Fuerza neta sobre cada carga, esquema y coherencia." }
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Trabajo de configuración e interpretación del signo."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Fuerza neta sobre cada carga, esquema y coherencia."
+        }
       ],
       "resolucion": [
         {
-          "titulo": "Energía potencial del sistema",
-          "contenido": "Para tres cargas iguales $q=-20\\,\\text{nC}$ en un triángulo equilátero de lado $r=0{,}03\\,\\text{m}$: $U=\\frac{3\\,k\\,q^2}{r}=\\frac{3\\cdot9{,}00\\cdot10^9\\cdot(20\\cdot10^{-9})^2}{0{,}03}=3{,}60\\cdot10^{-4}\\,\\text{J}$."
+          "titulo": "Energía potencial del sistema de tres cargas",
+          "contenido": "La energía potencial eléctrica de un sistema de tres cargas iguales, cada una de valor $q=-20\\cdot10^{-9}\\,\\text{C}$, en un triángulo equilátero de lado $l=0{,}03\\,\\text{m}$ es la suma de las tres parejas:\n\n$$U=3\\,\\frac{K_0\\,q^{2}}{l}.$$\n\nSustituyendo:\n\n$$U=3\\cdot\\frac{9{,}00\\cdot10^{9}\\cdot(20\\cdot10^{-9})^{2}}{0{,}03}=3{,}6\\cdot10^{-4}\\,\\text{J}.$$"
         },
         {
-          "titulo": "Trabajo externo",
-          "contenido": "Como inicialmente están muy alejadas, $W_{\\text{ext}}=U_f-U_i=3{,}60\\cdot10^{-4}\\,\\text{J}$. El signo positivo indica que hay que aportar energía porque las cargas del mismo signo se repelen."
+          "titulo": "Trabajo necesario e interpretación del signo",
+          "contenido": "El trabajo realizado por un agente externo para llevar las cargas desde el infinito, donde $U_{\\infty}=0$, hasta esta configuración es:\n\n$$W_{\\text{ext}}=\\Delta U=U_{\\text{final}}-U_{\\text{inicial}}=3{,}6\\cdot10^{-4}\\,\\text{J}.$$\n\nEl signo positivo significa que ha sido necesario aportar energía al sistema, ya que las tres cargas son del mismo signo, todas negativas, y se repelen entre sí. Vencer la repulsión mutua requiere trabajo externo positivo. Equivalentemente, las cargas no se moverían espontáneamente a esa configuración, sino que tienden a alejarse."
         },
         {
-          "titulo": "Fuerza entre dos cargas",
-          "contenido": "$F=\\frac{k\\,q^2}{r^2}=\\frac{9{,}00\\cdot10^9\\cdot(20\\cdot10^{-9})^2}{(0{,}03)^2}=4{,}00\\cdot10^{-3}\\,\\text{N}$."
+          "titulo": "Fuerza de un par sobre una carga",
+          "contenido": "El módulo de la fuerza entre dos cargas iguales separadas una distancia $l$ es:\n\n$$F=K_0\\,\\frac{q^{2}}{l^{2}}=9{,}00\\cdot10^{9}\\cdot\\frac{(20\\cdot10^{-9})^{2}}{(0{,}03)^{2}}=4{,}0\\cdot10^{-3}\\,\\text{N}.$$"
         },
         {
-          "titulo": "Fuerza neta sobre una carga",
-          "contenido": "Las dos fuerzas sobre una carga forman $60^\\circ$ entre sí, por lo que $F_{\\text{neta}}=2F\\cos30^\\circ=2\\cdot4{,}00\\cdot10^{-3}\\cdot0{,}866=6{,}93\\cdot10^{-3}\\,\\text{N}$, dirigida hacia fuera del triángulo. Es coherente con el trabajo positivo."
+          "titulo": "Suma vectorial sobre una carga del vértice",
+          "contenido": "Sobre una carga del vértice actúan las repulsiones de las otras dos, de igual módulo $F$, que forman un ángulo de $60^{\\circ}$ entre sí, ángulo del triángulo equilátero. Su resultante tiene módulo:\n\n$$F_{\\text{neta}}=2F\\cos(30^{\\circ})=\\sqrt{3}\\,F\\approx6{,}9\\cdot10^{-3}\\,\\text{N}.$$\n\nLa fuerza neta sobre cada carga apunta hacia fuera del triángulo, según la bisectriz del ángulo interno de su vértice."
+        },
+        {
+          "titulo": "Esquema y coherencia con el trabajo positivo",
+          "contenido": "Esquema descriptivo: triángulo equilátero con las tres cargas negativas en los vértices. Sobre cada carga, el vector fuerza neta apunta a lo largo de la mediatriz que va desde el centro del triángulo hacia el vértice, es decir, las tres fuerzas son centrífugas y apuntan radialmente hacia fuera del baricentro.\n\nEsto es coherente con $W_{\\text{ext}}>0$ del apartado a): si las cargas se soltasen, la fuerza neta sobre cada una las alejaría hacia el infinito, devolviendo la energía aportada en forma de energía cinética. Para mantener la configuración hay que sostener el sistema contra esas fuerzas centrífugas; el agente que las acerca debe hacer trabajo positivo, exactamente $3{,}6\\cdot10^{-4}\\,\\text{J}$."
         }
       ],
-      "resultado": "$W=+3{,}60\\cdot10^{-4}\\,\\text{J}$; $F_{\\text{neta}}\\approx6{,}93\\cdot10^{-3}\\,\\text{N}$ hacia fuera; coherente con el trabajo positivo."
+      "resultado": "a) $W_{\\text{ext}}=+3{,}6\\cdot10^{-4}\\,\\text{J}$; es positivo porque hay que vencer la repulsión entre cargas del mismo signo.\nb) $F_{\\text{neta}}\\approx6{,}9\\cdot10^{-3}\\,\\text{N}$ sobre cada carga, dirigida hacia fuera del triángulo."
     },
     {
       "numero": 6,
       "titulo": "Flujo magnético y fem inducida al invertir el campo en una bobina",
-      "tema": "Electromagnetismo",
-      "puntuacion": "2 puntos",
-      "enunciado": "Una bobina de $200$ espiras circulares de $5\\,\\text{cm}$ de radio está en un plano horizontal. Un campo magnético uniforme de $2\\cdot10^{-6}\\,\\text{T}$ atraviesa de abajo hacia arriba la bobina formando $30^\\circ$ con la vertical. a) Determine el flujo magnético a través de la bobina. b) Se invierte el sentido del campo en $0{,}05\\,\\text{s}$. Calcule la fuerza electromotriz inducida suponiendo variación lineal.",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Consideremos una bobina de 200 espiras circulares de 5 cm de radio, situadas en un plano horizontal. Un campo magnético uniforme de $2\\cdot10^{-6}\\,\\text{T}$ atraviesa de abajo hacia arriba la bobina formando un ángulo de $30^{\\circ}$ con la vertical. a) Determine el flujo magnético a través de la bobina. b) A continuación, se invierte el sentido del campo magnético, empleando $0{,}05\\,\\text{s}$ en el proceso. Calcule la fuerza electromotriz inducida en la bobina suponiendo que la variación del campo con el tiempo se ha llevado a cabo de forma lineal.",
       "apartados": [
-        { "letra": "a", "puntuacion": "1 punto", "enunciado": "Flujo magnético." },
-        { "letra": "b", "puntuacion": "1 punto", "enunciado": "FEM inducida al invertir el campo." }
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Flujo magnético a través de la bobina."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Fuerza electromotriz inducida al invertir el campo."
+        }
       ],
       "resolucion": [
         {
-          "titulo": "Área y flujo inicial",
-          "contenido": "$A=\\pi\\,(0{,}05)^2=7{,}85\\cdot10^{-3}\\,\\text{m}^2$. El ángulo entre el campo y la normal es $30^\\circ$. $\\Phi_i=N\\,B\\,A\\cos30^\\circ=200\\cdot2\\cdot10^{-6}\\cdot7{,}85\\cdot10^{-3}\\cdot0{,}866=2{,}72\\cdot10^{-6}\\,\\text{Wb}$."
+          "titulo": "Vector normal y ángulo",
+          "contenido": "La bobina está en un plano horizontal, así que su vector normal es vertical. El campo forma $30^{\\circ}$ con la vertical, es decir, $30^{\\circ}$ con la normal a la bobina. Por tanto, el coseno relevante es $\\cos 30^{\\circ}=\\frac{\\sqrt{3}}{2}$."
         },
         {
-          "titulo": "Variación de flujo y fem",
-          "contenido": "Al invertir el campo, $\\Delta\\Phi=\\Phi_f-\\Phi_i=-2\\,\\Phi_i=-5{,}44\\cdot10^{-6}\\,\\text{Wb}$. $\\varepsilon=-\\frac{\\Delta\\Phi}{\\Delta t}=\\frac{5{,}44\\cdot10^{-6}}{0{,}05}=1{,}09\\cdot10^{-4}\\,\\text{V}$."
+          "titulo": "Área y flujo",
+          "contenido": "Área de una espira:\n\n$$A=\\pi r^{2}=\\pi(0{,}05)^{2}=7{,}85\\cdot10^{-3}\\,\\text{m}^{2}.$$\n\nFlujo total a través de las $N=200$ espiras:\n\n$$\\Phi=N\\,B\\,A\\,\\cos\\theta=200\\cdot2\\cdot10^{-6}\\cdot7{,}85\\cdot10^{-3}\\cdot\\cos 30^{\\circ}\\approx2{,}72\\cdot10^{-6}\\,\\text{Wb}.$$"
+        },
+        {
+          "titulo": "Variación del flujo al invertir el campo",
+          "contenido": "Al invertir el sentido del campo, el flujo pasa de $+2{,}72\\cdot10^{-6}\\,\\text{Wb}$ a $-2{,}72\\cdot10^{-6}\\,\\text{Wb}$. La variación total es:\n\n$$\\Delta\\Phi=-2\\Phi_{\\text{inicial}}=-5{,}44\\cdot10^{-6}\\,\\text{Wb}.$$"
+        },
+        {
+          "titulo": "FEM media inducida (variación lineal)",
+          "contenido": "Como la variación es lineal en el tiempo, la fem media es constante e igual a:\n\n$$\\varepsilon=-\\frac{\\Delta\\Phi}{\\Delta t}=-\\frac{-5{,}44\\cdot10^{-6}}{0{,}05}\\approx1{,}09\\cdot10^{-4}\\,\\text{V}.$$"
         }
       ],
-      "resultado": "$\\Phi_i\\approx2{,}72\\cdot10^{-6}\\,\\text{Wb}$; $\\varepsilon\\approx1{,}09\\cdot10^{-4}\\,\\text{V}$."
+      "resultado": "a) $\\Phi\\approx2{,}72\\cdot10^{-6}\\,\\text{Wb}$.\nb) $\\varepsilon\\approx1{,}09\\cdot10^{-4}\\,\\text{V}$."
     },
     {
       "numero": 7,
       "titulo": "Intensidad sonora a partir de un incremento de nivel de 7 dB",
-      "tema": "Ondas sonoras",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
       "puntuacion": "1 punto",
-      "enunciado": "Calcule la intensidad de un sonido cuyo nivel de intensidad sonora es $7\\,\\text{dB}$ más alto que otro de intensidad $4\\cdot10^{-9}\\,\\text{W}\\,\\text{m}^{-2}$. Dato: $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$.",
+      "enunciado": "Calcule la intensidad de un sonido cuyo nivel de intensidad sonora es 7 dB más alto que otro de intensidad $4\\cdot10^{-9}\\,\\text{W}\\,\\text{m}^{-2}$. Dato: intensidad física umbral $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Diferencia de niveles",
-          "contenido": "$\\Delta L=10\\log\\left(\\frac{I_2}{I_1}\\right)=7\\,\\text{dB}$, luego $\\frac{I_2}{I_1}=10^{0{,}7}=5{,}01$."
+          "contenido": "La diferencia entre dos niveles de intensidad sonora es:\n\n$$\\beta_2-\\beta_1=10\\log\\left(\\frac{I_2}{I_1}\\right)=7\\,\\text{dB}.$$\n\nPor tanto:\n\n$$\\frac{I_2}{I_1}=10^{0{,}7}\\approx5{,}01.$$"
         },
         {
-          "titulo": "Intensidad buscada",
-          "contenido": "$I_2=4\\cdot10^{-9}\\cdot5{,}01=2{,}00\\cdot10^{-8}\\,\\text{W}\\,\\text{m}^{-2}$."
+          "titulo": "Cálculo de $I_2$",
+          "contenido": "$$I_2=I_1\\cdot10^{0{,}7}=4\\cdot10^{-9}\\cdot5{,}01\\approx2{,}0\\cdot10^{-8}\\,\\text{W}\\,\\text{m}^{-2}.$$"
         }
       ],
-      "resultado": "$I_2\\approx2{,}00\\cdot10^{-8}\\,\\text{W}\\,\\text{m}^{-2}$."
+      "resultado": "$I_2\\approx2{,}0\\cdot10^{-8}\\,\\text{W}\\,\\text{m}^{-2}$."
     },
     {
       "numero": 8,
       "titulo": "Índice de refracción a partir del ángulo límite",
-      "tema": "Óptica",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias; C5. Naturaleza de la luz y óptica física básica",
       "puntuacion": "1 punto",
-      "enunciado": "El rayo de luz de la figura se propaga por el interior de cierto medio e incide sobre la superficie que lo separa del aire. Las dimensiones mostradas corresponden al ángulo límite: componente vertical $15{,}0\\,\\text{cm}$ y horizontal $13{,}4\\,\\text{cm}$. Determine el índice de refracción del medio. El aire tiene $n_1=1$.",
+      "enunciado": "El rayo de luz de la figura se propaga por el interior de cierto medio e incide sobre la superficie que lo separa del aire. Las dimensiones mostradas en el diagrama corresponden justamente al ángulo límite. Determine el índice de refracción del medio. Dimensiones de la figura: la trayectoria del rayo dentro del medio tiene una componente vertical de $15{,}0\\,\\text{cm}$, paralela a la normal a la superficie, y una componente horizontal de $13{,}4\\,\\text{cm}$, paralela a la superficie. El medio tiene índice $n_2$ y el aire por encima tiene $n_1=1$.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Ángulo límite a partir de la geometría",
-          "contenido": "$\\tan\\theta_c=\\frac{13{,}4}{15{,}0}=0{,}893$, luego $\\theta_c=41{,}8^\\circ$."
+          "contenido": "El ángulo del rayo respecto a la normal vertical cumple:\n\n$$\\tan\\theta_L=\\frac{13{,}4}{15{,}0}\\approx0{,}893\\quad\\Rightarrow\\quad\\theta_L\\approx41{,}8^{\\circ}.$$\n\nEquivalentemente, por geometría, con la hipotenusa del triángulo rectángulo formado:\n\n$$\\text{sen}\\,\\theta_L=\\frac{13{,}4}{\\sqrt{15{,}0^{2}+13{,}4^{2}}}\\approx0{,}666.$$"
         },
         {
-          "titulo": "Índice de refracción",
-          "contenido": "En el ángulo límite, $\\sin\\theta_c=\\frac{n_1}{n_2}=\\frac{1}{n_2}$. Por tanto, $n_2=\\frac{1}{\\sin41{,}8^\\circ}=1{,}50$."
+          "titulo": "Condición de ángulo límite y cálculo de $n_2$",
+          "contenido": "El ángulo límite cumple:\n\n$$\\text{sen}\\,\\theta_L=\\frac{n_1}{n_2}=\\frac{1}{n_2}.$$\n\nPor tanto:\n\n$$n_2=\\frac{1}{\\text{sen}\\,\\theta_L}\\approx\\frac{1}{0{,}666}\\approx1{,}50.$$"
         }
       ],
-      "resultado": "$n\\approx1{,}50$."
+      "resultado": "$n_2\\approx1{,}50$."
     },
     {
       "numero": 9,
       "titulo": "Onda armónica en una cuerda: longitud, velocidad y diferencias de fase",
-      "tema": "Vibraciones y ondas",
-      "puntuacion": "2 puntos",
-      "enunciado": "La ecuación de una onda armónica en una cuerda es $y=0{,}1\\sin\\!\\left[\\pi\\,(0{,}8x-0{,}8t)+\\frac{\\pi}{2}\\right]$ en unidades del S.I. a) Calcule la longitud de onda y la velocidad de propagación. b) Para un instante dado, calcule la diferencia de fase entre dos puntos que distan $20\\,\\text{cm}$. Determine también la diferencia de fase, para un punto dado, entre dos instantes separados por $0{,}1\\,\\text{s}$.",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "La ecuación de una onda armónica que se propaga en una cuerda es:\n\n$$y=0{,}1\\,\\text{sen}\\left[\\pi(0{,}8\\,x-0{,}8\\,t)+\\frac{\\pi}{2}\\right]$$\n\nen unidades del SI. a) Calcule la longitud de onda y la velocidad de propagación del movimiento ondulatorio. b) Para un instante dado, calcule la diferencia de fase entre dos puntos que distan 20 cm. Determine también la diferencia de fase, para un punto dado, entre dos instantes separados por un intervalo de 0,1 s.",
       "apartados": [
-        { "letra": "a", "puntuacion": "1 punto", "enunciado": "Longitud de onda y velocidad." },
-        { "letra": "b", "puntuacion": "1 punto", "enunciado": "Diferencias de fase espacial y temporal." }
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Longitud de onda y velocidad de propagación."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Diferencias de fase espacial y temporal."
+        }
       ],
       "resolucion": [
         {
           "titulo": "Identificación de $k$ y $\\omega$",
-          "contenido": "De la fase $\\pi\\,(0{,}8x-0{,}8t)+\\frac{\\pi}{2}$, se tiene $k=0{,}8\\pi\\,\\text{rad/m}$ y $\\omega=0{,}8\\pi\\,\\text{rad/s}$."
+          "contenido": "Reescribimos la fase desarrollando el coeficiente de $x$ y $t$:\n\n$$y=0{,}1\\,\\text{sen}\\left(0{,}8\\pi x-0{,}8\\pi t+\\frac{\\pi}{2}\\right).$$\n\nPor comparación con la forma $y=A\\,\\text{sen}(kx-\\omega t+\\varphi)$:\n\n$$k=0{,}8\\pi\\,\\text{rad}\\,\\text{m}^{-1},\\qquad \\omega=0{,}8\\pi\\,\\text{rad}\\,\\text{s}^{-1}.$$"
         },
         {
-          "titulo": "Longitud de onda y velocidad",
-          "contenido": "$\\lambda=\\frac{2\\pi}{k}=\\frac{2\\pi}{0{,}8\\pi}=2{,}5\\,\\text{m}$; $v=\\frac{\\omega}{k}=1{,}0\\,\\text{m/s}$."
+          "titulo": "Longitud de onda",
+          "contenido": "$$\\lambda=\\frac{2\\pi}{k}=\\frac{2\\pi}{0{,}8\\pi}=2{,}5\\,\\text{m}.$$"
         },
         {
-          "titulo": "Diferencia de fase espacial",
-          "contenido": "$\\Delta\\varphi_x=k\\,\\Delta x=0{,}8\\pi\\cdot0{,}2=0{,}16\\pi\\approx0{,}503\\,\\text{rad}$."
+          "titulo": "Velocidad de propagación",
+          "contenido": "$$v=\\frac{\\omega}{k}=\\frac{0{,}8\\pi}{0{,}8\\pi}=1{,}0\\,\\text{m}\\,\\text{s}^{-1}.$$"
         },
         {
-          "titulo": "Diferencia de fase temporal",
-          "contenido": "$\\Delta\\varphi_t=\\omega\\,\\Delta t=0{,}8\\pi\\cdot0{,}1=0{,}08\\pi\\approx0{,}251\\,\\text{rad}$."
+          "titulo": "Diferencia de fase espacial (a $t$ fijo, $\\Delta x=20\\,\\text{cm}$)",
+          "contenido": "$$\\Delta\\varphi_x=k\\,\\Delta x=0{,}8\\pi\\cdot0{,}20=0{,}16\\pi\\,\\text{rad}\\approx0{,}50\\,\\text{rad}.$$"
+        },
+        {
+          "titulo": "Diferencia de fase temporal (a $x$ fijo, $\\Delta t=0{,}1\\,\\text{s}$)",
+          "contenido": "$$\\Delta\\varphi_t=\\omega\\,\\Delta t=0{,}8\\pi\\cdot0{,}1=0{,}08\\pi\\,\\text{rad}\\approx0{,}25\\,\\text{rad}.$$"
         }
       ],
-      "resultado": "$\\lambda=2{,}5\\,\\text{m}$; $v=1{,}0\\,\\text{m/s}$; $\\Delta\\varphi_x\\approx0{,}503\\,\\text{rad}$; $\\Delta\\varphi_t\\approx0{,}251\\,\\text{rad}$."
+      "resultado": "a) $\\lambda=2{,}5\\,\\text{m}$; $v=1{,}0\\,\\text{m}\\,\\text{s}^{-1}$.\nb) $\\Delta\\varphi_x=0{,}16\\pi\\,\\text{rad}\\approx0{,}50\\,\\text{rad}$; $\\Delta\\varphi_t=0{,}08\\pi\\,\\text{rad}\\approx0{,}25\\,\\text{rad}$."
     },
     {
       "numero": 10,
       "titulo": "Actividad y vida residual de una muestra de $^{90}\\text{Sr}$",
-      "tema": "Física nuclear",
-      "puntuacion": "2 puntos",
-      "enunciado": "El $^{90}\\text{Sr}$ es un núcleo radiactivo cuyo periodo de semidesintegración es de $28\\,\\text{años}$. Calcule en unidades del S.I.: a) La actividad de una muestra de $1\\,\\text{mg}$ de esta sustancia. b) El tiempo necesario para que la muestra se reduzca a $0{,}15\\,\\text{mg}$. Dato: $N_A=6{,}022\\cdot10^{23}\\,\\text{mol}^{-1}$.",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "El $^{90}_{38}\\text{Sr}$ es un núcleo radiactivo cuyo periodo de semidesintegración es de 28 años. Calcule, expresando los resultados en unidades del SI: a) La actividad de una muestra de 1 mg de esta sustancia. b) El tiempo necesario para que la anterior muestra se reduzca a 0,15 mg. Datos: $N_A=6{,}022\\cdot10^{23}\\,\\text{mol}^{-1}$.",
       "apartados": [
-        { "letra": "a", "puntuacion": "1 punto", "enunciado": "Actividad de 1 mg." },
-        { "letra": "b", "puntuacion": "1 punto", "enunciado": "Tiempo para reducirse a 0,15 mg." }
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Actividad de una muestra de 1 mg."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Tiempo necesario para que la muestra se reduzca a 0,15 mg."
+        }
       ],
       "resolucion": [
         {
           "titulo": "Constante de desintegración",
-          "contenido": "$T_{1/2}=28\\,\\text{años}=8{,}83\\cdot10^8\\,\\text{s}$. $\\lambda=\\frac{\\ln 2}{T_{1/2}}=7{,}85\\cdot10^{-10}\\,\\text{s}^{-1}$."
+          "contenido": "$$\\lambda=\\frac{\\ln 2}{T_{1/2}}=\\frac{0{,}693}{28\\cdot365\\cdot24\\cdot3600}\\approx7{,}85\\cdot10^{-10}\\,\\text{s}^{-1}.$$"
         },
         {
-          "titulo": "Número de núcleos y actividad",
-          "contenido": "$N=\\frac{10^{-3}}{90}\\cdot6{,}022\\cdot10^{23}=6{,}69\\cdot10^{18}$ núcleos. $A=\\lambda\\,N=5{,}25\\cdot10^9\\,\\text{Bq}$."
+          "titulo": "Número de núcleos en 1 mg de Sr",
+          "contenido": "Masa molar $M\\approx90\\,\\text{g}\\,\\text{mol}^{-1}=0{,}090\\,\\text{kg}\\,\\text{mol}^{-1}$. Con $m=1\\,\\text{mg}=1\\cdot10^{-6}\\,\\text{kg}$:\n\n$$N=\\frac{m}{M}N_A=\\frac{1\\cdot10^{-6}}{0{,}090}\\cdot6{,}022\\cdot10^{23}\\approx6{,}69\\cdot10^{18}\\,\\text{núcleos}.$$"
         },
         {
-          "titulo": "Tiempo hasta 0,15 mg",
-          "contenido": "$m=m_0\\,e^{-\\lambda t}$, luego $t=\\frac{\\ln(m_0/m)}{\\lambda}=\\frac{\\ln(1/0{,}15)}{7{,}85\\cdot10^{-10}}=2{,}42\\cdot10^9\\,\\text{s}\\approx76{,}6\\,\\text{años}$."
+          "titulo": "Actividad",
+          "contenido": "$$A=\\lambda N=7{,}85\\cdot10^{-10}\\cdot6{,}69\\cdot10^{18}\\approx5{,}25\\cdot10^{9}\\,\\text{Bq}.$$"
+        },
+        {
+          "titulo": "Ley de desintegración",
+          "contenido": "La masa decae con la misma constante que el número de núcleos:\n\n$$m=m_0\\,e^{-\\lambda t}.$$"
+        },
+        {
+          "titulo": "Cálculo numérico",
+          "contenido": "$$t=\\frac{1}{\\lambda}\\ln\\left(\\frac{m_0}{m}\\right)=\\frac{1}{7{,}85\\cdot10^{-10}}\\ln\\left(\\frac{1}{0{,}15}\\right)\\approx2{,}42\\cdot10^{9}\\,\\text{s}\\approx76{,}6\\,\\text{años}.$$"
         }
       ],
-      "resultado": "$A\\approx5{,}25\\cdot10^9\\,\\text{Bq}$; $t\\approx2{,}42\\cdot10^9\\,\\text{s}\\approx76{,}6\\,\\text{años}$."
+      "resultado": "a) $A\\approx5{,}25\\cdot10^{9}\\,\\text{Bq}$.\nb) $t\\approx2{,}42\\cdot10^{9}\\,\\text{s}\\approx76{,}6\\,\\text{años}$."
     },
     {
       "numero": 11,
       "titulo": "Dualidad onda-corpúsculo",
-      "tema": "Física cuántica",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
       "puntuacion": "1 punto",
-      "enunciado": "¿Qué se entiende por dualidad onda-corpúsculo?",
+      "enunciado": "¿Qué se entiende por dualidad onda-corpúsculo? (Bloque 4: Física relativista, cuántica, nuclear y de partículas, opción B, 1 punto).",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Enunciado de la dualidad",
-          "contenido": "La dualidad onda-corpúsculo establece que, a escala microscópica, toda entidad física presenta comportamiento ondulatorio y corpuscular según el experimento que se realice, sin que pueda asignársele de forma absoluta una sola naturaleza."
+          "contenido": "La dualidad onda-corpúsculo es uno de los pilares de la mecánica cuántica. Establece que, a escala microscópica, toda entidad física se comporta tanto como onda como como partícula dependiendo del experimento que se realice sobre ella, sin que pueda asignársele de modo absoluto una u otra naturaleza."
         },
         {
           "titulo": "Caso de la luz",
-          "contenido": "La luz se comporta como onda electromagnética en fenómenos como interferencia y difracción, y como partícula (fotón) en el efecto fotoeléctrico o el efecto Compton, con $E=h\\,f$ y $p=\\frac{h}{\\lambda}$."
+          "contenido": "La luz, tratada clásicamente como onda electromagnética por Maxwell, también exhibe carácter corpuscular: el efecto fotoeléctrico y el efecto Compton se explican como interacciones de fotones de energía $E=h\\nu$ y momento lineal $p=\\frac{h}{\\lambda}$, según Einstein en 1905."
         },
         {
-          "titulo": "Caso de la materia",
-          "contenido": "De Broglie postuló que toda partícula material de momento $p$ lleva asociada una onda de longitud $\\lambda=\\frac{h}{p}$, confirmada experimentalmente con la difracción de electrones."
+          "titulo": "Caso de las partículas materiales (hipótesis de de Broglie)",
+          "contenido": "Recíprocamente, en 1924 de Broglie postuló que toda partícula material de momento lineal $p$ lleva asociada una onda de longitud:\n\n$$\\lambda=\\frac{h}{p},$$\n\nconfirmada experimentalmente por Davisson y Germer en 1927 con la difracción de electrones por una red cristalina. Esta longitud de onda es habitualmente despreciable a escalas macroscópicas, por ejemplo del orden de $10^{-34}\\,\\text{m}$ para una pelota de tenis, pero del orden del tamaño atómico para electrones acelerados a unos pocos voltios."
         }
       ],
-      "resultado": "La dualidad onda-corpúsculo establece que la radiación y la materia presentan comportamiento ondulatorio y corpuscular según el experimento."
+      "resultado": "La dualidad onda-corpúsculo establece que toda entidad física presenta comportamiento ondulatorio y corpuscular según el experimento. La luz muestra carácter de partícula mediante fotones, y las partículas materiales muestran carácter ondulatorio con $\\lambda=\\frac{h}{p}$."
     },
     {
       "numero": 12,
       "titulo": "Longitud de onda de de Broglie de un electrón acelerado",
-      "tema": "Física cuántica",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
       "puntuacion": "1 punto",
-      "enunciado": "Un electrón inicialmente en reposo es acelerado mediante una diferencia de potencial $\\Delta V=1800\\,\\text{V}$. Determine la longitud de onda asociada. Datos: $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$; $e=1{,}60\\cdot10^{-19}\\,\\text{C}$.",
+      "enunciado": "Un electrón que se encuentra inicialmente en reposo es acelerado mediante una diferencia de potencial $\\Delta V=1800\\,\\text{V}$. Determine la longitud de onda asociada a dicho electrón. Datos: $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$; $e=1{,}60\\cdot10^{-19}\\,\\text{C}$.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Energía cinética adquirida",
-          "contenido": "$K=e\\,\\Delta V=1{,}60\\cdot10^{-19}\\cdot1800=2{,}88\\cdot10^{-16}\\,\\text{J}$."
+          "contenido": "El trabajo del campo eléctrico se invierte íntegramente en energía cinética, pues el electrón está inicialmente en reposo:\n\n$$E_c=e\\,\\Delta V=1{,}60\\cdot10^{-19}\\cdot1800=2{,}88\\cdot10^{-16}\\,\\text{J}.$$"
         },
         {
           "titulo": "Momento lineal",
-          "contenido": "$p=\\sqrt{2\\,m_e\\,K}=\\sqrt{2\\cdot9{,}11\\cdot10^{-31}\\cdot2{,}88\\cdot10^{-16}}=2{,}29\\cdot10^{-23}\\,\\text{kg}\\,\\text{m/s}$."
+          "contenido": "$$p=\\sqrt{2\\,m_e\\,E_c}=\\sqrt{2\\cdot9{,}11\\cdot10^{-31}\\cdot2{,}88\\cdot10^{-16}}\\approx2{,}29\\cdot10^{-23}\\,\\text{kg}\\,\\text{m}\\,\\text{s}^{-1}.$$"
         },
         {
           "titulo": "Longitud de onda de de Broglie",
-          "contenido": "$\\lambda=\\frac{h}{p}=\\frac{6{,}63\\cdot10^{-34}}{2{,}29\\cdot10^{-23}}=2{,}90\\cdot10^{-11}\\,\\text{m}$."
+          "contenido": "$$\\lambda=\\frac{h}{p}=\\frac{6{,}63\\cdot10^{-34}}{2{,}29\\cdot10^{-23}}\\approx2{,}89\\cdot10^{-11}\\,\\text{m}.$$"
         }
       ],
-      "resultado": "$\\lambda\\approx2{,}90\\cdot10^{-11}\\,\\text{m}$."
+      "resultado": "$\\lambda\\approx2{,}89\\cdot10^{-11}\\,\\text{m}$."
     }
   ]
 }

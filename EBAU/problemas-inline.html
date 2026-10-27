@@ -1,224 +1,653 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Problemas con Soluciones - EBAU</title>
-    
-    <!-- Script de MathJax para que se vean las fórmulas matemáticas -->
-    <script>
-      MathJax = {
-        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
-        svg: { fontCache: 'global' }
-      };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAU Física · Buscador de problemas resueltos</title>
 
-    <style>
-        body { font-family: system-ui, -apple-system, sans-serif; background: #f8fafc; color: #0f172a; margin: 0; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
-        .filtros-panel { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .grupo-filtro { margin-bottom: 15px; }
-        .grupo-filtro h3 { font-size: 14px; margin: 0 0 10px 0; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
-        .botones { display: flex; flex-wrap: wrap; gap: 8px; }
-        .btn-filtro { background: #f1f5f9; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: all 0.2s; }
-        .btn-filtro:hover { background: #e2e8f0; }
-        .btn-filtro.activo { background: #2563eb; color: white; border-color: #2563eb; }
-        
-        /* NUEVOS ESTILOS PARA EL BUSCADOR */
-        .busqueda-container { display: flex; gap: 10px; }
-        .busqueda-container input[type="text"] {
-            flex: 1;
-            padding: 10px 15px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-size: 14px;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .busqueda-container input[type="text"]:focus { border-color: #2563eb; }
-        .busqueda-container select {
-            padding: 10px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-size: 14px;
-            background: #f8fafc;
-            cursor: pointer;
-        }
+<!-- MathJax -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-        .controles { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; border-top: 1px solid #e2e8f0; padding-top: 15px; flex-wrap: wrap; gap: 10px; }
-        select { padding: 8px; border-radius: 6px; border: 1px solid #cbd5e1; }
-        .btn-limpiar { background: none; border: none; color: #2563eb; cursor: pointer; text-decoration: underline; }
-        
-        .lista-problemas { display: flex; flex-direction: column; gap: 12px; }
-        
-        /* Estilos para los desplegables */
-        .tarjeta-problema-desplegable {
-            background: white;
-            border-radius: 10px;
-            border: 1px solid #e2e8f0;
-            overflow: hidden;
-            transition: border 0.2s;
-        }
-        .tarjeta-problema-desplegable[open] {
-            border-color: #2563eb;
-            box-shadow: 0 2px 5px rgba(37,99,235,0.1);
-        }
-        .tarjeta-problema-desplegable summary {
-            padding: 15px;
-            cursor: pointer;
-            list-style: none;
-            position: relative;
-        }
-        .tarjeta-problema-desplegable summary::-webkit-details-marker { display: none; }
-        .tarjeta-problema-desplegable summary::after {
-            content: '▼';
-            position: absolute;
-            right: 15px;
-            top: 20px;
-            font-size: 12px;
-            color: #94a3b8;
-            transition: transform 0.3s;
-        }
-        .tarjeta-problema-desplegable[open] summary::after {
-            transform: rotate(180deg);
-        }
-        
-        .etiquetas { display: flex; gap: 8px; margin-bottom: 8px; }
-        .badge { font-size: 11px; padding: 3px 8px; border-radius: 12px; font-weight: bold; }
-        .badge-tema { background: #eff6ff; color: #1d4ed8; }
-        .badge-examen { background: #f1f5f9; color: #475569; }
-        
-        /* NUEVO: Fila para el título y el botón de examen */
-        .header-top-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding-right: 25px; /* Espacio para la flecha del desplegable */
-            gap: 15px;
-            margin-bottom: 5px;
-        }
-        
-        .tarjeta-problema-desplegable h4 { margin: 0; font-size: 16px; line-height: 1.4; }
-        
-        /* NUEVO: Botón para ir al examen completo */
-        .btn-ver-examen {
-            background: #2563eb;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: bold;
-            text-decoration: none;
-            white-space: nowrap;
-            transition: background 0.2s;
-            flex-shrink: 0;
-        }
-        .btn-ver-examen:hover {
-            background: #1d4ed8;
-        }
-        
-        /* NUEVOS ESTILOS: Botones pequeños de PDF dentro de la cabecera */
-        .pdf-mini-buttons {
-            display: flex;
-            gap: 8px;
-            margin-top: 5px;
-            position: relative;
-            z-index: 10;
-        }
-        .pdf-mini-buttons a {
-            font-size: 11px;
-            padding: 4px 8px;
-            background: #f0f9ff;
-            color: #0284c7;
-            border: 1px solid #bae6fd;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.2s;
-        }
-        .pdf-mini-buttons a:hover {
-            background: #e0f2fe;
-            border-color: #38bdf8;
-        }
+<style>
+  :root{
+    --bg:            #f4f6fb;
+    --surface:       #ffffff;
+    --surface-2:     #f8fafc;
+    --text:          #1f2937;
+    --text-soft:     #4b5563;
+    --text-mute:     #6b7280;
+    --line:          #e2e8f0;
+    --line-strong:   #cbd5e1;
 
-        /* Estilo para el resumen del enunciado */
-        .resumen-enunciado { margin: 10px 0 0 0; font-size: 13px; color: #64748b; font-style: italic; padding-right: 25px; line-height: 1.5; display: none; }
-        .mostrar-enunciado .resumen-enunciado { display: block; }
-        
-        /* Estilos del contenido desplegado */
-        .detalle-problema { padding: 0 15px 15px 15px; border-top: 1px solid #f1f5f9; margin-top: 10px; padding-top: 15px; }
-        .enunciado-ej { font-weight: bold; color: #334155; margin-bottom: 5px; font-size: 14px; }
-        .detalle-problema p { margin: 0 0 10px 0; font-size: 14px; line-height: 1.6; color: #475569; }
-        .resolucion { background: #f8fafc; padding: 15px; border-radius: 8px; margin-top: 15px; }
-        .paso { margin-bottom: 10px; font-size: 14px; line-height: 1.6; color: #334155; }
-        .paso strong { color: #0f172a; }
-        .resultado-final { margin-top: 15px; padding-top: 15px; border-top: 1px dashed #cbd5e1; color: #15803d; font-size: 14px; }
-        
-        .grupo-tema-titulo { font-size: 20px; margin: 30px 0 15px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 5px; }
-    </style>
+    --a: #4f46e5;  --a-bg:#eef2ff;
+    --b: #b45309;  --b-bg:#fef3c7;
+    --c: #0f766e;  --c-bg:#ccfbf1;
+    --d: #9d174d;  --d-bg:#fce7f3;
+
+    --ok:  #047857;
+    --ok-bg:#d1fae5;
+
+    --radius: 16px;
+    --shadow: 0 1px 2px rgba(16,24,40,.05), 0 8px 24px -8px rgba(16,24,40,.12);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    padding: 0 1rem 4rem;
+    background: var(--bg);
+    background-image:
+      radial-gradient(1200px 500px at 50% -200px, #e0e7ff 0%, transparent 70%);
+    color: var(--text);
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui, sans-serif;
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{ max-width: 980px; margin: 0 auto; }
+
+  /* ─── HERO ──────────────────────────────────────────────── */
+  header.hero{
+    margin: 2rem 0 1.5rem;
+    padding: 2rem 1.75rem;
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 45%, #4338ca 100%);
+    color: #fff;
+    border-radius: 22px;
+    box-shadow: 0 20px 45px -20px rgba(49,46,129,.7);
+    position: relative;
+    overflow: hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute; inset:auto -60px -110px auto;
+    width: 320px; height: 320px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+  }
+  .hero .kicker{
+    display:inline-block;
+    font-size:.74rem; letter-spacing:.16em; text-transform:uppercase;
+    background: rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.25);
+    padding:.28rem .75rem; border-radius:999px; font-weight:700;
+    margin-bottom:.9rem;
+  }
+  header.hero h1{
+    margin:0 0 .5rem; font-size: clamp(1.45rem, 3.6vw, 2.15rem);
+    line-height:1.25; font-weight:800; letter-spacing:-.02em;
+  }
+  header.hero p.sub{
+    margin:0 0 1.25rem; color:#c7d2fe; font-size:1rem; max-width: 70ch;
+  }
+  .metachips{ display:flex; flex-wrap:wrap; gap:.5rem; position:relative; z-index:1;}
+  .metachips span{
+    font-size:.8rem; font-weight:600;
+    background: rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.22);
+    padding:.3rem .7rem; border-radius:8px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ─── BLOQUES / SECCIONES ───────────────────────────────── */
+  section.block{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+  section.block > h2{
+    margin: 0 0 1rem;
+    font-size: 1.12rem;
+    letter-spacing:.02em;
+    text-transform: uppercase;
+    color: #312e81;
+    display:flex; align-items:center; gap:.6rem;
+  }
+  section.block > h2::before{
+    content:""; width:6px; height:22px; border-radius:3px;
+    background: linear-gradient(180deg,#6366f1,#4338ca);
+    flex: 0 0 auto;
+  }
+
+  /* ─── BUSCADOR ──────────────────────────────────────────── */
+  .search-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: 1rem;
+  }
+  #input-busqueda{
+    flex: 1 1 260px;
+    padding: .72rem .95rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text);
+    transition: .15s ease;
+  }
+  #input-busqueda::placeholder{ color: #94a3b8; }
+  #input-busqueda:focus{
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px #c7d2fe;
+  }
+  #select-logica, #select-orden{
+    font-family: inherit;
+    font-size: .9rem;
+    padding: .55rem .75rem;
+    border-radius: 10px;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: .15s ease;
+  }
+  #select-logica:focus, #select-orden:focus{
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px #c7d2fe;
+  }
+
+  /* ─── GRUPOS DE FILTRO ──────────────────────────────────── */
+  .filtros-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .85rem;
+    margin-bottom: .5rem;
+  }
+  .filtro-hint{
+    font-size: .82rem;
+    color: var(--text-mute);
+    font-style: italic;
+    margin: 0;
+    padding: .2rem 0;
+}
+  .filtro-grupo > label{
+    display: block;
+    font-size: .74rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    margin-bottom: .4rem;
+  }
+  .filtro-grupo .botones{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+    min-height: 1px;
+  }
+  .btn-filtro{
+    font-family: inherit;
+    font-size: .82rem;
+    padding: .35rem .75rem;
+    border-radius: 999px;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--text-soft);
+    cursor: pointer;
+    transition: .15s ease;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .btn-filtro:hover{
+    border-color: #a5b4fc;
+    color: #312e81;
+    background: #eef2ff;
+  }
+  .btn-filtro.activo{
+    background: #4f46e5;
+    border-color: #4f46e5;
+    color: #fff;
+    box-shadow: 0 4px 12px -4px rgba(79,70,229,.55);
+  }
+  
+    /* ─── Estado de los botones de PDF ─────────────────────── */
+    .pdf-mini-buttons a.pdf-missing{
+        opacity: .55;
+        cursor: not-allowed;
+        background: #fef2f2;
+        border-color: #fecaca;
+        color: #b91c1c;
+        text-decoration: line-through;
+        pointer-events: none;
+    }
+    .pdf-mini-buttons a.pdf-missing:hover{
+        background: #fef2f2;
+        border-color: #fecaca;
+        color: #b91c1c;
+    }
+
+  /* Los filtros de tema y bloque pueden contener textos largos: permitimos
+     que se recorten con elipsis en vez de romper el layout. */
+  #filtros-tema .btn-filtro,
+  #filtros-bloque .btn-filtro{
+    max-width: 100%;
+  }
+
+  /* ─── TOOLBAR INFERIOR ──────────────────────────────────── */
+  .toolbar{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    margin-top: .75rem;
+  }
+  .toolbar label{
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    font-size: .88rem;
+    color: var(--text-soft);
+    cursor: pointer;
+    user-select: none;
+  }
+  .toolbar label input[type="checkbox"]{
+    width: 16px; height: 16px; accent-color: #4f46e5;
+  }
+  .btn-limpiar{
+    margin-left: auto;
+    font-family: inherit;
+    font-size: .85rem;
+    font-weight: 700;
+    padding: .45rem .9rem;
+    border-radius: 8px;
+    border: 1px solid #fecaca;
+    background: #fee2e2;
+    color: #b91c1c;
+    cursor: pointer;
+    transition: .15s ease;
+  }
+  .btn-limpiar:hover{ background: #fecaca; border-color: #fca5a5; }
+
+  /* ─── RESULTADOS ────────────────────────────────────────── */
+  #contador-resultados{
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--text-mute);
+    margin: 0 0 1rem;
+  }
+
+  .tarjeta-problema-desplegable{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 1px 2px rgba(16,24,40,.04);
+    margin-bottom: .9rem;
+    overflow: hidden;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  .tarjeta-problema-desplegable[open]{
+    border-color: #c7d2fe;
+    box-shadow: var(--shadow);
+  }
+  .tarjeta-problema-desplegable > summary{
+    display: block;
+    list-style: none;
+    cursor: pointer;
+    padding: 1rem 1.15rem;
+    user-select: none;
+    transition: background .15s ease;
+  }
+  .tarjeta-problema-desplegable > summary::-webkit-details-marker{ display: none; }
+  .tarjeta-problema-desplegable > summary:hover{ background: var(--surface-2); }
+
+  .etiquetas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+    margin-bottom: .55rem;
+  }
+  .badge{
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+    padding: .2rem .55rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .badge-tema{
+    background: var(--a-bg);
+    color: var(--a);
+    border-color: #c7d2fe;
+    cursor: default;
+  }
+  .badge-examen{
+    background: var(--surface-2);
+    color: var(--text-soft);
+    border-color: var(--line-strong);
+  }
+  .badge-puntos{
+    background: var(--ok-bg);
+    color: var(--ok);
+    border-color: #6ee7b7;
+  }
+  .badge-bloque{
+    background: var(--b-bg);
+    color: var(--b);
+    border-color: #fde68a;
+    white-space: normal;
+  }
+
+  .header-top-row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .5rem .75rem;
+    margin-bottom: .35rem;
+  }
+  .header-top-row h4{
+    margin: 0;
+    flex: 1 1 auto;
+    font-size: 1.03rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.35;
+  }
+  .header-top-row h4::after{
+    content: "▾";
+    margin-left: .35rem;
+    color: var(--text-mute);
+    font-weight: 400;
+    display: inline-block;
+    transition: transform .2s ease;
+  }
+  .tarjeta-problema-desplegable[open] .header-top-row h4::after{
+    transform: rotate(180deg);
+  }
+  .btn-ver-examen{
+    font-size: .82rem;
+    font-weight: 700;
+    color: var(--a);
+    text-decoration: none;
+    padding: .28rem .7rem;
+    border-radius: 8px;
+    background: var(--a-bg);
+    border: 1px solid #c7d2fe;
+    white-space: nowrap;
+    transition: .15s ease;
+  }
+  .btn-ver-examen:hover{ background: #e0e7ff; border-color: #a5b4fc; }
+
+  .pdf-mini-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    margin: .35rem 0 .55rem;
+  }
+  .pdf-mini-buttons a{
+    font-size: .78rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-soft);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: .2rem .55rem;
+    transition: .15s ease;
+  }
+  .pdf-mini-buttons a:hover{
+    border-color: #a5b4fc;
+    color: var(--a);
+    background: var(--a-bg);
+  }
+
+  .resumen-enunciado{
+    display: none;
+    margin: .4rem 0 0;
+    font-size: .9rem;
+    color: var(--text-soft);
+    padding-left: .65rem;
+    border-left: 3px solid var(--line-strong);
+  }
+  #resultados.mostrar-enunciado .resumen-enunciado{ display: block; }
+
+  /* ─── DETALLE ABIERTO ──────────────────────────────────── */
+  .detalle-problema{
+    padding: 0 1.15rem 1.15rem;
+    border-top: 1px dashed var(--line);
+  }
+  .enunciado-ej{
+    font-size: .74rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #6366f1;
+    margin: .85rem 0 .35rem;
+  }
+  .detalle-problema > p{
+    margin: 0 0 .65rem;
+    color: var(--text);
+    text-align: justify;
+  }
+  .detalle-problema > p strong{ color: var(--text); }
+
+  .resolucion{ margin-top: .85rem; }
+  .paso{
+    padding: .7rem .9rem;
+    border-left: 3px solid #10b981;
+    background: linear-gradient(180deg,#f0fdf4,#ffffff 70%);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: .55rem;
+    color: var(--text-soft);
+    text-align: justify;
+    overflow-x: auto;
+    font-size: .94rem;
+  }
+  .paso strong{ color: #065f46; }
+
+  .resultado-final{
+    margin-top: .7rem;
+    padding: .8rem 1rem;
+    background: var(--ok-bg);
+    border: 1px solid #6ee7b7;
+    border-radius: 10px;
+    color: #065f46;
+    font-size: .92rem;
+    text-align: justify;
+  }
+
+  /* ─── CABECERAS DE GRUPO ───────────────────────────────── */
+  .grupo-tema-titulo{
+    margin: 1.5rem 0 .75rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #312e81;
+    padding-bottom: .3rem;
+    border-bottom: 2px solid #c7d2fe;
+  }
+  .grupo-tema-titulo:first-child{ margin-top: 0; }
+
+  .grupo-bloque-titulo{
+    margin: 1.5rem 0 .75rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #312e81;
+    padding-bottom: .3rem;
+    border-bottom: 2px solid #cbd5e1;
+  }
+  .grupo-bloque-titulo:first-child{ margin-top: 0; }
+
+  /* ─── CARGAR MÁS ──────────────────────────────────────── */
+  .cargar-mas-container{
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0 0;
+  }
+  .btn-cargar-mas{
+    font-family: inherit;
+    font-size: .92rem;
+    font-weight: 700;
+    padding: .7rem 1.4rem;
+    border-radius: 10px;
+    border: 1px solid #4f46e5;
+    background: #4f46e5;
+    color: #fff;
+    cursor: pointer;
+    transition: .15s ease;
+    box-shadow: 0 10px 20px -10px rgba(79,70,229,.6);
+  }
+  .btn-cargar-mas:hover{
+    background: #4338ca;
+    border-color: #4338ca;
+    transform: translateY(-1px);
+  }
+
+  /* ─── BOTÓN VOLVER ARRIBA ──────────────────────────────── */
+  .top-link{
+    position: fixed; right: 1.1rem; bottom: 1.1rem;
+    width: 46px; height:46px; border-radius: 50%;
+    display:grid; place-items:center;
+    background:#312e81; color:#fff; text-decoration:none;
+    box-shadow: 0 10px 24px -8px rgba(49,46,129,.8);
+    font-size:1.15rem; z-index:50;
+    transition: transform .18s ease, background .18s ease;
+  }
+  .top-link:hover{ transform: translateY(-3px); background:#4338ca; }
+
+  /* ─── PIE ──────────────────────────────────────────────── */
+  footer.foot{
+    text-align:center; color: var(--text-mute);
+    font-size:.83rem; padding: 1.5rem 0 .5rem;
+  }
+  footer.foot code{
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 0 .35rem;
+    font-size: .82rem;
+  }
+
+  /* MathJax */
+  mjx-container{ overflow-x:auto; overflow-y:hidden; max-width:100%; }
+  mjx-container[display="true"]{ margin: .75em 0 !important; }
+
+  /* ─── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 640px){
+    body{ font-size: 15px; padding: 0 .6rem 3.5rem; }
+    header.hero{ padding: 1.5rem 1.15rem; border-radius:18px; }
+    section.block{ padding: 1.15rem 1.05rem; }
+    .toolbar{ gap: .5rem; }
+    .btn-limpiar{ margin-left: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Problemas y Soluciones</h1>
-        <p style="color: #64748b; margin-bottom: 20px;">Filtra y despliega para ver la resolución paso a paso sin salir de la página.</p>
 
-        <div class="filtros-panel">
-            
-            <div class="grupo-filtro">
-                <h3>Buscar por palabra</h3>
-                <div class="busqueda-container">
-                    <input type="text" id="input-busqueda" placeholder="Ej: energía, gravitatorio, Astra...">
-                    <select id="select-logica">
-                        <option value="OR">Cualquier palabra (O)</option>
-                        <option value="AND">Todas las palabras (Y)</option>
-                    </select>
-                </div>
-            </div>
+<div class="wrap" id="top">
 
-            <div class="grupo-filtro">
-                <h3>Año</h3>
-                <div class="botones" id="filtros-anio"></div>
-            </div>
+  <header class="hero">
+    <span class="kicker">PAU · Física</span>
+    <h1>Buscador de problemas resueltos</h1>
+    <p class="sub">
+      Explora y filtra los ejercicios de Física de las pruebas de acceso a la universidad.
+      Busca por título, enunciado, tema o bloque y combina con los filtros de año,
+      convocatoria y comunidad autónoma.
+    </p>
+    <div class="metachips">
+      <span>2.º Bachillerato</span>
+      <span>Enunciados + resoluciones paso a paso</span>
+      <span>Filtros por bloque y tema</span>
+    </div>
+  </header>
 
-            <div class="grupo-filtro">
-                <h3>Convocatoria</h3>
-                <div class="botones" id="filtros-convocatoria"></div>
-            </div>
+  <section class="block">
+    <h2>Búsqueda y filtros</h2>
 
-            <!-- NUEVO: Filtro por comunidad autónoma -->
-            <div class="grupo-filtro" id="grupo-filtros-comunidad">
-                <h3>Comunidad Autónoma</h3>
-                <div class="botones" id="filtros-comunidad"></div>
-            </div>
-
-            <div class="grupo-filtro">
-                <h3>Tema</h3>
-                <div class="botones" id="filtros-tema"></div>
-            </div>
-            
-            <div class="controles">
-                <label>
-                    Ordenar por: 
-                    <select id="select-orden">
-                        <option value="numero">Número de problema</option>
-                        <option value="tema">Tema</option>
-                    </select>
-                </label>
-                
-                <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:14px; font-weight:bold; color:#475569;">
-                    <input type="checkbox" id="check-mostrar-enunciado" style="width:16px; height:16px; cursor:pointer;">
-                    Ver resumen
-                </label>
-
-                <button id="btn-limpiar" class="btn-limpiar" style="display:none;">Limpiar filtros</button>
-                <span style="font-weight: bold; color: #0f172a;" id="contador-resultados"></span>
-            </div>
-        </div>
-
-        <div id="resultados" class="lista-problemas"></div>
+    <!-- Buscador + lógica -->
+    <div class="search-row">
+      <input type="text" id="input-busqueda"
+             placeholder="Buscar por título, enunciado, tema, bloque, resultado…"
+             autocomplete="off" spellcheck="false">
+      <select id="select-logica" title="Lógica entre palabras clave">
+        <option value="OR">Cualquier palabra (OR)</option>
+        <option value="AND">Todas las palabras (AND)</option>
+      </select>
     </div>
 
-    <script src="js/filtro-problemas-inline.js"></script>
+    <!-- Botones de filtro (los rellena el JS) -->
+    <div class="filtros-grid">
+      <div class="filtro-grupo">
+        <label>Año</label>
+        <div class="botones" id="filtros-anio"></div>
+      </div>
+      <div class="filtro-grupo">
+        <label>Convocatoria</label>
+        <div class="botones" id="filtros-convocatoria"></div>
+      </div>
+      <div class="filtro-grupo">
+        <label>Comunidad autónoma</label>
+        <div class="botones" id="filtros-comunidad"></div>
+      </div>
+      <div class="filtro-grupo">
+        <label>Bloque</label>
+        <div class="botones" id="filtros-bloque"></div>
+      </div>
+      <div class="filtro-grupo">
+        <label>Tema</label>
+        <div class="botones" id="filtros-tema"></div>
+      </div>
+    </div>
+
+    <!-- Orden, resumen y limpiar -->
+    <div class="toolbar">
+      <select id="select-orden" title="Orden de los resultados">
+        <option value="num">Ordenar por número</option>
+        <option value="tema">Agrupar por tema</option>
+      </select>
+      <label>
+        <input type="checkbox" id="check-mostrar-enunciado">
+        Mostrar resumen del enunciado
+      </label>
+      <button id="btn-limpiar" class="btn-limpiar" style="display:none">Limpiar filtros</button>
+    </div>
+  </section>
+
+  <section class="block">
+    <p id="contador-resultados">Cargando…</p>
+    <div id="resultados"></div>
+  </section>
+
+  <footer class="foot">
+    <p>PAU · Física · Buscador de problemas resueltos · Los datos se cargan desde <code>./Datos/indice.json</code>.</p>
+  </footer>
+
+</div>
+
+<a href="#top" class="top-link" title="Volver arriba" aria-label="Volver arriba">↑</a>
+
+<!-- Carga del script de filtrado -->
+<script src="./js/filtro-problemas-inline.js"></script>
+
 </body>
 </html>

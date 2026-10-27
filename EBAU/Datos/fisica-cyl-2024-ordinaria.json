@@ -7,53 +7,55 @@
   "anio": 2024,
   "nivel": "PAU",
   "curso": "2º Bachillerato",
-  "enunciado_general": "Examen resuelto de Física de Castilla y León, convocatoria ordinaria 2024, con 17 problemas de los bloques A y B.",
-  "objetivo": "Proporcionar soluciones paso a paso de los problemas del examen, con la notación matemática y las unidades correctamente expresadas.",
+  "enunciado_general": "Examen oficial de Física de la PAU de Castilla y León, convocatoria Ordinaria de 2024, con 17 problemas resueltos que cubren gravitación, electromagnetismo, ondas, óptica y física cuántica y nuclear.",
+  "objetivo": "Evaluar la aplicación de las leyes fundamentales de la Física a situaciones concretas, el razonamiento físico y la resolución cuantitativa con unidades correctas.",
   "procedimiento": [
     {
       "titulo": "Estructura del examen",
-      "contenido": "El examen consta de dos bloques. Del bloque A se eligen 7 preguntas de 11 y del bloque B se eligen 3 preguntas de 6. Cada pregunta se evalúa sobre 1 punto."
+      "contenido": "OPTATIVIDAD: se podrán elegir siete preguntas del bloque A y tres preguntas del bloque B. Todas las preguntas se evaluarán sobre un máximo de 1 punto, tanto las del bloque A como las del bloque B. La calificación final se obtendrá sumando las notas de las 10 preguntas elegidas. Las fórmulas empleadas en la resolución de los ejercicios deberán acompañarse de los razonamientos oportunos y los resultados numéricos obtenidos para las magnitudes físicas deberán escribirse con las unidades adecuadas."
     },
     {
-      "titulo": "Criterios de resolución",
-      "contenido": "Las fórmulas deben acompañarse de razonamientos y los resultados numéricos deben expresarse con las unidades adecuadas."
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $g_T=9{,}80\\,\\text{m}\\,\\text{s}^{-2}$; $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$; $k=9{,}0\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $c=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$; $e=1{,}60\\cdot10^{-19}\\,\\text{C}$; $1\\,\\text{u}=1{,}66\\cdot10^{-27}\\,\\text{kg}=931{,}5\\,\\text{MeV}\\,c^{-2}$; $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$."
     }
   ],
   "ejercicios": [
     {
       "numero": 1,
       "titulo": "Velocidad de escape desde la superficie lunar",
-      "tema": "Campo gravitatorio",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A7. Movimiento planetario, satélites y velocidades características",
       "puntuacion": "1 punto",
       "enunciado": "Sabiendo que la masa de la Luna es 81 veces menor que la de la Tierra y que la gravedad en su superficie es 6 veces menor que la gravedad terrestre, determine la velocidad de escape desde la superficie lunar.",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Radio lunar",
-          "contenido": "La gravedad superficial es $g=\\frac{G\\,M}{R^2}$. Con $M_L=\\frac{M_T}{81}$ y $g_L=\\frac{g_T}{6}$, se obtiene $\\frac{R_L}{R_T}=\\sqrt{\\frac{M_L/M_T}{g_L/g_T}}=\\sqrt{\\frac{1/81}{1/6}}=\\sqrt{\\frac{2}{27}}$."
+          "titulo": "Determinación del radio lunar",
+          "contenido": "Partimos de las relaciones $M_L=\\frac{M_T}{81}$ y $g_L=\\frac{g_T}{6}$. La aceleración gravitatoria en la superficie de un astro esférico de masa $M$ y radio $R$ es $g=\\frac{GM}{R^{2}}$, de donde $R^{2}=\\frac{GM}{g}$.\n\nAplicado a la Luna y a la Tierra:\n\n$$\\frac{R_L^{2}}{R_T^{2}}=\\frac{M_L/g_L}{M_T/g_T}=\\frac{(M_T/81)/(g_T/6)}{M_T/g_T}=\\frac{6}{81}=\\frac{2}{27}.$$\n\nPor tanto, $R_L=R_T\\sqrt{\\frac{2}{27}}$. Tomando $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$, resulta $R_L=1{,}73\\cdot10^{6}\\,\\text{m}$."
         },
         {
-          "titulo": "Velocidad de escape",
-          "contenido": "La velocidad de escape es $v_{\\text{escape}}=\\sqrt{\\frac{2G\\,M}{R}}=\\sqrt{2gR}$. Por tanto, $v_{\\text{escape,L}}=v_{\\text{escape,T}}\\sqrt{\\frac{g_LR_L}{g_TR_T}}\\approx11{,}2\\cdot10^{3}\\sqrt{\\frac{1}{6}\\sqrt{\\frac{2}{27}}}\\,\\text{m}\\,\\text{s}^{-1}$."
+          "titulo": "Velocidad de escape en la superficie lunar",
+          "contenido": "La velocidad de escape se obtiene imponiendo que la energía mecánica sea nula en el infinito:\n\n$$\\frac{1}{2}m v_e^{2}-\\frac{G M_L m}{R_L}=0 \\quad\\Rightarrow\\quad v_e=\\sqrt{\\frac{2G M_L}{R_L}}=\\sqrt{2g_L R_L}.$$\n\nSustituyendo $g_L=\\frac{9{,}80}{6}\\,\\text{m}\\,\\text{s}^{-2}$ y $R_L=1{,}73\\cdot10^{6}\\,\\text{m}$:\n\n$$v_e=\\sqrt{2\\cdot\\frac{9{,}80}{6}\\cdot1{,}73\\cdot10^{6}}\\approx2{,}38\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
         }
       ],
-      "resultado": "$v_{\\text{escape,L}}\\approx2{,}38\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$."
+      "resultado": "$v_e\\approx2{,}38\\,\\text{km}\\,\\text{s}^{-1}$."
     },
     {
       "numero": 2,
       "titulo": "Masa de un satélite a partir de su fuerza gravitatoria orbital",
-      "tema": "Campo gravitatorio",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A7. Movimiento planetario, satélites y velocidades características",
       "puntuacion": "1 punto",
       "enunciado": "Un satélite artificial se encuentra en órbita circular alrededor de la Tierra moviéndose a una velocidad de $6{,}9\\,\\text{km}\\,\\text{s}^{-1}$. Si la fuerza gravitatoria que actúa sobre el satélite en dicha órbita es $5700\\,\\text{N}$, calcule su masa.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Radio de la órbita",
-          "contenido": "En una órbita circular, $\\frac{G\\,M_T\\,m}{r^2}=\\frac{m\\,v^2}{r}$, de donde $r=\\frac{G\\,M_T}{v^2}$. Con $v=6{,}9\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$, resulta $r\\approx8{,}37\\cdot10^{6}\\,\\text{m}$."
+          "contenido": "En órbita circular, la fuerza gravitatoria proporciona la fuerza centrípeta y la velocidad orbital cumple $v^{2}=\\frac{GM_T}{r}$. Con $GM_T=g_T R_T^{2}=9{,}80\\cdot(6{,}37\\cdot10^{6})^{2}=3{,}98\\cdot10^{14}\\,\\text{m}^{3}\\,\\text{s}^{-2}$ y $v=6{,}9\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$:\n\n$$r=\\frac{GM_T}{v^{2}}=\\frac{3{,}98\\cdot10^{14}}{(6{,}9\\cdot10^{3})^{2}}=8{,}35\\cdot10^{6}\\,\\text{m}.$$"
         },
         {
           "titulo": "Masa del satélite",
-          "contenido": "De $F=\\frac{m\\,v^2}{r}$ se obtiene $m=\\frac{F\\,r}{v^2}\\approx\\frac{5700\\cdot8{,}37\\cdot10^{6}}{(6{,}9\\cdot10^{3})^2}\\,\\text{kg}$."
+          "contenido": "De la ecuación del movimiento circular $F=\\frac{m v^{2}}{r}$, despejamos la masa:\n\n$$m=\\frac{F r}{v^{2}}=\\frac{5700\\cdot8{,}35\\cdot10^{6}}{(6{,}9\\cdot10^{3})^{2}}\\approx1{,}00\\cdot10^{3}\\,\\text{kg}.$$"
         }
       ],
       "resultado": "$m\\approx1{,}0\\cdot10^{3}\\,\\text{kg}$."
@@ -61,68 +63,71 @@
     {
       "numero": 3,
       "titulo": "Fuerza eléctrica sobre una carga en un arco de circunferencia",
-      "tema": "Campo eléctrico",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico",
       "puntuacion": "1 punto",
-      "enunciado": "Sobre un arco de circunferencia se depositan tres cargas puntuales, según se muestra en la figura. Teniendo en cuenta que $a=5\\,\\text{cm}$ y $q=4\\,\\text{nC}$, determine la fuerza que experimenta la carga situada en el punto $P$. Configuración: tres cargas sobre la circunferencia de radio $a$ centrada en $O$: $-q$ en $(-a,0)$, $+q$ en $(0,a)$ y $+q$ en $P\\,(a,0)$.",
+      "enunciado": "Sobre un arco de circunferencia se depositan tres cargas puntuales, según se muestra en la figura. Teniendo en cuenta que $a=5\\,\\text{cm}$ y $q=4\\,\\text{nC}$, determine la fuerza que experimenta la carga situada en el punto P. Configuración (figura): tres cargas sobre la circunferencia de radio $a$ centrada en $O$: $-q$ en $(-a,0)$, $+q$ en $(0,a)$ y $+q$ en el punto $P\\,(a,0)$.",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Fuerza debida a la carga en $(-a,0)$",
-          "contenido": "La distancia es $2a$ y la fuerza es atractiva hacia la izquierda: $F_1=\\frac{k\\,q^2}{(2a)^2}\\approx1{,}44\\cdot10^{-5}\\,\\text{N}$, en la dirección $-\\vec{i}$."
+          "titulo": "Fuerza sobre $+q$ en $P$ debida a la carga en $(-a,0)$",
+          "contenido": "La distancia entre ambas cargas es $2a=0{,}10\\,\\text{m}$ y la fuerza es atractiva, dirigida hacia la carga negativa situada a la izquierda:\n\n$$\\vec F_1=-\\frac{k q^{2}}{(2a)^{2}}\\,\\hat i=-\\frac{9{,}0\\cdot10^{9}\\cdot(4\\cdot10^{-9})^{2}}{(0{,}10)^{2}}\\,\\hat i=-1{,}44\\cdot10^{-5}\\,\\hat i\\ \\text{N}.$$"
         },
         {
-          "titulo": "Fuerza debida a la carga en $(0,a)$",
-          "contenido": "La distancia es $a\\sqrt{2}$ y la fuerza es repulsiva: $F_2=\\frac{k\\,q^2}{2a^2}\\approx2{,}88\\cdot10^{-5}\\,\\text{N}$, con dirección $(\\vec{i}-\\vec{j})/\\sqrt{2}$."
+          "titulo": "Fuerza sobre $+q$ en $P$ debida a la carga en $(0,a)$",
+          "contenido": "La distancia entre las cargas es $a\\sqrt{2}$ y la fuerza es repulsiva, dirigida desde $(0,a)$ hacia $(a,0)$, con vector unitario $\\frac{1}{\\sqrt{2}}(\\hat i-\\hat j)$. Por tanto:\n\n$$F_2=\\frac{k q^{2}}{(a\\sqrt{2})^{2}}=\\frac{9{,}0\\cdot10^{9}\\cdot(4\\cdot10^{-9})^{2}}{2(0{,}05)^{2}}=2{,}88\\cdot10^{-5}\\,\\text{N},$$\n\n$$\\vec F_2=2{,}88\\cdot10^{-5}\\left(\\frac{1}{\\sqrt{2}}\\hat i-\\frac{1}{\\sqrt{2}}\\hat j\\right)=(2{,}04\\cdot10^{-5}\\,\\hat i-2{,}04\\cdot10^{-5}\\,\\hat j)\\,\\text{N}.$$"
         },
         {
-          "titulo": "Fuerza resultante",
-          "contenido": "Sumando componentes: $\\vec{F}\\approx(5{,}96\\cdot10^{-6}\\,\\vec{i}-2{,}03\\cdot10^{-5}\\,\\vec{j})\\,\\text{N}$."
+          "titulo": "Fuerza resultante sobre la carga en $P$",
+          "contenido": "Sumando vectorialmente:\n\n$$\\vec F=\\vec F_1+\\vec F_2=(5{,}96\\cdot10^{-6}\\,\\hat i-2{,}04\\cdot10^{-5}\\,\\hat j)\\,\\text{N}.$$\n\nSu módulo es:\n\n$$|\\vec F|=\\sqrt{(5{,}96\\cdot10^{-6})^{2}+(2{,}04\\cdot10^{-5})^{2}}\\approx2{,}12\\cdot10^{-5}\\,\\text{N}.$$\n\nLa dirección forma un ángulo $\\theta=\\arctan\\left(\\frac{2{,}04\\cdot10^{-5}}{5{,}96\\cdot10^{-6}}\\right)\\approx73{,}7^{\\circ}$ por debajo del eje $+x$."
         }
       ],
-      "resultado": "$\\vec{F}\\approx(6{,}0\\cdot10^{-6}\\,\\vec{i}-2{,}0\\cdot10^{-5}\\,\\vec{j})\\,\\text{N}$; $|\\vec{F}|\\approx2{,}1\\cdot10^{-5}\\,\\text{N}$."
+      "resultado": "$\\vec F\\approx(5{,}96\\cdot10^{-6}\\,\\hat i-2{,}04\\cdot10^{-5}\\,\\hat j)\\,\\text{N}$; $|\\vec F|\\approx2{,}12\\cdot10^{-5}\\,\\text{N}$, formando unos $73{,}7^{\\circ}$ por debajo del eje $+x$."
     },
     {
       "numero": 4,
       "titulo": "Campo magnético creado por dos conductores paralelos",
-      "tema": "Campo magnético",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro",
       "puntuacion": "1 punto",
-      "enunciado": "Dos conductores rectilíneos, paralelos e indefinidos, $C_1$ y $C_2$, distan entre sí $10\\,\\text{cm}$. Por $C_1$ circula una corriente de $10\\,\\text{A}$ y por $C_2$ otra corriente de $15\\,\\text{A}$ en el mismo sentido. Calcule el campo magnético en un punto $P$ situado a $5\\,\\text{cm}$ de $C_1$ y $15\\,\\text{cm}$ de $C_2$, en el plano definido por ambos conductores.",
+      "enunciado": "Dos conductores rectilíneos, paralelos e indefinidos, $C_1$ y $C_2$, distan entre sí $10\\,\\text{cm}$. Por el conductor $C_1$ circula una corriente de $10\\,\\text{A}$ y por el conductor $C_2$ otra corriente de $15\\,\\text{A}$ en el mismo sentido que la anterior. Calcule el campo magnético en un punto $P$ situado a una distancia de $5\\,\\text{cm}$ de $C_1$ y $15\\,\\text{cm}$ de $C_2$, que se encuentra en el plano definido por ambos conductores. Realice un diagrama ilustrativo en el que se muestre el campo magnético generado por cada hilo y el campo total.",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Posición del punto $P$",
-          "contenido": "Como $10\\,\\text{cm}=5\\,\\text{cm}+15\\,\\text{cm}$, $P$ está alineado con los conductores y situado al lado de $C_1$ opuesto a $C_2$."
+          "titulo": "Posición del punto P",
+          "contenido": "Como $d(C_1,C_2)=10\\,\\text{cm}$, $r_1=5\\,\\text{cm}$ y $r_2=15\\,\\text{cm}$, se cumple $r_2=r_1+d(C_1,C_2)$; por tanto, $P$ está alineado con los dos conductores y situado al lado de $C_1$ opuesto a $C_2$. Si $C_1$ está en $x=0$ y $C_2$ en $x=10\\,\\text{cm}$, entonces $P$ está en $x=-5\\,\\text{cm}$."
         },
         {
-          "titulo": "Campos creados por cada hilo",
-          "contenido": "Con $B=\\frac{\\mu_0 I}{2\\pi r}$, se obtiene $B_1=\\frac{2\\cdot10^{-7}\\cdot10}{0{,}05}=4\\cdot10^{-5}\\,\\text{T}$ y $B_2=\\frac{2\\cdot10^{-7}\\cdot15}{0{,}15}=2\\cdot10^{-5}\\,\\text{T}$."
+          "titulo": "Módulo del campo creado por cada hilo en P",
+          "contenido": "Usando $B=\\frac{\\mu_0 I}{2\\pi r}$:\n\n$$B_1=\\frac{4\\pi\\cdot10^{-7}\\cdot10}{2\\pi\\cdot0{,}05}=4{,}0\\cdot10^{-5}\\,\\text{T},$$\n\n$$B_2=\\frac{4\\pi\\cdot10^{-7}\\cdot15}{2\\pi\\cdot0{,}15}=2{,}0\\cdot10^{-5}\\,\\text{T}.$$"
         },
         {
-          "titulo": "Campo total",
-          "contenido": "Los dos campos tienen la misma dirección y sentido en $P$, por lo que se suman: $B_{\\text{total}}=B_1+B_2$."
+          "titulo": "Dirección y campo total",
+          "contenido": "Si ambas corrientes salen del papel, la regla de la mano derecha da campos antihorarios alrededor de cada hilo. En $P$, situado a la izquierda de ambos conductores, los dos campos apuntan hacia abajo (por ejemplo, $-\\hat j$). Por tanto se suman:\n\n$$B_{\\text{total}}=B_1+B_2=6{,}0\\cdot10^{-5}\\,\\text{T}.$$"
         }
       ],
-      "resultado": "$B_{\\text{total}}\\approx6{,}0\\cdot10^{-5}\\,\\text{T}$, perpendicular al plano de los conductores."
+      "resultado": "$B=6{,}0\\cdot10^{-5}\\,\\text{T}$, perpendicular al plano de los conductores y con los dos campos parciales sumándose."
     },
     {
       "numero": 5,
-      "titulo": "Flujo y fem inducida en una bobina rotatoria",
-      "tema": "Electromagnetismo",
+      "titulo": "Flujo y fem inducida en una bobina rotatoria (generador de corriente alterna)",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
       "puntuacion": "1 punto",
-      "enunciado": "Una bobina rectangular de $100$ espiras, de dimensiones $10\\,\\text{cm}\\cdot15\\,\\text{cm}$, gira a $2000\\,\\text{rpm}$ alrededor de un eje contenido en el plano de la bobina y perpendicular a un campo magnético uniforme de $0{,}8\\,\\text{T}$. Determine la expresión del flujo en función del tiempo y la fem máxima que es capaz de suministrar la bobina.",
+      "enunciado": "Una bobina rectangular de 100 espiras, de dimensiones $10\\,\\text{cm}\\times15\\,\\text{cm}$, gira a $2000\\,\\text{rpm}$ alrededor de un eje contenido en el plano de la bobina y perpendicular a un campo magnético uniforme de $0{,}8\\,\\text{T}$. Determine la expresión del flujo en función del tiempo y la fem máxima que es capaz de suministrar la bobina.",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Velocidad angular y área",
-          "contenido": "$\\omega=2000\\cdot\\frac{2\\pi}{60}\\approx209{,}4\\,\\text{rad}\\,\\text{s}^{-1}$ y $A=0{,}10\\cdot0{,}15=1{,}5\\cdot10^{-2}\\,\\text{m}^2$."
+          "titulo": "Datos y velocidad angular",
+          "contenido": "Número de espiras $N=100$, área de la bobina $A=0{,}10\\cdot0{,}15=0{,}015\\,\\text{m}^{2}$, campo $B=0{,}8\\,\\text{T}$, velocidad de giro $2000\\,\\text{rpm}$. La velocidad angular es:\n\n$$\\omega=2000\\cdot\\frac{2\\pi}{60}=209{,}4\\,\\text{rad}\\,\\text{s}^{-1}.$$"
         },
         {
-          "titulo": "Flujo magnético",
-          "contenido": "$\\Phi(t)=N\\,B\\,A\\cos(\\omega t)\\approx1{,}2\\cos(209{,}4\\,t)\\,\\text{Wb}$."
+          "titulo": "Flujo magnético en función del tiempo",
+          "contenido": "Si en el instante $t=0$ la normal a la bobina es paralela al campo, el ángulo entre la normal y $\\vec B$ vale $\\omega t$ y el flujo magnético total a través de las espiras es:\n\n$$\\Phi(t)=N B A\\cos(\\omega t).$$\n\nComo $N B A=100\\cdot0{,}8\\cdot0{,}015=1{,}2\\,\\text{Wb}$:\n\n$$\\Phi(t)=1{,}2\\cos(209{,}4\\,t)\\,\\text{Wb}.$$"
         },
         {
-          "titulo": "Fem inducida",
-          "contenido": "Aplicando la ley de Faraday-Lenz: $\\varepsilon=-\\frac{d\\Phi}{dt}=N\\,B\\,A\\,\\omega\\sin(\\omega t)$. Por tanto, $\\varepsilon_{\\text{max}}=N\\,B\\,A\\,\\omega\\approx2{,}51\\cdot10^{2}\\,\\text{V}$."
+          "titulo": "Fuerza electromotriz inducida y su valor máximo",
+          "contenido": "Aplicando la ley de Faraday-Lenz:\n\n$$\\varepsilon=-\\frac{d\\Phi}{dt}=1{,}2\\cdot209{,}4\\,\\text{sen}(209{,}4\\,t)=2{,}51\\cdot10^{2}\\,\\text{sen}(209{,}4\\,t)\\,\\text{V}.$$\n\nPor tanto, la fem máxima es $\\varepsilon_{\\text{max}}=2{,}51\\cdot10^{2}\\,\\text{V}$."
         }
       ],
       "resultado": "$\\Phi(t)=1{,}2\\cos(209{,}4\\,t)\\,\\text{Wb}$; $\\varepsilon_{\\text{max}}\\approx2{,}51\\cdot10^{2}\\,\\text{V}$."
@@ -130,41 +135,43 @@
     {
       "numero": 6,
       "titulo": "Elongación de una onda armónica en un punto y un instante dados",
-      "tema": "Vibraciones y ondas",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
       "puntuacion": "1 punto",
-      "enunciado": "Una onda armónica transversal, de amplitud $10\\,\\text{cm}$, se propaga en el sentido positivo del eje X. En el instante inicial, la elongación es máxima y positiva en el origen. ¿Cuál será la elongación de un punto $P$ situado a una distancia $\\frac{\\lambda}{6}$ del origen para el instante $t=\\frac{T}{4}$?",
+      "enunciado": "Una onda armónica transversal, de amplitud $10\\,\\text{cm}$, se propaga en el sentido positivo del eje X. En el instante inicial, la elongación es máxima y positiva en el origen. ¿Cuál será la elongación de un punto P situado a una distancia $\\lambda/6$ del origen para el instante $t=T/4$?",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Ecuación de la onda",
-          "contenido": "Con $A=0{,}10\\,\\text{m}$ y máximo en $x=0$, $t=0$, se usa $y(x,t)=A\\cos\\left(2\\pi\\left(\\frac{t}{T}-\\frac{x}{\\lambda}\\right)\\right)$."
+          "contenido": "Como la onda se propaga en $+x$ y en $x=0$, $t=0$ la elongación es máxima y positiva, la ecuación adecuada es:\n\n$$y(x,t)=A\\cos(\\omega t-kx),$$\n\ncon $A=0{,}10\\,\\text{m}$, $\\omega=\\frac{2\\pi}{T}$ y $k=\\frac{2\\pi}{\\lambda}$."
         },
         {
-          "titulo": "Sustitución",
-          "contenido": "Para $x=\\frac{\\lambda}{6}$ y $t=\\frac{T}{4}$: $y=0{,}10\\cos\\left(2\\pi\\left(\\frac{1}{4}-\\frac{1}{6}\\right)\\right)=0{,}10\\cos\\left(\\frac{\\pi}{6}\\right)$."
+          "titulo": "Sustitución en el punto y tiempo pedidos",
+          "contenido": "En $x=\\frac{\\lambda}{6}$ y $t=\\frac{T}{4}$:\n\n$$y=0{,}10\\cos\\left(\\frac{2\\pi}{T}\\frac{T}{4}-\\frac{2\\pi}{\\lambda}\\frac{\\lambda}{6}\\right)=0{,}10\\cos\\left(\\frac{\\pi}{2}-\\frac{\\pi}{3}\\right)=0{,}10\\cos\\frac{\\pi}{6}.$$\n\nPor tanto:\n\n$$y=0{,}10\\cdot\\frac{\\sqrt{3}}{2}=8{,}66\\cdot10^{-2}\\,\\text{m}.$$"
         }
       ],
-      "resultado": "$y\\approx8{,}66\\cdot10^{-2}\\,\\text{m}$."
+      "resultado": "$y=8{,}66\\cdot10^{-2}\\,\\text{m}=8{,}66\\,\\text{cm}$."
     },
     {
       "numero": 7,
       "titulo": "Nivel de intensidad sonora de un foco puntual",
-      "tema": "Ondas sonoras",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
       "puntuacion": "1 punto",
-      "enunciado": "Un foco sonoro, considerado puntual, emite una energía de $1{,}5\\cdot10^{-2}\\,\\text{J}$ por minuto. Calcule el nivel de intensidad sonora que percibe una persona a $20\\,\\text{m}$ del foco. Dato: $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$.",
+      "enunciado": "Un foco sonoro, considerado puntual, emite una energía de $1{,}5\\cdot10^{-2}\\,\\text{J}$ por minuto. Calcule el nivel de intensidad sonora que percibe una persona a $20\\,\\text{m}$ del foco. Dato: Intensidad física umbral $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Potencia del foco",
-          "contenido": "$P=\\frac{1{,}5\\cdot10^{-2}}{60}=2{,}5\\cdot10^{-4}\\,\\text{W}$."
+          "contenido": "$$P=\\frac{E}{t}=\\frac{1{,}5\\cdot10^{-2}}{60}=2{,}5\\cdot10^{-4}\\,\\text{W}.$$"
         },
         {
-          "titulo": "Intensidad a $20\\,\\text{m}$",
-          "contenido": "Para ondas esféricas, $I=\\frac{P}{4\\pi r^2}=\\frac{2{,}5\\cdot10^{-4}}{4\\pi(20)^2}\\approx4{,}97\\cdot10^{-8}\\,\\text{W}\\,\\text{m}^{-2}$."
+          "titulo": "Intensidad a 20 m",
+          "contenido": "Para un foco puntual emitiendo ondas esféricas:\n\n$$I=\\frac{P}{4\\pi r^{2}}=\\frac{2{,}5\\cdot10^{-4}}{4\\pi\\cdot20^{2}}=4{,}97\\cdot10^{-8}\\,\\text{W}\\,\\text{m}^{-2}.$$"
         },
         {
           "titulo": "Nivel de intensidad sonora",
-          "contenido": "$\\beta=10\\log\\left(\\frac{I}{I_0}\\right)=10\\log\\left(\\frac{4{,}97\\cdot10^{-8}}{10^{-12}}\\right)\\approx47\\,\\text{dB}$."
+          "contenido": "$$\\beta=10\\log\\left(\\frac{I}{I_0}\\right)=10\\log\\left(\\frac{4{,}97\\cdot10^{-8}}{10^{-12}}\\right)=10\\log(4{,}97\\cdot10^{4})\\approx47\\,\\text{dB}.$$"
         }
       ],
       "resultado": "$\\beta\\approx47\\,\\text{dB}$."
@@ -172,231 +179,253 @@
     {
       "numero": 8,
       "titulo": "Refracción de un haz de luz desde el agua hacia el aire y ángulo límite",
-      "tema": "Óptica",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
       "puntuacion": "1 punto",
-      "enunciado": "Un buceador enciende una linterna bajo el agua ($n_{\\text{agua}}=1{,}33$) y dirige el haz luminoso hacia arriba formando un ángulo de $40^{\\circ}$ con la vertical. ¿Con qué ángulo emergerá la luz del agua? ¿Cuál sería el ángulo de incidencia a partir del cual el haz no saldría al aire?",
+      "enunciado": "Un buceador enciende una linterna bajo el agua (índice de refracción $n_{\\text{agua}}=1{,}33$) y dirige el haz luminoso hacia arriba formando un ángulo de $40^{\\circ}$ con la vertical. ¿Con qué ángulo emergerá la luz del agua? ¿Cuál sería el ángulo de incidencia a partir del cual el haz no saldría al aire?",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Ley de Snell agua-aire",
-          "contenido": "$n_{\\text{agua}}\\sin\\theta_i=n_{\\text{aire}}\\sin\\theta_r$. Con $\\theta_i=40^{\\circ}$: $1{,}33\\sin40^{\\circ}=\\sin\\theta_r$, de donde $\\theta_r\\approx58{,}8^{\\circ}$."
+          "titulo": "Identificación del ángulo de incidencia",
+          "contenido": "La superficie del agua es horizontal, así que la normal a la superficie es vertical. El haz incide formando $40^{\\circ}$ con la vertical, lo que coincide con el ángulo medido respecto a la normal: $\\theta_1=40^{\\circ}$."
         },
         {
-          "titulo": "Ángulo límite",
-          "contenido": "La reflexión total ocurre para $\\theta_c=\\arcsin\\left(\\frac{n_{\\text{aire}}}{n_{\\text{agua}}}\\right)=\\arcsin\\left(\\frac{1}{1{,}33}\\right)\\approx48{,}8^{\\circ}$."
+          "titulo": "Ley de Snell agua-aire",
+          "contenido": "$$n_{\\text{agua}}\\,\\text{sen}\\,\\theta_1=n_{\\text{aire}}\\,\\text{sen}\\,\\theta_2.$$\n\nPor tanto:\n\n$$1{,}33\\,\\text{sen}\\,40^{\\circ}=1\\cdot\\text{sen}\\,\\theta_2 \\quad\\Rightarrow\\quad \\text{sen}\\,\\theta_2=1{,}33\\cdot0{,}6428=0{,}855,$$\n\n$$\\theta_2=\\arcsin(0{,}855)\\approx58{,}8^{\\circ}.$$"
+        },
+        {
+          "titulo": "Ángulo límite de reflexión total",
+          "contenido": "Para que el haz no emerja al aire se necesita reflexión total interna; ocurre cuando $\\theta_2=90^{\\circ}$, esto es:\n\n$$\\text{sen}\\,\\theta_c=\\frac{n_{\\text{aire}}}{n_{\\text{agua}}}=\\frac{1}{1{,}33}=0{,}752,$$\n\n$$\\theta_c=\\arcsin(0{,}752)\\approx48{,}8^{\\circ}.$$"
         }
       ],
-      "resultado": "$\\theta_r\\approx58{,}8^{\\circ}$; $\\theta_c\\approx48{,}8^{\\circ}$."
+      "resultado": "$\\theta_2\\approx58{,}8^{\\circ}$; ángulo límite $\\theta_c\\approx48{,}8^{\\circ}$."
     },
     {
       "numero": 9,
-      "titulo": "Dos posiciones de una lente convergente para formar imagen real en pantalla",
-      "tema": "Óptica",
+      "titulo": "Dos posiciones de una lente convergente para formar una imagen real en la pantalla",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
       "puntuacion": "1 punto",
       "enunciado": "Un objeto de $3\\,\\text{cm}$ de tamaño se sitúa a $64\\,\\text{cm}$ de una pantalla. Entre el objeto y la pantalla se coloca una lente convergente de focal $12\\,\\text{cm}$. ¿En qué posiciones hay que situar la lente para que se forme una imagen nítida del objeto en la pantalla? ¿Cuál sería el tamaño de la imagen en cada caso?",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Ecuación de la lente",
-          "contenido": "Sea $s$ la distancia objeto-lente y $s'$ la distancia lente-pantalla, con $s+s'=64\\,\\text{cm}$. La ecuación es $\\frac{1}{f}=\\frac{1}{s}+\\frac{1}{s'}$, con $f=12\\,\\text{cm}$."
+          "titulo": "Planteamiento del problema",
+          "contenido": "Llamemos $d$ a la distancia del objeto a la lente y $d'$ a la distancia de la lente a la pantalla. Como la imagen ha de formarse sobre la pantalla a $64\\,\\text{cm}$ del objeto:\n\n$$d+d'=64\\,\\text{cm}.$$\n\nUsando la ecuación de la lente delgada con el criterio DIN:\n\n$$\\frac{1}{f}=\\frac{1}{d}+\\frac{1}{d'}.$$"
         },
         {
-          "titulo": "Ecuación de segundo grado",
-          "contenido": "Sustituyendo $s'=64-s$: $\\frac{1}{12}=\\frac{1}{s}+\\frac{1}{64-s}$, que conduce a $s^2-64s+768=0$. Las soluciones son $s=48\\,\\text{cm}$ y $s=16\\,\\text{cm}$."
+          "titulo": "Ecuación de segundo grado para d",
+          "contenido": "Sustituyendo $d'=64-d$ y $f=12\\,\\text{cm}$:\n\n$$\\frac{1}{12}=\\frac{1}{d}+\\frac{1}{64-d} \\quad\\Rightarrow\\quad d(64-d)=768.$$\n\nDe aquí:\n\n$$d^{2}-64d+768=0 \\quad\\Rightarrow\\quad d=\\frac{64\\pm\\sqrt{64^{2}-4\\cdot768}}{2}=\\frac{64\\pm32}{2}.$$\n\nLas dos soluciones son $d=48\\,\\text{cm}$ (entonces $d'=16\\,\\text{cm}$) y $d=16\\,\\text{cm}$ (entonces $d'=48\\,\\text{cm}$)."
         },
         {
-          "titulo": "Tamaño de la imagen",
-          "contenido": "El aumento lateral es $m=-\\frac{s'}{s}$. Para $s=48\\,\\text{cm}$, $s'=16\\,\\text{cm}$: $m=-\\frac{1}{3}$ y $y'=1\\,\\text{cm}$. Para $s=16\\,\\text{cm}$, $s'=48\\,\\text{cm}$: $m=-3$ y $y'=9\\,\\text{cm}$."
+          "titulo": "Tamaño de la imagen en cada caso",
+          "contenido": "El aumento lateral es $m=-\\frac{d'}{d}$, de modo que $y'=m\\,y$. Caso 1: $d=48\\,\\text{cm}$, $d'=16\\,\\text{cm}$, $m=-\\frac{16}{48}=-\\frac{1}{3}$, luego $y'=-1\\,\\text{cm}$ (imagen invertida y menor). Caso 2: $d=16\\,\\text{cm}$, $d'=48\\,\\text{cm}$, $m=-\\frac{48}{16}=-3$, luego $y'=-9\\,\\text{cm}$ (imagen invertida y mayor)."
         }
       ],
-      "resultado": "Posición 1: lente a $48\\,\\text{cm}$ del objeto, imagen de $1\\,\\text{cm}$ invertida. Posición 2: lente a $16\\,\\text{cm}$ del objeto, imagen de $9\\,\\text{cm}$ invertida."
+      "resultado": "Posición 1: lente a $48\\,\\text{cm}$ del objeto ($16\\,\\text{cm}$ de la pantalla), imagen de $1\\,\\text{cm}$ invertida. Posición 2: lente a $16\\,\\text{cm}$ del objeto ($48\\,\\text{cm}$ de la pantalla), imagen de $9\\,\\text{cm}$ invertida."
     },
     {
       "numero": 10,
       "titulo": "Defecto de masa y energía de enlace por nucleón del bario-136",
-      "tema": "Física nuclear",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares",
       "puntuacion": "1 punto",
-      "enunciado": "Determine el defecto de masa y la energía de enlace por nucleón, expresada en $\\text{MeV}$, para el isótopo $^{136}_{56}\\text{Ba}$, sabiendo que su masa atómica es $135{,}904576\\,\\text{u}$. Datos: $m_{\\text{neutrón}}=1{,}008665\\,\\text{u}$; $m_{\\text{protón}}=1{,}007276\\,\\text{u}$.",
+      "enunciado": "Determine el defecto de masa y la energía de enlace por nucleón (expresada en MeV) para el isótopo del bario $^{136}_{56}Ba$ sabiendo que su masa atómica es $135{,}904576\\,\\text{u}$. Datos: $m_{\\text{neutrón}}=1{,}008665\\,\\text{u}$; $m_{\\text{protón}}=1{,}007276\\,\\text{u}$.",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Número de protones y neutrones",
-          "contenido": "Para $^{136}_{56}\\text{Ba}$: $Z=56$ protones y $N=136-56=80$ neutrones."
+          "titulo": "Cálculo del defecto de masa",
+          "contenido": "El núcleo de $^{136}_{56}Ba$ tiene $Z=56$ protones y $N=136-56=80$ neutrones. La masa de los nucleones libres sería:\n\n$$m_{\\text{nucleones}}=56\\cdot1{,}007276+80\\cdot1{,}008665=137{,}100656\\,\\text{u}.$$\n\nEl defecto de masa es la diferencia entre esta suma y la masa real del núcleo:\n\n$$\\Delta m=137{,}100656-135{,}904576=1{,}196080\\,\\text{u}.$$"
         },
         {
-          "titulo": "Defecto de masa",
-          "contenido": "Masa de los nucleones libres: $56\\cdot1{,}007276+80\\cdot1{,}008665=137{,}100656\\,\\text{u}$. Defecto de masa: $\\Delta m=137{,}100656-135{,}904576=1{,}196080\\,\\text{u}$."
+          "titulo": "Energía de enlace total (Einstein)",
+          "contenido": "Usando $E=\\Delta m\\,c^{2}$ y $1\\,\\text{u}=931{,}5\\,\\text{MeV}\\,c^{-2}$:\n\n$$E=1{,}196080\\cdot931{,}5=1{,}114\\cdot10^{3}\\,\\text{MeV}.$$\n\nEquivalentemente, con $\\Delta m=1{,}196080\\cdot1{,}66\\cdot10^{-27}=1{,}985\\cdot10^{-27}\\,\\text{kg}$ y $c=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$, $E=1{,}79\\cdot10^{-10}\\,\\text{J}=1{,}114\\cdot10^{3}\\,\\text{MeV}$."
         },
         {
           "titulo": "Energía de enlace por nucleón",
-          "contenido": "$E=\\Delta m\\,c^2\\approx1{,}196\\cdot931{,}5\\approx1114\\,\\text{MeV}$. Por tanto, $E/A=\\frac{1114}{136}\\approx8{,}19\\,\\text{MeV/nucleón}$."
+          "contenido": "$$\\frac{E}{A}=\\frac{1{,}114\\cdot10^{3}}{136}=8{,}19\\,\\text{MeV/nucleón}.$$"
         }
       ],
-      "resultado": "$\\Delta m\\approx1{,}20\\,\\text{u}$; $E/A\\approx8{,}2\\,\\text{MeV/nucleón}$."
+      "resultado": "$\\Delta m\\approx1{,}196\\,\\text{u}$; $E\\approx1{,}11\\cdot10^{3}\\,\\text{MeV}$; $E/A\\approx8{,}19\\,\\text{MeV/nucleón}$."
     },
     {
       "numero": 11,
-      "titulo": "Longitud de onda de la luz incidente en efecto fotoeléctrico con de Broglie",
-      "tema": "Física cuántica",
+      "titulo": "Longitud de onda de la luz incidente en un efecto fotoeléctrico con de Broglie",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
       "puntuacion": "1 punto",
-      "enunciado": "La longitud de onda de de Broglie de los electrones emitidos por un cierto metal es $1{,}5\\,\\text{nm}$ cuando sobre él incide un cierto haz de luz. Teniendo en cuenta que el trabajo de extracción del metal es $1{,}3\\,\\text{eV}$, determine la longitud de onda de la luz incidente. ¿Pertenece al rango de la luz visible?",
+      "enunciado": "La longitud de onda de de Broglie de los electrones emitidos por un cierto metal es $1{,}5\\,\\text{nm}$ cuando sobre él incide un cierto haz de luz. Teniendo en cuenta que el trabajo de extracción del metal tiene un valor de $1{,}3\\,\\text{eV}$, determine la longitud de onda de la luz incidente. ¿Pertenece al rango de la luz visible?",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Energía cinética de los fotoelectrones",
-          "contenido": "De $\\lambda_{\\text{dB}}=\\frac{h}{p}$, $p=\\frac{h}{\\lambda_{\\text{dB}}}$. La energía cinética es $K=\\frac{p^2}{2m_e}\\approx1{,}07\\cdot10^{-19}\\,\\text{J}\\approx0{,}67\\,\\text{eV}$."
+          "titulo": "Energía cinética de los fotoelectrones (de Broglie)",
+          "contenido": "La longitud de onda de de Broglie es $\\lambda_e=\\frac{h}{p}$, de donde $p=\\frac{h}{\\lambda_e}$, y la energía cinética no relativista es $K=\\frac{p^{2}}{2m_e}$.\n\nSustituyendo $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$, $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$ y $\\lambda_e=1{,}5\\cdot10^{-9}\\,\\text{m}$:\n\n$$p=\\frac{6{,}63\\cdot10^{-34}}{1{,}5\\cdot10^{-9}}=4{,}42\\cdot10^{-25}\\,\\text{kg}\\,\\text{m}\\,\\text{s}^{-1},$$\n\n$$K=\\frac{(4{,}42\\cdot10^{-25})^{2}}{2\\cdot9{,}11\\cdot10^{-31}}=1{,}07\\cdot10^{-19}\\,\\text{J}=0{,}670\\,\\text{eV}.$$"
         },
         {
-          "titulo": "Energía del fotón incidente",
-          "contenido": "Por la ecuación de Einstein del efecto fotoeléctrico: $E_f=W+K\\approx1{,}3+0{,}67=1{,}97\\,\\text{eV}$."
+          "titulo": "Energía del fotón incidente (Einstein del efecto fotoeléctrico)",
+          "contenido": "$$E_f=K+W=0{,}670+1{,}3=1{,}970\\,\\text{eV},$$\n\nes decir, $E_f=1{,}970\\cdot1{,}60\\cdot10^{-19}=3{,}15\\cdot10^{-19}\\,\\text{J}$."
         },
         {
           "titulo": "Longitud de onda de la luz incidente",
-          "contenido": "$\\lambda=\\frac{hc}{E_f}\\approx\\frac{1240\\,\\text{eV}\\,\\text{nm}}{1{,}97\\,\\text{eV}}\\approx630\\,\\text{nm}$."
+          "contenido": "$$\\lambda=\\frac{hc}{E_f}=\\frac{6{,}63\\cdot10^{-34}\\cdot3{,}00\\cdot10^{8}}{3{,}15\\cdot10^{-19}}=6{,}30\\cdot10^{-7}\\,\\text{m}.$$\n\nEsta longitud de onda, $630\\,\\text{nm}$, pertenece al rango visible (rojo)."
         }
       ],
-      "resultado": "$\\lambda\\approx6{,}3\\cdot10^{-7}\\,\\text{m}=630\\,\\text{nm}$, pertenece al visible."
+      "resultado": "$\\lambda\\approx6{,}3\\cdot10^{-7}\\,\\text{m}=630\\,\\text{nm}$; pertenece al visible (rojo)."
     },
     {
       "numero": 12,
       "titulo": "Superficies equipotenciales y campo gravitatorio uniforme",
-      "tema": "Campo gravitatorio",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A5. Potencial gravitatorio, equipotenciales y relación con el campo",
       "puntuacion": "1 punto",
       "enunciado": "¿Qué son las superficies equipotenciales? Si en una región del espacio el campo gravitatorio es uniforme y paralelo al eje X, ¿cómo serían las correspondientes superficies equipotenciales? Razone la respuesta.",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Definición",
-          "contenido": "Una superficie equipotencial es el lugar geométrico de los puntos con el mismo potencial gravitatorio: $V=\\text{constante}$."
+          "titulo": "Definición de superficie equipotencial",
+          "contenido": "Una superficie equipotencial es el lugar geométrico de los puntos del espacio en los que el potencial gravitatorio tiene el mismo valor: $V=\\text{cte}$. Como el trabajo realizado por el campo gravitatorio entre dos puntos $A$ y $B$ se relaciona con la diferencia de potencial mediante $W_{A\\to B}=m(V_A-V_B)$, al desplazar una masa entre dos puntos cualesquiera de la misma superficie equipotencial el trabajo realizado por el campo es nulo."
         },
         {
           "titulo": "Relación campo-potencial",
-          "contenido": "El campo gravitatorio es perpendicular en cada punto a la superficie equipotencial y apunta hacia potenciales decrecientes."
+          "contenido": "Por definición, $\\vec g=-\\nabla V$, lo que implica que el campo gravitatorio es perpendicular en cada punto a la superficie equipotencial que pasa por él y apunta en el sentido de los potenciales decrecientes. Equivalentemente, las líneas de campo y las superficies equipotenciales son mutuamente perpendiculares."
         },
         {
-          "titulo": "Campo uniforme paralelo al eje X",
-          "contenido": "Si $\\vec{g}=g\\,\\vec{i}$, entonces $V(x)=-g\\,x+C$. Las superficies equipotenciales son $x=\\text{constante}$, es decir, planos perpendiculares al eje X."
+          "titulo": "Forma de las superficies para un campo uniforme paralelo al eje X",
+          "contenido": "Si $\\vec g=g_0\\,\\hat i$ (uniforme, paralelo a $X$), entonces $V=-g_0 x+C$, donde $C$ es una constante de integración. La condición $V=\\text{cte}$ equivale a $x=\\text{cte}$. Por tanto, las superficies equipotenciales son planos perpendiculares al eje X (es decir, planos paralelos entre sí, paralelos al plano $YZ$). Pasan por todos los puntos de igual coordenada $x$, son ortogonales a las líneas de campo (que son rectas paralelas al eje $X$) y están separadas con potenciales que varían linealmente con $x$."
         }
       ],
-      "resultado": "Las superficies equipotenciales son planos perpendiculares al eje X."
+      "resultado": "Son planos perpendiculares al eje $X$ (paralelos al plano $YZ$), por la relación $\\vec g=-\\nabla V$ y $V=\\text{cte}$."
     },
     {
       "numero": 13,
       "titulo": "Equilibrio de una partícula cargada entre dos planos paralelos",
-      "tema": "Campo eléctrico",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B4. Potencial eléctrico, equipotenciales y campo uniforme",
       "puntuacion": "1 punto",
       "enunciado": "Una partícula cargada se coloca entre dos planos uniformemente cargados, horizontales y paralelos. El superior está cargado negativamente y el inferior positivamente. Si la partícula queda en equilibrio bajo la acción de las fuerzas eléctrica y gravitatoria, ¿cuál será el signo de la carga de la partícula? Razone la respuesta.",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Campo eléctrico entre los planos",
-          "contenido": "El campo va del plano positivo al negativo, es decir, hacia arriba: $\\vec{E}=E\\,\\vec{j}$."
+          "titulo": "Campo eléctrico creado entre los dos planos",
+          "contenido": "Para un par de planos paralelos infinitos con cargas opuestas, el campo en la región interior es uniforme y va dirigido desde el plano positivo hacia el plano negativo. En este caso, plano positivo abajo y plano negativo arriba, así que $\\vec E$ apunta hacia arriba: $\\vec E=E\\,\\hat j$, con $E>0$ y $\\hat j$ el versor vertical ascendente."
         },
         {
           "titulo": "Equilibrio de fuerzas",
-          "contenido": "Para equilibrar el peso, la fuerza eléctrica debe ser hacia arriba: $\\vec{F}_e=q\\vec{E}$. Por tanto, $q>0$."
+          "contenido": "Sobre la partícula actúan dos fuerzas: el peso $m\\vec g$ (vertical hacia abajo) y la fuerza eléctrica $q\\vec E$. Para que la partícula esté en equilibrio se requiere:\n\n$$q\\vec E+m\\vec g=0 \\quad\\Rightarrow\\quad qE=mg.$$"
+        },
+        {
+          "titulo": "Conclusión",
+          "contenido": "La carga de la partícula debe ser positiva ($q>0$), de modo que la fuerza eléctrica sea paralela a $\\vec E$ (hacia arriba) y compense exactamente al peso. Si la carga fuese negativa, la fuerza eléctrica apuntaría hacia abajo, sumándose al peso, y no existiría equilibrio."
         }
       ],
-      "resultado": "La carga debe ser positiva."
+      "resultado": "Carga positiva ($q>0$), con módulo $q=\\frac{mg}{E}$."
     },
     {
       "numero": 14,
       "titulo": "Variación del flujo y sentido de la corriente inducida en una espira",
-      "tema": "Electromagnetismo",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
       "puntuacion": "1 punto",
-      "enunciado": "Una espira cuadrada de lado $a$ se encuentra en una región con un campo magnético uniforme $\\vec{B}$ perpendicular al plano de la espira. Explique cómo varía el flujo magnético si reducimos progresivamente la intensidad del campo a la mitad y, a continuación, aumentamos progresivamente la longitud de los lados al doble. Razone el sentido de la corriente inducida en ambas etapas.",
+      "enunciado": "Una espira cuadrada de lado $a$ se encuentra en una región en la que existe un campo magnético uniforme $\\vec B$ y perpendicular al plano de la espira. Explique cómo varía el flujo magnético si reducimos progresivamente la intensidad del campo magnético a la mitad y, a continuación, aumentamos progresivamente la longitud de los lados de la espira al doble. Razone el sentido de la corriente inducida en ambas etapas del proceso. Configuración (figura): el campo $\\vec B$ entra perpendicularmente al plano de la espira (símbolos $\\otimes$ en la figura).",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Flujo inicial",
-          "contenido": "Si $\\vec{B}$ es perpendicular al plano, $\\Phi_0=B\\,a^2$."
+          "contenido": "Como $\\vec B$ es perpendicular al plano de la espira, $\\Phi_0=B a^{2}$, tomando como sentido positivo de la normal el que entra al plano (mismo sentido que $\\vec B$, valor positivo)."
         },
         {
-          "titulo": "Etapa 1: campo a la mitad",
-          "contenido": "El flujo disminuye desde $B\\,a^2$ hasta $\\frac{B}{2}a^2$. Por la ley de Lenz, la corriente inducida genera un campo en el mismo sentido que el externo para oponerse a la disminución: sentido horario visto desde fuera del papel."
+          "titulo": "Etapa 1: reducción del campo a la mitad",
+          "contenido": "El área permanece constante y $B$ pasa progresivamente de $B$ a $B/2$. El flujo evoluciona desde $\\Phi_0=B a^{2}$ hasta $\\Phi_0/2$, esto es, disminuye. Por la ley de Lenz, la corriente inducida circulará en el sentido que se oponga a la disminución de flujo entrante; por tanto, la corriente inducida genera un campo magnético en el mismo sentido que $\\vec B$ (entrante al plano), lo cual, vista la espira desde fuera del papel (lado del lector), corresponde a circulación en sentido horario."
         },
         {
-          "titulo": "Etapa 2: lado al doble",
-          "contenido": "El área pasa de $a^2$ a $4a^2$ y el flujo aumenta desde $\\frac{B}{2}a^2$ hasta $2B\\,a^2$. La corriente inducida se opone al aumento creando un campo opuesto: sentido antihorario visto desde fuera del papel."
+          "titulo": "Etapa 2: aumento del lado al doble",
+          "contenido": "Ahora $B$ es constante (valor $B/2$) y el área crece progresivamente de $a^{2}$ a $(2a)^{2}=4a^{2}$. El flujo evoluciona desde $B a^{2}/2$ hasta $2B a^{2}$, esto es, aumenta. Por Lenz, la corriente inducida se opone al aumento de flujo entrante creando un campo inducido opuesto al externo (saliente del plano), lo que corresponde a circulación en sentido antihorario vista desde el lado del lector."
         }
       ],
-      "resultado": "Etapa 1: corriente horaria. Etapa 2: corriente antihoraria."
+      "resultado": "Etapa 1 ($B$ disminuye): corriente en sentido horario (vista desde fuera del papel). Etapa 2 (área aumenta): corriente en sentido antihorario."
     },
     {
       "numero": 15,
       "titulo": "Cambio de medio de propagación: velocidad y periodo",
-      "tema": "Vibraciones y ondas",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
       "puntuacion": "1 punto",
       "enunciado": "Cuando una onda que se propaga en un medio A pasa a otro medio B, se reduce su longitud de onda a la mitad. ¿Cómo se modifica la velocidad de propagación de la onda en el segundo medio respecto al primero? ¿Y su periodo? Razone las respuestas.",
       "apartados": [],
       "resolucion": [
         {
-          "titulo": "Frecuencia y periodo",
-          "contenido": "La frecuencia y el periodo son propiedades de la fuente y no cambian al pasar de un medio a otro: $T_B=T_A$."
+          "titulo": "Frecuencia: invariante al cambiar de medio",
+          "contenido": "La frecuencia (y por tanto el periodo $T$) de una onda es una propiedad de la fuente emisora y NO cambia al pasar de un medio a otro. Lo que cambia al cambiar de medio son las propiedades elásticas/ópticas, que afectan a $v$ y a $\\lambda$ pero no a $f$."
         },
         {
-          "titulo": "Velocidad de propagación",
-          "contenido": "Como $v=\\lambda\\,f$ y $\\lambda_B=\\frac{\\lambda_A}{2}$, entonces $v_B=\\frac{v_A}{2}$."
+          "titulo": "Periodo en B respecto a A",
+          "contenido": "Como $f_B=f_A$, también $T_B=T_A$. El periodo NO se modifica; permanece igual al pasar al medio B."
+        },
+        {
+          "titulo": "Velocidad en B respecto a A",
+          "contenido": "Para cualquier onda armónica se cumple $v=\\lambda f$. Dado que $\\lambda_B=\\frac{\\lambda_A}{2}$ y $f_B=f_A$:\n\n$$v_B=\\lambda_B f_B=\\frac{\\lambda_A}{2}f_A=\\frac{v_A}{2}.$$\n\nLa velocidad de propagación en B es la mitad de la velocidad en A."
         }
       ],
-      "resultado": "El periodo no cambia; la velocidad se reduce a la mitad."
+      "resultado": "Periodo: $T_B=T_A$ (no cambia). Velocidad: $v_B=\\frac{v_A}{2}$ (se reduce a la mitad). $f$ es invariante."
     },
     {
       "numero": 16,
-      "titulo": "Posición del objeto para que una lente convergente forme imagen invertida y reducida",
-      "tema": "Óptica",
+      "titulo": "Posición del objeto para que una lente convergente reduzca el tamaño y forme imagen invertida",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
       "puntuacion": "1 punto",
       "enunciado": "Deduzca la relación entre la distancia de un objeto a una lente convergente y la distancia focal de esta para que la imagen obtenida sea invertida y tenga un tamaño 1,5 veces menor que el objeto. Justifique la respuesta mediante el correspondiente diagrama de rayos.",
       "apartados": [],
       "resolucion": [
         {
           "titulo": "Condición de aumento",
-          "contenido": "Que la imagen sea invertida y 1,5 veces menor significa $m=-\\frac{2}{3}$. Como $m=-\\frac{s'}{s}$, se tiene $s'=\\frac{2}{3}s$."
+          "contenido": "El aumento lateral es $m=\\frac{y'}{y}$. Que la imagen sea invertida y $1{,}5$ veces menor que el objeto significa $m=-\\frac{1}{1{,}5}=-\\frac{2}{3}$. Como el objeto está a la izquierda, con $s>0$; análogamente $s'>0$ (imagen real a la derecha). Así:\n\n$$-\\frac{s'}{s}=-\\frac{2}{3} \\quad\\Rightarrow\\quad s'=\\frac{2}{3}s.$$"
         },
         {
-          "titulo": "Ecuación de la lente",
-          "contenido": "Con $\\frac{1}{f}=\\frac{1}{s}+\\frac{1}{s'}=\\frac{1}{s}+\\frac{3}{2s}=\\frac{5}{2s}$, resulta $s=\\frac{5}{2}f$."
+          "titulo": "Sustitución en la ecuación de las lentes",
+          "contenido": "Con $\\frac{1}{f}=\\frac{1}{s}+\\frac{1}{s'}$:\n\n$$\\frac{1}{f}=\\frac{1}{s}+\\frac{1}{\\frac{2}{3}s}=\\frac{1}{s}+\\frac{3}{2s}=\\frac{5}{2s}.$$\n\nPor tanto:\n\n$$s=\\frac{5}{2}f, \\qquad s'=\\frac{2}{3}s=\\frac{5}{3}f.$$"
         },
         {
-          "titulo": "Diagrama de rayos",
-          "contenido": "El objeto se coloca a $s=2{,}5f$ del centro óptico. Un rayo paralelo al eje pasa por el foco imagen, otro pasa por el centro óptico sin desviarse y otro pasa por el foco objeto y sale paralelo. La imagen es real, invertida y de tamaño $2/3$ del objeto."
+          "titulo": "Diagrama de rayos (descripción)",
+          "contenido": "El objeto (flecha sobre el eje óptico) se coloca a $s=\\frac{5}{2}f$ del centro óptico (más allá del foco objeto $F$, pues $s>f$). Se trazan tres rayos característicos: (1) un rayo paralelo al eje que tras la lente pasa por el foco imagen $F'$; (2) un rayo que pasa por el centro óptico sin desviarse; (3) un rayo que pasa por el foco objeto y sale paralelo al eje. Los tres rayos se cortan al otro lado de la lente, a una distancia $s'=\\frac{5}{3}f$, en un punto situado debajo del eje óptico, formando una imagen real, invertida y de tamaño $\\frac{2}{3}$ del original."
         }
       ],
-      "resultado": "$s=\\frac{5}{2}f=2{,}5f$."
+      "resultado": "$s=\\frac{5}{2}f$; $s'=\\frac{5}{3}f$; imagen real, invertida y de tamaño $\\frac{2}{3}$ del objeto."
     },
     {
       "numero": 17,
       "titulo": "Fisión y fusión nuclear: identificación en reacciones concretas",
-      "tema": "Física nuclear",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares",
       "puntuacion": "1 punto",
-      "enunciado": "Defina fisión y fusión nuclear e identifique razonadamente cuál de estos dos procesos tiene lugar en cada una de las siguientes reacciones.",
+      "enunciado": "Defina fisión y fusión nuclear e identifique razonadamente cuál de estos dos procesos tiene lugar en cada una de las siguientes reacciones: a) $^{235}_{92}U+^{1}_{0}n\\rightarrow{}^{92}_{36}Kr+^{141}_{56}Ba+3\\,^{1}_{0}n+170\\,\\text{MeV}$; b) $^{2}_{1}H+^{2}_{1}H\\rightarrow{}^{3}_{2}He+^{1}_{0}n+3{,}2\\,\\text{MeV}$.",
       "apartados": [
         {
           "letra": "a",
-          "puntuacion": "0,5 puntos",
-          "enunciado": "$^{235}_{92}\\text{U}+^{1}_{0}n\\rightarrow{}^{92}_{36}\\text{Kr}+^{141}_{56}\\text{Ba}+3\\,^{1}_{0}n+170\\,\\text{MeV}$"
+          "puntuacion": "1 punto",
+          "enunciado": "$^{235}_{92}U+^{1}_{0}n\\rightarrow{}^{92}_{36}Kr+^{141}_{56}Ba+3\\,^{1}_{0}n+170\\,\\text{MeV}$"
         },
         {
           "letra": "b",
-          "puntuacion": "0,5 puntos",
-          "enunciado": "$^{2}_{1}\\text{H}+^{2}_{1}\\text{H}\\rightarrow{}^{3}_{2}\\text{He}+^{1}_{0}n+3{,}2\\,\\text{MeV}$"
+          "puntuacion": "1 punto",
+          "enunciado": "$^{2}_{1}H+^{2}_{1}H\\rightarrow{}^{3}_{2}He+^{1}_{0}n+3{,}2\\,\\text{MeV}$"
         }
       ],
       "resolucion": [
         {
-          "titulo": "Fisión nuclear",
-          "contenido": "La fisión es la división de un núcleo pesado en dos núcleos más ligeros, con emisión de neutrones y gran cantidad de energía."
+          "titulo": "Definición de fisión nuclear",
+          "contenido": "La fisión nuclear es la reacción en la que un núcleo pesado e inestable (típicamente $^{235}U$) se divide en dos núcleos más ligeros, acompañados de varios neutrones y de una gran cantidad de energía. Suele desencadenarse por la captura de un neutrón térmico y se aprovecha en reactores nucleares y armas atómicas."
         },
         {
-          "titulo": "Fusión nuclear",
-          "contenido": "La fusión es la unión de dos núcleos ligeros para formar un núcleo más pesado, liberando energía."
+          "titulo": "Definición de fusión nuclear",
+          "contenido": "La fusión nuclear es la reacción en la que dos núcleos ligeros (típicamente isótopos del hidrógeno) se combinan para formar un núcleo más pesado, liberando energía. Requiere altísimas temperaturas (decenas de millones de kelvin) para vencer la repulsión coulombiana entre los protones, y es la fuente de energía de las estrellas (incluido el Sol)."
         },
         {
-          "titulo": "Identificación",
-          "contenido": "La reacción a) corresponde a la fisión del $^{235}_{92}\\text{U}$ por captura de un neutrón. La reacción b) corresponde a la fusión de dos núcleos de deuterio."
+          "titulo": "Identificación a) y b)",
+          "contenido": "Reacción a) $^{235}_{92}U+^{1}_{0}n\\rightarrow{}^{92}_{36}Kr+^{141}_{56}Ba+3\\,^{1}_{0}n+170\\,\\text{MeV}$. Un núcleo pesado de uranio-235 captura un neutrón y se divide en kriptón-92 y bario-141, dos núcleos de masa intermedia, más 3 neutrones y $170\\,\\text{MeV}$. Es por tanto una reacción de fisión.\n\nReacción b) $^{2}_{1}H+^{2}_{1}H\\rightarrow{}^{3}_{2}He+^{1}_{0}n+3{,}2\\,\\text{MeV}$. Dos núcleos ligeros de deuterio se combinan en un núcleo de helio-3, liberando un neutrón y $3{,}2\\,\\text{MeV}$. Es una reacción de fusión."
         }
       ],
-      "resultado": "a) Fisión nuclear. b) Fusión nuclear."
+      "resultado": "a) fisión (uranio-235 + neutrón $\\rightarrow$ Kr-92 + Ba-141 + 3n). b) fusión (D + D $\\rightarrow$ He-3 + n)."
     }
   ]
 }
