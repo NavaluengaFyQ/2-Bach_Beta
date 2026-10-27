@@ -1,42 +1,480 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-rioja-2022-extraordinaria",
+  "codigo": "EXA.FIS.RIO.2022.EXT.SOL",
+  "comunidad": "La Rioja",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2022,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen resuelto de Física de la PAU de La Rioja, convocatoria Extraordinaria 2022. Consta de 12 problemas de gravitación, electromagnetismo, ondas, óptica y física moderna.",
+  "objetivo": "Evaluar el dominio de los contenidos de Física de 2º de Bachillerato mediante problemas de aplicación de leyes fundamentales, cálculo y razonamiento físico.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "El estudiante elegirá y contestará SOLO CINCO problemas de entre los doce propuestos. Si se contestan a más problemas de los cinco indicados, el exceso no se corregirá. Todos los problemas tienen la misma puntuación (2 puntos cada uno)."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}7\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $g=9{,}8\\,\\text{m}\\,\\text{s}^{-2}$; $c=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $k=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $e=1{,}6\\cdot10^{-19}\\,\\text{C}$; $m_e=9{,}1\\cdot10^{-31}\\,\\text{kg}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{N}\\,\\text{A}^{-2}$; $1\\,\\text{eV}=1{,}60\\cdot10^{-19}\\,\\text{J}$."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Encelado: órbita circular alrededor de Saturno",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A2. Leyes de Kepler y relación con la gravitación; A4. Intensidad de campo gravitatorio y líneas de campo; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (0,7 + 0,7 + 0,6)",
+      "enunciado": "Encelado es un pequeño planeta de masa $1{,}1\\cdot10^{20}\\,\\text{kg}$ y diámetro $502\\,\\text{km}$ que gira alrededor de Saturno en órbita circular de radio $238000\\,\\text{km}$. a) Calcular el periodo orbital de Encelado alrededor de Saturno. b) Obtener el valor de la gravedad en la superficie de Encelado. c) ¿Cuánto pesaría en Encelado una persona que en la Tierra pesa $686\\,\\text{N}$? Datos: masa de Saturno $M_S=5{,}7\\cdot10^{26}\\,\\text{kg}$; constante de la gravitación universal $G=6{,}7\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$.",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "0,7 puntos",
+          "enunciado": "Periodo orbital de Encelado."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,7 puntos",
+          "enunciado": "Gravedad superficial de Encelado."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,6 puntos",
+          "enunciado": "Peso en Encelado de una persona de $686\\,\\text{N}$ en la Tierra."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Igualar fuerza gravitatoria a fuerza centrípeta",
+          "contenido": "La única fuerza que actúa sobre Encelado es la atracción gravitatoria de Saturno, que proporciona la fuerza centrípeta del movimiento circular:\n\n$$\\frac{G\\,M_S\\,m}{r^{2}}=\\frac{m\\,v^{2}}{r}.$$\n\nComo $v=\\frac{2\\pi r}{T}$, se obtiene la tercera ley de Kepler:\n\n$$\\frac{G\\,M_S}{r^{2}}=\\frac{4\\pi^{2}r}{T^{2}}\\quad\\Rightarrow\\quad T=2\\pi\\sqrt{\\frac{r^{3}}{G\\,M_S}}.$$"
+        },
+        {
+          "titulo": "Sustituir valores numéricos",
+          "contenido": "Con $r=238000\\,\\text{km}=2{,}38\\cdot10^{8}\\,\\text{m}$, $M_S=5{,}7\\cdot10^{26}\\,\\text{kg}$ y $G=6{,}7\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$:\n\n$$T=2\\pi\\sqrt{\\frac{(2{,}38\\cdot10^{8})^{3}}{6{,}7\\cdot10^{-11}\\cdot5{,}7\\cdot10^{26}}}\\approx1{,}18\\cdot10^{5}\\,\\text{s}.$$"
+        },
+        {
+          "titulo": "Aplicar la ley de gravitación en la superficie",
+          "contenido": "La gravedad en la superficie de Encelado es\n\n$$g_E=\\frac{G\\,M_E}{R_E^{2}},$$\n\ncon $M_E=1{,}1\\cdot10^{20}\\,\\text{kg}$ y $R_E=\\frac{502}{2}\\,\\text{km}=2{,}51\\cdot10^{5}\\,\\text{m}$."
+        },
+        {
+          "titulo": "Cálculo numérico",
+          "contenido": "$$g_E=\\frac{6{,}7\\cdot10^{-11}\\cdot1{,}1\\cdot10^{20}}{(2{,}51\\cdot10^{5})^{2}}\\approx1{,}17\\cdot10^{-1}\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        },
+        {
+          "titulo": "Calcular masa y peso en Encelado",
+          "contenido": "La masa es invariante. Si en la Tierra ($g=9{,}8\\,\\text{m}\\,\\text{s}^{-2}$) pesa $686\\,\\text{N}$, su masa es\n\n$$m=\\frac{686}{9{,}8}=70\\,\\text{kg}.$$\n\nSu peso en Encelado será\n\n$$P_E=m\\,g_E=70\\cdot0{,}117\\approx8{,}2\\,\\text{N}.$$"
         }
       ],
-      "resultado": ""
+      "resultado": "$T\\approx1{,}18\\cdot10^{5}\\,\\text{s}\\approx32{,}8\\,\\text{h}$\n$g_E\\approx1{,}17\\cdot10^{-1}\\,\\text{m}\\,\\text{s}^{-2}$\n$P_E\\approx8{,}2\\,\\text{N}$"
+    },
+    {
+      "numero": 2,
+      "titulo": "Satélite Hispasat-4 geoestacionario",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A2. Leyes de Kepler y relación con la gravitación; A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (0,7 + 0,7 + 0,6)",
+      "enunciado": "El satélite Hispasat-4, de $3000\\,\\text{kg}$ de masa, está en órbita geoestacionaria circular (periodo orbital de $24\\,\\text{h}$) alrededor de la Tierra. a) Calcular la altura sobre la superficie de la Tierra a la que orbita ese satélite. b) Calcular el módulo de la velocidad lineal con que orbita ese satélite. c) Calcular la energía que es necesario suministrar al satélite para colocarlo en dicha órbita. Datos: radio de la Tierra $R_T=6{,}4\\cdot10^{3}\\,\\text{km}$; masa de la Tierra $M_T=6\\cdot10^{24}\\,\\text{kg}$; constante de la gravitación universal $G=6{,}7\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,7 puntos",
+          "enunciado": "Altura sobre la superficie."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,7 puntos",
+          "enunciado": "Módulo de la velocidad lineal."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,6 puntos",
+          "enunciado": "Energía necesaria para colocarlo en órbita."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Aplicar la tercera ley de Kepler",
+          "contenido": "Con $T=24\\,\\text{h}=86400\\,\\text{s}$:\n\n$$r=\\left(\\frac{G\\,M_T\\,T^{2}}{4\\pi^{2}}\\right)^{1/3}.$$"
+        },
+        {
+          "titulo": "Calcular el radio de la órbita",
+          "contenido": "$$r=\\left(\\frac{6{,}7\\cdot10^{-11}\\cdot6\\cdot10^{24}\\cdot86400^{2}}{4\\pi^{2}}\\right)^{1/3}\\approx4{,}23\\cdot10^{7}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Calcular la altura",
+          "contenido": "$$h=r-R_T=4{,}23\\cdot10^{7}-6{,}4\\cdot10^{6}\\approx3{,}59\\cdot10^{7}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Velocidad orbital",
+          "contenido": "Igualando fuerza gravitatoria y centrípeta:\n\n$$\\frac{G\\,M_T\\,m}{r^{2}}=\\frac{m\\,v^{2}}{r}\\quad\\Rightarrow\\quad v=\\sqrt{\\frac{G\\,M_T}{r}}.$$\n\n$$v=\\sqrt{\\frac{6{,}7\\cdot10^{-11}\\cdot6\\cdot10^{24}}{4{,}23\\cdot10^{7}}}\\approx3{,}08\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Energía mecánica en cada estado",
+          "contenido": "En la superficie (en reposo): $E_{\\text{sup}}=-\\frac{G\\,M_T\\,m}{R_T}$. En la órbita: $E_{\\text{orb}}=-\\frac{G\\,M_T\\,m}{2r}$.\n\nLa energía mecánica de un objeto en órbita circular es la mitad de la energía potencial."
+        },
+        {
+          "titulo": "Energía a suministrar",
+          "contenido": "$$\\Delta E=E_{\\text{orb}}-E_{\\text{sup}}=G\\,M_T\\,m\\left(\\frac{1}{R_T}-\\frac{1}{2r}\\right).$$\n\n$$\\Delta E=6{,}7\\cdot10^{-11}\\cdot6\\cdot10^{24}\\cdot3000\\left(\\frac{1}{6{,}4\\cdot10^{6}}-\\frac{1}{2\\cdot4{,}23\\cdot10^{7}}\\right)\\approx1{,}74\\cdot10^{11}\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$h\\approx3{,}59\\cdot10^{7}\\,\\text{m}$\n$v\\approx3{,}08\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$\n$\\Delta E\\approx1{,}74\\cdot10^{11}\\,\\text{J}$"
+    },
+    {
+      "numero": 3,
+      "titulo": "Cuatro cargas en los vértices de un cuadrado (1)",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "En los vértices de un cuadrado de $10^{-9}\\,\\text{m}$ de lado hay colocados dos electrones y dos protones, situados de forma que electrones y protones son adyacentes (no en diagonal). Calcular el trabajo necesario para trasladar uno de los dos protones al centro del cuadrado. Datos: carga del electrón $e^{-}=-1{,}6\\cdot10^{-19}\\,\\text{C}$; carga del protón $e^{+}=1{,}6\\cdot10^{-19}\\,\\text{C}$; constante de Coulomb $k=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "2,0 puntos",
+          "enunciado": "Trabajo para trasladar un protón al centro."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Geometría del cuadrado",
+          "contenido": "Lado $L=10^{-9}\\,\\text{m}$. Distancia desde un vértice al centro: $\\frac{L}{\\sqrt{2}}=\\frac{10^{-9}}{\\sqrt{2}}\\,\\text{m}$. Configuración: los dos electrones y dos protones se alternan en pares adyacentes (no en diagonal). Etiquetamos $A$ como el protón que se mueve, $B$ el protón adyacente, $C$ un electrón en el vértice opuesto y $D$ el otro electrón adyacente a $A$."
+        },
+        {
+          "titulo": "Potencial en el vértice A (protón a mover)",
+          "contenido": "Considerando solo las otras tres cargas ($B$ protón a distancia $L$, $C$ electrón a distancia $\\sqrt{2}L$, $D$ electrón a distancia $L$):\n\n$$V_A=k\\left(\\frac{e}{L}+\\frac{-e}{\\sqrt{2}L}+\\frac{-e}{L}\\right)=-\\frac{k\\,e}{\\sqrt{2}L}.$$"
+        },
+        {
+          "titulo": "Potencial en el centro O",
+          "contenido": "Las cuatro cargas están a la misma distancia $\\frac{L}{\\sqrt{2}}$. La suma neta de cargas es cero, por lo que\n\n$$V_O=k\\frac{e-e+e-e}{L/\\sqrt{2}}=0.$$"
+        },
+        {
+          "titulo": "Trabajo del campo y trabajo externo",
+          "contenido": "El trabajo realizado por una fuerza externa para mover una carga desde $A$ a $O$ es\n\n$$W_{\\text{ext}}=q\\,(V_O-V_A)=e\\left(0+\\frac{k\\,e}{\\sqrt{2}L}\\right)=\\frac{k\\,e^{2}}{\\sqrt{2}L}.$$\n\n$$W_{\\text{ext}}=\\frac{9\\cdot10^{9}\\cdot(1{,}6\\cdot10^{-19})^{2}}{\\sqrt{2}\\cdot10^{-9}}\\approx1{,}63\\cdot10^{-19}\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$W_{\\text{ext}}\\approx1{,}63\\cdot10^{-19}\\,\\text{J}$"
+    },
+    {
+      "numero": 4,
+      "titulo": "Cuatro cargas en los vértices de un cuadrado (2)",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "En los vértices de un cuadrado de lado $L$ hay colocadas dos cargas positivas y dos cargas negativas $+q$ y $-q$ (no se indica en la figura). Una quinta carga negativa $-q$ está situada en el centro del cuadrado. a) Calcular el campo eléctrico en el centro del cuadrado. b) Calcular la fuerza que las cuatro cargas situadas en las esquinas del cuadrado ejercen sobre la carga situada en el centro del cuadrado. Expresar los resultados en función de $q$, $L$ y la constante de Coulomb $k$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,0 puntos",
+          "enunciado": "Campo en el centro."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,0 puntos",
+          "enunciado": "Fuerza sobre la carga del centro."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Configuración adyacente: dos +q juntas y dos -q juntas",
+          "contenido": "Si las cargas positivas están en dos vértices adyacentes y las negativas en los otros dos, las cuatro cargas se encuentran a la misma distancia del centro. Los campos creados por $+q$ se alejan de las cargas positivas y los creados por $-q$ apuntan hacia las cargas negativas. Por simetría, el campo total apunta de la zona positiva a la zona negativa (paralelo al eje que une los puntos medios de las aristas con cargas iguales)."
+        },
+        {
+          "titulo": "Suma vectorial",
+          "contenido": "Cada carga produce un campo de módulo\n\n$$E_i=\\frac{k\\,q}{(L/\\sqrt{2})^{2}}=\\frac{2k\\,q}{L^{2}}.$$\n\nLa componente útil de cada campo es $E_i\\cos45^{\\circ}=\\frac{2k\\,q}{L^{2}}\\frac{\\sqrt{2}}{2}=\\frac{\\sqrt{2}k\\,q}{L^{2}}$. Cuatro cargas contribuyen sumándose:\n\n$$E_{\\text{total}}=4\\frac{\\sqrt{2}k\\,q}{L^{2}}=\\frac{4\\sqrt{2}k\\,q}{L^{2}},$$\n\ndirigido desde las cargas positivas hacia las negativas."
+        },
+        {
+          "titulo": "Fuerza sobre la carga -q en el centro",
+          "contenido": "$$\\vec F=q_{\\text{centro}}\\vec E=(-q)\\vec E,$$\n\npor lo que la fuerza tiene módulo\n\n$$F=\\frac{4\\sqrt{2}k\\,q^{2}}{L^{2}}$$\n\ny apunta hacia las cargas positivas."
+        }
+      ],
+      "resultado": "$E=\\frac{4\\sqrt{2}k\\,q}{L^{2}}$ de la zona positiva a la negativa\n$F=\\frac{4\\sqrt{2}k\\,q^{2}}{L^{2}}$ hacia las cargas positivas"
+    },
+    {
+      "numero": 5,
+      "titulo": "Selector de velocidades de electrones y muones",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "En un acelerador de partículas se aceleran muones desde el reposo mediante una diferencia de potencial de $2000\\,\\text{V}$. a) Determinar la energía cinética que adquieren los muones. b) A continuación, los muones entran en una zona con un campo magnético uniforme de $3\\,\\text{mT}$ perpendicular a su velocidad. Si la trayectoria de los electrones con la misma velocidad en el mismo campo magnético tiene un radio que es $206$ veces más pequeño que el radio de los muones, obtener la masa de un muón. Datos: carga del electrón $e^{-}=-1{,}6\\cdot10^{-19}\\,\\text{C}$; masa del electrón $m_e=9{,}1\\cdot10^{-31}\\,\\text{kg}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,0 puntos",
+          "enunciado": "Energía cinética de los muones."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,0 puntos",
+          "enunciado": "Masa de un muón."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Conservación de energía: trabajo eléctrico = energía cinética",
+          "contenido": "$$K=q\\,\\Delta V=e\\cdot2000\\,\\text{V}=2000\\,\\text{eV}=2000\\cdot1{,}6\\cdot10^{-19}\\,\\text{J}=3{,}2\\cdot10^{-16}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Radio de la trayectoria circular en campo magnético",
+          "contenido": "En un movimiento circular en $B$:\n\n$$q\\,v\\,B=\\frac{m\\,v^{2}}{r}\\quad\\Rightarrow\\quad r=\\frac{m\\,v}{q\\,B}.$$\n\nComo las velocidades son iguales y la carga es igual en magnitud, $r\\propto m$. El enunciado indica $r_m=206\\,r_e$."
+        },
+        {
+          "titulo": "Cálculo de la masa del muón",
+          "contenido": "$$\\frac{r_m}{r_e}=\\frac{m_m}{m_e}=206\\quad\\Rightarrow\\quad m_m=206\\,m_e=206\\cdot9{,}1\\cdot10^{-31}\\approx1{,}87\\cdot10^{-28}\\,\\text{kg}.$$"
+        }
+      ],
+      "resultado": "$K=3{,}2\\cdot10^{-16}\\,\\text{J}=2000\\,\\text{eV}$\n$m_m\\approx1{,}87\\cdot10^{-28}\\,\\text{kg}$"
+    },
+    {
+      "numero": 6,
+      "titulo": "Conductores rectilíneos paralelos verticales",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos",
+      "puntuacion": "2 puntos",
+      "enunciado": "Dos conductores rectilíneos, paralelos y verticales, distan entre sí $20\\,\\text{cm}$. Por el primero de ellos circula una corriente de $10\\,\\text{A}$ hacia arriba. Calcular su magnitud y razonar el sentido de la corriente que debe circular por el segundo conductor, colocado a la derecha del primero, para que el campo magnético total creado por ambas corrientes en un punto $P$ situado a $5\\,\\text{cm}$ a la izquierda del segundo conductor se anule. Datos: permeabilidad magnética del vacío $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{N}\\,\\text{A}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "2,0 puntos",
+          "enunciado": "Sentido y magnitud de $I_2$ para $B_{\\text{total}}=0$ en $P$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Posiciones y distancias al punto P",
+          "contenido": "Disposición: hilo 1 a la izquierda con $I_1=10\\,\\text{A}$ hacia arriba, hilo 2 a la derecha (separados $20\\,\\text{cm}$). El punto $P$ está entre ambos hilos, a $5\\,\\text{cm}$ del hilo 2; por tanto, a $15\\,\\text{cm}$ del hilo 1."
+        },
+        {
+          "titulo": "Campo creado por el hilo 1 en P",
+          "contenido": "Por la regla de la mano derecha, la corriente ascendente del hilo 1 crea en $P$ (a su derecha) un campo entrando en el plano. Su módulo es\n\n$$B_1=\\frac{\\mu_0\\,I_1}{2\\pi r_1}=\\frac{4\\pi\\cdot10^{-7}\\cdot10}{2\\pi\\cdot0{,}15}\\approx1{,}33\\cdot10^{-5}\\,\\text{T}.$$"
+        },
+        {
+          "titulo": "Sentido necesario de I_2",
+          "contenido": "Para que en $P$ se cancele $B_1$, el campo $B_2$ debe salir del plano. Como $P$ está a la izquierda del hilo 2, la regla de la mano derecha exige que la corriente en el hilo 2 circule hacia arriba."
+        },
+        {
+          "titulo": "Magnitud de I_2",
+          "contenido": "Imponiendo $B_1=B_2$:\n\n$$\\frac{\\mu_0\\,I_1}{2\\pi\\cdot0{,}15}=\\frac{\\mu_0\\,I_2}{2\\pi\\cdot0{,}05}\\quad\\Rightarrow\\quad I_2=I_1\\frac{0{,}05}{0{,}15}=\\frac{10}{3}\\approx3{,}33\\,\\text{A}.$$"
+        }
+      ],
+      "resultado": "$I_2\\approx3{,}33\\,\\text{A}$, hacia arriba"
+    },
+    {
+      "numero": 7,
+      "titulo": "Refracción y ángulo límite",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un rayo de luz monocromático de frecuencia $f=6\\cdot10^{14}\\,\\text{Hz}$ incide con un ángulo $\\theta_1=35^{\\circ}$ sobre la superficie de separación de dos medios con diferentes índices de refracción $n_1$ y $n_2$. Sabiendo que dicho rayo viaja por el primer medio a una velocidad de $v_1=2{,}4\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$, y que su longitud de onda en el segundo medio es de $\\lambda_2=5\\cdot10^{-7}\\,\\text{m}$, calcular: a) el ángulo de refracción $\\theta_2$; b) el ángulo límite de incidencia $\\theta_l$ a partir del cual se producirá la reflexión total. Velocidad de la luz en el vacío: $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,0 puntos",
+          "enunciado": "Ángulo de refracción $\\theta_2$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,0 puntos",
+          "enunciado": "Ángulo límite de incidencia $\\theta_l$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Índice de refracción n1",
+          "contenido": "$$n_1=\\frac{c}{v_1}=\\frac{3\\cdot10^{8}}{2{,}4\\cdot10^{8}}=1{,}25.$$"
+        },
+        {
+          "titulo": "Calcular n2 a partir de lambda2",
+          "contenido": "La frecuencia se conserva en el cambio de medio. La velocidad en el segundo medio es $v_2=\\lambda_2 f=5\\cdot10^{-7}\\cdot6\\cdot10^{14}=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$, por lo que $n_2=\\frac{c}{v_2}=1$. El segundo medio es el vacío."
+        },
+        {
+          "titulo": "Aplicar la ley de Snell",
+          "contenido": "$$n_1\\,\\text{sen}\\,\\theta_1=n_2\\,\\text{sen}\\,\\theta_2.$$\n\n$$\\text{sen}\\,\\theta_2=1{,}25\\,\\text{sen}\\,35^{\\circ}\\approx0{,}717\\quad\\Rightarrow\\quad\\theta_2\\approx45{,}8^{\\circ}.$$"
+        },
+        {
+          "titulo": "Ángulo límite",
+          "contenido": "El ángulo límite ocurre cuando $\\theta_2=90^{\\circ}$:\n\n$$n_1\\,\\text{sen}\\,\\theta_l=n_2\\quad\\Rightarrow\\quad\\theta_l=\\arcsin\\left(\\frac{n_2}{n_1}\\right)=\\arcsin\\left(\\frac{1}{1{,}25}\\right)\\approx53{,}1^{\\circ}.$$"
+        }
+      ],
+      "resultado": "$\\theta_2\\approx45{,}8^{\\circ}$\n$\\theta_l\\approx53{,}1^{\\circ}$"
+    },
+    {
+      "numero": 8,
+      "titulo": "Onda mecánica del terremoto de Haití",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía; C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "El terremoto de Haití de 2010 provocó ondas mecánicas transversales que se propagaban por la superficie y cuyo desplazamiento vertical se puede modelizar por la expresión $y(x,t)=A\\,\\text{sen}(12{,}6t-4{,}3x)$, donde $x$ es la distancia en kilómetros desde el epicentro del terremoto y $t$ el tiempo en segundos. a) Determinar la longitud de onda, frecuencia y velocidad de propagación de dichas ondas. b) Los sismógrafos midieron una aceleración máxima de $0{,}2g$ (donde $g=9{,}8\\,\\text{m}\\,\\text{s}^{-2}$ es la aceleración de la gravedad). Determinar el valor de la amplitud $A$, en milímetros.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,0 puntos",
+          "enunciado": "$\\lambda$, $f$ y $v_{\\text{propag}}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,0 puntos",
+          "enunciado": "Amplitud $A$ en mm."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Identificar parámetros de la onda",
+          "contenido": "Comparando $y(x,t)=A\\,\\text{sen}(12{,}6t-4{,}3x)$ con $y=A\\,\\text{sen}(\\omega t-kx)$: $\\omega=12{,}6\\,\\text{rad}\\,\\text{s}^{-1}$, $k=4{,}3\\,\\text{rad}\\,\\text{km}^{-1}$.\n\n$$f=\\frac{\\omega}{2\\pi}\\approx2{,}0\\,\\text{Hz},\\qquad \\lambda=\\frac{2\\pi}{k}\\approx1{,}46\\,\\text{km},\\qquad v=\\frac{\\omega}{k}\\approx2{,}93\\,\\text{km}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Aceleración máxima de un MAS",
+          "contenido": "$a_{\\text{max}}=\\omega^{2}A$. La aceleración máxima es $0{,}2g=0{,}2\\cdot9{,}8=1{,}96\\,\\text{m}\\,\\text{s}^{-2}$.\n\nCada partícula del medio realiza un movimiento armónico simple con esa amplitud y frecuencia angular."
+        },
+        {
+          "titulo": "Despejar A",
+          "contenido": "$$A=\\frac{a_{\\text{max}}}{\\omega^{2}}=\\frac{1{,}96}{12{,}6^{2}}\\approx1{,}23\\cdot10^{-2}\\,\\text{m}\\approx12{,}3\\,\\text{mm}.$$"
+        }
+      ],
+      "resultado": "$\\lambda\\approx1{,}46\\,\\text{km}$; $f\\approx2{,}0\\,\\text{Hz}$; $v\\approx2{,}93\\,\\text{km}\\,\\text{s}^{-1}$\n$A\\approx12{,}3\\,\\text{mm}$"
+    },
+    {
+      "numero": 9,
+      "titulo": "Lente convergente con potencia 2.5 dioptrías",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una lente convergente tiene una potencia de $2{,}5$ dioptrías. Un cierto objeto situado a la izquierda de la lente produce una imagen real de dicho objeto de tamaño cuatro veces mayor. a) Determinar la posición de ese objeto. b) Realizar el esquema de rayos de la imagen.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,0 puntos",
+          "enunciado": "Posición del objeto."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,0 puntos",
+          "enunciado": "Esquema."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancia focal",
+          "contenido": "$$f'=\\frac{1}{P}=\\frac{1}{2{,}5}=0{,}4\\,\\text{m}=40\\,\\text{cm}.$$\n\nLa distancia focal imagen es positiva por ser una lente convergente."
+        },
+        {
+          "titulo": "Aumento lateral",
+          "contenido": "Imagen real e invertida con aumento de magnitud $4$: $m=\\frac{s'}{s}=-4$. Con $s=-x$ y $s'=4x$."
+        },
+        {
+          "titulo": "Aplicar la ecuación de las lentes delgadas",
+          "contenido": "$$\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f'}.$$\n\n$$\\frac{1}{4x}-\\frac{1}{-x}=\\frac{1}{40}\\quad\\Rightarrow\\quad\\frac{5}{4x}=\\frac{1}{40}\\quad\\Rightarrow\\quad x=50\\,\\text{cm}.$$\n\nPor tanto, $s=-50\\,\\text{cm}$ y $s'=200\\,\\text{cm}$."
+        },
+        {
+          "titulo": "Esquema de rayos",
+          "contenido": "Para construir la imagen se trazan dos de los tres rayos principales desde la punta del objeto: 1) rayo paralelo al eje óptico que tras refractarse pasa por el foco imagen $F'$; 2) rayo que pasa por el centro óptico y no se desvía; 3) rayo que pasa por el foco objeto $F$ y emerge paralelo al eje. El objeto está entre $2F$ y $F$; la imagen se forma más allá de $2F'$, invertida y aumentada ($4\\times$)."
+        }
+      ],
+      "resultado": "$s=-50\\,\\text{cm}$ (objeto a $50\\,\\text{cm}$ a la izquierda); $s'=200\\,\\text{cm}$ (imagen real, invertida y aumentada $4\\times$ a la derecha)"
+    },
+    {
+      "numero": 10,
+      "titulo": "Lente divergente con imagen virtual",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una lente divergente produce una imagen $y'$ que es 4 veces menor que el tamaño $y$ del objeto cuando la separación entre la imagen y el objeto es de $54\\,\\text{cm}$. a) Calcular las posiciones $s$ y $s'$ del objeto y de la imagen, respectivamente. b) Calcular la distancia focal $f'$ de la lente.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,0 puntos",
+          "enunciado": "Posiciones $s$ y $s'$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,0 puntos",
+          "enunciado": "Distancia focal $f'$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Imagen virtual y aumento",
+          "contenido": "Una lente divergente siempre da imagen virtual, derecha y reducida cuando el objeto es real. El aumento es $m=\\frac{y'}{y}=\\frac{1}{4}$. Por la fórmula del aumento, $\\frac{s'}{s}=\\frac{1}{4}$, con $s$ y $s'$ negativos (ambos a la izquierda)."
+        },
+        {
+          "titulo": "Plantear la separación entre objeto e imagen",
+          "contenido": "Sea $s=-x$ y $s'=-\\frac{x}{4}$. La separación entre objeto e imagen es\n\n$$x-\\frac{x}{4}=54\\,\\text{cm}\\quad\\Rightarrow\\quad\\frac{3x}{4}=54\\quad\\Rightarrow\\quad x=72\\,\\text{cm}.$$\n\nAsí, $s=-72\\,\\text{cm}$ y $s'=-18\\,\\text{cm}$."
+        },
+        {
+          "titulo": "Aplicar la fórmula de las lentes",
+          "contenido": "$$\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f'}.$$\n\n$$\\frac{1}{-18}-\\frac{1}{-72}=-\\frac{1}{18}+\\frac{1}{72}=-\\frac{3}{72}=-\\frac{1}{24}\\quad\\Rightarrow\\quad f'=-24\\,\\text{cm}.$$"
+        }
+      ],
+      "resultado": "$s=-72\\,\\text{cm}$; $s'=-18\\,\\text{cm}$; $f'=-24\\,\\text{cm}$"
+    },
+    {
+      "numero": 11,
+      "titulo": "Efecto fotoeléctrico en placa de oro",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica",
+      "puntuacion": "2 puntos (0,7 + 0,7 + 0,6)",
+      "enunciado": "Irradiamos una placa de oro y una de plata con un rayo de luz de longitud de onda de $250\\,\\text{nm}$. El trabajo de extracción del oro y la plata son $5{,}10\\,\\text{eV}$ y $4{,}73\\,\\text{eV}$ respectivamente. a) Calcular la frecuencia y la energía de los fotones de la luz incidente. b) Razonar cuantitativamente en cuál de las dos placas se arrancarán electrones y la energía cinética de emisión de los mismos. Constante de Planck: $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; velocidad de la luz en el vacío: $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; masa del electrón: $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$; $1\\,\\text{eV}=1{,}60\\cdot10^{-19}\\,\\text{J}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,7 puntos",
+          "enunciado": "$f$ y $E_{\\text{fotón}}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,7 puntos",
+          "enunciado": "Qué placa emite y $E_c$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,6 puntos",
+          "enunciado": "Velocidad máxima de los electrones."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Frecuencia y energía del fotón",
+          "contenido": "$$f=\\frac{c}{\\lambda}=\\frac{3\\cdot10^{8}}{250\\cdot10^{-9}}=1{,}2\\cdot10^{15}\\,\\text{Hz}.$$\n\n$$E=h\\,f=6{,}63\\cdot10^{-34}\\cdot1{,}2\\cdot10^{15}=7{,}96\\cdot10^{-19}\\,\\text{J}\\approx4{,}97\\,\\text{eV}.$$"
+        },
+        {
+          "titulo": "Comparar con el trabajo de extracción",
+          "contenido": "Se produce efecto fotoeléctrico solo si $E_{\\text{fotón}}>W_{\\text{extracción}}$.\n\n- Oro: $4{,}97\\,\\text{eV}<5{,}10\\,\\text{eV}$: no emite electrones.\n\n- Plata: $4{,}97\\,\\text{eV}>4{,}73\\,\\text{eV}$: sí emite electrones."
+        },
+        {
+          "titulo": "Energía cinética máxima en la plata",
+          "contenido": "$$K_{\\text{max}}=E-W_{\\text{Ag}}=4{,}97-4{,}73=0{,}24\\,\\text{eV}=3{,}84\\cdot10^{-20}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Velocidad máxima de los electrones",
+          "contenido": "$$K_{\\text{max}}=\\frac{1}{2}m_e v_{\\text{max}}^{2}\\quad\\Rightarrow\\quad v_{\\text{max}}=\\sqrt{\\frac{2K_{\\text{max}}}{m_e}}=\\sqrt{\\frac{2\\cdot3{,}84\\cdot10^{-20}}{9{,}11\\cdot10^{-31}}}\\approx2{,}90\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$f=1{,}2\\cdot10^{15}\\,\\text{Hz}$; $E\\approx7{,}96\\cdot10^{-19}\\,\\text{J}\\approx4{,}97\\,\\text{eV}$\nSolo la plata emite electrones; $K_{\\text{max}}\\approx0{,}24\\,\\text{eV}\\approx3{,}84\\cdot10^{-20}\\,\\text{J}$; $v_{\\text{max}}\\approx2{,}90\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}$"
+    },
+    {
+      "numero": 12,
+      "titulo": "Relatividad: viaje a Sirio a la décima parte de la nave",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D1. Relatividad especial y consecuencias",
+      "puntuacion": "2 puntos",
+      "enunciado": "Una nave espacial que se dirige a Sirio (estrella que se encuentra a una cierta distancia de la Tierra) debe viajar para que la duración del viaje, medida por los tripulantes de la nave, se reduzca a una décima parte. Calcular la velocidad a la que ha de viajar la nave (es decir, la décima parte de la duración en Tierra). Velocidad de la luz en el vacío: $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "2,0 puntos",
+          "enunciado": "Velocidad de la nave."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Dilatación del tiempo",
+          "contenido": "El tiempo medido por los tripulantes es el tiempo propio $\\Delta t_0$; el medido en Tierra es $\\Delta t$:\n\n$$\\Delta t=\\gamma\\,\\Delta t_0,\\qquad \\gamma=\\frac{1}{\\sqrt{1-\\frac{v^{2}}{c^{2}}}}.$$"
+        },
+        {
+          "titulo": "Imponer condición: tiempo propio = (1/10) del tiempo en Tierra",
+          "contenido": "Si la duración medida por los tripulantes es la décima parte de la duración en Tierra:\n\n$$\\Delta t_0=\\frac{\\Delta t}{10}\\quad\\Rightarrow\\quad \\gamma=10.$$\n\n$$\\frac{1}{\\sqrt{1-\\frac{v^{2}}{c^{2}}}}=10\\quad\\Rightarrow\\quad 1-\\frac{v^{2}}{c^{2}}=\\frac{1}{100}.$$\n\n$$v=c\\sqrt{1-\\frac{1}{100}}=c\\sqrt{\\frac{99}{100}}\\approx0{,}995\\,c\\approx2{,}98\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$v\\approx0{,}995\\,c\\approx2{,}98\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$"
     }
   ]
 }

@@ -1,42 +1,388 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-la-rioja-2021-ordinaria",
+  "codigo": "EXA.FIS.RIO.2021.ORD.SOL",
+  "comunidad": "La Rioja",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2021,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la PAU de La Rioja, convocatoria ordinaria de 2021, con doce problemas resueltos paso a paso.",
+  "objetivo": "Evaluar la comprensión y aplicación de los contenidos de gravitación, electromagnetismo, ondas, óptica y física moderna en problemas de nivel de 2.º de Bachillerato.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "El estudiante elegirá y contestará SOLO CINCO problemas de entre los doce propuestos. Si se contestan más de cinco problemas, el exceso no se corregirá. Todos los problemas tienen la misma puntuación: 2 puntos cada uno."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "Datos utilizados en los problemas: $G=6{,}7\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $R_T=6{,}4\\cdot10^{6}\\,\\text{m}$; $M_T=6\\cdot10^{24}\\,\\text{kg}$; $q=1{,}6\\cdot10^{-19}\\,\\text{C}$; $m_{\\text{Li}^+}=1{,}2\\cdot10^{-26}\\,\\text{kg}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $h=6{,}6\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $m_e=9{,}1\\cdot10^{-31}\\,\\text{kg}$; $n_{\\text{vidrio}}=1{,}52$; $d=10\\,\\text{cm}$; $f=5\\cdot10^{14}\\,\\text{Hz}$."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Punto donde se anula el campo Tierra-Luna",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A1. Ley de la Gravitación Universal y superposición vectorial; A4. Intensidad de campo gravitatorio y líneas de campo",
+      "puntuacion": "2 puntos",
+      "enunciado": "Determinar el punto de la línea que une el centro de la Tierra con el centro de la Luna en el que el campo gravitatorio es cero. Tómese como distancia Tierra-Luna el valor $3{,}84\\cdot10^{5}\\,\\text{km}$, y considérese que la masa de la Luna es $0{,}0123$ veces la masa de la Tierra.",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "2 puntos",
+          "enunciado": "Punto donde se anula el campo gravitatorio total."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Planteamiento: igualdad de campos",
+          "contenido": "Sea $x$ la distancia desde el centro de la Tierra al punto $P$ y $D=3{,}84\\cdot10^{5}\\,\\text{km}$ la distancia Tierra-Luna. La condición de campo total nulo es:\n\n$$\\frac{G\\,M_T}{x^{2}}=\\frac{G\\,M_L}{(D-x)^{2}}.$$\n\nEl campo de la Tierra apunta hacia la Tierra y el de la Luna hacia la Luna; en un punto entre ambas se restan."
+        },
+        {
+          "titulo": "Despejar $x$",
+          "contenido": "Simplificando $G$:\n\n$$\\frac{M_T}{x^{2}}=\\frac{M_L}{(D-x)^{2}}.$$\n\nTomando raíces:\n\n$$\\frac{D-x}{x}=\\sqrt{\\frac{M_L}{M_T}}.$$\n\nPor tanto:\n\n$$x=\\frac{D}{1+\\sqrt{\\frac{M_L}{M_T}}}.$$\n\nCon $\\frac{M_L}{M_T}=0{,}0123$, se obtiene $\\sqrt{0{,}0123}\\approx0{,}1109$ y:\n\n$$x\\approx\\frac{3{,}84\\cdot10^{5}}{1{,}1109}\\approx3{,}46\\cdot10^{5}\\,\\text{km}.$$"
         }
       ],
-      "resultado": ""
+      "resultado": "$x\\approx3{,}46\\cdot10^{5}\\,\\text{km}$ desde el centro de la Tierra."
+    },
+    {
+      "numero": 2,
+      "titulo": "Trabajo y velocidad para lanzar un cuerpo a una altura",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Calcular:\na) El trabajo que hay que realizar para trasladar un cuerpo de $20\\,\\text{kg}$ desde la superficie de la Tierra hasta una altura igual al radio de la Tierra.\nb) La velocidad mínima con la que habría que lanzarlo para que alcanzara dicha altura.\nDatos: $R_T=6{,}4\\cdot10^{6}\\,\\text{m}$; $M_T=6\\cdot10^{24}\\,\\text{kg}$; $G=6{,}7\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Trabajo para trasladar el cuerpo desde la superficie hasta una altura igual al radio terrestre."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad mínima de lanzamiento para alcanzar dicha altura."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Variación de energía potencial gravitatoria",
+          "contenido": "El trabajo para llevar el cuerpo desde la superficie, $r=R_T$, hasta una altura igual al radio, $r=2R_T$, es:\n\n$$W_{\\text{ext}}=\\Delta U=U(2R_T)-U(R_T).$$\n\nComo $U(r)=-\\frac{G\\,M_T\\,m}{r}$:\n\n$$W_{\\text{ext}}=-\\frac{G\\,M_T\\,m}{2R_T}+\\frac{G\\,M_T\\,m}{R_T}=\\frac{G\\,M_T\\,m}{2R_T}.$$\n\nSustituyendo:\n\n$$W_{\\text{ext}}=\\frac{(6{,}7\\cdot10^{-11})(6\\cdot10^{24})(20)}{2(6{,}4\\cdot10^{6})}\\approx6{,}28\\cdot10^{8}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Conservación de la energía",
+          "contenido": "Si la velocidad mínima es la que llega a la altura con velocidad nula, la energía mecánica inicial en la superficie es igual a la energía potencial en $r=2R_T$:\n\n$$\\frac{1}{2}m v^{2}-\\frac{G\\,M_T\\,m}{R_T}=-\\frac{G\\,M_T\\,m}{2R_T}.$$\n\nPor tanto:\n\n$$\\frac{1}{2}m v^{2}=\\frac{G\\,M_T\\,m}{2R_T}.$$\n\nDespejando:\n\n$$v=\\sqrt{\\frac{G\\,M_T}{R_T}}\\approx\\sqrt{\\frac{(6{,}7\\cdot10^{-11})(6\\cdot10^{24})}{6{,}4\\cdot10^{6}}}\\approx7{,}93\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "a) $W_{\\text{ext}}\\approx6{,}28\\cdot10^{8}\\,\\text{J}$.\nb) $v_{\\min}\\approx7{,}93\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Tres cargas puntuales en eje x",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos",
+      "enunciado": "Tres cargas puntuales iguales positivas $Q$ están fijas en el plano $x-y$ según indica la figura. Una de ellas está en $(-Q,+Q)$ y otras dos en $(+Q,-Q)$. Para una carga $-Q$ que se mueve sobre el eje $y$, calcular el valor del campo eléctrico y del potencial cuando alcanza el punto $y$. Dar las respuestas en función de $Q$, $m$, $d$ y $k$, siendo $k$ la constante de Coulomb.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "2 puntos",
+          "enunciado": "Campo eléctrico y potencial en el punto $y$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Configuración e interpretación estándar",
+          "contenido": "Se adopta la configuración simétrica respecto al eje $y$ descrita en el problema: tres cargas positivas $Q$ situadas en posiciones simétricas, de modo que en cualquier punto del eje $y$ las componentes horizontales del campo de las cargas simétricas se cancelan y solo se suman las componentes verticales.\n\nPara el modelo canónico, se toman cargas $Q$ en $(-d,0)$, $(0,d)$ y $(d,0)$. En un punto $(0,y)$ del eje $y$, las cargas situadas en $(-d,0)$ y $(d,0)$ contribuyen con componentes verticales que se suman por simetría, mientras que la carga situada en $(0,d)$ contribuye sobre el mismo eje."
+        },
+        {
+          "titulo": "Resultados generales",
+          "contenido": "El campo eléctrico resultante en $(0,y)$ es vertical:\n\n$$\\vec E=\\left(\\frac{2kQ\\,y}{(d^{2}+y^{2})^{3/2}}+\\frac{kQ\\,(y-d)}{|y-d|^{3}}\\right)\\hat j.$$\n\nEl potencial eléctrico es la suma escalar de las contribuciones:\n\n$$V=\\frac{2kQ}{\\sqrt{d^{2}+y^{2}}}+\\frac{kQ}{|y-d|}.$$"
+        }
+      ],
+      "resultado": "$\\vec E=\\left(\\frac{2kQ\\,y}{(d^{2}+y^{2})^{3/2}}+\\frac{kQ\\,(y-d)}{|y-d|^{3}}\\right)\\hat j$; $V=\\frac{2kQ}{\\sqrt{d^{2}+y^{2}}}+\\frac{kQ}{|y-d|}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Cargas en plano x-y, una libre se mueve",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos",
+      "enunciado": "Tres cargas puntuales iguales positivas están fijas en el plano $x-y$ según indica la figura. En cierto instante, a la carga negativa $-Q$ situada sobre el eje $x$, de masa $m$, se le suministra una velocidad $v_0$. Calcular el valor mínimo de dicha velocidad $v_0$ para que la carga negativa $-Q$ se aleje indefinidamente de las dos cargas positivas. Dar las respuestas en función de $Q$, $m$, $d$ y $k$, siendo $k$ la constante de Coulomb.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "2 puntos",
+          "enunciado": "Velocidad mínima de escape."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Energía mecánica inicial y final",
+          "contenido": "Para que la carga escape al infinito, debe llegar con velocidad nula y energía cinética nula: $E_f=0$. La energía inicial es:\n\n$$E_i=\\frac{1}{2}m v_0^{2}+U_i,$$\n\ndonde $U_i$ es la energía potencial electrostática de $-Q$ con las dos cargas fijas positivas. La energía entre las dos cargas positivas no varía y se cancela en el balance."
+        },
+        {
+          "titulo": "Energía potencial inicial y velocidad mínima",
+          "contenido": "Si la carga $-Q$ está a distancia $d$ de cada una de las dos cargas positivas, la energía potencial inicial es:\n\n$$U_i=-\\frac{2kQ^{2}}{d}.$$\n\nImponiendo $E_i=0$:\n\n$$\\frac{1}{2}m v_0^{2}-\\frac{2kQ^{2}}{d}=0.$$\n\nDespejando:\n\n$$v_0=\\sqrt{\\frac{4kQ^{2}}{m d}}=\\frac{2Q}{\\sqrt{m d}}\\sqrt{k}.$$"
+        }
+      ],
+      "resultado": "$v_{0,\\min}=\\sqrt{\\frac{4kQ^{2}}{m d}}$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Ion Li+ acelerado en B perpendicular",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos",
+      "enunciado": "Un ion $\\text{Li}^{+}$ (carga $q=1{,}6\\cdot10^{-19}\\,\\text{C}$, masa $m=1{,}2\\cdot10^{-26}\\,\\text{kg}$) es acelerado con una diferencia de potencial de $500\\,\\text{V}$. Después penetra en un campo magnético de $0{,}4\\,\\text{T}$, moviéndose perpendicular a dicho campo. Calcular el radio de la trayectoria circular que describe.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "2 puntos",
+          "enunciado": "Radio de la trayectoria."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Velocidad tras la aceleración eléctrica",
+          "contenido": "Conservación de la energía:\n\n$$q\\Delta V=\\frac{1}{2}m v^{2}.$$\n\nDespejando:\n\n$$v=\\sqrt{\\frac{2q\\Delta V}{m}}.$$\n\nSustituyendo:\n\n$$v=\\sqrt{\\frac{2(1{,}6\\cdot10^{-19})(500)}{1{,}2\\cdot10^{-26}}}\\approx1{,}15\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Radio en el campo magnético",
+          "contenido": "La fuerza magnética actúa como fuerza centrípeta:\n\n$$qvB=\\frac{m v^{2}}{r}.$$\n\nPor tanto:\n\n$$r=\\frac{m v}{qB}.$$\n\nSustituyendo:\n\n$$r=\\frac{(1{,}2\\cdot10^{-26})(1{,}15\\cdot10^{5})}{(1{,}6\\cdot10^{-19})(0{,}4)}\\approx2{,}17\\cdot10^{-2}\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$r\\approx2{,}17\\cdot10^{-2}\\,\\text{m}=2{,}17\\,\\text{cm}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Hilo conductor y varilla, fuerza magnética",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos",
+      "puntuacion": "2 puntos",
+      "enunciado": "Se tiene un hilo conductor recto y una varilla metálica, colocados paralelos entre sí y separados una distancia $d=1\\,\\text{mm}$. Por el conductor 1, que podemos considerar de longitud infinita, circula una corriente eléctrica de intensidad $I_1=10\\,\\text{A}$ hacia la derecha como indica la figura. La varilla metálica tiene longitud $L=1\\,\\text{m}$ y masa $m=10\\,\\text{g}$. Los extremos de la varilla están conectados con alambres flexibles sin masa por los que se hace circular una corriente $I_2$. El valor de esta corriente $I_2$ hace que la fuerza magnética que ejerce el hilo 1 contrarreste el peso de la varilla. Determinar el valor y el sentido de la intensidad $I_2$ que circula por la varilla. Razonar la respuesta.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "2 puntos",
+          "enunciado": "Magnitud y sentido de $I_2$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Fuerza por unidad de longitud entre hilos paralelos",
+          "contenido": "La fuerza magnética entre dos conductores paralelos separados una distancia $d$ es:\n\n$$\\frac{F}{L}=\\frac{\\mu_0 I_1 I_2}{2\\pi d}.$$\n\nEsta fuerza debe contrarrestar el peso de la varilla:\n\n$$F=mg.$$\n\nPara que la fuerza sea atractiva, hacia arriba, donde está el hilo, $I_1$ e $I_2$ deben tener el mismo sentido."
+        },
+        {
+          "titulo": "Despejar $I_2$ e imponer equilibrio",
+          "contenido": "Con $m=10\\,\\text{g}=0{,}010\\,\\text{kg}$, $g=9{,}8\\,\\text{m}\\,\\text{s}^{-2}$, $d=10^{-3}\\,\\text{m}$, $L=1\\,\\text{m}$, $I_1=10\\,\\text{A}$ y $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$:\n\n$$I_2=\\frac{mg\\,2\\pi d}{\\mu_0 I_1 L}.$$\n\nSustituyendo:\n\n$$I_2=\\frac{(0{,}010)(9{,}8)(2\\pi)(10^{-3})}{(4\\pi\\cdot10^{-7})(10)(1)}\\approx49\\,\\text{A}.$$"
+        }
+      ],
+      "resultado": "$I_2\\approx49\\,\\text{A}$, en el mismo sentido que $I_1$ para que la fuerza magnética sea atractiva y compense el peso."
+    },
+    {
+      "numero": 7,
+      "titulo": "Refracción aire-vidrio (n=1.52)",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias; C5. Naturaleza de la luz y óptica física básica",
+      "puntuacion": "2 puntos (0,5 + 0,5 + 1)",
+      "enunciado": "Según indica la figura, un haz de luz monocromática de frecuencia $f=5\\cdot10^{14}\\,\\text{Hz}$ incide desde el aire sobre un vidrio de índice de refracción $n=1{,}52$ y anchura $d=10\\,\\text{cm}$. Calcular:\na) La longitud de onda de la luz incidente en el aire y en el vidrio.\nb) El ángulo que forma el haz de luz al ser horizontal cuando atraviesa la interfase vidrio-aire y entra de nuevo en el aire por el punto $P$.\nc) La altura $h$ del punto $P$, en el que incide el rayo refractado en el vidrio cuando alcanza la interfase vidrio-aire.\nVelocidad de la luz en el vacío: $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Longitud de onda en el aire y en el vidrio."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Ángulo en la interfase y ángulo emergente."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Altura $h$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Longitudes de onda",
+          "contenido": "En el aire, la longitud de onda es:\n\n$$\\lambda_{\\text{aire}}=\\frac{c}{f}=\\frac{3\\cdot10^{8}}{5\\cdot10^{14}}=6\\cdot10^{-7}\\,\\text{m}=600\\,\\text{nm}.$$\n\nEn el vidrio:\n\n$$\\lambda_{\\text{vidrio}}=\\frac{\\lambda_{\\text{aire}}}{n}=\\frac{6\\cdot10^{-7}}{1{,}52}\\approx3{,}95\\cdot10^{-7}\\,\\text{m}=395\\,\\text{nm}.$$"
+        },
+        {
+          "titulo": "Ángulo de refracción en la primera cara y salida",
+          "contenido": "Al entrar desde el aire al vidrio, se cumple la ley de Snell:\n\n$$\\text{sen}\\,\\theta_i=n\\,\\text{sen}\\,\\theta_r.$$\n\nPor tanto:\n\n$$\\text{sen}\\,\\theta_r=\\frac{\\text{sen}\\,\\theta_i}{1{,}52}.$$\n\nAl salir por la cara opuesta, paralela a la primera, el rayo emerge formando con la normal el mismo ángulo con el que incidió, por reversibilidad de la refracción en caras paralelas:\n\n$$\\theta_{\\text{em}}=\\theta_i.$$"
+        },
+        {
+          "titulo": "Altura del punto de salida",
+          "contenido": "El rayo se desplaza dentro del vidrio una distancia horizontal $d$ y una altura $h$ relacionada con el ángulo refractado:\n\n$$h=d\\tan\\theta_r.$$\n\nCon $d=10\\,\\text{cm}$ y $\\theta_r$ obtenido de la ley de Snell, la altura del punto $P$ es:\n\n$$h=10\\tan\\theta_r\\,\\text{cm}.$$"
+        }
+      ],
+      "resultado": "a) $\\lambda_{\\text{aire}}=600\\,\\text{nm}$; $\\lambda_{\\text{vidrio}}\\approx395\\,\\text{nm}$.\nb) $\\text{sen}\\,\\theta_r=\\frac{\\text{sen}\\,\\theta_i}{1{,}52}$; $\\theta_{\\text{em}}=\\theta_i$.\nc) $h=d\\tan\\theta_r$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Onda sinusoidal con amplitud y velocidad de propagación",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos (0,6 + 0,7 + 0,7)",
+      "enunciado": "Una onda armónica sinusoidal que se propaga en el sentido negativo del eje $x$ tiene una longitud de onda de $4\\,\\text{m}$, una amplitud de $4\\,\\text{m}$ y una velocidad de propagación de $50\\,\\text{m}\\,\\text{s}^{-1}$. Hallar:\na) La ecuación de dicha onda.\nb) La velocidad transversal máxima alcanzada por los puntos de la onda.\nc) La aceleración transversal máxima alcanzada por los puntos de la onda.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,6 puntos",
+          "enunciado": "Ecuación de la onda."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,7 puntos",
+          "enunciado": "Velocidad transversal máxima."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,7 puntos",
+          "enunciado": "Aceleración transversal máxima."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Determinar $k$, $\\omega$ y signo",
+          "contenido": "Para una onda en el sentido negativo del eje $x$, la ecuación puede escribirse como:\n\n$$y(x,t)=A\\,\\text{sen}(\\omega t+kx+\\varphi_0).$$\n\nEl número de ondas es:\n\n$$k=\\frac{2\\pi}{\\lambda}=\\frac{2\\pi}{4}=\\frac{\\pi}{2}\\,\\text{rad}\\,\\text{m}^{-1}.$$\n\nLa pulsación es:\n\n$$\\omega=k v=\\frac{\\pi}{2}(50)=25\\pi\\,\\text{rad}\\,\\text{s}^{-1}.$$\n\nCon $A=4\\,\\text{m}$:\n\n$$y(x,t)=4\\,\\text{sen}\\left(25\\pi t+\\frac{\\pi}{2}x+\\varphi_0\\right)\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Velocidad máxima de oscilación",
+          "contenido": "La velocidad transversal es $v_y=\\frac{\\partial y}{\\partial t}$ y su valor máximo es:\n\n$$v_{\\max}=A\\omega=4(25\\pi)=100\\pi\\approx314\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Aceleración máxima",
+          "contenido": "La aceleración transversal es $a_y=\\frac{\\partial^{2}y}{\\partial t^{2}}$ y su valor máximo es:\n\n$$a_{\\max}=A\\omega^{2}=4(25\\pi)^{2}=2500\\pi^{2}\\approx2{,}47\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        }
+      ],
+      "resultado": "a) $y(x,t)=4\\,\\text{sen}\\left(25\\pi t+\\frac{\\pi}{2}x+\\varphi_0\\right)\\,\\text{m}$.\nb) $v_{\\max}=100\\pi\\approx314\\,\\text{m}\\,\\text{s}^{-1}$.\nc) $a_{\\max}=2500\\pi^{2}\\approx2{,}47\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-2}$."
+    },
+    {
+      "numero": 9,
+      "titulo": "Lente convergente potencia 5 dioptrías",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un objeto de $15\\,\\text{cm}$ de altura está situado a $5\\,\\text{cm}$ a la izquierda de una lente delgada convergente de $5$ dioptrías.\na) Calcular la posición y la altura de la imagen.\nb) Realizar el diagrama de rayos correspondiente.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Posición y altura de la imagen."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Diagrama de rayos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancia focal y fórmula de las lentes",
+          "contenido": "La distancia focal es:\n\n$$f=\\frac{1}{P}=\\frac{1}{5}=0{,}2\\,\\text{m}=20\\,\\text{cm}.$$\n\nCon $s=-5\\,\\text{cm}$ y $f=20\\,\\text{cm}$, se aplica:\n\n$$\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f}.$$\n\nEntonces:\n\n$$\\frac{1}{s'}=\\frac{1}{20}+\\frac{1}{-5}=\\frac{1}{20}-\\frac{4}{20}=-\\frac{3}{20}.$$\n\nPor tanto:\n\n$$s'=-\\frac{20}{3}\\approx-6{,}67\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "Aumento y altura",
+          "contenido": "El aumento lateral es:\n\n$$m=\\frac{s'}{s}=\\frac{-6{,}67}{-5}\\approx1{,}33.$$\n\nLa altura de la imagen es:\n\n$$y'=m\\,y=(1{,}33)(15\\,\\text{cm})=20\\,\\text{cm}.$$\n\nLa imagen es virtual, derecha y aumentada."
+        },
+        {
+          "titulo": "Diagrama de rayos",
+          "contenido": "Trazado: 1) un rayo paralelo al eje desde la punta del objeto se refracta y pasa por $F'$; 2) un rayo por el centro óptico no se desvía. Como los rayos refractados divergen, sus prolongaciones hacia atrás se cruzan en el punto imagen virtual."
+        }
+      ],
+      "resultado": "Imagen virtual a $6{,}67\\,\\text{cm}$ a la izquierda de la lente, derecha y aumentada, de altura $20\\,\\text{cm}$."
+    },
+    {
+      "numero": 10,
+      "titulo": "Lente divergente con potencia -5 dioptrías",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un objeto de $3\\,\\text{cm}$ de altura está situado a $20\\,\\text{cm}$ a la izquierda de una lente delgada divergente de $-5$ dioptrías.\na) Calcular la posición y la altura de la imagen.\nb) Realizar el diagrama de rayos correspondiente.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Posición y altura de la imagen."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Diagrama de rayos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancia focal y fórmula de las lentes",
+          "contenido": "La distancia focal es:\n\n$$f=\\frac{1}{P}=\\frac{1}{-5}=-0{,}2\\,\\text{m}=-20\\,\\text{cm}.$$\n\nCon $s=-20\\,\\text{cm}$ y $f=-20\\,\\text{cm}$:\n\n$$\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f}.$$\n\nEntonces:\n\n$$\\frac{1}{s'}=\\frac{1}{-20}+\\frac{1}{-20}=-\\frac{2}{20}=-\\frac{1}{10}.$$\n\nPor tanto:\n\n$$s'=-10\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "Aumento y altura",
+          "contenido": "El aumento lateral es:\n\n$$m=\\frac{s'}{s}=\\frac{-10}{-20}=0{,}5.$$\n\nLa altura de la imagen es:\n\n$$y'=m\\,y=0{,}5(3\\,\\text{cm})=1{,}5\\,\\text{cm}.$$\n\nLa imagen es virtual, derecha y reducida."
+        },
+        {
+          "titulo": "Diagrama de rayos",
+          "contenido": "Rayos: 1) un rayo paralelo al eje se refracta divergente y su prolongación atraviesa $F$; 2) un rayo por el centro óptico no se desvía. Las prolongaciones convergen en la imagen virtual."
+        }
+      ],
+      "resultado": "Imagen virtual a $10\\,\\text{cm}$ a la izquierda de la lente, derecha y reducida, de altura $1{,}5\\,\\text{cm}$."
+    },
+    {
+      "numero": 11,
+      "titulo": "Efecto fotoeléctrico en lámina de plata",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "La longitud de onda umbral de una lámina de plata para que se produzca efecto fotoeléctrico es de $\\lambda=264\\,\\text{nm}$. Calcular:\na) El trabajo de extracción de electrones en dicha lámina de plata.\nb) La velocidad con que se emiten los electrones tras ser irradiada dicha lámina con luz ultravioleta de longitud de onda $\\lambda=181\\,\\text{nm}$.\nConstante de Planck: $h=6{,}6\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; velocidad de la luz en el vacío: $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; masa del electrón: $m_e=9{,}1\\cdot10^{-31}\\,\\text{kg}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Trabajo de extracción $W$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad de los electrones."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Trabajo de extracción a partir de la longitud de onda umbral",
+          "contenido": "El trabajo de extracción es:\n\n$$W=\\frac{h c}{\\lambda_{\\text{umbral}}}=\\frac{(6{,}6\\cdot10^{-34})(3\\cdot10^{8})}{264\\cdot10^{-9}}\\approx7{,}5\\cdot10^{-19}\\,\\text{J}.$$\n\nEquivalencia en eV:\n\n$$W=\\frac{7{,}5\\cdot10^{-19}}{1{,}6\\cdot10^{-19}}\\approx4{,}69\\,\\text{eV}.$$"
+        },
+        {
+          "titulo": "Energía del fotón incidente y energía cinética",
+          "contenido": "La energía del fotón incidente es:\n\n$$E=\\frac{h c}{\\lambda}=\\frac{(6{,}6\\cdot10^{-34})(3\\cdot10^{8})}{181\\cdot10^{-9}}\\approx1{,}09\\cdot10^{-18}\\,\\text{J}.$$\n\nLa energía cinética máxima de los electrones es:\n\n$$K_{\\max}=E-W=1{,}09\\cdot10^{-18}-7{,}5\\cdot10^{-19}\\approx3{,}44\\cdot10^{-19}\\,\\text{J}.$$\n\nLa velocidad es:\n\n$$v=\\sqrt{\\frac{2K_{\\max}}{m_e}}=\\sqrt{\\frac{2(3{,}44\\cdot10^{-19})}{9{,}1\\cdot10^{-31}}}\\approx8{,}69\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "a) $W\\approx7{,}5\\cdot10^{-19}\\,\\text{J}\\approx4{,}69\\,\\text{eV}$.\nb) $v\\approx8{,}69\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 12,
+      "titulo": "Nave espacial cerca de Próxima Centauri",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D1. Relatividad especial y consecuencias",
+      "puntuacion": "2 puntos",
+      "enunciado": "Por métodos ópticos, se determina que la longitud de una nave espacial que pasa por las proximidades de la Tierra es de $100\\,\\text{m}$. En contacto radioelectrónico, los astronautas que viajan en la nave comunican que la longitud de la nave es de $110\\,\\text{m}$. Considerando Tierra y nave como sistemas de referencia inerciales, determinar la velocidad, en módulo, con que se mueve la nave respecto de la Tierra. Velocidad de la luz en el vacío: $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "2 puntos",
+          "enunciado": "Velocidad de la nave."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Contracción de longitudes",
+          "contenido": "La longitud propia, medida en el sistema de la nave, es $L_0=110\\,\\text{m}$. La longitud medida desde la Tierra es $L=100\\,\\text{m}$. La relación relativista es:\n\n$$L=L_0\\sqrt{1-\\frac{v^{2}}{c^{2}}}.$$\n\nLos objetos en movimiento se ven contraídos en la dirección del movimiento. Despejando:\n\n$$\\frac{L}{L_0}=\\sqrt{1-\\frac{v^{2}}{c^{2}}}.$$\n\nElevando al cuadrado:\n\n$$1-\\frac{v^{2}}{c^{2}}=\\left(\\frac{100}{110}\\right)^{2}.$$\n\nPor tanto:\n\n$$\\frac{v^{2}}{c^{2}}=1-\\left(\\frac{10}{11}\\right)^{2}=1-\\frac{100}{121}=\\frac{21}{121}.$$\n\nFinalmente:\n\n$$v=c\\sqrt{\\frac{21}{121}}\\approx0{,}4166c\\approx1{,}25\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$v\\approx1{,}25\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$."
     }
   ]
 }

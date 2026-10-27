@@ -1,42 +1,432 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-la-rioja-2024-extraordinaria",
+  "codigo": "EXA.FIS.RIO.2024.EXT.SOL",
+  "comunidad": "La Rioja",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2024,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la PAU de La Rioja, convocatoria extraordinaria de 2024, compuesto por doce problemas de gravitación, electromagnetismo, vibraciones y ondas, óptica, relatividad y física cuántica. El estudiante debe elegir y resolver cinco problemas de los doce propuestos.",
+  "objetivo": "Evaluar la comprensión y aplicación de las leyes fundamentales de la Física en contextos propios de la PAU, incluyendo cálculo, razonamiento físico, interpretación de resultados y uso correcto de unidades.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "El estudiante elegirá y contestará a SOLO CINCO problemas de entre los doce propuestos. Si se contestan a más problemas de los cinco indicados, el exceso no se corregirá. Todos los problemas tienen la misma puntuación. Cada problema vale 2 puntos, con apartados internos cuya puntuación se indica en cada tarjeta."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "Se utilizan los datos que aparecen en los enunciados: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $M_T=6\\cdot10^{24}\\,\\text{kg}$; $R_T=6400\\,\\text{km}=6{,}4\\cdot10^{6}\\,\\text{m}$; $k=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $q_e=1{,}6\\cdot10^{-19}\\,\\text{C}$."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Satélite a 4400 km sobre la Tierra",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A7. Movimiento planetario, satélites y velocidades características; A6. Trabajo, energía potencial y energía mecánica gravitatoria",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un satélite artificial se encuentra orbitando alrededor de la Tierra en órbita circular y a una altura $h=4000\\,\\text{km}$ de la superficie de la Tierra. a) Calcular la velocidad con la que se mueve este satélite en dicha órbita. b) Calcular la velocidad de escape de ese satélite hacia el infinito. Datos: Constante de gravitación universal $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; masa de la Tierra $M_T=6\\cdot10^{24}\\,\\text{kg}$; radio de la Tierra $R_T=6400\\,\\text{km}$.",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad orbital."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad de escape."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Radio de la órbita",
+          "contenido": "El radio de la órbita circular es la suma del radio terrestre y la altura del satélite:\n\n$$r=R_T+h=6{,}4\\cdot10^{6}+4{,}0\\cdot10^{6}=1{,}04\\cdot10^{7}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Velocidad orbital",
+          "contenido": "En una órbita circular, la fuerza gravitatoria proporciona la fuerza centrípeta:\n\n$$\\frac{G\\,M_T\\,m}{r^{2}}=\\frac{m\\,v^{2}}{r}.$$\n\nSimplificando la masa del satélite:\n\n$$v=\\sqrt{\\frac{G\\,M_T}{r}}.$$\n\nSustituyendo los datos:\n\n$$v=\\sqrt{\\frac{6{,}67\\cdot10^{-11}\\cdot6\\cdot10^{24}}{1{,}04\\cdot10^{7}}}\\approx6{,}20\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Velocidad de escape",
+          "contenido": "La velocidad de escape desde la órbita se obtiene igualando la energía mecánica a cero en el infinito:\n\n$$\\frac{1}{2}m\\,v_e^{2}-\\frac{G\\,M_T\\,m}{r}=0,$$\n\nde donde\n\n$$v_e=\\sqrt{\\frac{2\\,G\\,M_T}{r}}=\\sqrt{2}\\,v.$$\n\nNuméricamente:\n\n$$v_e=\\sqrt{2}\\cdot6{,}20\\cdot10^{3}\\approx8{,}77\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
         }
       ],
-      "resultado": ""
+      "resultado": "$v\\approx6{,}20\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$\n$v_e\\approx8{,}77\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$"
+    },
+    {
+      "numero": 2,
+      "titulo": "Satélite de Júpiter",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "El satélite de Júpiter Io tiene un radio $R_I=1820\\,\\text{km}$ y una masa de $M_I\\approx9\\cdot10^{22}\\,\\text{kg}$. a) Calcular el valor de la aceleración de la gravedad en la superficie de Io. b) Calcular el periodo orbital de una sonda espacial que orbite en órbita circular alrededor de Io a una altura de $500\\,\\text{km}$ sobre la superficie de Io. Dato: Constante de gravitación universal $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Gravedad superficial en Io."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Periodo orbital de la sonda."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Gravedad superficial",
+          "contenido": "La aceleración de la gravedad en la superficie de un cuerpo esférico es:\n\n$$g_I=\\frac{G\\,M_I}{R_I^{2}}.$$\n\nCon $R_I=1{,}82\\cdot10^{6}\\,\\text{m}$:\n\n$$g_I=\\frac{6{,}67\\cdot10^{-11}\\cdot9\\cdot10^{22}}{(1{,}82\\cdot10^{6})^{2}}\\approx1{,}81\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        },
+        {
+          "titulo": "Periodo orbital",
+          "contenido": "El radio orbital de la sonda es:\n\n$$r=R_I+h=1{,}82\\cdot10^{6}+0{,}50\\cdot10^{6}=2{,}32\\cdot10^{6}\\,\\text{m}.$$\n\nLa tercera ley de Kepler para una órbita circular alrededor de Io permite escribir:\n\n$$T=2\\pi\\sqrt{\\frac{r^{3}}{G\\,M_I}}.$$\n\nSustituyendo:\n\n$$T=2\\pi\\sqrt{\\frac{(2{,}32\\cdot10^{6})^{3}}{6{,}67\\cdot10^{-11}\\cdot9\\cdot10^{22}}}\\approx9{,}06\\cdot10^{3}\\,\\text{s}.$$"
+        }
+      ],
+      "resultado": "$g_I\\approx1{,}81\\,\\text{m}\\,\\text{s}^{-2}$\n$T\\approx9{,}06\\cdot10^{3}\\,\\text{s}\\approx2{,}52\\,\\text{h}$"
+    },
+    {
+      "numero": 3,
+      "titulo": "Dos cargas puntuales",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas",
+      "puntuacion": "2 puntos (0,66 + 0,67 + 0,67)",
+      "enunciado": "Dos masas puntuales de $0{,}2\\,\\text{kg}$ y cargadas eléctricamente con $2\\,\\mu\\text{C}$ cada una de ellas, se encuentran inicialmente en reposo y separadas una distancia de $1\\,\\text{m}$. a) Calcular la fuerza con que se repelen y la energía mecánica del sistema. b) En un cierto instante, la carga del apartado anterior se libera. Calcular la velocidad que tendrá cada una de las cargas cuando se hayan separado una distancia de $4\\,\\text{m}$. c) Si dejásemos transcurrir un tiempo infinito, ¿cuál sería la energía cinética que tendría cada carga? Dato: Constante de Coulomb $k=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,66 puntos",
+          "enunciado": "Fuerza de repulsión y energía mecánica del sistema."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,67 puntos",
+          "enunciado": "Velocidad de cada carga cuando la separación es de $4\\,\\text{m}$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,67 puntos",
+          "enunciado": "Energía cinética de cada carga cuando la separación tiende a infinito."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Fuerza de Coulomb",
+          "contenido": "La fuerza entre dos cargas puntuales viene dada por la ley de Coulomb:\n\n$$F=k\\frac{|q_1\\,q_2|}{r^{2}}.$$\n\nCon $q_1=q_2=2\\cdot10^{-6}\\,\\text{C}$ y $r=1\\,\\text{m}$:\n\n$$F=9\\cdot10^{9}\\frac{(2\\cdot10^{-6})^{2}}{1^{2}}=0{,}036\\,\\text{N}.$$\n\nLa fuerza es repulsiva porque las dos cargas tienen el mismo signo."
+        },
+        {
+          "titulo": "Energía mecánica inicial",
+          "contenido": "Inicialmente las cargas están en reposo, por lo que la energía cinética es nula. La energía potencial eléctrica es:\n\n$$U=k\\frac{q_1\\,q_2}{r}=9\\cdot10^{9}\\frac{(2\\cdot10^{-6})^{2}}{1}=0{,}036\\,\\text{J}.$$\n\nPor tanto, la energía mecánica inicial es:\n\n$$E_m=K+U=0+0{,}036=0{,}036\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Velocidad cuando la separación es $4\\,\\text{m}$",
+          "contenido": "Por conservación de la energía mecánica:\n\n$$E_{m,i}=E_{m,f}.$$\n\nLa energía potencial final es:\n\n$$U_f=9\\cdot10^{9}\\frac{(2\\cdot10^{-6})^{2}}{4}=0{,}009\\,\\text{J}.$$\n\nLa energía cinética total final será:\n\n$$K_f=E_{m,i}-U_f=0{,}036-0{,}009=0{,}027\\,\\text{J}.$$\n\nComo las dos cargas tienen la misma masa y se liberan desde el reposo, sus velocidades son iguales en módulo. Entonces:\n\n$$K_f=2\\cdot\\frac{1}{2}m\\,v^{2}=m\\,v^{2}.$$\n\nDespejando:\n\n$$v=\\sqrt{\\frac{K_f}{m}}=\\sqrt{\\frac{0{,}027}{0{,}2}}\\approx0{,}367\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Energía cinética en el infinito",
+          "contenido": "Cuando la separación tiende a infinito, la energía potencial eléctrica tiende a cero. Toda la energía mecánica inicial se transforma en energía cinética:\n\n$$K_{\\infty}=E_{m,i}=0{,}036\\,\\text{J}.$$\n\nPor simetría, esta energía se reparte por igual entre las dos cargas:\n\n$$K_{1,\\infty}=K_{2,\\infty}=\\frac{0{,}036}{2}=0{,}018\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$F=0{,}036\\,\\text{N}$ repulsiva; $E_m=0{,}036\\,\\text{J}$\n$v\\approx0{,}367\\,\\text{m}\\,\\text{s}^{-1}$ cada carga a $4\\,\\text{m}$\n$K_{1,\\infty}=K_{2,\\infty}=0{,}018\\,\\text{J}$"
+    },
+    {
+      "numero": 4,
+      "titulo": "Cuatro cargas en los vértices de un cuadrado",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "En los puntos $(d,0)$, $(-d,0)$, $(0,d)$ y $(0,-d)$ del plano $xy$ se colocan cuatro cargas eléctricas puntuales iguales $Q=q$. Otra carga puntual $q<0$ de masa $m$ está inicialmente situada en el eje $z$ y en el punto $z=2d$. a) Calcular el campo eléctrico que las cuatro cargas situadas en el plano $xy$ crean en el punto del eje $z=2d$ donde está situada la carga $q<0$. b) En un cierto instante, la carga $q<0$ se deja libre. Calcular su aceleración inicial.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Campo eléctrico en $(0,0,2d)$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Aceleración inicial de la carga negativa."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancia de cada carga al punto",
+          "contenido": "Cada una de las cuatro cargas está situada en el plano $xy$ a distancia $d$ del origen. El punto donde se calcula el campo es $(0,0,2d)$. La distancia de cada carga a dicho punto es:\n\n$$r=\\sqrt{d^{2}+(2d)^{2}}=\\sqrt{5}\\,d.$$\n\nPor simetría, las componentes del campo en el plano $xy$ se cancelan y solo queda la componente según el eje $z$."
+        },
+        {
+          "titulo": "Campo total en $z=2d$",
+          "contenido": "El módulo del campo creado por cada carga es:\n\n$$E_i=k\\frac{q}{r^{2}}=k\\frac{q}{5d^{2}}.$$\n\nLa componente $z$ de cada campo es $E_i\\cos\\theta$, con:\n\n$$\\cos\\theta=\\frac{2d}{\\sqrt{5}\\,d}=\\frac{2}{\\sqrt{5}}.$$\n\nSumando las cuatro contribuciones:\n\n$$E_z=4\\,k\\frac{q}{5d^{2}}\\frac{2}{\\sqrt{5}}=\\frac{8kq}{5\\sqrt{5}\\,d^{2}}.$$\n\nEl campo apunta en el sentido positivo del eje $z$, alejándose del plano de las cargas:\n\n$$\\vec E=\\frac{8kq}{5\\sqrt{5}\\,d^{2}}\\,\\hat k.$$"
+        },
+        {
+          "titulo": "Aceleración inicial",
+          "contenido": "La fuerza sobre la carga negativa es:\n\n$$\\vec F=q\\,\\vec E.$$\n\nComo $q<0$, la fuerza tiene sentido opuesto al campo, es decir, hacia el plano $xy$ y hacia el centro del cuadrado. La aceleración inicial es:\n\n$$\\vec a=\\frac{\\vec F}{m}=\\frac{q}{m}\\,\\vec E.$$\n\nEn módulo:\n\n$$a=\\frac{8k|q|q}{5\\sqrt{5}\\,d^{2}\\,m},$$\n\ndonde el signo negativo indica que apunta hacia el plano $xy$."
+        }
+      ],
+      "resultado": "$\\vec E=\\frac{8kq}{5\\sqrt{5}\\,d^{2}}\\,\\hat k$\n$\\vec a=-\\frac{8k|q|q}{5\\sqrt{5}\\,d^{2}\\,m}\\,\\hat k$ hacia el centro del cuadrado"
+    },
+    {
+      "numero": 5,
+      "titulo": "Espectrómetro de masas — isótopos de Ni",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un haz de iones de $^{58}\\text{Ni}$ y $^{60}\\text{Ni}$ se acelera mediante una diferencia de potencial $\\Delta V$. Tras los iones, todos ellos de igual carga $+q$, penetran en una región con campo magnético $B$ constante. Determinar la relación entre los radios de curvatura de las órbitas de los iones $^{58}\\text{Ni}$ y $^{60}\\text{Ni}$ cuando abandonan la región del campo magnético. Suponer que la relación de masas entre los dos tipos de iones es $58:60$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad tras la diferencia de potencial."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Relación entre los radios de curvatura."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Velocidad tras la aceleración",
+          "contenido": "La energía potencial eléctrica se transforma en energía cinética:\n\n$$q\\,\\Delta V=\\frac{1}{2}m\\,v^{2}.$$\n\nPor tanto:\n\n$$v=\\sqrt{\\frac{2q\\,\\Delta V}{m}}.$$"
+        },
+        {
+          "titulo": "Radio de curvatura en el campo magnético",
+          "contenido": "En la región del campo magnético, la fuerza magnética actúa como fuerza centrípeta:\n\n$$q\\,v\\,B=\\frac{m\\,v^{2}}{r}.$$\n\nDespejando el radio:\n\n$$r=\\frac{m\\,v}{q\\,B}.$$\n\nSustituyendo la velocidad obtenida:\n\n$$r=\\frac{m}{qB}\\sqrt{\\frac{2q\\,\\Delta V}{m}}=\\frac{1}{B}\\sqrt{\\frac{2m\\,\\Delta V}{q}}.$$\n\nPor tanto, para una misma carga y una misma diferencia de potencial, $r\\propto\\sqrt{m}$."
+        },
+        {
+          "titulo": "Relación entre los radios",
+          "contenido": "Para los isótopos de $^{58}\\text{Ni}$ y $^{60}\\text{Ni}$:\n\n$$\\frac{r_{58}}{r_{60}}=\\sqrt{\\frac{m_{58}}{m_{60}}}=\\sqrt{\\frac{58}{60}}\\approx0{,}983.$$"
+        }
+      ],
+      "resultado": "$\\frac{r_{58}}{r_{60}}=\\sqrt{\\frac{58}{60}}\\approx0{,}983$"
+    },
+    {
+      "numero": 6,
+      "titulo": "Tres conductores con corrientes I_1, I_2, I_3",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro",
+      "puntuacion": "2 puntos",
+      "enunciado": "Tres conductores rectilíneos muy largos y paralelos pasan a través de los vértices de un cuadrado de lado $L$, según se muestra en la figura. Las corrientes $I_1$ e $I_3$ circulan hacia dentro del papel e $I_2$ circula hacia fuera del papel. Determinar la relación entre las corrientes para que el vector campo magnético total creado por los tres conductores en el vértice $P$ no ocupado sea cero.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Distancias y módulos de los campos",
+          "contenido": "Los conductores con corrientes $I_1$ e $I_3$ están en vértices adyacentes a $P$, a distancia $L$. El conductor con corriente $I_2$ está en el vértice diagonalmente opuesto, a distancia $\\sqrt{2}\\,L$. El módulo del campo magnético creado por un hilo rectilíneo muy largo es:\n\n$$B=\\frac{\\mu_0\\,I}{2\\pi\\,r}.$$\n\nAsí:\n\n$$B_1=\\frac{\\mu_0\\,I_1}{2\\pi\\,L},\\qquad B_3=\\frac{\\mu_0\\,I_3}{2\\pi\\,L},\\qquad B_2=\\frac{\\mu_0\\,I_2}{2\\pi\\sqrt{2}\\,L}.$$"
+        },
+        {
+          "titulo": "Resultante de I_1 e I_3",
+          "contenido": "Los campos $\\vec B_1$ y $\\vec B_3$ son perpendiculares entre sí por la geometría del cuadrado. Su resultante tiene módulo:\n\n$$B_{13}=\\sqrt{B_1^{2}+B_3^{2}}=\\frac{\\mu_0}{2\\pi L}\\sqrt{I_1^{2}+I_3^{2}}.$$\n\nEsta resultante apunta a lo largo de la diagonal del cuadrado."
+        },
+        {
+          "titulo": "Condición para que el campo total sea nulo",
+          "contenido": "El campo $\\vec B_2$ tiene dirección opuesta a la resultante anterior. Para que el campo total en $P$ sea nulo debe cumplirse:\n\n$$B_2=B_{13}.$$\n\nSustituyendo:\n\n$$\\frac{\\mu_0\\,I_2}{2\\pi\\sqrt{2}\\,L}=\\frac{\\mu_0}{2\\pi L}\\sqrt{I_1^{2}+I_3^{2}}.$$\n\nSimplificando:\n\n$$\\frac{I_2}{\\sqrt{2}}=\\sqrt{I_1^{2}+I_3^{2}},$$\n\nes decir:\n\n$$I_2=\\sqrt{2}\\sqrt{I_1^{2}+I_3^{2}}.$$\n\nEn el caso simétrico $I_1=I_3=I$, se obtiene $I_2=2I$."
+        }
+      ],
+      "resultado": "$I_2=\\sqrt{2}\\sqrt{I_1^{2}+I_3^{2}}$\nSi $I_1=I_3=I$, entonces $I_2=2I$"
+    },
+    {
+      "numero": 7,
+      "titulo": "Muelle estirado y oscilación armónica",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía",
+      "puntuacion": "2 puntos (0,5 + 0,5 + 0,5 + 0,5)",
+      "enunciado": "Un muelle de masa despreciable de $10\\,\\text{cm}$ de longitud natural tiene uno de sus extremos fijos en una pared vertical, y el otro extremo del muelle está unido a una masa $m$ que descansa sobre una superficie horizontal sin rozamiento. Sobre la masa $m$ se aplica una fuerza de $5\\,\\text{N}$ que la mantiene estirado hasta una longitud de $15\\,\\text{cm}$. Desde esta posición, se suelta de forma que la masa $m$ comienza a oscilar describiendo un movimiento vibratorio armónico simple con una frecuencia angular de $2\\pi\\,\\text{rad}\\,\\text{s}^{-1}$. Calcular: a) La ecuación del m.v.a.s. y describir la posición de la masa $m$ en cada instante de tiempo $t$. b) La constante recuperadora $k$ del muelle. c) El valor de la masa $m$ que oscila. d) La energía potencial elástica de la masa $m$ cuando la longitud del muelle es de $8\\,\\text{cm}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Ecuación del m.v.a.s. y descripción de la posición."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Constante recuperadora $k$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Masa $m$ que oscila."
+        },
+        {
+          "letra": "d",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Energía potencial elástica cuando la longitud es $8\\,\\text{cm}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Ecuación del m.v.a.s.",
+          "contenido": "La longitud natural del muelle es $0{,}10\\,\\text{m}$ y se estira hasta $0{,}15\\,\\text{m}$, por lo que la amplitud es:\n\n$$A=0{,}15-0{,}10=0{,}05\\,\\text{m}.$$\n\nLa masa se suelta desde la posición de máximo desplazamiento, por lo que en $t=0$ está en $x=+A$. La ecuación del movimiento armónico simple es:\n\n$$x(t)=A\\cos(\\omega t)=0{,}05\\cos(2\\pi t)\\,\\text{m}.$$\n\nLa masa oscila entre $x=-0{,}05\\,\\text{m}$ y $x=+0{,}05\\,\\text{m}$ alrededor de la posición de equilibrio."
+        },
+        {
+          "titulo": "Constante recuperadora",
+          "contenido": "En la posición estirada, la fuerza aplicada equilibra la fuerza recuperadora del muelle:\n\n$$F=k\\,\\Delta x.$$\n\nCon $F=5\\,\\text{N}$ y $\\Delta x=0{,}05\\,\\text{m}$:\n\n$$k=\\frac{F}{\\Delta x}=\\frac{5}{0{,}05}=100\\,\\text{N}\\,\\text{m}^{-1}.$$"
+        },
+        {
+          "titulo": "Masa que oscila",
+          "contenido": "La frecuencia angular del m.v.a.s. es:\n\n$$\\omega=\\sqrt{\\frac{k}{m}}.$$\n\nDespejando la masa:\n\n$$m=\\frac{k}{\\omega^{2}}=\\frac{100}{(2\\pi)^{2}}\\approx2{,}53\\,\\text{kg}.$$"
+        },
+        {
+          "titulo": "Energía potencial elástica a $8\\,\\text{cm}$",
+          "contenido": "Cuando la longitud del muelle es $0{,}08\\,\\text{m}$, la deformación respecto de la longitud natural es:\n\n$$x=0{,}08-0{,}10=-0{,}02\\,\\text{m}.$$\n\nLa energía potencial elástica es:\n\n$$U=\\frac{1}{2}k\\,x^{2}=\\frac{1}{2}\\cdot100\\cdot(-0{,}02)^{2}=0{,}02\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$x(t)=0{,}05\\cos(2\\pi t)\\,\\text{m}$\n$k=100\\,\\text{N}\\,\\text{m}^{-1}$\n$m\\approx2{,}53\\,\\text{kg}$\n$U=0{,}02\\,\\text{J}$"
+    },
+    {
+      "numero": 8,
+      "titulo": "Placa de vidrio sumergida en agua",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una placa de vidrio de índice de refracción $1{,}5$ está sumergida en agua (índice de refracción $n_a=1{,}33$). Un rayo de luz que incide desde el aire (índice de refracción $1$) sobre la placa de vidrio con un cierto ángulo de incidencia $\\theta_1$, penetra el camino mostrado en la figura. Calcular el valor del mínimo ángulo de incidencia $\\theta_1$ para que en el punto de incidencia $P$ entre el vidrio y el agua el rayo no pase al agua.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Ángulo límite vidrio-agua",
+          "contenido": "Para que el rayo no pase del vidrio al agua en la cara lateral, debe producirse reflexión total interna. El ángulo límite cumple:\n\n$$\\text{sen}\\,\\theta_c=\\frac{n_{\\text{agua}}}{n_{\\text{vidrio}}}=\\frac{1{,}33}{1{,}5}\\approx0{,}8867.$$\n\nPor tanto:\n\n$$\\theta_c\\approx62{,}5^{\\circ}.$$"
+        },
+        {
+          "titulo": "Refracción aire-vidrio",
+          "contenido": "Si las caras del vidrio son perpendiculares, el ángulo de incidencia en la cara vidrio-agua y el ángulo de refracción en la cara aire-vidrio son complementarios:\n\n$$\\theta_3=90^{\\circ}-\\theta_2.$$\n\nPara el ángulo mínimo de incidencia se toma el caso límite $\\theta_3=\\theta_c$, luego:\n\n$$\\theta_2=90^{\\circ}-\\theta_c\\approx27{,}5^{\\circ}.$$\n\nAplicando la ley de Snell entre el aire y el vidrio:\n\n$$1\\cdot\\text{sen}\\,\\theta_1=1{,}5\\,\\text{sen}\\,\\theta_2.$$\n\nAsí:\n\n$$\\text{sen}\\,\\theta_1=1{,}5\\,\\text{sen}\\,27{,}5^{\\circ}\\approx0{,}694,$$\n\n$$\\theta_1\\approx43{,}9^{\\circ}.$$"
+        }
+      ],
+      "resultado": "$\\theta_1\\ge43{,}9^{\\circ}$"
+    },
+    {
+      "numero": 9,
+      "titulo": "Lente convergente — diapositiva en pantalla",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (0,5 + 0,5 + 0,5 + 0,5)",
+      "enunciado": "Un objeto luminoso de $2{,}5\\,\\text{mm}$ de tamaño se encuentra situado a $2\\,\\text{m}$ a la izquierda de una lente delgada. Mediante una lente delgada se quiere proyectar sobre una pantalla una imagen de ese objeto nueve veces más grande. a) Razonar qué tipo de lente hay que utilizar. b) Determinar la posición de la lente respecto a la pantalla. c) Calcular la potencia de la lente que hay que utilizar. d) Realizar el esquema de rayos que muestre la formación de la imagen.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Tipo de lente."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Posición de la lente respecto a la pantalla."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Potencia de la lente."
+        },
+        {
+          "letra": "d",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Esquema de rayos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Tipo de lente",
+          "contenido": "Para proyectar una imagen real sobre una pantalla se necesita una lente convergente. Además, la imagen debe ser mayor que el objeto, por lo que el objeto debe situarse entre el foco y el doble de la distancia focal."
+        },
+        {
+          "titulo": "Posición de la lente respecto a la pantalla",
+          "contenido": "El aumento lateral, en valor absoluto, es:\n\n$$|m|=\\frac{s'}{s}=9.$$\n\nCon $s=2\\,\\text{m}$:\n\n$$s'=9s=18\\,\\text{m}.$$\n\nLa pantalla debe colocarse a $18\\,\\text{m}$ a la derecha de la lente."
+        },
+        {
+          "titulo": "Potencia de la lente",
+          "contenido": "La ecuación de las lentes delgadas es:\n\n$$\\frac{1}{f}=\\frac{1}{s}+\\frac{1}{s'}.$$\n\nSustituyendo:\n\n$$\\frac{1}{f}=\\frac{1}{2}+\\frac{1}{18}=\\frac{5}{9}\\,\\text{m}^{-1}.$$\n\nPor tanto:\n\n$$f=\\frac{9}{5}=1{,}8\\,\\text{m}.$$\n\nLa potencia es:\n\n$$P=\\frac{1}{f}\\approx0{,}556\\,\\text{D}.$$"
+        },
+        {
+          "titulo": "Esquema de rayos",
+          "contenido": "Se trazan tres rayos principales: uno paralelo al eje óptico que sale pasando por el foco imagen; otro que pasa por el centro óptico sin desviarse; y otro que pasa por el foco objeto y sale paralelo al eje. Los tres rayos se cortan al otro lado de la lente formando una imagen real, invertida y de mayor tamaño que el objeto."
+        }
+      ],
+      "resultado": "Lente convergente\n$s'=18\\,\\text{m}$ de la lente a la pantalla\n$P\\approx0{,}556\\,\\text{D}$"
+    },
+    {
+      "numero": 10,
+      "titulo": "Altavoz y nivel de intensidad",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un altavoz emite uniformemente en todas las direcciones. A una distancia $r_1$ del altavoz, el nivel de intensidad sonora de las ondas que emite es $\\beta_1$ en decibelios. A una distancia doble $r_2=2r_1$ el nivel de intensidad sonora de las ondas que emite es $\\beta_2$ en decibelios. Calcular la diferencia $\\beta_1-\\beta_2$ entre ambos niveles de intensidad sonora.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Relación de intensidades",
+          "contenido": "Para un emisor isótropo, la intensidad sonora es inversamente proporcional al cuadrado de la distancia:\n\n$$I=\\frac{P}{4\\pi r^{2}}.$$\n\nPor tanto:\n\n$$\\frac{I_1}{I_2}=\\left(\\frac{r_2}{r_1}\\right)^{2}=2^{2}=4.$$"
+        },
+        {
+          "titulo": "Diferencia de niveles",
+          "contenido": "El nivel de intensidad sonora es:\n\n$$\\beta=10\\log\\left(\\frac{I}{I_0}\\right).$$\n\nEntonces:\n\n$$\\beta_1-\\beta_2=10\\log\\left(\\frac{I_1}{I_2}\\right)=10\\log 4\\approx6{,}02\\,\\text{dB}.$$"
+        }
+      ],
+      "resultado": "$\\beta_1-\\beta_2\\approx6{,}02\\,\\text{dB}$"
+    },
+    {
+      "numero": 11,
+      "titulo": "Nave espacial hacia estrella X",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D1. Relatividad especial y consecuencias",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una nave espacial parte desde la Tierra hacia la estrella X con una velocidad $v=0{,}8c$. Respecto a los relojes de la Tierra, la nave tarda $10\\,\\text{años}$ en llegar a la estrella X. a) Calcular en años-luz la distancia respecto a la Tierra a la que se encuentra la estrella X. b) Calcular en años-luz los relojes de la nave atrasarán medidos respecto a los relojes de la Tierra cuando la nave llega a la estrella X.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Distancia en años-luz."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Tiempo propio y atraso de los relojes."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancia en el sistema Tierra",
+          "contenido": "En el sistema de referencia de la Tierra, la nave viaja a $v=0{,}8c$ durante $t=10\\,\\text{años}$. La distancia recorrida es:\n\n$$d=v\\,t=0{,}8c\\cdot10\\,\\text{años}=8\\,\\text{años-luz}.$$"
+        },
+        {
+          "titulo": "Tiempo propio y atraso",
+          "contenido": "El factor de Lorentz es:\n\n$$\\gamma=\\frac{1}{\\sqrt{1-\\frac{v^{2}}{c^{2}}}}=\\frac{1}{\\sqrt{1-0{,}8^{2}}}=\\frac{1}{0{,}6}\\approx1{,}667.$$\n\nEl tiempo propio medido por la nave es:\n\n$$\\tau=\\frac{t}{\\gamma}=\\frac{10}{1{,}667}=6\\,\\text{años}.$$\n\nEl atraso de los relojes de la nave respecto a los de la Tierra es:\n\n$$t-\\tau=10-6=4\\,\\text{años}.$$"
+        }
+      ],
+      "resultado": "$d=8\\,\\text{años-luz}$\n$\\tau=6\\,\\text{años}$; atraso $=4\\,\\text{años}$"
+    },
+    {
+      "numero": 12,
+      "titulo": "Efecto fotoeléctrico — placa de plata",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Los electrones emitidos por una placa de plata cuando se incide sobre ella con una luz de longitud de onda de $200\\,\\text{nm}$ tienen un potencial de frenado de $1{,}48\\,\\text{V}$. Calcular: a) La función de trabajo o trabajo de extracción de la plata. b) La frecuencia umbral del efecto fotoeléctrico. Datos: constante de Planck $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; velocidad de la luz en el vacío $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; carga del electrón $q=1{,}6\\cdot10^{-19}\\,\\text{C}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Trabajo de extracción de la plata."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Frecuencia umbral del efecto fotoeléctrico."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Energía del fotón",
+          "contenido": "La energía de un fotón es:\n\n$$E=h\\,f=\\frac{h\\,c}{\\lambda}.$$\n\nCon $\\lambda=200\\,\\text{nm}=2{,}00\\cdot10^{-7}\\,\\text{m}$:\n\n$$E=\\frac{6{,}63\\cdot10^{-34}\\cdot3\\cdot10^{8}}{2{,}00\\cdot10^{-7}}\\approx9{,}95\\cdot10^{-19}\\,\\text{J}.$$\n\nEn electronvoltios:\n\n$$E\\approx\\frac{9{,}95\\cdot10^{-19}}{1{,}6\\cdot10^{-19}}\\approx6{,}22\\,\\text{eV}.$$"
+        },
+        {
+          "titulo": "Trabajo de extracción",
+          "contenido": "La energía cinética máxima de los electrones emitidos es:\n\n$$K_{\\text{max}}=q\\,V_{\\text{frenado}}=1{,}6\\cdot10^{-19}\\cdot1{,}48\\approx2{,}37\\cdot10^{-19}\\,\\text{J}.$$\n\nAplicando la ecuación del efecto fotoeléctrico:\n\n$$E=W+K_{\\text{max}},$$\n\nse obtiene:\n\n$$W=E-K_{\\text{max}}\\approx9{,}95\\cdot10^{-19}-2{,}37\\cdot10^{-19}=7{,}58\\cdot10^{-19}\\,\\text{J}.$$\n\nEn electronvoltios:\n\n$$W\\approx4{,}74\\,\\text{eV}.$$"
+        },
+        {
+          "titulo": "Frecuencia umbral",
+          "contenido": "La frecuencia umbral cumple:\n\n$$W=h\\,f_0.$$\n\nPor tanto:\n\n$$f_0=\\frac{W}{h}=\\frac{7{,}58\\cdot10^{-19}}{6{,}63\\cdot10^{-34}}\\approx1{,}14\\cdot10^{15}\\,\\text{Hz}.$$\n\nLa longitud de onda umbral es:\n\n$$\\lambda_0=\\frac{c}{f_0}\\approx\\frac{3\\cdot10^{8}}{1{,}14\\cdot10^{15}}\\approx2{,}63\\cdot10^{-7}\\,\\text{m}=263\\,\\text{nm}.$$"
+        }
+      ],
+      "resultado": "$W\\approx7{,}58\\cdot10^{-19}\\,\\text{J}\\approx4{,}74\\,\\text{eV}$\n$f_0\\approx1{,}14\\cdot10^{15}\\,\\text{Hz}$; $\\lambda_0\\approx263\\,\\text{nm}$"
     }
   ]
 }

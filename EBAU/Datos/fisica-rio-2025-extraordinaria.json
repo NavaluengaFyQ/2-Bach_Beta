@@ -1,42 +1,288 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-rio-2025-extraordinaria",
+  "codigo": "EXA.FIS.RIO.2025.EXT.SOL",
+  "comunidad": "La Rioja",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2025,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la PAU de La Rioja, convocatoria extraordinaria de 2025, formado por 9 problemas resueltos paso a paso.",
+  "objetivo": "Evaluar la comprensión y aplicación de las leyes de la gravitación, el electromagnetismo, las ondas, la óptica y la física cuántica y nuclear, así como el cálculo, la interpretación física y la correcta utilización de unidades y notación científica.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "El examen consta de 9 problemas, cada uno con un valor de 2 puntos. Se exige la correcta utilización de la notación apropiada, las unidades, la formulación matemática acompañada de verbalización y el uso de notación y cálculo vectorial. Se valora positivamente el rigor en los razonamientos, la precisión, la destreza y la realización correcta de cálculos. Se valora negativamente explicar conceptos con la sola expresión de una fórmula, las faltas de ortografía y la falta de claridad y orden."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $M_T=6\\cdot10^{24}\\,\\text{kg}$; $R_T=6400\\,\\text{km}$; $K=8{,}99\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $q_e=1{,}6\\cdot10^{-19}\\,\\text{C}$; $v_{\\text{sonido}}=340\\,\\text{m}\\,\\text{s}^{-1}$; $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Órbita de Mercurio y distancia a la que orbita",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A2. Leyes de Kepler y relación con la gravitación; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos",
+      "enunciado": "Sabemos que la órbita de la Tierra alrededor del Sol es casi circular, que el radio de esa órbita es aproximadamente $1{,}5\\cdot10^{8}\\,\\text{km}$, y que la Tierra tarda $365{,}25$ días en dar una vuelta alrededor del Sol. Sabemos que Mercurio tiene un periodo de revolución alrededor del Sol de $88$ días. Supuesta circular la órbita de Mercurio alrededor del Sol, únicamente con los datos del enunciado del problema, calcular la distancia de Mercurio al Sol.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Tercera ley de Kepler",
+          "contenido": "La tercera ley de Kepler establece que el cuadrado del periodo orbital es proporcional al cubo del radio de la órbita:\n\n$$\\frac{T^{2}}{r^{3}}=\\text{constante}.$$\n\nAplicada a la Tierra y a Mercurio:\n\n$$\\frac{T_T^{2}}{r_T^{3}}=\\frac{T_M^{2}}{r_M^{3}}.$$"
+        },
+        {
+          "titulo": "Despejar el radio de Mercurio",
+          "contenido": "Despejamos $r_M$:\n\n$$r_M=r_T\\left(\\frac{T_M}{T_T}\\right)^{2/3}.$$"
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "Datos: $r_T=1{,}5\\cdot10^{8}\\,\\text{km}$, $T_T=365{,}25\\,\\text{días}$, $T_M=88\\,\\text{días}$.\n\nCalculamos la fracción:\n\n$$\\frac{T_M}{T_T}=\\frac{88}{365{,}25}\\approx0{,}2409.$$\n\nElevamos a $2/3$:\n\n$$\\left(\\frac{T_M}{T_T}\\right)^{2/3}\\approx0{,}3872.$$\n\nPor tanto:\n\n$$r_M\\approx1{,}5\\cdot10^{8}\\cdot0{,}3872\\approx5{,}8\\cdot10^{7}\\,\\text{km}.$$"
+        }
+      ],
+      "resultado": "$r_M\\approx5{,}8\\cdot10^{7}\\,\\text{km}\\approx5{,}8\\cdot10^{10}\\,\\text{m}$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Satélite artificial en órbita circular",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos",
+      "enunciado": "En un cierto instante, un satélite artificial de $500\\,\\text{kg}$ de masa gira alrededor de la Tierra en órbita circular de $500\\,\\text{km}$ sobre la superficie de la Tierra. Si la energía total del satélite disminuye a razón de $7200\\,\\text{J}$ por vuelta, ¿cuántas vueltas habrá completado cuando su altura se haya reducido a $400\\,\\text{km}$? Suponer que el satélite pasa por trayectorias solamente circulares.\n\nDatos: Constante de gravitación universal $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; masa de la Tierra $M_T=6\\cdot10^{24}\\,\\text{kg}$; radio de la Tierra $R_T=6400\\,\\text{km}$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Energía mecánica de un satélite en órbita circular",
+          "contenido": "La energía mecánica total de un satélite en órbita circular de radio $r$ es:\n\n$$E=-\\frac{G\\,M_T\\,m}{2r}.$$"
+        },
+        {
+          "titulo": "Radios orbitales",
+          "contenido": "Radio orbital inicial, con altura de $500\\,\\text{km}$:\n\n$$r_1=R_T+500\\,\\text{km}=6400+500=6900\\,\\text{km}=6{,}9\\cdot10^{6}\\,\\text{m}.$$\n\nRadio orbital final, con altura de $400\\,\\text{km}$:\n\n$$r_2=R_T+400\\,\\text{km}=6800\\,\\text{km}=6{,}8\\cdot10^{6}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Energías mecánicas",
+          "contenido": "Con $GM_T=6{,}67\\cdot10^{-11}\\cdot6\\cdot10^{24}=4{,}002\\cdot10^{14}$ y $m=500\\,\\text{kg}$:\n\n$$E_1=-\\frac{G\\,M_T\\,m}{2r_1}\\approx-1{,}45\\cdot10^{10}\\,\\text{J},$$\n\n$$E_2=-\\frac{G\\,M_T\\,m}{2r_2}\\approx-1{,}47\\cdot10^{10}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Variación de energía y número de vueltas",
+          "contenido": "La variación de energía mecánica total es:\n\n$$\\Delta E=E_2-E_1\\approx-2{,}13\\cdot10^{8}\\,\\text{J}.$$\n\nComo la energía disminuye $7200\\,\\text{J}$ por vuelta:\n\n$$N=\\frac{|\\Delta E|}{7200}\\approx\\frac{2{,}13\\cdot10^{8}}{7200}\\approx2{,}96\\cdot10^{4}.$$"
+        }
+      ],
+      "resultado": "$\\Delta E\\approx-2{,}13\\cdot10^{8}\\,\\text{J}$; $N\\approx2{,}96\\cdot10^{4}$ vueltas."
+    },
+    {
+      "numero": 3,
+      "titulo": "Tres cargas puntuales en un triángulo equilátero",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas",
+      "puntuacion": "2 puntos",
+      "enunciado": "En los vértices de un triángulo equilátero de lado $2\\,\\text{m}$ se encuentran tres cargas puntuales $q_1=q_2=-q_3=1\\,\\text{nC}$ según la figura.\n\na) Calcular el campo eléctrico total creado por las tres cargas en el punto $P$, centro de la base del triángulo. Justificar con un esquema vectorial el cálculo del campo eléctrico realizado.\n\nb) Calcular la energía potencial electrostática de esta distribución de cargas.",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular el campo eléctrico total en el punto $P$, centro de la base del triángulo, con esquema vectorial."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular la energía potencial electrostática de la distribución de cargas."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Geometría del triángulo equilátero",
+          "contenido": "El triángulo equilátero tiene lado $L=2\\,\\text{m}$. El punto $P$ es el centro de la base, es decir, el punto medio del lado inferior. Las cargas $q_1$ y $q_2$ están en los extremos de la base y $q_3$ está en el vértice superior.\n\nLas distancias de $P$ a $q_1$ y $q_2$ son:\n\n$$d_1=d_2=\\frac{L}{2}=1\\,\\text{m}.$$\n\nLa distancia de $P$ a $q_3$ es la altura del triángulo equilátero:\n\n$$d_3=\\sqrt{L^{2}-\\left(\\frac{L}{2}\\right)^{2}}=\\sqrt{3}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Campos individuales",
+          "contenido": "El campo debido a $q_1$ en $P$ apunta hacia la derecha, pues $q_1$ es positiva. El campo debido a $q_2$ en $P$ apunta hacia la izquierda, pues $q_2$ es positiva. Por simetría, sus módulos son iguales y se cancelan en la componente horizontal:\n\n$$E_{1x}+E_{2x}=0.$$\n\nEl campo debido a $q_3$ está dirigido verticalmente hacia $q_3$, es decir, hacia arriba, porque $q_3$ es negativa:\n\n$$E_3=K\\frac{|q_3|}{d_3^{2}}=8{,}99\\cdot10^{9}\\frac{1\\cdot10^{-9}}{(\\sqrt{3})^{2}}\\approx3{,}00\\,\\text{N}\\,\\text{C}^{-1}.$$"
+        },
+        {
+          "titulo": "Energía potencial electrostática",
+          "contenido": "La energía potencial electrostática del sistema de tres cargas es la suma de las energías de cada par:\n\n$$U=K\\left(\\frac{q_1q_2}{L}+\\frac{q_1q_3}{L}+\\frac{q_2q_3}{L}\\right).$$\n\nCon $L=2\\,\\text{m}$, $q_1=q_2=1\\cdot10^{-9}\\,\\text{C}$ y $q_3=-1\\cdot10^{-9}\\,\\text{C}$:\n\n$$U=8{,}99\\cdot10^{9}\\frac{1\\cdot10^{-18}-1\\cdot10^{-18}-1\\cdot10^{-18}}{2}\\approx-4{,}50\\cdot10^{-9}\\,\\text{J}.$$"
         }
       ],
-      "resultado": ""
+      "resultado": "$\\vec E_P\\approx3{,}00\\,\\text{N}\\,\\text{C}^{-1}$ dirigido verticalmente hacia arriba, hacia $q_3$; $U\\approx-4{,}50\\cdot10^{-9}\\,\\text{J}\\approx-4{,}50\\,\\text{nJ}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Dos hilos infinitos con corrientes y campo magnético nulo",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos",
+      "puntuacion": "2 puntos",
+      "enunciado": "Dos hilos infinitamente largos transportan corrientes $I_1$ e $I_2$ según indica la figura. Calcular la relación entre el valor de ambas corrientes para que el campo magnético total sea cero en cualquier punto del segmento punteado que forma $30^{\\circ}$ con la horizontal.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Campo magnético de un hilo infinito",
+          "contenido": "El módulo del campo magnético creado por un hilo infinito con corriente $I$ a una distancia $d$ es:\n\n$$B=\\frac{\\mu_0 I}{2\\pi d}.$$"
+        },
+        {
+          "titulo": "Geometría y distancias",
+          "contenido": "El hilo 1 es horizontal y el hilo 2 es vertical. Para un punto cualquiera del segmento punteado, situado a una distancia $r$ del cruce, las distancias perpendiculares a cada hilo son:\n\n$$d_1=r\\,\\text{sen}\\,30^{\\circ}=\\frac{r}{2},$$\n\n$$d_2=r\\cos30^{\\circ}=\\frac{\\sqrt{3}\\,r}{2}.$$"
+        },
+        {
+          "titulo": "Condición de campo nulo",
+          "contenido": "Para que el campo total sea cero, los campos de ambos hilos deben tener igual módulo y sentidos opuestos. Igualando módulos:\n\n$$\\frac{\\mu_0 I_1}{2\\pi d_1}=\\frac{\\mu_0 I_2}{2\\pi d_2}.$$\n\nSimplificando:\n\n$$\\frac{I_1}{d_1}=\\frac{I_2}{d_2}\\Rightarrow I_2=I_1\\frac{d_2}{d_1}=I_1\\frac{\\sqrt{3}\\,r/2}{r/2}=\\sqrt{3}\\,I_1.$$\n\nLos sentidos de las corrientes deben elegirse para que los campos magnéticos tengan sentidos opuestos en el segmento."
+        }
+      ],
+      "resultado": "$I_2=\\sqrt{3}\\,I_1$, es decir, $\\frac{I_2}{I_1}=\\sqrt{3}$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Espejo esférico cóncavo: posición y tamaño de la imagen",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos",
+      "enunciado": "Un espejo esférico cóncavo tiene un radio de curvatura de $40\\,\\text{cm}$.\n\na) Determinar la posición y el tamaño de la imagen de un objeto de $4\\,\\text{cm}$ de altura situado delante del espejo a una distancia de $50\\,\\text{cm}$. Realizar el esquema de rayos correspondiente.\n\nb) Determinar la posición y el tamaño de la imagen de un objeto de $4\\,\\text{cm}$ de altura situado delante del espejo a una distancia de $25\\,\\text{cm}$. Realizar el esquema de rayos correspondiente.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Objeto a $50\\,\\text{cm}$ del espejo cóncavo de $R=40\\,\\text{cm}$. Posición y tamaño de la imagen."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Objeto a $25\\,\\text{cm}$ del espejo cóncavo de $R=40\\,\\text{cm}$. Posición y tamaño de la imagen."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancia focal y ecuación del espejo",
+          "contenido": "Para un espejo esférico cóncavo, la distancia focal es:\n\n$$f=\\frac{R}{2}=\\frac{40}{2}=20\\,\\text{cm}.$$\n\nEn el convenio de signos utilizado, $f>0$ para espejo cóncavo y la ecuación del espejo es:\n\n$$\\frac{1}{f}=\\frac{1}{s}+\\frac{1}{s'}.$$\n\nEl aumento lateral es:\n\n$$m=\\frac{y'}{y}=-\\frac{s'}{s}.$$"
+        },
+        {
+          "titulo": "Apartado a) Objeto a 50 cm",
+          "contenido": "Con $s=50\\,\\text{cm}$ y $f=20\\,\\text{cm}$:\n\n$$\\frac{1}{s'}=\\frac{1}{f}-\\frac{1}{s}=\\frac{1}{20}-\\frac{1}{50}=\\frac{3}{100}\\Rightarrow s'=33{,}3\\,\\text{cm}.$$\n\nEl aumento lateral es:\n\n$$m=-\\frac{s'}{s}=-\\frac{33{,}3}{50}\\approx-0{,}667.$$\n\nEl tamaño de la imagen es:\n\n$$y'=m\\,y=-0{,}667\\cdot4\\approx-2{,}67\\,\\text{cm}.$$\n\nLa imagen es real, invertida y reducida. El objeto está más allá del centro de curvatura $C$; un rayo paralelo al eje se refleja pasando por $F$ y otro rayo que pasa por $C$ se refleja sobre sí mismo. La imagen se forma entre $F$ y $C$."
+        },
+        {
+          "titulo": "Apartado b) Objeto a 25 cm",
+          "contenido": "Con $s=25\\,\\text{cm}$ y $f=20\\,\\text{cm}$:\n\n$$\\frac{1}{s'}=\\frac{1}{20}-\\frac{1}{25}=\\frac{1}{100}\\Rightarrow s'=100\\,\\text{cm}.$$\n\nEl aumento lateral es:\n\n$$m=-\\frac{s'}{s}=-\\frac{100}{25}=-4.$$\n\nEl tamaño de la imagen es:\n\n$$y'=m\\,y=-4\\cdot4=-16\\,\\text{cm}.$$\n\nLa imagen es real, invertida y ampliada. El objeto está entre $F$ y $C$; la imagen se forma más allá de $C$. En el esquema, un rayo paralelo se refleja pasando por $F$ y un rayo que pasa por $C$ se refleja sobre sí mismo."
+        }
+      ],
+      "resultado": "a) $s'=33{,}3\\,\\text{cm}$ delante del espejo, $y'=-2{,}67\\,\\text{cm}$: imagen real, invertida y reducida.\nb) $s'=100\\,\\text{cm}$ delante del espejo, $y'=-16\\,\\text{cm}$: imagen real, invertida y ampliada."
+    },
+    {
+      "numero": 6,
+      "titulo": "Voz de soprano: longitud de onda y potencia",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda; C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2 puntos",
+      "enunciado": "El término soprano en ópera se refiere a la voz más aguda. El rango vocal típico de esta voz se comprende entre los $262\\,\\text{Hz}$ y los $1175\\,\\text{Hz}$.\n\na) Calcular las longitudes de onda correspondientes a estos sonidos.\n\nb) En una actuación, un espectador situado a $10\\,\\text{m}$ de una soprano percibe una intensidad sonora de $60\\,\\text{dB}$. Calcular la potencia de la voz de esta soprano.\n\nDatos: Intensidad física umbral $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$; velocidad del sonido $v=340\\,\\text{m}\\,\\text{s}^{-1}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular las longitudes de onda correspondientes a $262\\,\\text{Hz}$ y $1175\\,\\text{Hz}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular la potencia de la voz de la soprano si a $10\\,\\text{m}$ se perciben $60\\,\\text{dB}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Relación longitud de onda-frecuencia",
+          "contenido": "La longitud de onda se relaciona con la frecuencia y la velocidad del sonido mediante:\n\n$$\\lambda=\\frac{v}{f}.$$"
+        },
+        {
+          "titulo": "Apartado a) Longitudes de onda",
+          "contenido": "Para $f=262\\,\\text{Hz}$:\n\n$$\\lambda=\\frac{340}{262}\\approx1{,}30\\,\\text{m}.$$\n\nPara $f=1175\\,\\text{Hz}$:\n\n$$\\lambda=\\frac{340}{1175}\\approx0{,}289\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Apartado b) Potencia de la voz",
+          "contenido": "El nivel de intensidad sonora en decibelios es:\n\n$$\\beta=10\\log\\left(\\frac{I}{I_0}\\right).$$\n\nDespejamos la intensidad:\n\n$$I=I_0\\,10^{\\beta/10}=10^{-12}\\cdot10^{60/10}=10^{-6}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nSuponiendo emisión esférica, la intensidad se relaciona con la potencia mediante:\n\n$$I=\\frac{P}{4\\pi r^{2}}.$$\n\nDespejamos $P$:\n\n$$P=I\\,4\\pi r^{2}=10^{-6}\\cdot4\\pi\\cdot10^{2}\\approx1{,}26\\cdot10^{-3}\\,\\text{W}.$$"
+        }
+      ],
+      "resultado": "a) $\\lambda_{262}\\approx1{,}30\\,\\text{m}$ y $\\lambda_{1175}\\approx0{,}289\\,\\text{m}$.\nb) $P\\approx1{,}26\\cdot10^{-3}\\,\\text{W}\\approx1{,}26\\,\\text{mW}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Efecto fotoeléctrico en el potasio",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos",
+      "enunciado": "La longitud de onda umbral del potasio para emitir electrones por efecto fotoeléctrico es de $564\\,\\text{nm}$.\n\na) Calcular la función de trabajo o trabajo de extracción del potasio.\n\nb) Calcular el potencial de frenado cuando sobre este metal incide luz de $400\\,\\text{nm}$ de longitud de onda.\n\nDatos: constante de Planck $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; velocidad de la luz en el vacío $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; carga del electrón $q=1{,}6\\cdot10^{-19}\\,\\text{C}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular la función de trabajo del potasio."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular el potencial de frenado para luz de $400\\,\\text{nm}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a) Función de trabajo",
+          "contenido": "La longitud de onda umbral corresponde a la energía mínima necesaria para extraer un electrón, es decir, a la función de trabajo $W$:\n\n$$W=\\frac{hc}{\\lambda_0}.$$\n\nSustituyendo:\n\n$$W=\\frac{6{,}63\\cdot10^{-34}\\cdot3\\cdot10^{8}}{564\\cdot10^{-9}}\\approx3{,}53\\cdot10^{-19}\\,\\text{J}.$$\n\nEn electronvoltios:\n\n$$W=\\frac{3{,}53\\cdot10^{-19}}{1{,}6\\cdot10^{-19}}\\approx2{,}20\\,\\text{eV}.$$"
+        },
+        {
+          "titulo": "Apartado b) Potencial de frenado",
+          "contenido": "La ecuación de Einstein del efecto fotoeléctrico es:\n\n$$E_{\\text{fotón}}=W+K_{\\text{max}}.$$\n\nLa energía cinética máxima se relaciona con el potencial de frenado mediante:\n\n$$K_{\\text{max}}=q_e V_{\\text{frenado}}.$$\n\nLa energía del fotón incidente de $400\\,\\text{nm}$ es:\n\n$$E_{\\text{fotón}}=\\frac{hc}{\\lambda}=\\frac{6{,}63\\cdot10^{-34}\\cdot3\\cdot10^{8}}{400\\cdot10^{-9}}\\approx4{,}97\\cdot10^{-19}\\,\\text{J}.$$\n\nPor tanto:\n\n$$K_{\\text{max}}=4{,}97\\cdot10^{-19}-3{,}53\\cdot10^{-19}=1{,}44\\cdot10^{-19}\\,\\text{J}.$$\n\nEl potencial de frenado es:\n\n$$V_{\\text{frenado}}=\\frac{K_{\\text{max}}}{q_e}=\\frac{1{,}44\\cdot10^{-19}}{1{,}6\\cdot10^{-19}}\\approx0{,}90\\,\\text{V}.$$"
+        }
+      ],
+      "resultado": "a) $W\\approx3{,}53\\cdot10^{-19}\\,\\text{J}\\approx2{,}20\\,\\text{eV}$.\nb) $V_{\\text{frenado}}\\approx0{,}90\\,\\text{V}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Desintegración de una muestra de radio",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2 puntos",
+      "enunciado": "El periodo de semidesintegración del radio es de $1620$ años. Calcular el tiempo necesario para que se desintegre el $90\\%$ de una muestra de radio.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Ley de desintegración radiactiva",
+          "contenido": "La ley de desintegración radiactiva establece:\n\n$$N=N_0\\,e^{-\\lambda t},$$\n\ndonde $\\lambda$ es la constante de desintegración. La relación entre $\\lambda$ y el periodo de semidesintegración $T_{1/2}$ es:\n\n$$\\lambda=\\frac{\\ln2}{T_{1/2}}.$$"
+        },
+        {
+          "titulo": "Condición del problema",
+          "contenido": "Si se desintegra el $90\\%$ de la muestra, queda el $10\\%$:\n\n$$\\frac{N}{N_0}=0{,}10.$$\n\nSustituyendo en la ley de desintegración:\n\n$$0{,}10=e^{-\\lambda t}.$$\n\nTomando logaritmos neperianos:\n\n$$\\ln(0{,}10)=-\\lambda t\\Rightarrow t=\\frac{\\ln10}{\\lambda}.$$"
+        },
+        {
+          "titulo": "Cálculo",
+          "contenido": "Constante de desintegración:\n\n$$\\lambda=\\frac{\\ln2}{1620}\\approx4{,}28\\cdot10^{-4}\\,\\text{año}^{-1}.$$\n\nTiempo:\n\n$$t=\\frac{\\ln10}{\\lambda}=\\frac{\\ln10}{\\ln2}\\,T_{1/2}\\approx3{,}322\\cdot1620\\approx5{,}38\\cdot10^{3}\\,\\text{años}.$$"
+        }
+      ],
+      "resultado": "$t\\approx5{,}38\\cdot10^{3}$ años."
+    },
+    {
+      "numero": 9,
+      "titulo": "Problema competencial: determinación de q/m (Thomson)",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos",
+      "enunciado": "En 1897 J. J. Thomson determinó experimentalmente la relación $q/m$ entre la carga $q$ y la masa $m$ del electrón. Para ello, mediante una diferencia de potencial $\\Delta V$ conocida, aceleró los electrones producidos por un cátodo. Una vez que los electrones eran acelerados hasta una cierta velocidad $v$, estos penetraban en una región de campo magnético $B$ uniforme de valor conocido y constante. Midiendo el radio $R$ de las correspondientes trayectorias circulares seguidas por los electrones, Thomson pudo determinar la relación $q/m$.\n\nLa fotografía de la figura muestra la trayectoria circular que siguen los electrones en un experimento realizado para determinar el valor de $q/m$. En el experimento que muestra la fotografía, la velocidad $v$ con que se mueven los electrones es perpendicular a un campo magnético $B=10^{-3}\\,\\text{T}$, y estos fueron acelerados con una $\\Delta V=90\\,\\text{V}$. A partir de datos obtenidos de la gráfica, determinar el valor de la relación $q/m$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Aceleración del electrón por la diferencia de potencial",
+          "contenido": "Cuando un electrón se acelera a través de una diferencia de potencial $\\Delta V$, la energía cinética adquirida es:\n\n$$q\\,\\Delta V=\\frac{1}{2}m\\,v^{2}.$$\n\nDe aquí:\n\n$$v=\\sqrt{\\frac{2q\\,\\Delta V}{m}}.$$"
+        },
+        {
+          "titulo": "Movimiento circular en el campo magnético",
+          "contenido": "Cuando el electrón entra en un campo magnético perpendicular a su velocidad, la fuerza de Lorentz actúa como fuerza centrípeta:\n\n$$q\\,v\\,B=\\frac{m\\,v^{2}}{R}.$$\n\nSimplificando:\n\n$$v=\\frac{q\\,B\\,R}{m}.$$"
+        },
+        {
+          "titulo": "Combinación de ambas ecuaciones",
+          "contenido": "Igualando las dos expresiones de $v$:\n\n$$\\sqrt{\\frac{2q\\,\\Delta V}{m}}=\\frac{q\\,B\\,R}{m}.$$\n\nElevando al cuadrado y despejando $q/m$:\n\n$$\\frac{q}{m}=\\frac{2\\Delta V}{B^{2}R^{2}}.$$"
+        },
+        {
+          "titulo": "Lectura del radio de la gráfica y cálculo",
+          "contenido": "De la fotografía del experimento se estima un radio de la trayectoria circular $R\\approx3{,}2\\,\\text{cm}=3{,}2\\cdot10^{-2}\\,\\text{m}$.\n\nSustituyendo $\\Delta V=90\\,\\text{V}$ y $B=10^{-3}\\,\\text{T}$:\n\n$$\\frac{q}{m}=\\frac{2\\cdot90}{(10^{-3})^{2}(3{,}2\\cdot10^{-2})^{2}}\\approx1{,}76\\cdot10^{11}\\,\\text{C}\\,\\text{kg}^{-1}.$$\n\nEl valor teórico aceptado es del mismo orden, $1{,}76\\cdot10^{11}\\,\\text{C}\\,\\text{kg}^{-1}$; la pequeña discrepancia procede de la estimación del radio a partir de la fotografía."
+        }
+      ],
+      "resultado": "$\\frac{q}{m}\\approx1{,}76\\cdot10^{11}\\,\\text{C}\\,\\text{kg}^{-1}$ con $R\\approx3{,}2\\,\\text{cm}$."
     }
   ]
 }
