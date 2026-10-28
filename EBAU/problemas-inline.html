@@ -180,7 +180,7 @@
     font-style: italic;
     margin: 0;
     padding: .2rem 0;
-}
+  }
   .filtro-grupo > label{
     display: block;
     font-size: .74rem;
@@ -222,25 +222,23 @@
     color: #fff;
     box-shadow: 0 4px 12px -4px rgba(79,70,229,.55);
   }
-  
-    /* ─── Estado de los botones de PDF ─────────────────────── */
-    .pdf-mini-buttons a.pdf-missing{
-        opacity: .55;
-        cursor: not-allowed;
-        background: #fef2f2;
-        border-color: #fecaca;
-        color: #b91c1c;
-        text-decoration: line-through;
-        pointer-events: none;
-    }
-    .pdf-mini-buttons a.pdf-missing:hover{
-        background: #fef2f2;
-        border-color: #fecaca;
-        color: #b91c1c;
-    }
 
-  /* Los filtros de tema y bloque pueden contener textos largos: permitimos
-     que se recorten con elipsis en vez de romper el layout. */
+  /* ─── Estado de los botones de PDF ─────────────────────── */
+  .pdf-mini-buttons a.pdf-missing{
+    opacity: .55;
+    cursor: not-allowed;
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #b91c1c;
+    text-decoration: line-through;
+    pointer-events: none;
+  }
+  .pdf-mini-buttons a.pdf-missing:hover{
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #b91c1c;
+  }
+
   #filtros-tema .btn-filtro,
   #filtros-bloque .btn-filtro{
     max-width: 100%;
@@ -299,10 +297,16 @@
     margin-bottom: .9rem;
     overflow: hidden;
     transition: border-color .15s ease, box-shadow .15s ease;
+
+    /* El navegador no maqueta/pinta tarjetas fuera de pantalla. */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 150px;
   }
   .tarjeta-problema-desplegable[open]{
     border-color: #c7d2fe;
     box-shadow: var(--shadow);
+    /* Al abrirse, forzamos el renderizado real (evita saltos raros). */
+    content-visibility: visible;
   }
   .tarjeta-problema-desplegable > summary{
     display: block;

@@ -7,7 +7,10 @@ let temasSeleccionados = [];
 let comunidadesSeleccionadas = [];
 let bloquesSeleccionados = [];
 
-const POR_PAGINA = 40;
+// Menos tarjetas por lote en móvil: menos maquetado y menos MathJax.
+const POR_PAGINA = (typeof window !== 'undefined' && window.matchMedia &&
+                    window.matchMedia('(max-width: 640px)').matches) ? 20 : 40;
+
 let filtradosActuales = [];
 let mostrados = 0;
 let ultimoTemaRenderizado = '';
@@ -37,8 +40,8 @@ function escapeHtml(s) {
 function normalizarTexto(texto) {
     if (!texto) return '';
     return texto.toString().toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
 }
 
 function debounce(fn, ms = 250) {
@@ -142,6 +145,19 @@ function normalizarEjercicio(ej, examen) {
     };
 }
 
+// Acepta problemas de `normalizarEjercicio` o del `problemas.json` consolidado.
+function enriquecerProblema(p) {
+    const temas = (p.temas && p.temas.length) ? p.temas : dividirMulti(p.Tema || p.tema || '');
+    const bloques = (p.bloques && p.bloques.length) ? p.bloques : dividirMulti(p.Bloque || p.bloque || '');
+    return {
+        ...p,
+        temas,
+        bloques,
+        temaPrincipal: p.temaPrincipal || temas[0] || '',
+        bloquePrincipal: p.bloquePrincipal || bloques[0] || '',
+    };
+}
+
 const CAMPOS_BUSQUEDA = {
     todo: p => [
         p.titulo, p.enunciado, p.comunidad,
@@ -190,33 +206,114 @@ async function comprobarPdf(url) {
     return promesa;
 }
 
-async function comprobarPdfsEn(nodos) {
-    const links = [];
+// Observador perezoso: solo comprueba el PDF cuando el enlace entra en viewport.
+let pdfObserver = null;
+function getPdfObserver() {
+    if (pdfObserver) return pdfObserver;
+    if (typeof IntersectionObserver === 'undefined') return null;
+
+    pdfObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const a = entry.target;
+            pdfObserver.unobserve(a);
+            const url = a.getAttribute('data-pdf-url');
+            comprobarPdf(url).then(ok => {
+                if (ok) {
+                    a.classList.add('pdf-ok');
+                    return;
+                }
+                a.classList.add('pdf-missing');
+                a.removeAttribute('href');
+                a.removeAttribute('target');
+                a.setAttribute('aria-disabled', 'true');
+                a.title = 'PDF no disponible';
+                if (OCULTAR_PDF_FALTANTE) {
+                    a.style.display = 'none';
+                } else {
+                    const emoji = a.textContent.includes('📝') ? '📝' : '📄';
+                    a.textContent = `${emoji} no disponible`;
+                }
+            });
+        });
+    }, { rootMargin: '200px' });
+
+    return pdfObserver;
+}
+
+function observarPdfsEn(nodos) {
+    const obs = getPdfObserver();
+    if (!obs) return; // sin IntersectionObserver: dejamos los enlaces tal cual
     nodos.forEach(n => {
         if (n.nodeType !== 1) return;
-        n.querySelectorAll('.pdf-mini-buttons a[data-pdf-url]').forEach(a => links.push(a));
+        n.querySelectorAll('.pdf-mini-buttons a[data-pdf-url]').forEach(a => obs.observe(a));
     });
-    if (links.length === 0) return;
+}
 
-    await Promise.all(links.map(async a => {
-        const url = a.getAttribute('data-pdf-url');
-        const ok = await comprobarPdf(url);
-        if (ok) {
-            a.classList.add('pdf-ok');
-            return;
+// ─── Carga de datos ────────────────────────────────────────────
+async function cargarProblemasCrudos() {
+    // 1) JSON consolidado (recomendado): 1 sola petición.
+    try {
+        const r = await fetch('./Datos/problemas.json', { cache: 'no-cache' });
+        if (r.ok) {
+            const flat = await r.json();
+            if (Array.isArray(flat) && flat.length) {
+                return flat.map(enriquecerProblema);
+            }
         }
-        a.classList.add('pdf-missing');
-        a.removeAttribute('href');
-        a.removeAttribute('target');
-        a.setAttribute('aria-disabled', 'true');
-        a.title = 'PDF no disponible';
-        if (OCULTAR_PDF_FALTANTE) {
-            a.style.display = 'none';
-        } else {
-            const emoji = a.textContent.includes('📝') ? '📝' : '📄';
-            a.textContent = `${emoji} no disponible`;
+    } catch { /* no existe: seguimos con el fallback */ }
+
+    // 2) Fallback: índice + N ficheros, con concurrencia limitada (6).
+    const resIndice = await fetch('./Datos/indice.json');
+    if (!resIndice.ok) throw new Error('No se encontró indice.json');
+    const indice = await resIndice.json();
+
+    const CONCURRENCIA = 6;
+    const resultados = new Array(indice.length).fill(null);
+    let cursor = 0;
+
+    async function worker() {
+        while (true) {
+            const i = cursor++;
+            if (i >= indice.length) return;
+            const ex = indice[i];
+            try {
+                const res = await fetch(`./Datos/${ex.id}.json`);
+                if (!res.ok) throw new Error(`No se encontró ${ex.id}.json`);
+                const data = await res.json();
+                data.id = ex.id;
+                if (ex.codigo) data.codigo = ex.codigo;
+                if (!data.comunidad && ex.comunidad) data.comunidad = ex.comunidad;
+                if (!data.anio && ex.anio) data.anio = ex.anio;
+                if (!data.convocatoria && ex.convocatoria) data.convocatoria = ex.convocatoria;
+                resultados[i] = data;
+            } catch (e) {
+                console.warn(e);
+            }
         }
-    }));
+    }
+
+    const workers = [];
+    for (let k = 0; k < CONCURRENCIA; k++) workers.push(worker());
+    await Promise.all(workers);
+
+    return resultados
+        .filter(Boolean)
+        .flatMap(examen =>
+            (examen.ejercicios || []).map(ej => enriquecerProblema(normalizarEjercicio(ej, examen)))
+        );
+}
+
+function precalcularIndiceBusqueda() {
+    todosLosProblemas.forEach(p => {
+        const campos = [
+            p.titulo, p.enunciado, p.comunidad, p.asignatura,
+            p.nivel, p.curso, p.resultado,
+            ...(p.temas || []),
+            ...(p.bloques || [])
+        ];
+        p._searchAll = normalizarTexto(campos.filter(Boolean).join(' '));
+    });
 }
 
 async function cargarDatos() {
@@ -224,41 +321,17 @@ async function cargarDatos() {
     contenedor.innerHTML = '<p style="text-align:center; color:#64748b; padding: 20px;">Cargando problemas...</p>';
 
     try {
-        const resIndice = await fetch('./Datos/indice.json');
-        const indice = await resIndice.json();
-
-        const promesasExamenes = indice.map(ex => {
-            const idLimpio = ex.id;
-            return fetch(`./Datos/${idLimpio}.json`)
-                .then(res => {
-                    if (!res.ok) throw new Error(`No se encontró ${idLimpio}.json`);
-                    return res.json();
-                })
-                .then(data => {
-                    data.id = idLimpio;
-                    if (ex.codigo) data.codigo = ex.codigo;
-                    if (!data.comunidad && ex.comunidad) data.comunidad = ex.comunidad;
-                    if (!data.anio && ex.anio) data.anio = ex.anio;
-                    if (!data.convocatoria && ex.convocatoria) data.convocatoria = ex.convocatoria;
-                    return data;
-                });
-        });
-
-        const examenesCompletos = await Promise.all(promesasExamenes);
-
-        todosLosProblemas = examenesCompletos.flatMap(examen => {
-            if (!examen.ejercicios) return [];
-            return examen.ejercicios.map(ej => normalizarEjercicio(ej, examen));
-        });
-
+        todosLosProblemas = await cargarProblemasCrudos();
+        precalcularIndiceBusqueda();
         inicializarFiltros();
         renderizarResultados();
     } catch (error) {
-        console.error("Error cargando los datos:", error);
-        contenedor.innerHTML = `<p style="text-align:center; color:red;">Error al cargar: ${error.message}</p>`;
+        console.error('Error cargando los datos:', error);
+        contenedor.innerHTML = `<p style="text-align:center; color:red;">Error al cargar: ${escapeHtml(error.message)}</p>`;
     }
 }
 
+// ─── Filtros ───────────────────────────────────────────────────
 function inicializarFiltros() {
     // Años
     const anios = [...new Set(todosLosProblemas.map(p => p.anio))]
@@ -405,6 +478,7 @@ function toggleFiltro(valor, tipo, boton) {
     actualizarBotonLimpiar();
 }
 
+// ─── Render ────────────────────────────────────────────────────
 function renderizarResultados() {
     const orden = document.getElementById('select-orden').value;
     const mostrarEnunciado = document.getElementById('check-mostrar-enunciado').checked;
@@ -426,10 +500,10 @@ function renderizarResultados() {
 
         let cumpleBusqueda = true;
         if (palabrasBuscadas.length > 0) {
-            const textoCompleto = textoDeCampo(p, 'todo');
+            const t = p._searchAll || '';
             cumpleBusqueda = logica === 'AND'
-                ? palabrasBuscadas.every(w => textoCompleto.includes(w))
-                : palabrasBuscadas.some(w => textoCompleto.includes(w));
+                ? palabrasBuscadas.every(w => t.includes(w))
+                : palabrasBuscadas.some(w => t.includes(w));
         }
         return cumpleAnio && cumpleConv && cumpleComunidad && cumpleTema && cumpleBloque && cumpleBusqueda;
     });
@@ -487,13 +561,106 @@ function cargarMas() {
         n.classList &&
         n.classList.contains('tarjeta-problema-desplegable')
     );
+
+    // Carga perezosa del detalle al abrir la tarjeta.
+    nuevasTarjetas.forEach(card => {
+        card.addEventListener('toggle', () => {
+            if (!card.open) return;
+            const detalle = card.querySelector('.detalle-problema');
+            if (!detalle || detalle.dataset.loaded === '1') return;
+            detalle.dataset.loaded = '1';
+            detalle.innerHTML = card._construirDetalle();
+            typesetMathJax([detalle]);
+        });
+    });
+
+    // Typeset sólo del summary (barato). El detalle se procesa al abrirse.
     if (nuevasTarjetas.length > 0) typesetMathJax(nuevasTarjetas);
 
-    // Comprobación ASÍNCRONA de PDFs (no bloquea el renderizado).
-    comprobarPdfsEn(nuevosNodos);
+    // Comprobación perezosa de PDFs vía IntersectionObserver.
+    observarPdfsEn(nuevosNodos);
 
     actualizarBotonCargarMas();
     actualizarContador();
+}
+
+function construirSummaryHtml(p) {
+    const baseCode = p.codigo ? p.codigo.replace('.SOL', '') : p.examenId;
+    const baseCodeSafe = escapeHtml(baseCode);
+    const urlExamen = `./PDF/${baseCodeSafe}.pdf`;
+    const urlCriterios = `./PDF/${baseCodeSafe}.CRI.pdf`;
+    const pdfLinks = `
+        <div class="pdf-mini-buttons" onclick="event.stopPropagation()">
+            <a href="${urlExamen}" target="_blank" title="Descargar Examen Original"
+               data-pdf-url="${urlExamen}">📄 PDF Examen</a>
+            <a href="${urlCriterios}" target="_blank" title="Descargar Criterios de Corrección"
+               data-pdf-url="${urlCriterios}">📝 PDF Criterios</a>
+        </div>
+    `;
+    const urlExamenCompleto = `examen.html?id=${encodeURIComponent(txt(p.examenId))}#p${encodeURIComponent(txt(p.numero))}`;
+
+    const textoCorto = p.enunciado && p.enunciado.length > 150
+        ? p.enunciado.substring(0, 150) + '...'
+        : p.enunciado;
+    const resumenEnunciado = `<p class="resumen-enunciado">${escapeHtml(textoCorto)}</p>`;
+
+    const partesBadgeExamen = [txt(p.anio), txt(p.convocatoria), txt(p.comunidad)].filter(Boolean);
+    const badgeExamen = partesBadgeExamen.join(' · ');
+    const badgePuntos = p.puntuacion
+        ? `<span class="badge badge-puntos">${escapeHtml(p.puntuacion)}</span>`
+        : '';
+
+    const badgesTema = (p.temas || []).map(t =>
+        `<span class="badge badge-tema" title="${escapeHtml(t)}">${escapeHtml(codigoTema(t))}</span>`
+    ).join('');
+    const badgesBloque = (p.bloques || []).map(b =>
+        `<span class="badge badge-bloque">${escapeHtml(b)}</span>`
+    ).join('');
+
+    return `
+        <summary>
+            <div class="etiquetas">
+                ${badgesBloque}
+                ${badgesTema}
+                <span class="badge badge-examen">${escapeHtml(badgeExamen)}</span>
+                ${badgePuntos}
+            </div>
+            <div class="header-top-row">
+                <h4>Problema ${escapeHtml(p.numero)}: ${escapeHtml(p.titulo)}</h4>
+                <a href="${urlExamenCompleto}" class="btn-ver-examen" onclick="event.stopPropagation()">Ver examen completo ↗</a>
+            </div>
+            ${pdfLinks}
+            ${resumenEnunciado}
+        </summary>
+    `;
+}
+
+function construirDetalleHtml(p) {
+    let apartadosHtml = '';
+    (p.apartados || []).forEach(ap => {
+        apartadosHtml += `<p><strong>${escapeHtml(ap.letra)})</strong> ${escapeHtml(ap.enunciado)} ${
+            ap.puntuacion ? `<em>(${escapeHtml(ap.puntuacion)})</em>` : ''
+        }</p>`;
+    });
+
+    let resolucionHtml = '';
+    (p.resolucion || []).forEach(paso => {
+        resolucionHtml += `
+            <div class="paso">
+                <strong>${escapeHtml(paso.titulo)}.</strong> ${escapeHtml(paso.contenido)}
+            </div>
+        `;
+    });
+
+    return `
+        <div class="enunciado-ej">📌 Enunciado completo:</div>
+        <p>${escapeHtml(p.enunciado)}</p>
+        ${apartadosHtml}
+        <div class="resolucion">
+            ${resolucionHtml}
+            <div class="resultado-final">✔️ <strong>Resultado:</strong> ${escapeHtml(p.resultado)}</div>
+        </div>
+    `;
 }
 
 function construirLote(desde, hasta) {
@@ -501,7 +668,7 @@ function construirLote(desde, hasta) {
     const lote = filtradosActuales.slice(desde, hasta);
     let html = '';
 
-    lote.forEach(p => {
+    lote.forEach((p, idx) => {
         if (orden === 'tema' && p.temaPrincipal !== ultimoTemaRenderizado) {
             ultimoTemaRenderizado = p.temaPrincipal;
             html += `<h2 class="grupo-tema-titulo">${escapeHtml(p.temaPrincipal || 'Sin tema')}</h2>`;
@@ -511,86 +678,27 @@ function construirLote(desde, hasta) {
             html += `<h2 class="grupo-bloque-titulo">${escapeHtml(p.bloquePrincipal || 'Sin bloque')}</h2>`;
         }
 
-        const baseCode = p.codigo ? p.codigo.replace('.SOL', '') : p.examenId;
-        const baseCodeSafe = escapeHtml(baseCode);
-        const urlExamen = `./PDF/${baseCodeSafe}.pdf`;
-        const urlCriterios = `./PDF/${baseCodeSafe}.CRI.pdf`;
-        const pdfLinks = `
-            <div class="pdf-mini-buttons" onclick="event.stopPropagation()">
-                <a href="${urlExamen}" target="_blank" title="Descargar Examen Original"
-                   data-pdf-url="${urlExamen}">📄 PDF Examen</a>
-                <a href="${urlCriterios}" target="_blank" title="Descargar Criterios de Corrección"
-                   data-pdf-url="${urlCriterios}">📝 PDF Criterios</a>
-            </div>
-        `;
-        const urlExamenCompleto = `examen.html?id=${encodeURIComponent(txt(p.examenId))}#p${encodeURIComponent(txt(p.numero))}`;
-
-        let apartadosHtml = '';
-        (p.apartados || []).forEach(ap => {
-            apartadosHtml += `<p><strong>${escapeHtml(ap.letra)})</strong> ${escapeHtml(ap.enunciado)} ${
-                ap.puntuacion ? `<em>(${escapeHtml(ap.puntuacion)})</em>` : ''
-            }</p>`;
-        });
-
-        let resolucionHtml = '';
-        (p.resolucion || []).forEach(paso => {
-            resolucionHtml += `
-                <div class="paso">
-                    <strong>${escapeHtml(paso.titulo)}.</strong> ${escapeHtml(paso.contenido)}
-                </div>
-            `;
-        });
-
-        const textoCorto = p.enunciado && p.enunciado.length > 150
-            ? p.enunciado.substring(0, 150) + '...'
-            : p.enunciado;
-        const resumenEnunciado = `<p class="resumen-enunciado">${escapeHtml(textoCorto)}</p>`;
-
-        const partesBadgeExamen = [txt(p.anio), txt(p.convocatoria), txt(p.comunidad)].filter(Boolean);
-        const badgeExamen = partesBadgeExamen.join(' · ');
-        const badgePuntos = p.puntuacion
-            ? `<span class="badge badge-puntos">${escapeHtml(p.puntuacion)}</span>`
-            : '';
-
-        const badgesTema = (p.temas || []).map(t =>
-            `<span class="badge badge-tema" title="${escapeHtml(t)}">${escapeHtml(codigoTema(t))}</span>`
-        ).join('');
-        const badgesBloque = (p.bloques || []).map(b =>
-            `<span class="badge badge-bloque">${escapeHtml(b)}</span>`
-        ).join('');
-
-        html += `
-            <details class="tarjeta-problema-desplegable">
-                <summary>
-                    <div class="etiquetas">
-                        ${badgesBloque}
-                        ${badgesTema}
-                        <span class="badge badge-examen">${escapeHtml(badgeExamen)}</span>
-                        ${badgePuntos}
-                    </div>
-                    <div class="header-top-row">
-                        <h4>Problema ${escapeHtml(p.numero)}: ${escapeHtml(p.titulo)}</h4>
-                        <a href="${urlExamenCompleto}" class="btn-ver-examen" onclick="event.stopPropagation()">Ver examen completo ↗</a>
-                    </div>
-                    ${pdfLinks}
-                    ${resumenEnunciado}
-                </summary>
-                <div class="detalle-problema">
-                    <div class="enunciado-ej">📌 Enunciado completo:</div>
-                    <p>${escapeHtml(p.enunciado)}</p>
-                    ${apartadosHtml}
-                    <div class="resolucion">
-                        ${resolucionHtml}
-                        <div class="resultado-final">✔️ <strong>Resultado:</strong> ${escapeHtml(p.resultado)}</div>
-                    </div>
-                </div>
-            </details>
-        `;
+        html += `<details class="tarjeta-problema-desplegable" data-idx="${idx}">
+            ${construirSummaryHtml(p)}
+            <div class="detalle-problema" data-loaded="0"></div>
+        </details>`;
     });
 
     const template = document.createElement('template');
     template.innerHTML = html;
-    return [...template.content.childNodes];
+    const nodes = [...template.content.childNodes];
+
+    // Asociar el constructor del detalle a cada tarjeta.
+    nodes.forEach(n => {
+        if (n.nodeType !== 1) return;
+        if (n.classList && n.classList.contains('tarjeta-problema-desplegable')) {
+            const idx = Number(n.dataset.idx);
+            const p = lote[idx];
+            n._construirDetalle = () => construirDetalleHtml(p);
+        }
+    });
+
+    return nodes;
 }
 
 function actualizarBotonCargarMas() {
