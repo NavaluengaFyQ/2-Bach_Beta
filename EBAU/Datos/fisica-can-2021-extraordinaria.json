@@ -1,42 +1,406 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-cnt-2021-extraordinaria",
+  "codigo": "EXA.FIS.CNT.2021.EXT.SOL",
+  "comunidad": "Cantabria",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2021,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen resuelto de Física de la EBAU de Cantabria, convocatoria extraordinaria de 2021. Contiene diez problemas de ondas, óptica, gravitación, electromagnetismo y física moderna, con resolución paso a paso.",
+  "objetivo": "Evaluar la aplicación de las leyes fundamentales de la Física a problemas de ondas, óptica, campos gravitatorio y electromagnético, y física cuántica y nuclear, con tratamiento algebraico y numérico.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "EBAU Cantabria - Julio 2021 (Extraordinaria) - Física. 5 bloques con 2 ejercicios cada uno (10 ejercicios), 2,5 puntos cada uno. Se responden 5 ejercicios, uno por bloque. La puntuación indicada en cada tarjeta del examen resuelto se conserva en los apartados correspondientes."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $k=9{,}00\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $c=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $e=1{,}60\\cdot10^{-19}\\,\\text{C}$; $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$; $m_p=1{,}67\\cdot10^{-27}\\,\\text{kg}$; $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Onda armónica en cuerda",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2,5 puntos (1 + 0,5 + 1)",
+      "enunciado": "$y(x,t)=0{,}3\\cos\\left(\\frac{\\pi}{3}t-\\frac{\\pi}{5}x+\\frac{\\pi}{10}\\right)$ (S.I.). a) Amplitud, período, frecuencia y longitud de onda. b) Velocidad de propagación. c) Velocidad transversal en $x=0$.",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Amplitud, período, frecuencia y longitud de onda."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Velocidad de propagación."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad transversal en $x=0$."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Identificación de magnitudes",
+          "contenido": "La ecuación general de una onda armónica unidimensional es $y(x,t)=A\\cos(\\omega t-kx+\\varphi_0)$. Comparando con $y(x,t)=0{,}3\\cos\\left(\\frac{\\pi}{3}t-\\frac{\\pi}{5}x+\\frac{\\pi}{10}\\right)$ se obtiene:\n\n$$A=0{,}3\\,\\text{m},\\quad \\omega=\\frac{\\pi}{3}\\,\\text{rad}\\,\\text{s}^{-1},\\quad k=\\frac{\\pi}{5}\\,\\text{rad}\\,\\text{m}^{-1},\\quad \\varphi_0=\\frac{\\pi}{10}\\,\\text{rad}.$$\n\nEl período es $T=\\frac{2\\pi}{\\omega}=\\frac{2\\pi}{\\pi/3}=6\\,\\text{s}$.\n\nLa frecuencia es $f=\\frac{1}{T}=\\frac{1}{6}\\,\\text{Hz}\\approx0{,}167\\,\\text{Hz}$.\n\nLa longitud de onda es $\\lambda=\\frac{2\\pi}{k}=\\frac{2\\pi}{\\pi/5}=10\\,\\text{m}$."
+        },
+        {
+          "titulo": "Velocidad de propagación",
+          "contenido": "La velocidad de propagación vale:\n\n$$v=\\frac{\\lambda}{T}=\\frac{10}{6}=\\frac{5}{3}\\,\\text{m}\\,\\text{s}^{-1}\\approx1{,}67\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nEl signo negativo del término $kx$ indica propagación en el sentido positivo del eje $OX$."
+        },
+        {
+          "titulo": "Velocidad transversal en x=0",
+          "contenido": "Derivando respecto del tiempo:\n\n$$v_y(x,t)=\\frac{\\partial y}{\\partial t}=-A\\omega\\sin(\\omega t-kx+\\varphi_0).$$\n\nEn $x=0$:\n\n$$v_y(0,t)=-0{,}3\\cdot\\frac{\\pi}{3}\\sin\\left(\\frac{\\pi}{3}t+\\frac{\\pi}{10}\\right)=-0{,}1\\pi\\sin\\left(\\frac{\\pi}{3}t+\\frac{\\pi}{10}\\right)\\,\\text{m}\\,\\text{s}^{-1}.$$"
         }
       ],
-      "resultado": ""
+      "resultado": "$A=0{,}3\\,\\text{m}$; $T=6\\,\\text{s}$; $f=\\frac{1}{6}\\,\\text{Hz}\\approx0{,}167\\,\\text{Hz}$; $\\lambda=10\\,\\text{m}$; $v=\\frac{5}{3}\\,\\text{m}\\,\\text{s}^{-1}\\approx1{,}67\\,\\text{m}\\,\\text{s}^{-1}$; $v_y(0,t)=-0{,}1\\pi\\sin\\left(\\frac{\\pi}{3}t+\\frac{\\pi}{10}\\right)\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Altavoz: nivel sonoro y distancia",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2,5 puntos (1 + 0,75 + 0,75)",
+      "enunciado": "Altavoz a distancia $d$ con nivel sonoro $S=70\\,\\text{dB}$. $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$. Umbral de dolor si $I>1\\,\\text{W}\\,\\text{m}^{-2}$. a) Intensidad sonora. b) Factor por el que aumentar la distancia para $S=60\\,\\text{dB}$. c) Factor por el que aumentar la potencia para $S=80\\,\\text{dB}$ a la misma $d$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Intensidad sonora."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Factor por el que aumentar la distancia para $S=60\\,\\text{dB}$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Factor por el que aumentar la potencia para $S=80\\,\\text{dB}$ a la misma $d$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Intensidad sonora",
+          "contenido": "El nivel de intensidad sonora se relaciona con la intensidad mediante la ley de Weber-Fechner:\n\n$$S=10\\log\\left(\\frac{I}{I_0}\\right).$$\n\nPara $S=70\\,\\text{dB}$:\n\n$$I=I_0\\,10^{S/10}=10^{-12}\\cdot10^{7}=10^{-5}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nEsta intensidad está por debajo de $1\\,\\text{W}\\,\\text{m}^{-2}$, por lo que no corresponde al umbral de dolor."
+        },
+        {
+          "titulo": "Factor de distancia para 60 dB",
+          "contenido": "Para $S=60\\,\\text{dB}$:\n\n$$I_2=I_0\\,10^{60/10}=10^{-12}\\cdot10^{6}=10^{-6}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nComo para una fuente puntual $I\\propto\\frac{1}{r^{2}}$, se cumple:\n\n$$\\frac{r_2}{r_1}=\\sqrt{\\frac{I_1}{I_2}}=\\sqrt{\\frac{10^{-5}}{10^{-6}}}=\\sqrt{10}\\approx3{,}16.$$\n\nHay que alejar el altavoz un factor $\\sqrt{10}\\approx3{,}16$."
+        },
+        {
+          "titulo": "Factor de potencia para 80 dB",
+          "contenido": "Para $S=80\\,\\text{dB}$:\n\n$$I_3=I_0\\,10^{80/10}=10^{-12}\\cdot10^{8}=10^{-4}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nA la misma distancia, $P\\propto I$, por tanto:\n\n$$\\frac{P_3}{P_1}=\\frac{I_3}{I_1}=\\frac{10^{-4}}{10^{-5}}=10.$$\n\nHay que multiplicar la potencia por $10$."
+        }
+      ],
+      "resultado": "$I=10^{-5}\\,\\text{W}\\,\\text{m}^{-2}$; factor de distancia $\\sqrt{10}\\approx3{,}16$; factor de potencia $10$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Material entre agua y aire",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias; C5. Naturaleza de la luz y óptica física básica",
+      "puntuacion": "2,5 puntos (0,5 + 1 + 1)",
+      "enunciado": "Material $n_{\\text{lámina}}=1{,}55$ entre agua ($n=1{,}33$) y aire ($n=1$). Rayo de $f=4{,}5\\cdot10^{14}\\,\\text{Hz}$ incide desde agua con ángulo $20^{\\circ}$. a) $\\lambda$ en agua y en el material. b) Ángulos de refracción. c) Ángulo de incidencia para reflexión total en la segunda cara.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "$\\lambda$ en agua y en el material."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Ángulos de refracción."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Ángulo de incidencia para reflexión total en la segunda cara."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Longitudes de onda",
+          "contenido": "La longitud de onda en el vacío es:\n\n$$\\lambda_0=\\frac{c}{f}=\\frac{3{,}00\\cdot10^{8}}{4{,}5\\cdot10^{14}}=6{,}67\\cdot10^{-7}\\,\\text{m}=667\\,\\text{nm}.$$\n\nEn el agua:\n\n$$\\lambda_{\\text{agua}}=\\frac{\\lambda_0}{n_{\\text{agua}}}=\\frac{6{,}67\\cdot10^{-7}}{1{,}33}=5{,}01\\cdot10^{-7}\\,\\text{m}\\approx501\\,\\text{nm}.$$\n\nEn el material:\n\n$$\\lambda_{\\text{lámina}}=\\frac{\\lambda_0}{n_{\\text{lámina}}}=\\frac{6{,}67\\cdot10^{-7}}{1{,}55}=4{,}30\\cdot10^{-7}\\,\\text{m}\\approx430\\,\\text{nm}.$$"
+        },
+        {
+          "titulo": "Ángulos de refracción",
+          "contenido": "Al pasar del agua a la lámina, aplicando la ley de Snell:\n\n$$n_{\\text{agua}}\\sin i=n_{\\text{lámina}}\\sin r.$$\n\nCon $i=20^{\\circ}$:\n\n$$\\sin r=\\frac{1{,}33}{1{,}55}\\sin20^{\\circ}=0{,}2935\\quad\\Rightarrow\\quad r\\approx17{,}1^{\\circ}.$$\n\nAl pasar de la lámina al aire:\n\n$$n_{\\text{lámina}}\\sin r=n_{\\text{aire}}\\sin r'.$$\n\nPor tanto:\n\n$$\\sin r'=1{,}55\\sin17{,}1^{\\circ}=0{,}455\\quad\\Rightarrow\\quad r'\\approx27{,}1^{\\circ}.$$"
+        },
+        {
+          "titulo": "Ángulo de incidencia para reflexión total",
+          "contenido": "En la segunda cara, lámina-aire, la reflexión total ocurre si el ángulo dentro de la lámina supera el ángulo crítico:\n\n$$\\sin C=\\frac{n_{\\text{aire}}}{n_{\\text{lámina}}}=\\frac{1}{1{,}55}=0{,}645\\quad\\Rightarrow\\quad C\\approx40{,}2^{\\circ}.$$\n\nEse ángulo dentro de la lámina es el ángulo refractado $r$ en la primera cara. Aplicando Snell agua-lámina:\n\n$$n_{\\text{agua}}\\sin i_1=n_{\\text{lámina}}\\sin C=n_{\\text{aire}}.$$\n\nPor tanto:\n\n$$\\sin i_1=\\frac{1}{1{,}33}=0{,}752\\quad\\Rightarrow\\quad i_1\\approx48{,}8^{\\circ}.$$"
+        }
+      ],
+      "resultado": "$\\lambda_{\\text{agua}}\\approx5{,}01\\cdot10^{-7}\\,\\text{m}$; $\\lambda_{\\text{lámina}}\\approx4{,}30\\cdot10^{-7}\\,\\text{m}$; $r\\approx17{,}1^{\\circ}$; $r'\\approx27{,}1^{\\circ}$; $i_1\\approx48{,}8^{\\circ}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Lente divergente",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2,5 puntos (1,5 + 1)",
+      "enunciado": "Lente divergente $|f'|=15\\,\\text{cm}$. a) Posición y altura de la imagen para objeto $y=4\\,\\text{cm}$ a $10\\,\\text{cm}$. b) Naturaleza de la imagen.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Posición y altura de la imagen para objeto $y=4\\,\\text{cm}$ a $10\\,\\text{cm}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Naturaleza de la imagen."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Posición y altura de la imagen",
+          "contenido": "Para una lente divergente, la focal es $f'=-15\\,\\text{cm}$. Con el convenio de signos habitual, el objeto está a $s=-10\\,\\text{cm}$ y la ecuación de las lentes delgadas es:\n\n$$\\frac{1}{f'}=\\frac{1}{s'}-\\frac{1}{s}.$$\n\nSustituyendo:\n\n$$\\frac{1}{s'}=\\frac{1}{f'}+\\frac{1}{s}=-\\frac{1}{15}-\\frac{1}{10}=-\\frac{5}{30}=-\\frac{1}{6}\\quad\\Rightarrow\\quad s'=-6\\,\\text{cm}.$$\n\nEl aumento lateral es:\n\n$$m=\\frac{s'}{s}=\\frac{-6}{-10}=0{,}6.$$\n\nLa altura de la imagen es:\n\n$$y'=m\\,y=0{,}6\\cdot4=2{,}4\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "Naturaleza de la imagen",
+          "contenido": "Como $s'<0$, la imagen es virtual y se forma del mismo lado que el objeto. Como $m>0$, es derecha; como $|m|<1$, es menor que el objeto."
+        }
+      ],
+      "resultado": "$s'=-6\\,\\text{cm}$; $y'=2{,}4\\,\\text{cm}$; imagen virtual, derecha y menor."
+    },
+    {
+      "numero": 5,
+      "titulo": "Campo gravitatorio de dos masas",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A1. Ley de la Gravitación Universal y superposición vectorial; A4. Intensidad de campo gravitatorio y líneas de campo; A5. Potencial gravitatorio, equipotenciales y relación con el campo; A6. Trabajo, energía potencial y energía mecánica gravitatoria",
+      "puntuacion": "2,5 puntos (1 + 1 + 0,5)",
+      "enunciado": "$m_A=2\\cdot10^{10}\\,\\text{kg}$ en $(-50,0)$, $m_B=3\\cdot10^{10}\\,\\text{kg}$ en $(100,0)$. Distancias en metros. a) Campo en $(0,0)$. b) Potencial en $(0,0)$ y $(0,50)$. c) Trabajo del campo sobre $10\\,\\text{kg}$ de $(0,0)$ a $(0,50)$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Campo en $(0,0)$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Potencial en $(0,0)$ y $(0,50)$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Trabajo del campo sobre $10\\,\\text{kg}$ de $(0,0)$ a $(0,50)$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Campo en el origen",
+          "contenido": "En $O(0,0)$, el campo debido a $m_A$ apunta hacia $A$ (sentido negativo de $OX$):\n\n$$\\vec{g}_A=-G\\frac{m_A}{r_A^{2}}\\vec{i}=-6{,}67\\cdot10^{-11}\\frac{2\\cdot10^{10}}{50^{2}}\\vec{i}=-5{,}34\\cdot10^{-4}\\vec{i}\\,\\text{N}\\,\\text{kg}^{-1}.$$\n\nEl campo debido a $m_B$ apunta hacia $B$ (sentido positivo de $OX$):\n\n$$\\vec{g}_B=G\\frac{m_B}{r_B^{2}}\\vec{i}=6{,}67\\cdot10^{-11}\\frac{3\\cdot10^{10}}{100^{2}}\\vec{i}=2{,}00\\cdot10^{-4}\\vec{i}\\,\\text{N}\\,\\text{kg}^{-1}.$$\n\nEl campo resultante es:\n\n$$\\vec{g}_O=\\vec{g}_A+\\vec{g}_B=-3{,}34\\cdot10^{-4}\\vec{i}\\,\\text{N}\\,\\text{kg}^{-1}.$$"
+        },
+        {
+          "titulo": "Potencial en O y en C",
+          "contenido": "El potencial en $O(0,0)$ es:\n\n$$V_O=-G\\left(\\frac{m_A}{r_A}+\\frac{m_B}{r_B}\\right)=-6{,}67\\cdot10^{-11}\\left(\\frac{2\\cdot10^{10}}{50}+\\frac{3\\cdot10^{10}}{100}\\right)=-4{,}67\\cdot10^{-2}\\,\\text{J}\\,\\text{kg}^{-1}.$$\n\nEn $C(0,50)$, las distancias son $r_A=\\sqrt{50^{2}+50^{2}}=70{,}71\\,\\text{m}$ y $r_B=\\sqrt{100^{2}+50^{2}}=111{,}80\\,\\text{m}$. Así:\n\n$$V_C=-G\\left(\\frac{m_A}{r_A}+\\frac{m_B}{r_B}\\right)=-6{,}67\\cdot10^{-11}\\left(\\frac{2\\cdot10^{10}}{70{,}71}+\\frac{3\\cdot10^{10}}{111{,}80}\\right)=-3{,}68\\cdot10^{-2}\\,\\text{J}\\,\\text{kg}^{-1}.$$"
+        },
+        {
+          "titulo": "Trabajo del campo",
+          "contenido": "El trabajo del campo gravitatorio sobre una masa $m=10\\,\\text{kg}$ al pasar de $O$ a $C$ es:\n\n$$W_{\\text{campo}}=-\\Delta E_p=m\\,(V_O-V_C)=10\\,(-4{,}67\\cdot10^{-2}+3{,}68\\cdot10^{-2})=-9{,}9\\cdot10^{-2}\\,\\text{J}.$$\n\nEl trabajo es negativo: el campo se opone al desplazamiento y es necesaria una fuerza externa para realizar el traslado."
+        }
+      ],
+      "resultado": "$\\vec{g}_O=-3{,}34\\cdot10^{-4}\\vec{i}\\,\\text{N}\\,\\text{kg}^{-1}$; $V_O=-4{,}67\\cdot10^{-2}\\,\\text{J}\\,\\text{kg}^{-1}$; $V_C=-3{,}68\\cdot10^{-2}\\,\\text{J}\\,\\text{kg}^{-1}$; $W_{\\text{campo}}=-9{,}9\\cdot10^{-2}\\,\\text{J}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Satélite en órbita alrededor del planeta P",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo; A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2,5 puntos (1 + 0,75 + 0,75)",
+      "enunciado": "Satélite $m=8\\cdot10^{10}\\,\\text{kg}$ en órbita circular a $h=800\\,\\text{km}$. $M_P=5\\cdot10^{25}\\,\\text{kg}$, $R_P=2\\cdot10^{4}\\,\\text{km}$. a) Periodo orbital. b) Energía total. c) Campo gravitatorio en la superficie.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Periodo orbital."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Energía total."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Campo gravitatorio en la superficie."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Periodo orbital",
+          "contenido": "El radio de la órbita es:\n\n$$r=R_P+h=2{,}00\\cdot10^{7}+8{,}00\\cdot10^{5}=2{,}08\\cdot10^{7}\\,\\text{m}.$$\n\nLa velocidad orbital se obtiene de:\n\n$$\\frac{v^{2}}{r}=\\frac{GM_P}{r^{2}}\\quad\\Rightarrow\\quad v=\\sqrt{\\frac{GM_P}{r}}.$$\n\nSustituyendo:\n\n$$v=\\sqrt{\\frac{6{,}67\\cdot10^{-11}\\cdot5\\cdot10^{25}}{2{,}08\\cdot10^{7}}}=1{,}27\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nEl período es:\n\n$$T=\\frac{2\\pi r}{v}=\\frac{2\\pi\\cdot2{,}08\\cdot10^{7}}{1{,}27\\cdot10^{4}}=1{,}03\\cdot10^{4}\\,\\text{s}\\approx2{,}87\\,\\text{h}.$$"
+        },
+        {
+          "titulo": "Energía total",
+          "contenido": "La energía cinética es:\n\n$$E_c=\\frac{1}{2}mv^{2}=\\frac{GM_Pm}{2r}=6{,}41\\cdot10^{18}\\,\\text{J}.$$\n\nLa energía potencial es:\n\n$$E_p=-\\frac{GM_Pm}{r}=-1{,}28\\cdot10^{19}\\,\\text{J}.$$\n\nLa energía mecánica total es:\n\n$$E_m=E_c+E_p=-\\frac{GM_Pm}{2r}=-6{,}41\\cdot10^{18}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Campo gravitatorio en la superficie",
+          "contenido": "En la superficie del planeta:\n\n$$g_0=\\frac{GM_P}{R_P^{2}}=\\frac{6{,}67\\cdot10^{-11}\\cdot5\\cdot10^{25}}{(2{,}00\\cdot10^{7})^{2}}=8{,}34\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        }
+      ],
+      "resultado": "$T\\approx1{,}03\\cdot10^{4}\\,\\text{s}\\approx2{,}87\\,\\text{h}$; $E_m=-6{,}41\\cdot10^{18}\\,\\text{J}$; $g_0=8{,}34\\,\\text{m}\\,\\text{s}^{-2}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Cargas y carga adicional para anular fuerza",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2,5 puntos (1 + 1 + 0,5)",
+      "enunciado": "$Q_1=1\\,\\mu\\text{C}$ en $(2,0)$, $Q_2=-1\\,\\mu\\text{C}$ en $(-2,0)$. a) Campo en $(0,2)$. b) $Q_3$ en $(1,2)$ para que carga en $(0,2)$ no sienta fuerza neta. c) Potencial resultante en $(0,2)$ con $Q_1$, $Q_2$ y $Q_3$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Campo en $(0,2)$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "$Q_3$ en $(1,2)$ para que carga en $(0,2)$ no sienta fuerza neta."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Potencial resultante en $(0,2)$ con $Q_1$, $Q_2$ y $Q_3$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Campo en C(0,2)",
+          "contenido": "Las distancias de $Q_1$ y $Q_2$ al punto $C(0,2)$ son:\n\n$$r_1=r_2=\\sqrt{2^{2}+2^{2}}=2{,}83\\,\\text{m}.$$\n\nEl campo de $Q_1$ en $C$ apunta alejándose de $Q_1$, y el de $Q_2$ apunta hacia $Q_2$. Por simetría, las componentes verticales se cancelan y las horizontales se suman en el sentido negativo de $OX$:\n\n$$E_C=2\\,k\\frac{|Q_1|}{r_1^{2}}\\cos45^{\\circ}=2\\cdot9\\cdot10^{9}\\frac{10^{-6}}{8}\\frac{\\sqrt{2}}{2}=1{,}59\\cdot10^{3}\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nVectorialmente:\n\n$$\\vec{E}_C=-1{,}59\\cdot10^{3}\\vec{i}\\,\\text{N}\\,\\text{C}^{-1}.$$"
+        },
+        {
+          "titulo": "Carga Q3 para anular la fuerza",
+          "contenido": "Para que una carga situada en $C$ no sienta fuerza neta, el campo de $Q_3$ debe cancelar $\\vec{E}_C$. Como $Q_3$ está en $(1,2)$, la distancia a $C$ es $1\\,\\text{m}$ y el campo que produce en $C$ debe valer $+1{,}59\\cdot10^{3}\\vec{i}\\,\\text{N}\\,\\text{C}^{-1}$.\n\nPara que el campo apunte hacia $Q_3$, la carga $Q_3$ debe ser negativa. Su valor absoluto es:\n\n$$|Q_3|=\\frac{E_C\\,r_3^{2}}{k}=\\frac{1{,}59\\cdot10^{3}\\cdot1^{2}}{9\\cdot10^{9}}=1{,}77\\cdot10^{-7}\\,\\text{C}.$$\n\nPor tanto:\n\n$$Q_3=-1{,}77\\cdot10^{-7}\\,\\text{C}\\approx-0{,}177\\,\\mu\\text{C}.$$"
+        },
+        {
+          "titulo": "Potencial en C con las tres cargas",
+          "contenido": "El potencial en $C$ es la suma escalar:\n\n$$V_C=k\\left(\\frac{Q_1}{r_1}+\\frac{Q_2}{r_2}+\\frac{Q_3}{r_3}\\right).$$\n\nComo $Q_1=-Q_2$ y $r_1=r_2$, los dos primeros términos se cancelan:\n\n$$V_C=k\\frac{Q_3}{r_3}=9\\cdot10^{9}\\frac{-1{,}77\\cdot10^{-7}}{1}=-1{,}59\\cdot10^{3}\\,\\text{V}.$$"
+        }
+      ],
+      "resultado": "$\\vec{E}_C=-1{,}59\\cdot10^{3}\\vec{i}\\,\\text{N}\\,\\text{C}^{-1}$; $Q_3\\approx-0{,}177\\,\\mu\\text{C}$; $V_C=-1{,}59\\cdot10^{3}\\,\\text{V}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Protón en campo magnético",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz",
+      "puntuacion": "2,5 puntos (1 + 1 + 0,5)",
+      "enunciado": "Protón en campo $\\vec{B}=2\\vec{i}\\,\\text{T}$ con $\\vec{v}=2\\cdot10^{6}\\vec{j}\\,\\text{m}\\,\\text{s}^{-1}$. a) Vector fuerza. b) Radio de curvatura. c) Periodo.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Vector fuerza."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Radio de curvatura."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Periodo."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Vector fuerza",
+          "contenido": "La fuerza magnética sobre el protón es:\n\n$$\\vec{F}=q\\,\\vec{v}\\times\\vec{B}.$$\n\nCon $\\vec{v}=2\\cdot10^{6}\\vec{j}\\,\\text{m}\\,\\text{s}^{-1}$ y $\\vec{B}=2\\vec{i}\\,\\text{T}$:\n\n$$\\vec{v}\\times\\vec{B}=(2\\cdot10^{6}\\vec{j})\\times(2\\vec{i})=-4\\cdot10^{6}\\vec{k}.$$\n\nPor tanto:\n\n$$\\vec{F}=1{,}60\\cdot10^{-19}(-4\\cdot10^{6}\\vec{k})=-6{,}4\\cdot10^{-13}\\vec{k}\\,\\text{N}.$$"
+        },
+        {
+          "titulo": "Radio de curvatura",
+          "contenido": "La fuerza magnética actúa como fuerza centrípeta:\n\n$$qvB=\\frac{mv^{2}}{R}\\quad\\Rightarrow\\quad R=\\frac{mv}{qB}.$$\n\nSustituyendo:\n\n$$R=\\frac{1{,}67\\cdot10^{-27}\\cdot2\\cdot10^{6}}{1{,}60\\cdot10^{-19}\\cdot2}=1{,}04\\cdot10^{-2}\\,\\text{m}\\approx1{,}0\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "Periodo",
+          "contenido": "El período del movimiento circular es:\n\n$$T=\\frac{2\\pi R}{v}=\\frac{2\\pi\\cdot1{,}04\\cdot10^{-2}}{2\\cdot10^{6}}=3{,}27\\cdot10^{-8}\\,\\text{s}.$$"
+        }
+      ],
+      "resultado": "$\\vec{F}=-6{,}4\\cdot10^{-13}\\vec{k}\\,\\text{N}$; $R\\approx1{,}04\\cdot10^{-2}\\,\\text{m}\\approx1{,}0\\,\\text{cm}$; $T\\approx3{,}27\\cdot10^{-8}\\,\\text{s}$."
+    },
+    {
+      "numero": 9,
+      "titulo": "Efecto fotoeléctrico cobre",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2,75 puntos (0,75 + 1 + 1)",
+      "enunciado": "$W_0(\\text{Cu})=4{,}7\\,\\text{eV}$. Iluminación con $\\lambda=2{,}5\\cdot10^{-7}\\,\\text{m}$. $1\\,\\text{eV}=1{,}6\\cdot10^{-19}\\,\\text{J}$. a) $\\lambda$ umbral del cobre. b) $v_{\\text{max}}$ electrones. c) Potencial de frenado.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "$\\lambda$ umbral del cobre."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "$v_{\\text{max}}$ electrones."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Potencial de frenado."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Longitud de onda umbral",
+          "contenido": "La energía umbral es:\n\n$$W_0=4{,}7\\,\\text{eV}\\cdot1{,}6\\cdot10^{-19}\\,\\text{J}\\,\\text{eV}^{-1}=7{,}52\\cdot10^{-19}\\,\\text{J}.$$\n\nLa longitud de onda umbral cumple $\\frac{hc}{\\lambda_0}=W_0$:\n\n$$\\lambda_0=\\frac{hc}{W_0}=\\frac{6{,}63\\cdot10^{-34}\\cdot3{,}00\\cdot10^{8}}{7{,}52\\cdot10^{-19}}=2{,}65\\cdot10^{-7}\\,\\text{m}\\approx265\\,\\text{nm}.$$"
+        },
+        {
+          "titulo": "Velocidad máxima de los electrones",
+          "contenido": "La energía del fotón incidente es:\n\n$$E=\\frac{hc}{\\lambda}=\\frac{6{,}63\\cdot10^{-34}\\cdot3{,}00\\cdot10^{8}}{2{,}5\\cdot10^{-7}}=7{,}96\\cdot10^{-19}\\,\\text{J}.$$\n\nLa energía cinética máxima es:\n\n$$K_{\\text{max}}=E-W_0=7{,}96\\cdot10^{-19}-7{,}52\\cdot10^{-19}=4{,}4\\cdot10^{-20}\\,\\text{J}.$$\n\nDe $K_{\\text{max}}=\\frac{1}{2}m_ev_{\\text{max}}^{2}$:\n\n$$v_{\\text{max}}=\\sqrt{\\frac{2K_{\\text{max}}}{m_e}}=\\sqrt{\\frac{2\\cdot4{,}4\\cdot10^{-20}}{9{,}11\\cdot10^{-31}}}=3{,}1\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Potencial de frenado",
+          "contenido": "El potencial de frenado se obtiene de $eV_f=K_{\\text{max}}$:\n\n$$V_f=\\frac{K_{\\text{max}}}{e}=\\frac{4{,}4\\cdot10^{-20}}{1{,}6\\cdot10^{-19}}=0{,}275\\,\\text{V}\\approx0{,}28\\,\\text{V}.$$"
+        }
+      ],
+      "resultado": "$\\lambda_0\\approx2{,}65\\cdot10^{-7}\\,\\text{m}\\approx265\\,\\text{nm}$; $v_{\\text{max}}\\approx3{,}1\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}$; $V_f\\approx0{,}28\\,\\text{V}$."
+    },
+    {
+      "numero": 10,
+      "titulo": "Decaimiento radiactivo: actividad",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2,5 puntos (1,25 + 1,25)",
+      "enunciado": "$A_0=10^{8}\\,\\text{Bq}$. A los $100$ días, $A=2\\cdot10^{7}\\,\\text{Bq}$. $1\\,\\text{Bq}=1$ desintegración/s. a) $\\lambda$ y $T_{1/2}$. b) Para una segunda muestra con $A=4\\cdot10^{9}\\,\\text{Bq}$ tras $10$ días, calcular $N_0$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,25 puntos",
+          "enunciado": "$\\lambda$ y $T_{1/2}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,25 puntos",
+          "enunciado": "Para una segunda muestra con $A=4\\cdot10^{9}\\,\\text{Bq}$ tras $10$ días, calcular $N_0$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Constante de desintegración y periodo de semidesintegración",
+          "contenido": "La actividad sigue la ley:\n\n$$A=A_0e^{-\\lambda t}.$$\n\nCon $A_0=10^{8}\\,\\text{Bq}$, $A=2\\cdot10^{7}\\,\\text{Bq}$ y $t=100\\,\\text{días}$:\n\n$$2\\cdot10^{7}=10^{8}e^{-100\\lambda}\\quad\\Rightarrow\\quad0{,}2=e^{-100\\lambda}.$$\n\nTomando logaritmos:\n\n$$\\lambda=-\\frac{\\ln0{,}2}{100}=1{,}61\\cdot10^{-2}\\,\\text{día}^{-1}.$$\n\nEn unidades del SI:\n\n$$\\lambda=\\frac{1{,}61\\cdot10^{-2}}{86400}=1{,}86\\cdot10^{-7}\\,\\text{s}^{-1}.$$\n\nEl período de semidesintegración es:\n\n$$T_{1/2}=\\frac{\\ln2}{\\lambda}=\\frac{0{,}693}{1{,}61\\cdot10^{-2}}=43{,}1\\,\\text{días}.$$"
+        },
+        {
+          "titulo": "Núcleos iniciales de la segunda muestra",
+          "contenido": "Para la segunda muestra, $A=4\\cdot10^{9}\\,\\text{Bq}$ a $t=10\\,\\text{días}$. La actividad inicial fue:\n\n$$A_0=Ae^{\\lambda t}=4\\cdot10^{9}e^{1{,}61\\cdot10^{-2}\\cdot10}=4{,}70\\cdot10^{9}\\,\\text{Bq}.$$\n\nComo $A_0=\\lambda N_0$ y $\\lambda=1{,}86\\cdot10^{-7}\\,\\text{s}^{-1}$:\n\n$$N_0=\\frac{A_0}{\\lambda}=\\frac{4{,}70\\cdot10^{9}}{1{,}86\\cdot10^{-7}}=2{,}53\\cdot10^{16}\\ \\text{núcleos}.$$"
+        }
+      ],
+      "resultado": "$\\lambda=1{,}61\\cdot10^{-2}\\,\\text{día}^{-1}=1{,}86\\cdot10^{-7}\\,\\text{s}^{-1}$; $T_{1/2}=43{,}1\\,\\text{días}$; $N_0\\approx2{,}53\\cdot10^{16}$ núcleos."
     }
   ]
 }

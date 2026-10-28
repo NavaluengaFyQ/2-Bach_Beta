@@ -1,42 +1,432 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-aragon-2025-extraordinaria",
+  "codigo": "EXA.FIS.ARA.2025.EXT.SOL",
+  "comunidad": "Aragón",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2025,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la PAU de Aragón, convocatoria extraordinaria de 2025, con 13 problemas resueltos paso a paso. El examen abarca campo gravitatorio, campo electromagnético, vibraciones y ondas, óptica y física cuántica.",
+  "objetivo": "Evaluar la comprensión de los conceptos fundamentales de la Física de 2º de Bachillerato y la capacidad de aplicarlos a la resolución de problemas numéricos y cuestiones teóricas.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "El examen contiene 4 bloques, que corresponden a los saberes básicos. Cada bloque contiene una pregunta de carácter obligatorio y varias preguntas extra de las cuales se deben elegir una o dos, dependiendo del bloque. Bloque 1 (Campo gravitatorio): 2,5 puntos — obligatoria 1a) + elegir una entre 1b)/1c). Bloque 2 (Campo electromagnético): 2,5 puntos — obligatoria 2a) + elegir una entre 2b)/2c). Bloque 3 (Vibraciones y Ondas): 3 puntos — obligatoria 3a) + elegir dos entre 3b)/3c)/3d). Bloque 4 (Física relativista, cuántica, nuclear y de partículas): 2 puntos — obligatoria 4a) + elegir una entre 4b)/4c). Tiempo: 1 hora 30 minutos."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $M_T=5{,}972\\cdot10^{24}\\,\\text{kg}$; $M_L=7{,}349\\cdot10^{22}\\,\\text{kg}$; $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$; $|e|=1{,}6\\cdot10^{-19}\\,\\text{C}$; $g=9{,}8\\,\\text{m}\\,\\text{s}^{-2}$; $v_{\\text{sonido}}=346\\,\\text{m}\\,\\text{s}^{-1}$; $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$; $m_e=9{,}1\\cdot10^{-31}\\,\\text{kg}$; $h=6{,}626\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Concepto y expresión de la energía potencial gravitatoria",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A5. Potencial gravitatorio, equipotenciales y relación con el campo",
+      "puntuacion": "1 punto (0,5 + 0,5)",
+      "enunciado": "BLOQUE 1 — Pregunta obligatoria (1 punto). 1a) Explique el concepto de energía potencial gravitatoria (0,5 puntos). ¿Qué energía potencial gravitatoria tiene una partícula de masa $m$ situada a una distancia $r$ de otra de masa $M$? (0,5 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Concepto físico y definición operacional",
+          "contenido": "La energía potencial gravitatoria de un sistema de dos masas puntuales es el trabajo, cambiado de signo, que realiza la fuerza gravitatoria al traer una de las masas desde el infinito, donde se toma $E_p=0$, hasta su posición actual, manteniendo fija la otra masa. Equivalentemente, es la energía que la fuerza gravitatoria puede devolver al sistema cuando las masas se separan de nuevo al infinito.\n\nEs una magnitud asociada al sistema en su conjunto, no a una sola masa, depende únicamente de la posición relativa y es siempre negativa con el convenio $E_p(\\infty)=0$, lo que refleja el carácter atractivo de la interacción: hay que ceder energía positiva al sistema para alejar las masas."
+        },
+        {
+          "titulo": "Relación con el campo y propiedad fundamental",
+          "contenido": "El campo gravitatorio es conservativo, de modo que la fuerza deriva de un potencial:\n\n$$\\vec{F}_g=-\\frac{GMm}{r^{2}}\\,\\hat r=-\\frac{dE_p}{dr}\\,\\hat r.$$\n\nLa diferencia de energía potencial entre dos posiciones $A$ y $B$ coincide con el trabajo que realiza la fuerza gravitatoria al ir de $A$ a $B$ cambiado de signo:\n\n$$W_{A\\to B}^{\\text{grav}}=-\\Delta E_p=-(E_p(B)-E_p(A)).$$\n\nPor ello la energía potencial gravitatoria mide el contenido energético almacenado en la configuración del sistema, recuperable como energía cinética si las masas pueden moverse libremente."
+        },
+        {
+          "titulo": "Expresión de $E_p$ para dos masas puntuales separadas $r$",
+          "contenido": "Sea una masa $M$ fija en el origen y una masa $m$ a distancia $r$. La fuerza que ejerce $M$ sobre $m$ es radial atractiva:\n\n$$\\vec{F}_g=-\\frac{GMm}{r^{2}}\\,\\hat r.$$\n\nEl trabajo que realiza esta fuerza para traer $m$ desde el infinito hasta la posición $r$, moviéndose radialmente, es:\n\n$$W_{\\infty\\to r}^{\\text{grav}}=\\int_{\\infty}^{r}\\left(-\\frac{GMm}{r'^{2}}\\right)dr'=\\frac{GMm}{r}.$$\n\nPor la definición $W_{\\infty\\to r}^{\\text{grav}}=-\\Delta E_p=-(E_p(r)-E_p(\\infty))$ y, fijando $E_p(\\infty)=0$:\n\n$$E_p(r)=-\\frac{GMm}{r}.$$"
+        },
+        {
+          "titulo": "Interpretación del signo",
+          "contenido": "El signo negativo expresa que el sistema ligado tiene menos energía que el sistema disociado en el infinito: hay que entregar al sistema una energía mínima para separar ambas masas. Si $r\\to\\infty$, $E_p\\to0$ (estado de referencia); si $r$ disminuye, $E_p$ se hace cada vez más negativa (interacción cada vez más intensa)."
+        }
+      ],
+      "resultado": "$E_p(r)=-\\dfrac{GMm}{r}$; energía potencial gravitatoria del sistema de dos masas puntuales, negativa con $E_p(\\infty)=0$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Radio orbital de la Luna y fuerza gravitatoria Tierra-Luna",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A2. Leyes de Kepler y relación con la gravitación; A7. Movimiento planetario, satélites y velocidades características; A1. Ley de la Gravitación Universal y superposición vectorial",
+      "puntuacion": "1,5 puntos (0,5 + 1)",
+      "enunciado": "BLOQUE 1 — Pregunta opcional (1,5 puntos). 1b) De forma simplificada, la fuerza gravitatoria de la Tierra mantiene a la Luna orbitando a su alrededor. Sabiendo que la Luna tarda 28 días en realizar una órbita completa, ¿a qué distancia del centro de la Tierra se encuentra? (0,5 puntos). ¿Cuánto vale la fuerza gravitatoria que se ejercen ambos astros el uno al otro? Dibuje el sistema Tierra-Luna y la fuerza gravitatoria que actúa sobre la Luna debida a la Tierra (1 punto). Datos: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $M_T=5{,}972\\cdot10^{24}\\,\\text{kg}$; $M_L=7{,}349\\cdot10^{22}\\,\\text{kg}$.",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "i",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Distancia Tierra-Luna por la 3.ª ley de Kepler."
+        },
+        {
+          "letra": "ii",
+          "puntuacion": "1 punto",
+          "enunciado": "Fuerza gravitatoria Tierra-Luna y diagrama."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Datos y conversión de unidades",
+          "contenido": "Periodo orbital: $T=28\\,\\text{días}=28\\cdot24\\cdot3600=2{,}4192\\cdot10^{6}\\,\\text{s}$.\n\nMasas: $M_T=5{,}972\\cdot10^{24}\\,\\text{kg}$; $M_L=7{,}349\\cdot10^{22}\\,\\text{kg}$; $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$."
+        },
+        {
+          "titulo": "Distancia Tierra-Luna por la 3.ª ley de Kepler",
+          "contenido": "Para una órbita circular de radio $r$ alrededor de la Tierra, igualando la fuerza gravitatoria a la fuerza centrípeta:\n\n$$\\frac{GM_TM_L}{r^{2}}=M_L\\frac{v^{2}}{r},\\qquad v=\\frac{2\\pi r}{T}.$$\n\nSustituyendo $v$:\n\n$$\\frac{GM_T}{r^{2}}=\\frac{4\\pi^{2}r}{T^{2}}\\quad\\Rightarrow\\quad r^{3}=\\frac{GM_TT^{2}}{4\\pi^{2}}.$$\n\nSustitución numérica:\n\n$$r=\\left(\\frac{6{,}67\\cdot10^{-11}\\cdot5{,}972\\cdot10^{24}\\cdot(2{,}4192\\cdot10^{6})^{2}}{4\\pi^{2}}\\right)^{1/3}\\approx3{,}84\\cdot10^{8}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Fuerza gravitatoria Tierra-Luna y diagrama",
+          "contenido": "El módulo de la fuerza que cada cuerpo ejerce sobre el otro es:\n\n$$F=G\\frac{M_TM_L}{r^{2}}.$$\n\nSustitución numérica:\n\n$$F=6{,}67\\cdot10^{-11}\\frac{5{,}972\\cdot10^{24}\\cdot7{,}349\\cdot10^{22}}{(3{,}84\\cdot10^{8})^{2}}\\approx1{,}99\\cdot10^{20}\\,\\text{N}.$$\n\nDiagrama: se representa la Tierra y la Luna unidas por la línea que pasa por sus centros. La fuerza que la Tierra ejerce sobre la Luna, $\\vec{F}_{T\\to L}$, sale del centro de la Luna y apunta hacia el centro de la Tierra; es la fuerza centrípeta que mantiene a la Luna en su órbita aproximadamente circular. Por la 3.ª ley de Newton, la Luna atrae a la Tierra con una fuerza $\\vec{F}_{L\\to T}$ de igual módulo y sentido opuesto."
         }
       ],
-      "resultado": ""
+      "resultado": "$r\\approx3{,}84\\cdot10^{8}\\,\\text{m}$; $F\\approx1{,}99\\cdot10^{20}\\,\\text{N}$ (atractiva, en la línea que une los centros)."
+    },
+    {
+      "numero": 3,
+      "titulo": "Radio y gravedad superficial de la Luna a partir de su densidad",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A1. Ley de la Gravitación Universal y superposición vectorial; A4. Intensidad de campo gravitatorio y líneas de campo; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "1,5 puntos (0,75 + 0,75)",
+      "enunciado": "BLOQUE 1 — Pregunta opcional (1,5 puntos). 1c) La densidad promedio lunar es de $3{,}34\\,\\text{g/cm}^{3}$. ¿Cuál será su radio promedio? (0,75 puntos) ¿Y el valor de la aceleración de la gravedad en la superficie de la Luna? (0,75 puntos). Datos: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $M_L=7{,}349\\cdot10^{22}\\,\\text{kg}$.",
+      "apartados": [
+        {
+          "letra": "i",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Radio promedio de la Luna."
+        },
+        {
+          "letra": "ii",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Gravedad superficial lunar."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Radio promedio de la Luna",
+          "contenido": "Conversión de la densidad al SI:\n\n$$\\rho=3{,}34\\,\\text{g/cm}^{3}=3{,}34\\cdot10^{3}\\,\\text{kg/m}^{3}.$$\n\nSuponiendo la Luna esférica de radio $R$:\n\n$$V=\\frac{4}{3}\\pi R^{3}=\\frac{M_L}{\\rho}\\quad\\Rightarrow\\quad R=\\left(\\frac{3M_L}{4\\pi\\rho}\\right)^{1/3}.$$\n\nSustitución numérica:\n\n$$R=\\left(\\frac{3\\cdot7{,}349\\cdot10^{22}}{4\\pi\\cdot3{,}34\\cdot10^{3}}\\right)^{1/3}\\approx1{,}74\\cdot10^{6}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Gravedad superficial lunar",
+          "contenido": "La aceleración de la gravedad en la superficie de un cuerpo esférico de masa $M_L$ y radio $R$ se obtiene de:\n\n$$g_L=\\frac{GM_L}{R^{2}}.$$\n\nSustitución numérica:\n\n$$g_L=\\frac{6{,}67\\cdot10^{-11}\\cdot7{,}349\\cdot10^{22}}{(1{,}74\\cdot10^{6})^{2}}\\approx1{,}62\\,\\text{m/s}^{2}.$$"
+        }
+      ],
+      "resultado": "$R\\approx1{,}74\\cdot10^{6}\\,\\text{m}$; $g_L\\approx1{,}62\\,\\text{m/s}^{2}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Fuerza por unidad de longitud entre dos hilos paralelos con corrientes",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos",
+      "puntuacion": "1 punto",
+      "enunciado": "BLOQUE 2 — Pregunta obligatoria (1 punto). 2a) Los dos cables de la figura son infinitos, paralelos y están separados una distancia $d=12\\,\\text{cm}$. Además conducen sendas corrientes de $I_1=2\\,\\text{A}$ e $I_2=3\\,\\text{A}$, en los sentidos indicados en la figura. Calcule la fuerza por unidad de longitud que se ejercen entre ellos y haga un dibujo que muestre la dirección y sentido de la fuerza que actúa sobre cada una de las corrientes (1 punto). En la figura, dos cables verticales paralelos por los que ambas corrientes circulan en el mismo sentido, hacia arriba. Datos: $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m/A}$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Expresión teórica",
+          "contenido": "Un hilo rectilíneo infinito de corriente $I_1$ crea, a distancia $d$, un campo magnético de módulo:\n\n$$B_1=\\frac{\\mu_0I_1}{2\\pi d}.$$\n\nSobre un segmento de longitud $L$ del segundo hilo, que transporta $I_2$, este campo ejerce la fuerza de Lorentz:\n\n$$F=I_2LB_1.$$\n\nCon cables paralelos, el módulo de la fuerza por unidad de longitud es:\n\n$$\\frac{F}{L}=\\frac{\\mu_0I_1I_2}{2\\pi d}.$$"
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "Sustituyendo $d=0{,}12\\,\\text{m}$, $I_1=2\\,\\text{A}$ e $I_2=3\\,\\text{A}$:\n\n$$\\frac{F}{L}=\\frac{4\\pi\\cdot10^{-7}\\cdot2\\cdot3}{2\\pi\\cdot0{,}12}=1{,}0\\cdot10^{-5}\\,\\text{N/m}.$$"
+        },
+        {
+          "titulo": "Dirección y sentido — diagrama",
+          "contenido": "Aplicando la regla de la mano derecha a $I_1$ con ambas corrientes en el mismo sentido, el campo $\\vec{B}_1$ sale del cable 1 girando en círculo; en la posición del cable 2 es perpendicular al plano de los cables. El producto $\\vec{I}_2L\\times\\vec{B}_1$ da una fuerza sobre el cable 2 dirigida hacia el cable 1. Por la 3.ª ley de Newton, sobre el cable 1 la fuerza apunta hacia el cable 2.\n\nConclusión: dos corrientes paralelas y del mismo sentido se atraen; las fuerzas son iguales en módulo, opuestas en sentido y dirigidas a lo largo del eje que une ambos cables, cada una apuntando hacia el otro cable."
+        }
+      ],
+      "resultado": "$\\dfrac{F}{L}=1{,}0\\cdot10^{-5}\\,\\text{N/m}$, atractiva entre los dos cables."
+    },
+    {
+      "numero": 5,
+      "titulo": "Líneas de campo y punto de campo total nulo entre dos hilos",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B8. Líneas de campo eléctrico y magnético en distribuciones sencillas",
+      "puntuacion": "1,5 puntos (0,5 + 1)",
+      "enunciado": "BLOQUE 2 — Pregunta opcional (1,5 puntos). 2b) ¿Qué forma tienen las líneas de campo magnético generadas por la corriente $I_1$? (0,5 puntos). ¿Existe algún punto del eje $x$ donde se anule el campo magnético total generado por ambas corrientes? Justifique la respuesta y dé la distancia del punto respecto a la corriente $I_1$ (1 punto).",
+      "apartados": [
+        {
+          "letra": "i",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Forma de las líneas de campo de $I_1$."
+        },
+        {
+          "letra": "ii",
+          "puntuacion": "1 punto",
+          "enunciado": "Punto del eje $x$ donde se anula $\\vec{B}_{\\text{tot}}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Forma de las líneas de campo de $I_1$",
+          "contenido": "Las líneas de campo magnético creadas por un hilo rectilíneo infinito son circunferencias coaxiales con el hilo, contenidas en planos perpendiculares al hilo y centradas en él. Su sentido de circulación se determina con la regla de la mano derecha: el pulgar apunta en el sentido de $I_1$ y los dedos se cierran en el sentido de las líneas de $\\vec{B}$.\n\nEl módulo es, a distancia $r$ del cable:\n\n$$B=\\frac{\\mu_0I_1}{2\\pi r}.$$\n\nLas líneas más próximas al hilo corresponden a campos más intensos."
+        },
+        {
+          "titulo": "Punto del eje $x$ donde se anula $\\vec{B}_{\\text{tot}}$",
+          "contenido": "En el eje $x$, que une ambos hilos perpendicularmente, $\\vec{B}_1$ y $\\vec{B}_2$ son perpendiculares al plano de los cables. Entre los cables, con corrientes en el mismo sentido, $\\vec{B}_1$ y $\\vec{B}_2$ tienen sentidos opuestos; pueden anularse si los módulos coinciden. Fuera de la zona entre los cables, $\\vec{B}_1$ y $\\vec{B}_2$ tienen el mismo sentido y no pueden anularse. Por tanto, el punto de campo nulo, si existe, está entre ambos hilos.\n\nSea $x$ la distancia del punto al cable 1. La condición $B_1=B_2$ es:\n\n$$\\frac{\\mu_0I_1}{2\\pi x}=\\frac{\\mu_0I_2}{2\\pi(d-x)}.$$\n\nSimplificando:\n\n$$\\frac{I_1}{x}=\\frac{I_2}{d-x}\\quad\\Rightarrow\\quad I_1(d-x)=I_2x\\quad\\Rightarrow\\quad x=\\frac{I_1d}{I_1+I_2}.$$\n\nSustitución numérica con $d=12\\,\\text{cm}$, $I_1=2\\,\\text{A}$ e $I_2=3\\,\\text{A}$:\n\n$$x=\\frac{2\\cdot12}{2+3}=4{,}8\\,\\text{cm}.$$\n\nLa distancia al cable 2 es $12-4{,}8=7{,}2\\,\\text{cm}$."
+        }
+      ],
+      "resultado": "El campo total se anula a $4{,}8\\,\\text{cm}$ del cable $I_1$ (y a $7{,}2\\,\\text{cm}$ del cable $I_2$)."
+    },
+    {
+      "numero": 6,
+      "titulo": "Fuerza electrostática sobre un electrón en un campo uniforme",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "1,5 puntos (0,75 + 0,75)",
+      "enunciado": "BLOQUE 2 — Pregunta opcional (1,5 puntos). 2c) Si se activa un campo eléctrico uniforme perpendicular a las corrientes de la figura y hacia la derecha (sentido positivo del eje $x$), $E=150\\,\\text{V/m}$, calcule la fuerza electrostática que sufrirá cada uno de los electrones de la corriente $I_2$ (0,75 puntos). Haga un dibujo de esta fuerza en la que se vea claramente su dirección y sentido (0,75 puntos). Datos: $|e|=1{,}6\\cdot10^{-19}\\,\\text{C}$.",
+      "apartados": [
+        {
+          "letra": "i",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Módulo de la fuerza electrostática."
+        },
+        {
+          "letra": "ii",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Dirección y sentido — diagrama."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Módulo de la fuerza electrostática",
+          "contenido": "Sobre una carga puntual $q$ situada en un campo eléctrico $\\vec{E}$ actúa la fuerza:\n\n$$\\vec{F}_E=q\\vec{E}.$$\n\nPara un electrón $q=-e$, de modo que la fuerza tiene sentido contrario al campo. El módulo es:\n\n$$F_E=eE=1{,}6\\cdot10^{-19}\\cdot150=2{,}4\\cdot10^{-17}\\,\\text{N}.$$"
+        },
+        {
+          "titulo": "Dirección y sentido — diagrama",
+          "contenido": "El campo apunta en el sentido positivo de $x$, hacia la derecha. Como el electrón tiene carga negativa, la fuerza electrostática apunta en sentido contrario, es decir, hacia la izquierda.\n\nEn el diagrama se dibuja el campo $\\vec{E}$ horizontal hacia la derecha y, sobre cada electrón portador de corriente del cable $I_2$, una fuerza $\\vec{F}_E$ horizontal hacia la izquierda."
+        }
+      ],
+      "resultado": "$F_E=2{,}4\\cdot10^{-17}\\,\\text{N}$, dirigida hacia la izquierda, en sentido opuesto a $\\vec{E}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Espejo cóncavo: posición y tamaño de la imagen, naturaleza",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "1 punto (0,5 + 0,5)",
+      "enunciado": "BLOQUE 3 — Pregunta obligatoria (1 punto). 3a) Frente a un espejo cóncavo de radio $R=12\\,\\text{cm}$ se coloca un objeto de 4 cm de altura a una distancia de 20 cm. Calcule la posición y el tamaño de la imagen dada por el espejo (0,5 puntos). ¿Se trata de una imagen derecha o invertida? Haga un trazado de rayos del problema para justificarlo (0,5 puntos).",
+      "apartados": [
+        {
+          "letra": "i",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Posición y tamaño de la imagen."
+        },
+        {
+          "letra": "ii",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Naturaleza de la imagen y trazado de rayos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Posición y tamaño de la imagen",
+          "contenido": "La distancia focal del espejo cóncavo es:\n\n$$f=\\frac{R}{2}=6\\,\\text{cm}.$$\n\nAplicando la ecuación del espejo:\n\n$$\\frac{1}{f}=\\frac{1}{s}+\\frac{1}{s'},$$\n\ncon $s=20\\,\\text{cm}$:\n\n$$\\frac{1}{s'}=\\frac{1}{6}-\\frac{1}{20}=\\frac{10-3}{60}=\\frac{7}{60}\\quad\\Rightarrow\\quad s'=\\frac{60}{7}\\approx8{,}57\\,\\text{cm}.$$\n\nLa imagen se forma a $8{,}57\\,\\text{cm}$ del vértice, a la izquierda del espejo, por lo que es una imagen real. El aumento lateral es:\n\n$$m=\\frac{y'}{y}=-\\frac{s'}{s}=-\\frac{8{,}57}{20}\\approx-0{,}429.$$\n\nEl tamaño de la imagen es:\n\n$$y'=m\\,y=-0{,}429\\cdot4\\approx-1{,}71\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "Naturaleza de la imagen y trazado de rayos",
+          "contenido": "El signo negativo de $y'$ indica que la imagen es invertida. Como $|y'|<|y|$, la imagen es reducida. Al formarse a la izquierda del espejo, es una imagen real.\n\nTrazado de rayos: se dibuja el eje óptico, el espejo cóncavo, el foco $F$ a $6\\,\\text{cm}$ y el centro $C$ a $12\\,\\text{cm}$. Se trazan tres rayos principales: el rayo paralelo al eje óptico que, tras reflejarse, pasa por $F$; el rayo que pasa por $F$ y, tras reflejarse, sale paralelo al eje; y el rayo que pasa por $C$, que incide perpendicularmente al espejo y se refleja sobre sí mismo. La intersección de los rayos reflejados se produce a $8{,}57\\,\\text{cm}$ del vértice, entre $F$ y $C$, con la imagen invertida, real y reducida."
+        }
+      ],
+      "resultado": "$s'=8{,}57\\,\\text{cm}$ a la izquierda del espejo (imagen real); $y'=-1{,}71\\,\\text{cm}$ (imagen invertida y reducida)."
+    },
+    {
+      "numero": 8,
+      "titulo": "Péndulo simple: frecuencia angular, ecuación del MAS y velocidad máxima",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía",
+      "puntuacion": "1 punto (0,5 + 0,25 + 0,25)",
+      "enunciado": "BLOQUE 3 — Pregunta opcional (1 punto). 3b) Se dispone de un péndulo simple de 87 cm de longitud que oscila respecto a su posición de equilibrio con un ángulo muy pequeño. Obtenga la frecuencia angular de oscilación y el periodo (0,5 puntos). Escriba la ecuación de la posición en función del tiempo si la amplitud inicial es de $A=2\\,\\text{cm}$ y $x(t=0\\,\\text{s})=A$ (0,25 puntos). ¿Cuál es la velocidad del péndulo al pasar por la vertical? (0,25 puntos). Datos: $g=9{,}8\\,\\text{m/s}^{2}$.",
+      "apartados": [
+        {
+          "letra": "i",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Frecuencia angular y periodo."
+        },
+        {
+          "letra": "ii",
+          "puntuacion": "0,25 puntos",
+          "enunciado": "Ecuación del MAS con $x(0)=A$."
+        },
+        {
+          "letra": "iii",
+          "puntuacion": "0,25 puntos",
+          "enunciado": "Velocidad al pasar por la vertical."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Frecuencia angular y periodo",
+          "contenido": "Para oscilaciones de pequeña amplitud, el péndulo simple se linealiza a un MAS con:\n\n$$\\omega=\\sqrt{\\frac{g}{L}}.$$\n\nCon $L=0{,}87\\,\\text{m}$ y $g=9{,}8\\,\\text{m/s}^{2}$:\n\n$$\\omega=\\sqrt{\\frac{9{,}8}{0{,}87}}\\approx3{,}36\\,\\text{rad/s}.$$\n\nEl periodo es:\n\n$$T=\\frac{2\\pi}{\\omega}\\approx\\frac{2\\pi}{3{,}36}\\approx1{,}87\\,\\text{s}.$$"
+        },
+        {
+          "titulo": "Ecuación del MAS con $x(0)=A$",
+          "contenido": "El MAS general es:\n\n$$x(t)=A\\cos(\\omega t+\\varphi).$$\n\nImponiendo $x(0)=A$:\n\n$$A=A\\cos\\varphi\\quad\\Rightarrow\\quad\\cos\\varphi=1\\quad\\Rightarrow\\quad\\varphi=0.$$\n\nPor tanto, con $A=0{,}02\\,\\text{m}$:\n\n$$x(t)=0{,}02\\cos(3{,}36\\,t)\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Velocidad al pasar por la vertical",
+          "contenido": "Al pasar por la vertical el péndulo está en la posición de equilibrio $x=0$; allí la velocidad es máxima. Para un MAS:\n\n$$v_{\\text{max}}=A\\omega.$$\n\nSustitución numérica:\n\n$$v_{\\text{max}}=0{,}02\\cdot3{,}36\\approx0{,}067\\,\\text{m/s}.$$"
+        }
+      ],
+      "resultado": "$\\omega\\approx3{,}36\\,\\text{rad/s}$; $T\\approx1{,}87\\,\\text{s}$; $x(t)=0{,}02\\cos(3{,}36\\,t)\\,\\text{m}$; $v_{\\text{max}}\\approx0{,}067\\,\\text{m/s}$."
+    },
+    {
+      "numero": 9,
+      "titulo": "Tubería abierta por ambos extremos: armónico fundamental",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "1 punto (0,5 + 0,25 + 0,25)",
+      "enunciado": "BLOQUE 3 — Pregunta opcional (1 punto). 3c) Se desea fabricar un instrumento musical de viento con una tubería de PVC. Para ello se corta la tubería en trozos de distintos tamaños con los dos extremos abiertos. Si el primer trozo tiene una longitud de 25 cm, calcule la frecuencia del armónico fundamental que producirá (0,5 puntos). ¿De qué tamaño habrá que cortar el siguiente trozo para que produzca una onda estacionaria cuya frecuencia del armónico fundamental sea $2/3$ de la frecuencia del armónico fundamental del primer tubo? (0,25 puntos). Dé la longitud de onda de ambos sonidos (0,25 puntos). Datos: $v=346\\,\\text{m/s}$.",
+      "apartados": [
+        {
+          "letra": "i",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Frecuencia fundamental del tubo de 25 cm (abierto-abierto)."
+        },
+        {
+          "letra": "ii",
+          "puntuacion": "0,25 puntos",
+          "enunciado": "Longitud del segundo trozo."
+        },
+        {
+          "letra": "iii",
+          "puntuacion": "0,25 puntos",
+          "enunciado": "Longitudes de onda de ambos sonidos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Frecuencia fundamental del tubo de 25 cm (abierto-abierto)",
+          "contenido": "En un tubo abierto por ambos extremos, los extremos son vientres de desplazamiento. El armónico fundamental contiene medio longitud de onda dentro del tubo:\n\n$$L_1=\\frac{\\lambda_1}{2}\\quad\\Rightarrow\\quad\\lambda_1=2L_1.$$\n\nCon $L_1=0{,}25\\,\\text{m}$:\n\n$$\\lambda_1=0{,}50\\,\\text{m}.$$\n\nLa frecuencia fundamental es:\n\n$$f_1=\\frac{v}{\\lambda_1}=\\frac{346}{0{,}50}=692\\,\\text{Hz}.$$"
+        },
+        {
+          "titulo": "Longitud del segundo trozo",
+          "contenido": "Se pide $f_2=\\frac{2}{3}f_1=\\frac{2}{3}\\cdot692\\approx461{,}3\\,\\text{Hz}$. Para un tubo abierto-abierto, $f=\\frac{v}{2L}$, luego:\n\n$$L_2=\\frac{v}{2f_2}=\\frac{346}{2\\cdot461{,}3}\\approx0{,}375\\,\\text{m}=37{,}5\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "Longitudes de onda de ambos sonidos",
+          "contenido": "La longitud de onda del primer sonido es $\\lambda_1=0{,}50\\,\\text{m}$. Para el segundo:\n\n$$\\lambda_2=\\frac{v}{f_2}=\\frac{346}{461{,}3}\\approx0{,}75\\,\\text{m}.$$\n\nDe forma equivalente, $\\lambda_2=2L_2=0{,}75\\,\\text{m}$."
+        }
+      ],
+      "resultado": "$f_1=692\\,\\text{Hz}$; $L_2=37{,}5\\,\\text{cm}$; $\\lambda_1=0{,}50\\,\\text{m}$; $\\lambda_2=0{,}75\\,\\text{m}$."
+    },
+    {
+      "numero": 10,
+      "titulo": "Intensidad sonora del umbral 60 dB y distancia de detección",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "1 punto (0,5 + 0,5)",
+      "enunciado": "BLOQUE 3 — Pregunta opcional (1 punto). 3d) Un barco se aproxima al puerto haciendo sonar su sirena, de 500 W de potencia. El aparato con el que se detecta el sonido tiene un umbral sonoro de 60 dB, con lo que no detecta ningún sonido por debajo de este nivel sonoro. ¿A qué intensidad corresponde este nivel sonoro? (0,5 puntos) ¿A qué distancia empezará a detectar el sonido si la sirena emite de manera uniforme en una semiesfera? (0,5 puntos). Datos: $I_0=10^{-12}\\,\\text{W/m}^{2}$.",
+      "apartados": [
+        {
+          "letra": "i",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Intensidad correspondiente a 60 dB."
+        },
+        {
+          "letra": "ii",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Distancia mínima de detección (emisión en semiesfera)."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Intensidad correspondiente a 60 dB",
+          "contenido": "El nivel sonoro en decibelios se define como:\n\n$$\\beta=10\\log_{10}\\left(\\frac{I}{I_0}\\right).$$\n\nDespejando $I$:\n\n$$60=10\\log_{10}\\left(\\frac{I}{I_0}\\right)\\quad\\Rightarrow\\quad\\log_{10}\\left(\\frac{I}{I_0}\\right)=6\\quad\\Rightarrow\\quad I=I_0\\cdot10^{6}.$$\n\nSustitución numérica:\n\n$$I=10^{-12}\\cdot10^{6}=1{,}0\\cdot10^{-6}\\,\\text{W/m}^{2}.$$"
+        },
+        {
+          "titulo": "Distancia mínima de detección (emisión en semiesfera)",
+          "contenido": "Si la sirena reparte uniformemente toda su potencia en una semiesfera de radio $r$, el área receptora es $2\\pi r^{2}$ y:\n\n$$I=\\frac{P}{2\\pi r^{2}}.$$\n\nDespejando $r$:\n\n$$r=\\sqrt{\\frac{P}{2\\pi I}}.$$\n\nSustitución numérica con $P=500\\,\\text{W}$ e $I=1{,}0\\cdot10^{-6}\\,\\text{W/m}^{2}$:\n\n$$r=\\sqrt{\\frac{500}{2\\pi\\cdot1{,}0\\cdot10^{-6}}}\\approx8{,}9\\cdot10^{3}\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$I=1{,}0\\cdot10^{-6}\\,\\text{W/m}^{2}$; $r\\approx8{,}9\\cdot10^{3}\\,\\text{m}\\approx8{,}9\\,\\text{km}$."
+    },
+    {
+      "numero": 11,
+      "titulo": "Ecuación de De Broglie: enunciado y significado físico",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "1 punto",
+      "enunciado": "BLOQUE 4 — Pregunta obligatoria (1 punto). 4a) Escriba la ecuación de De Broglie y comente su significado e importancia física (1 punto).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Ecuación y enunciado",
+          "contenido": "Louis de Broglie postuló que toda partícula material lleva asociada una onda cuya longitud de onda viene dada por:\n\n$$\\lambda=\\frac{h}{p}=\\frac{h}{mv},$$\n\ndonde $h$ es la constante de Planck y $p$ es el momento lineal de la partícula (para velocidades no relativistas)."
+        },
+        {
+          "titulo": "Significado e importancia física",
+          "contenido": "La ecuación extiende la dualidad onda-partícula, ya conocida para la luz a través del fotón, a toda entidad material: electrones, protones, átomos e incluso moléculas y objetos macroscópicos. En estos últimos, $\\lambda$ es ridículamente pequeña. A mayor momento $p$, menor longitud de onda asociada; por eso los efectos ondulatorios son despreciables para objetos macroscópicos. A pequeña masa y baja velocidad, como en los electrones atómicos, $\\lambda$ es del orden del tamaño atómico y la naturaleza ondulatoria es fundamental.\n\nImportancia física: es el fundamento de la Mecánica Cuántica, justifica la cuantización de las órbitas en el átomo de Bohr y prepara el camino hacia la ecuación de Schrödinger. El experimento de Davisson-Germer (1927) confirmó experimentalmente el comportamiento ondulatorio de los electrones mediante difracción por un cristal de níquel. Tiene aplicaciones en el microscopio electrónico, en la difracción de neutrones para el estudio de estructuras cristalinas y magnéticas, y en la física de materiales."
+        }
+      ],
+      "resultado": "$\\lambda=\\dfrac{h}{p}=\\dfrac{h}{mv}$; toda partícula material lleva asociada una onda de De Broglie."
+    },
+    {
+      "numero": 12,
+      "titulo": "Energía cinética y longitud de onda de De Broglie de un electrón",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "1 punto",
+      "enunciado": "BLOQUE 4 — Pregunta opcional (1 punto). 4b) Se lanza un electrón a una velocidad de $2{,}04\\cdot10^{6}\\,\\text{km/h}$, calcule su energía cinética y su longitud de onda asociada (1 punto). Datos: $m_e=9{,}1\\cdot10^{-31}\\,\\text{kg}$; $h=6{,}626\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$.",
+      "apartados": [
+        {
+          "letra": "i",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Energía cinética."
+        },
+        {
+          "letra": "ii",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Longitud de onda de De Broglie."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Conversión de unidades de la velocidad",
+          "contenido": "De km/h a m/s:\n\n$$v=2{,}04\\cdot10^{6}\\,\\text{km/h}\\cdot\\frac{1000\\,\\text{m}}{1\\,\\text{km}}\\cdot\\frac{1\\,\\text{h}}{3600\\,\\text{s}}\\approx5{,}67\\cdot10^{5}\\,\\text{m/s}.$$"
+        },
+        {
+          "titulo": "Energía cinética",
+          "contenido": "Tratamiento no relativista:\n\n$$E_c=\\frac{1}{2}m_ev^{2}=\\frac{1}{2}\\cdot9{,}1\\cdot10^{-31}\\cdot(5{,}67\\cdot10^{5})^{2}\\approx1{,}46\\cdot10^{-19}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Longitud de onda de De Broglie",
+          "contenido": "El momento lineal es:\n\n$$p=m_ev=9{,}1\\cdot10^{-31}\\cdot5{,}67\\cdot10^{5}\\approx5{,}16\\cdot10^{-25}\\,\\text{kg}\\,\\text{m/s}.$$\n\nAplicando la ecuación de De Broglie:\n\n$$\\lambda=\\frac{h}{p}=\\frac{6{,}626\\cdot10^{-34}}{5{,}16\\cdot10^{-25}}\\approx1{,}29\\cdot10^{-9}\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$E_c\\approx1{,}46\\cdot10^{-19}\\,\\text{J}$; $\\lambda\\approx1{,}29\\cdot10^{-9}\\,\\text{m}$."
+    },
+    {
+      "numero": 13,
+      "titulo": "Frecuencia y energía de los fotones de un láser He-Ne",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "1 punto",
+      "enunciado": "BLOQUE 4 — Pregunta opcional (1 punto). 4c) Un láser de He-Ne emite fotones de longitud de onda igual a 632,8 nm. Calcule la frecuencia de cada fotón y la energía asociada (1 punto). Datos: $c=3\\cdot10^{8}\\,\\text{m/s}$; $h=6{,}626\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$.",
+      "apartados": [
+        {
+          "letra": "i",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Frecuencia de cada fotón."
+        },
+        {
+          "letra": "ii",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Energía del fotón."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Frecuencia de cada fotón",
+          "contenido": "Para una onda electromagnética en el vacío, $c=\\lambda f$, luego:\n\n$$f=\\frac{c}{\\lambda}.$$\n\nCon $\\lambda=632{,}8\\,\\text{nm}=6{,}328\\cdot10^{-7}\\,\\text{m}$:\n\n$$f=\\frac{3\\cdot10^{8}}{6{,}328\\cdot10^{-7}}\\approx4{,}74\\cdot10^{14}\\,\\text{Hz}.$$"
+        },
+        {
+          "titulo": "Energía del fotón",
+          "contenido": "Relación de Planck-Einstein:\n\n$$E=hf.$$\n\nCálculo:\n\n$$E=6{,}626\\cdot10^{-34}\\cdot4{,}74\\cdot10^{14}\\approx3{,}14\\cdot10^{-19}\\,\\text{J}.$$\n\nEn electronvoltios:\n\n$$E\\approx\\frac{3{,}14\\cdot10^{-19}}{1{,}6\\cdot10^{-19}}\\approx1{,}96\\,\\text{eV}.$$"
+        }
+      ],
+      "resultado": "$f\\approx4{,}74\\cdot10^{14}\\,\\text{Hz}$; $E\\approx3{,}14\\cdot10^{-19}\\,\\text{J}\\approx1{,}96\\,\\text{eV}$."
     }
   ]
 }

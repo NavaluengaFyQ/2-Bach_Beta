@@ -1,42 +1,376 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-navarra-2022-extraordinaria",
+  "codigo": "EXA.FIS.NAV.2022.EXT.SOL",
+  "comunidad": "Navarra",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2022,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la PAU de Navarra, convocatoria Extraordinaria de 2022. Consta de ocho problemas de 2,5 puntos cada uno; el alumnado debe elegir cuatro. Los ejercicios cubren gravitación, ondas, acústica, física nuclear, campo eléctrico, óptica geométrica y magnetismo.",
+  "objetivo": "Evaluar la aplicación de conceptos y leyes fundamentales de la Física a situaciones y problemas propios del nivel de 2º de Bachillerato.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "Evaluación del Bachillerato para el Acceso a la Universidad. CURSO: 2021-2022. ASIGNATURA: FÍSICA. ELIJA CUATRO EJERCICIOS DE LOS OCHO PROPUESTOS. Cada ejercicio vale 2,5 puntos."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$g_0=9{,}8\\,\\text{m}\\,\\text{s}^{-2}$; $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $I_0=1{,}0\\cdot10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$; $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Gravedad en Saturno y masa del planeta a partir de Titán",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A1. Ley de la Gravitación Universal y superposición vectorial; A2. Leyes de Kepler y relación con la gravitación; A4. Intensidad de campo gravitatorio y líneas de campo; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "Saturno tiene una masa aproximadamente 95 veces mayor que la masa de la Tierra y un radio de 9 veces mayor que el radio de la Tierra. Sabiendo que en la superficie de la Tierra la aceleración de la gravedad es $g_0=9{,}8\\,\\text{m}\\,\\text{s}^{-2}$. a) ¿Cuánto pesará en Saturno una persona de 80 kg de masa? (1,25 pts). b) El mayor satélite de Saturno es Titán, que tiene una órbita cuyo radio medio es $1{,}22\\cdot10^{6}\\,\\text{km}$ y un periodo de 15,9 días. Hallar la masa de Saturno. ($G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$) (1,25 pts).",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "1,25 puntos",
+          "enunciado": "¿Cuánto pesará en Saturno una persona de 80 kg de masa?"
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,25 puntos",
+          "enunciado": "El mayor satélite de Saturno es Titán, que tiene una órbita cuyo radio medio es $1{,}22\\cdot10^{6}\\,\\text{km}$ y un periodo de 15,9 días. Hallar la masa de Saturno."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Gravedad superficial en Saturno",
+          "contenido": "La gravedad superficial de un planeta esférico de masa $M$ y radio $R$ vale:\n\n$$g=\\dfrac{G\\,M}{R^{2}}.$$\n\nPara Saturno, $M_S=95\\,M_T$ y $R_S=9\\,R_T$. Por tanto:\n\n$$g_S=\\dfrac{G(95\\,M_T)}{(9\\,R_T)^{2}}=\\dfrac{95}{81}\\,\\dfrac{G\\,M_T}{R_T^{2}}=\\dfrac{95}{81}\\,g_0.$$\n\nSustituyendo $g_0=9{,}8\\,\\text{m}\\,\\text{s}^{-2}$:\n\n$$g_S=\\dfrac{95}{81}\\cdot9{,}8\\approx11{,}49\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        },
+        {
+          "titulo": "Peso de la persona en Saturno",
+          "contenido": "El peso es $P=m\\,g_S$. Para $m=80\\,\\text{kg}$:\n\n$$P=80\\cdot11{,}49\\approx9{,}19\\cdot10^{2}\\,\\text{N}.$$"
+        },
+        {
+          "titulo": "Masa de Saturno por Titán",
+          "contenido": "Aplicamos la tercera ley de Kepler para Titán orbitando Saturno:\n\n$$T^{2}=\\dfrac{4\\pi^{2}r^{3}}{G\\,M_S}.$$\n\nConversión de unidades:\n\n$$r=1{,}22\\cdot10^{6}\\,\\text{km}=1{,}22\\cdot10^{9}\\,\\text{m};$$\n\n$$T=15{,}9\\,\\text{d}=15{,}9\\cdot86400=1{,}37376\\cdot10^{6}\\,\\text{s}.$$\n\nDespejando la masa de Saturno:\n\n$$M_S=\\dfrac{4\\pi^{2}r^{3}}{G\\,T^{2}}=\\dfrac{4\\pi^{2}(1{,}22\\cdot10^{9})^{3}}{6{,}67\\cdot10^{-11}(1{,}37376\\cdot10^{6})^{2}}\\approx5{,}70\\cdot10^{26}\\,\\text{kg}.$$"
         }
       ],
-      "resultado": ""
+      "resultado": "$g_S\\approx11{,}5\\,\\text{m}\\,\\text{s}^{-2}$; $P\\approx9{,}2\\cdot10^{2}\\,\\text{N}$.\n$M_S\\approx5{,}70\\cdot10^{26}\\,\\text{kg}$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Onda transversal: ecuación, fase y velocidades",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía; C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "Una onda armónica transversal se propaga en el sentido positivo del eje X de una cuerda con una amplitud de 0,2 m. Un punto de la cuerda tarda 1 s en completar una oscilación y la longitud de onda es de 10 cm. En el instante inicial $(t=0)$, el punto de la cuerda situado sobre el origen de coordenadas se encuentra a 0,2 m por encima del punto de equilibrio. a) Ecuación de onda (1,25 pts). b) ¿Cuál es la diferencia de fase entre dos puntos separados un cuarto de longitud de onda? (0,5 pts). c) Expresión de la aceleración de los puntos de la cuerda en función del tiempo (0,5 pts). d) Valores máximos de la velocidad y la aceleración de los puntos de la cuerda (0,25 pts).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,25 puntos",
+          "enunciado": "Ecuación de onda."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "¿Cuál es la diferencia de fase entre dos puntos separados un cuarto de longitud de onda?"
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Expresión de la aceleración de los puntos de la cuerda en función del tiempo."
+        },
+        {
+          "letra": "d",
+          "puntuacion": "0,25 puntos",
+          "enunciado": "Valores máximos de la velocidad y la aceleración de los puntos de la cuerda."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Parámetros de la onda",
+          "contenido": "La amplitud es $A=0{,}2\\,\\text{m}$. El periodo es $T=1\\,\\text{s}$, por lo que la pulsación vale:\n\n$$\\omega=\\dfrac{2\\pi}{T}=2\\pi\\,\\text{rad}\\,\\text{s}^{-1}.$$\n\nLa longitud de onda es $\\lambda=10\\,\\text{cm}=0{,}1\\,\\text{m}$, de donde el número de onda es:\n\n$$k=\\dfrac{2\\pi}{\\lambda}=\\dfrac{2\\pi}{0{,}1}=20\\pi\\,\\text{rad}\\,\\text{m}^{-1}.$$"
+        },
+        {
+          "titulo": "Determinación de la fase inicial y ecuación de onda",
+          "contenido": "Para una onda que se propaga en el sentido positivo de $X$, escribimos:\n\n$$y(x,t)=A\\,\\text{sen}(\\omega t-kx+\\varphi_0).$$\n\nEn $x=0$ y $t=0$ se cumple $y(0,0)=+A=0{,}2\\,\\text{m}$. Por tanto:\n\n$$0{,}2\\,\\text{sen}\\,\\varphi_0=0{,}2\\Rightarrow\\text{sen}\\,\\varphi_0=1\\Rightarrow\\varphi_0=\\dfrac{\\pi}{2}.$$\n\nLa ecuación de onda queda:\n\n$$y(x,t)=0{,}2\\,\\text{sen}\\left(2\\pi t-20\\pi x+\\dfrac{\\pi}{2}\\right)\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Diferencia de fase entre dos puntos separados un cuarto de longitud de onda",
+          "contenido": "La diferencia de fase entre dos puntos separados una distancia $\\Delta x$ es:\n\n$$\\Delta\\varphi=k\\,\\Delta x.$$\n\nPara $\\Delta x=\\dfrac{\\lambda}{4}$:\n\n$$\\Delta\\varphi=\\dfrac{2\\pi}{\\lambda}\\cdot\\dfrac{\\lambda}{4}=\\dfrac{\\pi}{2}\\,\\text{rad}.$$\n\nEs decir, $90^{\\circ}$."
+        },
+        {
+          "titulo": "Aceleración de los puntos de la cuerda",
+          "contenido": "Derivando dos veces respecto del tiempo:\n\n$$v(x,t)=\\dfrac{\\partial y}{\\partial t}=0{,}4\\pi\\cos\\left(2\\pi t-20\\pi x+\\dfrac{\\pi}{2}\\right)\\,\\text{m}\\,\\text{s}^{-1};$$\n\n$$a(x,t)=\\dfrac{\\partial^{2}y}{\\partial t^{2}}=-0{,}8\\pi^{2}\\,\\text{sen}\\left(2\\pi t-20\\pi x+\\dfrac{\\pi}{2}\\right)\\,\\text{m}\\,\\text{s}^{-2}.$$\n\nEn $x=0$:\n\n$$a(0,t)=-0{,}8\\pi^{2}\\cos(2\\pi t)\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        },
+        {
+          "titulo": "Valores máximos de velocidad y aceleración",
+          "contenido": "Los valores máximos se obtienen cuando el seno o el coseno valen $\\pm1$:\n\n$$v_{\\text{max}}=A\\omega=0{,}2\\cdot2\\pi=0{,}4\\pi\\approx1{,}26\\,\\text{m}\\,\\text{s}^{-1};$$\n\n$$a_{\\text{max}}=A\\omega^{2}=0{,}2\\cdot(2\\pi)^{2}=0{,}8\\pi^{2}\\approx7{,}90\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        }
+      ],
+      "resultado": "$y(x,t)=0{,}2\\,\\text{sen}\\left(2\\pi t-20\\pi x+\\dfrac{\\pi}{2}\\right)\\,\\text{m}$.\n$\\Delta\\varphi=\\dfrac{\\pi}{2}\\,\\text{rad}$.\n$a(x,t)=-0{,}8\\pi^{2}\\,\\text{sen}\\left(2\\pi t-20\\pi x+\\dfrac{\\pi}{2}\\right)\\,\\text{m}\\,\\text{s}^{-2}$.\n$v_{\\text{max}}\\approx1{,}26\\,\\text{m}\\,\\text{s}^{-1}$; $a_{\\text{max}}\\approx7{,}90\\,\\text{m}\\,\\text{s}^{-2}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Intensidad sonora y exposición laboral",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "(A) Intensidad sonora. Definición y unidades (1,25 pts). (B) La norma indica que ningún trabajador puede estar expuesto a un nivel de intensidad sonora mayor a 85 dB durante una jornada laboral (8 horas). a) ¿A qué intensidad de sonido corresponde ese nivel? (0,5 pts). b) Si la fuente, supuesta puntual, que produce el sonido está a 5 m del trabajador, ¿cuál será la potencia del sonido emitido? (0,5 pts). c) Si suponemos el tímpano con un área aproximada de $1{,}26\\cdot10^{-5}\\,\\text{m}^{2}$, ¿cuánta energía llegaría al tímpano durante una jornada laboral y con ese nivel de exposición? (0,25 pts). Dato: $I_0=1{,}0\\cdot10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "A",
+          "puntuacion": "1,25 puntos",
+          "enunciado": "Intensidad sonora. Definición y unidades."
+        },
+        {
+          "letra": "B.a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "¿A qué intensidad de sonido corresponde un nivel de 85 dB?"
+        },
+        {
+          "letra": "B.b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Si la fuente, supuesta puntual, que produce el sonido está a 5 m del trabajador, ¿cuál será la potencia del sonido emitido?"
+        },
+        {
+          "letra": "B.c",
+          "puntuacion": "0,25 puntos",
+          "enunciado": "Si suponemos el tímpano con un área aproximada de $1{,}26\\cdot10^{-5}\\,\\text{m}^{2}$, ¿cuánta energía llegaría al tímpano durante una jornada laboral y con ese nivel de exposición?"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Definición de intensidad sonora",
+          "contenido": "La intensidad sonora es la potencia que atraviesa una superficie por unidad de área:\n\n$$I=\\dfrac{P}{S}.$$\n\nSu unidad en el SI es $\\text{W}\\,\\text{m}^{-2}$. Para una fuente puntual que emite ondas esféricas de potencia $P$, en un punto a distancia $r$:\n\n$$I=\\dfrac{P}{4\\pi r^{2}}.$$\n\nEl nivel de intensidad sonora en decibelios se define respecto al umbral $I_0=1{,}0\\cdot10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$:\n\n$$L=10\\log_{10}\\left(\\dfrac{I}{I_0}\\right).$$"
+        },
+        {
+          "titulo": "Intensidad correspondiente a 85 dB",
+          "contenido": "Despejamos la intensidad de la definición del nivel sonoro:\n\n$$85=10\\log_{10}\\left(\\dfrac{I}{I_0}\\right)\\Rightarrow\\log_{10}\\left(\\dfrac{I}{I_0}\\right)=8{,}5.$$\n\nPor tanto:\n\n$$I=I_0\\,10^{8{,}5}=1{,}0\\cdot10^{-12}\\cdot10^{8{,}5}=3{,}16\\cdot10^{-4}\\,\\text{W}\\,\\text{m}^{-2}.$$"
+        },
+        {
+          "titulo": "Potencia de la fuente puntual",
+          "contenido": "Para una fuente puntual a $r=5\\,\\text{m}$:\n\n$$P=I\\,4\\pi r^{2}=3{,}16\\cdot10^{-4}\\cdot4\\pi(5)^{2}\\approx9{,}93\\cdot10^{-2}\\,\\text{W}.$$"
+        },
+        {
+          "titulo": "Energía que llega al tímpano",
+          "contenido": "El tiempo de una jornada laboral es:\n\n$$t=8\\,\\text{h}=8\\cdot3600=28800\\,\\text{s}.$$\n\nLa potencia que incide sobre el tímpano de área $A=1{,}26\\cdot10^{-5}\\,\\text{m}^{2}$ es:\n\n$$P_{\\text{tímpano}}=I\\,A=3{,}16\\cdot10^{-4}\\cdot1{,}26\\cdot10^{-5}\\approx3{,}98\\cdot10^{-9}\\,\\text{W}.$$\n\nLa energía recibida vale:\n\n$$E=P_{\\text{tímpano}}\\,t=3{,}98\\cdot10^{-9}\\cdot28800\\approx1{,}15\\cdot10^{-4}\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$I\\approx3{,}16\\cdot10^{-4}\\,\\text{W}\\,\\text{m}^{-2}$.\n$P\\approx9{,}93\\cdot10^{-2}\\,\\text{W}$.\n$E\\approx1{,}15\\cdot10^{-4}\\,\\text{J}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Desintegración beta del Pb-209",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares; D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "(A) Leyes de las emisiones radiactivas (leyes de Soddy y Fajans) (1 pto). (B) El $^{209}_{82}\\text{Pb}$ se desintegra por emisiones $\\beta$ dando lugar a Bismuto estable. El periodo de semidesintegración del $^{209}_{82}\\text{Pb}$ es de 3,3 horas. a) Escribir la reacción de desintegración (0,25 pts). b) Hallar la constante radiactiva (0,5 pts). Si tenemos una muestra de $8\\cdot10^{22}$ átomos de plomo: c) ¿Cuántos átomos de plomo habrá al cabo de un día? (0,5 pts). d) ¿Cuántas emisiones $\\beta$ podemos contar en un día? (0,25 pts).",
+      "apartados": [
+        {
+          "letra": "A",
+          "puntuacion": "1 punto",
+          "enunciado": "Leyes de las emisiones radiactivas (leyes de Soddy y Fajans)."
+        },
+        {
+          "letra": "B.a",
+          "puntuacion": "0,25 puntos",
+          "enunciado": "Escribir la reacción de desintegración."
+        },
+        {
+          "letra": "B.b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Hallar la constante radiactiva."
+        },
+        {
+          "letra": "B.c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "¿Cuántos átomos de plomo habrá al cabo de un día?"
+        },
+        {
+          "letra": "B.d",
+          "puntuacion": "0,25 puntos",
+          "enunciado": "¿Cuántas emisiones $\\beta$ podemos contar en un día?"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Leyes de Soddy-Fajans",
+          "contenido": "Las leyes del desplazamiento radiactivo describen los cambios en el núcleo:\n\n1. Emisión $\\alpha$: el núcleo emite una partícula $^{4}_{2}\\text{He}$. El número másico disminuye en 4 y el número atómico en 2.\n\n2. Emisión $\\beta^{-}$: un neutrón se transforma en protón emitiendo un electrón y un antineutrino. $A$ no cambia y $Z$ aumenta en 1.\n\n3. Emisión $\\gamma$: el núcleo libera energía electromagnética sin cambiar $A$ ni $Z$.\n\nEn toda emisión se conservan el número másico y la carga eléctrica."
+        },
+        {
+          "titulo": "Reacción de desintegración beta",
+          "contenido": "El plomo-209 emite una partícula $\\beta^{-}$ y se transforma en bismuto-209:\n\n$$^{209}_{82}\\text{Pb}\\rightarrow{}^{209}_{83}\\text{Bi}+e^{-}+\\bar{\\nu}_{e}.$$"
+        },
+        {
+          "titulo": "Constante radiactiva",
+          "contenido": "La constante radiactiva se relaciona con el periodo de semidesintegración mediante:\n\n$$\\lambda=\\dfrac{\\ln 2}{T_{1/2}}.$$\n\nCon $T_{1/2}=3{,}3\\,\\text{h}=3{,}3\\cdot3600=11880\\,\\text{s}$:\n\n$$\\lambda=\\dfrac{0{,}693}{11880}\\approx5{,}83\\cdot10^{-5}\\,\\text{s}^{-1}.$$\n\nEn horas:\n\n$$\\lambda\\approx0{,}210\\,\\text{h}^{-1}.$$"
+        },
+        {
+          "titulo": "Átomos de plomo al cabo de un día",
+          "contenido": "Aplicamos la ley de decaimiento:\n\n$$N=N_0\\,e^{-\\lambda t}.$$\n\nCon $N_0=8\\cdot10^{22}$ átomos y $t=24\\,\\text{h}$:\n\n$$\\lambda t=0{,}210\\cdot24=5{,}04;$$\n\n$$N=8\\cdot10^{22}\\,e^{-5{,}04}\\approx5{,}18\\cdot10^{20}\\ \\text{átomos}.$$"
+        },
+        {
+          "titulo": "Emisiones beta en un día",
+          "contenido": "Cada átomo desintegrado emite una partícula $\\beta^{-}$. El número de desintegraciones es:\n\n$$N_{\\text{emis}}=N_0-N=8\\cdot10^{22}-5{,}18\\cdot10^{20}\\approx7{,}95\\cdot10^{22}.$$"
+        }
+      ],
+      "resultado": "$^{209}_{82}\\text{Pb}\\rightarrow{}^{209}_{83}\\text{Bi}+e^{-}+\\bar{\\nu}_{e}$.\n$\\lambda\\approx5{,}83\\cdot10^{-5}\\,\\text{s}^{-1}\\approx0{,}210\\,\\text{h}^{-1}$.\n$N\\approx5{,}18\\cdot10^{20}$ átomos.\n$N_{\\text{emis}}\\approx7{,}95\\cdot10^{22}$ emisiones $\\beta$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Potencial y trabajo de cargas puntuales",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "Una carga puntual positiva de $2\\,\\mu C$ está situada en el punto $A(2,-1)$ m y otra carga puntual negativa de $-3\\,\\mu C$ se encuentra en el punto $B(3,3)$ m. a) Hallar el potencial creado en el punto $C(1,2)$ m (0,5 pts). b) Calcular el trabajo realizado por el campo eléctrico para trasladar $-1\\,\\mu C$ desde el punto $C(1,2)$ m hasta el punto $D(-2,4)$ m (1,5 pts). c) Explica qué significa el signo del trabajo obtenido en el apartado anterior (0,5 pts). Datos: $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Hallar el potencial creado en el punto $C(1,2)$ m."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Calcular el trabajo realizado por el campo eléctrico para trasladar $-1\\,\\mu C$ desde el punto $C(1,2)$ m hasta el punto $D(-2,4)$ m."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Explica qué significa el signo del trabajo obtenido en el apartado anterior."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancias de las cargas al punto C",
+          "contenido": "Las distancias son:\n\n$$r_{AC}=\\sqrt{(1-2)^{2}+(2+1)^{2}}=\\sqrt{1+9}=\\sqrt{10}\\,\\text{m};$$\n\n$$r_{BC}=\\sqrt{(1-3)^{2}+(2-3)^{2}}=\\sqrt{4+1}=\\sqrt{5}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Potencial en C",
+          "contenido": "El potencial total es la suma de los potenciales de cada carga:\n\n$$V_C=K\\left(\\dfrac{q_1}{r_{AC}}+\\dfrac{q_2}{r_{BC}}\\right).$$\n\nSustituyendo $q_1=2\\cdot10^{-6}\\,\\text{C}$, $q_2=-3\\cdot10^{-6}\\,\\text{C}$ y $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$:\n\n$$V_C=9\\cdot10^{9}\\left(\\dfrac{2\\cdot10^{-6}}{\\sqrt{10}}+\\dfrac{-3\\cdot10^{-6}}{\\sqrt{5}}\\right)\\approx-6{,}38\\cdot10^{3}\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Distancias al punto D y potencial en D",
+          "contenido": "Las distancias desde las cargas hasta $D(-2,4)$ son:\n\n$$r_{AD}=\\sqrt{(-2-2)^{2}+(4+1)^{2}}=\\sqrt{16+25}=\\sqrt{41}\\,\\text{m};$$\n\n$$r_{BD}=\\sqrt{(-2-3)^{2}+(4-3)^{2}}=\\sqrt{25+1}=\\sqrt{26}\\,\\text{m}.$$\n\nEl potencial en $D$ vale:\n\n$$V_D=9\\cdot10^{9}\\left(\\dfrac{2\\cdot10^{-6}}{\\sqrt{41}}+\\dfrac{-3\\cdot10^{-6}}{\\sqrt{26}}\\right)\\approx-2{,}48\\cdot10^{3}\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Trabajo del campo eléctrico de C a D",
+          "contenido": "Para una carga $q=-1\\cdot10^{-6}\\,\\text{C}$, el trabajo realizado por el campo eléctrico al pasar de $C$ a $D$ es:\n\n$$W_{C\\to D}=q\\,(V_C-V_D).$$\n\nSustituyendo:\n\n$$W_{C\\to D}=(-1\\cdot10^{-6})\\left(-6{,}38\\cdot10^{3}-(-2{,}48\\cdot10^{3})\\right)\\approx3{,}90\\cdot10^{-3}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Interpretación del signo del trabajo",
+          "contenido": "El trabajo es positivo, lo que significa que el campo eléctrico realiza trabajo a favor del desplazamiento. La carga negativa se mueve espontáneamente hacia una zona de menor energía potencial: al ir de $C$ a $D$ su energía potencial disminuye. Equivalentemente, para una carga negativa, $D$ es un punto de menor energía potencial que $C$."
+        }
+      ],
+      "resultado": "$V_C\\approx-6{,}38\\cdot10^{3}\\,\\text{V}$.\n$W_{C\\to D}\\approx+3{,}90\\cdot10^{-3}\\,\\text{J}$.\nEl campo impulsa la carga negativa; su energía potencial disminuye al pasar de $C$ a $D$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Lente con imagen real e inversa, doble tamaño",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "Un objeto de 1 m de altura está situado a 2 m de una lente. Produce una imagen invertida sobre una pantalla del doble de tamaño que el objeto. a) Potencia de la lente y distancia lente-pantalla (0,5 pts). b) Construcción geométrica (trazado de rayos) manteniendo las proporciones (0,75 pts). c) Si colocamos la pantalla a 8 m de la lente, ¿dónde colocaremos el objeto para que la imagen se siga produciendo en la pantalla? Realiza la construcción geométrica (trazado de rayos) manteniendo las proporciones (1,25 pts).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Potencia de la lente y distancia lente-pantalla."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Construcción geométrica (trazado de rayos) manteniendo las proporciones."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1,25 puntos",
+          "enunciado": "Si colocamos la pantalla a 8 m de la lente, ¿dónde colocaremos el objeto para que la imagen se siga produciendo en la pantalla? Realiza la construcción geométrica (trazado de rayos) manteniendo las proporciones."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Potencia y distancia lente-pantalla",
+          "contenido": "El objeto tiene $y=1\\,\\text{m}$ y está a $s=2\\,\\text{m}$ de la lente. La imagen es real, invertida y del doble de tamaño, por lo que el aumento lateral es $m=-2$. Como:\n\n$$m=-\\dfrac{s'}{s}\\Rightarrow-2=-\\dfrac{s'}{2}\\Rightarrow s'=4\\,\\text{m}.$$\n\nLa distancia lente-pantalla es $4\\,\\text{m}$. Aplicando la ecuación de la lente delgada:\n\n$$\\dfrac{1}{f}=\\dfrac{1}{s}+\\dfrac{1}{s'}=\\dfrac{1}{2}+\\dfrac{1}{4}=0{,}75\\,\\text{m}^{-1}.$$\n\nPor tanto:\n\n$$f=\\dfrac{1}{0{,}75}=1{,}33\\,\\text{m};$$\n\n$$P=\\dfrac{1}{f}=0{,}75\\,\\text{D}.$$"
+        },
+        {
+          "titulo": "Trazado de rayos para el apartado b",
+          "contenido": "Se dibuja el objeto vertical de $1\\,\\text{m}$ a $2\\,\\text{m}$ a la izquierda de la lente. Se trazan tres rayos:\n\n1. Un rayo paralelo al eje óptico que, tras refractarse, pasa por el foco imagen situado a $1{,}33\\,\\text{m}$ a la derecha de la lente.\n\n2. Un rayo que pasa por el centro óptico y no se desvía.\n\n3. Un rayo que pasa por el foco objeto y emerge paralelo al eje óptico.\n\nLos tres rayos se cortan a $4\\,\\text{m}$ a la derecha de la lente. La imagen es real, invertida y de altura $2\\,\\text{m}$."
+        },
+        {
+          "titulo": "Pantalla a 8 m de la lente",
+          "contenido": "Ahora $s'=8\\,\\text{m}$ y la lente es la misma, con $f=1{,}33\\,\\text{m}$. De la ecuación de la lente:\n\n$$\\dfrac{1}{s}=\\dfrac{1}{f}-\\dfrac{1}{s'}=0{,}75-\\dfrac{1}{8}=0{,}75-0{,}125=0{,}625\\,\\text{m}^{-1}.$$\n\nPor tanto:\n\n$$s=\\dfrac{1}{0{,}625}=1{,}6\\,\\text{m}.$$\n\nEl objeto debe colocarse a $1{,}6\\,\\text{m}$ delante de la lente. El aumento es:\n\n$$m=-\\dfrac{s'}{s}=-\\dfrac{8}{1{,}6}=-5,$$\n\nluego la imagen es invertida y cinco veces mayor, de altura $5\\,\\text{m}$."
+        }
+      ],
+      "resultado": "$P=0{,}75\\,\\text{D}$; $s'=4\\,\\text{m}$.\nImagen real, invertida, a $4\\,\\text{m}$ de la lente y de altura $2\\,\\text{m}$.\nPara pantalla a $8\\,\\text{m}$: $s=1{,}6\\,\\text{m}$ delante de la lente; $m=-5$; altura $5\\,\\text{m}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Fuerzas entre corrientes paralelas",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "(A) Fuerza entre corrientes paralelas. Fuerza por unidad de longitud, ecuación, dibujo y unidades (1,25 pts). (B) Dos conductores rectilíneos muy largos y paralelos están separados una distancia de 5 cm. Por el conductor 1 circula una corriente de 10 A. a) Hallar el valor de la corriente y el sentido de la misma en el segundo conductor ($I_2$) para que el campo magnético creado por ambos en un punto $P$, 5 cm a la izquierda del segundo, sea nulo (0,5 pts). b) Dibujar y calcular el campo magnético que crea el conductor 1 (10 A) en el lugar que ocupa el conductor 2 (0,25 pts). c) Dibuja y calcula la fuerza por unidad de longitud que recibe el conductor 1 debida al conductor 2 (0,5 pts). Dato: $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$.",
+      "apartados": [
+        {
+          "letra": "A",
+          "puntuacion": "1,25 puntos",
+          "enunciado": "Fuerza entre corrientes paralelas. Fuerza por unidad de longitud, ecuación, dibujo y unidades."
+        },
+        {
+          "letra": "B.a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Hallar el valor de la corriente y el sentido de la misma en el segundo conductor ($I_2$) para que el campo magnético creado por ambos en un punto $P$, 5 cm a la izquierda del segundo, sea nulo."
+        },
+        {
+          "letra": "B.b",
+          "puntuacion": "0,25 puntos",
+          "enunciado": "Dibujar y calcular el campo magnético que crea el conductor 1 (10 A) en el lugar que ocupa el conductor 2."
+        },
+        {
+          "letra": "B.c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Dibuja y calcula la fuerza por unidad de longitud que recibe el conductor 1 debida al conductor 2."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Fuerza entre corrientes paralelas",
+          "contenido": "Un conductor 1 con corriente $I_1$ crea, a distancia $d$, un campo magnético cuyas líneas son circunferencias concéntricas. Su módulo en el punto donde está el conductor 2 es:\n\n$$B_1=\\dfrac{\\mu_0 I_1}{2\\pi d}.$$\n\nEl conductor 2, paralelo al 1 y con corriente $I_2$, está sometido a una fuerza magnética. La fuerza por unidad de longitud sobre 2 es:\n\n$$\\dfrac{F}{L}=\\dfrac{\\mu_0 I_1 I_2}{2\\pi d}.$$\n\nLa fuerza es atractiva si las corrientes tienen el mismo sentido y repulsiva si tienen sentidos opuestos."
+        },
+        {
+          "titulo": "Corriente $I_2$ para campo nulo en P",
+          "contenido": "Se considera que $P$ está a $5\\,\\text{cm}$ a la izquierda del conductor 1, de modo que la distancia de $P$ al conductor 1 es $5\\,\\text{cm}$ y al conductor 2 es $10\\,\\text{cm}$. Para que el campo total sea nulo, los campos creados por ambos conductores en $P$ deben tener igual módulo y sentidos opuestos:\n\n$$\\dfrac{\\mu_0 I_1}{2\\pi(0{,}05)}=\\dfrac{\\mu_0 I_2}{2\\pi(0{,}10)}.$$\n\nDespejando:\n\n$$I_2=I_1\\dfrac{0{,}10}{0{,}05}=2I_1=20\\,\\text{A}.$$\n\nEl sentido de $I_2$ debe ser opuesto al de $I_1$ para que los campos se cancelen en $P$."
+        },
+        {
+          "titulo": "Campo del conductor 1 en la posición del conductor 2",
+          "contenido": "La distancia entre conductores es $d=0{,}05\\,\\text{m}$ y $I_1=10\\,\\text{A}$:\n\n$$B_1=\\dfrac{\\mu_0 I_1}{2\\pi d}=\\dfrac{4\\pi\\cdot10^{-7}\\cdot10}{2\\pi\\cdot0{,}05}=4\\cdot10^{-5}\\,\\text{T}.$$\n\nLa dirección es perpendicular al plano que contiene ambos conductores; el sentido se determina con la regla de la mano derecha a partir del sentido de $I_1$."
+        },
+        {
+          "titulo": "Fuerza por unidad de longitud sobre el conductor 1",
+          "contenido": "La fuerza por unidad de longitud vale:\n\n$$\\dfrac{F}{L}=\\dfrac{\\mu_0 I_1 I_2}{2\\pi d}=\\dfrac{4\\pi\\cdot10^{-7}\\cdot10\\cdot20}{2\\pi\\cdot0{,}05}=8\\cdot10^{-4}\\,\\text{N}\\,\\text{m}^{-1}.$$\n\nComo $I_1$ e $I_2$ son antiparalelas, la fuerza es repulsiva: el conductor 1 es empujado en sentido contrario al conductor 2."
+        }
+      ],
+      "resultado": "$I_2=20\\,\\text{A}$, en sentido opuesto a $I_1$.\n$B_1=4\\cdot10^{-5}\\,\\text{T}$, perpendicular al plano de los conductores.\n$\\dfrac{F}{L}=8\\cdot10^{-4}\\,\\text{N}\\,\\text{m}^{-1}$, fuerza repulsiva."
+    },
+    {
+      "numero": 8,
+      "titulo": "Ley de gravitación universal",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A1. Ley de la Gravitación Universal y superposición vectorial; A2. Leyes de Kepler y relación con la gravitación; A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "Ley de Gravitación universal. Consecuencias (2,5 pts).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Enunciado de la ley",
+          "contenido": "Dos partículas puntuales de masas $m_1$ y $m_2$ separadas una distancia $r$ se atraen con una fuerza dirigida según la línea que las une, de módulo:\n\n$$F=G\\dfrac{m_1 m_2}{r^{2}},$$\n\ndonde $G$ es la constante de gravitación universal. En forma vectorial:\n\n$$\\vec{F}_{12}=-G\\dfrac{m_1 m_2}{r^{2}}\\,\\hat{r}_{12},$$\n\nsiendo $\\hat{r}_{12}$ el vector unitario que va de la masa 1 a la masa 2. La fuerza es atractiva."
+        },
+        {
+          "titulo": "Consecuencias principales",
+          "contenido": "1. Las leyes de Kepler se deducen como consecuencia: las órbitas de los planetas son elipses con el Sol en un foco; las áreas barridas por unidad de tiempo son constantes (conservación del momento angular); $T^{2}\\propto r^{3}$.\n\n2. Caída libre: cerca de la superficie de un planeta, $g=GM/R^{2}$. En la Tierra $g\\approx9{,}8\\,\\text{m}\\,\\text{s}^{-2}$.\n\n3. Peso, masa inercial y masa gravitatoria: la equivalencia entre ambas es la base del principio de equivalencia y de la relatividad general.\n\n4. Velocidad orbital y velocidad de escape: $v_{\\text{orb}}=\\sqrt{\\dfrac{GM}{r}}$; $v_{\\text{escape}}=\\sqrt{\\dfrac{2GM}{R}}$.\n\n5. Energía potencial gravitatoria: $U=-\\dfrac{GMm}{r}$ con origen en el infinito. En las cercanías de la superficie, $U\\approx mgh$.\n\n6. Mareas: el carácter diferencial de la fuerza gravitatoria explica las mareas terrestres producidas por la Luna y el Sol.\n\n7. Estabilidad de cuerpos celestes: equilibrio entre la presión interior y la atracción gravitatoria; la dependencia inversa con el cuadrado de la distancia garantiza órbitas cerradas estables."
+        }
+      ],
+      "resultado": "Ley: $F=G\\dfrac{m_1 m_2}{r^{2}}$, atractiva y dirigida según la línea que une las masas.\nConsecuencias: leyes de Kepler, gravedad superficial, energía potencial, velocidades orbital y de escape, mareas y equivalencia entre masa inercial y gravitatoria."
     }
   ]
 }

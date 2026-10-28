@@ -1,42 +1,433 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-navarra-2021-ordinaria",
+  "codigo": "EXA.FIS.NAV.2021.ORD.SOL",
+  "comunidad": "Navarra",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2021,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen resuelto de Física de la convocatoria ordinaria de 2021 en Navarra. Consta de ocho ejercicios de 2,5 puntos cada uno, de los que el alumno debe elegir cuatro.",
+  "objetivo": "Evaluar la comprensión y aplicación de los contenidos de Física de 2º de Bachillerato: física nuclear, óptica geométrica, campo gravitatorio, campo electromagnético, ondas mecánicas y sonoras e inducción electromagnética.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "El examen consta de ocho ejercicios. El alumno debe elegir cuatro ejercicios de los ocho propuestos. Cada ejercicio se valora sobre 2,5 puntos."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $I_0=1\\cdot10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$; $M_{\\text{planeta}}=6\\cdot10^{24}\\,\\text{kg}$; $q'=-1{,}6\\cdot10^{-19}\\,\\text{C}$; $m=1{,}6\\cdot10^{-27}\\,\\text{kg}$; $v=3000\\,\\text{m}\\,\\text{s}^{-1}$; $r=3\\,\\text{m}$; $B=0{,}25\\,\\text{T}$; $L=0{,}2\\,\\text{m}$; $R=20\\,\\Omega$; $v=3\\,\\text{m}\\,\\text{s}^{-1}$."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Desintegracion beta-menos del Co-60",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares; D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2,5 puntos (0,5 + 1 + 1)",
+      "enunciado": "Una muestra de $^{60}_{27}\\text{Co}$ ($Z=27$) posee una actividad de $1{,}251\\cdot10^{11}\\,\\text{Bq}$. (a) Completa la ecuación de desintegración indicando de qué tipo se trata: $^{60}_{27}\\text{Co}\\rightarrow \\_\\_\\_+\\bar{\\nu}_e+^{60}_{28}\\text{Ni}$. (0,5 puntos). Pasados 10 años su actividad es de $3{,}36\\cdot10^{10}\\,\\text{Bq}$. (b) Hallar el periodo de semidesintegración. (1 punto). (c) ¿Cuál es el número de núcleos que había inicialmente? (1 punto).",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Completa la ecuación de desintegración indicando de qué tipo se trata."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Hallar el periodo de semidesintegración."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "¿Cuál es el número de núcleos que había inicialmente?"
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Conservación de A y Z",
+          "contenido": "En la reacción $^{60}_{27}\\text{Co}\\rightarrow ^{60}_{28}\\text{Ni}+e^-+\\bar{\\nu}_e$ se conserva el número másico: $60=60+0+0$. También se conserva la carga: $27=28-1+0$. La partícula emitida es un electrón, con carga $-e$ y masa despreciable frente a la del núcleo. El antineutrino electrónico es la firma de la desintegración beta-menos."
+        },
+        {
+          "titulo": "Reacción completa",
+          "contenido": "$$^{60}_{27}\\text{Co}\\rightarrow ^{60}_{28}\\text{Ni}+e^-+\\bar{\\nu}_e$$\n\nSe trata de una desintegración beta-menos: un neutrón del núcleo se convierte en un protón emitiendo un electrón y un antineutrino electrónico."
+        },
+        {
+          "titulo": "Ley de desintegración",
+          "contenido": "La actividad sigue la ley exponencial:\n\n$$A(t)=A_0e^{-\\lambda t}.$$\n\nTomando logaritmos:\n\n$$\\lambda=\\frac{1}{t}\\ln\\left(\\frac{A_0}{A}\\right).$$"
+        },
+        {
+          "titulo": "Cálculo de la constante de desintegración",
+          "contenido": "$A_0=1{,}251\\cdot10^{11}\\,\\text{Bq}$, $A=3{,}36\\cdot10^{10}\\,\\text{Bq}$, $t=10\\,\\text{años}$.\n\n$$\\lambda=\\frac{1}{10}\\ln\\left(\\frac{1{,}251\\cdot10^{11}}{3{,}36\\cdot10^{10}}\\right)=0{,}1314\\,\\text{año}^{-1}.$$"
+        },
+        {
+          "titulo": "Periodo de semidesintegración",
+          "contenido": "$$T_{1/2}=\\frac{\\ln 2}{\\lambda}=\\frac{0{,}693}{0{,}1314}=5{,}27\\,\\text{años}.$$"
+        },
+        {
+          "titulo": "Relación entre actividad y número de núcleos",
+          "contenido": "La actividad es el número de desintegraciones por segundo:\n\n$$A=\\lambda N.$$\n\nPor tanto, $N_0=\\frac{A_0}{\\lambda}$, con $\\lambda$ en $\\text{s}^{-1}$."
+        },
+        {
+          "titulo": "Conversión de $\\lambda$ a $\\text{s}^{-1}$",
+          "contenido": "$$\\lambda=0{,}1314\\,\\text{año}^{-1}\\cdot\\frac{1\\,\\text{año}}{365\\cdot24\\cdot3600\\,\\text{s}}=4{,}17\\cdot10^{-9}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Cálculo de $N_0$",
+          "contenido": "$$N_0=\\frac{A_0}{\\lambda}=\\frac{1{,}251\\cdot10^{11}}{4{,}17\\cdot10^{-9}}=3{,}00\\cdot10^{19}\\ \\text{núcleos}.$$"
         }
       ],
-      "resultado": ""
+      "resultado": "$^{60}_{27}\\text{Co}\\rightarrow ^{60}_{28}\\text{Ni}+e^-+\\bar{\\nu}_e$; desintegración beta-menos.\n$T_{1/2}=5{,}27\\,\\text{años}$.\n$N_0=3{,}00\\cdot10^{19}$ núcleos."
+    },
+    {
+      "numero": 2,
+      "titulo": "Lente convergente de focal 4 cm: imagen amplificada 8 veces",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2,5 puntos (1 + 0,5 + 1)",
+      "enunciado": "Sabemos que una lente convergente de focal 4 cm provoca una imagen amplificada 8 veces de un objeto. (a) Obtener las dos posiciones en las que puede estar el objeto. (1 punto). (b) Indicar cómo serán las imágenes en ambos casos (real-virtual, derecha-invertida). (0,5 puntos). (c) Hacer los diagramas del trazado de rayos en ambos casos. (1 punto).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Obtener las dos posiciones en las que puede estar el objeto."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Indicar cómo serán las imágenes en ambos casos (real-virtual, derecha-invertida)."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Hacer los diagramas del trazado de rayos en ambos casos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Condición de aumento $\\pm 8$",
+          "contenido": "Convenio DIN: $f=+4\\,\\text{cm}$ (lente convergente). «Amplificada 8 veces» significa $|\\beta|=8$, esto es $\\beta=-8$ (imagen real invertida) o $\\beta=+8$ (imagen virtual derecha). Se usa $\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f}$ y $\\beta=\\frac{s'}{s}$."
+        },
+        {
+          "titulo": "Caso 1: $\\beta=-8$ (imagen real)",
+          "contenido": "Sustituyendo $s'=\\beta s=-8s$ en $\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f}$:\n\n$$\\frac{1}{-8s}-\\frac{1}{s}=\\frac{1}{4}$$\n\n$$-\\frac{9}{8s}=\\frac{1}{4}\\Rightarrow s=-4{,}5\\,\\text{cm}.$$\n\nEntonces $s'=-8(-4{,}5)=36\\,\\text{cm}$. Resultado: objeto a $4{,}5\\,\\text{cm}$ a la izquierda de la lente, imagen real a $36\\,\\text{cm}$ a la derecha."
+        },
+        {
+          "titulo": "Caso 2: $\\beta=+8$ (imagen virtual)",
+          "contenido": "$s'=8s$. Sustituyendo:\n\n$$\\frac{1}{8s}-\\frac{1}{s}=\\frac{1}{4}$$\n\n$$-\\frac{7}{8s}=\\frac{1}{4}\\Rightarrow s=-3{,}5\\,\\text{cm}.$$\n\nEntonces $s'=8(-3{,}5)=-28\\,\\text{cm}$. Resultado: objeto a $3{,}5\\,\\text{cm}$ a la izquierda de la lente, imagen virtual a $28\\,\\text{cm}$ a la izquierda."
+        },
+        {
+          "titulo": "Naturaleza de las imágenes",
+          "contenido": "Caso 1: $s=-4{,}5\\,\\text{cm}$, $s'=36\\,\\text{cm}>0$: imagen real, invertida y 8 veces mayor. Caso 2: $s=-3{,}5\\,\\text{cm}$, $s'=-28\\,\\text{cm}<0$: imagen virtual, derecha y 8 veces mayor (lupa)."
+        },
+        {
+          "titulo": "Diagrama de trazado de rayos. Caso 1",
+          "contenido": "Objeto a $4{,}5\\,\\text{cm}$ e imagen real a $36\\,\\text{cm}$. 1) Rayo paralelo al eje desde el objeto: refracta pasando por el foco imagen $F'$ a $4\\,\\text{cm}$. 2) Rayo por el centro óptico: continúa sin desviarse. 3) Rayo por el foco objeto $F$ a $4\\,\\text{cm}$: tras la lente sale paralelo. La intersección de los rayos refractados a $36\\,\\text{cm}$ determina la imagen real e invertida."
+        },
+        {
+          "titulo": "Diagrama de trazado de rayos. Caso 2",
+          "contenido": "Objeto a $3{,}5\\,\\text{cm}$ e imagen virtual a $-28\\,\\text{cm}$. 1) Rayo paralelo al eje: refracta pasando por $F'$. 2) Rayo por el centro óptico: continúa sin desviarse. 3) Rayo por $F$: sale paralelo. Como el objeto está dentro del foco objeto, los rayos refractados divergen; sus prolongaciones hacia atrás se cortan a $-28\\,\\text{cm}$ (mismo lado que el objeto), determinando la imagen virtual derecha y mayor."
+        }
+      ],
+      "resultado": "$s_1=-4{,}5\\,\\text{cm}$, $s'_1=36\\,\\text{cm}$: imagen real, invertida, 8 veces mayor.\n$s_2=-3{,}5\\,\\text{cm}$, $s'_2=-28\\,\\text{cm}$: imagen virtual, derecha, 8 veces mayor."
+    },
+    {
+      "numero": 3,
+      "titulo": "Satelite de 500 kg en orbita circular T=20 h, r=3,75e7 m",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2,5 puntos (1 + 0,5 + 0,5 + 0,5)",
+      "enunciado": "(A) Deducción de la velocidad y la energía en una órbita circular. (1 punto). (B) Un satélite de 500 kg orbita en una órbita circular alrededor de un planeta con un periodo de 20 h y a una distancia de su centro de $3{,}75\\cdot10^{7}\\,\\text{m}$. (a) Hallar el valor de la constante de gravitación universal $G$. (0,5 puntos). (b) ¿Cuál es el valor de la fuerza a la que se ve sometido el satélite? (0,5 puntos). (c) Hallar la energía mecánica del satélite. (0,5 puntos). Dato: $M_{\\text{planeta}}=6\\cdot10^{24}\\,\\text{kg}$.",
+      "apartados": [
+        {
+          "letra": "A",
+          "puntuacion": "1 punto",
+          "enunciado": "Deducción de la velocidad y la energía en una órbita circular."
+        },
+        {
+          "letra": "B.a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Hallar el valor de la constante de gravitación universal $G$."
+        },
+        {
+          "letra": "B.b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "¿Cuál es el valor de la fuerza a la que se ve sometido el satélite?"
+        },
+        {
+          "letra": "B.c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Hallar la energía mecánica del satélite."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Deducción de la velocidad orbital",
+          "contenido": "Para una órbita circular, la fuerza gravitatoria proporciona la fuerza centrípeta:\n\n$$\\frac{G M m}{r^2}=\\frac{m v^2}{r}\\Rightarrow v=\\sqrt{\\frac{G M}{r}}.$$"
+        },
+        {
+          "titulo": "Energía cinética, potencial y mecánica",
+          "contenido": "$$E_c=\\frac{1}{2}mv^2=\\frac{G M m}{2r}.$$\n\n$$E_p=-\\frac{G M m}{r}.$$\n\n$$E_m=E_c+E_p=-\\frac{G M m}{2r}.$$"
+        },
+        {
+          "titulo": "Cálculo de $G$ a partir de la tercera ley de Kepler",
+          "contenido": "$$T^2=\\frac{4\\pi^2 r^3}{G M}\\Rightarrow G=\\frac{4\\pi^2 r^3}{M T^2}.$$\n\nCon $T=20\\,\\text{h}=72000\\,\\text{s}$, $r=3{,}75\\cdot10^{7}\\,\\text{m}$ y $M=6\\cdot10^{24}\\,\\text{kg}$:\n\n$$G=\\frac{4\\pi^2(3{,}75\\cdot10^{7})^3}{6\\cdot10^{24}(72000)^2}=6{,}69\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}.$$"
+        },
+        {
+          "titulo": "Fuerza gravitatoria sobre el satélite",
+          "contenido": "$$F=\\frac{G M m}{r^2}=\\frac{(6{,}69\\cdot10^{-11})(6\\cdot10^{24})(500)}{(3{,}75\\cdot10^{7})^2}=1{,}43\\cdot10^{2}\\,\\text{N}.$$"
+        },
+        {
+          "titulo": "Energía mecánica del satélite",
+          "contenido": "$$E_m=-\\frac{G M m}{2r}=-\\frac{(6{,}69\\cdot10^{-11})(6\\cdot10^{24})(500)}{2(3{,}75\\cdot10^{7})}=-2{,}68\\cdot10^{9}\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$v=\\sqrt{\\frac{GM}{r}}$; $E_c=\\frac{GMm}{2r}$; $E_p=-\\frac{GMm}{r}$; $E_m=-\\frac{GMm}{2r}$.\n$G=6{,}69\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$.\n$F=1{,}43\\cdot10^{2}\\,\\text{N}$.\n$E_m=-2{,}68\\cdot10^{9}\\,\\text{J}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Campo magnetico. Fuerza magnetica sobre carga en movimiento (Lorentz)",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B5. Magnetismo, experiencia de Oersted y carácter no conservativo del campo magnético; B8. Líneas de campo eléctrico y magnético en distribuciones sencillas",
+      "puntuacion": "2,5 puntos (cuestión teórica)",
+      "enunciado": "Campo magnetico. Fuerza magnetica sobre una carga en movimiento: Fuerza de Lorentz. Vector campo B. (2,5 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Fuerza de Lorentz",
+          "contenido": "Una carga $q$ que se mueve con velocidad $\\vec v$ en un campo magnético $\\vec B$ experimenta una fuerza:\n\n$$\\vec F=q(\\vec v\\times\\vec B).$$\n\nSu módulo es $F=q v B\\,\\text{sen}\\,\\theta$, donde $\\theta$ es el ángulo entre $\\vec v$ y $\\vec B$."
+        },
+        {
+          "titulo": "Dirección y sentido",
+          "contenido": "$\\vec F$ es perpendicular al plano formado por $\\vec v$ y $\\vec B$. Para $q>0$, el sentido lo da la regla de la mano derecha (de $\\vec v$ a $\\vec B$ por el ángulo menor). Para $q<0$, el sentido se invierte."
+        },
+        {
+          "titulo": "Propiedades clave",
+          "contenido": "1) La fuerza magnética no realiza trabajo: $W=\\int \\vec F\\cdot d\\vec r=0$. 2) Solo cambia la dirección de $\\vec v$, no su módulo. 3) Si $\\vec v\\parallel\\vec B$ o $\\vec v=0$, entonces $F=0$. 4) Si $\\vec v\\perp\\vec B$, $F=q v B$ (módulo máximo) y produce trayectoria circular."
+        },
+        {
+          "titulo": "Definición operacional del vector campo magnético $\\vec B$",
+          "contenido": "$\\vec B$ se define a partir de la fuerza experimentada por una carga test en movimiento: en cada punto del espacio, es el único vector tal que $\\vec F=q(\\vec v\\times\\vec B)$ para toda $q$ y $\\vec v$. La unidad SI es el tesla: $1\\,\\text{T}=1\\,\\text{N}\\,\\text{s}\\,\\text{C}^{-1}\\,\\text{m}^{-1}$."
+        },
+        {
+          "titulo": "Propiedades del campo $\\vec B$",
+          "contenido": "1) Es solenoidal: $\\nabla\\cdot\\vec B=0$ (no existen monopolos magnéticos); las líneas de $\\vec B$ son siempre cerradas. 2) Es generado por cargas en movimiento (corrientes eléctricas, momentos magnéticos atómicos). 3) Su rotacional viene dado por la ley de Ampère-Maxwell: $\\nabla\\times\\vec B=\\mu_0\\vec J+\\mu_0\\varepsilon_0\\frac{\\partial\\vec E}{\\partial t}$."
+        },
+        {
+          "titulo": "Líneas de campo y representación",
+          "contenido": "Las líneas de $\\vec B$ son tangentes al campo en cada punto y su densidad indica la intensidad. En un imán salen del polo norte y entran por el sur por fuera. En un solenoide son paralelas en el interior. Alrededor de una corriente rectilínea son circulares concéntricas (regla de la mano derecha). Diferencia esencial con $\\vec E$: las líneas de $\\vec B$ son cerradas (no tienen origen ni fin), mientras que las de $\\vec E$ son abiertas (nacen en cargas positivas y mueren en cargas negativas)."
+        }
+      ],
+      "resultado": "$\\vec F=q(\\vec v\\times\\vec B)$; $F=qvB\\,\\text{sen}\\,\\theta$; $\\vec F\\perp\\vec v,\\vec B$; no realiza trabajo. $\\vec B$ en tesla, solenoidal ($\\nabla\\cdot\\vec B=0$) y con líneas cerradas."
+    },
+    {
+      "numero": 5,
+      "titulo": "Carga negativa lanzada hacia carga positiva en (3,0)",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2,5 puntos (1 + 1,5)",
+      "enunciado": "Supongamos una carga $q$ fija en el origen de coordenadas. Se lanza desde el infinito con una velocidad de $3000\\,\\text{m}\\,\\text{s}^{-1}$ una partícula de carga negativa $q'=-1{,}6\\cdot10^{-19}\\,\\text{C}$ y masa $1{,}6\\cdot10^{-27}\\,\\text{kg}$, que se mueve horizontalmente (eje X), hacia la carga $q$. La partícula se para a una distancia de $3\\,\\text{m}$ de la carga $q$. Despreciamos cualquier efecto gravitatorio. (a) Hallar el valor de la carga $q$. (1 punto). (b) Hallar el valor del campo electrostático que crean las dos cargas (una vez que están en reposo) en el punto medio de ambas. (1,5 puntos). Dato: $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Hallar el valor de la carga $q$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Hallar el valor del campo electrostático que crean las dos cargas (una vez que están en reposo) en el punto medio de ambas."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Conservación de la energía mecánica",
+          "contenido": "La partícula parte del infinito con $v=3000\\,\\text{m}\\,\\text{s}^{-1}$ y $U_\\infty=0$. Se detiene a $r=3\\,\\text{m}$ con $v=0$. Por conservación de la energía mecánica:\n\n$$\\frac{1}{2}m v^2=\\frac{k q q'}{r}.$$"
+        },
+        {
+          "titulo": "Valor de la carga $q$",
+          "contenido": "Despejando $q$:\n\n$$q=\\frac{m v^2 r}{2 k q'}.$$\n\nCon $m=1{,}6\\cdot10^{-27}\\,\\text{kg}$, $v=3000\\,\\text{m}\\,\\text{s}^{-1}$, $r=3\\,\\text{m}$, $k=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$ y $q'=-1{,}6\\cdot10^{-19}\\,\\text{C}$:\n\n$$q=\\frac{(1{,}6\\cdot10^{-27})(3000)^2(3)}{2(9\\cdot10^{9})(-1{,}6\\cdot10^{-19})}=-1{,}5\\cdot10^{-11}\\,\\text{C}.$$"
+        },
+        {
+          "titulo": "Configuración final y punto medio",
+          "contenido": "Tras detenerse, la partícula está en $x=3\\,\\text{m}$ y la carga $q$ en el origen. El punto medio está en $x=1{,}5\\,\\text{m}$. Las distancias son iguales: $r=1{,}5\\,\\text{m}$."
+        },
+        {
+          "titulo": "Campo de $q$ en el punto medio",
+          "contenido": "$$E_q=\\frac{k|q|}{r^2}=\\frac{(9\\cdot10^{9})(1{,}5\\cdot10^{-11})}{(1{,}5)^2}=6{,}0\\cdot10^{-2}\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nApunta hacia $q$ (sentido $-\\hat i$), porque $q<0$."
+        },
+        {
+          "titulo": "Campo de $q'$ en el punto medio",
+          "contenido": "$$E_{q'}=\\frac{k|q'|}{r^2}=\\frac{(9\\cdot10^{9})(1{,}6\\cdot10^{-19})}{(1{,}5)^2}=6{,}4\\cdot10^{-10}\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nApunta hacia $q'$ (sentido $+\\hat i$)."
+        },
+        {
+          "titulo": "Campo total",
+          "contenido": "$$\\vec E_{\\text{total}}=(-6{,}0\\cdot10^{-2}+6{,}4\\cdot10^{-10})\\,\\hat i\\approx -6{,}0\\cdot10^{-2}\\,\\hat i\\ \\text{N}\\,\\text{C}^{-1}.$$"
+        }
+      ],
+      "resultado": "$q=-1{,}5\\cdot10^{-11}\\,\\text{C}$.\n$\\vec E_{\\text{total}}\\approx -6{,}0\\cdot10^{-2}\\,\\hat i\\ \\text{N}\\,\\text{C}^{-1}$ (hacia $q$)."
+    },
+    {
+      "numero": 6,
+      "titulo": "Onda transversal en cuerda: A=10 cm, lambda=200 cm, hacia +x",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2,5 puntos (1 + 0,5 + 1)",
+      "enunciado": "Una onda transversal sinusoidal de 10 cm de amplitud y longitud de onda 200 cm se propaga en sentido positivo del eje X con una velocidad de 100 cm/s. Tomamos como origen la posición $x=0$. En el instante inicial el origen tiene una elongación $y=0$ y su velocidad es negativa. Hallar: (a) Ecuación de la onda. (1 punto). (b) Máxima velocidad de vibración de cualquier partícula de la cuerda. (0,5 puntos). (c) Velocidad y elongación de una partícula situada a 150 cm a la derecha del origen en $t=3{,}25\\,\\text{s}$. (1 punto).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Ecuación de la onda."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Máxima velocidad de vibración de cualquier partícula de la cuerda."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad y elongación de una partícula situada a 150 cm a la derecha del origen en $t=3{,}25\\,\\text{s}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Magnitudes básicas en SI",
+          "contenido": "$A=0{,}10\\,\\text{m}$, $\\lambda=2{,}00\\,\\text{m}$, $v=1{,}00\\,\\text{m}\\,\\text{s}^{-1}$. Por tanto $k=\\frac{2\\pi}{\\lambda}=\\pi\\,\\text{rad}\\,\\text{m}^{-1}$ y $\\omega=k v=\\pi\\,\\text{rad}\\,\\text{s}^{-1}$."
+        },
+        {
+          "titulo": "Determinación de la fase inicial",
+          "contenido": "Forma general para propagación en $+x$: $y(x,t)=A\\,\\text{sen}(\\omega t-kx+\\varphi_0)$. En $x=0$, $t=0$: $y=0$, luego $\\text{sen}\\,\\varphi_0=0$, es decir $\\varphi_0=0$ o $\\varphi_0=\\pi$. La velocidad transversal es $v_y=A\\omega\\cos(\\omega t-kx+\\varphi_0)$; en $x=0$, $t=0$ debe ser negativa, por lo que $\\cos\\varphi_0<0$ y $\\varphi_0=\\pi$."
+        },
+        {
+          "titulo": "Ecuación de la onda",
+          "contenido": "$$y(x,t)=0{,}10\\,\\text{sen}(\\pi t-\\pi x+\\pi)\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Velocidad máxima de vibración",
+          "contenido": "$$v_{\\text{max}}=A\\omega=0{,}10\\pi=0{,}314\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Elongación y velocidad en $x=1{,}5\\,\\text{m}$, $t=3{,}25\\,\\text{s}$",
+          "contenido": "Fase: $\\pi(3{,}25)-\\pi(1{,}5)+\\pi=2{,}75\\pi\\,\\text{rad}\\equiv \\frac{11\\pi}{4}\\,\\text{rad}$.\n\n$$y=0{,}10\\,\\text{sen}(2{,}75\\pi)=7{,}07\\cdot10^{-2}\\,\\text{m}.$$\n\n$$v_y=0{,}10\\pi\\cos(2{,}75\\pi)=-0{,}222\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$y(x,t)=0{,}10\\,\\text{sen}(\\pi t-\\pi x+\\pi)\\,\\text{m}$.\n$v_{\\text{max}}=0{,}314\\,\\text{m}\\,\\text{s}^{-1}$.\nEn $x=1{,}5\\,\\text{m}$, $t=3{,}25\\,\\text{s}$: $y=7{,}07\\cdot10^{-2}\\,\\text{m}$, $v_y=-0{,}222\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Sonido. Intensidad y nivel de intensidad sonora",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2,5 puntos (1,25 + 0,5 + 0,25 + 0,5)",
+      "enunciado": "(A) El sonido. Intensidad sonora y nivel de intensidad sonora. Definición y unidades. (1,25 puntos). (B) Una fuente puntual emite un sonido que se percibe con un nivel de intensidad de 60 dB a una distancia de 20 m. (a) Hallar la intensidad sonora. (0,5 puntos). (b) Hallar la potencia sonora de la fuente. (0,25 puntos). (c) ¿A qué distancia deja de ser audible el sonido? (0,5 puntos). Dato: $I_0=1\\cdot10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "A",
+          "puntuacion": "1,25 puntos",
+          "enunciado": "El sonido. Intensidad sonora y nivel de intensidad sonora. Definición y unidades."
+        },
+        {
+          "letra": "B.a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Hallar la intensidad sonora."
+        },
+        {
+          "letra": "B.b",
+          "puntuacion": "0,25 puntos",
+          "enunciado": "Hallar la potencia sonora de la fuente."
+        },
+        {
+          "letra": "B.c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "¿A qué distancia deja de ser audible el sonido?"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "El sonido",
+          "contenido": "El sonido es una onda mecánica longitudinal de presión/densidad que se propaga en medios materiales (gas, líquido, sólido). El oído humano detecta frecuencias entre $20\\,\\text{Hz}$ y $20\\,\\text{kHz}$. Velocidad en aire ($15\\,^{\\circ}\\text{C}$) $\\approx 340\\,\\text{m}\\,\\text{s}^{-1}$."
+        },
+        {
+          "titulo": "Intensidad sonora $I$",
+          "contenido": "Energía que atraviesa la unidad de superficie por unidad de tiempo (potencia por unidad de área):\n\n$$I=\\frac{P}{S}.$$\n\nPara una fuente puntual con simetría esférica: $I=\\frac{P}{4\\pi r^2}$. La intensidad decrece con $r^2$."
+        },
+        {
+          "titulo": "Nivel de intensidad sonora",
+          "contenido": "El oído humano percibe la intensidad de forma logarítmica. Se define el nivel de intensidad sonora en decibelios:\n\n$$L=10\\log_{10}\\left(\\frac{I}{I_0}\\right)\\,\\text{dB},$$\n\ndonde $I_0=1\\cdot10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$ es el umbral de audición. El umbral de dolor está en $I=1\\,\\text{W}\\,\\text{m}^{-2}$ ($120\\,\\text{dB}$)."
+        },
+        {
+          "titulo": "Intensidad a $20\\,\\text{m}$",
+          "contenido": "$$L=10\\log_{10}\\left(\\frac{I}{I_0}\\right)\\Rightarrow I=I_0 10^{L/10}.$$\n\n$$I=(1\\cdot10^{-12})10^{60/10}=1{,}0\\cdot10^{-6}\\,\\text{W}\\,\\text{m}^{-2}.$$"
+        },
+        {
+          "titulo": "Potencia de la fuente",
+          "contenido": "$$P=I\\,4\\pi r^2=(1{,}0\\cdot10^{-6})4\\pi(20)^2=5{,}03\\cdot10^{-3}\\,\\text{W}.$$"
+        },
+        {
+          "titulo": "Distancia hasta dejar de ser audible",
+          "contenido": "La condición límite es $I=I_0$:\n\n$$I_0=\\frac{P}{4\\pi r^2}\\Rightarrow r=\\sqrt{\\frac{P}{4\\pi I_0}}.$$\n\n$$r=\\sqrt{\\frac{5{,}03\\cdot10^{-3}}{4\\pi(1\\cdot10^{-12})}}=2{,}0\\cdot10^{4}\\,\\text{m}=20\\,\\text{km}.$$"
+        }
+      ],
+      "resultado": "$I=1{,}0\\cdot10^{-6}\\,\\text{W}\\,\\text{m}^{-2}$.\n$P=5{,}03\\cdot10^{-3}\\,\\text{W}$.\n$r=2{,}0\\cdot10^{4}\\,\\text{m}=20\\,\\text{km}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Barra conductora 0,2 m con I=3 A en B=0,25 T (railes)",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz; B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos",
+      "puntuacion": "2,5 puntos (1,25 + 0,75 + 0,5)",
+      "enunciado": "(A) Enunciar la fuerza magnética sobre una corriente. Explicar cada uno de sus términos. Dibujo. (1,25 puntos). (B) El circuito de la figura está formado por una barra metálica que puede deslizarse sobre un conductor en forma de U. Sobre dicho circuito actúa un campo magnético de $0{,}25\\,\\text{T}$ perpendicular al plano del circuito y cuyo sentido es hacia fuera («del papel», eje X positivo). La barra tiene una longitud de $0{,}2\\,\\text{m}$ y una resistencia de $20\\,\\Omega$. Cuando la barra se mueve con una velocidad de $3\\,\\text{m}\\,\\text{s}^{-1}$, tal y como se indica en la figura: (a) Hallar el valor y el sentido de la corriente inducida en el circuito. (0,75 puntos). (b) Hallar la fuerza magnética que actúa sobre la barra. (0,5 puntos).",
+      "apartados": [
+        {
+          "letra": "A",
+          "puntuacion": "1,25 puntos",
+          "enunciado": "Enunciar la fuerza magnética sobre una corriente. Explicar cada uno de sus términos. Dibujo."
+        },
+        {
+          "letra": "B.a",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Hallar el valor y el sentido de la corriente inducida en el circuito."
+        },
+        {
+          "letra": "B.b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Hallar la fuerza magnética que actúa sobre la barra."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Fuerza magnética sobre una corriente",
+          "contenido": "Sobre un elemento de hilo conductor $\\vec L$ orientado en el sentido de la corriente $I$ en presencia de un campo $\\vec B$ actúa:\n\n$$\\vec F=I(\\vec L\\times\\vec B).$$\n\nPara un hilo recto de longitud $L$ con corriente $I$ en campo uniforme: $F=I L B\\,\\text{sen}\\,\\theta$, con $\\theta$ el ángulo entre $\\vec L$ y $\\vec B$."
+        },
+        {
+          "titulo": "Origen: fuerza de Lorentz sobre cargas móviles",
+          "contenido": "La fuerza sobre el hilo es la suma de las fuerzas de Lorentz sobre los portadores móviles (densidad $n$, velocidad de arrastre $\\vec v_d$). Como $I=n q A v_d$, sumando sobre el volumen de la barra resulta $\\vec F=I(\\vec L\\times\\vec B)$."
+        },
+        {
+          "titulo": "Interpretación de cada término",
+          "contenido": "$I$ es la intensidad de corriente (A); $\\vec L$ es el vector longitud del conductor (m), con sentido de $I$; $\\vec B$ es la inducción magnética (T); $\\vec F$ es la fuerza (N), perpendicular al plano formado por $\\vec L$ y $\\vec B$. En el dibujo, con $I$ horizontal a la derecha, $\\vec B$ vertical hacia arriba y $\\vec F$ saliente del papel, según la regla de la mano derecha."
+        },
+        {
+          "titulo": "Fem inducida (motional)",
+          "contenido": "Al desplazarse la barra de longitud $L=0{,}2\\,\\text{m}$ con velocidad $v=3\\,\\text{m}\\,\\text{s}^{-1}$ en el campo $B=0{,}25\\,\\text{T}$ perpendicular al plano del circuito:\n\n$$\\varepsilon=B L v=(0{,}25)(0{,}2)(3)=0{,}15\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Corriente inducida",
+          "contenido": "$$I=\\frac{\\varepsilon}{R}=\\frac{0{,}15}{20}=7{,}5\\cdot10^{-3}\\,\\text{A}=7{,}5\\,\\text{mA}.$$"
+        },
+        {
+          "titulo": "Sentido por la ley de Lenz",
+          "contenido": "Al desplazarse la barra aumentando el área del circuito, el flujo a través del circuito (con $\\vec B$ saliente del papel) aumenta. La corriente inducida se opone a este aumento creando un campo inducido hacia dentro del papel. Por la regla de la mano derecha, la corriente debe circular en sentido horario visto desde fuera, donde sale $\\vec B$."
+        },
+        {
+          "titulo": "Fuerza magnética sobre la barra",
+          "contenido": "$$F=I L B=(7{,}5\\cdot10^{-3})(0{,}2)(0{,}25)=3{,}75\\cdot10^{-4}\\,\\text{N}.$$\n\nEsta fuerza se opone al movimiento de la barra (frenado magnético). Si la barra se mueve hacia la derecha, $\\vec F$ apunta hacia la izquierda."
+        }
+      ],
+      "resultado": "$\\varepsilon=0{,}15\\,\\text{V}$; $I=7{,}5\\,\\text{mA}$, sentido horario.\n$F=3{,}75\\cdot10^{-4}\\,\\text{N}$, opuesta al movimiento."
     }
   ]
 }

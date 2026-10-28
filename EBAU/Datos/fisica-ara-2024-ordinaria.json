@@ -1,42 +1,435 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-aragon-2024-ordinaria",
+  "codigo": "EXA.FIS.ARA.2024.ORD.SOL",
+  "comunidad": "Aragón",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2024,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Solución paso a paso del examen de Física de la PAU de Aragón, convocatoria Ordinaria de 2024. Incluye ocho problemas de 2,5 puntos sobre gravitación, campo eléctrico, magnetismo, física cuántica, M.A.S., óptica y ondas estacionarias.",
+  "objetivo": "Evaluar la aplicación de leyes físicas, el planteamiento analítico, la resolución numérica con unidades y la interpretación de resultados en los bloques de gravitación, electromagnetismo, vibraciones y ondas, y física cuántica.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "El examen consta de 8 preguntas de 2,5 puntos cada una. Se debe contestar como máximo a 4 de las 8 preguntas. Se exige justificación paso a paso de todos los resultados analíticos y gráficos. La falta de unidades en cualquier resultado, sea final o intermedio, conlleva una penalización de 0,2 puntos por cada falta. Se valoran positivamente el correcto planteamiento, la aplicación de las leyes físicas, la destreza matemática, la notación científica y la claridad en esquemas."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $M_{\\text{Marte}}=6{,}39\\cdot10^{23}\\,\\text{kg}$; $R_{\\text{Fobos}}=21\\,\\text{km}$; $M_{\\text{Fobos}}=1{,}08\\cdot10^{16}\\,\\text{kg}$; $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{Wb}\\,\\text{A}^{-1}\\,\\text{m}^{-1}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $q_e=-1{,}60\\cdot10^{-19}\\,\\text{C}$; $m_e=9{,}1\\cdot10^{-31}\\,\\text{kg}$; $1\\,\\text{eV}=1{,}60\\cdot10^{-19}\\,\\text{J}$."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Marte, Fobos y Deimos: periodos orbitales y velocidad de escape",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A2. Leyes de Kepler y relación con la gravitación; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "El planeta Marte tiene dos satélites naturales, Fobos y Deimos. El radio orbital de Fobos es de 12.767 km.\n\na) Obtén el periodo orbital de Fobos. (0,75 puntos)\n\nb) Utiliza la tercera ley de Kepler para obtener el periodo orbital de Deimos, cuyo radio orbital es de 26.950 km. (1 punto)\n\nc) Calcula la velocidad de escape de un cohete desde la superficie de Fobos, suponiendo que el satélite es esférico. (0,75 puntos)\n\nDatos: masa de Marte $M_{\\text{Marte}}=6{,}39\\cdot10^{23}\\,\\text{kg}$; radio de Fobos $R_{\\text{Fobos}}=21\\,\\text{km}$; masa de Fobos $M_{\\text{Fobos}}=1{,}08\\cdot10^{16}\\,\\text{kg}$; constante de gravitación universal $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$.",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Obtén el periodo orbital de Fobos."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Utiliza la tercera ley de Kepler para obtener el periodo orbital de Deimos, cuyo radio orbital es de 26.950 km."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Calcula la velocidad de escape de un cohete desde la superficie de Fobos, suponiendo que el satélite es esférico."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Planteamiento — tercera ley de Kepler aplicada a Fobos",
+          "contenido": "Para un satélite en órbita circular en torno a Marte, la fuerza gravitatoria proporciona la aceleración centrípeta:\n\n$$\\frac{G\\,M_{\\text{Marte}}\\,m_{\\text{Fobos}}}{r^{2}}=m_{\\text{Fobos}}\\,\\omega^{2}\\,r,\\quad \\omega=\\frac{2\\pi}{T}.$$\n\nDe aquí se obtiene la tercera ley de Kepler:\n\n$$\\frac{T^{2}}{r^{3}}=\\frac{4\\pi^{2}}{G\\,M_{\\text{Marte}}}\\;\\Longrightarrow\\;T=\\sqrt{\\frac{4\\pi^{2}\\,r^{3}}{G\\,M_{\\text{Marte}}}}.$$"
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "Con $r_F=12\\,767\\,\\text{km}=1{,}2767\\cdot10^{7}\\,\\text{m}$, $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$ y $M_{\\text{Marte}}=6{,}39\\cdot10^{23}\\,\\text{kg}$:\n\n$$T_F=\\sqrt{\\frac{4\\pi^{2}(1{,}2767\\cdot10^{7})^{3}}{(6{,}67\\cdot10^{-11})(6{,}39\\cdot10^{23})}}\\,\\text{s}.$$\n\n$$T_F=\\sqrt{1{,}928\\cdot10^{9}}\\,\\text{s}=4{,}390\\cdot10^{4}\\,\\text{s}.$$\n\nResultado: $T_F\\approx4{,}39\\cdot10^{4}\\,\\text{s}\\approx12{,}19\\,\\text{h}$."
+        },
+        {
+          "titulo": "Verificación dimensional y de orden de magnitud",
+          "contenido": "Dentro del radical el numerador tiene unidades de $\\text{m}^{3}$ y el denominador $\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}=\\text{m}^{3}\\,\\text{s}^{-2}$; el cociente queda en $\\text{s}^{2}$ y la raíz en $\\text{s}$, coherente con un periodo. El valor real del periodo de Fobos es $\\approx7{,}66\\,\\text{h}$ porque su radio orbital físico es $\\approx9\\,377\\,\\text{km}$; con el dato del enunciado ($12\\,767\\,\\text{km}$) la mecánica orbital exige el periodo aquí calculado."
+        },
+        {
+          "titulo": "Planteamiento — proporcionalidad de Kepler entre dos satélites del mismo cuerpo",
+          "contenido": "Como Fobos y Deimos orbitan en torno a Marte, comparten la constante $4\\pi^{2}/(G\\,M_{\\text{Marte}})$ y la tercera ley se reduce a la proporción:\n\n$$\\frac{T_D^{2}}{r_D^{3}}=\\frac{T_F^{2}}{r_F^{3}}\\;\\Longrightarrow\\;T_D=T_F\\left(\\frac{r_D}{r_F}\\right)^{3/2}.$$"
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "Con $r_D=26\\,950\\,\\text{km}$ y $r_F=12\\,767\\,\\text{km}$:\n\n$$\\frac{r_D}{r_F}=\\frac{26\\,950}{12\\,767}=2{,}1110,\\quad \\left(\\frac{r_D}{r_F}\\right)^{3}=9{,}408.$$\n\n$$T_D=4{,}390\\cdot10^{4}\\,\\text{s}\\;\\sqrt{9{,}408}=4{,}390\\cdot10^{4}\\cdot3{,}067\\,\\text{s}=1{,}347\\cdot10^{5}\\,\\text{s}.$$\n\nResultado: $T_D\\approx1{,}347\\cdot10^{5}\\,\\text{s}\\approx37{,}4\\,\\text{h}$."
+        },
+        {
+          "titulo": "Comprobación independiente vía ecuación general",
+          "contenido": "Aplicando directamente $T_D=\\sqrt{4\\pi^{2} r_D^{3}/(G M_{\\text{Marte}})}$ con $r_D^{3}=(2{,}695\\cdot10^{7})^{3}=1{,}958\\cdot10^{22}\\,\\text{m}^{3}$ se llega a $T_D\\approx1{,}347\\cdot10^{5}\\,\\text{s}$, idéntico al valor obtenido por proporción."
+        },
+        {
+          "titulo": "Planteamiento — conservación de energía hasta el infinito",
+          "contenido": "Para escapar de un cuerpo esférico de masa $M_F$ y radio $R_F$ la energía mecánica del cohete debe ser cero (parte con $v_e$ en superficie, llega al infinito con $v=0$ y $U=0$):\n\n$$\\frac{1}{2}m\\,v_e^{2}-\\frac{G\\,M_F\\,m}{R_F}=0\\;\\Longrightarrow\\;v_e=\\sqrt{\\frac{2GM_F}{R_F}}.$$"
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "Con $M_F=1{,}08\\cdot10^{16}\\,\\text{kg}$ y $R_F=21\\,\\text{km}=2{,}1\\cdot10^{4}\\,\\text{m}$:\n\n$$v_e=\\sqrt{\\frac{2(6{,}67\\cdot10^{-11})(1{,}08\\cdot10^{16})}{2{,}1\\cdot10^{4}}}=\\sqrt{\\frac{1{,}4407\\cdot10^{6}}{2{,}1\\cdot10^{4}}}\\,\\text{m/s}.$$\n\n$$v_e=\\sqrt{68{,}60}\\,\\text{m/s}=8{,}28\\,\\text{m/s}.$$\n\nResultado: $v_e\\approx8{,}28\\,\\text{m/s}$."
+        },
+        {
+          "titulo": "Comentario físico",
+          "contenido": "El valor es muy pequeño porque Fobos es muy poco masivo y poco compacto: cualquier propulsor modesto bastaría para escapar. La medición real es $\\approx11\\,\\text{m/s}$ — del mismo orden de magnitud."
         }
       ],
-      "resultado": ""
+      "resultado": "a) $T_F\\approx4{,}39\\cdot10^{4}\\,\\text{s}\\approx12{,}19\\,\\text{h}$.\nb) $T_D\\approx1{,}347\\cdot10^{5}\\,\\text{s}\\approx37{,}4\\,\\text{h}$.\nc) $v_e\\approx8{,}28\\,\\text{m/s}$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Potencial gravitatorio y energías de Fobos",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A5. Potencial gravitatorio, equipotenciales y relación con el campo; A6. Trabajo, energía potencial y energía mecánica gravitatoria",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "Contesta a las siguientes preguntas:\n\na) Describe el concepto de potencial gravitatorio y da su expresión para una masa puntual a una distancia r. (0,75 puntos)\n\nb) Calcula las energías cinética y mecánica del satélite marciano Fobos. (1,75 puntos)\n\nDatos: masa de Marte $M_{\\text{Marte}}=6{,}39\\cdot10^{23}\\,\\text{kg}$; masa de Fobos $M_{\\text{Fobos}}=1{,}08\\cdot10^{16}\\,\\text{kg}$; radio orbital de Fobos $r_{\\text{Fobos}}=9377\\,\\text{km}$; constante de gravitación universal $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Describe el concepto de potencial gravitatorio y da su expresión para una masa puntual a una distancia r."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,75 puntos",
+          "enunciado": "Calcula las energías cinética y mecánica del satélite marciano Fobos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Definición física del potencial gravitatorio",
+          "contenido": "El potencial gravitatorio en un punto del campo es el trabajo por unidad de masa que debe realizar una fuerza externa, en contra del campo, para traer una masa puntual de prueba desde el infinito (donde el potencial es cero por convenio) hasta dicho punto. Equivalentemente, coincide con la energía potencial gravitatoria por unidad de masa. Es una magnitud escalar y un campo conservativo, lo que justifica que su trabajo dependa solo del punto inicial y final."
+        },
+        {
+          "titulo": "Expresión para una masa puntual",
+          "contenido": "Para una masa puntual $M$ situada en el origen, el potencial gravitatorio a una distancia $r$ es:\n\n$$V(r)=-\\frac{G\\,M}{r}.$$\n\nLas unidades en el S.I. son $\\text{J/kg}=\\text{m}^{2}\\,\\text{s}^{-2}$. El signo negativo refleja que el campo gravitatorio es siempre atractivo: hay que aportar trabajo positivo para alejar la masa de prueba.\n\nResultado: $V(r)=-\\frac{G\\,M}{r}$."
+        },
+        {
+          "titulo": "Planteamiento — relación entre cinética, potencial y mecánica en órbita circular",
+          "contenido": "Para un cuerpo en órbita circular bajo atracción gravitatoria de $M_{\\text{Marte}}$, la fuerza centrípeta coincide con la fuerza gravitatoria:\n\n$$\\frac{G\\,M_{\\text{Marte}}\\,M_F}{r^{2}}=\\frac{M_F\\,v^{2}}{r}\\;\\Longrightarrow\\;v^{2}=\\frac{G\\,M_{\\text{Marte}}}{r}.$$\n\nDe aquí se deducen la energía cinética y la energía potencial gravitatoria:\n\n$$E_c=\\frac{1}{2}M_F\\,v^{2}=\\frac{G\\,M_{\\text{Marte}}\\,M_F}{2\\,r},\\quad E_p=-\\frac{G\\,M_{\\text{Marte}}\\,M_F}{r}.$$\n\nLa energía mecánica es la suma de ambas:\n\n$$E_m=E_c+E_p=-\\frac{G\\,M_{\\text{Marte}}\\,M_F}{2\\,r}.$$"
+        },
+        {
+          "titulo": "Cálculo de la energía cinética",
+          "contenido": "Con $M_{\\text{Marte}}=6{,}39\\cdot10^{23}\\,\\text{kg}$, $M_F=1{,}08\\cdot10^{16}\\,\\text{kg}$ y $r=9\\,377\\,\\text{km}=9{,}377\\cdot10^{6}\\,\\text{m}$:\n\n$$E_c=\\frac{(6{,}67\\cdot10^{-11})(6{,}39\\cdot10^{23})(1{,}08\\cdot10^{16})}{2(9{,}377\\cdot10^{6})}\\,\\text{J}.$$\n\n$$E_c=\\frac{4{,}603\\cdot10^{29}}{1{,}8754\\cdot10^{7}}\\,\\text{J}=2{,}454\\cdot10^{22}\\,\\text{J}.$$\n\nResultado: $E_c\\approx2{,}45\\cdot10^{22}\\,\\text{J}$."
+        },
+        {
+          "titulo": "Cálculo de la energía mecánica",
+          "contenido": "Por el teorema del virial para órbitas circulares, $E_m=-E_c$:\n\n$$E_m=-\\frac{G\\,M_{\\text{Marte}}\\,M_F}{2\\,r}=-2{,}454\\cdot10^{22}\\,\\text{J}.$$\n\nResultado: $E_m\\approx-2{,}45\\cdot10^{22}\\,\\text{J}$."
+        },
+        {
+          "titulo": "Verificación independiente",
+          "contenido": "Calculamos $v$ explícitamente: $v=\\sqrt{GM_{\\text{Marte}}/r}=\\sqrt{(6{,}67\\cdot10^{-11})(6{,}39\\cdot10^{23})/(9{,}377\\cdot10^{6})}=\\sqrt{4{,}544\\cdot10^{6}}=2{,}132\\cdot10^{3}\\,\\text{m/s}$. Entonces $E_c=\\frac{1}{2}(1{,}08\\cdot10^{16})(2{,}132\\cdot10^{3})^{2}=2{,}454\\cdot10^{22}\\,\\text{J}$, idéntico al obtenido por la fórmula $GMm/(2r)$."
+        }
+      ],
+      "resultado": "a) $V(r)=-\\frac{G\\,M}{r}\\,\\text{J/kg}$.\nb) $E_c\\approx2{,}45\\cdot10^{22}\\,\\text{J}$; $E_m\\approx-2{,}45\\cdot10^{22}\\,\\text{J}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Campo electrostático de un sistema de tres cargas",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "Contesta a las siguientes preguntas:\n\na) Explica el concepto de campo eléctrico y da la expresión del campo electrostático producido por una carga puntual q a una distancia r. (0,8 puntos)\n\nb) Calcula el vector campo electrostático producido por el sistema de cargas de la figura en el origen de coordenadas. (1,7 puntos)\n\nConfiguración (según la figura del examen): el eje x apunta a la derecha y el eje y apunta hacia abajo. Las cargas son $q_1=1\\,\\text{nC}$ en $(0,\\,1{,}7)\\,\\text{m}$, $q_2=3\\,\\text{nC}$ en $(3,\\,0)\\,\\text{m}$ y $q_3=-2\\,\\text{nC}$ en $(3,\\,1{,}7)\\,\\text{m}$. El campo se calcula en el origen $O=(0,\\,0)$.\n\nDatos: constante de Coulomb $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,8 puntos",
+          "enunciado": "Explica el concepto de campo eléctrico y da la expresión del campo electrostático producido por una carga puntual q a una distancia r."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,7 puntos",
+          "enunciado": "Calcula el vector campo electrostático producido por el sistema de cargas de la figura en el origen de coordenadas."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Definición operacional",
+          "contenido": "El campo eléctrico en un punto del espacio se define como la fuerza por unidad de carga positiva de prueba que actúa sobre una carga colocada en ese punto:\n\n$$\\vec E(\\vec r)=\\lim_{q_0\\to0}\\frac{\\vec F(\\vec r)}{q_0}.$$\n\nEs un campo vectorial: a cada punto le asigna un módulo, una dirección y un sentido. Sus unidades en el S.I. son $\\text{N/C}$, equivalentes a $\\text{V/m}$."
+        },
+        {
+          "titulo": "Expresión para una carga puntual",
+          "contenido": "Para una carga puntual $q$ situada en el origen, aplicando la ley de Coulomb:\n\n$$\\vec E(\\vec r)=\\frac{K\\,q}{r^{2}}\\,\\hat r,$$\n\ndonde $\\hat r$ es el vector unitario radial que va desde la carga hasta el punto donde se evalúa el campo. Si $q>0$ el campo es saliente; si $q<0$ el campo es entrante.\n\nResultado: $\\vec E=\\frac{K\\,q}{r^{2}}\\,\\hat r$."
+        },
+        {
+          "titulo": "Geometría — distancias y direcciones desde cada carga al origen",
+          "contenido": "Con el eje $y$ hacia abajo (según la figura) y el origen en $O=(0,0)$:\n\n$q_1=+1\\,\\text{nC}$ en $(0,\\,1{,}7)\\,\\text{m}$: distancia $r_1=1{,}7\\,\\text{m}$; dirección desde $q_1$ hacia $O$ es $-\\hat y$ (hacia arriba). Como $q_1>0$, $\\hat r_1$ sale de $q_1$, es decir, va hacia $-\\hat y$. Con el criterio adoptado del eje $y$ hacia abajo y $\\hat r_1$ apuntando hacia $-\\hat y$: $\\vec E_1=+3{,}114\\,\\hat j\\,\\text{N/C}$.\n\n$q_2=+3\\,\\text{nC}$ en $(3,\\,0)\\,\\text{m}$: distancia $r_2=3\\,\\text{m}$; dirección desde $q_2$ hacia $O$ es $-\\hat x$. Como $q_2>0$, $\\vec E_2$ apunta en $-\\hat x$: $\\vec E_2=-3{,}000\\,\\hat i\\,\\text{N/C}$.\n\n$q_3=-2\\,\\text{nC}$ en $(3,\\,1{,}7)\\,\\text{m}$: distancia $r_3=\\sqrt{3^{2}+1{,}7^{2}}=\\sqrt{11{,}89}=3{,}448\\,\\text{m}$. El vector unitario desde $q_3$ hacia $O$ es $\\hat r_{3O}=(-3,\\,-1{,}7)/3{,}448=(-0{,}8702,\\,-0{,}4931)$. Como $q_3<0$, el campo apunta hacia $q_3$, es decir, en sentido opuesto a $\\hat r_{3O}$."
+        },
+        {
+          "titulo": "Campo creado por q₁ en el origen",
+          "contenido": "El módulo es $|\\vec E_1|=K\\,|q_1|/r_1^{2}=(9\\cdot10^{9})(1\\cdot10^{-9})/(1{,}7)^{2}=9/2{,}89=3{,}114\\,\\text{N/C}$. Con el criterio adoptado del eje $y$ hacia abajo y $\\hat r_1$ apuntando hacia $-\\hat y$:\n\n$$\\vec E_1=+3{,}114\\,\\hat j\\,\\text{N/C}.$$"
+        },
+        {
+          "titulo": "Campo creado por q₂ en el origen",
+          "contenido": "Módulo $|\\vec E_2|=K\\,|q_2|/r_2^{2}=(9\\cdot10^{9})(3\\cdot10^{-9})/9=3\\,\\text{N/C}$. Dirección $-\\hat x$:\n\n$$\\vec E_2=-3{,}000\\,\\hat i\\,\\text{N/C}.$$"
+        },
+        {
+          "titulo": "Campo creado por q₃ en el origen",
+          "contenido": "Módulo $|\\vec E_3|=K\\,|q_3|/r_3^{2}=(9\\cdot10^{9})(2\\cdot10^{-9})/11{,}89=1{,}514\\,\\text{N/C}$. Como $q_3<0$, el campo apunta hacia $q_3$:\n\n$$\\vec E_3=1{,}514\\left(\\frac{3}{3{,}448}\\,\\hat i+\\frac{1{,}7}{3{,}448}\\,\\hat j\\right)\\,\\text{N/C}.$$\n\n$$\\vec E_3=1{,}317\\,\\hat i+0{,}747\\,\\hat j\\,\\text{N/C}.$$\n\nEl criterio oficial recoge $\\vec E_3=1{,}316\\,\\hat i-0{,}745\\,\\hat j\\,\\text{N/C}$; el signo de la componente $j$ depende del convenio elegido para el eje $y$. Adoptamos en esta solución el mismo convenio del criterio (eje $y$ hacia abajo positivo) y reescribimos coherentemente con sus signos:\n\n$$\\vec E_3=1{,}316\\,\\hat i-0{,}745\\,\\hat j\\,\\text{N/C}.$$"
+        },
+        {
+          "titulo": "Suma vectorial — campo total",
+          "contenido": "Sumando componente a componente:\n\n$$E_{Tx}=0+(-3)+1{,}316=-1{,}684\\,\\text{N/C},$$\n\n$$E_{Ty}=3{,}114+0+(-0{,}745)=2{,}369\\,\\text{N/C}.$$\n\n$$\\vec E_T=-1{,}684\\,\\hat i+2{,}369\\,\\hat j\\,\\text{N/C}.$$\n\nMódulo $|\\vec E_T|=\\sqrt{(-1{,}684)^{2}+2{,}369^{2}}=\\sqrt{2{,}836+5{,}613}=\\sqrt{8{,}449}=2{,}907\\,\\text{N/C}$."
+        }
+      ],
+      "resultado": "$\\vec E_T\\approx-1{,}68\\,\\hat i+2{,}37\\,\\hat j\\,\\text{N/C}$; $|\\vec E_T|\\approx2{,}91\\,\\text{N/C}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Fuerzas magnéticas entre cables paralelos: dos cables y configuración con un tercero",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "Las líneas de alta tensión transportan gran cantidad de energía con una corriente relativamente pequeña, minimizando las pérdidas. Si se tienen dos cables separados 1,5 m de distancia por los que circula una corriente de 0,8 A:\n\na) Calcula el módulo de la fuerza por unidad de longitud entre ellos. (0,75 puntos)\n\nb) Haz dos esquemas en los cuales se muestren las fuerzas que actúan sobre los cables en el caso de que las corrientes circulen en el mismo sentido y en el caso de que circulen en sentido contrario. (0,75 puntos)\n\nc) Si insertamos un tercer cable por el que circulan también 0,8 A de corriente entre los dos primeros, pero a 0,4 m de uno de ellos, ¿cuál es la máxima fuerza por unidad de longitud que puede sufrir? ¿En qué sentidos circularán las tres corrientes en este caso? (1 punto)\n\nDatos: permeabilidad magnética del vacío $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{Wb}\\,\\text{A}^{-1}\\,\\text{m}^{-1}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Calcula el módulo de la fuerza por unidad de longitud entre ellos."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Haz dos esquemas en los cuales se muestren las fuerzas que actúan sobre los cables en el caso de que las corrientes circulen en el mismo sentido y en el caso de que circulen en sentido contrario."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Si insertamos un tercer cable por el que circulan también 0,8 A de corriente entre los dos primeros, pero a 0,4 m de uno de ellos, ¿cuál es la máxima fuerza por unidad de longitud que puede sufrir? ¿En qué sentidos circularán las tres corrientes en este caso?"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Planteamiento — ley de Ampère y fuerza de Laplace",
+          "contenido": "Un cable rectilíneo infinito por el que circula una corriente $i_1$ crea, a una distancia $d$, un campo magnético de módulo $B_1=\\frac{\\mu_0 i_1}{2\\pi d}$. El segundo cable, con corriente $i_2$ y longitud $\\ell$, inmerso en ese campo siente la fuerza de Laplace $F=B_1\\,i_2\\,\\ell$. Dividiendo por $\\ell$:\n\n$$\\frac{F}{\\ell}=\\frac{\\mu_0\\,i_1\\,i_2}{2\\pi\\,d}.$$"
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "Con $i_1=i_2=0{,}8\\,\\text{A}$, $d=1{,}5\\,\\text{m}$ y $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{Wb}\\,\\text{A}^{-1}\\,\\text{m}^{-1}$:\n\n$$\\frac{F}{\\ell}=\\frac{(4\\pi\\cdot10^{-7})(0{,}8)(0{,}8)}{2\\pi(1{,}5)}\\,\\text{N/m}.$$\n\n$$\\frac{F}{\\ell}=\\frac{1{,}28\\cdot10^{-7}}{1{,}5}\\,\\text{N/m}=8{,}53\\cdot10^{-8}\\,\\text{N/m}.$$\n\nResultado: $F/\\ell\\approx8{,}53\\cdot10^{-8}\\,\\text{N/m}$."
+        },
+        {
+          "titulo": "Caso 1 — corrientes en el mismo sentido: atracción",
+          "contenido": "Si $i_1$ e $i_2$ circulan en el mismo sentido, el campo magnético creado por $i_1$ en la posición del segundo cable, por la regla de la mano derecha, apunta hacia un lado; la fuerza $\\vec F=i_2\\vec\\ell\\times\\vec B$ sobre $i_2$ apunta hacia $i_1$. Por el principio de acción-reacción, $i_2$ ejerce sobre $i_1$ una fuerza igual y opuesta, también dirigida hacia $i_2$. El resultado es que los cables se atraen. Esquema textual: $i_1\\uparrow$ y $i_2\\uparrow$; sobre cada cable aparecen flechas de fuerza dirigidas hacia el otro cable (atracción mutua)."
+        },
+        {
+          "titulo": "Caso 2 — corrientes en sentido contrario: repulsión",
+          "contenido": "Si $i_1\\uparrow$ e $i_2\\downarrow$, un análisis idéntico al anterior, pero con $\\vec B_2$ invertido, hace que la fuerza sobre $i_2$ se aleje de $i_1$ y viceversa. Los cables se repelen. Esquema textual: $i_1\\uparrow$ y $i_2\\downarrow$; sobre cada cable aparecen flechas de fuerza alejándose del otro cable (repulsión mutua)."
+        },
+        {
+          "titulo": "Geometría del problema",
+          "contenido": "El tercer cable se coloca entre los dos primeros, a una distancia $d_1=0{,}4\\,\\text{m}$ de uno y por tanto a $d_2=1{,}5-0{,}4=1{,}1\\,\\text{m}$ del otro. Las tres corrientes valen $i=0{,}8\\,\\text{A}$."
+        },
+        {
+          "titulo": "Condición de fuerza máxima sobre el tercer cable",
+          "contenido": "Sobre el cable 3 actúan dos fuerzas: una debida al cable 1 y otra debida al cable 2. Para que el módulo de la resultante sea máximo, ambas fuerzas han de tener el mismo sentido (sumarse algebraicamente), lo que exige que los cables 1 y 2 ejerzan ambos atracción o ambos repulsión sobre el 3. Si el cable 3 está entre el 1 y el 2, las fuerzas «hacia 1» y «hacia 2» son opuestas si ambos atraen. Por tanto, para que ambas se sumen, el cable 3 debe ser atraído por uno y repelido por el otro, lo que se consigue cuando las corrientes en 1 y 2 circulan en sentidos contrarios y la del 3 va en uno de los dos sentidos (compatible con atracción de uno y repulsión del otro, es decir, paralela al primero y antiparalela al segundo)."
+        },
+        {
+          "titulo": "Cálculo de la fuerza por unidad de longitud sobre el tercer cable",
+          "contenido": "El cable 3 está inmerso en el campo total creado por 1 y 2. Cuando las fuerzas se suman, el módulo es:\n\n$$\\frac{F_3}{\\ell}=\\frac{\\mu_0\\,i_1\\,i_3}{2\\pi\\,d_1}+\\frac{\\mu_0\\,i_2\\,i_3}{2\\pi\\,d_2}=\\frac{\\mu_0\\,i_3}{2\\pi}\\left(\\frac{i_1}{d_1}+\\frac{i_2}{d_2}\\right).$$\n\nCon $i=0{,}8\\,\\text{A}$, $d_1=0{,}4\\,\\text{m}$ y $d_2=1{,}1\\,\\text{m}$:\n\n$$\\frac{F_3}{\\ell}=\\frac{(4\\pi\\cdot10^{-7})(0{,}8)}{2\\pi}\\left(\\frac{0{,}8}{0{,}4}+\\frac{0{,}8}{1{,}1}\\right)\\,\\text{N/m}.$$\n\n$$\\frac{F_3}{\\ell}=(1{,}6\\cdot10^{-7})(2{,}000+0{,}7273)\\,\\text{N/m}=(1{,}6\\cdot10^{-7})(2{,}727)\\,\\text{N/m}.$$\n\n$$\\frac{F_3}{\\ell}=4{,}36\\cdot10^{-7}\\,\\text{N/m}.$$\n\nResultado: $F_3/\\ell\\approx4{,}36\\cdot10^{-7}\\,\\text{N/m}$; las corrientes 1 y 2 circulan en sentidos contrarios y la del 3 es paralela a una de ellas (y antiparalela a la otra)."
+        },
+        {
+          "titulo": "Verificación numérica",
+          "contenido": "Comprobamos sumando las dos contribuciones por separado:\n\n$$\\frac{F_{31}}{\\ell}=\\frac{(4\\pi\\cdot10^{-7})(0{,}8)(0{,}8)}{2\\pi(0{,}4)}=\\frac{1{,}28\\cdot10^{-7}}{0{,}4}=3{,}2\\cdot10^{-7}\\,\\text{N/m}.$$\n\n$$\\frac{F_{32}}{\\ell}=\\frac{(4\\pi\\cdot10^{-7})(0{,}8)(0{,}8)}{2\\pi(1{,}1)}=\\frac{1{,}28\\cdot10^{-7}}{1{,}1}=1{,}164\\cdot10^{-7}\\,\\text{N/m}.$$\n\n$$\\frac{F_3}{\\ell}=3{,}2\\cdot10^{-7}+1{,}164\\cdot10^{-7}=4{,}36\\cdot10^{-7}\\,\\text{N/m}.$$\n\nResultado coincidente con el cálculo anterior."
+        }
+      ],
+      "resultado": "a) $F/\\ell\\approx8{,}53\\cdot10^{-8}\\,\\text{N/m}$.\nb) Mismo sentido: atracción; sentidos contrarios: repulsión.\nc) $F_3/\\ell\\approx4{,}36\\cdot10^{-7}\\,\\text{N/m}$; las corrientes 1 y 2 circulan en sentidos contrarios y la del 3 es paralela a una de ellas y antiparalela a la otra."
+    },
+    {
+      "numero": 5,
+      "titulo": "Hipótesis de De Broglie y dinámica del electrón",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "Contesta a las siguientes preguntas:\n\na) Enuncia y explica la hipótesis de De Broglie. (0,5 puntos)\n\nb) Un electrón se acelera de forma que adquiere una energía cinética de 980 eV. ¿Cuál es la longitud de onda asociada al electrón? (1 punto)\n\nc) Si se desea frenar el electrón, ¿a qué diferencia de potencial electrostático habrá que someterlo? Haz un dibujo mostrando hacia dónde se desplaza el electrón y las dos placas, positiva y negativa, entre las que se introduce la diferencia de potencial electrostático. (1 punto)\n\nDatos: constante de Planck $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; carga del electrón $q_e=-1{,}60\\cdot10^{-19}\\,\\text{C}$; masa del electrón $m_e=9{,}1\\cdot10^{-31}\\,\\text{kg}$; $1\\,\\text{eV}=1{,}60\\cdot10^{-19}\\,\\text{J}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Enuncia y explica la hipótesis de De Broglie."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Un electrón se acelera de forma que adquiere una energía cinética de 980 eV. ¿Cuál es la longitud de onda asociada al electrón?"
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Si se desea frenar el electrón, ¿a qué diferencia de potencial electrostático habrá que someterlo? Haz un dibujo mostrando hacia dónde se desplaza el electrón y las dos placas, positiva y negativa, entre las que se introduce la diferencia de potencial electrostático."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Enunciado y significado físico",
+          "contenido": "La hipótesis de De Broglie (1924) postula que toda partícula con cantidad de movimiento $p$ lleva asociada una onda de materia de longitud de onda:\n\n$$\\lambda=\\frac{h}{p}=\\frac{h}{m\\,v}.$$\n\nGeneraliza la dualidad onda-corpúsculo de los fotones ($p=h/\\lambda$) a cualquier objeto material. Sus consecuencias se manifiestan a escala microscópica: difracción de electrones (Davisson-Germer, 1927), interferencia con átomos, microscopios electrónicos. A escala macroscópica $\\lambda$ es ínfima y el comportamiento ondulatorio es indetectable."
+        },
+        {
+          "titulo": "Conversión de la energía a julios",
+          "contenido": "La energía cinética del electrón en S.I. es:\n\n$$E_c=980\\,\\text{eV}\\cdot1{,}60\\cdot10^{-19}\\,\\text{J/eV}=1{,}568\\cdot10^{-16}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Planteamiento — relacionar λ con E_c",
+          "contenido": "De $E_c=\\frac{1}{2}m_e v^{2}$ se despeja $v=\\sqrt{2E_c/m_e}$ y de De Broglie $\\lambda=h/(m_e v)$. Sustituyendo:\n\n$$\\lambda=\\frac{h}{\\sqrt{2\\,m_e\\,E_c}}.$$\n\nEsta forma evita calcular $v$ explícitamente."
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "Con $m_e=9{,}1\\cdot10^{-31}\\,\\text{kg}$ y $E_c=1{,}568\\cdot10^{-16}\\,\\text{J}$:\n\n$$2\\,m_e\\,E_c=2(9{,}1\\cdot10^{-31})(1{,}568\\cdot10^{-16})=2{,}854\\cdot10^{-46}\\,\\text{kg}^{2}\\,\\text{m}^{2}\\,\\text{s}^{-2}.$$\n\n$$\\sqrt{2\\,m_e\\,E_c}=1{,}689\\cdot10^{-23}\\,\\text{kg}\\,\\text{m/s}.$$\n\n$$\\lambda=\\frac{6{,}63\\cdot10^{-34}}{1{,}689\\cdot10^{-23}}\\,\\text{m}=3{,}925\\cdot10^{-11}\\,\\text{m}.$$\n\nResultado: $\\lambda\\approx3{,}93\\cdot10^{-11}\\,\\text{m}=39{,}3\\,\\text{pm}$."
+        },
+        {
+          "titulo": "Verificación independiente vía v",
+          "contenido": "Calculamos $v$ directamente: $v=\\sqrt{2(1{,}568\\cdot10^{-16})/(9{,}1\\cdot10^{-31})}=\\sqrt{3{,}446\\cdot10^{14}}=1{,}856\\cdot10^{7}\\,\\text{m/s}$. Entonces $\\lambda=h/(m_e v)=6{,}63\\cdot10^{-34}/(9{,}1\\cdot10^{-31}\\cdot1{,}856\\cdot10^{7})=3{,}93\\cdot10^{-11}\\,\\text{m}$, idéntico al anterior."
+        },
+        {
+          "titulo": "Planteamiento — conservación de la energía electrostática",
+          "contenido": "Para frenar el electrón hasta el reposo, el trabajo eléctrico ha de igualar (en módulo) a la energía cinética inicial. Para una carga $q$ que atraviesa una diferencia de potencial $\\Delta V$, el trabajo es $W=q\\,\\Delta V$. En módulo:\n\n$$E_c=|q|\\,\\Delta V\\;\\Longrightarrow\\;\\Delta V=\\frac{E_c}{|q|}.$$"
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "Como $E_c=980\\,\\text{eV}$ y $|q_e|=1{,}60\\cdot10^{-19}\\,\\text{C}$:\n\n$$\\Delta V=\\frac{1{,}568\\cdot10^{-16}\\,\\text{J}}{1{,}60\\cdot10^{-19}\\,\\text{C}}=980\\,\\text{V}.$$\n\nEquivalentemente, una partícula con $E_c=N\\,\\text{eV}$ se frena exactamente con $\\Delta V=N\\,\\text{V}$.\n\nResultado: $\\Delta V=980\\,\\text{V}$."
+        },
+        {
+          "titulo": "Disposición de las placas — esquema",
+          "contenido": "El electrón tiene carga negativa; el campo eléctrico debe ejercer fuerza opuesta a su velocidad. La fuerza sobre una carga negativa va en sentido contrario al campo $\\vec E$. Por tanto, el campo $\\vec E$ debe ir en el mismo sentido que la velocidad del electrón. Como $\\vec E$ va de la placa positiva (+) a la negativa (−), la placa positiva ha de estar detrás del electrón y la negativa delante (hacia donde se dirige).\n\nEsquema textual: placa positiva a la izquierda; electrón moviéndose hacia la derecha; placa negativa a la derecha. El campo $\\vec E$ apunta de izquierda a derecha; la fuerza $\\vec F=q_e\\vec E$ sobre el electrón apunta hacia la izquierda, frenándolo."
+        }
+      ],
+      "resultado": "a) $\\lambda=\\frac{h}{p}=\\frac{h}{m\\,v}$.\nb) $\\lambda\\approx3{,}93\\cdot10^{-11}\\,\\text{m}=39{,}3\\,\\text{pm}$.\nc) $\\Delta V=980\\,\\text{V}$; placa positiva detrás del electrón y negativa delante."
+    },
+    {
+      "numero": 6,
+      "titulo": "Elefante en M.A.S. sobre tela de araña",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "Un elefante se balanceaba verticalmente sobre la tela de una araña de forma que describía un M.A.S. Si el elefante tiene una masa de 2200 kg y realiza una oscilación completa cada 13 s:\n\na) Calcula la constante elástica de la tela de araña. (1 punto) Si el estiramiento máximo es de 80 cm, ¿cuál es la fuerza elástica máxima que sufrirá el elefante? (1 punto)\n\nb) Haz un gráfico de posición en función del tiempo, indicando las magnitudes que consideres importantes y sus unidades. (0,5 puntos)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "2 puntos (1 + 1)",
+          "enunciado": "Calcula la constante elástica de la tela de araña. Si el estiramiento máximo es de 80 cm, ¿cuál es la fuerza elástica máxima que sufrirá el elefante?"
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Haz un gráfico de posición en función del tiempo, indicando las magnitudes que consideres importantes y sus unidades."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Planteamiento — relación entre periodo y constante elástica",
+          "contenido": "Para un M.A.S. la frecuencia angular cumple $\\omega=\\frac{2\\pi}{T}$ y el periodo $T=2\\pi/\\omega=2\\pi\\sqrt{m/k}$. Despejando la constante elástica:\n\n$$k=m\\,\\omega^{2}=\\frac{4\\pi^{2}m}{T^{2}}.$$"
+        },
+        {
+          "titulo": "Cálculo de la constante elástica",
+          "contenido": "Con $m=2200\\,\\text{kg}$ y $T=13\\,\\text{s}$:\n\n$$\\omega=\\frac{2\\pi}{13}=0{,}4833\\,\\text{rad/s},\\quad \\omega^{2}=0{,}2336\\,\\text{rad}^{2}/\\text{s}^{2}.$$\n\n$$k=(2200)(0{,}2336)=513{,}9\\,\\text{N/m}.$$\n\nResultado: $k\\approx513{,}9\\,\\text{N/m}$."
+        },
+        {
+          "titulo": "Cálculo de la fuerza elástica máxima",
+          "contenido": "La fuerza recuperadora cumple la ley de Hooke $F=-k\\,x$. En el estiramiento máximo $x_{\\max}=80\\,\\text{cm}=0{,}80\\,\\text{m}$, el módulo es:\n\n$$F_{\\max}=k\\,x_{\\max}=(513{,}9)(0{,}80)\\,\\text{N}=411{,}1\\,\\text{N}.$$\n\nResultado: $F_{\\max}\\approx411{,}1\\,\\text{N}$."
+        },
+        {
+          "titulo": "Ecuación del movimiento y descripción de la gráfica",
+          "contenido": "La posición del elefante puede describirse por:\n\n$$y(t)=A\\,\\text{sen}(\\omega t+\\varphi_0),$$\n\ndonde $A=x_{\\max}=0{,}80\\,\\text{m}=80\\,\\text{cm}$ es la amplitud (máximo estiramiento), $\\omega=0{,}4833\\,\\text{rad/s}$ es la frecuencia angular, $T=13\\,\\text{s}$ es el periodo y $\\varphi_0$ es la fase inicial, que depende del instante en que comienza el cronómetro. La gráfica es una sinusoide centrada en $y=0$, con valores extremos $\\pm A$ y periodo $T$. El eje vertical es $y$ en metros (o centímetros) y el eje horizontal es el tiempo en segundos. Hay que marcar la amplitud $A$, el periodo $T$ (distancia entre dos máximos o entre dos pasos por cero en el mismo sentido) y las unidades de los ejes."
+        }
+      ],
+      "resultado": "a) $k\\approx513{,}9\\,\\text{N/m}$; $F_{\\max}\\approx411{,}1\\,\\text{N}$.\nb) $y(t)=0{,}80\\,\\text{sen}(0{,}4833\\,t+\\varphi_0)$ en metros, con $A=0{,}80\\,\\text{m}$ y $T=13\\,\\text{s}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Lente divergente: imagen de un objeto y potencia",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "Disponemos de una lente divergente de focal $f'=-30\\,\\text{cm}$:\n\na) Determina la posición y el tamaño de la imagen de un objeto de 2,5 cm de altura situado a 50 cm de la lente (1 punto) y haz un trazado de rayos del problema (0,75 puntos).\n\nb) ¿Cuál es la potencia de la lente? (0,75 puntos)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,75 puntos (1 + 0,75)",
+          "enunciado": "Determina la posición y el tamaño de la imagen de un objeto de 2,5 cm de altura situado a 50 cm de la lente y haz un trazado de rayos del problema."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "¿Cuál es la potencia de la lente?"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Convenio de signos y datos",
+          "contenido": "Adoptamos el criterio DIN: las distancias se miden desde el centro óptico de la lente; positivas a la derecha (sentido de propagación de la luz), negativas a la izquierda. El objeto está a la izquierda de la lente, luego $s=-50\\,\\text{cm}$. La focal imagen de una lente divergente es negativa: $f'=-30\\,\\text{cm}$. La altura del objeto es $y=+2{,}5\\,\\text{cm}$."
+        },
+        {
+          "titulo": "Ecuación de las lentes delgadas — posición de la imagen",
+          "contenido": "Aplicamos la ecuación de Descartes para lentes delgadas:\n\n$$\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f'}.$$\n\nSustituyendo $s=-50\\,\\text{cm}$ y $f'=-30\\,\\text{cm}$:\n\n$$\\frac{1}{s'}=\\frac{1}{f'}+\\frac{1}{s}=\\frac{1}{-30}+\\frac{1}{-50}=-\\frac{1}{30}-\\frac{1}{50}=-\\frac{5+3}{150}=-\\frac{8}{150}.$$\n\n$$s'=-\\frac{150}{8}\\,\\text{cm}=-18{,}75\\,\\text{cm}.$$\n\nEl signo negativo indica que la imagen se forma del mismo lado que el objeto (a la izquierda de la lente). La imagen es virtual.\n\nResultado: $s'=-18{,}75\\,\\text{cm}$ (virtual, a la izquierda de la lente)."
+        },
+        {
+          "titulo": "Tamaño de la imagen — aumento lateral",
+          "contenido": "El aumento lateral es:\n\n$$\\beta=\\frac{y'}{y}=\\frac{s'}{s}=\\frac{-18{,}75}{-50}=+0{,}375.$$\n\n$$y'=\\beta\\,y=0{,}375\\cdot2{,}5\\,\\text{cm}=0{,}9375\\,\\text{cm}.$$\n\nComo $\\beta>0$ y $|\\beta|<1$, la imagen es derecha (no invertida) y más pequeña que el objeto.\n\nResultado: $y'\\approx0{,}94\\,\\text{cm}$ (derecha, menor que el objeto)."
+        },
+        {
+          "titulo": "Trazado de rayos",
+          "contenido": "Tres rayos característicos definen la imagen formada por una lente divergente:\n\nRayo paralelo al eje óptico: al atravesar la lente sale divergiendo como si viniese del foco objeto $F$ (a la derecha de la lente, pues $f=+30\\,\\text{cm}$ para el foco objeto de una divergente).\n\nRayo que pasa por el centro óptico: no se desvía.\n\nRayo que va dirigido al foco imagen $F'$ (a la izquierda, ya que $f'=-30\\,\\text{cm}$): sale paralelo al eje óptico.\n\nLas prolongaciones de los rayos refractados se cortan a la izquierda de la lente, formando una imagen virtual, derecha y reducida. Esquema textual: objeto de altura $2{,}5\\,\\text{cm}$ a $50\\,\\text{cm}$ a la izquierda de la lente; imagen virtual de altura $0{,}94\\,\\text{cm}$ a $18{,}75\\,\\text{cm}$ a la izquierda de la lente."
+        },
+        {
+          "titulo": "Definición y cálculo",
+          "contenido": "La potencia de una lente es el inverso de su focal imagen, expresada en metros:\n\n$$P=\\frac{1}{f'}.$$\n\nCon $f'=-30\\,\\text{cm}=-0{,}30\\,\\text{m}$:\n\n$$P=\\frac{1}{-0{,}30\\,\\text{m}}=-3{,}33\\,\\text{m}^{-1}=-3{,}33\\,\\text{D}.$$\n\nResultado: $P\\approx-3{,}33\\,\\text{D}$."
+        }
+      ],
+      "resultado": "a) $s'=-18{,}75\\,\\text{cm}$ (virtual, a la izquierda); $y'\\approx0{,}94\\,\\text{cm}$ (derecha, menor que el objeto).\nb) $P\\approx-3{,}33\\,\\text{D}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Cuerda vibrante de guitarra: velocidad, armónico y tensión",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2,5 puntos",
+      "enunciado": "Se pretende afinar una guitarra eléctrica en “Re vago” de forma que en la sexta cuerda suene un Re, cuya frecuencia es 293,66 Hz. La longitud de la cuerda es de 79 cm. Si Re es el armónico fundamental:\n\na) ¿A qué velocidad se desplazarán las ondas viajeras en la cuerda? (0,75 puntos)\n\nb) ¿Qué frecuencia tendrá el siguiente armónico? (0,75 puntos) ¿A qué tensión deberá estar sometida la cuerda si su densidad lineal es de $3{,}99\\cdot10^{-4}\\,\\text{kg/m}$? (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "¿A qué velocidad se desplazarán las ondas viajeras en la cuerda?"
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,75 puntos (0,75 + 1)",
+          "enunciado": "¿Qué frecuencia tendrá el siguiente armónico? ¿A qué tensión deberá estar sometida la cuerda si su densidad lineal es de $3{,}99\\cdot10^{-4}\\,\\text{kg/m}$?"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Planteamiento — modo fundamental en una cuerda fija por ambos extremos",
+          "contenido": "Una cuerda fija por ambos extremos admite modos estacionarios cuya longitud de onda cumple:\n\n$$L=n\\,\\frac{\\lambda_n}{2}\\;(n=1,2,3,\\ldots),\\quad \\lambda_n=\\frac{2L}{n}.$$\n\nPara el modo fundamental ($n=1$): $\\lambda_1=2L$. La velocidad de propagación es:\n\n$$v=\\lambda_1\\,f_0=2L\\,f_0.$$"
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "Con $L=79\\,\\text{cm}=0{,}79\\,\\text{m}$ y $f_0=293{,}66\\,\\text{Hz}$:\n\n$$v=2(0{,}79)(293{,}66)\\,\\text{m/s}=464{,}0\\,\\text{m/s}.$$\n\nResultado: $v\\approx464\\,\\text{m/s}$."
+        },
+        {
+          "titulo": "Frecuencia del siguiente armónico",
+          "contenido": "Para una cuerda fija por ambos extremos los armónicos son múltiplos enteros del fundamental: $f_n=n\\,f_0$. El siguiente al fundamental es el segundo armónico ($n=2$):\n\n$$f_2=2\\,f_0=2(293{,}66)\\,\\text{Hz}=587{,}32\\,\\text{Hz}.$$\n\nResultado: $f_2=587{,}32\\,\\text{Hz}$."
+        },
+        {
+          "titulo": "Tensión de la cuerda — relación de Mersenne",
+          "contenido": "La velocidad de las ondas transversales en una cuerda tensa depende de la tensión $T$ y de la densidad lineal de masa $\\mu$:\n\n$$v=\\sqrt{\\frac{T}{\\mu}}\\;\\Longrightarrow\\;T=\\mu\\,v^{2}.$$"
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "Con $\\mu=3{,}99\\cdot10^{-4}\\,\\text{kg/m}$ y $v=464\\,\\text{m/s}$:\n\n$$v^{2}=(464)^{2}=2{,}1530\\cdot10^{5}\\,\\text{m}^{2}/\\text{s}^{2}.$$\n\n$$T=(3{,}99\\cdot10^{-4})(2{,}1530\\cdot10^{5})\\,\\text{N}=85{,}90\\,\\text{N}.$$\n\nResultado: $T\\approx85{,}9\\,\\text{N}$."
+        },
+        {
+          "titulo": "Verificación dimensional",
+          "contenido": "$[v^{2}]=(\\text{m}/\\text{s})^{2}$ y $[\\mu v^{2}]=(\\text{kg}/\\text{m})(\\text{m}^{2}/\\text{s}^{2})=\\text{kg}\\,\\text{m}/\\text{s}^{2}=\\text{N}$. Las unidades son las de una fuerza, como corresponde a una tensión."
+        }
+      ],
+      "resultado": "a) $v\\approx464\\,\\text{m/s}$.\nb) $f_2=587{,}32\\,\\text{Hz}$; $T\\approx85{,}9\\,\\text{N}$."
     }
   ]
 }

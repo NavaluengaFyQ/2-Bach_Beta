@@ -1,42 +1,305 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-extremadura-2023-ordinaria",
+  "codigo": "EXA.FIS.EXT.2023.ORD.SOL",
+  "comunidad": "Extremadura",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2023,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen oficial de Física de la PAU de Extremadura, convocatoria Ordinaria de 2023, con diez problemas resueltos paso a paso.",
+  "objetivo": "Evaluar el dominio de los bloques de campo gravitatorio, campo electromagnético, vibraciones y ondas y física moderna, aplicando leyes, cálculos y razonamientos físicos.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "El examen consta de 10 preguntas, cuyo valor es de 2 puntos cada una. El estudiante ha de elegir 5 preguntas. En ningún caso deberá responder a un número mayor del indicado: porque en la corrección sólo se tendrán en cuenta las cinco primeras cuestiones/preguntas respondidas. Si se desea que alguna de ellas no sea tenida en cuenta, el estudiante ha de tacharla y dejarlo claramente indicado."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "Constantes y datos del examen: $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; intensidad umbral sonora $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$; índice de refracción del aire $n_{\\text{aire}}=1$; constante de Planck $h=6{,}6\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Superficies equipotenciales en campo gravitatorio",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A5. Potencial gravitatorio, equipotenciales y relación con el campo; A4. Intensidad de campo gravitatorio y líneas de campo",
+      "puntuacion": "2 puntos",
+      "enunciado": "Superficies equipotenciales en un campo gravitatorio: definición y propiedades. Cita un ejemplo gráfico.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Definición y propiedades",
+          "contenido": "Una **superficie equipotencial** del campo gravitatorio es el lugar geométrico de los puntos del espacio en los que el potencial gravitatorio toma el mismo valor. Matemáticamente:\n\n$$V(\\vec r)=V_0=\\text{constante}.$$\n\nPropiedades:\n\n1. **Son perpendiculares al campo $\\vec g$ en cada punto.** Esto se deduce de $\\vec g=-\\nabla V$: el gradiente apunta perpendicular a las superficies de nivel.\n\n2. **El trabajo realizado por el campo al mover una masa sobre una equipotencial es nulo**: $W_{A\\to B}=m(V_A-V_B)=0$ si $V_A=V_B$.\n\n3. **No pueden cortarse** entre sí: si lo hicieran, el potencial tendría dos valores en un mismo punto.\n\n4. **Próximas en regiones de campo intenso, separadas en regiones débiles**.\n\n5. **Encierran la masa fuente** en sistemas atractivos."
+        },
+        {
+          "titulo": "Ejemplo gráfico",
+          "contenido": "Para una masa puntual las equipotenciales son **esferas concéntricas** centradas en la masa $M$, con $V=-\\frac{GM}{r}$. Cada esfera de radio $r$ tiene un potencial fijo $V=-\\frac{GM}{r}$. Las líneas de campo son radiales (entrantes hacia $M$) y, por tanto, perpendiculares a las esferas equipotenciales. En la superficie de la Tierra, considerada esférica, la equipotencial es aproximadamente la propia superficie terrestre."
+        }
+      ],
+      "resultado": "Superficie equipotencial: $V(\\vec r)=V_0=\\text{constante}$; $\\vec g=-\\nabla V$ es perpendicular a la equipotencial; $W_{A\\to B}=0$ sobre una equipotencial. Ejemplo: esferas concéntricas $V=-\\frac{GM}{r}$ alrededor de una masa puntual."
+    },
+    {
+      "numero": 2,
+      "titulo": "Analogías campo eléctrico vs gravitatorio",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B4. Potencial eléctrico, equipotenciales y campo uniforme; A1. Ley de la Gravitación Universal y superposición vectorial; A5. Potencial gravitatorio, equipotenciales y relación con el campo",
+      "puntuacion": "2 puntos",
+      "enunciado": "Cite y explique tres analogías entre el campo eléctrico y el campo gravitatorio.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Analogía 1: Ley del inverso del cuadrado",
+          "contenido": "Ambas fuerzas (Newton y Coulomb) decaen como $1/r^{2}$:\n\n$$F_g=G\\frac{M\\,m}{r^{2}},\\qquad F_e=K\\frac{q_1\\,q_2}{r^{2}}.$$\n\nSustituyendo $G\\to K$ y $M,m\\to q_1,q_2$ se obtiene una expresión idéntica."
+        },
+        {
+          "titulo": "Analogía 2: Conservativos y derivables de un potencial",
+          "contenido": "Ambos campos son **conservativos**: el trabajo entre dos puntos sólo depende de los puntos inicial y final, no del camino. Existen funciones potenciales $V$ (gravitatoria) y $\\phi$ (eléctrica) tales que $\\vec g=-\\nabla V$ y $\\vec E=-\\nabla \\phi$."
+        },
+        {
+          "titulo": "Analogía 3: Acción a distancia y campo central",
+          "contenido": "Ambos describen interacciones a distancia (sin contacto), de carácter central (la fuerza apunta a lo largo de la línea que une las fuentes), y se representan mediante **líneas de campo** y **superficies equipotenciales**. Las leyes de Gauss son formalmente análogas:\n\n$$\\oint \\vec E\\cdot d\\vec S=\\frac{Q}{\\varepsilon_0},\\qquad \\oint \\vec g\\cdot d\\vec S=-4\\pi G M.$$"
+        }
+      ],
+      "resultado": "Tres analogías: ley del inverso del cuadrado; campos conservativos derivables de un potencial; acción a distancia central representada por líneas de campo y equipotenciales, con leyes de Gauss formalmente análogas."
+    },
+    {
+      "numero": 3,
+      "titulo": "Razonar afirmación sobre potencial gravitatorio",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A5. Potencial gravitatorio, equipotenciales y relación con el campo",
+      "puntuacion": "2 puntos",
+      "enunciado": "Diga si la siguiente frase es CIERTA o FALSA y razone la respuesta: «El potencial gravitatorio creado por una masa M, en un punto situado a una distancia r, es una magnitud vectorial proporcional a la masa M».",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Definición de potencial",
+          "contenido": "El potencial gravitatorio se define como\n\n$$V=-\\frac{G\\,M}{r},$$\n\ndonde $G$ es la constante de gravitación, $M$ es la masa y $r$ la distancia. Es una **magnitud escalar** (energía por unidad de masa, $\\text{J}\\,\\text{kg}^{-1}$)."
+        },
+        {
+          "titulo": "Análisis de la afirmación",
+          "contenido": "La frase contiene **dos** afirmaciones:\n\n1. «Es una magnitud vectorial»: **FALSA**. El potencial es escalar; lo que es vectorial es el campo $\\vec g$.\n\n2. «Es proporcional a $M$»: **CIERTA**, ya que $V=-\\frac{G\\,M}{r}$ y, a $r$ fijo, $V\\propto M$.\n\nComo la afirmación encadena ambas con «y» implícito, la afirmación global es **FALSA** por su parte vectorial."
+        }
+      ],
+      "resultado": "FALSA: el potencial gravitatorio es una magnitud escalar, aunque sí es proporcional a la masa $M$ a distancia $r$ fija."
+    },
+    {
+      "numero": 4,
+      "titulo": "Tres cargas alineadas",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B4. Potencial eléctrico, equipotenciales y campo uniforme; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Dos cargas eléctricas están situadas en los puntos (2,0) y (4,0) de un sistema de coordenadas en el eje (las distancias se miden en metros. La primera es de 3 μC y la segunda es de 9 μC. Calcular: a) el potencial eléctrico creado por estas cargas eléctricas; b) El trabajo que hay que realizar para desplazar una tercera carga de 4 μC del punto A al punto B. Datos: K = 9·10⁹ N·m²·C⁻². (Calificación de cada apartado, 1 punto). [Punto A = (3,0); B en otro punto distinto]",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular el potencial eléctrico creado por estas cargas eléctricas."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular el trabajo que hay que realizar para desplazar una tercera carga de 4 μC del punto A al punto B."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "a) Potencial creado: punto medio entre cargas",
+          "contenido": "Tomando como punto representativo $A=(3,0)$, equidistante de ambas cargas ($1\\,\\text{m}$ de cada una):\n\n$$V_A=K\\left(\\frac{q_1}{r_1}+\\frac{q_2}{r_2}\\right)=9\\cdot10^{9}\\left(\\frac{3\\cdot10^{-6}}{1}+\\frac{9\\cdot10^{-6}}{1}\\right)=1{,}08\\cdot10^{5}\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "b) Trabajo (tomando B en el infinito)",
+          "contenido": "El trabajo del campo para llevar una carga $q_3=4\\cdot10^{-6}\\,\\text{C}$ desde $A$ hasta $B$ es $W_{\\text{campo}}=q_3(V_A-V_B)$. Si $B$ está suficientemente lejos para que $V_B\\approx0$:\n\n$$W_{\\text{campo},A\\to\\infty}=q_3\\,V_A=4\\cdot10^{-6}\\cdot1{,}08\\cdot10^{5}=0{,}432\\,\\text{J}.$$\n\nEl trabajo realizado **por un agente externo** (en contra del campo, las tres cargas son positivas) es el opuesto: $-0{,}432\\,\\text{J}$ si llevamos la carga al infinito, o $+0{,}432\\,\\text{J}$ si la traemos del infinito a $A$."
         }
       ],
-      "resultado": ""
+      "resultado": "$V_A=1{,}08\\cdot10^{5}\\,\\text{V}$.\n$W_{\\text{ext},A\\to\\infty}=-0{,}432\\,\\text{J}$ (o $+0{,}432\\,\\text{J}$ si se trae del infinito a $A$)."
+    },
+    {
+      "numero": 5,
+      "titulo": "Onda armónica viajera",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos",
+      "enunciado": "La ecuación de una onda viene dada por y(x,t) = 0,4 sen[2π(8t − 5x)], estando las magnitudes medidas en el Sistema Internacional de unidades. Determinar: a) la amplitud, b) la frecuencia, c) la longitud de onda y d) la velocidad de propagación. (Calificación de cada apartado, 0,5 puntos).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Determinar la amplitud."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Determinar la frecuencia."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Determinar la longitud de onda."
+        },
+        {
+          "letra": "d",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Determinar la velocidad de propagación."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Identificación de parámetros",
+          "contenido": "La ecuación dada es\n\n$$y(x,t)=0{,}4\\,\\text{sen}\\left[2\\pi(8t-5x)\\right]=0{,}4\\,\\text{sen}(16\\pi t-10\\pi x).$$\n\nComparando con la forma estándar $y(x,t)=A\\,\\text{sen}(\\omega t-kx)$: $A=0{,}4\\,\\text{m}$, $\\omega=16\\pi\\,\\text{rad}\\,\\text{s}^{-1}$, $k=10\\pi\\,\\text{rad}\\,\\text{m}^{-1}$."
+        },
+        {
+          "titulo": "a) Amplitud",
+          "contenido": "$$A=0{,}4\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "b) Frecuencia",
+          "contenido": "$$f=\\frac{\\omega}{2\\pi}=\\frac{16\\pi}{2\\pi}=8\\,\\text{Hz}.$$"
+        },
+        {
+          "titulo": "c) Longitud de onda",
+          "contenido": "$$\\lambda=\\frac{2\\pi}{k}=\\frac{2\\pi}{10\\pi}=0{,}2\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "d) Velocidad",
+          "contenido": "$$v=\\frac{\\omega}{k}=\\frac{16\\pi}{10\\pi}=1{,}6\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nTambién $v=\\lambda f=0{,}2\\cdot8=1{,}6\\,\\text{m}\\,\\text{s}^{-1}$."
+        }
+      ],
+      "resultado": "$A=0{,}4\\,\\text{m}$; $f=8\\,\\text{Hz}$; $\\lambda=0{,}2\\,\\text{m}$; $v=1{,}6\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Sonido — atenuación con distancia",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2 puntos",
+      "enunciado": "La sensación sonora es de 80 dB en un punto situado a 25 m de un foco que emite ondas sonoras que se transmiten en un medio homogéneo. Hallar: a) La intensidad sonora en dicho punto, prescindiendo de la absorción que pudiera producirse en el medio; y b) la potencia con que emite el foco sonoro. Datos: intensidad umbral = 10⁻¹² W/m².",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Hallar la intensidad sonora en dicho punto, prescindiendo de la absorción que pudiera producirse en el medio."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Hallar la potencia con que emite el foco sonoro."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "a) Intensidad: de β a I",
+          "contenido": "$$\\beta=10\\log\\left(\\frac{I}{I_0}\\right).$$\n\nCon $\\beta=80\\,\\text{dB}$ e $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$:\n\n$$80=10\\log\\left(\\frac{I}{10^{-12}}\\right)\\Rightarrow \\log\\left(\\frac{I}{10^{-12}}\\right)=8\\Rightarrow I=10^{8}\\cdot10^{-12}=10^{-4}\\,\\text{W}\\,\\text{m}^{-2}.$$"
+        },
+        {
+          "titulo": "b) Potencia del foco: frente esférico",
+          "contenido": "Suponiendo emisión isótropa:\n\n$$P=I\\,4\\pi r^{2}=10^{-4}\\cdot4\\pi\\cdot(25)^{2}=0{,}25\\pi\\,\\text{W}\\approx0{,}785\\,\\text{W}.$$\n\nMás exactamente, $P=0{,}785\\,\\text{W}$."
+        }
+      ],
+      "resultado": "$I=10^{-4}\\,\\text{W}\\,\\text{m}^{-2}$.\n$P\\approx0{,}785\\,\\text{W}$ ($0{,}25\\pi\\,\\text{W}$)."
+    },
+    {
+      "numero": 7,
+      "titulo": "Reflexión total y diferenciación de tipos de vidrios",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias; C5. Naturaleza de la luz y óptica física básica",
+      "puntuacion": "2 puntos",
+      "enunciado": "Un haz muy fino de luz procede del aire incide sobre la superficie de un líquido transparente con un ángulo respecto a la normal de 40°. Se observa que el rayo en el interior del líquido respecto a la horizontal forma un ángulo de 60°. Determine el índice de refracción del líquido. Datos: índice de refracción del aire = 1.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Conversión de ángulos",
+          "contenido": "El rayo refractado forma $60^{\\circ}$ con la **horizontal** (con la superficie), por tanto forma $30^{\\circ}$ con la normal."
+        },
+        {
+          "titulo": "Aplicación de la ley de Snell",
+          "contenido": "$$n_{\\text{aire}}\\,\\text{sen}\\,\\theta_1=n_{\\text{líquido}}\\,\\text{sen}\\,\\theta_2.$$\n\nCon $n_{\\text{aire}}=1$, $\\theta_1=40^{\\circ}$ y $\\theta_2=30^{\\circ}$:\n\n$$n_{\\text{líquido}}=\\frac{\\text{sen}\\,40^{\\circ}}{\\text{sen}\\,30^{\\circ}}=\\frac{0{,}6428}{0{,}5}\\approx1{,}29.$$"
+        }
+      ],
+      "resultado": "$n_{\\text{líquido}}\\approx1{,}29$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Lente convergente",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "1 punto",
+      "enunciado": "Un objeto de 6 cm de altura está a una distancia de 8 cm de una lente divergente, cuya distancia focal es 4 cm. Determina: a) la posición de la imagen; b) el tamaño de la imagen y las características de dicha imagen. (Calificación de cada apartado, 1 punto).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Determinar la posición de la imagen."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Determinar el tamaño de la imagen y las características de dicha imagen."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "a) Posición: lente divergente",
+          "contenido": "$f=-4\\,\\text{cm}$ (divergente, focal negativa), $s=-8\\,\\text{cm}$ (objeto real a la izquierda). Usando la ecuación de las lentes delgadas:\n\n$$\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f}.$$\n\nSustituyendo:\n\n$$\\frac{1}{s'}-\\frac{1}{-8}=\\frac{1}{-4}\\Rightarrow \\frac{1}{s'}+\\frac{1}{8}=-\\frac{1}{4}\\Rightarrow \\frac{1}{s'}=-\\frac{3}{8}\\Rightarrow s'=-\\frac{8}{3}\\,\\text{cm}\\approx-2{,}67\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "b) Tamaño y características: aumento",
+          "contenido": "$$m=\\frac{s'}{s}=\\frac{-8/3}{-8}=\\frac{1}{3}.$$\n\nLa imagen es **virtual** (signo negativo de $s'$, mismo lado que el objeto), **derecha** ($m>0$) y **menor** ($|m|<1$). Es el comportamiento característico de las lentes divergentes.\n\n$$y'=m\\,y=\\frac{1}{3}\\cdot6=2\\,\\text{cm}.$$"
+        }
+      ],
+      "resultado": "$s'\\approx-2{,}67\\,\\text{cm}$ (imagen virtual, mismo lado que el objeto).\n$y'=2\\,\\text{cm}$; imagen virtual, derecha y menor."
+    },
+    {
+      "numero": 9,
+      "titulo": "Sr-90 — radiofarmacia",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D6. Leyes de desintegración radiactiva y actividad; D5. Núcleos atómicos, radiactividad y reacciones nucleares",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "El Sr-90 es un isótopo radiactivo que se utiliza en Radioterapia para luchar contra el cáncer. Su periodo de semidesintegración es de unos 28 años. Si tenemos una pastilla de este isótopo con una actividad inicial de 20 kBq. Determina: a) La constante de desintegración del Sr-90. b) La actividad de la muestra al cabo de 100 años.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Determinar la constante de desintegración del Sr-90."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Determinar la actividad de la muestra al cabo de 100 años."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "a) Constante de desintegración",
+          "contenido": "$$\\lambda=\\frac{\\ln2}{T_{1/2}}.$$\n\nCon $T_{1/2}=28\\,\\text{años}$:\n\n$$\\lambda=\\frac{\\ln2}{28}=0{,}02476\\,\\text{año}^{-1}.$$\n\nEn segundos, $T_{1/2}=28\\cdot365\\cdot24\\cdot3600\\approx8{,}83\\cdot10^{8}\\,\\text{s}$:\n\n$$\\lambda=\\frac{\\ln2}{8{,}83\\cdot10^{8}}\\approx7{,}85\\cdot10^{-10}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "b) Actividad a 100 años: decaimiento exponencial",
+          "contenido": "$$A(t)=A_0e^{-\\lambda t}.$$\n\nCon $A_0=20\\,\\text{kBq}$ y $t=100\\,\\text{años}$:\n\n$$A(100)=20\\,e^{-0{,}02476\\cdot100}=20\\,e^{-2{,}476}\\approx20\\cdot0{,}0841=1{,}68\\,\\text{kBq}.$$"
+        }
+      ],
+      "resultado": "$\\lambda\\approx7{,}85\\cdot10^{-10}\\,\\text{s}^{-1}$ ($0{,}02476\\,\\text{año}^{-1}$).\n$A(100\\,\\text{años})\\approx1{,}68\\,\\text{kBq}$."
+    },
+    {
+      "numero": 10,
+      "titulo": "De Broglie — mota de polvo",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos",
+      "enunciado": "Calcule la longitud de la onda de materia asociada a una mota de polvo con masa de 0,02 μg que cae al suelo con una velocidad de 2 mm/s. Datos: Constante de Planck h = 6,6·10⁻³⁴ J·s.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Conversión de unidades",
+          "contenido": "$m=0{,}02\\,\\mu\\text{g}=0{,}02\\cdot10^{-9}\\,\\text{kg}=2\\cdot10^{-11}\\,\\text{kg}$; $v=2\\,\\text{mm}\\,\\text{s}^{-1}=2\\cdot10^{-3}\\,\\text{m}\\,\\text{s}^{-1}$. El momento lineal es $p=mv=4\\cdot10^{-14}\\,\\text{kg}\\,\\text{m}\\,\\text{s}^{-1}$."
+        },
+        {
+          "titulo": "Cálculo de la longitud de onda de De Broglie",
+          "contenido": "$$\\lambda=\\frac{h}{p}=\\frac{6{,}6\\cdot10^{-34}}{4\\cdot10^{-14}}=1{,}65\\cdot10^{-20}\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$\\lambda\\approx1{,}65\\cdot10^{-20}\\,\\text{m}$."
     }
   ]
 }

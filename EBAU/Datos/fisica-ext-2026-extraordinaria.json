@@ -1,42 +1,359 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-extremadura-2026-extraordinaria",
+  "codigo": "EXA.FIS.EXT.2026.EXT.SOL",
+  "comunidad": "Extremadura",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2026,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la PAU de Extremadura, convocatoria Extraordinaria 2026, compuesto por siete problemas resueltos de campo gravitatorio, campo eléctrico, inducción electromagnética, ondas, óptica, física cuántica y física nuclear.",
+  "objetivo": "Evaluar la resolución razonada de problemas de Física de 2º de Bachillerato, incluyendo el planteamiento, el cálculo con unidades y la interpretación física de los resultados.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "Cada una de las preguntas se califica de 0 a 2,50 puntos. Si no aparece explícitamente el valor de cada apartado, se entiende que todos tienen la misma puntuación. El Bloque A es obligatorio. En los bloques B, C y D hay dos preguntas para elegir una; si se responden ambas, se corrige la que aparezca en primer lugar y se ignora la segunda. Total: 10 puntos; aquí se resuelven las siete preguntas.\n\nTiempo máximo: 1 h 30 min. Se exige desarrollo razonado, adecuación al enunciado y corrección de los textos. Los dos primeros errores ortográficos no se penalizan; una falta repetida cuenta una vez; desde la tercera, se descuentan 0,1 puntos por falta, hasta 1 punto. Sintaxis, vocabulario y presentación: máximo 0,5 puntos; descuento conjunto máximo por estos conceptos: 1 punto, flexibilizable para alumnado con necesidad específica de apoyo educativo. En unidades, el descuento general es del 50 % del apartado, hasta 1 punto en el examen. Los errores propagados se penalizan una sola vez salvo resultado físicamente absurdo no advertido. Material permitido: calculadora autorizada, bolígrafos (ni rojo ni verde), corrector, reglas de dibujo y compás. No se eliminará un examen completo por presentar un disparate grave."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$\n\n$K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$\n\n$c=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$\n\n$h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$\n\n$1\\,\\text{eV}=1{,}60\\cdot10^{-19}\\,\\text{J}$\n\n$n_{\\text{aire}}\\approx1$"
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Anulación del campo gravitatorio entre dos esferas",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A1. Ley de la Gravitación Universal y superposición vectorial; A4. Intensidad de campo gravitatorio y líneas de campo; A5. Potencial gravitatorio, equipotenciales y relación con el campo; A6. Trabajo, energía potencial y energía mecánica gravitatoria",
+      "puntuacion": "2,5 puntos (0,6 + 1 + 0,9)",
+      "enunciado": "En un instituto vais a presentar a un concurso un “laboratorio de microgravedad casero”. La idea es usar masas relativamente grandes colocadas sobre una mesa para crear una zona donde la intensidad del campo gravitatorio resultante sea prácticamente nula, y estudiar cómo se mueve una pequeña esfera de prueba.\n\nEn el prototipo se usan dos esferas metálicas, A y B, colocadas sobre una mesa horizontal, separadas una cierta distancia. Tomamos como eje X la recta que une A y B, con origen en A y sentido hacia B. Una pequeña esfera de prueba puede deslizarse sin rozamiento sobre una guía recta que pasa por A y B.\n\nDATOS. Masa de la esfera A: $M_A=15\\,\\text{kg}$; Masa de la esfera B: $M_B=10\\,\\text{kg}$; Distancia entre A y B: $d=1\\,\\text{m}$; Masa de la esfera de prueba: $m=0{,}2\\,\\text{kg}$; Constante de gravitación universal: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$.",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "0,6 puntos",
+          "enunciado": "Dibuja un esquema en el que representes los campos gravitatorios de ambas esferas en 3 puntos diferentes (M, N y P) del eje X, tales que: M se encuentra a la izquierda de ambas esferas, N se sitúa a la derecha de ambas esferas y P está entre las esferas A y B."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "¿En cuál de los puntos anteriores podría ser nulo el campo gravitatorio? Encuentra exactamente su posición respecto de la esfera A."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,9 puntos",
+          "enunciado": "La esfera de prueba se desplaza lentamente y sin rozamiento desde el punto medio entre A y B hasta el punto donde el campo gravitatorio resultante es nulo. Calcula el trabajo realizado por las fuerzas gravitatorias durante el desplazamiento descrito e interpreta el signo obtenido."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Campos atractivos en las tres posiciones",
+          "contenido": "El campo gravitatorio de cada esfera apunta siempre hacia esa esfera. Las flechas representan los dos campos por separado: en M, ambos campos apuntan hacia la derecha; en N, ambos apuntan hacia la izquierda; en P, los campos tienen sentidos opuestos.\n\nEsquema sobre el eje X: M está a la izquierda de A y B; P está entre A y B; N está a la derecha de A y B. En M, $\\vec g_A$ y $\\vec g_B$ apuntan hacia $+x$. En N, $\\vec g_A$ y $\\vec g_B$ apuntan hacia $-x$. En P, $\\vec g_A$ apunta hacia $-x$ y $\\vec g_B$ apunta hacia $+x$."
+        },
+        {
+          "titulo": "Condición de campo nulo entre las esferas",
+          "contenido": "Solo puede anularse en la zona de P, donde los campos son opuestos. Para $0<x<d$, tratando las esferas como masas esféricas vistas desde el exterior:\n\n$$g(x)=G\\left(-\\frac{M_A}{x^{2}}+\\frac{M_B}{(d-x)^{2}}\\right).$$\n\nLa condición $g(x)=0$ exige:\n\n$$\\frac{M_A}{x^{2}}=\\frac{M_B}{(d-x)^{2}}.$$"
+        },
+        {
+          "titulo": "Posición exacta del punto de equilibrio",
+          "contenido": "Sustituyendo $M_A=15\\,\\text{kg}$, $M_B=10\\,\\text{kg}$ y $d=1\\,\\text{m}$:\n\n$$\\frac{15}{x^{2}}=\\frac{10}{(1-x)^{2}}\\Rightarrow 3(1-x)^{2}=2x^{2}.$$\n\nComo ambas distancias son positivas:\n\n$$\\sqrt{3}(1-x)=\\sqrt{2}\\,x\\Rightarrow x=\\frac{\\sqrt{3}}{\\sqrt{2}+\\sqrt{3}}=3-\\sqrt{6}\\approx0{,}5505\\,\\text{m}.$$\n\nLa distancia a B es $d-x_P=1-(3-\\sqrt{6})=\\sqrt{6}-2\\approx0{,}44949\\,\\text{m}$. La anulación se produce más cerca de la masa menor."
+        },
+        {
+          "titulo": "Energía potencial gravitatoria de la esfera",
+          "contenido": "La energía potencial gravitatoria de la esfera de prueba es:\n\n$$U(x)=-Gm\\left(\\frac{M_A}{x}+\\frac{M_B}{d-x}\\right).$$\n\nInicialmente, $x_i=0{,}50\\,\\text{m}$:\n\n$$U_i=-6{,}67\\cdot10^{-11}\\cdot0{,}2\\left(\\frac{15}{0{,}5}+\\frac{10}{0{,}5}\\right)=-6{,}67\\cdot10^{-10}\\,\\text{J}.$$\n\nEn $x_f=3-\\sqrt{6}\\,\\text{m}$:\n\n$$U_f=-Gm\\left(\\frac{M_A}{x_f}+\\frac{M_B}{1-x_f}\\right)=-6{,}60262\\cdot10^{-10}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Trabajo gravitatorio e interpretación",
+          "contenido": "El trabajo realizado por la fuerza gravitatoria es:\n\n$$W_g=-\\Delta U=U_i-U_f=-6{,}73807\\cdot10^{-12}\\,\\text{J}.$$\n\nEl trabajo es negativo: al ir desde el punto medio hacia la derecha hasta el equilibrio, la fuerza gravitatoria resultante apunta hacia A y se opone al desplazamiento. La energía potencial aumenta. El movimiento lento requiere un trabajo externo positivo de igual módulo si no cambia la energía cinética."
         }
       ],
-      "resultado": ""
+      "resultado": "a) En M, $\\vec g_A$ y $\\vec g_B$ apuntan hacia $+x$; en N, ambos hacia $-x$; en P, $\\vec g_A$ hacia $-x$ y $\\vec g_B$ hacia $+x$.\nb) $x_P=3-\\sqrt{6}\\approx0{,}5505\\,\\text{m}$ a la derecha de A.\nc) $W_g=-6{,}74\\cdot10^{-12}\\,\\text{J}$; el trabajo gravitatorio es negativo porque la fuerza gravitatoria se opone al desplazamiento y la energía potencial aumenta."
+    },
+    {
+      "numero": 2,
+      "titulo": "Carga puntual, fuerza eléctrica y aceleración de partículas",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2,5 puntos (1,5 + 0,5 + 0,5)",
+      "enunciado": "Problema con tres apartados independientes sobre campo eléctrico, fuerza entre cargas y aceleración de partículas en un campo eléctrico uniforme.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "El módulo del campo electrostático, creado por una carga puntual $q$ en cierto punto P, es de $1500\\,\\text{N}\\,\\text{C}^{-1}$ y el potencial electrostático en ese mismo punto es $6000\\,\\text{V}$. Determina el valor de $q$ y la distancia del punto P a la carga. DATO: Constante de Coulomb: $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Si colocamos una carga $Q=3\\,\\mu\\text{C}$ en un punto a $30\\,\\text{cm}$ de la carga $q$ del apartado a), ¿cuál es el valor de la fuerza a la que estará sometida? Indica, razonadamente, si la carga $Q$ se acerca o se aleja de $q$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Dos partículas A y B, de masas $m_A$ y $m_B$, y cargas positivas $q_A$ y $q_B$, penetran en una región del espacio donde existe un campo eléctrico uniforme de valor $E$. Si $m_A=m_B$ y $q_A>q_B$, indica, justificando tu respuesta, cuál de las dos partículas está sometida a mayor aceleración."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Campo y potencial de una carga puntual",
+          "contenido": "Para una carga puntual:\n\n$$E=\\frac{Kq}{r^{2}},\\qquad V=\\frac{Kq}{r}.$$\n\nTomamos el cero de potencial en el infinito. Puesto que $V=6000\\,\\text{V}$ es positivo, $q>0$. Dividimos las ecuaciones:\n\n$$\\frac{V}{E}=\\frac{Kq/r}{Kq/r^{2}}=r=\\frac{6000}{1500}=4{,}00\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Determinación de la carga",
+          "contenido": "Despejando la carga:\n\n$$q=\\frac{Vr}{K}=\\frac{6000\\cdot4{,}00}{9\\cdot10^{9}}=2{,}6667\\cdot10^{-6}\\,\\text{C}.$$"
+        },
+        {
+          "titulo": "Ley de Coulomb y sentido de la fuerza",
+          "contenido": "La fuerza entre $q$ y $Q$ vale:\n\n$$F=K\\frac{qQ}{r^{2}}=9\\cdot10^{9}\\frac{(2{,}6667\\cdot10^{-6})(3\\cdot10^{-6})}{0{,}30^{2}}=0{,}80\\,\\text{N}.$$\n\nLas dos cargas son positivas, de modo que se repelen. La fuerza sobre $Q$ se dirige radialmente alejándose de $q$; si se libera desde el reposo, $Q$ se aleja de $q$."
+        },
+        {
+          "titulo": "Comparación de las aceleraciones",
+          "contenido": "La aceleración de cada partícula en el campo uniforme es:\n\n$$a_A=\\frac{q_A E}{m_A},\\qquad a_B=\\frac{q_B E}{m_B}.$$\n\nAl ser iguales las masas y positivas las cargas, ambas aceleraciones apuntan en el sentido del campo. Sus módulos cumplen:\n\n$$\\frac{a_A}{a_B}=\\frac{q_A}{q_B}>1.$$\n\nPor tanto, la partícula A tiene mayor aceleración."
+        }
+      ],
+      "resultado": "a) $q=+2{,}67\\,\\mu\\text{C}$ y $r=4{,}00\\,\\text{m}$.\nb) $F=0{,}80\\,\\text{N}$, repulsiva; $Q$ se aleja de $q$.\nc) $a_A>a_B$; la partícula A tiene mayor aceleración porque $q_A>q_B$ y $m_A=m_B$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Flujo e inducción en una espira circular giratoria",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "2,5 puntos (1 + 1 + 0,5)",
+      "enunciado": "Una espira circular de $7\\,\\text{cm}$ de radio, situada inicialmente en el plano XY, está dentro de una zona de campo magnético constante, de valor $0{,}18\\,\\text{T}$, paralelo al eje Z. La espira gira alrededor del eje Y con velocidad constante de $75\\,\\text{rpm}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcula el valor máximo del flujo magnético."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Determina el valor de la fuerza electromotriz inducida en la espira en el instante $t=0{,}5\\,\\text{s}$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Si la resistencia de la espira es $150\\,\\Omega$, halla el valor máximo de la corriente inducida en la espira."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Área, orientación y flujo máximo",
+          "contenido": "El área de la espira es:\n\n$$S=\\pi r^{2}=\\pi(0{,}07)^{2}=0{,}0153938\\,\\text{m}^{2}.$$\n\nLa normal inicial a la espira es paralela a $\\vec B$, así que podemos tomar $\\varphi_0=0$. El flujo es $\\Phi(t)=BS\\cos(\\omega t)$, y su máximo se alcanza cuando la normal es paralela al campo:\n\n$$\\Phi_{\\text{máx}}=BS=0{,}18\\cdot\\pi(0{,}07)^{2}=2{,}77088\\cdot10^{-3}\\,\\text{Wb}.$$"
+        },
+        {
+          "titulo": "Conversión de la velocidad angular",
+          "contenido": "La velocidad angular es:\n\n$$\\omega=75\\,\\text{rpm}\\cdot\\frac{2\\pi\\,\\text{rad}}{1\\,\\text{rev}}\\cdot\\frac{1\\,\\text{min}}{60\\,\\text{s}}=2{,}5\\pi\\,\\text{rad}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Ley de Faraday",
+          "contenido": "La fuerza electromotriz inducida es:\n\n$$\\varepsilon(t)=-\\frac{d\\Phi}{dt}=BS\\omega\\,\\text{sen}(\\omega t).$$\n\nEn $t=0{,}5\\,\\text{s}$:\n\n$$\\varepsilon(0{,}5)=2{,}77088\\cdot10^{-3}\\cdot2{,}5\\pi\\,\\text{sen}(1{,}25\\pi)=-1{,}53884\\cdot10^{-2}\\,\\text{V}.$$\n\nEste signo corresponde a la orientación positiva elegida para la superficie; el valor absoluto es:\n\n$$|\\varepsilon(0{,}5)|=1{,}54\\cdot10^{-2}\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Corriente máxima por la ley de Ohm",
+          "contenido": "La corriente máxima es:\n\n$$I_{\\text{máx}}=\\frac{\\varepsilon_{\\text{máx}}}{R}=\\frac{BS\\omega}{R}=\\frac{2{,}77088\\cdot10^{-3}\\cdot2{,}5\\pi}{150}=1{,}45083\\cdot10^{-4}\\,\\text{A}.$$"
+        }
+      ],
+      "resultado": "a) $\\Phi_{\\text{máx}}=2{,}77\\cdot10^{-3}\\,\\text{Wb}$.\nb) $|\\varepsilon(0{,}5)|=15{,}4\\,\\text{mV}$; con la normal inicial paralela a $\\vec B$, $\\varepsilon=-15{,}4\\,\\text{mV}$.\nc) $I_{\\text{máx}}=1{,}45\\cdot10^{-4}\\,\\text{A}=0{,}145\\,\\text{mA}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Ondas viajeras, nodos y velocidad en una onda estacionaria",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2,5 puntos (1 + 0,5 + 1)",
+      "enunciado": "Una cuerda tensa vibra de acuerdo con la siguiente ecuación de onda estacionaria, expresada en unidades del Sistema Internacional:\n\n$$y(x,t)=0{,}04\\,\\text{sen}(5\\pi x)\\cos(40\\pi t).$$\n\nCalcula razonadamente los apartados siguientes.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "La amplitud, la longitud de onda, la frecuencia y la velocidad de propagación de las dos ondas viajeras cuya superposición da lugar a este movimiento."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "La distancia entre dos de los nodos consecutivos."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "La velocidad máxima con la que vibra un punto situado a $0{,}25\\,\\text{m}$ del origen."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Descomposición en las dos ondas viajeras",
+          "contenido": "La identidad $\\text{sen}A\\cos B=\\frac{1}{2}[\\text{sen}(A+B)+\\text{sen}(A-B)]$ da:\n\n$$y=0{,}02\\,\\text{sen}(5\\pi x+40\\pi t)+0{,}02\\,\\text{sen}(5\\pi x-40\\pi t).$$\n\nSon ondas de igual amplitud $A=0{,}02\\,\\text{m}$ que viajan en sentidos opuestos. La amplitud de cada una es la mitad de la amplitud máxima de la onda estacionaria."
+        },
+        {
+          "titulo": "Longitud de onda, frecuencia y velocidad",
+          "contenido": "De la ecuación se obtiene:\n\n$$k=5\\pi\\,\\text{rad}\\,\\text{m}^{-1},\\qquad \\omega=40\\pi\\,\\text{rad}\\,\\text{s}^{-1}.$$\n\nPor tanto:\n\n$$\\lambda=\\frac{2\\pi}{k}=0{,}40\\,\\text{m},\\qquad f=\\frac{\\omega}{2\\pi}=20\\,\\text{Hz},\\qquad v=\\frac{\\omega}{k}=8{,}0\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nLas dos ondas viajeras tienen $A=0{,}020\\,\\text{m}$, $\\lambda=0{,}40\\,\\text{m}$ y $f=20\\,\\text{Hz}$. Sus velocidades son $v_1=-8{,}0\\,\\text{m}\\,\\text{s}^{-1}$ y $v_2=+8{,}0\\,\\text{m}\\,\\text{s}^{-1}$."
+        },
+        {
+          "titulo": "Posiciones de los nodos",
+          "contenido": "Un nodo tiene desplazamiento nulo en todo instante:\n\n$$\\text{sen}(5\\pi x_n)=0\\Rightarrow 5\\pi x_n=n\\pi\\Rightarrow x_n=\\frac{n}{5}\\,\\text{m},\\quad n\\in\\mathbb{Z}.$$\n\nLa distancia entre dos nodos consecutivos es:\n\n$$\\Delta x=x_{n+1}-x_n=0{,}20\\,\\text{m}=\\frac{\\lambda}{2}.$$"
+        },
+        {
+          "titulo": "Velocidad transversal de vibración",
+          "contenido": "La velocidad del punto de la cuerda se obtiene derivando respecto del tiempo, no usando la velocidad de propagación:\n\n$$v_y(x,t)=\\frac{\\partial y}{\\partial t}=-0{,}04\\cdot40\\pi\\,\\text{sen}(5\\pi x)\\,\\text{sen}(40\\pi t).$$\n\nEn $x=0{,}25\\,\\text{m}$, $\\text{sen}(5\\pi x)=\\text{sen}\\left(\\frac{5\\pi}{4}\\right)=-\\frac{\\sqrt{2}}{2}$:\n\n$$v_y(0{,}25,t)=0{,}8\\pi\\sqrt{2}\\,\\text{sen}(40\\pi t).$$"
+        },
+        {
+          "titulo": "Valor máximo",
+          "contenido": "El valor máximo se alcanza cuando el seno temporal vale 1; el máximo módulo corresponde a $|\\text{sen}(40\\pi t)|=1$:\n\n$$|v_y|_{\\text{máx}}=0{,}8\\pi\\sqrt{2}=3{,}5543\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "a) Cada onda: $A=0{,}020\\,\\text{m}$, $\\lambda=0{,}40\\,\\text{m}$, $f=20\\,\\text{Hz}$; velocidades $v_1=-8{,}0\\,\\text{m}\\,\\text{s}^{-1}$ y $v_2=+8{,}0\\,\\text{m}\\,\\text{s}^{-1}$.\nb) Los nodos consecutivos distan $0{,}20\\,\\text{m}$.\nc) $v_{y,\\text{máx}}=3{,}55\\,\\text{m}\\,\\text{s}^{-1}$, con rango $[-3{,}55,+3{,}55]\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Refracción de luz roja en una placa de metacrilato",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias; C5. Naturaleza de la luz y óptica física básica",
+      "puntuacion": "2,5 puntos (0,7 + 0,7 + 0,7 + 0,4)",
+      "enunciado": "Un láser de helio-neón emite luz roja que en el aire tiene una longitud de onda de $632{,}8\\,\\text{nm}$. Cuando alcanza una placa de metacrilato con un ángulo de incidencia de $30^{\\circ}$, el ángulo de refracción resulta ser de $19{,}6^{\\circ}$.\n\nDATO: Índice de refracción del aire aproximadamente igual a la unidad.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,7 puntos",
+          "enunciado": "Calcula el índice de refracción del metacrilato."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,7 puntos",
+          "enunciado": "Calcula la velocidad de propagación de dicha luz en el metacrilato."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,7 puntos",
+          "enunciado": "Calcula la longitud de onda en ese medio."
+        },
+        {
+          "letra": "d",
+          "puntuacion": "0,4 puntos",
+          "enunciado": "¿Cambia de color la luz al cambiar de medio? Razona tu respuesta."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Ley de Snell",
+          "contenido": "Aplicando la ley de Snell:\n\n$$n_{\\text{aire}}\\text{sen}\\,i=n_{\\text{met}}\\text{sen}\\,r.$$\n\nCon $n_{\\text{aire}}\\approx1$:\n\n$$n_{\\text{met}}=\\frac{\\text{sen}\\,30^{\\circ}}{\\text{sen}\\,19{,}6^{\\circ}}=\\frac{0{,}5}{0{,}335452}=1{,}49053.$$"
+        },
+        {
+          "titulo": "Velocidad e índice de refracción",
+          "contenido": "Usamos $c=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$:\n\n$$n=\\frac{c}{v}\\Rightarrow v=\\frac{c}{n}=\\frac{3{,}00\\cdot10^{8}}{1{,}49053}=2{,}01271\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Conservación de la frecuencia",
+          "contenido": "La frecuencia no cambia al cruzar la interfaz. Puesto que $\\lambda=\\frac{v}{f}$:\n\n$$\\frac{\\lambda_{\\text{met}}}{\\lambda_{\\text{aire}}}=\\frac{v_{\\text{met}}}{v_{\\text{aire}}}=\\frac{1}{n_{\\text{met}}}.$$\n\nAsí:\n\n$$\\lambda_{\\text{met}}=\\frac{632{,}8\\,\\text{nm}}{1{,}49053}=424{,}55\\,\\text{nm}=4{,}2455\\cdot10^{-7}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Color y frecuencia de la luz",
+          "contenido": "No cambia de color: la frecuencia se conserva al pasar del aire al metacrilato. Lo que cambia es la velocidad y, en consecuencia, la longitud de onda en el medio. El color corresponde a la frecuencia de la radiación; la longitud de onda de $424{,}5\\,\\text{nm}$ dentro del metacrilato no convierte esta luz en violeta."
+        }
+      ],
+      "resultado": "a) $n_{\\text{met}}\\approx1{,}49$.\nb) $v=2{,}01\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$.\nc) $\\lambda_{\\text{met}}\\approx424{,}5\\,\\text{nm}$.\nd) La luz sigue siendo roja porque mantiene su frecuencia; cambian la velocidad y la longitud de onda."
+    },
+    {
+      "numero": 6,
+      "titulo": "Efecto fotoeléctrico en el sensor de una puerta automática",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2,5 puntos (0,5 + 0,5 + 0,5 + 1)",
+      "enunciado": "En la entrada de un edificio se instala una puerta automática que se abre cuando una célula fotoeléctrica deja de recibir luz. La célula está formada por un fotocátodo metálico y un ánodo. Cuando la luz incide sobre el fotocátodo, se produce efecto fotoeléctrico y circula corriente; cuando algo interrumpe el haz de luz, la corriente cae a cero y la puerta se abre.\n\nLa célula se ilumina con una lámpara que emite luz casi monocromática de longitud de onda $\\lambda=400\\,\\text{nm}$. El trabajo de extracción del metal del fotocátodo es $\\phi=2{,}0\\,\\text{eV}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcula la energía de cada fotón de la luz incidente, en eV y en J."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Determina la energía cinética máxima de los electrones emitidos, en eV y en J."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcula el potencial de frenado necesario para anular la corriente fotoeléctrica."
+        },
+        {
+          "letra": "d",
+          "puntuacion": "1 punto",
+          "enunciado": "¿Cuál sería la longitud de onda máxima con la que funcionaría la puerta, manteniendo la misma intensidad en la lámpara? Razona la respuesta."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Energía del fotón y conversión a electronvoltios",
+          "contenido": "Usamos $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$, $c=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$ y $1\\,\\text{eV}=1{,}60\\cdot10^{-19}\\,\\text{J}$:\n\n$$E_{\\text{fotón}}=\\frac{hc}{\\lambda}=\\frac{6{,}63\\cdot10^{-34}\\cdot3{,}00\\cdot10^{8}}{400\\cdot10^{-9}}=4{,}9725\\cdot10^{-19}\\,\\text{J}.$$\n\nEn electronvoltios:\n\n$$E_{\\text{fotón}}=\\frac{4{,}9725\\cdot10^{-19}}{1{,}60\\cdot10^{-19}}=3{,}1078\\,\\text{eV}.$$"
+        },
+        {
+          "titulo": "Balance de energía fotoeléctrica",
+          "contenido": "La energía cinética máxima es:\n\n$$E_{c,\\text{máx}}=E_{\\text{fotón}}-\\phi=3{,}1078-2{,}0=1{,}1078\\,\\text{eV}.$$\n\nEl trabajo de extracción en julios es:\n\n$$\\phi=2{,}0\\cdot1{,}60\\cdot10^{-19}=3{,}20\\cdot10^{-19}\\,\\text{J}.$$\n\nPor tanto:\n\n$$E_{c,\\text{máx}}=4{,}9725\\cdot10^{-19}-3{,}20\\cdot10^{-19}=1{,}7725\\cdot10^{-19}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Potencial que detiene los electrones más rápidos",
+          "contenido": "El potencial de frenado cumple:\n\n$$|e|V_{\\text{frenado}}=E_{c,\\text{máx}}\\Rightarrow V_{\\text{frenado}}=\\frac{1{,}7725\\cdot10^{-19}}{1{,}60\\cdot10^{-19}}=1{,}1078\\,\\text{V}.$$\n\nSe aplica una tensión retardadora: el ánodo debe estar a menor potencial que el fotocátodo. Así, $V_{\\text{ánodo}}-V_{\\text{fotocátodo}}=-1{,}11\\,\\text{V}$."
+        },
+        {
+          "titulo": "Condición umbral de emisión",
+          "contenido": "Para que el sensor detecte luz mediante la emisión de electrones, cada fotón debe tener energía al menos igual al trabajo de extracción:\n\n$$\\frac{hc}{\\lambda_{\\text{umbral}}}=\\phi.$$\n\nPor tanto:\n\n$$\\lambda_{\\text{umbral}}=\\frac{6{,}63\\cdot10^{-34}\\cdot3{,}00\\cdot10^{8}}{3{,}20\\cdot10^{-19}}=6{,}215625\\cdot10^{-7}\\,\\text{m}=621{,}6\\,\\text{nm}.$$\n\nEsta es la longitud de onda umbral ideal, donde $E_{c,\\text{máx}}=0$; para una corriente de detección con margen se utiliza una longitud de onda menor. Mantener o aumentar la intensidad no permite emitir electrones si $\\lambda>\\lambda_{\\text{umbral}}$: aumenta el número de fotones, pero no su energía individual."
+        }
+      ],
+      "resultado": "a) $E_{\\text{fotón}}=3{,}11\\,\\text{eV}=4{,}97\\cdot10^{-19}\\,\\text{J}$.\nb) $E_{c,\\text{máx}}=1{,}11\\,\\text{eV}=1{,}77\\cdot10^{-19}\\,\\text{J}$.\nc) Potencial de frenado de módulo $1{,}11\\,\\text{V}$; $V_{\\text{ánodo}}-V_{\\text{fotocátodo}}=-1{,}11\\,\\text{V}$.\nd) $\\lambda_{\\text{umbral}}\\approx622\\,\\text{nm}$; para longitudes de onda mayores no hay emisión aunque aumente la intensidad."
+    },
+    {
+      "numero": 7,
+      "titulo": "Decaimiento y límite de detección de un radiofármaco",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares; D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2,5 puntos (0,25 + 1 + 0,5 + 0,75)",
+      "enunciado": "En un servicio de medicina nuclear se administra a un paciente un radiofármaco que contiene un isótopo radiactivo. La gráfica adjunta recoge la evolución del número de núclidos del radiofármaco.\n\n[Gráfica del PDF original: «Evolución de núclidos del radiofármaco». Eje horizontal $t$ (días), de 0 a 80 con marcas cada 10 días. Eje vertical $N$ ($10^{12}$), de 0 a 10. Curva exponencial decreciente, con puntos visibles en $(0;10)$, $(10;5)$, $(20;2{,}5)$, $(30;\\text{aproximadamente }1{,}25)$ y sucesivos puntos cada 10 días hasta 80.]",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,25 puntos",
+          "enunciado": "A partir de la gráfica, indica el número inicial de núclidos del radiofármaco, justificando adecuadamente tu respuesta."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "A partir de la gráfica, halla el valor de la constante de desintegración radiactiva, justificando adecuadamente tu respuesta."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcula la actividad inicial del radiofármaco en MBq."
+        },
+        {
+          "letra": "d",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Si la actividad mínima detectable por el equipo es de $1\\,\\text{MBq}$, ¿cuántos días después de la administración dejaría de ser detectable el radiofármaco?"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Lectura del valor inicial en la gráfica",
+          "contenido": "El valor inicial se lee en $t=0$. El punto tiene ordenada 10 y el eje vertical está expresado en unidades de $10^{12}$ núclidos:\n\n$$N_0=10\\cdot10^{12}=1{,}0\\cdot10^{13}\\,\\text{núcleos}.$$"
+        },
+        {
+          "titulo": "Semiperíodo leído en la gráfica",
+          "contenido": "A los 10 días la ordenada baja de 10 a 5, es decir, de $N_0$ a $N_0/2$. Por tanto:\n\n$$T_{1/2}=10\\,\\text{días}.$$"
+        },
+        {
+          "titulo": "Constante de desintegración",
+          "contenido": "La ley de desintegración es:\n\n$$N(t)=N_0e^{-\\lambda t},\\qquad e^{-\\lambda T_{1/2}}=\\frac{1}{2}.$$\n\nAsí:\n\n$$\\lambda=\\frac{\\ln2}{T_{1/2}}=\\frac{\\ln2}{10}=0{,}0693147\\,\\text{días}^{-1}.$$"
+        },
+        {
+          "titulo": "Actividad inicial con unidades del Sistema Internacional",
+          "contenido": "Convertimos la constante a $\\text{s}^{-1}$:\n\n$$\\lambda=\\frac{0{,}0693147}{86400}=8{,}02254\\cdot10^{-7}\\,\\text{s}^{-1}.$$\n\nLa actividad inicial es:\n\n$$A_0=\\lambda N_0=8{,}02254\\cdot10^{-7}\\cdot1{,}0\\cdot10^{13}=8{,}02254\\cdot10^{6}\\,\\text{Bq}=8{,}02254\\,\\text{MBq}.$$"
+        },
+        {
+          "titulo": "Tiempo para alcanzar el umbral de detección",
+          "contenido": "La actividad sigue la misma ley exponencial que el número de núclidos. En el límite $A(t)=1\\,\\text{MBq}$:\n\n$$1=8{,}02254e^{-\\lambda t}\\Rightarrow t=\\frac{\\ln\\left(\\frac{8{,}02254}{1}\\right)}{0{,}0693147}=30{,}0406\\,\\text{días}.$$\n\nEn ese instante alcanza el umbral; para tiempos posteriores la actividad es menor y deja de ser detectable."
+        }
+      ],
+      "resultado": "a) $N_0=1{,}0\\cdot10^{13}$ núcleos.\nb) $T_{1/2}=10\\,\\text{días}$ y $\\lambda=0{,}0693\\,\\text{días}^{-1}$.\nc) $A_0=8{,}02\\,\\text{MBq}$.\nd) Deja de ser detectable después de aproximadamente $30{,}04\\,\\text{días}$."
     }
   ]
 }

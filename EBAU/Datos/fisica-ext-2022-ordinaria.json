@@ -1,42 +1,290 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-ext-2022-ordinaria",
+  "codigo": "EXA.FIS.EXT.2022.ORD.SOL",
+  "comunidad": "Extremadura",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2022,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la convocatoria ordinaria de 2022 en Extremadura, con 10 problemas resueltos paso a paso. Cada problema vale 2 puntos y el estudiante debe elegir 5 preguntas.",
+  "objetivo": "Evaluar la comprensión y aplicación de los contenidos de Física de 2º de Bachillerato: campo gravitatorio, campo electromagnético, vibraciones y ondas, óptica, física nuclear y física moderna.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "El examen consta de 10 preguntas, cuyo valor es de 2 puntos cada una. El estudiante ha de elegir 5 preguntas. En ningún caso deberá responder a un número mayor del indicado: en la corrección solo se tendrán en cuenta las cinco primeras cuestiones/preguntas respondidas. Si se desea que alguna de ellas no sea tenida en cuenta, el estudiante ha de tacharla y dejarlo claramente indicado. Observación importante: en ningún caso se corregirá un número mayor de preguntas de las indicadas."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "Datos que aparecen en los enunciados: $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $h=6{,}6\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$; $n_{\\text{aire}}=1$."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Ley de la gravitación universal",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A1. Ley de la Gravitación Universal y superposición vectorial",
+      "puntuacion": "2 puntos",
+      "enunciado": "Ley de la gravitación universal: enunciado y expresión matemática indicando las magnitudes que aparecen. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Enunciado y expresión",
+          "contenido": "Enunciado (Newton, 1687): la fuerza con la que se atraen dos partículas materiales (masas puntuales) es directamente proporcional al producto de sus masas e inversamente proporcional al cuadrado de la distancia que las separa. Es siempre atractiva y dirigida a lo largo de la línea recta que une las dos partículas.\n\nExpresión matemática:\n\n$$\\vec{F}_{12}=-G\\,\\frac{m_1 m_2}{r^{2}}\\,\\hat r_{12}$$\n\ndonde $\\hat r_{12}$ es el vector unitario que va de la masa 1 a la masa 2."
+        },
+        {
+          "titulo": "Magnitudes",
+          "contenido": "$\\vec F$: fuerza gravitatoria (N).\n\n$m_1,m_2$: masas (kg).\n\n$r$: distancia entre las masas (m).\n\n$G$: constante de gravitación universal (N·m²·kg⁻²), medida por Cavendish en 1798.\n\nEl signo menos indica que la fuerza es siempre atractiva, dirigida hacia la otra masa."
+        }
+      ],
+      "resultado": "$\\vec{F}_{12}=-G\\,\\frac{m_1 m_2}{r^{2}}\\,\\hat r_{12}$; fuerza siempre atractiva."
+    },
+    {
+      "numero": 2,
+      "titulo": "Campo eléctrico — definición e intensidad",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico",
+      "puntuacion": "2 puntos",
+      "enunciado": "Explique qué es un campo eléctrico y defina la intensidad de campo eléctrico. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Campo eléctrico",
+          "contenido": "Un campo eléctrico es la región del espacio en la que toda carga eléctrica situada en cualquiera de sus puntos experimenta una fuerza de naturaleza eléctrica. Es un campo vectorial creado por una distribución de cargas o por campos magnéticos variables, según Faraday."
+        },
+        {
+          "titulo": "Intensidad de campo",
+          "contenido": "La intensidad del campo eléctrico en un punto se define como la fuerza eléctrica por unidad de carga positiva que experimentaría una carga de prueba colocada en ese punto:\n\n$$\\vec E=\\frac{\\vec F}{q_0}$$\n\nCarácter: vector.\n\nUnidades SI: $\\text{N}\\,\\text{C}^{-1}=\\text{V}\\,\\text{m}^{-1}$.\n\nPara una carga puntual $Q$:\n\n$$\\vec E=K\\,\\frac{Q}{r^{2}}\\,\\hat r$$\n\ncon $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$. La dirección y sentido coinciden con los de la fuerza sobre una carga prueba positiva: hacia fuera de cargas positivas y hacia dentro de cargas negativas."
+        }
+      ],
+      "resultado": "$\\vec E=\\frac{\\vec F}{q_0}$; para una carga puntual, $\\vec E=K\\,\\frac{Q}{r^{2}}\\,\\hat r$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Razonar afirmación — punto sin energía potencial",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A5. Potencial gravitatorio, equipotenciales y relación con el campo; A4. Intensidad de campo gravitatorio y líneas de campo",
+      "puntuacion": "2 puntos",
+      "enunciado": "Diga si la siguiente frase es CIERTA o FALSA y razone su respuesta: «Si en un punto de un campo gravitatorio creado por una masa el potencial es nulo, entonces nunca será nula la intensidad del campo». (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Potencial y campo de masa puntual",
+          "contenido": "Para una masa puntual aislada:\n\n$$V=-\\frac{G\\,M}{r}$$\n\ny\n\n$$\\vec g=-\\frac{G\\,M}{r^{2}}\\,\\hat r$$\n\nEl potencial se anula solo cuando $r\\to\\infty$. En ese límite también $\\vec g\\to0$. Por tanto, para una masa puntual, donde $V=0$ también $\\vec g=0$."
+        },
+        {
+          "titulo": "Conclusión",
+          "contenido": "La afirmación es FALSA. Para una masa puntual, el potencial nulo se da en el infinito, donde el campo también es cero; no es cierto que «nunca» sea nula la intensidad. En distribuciones más complejas, con varias masas, puede haber puntos finitos donde $V=0$ por cancelación, y allí el campo no necesariamente es nulo. La frase literal no se cumple en ninguno de los dos casos."
+        }
+      ],
+      "resultado": "La afirmación es FALSA: para una masa puntual, en el infinito $V=0$ y $\\vec g=0$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Carga negativa entre dos cargas",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme; B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz",
+      "puntuacion": "2 puntos",
+      "enunciado": "Dos cargas eléctricas están situadas en los puntos $(3\\,\\text{m},0)$ y $(-3\\,\\text{m},0)$ y valen $+3\\,\\mu\\text{C}$ y $-3\\,\\mu\\text{C}$ respectivamente. El potencial eléctrico en un punto situado a $8\\,\\text{m}$ de la primera carga eléctrica es $12\\,\\text{V}$. Calcula el trabajo que hay que realizar para desplazar una tercera carga de $+4\\,\\mu\\text{C}$ del punto A al punto B. Datos: $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Configuración",
+          "contenido": "Dipolo: $q_1=+3\\,\\mu\\text{C}$ en $(3\\,\\text{m},0)$ y $q_2=-3\\,\\mu\\text{C}$ en $(-3\\,\\text{m},0)$; separación $6\\,\\text{m}$. El punto A está situado a $8\\,\\text{m}$ de la primera carga y su potencial es $V_A=12\\,\\text{V}$."
+        },
+        {
+          "titulo": "Potencial sobre la mediatriz",
+          "contenido": "Sobre la mediatriz del eje del dipolo, las contribuciones de ambas cargas se cancelan si el punto es equidistante de las dos. Si se evalúa en un punto A genérico equidistante, $V_A=0$. Si A es un punto sobre el eje X, situado a $8\\,\\text{m}$ de la primera carga, el potencial vale $V_A=12\\,\\text{V}$ según el enunciado."
+        },
+        {
+          "titulo": "Trabajo de A a B",
+          "contenido": "El trabajo externo para desplazar una carga $q$ desde A hasta B es:\n\n$$W_{\\text{ext}}=q\\,(V_B-V_A)$$\n\nSi B está en el infinito o sobre la mediatriz, $V_B=0$, y entonces:\n\n$$W_{\\text{ext}}=q\\,(0-V_A)=-q\\,V_A$$\n\nSustituyendo $q=+4\\,\\mu\\text{C}=4\\cdot10^{-6}\\,\\text{C}$ y $V_A=12\\,\\text{V}$:\n\n$$W_{\\text{ext}}=-4\\cdot10^{-6}\\cdot12=-4{,}8\\cdot10^{-5}\\,\\text{J}$$"
+        }
+      ],
+      "resultado": "No hay un valor único sin concretar el punto B. Si $B$ está en el infinito o en la mediatriz, $V_B=0$ y $W_{\\text{ext}}=-4{,}8\\cdot10^{-5}\\,\\text{J}$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Onda armónica con función dada",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "0,5 puntos",
+      "enunciado": "La ecuación de una onda viene dada por $y(x,t)=6\\,\\text{sen}\\left[2\\pi\\left(4t-\\frac{x}{4}\\right)\\right]$, estando las magnitudes medidas en el Sistema Internacional de unidades. Determinar: a) la amplitud, b) la frecuencia, c) la longitud de onda y d) la velocidad de propagación. (Calificación de cada apartado, 0,5 puntos).",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "La amplitud."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "La frecuencia."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "La longitud de onda."
+        },
+        {
+          "letra": "d",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "La velocidad de propagación."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Forma estándar",
+          "contenido": "La ecuación tiene la forma:\n\n$$y(x,t)=A\\,\\text{sen}\\left[2\\pi\\left(\\frac{t}{T}-\\frac{x}{\\lambda}\\right)\\right]$$\n\nComparando con $y(x,t)=6\\,\\text{sen}\\left[2\\pi\\left(4t-\\frac{x}{4}\\right)\\right]$ se identifica $A=6\\,\\text{m}$, $f=4\\,\\text{Hz}$ y $\\lambda=4\\,\\text{m}$."
+        },
+        {
+          "titulo": "a) Amplitud",
+          "contenido": "$A=6\\,\\text{m}$."
+        },
+        {
+          "titulo": "b) Frecuencia",
+          "contenido": "$f=4\\,\\text{Hz}$."
+        },
+        {
+          "titulo": "c) Longitud de onda",
+          "contenido": "$\\lambda=4\\,\\text{m}$."
+        },
+        {
+          "titulo": "d) Velocidad de propagación",
+          "contenido": "$$v=\\lambda\\,f=4\\cdot4=16\\,\\text{m}\\,\\text{s}^{-1}$$"
         }
       ],
-      "resultado": ""
+      "resultado": "$A=6\\,\\text{m}$; $f=4\\,\\text{Hz}$; $\\lambda=4\\,\\text{m}$; $v=16\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Foco sonoro a 12 m — sensación",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2 puntos",
+      "enunciado": "La sensación sonora en un punto situado a $12\\,\\text{m}$ de un foco que emite ondas sonoras es de $100\\,\\text{dB}$. Hallar: a) la intensidad sonora en dicho punto, prescindiendo de la absorción que pudiera producirse en el medio; y b) la potencia con que emite el foco sonoro. Datos: intensidad umbral $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$. (Calificación, 2 puntos).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "La intensidad sonora en dicho punto."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "La potencia con que emite el foco sonoro."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "a) Intensidad",
+          "contenido": "La sensación sonora en decibelios es:\n\n$$\\beta=10\\,\\log_{10}\\left(\\frac{I}{I_0}\\right)$$\n\nDespejando:\n\n$$I=I_0\\,10^{\\beta/10}=10^{-12}\\cdot10^{100/10}=10^{-12}\\cdot10^{10}=10^{-2}\\,\\text{W}\\,\\text{m}^{-2}$$"
+        },
+        {
+          "titulo": "b) Potencia",
+          "contenido": "Para un frente esférico:\n\n$$I=\\frac{P}{4\\pi r^{2}}$$\n\nDespejando la potencia:\n\n$$P=4\\pi r^{2}I=4\\pi(12)^{2}\\cdot10^{-2}=18{,}1\\,\\text{W}$$"
+        }
+      ],
+      "resultado": "$I=10^{-2}\\,\\text{W}\\,\\text{m}^{-2}$; $P=18{,}1\\,\\text{W}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Reflexión total en líquido",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
+      "puntuacion": "2 puntos",
+      "enunciado": "Un haz muy fino de luz incide formando un ángulo respecto a la normal de $40^{\\circ}$. Se observa que el rayo en el interior del líquido transparente forma un ángulo de $60^{\\circ}$ respecto a la horizontal. Determine el índice de refracción del líquido. Datos: índice de refracción del aire $=1$. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Ley de Snell",
+          "contenido": "El rayo refractado forma $60^{\\circ}$ con la horizontal, por lo que forma $30^{\\circ}$ con la normal. Aplicando la ley de Snell:\n\n$$n_1\\,\\text{sen}\\,\\theta_1=n_2\\,\\text{sen}\\,\\theta_2$$\n\nCon $n_1=1$, $\\theta_1=40^{\\circ}$ y $\\theta_2=30^{\\circ}$:\n\n$$1\\cdot\\text{sen}\\,40^{\\circ}=n\\cdot\\text{sen}\\,30^{\\circ}$$\n\n$$n=\\frac{\\text{sen}\\,40^{\\circ}}{\\text{sen}\\,30^{\\circ}}=1{,}29$$"
+        }
+      ],
+      "resultado": "$n_{\\text{líquido}}\\approx1{,}29$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Lente convergente — objeto a 8 cm",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "1 punto",
+      "enunciado": "Un objeto de $6\\,\\text{cm}$ de altura está a una distancia de $8\\,\\text{cm}$ de una lente divergente, cuya distancia focal es $4\\,\\text{cm}$. Determina: a) la posición y b) el tamaño de la imagen y las características de dicha imagen. (Calificación de cada apartado, 1 punto).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "La posición de la imagen."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "El tamaño de la imagen y sus características."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "a) Posición",
+          "contenido": "Lente divergente: $f=-4\\,\\text{cm}$; objeto a $s=8\\,\\text{cm}$. Usando la ecuación de las lentes delgadas:\n\n$$\\frac{1}{f}=\\frac{1}{s'}-\\frac{1}{s}$$\n\n$$\\frac{1}{s'}=\\frac{1}{f}+\\frac{1}{s}=-\\frac{1}{4}+\\frac{1}{8}=-\\frac{1}{8}$$\n\n$$s'=-8\\,\\text{cm}$$\n\nLa imagen se forma a $8\\,\\text{cm}$ delante de la lente, en el mismo lado que el objeto."
+        },
+        {
+          "titulo": "b) Tamaño y características",
+          "contenido": "El aumento lateral es:\n\n$$m=\\frac{s'}{s}=\\frac{-8}{8}=-1$$\n\nEl tamaño de la imagen es:\n\n$$y'=m\\,y=-1\\cdot6=-6\\,\\text{cm}$$\n\nLa imagen es virtual, derecha y del mismo tamaño que el objeto."
+        }
+      ],
+      "resultado": "$s'=-8\\,\\text{cm}$; $y'=-6\\,\\text{cm}$; imagen virtual, derecha y del mismo tamaño."
+    },
+    {
+      "numero": 9,
+      "titulo": "Yodo-131 radiactivo — 28 días",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "El Pu-238 es un isótopo radiactivo que se utiliza en el laboratorio Mars Science Laboratory como fuente de energía nuclear a largo plazo. Su periodo de semidesintegración es de $87{,}7$ años. Si tenemos una pastilla de este isótopo con una actividad inicial de $40\\,\\text{kBq}$. Determina: a) la constante de desintegración radiactiva del Pu-238; b) la actividad de la muestra al cabo de $100$ años. (Calificación de cada apartado, 1 punto).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "La constante de desintegración radiactiva del Pu-238."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "La actividad de la muestra al cabo de 100 años."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "a) Constante de desintegración",
+          "contenido": "La constante radiactiva se relaciona con el periodo de semidesintegración mediante:\n\n$$\\lambda=\\frac{\\ln 2}{T_{1/2}}$$\n\nSustituyendo $T_{1/2}=87{,}7\\,\\text{años}=87{,}7\\cdot365\\cdot24\\cdot3600\\,\\text{s}$:\n\n$$\\lambda=\\frac{0{,}693}{87{,}7\\cdot365\\cdot24\\cdot3600}=2{,}51\\cdot10^{-10}\\,\\text{s}^{-1}$$"
+        },
+        {
+          "titulo": "b) Actividad a 100 años",
+          "contenido": "La actividad sigue la ley:\n\n$$A=A_0\\,e^{-\\lambda t}$$\n\nCon $A_0=40\\,\\text{kBq}=4\\cdot10^{4}\\,\\text{Bq}$ y $t=100\\,\\text{años}$:\n\n$$A=4\\cdot10^{4}\\cdot e^{-2{,}51\\cdot10^{-10}\\cdot100\\cdot365\\cdot24\\cdot3600}$$\n\n$$A=4\\cdot10^{4}\\cdot e^{-0{,}790}=1{,}82\\cdot10^{4}\\,\\text{Bq}=18{,}2\\,\\text{kBq}$$"
+        }
+      ],
+      "resultado": "$\\lambda=2{,}51\\cdot10^{-10}\\,\\text{s}^{-1}$; $A=18{,}2\\,\\text{kBq}$."
+    },
+    {
+      "numero": 10,
+      "titulo": "De Broglie — pelota Ryan Winter",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos",
+      "enunciado": "Ryan Winter consiguió en 2013 que su pelota de golf de $45{,}93\\,\\text{g}$ de masa alcanzase una velocidad de $349\\,\\text{m}\\,\\text{s}^{-1}$. Calcule la longitud de la onda de materia asociada a dicha pelota. Datos: constante de Planck $h=6{,}6\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Conversión de unidades",
+          "contenido": "$m=45{,}93\\,\\text{g}=0{,}04593\\,\\text{kg}$; $v=349\\,\\text{m}\\,\\text{s}^{-1}$."
+        },
+        {
+          "titulo": "Longitud de onda de De Broglie",
+          "contenido": "La longitud de onda de materia es:\n\n$$\\lambda=\\frac{h}{m\\,v}$$\n\nSustituyendo:\n\n$$\\lambda=\\frac{6{,}6\\cdot10^{-34}}{0{,}04593\\cdot349}=4{,}12\\cdot10^{-35}\\,\\text{m}$$"
+        }
+      ],
+      "resultado": "$\\lambda=4{,}12\\cdot10^{-35}\\,\\text{m}$."
     }
   ]
 }

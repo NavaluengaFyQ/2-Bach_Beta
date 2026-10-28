@@ -1,42 +1,409 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-extremadura-2024-ordinaria",
+  "codigo": "EXA.FIS.EXT.2024.ORD.SOL",
+  "comunidad": "Extremadura",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2024,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la convocatoria ordinaria de 2024 en Extremadura. Consta de diez problemas de dos puntos cada uno, de los que el estudiante debe elegir cinco, e incluye cuestiones de electromagnetismo, vibraciones y ondas, campo gravitatorio, óptica, relatividad y física nuclear.",
+  "objetivo": "Evaluar la comprensión de los conceptos fundamentales de Física de 2º de Bachillerato y la capacidad de resolver problemas aplicando leyes, principios y modelos físicos.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "El examen consta de 10 preguntas, cuyo valor es de 2 puntos cada una. El estudiante ha de elegir 5 preguntas. El valor de cada uno de los apartados de las preguntas está indicado en el enunciado, cuando corresponda. En ningún caso deberá responder a un número mayor del indicado: porque en la corrección sólo se tendrán en cuenta las cinco primeras cuestiones/preguntas respondidas. Si se desea que alguna de ellas no sea tenida en cuenta, el estudiante ha de tacharla y dejarlo claramente indicado."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $M_T=5{,}972\\cdot10^{24}\\,\\text{kg}$; $R_T=6370\\,\\text{km}=6{,}37\\cdot10^{6}\\,\\text{m}$; $g_0=9{,}8\\,\\text{m}\\,\\text{s}^{-2}$; $1\\,\\text{u}=1{,}66\\cdot10^{-27}\\,\\text{kg}$; $1\\,\\text{eV}=1{,}6\\cdot10^{-19}\\,\\text{J}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $n_{\\text{agua}}\\approx1{,}33$; $K$ constante de Coulomb."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Ley de Faraday",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "2 puntos (1 + 0,5 + 0,5)",
+      "enunciado": "Ley de inducción electromagnética de Faraday.",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Enuncia la ley de Faraday."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Escribe una expresión matemática de dicha ley."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Según esta ley, indica al menos un procedimiento para inducir corriente en una espira."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Enunciado de la ley de Faraday",
+          "contenido": "La ley de inducción electromagnética de Faraday establece que la fuerza electromotriz (f.e.m.) inducida en un circuito cerrado es igual a la variación temporal del flujo magnético que lo atraviesa, cambiada de signo.\n\nCualquier variación del flujo magnético a través del área limitada por una espira o circuito cerrado origina en el mismo una f.e.m. inducida que se opone (signo menos, ley de Lenz) a la variación del flujo que la produce.\n\nEsta ley unifica fenómenos de inducción y constituye una de las cuatro ecuaciones de Maxwell."
+        },
+        {
+          "titulo": "Expresión matemática",
+          "contenido": "Forma diferencial: la f.e.m. inducida es\n\n$$\\varepsilon=-\\frac{d\\Phi}{dt},$$\n\ndonde el flujo magnético se define como\n\n$$\\Phi=\\int \\vec{B}\\cdot d\\vec{S}=B\\,S\\cos\\theta.$$\n\nSi la espira tiene $N$ vueltas:\n\n$$\\varepsilon=-N\\frac{d\\Phi}{dt}.$$\n\nResultado: $\\varepsilon=-\\frac{d\\Phi}{dt}$; para $N$ espiras, $\\varepsilon=-N\\frac{d\\Phi}{dt}$."
+        },
+        {
+          "titulo": "Procedimientos para inducir corriente",
+          "contenido": "Para inducir corriente en una espira es necesario variar el flujo magnético $\\Phi$.\n\nEsto se consigue: (1) variando el módulo del campo $\\vec{B}$ (por ejemplo, acercando o alejando un imán); (2) variando el área $S$ encerrada por la espira (deformándola); (3) variando el ángulo $\\theta$ entre $\\vec{B}$ y $\\vec{S}$ (rotando la espira en un campo constante: principio del alternador)."
         }
       ],
-      "resultado": ""
+      "resultado": "$\\varepsilon=-\\frac{d\\Phi}{dt}$; para $N$ espiras, $\\varepsilon=-N\\frac{d\\Phi}{dt}$; $\\Phi=B\\,S\\cos\\theta$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Velocidad de propagación del sonido y reflexión",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda; C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
+      "puntuacion": "2 puntos (1 + 0,5 + 0,5)",
+      "enunciado": "Velocidad de propagación del sonido en gases y unidades del Sistema Internacional.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Escribe la expresión de la velocidad de propagación del sonido en los gases e identifica el significado de cada uno de los parámetros."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Indica si la expresión anterior puede usarse para inducir corriente en una espira."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Indica al menos un procedimiento para sintonizar una emisora cuando se mide cada una de ellas en el Sistema Internacional."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Expresión de Laplace-Newton",
+          "contenido": "En un gas ideal, la velocidad de propagación de las ondas sonoras (proceso adiabático) es:\n\n$$v=\\sqrt{\\frac{\\gamma P}{\\rho}}=\\sqrt{\\frac{\\gamma R T}{M}},$$\n\ndonde:\n\n$\\gamma$ es el coeficiente adiabático del gas (adimensional); $P$ es la presión del gas (Pa); $\\rho$ es la densidad del gas ($\\text{kg}\\,\\text{m}^{-3}$); $R$ es la constante de los gases ideales ($\\text{J}\\,\\text{mol}^{-1}\\,\\text{K}^{-1}$); $T$ es la temperatura absoluta (K); $M$ es la masa molar del gas ($\\text{kg}\\,\\text{mol}^{-1}$).\n\nResultado: $v=\\sqrt{\\frac{\\gamma P}{\\rho}}=\\sqrt{\\frac{\\gamma R T}{M}}$."
+        },
+        {
+          "titulo": "Indicación sobre la expresión",
+          "contenido": "Esta expresión describe propagación mecánica en un medio elástico (gas).\n\nNo tiene relación con la inducción electromagnética: para inducir corriente en una espira se requiere una variación del flujo magnético (ley de Faraday), y la propagación del sonido es un fenómeno mecánico distinto."
+        },
+        {
+          "titulo": "Unidades en el Sistema Internacional",
+          "contenido": "Las magnitudes que intervienen en la expresión, expresadas en el SI, son: $v$ en $\\text{m}\\,\\text{s}^{-1}$; $P$ en $\\text{Pa}=\\text{N}\\,\\text{m}^{-2}=\\text{kg}\\,\\text{m}^{-1}\\,\\text{s}^{-2}$; $\\rho$ en $\\text{kg}\\,\\text{m}^{-3}$; $R$ en $\\text{J}\\,\\text{mol}^{-1}\\,\\text{K}^{-1}=\\text{kg}\\,\\text{m}^{2}\\,\\text{s}^{-2}\\,\\text{mol}^{-1}\\,\\text{K}^{-1}$; $T$ en K; $M$ en $\\text{kg}\\,\\text{mol}^{-1}$; $\\gamma$ es adimensional.\n\nLa magnitud que se sintoniza en una emisora es la frecuencia, medida en hercios ($\\text{Hz}=\\text{s}^{-1}$)."
+        }
+      ],
+      "resultado": "$v=\\sqrt{\\frac{\\gamma P}{\\rho}}=\\sqrt{\\frac{\\gamma R T}{M}}$; unidades SI: $v$ en $\\text{m}\\,\\text{s}^{-1}$, $P$ en Pa, $\\rho$ en $\\text{kg}\\,\\text{m}^{-3}$, $T$ en K, $M$ en $\\text{kg}\\,\\text{mol}^{-1}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Razonamiento sobre longitud de onda",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D1. Relatividad especial y consecuencias",
+      "puntuacion": "2 puntos",
+      "enunciado": "Indica si la siguiente afirmación es cierta o falsa, razonando la respuesta: \"Para que la longitud de una barra se reduzca a la mitad debe viajar a una velocidad la mitad que la luz\".",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Contracción de Lorentz",
+          "contenido": "Según la relatividad especial, la longitud propia medida en el sistema en reposo se relaciona con la longitud medida desde un sistema en movimiento mediante:\n\n$$L=L_0\\sqrt{1-\\frac{v^{2}}{c^{2}}}.$$\n\nPara que $L=\\frac{L_0}{2}$:\n\n$$\\frac{1}{2}=\\sqrt{1-\\frac{v^{2}}{c^{2}}}\\quad\\Rightarrow\\quad \\frac{1}{4}=1-\\frac{v^{2}}{c^{2}}\\quad\\Rightarrow\\quad \\frac{v^{2}}{c^{2}}=\\frac{3}{4}\\quad\\Rightarrow\\quad v=\\frac{\\sqrt{3}}{2}c\\approx0{,}866\\,c.$$\n\nLa afirmación supone una relación lineal velocidad-contracción que no existe en relatividad."
+        },
+        {
+          "titulo": "Conclusión",
+          "contenido": "La afirmación es FALSA. Si la barra viajase a $v=\\frac{c}{2}$ obtendríamos\n\n$$L=L_0\\sqrt{1-\\frac{1}{4}}=L_0\\frac{\\sqrt{3}}{2}\\approx0{,}866\\,L_0,$$\n\nuna contracción de solo el $13{,}4\\%$, muy lejos de la mitad. Para que la longitud se reduzca a la mitad la velocidad debe ser $v=\\frac{\\sqrt{3}}{2}c$, no $v=\\frac{c}{2}$."
+        }
+      ],
+      "resultado": "La afirmación es falsa. Para reducir la longitud a la mitad se necesita $v=\\frac{\\sqrt{3}}{2}c\\approx0{,}866\\,c$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Sonda en órbita circular",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una sonda espacial de 1000 kg de masa describe una órbita circular alrededor de la Tierra, con velocidad constante en módulo, a una altura sobre la superficie terrestre igual al radio de la Tierra. DATOS: Constante de gravitación universal: G = 6,67·10⁻¹¹ N·m²·kg⁻². Masa de la Tierra: M = 5,972·10²⁴ kg. Radio de la Tierra: R = 6370 km.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcula la energía cinética y la energía potencial gravitatoria de dicha sonda en esa órbita."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "¿Cuál sería la energía necesaria para transferir la sonda a otra órbita, también circular, situada a una altura igual a tres veces el radio de la Tierra?"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Datos y planteamiento",
+          "contenido": "Datos: $m=1000\\,\\text{kg}$, $M=5{,}972\\cdot10^{24}\\,\\text{kg}$, $R=6370\\,\\text{km}=6{,}37\\cdot10^{6}\\,\\text{m}$.\n\nLa primera órbita tiene una altura $h_1=R$, por lo que su radio orbital es $r_1=R+h_1=2R=2\\cdot6{,}37\\cdot10^{6}=1{,}274\\cdot10^{7}\\,\\text{m}$.\n\nEn una órbita circular, la fuerza gravitatoria proporciona la fuerza centrípeta:\n\n$$\\frac{GMm}{r^{2}}=\\frac{mv^{2}}{r}\\quad\\Rightarrow\\quad v^{2}=\\frac{GM}{r}.$$"
+        },
+        {
+          "titulo": "Energía cinética",
+          "contenido": "$$E_c=\\frac{1}{2}mv^{2}=\\frac{GMm}{2r_1}.$$\n\nSustituyendo:\n\n$$E_c=\\frac{6{,}67\\cdot10^{-11}\\cdot5{,}972\\cdot10^{24}\\cdot1000}{2\\cdot1{,}274\\cdot10^{7}}\\approx1{,}56\\cdot10^{10}\\,\\text{J}.$$\n\nResultado: $E_c\\approx1{,}56\\cdot10^{10}\\,\\text{J}$."
+        },
+        {
+          "titulo": "Energía potencial",
+          "contenido": "$$E_p=-\\frac{GMm}{r_1}.$$\n\nSustituyendo:\n\n$$E_p=-\\frac{6{,}67\\cdot10^{-11}\\cdot5{,}972\\cdot10^{24}\\cdot1000}{1{,}274\\cdot10^{7}}\\approx-3{,}13\\cdot10^{10}\\,\\text{J}.$$\n\nResultado: $E_p\\approx-3{,}13\\cdot10^{10}\\,\\text{J}$."
+        },
+        {
+          "titulo": "Energías mecánicas en cada órbita",
+          "contenido": "En cualquier órbita circular, $E_m=E_c+E_p=-\\frac{GMm}{2r}$.\n\nÓrbita inicial ($r_1=2R$):\n\n$$E_{m,1}=-\\frac{GMm}{2r_1}\\approx-1{,}56\\cdot10^{10}\\,\\text{J}.$$\n\nÓrbita final: la altura es $3R$, luego $r_2=R+3R=4R=2{,}548\\cdot10^{7}\\,\\text{m}$.\n\n$$E_{m,2}=-\\frac{GMm}{2r_2}\\approx-7{,}82\\cdot10^{9}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Energía necesaria para la transferencia",
+          "contenido": "La energía necesaria es la variación de energía mecánica:\n\n$$\\Delta E=E_{m,2}-E_{m,1}\\approx-7{,}82\\cdot10^{9}-\\left(-1{,}56\\cdot10^{10}\\right)\\approx7{,}82\\cdot10^{9}\\,\\text{J}.$$\n\nResultado: $\\Delta E\\approx7{,}82\\cdot10^{9}\\,\\text{J}$."
+        }
+      ],
+      "resultado": "$E_c\\approx1{,}56\\cdot10^{10}\\,\\text{J}$; $E_p\\approx-3{,}13\\cdot10^{10}\\,\\text{J}$; $\\Delta E\\approx7{,}82\\cdot10^{9}\\,\\text{J}$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Satélite en órbita 7/6 R",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Desde la superficie terrestre se lanza un satélite hasta situarlo en una órbita circular a una distancia del centro de la Tierra igual a las 7/6 partes del radio terrestre. DATOS: Constante de gravitación universal: G = 6,67·10⁻¹¹ N·m²·kg⁻². Radio de la Tierra: R = 6370 km. Valor del campo gravitatorio en la superficie terrestre: g = 9,8 m·s⁻².",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcula, con los datos del problema, la intensidad del campo gravitatorio terrestre en la órbita del satélite."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Halla el peso de una astronauta de masa 68 kg que se situase allí."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Relación con g superficial",
+          "contenido": "El campo gravitatorio decae como $\\frac{1}{r^{2}}$. En la superficie, $g_0=\\frac{GM}{R^{2}}=9{,}8\\,\\text{m}\\,\\text{s}^{-2}$.\n\nA distancia $r=\\frac{7}{6}R$:\n\n$$g=\\frac{GM}{r^{2}}=g_0\\left(\\frac{R}{r}\\right)^{2}=g_0\\left(\\frac{R}{\\frac{7}{6}R}\\right)^{2}=g_0\\left(\\frac{6}{7}\\right)^{2}.$$"
+        },
+        {
+          "titulo": "Cálculo numérico",
+          "contenido": "$$g=9{,}8\\cdot\\left(\\frac{6}{7}\\right)^{2}=9{,}8\\cdot\\frac{36}{49}=7{,}2\\,\\text{m}\\,\\text{s}^{-2}.$$\n\nResultado: $g=7{,}2\\,\\text{m}\\,\\text{s}^{-2}$."
+        },
+        {
+          "titulo": "Peso de la astronauta",
+          "contenido": "El peso es $P=mg$.\n\n$$P=68\\cdot7{,}2=489{,}6\\,\\text{N}.$$\n\nResultado: $P=489{,}6\\,\\text{N}$."
+        }
+      ],
+      "resultado": "$g=7{,}2\\,\\text{m}\\,\\text{s}^{-2}$; $P=489{,}6\\,\\text{N}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Triángulo equilátero con tres cargas",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "En los vértices inferiores de un triángulo equilátero de lado a, se sitúan dos cargas puntuales positivas iguales de valor q₁ = q₂ = q. Otra carga, también positiva, de valor Q, se coloca en el tercer vértice del triángulo.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Dibuja en un esquema los vectores campo eléctrico creado por las cargas q₁ y q₂ y la fuerza electrostática sobre la carga Q."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcula dicha fuerza como módulo, dirección y sentido. Expresa el resultado en términos de q, Q, a y de la constante de Coulomb, K."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Esquema y dirección",
+          "contenido": "En el vértice superior se encuentra $Q$. Las cargas $q_1$ y $q_2$ están en los vértices inferiores.\n\nEl campo creado por $q_1$ apunta desde $q_1$ hacia $Q$ (alejamiento, ya que ambas cargas son positivas); igualmente, el campo creado por $q_2$ apunta desde $q_2$ hacia $Q$.\n\nPor simetría, las componentes horizontales de $\\vec{E}_1$ y $\\vec{E}_2$ se cancelan y las verticales se suman, dando un campo total vertical hacia arriba. La fuerza sobre $Q$ es $\\vec{F}=Q\\vec{E}$, también vertical hacia arriba (eje del triángulo)."
+        },
+        {
+          "titulo": "Distancia y campo individual",
+          "contenido": "La distancia entre cada carga inferior y $Q$ es $a$ (lado del triángulo). El campo creado por cada $q$ en el vértice de $Q$ tiene módulo:\n\n$$E_1=E_2=K\\frac{q}{a^{2}}.$$"
+        },
+        {
+          "titulo": "Componente vertical y suma",
+          "contenido": "El ángulo entre cada campo y la vertical es $30^{\\circ}$ (porque el ángulo en el vértice superior de un triángulo equilátero es $60^{\\circ}$ y la mediana lo biseca).\n\nLa componente vertical de cada uno es $E\\cos30^{\\circ}$. Sumando ambos:\n\n$$E_{\\text{total}}=2E\\cos30^{\\circ}=2K\\frac{q}{a^{2}}\\cdot\\frac{\\sqrt{3}}{2}=\\sqrt{3}\\,K\\frac{q}{a^{2}}.$$"
+        },
+        {
+          "titulo": "Fuerza sobre Q",
+          "contenido": "$$F=Q\\,E_{\\text{total}}=\\sqrt{3}\\,K\\frac{qQ}{a^{2}}.$$\n\nDirección: a lo largo de la mediatriz del lado inferior (eje vertical del triángulo). Sentido: alejándose de las cargas inferiores (las tres cargas son positivas, por tanto, repulsión).\n\nResultado: $F=\\sqrt{3}\\,K\\frac{qQ}{a^{2}}$."
+        }
+      ],
+      "resultado": "$F=\\sqrt{3}\\,K\\frac{qQ}{a^{2}}$, vertical hacia arriba, a lo largo de la mediatriz y alejándose de las cargas inferiores."
+    },
+    {
+      "numero": 7,
+      "titulo": "Onda estacionaria — amplitud, longitud y velocidad",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos (0,4 + 0,4 + 0,4 + 0,4 + 0,4)",
+      "enunciado": "La función de onda estacionaria en una cuerda fija por sus dos extremos viene dada, en el Sistema Internacional, por: y(x,t) = 10 sen(0,4πx) cos(60πt).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,4 puntos",
+          "enunciado": "Determina la amplitud."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,4 puntos",
+          "enunciado": "Determina la longitud de onda."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,4 puntos",
+          "enunciado": "Determina la frecuencia."
+        },
+        {
+          "letra": "d",
+          "puntuacion": "0,4 puntos",
+          "enunciado": "Determina la velocidad de propagación de las ondas componentes."
+        },
+        {
+          "letra": "e",
+          "puntuacion": "0,4 puntos",
+          "enunciado": "Determina la distancia entre dos nodos consecutivos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Identificación de parámetros",
+          "contenido": "Forma general de una onda estacionaria:\n\n$$y(x,t)=2A\\,\\text{sen}(kx)\\cos(\\omega t),$$\n\ndonde $2A$ es la amplitud estacionaria, $k$ es el número de onda y $\\omega$ la pulsación.\n\nPor comparación con $y(x,t)=10\\,\\text{sen}(0{,}4\\pi x)\\cos(60\\pi t)$:\n\n$2A=10\\,\\text{m}$; $k=0{,}4\\pi\\,\\text{rad}\\,\\text{m}^{-1}$; $\\omega=60\\pi\\,\\text{rad}\\,\\text{s}^{-1}$."
+        },
+        {
+          "titulo": "a) Amplitud",
+          "contenido": "La amplitud de la onda estacionaria (en el vientre) es $10\\,\\text{m}$. Las ondas componentes tienen amplitud $A=5\\,\\text{m}$.\n\nResultado: $A_{\\text{est}}=10\\,\\text{m}$; $A_{\\text{componentes}}=5\\,\\text{m}$."
+        },
+        {
+          "titulo": "b) Longitud de onda",
+          "contenido": "$$\\lambda=\\frac{2\\pi}{k}=\\frac{2\\pi}{0{,}4\\pi}=5\\,\\text{m}.$$\n\nResultado: $\\lambda=5\\,\\text{m}$."
+        },
+        {
+          "titulo": "c) Frecuencia",
+          "contenido": "$$f=\\frac{\\omega}{2\\pi}=\\frac{60\\pi}{2\\pi}=30\\,\\text{Hz}.$$\n\nResultado: $f=30\\,\\text{Hz}$."
+        },
+        {
+          "titulo": "d) Velocidad de propagación",
+          "contenido": "$$v=\\lambda f=5\\cdot30=150\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nEquivalentemente, $v=\\frac{\\omega}{k}=\\frac{60\\pi}{0{,}4\\pi}=150\\,\\text{m}\\,\\text{s}^{-1}$.\n\nResultado: $v=150\\,\\text{m}\\,\\text{s}^{-1}$."
+        },
+        {
+          "titulo": "e) Distancia entre nodos consecutivos",
+          "contenido": "Los nodos están separados $\\frac{\\lambda}{2}$:\n\n$$d=\\frac{\\lambda}{2}=\\frac{5}{2}=2{,}5\\,\\text{m}.$$\n\nResultado: $d=2{,}5\\,\\text{m}$."
+        }
+      ],
+      "resultado": "$A_{\\text{est}}=10\\,\\text{m}$; $\\lambda=5\\,\\text{m}$; $f=30\\,\\text{Hz}$; $v=150\\,\\text{m}\\,\\text{s}^{-1}$; $d=2{,}5\\,\\text{m}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Reflexión total y refracción aire-vidrio-agua",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un rayo de luz, que se propaga por el vidrio, incide sobre la superficie de separación con el agua con un ángulo de 45°. Sabiendo que el índice de refracción del agua es aproximadamente 1,33 y que el ángulo límite vidrio-agua es de 60°:",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Determina el índice de refracción del vidrio, acompañando al cálculo con un diagrama de rayos."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Halla el ángulo de refracción en el agua. Haz, igualmente, el diagrama de rayos correspondiente."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Ángulo límite y reflexión total",
+          "contenido": "El ángulo límite corresponde al paso vidrio→agua donde la refracción es $90^{\\circ}$:\n\n$$n_{\\text{vidrio}}\\,\\text{sen}\\,L=n_{\\text{agua}}\\,\\text{sen}\\,90^{\\circ}.$$\n\nCon $L=60^{\\circ}$ y $n_{\\text{agua}}=1{,}33$:\n\n$$n_{\\text{vidrio}}=\\frac{n_{\\text{agua}}}{\\text{sen}\\,60^{\\circ}}=\\frac{1{,}33}{0{,}866}\\approx1{,}535.$$\n\nDiagrama de rayos: superficie horizontal de separación vidrio-agua; normal perpendicular a la superficie. El rayo incidente viaja por el vidrio y, en el ángulo límite, el rayo refractado sale rasante a la superficie (ángulo de refracción $90^{\\circ}$).\n\nResultado: $n_{\\text{vidrio}}\\approx1{,}535$."
+        },
+        {
+          "titulo": "Ángulo de refracción a 45°",
+          "contenido": "Como $45^{\\circ}<60^{\\circ}$, no hay reflexión total y el rayo se refracta.\n\nAplicando la ley de Snell:\n\n$$n_{\\text{vidrio}}\\,\\text{sen}\\,45^{\\circ}=n_{\\text{agua}}\\,\\text{sen}\\,r.$$\n\n$$\\text{sen}\\,r=\\frac{n_{\\text{vidrio}}\\,\\text{sen}\\,45^{\\circ}}{n_{\\text{agua}}}=\\frac{1{,}535\\cdot0{,}7071}{1{,}33}\\approx0{,}816.$$\n\n$$r=\\text{arcsen}(0{,}816)\\approx54{,}7^{\\circ}.$$\n\nDiagrama de rayos: el rayo incidente forma $45^{\\circ}$ con la normal en el vidrio; el rayo refractado en el agua se aleja de la normal y forma $54{,}7^{\\circ}$ con ella.\n\nResultado: $r\\approx54{,}7^{\\circ}$."
+        }
+      ],
+      "resultado": "$n_{\\text{vidrio}}\\approx1{,}535$; $r\\approx54{,}7^{\\circ}$."
+    },
+    {
+      "numero": 9,
+      "titulo": "Lente delgada biconvexa",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (2/3 + 2/3 + 2/3)",
+      "enunciado": "Una lente delgada biconvexa de vidrio cuyo índice de refracción es 1,5 tiene sus radios de curvatura iguales a 40 cm. Un objeto de 4 cm de altura se sitúa a 15 cm de la lente.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "2/3 punto",
+          "enunciado": "Halla la posición de la imagen."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "2/3 punto",
+          "enunciado": "Calcula la distancia focal de la lente."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "2/3 punto",
+          "enunciado": "Determina el tamaño de la imagen."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancia focal (la calculo primero)",
+          "contenido": "Ecuación del fabricante de lentes:\n\n$$\\frac{1}{f}=(n-1)\\left(\\frac{1}{R_1}-\\frac{1}{R_2}\\right).$$\n\nPara una lente biconvexa con criterio de signos: $R_1=+40\\,\\text{cm}$, $R_2=-40\\,\\text{cm}$. Aquí $n=1{,}5$.\n\n$$\\frac{1}{f}=(1{,}5-1)\\left(\\frac{1}{40}-\\frac{1}{-40}\\right)=0{,}5\\left(\\frac{1}{40}+\\frac{1}{40}\\right)=0{,}5\\cdot\\frac{2}{40}=\\frac{1}{40}.$$\n\nResultado: $f=40\\,\\text{cm}$."
+        },
+        {
+          "titulo": "Posición de la imagen",
+          "contenido": "Ecuación de la lente delgada:\n\n$$\\frac{1}{f}=\\frac{1}{d_o}+\\frac{1}{d_i}.$$\n\nConvenio: el objeto está delante de la lente, $d_o=15\\,\\text{cm}$.\n\n$$\\frac{1}{d_i}=\\frac{1}{40}-\\frac{1}{15}=\\frac{3-8}{120}=-\\frac{5}{120}=-\\frac{1}{24}.$$\n\n$$d_i=-24\\,\\text{cm}.$$\n\nEl signo negativo indica que la imagen es virtual y se forma del mismo lado que el objeto.\n\nResultado: $d_i=-24\\,\\text{cm}$."
+        },
+        {
+          "titulo": "Tamaño de la imagen",
+          "contenido": "Aumento lateral:\n\n$$m=\\frac{h_i}{h_o}=-\\frac{d_i}{d_o}=-\\frac{-24}{15}=1{,}6.$$\n\n$$h_i=m\\,h_o=1{,}6\\cdot4=6{,}4\\,\\text{cm}.$$\n\nImagen virtual, derecha y mayor (lupa).\n\nResultado: $h_i=6{,}4\\,\\text{cm}$."
+        }
+      ],
+      "resultado": "$f=40\\,\\text{cm}$; $d_i=-24\\,\\text{cm}$ (imagen virtual); $h_i=6{,}4\\,\\text{cm}$ (derecha y mayor)."
+    },
+    {
+      "numero": 10,
+      "titulo": "Fusión nuclear deuterio-tritio",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares",
+      "puntuacion": "2 puntos (1,5 + 0,5)",
+      "enunciado": "a) (1,5 puntos) Calcula la energía en Julios que se libera en el siguiente proceso de fusión nuclear: ²₁H + ³₁H → ⁴₂He + ¹₀n. b) (0,5 puntos) Expresa el resultado en MeV. DATOS: Masa del núcleo de Hidrógeno: 1,007825 u; Masa del núcleo de Deuterio: 2,014102 u; Masa del núcleo de Tritio: 3,016049 u; 1 u = 1,66·10⁻²⁷ kg; 1 eV = 1,6·10⁻¹⁹ J; Valor de la velocidad de la luz en el vacío: c = 3·10⁸ m/s.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Calcula la energía en Julios que se libera en el proceso de fusión nuclear."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Expresa el resultado en MeV."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Defecto de masa",
+          "contenido": "Reacción: $^{2}_{1}\\text{H}+^{3}_{1}\\text{H}\\rightarrow^{4}_{2}\\text{He}+^{1}_{0}\\text{n}$.\n\nMasas (u): reactivos: $m(^{2}_{1}\\text{H})=2{,}014102\\,\\text{u}$ y $m(^{3}_{1}\\text{H})=3{,}016049\\,\\text{u}$.\n\nSuma de reactivos:\n\n$$m_{\\text{reactivos}}=2{,}014102+3{,}016049=5{,}030151\\,\\text{u}.$$\n\nSe emplean las masas tabuladas estándar $m(^{4}_{2}\\text{He})=4{,}002603\\,\\text{u}$ y $m(^{1}_{0}\\text{n})=1{,}008665\\,\\text{u}$.\n\nSuma de productos:\n\n$$m_{\\text{productos}}=4{,}002603+1{,}008665=5{,}011268\\,\\text{u}.$$\n\nDefecto de masa:\n\n$$\\Delta m=m_{\\text{reactivos}}-m_{\\text{productos}}=5{,}030151-5{,}011268=0{,}018883\\,\\text{u}.$$"
+        },
+        {
+          "titulo": "Conversión a kg y energía",
+          "contenido": "$$\\Delta m=0{,}018883\\cdot1{,}66\\cdot10^{-27}=3{,}1346\\cdot10^{-29}\\,\\text{kg}.$$\n\n$$E=\\Delta m\\,c^{2}=3{,}1346\\cdot10^{-29}\\cdot\\left(3\\cdot10^{8}\\right)^{2}=3{,}1346\\cdot10^{-29}\\cdot9\\cdot10^{16}\\approx2{,}82\\cdot10^{-12}\\,\\text{J}.$$\n\nResultado: $E\\approx2{,}82\\cdot10^{-12}\\,\\text{J}$."
+        },
+        {
+          "titulo": "Conversión a MeV",
+          "contenido": "$$E=\\frac{2{,}82\\cdot10^{-12}}{1{,}6\\cdot10^{-19}}\\,\\text{eV}\\approx1{,}76\\cdot10^{7}\\,\\text{eV}=17{,}6\\,\\text{MeV}.$$\n\nResultado: $E\\approx17{,}6\\,\\text{MeV}$."
+        }
+      ],
+      "resultado": "$E\\approx2{,}82\\cdot10^{-12}\\,\\text{J}\\approx17{,}6\\,\\text{MeV}$."
     }
   ]
 }

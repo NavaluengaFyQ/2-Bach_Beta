@@ -1,42 +1,322 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-extremadura-2022-extraordinaria",
+  "codigo": "EXA.FIS.EXT.2022.EXT.SOL",
+  "comunidad": "Extremadura",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2022,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la PAU de Extremadura, convocatoria Extraordinaria de 2022. Consta de 10 problemas, de 2 puntos cada uno, de los que el estudiante debe elegir 5.",
+  "objetivo": "Evaluar la comprensión y aplicación de los contenidos de Física de 2º de Bachillerato: campo gravitatorio, campo electromagnético, vibraciones y ondas, relatividad, física cuántica, óptica geométrica y física nuclear.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "El examen consta de 10 preguntas, cuyo valor es de 2 puntos cada una. El estudiante ha de elegir 5 preguntas. En ningún caso deberá responder a un número mayor del indicado, porque en la corrección del mismo solo se tendrán en cuenta las cinco primeras cuestiones/preguntas respondidas. Si se desea que alguna de ellas no sea tenida en cuenta, el estudiante ha de tacharla y dejarlo claramente indicado. Tiempo máximo: 1 h 30 min."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $M_T=6\\cdot10^{24}\\,\\text{kg}$; $R_T=6370\\,\\text{km}=6{,}37\\cdot10^{6}\\,\\text{m}$; $K_0=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $h=6{,}6\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $T_{1/2}(^{18}\\text{F})=110\\,\\text{min}$."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Trabajo eléctrico y diferencia de potencial",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos",
+      "enunciado": "Determina el trabajo desarrollado para transportar una carga eléctrica entre dos puntos, en función de la diferencia de potencial. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Definición de potencial eléctrico",
+          "contenido": "El potencial eléctrico en un punto del campo eléctrico se define como la energía potencial eléctrica por unidad de carga de prueba situada en ese punto:\n\n$$V=\\frac{E_p}{q}.$$\n\nLa unidad en el SI es el voltio:\n\n$$1\\,\\text{V}=1\\,\\text{J}\\,\\text{C}^{-1}.$$\n\nPartimos de la definición operativa del potencial para relacionarlo con la energía y, por extensión, con el trabajo."
+        },
+        {
+          "titulo": "Trabajo de la fuerza eléctrica entre dos puntos",
+          "contenido": "El campo eléctrico es conservativo. El trabajo realizado por la fuerza del campo al transportar una carga $q$ desde un punto $A$ hasta un punto $B$ es igual a la diferencia de energía potencial cambiada de signo:\n\n$$W_{\\text{campo}}=-\\Delta U=U_A-U_B.$$\n\nEn todo campo conservativo, $\\Delta U=q\\,(V_B-V_A)$. Sustituyendo aparece la diferencia de potencial:\n\n$$W_{\\text{campo}}=q\\,(V_A-V_B).$$"
+        },
+        {
+          "titulo": "Trabajo realizado por un agente externo",
+          "contenido": "Si el transporte se realiza cuasiestáticamente por un agente externo, sin variación de energía cinética, el trabajo del agente externo es opuesto al del campo:\n\n$$W_{\\text{ext}}=-W_{\\text{campo}}=\\Delta U=q\\,(V_B-V_A).$$\n\nPor el teorema de la energía cinética, si $\\Delta E_c=0$ entonces $W_{\\text{total}}=0$ y, por tanto, $W_{\\text{ext}}+W_{\\text{campo}}=0$.\n\nResultado:\n\n$$W_{\\text{ext}}=q\\,(V_B-V_A).$$"
+        },
+        {
+          "titulo": "Interpretación física",
+          "contenido": "Si $V_B>V_A$ y $q>0$, el agente externo realiza trabajo positivo, pues la carga positiva no tiende espontáneamente a subir hacia un potencial mayor. Si $V_B<V_A$, el campo realiza trabajo positivo y el agente externo, negativo, porque la carga cae espontáneamente hacia un potencial menor. La unidad SI del trabajo es el julio ($\\text{J}$)."
+        }
+      ],
+      "resultado": "$W_{\\text{ext}}=q\\,(V_B-V_A)$; $W_{\\text{campo}}=q\\,(V_A-V_B)$. Unidad SI: $\\text{J}$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Energía relativista de un cuerpo",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D1. Relatividad especial y consecuencias",
+      "puntuacion": "2 puntos",
+      "enunciado": "Indica la relación entre energía de un cuerpo, su masa en reposo, y su velocidad, según la Teoría de la Relatividad. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Energía total relativista",
+          "contenido": "Según la Teoría Especial de la Relatividad de Einstein, la energía total de un cuerpo de masa en reposo $m_0$ que se mueve con velocidad $v$ respecto al observador es:\n\n$$E=\\gamma\\,m_0\\,c^{2}=\\frac{m_0\\,c^{2}}{\\sqrt{1-\\frac{v^{2}}{c^{2}}}},$$\n\nsiendo $c$ la velocidad de la luz en el vacío y $\\gamma$ el factor de Lorentz:\n\n$$\\gamma=\\frac{1}{\\sqrt{1-\\frac{v^{2}}{c^{2}}}}.$$\n\nEs la generalización relativista de la energía. Recoge tanto la energía intrínseca de la masa como el incremento debido al movimiento."
+        },
+        {
+          "titulo": "Energía en reposo",
+          "contenido": "Si $v=0$ entonces $\\gamma=1$ y se obtiene la famosa expresión de la equivalencia masa-energía:\n\n$$E_0=m_0\\,c^{2}.$$\n\nEs la energía que un cuerpo posee por el simple hecho de tener masa. Este caso límite permite identificar el término constante de la energía total."
+        },
+        {
+          "titulo": "Energía cinética relativista",
+          "contenido": "La energía cinética se define como la diferencia entre la energía total y la energía en reposo:\n\n$$E_c=E-E_0=(\\gamma-1)\\,m_0\\,c^{2}.$$\n\nPara velocidades muy pequeñas frente a $c$, desarrollando en serie de Taylor se recupera la expresión clásica de Newton:\n\n$$E_c\\approx\\frac{1}{2}\\,m_0\\,v^{2}.$$"
+        },
+        {
+          "titulo": "Relación energía-momento",
+          "contenido": "El momento lineal relativista es $p=\\gamma\\,m_0\\,v$. Combinándolo con $E=\\gamma\\,m_0\\,c^{2}$ se obtiene la invariante:\n\n$$E^{2}=p^{2}\\,c^{2}+m_0^{2}\\,c^{4}.$$\n\nEsta relación es válida también para fotones, para los cuales $m_0=0$ y $E=p\\,c$."
+        }
+      ],
+      "resultado": "$E=\\gamma\\,m_0\\,c^{2}$; $E_0=m_0\\,c^{2}$; $E_c=(\\gamma-1)\\,m_0\\,c^{2}$; $E^{2}=p^{2}\\,c^{2}+m_0^{2}\\,c^{4}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Atenuación de la intensidad de una onda esférica",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2 puntos",
+      "enunciado": "Diga si la siguiente frase es CIERTA o FALSA y razone la respuesta: \"Si la intensidad de una onda es 'I' en un punto situado a 2 metros del foco emisor, entonces a 6 metros será I/3\". (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Ley de la inversa del cuadrado",
+          "contenido": "Para una onda esférica que se propaga en un medio homogéneo e isótropo sin absorción, la potencia del foco se reparte por igual sobre la superficie de una esfera de radio $r$. La intensidad, potencia por unidad de área, es:\n\n$$I=\\frac{P}{4\\pi\\,r^{2}}.$$\n\nPor tanto, la relación entre intensidades a dos distancias $r_1$ y $r_2$ es:\n\n$$\\frac{I_2}{I_1}=\\left(\\frac{r_1}{r_2}\\right)^{2}.$$\n\nLa intensidad disminuye con el cuadrado de la distancia, no linealmente."
+        },
+        {
+          "titulo": "Aplicación al enunciado",
+          "contenido": "Datos: $r_1=2\\,\\text{m}$, $r_2=6\\,\\text{m}$, $I_1=I$.\n\n$$I_2=I\\left(\\frac{2}{6}\\right)^{2}=I\\left(\\frac{1}{3}\\right)^{2}=\\frac{I}{9}.$$\n\nResultado:\n\n$$I(6\\,\\text{m})=\\frac{I}{9}.$$"
+        },
+        {
+          "titulo": "Conclusión",
+          "contenido": "La frase es FALSA. La intensidad no decae linealmente con la distancia, no es $I/3$, sino con el cuadrado de la distancia, de modo que al triplicar la distancia se reduce $3^{2}=9$ veces, no $3$ veces."
+        }
+      ],
+      "resultado": "$I(6\\,\\text{m})=\\frac{I}{9}$; la frase es FALSA."
+    },
+    {
+      "numero": 4,
+      "titulo": "Peso e intensidad gravitatoria de un astronauta en Marte",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A1. Ley de la Gravitación Universal y superposición vectorial; A4. Intensidad de campo gravitatorio y líneas de campo",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Marte es un planeta bastante más pequeño que la Tierra. Concretamente, su diámetro es el 53% del de la Tierra y su masa el 11%. En los próximos años se quiere enviar un astronauta a la superficie de Marte. Si tuviese una masa de 80 kg, calcule a) el peso de este astronauta en la superficie de Marte y b) la intensidad del campo gravitatorio que soporta en dicha superficie. Datos: constante de gravitación universal $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; masa de la Tierra $M_T=6\\cdot10^{24}\\,\\text{kg}$; radio de la Tierra $R_T=6370\\,\\text{km}$. (Calificación de cada apartado, 1 punto).",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Peso del astronauta en la superficie de Marte."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Intensidad del campo gravitatorio en la superficie de Marte."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Datos derivados de Marte",
+          "contenido": "A partir de los datos:\n\n$$M_M=0{,}11\\,M_T=0{,}11\\cdot6\\cdot10^{24}=6{,}6\\cdot10^{23}\\,\\text{kg}.$$\n\n$$R_M=0{,}53\\,R_T=0{,}53\\cdot6370\\,\\text{km}=3376{,}1\\,\\text{km}=3{,}3761\\cdot10^{6}\\,\\text{m}.$$\n\nRecuerda que diámetros en igual proporción equivalen a radios en igual proporción. Convertimos los datos relativos a magnitudes absolutas SI antes de aplicar Newton."
+        },
+        {
+          "titulo": "Intensidad gravitatoria en la superficie",
+          "contenido": "Aplicando la ley de gravitación universal en la superficie de Marte:\n\n$$g_M=\\frac{G\\,M_M}{R_M^{2}}=\\frac{6{,}67\\cdot10^{-11}\\cdot6{,}6\\cdot10^{23}}{(3{,}3761\\cdot10^{6})^{2}}\\approx3{,}86\\,\\text{m}\\,\\text{s}^{-2}.$$\n\nNecesitamos este valor tanto para el apartado b) como para calcular el peso."
+        },
+        {
+          "titulo": "Peso del astronauta",
+          "contenido": "El peso es el producto de la masa por la intensidad gravitatoria:\n\n$$P=m\\,g_M=80\\cdot3{,}86\\approx3{,}09\\cdot10^{2}\\,\\text{N}.$$"
+        },
+        {
+          "titulo": "Resultado del apartado b)",
+          "contenido": "La intensidad del campo gravitatorio en la superficie de Marte es la calculada anteriormente:\n\n$$g_M\\approx3{,}86\\,\\text{m}\\,\\text{s}^{-2}.$$"
         }
       ],
-      "resultado": ""
+      "resultado": "a) $P\\approx3{,}09\\cdot10^{2}\\,\\text{N}$; b) $g_M\\approx3{,}86\\,\\text{m}\\,\\text{s}^{-2}$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Velocidad inicial para alcanzar 900 km de altura",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos",
+      "enunciado": "Determine la velocidad inicial a la que hay que lanzar un cohete verticalmente, desde la superficie de la Tierra, para que ascienda a una altura de 900 km. Datos: constante de gravitación universal $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; masa de la Tierra $M_T=6\\cdot10^{24}\\,\\text{kg}$; radio de la Tierra $R_T=6370\\,\\text{km}$. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Planteamiento por conservación de la energía",
+          "contenido": "Despreciando rozamiento, la energía mecánica se conserva entre el lanzamiento en la superficie terrestre, $r=R_T$, y el punto de altura máxima, $r=R_T+h$, donde la velocidad se anula:\n\n$$\\frac{1}{2}m\\,v_0^{2}-\\frac{G\\,M_T\\,m}{R_T}=-\\frac{G\\,M_T\\,m}{R_T+h}.$$\n\nDespejando $v_0$:\n\n$$v_0=\\sqrt{2\\,G\\,M_T\\left(\\frac{1}{R_T}-\\frac{1}{R_T+h}\\right)}.$$\n\nUsamos la energía potencial gravitatoria $-\\frac{G\\,M_T\\,m}{r}$, no $m\\,g\\,h$, porque la altura es comparable al radio terrestre y $g$ no es constante."
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "Datos: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$, $M_T=6\\cdot10^{24}\\,\\text{kg}$, $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$, $h=9{,}00\\cdot10^{5}\\,\\text{m}$.\n\n$$v_0=\\sqrt{2\\cdot6{,}67\\cdot10^{-11}\\cdot6\\cdot10^{24}\\left(\\frac{1}{6{,}37\\cdot10^{6}}-\\frac{1}{7{,}27\\cdot10^{6}}\\right)}.$$\n\n$$v_0\\approx3{,}94\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$v_0\\approx3{,}94\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}\\approx3{,}94\\,\\text{km}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Potencial eléctrico creado por dos cargas puntuales",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Dos cargas eléctricas positivas están situadas en los puntos $(0,0)$ y $(6,0)$ de un sistema de coordenadas en el que las distancias se miden en metros. La primera es de $4\\,\\mu\\text{C}$ y la segunda de $7\\,\\mu\\text{C}$. Calcule el potencial eléctrico en los puntos a) $A(1,0)$ y b) $B(8,0)$. Datos: $K_0=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$. (Calificación de cada apartado, 1 punto).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Potencial en $A(1,0)$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Potencial en $B(8,0)$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Planteamiento general",
+          "contenido": "El potencial eléctrico es una magnitud escalar. El potencial total creado por varias cargas es la suma algebraica de los potenciales individuales:\n\n$$V=\\sum_i K_0\\,\\frac{q_i}{r_i},$$\n\ncon $r_i$ la distancia desde la carga $q_i$ hasta el punto considerado. Datos: $q_1=4\\,\\mu\\text{C}=4\\cdot10^{-6}\\,\\text{C}$ en $(0,0)$; $q_2=7\\,\\mu\\text{C}=7\\cdot10^{-6}\\,\\text{C}$ en $(6,0)$.\n\nAl ser escalar, no hay que descomponer vectorialmente: basta sumar."
+        },
+        {
+          "titulo": "Apartado a) Potencial en A(1,0)",
+          "contenido": "Distancias a $A(1,0)$:\n\n$$r_1=1\\,\\text{m};\\qquad r_2=5\\,\\text{m}.$$\n\nEl punto $A$ está sobre el eje $X$ entre el origen y la segunda carga. Cálculo del potencial:\n\n$$V_A=K_0\\left(\\frac{q_1}{r_1}+\\frac{q_2}{r_2}\\right)=9\\cdot10^{9}\\left(\\frac{4\\cdot10^{-6}}{1}+\\frac{7\\cdot10^{-6}}{5}\\right).$$\n\n$$V_A=9\\cdot10^{9}\\left(4\\cdot10^{-6}+1{,}4\\cdot10^{-6}\\right)=4{,}86\\cdot10^{4}\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Apartado b) Potencial en B(8,0)",
+          "contenido": "Distancias a $B(8,0)$:\n\n$$r_1=8\\,\\text{m};\\qquad r_2=2\\,\\text{m}.$$\n\nEl punto $B$ está sobre el eje $X$ a la derecha de la segunda carga. Cálculo del potencial:\n\n$$V_B=K_0\\left(\\frac{q_1}{r_1}+\\frac{q_2}{r_2}\\right)=9\\cdot10^{9}\\left(\\frac{4\\cdot10^{-6}}{8}+\\frac{7\\cdot10^{-6}}{2}\\right).$$\n\n$$V_B=9\\cdot10^{9}\\left(0{,}5\\cdot10^{-6}+3{,}5\\cdot10^{-6}\\right)=3{,}60\\cdot10^{4}\\,\\text{V}.$$"
+        }
+      ],
+      "resultado": "a) $V_A=4{,}86\\cdot10^{4}\\,\\text{V}$; b) $V_B=3{,}60\\cdot10^{4}\\,\\text{V}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Velocidad de propagación y ecuación de la onda",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una onda tiene una longitud de onda de 10 m, una amplitud de 18 m y una frecuencia de 8 Hz. Determine a) la velocidad de propagación y b) la ecuación de la onda. (Calificación de cada apartado, 1 punto).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad de propagación."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Ecuación de la onda."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a) Velocidad de propagación",
+          "contenido": "Para una onda armónica, la velocidad de propagación se relaciona con la longitud de onda y la frecuencia mediante:\n\n$$v=\\lambda\\,f.$$\n\nSustituyendo $\\lambda=10\\,\\text{m}$ y $f=8\\,\\text{Hz}$:\n\n$$v=10\\cdot8=80\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Apartado b) Ecuación de la onda",
+          "contenido": "Pulsación angular:\n\n$$\\omega=2\\pi\\,f=2\\pi\\cdot8=16\\pi\\,\\text{rad}\\,\\text{s}^{-1}.$$\n\nNúmero de onda:\n\n$$k=\\frac{2\\pi}{\\lambda}=\\frac{2\\pi}{10}=\\frac{\\pi}{5}\\,\\text{rad}\\,\\text{m}^{-1}.$$\n\nTomando una onda armónica que se propaga en la dirección positiva de $X$, con fase inicial nula y amplitud $A=18\\,\\text{m}$:\n\n$$y(x,t)=A\\,\\text{sen}\\left(\\omega t-kx\\right)=18\\,\\text{sen}\\left(16\\pi t-\\frac{\\pi}{5}x\\right).$$\n\nComprobando con $v=\\frac{\\omega}{k}=\\frac{16\\pi}{\\pi/5}=80\\,\\text{m}\\,\\text{s}^{-1}$, lo cual coincide con el apartado a)."
+        }
+      ],
+      "resultado": "a) $v=80\\,\\text{m}\\,\\text{s}^{-1}$; b) $y(x,t)=18\\,\\text{sen}\\left(16\\pi t-\\frac{\\pi}{5}x\\right)\\,\\text{m}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Frecuencia y energía de un fotón",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un fotón viaja en el vacío a la velocidad de $3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$. La longitud de onda asociada al fotón es de $5\\cdot10^{-7}\\,\\text{m}$. Determine: a) la frecuencia de la onda y b) la energía del fotón. Datos: constante de Planck $h=6{,}6\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$. (Calificación de cada apartado, 1 punto).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Frecuencia de la onda."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Energía del fotón."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a) Frecuencia",
+          "contenido": "Toda onda electromagnética en el vacío cumple:\n\n$$c=\\lambda\\,f.$$\n\nDespejando la frecuencia:\n\n$$f=\\frac{c}{\\lambda}=\\frac{3\\cdot10^{8}}{5\\cdot10^{-7}}=6\\cdot10^{14}\\,\\text{Hz}.$$"
+        },
+        {
+          "titulo": "Apartado b) Energía",
+          "contenido": "La energía de un fotón está cuantizada según la hipótesis de Planck-Einstein:\n\n$$E=h\\,f.$$\n\nSustituyendo:\n\n$$E=6{,}6\\cdot10^{-34}\\cdot6\\cdot10^{14}=3{,}96\\cdot10^{-19}\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "a) $f=6\\cdot10^{14}\\,\\text{Hz}$; b) $E=3{,}96\\cdot10^{-19}\\,\\text{J}$."
+    },
+    {
+      "numero": 9,
+      "titulo": "Imagen producida por una lente convergente",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un objeto de 4 cm de altura está a una distancia de 2 cm de una lente convergente, cuya distancia focal es 16 cm. Determina: a) la posición de la imagen; y b) el tamaño de la imagen y las características de dicha imagen. (Calificación de cada apartado, 1 punto).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Posición de la imagen."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Tamaño y características de la imagen."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a) Posición de la imagen",
+          "contenido": "Adoptamos el convenio DIN: distancias medidas desde la lente; objetos reales a la izquierda con $s<0$, y $f=16\\,\\text{cm}$ para una lente convergente. La ecuación de las lentes delgadas es:\n\n$$\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f}.$$\n\nDatos: $s=-2\\,\\text{cm}$ (objeto real a 2 cm a la izquierda), $f=16\\,\\text{cm}$. El objeto está dentro de la distancia focal, $|s|<f$, lo que anticipa una imagen virtual.\n\nCálculo de $s'$:\n\n$$\\frac{1}{s'}=\\frac{1}{f}+\\frac{1}{s}=\\frac{1}{16}+\\frac{1}{-2}=\\frac{1}{16}-\\frac{1}{2}=-\\frac{7}{16}.$$\n\n$$s'=-\\frac{16}{7}\\,\\text{cm}\\approx-2{,}29\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "Apartado b) Tamaño y características",
+          "contenido": "El aumento lateral de una lente delgada es:\n\n$$m=\\frac{s'}{s}=\\frac{-\\frac{16}{7}}{-2}=\\frac{8}{7}\\approx1{,}14.$$\n\nEl cociente de signos iguales da aumento positivo: imagen derecha.\n\nTamaño de la imagen:\n\n$$y'=m\\,y=\\frac{8}{7}\\cdot4=\\frac{32}{7}\\,\\text{cm}\\approx4{,}57\\,\\text{cm}.$$\n\nCaracterísticas de la imagen: es virtual, ya que $s'<0$; es mayor que el objeto, pues $|m|>1$; y está al mismo lado del objeto, a unos $2{,}29\\,\\text{cm}$ de la lente. Es el comportamiento típico de una lupa."
+        }
+      ],
+      "resultado": "a) $s'=-\\frac{16}{7}\\,\\text{cm}\\approx-2{,}29\\,\\text{cm}$ (imagen virtual, al mismo lado del objeto); b) $y'=\\frac{32}{7}\\,\\text{cm}\\approx4{,}57\\,\\text{cm}$, imagen derecha, virtual y mayor."
+    },
+    {
+      "numero": 10,
+      "titulo": "Desintegración del 18F (radiofármaco PET)",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "El $^{18}\\text{F}$ es un isótopo radiactivo muy utilizado como radiofármaco en la Tomografía por Emisión de Positrones. Se desintegra con un periodo de semidesintegración de 110 minutos. Si se tiene una muestra de 12 g determine: a) la constante de desintegración de este radionúclido y b) la cantidad de $^{18}\\text{F}$ que quedará al cabo de 3 horas.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Constante de desintegración."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Masa restante a las 3 horas."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a) Constante de desintegración",
+          "contenido": "La ley de la desintegración radiactiva es $N=N_0\\,e^{-\\lambda t}$. Cuando $t=T_{1/2}$, se cumple $N=N_0/2$:\n\n$$\\frac{N_0}{2}=N_0\\,e^{-\\lambda T_{1/2}}.$$\n\nTomando logaritmos:\n\n$$\\lambda=\\frac{\\ln 2}{T_{1/2}}.$$\n\nSustitución numérica con $T_{1/2}=110\\,\\text{min}$:\n\n$$\\lambda=\\frac{\\ln 2}{110}\\approx\\frac{0{,}693}{110}\\approx6{,}30\\cdot10^{-3}\\,\\text{min}^{-1}.$$\n\nEquivalente en segundos:\n\n$$\\lambda\\approx\\frac{6{,}30\\cdot10^{-3}}{60}\\approx1{,}05\\cdot10^{-4}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Apartado b) Masa restante a las 3 horas",
+          "contenido": "Aplicación de la ley exponencial. Como $m=m_0\\,e^{-\\lambda t}$, también puede escribirse $m=m_0\\left(\\frac{1}{2}\\right)^{t/T_{1/2}}$. Para $t=3\\,\\text{h}=180\\,\\text{min}$:\n\n$$m=12\\,e^{-6{,}30\\cdot10^{-3}\\cdot180}\\approx12\\,e^{-1{,}134}\\approx3{,}86\\,\\text{g}.$$\n\nEquivalente a:\n\n$$m=12\\left(\\frac{1}{2}\\right)^{180/110}\\approx3{,}86\\,\\text{g}.$$"
+        }
+      ],
+      "resultado": "a) $\\lambda\\approx6{,}30\\cdot10^{-3}\\,\\text{min}^{-1}\\approx1{,}05\\cdot10^{-4}\\,\\text{s}^{-1}$; b) $m\\approx3{,}86\\,\\text{g}$."
     }
   ]
 }

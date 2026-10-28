@@ -1,42 +1,294 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-extremadura-2021-ordinaria",
+  "codigo": "EXA.FIS.EXT.2021.ORD.SOL",
+  "comunidad": "Extremadura",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2021,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen oficial de Física de la PAU de Extremadura, convocatoria Ordinaria de 2021. Consta de diez problemas de dos puntos cada uno, de los que el estudiante debe elegir cinco.",
+  "objetivo": "Evaluar el dominio de los contenidos de Física de 2º de Bachillerato: campo gravitatorio, campo electromagnético, vibraciones y ondas, óptica geométrica y física cuántica, mediante problemas y cuestiones de aplicación.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "El examen consta de 10 preguntas, cuyo valor es de 2 puntos cada una. El estudiante ha de elegir 5 preguntas. En ningún caso deberá responder a un número mayor del indicado, porque en la corrección del mismo sólo se tendrán en cuenta las cinco primeras cuestiones/preguntas respondidas. Tiempo máximo: 1 h 30 min."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "Datos aportados en los enunciados: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $\\mu=4\\pi\\cdot10^{-6}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $h=6{,}6\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Líneas de campo y superficies equipotenciales gravitatorias",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo; A5. Potencial gravitatorio, equipotenciales y relación con el campo",
+      "puntuacion": "2 puntos",
+      "enunciado": "Define y representa gráficamente las líneas de campo y las superficies equipotenciales de un campo gravitatorio. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Definiciones y representación",
+          "contenido": "Una línea de campo es una curva imaginaria tal que el vector intensidad del campo gravitatorio $\\vec g$ es tangente a ella en cada punto. Su sentido es el del campo (apunta hacia donde una masa de prueba sería empujada). Propiedades: las líneas nunca se cortan (en un punto el campo tiene una dirección única); salen del infinito y entran en las masas (el campo gravitatorio es siempre atractivo: las masas son sumideros, no fuentes); la densidad de líneas es proporcional al módulo de $\\vec g$.\n\nEs la definición canónica usada en los libros de texto de PAU.\n\nUna superficie equipotencial es el lugar geométrico de los puntos del espacio que tienen el mismo valor del potencial gravitatorio $V$:\n\n$$V=-\\frac{GM}{r}=\\text{constante}.$$\n\nPropiedades: son perpendiculares en cada punto a las líneas de campo; el trabajo realizado por el campo al mover una masa entre dos puntos de la misma superficie equipotencial es nulo:\n\n$$W_g=-m\\,\\Delta V=0;$$\n\nlas superficies no se cortan entre sí.\n\nSu perpendicularidad con $\\vec g$ es consecuencia de $\\vec g=-\\nabla V$."
+        },
+        {
+          "titulo": "Representación gráfica para una masa puntual",
+          "contenido": "Para una masa puntual $M$ situada en el origen: líneas de campo: rectas radiales que apuntan hacia $M$ (campo atractivo), distribuidas uniformemente en todas las direcciones. Superficies equipotenciales: esferas concéntricas centradas en $M$. Cuanto más cerca de $M$, más juntas están, porque $V$ varía más rápidamente.\n\nEsquema (vista 2D): las líneas de campo son radios que convergen hacia $M$ y las equipotenciales son circunferencias concéntricas; en cada punto, el radio y la circunferencia son perpendiculares."
+        }
+      ],
+      "resultado": "Líneas de campo radiales hacia la masa; equipotenciales esféricas concéntricas; ambas mutuamente perpendiculares."
+    },
+    {
+      "numero": 2,
+      "titulo": "Trabajo entre dos puntos de un campo eléctrico",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos",
+      "enunciado": "Calcula el trabajo necesario para transportar una carga entre dos puntos de un campo eléctrico creado por una o más cargas puntuales a partir de la diferencia de potencial. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Potencial creado por cargas puntuales",
+          "contenido": "El potencial eléctrico en un punto creado por una carga puntual $q$ a distancia $r$ es:\n\n$$V=k\\,\\frac{q}{r}.$$\n\nSi hay varias cargas, por el principio de superposición:\n\n$$V=\\sum_i k\\,\\frac{q_i}{r_i}.$$\n\nUnidad: voltios ($\\text{V}$).\n\nNecesario para evaluar $V_A$ y $V_B$ en cada uno de los dos puntos del enunciado."
+        },
+        {
+          "titulo": "Trabajo del campo y trabajo del agente externo",
+          "contenido": "El campo eléctrico es conservativo. El trabajo realizado por la fuerza eléctrica al transportar una carga $q$ desde $A$ hasta $B$ es:\n\n$$W_{\\text{campo}}=q\\,(V_A-V_B)=-q\\,\\Delta V.$$\n\nSi la carga se mueve cuasiestáticamente, el trabajo del agente externo (lo que hay que aportar) es:\n\n$$W_{\\text{ext}}=q\\,(V_B-V_A)=q\\,\\Delta V.$$\n\nPor el teorema de la energía cinética con $\\Delta K=0$, $W_{\\text{ext}}+W_{\\text{campo}}=0$."
+        },
+        {
+          "titulo": "Discusión de signos",
+          "contenido": "Si $q>0$ y $V_B>V_A$: $W_{\\text{ext}}>0$ (hay que aportar energía: la carga positiva no quiere subir hacia mayor potencial). Si $q>0$ y $V_B<V_A$: $W_{\\text{ext}}<0$ (el campo lo realiza espontáneamente). Para una carga negativa los signos se invierten. Observación: el trabajo solo depende de los puntos inicial y final, no de la trayectoria — esto es consecuencia directa del carácter conservativo del campo."
+        }
+      ],
+      "resultado": "$W_{\\text{ext}}=q\\,(V_B-V_A)$; $W_{\\text{campo}}=q\\,(V_A-V_B)$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Corrección de la miopía",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos",
+      "enunciado": "Diga si la siguiente frase es CIERTA o FALSA y razone la respuesta: \"La miopía del ojo humano se corrige con lentes divergentes\". (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Funcionamiento del ojo emétrope",
+          "contenido": "Un ojo normal (emétrope) enfoca los rayos paralelos procedentes del infinito justo sobre la retina, gracias a la convergencia conjunta de córnea y cristalino.\n\nSe usa como referencia para entender qué falla en el ojo miope."
+        },
+        {
+          "titulo": "Defecto de la miopía",
+          "contenido": "En el ojo miope, el sistema óptico es demasiado convergente o el globo ocular es demasiado largo. Los rayos procedentes de objetos lejanos convergen delante de la retina, formando una imagen borrosa.\n\nDiagnóstico óptico estándar de la miopía."
+        },
+        {
+          "titulo": "Solución con lente divergente",
+          "contenido": "Para corregirla se antepone al ojo una lente divergente (de potencia negativa, $P<0$). Esta lente diverge ligeramente los rayos antes de entrar al ojo, de manera que el cristalino los focalice exactamente en la retina. En términos de potencia:\n\n$$P=\\frac{1}{f}<0.$$\n\nUna miopía se corrige con lentes de focal negativa y potencia negativa (por ejemplo, gafas de potencia negativa)."
+        }
+      ],
+      "resultado": "La frase es CIERTA: la miopía se corrige con lentes divergentes."
+    },
+    {
+      "numero": 4,
+      "titulo": "Masa de un planeta a partir del periodo de un satélite",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A2. Leyes de Kepler y relación con la gravitación; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos",
+      "enunciado": "Un satélite orbita alrededor de un planeta describiendo una circunferencia de radio 5,6·10^7 m y tarda 12 h en dar una vuelta completa. Determine la masa del planeta. Datos: constante de gravitación universal (G) = 6,67·10^-11 N·m^2/kg^2. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Tercera ley de Kepler / Equilibrio fuerza gravitatoria - centrípeta",
+          "contenido": "Para un satélite en órbita circular, la fuerza gravitatoria ejercida por el planeta proporciona la aceleración centrípeta:\n\n$$\\frac{G\\,M\\,m}{r^{2}}=\\frac{m\\,v^{2}}{r}.$$\n\nDespejando la masa del planeta $M$:\n\n$$M=\\frac{v^{2}r}{G}.$$\n\nComo $v=\\frac{2\\pi r}{T}$, queda:\n\n$$M=\\frac{4\\pi^{2}r^{3}}{G\\,T^{2}}.$$\n\nÉsta es la 3.ª ley de Kepler en su forma dinámica.\n\nLa masa del satélite se cancela y solo intervienen $r$, $T$ y $G$, magnitudes conocidas."
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "Datos: $r=5{,}6\\cdot10^{7}\\,\\text{m}$, $T=12\\,\\text{h}=4{,}32\\cdot10^{4}\\,\\text{s}$, $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$.\n\nNumerador: $4\\pi^{2}r^{3}=4\\pi^{2}(5{,}6\\cdot10^{7})^{3}\\approx6{,}93\\cdot10^{24}\\,\\text{m}^{3}$; $T^{2}=(4{,}32\\cdot10^{4})^{2}\\approx1{,}87\\cdot10^{9}\\,\\text{s}^{2}$.\n\nDenominador: $G\\,T^{2}\\approx6{,}67\\cdot10^{-11}\\cdot1{,}87\\cdot10^{9}\\approx1{,}24\\cdot10^{-1}$.\n\n$$M\\approx\\frac{6{,}93\\cdot10^{24}}{1{,}24\\cdot10^{-1}}\\approx5{,}57\\cdot10^{25}\\,\\text{kg}.$$"
+        }
+      ],
+      "resultado": "$M\\approx5{,}57\\cdot10^{25}\\,\\text{kg}$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Intensidad de corriente en un hilo a partir de B",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro",
+      "puntuacion": "2 puntos",
+      "enunciado": "Por un cable conductor recto e indefinido circula una corriente eléctrica que genera un campo magnético de 0,006 T en un punto situado a una distancia de 4 cm de dicho conductor y en un plano perpendicular al mismo. Determine la intensidad de corriente que circula por el conductor. Datos: permeabilidad magnética del medio = 4·π·10^-6 T·m/A. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Ley de Biot-Savart para hilo recto indefinido",
+          "contenido": "El módulo del campo magnético creado por un hilo recto indefinido a una distancia $d$ es:\n\n$$B=\\frac{\\mu\\,I}{2\\pi d}.$$\n\nDespejando la intensidad:\n\n$$I=\\frac{2\\pi d\\,B}{\\mu}.$$\n\nEs la fórmula consecuencia directa de la ley de Ampère aplicada a la simetría cilíndrica del hilo recto."
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "Datos: $B=0{,}006\\,\\text{T}$, $d=4\\,\\text{cm}=0{,}04\\,\\text{m}$, $\\mu=4\\pi\\cdot10^{-6}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$.\n\n$$I=\\frac{2\\pi(0{,}04)(0{,}006)}{4\\pi\\cdot10^{-6}}=\\frac{0{,}00048\\pi}{4\\pi\\cdot10^{-6}}=120\\,\\text{A}.$$"
+        }
+      ],
+      "resultado": "$I=120\\,\\text{A}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Tiempo y longitud de onda de una onda mecánica",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una onda mecánica de frecuencia de 0,08 Hz viaja a una velocidad de 200 cm/s. Determina: a) el tiempo que tardará en alcanzar un punto situado a 30 m del foco donde se origina y b) su longitud de onda. (Calificación de cada apartado, 1 punto).",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Tiempo en alcanzar un punto a 30 m del foco."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Longitud de onda."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Apartado a) Tiempo de propagación",
+          "contenido": "El frente de onda viaja a velocidad constante $v$. El tiempo en alcanzar un punto a distancia $d$ es:\n\n$$t=\\frac{d}{v}.$$\n\nDatos: $d=30\\,\\text{m}$, $v=200\\,\\text{cm}\\,\\text{s}^{-1}=2\\,\\text{m}\\,\\text{s}^{-1}$.\n\n$$t=\\frac{30}{2}=15\\,\\text{s}.$$"
+        },
+        {
+          "titulo": "Apartado b) Longitud de onda",
+          "contenido": "Aplicación de $v=\\lambda\\,f$:\n\n$$v=\\lambda\\,f\\quad\\Rightarrow\\quad\\lambda=\\frac{v}{f}.$$\n\n$$\\lambda=\\frac{2}{0{,}08}=25\\,\\text{m}.$$"
         }
       ],
-      "resultado": ""
+      "resultado": "$t=15\\,\\text{s}$; $\\lambda=25\\,\\text{m}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Intensidad sonora y nivel de intensidad",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un foco sonoro emite con potencia de 50 W, ondas sonoras que se transmiten en un medio homogéneo. Hallar: a) la intensidad sonora y b) el nivel de intensidad sonora o sensación sonora en un punto que está a 12 m del foco, prescindiendo de la absorción que pudiera producirse en el medio. Dato: intensidad umbral = 10^-12 W/m^2. (Calificación de cada apartado, 1 punto).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Intensidad sonora a 12 m."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Nivel de intensidad sonora a 12 m."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a) Intensidad sonora",
+          "contenido": "Onda esférica sin absorción. La intensidad de una onda esférica a distancia $r$ del foco es la potencia dividida por el área de la esfera:\n\n$$I=\\frac{P}{4\\pi r^{2}}.$$\n\nDatos: $P=50\\,\\text{W}$, $r=12\\,\\text{m}$.\n\n$$I=\\frac{50}{4\\pi(12)^{2}}=\\frac{50}{576\\pi}\\approx2{,}76\\cdot10^{-2}\\,\\text{W}\\,\\text{m}^{-2}.$$"
+        },
+        {
+          "titulo": "Apartado b) Nivel de intensidad (sensación sonora)",
+          "contenido": "Definición logarítmica del nivel. El nivel de intensidad sonora se mide en decibelios (dB):\n\n$$\\beta=10\\log_{10}\\left(\\frac{I}{I_0}\\right),$$\n\ncon $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$ (umbral de audición).\n\nEs la respuesta logarítmica del oído humano según la ley de Weber-Fechner.\n\nCálculo numérico:\n\n$$\\beta=10\\log_{10}\\left(\\frac{2{,}76\\cdot10^{-2}}{10^{-12}}\\right)=10\\log_{10}(2{,}76\\cdot10^{10})\\approx104{,}4\\,\\text{dB}.$$"
+        }
+      ],
+      "resultado": "$I\\approx2{,}76\\cdot10^{-2}\\,\\text{W}\\,\\text{m}^{-2}$; $\\beta\\approx104{,}4\\,\\text{dB}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Lente bicóncava: focal, posición, tamaño y características",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (0,5 + 0,5 + 0,5 + 0,5)",
+      "enunciado": "Una lente esférica, delgada y bicóncava, cuyas caras tienen radios iguales a 8 cm, tiene un índice de refracción de 1,5 y está situada en el vacío. Determine a) la distancia focal imagen; b) la posición y c) el tamaño de la imagen que esa lente forma de un objeto de altura 2 cm situado a 4 cm delante de la lente; d) por último indique las características de esa imagen. (Calificación de cada apartado, 0,5 puntos).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Distancia focal imagen."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Posición de la imagen."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Tamaño de la imagen."
+        },
+        {
+          "letra": "d",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Características de la imagen."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a) Distancia focal imagen",
+          "contenido": "Ecuación del fabricante de lentes. Para una lente delgada en el vacío:\n\n$$\\frac{1}{f}=(n-1)\\left(\\frac{1}{R_1}-\\frac{1}{R_2}\\right).$$\n\nConvenio DIN: el sentido positivo es el de la propagación. Para una lente bicóncava simétrica, la primera cara es cóncava vista por la luz incidente, $R_1=-8\\,\\text{cm}$, y la segunda cara es convexa hacia la salida, $R_2=+8\\,\\text{cm}$. Con módulo $8\\,\\text{cm}$:\n\n$$\\frac{1}{f}=(1{,}5-1)\\left(\\frac{1}{-8}-\\frac{1}{8}\\right)=0{,}5\\left(-\\frac{2}{8}\\right)=-\\frac{1}{8}\\,\\text{cm}^{-1}.$$\n\nEl criterio de signos es esencial para que aparezcan los signos correctos en la ecuación.\n\n$$f=-8\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "Apartado b) Posición de la imagen",
+          "contenido": "Ecuación de Gauss de las lentes delgadas. Datos: $s=-4\\,\\text{cm}$ (objeto real), $f=-8\\,\\text{cm}$.\n\n$$\\frac{1}{f}=\\frac{1}{s'}-\\frac{1}{s}\\quad\\Rightarrow\\quad\\frac{1}{s'}=\\frac{1}{f}+\\frac{1}{s}.$$\n\n$$\\frac{1}{s'}=-\\frac{1}{8}+\\frac{1}{-4}=-\\frac{1}{8}-\\frac{2}{8}=-\\frac{3}{8}\\quad\\Rightarrow\\quad s'=-\\frac{8}{3}\\,\\text{cm}\\approx-2{,}67\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "Apartado c) Tamaño de la imagen",
+          "contenido": "Aumento lateral:\n\n$$m=\\frac{s'}{s}=\\frac{-\\frac{8}{3}}{-4}=\\frac{2}{3}\\approx0{,}67.$$\n\n$$y'=m\\,y=\\frac{2}{3}\\cdot2\\,\\text{cm}\\approx1{,}33\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "Apartado d) Características",
+          "contenido": "Análisis de la imagen: virtual ($s'<0$); derecha ($m>0$); menor ($|m|<1$ ⇒ tamaño reducido). Es el comportamiento típico de toda lente divergente con un objeto real: imagen siempre virtual, derecha y menor."
+        }
+      ],
+      "resultado": "$f=-8\\,\\text{cm}$ (lente divergente); $s'\\approx-2{,}67\\,\\text{cm}$; $y'\\approx1{,}33\\,\\text{cm}$; imagen virtual, derecha y menor."
+    },
+    {
+      "numero": 9,
+      "titulo": "Efecto fotoeléctrico: trabajo de extracción y energía cinética",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un haz de luz incide sobre un metal, cuya frecuencia umbral para el efecto fotoeléctrico es de 4·10^14 Hz. Determine: A) La energía mínima necesaria para arrancar un electrón de dicho metal. B) La energía cinética de los electrones producidos cuando se ilumina el metal con fotones de longitud de onda igual a 6·10^-7 m. Datos: Velocidad de la luz (c) = 3·10^8 m/s; Constante de Planck (h) = 6,6·10^-34 J·s. (Calificación de cada apartado, 1 punto).",
+      "apartados": [
+        {
+          "letra": "A",
+          "puntuacion": "1 punto",
+          "enunciado": "Energía mínima para arrancar un electrón (trabajo de extracción)."
+        },
+        {
+          "letra": "B",
+          "puntuacion": "1 punto",
+          "enunciado": "Energía cinética de los electrones para λ = 6·10^-7 m."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado A) Trabajo de extracción",
+          "contenido": "Definición del trabajo de extracción. El trabajo de extracción (o función de trabajo) se define como la mínima energía que hay que comunicar a un electrón para arrancarlo del metal. Está relacionado con la frecuencia umbral mediante:\n\n$$W=h\\,f_0.$$\n\nEs la condición límite del efecto fotoeléctrico de Einstein: a frecuencias inferiores a $f_0$ no hay emisión, por mucha intensidad luminosa.\n\nCálculo numérico:\n\n$$W=6{,}6\\cdot10^{-34}\\cdot4\\cdot10^{14}=2{,}64\\cdot10^{-19}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Apartado B) Energía cinética de los fotoelectrones",
+          "contenido": "Frecuencia del fotón incidente:\n\n$$f=\\frac{c}{\\lambda}=\\frac{3\\cdot10^{8}}{6\\cdot10^{-7}}=5\\cdot10^{14}\\,\\text{Hz}.$$\n\nEsta frecuencia supera la umbral ($4\\cdot10^{14}\\,\\text{Hz}$), así que sí se produce efecto fotoeléctrico.\n\nComprobamos que el fenómeno tiene lugar antes de aplicar la ecuación de Einstein.\n\nEcuación de Einstein del efecto fotoeléctrico. La energía del fotón se reparte entre arrancar al electrón y darle energía cinética:\n\n$$E_{\\text{fotón}}=W+K_{\\text{max}}.$$\n\nDespejando:\n\n$$K_{\\text{max}}=h\\,f-W=6{,}6\\cdot10^{-34}\\cdot5\\cdot10^{14}-2{,}64\\cdot10^{-19}=3{,}3\\cdot10^{-19}-2{,}64\\cdot10^{-19}=6{,}6\\cdot10^{-20}\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$W=2{,}64\\cdot10^{-19}\\,\\text{J}$; $K_{\\text{max}}=6{,}6\\cdot10^{-20}\\,\\text{J}$."
+    },
+    {
+      "numero": 10,
+      "titulo": "Hipótesis de De Broglie aplicada a un cohete",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos",
+      "enunciado": "Calcule la masa de un cohete que se mueve a una velocidad de 2000 km/h si la longitud de la onda de materia asociada es 4,2·10^-40 m. Datos: Constante de Planck (h) = 6,6·10^-34 J·s. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Hipótesis de De Broglie",
+          "contenido": "Toda partícula con momento lineal $p=m\\,v$ lleva asociada una onda de materia de longitud:\n\n$$\\lambda=\\frac{h}{p}=\\frac{h}{m\\,v}.$$\n\nDespejando la masa:\n\n$$m=\\frac{h}{\\lambda\\,v}.$$\n\nGeneralización de la dualidad onda-corpúsculo a sistemas macroscópicos."
+        },
+        {
+          "titulo": "Conversión de unidades y cálculo",
+          "contenido": "Conversión: $v=2000\\,\\text{km}\\,\\text{h}^{-1}=\\frac{2000\\cdot1000}{3600}\\,\\text{m}\\,\\text{s}^{-1}\\approx5{,}56\\cdot10^{2}\\,\\text{m}\\,\\text{s}^{-1}$.\n\nDenominador: $\\lambda\\,v=4{,}2\\cdot10^{-40}\\cdot5{,}56\\cdot10^{2}\\approx2{,}33\\cdot10^{-37}\\,\\text{m}^{2}\\,\\text{s}^{-1}$ ⇒ $m=\\frac{6{,}6\\cdot10^{-34}}{2{,}33\\cdot10^{-37}}\\approx2{,}83\\cdot10^{3}\\,\\text{kg}$."
+        }
+      ],
+      "resultado": "$m\\approx2{,}83\\cdot10^{3}\\,\\text{kg}$."
     }
   ]
 }

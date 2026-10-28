@@ -1,42 +1,332 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-extremadura-2021-extraordinaria",
+  "codigo": "EXA.FIS.EXT.2021.EXT.SOL",
+  "comunidad": "Extremadura",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2021,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen oficial de Física de la PAU de Extremadura, convocatoria extraordinaria de 2021, con diez problemas resueltos paso a paso.",
+  "objetivo": "Evaluar campos gravitatorio y eléctrico, ondas, óptica geométrica, física nuclear y física cuántica mediante problemas de aplicación y razonamiento.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "El examen consta de 10 preguntas, cuyo valor es de 2 puntos cada una. El estudiante ha de elegir 5 preguntas. En ningún caso deberá responder a un número mayor del indicado, porque en la corrección del mismo sólo se tendrán en cuenta las cinco primeras cuestiones/preguntas respondidas. Tiempo máximo: 1 h 30 min."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "Datos y constantes utilizados en los problemas: $K_0=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; intensidad umbral $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$; constante de Planck $h=6{,}6\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; masa del protón $m_p=1{,}67\\cdot10^{-27}\\,\\text{kg}$; índice de refracción del diamante $n_{\\text{diamante}}=2{,}4$; índice de refracción del aire $n_{\\text{aire}}=1$."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Campos de fuerza conservativos",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; A6. Trabajo, energía potencial y energía mecánica gravitatoria",
+      "puntuacion": "2 puntos",
+      "enunciado": "Campos de fuerza conservativos. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Definición de campo de fuerza",
+          "contenido": "Un campo de fuerza es una región del espacio en cuyos puntos está definida una fuerza que actuaría sobre una partícula adecuada (masa, carga, polo magnético) si se la colocara allí. Ejemplos: campo gravitatorio (sobre masas) y campo eléctrico (sobre cargas).\n\nEs la noción primaria que necesitamos para particularizar el concepto a conservativo."
+        },
+        {
+          "titulo": "Definición de campo conservativo",
+          "contenido": "Un campo de fuerza es conservativo si cumple cualquiera de estas propiedades equivalentes:\n\n1. El trabajo realizado por $\\vec F$ entre dos puntos $A$ y $B$ es independiente de la trayectoria seguida.\n\n2. El trabajo a lo largo de cualquier trayectoria cerrada es nulo:\n\n$$\\oint \\vec F\\cdot d\\vec r=0.$$\n\n3. Existe una función escalar $U$, llamada energía potencial, tal que:\n\n$$\\vec F=-\\nabla U,$$\n\nequivalentemente:\n\n$$\\nabla\\times\\vec F=\\vec 0.$$\n\nLas cuatro caracterizaciones son equivalentes en un dominio simplemente conexo."
+        },
+        {
+          "titulo": "Consecuencia: conservación de la energía mecánica",
+          "contenido": "Si las únicas fuerzas que actúan son conservativas, la energía mecánica se conserva durante el movimiento:\n\n$$E_m=E_c+E_p=\\text{constante}.$$\n\nDe ahí el nombre conservativo: se conserva la energía mecánica. Es la propiedad que justifica el nombre y la utilidad de la clasificación."
+        },
+        {
+          "titulo": "Ejemplos físicos",
+          "contenido": "Campos conservativos: campo gravitatorio, campo eléctrico estático y fuerza recuperadora elástica.\n\nCampos no conservativos o disipativos: fuerza de rozamiento y fuerza viscosa. El trabajo depende del camino y disipa energía mecánica en forma de calor."
+        }
+      ],
+      "resultado": "Un campo es conservativo si admite una energía potencial y el trabajo no depende del camino."
+    },
+    {
+      "numero": 2,
+      "titulo": "Ley de Coulomb",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz",
+      "puntuacion": "2 puntos",
+      "enunciado": "Ley de Coulomb: enunciado y expresión matemática indicando las magnitudes que aparecen. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Enunciado",
+          "contenido": "La Ley de Coulomb establece que la fuerza electrostática entre dos cargas puntuales en reposo es directamente proporcional al producto de los valores absolutos de las cargas e inversamente proporcional al cuadrado de la distancia que las separa. Su dirección coincide con la recta que une las cargas. Es atractiva si las cargas son de distinto signo y repulsiva si son del mismo signo."
+        },
+        {
+          "titulo": "Expresión matemática (forma vectorial)",
+          "contenido": "Para dos cargas puntuales $q_1$ y $q_2$ separadas por una distancia $r$ en el vacío:\n\n$$\\vec F_{12}=K_0\\dfrac{q_1 q_2}{r^{2}}\\,\\hat r_{12},$$\n\ndonde $\\hat r_{12}$ es el vector unitario que va desde $q_1$ hasta $q_2$; la fuerza sobre $q_2$ debida a $q_1$ es $\\vec F_{12}$. En forma escalar:\n\n$$F=K_0\\dfrac{|q_1 q_2|}{r^{2}}.$$"
+        },
+        {
+          "titulo": "Magnitudes y unidades SI",
+          "contenido": "$F$ es la fuerza eléctrica, en newton ($\\text{N}$). $q_1$ y $q_2$ son las cargas eléctricas, en culombio ($\\text{C}$). $r$ es la distancia entre ambas cargas, en metro ($\\text{m}$). $K_0$ es la constante de Coulomb en el vacío:\n\n$$K_0=\\dfrac{1}{4\\pi\\varepsilon_0},$$\n\ncon $\\varepsilon_0$ la permitividad eléctrica del vacío. En un medio con permitividad $\\varepsilon$, $K=\\dfrac{1}{4\\pi\\varepsilon}$, menor que $K_0$, pues el medio apantalla la fuerza."
+        }
+      ],
+      "resultado": "$$\\vec F_{12}=K_0\\dfrac{q_1 q_2}{r^{2}}\\,\\hat r_{12};\\qquad F=K_0\\dfrac{|q_1 q_2|}{r^{2}}.$$"
+    },
+    {
+      "numero": 3,
+      "titulo": "Intensidad gravitatoria de un planeta de doble masa",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo",
+      "puntuacion": "2 puntos",
+      "enunciado": "Diga si la siguiente frase es CIERTA o FALSA y razone la respuesta: \"La intensidad del campo gravitatorio en un planeta cuya masa es el doble que la de la Tierra y tiene el mismo radio será 4 veces el campo gravitatorio terrestre\" (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Expresión de la intensidad gravitatoria",
+          "contenido": "La intensidad del campo gravitatorio en la superficie de un planeta de masa $M$ y radio $R$ es:\n\n$$g=\\dfrac{G M}{R^{2}}.$$\n\nEs proporcional a $M$ y a $1/R^{2}$."
+        },
+        {
+          "titulo": "Aplicación al caso del enunciado",
+          "contenido": "Sea el planeta con $M'=2M_T$ y $R'=R_T$.\n\n$$g'=\\dfrac{G(2M_T)}{R_T^{2}}=2\\dfrac{G M_T}{R_T^{2}}=2g_T.$$"
+        },
+        {
+          "titulo": "Conclusión",
+          "contenido": "La frase es FALSA. La intensidad gravitatoria del planeta es 2 veces, no 4 veces, la terrestre. El radio aparece al cuadrado en el denominador, pero como $R'=R_T$, esa dependencia no introduce ningún factor adicional."
+        }
+      ],
+      "resultado": "La frase es falsa: $g'=2g_T$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Potencial y trabajo en un campo creado por una carga puntual",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B4. Potencial eléctrico, equipotenciales y campo uniforme; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una carga de $60\\,\\mu\\text{C}$ crea un campo eléctrico. Calcule: A) el potencial eléctrico en un punto situado a $8\\,\\text{m}$ de la carga creadora. B) El trabajo que hay que realizar para trasladar una carga de $-15\\,\\mu\\text{C}$ desde este punto a otro punto situado a $12\\,\\text{m}$ de la carga creadora. Datos: $K_0=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$. (Calificación de cada apartado, 1 punto).",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "A",
+          "puntuacion": "1 punto",
+          "enunciado": "Potencial eléctrico a $8\\,\\text{m}$."
+        },
+        {
+          "letra": "B",
+          "puntuacion": "1 punto",
+          "enunciado": "Trabajo para trasladar $-15\\,\\mu\\text{C}$ desde $8\\,\\text{m}$ a $12\\,\\text{m}$."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Apartado A) Potencial a 8 m",
+          "contenido": "Potencial creado por una carga puntual:\n\n$$V_A=K_0\\dfrac{Q}{r_A}=9\\cdot10^{9}\\dfrac{60\\cdot10^{-6}}{8}=6{,}75\\cdot10^{4}\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Apartado B) Trabajo de A a B",
+          "contenido": "Potencial en $B$ (a $12\\,\\text{m}$):\n\n$$V_B=K_0\\dfrac{Q}{r_B}=9\\cdot10^{9}\\dfrac{60\\cdot10^{-6}}{12}=4{,}5\\cdot10^{4}\\,\\text{V}.$$\n\nLa diferencia de potencial entre $A$ y $B$ es:\n\n$$V_B-V_A=4{,}5\\cdot10^{4}-6{,}75\\cdot10^{4}=-2{,}25\\cdot10^{4}\\,\\text{V}.$$\n\nPara trasladar cuasiestáticamente la carga desde $A$ hasta $B$:\n\n$$W_{\\text{ext}}=q(V_B-V_A)=(-15\\cdot10^{-6})(-2{,}25\\cdot10^{4})=0{,}3375\\,\\text{J}.$$"
         }
       ],
-      "resultado": ""
+      "resultado": "A) $V_A=6{,}75\\cdot10^{4}\\,\\text{V}$.\nB) $W_{\\text{ext}}=0{,}3375\\,\\text{J}$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Análisis de una ecuación de onda",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos (0,5 + 0,5 + 0,5 + 0,5)",
+      "enunciado": "La ecuación de una onda viene dada por $y(x,t)=80\\,\\text{sen}\\left[2\\pi\\left(6t-\\dfrac{x}{20}\\right)\\right]$, estando las magnitudes medidas en el Sistema Internacional de unidades. Determinar: a) la amplitud, b) la frecuencia, c) la longitud de onda y d) la velocidad de propagación. (Calificación de cada apartado, 0,5 puntos).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Amplitud."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Frecuencia."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Longitud de onda."
+        },
+        {
+          "letra": "d",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Velocidad de propagación."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Identificación de la forma canónica",
+          "contenido": "Forma estándar de una onda armónica:\n\n$$y(x,t)=A\\,\\text{sen}\\left[2\\pi\\left(ft-\\dfrac{x}{\\lambda}\\right)\\right].$$\n\nIdentificando coeficientes con la ecuación dada:\n\n$$A=80;\\qquad f=6\\,\\text{Hz};\\qquad \\lambda=20\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Apartado a) Amplitud",
+          "contenido": "Coeficiente del seno:\n\n$$A=80\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Apartado b) Frecuencia",
+          "contenido": "El coeficiente de $t$ dentro del paréntesis es $2\\pi f$, así que $f=6\\,\\text{Hz}$:\n\n$$f=6\\,\\text{Hz}.$$"
+        },
+        {
+          "titulo": "Apartado c) Longitud de onda",
+          "contenido": "Coeficiente de $x$:\n\n$$\\dfrac{2\\pi}{\\lambda}=\\dfrac{2\\pi}{20}\\Rightarrow \\lambda=20\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Apartado d) Velocidad de propagación",
+          "contenido": "Relación $v=\\lambda f$:\n\n$$v=20\\cdot6=120\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "a) $A=80\\,\\text{m}$; b) $f=6\\,\\text{Hz}$; c) $\\lambda=20\\,\\text{m}$; d) $v=120\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Sensación sonora y potencia del foco",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un foco sonoro emite ondas sonoras que se transmiten en un medio homogéneo. La intensidad sonora es $0{,}1\\,\\text{W}\\,\\text{m}^{-2}$ en un punto situado a $14\\,\\text{m}$ de dicho foco. Hallar: a) el nivel de intensidad sonora o sensación sonora en dicho punto, prescindiendo de la absorción que pudiera producirse en el medio; y b) la potencia con que emite el foco sonoro. Dato: intensidad umbral $=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$. (Calificación, 2 puntos).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Nivel de intensidad sonora a $14\\,\\text{m}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Potencia del foco."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a) Sensación sonora",
+          "contenido": "Definición logarítmica:\n\n$$\\beta=10\\log_{10}\\left(\\dfrac{I}{I_0}\\right).$$\n\nCon $I=0{,}1\\,\\text{W}\\,\\text{m}^{-2}$ e $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$:\n\n$$\\beta=10\\log_{10}\\left(\\dfrac{0{,}1}{10^{-12}}\\right)=10\\log_{10}(10^{11})=110\\,\\text{dB}.$$"
+        },
+        {
+          "titulo": "Apartado b) Potencia del foco",
+          "contenido": "Para una onda esférica:\n\n$$I=\\dfrac{P}{4\\pi r^{2}}\\Rightarrow P=I\\,4\\pi r^{2}.$$\n\nCon $r=14\\,\\text{m}$:\n\n$$P=0{,}1\\cdot4\\pi\\cdot14^{2}=0{,}1\\cdot4\\pi\\cdot196\\approx2{,}46\\cdot10^{2}\\,\\text{W}.$$"
+        }
+      ],
+      "resultado": "a) $\\beta=110\\,\\text{dB}$; b) $P\\approx2{,}46\\cdot10^{2}\\,\\text{W}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Refracción aire-diamante: ángulo de incidencia",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
+      "puntuacion": "2 puntos",
+      "enunciado": "Un haz muy fino de luz procedente del aire incide sobre la superficie de un diamante. Se observa que el rayo en el interior del diamante respecto a la horizontal forma un ángulo de $70^{\\circ}$. Determine el ángulo de incidencia respecto a la normal a la superficie del diamante. Datos: índice de refracción del diamante: $2{,}4$; índice de refracción del aire $=1$. (Calificación, 2 puntos).",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Interpretación geométrica del enunciado",
+          "contenido": "La superficie del diamante es horizontal. La normal a esa superficie es vertical. El rayo refractado forma un ángulo de $70^{\\circ}$ respecto a la horizontal; por tanto, respecto a la normal el ángulo de refracción es:\n\n$$r=90^{\\circ}-70^{\\circ}=20^{\\circ}.$$\n\nEl ángulo de refracción se mide siempre respecto a la normal, no respecto a la superficie."
+        },
+        {
+          "titulo": "Ley de Snell",
+          "contenido": "Aplicamos la ley de Snell con $n_{\\text{aire}}=1$ y $n_{\\text{diamante}}=2{,}4$:\n\n$$n_{\\text{aire}}\\,\\text{sen}\\,i=n_{\\text{diamante}}\\,\\text{sen}\\,r.$$\n\nDespejamos el seno del ángulo de incidencia:\n\n$$\\text{sen}\\,i=2{,}4\\,\\text{sen}\\,20^{\\circ}.$$"
+        },
+        {
+          "titulo": "Cálculo del ángulo de incidencia",
+          "contenido": "$$\\text{sen}\\,i=2{,}4\\cdot0{,}342=0{,}8208.$$\n\n$$i=\\arcsin(0{,}8208)\\approx55{,}1^{\\circ}.$$"
+        }
+      ],
+      "resultado": "$i\\approx55{,}1^{\\circ}$ medido desde la normal."
+    },
+    {
+      "numero": 8,
+      "titulo": "Imagen formada por una lente divergente",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un objeto de $10\\,\\text{cm}$ de altura está a una distancia de $2\\,\\text{cm}$ de una lente divergente, cuya distancia focal es $9\\,\\text{cm}$. Determina: a) la posición de la imagen; y b) el tamaño de la imagen y las características de dicha imagen. (Calificación de cada apartado, 1 punto).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Posición de la imagen."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Tamaño y características."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a) Posición de la imagen",
+          "contenido": "Convenio DIN. Lente divergente: $f<0$, así $f=-9\\,\\text{cm}$. Objeto real a $2\\,\\text{cm}$ a la izquierda: $s=-2\\,\\text{cm}$. Altura del objeto: $y=10\\,\\text{cm}$.\n\nEcuación de Gauss:\n\n$$\\dfrac{1}{f}=\\dfrac{1}{s'}-\\dfrac{1}{s}.$$\n\nSustituyendo:\n\n$$\\dfrac{1}{-9}=\\dfrac{1}{s'}-\\dfrac{1}{-2}\\Rightarrow s'=-1{,}64\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "Apartado b) Tamaño y características",
+          "contenido": "Aumento lateral:\n\n$$m=\\dfrac{s'}{s}=\\dfrac{-1{,}64}{-2}=0{,}818.$$\n\nCociente de signos iguales: aumento positivo, imagen derecha.\n\nTamaño de la imagen:\n\n$$y'=m\\,y=0{,}818\\cdot10=8{,}18\\,\\text{cm}.$$\n\nCaracterísticas: imagen virtual ($s'<0$), menor que el objeto y localizada a $1{,}64\\,\\text{cm}$ de la lente, en el mismo lado que el objeto. Es el comportamiento típico de una lente divergente para cualquier objeto real."
+        }
+      ],
+      "resultado": "a) $s'=-1{,}64\\,\\text{cm}$ (imagen virtual, mismo lado que el objeto); b) $y'=8{,}18\\,\\text{cm}$; imagen virtual, derecha y menor."
+    },
+    {
+      "numero": 9,
+      "titulo": "Desintegración del U-235: constante y actividad",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una muestra de U-235, que se utiliza como combustible en centrales nucleares, y cuyo período de semidesintegración es de $7{,}038\\cdot10^{8}$ años, tiene una actividad inicial de $50\\,\\text{kBq}$. Determina: a) La constante de desintegración radiactiva; b) La actividad de la muestra al cabo de $100$ millones de años. (Calificación de cada apartado, 1 punto).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Constante de desintegración $\\lambda$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Actividad a los $100$ millones de años."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a) Constante de desintegración",
+          "contenido": "Relación entre $\\lambda$ y $T_{1/2}$:\n\n$$\\lambda=\\dfrac{\\ln 2}{T_{1/2}}.$$\n\nConvirtiendo el periodo a segundos:\n\n$$T_{1/2}=7{,}038\\cdot10^{8}\\,\\text{años}=2{,}22\\cdot10^{16}\\,\\text{s}.$$\n\nEn años:\n\n$$\\lambda=\\dfrac{0{,}693}{7{,}038\\cdot10^{8}}=9{,}85\\cdot10^{-10}\\,\\text{año}^{-1}.$$\n\nEn segundos:\n\n$$\\lambda=3{,}12\\cdot10^{-17}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Apartado b) Actividad a los 10^8 años",
+          "contenido": "Ley exponencial de decaimiento:\n\n$$A=A_0 e^{-\\lambda t}.$$\n\nDatos: $A_0=50\\,\\text{kBq}=5{,}0\\cdot10^{4}\\,\\text{Bq}$, $t=10^{8}\\,\\text{años}$ y $\\lambda=9{,}85\\cdot10^{-10}\\,\\text{año}^{-1}$:\n\n$$A=5{,}0\\cdot10^{4}\\,e^{-9{,}85\\cdot10^{-10}\\cdot10^{8}}=4{,}53\\cdot10^{4}\\,\\text{Bq}.$$"
+        }
+      ],
+      "resultado": "a) $\\lambda=9{,}85\\cdot10^{-10}\\,\\text{año}^{-1}=3{,}12\\cdot10^{-17}\\,\\text{s}^{-1}$; b) $A=4{,}53\\cdot10^{4}\\,\\text{Bq}=45{,}3\\,\\text{kBq}$."
+    },
+    {
+      "numero": 10,
+      "titulo": "Momento lineal y onda de De Broglie de un protón",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un protón es acelerado en un campo eléctrico consiguiendo una velocidad final de $3\\cdot10^{3}\\,\\text{km}\\,\\text{h}^{-1}$. Calcule: a) el momento lineal y b) la longitud de onda de materia asociada. Datos: constante de Planck $h=6{,}6\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; masa del protón $m_p=1{,}67\\cdot10^{-27}\\,\\text{kg}$. (Calificación de cada apartado, 1 punto).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Momento lineal."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Longitud de onda de materia asociada."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a) Momento lineal",
+          "contenido": "Conversión de unidades de la velocidad:\n\n$$v=3\\cdot10^{3}\\,\\text{km}\\,\\text{h}^{-1}=3\\cdot10^{3}\\dfrac{1000}{3600}\\,\\text{m}\\,\\text{s}^{-1}=833{,}3\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nCálculo del momento lineal:\n\n$$p=m_p v=1{,}67\\cdot10^{-27}\\cdot833{,}3=1{,}39\\cdot10^{-24}\\,\\text{kg}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Apartado b) Longitud de onda de De Broglie",
+          "contenido": "Hipótesis de De Broglie:\n\n$$\\lambda=\\dfrac{h}{p}.$$\n\nSustituyendo:\n\n$$\\lambda=\\dfrac{6{,}6\\cdot10^{-34}}{1{,}39\\cdot10^{-24}}=4{,}74\\cdot10^{-10}\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "a) $p=1{,}39\\cdot10^{-24}\\,\\text{kg}\\,\\text{m}\\,\\text{s}^{-1}$; b) $\\lambda=4{,}74\\cdot10^{-10}\\,\\text{m}$."
     }
   ]
 }

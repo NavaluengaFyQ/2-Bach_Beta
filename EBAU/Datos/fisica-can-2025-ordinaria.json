@@ -1,42 +1,304 @@
 {
-  "id": "",
-  "codigo": "",
-  "comunidad": "",
-  "asignatura": "",
-  "convocatoria": "",
-  "anio": null,
-  "nivel": "",
-  "curso": "",
-  "enunciado_general": "",
-  "objetivo": "",
+  "id": "fisica-cnt-2025-ordinaria",
+  "codigo": "EXA.FIS.CNT.2025.ORD.SOL",
+  "comunidad": "Cantabria",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2025,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen oficial de Física de selectividad en Cantabria, convocatoria Ordinaria 2025, con 7 problemas resueltos paso a paso sobre gravitación, electromagnetismo, ondas, óptica y física moderna.",
+  "objetivo": "Evaluar la aplicación de los contenidos de Física de 2º de Bachillerato a problemas de campo gravitatorio, campo electromagnético, ondas, óptica geométrica y desintegración radiactiva.",
   "procedimiento": [
     {
-      "titulo": "",
-      "contenido": ""
+      "titulo": "Estructura del examen",
+      "contenido": "Se debe contestar a una pregunta de cada uno de los cuatro apartados. En caso de realizar dos preguntas de un mismo apartado, se corregirá la que aparezca resuelta en primer lugar. Entre corchetes se indica la puntuación máxima de cada pregunta. Se permite regla y calculadora científica básica con funciones estadísticas; están prohibidas las calculadoras gráficas o programables y los dispositivos con almacenamiento o transmisión."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "Datos y constantes utilizados: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $k_e=9{,}00\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $N_A=6{,}02\\cdot10^{23}\\,\\text{mol}^{-1}$. Los datos específicos de cada problema se indican en su enunciado."
     }
   ],
   "ejercicios": [
     {
-      "numero": null,
-      "titulo": "",
-      "Bloque": "",
-      "Tema": "",
-      "puntuacion": "",
-      "enunciado": "",
+      "numero": 1,
+      "titulo": "Sicorax: trabajo gravitatorio y velocidad orbital mínima",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A3. Momento angular en campo gravitatorio y fuerzas centrales; A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2,5 puntos (1 + 0,5 + 1)",
+      "enunciado": "Sicorax es un satélite de Urano. La distancia entre ambos oscila entre 5,8 y 18,5 millones de km. a) [1 PUNTO]. Calcular el trabajo realizado por el campo gravitatorio en el tránsito del punto más cercano al más alejado de la órbita del satélite alrededor del planeta. b) [0,5 PUNTOS]. ¿En qué punto de la trayectoria del satélite alrededor de Urano será mínima la velocidad orbital? c) [1 PUNTO]. Calcular la velocidad orbital mínima referida en el apartado b), sabiendo que la energía mecánica del satélite es $-4{,}8\\cdot10^{23}\\,\\text{J}$. Datos: masa de Urano $M_U=8{,}7\\cdot10^{25}\\,\\text{kg}$; masa de Sicorax $M_S=2\\cdot10^{18}\\,\\text{kg}$.",
       "apartados": [
         {
-          "letra": "",
-          "puntuacion": "",
-          "enunciado": ""
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular el trabajo realizado por el campo gravitatorio en el tránsito del punto más cercano al más alejado de la órbita del satélite alrededor de Urano."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "¿En qué punto de la trayectoria del satélite alrededor de Urano será mínima la velocidad orbital?"
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular la velocidad orbital mínima referida en el apartado b), sabiendo que la energía mecánica del satélite es $-4{,}8\\cdot10^{23}\\,\\text{J}$."
         }
       ],
       "resolucion": [
         {
-          "titulo": "",
-          "contenido": ""
+          "titulo": "Trabajo del campo gravitatorio",
+          "contenido": "El trabajo de una fuerza conservativa es el opuesto de la variación de energía potencial: $W=-\\Delta U=U_i-U_f$. Tomamos $r_i=5{,}8\\cdot10^{6}\\,\\text{km}=5{,}8\\cdot10^{9}\\,\\text{m}$ y $r_f=18{,}5\\cdot10^{6}\\,\\text{km}=1{,}85\\cdot10^{10}\\,\\text{m}$. La energía potencial es $U=-\\dfrac{G M_U M_S}{r}$.\n\nComo el satélite se aleja, la energía potencial aumenta (se hace menos negativa) y el trabajo del campo gravitatorio es negativo:\n\n$$W=G M_U M_S\\left(\\dfrac{1}{r_f}-\\dfrac{1}{r_i}\\right).$$\n\nCon $G M_U M_S=6{,}67\\cdot10^{-11}\\cdot8{,}7\\cdot10^{25}\\cdot2\\cdot10^{18}=1{,}1606\\cdot10^{34}\\,\\text{J}\\,\\text{m}$, resulta:\n\n$$W=1{,}1606\\cdot10^{34}\\left(\\dfrac{1}{1{,}85\\cdot10^{10}}-\\dfrac{1}{5{,}8\\cdot10^{9}}\\right)\\approx-1{,}37\\cdot10^{24}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Punto donde la velocidad orbital es mínima",
+          "contenido": "El momento angular se conserva porque la fuerza gravitatoria es central: $L=m\\,r\\,v\\,\\text{sen}\\,\\theta$. En los apsides $\\theta=90^{\\circ}$, por lo que $v=L/(m r)$; la velocidad orbital es mínima cuando $r$ es máximo.\n\nEquivalentemente, en el apo-Urano la energía cinética es mínima porque la energía potencial negativa toma su valor mayor (menos negativo) y la energía mecánica se conserva.\n\nResultado: el punto más alejado (apo-Urano), $r=18{,}5\\cdot10^{6}\\,\\text{km}=1{,}85\\cdot10^{10}\\,\\text{m}$."
+        },
+        {
+          "titulo": "Velocidad orbital mínima",
+          "contenido": "La energía mecánica en el apo-Urano se conserva:\n\n$$E_m=\\dfrac{1}{2}M_S v^{2}-\\dfrac{G M_U M_S}{r}.$$\n\nDespejando:\n\n$$v=\\sqrt{\\dfrac{2E_m}{M_S}+\\dfrac{2G M_U}{r}}.$$\n\nCon $E_m=-4{,}8\\cdot10^{23}\\,\\text{J}$, $M_S=2\\cdot10^{18}\\,\\text{kg}$ y $r=1{,}85\\cdot10^{10}\\,\\text{m}$:\n\n$$v=\\sqrt{\\dfrac{2(-4{,}8\\cdot10^{23})}{2\\cdot10^{18}}+\\dfrac{2\\cdot6{,}67\\cdot10^{-11}\\cdot8{,}7\\cdot10^{25}}{1{,}85\\cdot10^{10}}}\\approx3{,}84\\cdot10^{2}\\,\\text{m}\\,\\text{s}^{-1}.$$"
         }
       ],
-      "resultado": ""
+      "resultado": "$W\\approx-1{,}37\\cdot10^{24}\\,\\text{J}$\n$r_{\\text{apo}}=1{,}85\\cdot10^{10}\\,\\text{m}$\n$v_{\\text{min}}\\approx3{,}84\\cdot10^{2}\\,\\text{m}\\,\\text{s}^{-1}$"
+    },
+    {
+      "numero": 2,
+      "titulo": "Campo gravitatorio de una masa puntual y distancia máxima",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A1. Ley de la Gravitación Universal y superposición vectorial; A4. Intensidad de campo gravitatorio y líneas de campo; A6. Trabajo, energía potencial y energía mecánica gravitatoria",
+      "puntuacion": "2,5 puntos (1 + 0,5 + 1)",
+      "enunciado": "Un cuerpo de masa $m_1=10\\,\\text{kg}$ permanece fijo en el punto $(4,-3)\\,\\text{m}$. a) [1 PUNTO]. Calcular el campo gravitatorio generado por dicho cuerpo en el origen de coordenadas. b) [0,5 PUNTOS]. Calcular la fuerza que experimentará un segundo cuerpo de masa $m_2=5\\,\\text{kg}$ situado en el origen de coordenadas. Se pretende alejar el segundo cuerpo, transmitiéndole una velocidad de $10^{-2}\\,\\text{mm}\\,\\text{s}^{-1}$ según la dirección que une ambos cuerpos, alejándole del primero. c) [1 PUNTO]. Hallar la distancia máxima a la que llegará el segundo cuerpo con respecto al primero.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular el campo gravitatorio generado por $m_1$ en el origen de coordenadas."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcular la fuerza que experimentará un segundo cuerpo de masa $m_2=5\\,\\text{kg}$ situado en el origen de coordenadas."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Hallar la distancia máxima a la que llegará el segundo cuerpo con respecto al primero."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Campo gravitatorio en el origen",
+          "contenido": "La distancia entre el origen y $m_1$ es $r=\\sqrt{4^{2}+(-3)^{2}}=5\\,\\text{m}$. El módulo del campo es\n\n$$g=\\dfrac{G m_1}{r^{2}}=\\dfrac{6{,}67\\cdot10^{-11}\\cdot10}{25}=2{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{kg}^{-1}.$$\n\nEl campo apunta desde el origen hacia $m_1$. El vector unitario es $\\hat u=(4\\hat i-3\\hat j)/5=0{,}8\\hat i-0{,}6\\hat j$. Por tanto:\n\n$$\\vec g=2{,}67\\cdot10^{-11}(0{,}8\\hat i-0{,}6\\hat j)\\,\\text{N}\\,\\text{kg}^{-1}=(2{,}13\\cdot10^{-11}\\hat i-1{,}60\\cdot10^{-11}\\hat j)\\,\\text{N}\\,\\text{kg}^{-1}.$$"
+        },
+        {
+          "titulo": "Fuerza sobre $m_2$ en el origen",
+          "contenido": "La fuerza sobre $m_2$ en el origen es $\\vec F=m_2\\vec g$:\n\n$$\\vec F=5(2{,}13\\cdot10^{-11}\\hat i-1{,}60\\cdot10^{-11}\\hat j)\\,\\text{N}=(1{,}07\\cdot10^{-10}\\hat i-8{,}01\\cdot10^{-11}\\hat j)\\,\\text{N}.$$\n\nSu módulo es $F=1{,}33\\cdot10^{-10}\\,\\text{N}$ y apunta hacia $m_1$."
+        },
+        {
+          "titulo": "Distancia máxima alcanzada",
+          "contenido": "La energía mecánica por unidad de masa se conserva. En el instante inicial $r_0=5\\,\\text{m}$ y $v_0=10^{-2}\\,\\text{mm}\\,\\text{s}^{-1}=10^{-5}\\,\\text{m}\\,\\text{s}^{-1}$. En la distancia máxima $v=0$:\n\n$$\\dfrac{1}{2}v_0^{2}-\\dfrac{G m_1}{r_0}=-\\dfrac{G m_1}{r_{\\text{max}}}.$$\n\nDespejando:\n\n$$\\dfrac{1}{r_{\\text{max}}}=\\dfrac{1}{r_0}-\\dfrac{v_0^{2}}{2G m_1}.$$\n\nCon $G m_1=6{,}67\\cdot10^{-10}\\,\\text{m}^{3}\\,\\text{s}^{-2}$:\n\n$$\\dfrac{1}{r_{\\text{max}}}=0{,}2-\\dfrac{10^{-10}}{2\\cdot6{,}67\\cdot10^{-10}}\\approx0{,}125\\,\\text{m}^{-1}\\Rightarrow r_{\\text{max}}\\approx8{,}0\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$\\vec g=(2{,}13\\cdot10^{-11}\\hat i-1{,}60\\cdot10^{-11}\\hat j)\\,\\text{N}\\,\\text{kg}^{-1}$\n$\\vec F=(1{,}07\\cdot10^{-10}\\hat i-8{,}01\\cdot10^{-11}\\hat j)\\,\\text{N}$\n$r_{\\text{max}}\\approx8{,}0\\,\\text{m}$"
+    },
+    {
+      "numero": 3,
+      "titulo": "Energía, fuerza y trabajo en una distribución de tres cargas",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2,5 puntos (1 + 0,5 + 1)",
+      "enunciado": "Configuración de tres cargas: $q_1=q_2=5\\,\\text{mC}$ y $q_3=-5\\,\\text{mC}$, en $(0,2)\\,\\text{cm}$, $(0,0)\\,\\text{cm}$ y $(2,0)\\,\\text{cm}$ respectivamente. a) [1 PUNTO]. Energía potencial eléctrica total del sistema. b) [0,5 PUNTOS]. Vector fuerza eléctrica que siente la carga $q_3$. c) [1 PUNTO]. Trabajo externo para llevar $q_1$ desde su posición inicial a la posición $(1,0)\\,\\text{cm}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular la energía potencial eléctrica total del sistema."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcular el vector fuerza eléctrica que siente la carga $q_3$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular el trabajo externo para llevar $q_1$ desde su posición inicial a la posición $(1,0)\\,\\text{cm}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Energía potencial total",
+          "contenido": "Las distancias son $r_{12}=0{,}02\\,\\text{m}$, $r_{23}=0{,}02\\,\\text{m}$ y $r_{13}=\\sqrt{0{,}02^{2}+0{,}02^{2}}=0{,}0283\\,\\text{m}$. La energía potencial total es la suma de los tres pares:\n\n$$U=k_e\\left(\\dfrac{q_1q_2}{r_{12}}+\\dfrac{q_1q_3}{r_{13}}+\\dfrac{q_2q_3}{r_{23}}\\right).$$\n\nCon $q_1=q_2=5\\cdot10^{-3}\\,\\text{C}$ y $q_3=-5\\cdot10^{-3}\\,\\text{C}$:\n\n$$U=9\\cdot10^{9}\\left(\\dfrac{25\\cdot10^{-6}}{0{,}02}+\\dfrac{-25\\cdot10^{-6}}{0{,}0283}+\\dfrac{-25\\cdot10^{-6}}{0{,}02}\\right)\\approx-7{,}96\\cdot10^{6}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Fuerza sobre $q_3$",
+          "contenido": "Por superposición, $\\vec F_3=\\vec F_{13}+\\vec F_{23}$. La carga $q_3$ es negativa y las otras dos positivas, por lo que las fuerzas son atractivas.\n\nDe $q_2$ a $q_3$: $r_{23}=0{,}02\\,\\text{m}$ y\n\n$$F_{23}=k_e\\dfrac{|q_2q_3|}{r_{23}^{2}}=\\dfrac{9\\cdot10^{9}\\cdot25\\cdot10^{-6}}{0{,}02^{2}}=5{,}625\\cdot10^{8}\\,\\text{N}.$$\n\nEl vector va de $q_3$ hacia $q_2$, es decir, $-\\hat i$: $\\vec F_{23}=-5{,}625\\cdot10^{8}\\hat i\\,\\text{N}$.\n\nDe $q_1$ a $q_3$: $r_{13}=0{,}0283\\,\\text{m}$ y\n\n$$F_{13}=k_e\\dfrac{|q_1q_3|}{r_{13}^{2}}=\\dfrac{9\\cdot10^{9}\\cdot25\\cdot10^{-6}}{8\\cdot10^{-4}}=2{,}8125\\cdot10^{8}\\,\\text{N}.$$\n\nEl vector unitario de $q_3$ a $q_1$ es $(-\\hat i+\\hat j)/\\sqrt{2}$, luego $\\vec F_{13}=2{,}8125\\cdot10^{8}(-0{,}707\\hat i+0{,}707\\hat j)\\,\\text{N}=(-1{,}99\\cdot10^{8}\\hat i+1{,}99\\cdot10^{8}\\hat j)\\,\\text{N}$. Sumando:\n\n$$\\vec F_3=(-7{,}61\\cdot10^{8}\\hat i+1{,}99\\cdot10^{8}\\hat j)\\,\\text{N}.$$"
+        },
+        {
+          "titulo": "Trabajo externo para mover $q_1$ a $(1,0)\\,\\text{cm}$",
+          "contenido": "El trabajo externo es $W_{\\text{ext}}=q_1(V_f-V_i)$, donde $V_i$ y $V_f$ son los potenciales creados por $q_2$ y $q_3$ en la posición inicial y final de $q_1$.\n\nEn la posición inicial $(0;0{,}02)\\,\\text{m}$:\n\n$$V_i=k_e\\left(\\dfrac{q_2}{0{,}02}+\\dfrac{q_3}{0{,}0283}\\right)=9\\cdot10^{9}\\left(\\dfrac{5\\cdot10^{-3}}{0{,}02}-\\dfrac{5\\cdot10^{-3}}{0{,}0283}\\right)\\approx6{,}59\\cdot10^{8}\\,\\text{V}.$$\n\nEn la posición final $(0{,}01;0)\\,\\text{m}$, las distancias a $q_2$ y $q_3$ son ambas $0{,}01\\,\\text{m}$ y las cargas son opuestas, por lo que $V_f=0$.\n\nAsí:\n\n$$W_{\\text{ext}}=5\\cdot10^{-3}(0-6{,}59\\cdot10^{8})\\approx-3{,}30\\cdot10^{6}\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$U\\approx-7{,}96\\cdot10^{6}\\,\\text{J}$\n$\\vec F_3=(-7{,}61\\cdot10^{8}\\hat i+1{,}99\\cdot10^{8}\\hat j)\\,\\text{N}$\n$W_{\\text{ext}}\\approx-3{,}30\\cdot10^{6}\\,\\text{J}$"
+    },
+    {
+      "numero": 4,
+      "titulo": "FEM inducida en una varilla deslizante",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos; B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "2,5 puntos (1 + 0,5 + 1)",
+      "enunciado": "Una varilla metálica de $10\\,\\text{cm}$ de longitud desliza sin rozamiento sobre raíles horizontales paralelos al eje $X$. La resistencia de raíles y varilla es despreciable. La varilla se mueve con $\\vec v=50\\,\\hat i\\,\\text{cm}\\,\\text{s}^{-1}$. Los raíles se conectan en $x=0$ con $R=1\\,\\Omega$. Hay un campo magnético uniforme $\\vec B=2\\,\\hat k\\,\\text{T}$. Calcular: a) [1 PUNTO]. La fem inducida. b) [0,5 PUNTOS]. La intensidad. c) [1 PUNTO]. Razonar si sobre la varilla se ejerce algún tipo de fuerza por el campo magnético, justificar dirección y sentido.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular la fem inducida."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcular la intensidad de corriente."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Razonar si sobre la varilla se ejerce algún tipo de fuerza por el campo magnético, justificar dirección y sentido."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "FEM inducida",
+          "contenido": "El área del circuito es $S=Lx$, con $L=0{,}10\\,\\text{m}$ y $x=vt$. El flujo magnético es\n\n$$\\Phi_B=B S=2\\cdot0{,}10\\cdot0{,}50\\,t=0{,}10\\,t\\,\\text{Wb}.$$\n\nAplicando la ley de Faraday:\n\n$$\\varepsilon=-\\dfrac{d\\Phi_B}{dt}=-0{,}10\\,\\text{V}.$$\n\nEn módulo, $|\\varepsilon|=0{,}10\\,\\text{V}$."
+        },
+        {
+          "titulo": "Intensidad de corriente",
+          "contenido": "La intensidad es\n\n$$I=\\dfrac{|\\varepsilon|}{R}=\\dfrac{0{,}10}{1}=0{,}10\\,\\text{A}.$$\n\nPor la ley de Lenz, el sentido es horario visto desde $+Z$, oponiéndose al aumento del flujo saliente."
+        },
+        {
+          "titulo": "Fuerza sobre la varilla",
+          "contenido": "Sobre la varilla actúa la fuerza magnética $\\vec F=I\\vec L\\times\\vec B$. Con la corriente hacia abajo en la varilla, $\\vec L=-L\\hat j$, y $\\vec B=2\\hat k\\,\\text{T}$:\n\n$$\\vec F=I(-L\\hat j)\\times(B\\hat k)=-I L B\\hat i=-0{,}10\\cdot0{,}10\\cdot2\\,\\hat i=-0{,}02\\,\\hat i\\,\\text{N}.$$\n\nLa fuerza apunta en el sentido negativo del eje $X$, opuesta al movimiento: frena la varilla. Esto es coherente con la ley de Lenz, pues el sistema se opone al aumento de flujo."
+        }
+      ],
+      "resultado": "$|\\varepsilon|=0{,}10\\,\\text{V}$\n$I=0{,}10\\,\\text{A}$\n$\\vec F=-0{,}02\\,\\hat i\\,\\text{N}$, opuesta al movimiento"
+    },
+    {
+      "numero": 5,
+      "titulo": "Onda en una cuerda: caracterización, elongación y velocidad transversal",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2,5 puntos (1,5 + 0,5 + 0,5)",
+      "enunciado": "Por una cuerda se propaga una onda $y(x,t)=0{,}05\\cos[2\\pi(4x-5t)]$ (SI). a) [1,5 PUNTOS]. Determinar el sentido de propagación, la amplitud, la longitud de onda, la frecuencia, el periodo y la velocidad de propagación. b) [0,5 PUNTOS]. Calcular la elongación en $x=1/2\\,\\text{m}$ en $t=11/30\\,\\text{s}$. c) [0,5 PUNTOS]. Calcular la velocidad transversal de dicho punto en ese instante.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Determinar el sentido de propagación, la amplitud, la longitud de onda, la frecuencia, el periodo y la velocidad de propagación."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcular la elongación en $x=1/2\\,\\text{m}$ en $t=11/30\\,\\text{s}$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcular la velocidad transversal de dicho punto en ese instante."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Caracterización de la onda",
+          "contenido": "La onda es $y(x,t)=0{,}05\\cos[2\\pi(4x-5t)]$. Comparando con $y=A\\cos(kx-\\omega t)$, se obtiene $A=0{,}05\\,\\text{m}$, $k=8\\pi\\,\\text{rad}\\,\\text{m}^{-1}$ y $\\omega=10\\pi\\,\\text{rad}\\,\\text{s}^{-1}$. Como el término temporal lleva signo negativo respecto al espacial, la onda viaja en el sentido positivo del eje $X$.\n\n$$\\lambda=\\dfrac{2\\pi}{k}=\\dfrac{2\\pi}{8\\pi}=0{,}25\\,\\text{m};\\quad f=\\dfrac{\\omega}{2\\pi}=5\\,\\text{Hz};\\quad T=\\dfrac{1}{f}=0{,}20\\,\\text{s};\\quad v=\\lambda f=1{,}25\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Elongación en $x=1/2\\,\\text{m}$, $t=11/30\\,\\text{s}$",
+          "contenido": "En $x=0{,}5\\,\\text{m}$ y $t=11/30\\,\\text{s}$, el argumento es\n\n$$2\\pi\\left(4\\cdot0{,}5-5\\cdot\\dfrac{11}{30}\\right)=2\\pi\\left(2-\\dfrac{11}{6}\\right)=\\dfrac{\\pi}{3}.$$\n\nPor tanto:\n\n$$y=0{,}05\\cos\\dfrac{\\pi}{3}=0{,}05\\cdot0{,}5=0{,}025\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Velocidad transversal",
+          "contenido": "La velocidad transversal es $v_y=\\dfrac{\\partial y}{\\partial t}$:\n\n$$v_y=0{,}05\\cdot10\\pi\\,\\text{sen}\\left[2\\pi(4x-5t)\\right].$$\n\nEn el instante y punto anteriores, el argumento es $\\pi/3$:\n\n$$v_y=0{,}5\\pi\\,\\text{sen}\\dfrac{\\pi}{3}=0{,}5\\pi\\cdot\\dfrac{\\sqrt{3}}{2}\\approx1{,}36\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "Sentido $+X$; $A=0{,}05\\,\\text{m}$; $\\lambda=0{,}25\\,\\text{m}$; $f=5\\,\\text{Hz}$; $T=0{,}20\\,\\text{s}$; $v=1{,}25\\,\\text{m}\\,\\text{s}^{-1}$\n$y(0{,}5;11/30)=0{,}025\\,\\text{m}$\n$v_y\\approx1{,}36\\,\\text{m}\\,\\text{s}^{-1}$"
+    },
+    {
+      "numero": 6,
+      "titulo": "Lente delgada convergente: posición de imagen y trazado",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2,5 puntos (0,75 + 0,75 + 1)",
+      "enunciado": "Con una lente delgada convergente de $5$ dioptrías se forma una imagen real, invertida y de tamaño triple que el objeto, que es de $4\\,\\text{cm}$ de altura. a) [0,75 PUNTOS]. Calcular la posición del objeto y la posición de la imagen. Si el objeto se coloca ahora a $50\\,\\text{cm}$ de la lente: b) [0,75 PUNTOS]. Calcular la posición en que se forma la imagen y justificar su naturaleza. c) [1 PUNTO]. Dibujar el diagrama/trazado de rayos correspondiente.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Calcular la posición del objeto y la posición de la imagen."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Calcular la posición en que se forma la imagen y justificar su naturaleza si el objeto se coloca a $50\\,\\text{cm}$ de la lente."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Dibujar el diagrama/trazado de rayos correspondiente."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Posiciones del objeto y de la imagen",
+          "contenido": "La potencia es $P=5\\,\\text{D}$, luego $f=1/P=0{,}20\\,\\text{m}=20\\,\\text{cm}$. La imagen es real, invertida y triple: el aumento lateral es $\\beta=-3$. Con el convenio de signos, $\\beta=\\dfrac{s'}{s}$ y $\\dfrac{1}{s'}-\\dfrac{1}{s}=\\dfrac{1}{f}$.\n\nSustituyendo $s'=-3s$:\n\n$$\\dfrac{1}{-3s}-\\dfrac{1}{s}=\\dfrac{1}{20}\\Rightarrow -\\dfrac{4}{3s}=\\dfrac{1}{20}\\Rightarrow s=-\\dfrac{80}{3}\\,\\text{cm}.$$\n\nPor tanto, $s'=-3s=80\\,\\text{cm}$. El objeto está a $80/3\\,\\text{cm}$ a la izquierda de la lente y la imagen a $80\\,\\text{cm}$ a la derecha."
+        },
+        {
+          "titulo": "Imagen para $s=-50\\,\\text{cm}$",
+          "contenido": "Para $s=-50\\,\\text{cm}$:\n\n$$\\dfrac{1}{s'}=\\dfrac{1}{f}+\\dfrac{1}{s}=\\dfrac{1}{20}-\\dfrac{1}{50}=\\dfrac{3}{100}\\Rightarrow s'=\\dfrac{100}{3}\\approx33{,}3\\,\\text{cm}.$$\n\nEl aumento es $\\beta=s'/s=\\dfrac{100/3}{-50}=-\\dfrac{2}{3}$. La imagen es real ($s'>0$), invertida ($\\beta<0$) y menor que el objeto; su altura es $|y'|=\\dfrac{2}{3}\\cdot4=2{,}67\\,\\text{cm}$."
+        },
+        {
+          "titulo": "Trazado de rayos",
+          "contenido": "Para el apartado a), se trazan tres rayos principales desde la cabeza del objeto: (1) rayo paralelo al eje óptico que tras la lente pasa por el foco imagen $F'$ a $20\\,\\text{cm}$ a la derecha; (2) rayo que pasa por el centro óptico $O$ sin desviarse; (3) rayo que pasa por el foco objeto $F$ a $20\\,\\text{cm}$ a la izquierda y tras la lente sale paralelo al eje. Los tres rayos convergen en la imagen real, invertida y mayor (3x), situada a $80\\,\\text{cm}$ a la derecha y por debajo del eje.\n\nPara el apartado b), con el objeto a $50\\,\\text{cm}$ a la izquierda, los mismos tres rayos convergen en una imagen real, invertida y menor, situada a $100/3\\,\\text{cm}\\approx33{,}3\\,\\text{cm}$ a la derecha de la lente."
+        }
+      ],
+      "resultado": "a) $s=-80/3\\,\\text{cm}$, $s'=80\\,\\text{cm}$\nb) $s'=100/3\\,\\text{cm}\\approx33{,}3\\,\\text{cm}$; imagen real, invertida y menor\nc) Trazado con los tres rayos principales."
+    },
+    {
+      "numero": 7,
+      "titulo": "Desintegración radiactiva del Ga-68",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2,5 puntos (0,5 + 1 + 1)",
+      "enunciado": "En un laboratorio se rompe el contenedor de una solución de Ga-68 (vida media $\\tau=67{,}7\\,\\text{min}$), vertiéndose una muestra con actividad $246\\,\\text{MBq}$. Calcular: a) [0,5 PUNTOS]. La constante de desintegración. b) [1 PUNTO]. La masa vertida. c) [1 PUNTO]. El tiempo hasta que la actividad se reduzca a $35\\,\\text{kBq}$. Datos: masa molar del Ga-68 $M_{\\text{Ga}}=67{,}9\\,\\text{g}\\,\\text{mol}^{-1}$; número de Avogadro $N_A=6{,}02\\cdot10^{23}\\,\\text{mol}^{-1}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcular la constante de desintegración."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular la masa vertida."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular el tiempo hasta que la actividad se reduzca a $35\\,\\text{kBq}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Constante de desintegración",
+          "contenido": "La vida media de semidesintegración es $T_{1/2}=67{,}7\\,\\text{min}$. La constante de desintegración es\n\n$$\\lambda=\\dfrac{\\ln 2}{T_{1/2}}=\\dfrac{0{,}693}{67{,}7}=1{,}024\\cdot10^{-2}\\,\\text{min}^{-1}=1{,}71\\cdot10^{-4}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Masa vertida",
+          "contenido": "De $A=\\lambda N$:\n\n$$N=\\dfrac{A}{\\lambda}=\\dfrac{246\\cdot10^{6}}{1{,}71\\cdot10^{-4}}=1{,}44\\cdot10^{12}\\,\\text{núcleos}.$$\n\nLa masa es\n\n$$m=N\\dfrac{M_{\\text{Ga}}}{N_A}=1{,}44\\cdot10^{12}\\cdot\\dfrac{67{,}9}{6{,}02\\cdot10^{23}}\\approx1{,}63\\cdot10^{-10}\\,\\text{g}=1{,}63\\cdot10^{-13}\\,\\text{kg}.$$"
+        },
+        {
+          "titulo": "Tiempo hasta $A=35\\,\\text{kBq}$",
+          "contenido": "La ley de decaimiento es $A=A_0e^{-\\lambda t}$. Despejando:\n\n$$t=\\dfrac{1}{\\lambda}\\ln\\dfrac{A_0}{A}.$$\n\nCon $A_0=246\\cdot10^{6}\\,\\text{Bq}$ y $A=35\\cdot10^{3}\\,\\text{Bq}$:\n\n$$t=\\dfrac{1}{1{,}71\\cdot10^{-4}}\\ln\\dfrac{246\\cdot10^{6}}{35\\cdot10^{3}}\\approx5{,}19\\cdot10^{4}\\,\\text{s}\\approx865\\,\\text{min}\\approx14{,}4\\,\\text{h}.$$"
+        }
+      ],
+      "resultado": "$\\lambda=1{,}024\\cdot10^{-2}\\,\\text{min}^{-1}=1{,}71\\cdot10^{-4}\\,\\text{s}^{-1}$\n$m\\approx1{,}63\\cdot10^{-10}\\,\\text{g}=1{,}63\\cdot10^{-13}\\,\\text{kg}$\n$t\\approx5{,}19\\cdot10^{4}\\,\\text{s}\\approx865\\,\\text{min}\\approx14{,}4\\,\\text{h}$"
     }
   ]
 }
