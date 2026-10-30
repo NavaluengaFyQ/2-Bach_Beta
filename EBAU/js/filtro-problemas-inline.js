@@ -110,6 +110,39 @@ function ordenarTemas(a, b) {
     return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
 }
 
+// ─── Detección de problemas vacíos ─────────────────────────────
+// Un problema es "vacío" si no tiene NINGÚN contenido real:
+// título, enunciado, tema, bloque, apartados con texto, resolución
+// con texto o resultado. Da igual qué id/examenId/codigo tenga:
+// si no hay contenido que mostrar, no se lista.
+//
+// Esto cubre el caso problemático del fallback: un fichero de examen
+// en ./Datos/ que está completamente vacío pero cuyo id viene relleno
+// desde indice.json → sus ejercicios tendrían examenId válido pero
+// contenido vacío, así que ahora sí se descartan.
+function problemaVacio(p) {
+    if (!p) return true;
+
+    const vacio = v => v == null || String(v).trim() === '';
+
+    const tieneTitulo     = !vacio(p.titulo);
+    const tieneEnunciado  = !vacio(p.enunciado);
+    const tieneResultado  = !vacio(p.resultado);
+    const tieneTema       = !vacio(p.temaPrincipal || p.tema);
+    const tieneBloque     = !vacio(p.bloquePrincipal || p.bloque);
+
+    const tieneApartados = Array.isArray(p.apartados) && p.apartados.some(a =>
+        a && (!vacio(a.enunciado) || !vacio(a.letra))
+    );
+
+    const tieneResolucion = Array.isArray(p.resolucion) && p.resolucion.some(r =>
+        r && (!vacio(r.contenido) || !vacio(r.titulo))
+    );
+
+    return !(tieneTitulo || tieneEnunciado || tieneResultado ||
+             tieneTema || tieneBloque || tieneApartados || tieneResolucion);
+}
+
 function temasDisponiblesPorBloques() {
     if (bloquesSeleccionados.length === 0) return [];
     const letras = new Set(bloquesSeleccionados.map(letraBloque).filter(Boolean));
@@ -346,7 +379,9 @@ async function cargarProblemasCrudos() {
         if (r.ok) {
             const flat = await r.json();
             if (Array.isArray(flat) && flat.length) {
-                return flat.map(enriquecerProblema);
+                return flat
+                    .map(enriquecerProblema)
+                    .filter(p => !problemaVacio(p));
             }
         }
     } catch { /* no existe: seguimos con el fallback */ }
@@ -369,6 +404,31 @@ async function cargarProblemasCrudos() {
                 const res = await fetch(`./Datos/${ex.id}.json`);
                 if (!res.ok) throw new Error(`No se encontró ${ex.id}.json`);
                 const data = await res.json();
+
+                // Antes de sobrescribir data.id: si el fichero cargado está
+                // totalmente vacío, lo saltamos para no generar ejercicios
+                // fantasma con examenId válido pero contenido vacío.
+                const vacio = v => v == null || String(v).trim() === '';
+                const examenesVacios =
+                    vacio(data.id) &&
+                    vacio(data.codigo) &&
+                    vacio(data.comunidad) &&
+                    vacio(data.asignatura) &&
+                    vacio(data.convocatoria) &&
+                    vacio(data.nivel) &&
+                    vacio(data.curso) &&
+                    vacio(data.enunciado_general) &&
+                    !(data.ejercicios || []).some(ej =>
+                        !vacio(ej && ej.titulo) ||
+                        !vacio(ej && ej.enunciado) ||
+                        !vacio(ej && ej.Tema) ||
+                        !vacio(ej && ej.Bloque)
+                    );
+                if (examenesVacios) {
+                    resultados[i] = null;
+                    continue;
+                }
+
                 data.id = ex.id;
                 if (ex.codigo) data.codigo = ex.codigo;
                 if (!data.comunidad && ex.comunidad) data.comunidad = ex.comunidad;
@@ -387,9 +447,11 @@ async function cargarProblemasCrudos() {
 
     return resultados
         .filter(Boolean)
+        .filter(examen => examen.id != null && String(examen.id).trim() !== '')
         .flatMap(examen =>
             (examen.ejercicios || []).map(ej => enriquecerProblema(normalizarEjercicio(ej, examen)))
-        );
+        )
+        .filter(p => !problemaVacio(p));
 }
 
 // ─── Índices de búsqueda por ámbito ───────────────────────────
@@ -461,7 +523,10 @@ async function cargarDatos() {
     contenedor.innerHTML = '<p style="text-align:center; color:#64748b; padding: 20px;">Cargando problemas...</p>';
 
     try {
-        todosLosProblemas = await cargarProblemasCrudos();
+        // Filtro final de seguridad en la carga: `todosLosProblemas`
+        // nunca contendrá problemas sin contenido real.
+        todosLosProblemas = (await cargarProblemasCrudos())
+            .filter(p => !problemaVacio(p));
         precalcularIndiceBusqueda();
         inicializarFiltros();
         renderizarResultados();
@@ -643,6 +708,9 @@ function renderizarResultados() {
     const hayBusqueda = grupos.some(g => g.length > 0);
 
     let filtrados = todosLosProblemas.filter(p => {
+        // Seguro final: nunca mostrar problemas sin contenido.
+        if (problemaVacio(p)) return false;
+
         const cumpleAnio = aniosSeleccionados.length === 0 || aniosSeleccionados.includes(p.anio);
         const cumpleConv = convocatoriasSeleccionadas.length === 0 || convocatoriasSeleccionadas.includes(p.convocatoria);
         const cumpleComunidad = comunidadesSeleccionadas.length === 0 || comunidadesSeleccionadas.includes(p.comunidad);
