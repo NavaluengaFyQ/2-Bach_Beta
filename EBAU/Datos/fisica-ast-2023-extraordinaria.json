@@ -1,0 +1,361 @@
+{
+  "id": "fisica-ast-2023-extraordinaria",
+  "codigo": "EXA.FIS.AST.2023.EXT.SOL",
+  "comunidad": "Asturias",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2023,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la PAU de Asturias, convocatoria extraordinaria de 2023. Consta de 10 problemas de gravitación, electromagnetismo, ondas, óptica y física moderna.",
+  "objetivo": "Evaluar la aplicación de los conceptos y leyes fundamentales de la Física a situaciones problemáticas, con especial atención al planteamiento, cálculo y interpretación física de los resultados.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "El examen consta de 10 preguntas. El alumno debe responder a un máximo de cinco preguntas cualesquiera. Cada pregunta vale 2 puntos y la puntuación máxima total es 10 puntos."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $k=9{,}0\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $m_p=1{,}67\\cdot10^{-27}\\,\\text{kg}$; $c=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$; $e=1{,}60\\cdot10^{-19}\\,\\text{C}$; $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $M_T=5{,}97\\cdot10^{24}\\,\\text{kg}$; $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "Satelite ESA: velocidad inicial y E_c orbital",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "La ESA pretende poner un satélite de $100\\,\\text{kg}$ a $h=150\\,\\text{km}$ de altura en órbita circular.\na) Velocidad inicial mínima para alcanzar dicha altura. (1 punto)\nb) Energía cinética adicional para mantenerse en órbita circular. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad inicial mínima para alcanzar $150\\,\\text{km}$ de altura."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Energía cinética adicional para mantenerse en órbita circular."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): velocidad inicial mínima",
+          "contenido": "Se conserva la energía mecánica entre la superficie terrestre y el punto de altura $h$, al que se llega con velocidad nula en el caso límite:\n\n$$\\frac{1}{2}m v_i^{2}-\\frac{G M_T m}{R_T}=-\\frac{G M_T m}{R_T+h}.$$\n\nPor tanto:\n\n$$v_i=\\sqrt{2G M_T\\left(\\frac{1}{R_T}-\\frac{1}{R_T+h}\\right)}.$$\n\nCon $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$, $h=1{,}50\\cdot10^{5}\\,\\text{m}$ y $G M_T=3{,}98\\cdot10^{14}\\,\\text{m}^{3}\\,\\text{s}^{-2}$:\n\n$$v_i=\\sqrt{2\\cdot3{,}98\\cdot10^{14}\\left(\\frac{1}{6{,}37\\cdot10^{6}}-\\frac{1}{6{,}52\\cdot10^{6}}\\right)}\\approx1{,}70\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Apartado b): energía cinética orbital adicional",
+          "contenido": "En la órbita circular de radio $r=R_T+h$, la velocidad orbital es:\n\n$$v_{\\text{orb}}=\\sqrt{\\frac{G M_T}{r}}\\approx7{,}81\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nLa energía cinética necesaria es:\n\n$$E_{c,\\text{orb}}=\\frac{1}{2}m v_{\\text{orb}}^{2}=\\frac{G M_T m}{2r}.$$\n\nSustituyendo:\n\n$$E_{c,\\text{orb}}=\\frac{3{,}98\\cdot10^{14}\\cdot100}{2\\cdot6{,}52\\cdot10^{6}}\\approx3{,}05\\cdot10^{9}\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$v_i\\approx1{,}70\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$; $v_{\\text{orb}}\\approx7{,}81\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$; $E_{c,\\text{orb}}\\approx3{,}05\\cdot10^{9}\\,\\text{J}$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Velocidad de escape y peso de sonda",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una sonda se lanza a $v_0=25\\,\\text{km}\\,\\text{s}^{-1}$ desde la superficie de un planeta de masa $M_P=3{,}25\\cdot10^{25}\\,\\text{kg}$ y radio $R_P=5{,}75\\cdot10^{6}\\,\\text{m}$.\na) ¿Conseguirá escapar la sonda? Justifique. (1 punto)\nb) Peso de la sonda en el lanzamiento si se le comunica $E_c=2\\cdot10^{12}\\,\\text{J}$. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Comparación entre $v_0$ y la velocidad de escape."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Peso de la sonda en el lanzamiento."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): velocidad de escape y comparación",
+          "contenido": "La velocidad de escape desde la superficie es:\n\n$$v_{\\text{esc}}=\\sqrt{\\frac{2G M_P}{R_P}}=\\sqrt{\\frac{2\\cdot6{,}67\\cdot10^{-11}\\cdot3{,}25\\cdot10^{25}}{5{,}75\\cdot10^{6}}}\\approx2{,}75\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-1}=27{,}5\\,\\text{km}\\,\\text{s}^{-1}.$$\n\nComo $v_0=25\\,\\text{km}\\,\\text{s}^{-1}<v_{\\text{esc}}$, la sonda no escapa; su energía mecánica es negativa y queda ligada gravitatoriamente al planeta."
+        },
+        {
+          "titulo": "Apartado b): masa y peso",
+          "contenido": "De $E_c=\\frac{1}{2}m v_0^{2}$:\n\n$$m=\\frac{2E_c}{v_0^{2}}=\\frac{2\\cdot2\\cdot10^{12}}{(2{,}5\\cdot10^{4})^{2}}=6{,}40\\cdot10^{3}\\,\\text{kg}.$$\n\nLa gravedad superficial es:\n\n$$g_P=\\frac{G M_P}{R_P^{2}}=\\frac{6{,}67\\cdot10^{-11}\\cdot3{,}25\\cdot10^{25}}{(5{,}75\\cdot10^{6})^{2}}\\approx65{,}6\\,\\text{m}\\,\\text{s}^{-2}.$$\n\nEl peso vale:\n\n$$P=m g_P=6{,}40\\cdot10^{3}\\cdot65{,}6\\approx4{,}20\\cdot10^{5}\\,\\text{N}.$$"
+        }
+      ],
+      "resultado": "$v_{\\text{esc}}\\approx27{,}5\\,\\text{km}\\,\\text{s}^{-1}$; no escapa porque $25\\,\\text{km}\\,\\text{s}^{-1}<27{,}5\\,\\text{km}\\,\\text{s}^{-1}$.\n$m\\approx6{,}40\\cdot10^{3}\\,\\text{kg}$; $g_P\\approx65{,}6\\,\\text{m}\\,\\text{s}^{-2}$; $P\\approx4{,}20\\cdot10^{5}\\,\\text{N}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Cargas en simetria, calculo del valor y trabajo",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos (1 + 0,5 + 0,5)",
+      "enunciado": "Dos cargas iguales y del mismo signo están en $(2,2)\\,\\text{m}$ y $(-2,-2)\\,\\text{m}$. El módulo del campo en $(1,1)\\,\\text{m}$ es $E=8{,}1\\cdot10^{4}\\,\\text{N}\\,\\text{C}^{-1}$.\na) Calcule el valor de las cargas y el vector campo en $(-1,-1)\\,\\text{m}$. (1 punto)\nb) Trabajo para llevar una carga de $5\\,\\text{nC}$ desde infinito hasta $(-1,-1)\\,\\text{m}$. (0,5 puntos)\nc) ¿Qué signo debe tener para que el trabajo lo realice la fuerza del campo? (0,5 puntos)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Valor de $q$ y vector campo en $(-1,-1)\\,\\text{m}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Trabajo desde infinito hasta $(-1,-1)\\,\\text{m}$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Signo de la carga para que el campo realice el trabajo."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): valor de las cargas y campo en $(-1,-1)$",
+          "contenido": "En el punto $P(1,1)$, las distancias a las cargas son $r_1=\\sqrt{2}\\,\\text{m}$ (carga en $(2,2)$) y $r_2=3\\sqrt{2}\\,\\text{m}$ (carga en $(-2,-2)$). Los campos tienen sentidos opuestos. Si $q>0$, sus módulos son:\n\n$$E_1=\\frac{k q}{2},\\qquad E_2=\\frac{k q}{18}.$$\n\nEl módulo resultante es:\n\n$$E=\\frac{k q}{2}-\\frac{k q}{18}=\\frac{4}{9}k q.$$\n\nIgualando $8{,}1\\cdot10^{4}\\,\\text{N}\\,\\text{C}^{-1}$:\n\n$$q=\\frac{9E}{4k}=\\frac{9\\cdot8{,}1\\cdot10^{4}}{4\\cdot9\\cdot10^{9}}\\approx2{,}03\\cdot10^{-5}\\,\\text{C}\\approx20{,}3\\,\\mu\\text{C}.$$\n\nEn $S(-1,-1)$, por simetría, el campo resultante apunta en la dirección $(1,1)$ y tiene el mismo módulo $8{,}1\\cdot10^{4}\\,\\text{N}\\,\\text{C}^{-1}$. Sus componentes son:\n\n$$\\vec E_S=\\frac{8{,}1\\cdot10^{4}}{\\sqrt{2}}(\\hat i+\\hat j)\\approx(5{,}73\\cdot10^{4}\\,\\hat i+5{,}73\\cdot10^{4}\\,\\hat j)\\,\\text{N}\\,\\text{C}^{-1}.$$"
+        },
+        {
+          "titulo": "Apartado b): potencial y trabajo desde infinito",
+          "contenido": "El potencial en $S(-1,-1)$ es:\n\n$$V_S=k q\\left(\\frac{1}{3\\sqrt{2}}+\\frac{1}{\\sqrt{2}}\\right)=k q\\frac{4}{3\\sqrt{2}}\\approx1{,}72\\cdot10^{5}\\,\\text{V}.$$\n\nEl trabajo externo para traer $q_0=5\\,\\text{nC}$ desde infinito es:\n\n$$W_{\\text{ext}}=q_0 V_S=5\\cdot10^{-9}\\cdot1{,}72\\cdot10^{5}\\approx8{,}59\\cdot10^{-4}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Apartado c): signo de la carga",
+          "contenido": "El trabajo realizado por la fuerza del campo al traer la carga desde infinito es $W_{\\text{campo}}=-q_0 V_S$. Para que sea positivo, con $V_S>0$, debe cumplirse $q_0<0$. Por tanto, la carga debe ser negativa."
+        }
+      ],
+      "resultado": "$q\\approx2{,}03\\cdot10^{-5}\\,\\text{C}\\approx20{,}3\\,\\mu\\text{C}$; $\\vec E(-1,-1)\\approx(5{,}73\\cdot10^{4}\\,\\hat i+5{,}73\\cdot10^{4}\\,\\hat j)\\,\\text{N}\\,\\text{C}^{-1}$.\n$W_{\\text{ext}}\\approx8{,}59\\cdot10^{-4}\\,\\text{J}$.\nLa carga debe ser negativa."
+    },
+    {
+      "numero": 4,
+      "titulo": "Dos hilos paralelos: campo en punto medio y donde se anula",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B8. Líneas de campo eléctrico y magnético en distribuciones sencillas",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Dos hilos paralelos están separados $d=0{,}4\\,\\text{m}$, con $I_1=1\\,\\text{A}$ e $I_2=3\\,\\text{A}$ en el mismo sentido.\na) Vector $\\vec B$ en el punto intermedio entre ambos. (1 punto)\nb) Puntos donde se anula $\\vec B$ resultante. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Campo magnético en el punto medio."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Puntos donde $B=0$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): campo en el punto medio",
+          "contenido": "En el punto medio, $r=0{,}2\\,\\text{m}$ respecto a cada hilo. Los módulos son:\n\n$$B_1=\\frac{\\mu_0 I_1}{2\\pi r}=\\frac{4\\pi\\cdot10^{-7}\\cdot1}{2\\pi\\cdot0{,}2}=1{,}0\\cdot10^{-6}\\,\\text{T},$$\n\n$$B_2=\\frac{\\mu_0 I_2}{2\\pi r}=\\frac{4\\pi\\cdot10^{-7}\\cdot3}{2\\pi\\cdot0{,}2}=3{,}0\\cdot10^{-6}\\,\\text{T}.$$\n\nAl circular en el mismo sentido, en el punto medio los campos tienen sentidos opuestos. El campo resultante vale:\n\n$$B=B_2-B_1=2{,}0\\cdot10^{-6}\\,\\text{T},$$\n\ny apunta en el sentido del campo creado por el hilo de mayor corriente, $I_2$."
+        },
+        {
+          "titulo": "Apartado b): puntos donde se anula el campo",
+          "contenido": "Con corrientes paralelas en el mismo sentido, el campo solo puede anularse entre los hilos. Sea $x$ la distancia desde $I_1$. Igualando módulos:\n\n$$\\frac{\\mu_0 I_1}{2\\pi x}=\\frac{\\mu_0 I_2}{2\\pi(d-x)}.$$\n\nSimplificando:\n\n$$\\frac{1}{x}=\\frac{3}{0{,}4-x}\\Rightarrow0{,}4-x=3x\\Rightarrow x=0{,}1\\,\\text{m}.$$\n\nEl punto está a $0{,}1\\,\\text{m}$ de $I_1$ y a $0{,}3\\,\\text{m}$ de $I_2$."
+        }
+      ],
+      "resultado": "$B=2{,}0\\cdot10^{-6}\\,\\text{T}$ en el sentido del campo de $I_2$.\n$B=0$ a $0{,}1\\,\\text{m}$ de $I_1$ y $0{,}3\\,\\text{m}$ de $I_2$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Onda armonica transversal: v_prop, k, ecuacion y v_max",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía; C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos (0,5 + 1 + 0,5)",
+      "enunciado": "Onda armónica transversal con $f=0{,}25\\,\\text{Hz}$, $\\lambda=2\\,\\text{m}$, $A=0{,}5\\,\\text{m}$, que se propaga en $+X$. En $t=0$, $x=0$, la elongación es máxima.\na) Velocidad de propagación y número de ondas. (0,5 puntos)\nb) Función que representa la onda. (1 punto)\nc) Velocidad máxima de oscilación. (0,5 puntos)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Velocidad de propagación y número de ondas."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Ecuación de la onda."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Velocidad máxima de oscilación."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): velocidad de propagación y número de ondas",
+          "contenido": "La velocidad de propagación es:\n\n$$v=\\lambda f=2\\cdot0{,}25=0{,}5\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nEl número de ondas:\n\n$$k=\\frac{2\\pi}{\\lambda}=\\pi\\,\\text{rad}\\,\\text{m}^{-1}\\approx3{,}14\\,\\text{rad}\\,\\text{m}^{-1}.$$"
+        },
+        {
+          "titulo": "Apartado b): ecuación de onda",
+          "contenido": "La pulsación es $\\omega=2\\pi f=0{,}5\\pi\\,\\text{rad}\\,\\text{s}^{-1}$. Como en $t=0$, $x=0$ la elongación es máxima, la fase inicial es cero y la onda viaja en $+X$:\n\n$$y(x,t)=A\\cos(kx-\\omega t)=0{,}5\\cos(\\pi x-0{,}5\\pi t)\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Apartado c): velocidad máxima de oscilación",
+          "contenido": "La velocidad de oscilación es la derivada temporal:\n\n$$v_y=\\frac{\\partial y}{\\partial t}=A\\omega\\,\\text{sen}(kx-\\omega t).$$\n\nSu valor máximo:\n\n$$v_{\\text{max}}=A\\omega=0{,}5\\cdot0{,}5\\pi=0{,}25\\pi\\approx0{,}785\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$v=0{,}5\\,\\text{m}\\,\\text{s}^{-1}$; $k=\\pi\\,\\text{rad}\\,\\text{m}^{-1}$.\n$y(x,t)=0{,}5\\cos(\\pi x-0{,}5\\pi t)\\,\\text{m}$.\n$v_{\\text{max}}=0{,}25\\pi\\approx0{,}785\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Dos altavoces: nivel total e iguales sonoridades",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Dos altavoces separados $8\\,\\text{m}$ emiten con potencias $P_1=100\\,\\text{W}$ y $P_2=120\\,\\text{W}$.\na) Nivel de intensidad sonora total medido a mitad de distancia entre ambos. (1 punto)\nb) ¿En qué puntos de la línea entre ambos se mide la misma sonoridad para cada altavoz? (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Nivel total en el punto medio."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Puntos de igual sonoridad."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): intensidades y nivel total en el punto medio",
+          "contenido": "A $4\\,\\text{m}$ de cada altavoz:\n\n$$I_1=\\frac{P_1}{4\\pi r^{2}}=\\frac{100}{4\\pi\\cdot16}\\approx0{,}497\\,\\text{W}\\,\\text{m}^{-2},$$\n\n$$I_2=\\frac{P_2}{4\\pi r^{2}}=\\frac{120}{4\\pi\\cdot16}\\approx0{,}597\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nAl ser fuentes incoherentes, se suman las intensidades:\n\n$$I=I_1+I_2\\approx1{,}094\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nEl nivel de intensidad sonora total es:\n\n$$L=10\\log_{10}\\left(\\frac{I}{I_0}\\right)=10\\log_{10}\\left(\\frac{1{,}094}{10^{-12}}\\right)\\approx120{,}4\\,\\text{dB}.$$"
+        },
+        {
+          "titulo": "Apartado b): punto de igual sonoridad",
+          "contenido": "Sea $x$ la distancia al altavoz 1 y $8-x$ la distancia al altavoz 2. Igualando intensidades:\n\n$$\\frac{100}{4\\pi x^{2}}=\\frac{120}{4\\pi(8-x)^{2}}.$$\n\nSimplificando:\n\n$$\\frac{100}{x^{2}}=\\frac{120}{(8-x)^{2}}\\Rightarrow\\frac{8-x}{x}=\\sqrt{\\frac{120}{100}}\\approx1{,}095.$$\n\nDe aquí:\n\n$$8-x=1{,}095x\\Rightarrow x\\approx3{,}82\\,\\text{m}.$$\n\nEl punto está a $3{,}82\\,\\text{m}$ del altavoz 1 y a $4{,}18\\,\\text{m}$ del altavoz 2."
+        }
+      ],
+      "resultado": "$L\\approx120{,}4\\,\\text{dB}$.\n$I_1=I_2$ a $x\\approx3{,}82\\,\\text{m}$ del altavoz 1."
+    },
+    {
+      "numero": 7,
+      "titulo": "Lente convergente: imagen para objeto a 3f",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un objeto de altura $h$ está situado a una distancia $3f$ de una lente convergente.\na) Diagrama de rayos a escala. (1 punto)\nb) Justifique analíticamente si la imagen es real o virtual, derecha o invertida, y mayor o menor. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Diagrama de rayos."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Características analíticas de la imagen."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): diagrama de rayos",
+          "contenido": "Se dibuja la lente convergente con el foco objeto $F$ a $-f$ y el foco imagen $F'$ a $+f$. El objeto $AB$ se sitúa a $-3f$. El rayo paralelo al eje desde el extremo del objeto sale tras la lente pasando por $F'$. El rayo que pasa por el centro óptico $O$ no se desvía. El rayo que pasa por $F$ emerge paralelo al eje. Los rayos convergen al otro lado de la lente, formando una imagen real."
+        },
+        {
+          "titulo": "Apartado b): posición, tamaño y naturaleza",
+          "contenido": "Con la ecuación de la lente delgada, tomando $s=3f$:\n\n$$\\frac{1}{s'}+\\frac{1}{s}=\\frac{1}{f}\\Rightarrow\\frac{1}{s'}=\\frac{1}{f}-\\frac{1}{3f}=\\frac{2}{3f}\\Rightarrow s'=\\frac{3f}{2}=1{,}5f.$$\n\nEl aumento lateral es:\n\n$$m=\\frac{y'}{y}=-\\frac{s'}{s}=-\\frac{1{,}5f}{3f}=-0{,}5.$$\n\nComo $s'>0$, la imagen es real; como $m<0$, es invertida; y como $|m|<1$, es menor que el objeto."
+        }
+      ],
+      "resultado": "Imagen real, invertida y de tamaño mitad, situada a $1{,}5f$ al otro lado de la lente."
+    },
+    {
+      "numero": 8,
+      "titulo": "Refraccion en prisma triangular",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias; C5. Naturaleza de la luz y óptica física básica",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un rayo monocromático incide con $\\varphi_i=45^{\\circ}$ sobre una cara de un prisma triangular de índice $n=1{,}45$ y ángulo $60^{\\circ}$.\na) Ángulo de refracción en la primera superficie. (1 punto)\nb) Menor ángulo de incidencia sobre la segunda superficie para que el rayo emerja al aire. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Ángulo de refracción en la primera cara."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Ángulo mínimo en la segunda cara para emerger."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): refracción en la primera cara",
+          "contenido": "Aplicando la ley de Snell en la primera cara:\n\n$$1\\cdot\\text{sen}\\,45^{\\circ}=n\\,\\text{sen}\\,r_1.$$\n\n$$\\text{sen}\\,r_1=\\frac{\\text{sen}\\,45^{\\circ}}{1{,}45}=\\frac{0{,}7071}{1{,}45}\\approx0{,}4877\\Rightarrow r_1\\approx29{,}2^{\\circ}.$$"
+        },
+        {
+          "titulo": "Apartado b): ángulo crítico y emergencia por la segunda cara",
+          "contenido": "El ángulo crítico prisma-aire es:\n\n$$C=\\text{sen}^{-1}\\left(\\frac{1}{n}\\right)=\\text{sen}^{-1}\\left(\\frac{1}{1{,}45}\\right)\\approx43{,}6^{\\circ}.$$\n\nEl ángulo de incidencia sobre la segunda cara es $i_2=A-r_1=60^{\\circ}-29{,}2^{\\circ}=30{,}8^{\\circ}$. Como $i_2<C$, el rayo emerge al aire. El ángulo de incidencia sobre la segunda cara debe ser menor que $43{,}6^{\\circ}$; el mínimo posible es $0^{\\circ}$ (incidencia normal) y el máximo permitido para que emerja es $43{,}6^{\\circ}$."
+        }
+      ],
+      "resultado": "$r_1\\approx29{,}2^{\\circ}$.\n$C\\approx43{,}6^{\\circ}$; $i_2\\approx30{,}8^{\\circ}<C$, por lo que emerge. El máximo ángulo de incidencia en la segunda cara para emerger es $43{,}6^{\\circ}$."
+    },
+    {
+      "numero": 9,
+      "titulo": "Efecto fotoelectrico: IR vs UV",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos (1 + 0,5 + 0,5)",
+      "enunciado": "El trabajo de extracción de un material es $2{,}1\\,\\text{eV}$.\na) Indique cuál de las radiaciones produce efecto fotoeléctrico: IR de $780\\,\\text{nm}$ o UV de $280\\,\\text{nm}$. (1 punto)\nb) Energía cinética máxima de los electrones emitidos en el caso anterior. (0,5 puntos)\nc) Potencial de frenado requerido. (0,5 puntos)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Radiación que produce efecto fotoeléctrico."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Energía cinética máxima."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Potencial de frenado."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): energía de los fotones y radiación que produce efecto",
+          "contenido": "La energía de un fotón es $E=\\frac{hc}{\\lambda}$. Para el IR de $780\\,\\text{nm}$:\n\n$$E_{\\text{IR}}=\\frac{6{,}63\\cdot10^{-34}\\cdot3\\cdot10^{8}}{780\\cdot10^{-9}}\\approx2{,}55\\cdot10^{-19}\\,\\text{J}\\approx1{,}59\\,\\text{eV}.$$\n\nPara el UV de $280\\,\\text{nm}$:\n\n$$E_{\\text{UV}}=\\frac{6{,}63\\cdot10^{-34}\\cdot3\\cdot10^{8}}{280\\cdot10^{-9}}\\approx7{,}10\\cdot10^{-19}\\,\\text{J}\\approx4{,}44\\,\\text{eV}.$$\n\nComo el trabajo de extracción es $2{,}1\\,\\text{eV}$, solo el UV produce efecto fotoeléctrico."
+        },
+        {
+          "titulo": "Apartado b): energía cinética máxima",
+          "contenido": "Para el UV:\n\n$$K_{\\text{max}}=E_{\\text{UV}}-W_0=4{,}44-2{,}10=2{,}34\\,\\text{eV}\\approx3{,}74\\cdot10^{-19}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Apartado c): potencial de frenado",
+          "contenido": "El potencial de frenado se obtiene de $K_{\\text{max}}=e V_f$:\n\n$$V_f=\\frac{K_{\\text{max}}}{e}=2{,}34\\,\\text{V}.$$"
+        }
+      ],
+      "resultado": "Solo el UV ($280\\,\\text{nm}$) produce efecto fotoeléctrico.\n$K_{\\text{max}}\\approx2{,}34\\,\\text{eV}\\approx3{,}74\\cdot10^{-19}\\,\\text{J}$.\n$V_f\\approx2{,}34\\,\\text{V}$."
+    },
+    {
+      "numero": 10,
+      "titulo": "Laser y absorcion: longitudes de onda asociadas",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "La luz emitida por un láser, en la transición del primer estado excitado al fundamental, tiene energía $2{,}17\\,\\text{eV}$. La absorción en la sustancia es una transición del fundamental al segundo estado excitado, con energía $2{,}85\\,\\text{eV}$. Calcule:\na) Longitud de onda de la radiación emitida. (1 punto)\nb) Longitud de onda y frecuencia del fotón para la transición de absorción. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Longitud de onda emitida."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Longitud de onda y frecuencia de absorción."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): longitud de onda de la radiación emitida",
+          "contenido": "La energía del fotón emitido es $E=2{,}17\\,\\text{eV}=3{,}47\\cdot10^{-19}\\,\\text{J}$. Su longitud de onda:\n\n$$\\lambda=\\frac{hc}{E}=\\frac{6{,}63\\cdot10^{-34}\\cdot3\\cdot10^{8}}{3{,}47\\cdot10^{-19}}\\approx5{,}73\\cdot10^{-7}\\,\\text{m}=573\\,\\text{nm}.$$"
+        },
+        {
+          "titulo": "Apartado b): longitud de onda y frecuencia de la absorción",
+          "contenido": "Para la transición de absorción, $E=2{,}85\\,\\text{eV}=4{,}56\\cdot10^{-19}\\,\\text{J}$:\n\n$$\\lambda=\\frac{hc}{E}=\\frac{6{,}63\\cdot10^{-34}\\cdot3\\cdot10^{8}}{4{,}56\\cdot10^{-19}}\\approx4{,}36\\cdot10^{-7}\\,\\text{m}=436\\,\\text{nm}.$$\n\nLa frecuencia es:\n\n$$f=\\frac{c}{\\lambda}=\\frac{3\\cdot10^{8}}{4{,}36\\cdot10^{-7}}\\approx6{,}88\\cdot10^{14}\\,\\text{Hz}.$$"
+        }
+      ],
+      "resultado": "$\\lambda_{\\text{emisión}}\\approx573\\,\\text{nm}$.\n$\\lambda_{\\text{absorción}}\\approx436\\,\\text{nm}$; $f\\approx6{,}88\\cdot10^{14}\\,\\text{Hz}$."
+    }
+  ]
+}

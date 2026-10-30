@@ -1,0 +1,414 @@
+{
+  "id": "fisica-asturias-2021-ordinaria",
+  "codigo": "EXA.FIS.AST.2021.ORD.SOL",
+  "comunidad": "Asturias",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2021,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen resuelto de Física de la convocatoria ordinaria de 2021 en Asturias, con diez problemas de gravitación, electromagnetismo, ondas, óptica, física cuántica y nuclear.",
+  "objetivo": "Evaluar la aplicación de los principios y leyes fundamentales de la Física a situaciones problemáticas propias del nivel de 2º de Bachillerato, incluyendo cálculo, justificación conceptual e interpretación de resultados.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "El examen consta de diez preguntas. El estudiante debe responder cinco preguntas cualesquiera, con un máximo de 2 puntos por pregunta y una duración de 90 minutos. Debe indicar la agrupación de preguntas que responderá; no es válido seleccionar preguntas que sumen más de 10 puntos ni agrupaciones que no coincidan con las indicadas, lo que puede conllevar la anulación de alguna pregunta."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $R_T=6370\\,\\text{km}=6{,}37\\cdot10^{6}\\,\\text{m}$; $M_T=5{,}98\\cdot10^{24}\\,\\text{kg}$; $R_{\\text{Io}}=1815\\,\\text{km}=1{,}815\\cdot10^{6}\\,\\text{m}$; $M_{\\text{Io}}=8{,}94\\cdot10^{22}\\,\\text{kg}$; $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{N}\\,\\text{A}^{-2}$; $n_{\\text{etanol}}=1{,}36$; $n_{\\text{aire}}=1{,}00$; $m_n=1{,}675\\cdot10^{-27}\\,\\text{kg}$; $h=6{,}626\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $v_{\\text{aire}}=340\\,\\text{m}\\,\\text{s}^{-1}$."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "Satélite en órbita circular y energía mecánica",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Se desea ubicar un satélite para comunicaciones, cuya masa es $m=1000\\,\\text{kg}$, en una órbita circular $500\\,\\text{km}$ por encima de la superficie terrestre. Calcule: a. La velocidad del satélite en dicha órbita. (1 punto) b. ¿A qué distancia de la Tierra debería situarse el satélite para que su energía mecánica fuera la mitad? (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad del satélite en órbita circular a $h=500\\,\\text{km}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Distancia para que la energía mecánica sea la mitad."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Planteamiento: igualar fuerza gravitatoria a fuerza centrípeta",
+          "contenido": "Para una órbita circular estable, la fuerza gravitatoria proporciona la aceleración centrípeta:\n\n$$\\frac{G\\,M_T\\,m}{r^{2}}=\\frac{m\\,v^{2}}{r}.$$\n\nDespejando la velocidad orbital:\n\n$$v=\\sqrt{\\frac{G\\,M_T}{r}}.$$\n\nEl satélite describe una circunferencia: la fuerza gravitatoria, radial hacia el centro de la Tierra, actúa como fuerza centrípeta."
+        },
+        {
+          "titulo": "Cálculo del radio orbital",
+          "contenido": "El radio orbital es la suma del radio terrestre y la altura sobre la superficie:\n\n$$r=R_T+h=6{,}37\\cdot10^{6}+5{,}00\\cdot10^{5}=6{,}87\\cdot10^{6}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "$$v=\\sqrt{\\frac{6{,}67\\cdot10^{-11}\\cdot5{,}98\\cdot10^{24}}{6{,}87\\cdot10^{6}}}=7{,}62\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Energía mecánica en órbita circular",
+          "contenido": "Para una órbita circular, $E_c=\\frac{1}{2}m v^{2}$ y $E_p=-\\frac{G M_T m}{r}$. La energía mecánica total es:\n\n$$E_m=E_c+E_p=-\\frac{G\\,M_T\\,m}{2r}.$$\n\nEn órbita circular se cumple el teorema del virial: $E_c=-\\frac{1}{2}E_p$."
+        },
+        {
+          "titulo": "Condición para energía mecánica mitad",
+          "contenido": "Si la energía mecánica original es $E_{m,1}=-\\frac{G M_T m}{2r_1}$, queremos $E_{m,2}=\\frac{1}{2}E_{m,1}=-\\frac{G M_T m}{4r_1}$. Como $E_{m,2}=-\\frac{G M_T m}{2r_2}$:\n\n$$-\\frac{G M_T m}{2r_2}=-\\frac{G M_T m}{4r_1}\\Rightarrow r_2=2r_1.$$"
+        },
+        {
+          "titulo": "Cálculo numérico",
+          "contenido": "$$r_2=2\\cdot6{,}87\\cdot10^{6}=1{,}374\\cdot10^{7}\\,\\text{m}.$$\n\nLa altura sobre la superficie terrestre será:\n\n$$h_2=r_2-R_T=1{,}374\\cdot10^{7}-6{,}37\\cdot10^{6}=7{,}37\\cdot10^{6}\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$v=7{,}62\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$;\n$r_2=1{,}374\\cdot10^{7}\\,\\text{m}$ desde el centro de la Tierra;\n$h_2\\approx7{,}37\\cdot10^{6}\\,\\text{m}\\approx7370\\,\\text{km}$ sobre la superficie."
+    },
+    {
+      "numero": 2,
+      "titulo": "Velocidad inicial y velocidad de escape en Io (luna de Júpiter)",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Io, una de las lunas de Júpiter, posee una intensa actividad volcánica y el material lanzado durante las erupciones puede alcanzar alturas de $500\\,\\text{km}$ sobre la superficie. Calcule: a. La velocidad inicial del material volcánico en la superficie de Io. (1 punto) b. La velocidad de escape en Io. (1 punto) Datos: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$, $R_{\\text{Io}}=1815\\,\\text{km}$, $M_{\\text{Io}}=8{,}94\\cdot10^{22}\\,\\text{kg}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad inicial del material volcánico en superficie."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad de escape en Io."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Conservación de la energía mecánica",
+          "contenido": "Aplicamos conservación entre la superficie (estado inicial, $r_i=R_{\\text{Io}}$, $v_i=v_0$) y la altura máxima (estado final, $r_f=R_{\\text{Io}}+h$, $v_f=0$):\n\n$$\\frac{1}{2}m v_0^{2}-\\frac{G M_{\\text{Io}} m}{R_{\\text{Io}}}=-\\frac{G M_{\\text{Io}} m}{R_{\\text{Io}}+h}.$$\n\nDespejando:\n\n$$v_0=\\sqrt{2G M_{\\text{Io}}\\left(\\frac{1}{R_{\\text{Io}}}-\\frac{1}{R_{\\text{Io}}+h}\\right)}.$$\n\nComo Io carece prácticamente de atmósfera, sólo actúa la fuerza gravitatoria, que es conservativa."
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "Con $R_{\\text{Io}}=1{,}815\\cdot10^{6}\\,\\text{m}$, $h=5{,}00\\cdot10^{5}\\,\\text{m}$:\n\n$$v_0=\\sqrt{2\\cdot6{,}67\\cdot10^{-11}\\cdot8{,}94\\cdot10^{22}\\left(\\frac{1}{1{,}815\\cdot10^{6}}-\\frac{1}{2{,}315\\cdot10^{6}}\\right)}=1{,}19\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Definición de velocidad de escape",
+          "contenido": "La velocidad de escape es la mínima velocidad necesaria para llegar al infinito con velocidad nula. Aplicando conservación de energía entre la superficie y el infinito:\n\n$$\\frac{1}{2}m v_e^{2}-\\frac{G M_{\\text{Io}} m}{R_{\\text{Io}}}=0\\Rightarrow v_e=\\sqrt{\\frac{2G M_{\\text{Io}}}{R_{\\text{Io}}}}.$$"
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "$$v_e=\\sqrt{\\frac{2\\cdot6{,}67\\cdot10^{-11}\\cdot8{,}94\\cdot10^{22}}{1{,}815\\cdot10^{6}}}=2{,}56\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$v_0=1{,}19\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$;\n$v_e=2{,}56\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Dipolo y trabajo eléctrico sobre partícula de polvo",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un dipolo está formado por dos cargas puntuales, $q_1=+3\\,\\text{nC}$ y $q_2=-3\\,\\text{nC}$, situadas a una distancia mutua de $3\\,\\text{cm}$. Una partícula de polvo con masa $m=5\\cdot10^{-9}\\,\\text{kg}$ y carga eléctrica $q_0=+2\\,\\text{nC}$ se coloca en reposo en un punto A localizado entre las dos cargas y a una distancia de $1\\,\\text{cm}$ respecto de la carga positiva. Calcule: a. El módulo, la dirección y el sentido de la fuerza externa ejercida sobre la partícula de polvo. (1 punto) b. El trabajo para trasladar la partícula desde el punto A a un punto B que dista $1\\,\\text{cm}$ de la partícula negativa. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Fuerza externa sobre la partícula en A."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Trabajo para trasladar A → B."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Esquema y cálculo del campo eléctrico en A",
+          "contenido": "Disponemos las cargas sobre el eje $X$: $q_1=+3\\,\\text{nC}$ en $x=0$, $q_2=-3\\,\\text{nC}$ en $x=3\\,\\text{cm}$. El punto A está en $x=1\\,\\text{cm}$, por lo que $r_1=0{,}01\\,\\text{m}$ y $r_2=0{,}02\\,\\text{m}$. Ambos campos en A apuntan hacia $+x$: $q_1$ repele hacia $+x$ y $q_2$ atrae hacia $+x$.\n\nAplicamos el principio de superposición. Ambos campos suman porque tienen el mismo sentido:\n\n$$E_A=K\\frac{|q_1|}{r_1^{2}}+K\\frac{|q_2|}{r_2^{2}}=9\\cdot10^{9}\\left(\\frac{3\\cdot10^{-9}}{0{,}01^{2}}+\\frac{3\\cdot10^{-9}}{0{,}02^{2}}\\right)=3{,}375\\cdot10^{5}\\,\\text{N}\\,\\text{C}^{-1}.$$"
+        },
+        {
+          "titulo": "Cálculo numérico del campo y la fuerza eléctrica",
+          "contenido": "La fuerza eléctrica sobre $q_0=+2\\,\\text{nC}$ es $\\vec F_e=q_0\\vec E_A$:\n\n$$F_e=2\\cdot10^{-9}\\cdot3{,}375\\cdot10^{5}=6{,}75\\cdot10^{-4}\\,\\text{N}.$$\n\nDirección y sentido: eje $X$ positivo, de $q_1$ hacia $q_2$."
+        },
+        {
+          "titulo": "Fuerza externa para mantenerla en reposo",
+          "contenido": "Para que la partícula permanezca en reposo en A, la fuerza externa debe equilibrar la fuerza eléctrica:\n\n$$\\vec F_{\\text{ext}}=-\\vec F_e.$$\n\nDirección: eje $X$. Sentido: opuesto al campo, es decir, hacia la carga positiva $q_1$. Módulo: $6{,}75\\cdot10^{-4}\\,\\text{N}$."
+        },
+        {
+          "titulo": "Potencial eléctrico en A y en B",
+          "contenido": "El punto B está a $1\\,\\text{cm}$ de la carga negativa, es decir, en $x=2\\,\\text{cm}$: $r_{1B}=0{,}02\\,\\text{m}$, $r_{2B}=0{,}01\\,\\text{m}$.\n\n$$V_A=K\\left(\\frac{q_1}{r_{1A}}+\\frac{q_2}{r_{2A}}\\right)=9\\cdot10^{9}\\left(\\frac{3\\cdot10^{-9}}{0{,}01}+\\frac{-3\\cdot10^{-9}}{0{,}02}\\right)=1350\\,\\text{V}.$$\n\n$$V_B=K\\left(\\frac{q_1}{r_{1B}}+\\frac{q_2}{r_{2B}}\\right)=9\\cdot10^{9}\\left(\\frac{3\\cdot10^{-9}}{0{,}02}+\\frac{-3\\cdot10^{-9}}{0{,}01}\\right)=-1350\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Trabajo realizado por la fuerza externa",
+          "contenido": "El trabajo realizado por una fuerza externa para trasladar una carga es:\n\n$$W_{\\text{ext}}=q_0(V_B-V_A)=2\\cdot10^{-9}(-1350-1350)=-5{,}4\\cdot10^{-6}\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$F_{\\text{ext}}=6{,}75\\cdot10^{-4}\\,\\text{N}$ hacia $q_1$ (sentido $-X$);\n$W_{\\text{ext}}=-5{,}4\\cdot10^{-6}\\,\\text{J}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Hilos paralelos con corrientes opuestas: campo y fuerza por unidad de longitud",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Dos hilos conductores rectilíneos paralelos muy largos de longitud $L$ y por los que circulan corrientes eléctricas opuestas de $15000\\,\\text{A}$ se encuentran a una distancia $d=5\\,\\text{mm}$. a. Halle el campo magnético en un punto del plano que determinan los conductores y equidistante entre ambos. (1 punto) b. Calcule la fuerza por unidad de longitud que ejerce cada hilo sobre el otro. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Campo magnético en el punto medio entre los hilos."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Fuerza por unidad de longitud entre los hilos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Campo de un hilo rectilíneo",
+          "contenido": "El módulo del campo creado por un hilo rectilíneo a distancia $r$ es:\n\n$$B=\\frac{\\mu_0 I}{2\\pi r}.$$\n\nLa dirección es tangente a una circunferencia centrada en el hilo (regla de la mano derecha)."
+        },
+        {
+          "titulo": "Superposición en el punto medio",
+          "contenido": "Sea M el punto medio: $r=2{,}5\\,\\text{mm}=2{,}5\\cdot10^{-3}\\,\\text{m}$. Como las corrientes son opuestas, los campos magnéticos producidos por los dos hilos en M tienen la misma dirección y mismo sentido (perpendicular al plano de los hilos), por lo que se suman:\n\n$$B_M=B_1+B_2=2\\frac{\\mu_0 I}{2\\pi r}.$$\n\nSi las corrientes fueran iguales, los campos en M serían opuestos y se cancelarían. Al ser opuestas, ambos campos coinciden en sentido."
+        },
+        {
+          "titulo": "Cálculo numérico",
+          "contenido": "$$B_M=2\\cdot\\frac{4\\pi\\cdot10^{-7}\\cdot15000}{2\\pi\\cdot2{,}5\\cdot10^{-3}}=2{,}4\\,\\text{T}.$$"
+        },
+        {
+          "titulo": "Ley de fuerza entre dos corrientes paralelas",
+          "contenido": "La fuerza por unidad de longitud que ejerce un hilo sobre otro paralelo es:\n\n$$\\frac{F}{L}=\\frac{\\mu_0 I_1 I_2}{2\\pi d}.$$\n\nSi las corrientes son opuestas, la fuerza es repulsiva."
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "$$\\frac{F}{L}=\\frac{4\\pi\\cdot10^{-7}\\cdot15000^{2}}{2\\pi\\cdot5\\cdot10^{-3}}=9{,}0\\cdot10^{3}\\,\\text{N}\\,\\text{m}^{-1}.$$"
+        }
+      ],
+      "resultado": "$B_M=2{,}4\\,\\text{T}$;\n$\\frac{F}{L}=9{,}0\\cdot10^{3}\\,\\text{N}\\,\\text{m}^{-1}$, repulsiva."
+    },
+    {
+      "numero": 5,
+      "titulo": "Onda transversal sinusoidal: frecuencia y velocidad de vibración",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una onda transversal sinusoidal con una amplitud de $2{,}5\\,\\text{mm}$ y una longitud de onda de $1{,}8\\,\\text{m}$ se propaga de izquierda a derecha a lo largo de una cuerda horizontal muy larga con una velocidad de $36\\,\\text{m}\\,\\text{s}^{-1}$. Tome como origen de coordenadas el extremo izquierdo de la cuerda. En el instante $t=0$, el extremo izquierdo de la cuerda se encuentra en la posición de máximo desplazamiento hacia arriba (positivo). a. Determine la frecuencia, la frecuencia angular y el número de onda de la onda transversal. (1 punto) b. Determine el valor máximo de la velocidad transversal para cualquier punto de la cuerda (velocidad máxima de vibración). (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Frecuencia, frecuencia angular y número de onda."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad transversal máxima."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Frecuencia",
+          "contenido": "La velocidad de propagación verifica $v=\\lambda f$, por lo que:\n\n$$f=\\frac{v}{\\lambda}=\\frac{36}{1{,}8}=20\\,\\text{Hz}.$$"
+        },
+        {
+          "titulo": "Frecuencia angular y número de onda",
+          "contenido": "$$\\omega=2\\pi f=40\\pi\\approx125{,}66\\,\\text{rad}\\,\\text{s}^{-1};$$\n\n$$k=\\frac{2\\pi}{\\lambda}=\\frac{2\\pi}{1{,}8}\\approx3{,}49\\,\\text{rad}\\,\\text{m}^{-1}.$$"
+        },
+        {
+          "titulo": "Ecuación de la onda y velocidad transversal",
+          "contenido": "La ecuación de la onda con las condiciones iniciales (máximo en $x=0$, $t=0$) es:\n\n$$y(x,t)=A\\cos(kx-\\omega t).$$\n\nLa velocidad transversal de un punto es la derivada parcial respecto al tiempo:\n\n$$v_y(x,t)=\\frac{\\partial y}{\\partial t}=A\\omega\\,\\text{sen}(kx-\\omega t).$$\n\nSu valor máximo es:\n\n$$v_{y,\\text{max}}=A\\omega.$$"
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "$$v_{y,\\text{max}}=2{,}5\\cdot10^{-3}\\cdot40\\pi=0{,}314\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$f=20\\,\\text{Hz}$; $\\omega\\approx125{,}66\\,\\text{rad}\\,\\text{s}^{-1}$; $k\\approx3{,}49\\,\\text{rad}\\,\\text{m}^{-1}$;\n$v_{y,\\text{max}}\\approx0{,}314\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Ultrasonidos médicos y rango audible",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Se denominan ultrasonidos a las frecuencias por encima del rango auditivo en los humanos ($20\\,\\text{kHz}$). Ondas sonoras por encima de esa frecuencia se utilizan para penetrar el cuerpo humano y producir imágenes por reflexión en las diferentes superficies. En un barrido de ultrasonidos típico las ondas sonoras viajan a una velocidad de $1500\\,\\text{m}\\,\\text{s}^{-1}$ y para una imagen detallada la longitud de onda no debe ser superior a $1\\,\\text{mm}$. a. ¿Qué frecuencia es necesaria? (1 punto) Si el rango de frecuencias audibles es $20\\,\\text{Hz}$ a $20\\,\\text{kHz}$: b. ¿A qué rango de longitudes de onda corresponde en el aire en condiciones normales? (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Frecuencia mínima de ultrasonidos."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Rango de longitudes de onda audibles en aire."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Aplicación de v = λf",
+          "contenido": "Para que $\\lambda\\le1\\,\\text{mm}=10^{-3}\\,\\text{m}$ con $v=1500\\,\\text{m}\\,\\text{s}^{-1}$, la frecuencia mínima necesaria es:\n\n$$f\\ge\\frac{v}{\\lambda}=\\frac{1500}{10^{-3}}=1{,}5\\cdot10^{6}\\,\\text{Hz}=1{,}5\\,\\text{MHz}.$$"
+        },
+        {
+          "titulo": "Cálculo de los extremos del rango",
+          "contenido": "Con $v_{\\text{aire}}=340\\,\\text{m}\\,\\text{s}^{-1}$:\n\n$$\\lambda_{\\text{min}}=\\frac{340}{20000}=0{,}017\\,\\text{m}=1{,}7\\,\\text{cm};$$\n\n$$\\lambda_{\\text{max}}=\\frac{340}{20}=17\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$f\\ge1{,}5\\,\\text{MHz}$;\nrango audible en aire: $1{,}7\\,\\text{cm}\\le\\lambda\\le17\\,\\text{m}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Refracción en pared de vidrio: aire-vidrio-etanol y líquido desconocido",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un depósito cúbico que contiene etanol tiene unas paredes planas de $2{,}5\\,\\text{cm}$ de grosor fabricadas con un vidrio transparente de índice de refracción $1{,}55$. Un rayo de luz incide desde el exterior (aire) sobre la pared de vidrio del depósito formando un ángulo de $41{,}3^{\\circ}$ respecto a la normal a la pared. a. Calcule el ángulo que forma el rayo de luz con la normal a la pared del vidrio en contacto con el etanol. (1 punto) b. El depósito se vacía y se rellena con un líquido desconocido. Si la luz incide con el mismo ángulo que en el caso anterior, el rayo entra en el líquido formando un ángulo de $20{,}2^{\\circ}$ con la normal. Justifique dónde es mayor la velocidad de la luz, en el etanol o en el líquido desconocido. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Ángulo refractado en el etanol."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Comparación de velocidades."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Ley de Snell aplicada en cada interfaz",
+          "contenido": "El rayo atraviesa dos interfaces: aire-vidrio y vidrio-etanol. Las paredes son planas y paralelas, por lo que el ángulo en la cara aire-vidrio es igual al ángulo de incidencia en la cara vidrio-etanol. Aplicando Snell directamente entre el primer medio (aire) y el último (etanol):\n\n$$n_{\\text{aire}}\\,\\text{sen}\\,\\theta_i=n_{\\text{etanol}}\\,\\text{sen}\\,\\theta_{\\text{etanol}}.$$\n\nCuando las dos caras del vidrio son paralelas, el grosor del vidrio sólo desplaza lateralmente el rayo pero no cambia el ángulo final."
+        },
+        {
+          "titulo": "Cálculo del ángulo",
+          "contenido": "$$\\text{sen}\\,\\theta_{\\text{etanol}}=\\frac{n_{\\text{aire}}}{n_{\\text{etanol}}}\\text{sen}\\,\\theta_i=\\frac{1{,}00}{1{,}36}\\text{sen}\\,41{,}3^{\\circ}=0{,}485.$$\n\n$$\\theta_{\\text{etanol}}=\\arcsin(0{,}485)\\approx29{,}0^{\\circ}.$$"
+        },
+        {
+          "titulo": "Cálculo del índice de refracción del líquido desconocido",
+          "contenido": "Aplicamos Snell aire-líquido (las caras paralelas del vidrio no cambian el ángulo final):\n\n$$n_{\\text{líquido}}\\,\\text{sen}\\,20{,}2^{\\circ}=n_{\\text{aire}}\\,\\text{sen}\\,41{,}3^{\\circ}.$$\n\n$$n_{\\text{líquido}}=\\frac{1{,}00\\cdot\\text{sen}\\,41{,}3^{\\circ}}{\\text{sen}\\,20{,}2^{\\circ}}\\approx1{,}91.$$"
+        },
+        {
+          "titulo": "Comparación de velocidades",
+          "contenido": "La velocidad de la luz en un medio es $v=\\frac{c}{n}$, por lo que mayor $n$ implica menor $v$. Como $n_{\\text{líquido}}\\approx1{,}91>n_{\\text{etanol}}=1{,}36$, la velocidad de la luz es mayor en el etanol."
+        }
+      ],
+      "resultado": "$\\theta_{\\text{etanol}}\\approx29{,}0^{\\circ}$;\n$n_{\\text{líquido}}\\approx1{,}91$; la velocidad de la luz es mayor en el etanol."
+    },
+    {
+      "numero": 8,
+      "titulo": "Lente convergente con objeto a 2f",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (1,5 + 0,5)",
+      "enunciado": "Colocamos un objeto cuya altura es de $8\\,\\text{cm}$ en un punto situado $32\\,\\text{cm}$ a la izquierda de una lente delgada convergente cuya distancia focal es $16\\,\\text{cm}$. a. Dibuje el diagrama de rayos principales en el que se muestre la formación de la imagen. (1.5 puntos) b. Determine la naturaleza de la imagen, su posición y su tamaño. (0.5 puntos)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Diagrama de rayos principales."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Naturaleza, posición y tamaño de la imagen."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Trazado de los tres rayos principales",
+          "contenido": "Con criterio DIN (sentido de la luz hacia la derecha, distancias del objeto negativas hacia la izquierda): $s=-32\\,\\text{cm}$, $f=16\\,\\text{cm}$. Los tres rayos principales son:\n\n1. Rayo paralelo al eje óptico: tras atravesar la lente pasa por el foco imagen situado a $+16\\,\\text{cm}$ a la derecha.\n\n2. Rayo que pasa por el centro óptico: no se desvía.\n\n3. Rayo que pasa por el foco objeto (situado a $-16\\,\\text{cm}$): tras la lente sale paralelo al eje óptico.\n\nLos tres rayos convergen en un punto al lado opuesto de la lente, formando una imagen real e invertida. Como el objeto está exactamente a $2f$, la imagen aparece también a $2f$ del otro lado, con tamaño igual e invertido."
+        },
+        {
+          "titulo": "Ecuación de la lente delgada",
+          "contenido": "$$\\frac{1}{f}=\\frac{1}{s'}-\\frac{1}{s}.$$\n\n$$\\frac{1}{16}=\\frac{1}{s'}-\\frac{1}{-32}\\Rightarrow\\frac{1}{s'}=\\frac{1}{16}-\\frac{1}{32}=\\frac{1}{32}\\Rightarrow s'=32\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "Aumento lateral y tamaño",
+          "contenido": "$$m=\\frac{s'}{s}=\\frac{32}{-32}=-1.$$\n\n$$y'=m\\,y=-1\\cdot8=-8\\,\\text{cm}.$$"
+        }
+      ],
+      "resultado": "Imagen real, invertida, situada $32\\,\\text{cm}$ a la derecha de la lente y de tamaño $8\\,\\text{cm}$ (invertida)."
+    },
+    {
+      "numero": 9,
+      "titulo": "Difracción de neutrones y comparación con partículas masivas",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Las técnicas de dispersión de neutrones se utilizan para el estudio de la estructura y microestructura de los materiales. En un experimento de difracción un haz de neutrones con una longitud de onda de De Broglie de $\\lambda=0{,}2\\,\\text{nm}$ (valor que es del orden de la distancia interatómica en materiales sólidos cristalinos) incide sobre el material objeto de nuestra investigación. a. Calcule la velocidad del neutrón. (1 punto) b. Justifique por qué ese estudio no puede llevarse a cabo empleando un haz de partículas que posean una masa promedio de $1\\,\\mu\\text{g}$ lanzadas a una velocidad de $10^{3}\\,\\text{m}\\,\\text{s}^{-1}$. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad del neutrón."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Justificación con partícula de $1\\,\\mu\\text{g}$ a $10^{3}\\,\\text{m}\\,\\text{s}^{-1}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Hipótesis de De Broglie",
+          "contenido": "$$\\lambda=\\frac{h}{p}=\\frac{h}{m_n v}\\Rightarrow v=\\frac{h}{m_n\\lambda}.$$"
+        },
+        {
+          "titulo": "Sustitución numérica",
+          "contenido": "$$v=\\frac{6{,}626\\cdot10^{-34}}{1{,}675\\cdot10^{-27}\\cdot2{,}0\\cdot10^{-10}}=1{,}98\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Cálculo de λ para la partícula de 1 µg",
+          "contenido": "$$p=m v=1\\cdot10^{-9}\\cdot10^{3}=1\\cdot10^{-6}\\,\\text{kg}\\,\\text{m}\\,\\text{s}^{-1};$$\n\n$$\\lambda=\\frac{h}{p}=\\frac{6{,}626\\cdot10^{-34}}{1\\cdot10^{-6}}=6{,}626\\cdot10^{-28}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Justificación",
+          "contenido": "La longitud de onda asociada es del orden de $10^{-28}\\,\\text{m}$, mucho menor que cualquier escala atómica (típicamente $10^{-10}\\,\\text{m}$) o nuclear ($10^{-15}\\,\\text{m}$). Para que se produzca difracción se requiere que $\\lambda$ sea comparable al tamaño del obstáculo o a la distancia entre los centros dispersores. Como $\\lambda\\ll d_{\\text{atómica}}$, no se observa difracción: la partícula se comporta como un proyectil clásico."
+        }
+      ],
+      "resultado": "$v=1{,}98\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$;\n$\\lambda_{\\text{partícula}}=6{,}626\\cdot10^{-28}\\,\\text{m}\\ll10^{-10}\\,\\text{m}$, por lo que no se produce difracción."
+    },
+    {
+      "numero": 10,
+      "titulo": "Reacción de fisión del U-235 y constante de desintegración",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares; D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una central nuclear produce una potencia de $3\\,\\text{GW}$. Su funcionamiento se basa en las reacciones de fisión nuclear del $^{235}\\text{U}$ con neutrones. La fisión de cada átomo de $^{235}\\text{U}$ libera $200\\,\\text{MeV}$. a. Complete el siguiente proceso que tiene lugar en la central sustituyendo con el número atómico ($Z$) y el número másico ($A$) correspondiente en cada caso: (1 punto) $^{A}_{Z}\\text{U}+^{1}_{0}\\text{n}\\rightarrow^{235}_{92}\\text{U}$; $^{236}_{92}\\text{U}\\rightarrow^{144}_{Z}\\text{Ba}+^{A}_{36}\\text{Kr}+3\\,^{1}_{0}\\text{n}$ b. Sabiendo que la vida media del $^{235}\\text{U}$ es de $7{,}04\\cdot10^{8}\\,\\text{años}$, calcule su constante de desintegración radiactiva y su periodo de semidesintegración. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Completar la reacción nuclear."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Constante de desintegración y periodo de semidesintegración."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Conservación del número másico y atómico",
+          "contenido": "Primera reacción (captura del neutrón):\n\n$$^{A}_{Z}\\text{U}+^{1}_{0}\\text{n}\\rightarrow^{235}_{92}\\text{U}.$$\n\nConservación de $A$: $A+1=235\\Rightarrow A=234$. Conservación de $Z$: $Z+0=92\\Rightarrow Z=92$. Por tanto, el reactante es $^{234}_{92}\\text{U}$.\n\nSegunda reacción (fisión):\n\n$$^{236}_{92}\\text{U}\\rightarrow^{144}_{Z}\\text{Ba}+^{A}_{36}\\text{Kr}+3\\,^{1}_{0}\\text{n}.$$\n\nConservación de $A$: $236=144+A+3\\Rightarrow A=89$. Conservación de $Z$: $92=Z+36\\Rightarrow Z=56$. Por tanto:\n\n$$^{236}_{92}\\text{U}\\rightarrow^{144}_{56}\\text{Ba}+^{89}_{36}\\text{Kr}+3\\,^{1}_{0}\\text{n}.$$"
+        },
+        {
+          "titulo": "Relación vida media — constante de desintegración",
+          "contenido": "La vida media (tiempo medio de vida) es $\\tau=\\frac{1}{\\lambda}$. Por tanto:\n\n$$\\lambda=\\frac{1}{\\tau}=\\frac{1}{7{,}04\\cdot10^{8}}=1{,}42\\cdot10^{-9}\\,\\text{año}^{-1}.$$\n\nConvertido a segundos ($1\\,\\text{año}\\approx3{,}156\\cdot10^{7}\\,\\text{s}$):\n\n$$\\lambda=\\frac{1}{7{,}04\\cdot10^{8}\\cdot3{,}156\\cdot10^{7}}=4{,}50\\cdot10^{-17}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Periodo de semidesintegración",
+          "contenido": "$$T_{1/2}=\\frac{\\ln2}{\\lambda}=\\tau\\ln2=7{,}04\\cdot10^{8}\\cdot0{,}693=4{,}88\\cdot10^{8}\\,\\text{años}.$$"
+        }
+      ],
+      "resultado": "$^{234}_{92}\\text{U}+^{1}_{0}\\text{n}\\rightarrow^{235}_{92}\\text{U}$;\n$^{236}_{92}\\text{U}\\rightarrow^{144}_{56}\\text{Ba}+^{89}_{36}\\text{Kr}+3\\,^{1}_{0}\\text{n}$;\n$\\lambda\\approx1{,}42\\cdot10^{-9}\\,\\text{año}^{-1}\\approx4{,}50\\cdot10^{-17}\\,\\text{s}^{-1}$;\n$T_{1/2}\\approx4{,}88\\cdot10^{8}\\,\\text{años}$."
+    }
+  ]
+}

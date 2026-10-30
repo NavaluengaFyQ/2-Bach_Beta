@@ -1,0 +1,368 @@
+{
+  "id": "fisica-asturias-2022-extraordinaria",
+  "codigo": "EXA.FIS.AST.2022.EXT.SOL",
+  "comunidad": "Asturias",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2022,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen oficial de Física de la PAU de Asturias, convocatoria extraordinaria de 2022, con diez problemas agrupados en cinco bloques con opciones A y B. Se resuelven paso a paso cuestiones de gravitación, electromagnetismo, ondas, óptica y física moderna.",
+  "objetivo": "Evaluar la comprensión y aplicación de las leyes fundamentales de la Física de 2º de Bachillerato mediante problemas de cálculo y razonamiento, con especial atención a la conservación de la energía, los campos, las ondas y la física cuántica y nuclear.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "El examen consta de diez preguntas, organizadas en cinco bloques con dos opciones cada uno (1A o 1B; ...; 5A o 5B). El alumnado debe responder cinco preguntas cualesquiera, una por bloque, a elegir entre las diez propuestas. Duración: 90 minutos. Puntuación: 2 puntos por pregunta."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $k=9{,}0\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $m_p=m_n=1{,}67\\cdot10^{-27}\\,\\text{kg}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$; $e=1{,}6\\cdot10^{-19}\\,\\text{C}$; $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "Cohete en Io: velocidad inicial, gravedad y periodo orbital (opción A)",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A2. Leyes de Kepler y relación con la gravitación; A4. Intensidad de campo gravitatorio y líneas de campo; A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 0,5 + 0,5)",
+      "enunciado": "1A. El satélite más cercano a Júpiter, Io, tiene un radio $R_{\\text{Io}}=1{,}82\\cdot10^{6}\\,\\text{m}$ y su masa es $M_{\\text{Io}}=8{,}94\\cdot10^{22}\\,\\text{kg}$. Si se lanza desde su superficie un cohete que alcanza una altura máxima $h=\\frac{9}{7}R_{\\text{Io}}$, determina:",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "La velocidad inicial con la que se ha lanzado el cohete."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "La aceleración de la gravedad sobre la superficie de Io y en el punto más alto."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "El periodo de rotación orbital del cohete a dicha altura, si permaneciese describiendo trayectoria circular."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Conservación de energía",
+          "contenido": "En el punto de lanzamiento, $r_0=R_{\\text{Io}}$, y en el punto más alto, $r_{\\text{max}}=R_{\\text{Io}}+h=R_{\\text{Io}}+\\frac{9}{7}R_{\\text{Io}}=\\frac{16}{7}R_{\\text{Io}}$. En el punto más alto la velocidad es nula.\n\nLa conservación de la energía mecánica entre ambos puntos es:\n\n$$\\frac{1}{2}m v_0^{2}-\\frac{G M_{\\text{Io}} m}{R_{\\text{Io}}}=-\\frac{G M_{\\text{Io}} m}{R_{\\text{Io}}+h}.$$\n\nPor tanto:\n\n$$v_0^{2}=2G M_{\\text{Io}}\\left(\\frac{1}{R_{\\text{Io}}}-\\frac{1}{R_{\\text{Io}}+h}\\right)=\\frac{2G M_{\\text{Io}}h}{R_{\\text{Io}}(R_{\\text{Io}}+h)}.$$"
+        },
+        {
+          "titulo": "Cálculo numérico",
+          "contenido": "Con $h=\\frac{9}{7}R_{\\text{Io}}$ y $R_{\\text{Io}}+h=\\frac{16}{7}R_{\\text{Io}}$:\n\n$$v_0^{2}=\\frac{2G M_{\\text{Io}}\\frac{9}{7}R_{\\text{Io}}}{R_{\\text{Io}}\\frac{16}{7}R_{\\text{Io}}}=\\frac{9G M_{\\text{Io}}}{8R_{\\text{Io}}}.$$\n\nSustituyendo $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$, $M_{\\text{Io}}=8{,}94\\cdot10^{22}\\,\\text{kg}$ y $R_{\\text{Io}}=1{,}82\\cdot10^{6}\\,\\text{m}$:\n\n$$v_0=\\sqrt{\\frac{9\\cdot6{,}67\\cdot10^{-11}\\cdot8{,}94\\cdot10^{22}}{8\\cdot1{,}82\\cdot10^{6}}}=1{,}92\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Gravedad en superficie y en altura $h$",
+          "contenido": "En la superficie de Io:\n\n$$g_0=\\frac{G M_{\\text{Io}}}{R_{\\text{Io}}^{2}}=\\frac{6{,}67\\cdot10^{-11}\\cdot8{,}94\\cdot10^{22}}{(1{,}82\\cdot10^{6})^{2}}=1{,}80\\,\\text{m}\\,\\text{s}^{-2}.$$\n\nEn el punto más alto, $r=R_{\\text{Io}}+h=\\frac{16}{7}R_{\\text{Io}}$:\n\n$$g_h=\\frac{G M_{\\text{Io}}}{(R_{\\text{Io}}+h)^{2}}=g_0\\left(\\frac{R_{\\text{Io}}}{R_{\\text{Io}}+h}\\right)^{2}=1{,}80\\left(\\frac{7}{16}\\right)^{2}=0{,}345\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        },
+        {
+          "titulo": "Periodo orbital con la tercera ley de Kepler",
+          "contenido": "Si el cohete describiese una órbita circular de radio $r=R_{\\text{Io}}+h=\\frac{16}{7}R_{\\text{Io}}=4{,}16\\cdot10^{6}\\,\\text{m}$, la fuerza gravitatoria sería centrípeta:\n\n$$\\frac{G M_{\\text{Io}}m}{r^{2}}=m\\frac{4\\pi^{2}}{T^{2}}r \\quad\\Rightarrow\\quad T=2\\pi\\sqrt{\\frac{r^{3}}{G M_{\\text{Io}}}}.$$\n\nSustituyendo:\n\n$$T=2\\pi\\sqrt{\\frac{(4{,}16\\cdot10^{6})^{3}}{6{,}67\\cdot10^{-11}\\cdot8{,}94\\cdot10^{22}}}=2{,}18\\cdot10^{4}\\,\\text{s}\\approx6{,}06\\,\\text{h}.$$"
+        }
+      ],
+      "resultado": "$v_0=1{,}92\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$; $g_0=1{,}80\\,\\text{m}\\,\\text{s}^{-2}$, $g_h=0{,}345\\,\\text{m}\\,\\text{s}^{-2}$; $T=2{,}18\\cdot10^{4}\\,\\text{s}\\approx6{,}06\\,\\text{h}$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Punto donde se anula campo gravitatorio y potencial (opción B)",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo; A5. Potencial gravitatorio, equipotenciales y relación con el campo",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "1B. Dos objetos tienen masas $m_1=0{,}5\\,\\text{kg}$ y $m_2=9m_1$. El primer objeto se sitúa en el origen, el segundo a $2\\,\\text{m}$ según el eje $X$ positivo.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Determina el punto sobre el eje $X$ en el que se anula el campo de atracción gravitatoria entre ambos."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcula el valor del potencial gravitatorio debido a ambos objetos en dicho punto."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Condición para campo nulo",
+          "contenido": "Sea $x$ la distancia desde $m_1$ (en el origen). El punto debe estar entre las masas, ya que fuera de ellas los campos tienen el mismo sentido. Igualando módulos:\n\n$$\\frac{G m_1}{x^{2}}=\\frac{G m_2}{(2-x)^{2}}.$$\n\nComo $m_2=9m_1$:\n\n$$\\frac{1}{x^{2}}=\\frac{9}{(2-x)^{2}} \\quad\\Rightarrow\\quad \\frac{1}{x}=\\frac{3}{2-x}.$$\n\nResolviendo: $2-x=3x$, de donde $x=0{,}5\\,\\text{m}$."
+        },
+        {
+          "titulo": "Potencial gravitatorio en el punto",
+          "contenido": "$V=-\\frac{G m_1}{x}-\\frac{G m_2}{2-x}$. Con $m_1=0{,}5\\,\\text{kg}$, $m_2=4{,}5\\,\\text{kg}$, $x=0{,}5\\,\\text{m}$ y $2-x=1{,}5\\,\\text{m}$:\n\n$$V=-G\\left(\\frac{0{,}5}{0{,}5}+\\frac{4{,}5}{1{,}5}\\right)=-4G=-2{,}67\\cdot10^{-10}\\,\\text{J}\\,\\text{kg}^{-1}.$$"
+        }
+      ],
+      "resultado": "$x=0{,}5\\,\\text{m}$ desde $m_1$; $V=-2{,}67\\cdot10^{-10}\\,\\text{J}\\,\\text{kg}^{-1}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Tres cargas en vértices de cuadrado: campo, potencial y trabajo (opción A)",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos (1,5 + 0,5)",
+      "enunciado": "2A. Tres cargas eléctricas puntuales se encuentran situadas en los vértices de un cuadrado de lado $l=2\\,\\text{m}$: dos cargas positivas $q$ en $(2,0)$ y $(0,2)$, y una carga negativa $-2q$ en el origen $(0,0)$, con $q=1\\cdot10^{-6}\\,\\text{C}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Determina el campo eléctrico resultante y el potencial eléctrico en el vértice opuesto al de la carga negativa, situado en $(2,2)$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcula el trabajo que debe realizarse para trasladar una carga negativa $-q$ desde el vértice $(2,2)$ hasta el centro $(1,1)$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancias al punto $P=(2,2)$",
+          "contenido": "Desde la carga $-2q$ en $(0,0)$: $r_0=\\sqrt{2^{2}+2^{2}}=2\\sqrt{2}\\,\\text{m}$. Desde $q$ en $(2,0)$: $r_1=2\\,\\text{m}$. Desde $q$ en $(0,2)$: $r_2=2\\,\\text{m}$."
+        },
+        {
+          "titulo": "Campo eléctrico vectorial",
+          "contenido": "El campo debido a $-2q$ en $P$ apunta hacia el origen:\n\n$$\\vec E_0=\\frac{k(2q)}{(2\\sqrt{2})^{2}}\\left(-\\frac{1}{\\sqrt{2}}\\hat i-\\frac{1}{\\sqrt{2}}\\hat j\\right)=\\frac{9\\cdot10^{9}\\cdot2\\cdot10^{-6}}{8}\\left(-\\frac{1}{\\sqrt{2}}\\hat i-\\frac{1}{\\sqrt{2}}\\hat j\\right)=(-1{,}59\\cdot10^{3}\\hat i-1{,}59\\cdot10^{3}\\hat j)\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nEl campo debido a $q$ en $(2,0)$:\n\n$$\\vec E_1=\\frac{kq}{2^{2}}\\hat j=2{,}25\\cdot10^{3}\\hat j\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nEl campo debido a $q$ en $(0,2)$:\n\n$$\\vec E_2=\\frac{kq}{2^{2}}\\hat i=2{,}25\\cdot10^{3}\\hat i\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nSumando:\n\n$$\\vec E=(2{,}25\\cdot10^{3}-1{,}59\\cdot10^{3})\\hat i+(2{,}25\\cdot10^{3}-1{,}59\\cdot10^{3})\\hat j=(6{,}59\\cdot10^{2}\\hat i+6{,}59\\cdot10^{2}\\hat j)\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nSu módulo es $E=9{,}32\\cdot10^{2}\\,\\text{N}\\,\\text{C}^{-1}$ y forma $45^{\\circ}$ con el eje $X$ positivo, alejándose del origen."
+        },
+        {
+          "titulo": "Potencial eléctrico (escalar)",
+          "contenido": "$$V_P=\\frac{k(-2q)}{2\\sqrt{2}}+\\frac{kq}{2}+\\frac{kq}{2}=kq\\left(1-\\frac{1}{\\sqrt{2}}\\right)=2{,}64\\cdot10^{3}\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Potencial en el centro y trabajo",
+          "contenido": "En el centro $(1,1)$, las distancias a las tres cargas son $\\sqrt{2}\\,\\text{m}$:\n\n$$V_C=\\frac{k(-2q)}{\\sqrt{2}}+\\frac{kq}{\\sqrt{2}}+\\frac{kq}{\\sqrt{2}}=0.$$\n\nEl trabajo externo para llevar $-q$ desde $P$ hasta el centro es:\n\n$$W_{\\text{ext}}=(-q)(V_C-V_P)=(-q)(0-V_P)=qV_P=2{,}64\\cdot10^{-3}\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$\\vec E=6{,}59\\cdot10^{2}\\hat i+6{,}59\\cdot10^{2}\\hat j\\,\\text{N}\\,\\text{C}^{-1}$ ($E=9{,}32\\cdot10^{2}\\,\\text{N}\\,\\text{C}^{-1}$, $45^{\\circ}$); $V_P=2{,}64\\cdot10^{3}\\,\\text{V}$; $W_{\\text{ext}}=2{,}64\\cdot10^{-3}\\,\\text{J}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Partícula alfa acelerada y trayectoria circular en B (opción B)",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "2B. Una partícula alfa ($^{4}\\text{He}^{2+}$) en estado de reposo inicial se acelera horizontalmente en sentido $+X$ mediante $\\Delta V=100\\,\\text{V}$ entre dos placas plano paralelas. Después penetra en una región con campo magnético $B=100\\,\\text{mT}$ perpendicular a la velocidad y dirigido según el eje $Z$ negativo (entrante al plano $XY$).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcula la velocidad de la partícula alfa al pasar por la segunda placa, y la máxima altura vertical alcanzada según el eje $Y$, tras recorrer una trayectoria semicircular bajo acción del campo magnético."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Qué radio de curvatura tendría la trayectoria que describiría un electrón en las mismas condiciones del experimento, tras cambiar la polaridad de las placas plano paralelas."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Velocidad de la partícula alfa",
+          "contenido": "La energía cinética adquirida es $q\\Delta V$:\n\n$$\\frac{1}{2}m_{\\alpha}v^{2}=q\\Delta V.$$\n\nCon $q=2e=3{,}2\\cdot10^{-19}\\,\\text{C}$, $m_{\\alpha}\\approx4m_p=6{,}68\\cdot10^{-27}\\,\\text{kg}$ y $\\Delta V=100\\,\\text{V}$:\n\n$$v=\\sqrt{\\frac{2q\\Delta V}{m_{\\alpha}}}=\\sqrt{\\frac{2\\cdot3{,}2\\cdot10^{-19}\\cdot100}{6{,}68\\cdot10^{-27}}}=9{,}79\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Radio circular y altura máxima",
+          "contenido": "En el campo magnético, la fuerza de Lorentz es centrípeta:\n\n$$q v B=\\frac{m v^{2}}{r} \\quad\\Rightarrow\\quad r=\\frac{m v}{qB}.$$\n\nCon $B=0{,}100\\,\\text{T}$:\n\n$$r=\\frac{6{,}68\\cdot10^{-27}\\cdot9{,}79\\cdot10^{4}}{3{,}2\\cdot10^{-19}\\cdot0{,}100}=2{,}04\\cdot10^{-2}\\,\\text{m}.$$\n\nComo describe una semicircunferencia, la altura máxima según el eje $Y$ es el diámetro:\n\n$$h_{\\text{max}}=2r=4{,}09\\cdot10^{-2}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Radio para un electrón",
+          "contenido": "Al cambiar la polaridad, el electrón también se acelera con $100\\,\\text{V}$:\n\n$$v_e=\\sqrt{\\frac{2e\\Delta V}{m_e}}=\\sqrt{\\frac{2\\cdot1{,}6\\cdot10^{-19}\\cdot100}{9{,}11\\cdot10^{-31}}}=5{,}93\\cdot10^{6}\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nSu radio en el mismo campo magnético es:\n\n$$r_e=\\frac{m_e v_e}{eB}=\\frac{9{,}11\\cdot10^{-31}\\cdot5{,}93\\cdot10^{6}}{1{,}6\\cdot10^{-19}\\cdot0{,}100}=3{,}38\\cdot10^{-4}\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$v_{\\alpha}=9{,}79\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-1}$; $r_{\\alpha}=2{,}04\\cdot10^{-2}\\,\\text{m}$, $h_{\\text{max}}=4{,}09\\cdot10^{-2}\\,\\text{m}$; $r_e=3{,}38\\cdot10^{-4}\\,\\text{m}$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Aullido de lobo: nivel sonoro a 200 m y distancia de manada (opción A)",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "3A. Un excursionista escucha el aullido de un lobo que se encuentra a $100\\,\\text{m}$ con $50\\,\\text{dB}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Si se aleja a $200\\,\\text{m}$, cuál será el nivel de intensidad sonora."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Si los 4 lobos de una manada aúllan a la vez con la misma potencia, a qué distancia se encontrará la manada si la sonoridad percibida es de $60\\,\\text{dB}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Cambio de nivel con la distancia",
+          "contenido": "Para un foco puntual, $I\\propto \\frac{1}{r^{2}}$. Al pasar de $100\\,\\text{m}$ a $200\\,\\text{m}$, la intensidad se divide por $4$:\n\n$$L_{200}=L_{100}-10\\log_{10}4=50-6{,}02=43{,}98\\,\\text{dB}.$$"
+        },
+        {
+          "titulo": "Potencia de un lobo y distancia con cuatro lobos",
+          "contenido": "De $L=10\\log_{10}(I/I_0)$ con $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$, para $50\\,\\text{dB}$:\n\n$$I_{100}=10^{-12}\\cdot10^{5}=10^{-7}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nLa potencia de un lobo es:\n\n$$P=I_{100}4\\pi r^{2}=10^{-7}\\cdot4\\pi\\cdot100^{2}=1{,}26\\cdot10^{-2}\\,\\text{W}.$$\n\nCuatro lobos emiten una potencia total $P_4=4P=5{,}03\\cdot10^{-2}\\,\\text{W}$. Para $60\\,\\text{dB}$, $I=10^{-6}\\,\\text{W}\\,\\text{m}^{-2}$:\n\n$$r=\\sqrt{\\frac{P_4}{4\\pi I}}=\\sqrt{\\frac{5{,}03\\cdot10^{-2}}{4\\pi\\cdot10^{-6}}}=6{,}32\\cdot10^{1}\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$L_{200}=43{,}98\\,\\text{dB}\\approx44\\,\\text{dB}$; $r=6{,}32\\cdot10^{1}\\,\\text{m}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Onda transversal: número de ondas, ecuación y velocidades (opción B)",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía; C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos (0,5 + 0,5 + 1)",
+      "enunciado": "3B. Onda transversal en cuerda de derecha a izquierda con $v=30\\,\\text{m}\\,\\text{s}^{-1}$, $\\lambda=1{,}5\\,\\text{m}$, $A=0{,}2\\,\\text{m}$. En $t=0$ el extremo derecho (origen de coordenadas) tiene desplazamiento nulo y velocidad de oscilación positiva.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Número de ondas y frecuencia angular."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Ecuación del movimiento ondulatorio."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad y aceleración máximas de oscilación."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Número de ondas y frecuencia angular",
+          "contenido": "$$k=\\frac{2\\pi}{\\lambda}=\\frac{2\\pi}{1{,}5}=4{,}19\\,\\text{rad}\\,\\text{m}^{-1}.$$\n\n$$\\omega=2\\pi f=2\\pi\\frac{v}{\\lambda}=2\\pi\\frac{30}{1{,}5}=40\\pi=1{,}26\\cdot10^{2}\\,\\text{rad}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Ecuación con condiciones iniciales",
+          "contenido": "La onda se propaga hacia $X$ negativo, por lo que escribimos:\n\n$$y(x,t)=A\\,\\text{sen}\\,(\\omega t+kx+\\varphi).$$\n\nEn $t=0$ y $x=0$: $y=0$, luego $\\text{sen}\\,\\varphi=0$. La velocidad de oscilación es $v_y=A\\omega\\cos(\\omega t+kx+\\varphi)$; en $t=0$, $x=0$ debe ser positiva, así que $\\cos\\varphi>0$ y $\\varphi=0$. Por tanto:\n\n$$y(x,t)=0{,}2\\,\\text{sen}\\,(40\\pi t+\\frac{4\\pi}{3}x)\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Velocidad y aceleración máximas",
+          "contenido": "$$v_{\\text{max}}=A\\omega=0{,}2\\cdot40\\pi=25{,}13\\,\\text{m}\\,\\text{s}^{-1}.$$\n\n$$a_{\\text{max}}=A\\omega^{2}=0{,}2\\cdot(40\\pi)^{2}=3{,}16\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        }
+      ],
+      "resultado": "$k=4{,}19\\,\\text{rad}\\,\\text{m}^{-1}$; $\\omega=1{,}26\\cdot10^{2}\\,\\text{rad}\\,\\text{s}^{-1}$; $y(x,t)=0{,}2\\,\\text{sen}\\,(40\\pi t+\\frac{4\\pi}{3}x)\\,\\text{m}$; $v_{\\text{max}}=25{,}13\\,\\text{m}\\,\\text{s}^{-1}$; $a_{\\text{max}}=3{,}16\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-2}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Lente convergente como lupa: posición del objeto (opción A)",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "4A. Distancia a la que debe colocarse un objeto delante de una lente convergente cuya distancia focal es $0{,}50\\,\\text{m}$, para que se forme una imagen virtual, derecha y tres veces mayor que un objeto de $1\\,\\text{cm}$ de altura. Realiza el trazado de rayos correspondiente, identificando los elementos principales de la lente, el objeto y la imagen formada, así como las posiciones en las que deben situarse.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Distancia a la que debe colocarse el objeto."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Trazado de rayos correspondiente."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Aumento y fórmula de Gauss",
+          "contenido": "Para una imagen virtual, derecha y tres veces mayor, el aumento es $\\beta=+3$:\n\n$$\\beta=-\\frac{s'}{s}=3 \\quad\\Rightarrow\\quad s'=-3s.$$\n\nCon la ecuación de la lente delgada, $\\frac{1}{f}=\\frac{1}{s}+\\frac{1}{s'}$:\n\n$$\\frac{1}{0{,}50}=\\frac{1}{s}-\\frac{1}{3s}=\\frac{2}{3s}.$$\n\nDe aquí $s=\\frac{2f}{3}=\\frac{2\\cdot0{,}50}{3}=0{,}333\\,\\text{m}$ y $s'=-3s=-1{,}00\\,\\text{m}$."
+        },
+        {
+          "titulo": "Trazado de rayos",
+          "contenido": "Se dibuja la lente convergente con su eje óptico, el foco objeto $F$ a $-0{,}50\\,\\text{m}$ y el foco imagen $F'$ a $+0{,}50\\,\\text{m}$. El objeto $AB$ de $1\\,\\text{cm}$ se sitúa entre $F$ y la lente, a $s=0{,}333\\,\\text{m}$ a la izquierda de la lente. Un rayo paralelo al eje desde el extremo del objeto sale de la lente pasando por $F'$; su prolongación hacia atrás proporciona la imagen virtual. Otro rayo que pasa por el centro óptico sigue recto. Las prolongaciones de ambos rayos se cortan a la izquierda de la lente, en $s'=-1{,}00\\,\\text{m}$, formando una imagen virtual, derecha y de $3\\,\\text{cm}$ de altura."
+        }
+      ],
+      "resultado": "$s=0{,}333\\,\\text{m}$ delante de la lente ($s=-1/3\\,\\text{m}$ en convenio cartesiano); imagen virtual en $s'=-1{,}00\\,\\text{m}$, derecha y de $3\\,\\text{cm}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Longitud de onda y frecuencia al cambiar de medio (opción B)",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias; C5. Naturaleza de la luz y óptica física básica",
+      "puntuacion": "2 puntos (0,5 + 1,5)",
+      "enunciado": "4B. Un rayo de luz de frecuencia $f=5\\cdot10^{14}\\,\\text{Hz}$ se propaga por un medio con $n_0=1$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcula su longitud de onda en dicho medio."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Cuáles serán los valores de la frecuencia y longitud de onda del rayo si el nuevo medio tiene $n_1=1{,}36$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Longitud de onda en el primer medio",
+          "contenido": "$$\\lambda_0=\\frac{c}{f}=\\frac{3\\cdot10^{8}}{5\\cdot10^{14}}=6{,}00\\cdot10^{-7}\\,\\text{m}=600\\,\\text{nm}.$$"
+        },
+        {
+          "titulo": "Frecuencia y longitud de onda en el nuevo medio",
+          "contenido": "La frecuencia no cambia al pasar de medio:\n\n$$f=5\\cdot10^{14}\\,\\text{Hz}.$$\n\nLa velocidad en el medio de índice $n_1=1{,}36$ es:\n\n$$v=\\frac{c}{n_1}=\\frac{3\\cdot10^{8}}{1{,}36}=2{,}21\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nY la nueva longitud de onda:\n\n$$\\lambda_1=\\frac{v}{f}=\\frac{2{,}21\\cdot10^{8}}{5\\cdot10^{14}}=4{,}41\\cdot10^{-7}\\,\\text{m}=441\\,\\text{nm}.$$"
+        }
+      ],
+      "resultado": "$\\lambda_0=6{,}00\\cdot10^{-7}\\,\\text{m}=600\\,\\text{nm}$; $f=5\\cdot10^{14}\\,\\text{Hz}$; $\\lambda_1=4{,}41\\cdot10^{-7}\\,\\text{m}=441\\,\\text{nm}$."
+    },
+    {
+      "numero": 9,
+      "titulo": "Datación radiactiva con C-14 (opción A)",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares; D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "5A. El $^{14}\\text{C}$ es el isótopo radiactivo del carbono, comúnmente denominado carbono-14, muy empleado en métodos de datación absoluta de materia orgánica fósil, cuyo periodo de semidesintegración es de $5760$ años. Se dispone de una muestra de dicho isótopo con una masa inicial de $10\\,\\text{mg}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcula la vida media del isótopo $^{14}\\text{C}$ y la masa que hay al cabo de $500$ años."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Cuánto se reduce la actividad de dicha muestra tras transcurrir un tiempo igual a $2/3$ de la vida media del isótopo."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Vida media y masa a 500 años",
+          "contenido": "La vida media es $\\tau=\\frac{T_{1/2}}{\\ln 2}$:\n\n$$\\tau=\\frac{5760}{0{,}693}=8{,}31\\cdot10^{3}\\,\\text{años}.$$\n\nLa masa sigue la ley $m=m_0e^{-\\lambda t}$, con $\\lambda=\\frac{\\ln 2}{T_{1/2}}$:\n\n$$m(500)=10\\,e^{-\\frac{\\ln 2}{5760}500}=9{,}42\\,\\text{mg}.$$"
+        },
+        {
+          "titulo": "Reducción de actividad a $2\\tau/3$",
+          "contenido": "La actividad es proporcional al número de núcleos: $A=A_0e^{-t/\\tau}$. Para $t=\\frac{2}{3}\\tau$:\n\n$$\\frac{A}{A_0}=e^{-2/3}=0{,}513.$$\n\nLa actividad se reduce en $1-0{,}513=0{,}487$, es decir, un $48{,}7\\,\\%$."
+        }
+      ],
+      "resultado": "$\\tau=8{,}31\\cdot10^{3}\\,\\text{años}$; $m(500)=9{,}42\\,\\text{mg}$; la actividad disminuye un $48{,}7\\,\\%$."
+    },
+    {
+      "numero": 10,
+      "titulo": "Efecto fotoeléctrico en plata: frecuencia umbral y potencial de frenado (opción B)",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "5B. El trabajo de extracción de la plata es de $4{,}73\\,\\text{eV}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcula la frecuencia umbral para el efecto fotoeléctrico de este metal."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Determina el potencial de frenado de los electrones arrancados cuando se irradia una muestra de Ag con una radiación de $200\\,\\text{nm}$ de longitud de onda."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Frecuencia umbral",
+          "contenido": "El trabajo de extracción es $W=4{,}73\\,\\text{eV}=4{,}73\\cdot1{,}6\\cdot10^{-19}=7{,}57\\cdot10^{-19}\\,\\text{J}$. La frecuencia umbral cumple $hf_0=W$:\n\n$$f_0=\\frac{W}{h}=\\frac{7{,}57\\cdot10^{-19}}{6{,}63\\cdot10^{-34}}=1{,}14\\cdot10^{15}\\,\\text{Hz}.$$"
+        },
+        {
+          "titulo": "Potencial de frenado",
+          "contenido": "Para $\\lambda=200\\,\\text{nm}$, la energía del fotón es:\n\n$$E=\\frac{hc}{\\lambda}=\\frac{6{,}63\\cdot10^{-34}\\cdot3\\cdot10^{8}}{200\\cdot10^{-9}}=9{,}95\\cdot10^{-19}\\,\\text{J}=6{,}22\\,\\text{eV}.$$\n\nLa energía cinética máxima es:\n\n$$K_{\\text{max}}=E-W=6{,}22-4{,}73=1{,}49\\,\\text{eV}.$$\n\nEl potencial de frenado es:\n\n$$V_s=\\frac{K_{\\text{max}}}{e}=1{,}49\\,\\text{V}.$$"
+        }
+      ],
+      "resultado": "$f_0=1{,}14\\cdot10^{15}\\,\\text{Hz}$; $K_{\\text{max}}=1{,}49\\,\\text{eV}$; $V_s=1{,}49\\,\\text{V}$."
+    }
+  ]
+}

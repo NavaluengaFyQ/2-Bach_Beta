@@ -1,0 +1,312 @@
+{
+  "id": "fisica-val-2022-ordinaria",
+  "codigo": "EXA.FIS.VAL.2022.ORD.SOL",
+  "comunidad": "Comunidad Valenciana",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2022,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la convocatoria ordinaria de 2022 en la Comunidad Valenciana, con doce problemas resueltos que cubren campo gravitatorio, campo electromagnético, vibraciones y ondas, óptica y física del siglo XX.",
+  "objetivo": "Evaluar la aplicación de los principios, leyes y modelos de la Física a problemas de selectividad, incluyendo deducciones, cálculos numéricos, interpretación física y razonamiento conceptual.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "El documento presenta doce problemas: las preguntas 1A–4A y 5–8 valen 1,5 puntos cada una, y las preguntas 1B–4B valen 2,0 puntos cada una. No se incluye en el documento un panel de baremo adicional con penalizaciones o optatividad."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $g_0=26\\,\\text{m}\\,\\text{s}^{-2}$ en el problema 1A; $k=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $m_e=9{,}1\\cdot10^{-31}\\,\\text{kg}$; $q=1{,}6\\cdot10^{-19}\\,\\text{C}$; $n_{\\text{aire}}=1{,}00$."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "Interacción gravitatoria - Potencial gravitatorio y distancia",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo; A5. Potencial gravitatorio, equipotenciales y relación con el campo",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "El potencial gravitatorio en un punto situado a una distancia $r$ del centro de un planeta es $V=-9{,}1\\cdot10^{8}\\,\\text{J}\\,\\text{kg}^{-1}$. La intensidad de campo en la superficie del planeta es $g_0=26\\,\\text{m}\\,\\text{s}^{-2}$ y el radio del planeta es $R=7\\cdot10^{4}\\,\\text{km}$. Deduce una relación que proporcione la distancia $r$ en función de $V$, $R$ y $g_0$ y calcula el valor de $r$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Deducción de la relación r(V, R, g0)",
+          "contenido": "El potencial gravitatorio a una distancia $r$ del centro del planeta viene dado por $V=-\\frac{GM}{r}$, donde $M$ es la masa del planeta y $G$ la constante de gravitación universal.\n\nLa intensidad del campo gravitatorio en la superficie es $g_0=\\frac{GM}{R^{2}}$, de donde $GM=g_0\\,R^{2}$.\n\nSustituyendo $GM$ en la expresión del potencial: $V=-\\frac{g_0\\,R^{2}}{r}$.\n\nDespejando $r$: $r=-\\frac{g_0\\,R^{2}}{V}$."
+        },
+        {
+          "titulo": "Cálculo numérico de r",
+          "contenido": "Datos: $V=-9{,}1\\cdot10^{8}\\,\\text{J}\\,\\text{kg}^{-1}$, $g_0=26\\,\\text{m}\\,\\text{s}^{-2}$, $R=7\\cdot10^{4}\\,\\text{km}=7\\cdot10^{7}\\,\\text{m}$.\n\n$$r=-\\frac{g_0\\,R^{2}}{V}=-\\frac{26\\cdot(7\\cdot10^{7})^{2}}{-9{,}1\\cdot10^{8}}.$$\n\nNumerador: $26\\cdot4{,}9\\cdot10^{15}=1{,}274\\cdot10^{17}$.\n\n$$r=\\frac{1{,}274\\cdot10^{17}}{9{,}1\\cdot10^{8}}=1{,}4\\cdot10^{8}\\,\\text{m}=1{,}4\\cdot10^{5}\\,\\text{km}=140\\,000\\,\\text{km}.$$\n\nLa distancia $r$ es el doble del radio del planeta, lo cual es coherente con que el potencial en la superficie sería $V_{\\text{sup}}=-g_0\\,R=-26\\cdot7\\cdot10^{7}=-1{,}82\\cdot10^{9}\\,\\text{J}\\,\\text{kg}^{-1}$, y como $|V|<|V_{\\text{sup}}|$, el punto está más lejos que la superficie."
+        }
+      ],
+      "resultado": "$r=-\\frac{g_0\\,R^{2}}{V}=1{,}4\\cdot10^{8}\\,\\text{m}=1{,}4\\cdot10^{5}\\,\\text{km}=140\\,000\\,\\text{km}$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Interacción gravitatoria - Energía mecánica de un satélite",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Deduce la relación entre la energía mecánica de un satélite y el radio de su órbita circular alrededor de un planeta. Dos satélites, A y B, de igual masa siguen órbitas circulares, uno con energía mecánica $E_A=-4\\cdot10^{10}\\,\\text{J}$ y otro con $E_B=-2\\cdot10^{10}\\,\\text{J}$. Razona cuál tiene mayor energía cinética y cuál se encuentra más lejos del planeta.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Deducción de la relación E_mec(r)",
+          "contenido": "Para un satélite de masa $m$ en órbita circular de radio $r$ alrededor de un planeta de masa $M$, la fuerza gravitatoria proporciona la fuerza centrípeta: $\\frac{GMm}{r^{2}}=\\frac{mv^{2}}{r}$, de donde $v^{2}=\\frac{GM}{r}$.\n\nLa energía cinética es $E_c=\\frac{1}{2}mv^{2}=\\frac{GMm}{2r}$.\n\nLa energía potencial gravitatoria es $E_p=-\\frac{GMm}{r}$.\n\nLa energía mecánica total es $E_{\\text{mec}}=E_c+E_p=\\frac{GMm}{2r}-\\frac{GMm}{r}=-\\frac{GMm}{2r}$.\n\nRelación fundamental: $E_{\\text{mec}}=-\\frac{GMm}{2r}$. También se cumple que $E_c=-E_{\\text{mec}}$ y $E_p=2E_{\\text{mec}}$."
+        },
+        {
+          "titulo": "Comparación de los satélites A y B",
+          "contenido": "Dado que $E_c=-E_{\\text{mec}}$, para el satélite A: $E_{c,A}=-(-4\\cdot10^{10})=4\\cdot10^{10}\\,\\text{J}$. Para el satélite B: $E_{c,B}=-(-2\\cdot10^{10})=2\\cdot10^{10}\\,\\text{J}$.\n\nEl satélite A tiene mayor energía cinética ($4\\cdot10^{10}\\,\\text{J}>2\\cdot10^{10}\\,\\text{J}$).\n\nComo $E_{\\text{mec}}=-\\frac{GMm}{2r}$, entonces $r=-\\frac{GMm}{2E_{\\text{mec}}}$. Un valor de $E_{\\text{mec}}$ más negativo (más pequeño) implica un radio menor. Como $E_A=-4\\cdot10^{10}\\,\\text{J}$ es más negativo que $E_B=-2\\cdot10^{10}\\,\\text{J}$, el satélite A está más cerca del planeta.\n\nEl satélite B se encuentra más lejos del planeta. Esto es coherente: un satélite más lejano tiene menor velocidad orbital, menor energía cinética y mayor (menos negativa) energía mecánica."
+        }
+      ],
+      "resultado": "$E_{\\text{mec}}=-\\frac{GMm}{2r}$; $E_{c,A}=4\\cdot10^{10}\\,\\text{J}>E_{c,B}=2\\cdot10^{10}\\,\\text{J}$; el satélite A está más cerca y el satélite B más lejos."
+    },
+    {
+      "numero": 3,
+      "titulo": "Interacción electromagnética - Fuerzas sobre una carga en campos E y B",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Una carga de $3\\,\\mu\\text{C}$ entra con velocidad $\\vec v=10^{4}\\,\\hat i\\ \\text{m}\\,\\text{s}^{-1}$ en una región del espacio en la que existe un campo eléctrico $\\vec E=10^{4}\\,\\hat j\\ \\text{N}\\,\\text{C}^{-1}$ y un campo magnético $\\vec B=(\\hat i+\\hat k)\\,\\text{T}$. Determina el valor de las fuerzas eléctrica, magnética y total que actúan sobre la carga.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Fuerza eléctrica",
+          "contenido": "La fuerza eléctrica es $\\vec F_e=q\\vec E=3\\cdot10^{-6}\\cdot10^{4}\\,\\hat j=0{,}03\\,\\hat j\\ \\text{N}$.\n\n$|\\vec F_e|=0{,}03\\,\\text{N}=3\\cdot10^{-2}\\,\\text{N}$, dirigida en la dirección $+\\hat j$."
+        },
+        {
+          "titulo": "Fuerza magnética",
+          "contenido": "La fuerza magnética es $\\vec F_m=q(\\vec v\\times\\vec B)$. Calculamos el producto vectorial $\\vec v\\times\\vec B$.\n\n$$\\vec v\\times\\vec B=(10^{4}\\hat i)\\times(\\hat i+\\hat k)=10^{4}(\\hat i\\times\\hat i)+10^{4}(\\hat i\\times\\hat k)=10^{4}\\cdot0+10^{4}(-\\hat j)=-10^{4}\\hat j.$$\n\n$$\\vec F_m=3\\cdot10^{-6}\\cdot(-10^{4})\\hat j=-0{,}03\\,\\hat j\\ \\text{N}.$$\n\n$|\\vec F_m|=0{,}03\\,\\text{N}=3\\cdot10^{-2}\\,\\text{N}$, dirigida en la dirección $-\\hat j$."
+        },
+        {
+          "titulo": "Fuerza total",
+          "contenido": "$$\\vec F_{\\text{total}}=\\vec F_e+\\vec F_m=0{,}03\\,\\hat j+(-0{,}03\\,\\hat j)=0\\ \\text{N}.$$\n\nLa fuerza total sobre la carga es nula. La fuerza eléctrica y la magnética tienen el mismo módulo pero sentidos opuestos, por lo que se cancelan. La carga se mueve en línea recta con velocidad constante (movimiento rectilíneo uniforme)."
+        }
+      ],
+      "resultado": "$\\vec F_e=0{,}03\\,\\hat j\\ \\text{N}$; $\\vec F_m=-0{,}03\\,\\hat j\\ \\text{N}$; $\\vec F_{\\text{total}}=0\\ \\text{N}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Interacción electromagnética - Inducción en barra deslizante",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "El circuito de la figura está formado por una barra metálica que desliza sobre un conductor en forma de U invertida. Sobre dicho circuito actúa un campo magnético perpendicular al plano $xy$. Razona por qué se genera una corriente inducida en el circuito y cuál es su sentido. Escribe la ley física en la que te basas.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Ley de Faraday y justificación de la corriente inducida",
+          "contenido": "La ley de Faraday-Lenz establece que la fuerza electromotriz inducida en un circuito es $\\varepsilon=-\\frac{d\\Phi_B}{dt}$, donde $\\Phi_B$ es el flujo magnético a través del circuito.\n\nEl flujo magnético se define como $\\Phi_B=B\\,A\\cos\\theta$, donde $B$ es el campo magnético, $A$ el área del circuito y $\\theta$ el ángulo entre $\\vec B$ y la normal a la superficie.\n\nComo el campo $\\vec B$ es perpendicular al plano $xy$ (paralelo a la normal del circuito), $\\theta=0$ y $\\Phi_B=B\\,A$.\n\nCuando la barra se desplaza, el área del circuito cambia (aumenta o disminuye según el sentido del movimiento), lo que provoca una variación temporal del flujo magnético $\\frac{d\\Phi_B}{dt}\\neq0$.\n\nSegún la ley de Faraday, esta variación de flujo genera una fem inducida que, al ser el circuito cerrado, produce una corriente inducida."
+        },
+        {
+          "titulo": "Sentido de la corriente (Ley de Lenz)",
+          "contenido": "La ley de Lenz (signo negativo en la ley de Faraday) establece que la corriente inducida tiene un sentido tal que el campo magnético que genera se opone a la variación de flujo que la produce.\n\nSi la barra se mueve hacia la derecha (aumenta el área y por tanto el flujo), la corriente inducida creará un campo que se oponga al aumento de flujo, es decir, un campo en sentido contrario a $\\vec B$. Aplicando la regla de la mano derecha, la corriente circulará en sentido antihorario vista desde el lado por donde sale $\\vec B$.\n\nSi la barra se mueve hacia la izquierda (disminuye el área y el flujo), la corriente circulará en sentido horario para intentar mantener el flujo."
+        }
+      ],
+      "resultado": "La variación de flujo magnético genera una corriente inducida; su sentido se opone a la variación de flujo según la ley de Lenz."
+    },
+    {
+      "numero": 5,
+      "titulo": "Ondas - Ecuación de una onda transversal",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Una onda transversal en una cuerda viene descrita por $y(x,t)=a\\sin(2\\pi bt-cx)$. ¿Qué magnitudes físicas representan $a$, $b$ y $c$? ¿Cuáles son sus unidades SI? ¿Qué información aporta el signo negativo? ¿Qué magnitud física representa $\\frac{2\\pi b}{c}$?",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Identificación de las magnitudes",
+          "contenido": "Comparando con la ecuación general $y(x,t)=A\\sin(\\omega t-kx)$, donde $\\omega=2\\pi f$ y $k$ es el número de onda:\n\n$a$ representa la amplitud de la onda. Es el desplazamiento máximo de los puntos de la cuerda respecto a su posición de equilibrio. Unidades SI: metros ($\\text{m}$).\n\n$b$ representa la frecuencia de la onda, ya que el término temporal es $2\\pi b t$, lo que equivale a $\\omega t=2\\pi f t$, luego $b=f$. Unidades SI: hercios ($\\text{Hz}$) o $\\text{s}^{-1}$.\n\n$c$ representa el número de onda, $k=\\frac{2\\pi}{\\lambda}$. Unidades SI: radianes por metro ($\\text{rad}\\,\\text{m}^{-1}$) o $\\text{m}^{-1}$."
+        },
+        {
+          "titulo": "Significado del signo negativo y del cociente",
+          "contenido": "El signo negativo delante de $cx$ indica que la onda se propaga en el sentido positivo del eje $x$. Si fuera $+cx$, se propagaría en el sentido negativo de $x$.\n\nEl cociente $\\frac{2\\pi b}{c}=\\frac{\\omega}{k}=v$, donde $v$ es la velocidad de propagación (velocidad de fase) de la onda. Sus unidades son $\\text{m}\\,\\text{s}^{-1}$."
+        }
+      ],
+      "resultado": "$a$: amplitud, $\\text{m}$; $b$: frecuencia, $\\text{Hz}$; $c$: número de onda, $\\text{rad}\\,\\text{m}^{-1}$; el signo negativo indica propagación en $+x$; $\\frac{2\\pi b}{c}$ es la velocidad de fase, $\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Ondas - Reflexión total en una piscina",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias; C5. Naturaleza de la luz y óptica física básica",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "En el fondo de una piscina llena de agua salada se sitúa un foco luminoso. El rayo A se refracta y sale del agua con un ángulo de refracción de $44^{\\circ}$, pero el rayo B no se refracta. Determina el índice de refracción $n$ del líquido y explica por qué el rayo B no se refracta. Dato: $n_{\\text{aire}}=1{,}00$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Cálculo del índice de refracción",
+          "contenido": "De la figura del examen se deduce que el rayo A incide desde el agua con un ángulo de incidencia de $30^{\\circ}$ y se refracta en el aire con un ángulo de refracción de $44^{\\circ}$.\n\nAplicando la ley de Snell: $n_{\\text{agua}}\\sin\\theta_i=n_{\\text{aire}}\\sin\\theta_r$.\n\n$$n_{\\text{agua}}\\sin30^{\\circ}=1{,}00\\sin44^{\\circ}.$$\n\n$$n_{\\text{agua}}=\\frac{\\sin44^{\\circ}}{\\sin30^{\\circ}}=\\frac{0{,}6947}{0{,}5000}=1{,}39.$$\n\nEl índice de refracción del agua salada es $n=1{,}39$, valor coherente con agua salada."
+        },
+        {
+          "titulo": "Explicación de la reflexión total del rayo B",
+          "contenido": "El ángulo límite o crítico para la reflexión total interna se calcula como $\\sin\\theta_c=\\frac{n_{\\text{aire}}}{n_{\\text{agua}}}=\\frac{1}{1{,}39}=0{,}7194$, por lo que $\\theta_c=\\arcsin(0{,}7194)=46{,}0^{\\circ}$.\n\nEl rayo B no se refracta porque incide sobre la superficie con un ángulo mayor que el ángulo límite ($\\theta_c=46^{\\circ}$). Cuando el ángulo de incidencia supera el ángulo crítico, toda la luz se refleja de vuelta al medio más denso (agua), sin que ninguna parte se transmita al medio menos denso (aire). Este fenómeno se conoce como reflexión total interna.\n\nLa reflexión total interna solo ocurre cuando la luz pasa de un medio con mayor índice de refracción (agua, $n=1{,}39$) a uno con menor índice (aire, $n=1{,}00$)."
+        }
+      ],
+      "resultado": "$n=1{,}39$; $\\theta_c=46{,}0^{\\circ}$; el rayo B no se refracta porque supera el ángulo límite y sufre reflexión total interna."
+    },
+    {
+      "numero": 7,
+      "titulo": "Óptica geométrica - Potencia de una lente y defecto visual",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Una persona se quita las gafas y situándolas a $30\\,\\text{cm}$ de un objeto obtiene sobre una pared una imagen enfocada a $2{,}7\\,\\text{m}$ de la gafa. ¿Qué potencia posee la lente? ¿Es convergente o divergente? ¿Es la persona miope o hipermétrope?",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Cálculo de la potencia de la lente",
+          "contenido": "Datos: distancia objeto $s=-30\\,\\text{cm}=-0{,}30\\,\\text{m}$ (signo negativo por convenio, objeto real). Distancia imagen $s'=+2{,}7\\,\\text{m}$ (imagen real al otro lado de la lente).\n\nAplicando la ecuación de la lente delgada: $\\frac{1}{f'}=\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{2{,}7}-\\frac{1}{-0{,}30}=\\frac{1}{2{,}7}+\\frac{1}{0{,}30}$.\n\n$$\\frac{1}{f'}=0{,}3704+3{,}333=3{,}704\\,\\text{m}^{-1}.$$\n\nLa potencia de la lente es $P=\\frac{1}{f'}=3{,}7\\,\\text{D}$ (redondeando, aproximadamente $3{,}70\\,\\text{D}$)."
+        },
+        {
+          "titulo": "Tipo de lente y defecto visual",
+          "contenido": "Como la potencia es positiva ($P>0$), la distancia focal imagen $f'$ es positiva: $f'=\\frac{1}{3{,}704}=0{,}27\\,\\text{m}=27\\,\\text{cm}$. La lente es convergente.\n\nLa lente forma una imagen real sobre la pared, lo cual confirma que es convergente (las lentes divergentes solo forman imágenes virtuales de objetos reales).\n\nSi la persona usa gafas con lentes convergentes, padece hipermetropía. En el ojo hipermétrope, la imagen se forma detrás de la retina y la lente convergente ayuda a adelantar el punto de enfoque hasta la retina."
+        }
+      ],
+      "resultado": "$P\\approx3{,}70\\,\\text{D}$; lente convergente; la persona es hipermétrope."
+    },
+    {
+      "numero": 8,
+      "titulo": "Física del siglo XX - Energía relativista",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D1. Relatividad especial y consecuencias",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Calcula la velocidad que debe tener una partícula para que su energía relativista sea el doble de su energía en reposo. ¿Sería posible que la velocidad de la partícula fuera el doble que la calculada anteriormente? Razona la respuesta. Dato: $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Cálculo de la velocidad",
+          "contenido": "La energía relativista total de una partícula es $E=\\gamma mc^{2}$, donde $\\gamma=\\frac{1}{\\sqrt{1-\\frac{v^{2}}{c^{2}}}}$ es el factor de Lorentz.\n\nLa energía en reposo es $E_0=mc^{2}$.\n\nLa condición es $E=2E_0$, es decir, $\\gamma mc^{2}=2mc^{2}$, por lo que $\\gamma=2$.\n\nResolviendo: $\\frac{1}{\\sqrt{1-\\frac{v^{2}}{c^{2}}}}=2$, de donde $\\sqrt{1-\\frac{v^{2}}{c^{2}}}=\\frac{1}{2}$, luego $1-\\frac{v^{2}}{c^{2}}=\\frac{1}{4}$.\n\n$\\frac{v^{2}}{c^{2}}=\\frac{3}{4}$, por lo que $v=c\\frac{\\sqrt{3}}{2}=0{,}866c$.\n\n$$v=0{,}866\\cdot3\\cdot10^{8}=2{,}598\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}\\approx2{,}6\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Posibilidad de velocidad doble",
+          "contenido": "El doble de la velocidad calculada sería $2v=2\\cdot0{,}866c=1{,}732c$.\n\nEsto NO es posible. Según la teoría de la relatividad especial de Einstein, la velocidad de la luz $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$ es la velocidad máxima alcanzable para cualquier partícula con masa. Ningún objeto con masa puede alcanzar ni superar la velocidad de la luz.\n\nFísicamente, a medida que la velocidad de una partícula se acerca a $c$, su energía (y masa relativista) tiende a infinito, por lo que sería necesaria una cantidad infinita de energía para alcanzar $c$."
+        }
+      ],
+      "resultado": "$v=0{,}866c=2{,}598\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}\\approx2{,}6\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; el doble de esa velocidad no es posible porque superaría $c$."
+    },
+    {
+      "numero": 9,
+      "titulo": "Interacción gravitatoria - Sonda orbital alrededor de Venus",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo; A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2,0 puntos",
+      "enunciado": "Una sonda espacial de masa $800\\,\\text{kg}$ en órbita circular de radio $6500\\,\\text{km}$ alrededor de Venus. Energía cinética de la sonda: $2\\cdot10^{10}\\,\\text{J}$. a) Deduce la expresión de la velocidad orbital y calcula la masa de Venus. b) Si Venus tiene densidad $\\rho=5{,}24\\,\\text{g}\\,\\text{cm}^{-3}$, calcula la altura para que la fuerza gravitatoria sea un $36\\%$ menor que en la superficie. $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "No especificada en el documento",
+          "enunciado": "Deduce la expresión de la velocidad orbital y calcula la masa de Venus."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "No especificada en el documento",
+          "enunciado": "Si Venus tiene densidad $\\rho=5{,}24\\,\\text{g}\\,\\text{cm}^{-3}$, calcula la altura para que la fuerza gravitatoria sea un $36\\%$ menor que en la superficie."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "a) Velocidad orbital y masa de Venus",
+          "contenido": "Para una órbita circular, la fuerza gravitatoria proporciona la fuerza centrípeta: $\\frac{GMm}{r^{2}}=\\frac{mv^{2}}{r}$.\n\nSimplificando: $v^{2}=\\frac{GM}{r}$, por lo que $v=\\sqrt{\\frac{GM}{r}}$. Esta es la expresión de la velocidad orbital.\n\nLa energía cinética es $E_c=\\frac{1}{2}mv^{2}=\\frac{1}{2}m\\frac{GM}{r}=\\frac{GMm}{2r}$.\n\nDespejando $M$: $M=\\frac{2E_c r}{Gm}$.\n\nDatos: $E_c=2\\cdot10^{10}\\,\\text{J}$, $r=6500\\,\\text{km}=6{,}5\\cdot10^{6}\\,\\text{m}$, $m=800\\,\\text{kg}$, $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$.\n\n$$M=\\frac{2\\cdot2\\cdot10^{10}\\cdot6{,}5\\cdot10^{6}}{6{,}67\\cdot10^{-11}\\cdot800}.$$\n\nNumerador: $4\\cdot10^{10}\\cdot6{,}5\\cdot10^{6}=2{,}6\\cdot10^{17}$.\n\nDenominador: $6{,}67\\cdot10^{-11}\\cdot800=5{,}336\\cdot10^{-8}$.\n\n$$M=\\frac{2{,}6\\cdot10^{17}}{5{,}336\\cdot10^{-8}}=4{,}87\\cdot10^{24}\\,\\text{kg}.$$\n\nLa masa de Venus es $M=4{,}87\\cdot10^{24}\\,\\text{kg}$ (valor real: $4{,}87\\cdot10^{24}\\,\\text{kg}$, resultado consistente).\n\nLa velocidad orbital: $v=\\sqrt{\\frac{2E_c}{m}}=\\sqrt{\\frac{2\\cdot2\\cdot10^{10}}{800}}=\\sqrt{5\\cdot10^{7}}=7071\\,\\text{m}\\,\\text{s}^{-1}=7{,}07\\,\\text{km}\\,\\text{s}^{-1}$."
+        },
+        {
+          "titulo": "b) Altura para que la fuerza sea un 36% menor",
+          "contenido": "Si la fuerza es un $36\\%$ menor que en la superficie, la fuerza a la altura $h$ es $F(h)=0{,}64F_{\\text{sup}}$ (queda el $64\\%$ de la fuerza superficial).\n\nEn la superficie: $F_{\\text{sup}}=\\frac{GMm}{R_V^{2}}$. A la altura $h$: $F(h)=\\frac{GMm}{(R_V+h)^{2}}$.\n\nLa condición es: $\\frac{GMm}{(R_V+h)^{2}}=0{,}64\\frac{GMm}{R_V^{2}}$.\n\nSimplificando: $\\frac{R_V^{2}}{(R_V+h)^{2}}=0{,}64$, por lo que $\\frac{R_V}{R_V+h}=\\sqrt{0{,}64}=0{,}8$.\n\n$R_V+h=\\frac{R_V}{0{,}8}=1{,}25R_V$, luego $h=0{,}25R_V$.\n\nCálculo del radio de Venus. Venus es esférico con $M=4{,}87\\cdot10^{24}\\,\\text{kg}$ y $\\rho=5{,}24\\,\\text{g}\\,\\text{cm}^{-3}=5240\\,\\text{kg}\\,\\text{m}^{-3}$.\n\n$M=\\rho\\frac{4}{3}\\pi R_V^{3}$, por lo que $R_V^{3}=\\frac{3M}{4\\pi\\rho}$.\n\n$$R_V^{3}=\\frac{3\\cdot4{,}87\\cdot10^{24}}{4\\pi\\cdot5240}=\\frac{1{,}461\\cdot10^{25}}{6{,}585\\cdot10^{4}}=2{,}218\\cdot10^{20}\\,\\text{m}^{3}.$$\n\n$R_V=(2{,}218\\cdot10^{20})^{1/3}$. Calculamos: $2{,}218^{1/3}=1{,}305$ y $(10^{20})^{1/3}=10^{6{,}667}=4{,}642\\cdot10^{6}$.\n\n$$R_V=1{,}305\\cdot4{,}642\\cdot10^{6}=6{,}06\\cdot10^{6}\\,\\text{m}=6060\\,\\text{km}.$$\n\n$h=0{,}25R_V=0{,}25\\cdot6060=1515\\,\\text{km}$.\n\nLa altura a la que hay que situar el cuerpo es $h=1515\\,\\text{km}$ (aproximadamente $1500\\,\\text{km}$)."
+        }
+      ],
+      "resultado": "a) $v=7071\\,\\text{m}\\,\\text{s}^{-1}$; $M=4{,}87\\cdot10^{24}\\,\\text{kg}$.\nb) $h=1515\\,\\text{km}$."
+    },
+    {
+      "numero": 10,
+      "titulo": "Interacción electromagnética - Campo eléctrico y potencial de dos cargas",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2,0 puntos",
+      "enunciado": "$q_1=-5\\,\\mu\\text{C}$ en $A(3,-4)\\,\\text{m}$ y $q_2=4\\,\\mu\\text{C}$ en $B(0,-5)\\,\\text{m}$. a) Calcula los vectores campo eléctrico de cada carga y el total en el origen $O(0,0)$. b) Calcula el potencial eléctrico total en $O$ y el trabajo para trasladar $Q=1\\,\\mu\\text{C}$ desde el infinito hasta $O$. $k=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "No especificada en el documento",
+          "enunciado": "Calcula los vectores campo eléctrico de cada carga y el total en el origen $O(0,0)$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "No especificada en el documento",
+          "enunciado": "Calcula el potencial eléctrico total en $O$ y el trabajo para trasladar $Q=1\\,\\mu\\text{C}$ desde el infinito hasta $O$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "a) Vectores campo eléctrico en el origen",
+          "contenido": "Posición de $q_1$: $A(3,-4)$. Vector de $A$ a $O$: $\\vec r_1=O-A=(0-3,0-(-4))=(-3,4)$. Distancia: $|\\vec r_1|=\\sqrt{9+16}=\\sqrt{25}=5\\,\\text{m}$.\n\nEl campo eléctrico de una carga negativa apunta hacia la carga. Como $q_1=-5\\,\\mu\\text{C}$ es negativa, $\\vec E_1$ en $O$ apunta de $O$ hacia $A$, es decir, en la dirección del vector $(3,-4)$.\n\nMódulo de $\\vec E_1$: $|\\vec E_1|=\\frac{k|q_1|}{r_1^{2}}=\\frac{9\\cdot10^{9}\\cdot5\\cdot10^{-6}}{25}=1800\\,\\text{N}\\,\\text{C}^{-1}$.\n\nVector unitario de $O$ hacia $A$: $\\hat u_{OA}=\\frac{(3,-4)}{5}=(0{,}6;-0{,}8)$. $\\vec E_1=1800(0{,}6;-0{,}8)=(1080;-1440)\\,\\text{N}\\,\\text{C}^{-1}$.\n\nPosición de $q_2$: $B(0,-5)$. Vector de $B$ a $O$: $\\vec r_2=O-B=(0,5)$. Distancia: $|\\vec r_2|=5\\,\\text{m}$.\n\nComo $q_2=4\\,\\mu\\text{C}$ es positiva, $\\vec E_2$ en $O$ apunta de $q_2$ hacia $O$ (alejándose de la carga positiva), es decir, en la dirección $(0,5)$, que es $+\\hat j$.\n\nMódulo de $\\vec E_2$: $|\\vec E_2|=\\frac{k|q_2|}{r_2^{2}}=\\frac{9\\cdot10^{9}\\cdot4\\cdot10^{-6}}{25}=1440\\,\\text{N}\\,\\text{C}^{-1}$.\n\nVector unitario: $\\hat u_{BO}=(0,1)$. $\\vec E_2=1440(0,1)=(0,1440)\\,\\text{N}\\,\\text{C}^{-1}$.\n\nCampo total: $\\vec E_{\\text{total}}=\\vec E_1+\\vec E_2=(1080+0;-1440+1440)=(1080,0)\\,\\text{N}\\,\\text{C}^{-1}$.\n\n$\\vec E_{\\text{total}}=1080\\,\\hat i\\ \\text{N}\\,\\text{C}^{-1}$. El campo total está dirigido en la dirección $+x$ con módulo $1080\\,\\text{N}\\,\\text{C}^{-1}$."
+        },
+        {
+          "titulo": "b) Potencial eléctrico y trabajo",
+          "contenido": "El potencial eléctrico es una magnitud escalar. En el origen $O$: $V_{\\text{total}}=V_1+V_2$.\n\n$V_1=\\frac{kq_1}{r_1}=\\frac{9\\cdot10^{9}\\cdot(-5\\cdot10^{-6})}{5}=-9000\\,\\text{V}=-9\\cdot10^{3}\\,\\text{V}$.\n\n$V_2=\\frac{kq_2}{r_2}=\\frac{9\\cdot10^{9}\\cdot4\\cdot10^{-6}}{5}=7200\\,\\text{V}=7{,}2\\cdot10^{3}\\,\\text{V}$.\n\n$V_{\\text{total}}=-9000+7200=-1800\\,\\text{V}$.\n\nEl trabajo necesario para trasladar $Q=1\\,\\mu\\text{C}$ desde el infinito hasta $O$ es $W=Q(V_{\\infty}-V_O)=Q(0-V_O)=-QV_O$.\n\nNota: el trabajo realizado por la fuerza eléctrica es $W_{\\text{eléc}}=Q(V_{\\infty}-V_O)$. El trabajo que debemos realizar contra el campo (trabajo externo) es $W_{\\text{ext}}=-W_{\\text{eléc}}=QV_O$.\n\n$$W_{\\text{ext}}=QV_O=1\\cdot10^{-6}\\cdot(-1800)=-1{,}8\\cdot10^{-3}\\,\\text{J}.$$\n\nEl trabajo necesario es $W=-1{,}8\\cdot10^{-3}\\,\\text{J}=-1{,}8\\,\\text{mJ}$. El signo negativo indica que el campo eléctrico realiza trabajo a favor del desplazamiento (el potencial en $O$ es negativo, luego la carga positiva $Q$ se mueve espontáneamente desde el infinito hacia $O$ y debemos frenarla, o equivalentemente, el agente externo realiza trabajo negativo)."
+        }
+      ],
+      "resultado": "a) $\\vec E_{\\text{total}}=1080\\,\\hat i\\ \\text{N}\\,\\text{C}^{-1}$.\nb) $V_{\\text{total}}=-1800\\,\\text{V}$; $W_{\\text{ext}}=-1{,}8\\cdot10^{-3}\\,\\text{J}=-1{,}8\\,\\text{mJ}$."
+    },
+    {
+      "numero": 11,
+      "titulo": "Óptica geométrica - Imagen con lente convergente",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2,0 puntos",
+      "enunciado": "De un objeto de $15\\,\\text{cm}$ se quiere obtener una imagen invertida de $0{,}75\\,\\text{m}$ sobre una pantalla. Lente convergente de $4$ dioptrías. a) Posición del objeto y de la pantalla. Trazado de rayos. b) Nueva lente con distancia focal mitad. Potencia y menor distancia objeto-lente para imagen enfocada con distancia objeto-pantalla $=1{,}0\\,\\text{m}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "No especificada en el documento",
+          "enunciado": "Posición del objeto y de la pantalla. Trazado de rayos."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "No especificada en el documento",
+          "enunciado": "Nueva lente con distancia focal mitad. Potencia y menor distancia objeto-lente para imagen enfocada con distancia objeto-pantalla $=1{,}0\\,\\text{m}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "a) Posición del objeto y de la pantalla",
+          "contenido": "Datos: tamaño objeto $y=15\\,\\text{cm}=0{,}15\\,\\text{m}$. Tamaño imagen $y'=-0{,}75\\,\\text{m}$ (negativo porque es invertida). Potencia $P=4\\,\\text{D}$, luego $f'=\\frac{1}{P}=0{,}25\\,\\text{m}=25\\,\\text{cm}$.\n\nEl aumento lateral es $M=\\frac{y'}{y}=\\frac{-0{,}75}{0{,}15}=-5$. También $M=\\frac{s'}{s}$.\n\nDe $M=\\frac{s'}{s}$: $s'=-5s$.\n\nAplicando la ecuación de lente delgada: $\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f'}$. Sustituyendo $s'=-5s$:\n\n$$\\frac{1}{-5s}-\\frac{1}{s}=\\frac{1}{0{,}25}.$$\n\nSimplificando: $\\frac{-\\frac{1}{5}-1}{s}=4$. Es decir: $\\frac{-\\frac{6}{5}}{s}=4$.\n\n$s=\\frac{-6}{5\\cdot4}=\\frac{-6}{20}=-0{,}30\\,\\text{m}=-30\\,\\text{cm}$.\n\nEl objeto debe colocarse a $30\\,\\text{cm}$ de la lente ($s=-30\\,\\text{cm}$, el signo negativo indica objeto real al mismo lado que la luz incidente).\n\n$s'=-5(-0{,}30)=1{,}50\\,\\text{m}$. La pantalla debe colocarse a $1{,}50\\,\\text{m}$ de la lente ($s'>0$, imagen real al otro lado).\n\nVerificación: $\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{1{,}50}-\\frac{1}{-0{,}30}=0{,}667+3{,}333=4{,}0=\\frac{1}{f'}$. Correcto.\n\nTrazado de rayos esquemático: un rayo paralelo al eje que se refracta pasando por el foco imagen ($F'$), un rayo que pasa por el centro óptico que no se desvía, y un rayo que pasa por el foco objeto ($F$) y sale paralelo al eje. Los tres convergen en el punto imagen, que está invertida y es 5 veces mayor que el objeto."
+        },
+        {
+          "titulo": "b) Nueva lente y menor distancia",
+          "contenido": "La nueva lente tiene distancia focal $f'_{\\text{nueva}}=\\frac{f'}{2}=\\frac{0{,}25}{2}=0{,}125\\,\\text{m}=12{,}5\\,\\text{cm}$.\n\nLa potencia de la nueva lente es $P_{\\text{nueva}}=\\frac{1}{f'_{\\text{nueva}}}=\\frac{1}{0{,}125}=8\\,\\text{D}$.\n\nCondición: distancia objeto-pantalla $=1{,}0\\,\\text{m}$. Sea $d$ la distancia del objeto a la lente ($d=|s|$) y la distancia de la lente a la pantalla $s'=1-d$ (ambas positivas, con $s=-d$).\n\nEcuación de la lente: $\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f'}$. Con $s=-d$ y $s'=1-d$: $\\frac{1}{1-d}+\\frac{1}{d}=\\frac{1}{0{,}125}=8$.\n\nDesarrollando: $\\frac{d+(1-d)}{d(1-d)}=8$, es decir, $\\frac{1}{d(1-d)}=8$.\n\n$d(1-d)=\\frac{1}{8}=0{,}125$. Esto da: $d-d^{2}=0{,}125$, o sea $d^{2}-d+0{,}125=0$.\n\nResolviendo la ecuación cuadrática: $d=\\frac{1\\pm\\sqrt{1-4\\cdot0{,}125}}{2}=\\frac{1\\pm\\sqrt{0{,}5}}{2}=\\frac{1\\pm0{,}7071}{2}$.\n\n$d_1=\\frac{1-0{,}7071}{2}=0{,}1464\\,\\text{m}=14{,}6\\,\\text{cm}$. $d_2=\\frac{1+0{,}7071}{2}=0{,}8536\\,\\text{m}=85{,}4\\,\\text{cm}$.\n\nLa menor distancia a la que hay que situar la lente del objeto es $d=14{,}6\\,\\text{cm}$ (aproximadamente $0{,}15\\,\\text{m}$). La otra solución ($85{,}4\\,\\text{cm}$) también da imagen enfocada pero con la lente más lejos del objeto."
+        }
+      ],
+      "resultado": "a) $s=-30\\,\\text{cm}$; $s'=1{,}50\\,\\text{m}$; imagen real, invertida y 5 veces mayor.\nb) $P_{\\text{nueva}}=8\\,\\text{D}$; $d_{\\text{mín}}=14{,}6\\,\\text{cm}$ (la otra solución es $85{,}4\\,\\text{cm}$)."
+    },
+    {
+      "numero": 12,
+      "titulo": "Física del siglo XX - Efecto fotoeléctrico y De Broglie",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2,0 puntos",
+      "enunciado": "Efecto fotoeléctrico con $\\lambda_1=550\\,\\text{nm}$, velocidad máxima de electrones $v=296\\,\\text{km}\\,\\text{s}^{-1}$. a) Trabajo de extracción ($\\text{eV}$) y longitud de onda umbral. b) Momento lineal y longitud de onda de De Broglie de los electrones más rápidos. Datos: $q=1{,}6\\cdot10^{-19}\\,\\text{C}$, $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$, $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$, $m=9{,}1\\cdot10^{-31}\\,\\text{kg}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "No especificada en el documento",
+          "enunciado": "Trabajo de extracción ($\\text{eV}$) y longitud de onda umbral."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "No especificada en el documento",
+          "enunciado": "Momento lineal y longitud de onda de De Broglie de los electrones más rápidos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "a) Trabajo de extracción y longitud de onda umbral",
+          "contenido": "La ecuación de Einstein del efecto fotoeléctrico es $E_{\\text{fotón}}=W+E_{c,\\text{max}}$, donde $E_{\\text{fotón}}=hf=\\frac{hc}{\\lambda}$, $W$ es el trabajo de extracción y $E_{c,\\text{max}}=\\frac{1}{2}mv^{2}$.\n\nEnergía del fotón: $E_{\\text{fotón}}=\\frac{hc}{\\lambda_1}=\\frac{6{,}63\\cdot10^{-34}\\cdot3\\cdot10^{8}}{550\\cdot10^{-9}}$.\n\n$$E_{\\text{fotón}}=\\frac{1{,}989\\cdot10^{-25}}{5{,}5\\cdot10^{-7}}=3{,}617\\cdot10^{-19}\\,\\text{J}.$$\n\nEnergía cinética máxima: $E_{c,\\text{max}}=\\frac{1}{2}\\cdot9{,}1\\cdot10^{-31}\\cdot(296\\cdot10^{3})^{2}=\\frac{1}{2}\\cdot9{,}1\\cdot10^{-31}\\cdot8{,}7616\\cdot10^{10}$.\n\n$$E_{c,\\text{max}}=0{,}5\\cdot9{,}1\\cdot10^{-31}\\cdot8{,}7616\\cdot10^{10}=3{,}987\\cdot10^{-20}\\,\\text{J}.$$\n\nTrabajo de extracción: $W=E_{\\text{fotón}}-E_{c,\\text{max}}=3{,}617\\cdot10^{-19}-0{,}3987\\cdot10^{-19}=3{,}218\\cdot10^{-19}\\,\\text{J}$.\n\nConvirtiendo a $\\text{eV}$: $W=\\frac{3{,}218\\cdot10^{-19}}{1{,}6\\cdot10^{-19}}=2{,}01\\,\\text{eV}$.\n\nLongitud de onda umbral (la mínima energía del fotón capaz de extraer un electrón, es decir, cuando $E_{c,\\text{max}}=0$): $W=\\frac{hc}{\\lambda_0}$.\n\n$$\\lambda_0=\\frac{hc}{W}=\\frac{6{,}63\\cdot10^{-34}\\cdot3\\cdot10^{8}}{3{,}218\\cdot10^{-19}}=\\frac{1{,}989\\cdot10^{-25}}{3{,}218\\cdot10^{-19}}=6{,}18\\cdot10^{-7}\\,\\text{m}=618\\,\\text{nm}.$$"
+        },
+        {
+          "titulo": "b) Momento lineal y longitud de onda de De Broglie",
+          "contenido": "El momento lineal del electrón: $p=mv=9{,}1\\cdot10^{-31}\\cdot296\\cdot10^{3}$.\n\n$$p=9{,}1\\cdot10^{-31}\\cdot2{,}96\\cdot10^{5}=2{,}694\\cdot10^{-25}\\,\\text{kg}\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nLa longitud de onda de De Broglie: $\\lambda_{\\text{DB}}=\\frac{h}{p}=\\frac{6{,}63\\cdot10^{-34}}{2{,}694\\cdot10^{-25}}$.\n\n$$\\lambda_{\\text{DB}}=2{,}461\\cdot10^{-9}\\,\\text{m}=2{,}46\\,\\text{nm}.$$"
+        }
+      ],
+      "resultado": "a) $W=2{,}01\\,\\text{eV}$; $\\lambda_0=618\\,\\text{nm}$.\nb) $p=2{,}694\\cdot10^{-25}\\,\\text{kg}\\,\\text{m}\\,\\text{s}^{-1}$; $\\lambda_{\\text{DB}}=2{,}46\\,\\text{nm}$."
+    }
+  ]
+}

@@ -44,12 +44,50 @@ function normalizarTexto(texto) {
         .replace(/[\u0300-\u036f]/g, '');
 }
 
+// Normaliza una frase para matching con límites de palabra:
+//  - minúsculas y sin acentos (vía normalizarTexto)
+//  - cualquier cosa que no sea letra o número → espacio
+//  - colapsa espacios y garantiza un espacio al inicio y al final
+// Así `"fuerza gravitatoria"` matchea "...la fuerza, gravitatoria, que..."
+// (con coma) pero NO matchea "...gravitatoria fuerza..." (orden invertido).
+function normalizarFrase(texto) {
+    if (!texto) return ' ';
+    const limpio = normalizarTexto(texto)
+        .replace(/[^\p{L}\p{N}]+/gu, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    return ' ' + limpio + ' ';
+}
+
 function debounce(fn, ms = 250) {
     let t;
     return (...args) => {
         clearTimeout(t);
         t = setTimeout(() => fn(...args), ms);
     };
+}
+
+// ─── Helpers DOM defensivos ───
+// Devuelve el elemento o null sin romper nada.
+function $id(id) { return document.getElementById(id); }
+
+// Añade un listener sólo si el elemento existe. Devuelve el elemento (o null).
+function on(id, event, handler, options) {
+    const el = $id(id);
+    if (el) el.addEventListener(event, handler, options);
+    return el;
+}
+
+// Lee el value de un select de forma segura, con fallback.
+function valorDe(id, fallback) {
+    const el = $id(id);
+    return el && typeof el.value === 'string' ? el.value : fallback;
+}
+
+// Escribe un value en un select de forma segura (ignora si no existe).
+function setValor(id, value) {
+    const el = $id(id);
+    if (el) el.value = value;
 }
 
 // ─── Multivalor ───
@@ -85,7 +123,7 @@ function temasDisponiblesPorBloques() {
 }
 
 function renderFiltroTemas() {
-    const contenedor = document.getElementById('filtros-tema');
+    const contenedor = $id('filtros-tema');
     if (!contenedor) return;
 
     const temas = temasDisponiblesPorBloques();
@@ -158,27 +196,79 @@ function enriquecerProblema(p) {
     };
 }
 
-const CAMPOS_BUSQUEDA = {
-    todo: p => [
-        p.titulo, p.enunciado, p.comunidad,
-        ...(p.temas || []),
-        ...(p.bloques || []),
-        p.asignatura, p.nivel, p.curso, p.resultado
-    ],
-    titulo: p => [p.titulo],
-    enunciado: p => [p.enunciado],
-    tema: p => p.temas || [],
-    bloque: p => p.bloques || [],
-    resultado: p => [p.resultado],
-    comunidad: p => [p.comunidad],
-    asignatura: p => [p.asignatura],
-    nivel: p => [p.nivel],
-    curso: p => [p.curso]
-};
+// ─── Parser de consultas ──────────────────────────────────────
+// Gramática:
+//   query   := orExpr
+//   orExpr  := andExpr ( '|' andExpr )*
+//   andExpr := term ( '+' term )*
+//   term    := PHRASE | WORD
+// Las frases van entre "..." o «...» (también se aceptan comillas tipográficas).
+// Si entre dos términos no hay operador explícito, se usa la lógica por defecto
+// (OR salvo que el usuario marque «Todas las palabras»).
+const QUOTE_CHARS = /["\u00AB\u00BB\u201C\u201D\u2018\u2019]/;
 
-function textoDeCampo(p, campo) {
-    const fn = CAMPOS_BUSQUEDA[campo] || CAMPOS_BUSQUEDA.todo;
-    return fn(p).map(normalizarTexto).join(' ');
+function parsearConsulta(query) {
+    const tokens = [];
+    const s = String(query || '');
+    let i = 0;
+    while (i < s.length) {
+        const c = s[i];
+        if (/\s/.test(c)) { i++; continue; }
+        if (c === '+') { tokens.push({ type: 'AND' }); i++; continue; }
+        if (c === '|') { tokens.push({ type: 'OR' });  i++; continue; }
+
+        // Frase entrecomillada
+        if (QUOTE_CHARS.test(c)) {
+            i++;
+            let phrase = '';
+            while (i < s.length && !QUOTE_CHARS.test(s[i])) phrase += s[i++];
+            if (i < s.length) i++; // consumir cierre
+            const val = normalizarTexto(phrase.trim());
+            if (val) tokens.push({ type: 'term', value: val, isPhrase: true });
+            continue;
+        }
+
+        // Palabra suelta
+        let word = '';
+        while (i < s.length && !/[\s+|]/.test(s[i]) && !QUOTE_CHARS.test(s[i])) {
+            word += s[i++];
+        }
+        if (word) {
+            const val = normalizarTexto(word);
+            if (val) tokens.push({ type: 'term', value: val, isPhrase: false });
+        }
+    }
+    return tokens;
+}
+
+// Agrupa tokens en una estructura "OR de ANDs".
+// - Un '|' crea un grupo nuevo.
+// - Un '+' (o la lógica por defecto cuando no hay operador explícito) mantiene
+//   el término en el grupo actual.
+function construirGrupos(tokens, defaultLogic) {
+    const groups = [[]];
+    let pendingOp = null;
+
+    for (const tok of tokens) {
+        if (tok.type === 'AND' || tok.type === 'OR') {
+            pendingOp = tok.type;
+            continue;
+        }
+        if (tok.isPhrase) {
+            tok._needle = normalizarFrase(tok.value);
+        }
+        const effectiveOp = pendingOp || defaultLogic;
+        const lastGroup = groups[groups.length - 1];
+        if (lastGroup.length === 0) {
+            lastGroup.push(tok);
+        } else if (effectiveOp === 'OR') {
+            groups.push([tok]);
+        } else {
+            lastGroup.push(tok);
+        }
+        pendingOp = null;
+    }
+    return groups;
 }
 
 // ─── Comprobación de PDFs ──────────────────────────────────────
@@ -186,12 +276,10 @@ async function comprobarPdf(url) {
     if (pdfExisteCache.has(url)) return pdfExisteCache.get(url);
 
     const promesa = (async () => {
-        // En file:// no se puede hacer HEAD de forma fiable: asumimos que existe.
         if (location.protocol === 'file:') return true;
         try {
             let r = await fetch(url, { method: 'HEAD', cache: 'no-store' });
             if (r.ok) return true;
-            // Si el servidor no soporta HEAD (405/501), prueba con GET parcial.
             if (r.status === 405 || r.status === 501) {
                 r = await fetch(url, { method: 'GET', headers: { Range: 'bytes=0-0' } });
                 return r.ok || r.status === 206;
@@ -243,7 +331,7 @@ function getPdfObserver() {
 
 function observarPdfsEn(nodos) {
     const obs = getPdfObserver();
-    if (!obs) return; // sin IntersectionObserver: dejamos los enlaces tal cual
+    if (!obs) return;
     nodos.forEach(n => {
         if (n.nodeType !== 1) return;
         n.querySelectorAll('.pdf-mini-buttons a[data-pdf-url]').forEach(a => obs.observe(a));
@@ -304,20 +392,72 @@ async function cargarProblemasCrudos() {
         );
 }
 
+// ─── Índices de búsqueda por ámbito ───────────────────────────
 function precalcularIndiceBusqueda() {
     todosLosProblemas.forEach(p => {
-        const campos = [
-            p.titulo, p.enunciado, p.comunidad, p.asignatura,
-            p.nivel, p.curso, p.resultado,
+        // ── Enunciado ──
+        const camposEnunciado = [p.titulo, p.enunciado];
+        (p.apartados || []).forEach(ap => {
+            if (ap.letra)     camposEnunciado.push(ap.letra);
+            if (ap.enunciado) camposEnunciado.push(ap.enunciado);
+        });
+
+        // ── Resolución ──
+        const camposResolucion = [p.resultado];
+        (p.resolucion || []).forEach(paso => {
+            if (paso.titulo)    camposResolucion.push(paso.titulo);
+            if (paso.contenido) camposResolucion.push(paso.contenido);
+        });
+
+        // ── Metadatos ──
+        const camposMeta = [
+            p.comunidad, p.asignatura, p.nivel, p.curso,
             ...(p.temas || []),
             ...(p.bloques || [])
         ];
-        p._searchAll = normalizarTexto(campos.filter(Boolean).join(' '));
+
+        const txtEnunciado  = camposEnunciado.filter(Boolean).join(' ');
+        const txtResolucion = camposResolucion.filter(Boolean).join(' ');
+        const txtMeta       = camposMeta.filter(Boolean).join(' ');
+        const txtAmbas      = [txtEnunciado, txtResolucion].filter(Boolean).join(' ');
+        const txtTodo       = [txtEnunciado, txtResolucion, txtMeta].filter(Boolean).join(' ');
+
+        p._idx = {
+            enunciado:  { all: normalizarTexto(txtEnunciado),  phrase: normalizarFrase(txtEnunciado)  },
+            resolucion: { all: normalizarTexto(txtResolucion), phrase: normalizarFrase(txtResolucion) },
+            ambas:      { all: normalizarTexto(txtAmbas),      phrase: normalizarFrase(txtAmbas)      },
+            todo:       { all: normalizarTexto(txtTodo),       phrase: normalizarFrase(txtTodo)       },
+        };
     });
 }
 
+function getIndices(ambito, p) {
+    if (p._idx && p._idx[ambito]) return p._idx[ambito];
+    if (p._idx && p._idx.todo)    return p._idx.todo;
+    return { all: '', phrase: ' ' };
+}
+
+function coincideTermino(tok, indices) {
+    if (tok.isPhrase) {
+        const needle = tok._needle;
+        if (!needle || needle === ' ') return false;
+        return (indices.phrase || ' ').includes(needle);
+    }
+    if (!tok.value) return false;
+    return (indices.all || '').includes(tok.value);
+}
+
+function evaluarGrupos(groups, p, ambito) {
+    const indices = getIndices(ambito, p);
+    return groups.some(group => group.every(tok => coincideTermino(tok, indices)));
+}
+
 async function cargarDatos() {
-    const contenedor = document.getElementById('resultados');
+    const contenedor = $id('resultados');
+    if (!contenedor) {
+        console.error('No existe #resultados en el HTML.');
+        return;
+    }
     contenedor.innerHTML = '<p style="text-align:center; color:#64748b; padding: 20px;">Cargando problemas...</p>';
 
     try {
@@ -337,41 +477,45 @@ function inicializarFiltros() {
     const anios = [...new Set(todosLosProblemas.map(p => p.anio))]
         .filter(a => a != null)
         .sort((a, b) => b - a);
-    const contenedorAnios = document.getElementById('filtros-anio');
-    contenedorAnios.innerHTML = '';
-    anios.forEach(anio => {
-        const btn = document.createElement('button');
-        btn.className = 'btn-filtro';
-        btn.textContent = anio;
-        btn.onclick = () => toggleFiltro(anio, 'anio', btn);
-        contenedorAnios.appendChild(btn);
-    });
+    const contenedorAnios = $id('filtros-anio');
+    if (contenedorAnios) {
+        contenedorAnios.innerHTML = '';
+        anios.forEach(anio => {
+            const btn = document.createElement('button');
+            btn.className = 'btn-filtro';
+            btn.textContent = anio;
+            btn.onclick = () => toggleFiltro(anio, 'anio', btn);
+            contenedorAnios.appendChild(btn);
+        });
+    }
 
     // Convocatorias
     const convocatorias = [...new Set(todosLosProblemas.map(p => p.convocatoria))]
         .filter(c => c)
         .sort();
-    const contenedorConvocatorias = document.getElementById('filtros-convocatoria');
-    contenedorConvocatorias.innerHTML = '';
-    convocatorias.forEach(conv => {
-        const btn = document.createElement('button');
-        btn.className = 'btn-filtro';
-        btn.textContent = conv;
-        btn.onclick = () => toggleFiltro(conv, 'convocatoria', btn);
-        contenedorConvocatorias.appendChild(btn);
-    });
+    const contenedorConvocatorias = $id('filtros-convocatoria');
+    if (contenedorConvocatorias) {
+        contenedorConvocatorias.innerHTML = '';
+        convocatorias.forEach(conv => {
+            const btn = document.createElement('button');
+            btn.className = 'btn-filtro';
+            btn.textContent = conv;
+            btn.onclick = () => toggleFiltro(conv, 'convocatoria', btn);
+            contenedorConvocatorias.appendChild(btn);
+        });
+    }
 
     // Comunidades
     const comunidades = [...new Set(
         todosLosProblemas.map(p => p.comunidad).filter(c => c)
     )].sort((a, b) => a.localeCompare(b));
 
-    let contenedorComunidades = document.getElementById('filtros-comunidad');
+    let contenedorComunidades = $id('filtros-comunidad');
     if (!contenedorComunidades && comunidades.length > 0) {
         contenedorComunidades = document.createElement('div');
         contenedorComunidades.id = 'filtros-comunidad';
         contenedorComunidades.className = 'botones';
-        const ref = document.getElementById('filtros-convocatoria') || document.getElementById('filtros-tema');
+        const ref = $id('filtros-convocatoria') || $id('filtros-tema');
         if (ref && ref.parentNode) {
             ref.parentNode.insertBefore(contenedorComunidades, ref.nextSibling);
         }
@@ -394,12 +538,12 @@ function inicializarFiltros() {
     }));
     const bloques = [...bloquesMap.keys()].sort((a, b) => a.localeCompare(b));
 
-    let contenedorBloques = document.getElementById('filtros-bloque');
+    let contenedorBloques = $id('filtros-bloque');
     if (!contenedorBloques && bloques.length > 0) {
         contenedorBloques = document.createElement('div');
         contenedorBloques.id = 'filtros-bloque';
         contenedorBloques.className = 'botones';
-        const ref = document.getElementById('filtros-comunidad') || document.getElementById('filtros-tema');
+        const ref = $id('filtros-comunidad') || $id('filtros-tema');
         if (ref && ref.parentNode) {
             ref.parentNode.insertBefore(contenedorBloques, ref.nextSibling);
         }
@@ -419,14 +563,16 @@ function inicializarFiltros() {
     // Temas: dependientes de los bloques
     renderFiltroTemas();
 
-    // Eventos
-    document.getElementById('select-orden').addEventListener('change', renderizarResultados);
-    document.getElementById('check-mostrar-enunciado').addEventListener('change', (e) => {
-        document.getElementById('resultados').classList.toggle('mostrar-enunciado', e.target.checked);
+    // Eventos (todos con `on()` defensivo: si el elemento no existe, no rompe)
+    on('select-orden', 'change', renderizarResultados);
+    on('select-ambito', 'change', renderizarResultados);
+    on('check-and-default', 'change', renderizarResultados);
+    on('check-mostrar-enunciado', 'change', (e) => {
+        const cont = $id('resultados');
+        if (cont) cont.classList.toggle('mostrar-enunciado', e.target.checked);
     });
-    document.getElementById('btn-limpiar').addEventListener('click', limpiarFiltros);
-    document.getElementById('input-busqueda').addEventListener('input', debounce(renderizarResultados, 250));
-    document.getElementById('select-logica').addEventListener('change', renderizarResultados);
+    on('btn-limpiar', 'click', limpiarFiltros);
+    on('input-busqueda', 'input', debounce(renderizarResultados, 250));
 }
 
 function toggleFiltro(valor, tipo, boton) {
@@ -480,13 +626,21 @@ function toggleFiltro(valor, tipo, boton) {
 
 // ─── Render ────────────────────────────────────────────────────
 function renderizarResultados() {
-    const orden = document.getElementById('select-orden').value;
-    const mostrarEnunciado = document.getElementById('check-mostrar-enunciado').checked;
-    const contenedor = document.getElementById('resultados');
+    const contenedor = $id('resultados');
+    if (!contenedor) return;
 
-    const query = normalizarTexto(document.getElementById('input-busqueda').value);
-    const logica = document.getElementById('select-logica').value;
-    const palabrasBuscadas = query.split(/\s+/).filter(p => p.length > 0);
+    const orden = valorDe('select-orden', 'num');
+    const check = $id('check-mostrar-enunciado');
+    const mostrarEnunciado = !!(check && check.checked);
+
+    // ─── Búsqueda con parser de consultas + ámbito ───
+    const queryRaw = valorDe('input-busqueda', '');
+    const checkAnd = $id('check-and-default');
+    const logica   = (checkAnd && checkAnd.checked) ? 'AND' : 'OR';
+    const ambito   = valorDe('select-ambito', 'todo');
+    const tokens   = parsearConsulta(queryRaw);
+    const grupos   = construirGrupos(tokens, logica);
+    const hayBusqueda = grupos.some(g => g.length > 0);
 
     let filtrados = todosLosProblemas.filter(p => {
         const cumpleAnio = aniosSeleccionados.length === 0 || aniosSeleccionados.includes(p.anio);
@@ -499,11 +653,8 @@ function renderizarResultados() {
             || bloquesSeleccionados.some(sel => (p.bloques || []).includes(sel));
 
         let cumpleBusqueda = true;
-        if (palabrasBuscadas.length > 0) {
-            const t = p._searchAll || '';
-            cumpleBusqueda = logica === 'AND'
-                ? palabrasBuscadas.every(w => t.includes(w))
-                : palabrasBuscadas.some(w => t.includes(w));
+        if (hayBusqueda) {
+            cumpleBusqueda = evaluarGrupos(grupos, p, ambito);
         }
         return cumpleAnio && cumpleConv && cumpleComunidad && cumpleTema && cumpleBloque && cumpleBusqueda;
     });
@@ -527,9 +678,11 @@ function renderizarResultados() {
     contenedor.innerHTML = '';
     contenedor.classList.toggle('mostrar-enunciado', mostrarEnunciado);
 
+    const contador = $id('contador-resultados');
+
     if (filtrados.length === 0) {
         contenedor.innerHTML = '<p style="text-align:center; color:#64748b; padding: 20px;">No hay problemas que coincidan con los filtros.</p>';
-        document.getElementById('contador-resultados').textContent = '0 problemas encontrados';
+        if (contador) contador.textContent = '0 problemas encontrados';
         return;
     }
 
@@ -548,8 +701,9 @@ function cargarMas() {
     mostrados = hasta;
 
     const nuevosNodos = construirLote(desde, hasta);
-    const contenedor = document.getElementById('resultados');
-    const btnContainer = document.getElementById('cargar-mas-container');
+    const contenedor = $id('resultados');
+    if (!contenedor) return;
+    const btnContainer = $id('cargar-mas-container');
 
     nuevosNodos.forEach(n => {
         if (btnContainer) contenedor.insertBefore(n, btnContainer);
@@ -562,7 +716,6 @@ function cargarMas() {
         n.classList.contains('tarjeta-problema-desplegable')
     );
 
-    // Carga perezosa del detalle al abrir la tarjeta.
     nuevasTarjetas.forEach(card => {
         card.addEventListener('toggle', () => {
             if (!card.open) return;
@@ -574,10 +727,8 @@ function cargarMas() {
         });
     });
 
-    // Typeset sólo del summary (barato). El detalle se procesa al abrirse.
     if (nuevasTarjetas.length > 0) typesetMathJax(nuevasTarjetas);
 
-    // Comprobación perezosa de PDFs vía IntersectionObserver.
     observarPdfsEn(nuevosNodos);
 
     actualizarBotonCargarMas();
@@ -664,7 +815,7 @@ function construirDetalleHtml(p) {
 }
 
 function construirLote(desde, hasta) {
-    const orden = document.getElementById('select-orden').value;
+    const orden = valorDe('select-orden', 'num');
     const lote = filtradosActuales.slice(desde, hasta);
     let html = '';
 
@@ -688,7 +839,6 @@ function construirLote(desde, hasta) {
     template.innerHTML = html;
     const nodes = [...template.content.childNodes];
 
-    // Asociar el constructor del detalle a cada tarjeta.
     nodes.forEach(n => {
         if (n.nodeType !== 1) return;
         if (n.classList && n.classList.contains('tarjeta-problema-desplegable')) {
@@ -702,7 +852,7 @@ function construirLote(desde, hasta) {
 }
 
 function actualizarBotonCargarMas() {
-    const btnContainer = document.getElementById('cargar-mas-container');
+    const btnContainer = $id('cargar-mas-container');
     if (!btnContainer) return;
     const restantes = filtradosActuales.length - mostrados;
     if (restantes <= 0) {
@@ -716,10 +866,12 @@ function actualizarBotonCargarMas() {
 }
 
 function actualizarContador() {
+    const contador = $id('contador-resultados');
+    if (!contador) return;
     const total = filtradosActuales.length;
     let texto = `${total} problema${total === 1 ? '' : 's'} encontrado${total === 1 ? '' : 's'}`;
     if (total > mostrados) texto += ` · mostrando ${mostrados}`;
-    document.getElementById('contador-resultados').textContent = texto;
+    contador.textContent = texto;
 }
 
 function limpiarFiltros() {
@@ -728,9 +880,18 @@ function limpiarFiltros() {
     temasSeleccionados = [];
     comunidadesSeleccionadas = [];
     bloquesSeleccionados = [];
-    document.getElementById('check-mostrar-enunciado').checked = false;
-    document.getElementById('input-busqueda').value = '';
-    document.getElementById('select-logica').value = 'OR';
+
+    const check = $id('check-mostrar-enunciado');
+    if (check) check.checked = false;
+
+    const checkAnd = $id('check-and-default');
+    if (checkAnd) checkAnd.checked = false;
+
+    const input = $id('input-busqueda');
+    if (input) input.value = '';
+
+    setValor('select-ambito', 'todo');
+
     document.querySelectorAll('.btn-filtro').forEach(btn => btn.classList.remove('activo'));
     renderFiltroTemas();
     renderizarResultados();
@@ -738,13 +899,15 @@ function limpiarFiltros() {
 }
 
 function actualizarBotonLimpiar() {
-    const btn = document.getElementById('btn-limpiar');
+    const btn = $id('btn-limpiar');
+    if (!btn) return;
+    const input = $id('input-busqueda');
     const hayFiltros = aniosSeleccionados.length > 0
         || convocatoriasSeleccionadas.length > 0
         || temasSeleccionados.length > 0
         || comunidadesSeleccionadas.length > 0
         || bloquesSeleccionados.length > 0
-        || document.getElementById('input-busqueda').value.trim() !== '';
+        || (input && input.value.trim() !== '');
     btn.style.display = hayFiltros ? 'block' : 'none';
 }
 

@@ -1,0 +1,344 @@
+{
+  "id": "fisica-pais-vasco-2026-ordinaria",
+  "codigo": "EXA.FIS.PVA.2026.ORD.SOL",
+  "comunidad": "País Vasco",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2026,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la PAU de País Vasco, convocatoria Ordinaria 2026, con seis problemas resueltos paso a paso: gravitación, inducción electromagnética, ondas sonoras, óptica geométrica, efecto fotoeléctrico y datación radiactiva con carbono-14.",
+  "objetivo": "Evaluar la comprensión y aplicación de los contenidos de Física de 2º de Bachillerato en situaciones físicas contextualizadas, incluyendo cálculo, justificación conceptual e interpretación de resultados.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "La prueba escrita consta de 4 problemas. Los problemas 1 y 2 no tienen opcionalidad. Los problemas 3 y 4 tienen dos opciones (a y b); debes elegir una de cada. Si se responde a más cuestiones de las indicadas, se corregirán siguiendo el orden. El valor de cada problema es de 2,5 puntos. Se puede utilizar calculadora científica. Sólo se pueden utilizar los datos de la tabla y de los enunciados.\n\nBloque A: A1 obligatorio. Bloque B: B1 obligatorio. Bloque C: elegir C1 o C2. Bloque D: elegir D1 o D2. Total de una elección válida: 10 puntos. Se incluyen las seis resoluciones, manteniendo la optatividad interna."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $M_{\\text{Tierra}}=5{,}97\\cdot10^{24}\\,\\text{kg}$; $R_{\\text{Tierra}}=6{,}37\\cdot10^{6}\\,\\text{m}$; $c=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $|q_e|=1{,}60\\cdot10^{-19}\\,\\text{C}$; $v_{\\text{sonido}}=340\\,\\text{m}\\,\\text{s}^{-1}$; $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$; $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$; $K=9{,}00\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $m_p=1{,}67\\cdot10^{-27}\\,\\text{kg}$."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "Órbita geoestacionaria y energía de impacto de un satélite",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2,5 puntos (1 + 1 + 0,5)",
+      "enunciado": "En un programa de divulgación científica has visto el siguiente titular alarmista: “Un satélite Starlink que está orbitando la Tierra podría caer, porque existe un alto riesgo de colisión con un meteorito que pasará muy cerca, y podría destruir grandes zonas.” En la realidad, la constelación de satélites Starlink está formada por miles de satélites en órbita alrededor de la Tierra. Para simplificar, supongamos que solo hay tres tipos de satélites Starlink, clasificados según su masa: Tipo V1: $m_1=300\\,\\text{kg}$, Tipo V2: $m_2=600\\,\\text{kg}$, Tipo V3: $m_3=2200\\,\\text{kg}$. Dado que la noticia no lo especifica, supón que el satélite es del tipo V1.\n\nAnaliza si el titular es físicamente razonable y responde a las siguientes cuestiones.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,00 punto",
+          "enunciado": "Supón que el satélite describe una órbita geoestacionaria alrededor de la Tierra. (1.00 punto)\n1. Calcula el radio $r_{\\text{geo}}$ de dicha órbita a partir de la condición de órbita geoestacionaria ($T=24\\,\\text{h}$). (0.50 puntos)\n2. Calcula la altura $h$ sobre la superficie terrestre. (0.25 puntos)\n3. Calcula la velocidad orbital $v_{\\text{orb}}$ del satélite. (0.25 puntos)"
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,00 punto",
+          "enunciado": "Imagina ahora el peor escenario: el meteorito choca contra el satélite. (1.00 punto)\n1. El satélite se dirige hacia la Tierra en caída libre con velocidad inicial nula; calcula la velocidad con la que llegará a la superficie terrestre (despreciando el rozamiento con la atmósfera). (0.50 puntos)\n2. Compara la energía cinética del satélite al llegar a la superficie de la Tierra con la energía liberada por un petardo potente (del orden de $10^4$-$10^5\\,\\text{J}$). ¿Te parece realista que este impacto “destruya grandes zonas”? (0.50 puntos)"
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,50 puntos",
+          "enunciado": "Supón que el satélite fuera de tipo V2 o V3, en lugar de V1. Razona, sin hacer ningún cálculo, si cambiarían los valores de $r_{\\text{geo}}$, $v_{\\text{orb}}$ y la velocidad de caída; y si cambiaría la energía mecánica. Justifica tu respuesta. (0.50 puntos)"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Condición de órbita geoestacionaria",
+          "contenido": "El periodo es $T=24\\,\\text{h}=24\\cdot3600\\,\\text{s}=86400\\,\\text{s}$. La gravedad proporciona la fuerza centrípeta:\n\n$$\\frac{GM_Tm}{r^2}=m\\frac{v_{\\text{orb}}^2}{r}.$$\n\nAl cancelar la masa y usar $v_{\\text{orb}}=\\frac{2\\pi r}{T}$, se obtiene:\n\n$$\\frac{GM_T}{r}=\\frac{4\\pi^2r^2}{T^2}\\quad\\Rightarrow\\quad r_{\\text{geo}}=\\left(\\frac{GM_TT^2}{4\\pi^2}\\right)^{1/3}.$$\n\nCon $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$ y $M_T=5{,}97\\cdot10^{24}\\,\\text{kg}$, resulta $GM_T=3{,}98199\\cdot10^{14}\\,\\text{m}^{3}\\,\\text{s}^{-2}$ y:\n\n$$r_{\\text{geo}}=4{,}22\\cdot10^{7}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Altura sobre la superficie terrestre",
+          "contenido": "El radio orbital se mide desde el centro de la Tierra. Por tanto, con $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$:\n\n$$h=r_{\\text{geo}}-R_T=4{,}22\\cdot10^{7}-6{,}37\\cdot10^{6}=3{,}59\\cdot10^{7}\\,\\text{m}.$$\n\nSe conservan las cifras sin redondear del radio hasta obtener la altura."
+        },
+        {
+          "titulo": "Velocidad en la órbita circular",
+          "contenido": "De $\\frac{GM_Tm}{r^2}=m\\frac{v_{\\text{orb}}^2}{r}$:\n\n$$v_{\\text{orb}}=\\sqrt{\\frac{GM_T}{r_{\\text{geo}}}}=\\sqrt{\\frac{3{,}98199\\cdot10^{14}}{4{,}22\\cdot10^{7}}}=3{,}07\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nResultado: $r_{\\text{geo}}=4{,}22\\cdot10^{7}\\,\\text{m}$; $h=3{,}59\\cdot10^{7}\\,\\text{m}$; $v_{\\text{orb}}=3{,}07\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$."
+        },
+        {
+          "titulo": "Conservación de la energía desde el reposo",
+          "contenido": "En el escenario indicado la velocidad inicial es nula. Se toma la energía potencial gravitatoria igual a cero en el infinito. Sin rozamiento:\n\n$$-\\frac{GM_Tm}{r_{\\text{geo}}}=\\frac{1}{2}mv_{\\text{caída}}^2-\\frac{GM_Tm}{R_T}.$$\n\nDespejando antes de sustituir:\n\n$$v_{\\text{caída}}=\\sqrt{2GM_T\\left(\\frac{1}{R_T}-\\frac{1}{r_{\\text{geo}}}\\right)}.$$\n\nLa masa se cancela y la velocidad es aproximadamente:\n\n$$v_{\\text{caída}}=1{,}03\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Energía de impacto y valoración del titular",
+          "contenido": "Para el satélite V1, $m=300\\,\\text{kg}$:\n\n$$E_{c,f}=\\frac{1}{2}mv_{\\text{caída}}^2=\\frac{1}{2}\\cdot300\\cdot(1{,}03\\cdot10^{4})^2=1{,}59\\cdot10^{10}\\,\\text{J}.$$\n\nLa razón respecto a un petardo de $10^5\\,\\text{J}$ es $1{,}59\\cdot10^{5}$, y respecto a uno de $10^4\\,\\text{J}$ es $1{,}59\\cdot10^{6}$. La energía es, por tanto, entre unas $160000$ y $1600000$ veces mayor.\n\nDentro del modelo ideal propuesto, la advertencia de un impacto potencialmente muy destructivo es razonable. Esta comparación energética no fija por sí sola una extensión geográfica del daño.\n\nResultado: $v_{\\text{caída}}=1{,}03\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-1}$; $E_{c,f}=1{,}59\\cdot10^{10}\\,\\text{J}$. Impacto mucho más energético que un petardo; advertencia cualitativamente razonable."
+        },
+        {
+          "titulo": "Dependencia con la masa",
+          "contenido": "El radio geoestacionario depende de $GM_T$ y del periodo, y las velocidades dependen de $GM_T$ y de los radios. La masa del satélite se cancela en las ecuaciones de movimiento. Por ello, V1, V2 y V3 tienen el mismo radio geoestacionario, la misma altura y las mismas velocidades orbital y de caída en los escenarios planteados.\n\nLa energía mecánica sí cambia: tanto $E_c=\\frac{1}{2}mv^2$ como $U=-\\frac{GM_Tm}{r}$ son proporcionales a la masa. Para condiciones cinemáticas iguales, un satélite de mayor masa tiene mayor energía cinética y mayor valor absoluto de la energía potencial y de la energía mecánica ligada.\n\nResultado: $r_{\\text{geo}}$, $h$, $v_{\\text{orb}}$ y $v_{\\text{caída}}$ no cambian. La energía mecánica es proporcional a la masa."
+        }
+      ],
+      "resultado": "$r_{\\text{geo}}=4{,}22\\cdot10^{7}\\,\\text{m}$; $h=3{,}59\\cdot10^{7}\\,\\text{m}$; $v_{\\text{orb}}=3{,}07\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$.\n$v_{\\text{caída}}=1{,}03\\cdot10^{4}\\,\\text{m}\\,\\text{s}^{-1}$; $E_{c,f}=1{,}59\\cdot10^{10}\\,\\text{J}$; impacto entre $1{,}59\\cdot10^{5}$ y $1{,}59\\cdot10^{6}$ veces más energético que un petardo.\n$r_{\\text{geo}}$, $h$, $v_{\\text{orb}}$ y $v_{\\text{caída}}$ no cambian con la masa; la energía mecánica es proporcional a la masa."
+    },
+    {
+      "numero": 2,
+      "titulo": "Inducción electromagnética en un microgenerador de espira",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "2,5 puntos (0,5 + 1 + 1)",
+      "enunciado": "Una estación meteorológica instalada en una zona montañosa aislada de la red eléctrica alimenta sus sensores con un microgenerador electromagnético. El dispositivo consiste en una espira circular plana de radio $R=6{,}0\\,\\text{cm}$, montada sobre un eje de giro dentro de un campo magnético uniforme.\n\nDurante las pruebas de laboratorio, el equipo de ingeniería ensaya el prototipo en dos configuraciones:\n• Configuración I (caracterización): La espira permanece fija, inicialmente situada en el plano $XY$. Un electroimán genera un campo magnético $\\vec B$ dirigido en el sentido positivo del eje $OZ$, cuyo módulo varía con el tiempo según $B(t)=3t^2$ ($B$ en teslas, $t$ en segundos).\n• Configuración II (modo generador): El campo magnético, de módulo constante $B_0=8{,}0\\,\\text{mT}$, está creado por imanes permanentes y dirigido en el sentido positivo del eje $OZ$. La espira gira alrededor del eje $OY$ con velocidad angular constante $\\omega=60\\,\\text{rad/s}$, partiendo del plano $XY$ en el instante $t=0$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,50 puntos",
+          "enunciado": "Para diseñar el sistema de detección de la señal eléctrica del generador, los ingenieros necesitan conocer los fundamentos de la inducción electromagnética. (0.50 puntos)\n1. Expresa matemáticamente el flujo del campo magnético a través de una superficie plana inmersa en un campo uniforme. Escribe su expresión matemática e indica el significado de cada magnitud. (0.25 puntos)\n2. Enuncia la ley de Faraday-Lenz de la inducción electromagnética y explica el significado físico del signo negativo en la expresión de la fuerza electromotriz inducida. (0.25 puntos)"
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,00 punto",
+          "enunciado": "Configuración I, Caracterización - electroimán variable (1.00 punto)\n1. Justifica que, cuando el dispositivo está en esta configuración, el ángulo entre $\\vec B$ y el vector unitario normal a la espira, $\\hat n$, es constante, e indica su valor. Escribe la expresión del flujo magnético a través de la espira en función del tiempo. (0.25 puntos)\n2. Deduce, aplicando la ley de Faraday, la expresión de la fuerza electromotriz inducida en la espira en función del tiempo. (0.25 puntos)\n3. Calcula el valor numérico de la fem inducida en el instante $t=7{,}0\\,\\text{ms}$. Expresa los resultados en notación científica con dos decimales e indica sus unidades. (0.50 puntos)"
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1,00 punto",
+          "enunciado": "Configuración II - modo generador (1.00 punto)\n1. Escribe la expresión del flujo magnético a través de la espira en función del tiempo y, a partir de ella, deduce la expresión de la fem inducida. Calcula el valor de la fem en el instante $t=7{,}0\\,\\text{ms}$. (0.50 puntos)\n2. Las especificaciones técnicas del sensor meteorológico exigen que el generador proporcione una fem máxima de al menos $0{,}50\\,\\text{mV}$. Indica si el prototipo actual cumple este requisito. (0.50 puntos)"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Definición del flujo magnético",
+          "contenido": "El flujo del campo magnético a través de una superficie es:\n\n$$\\Phi=\\int_S \\vec B\\cdot d\\vec S.$$\n\nPara una superficie plana de área $S$ en un campo uniforme:\n\n$$\\Phi=BS\\cos\\theta,$$\n\ndonde $B$ es el módulo del campo en teslas, $S$ el área en metros cuadrados, $\\hat n$ la normal orientada y $\\theta$ el ángulo entre el campo y esa normal. El flujo se mide en webers, $\\text{Wb}=\\text{T}\\,\\text{m}^{2}$."
+        },
+        {
+          "titulo": "Ley de inducción y significado del signo",
+          "contenido": "La fuerza electromotriz inducida en una espira es la variación temporal del flujo con signo negativo:\n\n$$\\varepsilon=-\\frac{d\\Phi}{dt}.$$\n\nSi el circuito está cerrado, la corriente inducida crea un campo que se opone a la variación de flujo que la produce, según la ley de Lenz. El signo se refiere al sentido de recorrido compatible con la normal elegida y expresa esa oposición.\n\nResultado: $\\Phi=BS\\cos\\theta$; $\\varepsilon=-\\frac{d\\Phi}{dt}$. La corriente inducida se opone a la variación del flujo."
+        },
+        {
+          "titulo": "Normal de la espira y flujo en la configuración I",
+          "contenido": "La espira está fija en el plano $XY$. Se orienta su normal hacia $+OZ$, paralela a $\\vec B$; entonces $\\theta=0$ permanece constante.\n\nEl área es $S=\\pi R^2$, por lo que:\n\n$$\\Phi_I(t)=B(t)S=3t^2\\pi R^2=3\\pi R^2t^2.$$"
+        },
+        {
+          "titulo": "Derivación y evaluación de la fem",
+          "contenido": "Aplicando Faraday-Lenz y tomando $t$ en segundos:\n\n$$\\varepsilon_I(t)=-\\frac{d\\Phi_I}{dt}=-6\\pi R^2t.$$\n\nEn $t=7{,}0\\,\\text{ms}=7{,}0\\cdot10^{-3}\\,\\text{s}$:\n\n$$\\varepsilon_I(7{,}0\\,\\text{ms})=-6\\pi(0{,}060)^2(7{,}0\\cdot10^{-3})=-4{,}75\\cdot10^{-4}\\,\\text{V}.$$\n\nEl módulo es $4{,}75\\cdot10^{-4}\\,\\text{V}=0{,}475\\,\\text{mV}$. La mantisa se presenta con dos decimales, como solicita el enunciado.\n\nResultado: $\\Phi_I(t)=3\\pi R^2t^2$; $\\varepsilon_I(t)=-6\\pi R^2t$; $\\varepsilon_I(7{,}0\\,\\text{ms})=-4{,}75\\cdot10^{-4}\\,\\text{V}$."
+        },
+        {
+          "titulo": "Flujo y fem de la configuración II",
+          "contenido": "La normal gira con la espira, de modo que $\\theta(t)=\\omega t$. Con el campo constante:\n\n$$\\Phi_{II}(t)=B_0S\\cos(\\omega t)=B_0\\pi R^2\\cos(\\omega t).$$\n\nDerivando:\n\n$$\\varepsilon_{II}(t)=-\\frac{d\\Phi_{II}}{dt}=B_0\\pi R^2\\omega\\,\\text{sen}(\\omega t).$$\n\nCon $B_0=8{,}0\\cdot10^{-3}\\,\\text{T}$, $\\omega=60\\,\\text{rad/s}$ y $t=0{,}0070\\,\\text{s}$, el argumento vale $\\omega t=0{,}42\\,\\text{rad}$:\n\n$$\\varepsilon_{II}(7{,}0\\,\\text{ms})=8{,}0\\cdot10^{-3}\\cdot\\pi(0{,}060)^2\\cdot60\\cdot\\text{sen}(0{,}42)=2{,}21\\cdot10^{-3}\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Fem máxima y comparación con la especificación",
+          "contenido": "El valor máximo del módulo se alcanza cuando $|\\text{sen}(\\omega t)|=1$:\n\n$$|\\varepsilon_{II}|_{\\text{máx}}=B_0\\pi R^2\\omega=5{,}43\\cdot10^{-3}\\,\\text{V}=5{,}43\\,\\text{mV}.$$\n\nComo $5{,}43\\,\\text{mV}>0{,}50\\,\\text{mV}$, el prototipo cumple el requisito; la fem máxima es unas $10{,}9$ veces el mínimo exigido.\n\nResultado: $\\Phi_{II}(t)=B_0\\pi R^2\\cos(\\omega t)$; $\\varepsilon_{II}(t)=B_0\\pi R^2\\omega\\,\\text{sen}(\\omega t)$; $\\varepsilon_{II}(7{,}0\\,\\text{ms})=2{,}21\\cdot10^{-3}\\,\\text{V}$; $|\\varepsilon_{II}|_{\\text{máx}}=5{,}43\\,\\text{mV}$. Cumple el requisito."
+        }
+      ],
+      "resultado": "$\\Phi_I(t)=3\\pi R^2t^2$; $\\varepsilon_I(t)=-6\\pi R^2t$; $\\varepsilon_I(7{,}0\\,\\text{ms})=-4{,}75\\cdot10^{-4}\\,\\text{V}$.\n$\\Phi_{II}(t)=B_0\\pi R^2\\cos(\\omega t)$; $\\varepsilon_{II}(t)=B_0\\pi R^2\\omega\\,\\text{sen}(\\omega t)$; $\\varepsilon_{II}(7{,}0\\,\\text{ms})=2{,}21\\cdot10^{-3}\\,\\text{V}$; $|\\varepsilon_{II}|_{\\text{máx}}=5{,}43\\,\\text{mV}$, cumple el requisito de $0{,}50\\,\\text{mV}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Ondas estacionarias y nivel sonoro de dos violines",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda; C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2,5 puntos (0,5 + 1 + 1)",
+      "enunciado": "Las cuerdas de un violín miden $L=32{,}8\\,\\text{cm}$. Se estudia la primera cuerda, que emite la nota Mi con una frecuencia $f_{\\text{Mi}}=659{,}3\\,\\text{Hz}$ cuando vibra en su modo fundamental.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,50 puntos",
+          "enunciado": "Obtén la longitud de onda de la onda estacionaria en la cuerda para el modo fundamental, y la longitud de onda del sonido en el aire correspondiente a esa nota. (0.50 puntos)"
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,00 punto",
+          "enunciado": "¿En qué punto (referido a cualquiera de los dos extremos) se debe pisar la cuerda para producir la nota La de frecuencia $f_{\\text{La}}=880{,}0\\,\\text{Hz}$? (1.00 punto)"
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1,00 punto",
+          "enunciado": "En un concierto, el violinista solista toca una melodía emitiendo un sonido de potencia $P=10^{-6}\\,\\text{W}$. Te unes a su lado con un violín que emite exactamente la misma nota y potencia. ¿Cuántos decibelios se medirían a una distancia de $10\\,\\text{m}$ de vuestra posición, si:\n• sólo toca el violinista solista;\n• tocáis ambos a la vez? (1.00 punto)"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Modo fundamental y propagación del sonido",
+          "contenido": "La cuerda tiene nodos en ambos extremos. En el modo fundamental cabe media longitud de onda:\n\n$$L=\\frac{\\lambda_{\\text{cuerda}}}{2}\\quad\\Rightarrow\\quad \\lambda_{\\text{cuerda}}=2L=2\\cdot0{,}328=0{,}656\\,\\text{m}.$$\n\nEl sonido en el aire conserva la frecuencia de la fuente. Con $v_{\\text{sonido}}=340\\,\\text{m}\\,\\text{s}^{-1}$:\n\n$$\\lambda_{\\text{aire}}=\\frac{v_{\\text{sonido}}}{f_{\\text{Mi}}}=\\frac{340}{659{,}3}=0{,}516\\,\\text{m}.$$\n\nResultado: $\\lambda_{\\text{cuerda}}=0{,}656\\,\\text{m}$; $\\lambda_{\\text{aire}}=0{,}516\\,\\text{m}$."
+        },
+        {
+          "titulo": "Relación entre la frecuencia y la longitud vibrante",
+          "contenido": "Al pisar la cuerda se reduce la longitud que vibra entre el dedo y el puente. Manteniendo la tensión y la densidad lineal, la velocidad de la onda en la cuerda se mantiene. Para el fundamental $f=\\frac{v_{\\text{cuerda}}}{2L_{\\text{vib}}}$, por lo que:\n\n$$L_{\\text{vib}}=\\frac{v_{\\text{cuerda}}}{2f_{\\text{La}}}=L\\frac{f_{\\text{Mi}}}{f_{\\text{La}}}=0{,}328\\cdot\\frac{659{,}3}{880{,}0}=0{,}246\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Distancia desde cada extremo",
+          "contenido": "Debe pisarse a $24{,}6\\,\\text{cm}$ del puente, dejando esa longitud vibrante. Desde el extremo opuesto de la cuerda original, el punto está a:\n\n$$32{,}8-24{,}6=8{,}2\\,\\text{cm}.$$\n\nResultado: pisar a $24{,}6\\,\\text{cm}$ del puente, o a $8{,}23\\,\\text{cm}$ del extremo opuesto."
+        },
+        {
+          "titulo": "Intensidad y nivel de un violín",
+          "contenido": "Para la propagación esférica del modelo, a $r=10\\,\\text{m}$:\n\n$$I_1=\\frac{P}{4\\pi r^2}=\\frac{10^{-6}}{4\\pi(10)^2}=7{,}96\\cdot10^{-10}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nCon $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$:\n\n$$\\beta_1=10\\log_{10}\\left(\\frac{I_1}{I_0}\\right)=10\\log_{10}(795{,}8)=29{,}0\\,\\text{dB}.$$"
+        },
+        {
+          "titulo": "Suma de intensidades y nivel de ambos violines",
+          "contenido": "En el modelo de fuentes sonoras independientes se suman las intensidades medias:\n\n$$I_2=2I_1=1{,}59\\cdot10^{-9}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nNo se suman directamente los niveles en decibelios:\n\n$$\\beta_2=10\\log_{10}\\left(\\frac{I_2}{I_0}\\right)=10\\log_{10}(1591{,}5)=32{,}0\\,\\text{dB}.$$\n\nResultado: sólo el solista: $\\beta_1=29{,}0\\,\\text{dB}$. Ambos a la vez: $\\beta_2=32{,}0\\,\\text{dB}$."
+        }
+      ],
+      "resultado": "$\\lambda_{\\text{cuerda}}=0{,}656\\,\\text{m}$; $\\lambda_{\\text{aire}}=0{,}516\\,\\text{m}$.\\nPisar a $24{,}6\\,\\text{cm}$ del puente, o a $8{,}23\\,\\text{cm}$ del extremo opuesto.\\nSólo el solista: $\\beta_1=29{,}0\\,\\text{dB}$. Ambos a la vez: $\\beta_2=32{,}0\\,\\text{dB}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Proyección de una diapositiva mediante una lente convergente",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2,5 puntos (1 + 0,5 + 1)",
+      "enunciado": "Disponemos de dos lentes delgadas: una lupa de potencia $P_1=+3\\,\\text{D}$; una lente de gafas de potencia $P_2=-3\\,\\text{D}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,00 punto",
+          "enunciado": "Indica cuál de las dos lentes sería adecuada para construir un proyector de imágenes (por ejemplo, para proyectar sobre una pantalla la imagen de una diapositiva). Justifica la elección atendiendo al tipo de lente (convergente/divergente) y al tipo de imagen que forma (real/virtual). Calcula la distancia focal imagen $f'$ de la lente elegida (en metros y en centímetros). (1.00 punto)"
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,50 puntos",
+          "enunciado": "Supón ahora que se utiliza la lente elegida para proyectar una diapositiva de altura $h=2{,}40\\,\\text{cm}$ sobre una pantalla situada a una distancia $D=2{,}00\\,\\text{m}$ de la lente. (0.50 puntos)\n1. Determina a qué distancia de la lente debe colocarse la diapositiva para que la imagen se forme nítidamente sobre la pantalla. (0.25 puntos)\n2. Calcula el aumento lateral del sistema y la altura de la imagen proyectada sobre la pantalla. (0.25 puntos)"
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1,00 punto",
+          "enunciado": "Análisis de las propiedades de la imagen: (1.00 punto)\n1. Indica la orientación de la imagen obtenida en b) (derecha o invertida) y justifica la respuesta a partir del signo del aumento. (0.25 puntos)\n2. Si la diapositiva se coloca ahora a una distancia $s=f'/2$ del centro óptico de la misma lente, determina la posición de la imagen y el aumento lateral aplicando la ecuación de lentes delgadas. (0.50 puntos)\n3. Compara las propiedades de la imagen en ambas situaciones (proyección y $s=f'/2$): tipo (real/virtual), orientación y tamaño relativo. (0.25 puntos)"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Imagen real para proyectar sobre una pantalla",
+          "contenido": "Una pantalla requiere una imagen real, formada por la convergencia de los rayos que salen de la lente. La lupa de potencia positiva $P_1=+3\\,\\text{D}$ es convergente y puede formar esa imagen si el objeto está más lejos que el foco. La lente de gafas, de potencia negativa, es divergente y produce una imagen virtual para un objeto real; no sirve para esta proyección."
+        },
+        {
+          "titulo": "Cálculo de la distancia focal imagen",
+          "contenido": "La potencia en dioptrías es $P=\\frac{1}{f'}$, con $f'$ en metros:\n\n$$f'=\\frac{1}{P_1}=\\frac{1}{3}=+0{,}333\\,\\text{m}=+33{,}3\\,\\text{cm}.$$\n\nResultado: lupa convergente de $+3\\,\\text{D}$; $f'=+0{,}333\\,\\text{m}=+33{,}3\\,\\text{cm}$."
+        },
+        {
+          "titulo": "Ecuación de la lente y posición del objeto",
+          "contenido": "Se emplean distancias algebraicas con el origen en la lente y la luz propagándose de izquierda a derecha. El objeto real tiene $s<0$ y la imagen real sobre la pantalla tiene $s'=+2{,}00\\,\\text{m}$. La ecuación de las lentes delgadas es:\n\n$$\\frac{1}{f'}=\\frac{1}{s'}-\\frac{1}{s}.$$\n\nSustituyendo $f'=\\frac{1}{3}\\,\\text{m}$:\n\n$$\\frac{1}{s}=\\frac{1}{s'}-\\frac{1}{f'}=\\frac{1}{2{,}00}-3=-2{,}5\\,\\text{m}^{-1}\\quad\\Rightarrow\\quad s=-0{,}400\\,\\text{m}.$$\n\nLa diapositiva debe colocarse a $40{,}0\\,\\text{cm}$ delante de la lente."
+        },
+        {
+          "titulo": "Aumento lateral y altura",
+          "contenido": "El aumento lateral es:\n\n$$M=\\frac{s'}{s}=\\frac{2{,}00}{-0{,}400}=-5{,}00.$$\n\nLa altura de la imagen es:\n\n$$h'=Mh=-5{,}00\\cdot2{,}40=-12{,}0\\,\\text{cm}.$$\n\nEl tamaño de la imagen es $12{,}0\\,\\text{cm}$; el signo indica que está invertida respecto a la diapositiva.\n\nResultado: objeto a $40{,}0\\,\\text{cm}$ delante de la lente: $s=-0{,}400\\,\\text{m}$. $M=-5{,}00$; $h'=-12{,}0\\,\\text{cm}$ (tamaño $12{,}0\\,\\text{cm}$)."
+        },
+        {
+          "titulo": "Orientación de la imagen proyectada",
+          "contenido": "En la proyección $M=-5{,}00$. Como el aumento es negativo, la imagen está invertida. Su módulo indica un tamaño cinco veces mayor que el objeto."
+        },
+        {
+          "titulo": "Objeto a media distancia focal",
+          "contenido": "La distancia geométrica indicada es $f'/2$ delante de la lente; con la convención algebraica anterior, $s=-\\frac{f'}{2}=-0{,}1667\\,\\text{m}$. Aplicando la ecuación de lentes delgadas:\n\n$$\\frac{1}{s'}=\\frac{1}{f'}+\\frac{1}{s}=3-6=-3\\,\\text{m}^{-1}\\quad\\Rightarrow\\quad s'=-0{,}333\\,\\text{m}.$$\n\nEl aumento lateral es:\n\n$$M=\\frac{s'}{s}=\\frac{-0{,}333}{-0{,}1667}=+2{,}00.$$\n\nLa imagen se forma a $33{,}3\\,\\text{cm}$ delante de la lente, en el lado del objeto. Es virtual, derecha y dos veces mayor."
+        },
+        {
+          "titulo": "Comparación de ambas imágenes",
+          "contenido": "En la proyección, $s=-0{,}400\\,\\text{m}$: imagen real, invertida y $|M|=5$.\n\nCon el objeto a $f'/2$, $s=-f'/2$: imagen virtual, derecha y $|M|=2$.\n\nResultado: proyección: real, invertida y cinco veces mayor. A $f'/2$: $s'=-f'=-0{,}333\\,\\text{m}$, $M=+2$, imagen virtual, derecha y dos veces mayor."
+        }
+      ],
+      "resultado": "Lupa convergente de $+3\\,\\text{D}$; $f'=+0{,}333\\,\\text{m}=+33{,}3\\,\\text{cm}$.\\nDiapositiva a $40{,}0\\,\\text{cm}$ delante de la lente; $M=-5{,}00$; $h'=-12{,}0\\,\\text{cm}$ (imagen real, invertida y cinco veces mayor).\\nPara $s=-f'/2$: $s'=-0{,}333\\,\\text{m}$, $M=+2{,}00$; imagen virtual, derecha y dos veces mayor."
+    },
+    {
+      "numero": 5,
+      "titulo": "Efecto fotoeléctrico y cambio de la función trabajo por oxidación",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2,5 puntos (0,5 + 1 + 1)",
+      "enunciado": "Al iluminar la superficie de un metal con luz de longitud de onda $280\\,\\text{nm}$, la emisión de fotoelectrones cesa para un potencial de frenado de $1{,}3\\,\\text{V}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,50 puntos",
+          "enunciado": "(0.50 puntos)\n1. Escribe la ecuación de Einstein del efecto fotoeléctrico y explica el significado físico de cada término. (0.25 puntos)\n2. A partir del potencial de frenado, determina la energía cinética máxima de los fotoelectrones emitidos. (0.25 puntos)"
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,00 punto",
+          "enunciado": "(1.00 punto)\n1. Calcula la función trabajo $W_0$ del metal. (0.50 puntos)\n2. Determina la frecuencia umbral $\\nu_{\\text{um}}$ y su longitud de onda correspondiente $\\lambda_{\\text{um}}$ de emisión fotoeléctrica para ese metal. (0.50 puntos)"
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1,00 punto",
+          "enunciado": "Cuando la superficie del metal se ha oxidado, el potencial de frenado para la misma luz incidente es de $0{,}7\\,\\text{V}$. (1.00 punto)\n1. Determina la nueva energía cinética máxima de los fotoelectrones y compárala con la del metal sin oxidar. (0.25 puntos)\n2. Calcula la nueva función trabajo del metal oxidado. (0.50 puntos)\n3. Razona cómo cambia la frecuencia umbral de emisión y explica físicamente por qué la oxidación modifica $W_0$. (0.25 puntos)"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Balance energético del efecto fotoeléctrico",
+          "contenido": "La ecuación de Einstein del efecto fotoeléctrico es:\n\n$$h\\nu=W_0+K_{\\text{máx}}.$$\n\n$h\\nu$ es la energía de un fotón incidente; $W_0$ es la energía mínima necesaria para extraer un electrón de la superficie del metal; $K_{\\text{máx}}$ es la energía cinética máxima que puede tener el electrón emitido. $h$ es la constante de Planck, $\\nu$ la frecuencia, $c$ la velocidad de la luz y $\\lambda$ la longitud de onda."
+        },
+        {
+          "titulo": "Energía a partir del potencial de frenado",
+          "contenido": "La energía eléctrica necesaria para detener los electrones más rápidos iguala su energía cinética:\n\n$$K_{\\text{máx}}=eV_f=1{,}60\\cdot10^{-19}\\cdot1{,}3=2{,}08\\cdot10^{-19}\\,\\text{J}=1{,}3\\,\\text{eV}.$$\n\nResultado: $h\\nu=W_0+K_{\\text{máx}}$; $K_{\\text{máx}}=2{,}08\\cdot10^{-19}\\,\\text{J}=1{,}3\\,\\text{eV}$."
+        },
+        {
+          "titulo": "Energía del fotón y función trabajo",
+          "contenido": "Con $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$, $c=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$ y $\\lambda=280\\cdot10^{-9}\\,\\text{m}$:\n\n$$E=h\\nu=\\frac{hc}{\\lambda}=\\frac{6{,}63\\cdot10^{-34}\\cdot3{,}00\\cdot10^{8}}{280\\cdot10^{-9}}=7{,}10\\cdot10^{-19}\\,\\text{J}.$$\n\nEntonces:\n\n$$W_0=E-K_{\\text{máx}}=7{,}10\\cdot10^{-19}-2{,}08\\cdot10^{-19}=5{,}02\\cdot10^{-19}\\,\\text{J}=3{,}14\\,\\text{eV}.$$"
+        },
+        {
+          "titulo": "Frecuencia y longitud de onda umbral",
+          "contenido": "En el umbral los electrones salen con energía cinética máxima nula:\n\n$$\\nu_{\\text{um}}=\\frac{W_0}{h}=\\frac{5{,}02\\cdot10^{-19}}{6{,}63\\cdot10^{-34}}=7{,}58\\cdot10^{14}\\,\\text{Hz}.$$\n\n$$\\lambda_{\\text{um}}=\\frac{c}{\\nu_{\\text{um}}}=\\frac{3{,}00\\cdot10^{8}}{7{,}58\\cdot10^{14}}=3{,}96\\cdot10^{-7}\\,\\text{m}=396\\,\\text{nm}.$$\n\nResultado: $W_0=5{,}02\\cdot10^{-19}\\,\\text{J}=3{,}14\\,\\text{eV}$; $\\nu_{\\text{um}}=7{,}58\\cdot10^{14}\\,\\text{Hz}$; $\\lambda_{\\text{um}}=396\\,\\text{nm}$."
+        },
+        {
+          "titulo": "Nueva energía cinética máxima",
+          "contenido": "Con el metal oxidado, $V'_f=0{,}7\\,\\text{V}$:\n\n$$K'_{\\text{máx}}=eV'_f=1{,}60\\cdot10^{-19}\\cdot0{,}7=1{,}12\\cdot10^{-19}\\,\\text{J}=0{,}7\\,\\text{eV}.$$\n\nDisminuye de $1{,}3\\,\\text{eV}$ a $0{,}7\\,\\text{eV}$, una reducción de $0{,}6\\,\\text{eV}=9{,}60\\cdot10^{-20}\\,\\text{J}$."
+        },
+        {
+          "titulo": "Nueva función trabajo",
+          "contenido": "La luz tiene la misma longitud de onda y la energía de cada fotón no cambia:\n\n$$W'_0=E-K'_{\\text{máx}}=7{,}10\\cdot10^{-19}-1{,}12\\cdot10^{-19}=5{,}98\\cdot10^{-19}\\,\\text{J}=3{,}74\\,\\text{eV}.$$\n\nLa función trabajo aumenta en $0{,}6\\,\\text{eV}$, exactamente lo que disminuye la energía cinética máxima."
+        },
+        {
+          "titulo": "Cambio de la frecuencia umbral y explicación física",
+          "contenido": "La nueva frecuencia umbral es:\n\n$$\\nu'_{\\text{um}}=\\frac{W'_0}{h}=\\frac{5{,}98\\cdot10^{-19}}{6{,}63\\cdot10^{-34}}=9{,}02\\cdot10^{14}\\,\\text{Hz}.$$\n\nLa longitud de onda umbral disminuye a $332\\,\\text{nm}$. La oxidación modifica las propiedades electrónicas de la superficie y la barrera que deben superar los electrones para salir. En este caso los datos muestran una barrera mayor: con la misma energía incidente queda menos energía cinética y se necesita una frecuencia umbral más alta.\n\nResultado: $K'_{\\text{máx}}=1{,}12\\cdot10^{-19}\\,\\text{J}=0{,}7\\,\\text{eV}$; $W'_0=5{,}98\\cdot10^{-19}\\,\\text{J}=3{,}74\\,\\text{eV}$; $\\nu'_{\\text{um}}=9{,}02\\cdot10^{14}\\,\\text{Hz}$. La función trabajo y la frecuencia umbral aumentan."
+        }
+      ],
+      "resultado": "$K_{\\text{máx}}=2{,}08\\cdot10^{-19}\\,\\text{J}=1{,}3\\,\\text{eV}$; $W_0=5{,}02\\cdot10^{-19}\\,\\text{J}=3{,}14\\,\\text{eV}$; $\\nu_{\\text{um}}=7{,}58\\cdot10^{14}\\,\\text{Hz}$; $\\lambda_{\\text{um}}=396\\,\\text{nm}$.\\nCon el metal oxidado: $K'_{\\text{máx}}=1{,}12\\cdot10^{-19}\\,\\text{J}=0{,}7\\,\\text{eV}$; $W'_0=5{,}98\\cdot10^{-19}\\,\\text{J}=3{,}74\\,\\text{eV}$; $\\nu'_{\\text{um}}=9{,}02\\cdot10^{14}\\,\\text{Hz}$; $\\lambda'_{\\text{um}}=332\\,\\text{nm}$. La función trabajo y la frecuencia umbral aumentan."
+    },
+    {
+      "numero": 6,
+      "titulo": "Datación de restos óseos mediante la desintegración del carbono-14",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2,5 puntos (1 + 0,5 + 1)",
+      "enunciado": "Diez gramos de unos restos óseos contienen actualmente $9{,}5\\cdot10^{8}$ átomos de carbono-14 por gramo. Se sabe que, en el momento de la muerte del animal del que proceden esos huesos, la proporción isotópica era la del carbono atmosférico, es decir, había $6{,}9\\cdot10^{9}$ átomos de C-14 por gramo.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,00 punto",
+          "enunciado": "(1.00 punto)\n1. Escribe la expresión para la ley de desintegración exponencial radiactiva y explica el significado físico de cada magnitud. (0.25 puntos)\n2. Haz una representación gráfica cualitativa de la ley; esto es, dibuja la curva e indica en la figura las magnitudes y sus correspondientes unidades. (0.25 puntos)\n3. Deduce la relación entre la constante de desintegración $\\lambda$ y el periodo de semidesintegración $t_{1/2}$. (0.25 puntos)\n4. Calcula la constante de desintegración $\\lambda$ del C-14, sabiendo que $t_{1/2}(^{14}\\text{C})=5730\\,\\text{años}$. (0.25 puntos)"
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,50 puntos",
+          "enunciado": "(0.50 puntos)\n1. Calcula el número total de átomos de C-14 que contiene actualmente la muestra de $10\\,\\text{g}$. (0.25 puntos)\n2. Calcula el número total de átomos de C-14 que contenía la misma muestra en el momento de la muerte. (0.25 puntos)"
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1,00 punto",
+          "enunciado": "Estima la antigüedad de los restos óseos. (1.00 punto)\n1. Plantea la ecuación de desintegración con los datos del problema. (0.25 puntos)\n2. Resuelve simbólicamente para obtener la expresión del tiempo $t$. (0.50 puntos)\n3. Calcula el resultado numérico y exprésalo en años. (0.25 puntos)"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Ley exponencial y significado de las magnitudes",
+          "contenido": "La ley de desintegración radiactiva es:\n\n$$N(t)=N_0e^{-\\lambda t}.$$\n\n$N(t)$ es el número de núcleos de C-14 sin desintegrar en el instante $t$, $N_0$ el número al morir el animal y $\\lambda>0$ la constante de desintegración, que expresa la probabilidad de desintegración por unidad de tiempo. Si $t$ se mide en años, $\\lambda$ se mide en $\\text{año}^{-1}$. $N$ es un número de átomos."
+        },
+        {
+          "titulo": "Representación cualitativa de la curva",
+          "contenido": "La gráfica decrece desde $N_0$, es convexa y se aproxima a cero sin alcanzarlo en un tiempo finito:\n\nN (átomos) ↑\nN₀│●\n  │ ╲\n  │  ╲\nN₀/2 ·●\n  │   ╲\n  │    ╲___\nN₀/4 ●___\n  │\nN₀/8 ●____\n0 └────────────────────────→ t (años)\n  0   5730   11460   17190\n\nLos puntos de referencia son $(0,N_0)$, $(5730,N_0/2)$, $(11460,N_0/4)$ y $(17190,N_0/8)$. El eje horizontal representa el tiempo desde la muerte, en años, y el vertical el número de átomos. El eje $N=0$ es una asíntota horizontal."
+        },
+        {
+          "titulo": "Relación con el periodo de semidesintegración",
+          "contenido": "Por definición $N(t_{1/2})=\\frac{N_0}{2}$. Por tanto:\n\n$$N_0e^{-\\lambda t_{1/2}}=\\frac{N_0}{2}\\quad\\Rightarrow\\quad e^{-\\lambda t_{1/2}}=\\frac{1}{2}\\quad\\Rightarrow\\quad \\lambda t_{1/2}=\\ln 2.$$\n\nAsí:\n\n$$\\lambda=\\frac{\\ln 2}{t_{1/2}}.$$"
+        },
+        {
+          "titulo": "Valor de la constante de desintegración",
+          "contenido": "Con $t_{1/2}=5730\\,\\text{años}$:\n\n$$\\lambda=\\frac{\\ln 2}{5730}=1{,}21\\cdot10^{-4}\\,\\text{año}^{-1}.$$\n\nResultado: $N(t)=N_0e^{-\\lambda t}$; $\\lambda=\\frac{\\ln 2}{t_{1/2}}=1{,}21\\cdot10^{-4}\\,\\text{año}^{-1}$. Gráfica exponencial decreciente con $N(5730)=N_0/2$."
+        },
+        {
+          "titulo": "Población actual y población al morir el animal",
+          "contenido": "Multiplicando el número de átomos por gramo por la masa de la muestra:\n\n$$N=9{,}5\\cdot10^{8}\\cdot10=9{,}5\\cdot10^{9}\\ \\text{átomos}.$$\n\n$$N_0=6{,}9\\cdot10^{9}\\cdot10=6{,}9\\cdot10^{10}\\ \\text{átomos}.$$\n\nResultado: actualmente $N=9{,}5\\cdot10^{9}$ átomos. Al morir el animal, $N_0=6{,}9\\cdot10^{10}$ átomos."
+        },
+        {
+          "titulo": "Ecuación con los datos y despeje simbólico",
+          "contenido": "La desintegración tras la muerte satisface:\n\n$$N=N_0e^{-\\lambda t}.$$\n\nDividiendo por $N_0$ y aplicando el logaritmo natural:\n\n$$\\frac{N}{N_0}=e^{-\\lambda t}\\quad\\Rightarrow\\quad \\ln\\left(\\frac{N}{N_0}\\right)=-\\lambda t\\quad\\Rightarrow\\quad t=\\frac{1}{\\lambda}\\ln\\left(\\frac{N_0}{N}\\right).$$"
+        },
+        {
+          "titulo": "Cálculo de la edad y comprobación",
+          "contenido": "Se usa la constante sin redondear para evitar acumular error:\n\n$$t=\\frac{1}{1{,}21\\cdot10^{-4}}\\ln\\left(\\frac{6{,}9\\cdot10^{10}}{9{,}5\\cdot10^{9}}\\right)=1{,}64\\cdot10^{4}\\,\\text{años}.$$\n\nResultado: antigüedad aproximada $1{,}64\\cdot10^{4}\\,\\text{años}$ (unos $16400$ años)."
+        }
+      ],
+      "resultado": "$\\lambda=1{,}21\\cdot10^{-4}\\,\\text{año}^{-1}$; $N=9{,}5\\cdot10^{9}$ átomos; $N_0=6{,}9\\cdot10^{10}$ átomos; $t=1{,}64\\cdot10^{4}\\,\\text{años}$ (aproximadamente $16400$ años)."
+    }
+  ]
+}

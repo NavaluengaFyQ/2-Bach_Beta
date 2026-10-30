@@ -1,0 +1,384 @@
+{
+  "id": "fisica-c-valenciana-2024-extraordinaria",
+  "codigo": "EXA.FIS.VAL.2024.EXT.SOL",
+  "comunidad": "Comunidad Valenciana",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2024,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Solución del examen de Física de la PAU de la Comunidad Valenciana, convocatoria extraordinaria de 2024, con 12 problemas resueltos paso a paso.",
+  "objetivo": "Evaluar la comprensión y aplicación de los contenidos de Física de 2º de Bachillerato: campo gravitatorio, campo electromagnético, vibraciones y ondas, y física moderna, nuclear y cuántica.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "La puntuación máxima de cada problema es de 2 puntos y la de cada cuestión es de 1,5 puntos. El alumnado elige y contesta exclusivamente 4 cuestiones y 2 problemas."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $k=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $m_e=9{,}1\\cdot10^{-31}\\,\\text{kg}$; $q=1{,}60\\cdot10^{-19}\\,\\text{C}$; $m_D=3{,}34\\cdot10^{-27}\\,\\text{kg}$; $1\\,\\text{MeV}=1{,}60\\cdot10^{-13}\\,\\text{J}$; $n_{\\text{agua}}=1{,}33$; $n_{\\text{vidrio}}=1{,}62$; $n_{\\text{aire}}=1{,}00$."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "Deducción de la tercera ley de Kepler",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A2. Leyes de Kepler y relación con la gravitación",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "La tercera ley de Kepler establece $T^{2}=C\\,r^{3}$. Deduce esta relación para órbitas circulares, da la expresión de $C$ y razona si el periodo depende de la masa del planeta.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Deducción a partir de una órbita circular",
+          "contenido": "Para un planeta de masa $m$ en órbita circular de radio $r$ alrededor del Sol, de masa $M$, la fuerza gravitatoria proporciona la fuerza centrípeta:\n\n$$G\\,\\dfrac{M\\,m}{r^{2}}=m\\,\\dfrac{v^{2}}{r}.$$\n\nSimplificando la masa del planeta $m$:\n\n$$\\dfrac{G\\,M}{r}=v^{2}.$$\n\nComo en una órbita circular $v=\\dfrac{2\\pi r}{T}$, se obtiene:\n\n$$\\dfrac{G\\,M}{r}=\\dfrac{4\\pi^{2}r^{2}}{T^{2}}.$$\n\nReordenando:\n\n$$T^{2}=\\dfrac{4\\pi^{2}}{G\\,M}\\,r^{3}.$$"
+        },
+        {
+          "titulo": "Expresión de la constante $C$",
+          "contenido": "Comparando con $T^{2}=C\\,r^{3}$:\n\n$$C=\\dfrac{4\\pi^{2}}{G\\,M}.$$\n\nEl resultado es $T^{2}=\\dfrac{4\\pi^{2}}{G\\,M}\\,r^{3}$, donde $M$ es la masa del cuerpo central, el Sol en el caso del sistema solar, y $G$ la constante de gravitación universal."
+        },
+        {
+          "titulo": "Dependencia con la masa del planeta",
+          "contenido": "El periodo no depende de la masa del planeta porque dicha masa se cancela al igualar la fuerza gravitatoria y la fuerza centrípeta. La constante $C$ solo depende de la masa del cuerpo central y de $G$. Todos los planetas que orbiten el mismo cuerpo central cumplen la misma relación con el mismo valor de $C$, independientemente de su masa individual."
+        }
+      ],
+      "resultado": "$T^{2}=\\dfrac{4\\pi^{2}}{G\\,M}\\,r^{3}$; $C=\\dfrac{4\\pi^{2}}{G\\,M}$; el periodo no depende de la masa del planeta."
+    },
+    {
+      "numero": 2,
+      "titulo": "Corrientes paralelas y campo nulo en un punto",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos; B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Dos corrientes paralelas separadas $4d$. $I_1=6\\,\\text{A}$ hacia arriba. Determina $I_2$ para que $B=0$ en $P$, punto situado a distancia $d$ de $I_2$ y $3d$ de $I_1$. Calcula la fuerza sobre una carga negativa en $P$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Análisis de la geometría",
+          "contenido": "Las dos corrientes están separadas $4d$. El punto $P$ está a distancia $d$ de $I_2$ y a distancia $3d$ de $I_1$. La corriente $I_1$ circula hacia arriba."
+        },
+        {
+          "titulo": "Condición de campo nulo en $P$",
+          "contenido": "Para que $\\vec B=0$, los campos de ambas corrientes deben ser iguales en módulo y opuestos en sentido.\n\n$$B_1=B_2\\quad\\Rightarrow\\quad \\dfrac{\\mu_0 I_1}{2\\pi(3d)}=\\dfrac{\\mu_0 I_2}{2\\pi d}.$$\n\nSimplificando:\n\n$$\\dfrac{I_1}{3d}=\\dfrac{I_2}{d}\\quad\\Rightarrow\\quad I_2=\\dfrac{I_1}{3}=\\dfrac{6}{3}=2\\,\\text{A}.$$\n\nPara que los campos sean opuestos en $P$, punto entre ambos conductores, $I_2$ debe circular en el mismo sentido que $I_1$, ambas hacia arriba. Así, por la regla de la mano derecha, los campos de $I_1$ e $I_2$ apuntan en sentidos opuestos en un punto situado entre ambos conductores.\n\nResultado: $I_2=2\\,\\text{A}$ hacia arriba."
+        },
+        {
+          "titulo": "Fuerza sobre la carga negativa",
+          "contenido": "Si el campo magnético en $P$ es nulo, $\\vec B=0$, la fuerza magnética sobre cualquier carga en $P$ es:\n\n$$\\vec F=q\\,\\vec v\\times\\vec B=0.$$\n\nLa fuerza sobre la carga, positiva o negativa, que pasa por $P$ es nula, ya que el campo magnético resultante en ese punto es cero."
+        }
+      ],
+      "resultado": "$I_2=2\\,\\text{A}$ en el mismo sentido que $I_1$, hacia arriba; $\\vec F=0$ sobre la carga negativa en $P$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Energía mecánica y velocidad de partículas cargadas",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Dos partículas idénticas $q=1\\,\\mu\\text{C}$, $m=1\\,\\text{g}$, en reposo separadas $d=1\\,\\text{m}$. Calcula la energía mecánica de una, la energía a distancia $10d$ y su velocidad allí. Dato: $k=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Energía mecánica inicial de una partícula",
+          "contenido": "La partícula está inicialmente en reposo, $v=0$. Su energía mecánica es solo la energía potencial electrostática:\n\n$$E_m=U=k\\,\\dfrac{q^{2}}{d}=9\\cdot10^{9}\\,\\dfrac{(1\\cdot10^{-6})^{2}}{1}=9\\cdot10^{-3}\\,\\text{J}.$$\n\nResultado: $E_m=9\\cdot10^{-3}\\,\\text{J}$."
+        },
+        {
+          "titulo": "Energía mecánica a distancia $10d$",
+          "contenido": "La energía mecánica se conserva, ya que solo actúa la fuerza electrostática, que es conservativa. Por tanto, la energía mecánica a distancia $10d$ es la misma:\n\n$$E_m=9\\cdot10^{-3}\\,\\text{J}.$$\n\nLa energía potencial a distancia $10d$ es:\n\n$$U_{10d}=k\\,\\dfrac{q^{2}}{10d}=\\dfrac{9\\cdot10^{-3}}{10}=9\\cdot10^{-4}\\,\\text{J}.$$\n\nResultado: $U_{10d}=9\\cdot10^{-4}\\,\\text{J}$."
+        },
+        {
+          "titulo": "Velocidad a distancia $10d$",
+          "contenido": "La energía cinética a distancia $10d$ es:\n\n$$K=E_m-U_{10d}=9\\cdot10^{-3}-9\\cdot10^{-4}=8{,}1\\cdot10^{-3}\\,\\text{J}.$$\n\nComo $K=\\dfrac{1}{2}m\\,v^{2}$:\n\n$$v=\\sqrt{\\dfrac{2K}{m}}=\\sqrt{\\dfrac{2\\cdot8{,}1\\cdot10^{-3}}{1\\cdot10^{-3}}}\\approx4{,}02\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nResultado: $v\\approx4{,}02\\,\\text{m}\\,\\text{s}^{-1}$."
+        }
+      ],
+      "resultado": "$E_m=9\\cdot10^{-3}\\,\\text{J}$; $U_{10d}=9\\cdot10^{-4}\\,\\text{J}$; $v\\approx4{,}02\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "FEM inducida en espira circular",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Espira circular de radio $30\\,\\text{cm}$ en el plano $XY$ con $\\vec B=5\\hat{k}\\,\\text{T}$ que aumenta a $10\\hat{k}\\,\\text{T}$ en $0{,}1\\,\\text{s}$. Calcula la fem inducida y el sentido de la corriente.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Datos y cálculo del área",
+          "contenido": "Radio: $r=0{,}30\\,\\text{m}$. Área:\n\n$$A=\\pi r^{2}=\\pi(0{,}30)^{2}=0{,}2827\\,\\text{m}^{2}.$$\n\nEl campo es perpendicular al plano de la espira, ambos en la dirección $\\hat{k}$, por lo que el flujo es $\\Phi=B\\,A$."
+        },
+        {
+          "titulo": "Cálculo de la FEM",
+          "contenido": "La variación del campo es $\\Delta B=10-5=5\\,\\text{T}$ en $\\Delta t=0{,}1\\,\\text{s}$. La fem inducida, en valor absoluto, es:\n\n$$|\\varepsilon|=\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|=A\\,\\dfrac{\\Delta B}{\\Delta t}=0{,}2827\\cdot\\dfrac{5}{0{,}1}\\approx14{,}1\\,\\text{V}.$$\n\nResultado: $|\\varepsilon|\\approx14{,}1\\,\\text{V}$."
+        },
+        {
+          "titulo": "Sentido de la corriente inducida",
+          "contenido": "El campo apunta en $+\\hat{k}$, saliendo del plano $XY$, y está aumentando. Por la ley de Lenz, la corriente inducida debe generar un campo que se oponga al aumento, es decir, un campo inducido en $-\\hat{k}$, entrando en el plano. Usando la regla de la mano derecha, para que el campo inducido apunte en $-\\hat{k}$, la corriente debe circular en sentido horario vista desde el eje $+z$, es decir, desde arriba.\n\nResultado: corriente en sentido horario vista desde $+z$."
+        }
+      ],
+      "resultado": "$|\\varepsilon|\\approx14{,}1\\,\\text{V}$; corriente en sentido horario vista desde $+z$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Imagen en espejo esférico convexo",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Objeto de $10\\,\\text{cm}$ a $1\\,\\text{m}$ de un espejo convexo de $1\\,\\text{m}$ de distancia focal. Determina la posición, el tamaño y las características de la imagen.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Datos y convenio de signos",
+          "contenido": "Para un espejo convexo, la distancia focal es negativa en el convenio estándar: $f=-100\\,\\text{cm}$. El objeto está a $s=100\\,\\text{cm}$ delante del espejo. Usamos la ecuación del espejo esférico:\n\n$$\\dfrac{1}{s}+\\dfrac{1}{s'}=\\dfrac{1}{f}.$$"
+        },
+        {
+          "titulo": "Cálculo de la posición de la imagen",
+          "contenido": "Sustituyendo $s=100\\,\\text{cm}$ y $f=-100\\,\\text{cm}$:\n\n$$\\dfrac{1}{100}+\\dfrac{1}{s'}=-\\dfrac{1}{100}\\quad\\Rightarrow\\quad \\dfrac{1}{s'}=-\\dfrac{2}{100}\\quad\\Rightarrow\\quad s'=-50\\,\\text{cm}.$$\n\nLa imagen se forma a $50\\,\\text{cm}$ detrás del espejo, por lo que es virtual.\n\nResultado: $s'=-50\\,\\text{cm}$."
+        },
+        {
+          "titulo": "Tamaño de la imagen",
+          "contenido": "El aumento lateral es:\n\n$$m=\\dfrac{y'}{y}=-\\dfrac{s'}{s}=-\\dfrac{-50}{100}=0{,}5.$$\n\nEl tamaño de la imagen es:\n\n$$y'=m\\,y=0{,}5\\cdot10=5\\,\\text{cm}.$$\n\nLa imagen es virtual, se forma detrás del espejo, derecha, $m>0$, y reducida, $5\\,\\text{cm}$, la mitad del objeto de $10\\,\\text{cm}$."
+        }
+      ],
+      "resultado": "Imagen virtual, derecha y reducida; $s'=-50\\,\\text{cm}$ detrás del espejo; $y'=5\\,\\text{cm}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Refracción y cambio de $v$, $f$ y $\\lambda$",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Un rayo pasa de medio 1, con índice $n_1$, a medio 2, con índice $n_2$, y $n_1>n_2$. Razona cómo cambian $v$, $f$ y $\\lambda$ al pasar del medio 1 al 2.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Velocidad",
+          "contenido": "El índice de refracción se define como $n=\\dfrac{c}{v}$, por lo que $v=\\dfrac{c}{n}$. Como $n_1>n_2$, se cumple $v_1<v_2$. La velocidad aumenta al pasar del medio 1 al medio 2, de mayor a menor índice de refracción."
+        },
+        {
+          "titulo": "Frecuencia",
+          "contenido": "La frecuencia no cambia al pasar de un medio a otro. Es una propiedad intrínseca de la onda, determinada por la fuente. Al atravesar la interfaz, la onda mantiene la misma frecuencia para garantizar la continuidad de las condiciones de contorno en la superficie de separación."
+        },
+        {
+          "titulo": "Longitud de onda",
+          "contenido": "Como $v=\\lambda\\,f$ y $f$ es constante:\n\n$$\\lambda=\\dfrac{v}{f}.$$\n\nComo $v$ aumenta y $f$ no cambia, la longitud de onda aumenta al pasar del medio 1 al 2.\n\nResultado: $v$ aumenta, $f$ no cambia y $\\lambda$ aumenta."
+        }
+      ],
+      "resultado": "$v$ aumenta; $f$ no cambia; $\\lambda$ aumenta."
+    },
+    {
+      "numero": 7,
+      "titulo": "Fusión nuclear deuterio-tritio y energía",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Fusión: $^{2}_{1}\\text{H}+^{3}_{1}\\text{H}\\rightarrow^{a}_{2b}\\text{X}+^{b}_{0}\\text{Y}$. Determina $a$ y $b$, identifica $X$ e $Y$. Calcula los gramos de deuterio necesarios para generar $1{,}62\\cdot10^{15}\\,\\text{J}$. Datos: $m_D=3{,}34\\cdot10^{-27}\\,\\text{kg}$; $q=1{,}60\\cdot10^{-19}\\,\\text{C}$; energía por reacción: $17{,}6\\,\\text{MeV}$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Identificación de productos",
+          "contenido": "La reacción de fusión deuterio-tritio es:\n\n$$^{2}_{1}\\text{H}+^{3}_{1}\\text{H}\\rightarrow^{a}_{2b}\\text{X}+^{b}_{0}\\text{Y}.$$\n\nConservación del número atómico $Z$:\n\n$$1+1=2b+0\\quad\\Rightarrow\\quad b=1.$$\n\nConservación del número másico $A$:\n\n$$2+3=a+b\\quad\\Rightarrow\\quad a=4.$$\n\nPor tanto, $X=^{4}_{2}\\text{He}$ y $Y=^{1}_{0}\\text{n}$.\n\nResultado: $a=4$, $b=1$; $X$ es una partícula alfa, $^{4}_{2}\\text{He}$, e $Y$ es un neutrón, $^{1}_{0}\\text{n}$. Reacción completa:\n\n$$^{2}_{1}\\text{H}+^{3}_{1}\\text{H}\\rightarrow^{4}_{2}\\text{He}+^{1}_{0}\\text{n}+17{,}6\\,\\text{MeV}.$$"
+        },
+        {
+          "titulo": "Gramos de deuterio necesarios",
+          "contenido": "La energía por reacción es:\n\n$$E_{\\text{reacción}}=17{,}6\\,\\text{MeV}=17{,}6\\cdot1{,}60\\cdot10^{-13}=2{,}816\\cdot10^{-12}\\,\\text{J}.$$\n\nEl número de reacciones necesarias es:\n\n$$N=\\dfrac{E_{\\text{total}}}{E_{\\text{reacción}}}=\\dfrac{1{,}62\\cdot10^{15}}{2{,}816\\cdot10^{-12}}\\approx5{,}75\\cdot10^{26}.$$\n\nCada reacción consume un núcleo de deuterio. La masa total de deuterio es:\n\n$$m=N\\,m_D=5{,}75\\cdot10^{26}\\cdot3{,}34\\cdot10^{-27}\\approx1{,}92\\,\\text{kg}=1{,}92\\cdot10^{3}\\,\\text{g}.$$\n\nResultado: $m_D\\approx1{,}92\\,\\text{kg}=1{,}92\\cdot10^{3}\\,\\text{g}$."
+        }
+      ],
+      "resultado": "$a=4$, $b=1$; $X=^{4}_{2}\\text{He}$, $Y=^{1}_{0}\\text{n}$; $m_D\\approx1{,}92\\,\\text{kg}=1{,}92\\cdot10^{3}\\,\\text{g}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Láser de KrF: energía, potencia y fotones",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Láser de KrF: $\\lambda=248\\,\\text{nm}$, energía total $E=1{,}1\\cdot10^{3}\\,\\text{J}$ en $\\Delta t=1\\,\\text{ns}$. Calcula la energía de un fotón, la potencia en MW y el número de fotones. Datos: $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Energía de un fotón",
+          "contenido": "La energía de un fotón es:\n\n$$E_{\\text{fotón}}=\\dfrac{h\\,c}{\\lambda}=\\dfrac{6{,}63\\cdot10^{-34}\\cdot3\\cdot10^{8}}{248\\cdot10^{-9}}\\approx8{,}02\\cdot10^{-19}\\,\\text{J}.$$\n\nResultado: $E_{\\text{fotón}}\\approx8{,}02\\cdot10^{-19}\\,\\text{J}$."
+        },
+        {
+          "titulo": "Potencia del láser",
+          "contenido": "La potencia es:\n\n$$P=\\dfrac{E}{\\Delta t}=\\dfrac{1{,}1\\cdot10^{3}}{1\\cdot10^{-9}}=1{,}1\\cdot10^{12}\\,\\text{W}=1{,}1\\cdot10^{6}\\,\\text{MW}.$$\n\nResultado: $P=1{,}1\\cdot10^{6}\\,\\text{MW}$."
+        },
+        {
+          "titulo": "Número de fotones",
+          "contenido": "El número de fotones es:\n\n$$N=\\dfrac{E}{E_{\\text{fotón}}}=\\dfrac{1{,}1\\cdot10^{3}}{8{,}02\\cdot10^{-19}}\\approx1{,}37\\cdot10^{21}.$$\n\nResultado: $N\\approx1{,}37\\cdot10^{21}$ fotones."
+        }
+      ],
+      "resultado": "$E_{\\text{fotón}}\\approx8{,}02\\cdot10^{-19}\\,\\text{J}$; $P=1{,}1\\cdot10^{6}\\,\\text{MW}$; $N\\approx1{,}37\\cdot10^{21}$ fotones."
+    },
+    {
+      "numero": 9,
+      "titulo": "Satélite en órbita circular: masas y energías",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Satélite de masa $m$ con $v=5\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}$ en órbita circular de radio $r=4\\cdot10^{8}\\,\\text{m}$, $E_c=2\\cdot10^{18}\\,\\text{J}$. a) Masas $M$ y $m$. b) Energía potencial, energía mecánica y energía mínima para escapar. Dato: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Masas $M$ y $m$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Energía potencial, energía mecánica y energía mínima para escapar."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Masa del satélite",
+          "contenido": "La energía cinética es $E_c=\\dfrac{1}{2}m\\,v^{2}$, por lo que:\n\n$$m=\\dfrac{2E_c}{v^{2}}=\\dfrac{2\\cdot2\\cdot10^{18}}{(5\\cdot10^{5})^{2}}=\\dfrac{4\\cdot10^{18}}{2{,}5\\cdot10^{11}}=1{,}6\\cdot10^{7}\\,\\text{kg}.$$\n\nResultado: $m=1{,}6\\cdot10^{7}\\,\\text{kg}$."
+        },
+        {
+          "titulo": "Masa del planeta",
+          "contenido": "Para una órbita circular, la fuerza gravitatoria proporciona la fuerza centrípeta:\n\n$$\\dfrac{G\\,M\\,m}{r^{2}}=m\\,\\dfrac{v^{2}}{r}\\quad\\Rightarrow\\quad M=\\dfrac{v^{2}r}{G}.$$\n\nSustituyendo:\n\n$$M=\\dfrac{(5\\cdot10^{5})^{2}\\cdot4\\cdot10^{8}}{6{,}67\\cdot10^{-11}}=\\dfrac{10^{20}}{6{,}67\\cdot10^{-11}}\\approx1{,}50\\cdot10^{30}\\,\\text{kg}.$$\n\nResultado: $M\\approx1{,}50\\cdot10^{30}\\,\\text{kg}$."
+        },
+        {
+          "titulo": "Energía potencial",
+          "contenido": "Para una órbita circular, usando $\\dfrac{G\\,M}{r}=v^{2}$:\n\n$$E_p=-\\dfrac{G\\,M\\,m}{r}=-m\\,v^{2}=-1{,}6\\cdot10^{7}\\cdot(5\\cdot10^{5})^{2}=-4{,}0\\cdot10^{18}\\,\\text{J}.$$\n\nResultado: $E_p=-4{,}0\\cdot10^{18}\\,\\text{J}$."
+        },
+        {
+          "titulo": "Energía mecánica",
+          "contenido": "La energía mecánica es:\n\n$$E_m=E_p+E_c=-4{,}0\\cdot10^{18}+2{,}0\\cdot10^{18}=-2{,}0\\cdot10^{18}\\,\\text{J}.$$\n\nResultado: $E_m=-2{,}0\\cdot10^{18}\\,\\text{J}$."
+        },
+        {
+          "titulo": "Energía mínima para escapar",
+          "contenido": "Para escapar, la energía mecánica final debe ser al menos cero, con $v=0$ en el infinito. La energía mínima adicional necesaria es:\n\n$$E_{\\text{escape,min}}=-E_m=2{,}0\\cdot10^{18}\\,\\text{J}.$$\n\nResultado: $E_{\\text{escape,min}}=2{,}0\\cdot10^{18}\\,\\text{J}$."
+        }
+      ],
+      "resultado": "$m=1{,}6\\cdot10^{7}\\,\\text{kg}$; $M\\approx1{,}50\\cdot10^{30}\\,\\text{kg}$\n$E_p=-4{,}0\\cdot10^{18}\\,\\text{J}$; $E_m=-2{,}0\\cdot10^{18}\\,\\text{J}$; $E_{\\text{escape,min}}=2{,}0\\cdot10^{18}\\,\\text{J}$."
+    },
+    {
+      "numero": 10,
+      "titulo": "Carga $q$ para campo nulo y trabajo al traer carga",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Distribución de cargas: $q_1=1\\,\\mu\\text{C}$ en $(-1,0)\\,\\text{m}$, $q$ en el origen $(0,0)\\,\\text{m}$, $q_2=1\\,\\mu\\text{C}$ en $(1,0)\\,\\text{m}$. Punto de evaluación: $(0,1)\\,\\text{m}$. a) La carga $q$ para que $\\vec E=0$ en $(0,1)\\,\\text{m}$. b) El trabajo para llevar $5\\,\\mu\\text{C}$ desde el infinito hasta $(0,1)\\,\\text{m}$. Dato: $k=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Carga $q$ para campo nulo en $(0,1)$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Trabajo para traer $5\\,\\mu\\text{C}$ desde el infinito."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Geometría de la distribución",
+          "contenido": "Posiciones de las cargas y distancias al punto $P=(0,1)$:\n\n$q_1=1\\,\\mu\\text{C}$ en $(-1,0)$: distancia $\\sqrt{2}\\,\\text{m}$.\n\n$q$ en $(0,0)$: distancia $1\\,\\text{m}$.\n\n$q_2=1\\,\\mu\\text{C}$ en $(1,0)$: distancia $\\sqrt{2}\\,\\text{m}$."
+        },
+        {
+          "titulo": "Campo de $q_1$ en $(0,1)$",
+          "contenido": "Vector de $q_1$ a $P$: $(1,1)$. Vector unitario: $\\left(\\dfrac{1}{\\sqrt{2}},\\dfrac{1}{\\sqrt{2}}\\right)$. Componentes:\n\n$$\\vec E_1=\\dfrac{k\\,q_1}{2}\\left(\\dfrac{1}{\\sqrt{2}},\\dfrac{1}{\\sqrt{2}}\\right).$$"
+        },
+        {
+          "titulo": "Campo de $q_2$ en $(0,1)$",
+          "contenido": "Vector de $q_2$ a $P$: $(-1,1)$. Vector unitario: $\\left(-\\dfrac{1}{\\sqrt{2}},\\dfrac{1}{\\sqrt{2}}\\right)$. Componentes:\n\n$$\\vec E_2=\\dfrac{k\\,q_2}{2}\\left(-\\dfrac{1}{\\sqrt{2}},\\dfrac{1}{\\sqrt{2}}\\right).$$"
+        },
+        {
+          "titulo": "Campo de $q$ en $(0,1)$",
+          "contenido": "La carga $q$ está en el origen. El vector de $q$ a $P$ es $(0,1)$, de módulo $1$. Componentes:\n\n$$\\vec E_q=k\\,q\\,(0,1).$$"
+        },
+        {
+          "titulo": "Condición de campo nulo",
+          "contenido": "La componente $x$ se anula por simetría. La componente $y$ debe anularse:\n\n$$k\\,q+2\\cdot\\dfrac{k\\,q_1}{2}\\cdot\\dfrac{1}{\\sqrt{2}}=0\\quad\\Rightarrow\\quad q=-\\dfrac{q_1}{\\sqrt{2}}.$$\n\nCon $q_1=1\\,\\mu\\text{C}$:\n\n$$q=-\\dfrac{1}{\\sqrt{2}}\\,\\mu\\text{C}\\approx-0{,}707\\,\\mu\\text{C}.$$\n\nLa carga debe ser negativa para que su campo, dirigido hacia abajo, hacia $q$, compense las componentes verticales positivas de $q_1$ y $q_2$."
+        },
+        {
+          "titulo": "Cálculo del potencial en $(0,1)$",
+          "contenido": "El potencial en $P$ creado por las tres cargas fijas es, por ser escalar:\n\n$$V=k\\left(\\dfrac{q_1}{\\sqrt{2}}+\\dfrac{q_2}{\\sqrt{2}}+\\dfrac{q}{1}\\right).$$\n\nCon $q_1=q_2=1\\,\\mu\\text{C}$ y $q=-\\dfrac{1}{\\sqrt{2}}\\,\\mu\\text{C}$:\n\n$$V=9\\cdot10^{9}\\left(\\dfrac{10^{-6}}{\\sqrt{2}}+\\dfrac{10^{-6}}{\\sqrt{2}}-\\dfrac{10^{-6}}{\\sqrt{2}}\\right)=\\dfrac{9\\cdot10^{3}}{\\sqrt{2}}\\approx6{,}36\\cdot10^{3}\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Cálculo del trabajo",
+          "contenido": "El trabajo realizado por el agente externo para traer una carga $Q=5\\,\\mu\\text{C}$ desde el infinito, con $V_\\infty=0$, hasta $P$ es igual al cambio de energía potencial:\n\n$$W_{\\text{ext}}=Q\\,V=5\\cdot10^{-6}\\cdot6{,}36\\cdot10^{3}\\approx3{,}18\\cdot10^{-2}\\,\\text{J}.$$\n\nResultado: $W_{\\text{ext}}\\approx3{,}18\\cdot10^{-2}\\,\\text{J}$."
+        }
+      ],
+      "resultado": "$q=-\\dfrac{1}{\\sqrt{2}}\\,\\mu\\text{C}\\approx-0{,}707\\,\\mu\\text{C}$\n$W_{\\text{ext}}\\approx3{,}18\\cdot10^{-2}\\,\\text{J}$."
+    },
+    {
+      "numero": 11,
+      "titulo": "Refracción agua-vidrio-aire y ángulo límite",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Luz de $f=3\\cdot10^{14}\\,\\text{Hz}$ incide desde agua sobre vidrio a $45^{\\circ}$. a) Ángulos de refracción agua-vidrio y vidrio-aire. b) Ángulo de incidencia máximo, tiempo en vidrio y longitud de onda en vidrio. Datos: $n_{\\text{agua}}=1{,}33$; $n_{\\text{vidrio}}=1{,}62$; $n_{\\text{aire}}=1{,}00$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; espesor vidrio $e=10\\,\\text{cm}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Ángulos de refracción agua-vidrio y vidrio-aire."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Ángulo de incidencia máximo, tiempo en vidrio y longitud de onda en vidrio."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Refracción agua-vidrio",
+          "contenido": "Ley de Snell:\n\n$$n_{\\text{agua}}\\text{sen}\\,\\theta_i=n_{\\text{vidrio}}\\text{sen}\\,\\theta_r.$$\n\nSustituyendo $\\theta_i=45^{\\circ}$:\n\n$$1{,}33\\cdot\\text{sen}\\,45^{\\circ}=1{,}62\\cdot\\text{sen}\\,\\theta_r\\quad\\Rightarrow\\quad \\text{sen}\\,\\theta_r=\\dfrac{1{,}33\\cdot0{,}7071}{1{,}62}\\approx0{,}5805.$$\n\n$$\\theta_r\\approx35{,}5^{\\circ}.$$\n\nResultado: $\\theta_{\\text{agua-vidrio}}\\approx35{,}5^{\\circ}$."
+        },
+        {
+          "titulo": "Refracción vidrio-aire",
+          "contenido": "El rayo llega a la interfaz vidrio-aire con el mismo ángulo, ya que las caras de la placa son paralelas:\n\n$$n_{\\text{vidrio}}\\text{sen}\\,\\theta_r=n_{\\text{aire}}\\text{sen}\\,\\theta_{r2}.$$\n\n$$1{,}62\\cdot\\text{sen}\\,35{,}5^{\\circ}=1{,}00\\cdot\\text{sen}\\,\\theta_{r2}\\quad\\Rightarrow\\quad \\text{sen}\\,\\theta_{r2}\\approx0{,}9404.$$\n\n$$\\theta_{r2}\\approx70{,}1^{\\circ}.$$\n\nResultado: $\\theta_{\\text{vidrio-aire}}\\approx70{,}1^{\\circ}$."
+        },
+        {
+          "titulo": "Ángulo de incidencia máximo desde agua",
+          "contenido": "Para que el rayo salga del vidrio al aire, el ángulo en la interfaz vidrio-aire debe ser menor que el ángulo límite. Para el ángulo máximo de incidencia desde el agua, el ángulo en el vidrio es el ángulo límite:\n\n$$\\text{sen}\\,\\theta_c=\\dfrac{n_{\\text{aire}}}{n_{\\text{vidrio}}}=\\dfrac{1}{1{,}62}\\approx0{,}6173\\quad\\Rightarrow\\quad \\theta_c\\approx38{,}1^{\\circ}.$$\n\nAplicando Snell entre agua y vidrio:\n\n$$n_{\\text{agua}}\\text{sen}\\,\\theta_{i,\\text{máx}}=n_{\\text{vidrio}}\\text{sen}\\,\\theta_c=n_{\\text{aire}}=1.$$\n\n$$\\text{sen}\\,\\theta_{i,\\text{máx}}=\\dfrac{1}{1{,}33}\\approx0{,}7519\\quad\\Rightarrow\\quad \\theta_{i,\\text{máx}}\\approx48{,}8^{\\circ}.$$\n\nResultado: $\\theta_{i,\\text{máx}}\\approx48{,}8^{\\circ}$."
+        },
+        {
+          "titulo": "Tiempo en el vidrio con ángulo máximo",
+          "contenido": "Con $\\theta_c\\approx38{,}1^{\\circ}$, el recorrido dentro del vidrio de espesor $e=0{,}10\\,\\text{m}$ es:\n\n$$L=\\dfrac{e}{\\cos\\theta_c}=\\dfrac{0{,}10}{\\cos38{,}1^{\\circ}}\\approx0{,}127\\,\\text{m}.$$\n\nLa velocidad en el vidrio es:\n\n$$v_{\\text{vidrio}}=\\dfrac{c}{n_{\\text{vidrio}}}=\\dfrac{3\\cdot10^{8}}{1{,}62}\\approx1{,}85\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nEl tiempo es:\n\n$$t=\\dfrac{L}{v_{\\text{vidrio}}}=\\dfrac{0{,}127}{1{,}85\\cdot10^{8}}\\approx6{,}86\\cdot10^{-10}\\,\\text{s}.$$\n\nResultado: $t\\approx6{,}86\\cdot10^{-10}\\,\\text{s}$."
+        },
+        {
+          "titulo": "Longitud de onda en el vidrio",
+          "contenido": "La longitud de onda en el vidrio es:\n\n$$\\lambda_{\\text{vidrio}}=\\dfrac{v_{\\text{vidrio}}}{f}=\\dfrac{1{,}85\\cdot10^{8}}{3\\cdot10^{14}}\\approx6{,}17\\cdot10^{-7}\\,\\text{m}.$$\n\nResultado: $\\lambda_{\\text{vidrio}}\\approx6{,}17\\cdot10^{-7}\\,\\text{m}$."
+        }
+      ],
+      "resultado": "$\\theta_{\\text{agua-vidrio}}\\approx35{,}5^{\\circ}$; $\\theta_{\\text{vidrio-aire}}\\approx70{,}1^{\\circ}$\n$\\theta_{i,\\text{máx}}\\approx48{,}8^{\\circ}$; $t\\approx6{,}86\\cdot10^{-10}\\,\\text{s}$; $\\lambda_{\\text{vidrio}}\\approx6{,}17\\cdot10^{-7}\\,\\text{m}$."
+    },
+    {
+      "numero": 12,
+      "titulo": "Efecto fotoeléctrico: velocidad máxima y potencial de frenado",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Frecuencia umbral $f_0=5\\cdot10^{14}\\,\\text{Hz}$. Luz incidente $f=1{,}5\\cdot10^{15}\\,\\text{Hz}$. a) Velocidad máxima de los fotoelectrones. b) Potencial de frenado. Datos: $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $m_e=9{,}1\\cdot10^{-31}\\,\\text{kg}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $q=1{,}6\\cdot10^{-19}\\,\\text{C}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad máxima de los fotoelectrones."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Potencial de frenado."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Ecuación de Einstein del efecto fotoeléctrico",
+          "contenido": "La ecuación de Einstein es:\n\n$$h\\,f=W+E_{c,\\text{máx}},$$\n\ndonde $W=h\\,f_0$ es la función de trabajo. Por tanto:\n\n$$E_{c,\\text{máx}}=h(f-f_0).$$"
+        },
+        {
+          "titulo": "Cálculo de la velocidad máxima",
+          "contenido": "Sustituyendo:\n\n$$E_{c,\\text{máx}}=6{,}63\\cdot10^{-34}(1{,}5\\cdot10^{15}-5\\cdot10^{14})=6{,}63\\cdot10^{-34}\\cdot1{,}0\\cdot10^{15}=6{,}63\\cdot10^{-19}\\,\\text{J}.$$\n\nComo $E_{c,\\text{máx}}=\\dfrac{1}{2}m_e v_{\\text{máx}}^{2}$:\n\n$$v_{\\text{máx}}=\\sqrt{\\dfrac{2E_{c,\\text{máx}}}{m_e}}=\\sqrt{\\dfrac{2\\cdot6{,}63\\cdot10^{-19}}{9{,}1\\cdot10^{-31}}}\\approx1{,}21\\cdot10^{6}\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nResultado: $v_{\\text{máx}}\\approx1{,}21\\cdot10^{6}\\,\\text{m}\\,\\text{s}^{-1}$."
+        },
+        {
+          "titulo": "Potencial de frenado",
+          "contenido": "El potencial de frenado detiene los fotoelectrones más energéticos:\n\n$$q\\,V_{\\text{frenado}}=E_{c,\\text{máx}}.$$\n\n$$V_{\\text{frenado}}=\\dfrac{E_{c,\\text{máx}}}{q}=\\dfrac{6{,}63\\cdot10^{-19}}{1{,}6\\cdot10^{-19}}\\approx4{,}14\\,\\text{V}.$$\n\nResultado: $V_{\\text{frenado}}\\approx4{,}14\\,\\text{V}$."
+        }
+      ],
+      "resultado": "$v_{\\text{máx}}\\approx1{,}21\\cdot10^{6}\\,\\text{m}\\,\\text{s}^{-1}$\n$V_{\\text{frenado}}\\approx4{,}14\\,\\text{V}$."
+    }
+  ]
+}

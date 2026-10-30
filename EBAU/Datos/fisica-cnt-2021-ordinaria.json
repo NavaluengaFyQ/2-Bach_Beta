@@ -1,0 +1,436 @@
+{
+  "id": "fisica-cnt-2021-ordinaria",
+  "codigo": "EXA.FIS.CNT.2021.ORD.SOL",
+  "comunidad": "Cantabria",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2021,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la EBAU de Cantabria, convocatoria ordinaria de 2021, con 10 problemas resueltos de ondas, óptica, gravitación, electromagnetismo y física moderna.",
+  "objetivo": "Evaluar la aplicación de los principios y leyes fundamentales de la Física a situaciones concretas, con especial atención al planteamiento, cálculo y interpretación física de los resultados.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "EBAU Cantabria — Junio 2021 — Física. 5 bloques con 2 ejercicios cada uno (10 ejercicios), 2,5 puntos cada uno. Se responden 5 ejercicios, uno de cada bloque."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "Datos y constantes que aparecen en los ejercicios: $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$; $M_M=6{,}4\\cdot10^{23}\\,\\text{kg}$; $R_M=3390\\,\\text{km}$; $T_{1/2}=12{,}32\\,\\text{años}$. En los cálculos se emplean las constantes físicas habituales ($G$, $k$, $h$, $c$, $m_e$, $e$) con los valores estándar."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "Onda transversal en cuerda",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2,5 puntos (1 + 0,5 + 0,5 + 0,5)",
+      "enunciado": "Onda armónica transversal: $A=6\\,\\text{mm}$, $\\lambda=0{,}025\\,\\text{m}$, $T=50\\,\\text{ms}$, propagándose hacia $+X$. Inicialmente, en $x=0$ la elongación es nula y la velocidad positiva. a) Ecuación de onda. b) Velocidad de propagación. c) Diferencia de fase entre puntos separados $1\\,\\text{cm}$. d) Velocidad transversal en $x=2\\,\\text{cm}$ en función del tiempo.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Ecuación de onda."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Velocidad de propagación."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Diferencia de fase entre puntos separados $1\\,\\text{cm}$."
+        },
+        {
+          "letra": "d",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Velocidad transversal en $x=2\\,\\text{cm}$ en función del tiempo."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Pulsación y número de ondas",
+          "contenido": "La pulsación se obtiene a partir del periodo:\n\n$$\\omega=\\frac{2\\pi}{T}=\\frac{2\\pi}{0{,}050}=40\\pi\\,\\text{rad}\\,\\text{s}^{-1}\\approx125{,}66\\,\\text{rad}\\,\\text{s}^{-1}.$$\n\nEl número de ondas es:\n\n$$k=\\frac{2\\pi}{\\lambda}=\\frac{2\\pi}{0{,}025}=80\\pi\\,\\text{rad}\\,\\text{m}^{-1}\\approx251{,}33\\,\\text{rad}\\,\\text{m}^{-1}.$$\n\nLa forma general de la onda que se propaga hacia $+X$ es:\n\n$$y(x,t)=A\\sin(\\omega t-kx+\\varphi_0).$$"
+        },
+        {
+          "titulo": "Determinación de $\\varphi_0$",
+          "contenido": "En $x=0$ y $t=0$ la elongación es nula:\n\n$$y(0,0)=A\\sin\\varphi_0=0\\Rightarrow\\varphi_0=0\\ \\text{o}\\ \\varphi_0=\\pi.$$\n\nLa velocidad transversal inicial es:\n\n$$v_y(x,t)=\\frac{\\partial y}{\\partial t}=A\\omega\\cos(\\omega t-kx+\\varphi_0).$$\n\nEn $x=0$, $t=0$ debe ser positiva:\n\n$$v_y(0,0)=A\\omega\\cos\\varphi_0>0\\Rightarrow\\cos\\varphi_0>0.$$\n\nPor tanto, $\\varphi_0=0\\,\\text{rad}$ y la ecuación de onda queda:\n\n$$y(x,t)=6\\cdot10^{-3}\\sin(40\\pi t-80\\pi x)\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Velocidad de propagación",
+          "contenido": "La velocidad de propagación se calcula como:\n\n$$v=\\frac{\\lambda}{T}=\\frac{0{,}025}{0{,}050}=0{,}5\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Diferencia de fase a $1\\,\\text{cm}$",
+          "contenido": "La diferencia de fase entre dos puntos separados una distancia $\\Delta x$ es:\n\n$$\\Delta\\varphi=k\\,\\Delta x=80\\pi\\cdot0{,}01=0{,}8\\pi\\,\\text{rad}\\approx2{,}513\\,\\text{rad}.$$"
+        },
+        {
+          "titulo": "Derivada respecto al tiempo",
+          "contenido": "La velocidad transversal es la derivada de la elongación respecto al tiempo:\n\n$$v_y(x,t)=\\frac{\\partial y}{\\partial t}=6\\cdot10^{-3}\\cdot40\\pi\\cos(40\\pi t-80\\pi x)\\,\\text{m}\\,\\text{s}^{-1}=0{,}24\\pi\\cos(40\\pi t-80\\pi x)\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nSustituyendo $x=0{,}02\\,\\text{m}$:\n\n$$v_y(0{,}02,t)=0{,}24\\pi\\cos(40\\pi t-80\\pi\\cdot0{,}02)\\,\\text{m}\\,\\text{s}^{-1}=0{,}24\\pi\\cos(40\\pi t-1{,}6\\pi)\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$y(x,t)=6\\cdot10^{-3}\\sin(40\\pi t-80\\pi x)\\,\\text{m}$\n$v=0{,}5\\,\\text{m}\\,\\text{s}^{-1}$\n$\\Delta\\varphi=0{,}8\\pi\\,\\text{rad}$\n$v_y(0{,}02,t)=0{,}24\\pi\\cos(40\\pi t-1{,}6\\pi)\\,\\text{m}\\,\\text{s}^{-1}$"
+    },
+    {
+      "numero": 2,
+      "titulo": "Avión a reacción: intensidad y potencia sonora",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2,5 puntos (1 + 0,75 + 0,75)",
+      "enunciado": "Avión emite sonido con nivel de intensidad de $180\\,\\text{dB}$ a $1\\,\\text{m}$. $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$. Se siente dolor cuando $I>1\\,\\text{W}\\,\\text{m}^{-2}$. a) Intensidad sonora. b) Potencia del motor. c) Distancia mínima para no sentir dolor.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Intensidad sonora."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Potencia del motor."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Distancia mínima para no sentir dolor."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Aplicación de Weber-Fechner",
+          "contenido": "El nivel de intensidad sonora se define como:\n\n$$\\beta=10\\log\\left(\\frac{I}{I_0}\\right).$$\n\nSustituyendo $\\beta=180\\,\\text{dB}$:\n\n$$180=10\\log\\left(\\frac{I}{10^{-12}}\\right)\\Rightarrow\\log\\left(\\frac{I}{10^{-12}}\\right)=18.$$\n\nPor tanto:\n\n$$\\frac{I}{10^{-12}}=10^{18}\\Rightarrow I=10^{6}\\,\\text{W}\\,\\text{m}^{-2}.$$"
+        },
+        {
+          "titulo": "Potencia",
+          "contenido": "La potencia se reparte sobre una superficie esférica de radio $r=1\\,\\text{m}$:\n\n$$P=I\\,4\\pi r^{2}=10^{6}\\cdot4\\pi\\cdot1^{2}=4\\pi\\cdot10^{6}\\,\\text{W}\\approx1{,}26\\cdot10^{7}\\,\\text{W}.$$"
+        },
+        {
+          "titulo": "Distancia mínima",
+          "contenido": "Para una fuente isótropa, $I\\,r^{2}$ permanece constante:\n\n$$I_1r_1^{2}=I_2r_2^{2}.$$\n\nCon $I_1=10^{6}\\,\\text{W}\\,\\text{m}^{-2}$, $r_1=1\\,\\text{m}$ e $I_2=1\\,\\text{W}\\,\\text{m}^{-2}$:\n\n$$10^{6}\\cdot1^{2}=1\\cdot r_2^{2}\\Rightarrow r_2=10^{3}\\,\\text{m}=1000\\,\\text{m}.$$\n\nA más de $1\\,\\text{km}$ no se siente dolor."
+        }
+      ],
+      "resultado": "$I=10^{6}\\,\\text{W}\\,\\text{m}^{-2}$\n$P=4\\pi\\cdot10^{6}\\,\\text{W}\\approx1{,}26\\cdot10^{7}\\,\\text{W}$\n$r_{\\min}=1000\\,\\text{m}$"
+    },
+    {
+      "numero": 3,
+      "titulo": "Lámina entre dos materiales: refracción y ángulo límite",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
+      "puntuacion": "2,5 puntos (0,5 + 1 + 1)",
+      "enunciado": "Lámina con $e=5\\,\\text{cm}$, $n_2=1{,}5$ entre $n_1=1{,}2$ y $n_3=1$. Rayo de $f=5\\cdot10^{14}\\,\\text{Hz}$ incide desde $n_1$ con ángulo $30^{\\circ}$. a) $\\lambda$ en la lámina. b) Ángulos de refracción con dibujo. c) Ángulo límite de entrada para que el rayo salga al tercer medio.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "$\\lambda$ en la lámina."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Ángulos de refracción con dibujo."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Ángulo límite de entrada para que el rayo salga al tercer medio."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Longitud de onda en la lámina",
+          "contenido": "La velocidad de la luz en la lámina es:\n\n$$v=\\frac{c}{n_2}=\\frac{3\\cdot10^{8}}{1{,}5}=2\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nLa longitud de onda en la lámina es:\n\n$$\\lambda=\\frac{v}{f}=\\frac{2\\cdot10^{8}}{5\\cdot10^{14}}=4\\cdot10^{-7}\\,\\text{m}=400\\,\\text{nm}.$$"
+        },
+        {
+          "titulo": "Primera refracción",
+          "contenido": "Aplicando la ley de Snell en la primera cara:\n\n$$n_1\\,\\text{sen}\\,\\theta_1=n_2\\,\\text{sen}\\,\\theta_2.$$\n\nCon $\\theta_1=30^{\\circ}$:\n\n$$1{,}2\\cdot\\text{sen}\\,30^{\\circ}=1{,}5\\,\\text{sen}\\,\\theta_2\\Rightarrow1{,}2\\cdot0{,}5=1{,}5\\,\\text{sen}\\,\\theta_2\\Rightarrow\\text{sen}\\,\\theta_2=0{,}4.$$\n\n$$\\theta_2=\\arcsin(0{,}4)\\approx23{,}58^{\\circ}.$$\n\nPor geometría, el ángulo de incidencia en la segunda cara es igual a $\\theta_2$ porque las caras de la lámina son paralelas.\n\nAplicando Snell en la segunda cara:\n\n$$n_2\\,\\text{sen}\\,\\theta_2=n_3\\,\\text{sen}\\,\\theta_3.$$\n\n$$1{,}5\\cdot0{,}4=1\\cdot\\text{sen}\\,\\theta_3\\Rightarrow\\text{sen}\\,\\theta_3=0{,}6.$$\n\n$$\\theta_3=\\arcsin(0{,}6)\\approx36{,}87^{\\circ}.$$\n\nDibujo descriptivo: el rayo incide desde el medio $n_1$ con $30^{\\circ}$ respecto a la normal; en la primera cara se refracta acercándose a la normal ($\\theta_2\\approx23{,}6^{\\circ}$); atraviesa la lámina y en la segunda cara se refracta alejándose de la normal ($\\theta_3\\approx36{,}9^{\\circ}$)."
+        },
+        {
+          "titulo": "Reflexión total en segunda cara",
+          "contenido": "El ángulo límite para que el rayo pase de $n_2$ a $n_3$ es:\n\n$$\\text{sen}\\,\\theta_c=\\frac{n_3}{n_2}=\\frac{1}{1{,}5}\\Rightarrow\\theta_c=\\arcsin\\left(\\frac{1}{1{,}5}\\right)\\approx41{,}81^{\\circ}.$$\n\nPara que el rayo salga al tercer medio debe cumplirse $\\theta_2\\le\\theta_c$. El caso límite es $\\theta_2=\\theta_c$. Entonces, en la primera cara:\n\n$$n_1\\,\\text{sen}\\,\\theta_{1,\\max}=n_2\\,\\text{sen}\\,\\theta_c=n_2\\cdot\\frac{n_3}{n_2}=n_3.$$\n\n$$\\text{sen}\\,\\theta_{1,\\max}=\\frac{n_3}{n_1}=\\frac{1}{1{,}2}=0{,}8333.$$\n\n$$\\theta_{1,\\max}=\\arcsin(0{,}8333)\\approx56{,}44^{\\circ}.$$\n\nPor tanto, el ángulo límite de entrada es aproximadamente $56{,}4^{\\circ}$."
+        }
+      ],
+      "resultado": "$\\lambda=400\\,\\text{nm}$\n$\\theta_2\\approx23{,}58^{\\circ}$; $\\theta_3\\approx36{,}87^{\\circ}$\n$\\theta_{1,\\max}\\approx56{,}44^{\\circ}$"
+    },
+    {
+      "numero": 4,
+      "titulo": "Lente convergente: dos posiciones de objeto",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2,5 puntos (1 + 1 + 0,5)",
+      "enunciado": "Lente convergente, $|f'|=25\\,\\text{cm}$. a) Imagen para objeto $y=5\\,\\text{cm}$ a $15\\,\\text{cm}$. b) Imagen para objeto $y=3\\,\\text{cm}$ a $35\\,\\text{cm}$. c) Naturaleza de las imágenes a) y b).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Imagen para objeto $y=5\\,\\text{cm}$ a $15\\,\\text{cm}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Imagen para objeto $y=3\\,\\text{cm}$ a $35\\,\\text{cm}$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Naturaleza de las imágenes a) y b)."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Ecuación de lentes para el apartado a)",
+          "contenido": "Para una lente convergente, $f'=+25\\,\\text{cm}$. Con el criterio de signos habitual, el objeto está a la izquierda: $s=-15\\,\\text{cm}$. La ecuación de las lentes delgadas es:\n\n$$\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f'}.$$\n\nSustituyendo:\n\n$$\\frac{1}{s'}=\\frac{1}{25}+\\frac{1}{-15}=\\frac{1}{25}-\\frac{1}{15}=\\frac{3-5}{75}=-\\frac{2}{75}.$$\n\n$$s'=-37{,}5\\,\\text{cm}.$$\n\nLa imagen se forma delante de la lente."
+        },
+        {
+          "titulo": "Aumento lateral del apartado a)",
+          "contenido": "El aumento lateral es:\n\n$$m=\\frac{s'}{s}=\\frac{-37{,}5}{-15}=2{,}5.$$\n\nLa altura de la imagen es:\n\n$$y'=m\\,y=2{,}5\\cdot5=12{,}5\\,\\text{cm}.$$\n\nLa imagen es virtual, derecha y mayor."
+        },
+        {
+          "titulo": "Ecuación de lentes para el apartado b)",
+          "contenido": "Ahora $s=-35\\,\\text{cm}$ y $f'=25\\,\\text{cm}$:\n\n$$\\frac{1}{s'}=\\frac{1}{f'}+\\frac{1}{s}=\\frac{1}{25}-\\frac{1}{35}=\\frac{7-5}{175}=\\frac{2}{175}.$$\n\n$$s'=87{,}5\\,\\text{cm}.$$\n\nLa imagen se forma detrás de la lente. El aumento lateral es:\n\n$$m=\\frac{s'}{s}=\\frac{87{,}5}{-35}=-2{,}5.$$\n\nLa altura de la imagen es:\n\n$$y'=m\\,y=-2{,}5\\cdot3=-7{,}5\\,\\text{cm}.$$\n\nLa imagen es real, invertida y mayor."
+        },
+        {
+          "titulo": "Naturaleza de las imágenes",
+          "contenido": "Apartado a): imagen virtual ($s'<0$), derecha ($m>0$) y mayor ($|m|>1$).\n\nApartado b): imagen real ($s'>0$), invertida ($m<0$) y mayor ($|m|>1$)."
+        }
+      ],
+      "resultado": "a) $s'=-37{,}5\\,\\text{cm}$; $y'=12{,}5\\,\\text{cm}$; imagen virtual, derecha y mayor.\nb) $s'=87{,}5\\,\\text{cm}$; $y'=-7{,}5\\,\\text{cm}$; imagen real, invertida y mayor.\nc) a) virtual y mayor; b) real, invertida y mayor."
+    },
+    {
+      "numero": 5,
+      "titulo": "Campo y potencial gravitatorio simétrico",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A1. Ley de la Gravitación Universal y superposición vectorial; A4. Intensidad de campo gravitatorio y líneas de campo; A5. Potencial gravitatorio, equipotenciales y relación con el campo; A6. Trabajo, energía potencial y energía mecánica gravitatoria",
+      "puntuacion": "2,5 puntos (1 + 1 + 0,5)",
+      "enunciado": "Dos masas idénticas de $1000\\,\\text{kg}$ en $(0,-2)$ y $(0,2)$. a) Campo gravitatorio en $(2,0)$ y fuerza sobre $10\\,\\text{kg}$. b) Potencial gravitatorio en $(2,0)$ y $(-4,0)$. c) Trabajo del campo sobre $2\\,\\text{kg}$ de $(2,0)$ a $(-4,0)$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Campo gravitatorio en $(2,0)$ y fuerza sobre $10\\,\\text{kg}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Potencial gravitatorio en $(2,0)$ y $(-4,0)$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Trabajo del campo sobre $2\\,\\text{kg}$ de $(2,0)$ a $(-4,0)$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Simetría",
+          "contenido": "La distancia desde cada masa hasta el punto $C(2,0)$ es:\n\n$$r=\\sqrt{2^{2}+2^{2}}=\\sqrt{8}=2\\sqrt{2}\\,\\text{m}.$$\n\nPor simetría, las componentes verticales de los campos gravitatorios creados por las dos masas se anulan. Las componentes horizontales tienen el mismo sentido, hacia el semieje $X$ negativo. El campo resultante es:\n\n$$\\vec g_C=-\\frac{\\sqrt{2}\\,G\\,M}{r^{2}}\\,\\hat i=-\\frac{\\sqrt{2}\\cdot6{,}67\\cdot10^{-11}\\cdot1000}{8}\\,\\hat i\\approx-1{,}18\\cdot10^{-8}\\,\\hat i\\,\\text{N}\\,\\text{kg}^{-1}.$$\n\nLa fuerza sobre $m=10\\,\\text{kg}$ es:\n\n$$\\vec F=m\\vec g_C=10\\cdot(-1{,}18\\cdot10^{-8}\\,\\hat i)\\approx-1{,}18\\cdot10^{-7}\\,\\hat i\\,\\text{N}.$$"
+        },
+        {
+          "titulo": "Potenciales",
+          "contenido": "El potencial gravitatorio en $C(2,0)$ es:\n\n$$V_C=-\\frac{GM}{r}-\\frac{GM}{r}=-\\frac{2GM}{\\sqrt{8}}=-\\frac{2\\cdot6{,}67\\cdot10^{-11}\\cdot1000}{2\\sqrt{2}}\\approx-4{,}72\\cdot10^{-8}\\,\\text{J}\\,\\text{kg}^{-1}.$$\n\nEn $D(-4,0)$, la distancia a cada masa es:\n\n$$r'=\\sqrt{4^{2}+2^{2}}=\\sqrt{20}=2\\sqrt{5}\\,\\text{m}.$$\n\n$$V_D=-\\frac{2GM}{\\sqrt{20}}=-\\frac{2\\cdot6{,}67\\cdot10^{-11}\\cdot1000}{2\\sqrt{5}}\\approx-2{,}98\\cdot10^{-8}\\,\\text{J}\\,\\text{kg}^{-1}.$$"
+        },
+        {
+          "titulo": "Trabajo de $C$ a $D$",
+          "contenido": "El trabajo realizado por el campo gravitatorio sobre $m=2\\,\\text{kg}$ es:\n\n$$W_{C\\to D}=m(V_C-V_D).$$\n\nSustituyendo:\n\n$$W_{C\\to D}=2\\cdot(-4{,}72\\cdot10^{-8}+2{,}98\\cdot10^{-8})\\approx-3{,}48\\cdot10^{-8}\\,\\text{J}.$$\n\nEl trabajo es negativo: para llevar la masa de $C$ a $D$ es necesaria una fuerza externa."
+        }
+      ],
+      "resultado": "$\\vec g_C\\approx-1{,}18\\cdot10^{-8}\\,\\hat i\\,\\text{N}\\,\\text{kg}^{-1}$; $\\vec F\\approx-1{,}18\\cdot10^{-7}\\,\\hat i\\,\\text{N}$\n$V_C\\approx-4{,}72\\cdot10^{-8}\\,\\text{J}\\,\\text{kg}^{-1}$; $V_D\\approx-2{,}98\\cdot10^{-8}\\,\\text{J}\\,\\text{kg}^{-1}$\n$W_{C\\to D}\\approx-3{,}48\\cdot10^{-8}\\,\\text{J}$"
+    },
+    {
+      "numero": 6,
+      "titulo": "Satélite alrededor de Marte",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2,5 puntos (1 + 0,75 + 0,75)",
+      "enunciado": "Satélite $m=1500\\,\\text{kg}$ en órbita circular a $h=5000\\,\\text{km}$ sobre Marte. $M_M=6{,}4\\cdot10^{23}\\,\\text{kg}$, $R_M=3390\\,\\text{km}$. a) Período orbital. b) Energía cinética, potencial y total. c) Peso del satélite en Marte y en la Tierra.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Período orbital."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Energía cinética, potencial y total."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Peso del satélite en Marte y en la Tierra."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Velocidad y período",
+          "contenido": "El radio de la órbita es:\n\n$$r=R_M+h=3390+5000=8390\\,\\text{km}=8{,}39\\cdot10^{6}\\,\\text{m}.$$\n\nLa velocidad orbital se obtiene de:\n\n$$v=\\sqrt{\\frac{GM_M}{r}}=\\sqrt{\\frac{6{,}67\\cdot10^{-11}\\cdot6{,}4\\cdot10^{23}}{8{,}39\\cdot10^{6}}}\\approx2{,}26\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nEl período orbital es:\n\n$$T=\\frac{2\\pi r}{v}=\\frac{2\\pi\\cdot8{,}39\\cdot10^{6}}{2{,}26\\cdot10^{3}}\\approx2{,}34\\cdot10^{4}\\,\\text{s}\\approx6{,}5\\,\\text{h}.$$"
+        },
+        {
+          "titulo": "Energías",
+          "contenido": "La energía cinética es:\n\n$$K=\\frac{GM_Mm}{2r}=\\frac{6{,}67\\cdot10^{-11}\\cdot6{,}4\\cdot10^{23}\\cdot1500}{2\\cdot8{,}39\\cdot10^{6}}\\approx3{,}82\\cdot10^{9}\\,\\text{J}.$$\n\nLa energía potencial gravitatoria es:\n\n$$U=-\\frac{GM_Mm}{r}=-2K\\approx-7{,}63\\cdot10^{9}\\,\\text{J}.$$\n\nLa energía mecánica total es:\n\n$$E=K+U=-\\frac{GM_Mm}{2r}\\approx-3{,}82\\cdot10^{9}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "$g_0$ y peso",
+          "contenido": "La intensidad del campo gravitatorio en la superficie de Marte es:\n\n$$g_M=\\frac{GM_M}{R_M^{2}}=\\frac{6{,}67\\cdot10^{-11}\\cdot6{,}4\\cdot10^{23}}{(3{,}39\\cdot10^{6})^{2}}\\approx3{,}72\\,\\text{m}\\,\\text{s}^{-2}.$$\n\nEl peso del satélite en Marte es:\n\n$$P_M=m\\,g_M=1500\\cdot3{,}72\\approx5{,}58\\cdot10^{3}\\,\\text{N}.$$\n\nEn la Tierra, con $g_T\\approx9{,}8\\,\\text{m}\\,\\text{s}^{-2}$:\n\n$$P_T=m\\,g_T=1500\\cdot9{,}8\\approx1{,}47\\cdot10^{4}\\,\\text{N}.$$"
+        }
+      ],
+      "resultado": "$T\\approx2{,}34\\cdot10^{4}\\,\\text{s}\\approx6{,}5\\,\\text{h}$\n$K\\approx3{,}82\\cdot10^{9}\\,\\text{J}$; $U\\approx-7{,}63\\cdot10^{9}\\,\\text{J}$; $E\\approx-3{,}82\\cdot10^{9}\\,\\text{J}$\n$P_M\\approx5{,}58\\cdot10^{3}\\,\\text{N}$; $P_T\\approx1{,}47\\cdot10^{4}\\,\\text{N}$"
+    },
+    {
+      "numero": 7,
+      "titulo": "Cargas puntuales: campo, trabajo, anulación",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2,5 puntos (1 + 1 + 0,5)",
+      "enunciado": "$q_1=5\\,\\mu\\text{C}$ en $(2,0)$, $q_2=-3\\,\\mu\\text{C}$ en $(-4,0)$. a) Campo eléctrico en $(0,2)$. b) Trabajo del campo sobre $2\\,\\mu\\text{C}$ desde $(0,2)$ hasta el infinito. c) ¿Existe punto del eje $X$ donde se anule el campo?",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Campo eléctrico en $(0,2)$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Trabajo del campo sobre $2\\,\\mu\\text{C}$ desde $(0,2)$ hasta el infinito."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "¿Existe punto del eje $X$ donde se anule el campo?"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancias y ángulos",
+          "contenido": "Para el punto $C(0,2)$:\n\n$$r_1=\\sqrt{(0-2)^{2}+(2-0)^{2}}=\\sqrt{8}=2\\sqrt{2}\\,\\text{m}.$$\n\n$$r_2=\\sqrt{(0+4)^{2}+(2-0)^{2}}=\\sqrt{20}=2\\sqrt{5}\\,\\text{m}.$$\n\nEl campo creado por $q_1$ tiene módulo:\n\n$$E_1=k\\frac{|q_1|}{r_1^{2}}=9\\cdot10^{9}\\frac{5\\cdot10^{-6}}{8}=5{,}625\\cdot10^{3}\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nSu dirección es la del vector $C-q_1=(-2,2)$, es decir, $(-1/\\sqrt{2},1/\\sqrt{2})$.\n\nEl campo creado por $q_2$ tiene módulo:\n\n$$E_2=k\\frac{|q_2|}{r_2^{2}}=9\\cdot10^{9}\\frac{3\\cdot10^{-6}}{20}=1{,}35\\cdot10^{3}\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nComo $q_2$ es negativa, el campo apunta hacia $q_2$: dirección del vector $q_2-C=(-4,-2)$, es decir, $(-2/\\sqrt{5},-1/\\sqrt{5})$."
+        },
+        {
+          "titulo": "Suma vectorial",
+          "contenido": "Las componentes de $\\vec E_1$ son:\n\n$$E_{1x}=5{,}625\\cdot10^{3}\\left(-\\frac{1}{\\sqrt{2}}\\right)\\approx-3{,}98\\cdot10^{3}\\,\\text{N}\\,\\text{C}^{-1},$$\n\n$$E_{1y}=5{,}625\\cdot10^{3}\\left(\\frac{1}{\\sqrt{2}}\\right)\\approx3{,}98\\cdot10^{3}\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nLas componentes de $\\vec E_2$ son:\n\n$$E_{2x}=1{,}35\\cdot10^{3}\\left(-\\frac{2}{\\sqrt{5}}\\right)\\approx-1{,}21\\cdot10^{3}\\,\\text{N}\\,\\text{C}^{-1},$$\n\n$$E_{2y}=1{,}35\\cdot10^{3}\\left(-\\frac{1}{\\sqrt{5}}\\right)\\approx-6{,}04\\cdot10^{2}\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nSumando:\n\n$$E_x\\approx-5{,}19\\cdot10^{3}\\,\\text{N}\\,\\text{C}^{-1},\\quad E_y\\approx3{,}37\\cdot10^{3}\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nEl módulo es:\n\n$$E=\\sqrt{E_x^{2}+E_y^{2}}\\approx6{,}19\\cdot10^{3}\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nEl campo resultante apunta hacia el segundo cuadrante."
+        },
+        {
+          "titulo": "Potencial en $C$",
+          "contenido": "El potencial eléctrico en $C$ es:\n\n$$V_C=k\\left(\\frac{q_1}{r_1}+\\frac{q_2}{r_2}\\right)=9\\cdot10^{9}\\left(\\frac{5\\cdot10^{-6}}{\\sqrt{8}}-\\frac{3\\cdot10^{-6}}{\\sqrt{20}}\\right)\\approx9{,}87\\cdot10^{3}\\,\\text{V}.$$\n\nEl trabajo realizado por el campo sobre $q=2\\,\\mu\\text{C}$ desde $C$ hasta el infinito es:\n\n$$W_{C\\to\\infty}=q(V_C-V_\\infty)=2\\cdot10^{-6}\\cdot9{,}87\\cdot10^{3}\\approx1{,}97\\cdot10^{-2}\\,\\text{J}.$$\n\nEl trabajo es positivo: el proceso es espontáneo."
+        },
+        {
+          "titulo": "Análisis cualitativo y cuantitativo",
+          "contenido": "El campo solo puede anularse en el eje $X$ a la izquierda de $q_2$, donde los campos son opuestos y la menor carga compensa la menor distancia. Sea $x$ la distancia a la izquierda de $q_2$; el punto está en $(-4-x,0)$.\n\nIgualando módulos:\n\n$$k\\frac{5\\cdot10^{-6}}{(6+x)^{2}}=k\\frac{3\\cdot10^{-6}}{x^{2}}.$$\n\n$$\\frac{5}{(6+x)^{2}}=\\frac{3}{x^{2}}\\Rightarrow\\sqrt{5}\\,x=\\sqrt{3}\\,(6+x).$$\n\nResolviendo:\n\n$$x=\\frac{6\\sqrt{3}}{\\sqrt{5}-\\sqrt{3}}\\approx20{,}6\\,\\text{m}.$$\n\nEl punto está $20{,}6\\,\\text{m}$ a la izquierda de $q_2$, es decir, en $(-24{,}6,0)$ aproximadamente."
+        }
+      ],
+      "resultado": "$\\vec E_C\\approx(-5{,}19\\cdot10^{3}\\,\\hat i+3{,}37\\cdot10^{3}\\,\\hat j)\\,\\text{N}\\,\\text{C}^{-1}$; $E_C\\approx6{,}19\\cdot10^{3}\\,\\text{N}\\,\\text{C}^{-1}$\n$W_{C\\to\\infty}\\approx1{,}97\\cdot10^{-2}\\,\\text{J}$\nPunto de campo nulo: $(-24{,}6,0)\\,\\text{m}$ aproximadamente."
+    },
+    {
+      "numero": 8,
+      "titulo": "Flujo y FEM inducida en espira",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "2,5 puntos (1 + 1 + 0,5)",
+      "enunciado": "$B(t)=0{,}1\\cos(2t)\\,\\text{T}$ atraviesa perpendicularmente una espira circular de $r=6\\,\\text{cm}$. a) Flujo magnético en función del tiempo. b) FEM inducida. c) ¿Es periódica? Periodo.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Flujo magnético en función del tiempo."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "FEM inducida."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "¿Es periódica? Periodo."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Cálculo del flujo",
+          "contenido": "El área de la espira es:\n\n$$A=\\pi r^{2}=\\pi(0{,}06)^{2}=3{,}6\\pi\\cdot10^{-3}\\,\\text{m}^{2}.$$\n\nComo el campo es perpendicular a la espira, el flujo magnético es:\n\n$$\\Phi(t)=B(t)A=0{,}1\\cos(2t)\\cdot3{,}6\\pi\\cdot10^{-3}=3{,}6\\pi\\cdot10^{-4}\\cos(2t)\\,\\text{Wb}\\approx1{,}13\\cdot10^{-3}\\cos(2t)\\,\\text{Wb}.$$"
+        },
+        {
+          "titulo": "Ley de Faraday-Lenz",
+          "contenido": "La fuerza electromotriz inducida es:\n\n$$\\varepsilon=-\\frac{d\\Phi}{dt}=3{,}6\\pi\\cdot10^{-4}\\cdot2\\,\\text{sen}(2t)\\,\\text{V}=7{,}2\\pi\\cdot10^{-4}\\,\\text{sen}(2t)\\,\\text{V}\\approx2{,}26\\cdot10^{-3}\\,\\text{sen}(2t)\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Periodicidad",
+          "contenido": "Sí, el flujo y la fem inducida son periódicos porque dependen de $\\cos(2t)$ y $\\text{sen}(2t)$. El período es:\n\n$$T=\\frac{2\\pi}{2}=\\pi\\,\\text{s}\\approx3{,}14\\,\\text{s}.$$"
+        }
+      ],
+      "resultado": "$\\Phi(t)\\approx1{,}13\\cdot10^{-3}\\cos(2t)\\,\\text{Wb}$\n$\\varepsilon(t)\\approx2{,}26\\cdot10^{-3}\\text{sen}(2t)\\,\\text{V}$\n$T=\\pi\\,\\text{s}\\approx3{,}14\\,\\text{s}$"
+    },
+    {
+      "numero": 9,
+      "titulo": "Efecto fotoeléctrico: potencial de frenado",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica",
+      "puntuacion": "2,5 puntos (0,5 + 1 + 1)",
+      "enunciado": "Iluminando un metal el potencial de frenado es $-1{,}39\\,\\text{V}$. Frecuencia umbral $4{,}52\\cdot10^{14}\\,\\text{Hz}$. a) Trabajo de extracción. b) Velocidad máxima de electrones. c) Longitud de onda de la luz incidente.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Trabajo de extracción."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad máxima de electrones."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Longitud de onda de la luz incidente."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Trabajo de extracción",
+          "contenido": "El trabajo de extracción es:\n\n$$W_0=hf_0=6{,}63\\cdot10^{-34}\\cdot4{,}52\\cdot10^{14}\\approx3{,}00\\cdot10^{-19}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Energía cinética máxima",
+          "contenido": "El potencial de frenado es $V_f=-1{,}39\\,\\text{V}$, por lo que la energía cinética máxima es:\n\n$$K_{\\max}=eV_f=1{,}60\\cdot10^{-19}\\cdot1{,}39\\approx2{,}22\\cdot10^{-19}\\,\\text{J}.$$\n\nLa velocidad máxima se obtiene de:\n\n$$K_{\\max}=\\frac{1}{2}m_ev_{\\max}^{2}\\Rightarrow v_{\\max}=\\sqrt{\\frac{2K_{\\max}}{m_e}}.$$\n\n$$v_{\\max}=\\sqrt{\\frac{2\\cdot2{,}22\\cdot10^{-19}}{9{,}11\\cdot10^{-31}}}\\approx6{,}99\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Ecuación de Einstein",
+          "contenido": "La energía de la luz incidente es:\n\n$$E=K_{\\max}+W_0\\approx2{,}22\\cdot10^{-19}+3{,}00\\cdot10^{-19}=5{,}22\\cdot10^{-19}\\,\\text{J}.$$\n\nLa longitud de onda incidente es:\n\n$$\\lambda=\\frac{hc}{E}=\\frac{6{,}63\\cdot10^{-34}\\cdot3\\cdot10^{8}}{5{,}22\\cdot10^{-19}}\\approx3{,}81\\cdot10^{-7}\\,\\text{m}=381\\,\\text{nm}.$$"
+        }
+      ],
+      "resultado": "$W_0\\approx3{,}00\\cdot10^{-19}\\,\\text{J}$\n$v_{\\max}\\approx6{,}99\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}$\n$\\lambda\\approx381\\,\\text{nm}$"
+    },
+    {
+      "numero": 10,
+      "titulo": "Periodo de semidesintegración 12,32 años",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2,5 puntos (1 + 1,5)",
+      "enunciado": "$T_{1/2}=12{,}32\\,\\text{años}$. a) Constante de desintegración y vida media. b) Tiempo en que la actividad se reduce al $10\\%$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Constante de desintegración y vida media."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Tiempo en que la actividad se reduce al $10\\%$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Cálculo de $\\lambda$ y vida media",
+          "contenido": "La constante de desintegración es:\n\n$$\\lambda=\\frac{\\ln2}{T_{1/2}}=\\frac{0{,}693}{12{,}32}\\approx0{,}05625\\,\\text{año}^{-1}.$$\n\nEn unidades del SI:\n\n$$\\lambda\\approx\\frac{0{,}05625}{3{,}156\\cdot10^{7}}\\approx1{,}78\\cdot10^{-9}\\,\\text{s}^{-1}.$$\n\nLa vida media es:\n\n$$\\tau=\\frac{1}{\\lambda}\\approx\\frac{1}{0{,}05625}\\approx17{,}78\\,\\text{años}\\approx5{,}61\\cdot10^{8}\\,\\text{s}.$$"
+        },
+        {
+          "titulo": "Decaimiento",
+          "contenido": "La actividad varía según:\n\n$$A=A_0e^{-\\lambda t}.$$\n\nPara que la actividad se reduzca al $10\\%$:\n\n$$0{,}1=e^{-\\lambda t}\\Rightarrow\\ln(0{,}1)=-\\lambda t.$$\n\n$$t=-\\frac{\\ln(0{,}1)}{\\lambda}=-\\frac{-2{,}3026}{0{,}05625}\\approx40{,}93\\,\\text{años}.$$"
+        }
+      ],
+      "resultado": "$\\lambda\\approx0{,}05625\\,\\text{año}^{-1}\\approx1{,}78\\cdot10^{-9}\\,\\text{s}^{-1}$; $\\tau\\approx17{,}78\\,\\text{años}$\n$t_{10\\%}\\approx40{,}93\\,\\text{años}$"
+    }
+  ]
+}

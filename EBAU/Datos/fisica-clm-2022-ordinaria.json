@@ -1,0 +1,323 @@
+{
+  "id": "fisica-clm-2022-ordinaria",
+  "codigo": "EXA.FIS.CLM.2022.ORD.SOL",
+  "comunidad": "Castilla la Mancha",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2022,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la convocatoria ordinaria de 2022 en Castilla la Mancha, con 12 ejercicios resueltos sobre electromagnetismo, gravitación, óptica, ondas y física moderna.",
+  "objetivo": "Evaluar la aplicación de las leyes fundamentales de la Física a problemas y cuestiones de nivel de Bachillerato, incluyendo cálculo, razonamiento físico e interpretación de resultados.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "La estructura indicada es: Sección 1: Problemas (elegir 2). Puntuación máxima 3 puntos cada uno. Sección 2: Cuestiones (elegir 3). Puntuación máxima 1 punto cada una. Sección 3: Cuestiones experimentales (elegir una). Puntuación máxima 1 punto cada una."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "Datos numéricos utilizados: $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $q_e=1{,}602\\cdot10^{-19}\\,\\text{C}$."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "Cargas en triángulo rectángulo: energía potencial, fuerza y trabajo",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas",
+      "puntuacion": "No especificada",
+      "enunciado": "Tres cargas están situadas en los vértices de un triángulo rectángulo como indica la figura. Disposición: $q_1$ en el vértice superior-izquierdo, $q_2$ en el vértice inferior-izquierdo y $q_3$ en la posición A (vértice inferior-derecho). El rectángulo tiene $6\\,\\text{cm}$ de base horizontal y $2\\,\\text{cm}$ de altura vertical. La posición alternativa B está en el vértice superior-derecho. Datos: $q_1=2\\,\\text{mC}$; $q_2=-1\\,\\text{mC}$; $q_3=-5\\,\\text{mC}$; $K=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "No especificada",
+          "enunciado": "Determina la energía potencial electrostática de la carga $q_3$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "No especificada",
+          "enunciado": "Calcula la fuerza que siente la carga $q_2$ y su módulo $|\\vec{F}|$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "No especificada",
+          "enunciado": "¿Cuánto trabajo costaría llevar la carga $q_3$ desde su ubicación inicial (A) a la ubicación alternativa (B)? Indica si sería necesaria una fuerza externa para ello."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Energía potencial electrostática de q3",
+          "contenido": "La energía potencial eléctrica de un par de cargas puntuales separadas una distancia $r$ es $U=K\\frac{q_iq_j}{r}$. La carga $q_3$ interacciona simultáneamente con $q_1$ y con $q_2$, así que por el principio de superposición se suman las dos contribuciones:\n\n$$U_A=K\\frac{q_1q_3}{r_{13}}+K\\frac{q_2q_3}{r_{23}}.$$\n\nEn la posición A, $r_{23}$ es el lado horizontal del rectángulo: $r_{23}=6\\,\\text{cm}=0{,}06\\,\\text{m}$. La distancia $r_{13}$ es la diagonal del rectángulo entre $q_1$ y $q_3$, que por el teorema de Pitágoras vale $r_{13}=\\sqrt{0{,}06^{2}+0{,}02^{2}}=0{,}0632\\,\\text{m}$.\n\nSustituyendo con los signos de las cargas:\n\n$$U_A=9\\cdot10^{9}\\frac{(2\\cdot10^{-3})(-5\\cdot10^{-3})}{0{,}0632}+9\\cdot10^{9}\\frac{(-1\\cdot10^{-3})(-5\\cdot10^{-3})}{0{,}06}.$$\n\nEl primer término vale aproximadamente $-1{,}42\\cdot10^{6}\\,\\text{J}$ y el segundo $7{,}50\\cdot10^{5}\\,\\text{J}$. Sumando:\n\n$$U_A\\approx -6{,}7\\cdot10^{5}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Fuerza sobre q2 y su módulo",
+          "contenido": "La fuerza electrostática entre un par de cargas puntuales separadas una distancia $r$ es $\\vec{F}=K\\frac{q_1q_2}{r^{2}}\\hat u$, donde $\\hat u$ es el vector unitario que va de la carga que ejerce a la que recibe. Aplicamos esto a $\\vec{F}_{12}$ (fuerza que $q_1$ ejerce sobre $q_2$) y $\\vec{F}_{32}$ (fuerza que $q_3$ ejerce sobre $q_2$).\n\n$q_1$ está justo encima de $q_2$ a $0{,}02\\,\\text{m}$. Tienen signos opuestos ($q_1>0$, $q_2<0$): se atraen, así que $q_2$ es atraída hacia arriba. En módulo:\n\n$$F_{12}=9\\cdot10^{9}\\frac{|2\\cdot10^{-3}|\\,|{-1}\\cdot10^{-3}|}{(0{,}02)^{2}}=4{,}5\\cdot10^{7}\\,\\text{N}.$$\n\nVectorialmente: $\\vec{F}_{12}=+4{,}5\\cdot10^{7}\\,\\hat j\\ \\text{N}$.\n\n$q_3$ está a la derecha de $q_2$ sobre el mismo lado horizontal, a $0{,}06\\,\\text{m}$. Ambas son negativas: se repelen, así que $q_2$ es empujada hacia la izquierda. En módulo:\n\n$$F_{32}=9\\cdot10^{9}\\frac{|{-5}\\cdot10^{-3}|\\,|{-1}\\cdot10^{-3}|}{(0{,}06)^{2}}=1{,}25\\cdot10^{7}\\,\\text{N}.$$\n\nVectorialmente: $\\vec{F}_{32}=-1{,}25\\cdot10^{7}\\,\\hat i\\ \\text{N}$.\n\nLa resultante es la suma vectorial:\n\n$$\\vec{F}_2=\\vec{F}_{12}+\\vec{F}_{32}=-1{,}25\\cdot10^{7}\\,\\hat i+4{,}5\\cdot10^{7}\\,\\hat j\\ \\text{N}.$$\n\nSumando componente a componente, su módulo es:\n\n$$|\\vec{F}_2|=\\sqrt{(1{,}25\\cdot10^{7})^{2}+(4{,}5\\cdot10^{7})^{2}}\\approx4{,}7\\cdot10^{7}\\,\\text{N}.$$"
+        },
+        {
+          "titulo": "Trabajo de A a B y necesidad de fuerza externa",
+          "contenido": "El trabajo que realiza el campo electrostático al llevar la carga $q_3$ desde A hasta B es $W_{\\text{campo}}=-\\Delta U=U_A-U_B$. El trabajo que tendría que realizar un agente externo es el opuesto: $W_{\\text{ext}}=\\Delta U=U_B-U_A$.\n\nEn la posición B cambian las distancias: ahora $q_1$ y $q_3$ están sobre el mismo lado horizontal del rectángulo, separadas únicamente por la base horizontal, por lo que $r_{13}=6\\,\\text{cm}=0{,}06\\,\\text{m}$. En cambio $q_2$ y $q_3$ están en vértices opuestos del rectángulo, separados por la diagonal $r_{23}=0{,}0632\\,\\text{m}$. Es decir, las dos distancias se han intercambiado respecto al apartado (a).\n\nLa energía potencial en B es:\n\n$$U_B=9\\cdot10^{9}\\frac{(2\\cdot10^{-3})(-5\\cdot10^{-3})}{0{,}06}+9\\cdot10^{9}\\frac{(-1\\cdot10^{-3})(-5\\cdot10^{-3})}{0{,}0632}.$$\n\nEl primer término vale aproximadamente $-1{,}50\\cdot10^{6}\\,\\text{J}$ y el segundo $7{,}12\\cdot10^{5}\\,\\text{J}$. Sumando:\n\n$$U_B\\approx -7{,}88\\cdot10^{5}\\,\\text{J}.$$\n\nEntonces:\n\n$$\\Delta U=U_B-U_A\\approx -1{,}15\\cdot10^{5}\\,\\text{J},$$\n\n$$W_{\\text{campo}}=-\\Delta U\\approx +1{,}15\\cdot10^{5}\\,\\text{J},$$\n\n$$W_{\\text{ext}}=\\Delta U\\approx -1{,}15\\cdot10^{5}\\,\\text{J}.$$\n\nPuesto que $U_B<U_A$, el sistema pasa espontáneamente de A a B. Las fuerzas del propio campo electrostático realizan trabajo positivo durante el desplazamiento, por lo que no es necesaria ninguna fuerza externa para empujar la carga: el campo se encarga del traslado. El trabajo del agente externo es negativo, lo que significa que, si se aplicase una fuerza, debería estar orientada opuestamente al movimiento y no propulsándolo."
+        }
+      ],
+      "resultado": "$U_A\\approx -6{,}7\\cdot10^{5}\\,\\text{J}$.\n$\\vec{F}_2=(-1{,}25\\cdot10^{7}\\,\\hat i+4{,}5\\cdot10^{7}\\,\\hat j)\\,\\text{N}$, $|\\vec{F}_2|\\approx4{,}7\\cdot10^{7}\\,\\text{N}$.\n$W_{\\text{campo}}\\approx +1{,}15\\cdot10^{5}\\,\\text{J}$; $W_{\\text{ext}}\\approx -1{,}15\\cdot10^{5}\\,\\text{J}$. No es necesaria una fuerza externa: las fuerzas del campo realizan el trabajo."
+    },
+    {
+      "numero": 2,
+      "titulo": "Exoplaneta Dimidio: masa de la estrella, periodo y velocidad de escape",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A2. Leyes de Kepler y relación con la gravitación; A7. Movimiento planetario, satélites y velocidades características; A8. Cosmología y astrofísica como aplicación",
+      "puntuacion": "No especificada",
+      "enunciado": "El primer exoplaneta detectado en 1995, Dimidio, presenta una órbita circular alrededor de su estrella con una velocidad de $136\\,\\text{km}\\,\\text{s}^{-1}$ y a una distancia de $7{,}78$ millones de km (de centro a centro). Su radio es de $132\\,800\\,\\text{km}$ y su masa $9\\cdot10^{28}\\,\\text{kg}$. Dato: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "No especificada",
+          "enunciado": "Calcula la masa que tiene la estrella en torno a la que orbita, deduciendo la expresión necesaria."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "No especificada",
+          "enunciado": "¿Durante cuántos días tenemos que observar la estrella para registrar 5 tránsitos completos del planeta (es decir, 5 vueltas completas alrededor de su estrella) y confirmar su existencia?"
+        },
+        {
+          "letra": "c",
+          "puntuacion": "No especificada",
+          "enunciado": "¿Qué velocidad mínima deberíamos proporcionar a una sonda que se hubiera posado en el planeta para que pudiese escapar de la atracción del planeta? Deduce razonadamente la expresión."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Masa de la estrella",
+          "contenido": "Para una órbita circular, la fuerza gravitatoria que la estrella ejerce sobre el planeta proporciona la aceleración centrípeta del planeta:\n\n$$G\\frac{Mm}{d^{2}}=m\\frac{v^{2}}{d},$$\n\ndonde $M$ es la masa de la estrella, $m$ la del planeta y $d$ la distancia entre centros.\n\nSimplificando $m$ y multiplicando por $d$:\n\n$$M=\\frac{v^{2}d}{G}.$$\n\nCon $v=136\\,\\text{km}\\,\\text{s}^{-1}=1{,}36\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}$ y $d=7{,}78\\cdot10^{9}\\,\\text{m}$:\n\n$$M=\\frac{(1{,}36\\cdot10^{5})^{2}(7{,}78\\cdot10^{9})}{6{,}67\\cdot10^{-11}}\\approx2{,}16\\cdot10^{30}\\,\\text{kg}.$$"
+        },
+        {
+          "titulo": "Tiempo para 5 vueltas completas",
+          "contenido": "El periodo es el cociente entre la longitud de la circunferencia descrita y la velocidad orbital:\n\n$$T=\\frac{2\\pi d}{v}.$$\n\nSustituyendo:\n\n$$T=\\frac{2\\pi(7{,}78\\cdot10^{9})}{1{,}36\\cdot10^{5}}\\approx3{,}59\\cdot10^{5}\\,\\text{s}.$$\n\nEl tiempo para 5 vueltas es:\n\n$$5T\\approx1{,}80\\cdot10^{6}\\,\\text{s}.$$\n\nExpresado en días:\n\n$$5T=\\frac{1{,}80\\cdot10^{6}}{86\\,400}\\approx20{,}8\\,\\text{días}.$$"
+        },
+        {
+          "titulo": "Velocidad de escape desde la superficie del planeta",
+          "contenido": "La velocidad mínima para escapar desde la superficie del planeta es aquella que hace que la energía mecánica total sea cero (órbita parabólica límite). Igualando la energía cinética y la energía potencial gravitatoria del planeta sobre la sonda:\n\n$$\\frac{1}{2}mv_e^{2}-G\\frac{M_pm}{R_p}=0.$$\n\nCancelando $m$ y reordenando:\n\n$$v_e=\\sqrt{\\frac{2GM_p}{R_p}}.$$\n\nCon $M_p=9\\cdot10^{28}\\,\\text{kg}$ y $R_p=132\\,800\\,\\text{km}=1{,}328\\cdot10^{8}\\,\\text{m}$:\n\n$$v_e=\\sqrt{\\frac{2(6{,}67\\cdot10^{-11})(9\\cdot10^{28})}{1{,}328\\cdot10^{8}}}\\approx3{,}01\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$M\\approx2{,}16\\cdot10^{30}\\,\\text{kg}$.\n$5T\\approx20{,}8\\,\\text{días}$.\n$v_e\\approx3{,}01\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}\\approx301\\,\\text{km}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Bobina circular en campo magnético variable: flujo, corriente inducida y sentido",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "No especificada",
+      "enunciado": "Una bobina circular de radio $15\\,\\text{cm}$ y $50$ espiras se coloca de manera que su eje forma un ángulo de $30^{\\circ}$ con un campo magnético uniforme cuyo valor varía en el tiempo según $B(t)=4-(t-2)^{2}\\,\\text{T}$. La resistencia total de la bobina es $5\\,\\Omega$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "No especificada",
+          "enunciado": "Calcula el valor del flujo magnético en $t=2\\,\\text{s}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "No especificada",
+          "enunciado": "Determina el valor de la corriente inducida en la bobina en función del tiempo."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "No especificada",
+          "enunciado": "Calcula el valor de la corriente inducida en $t=1\\,\\text{s}$ y en $t=3\\,\\text{s}$, y razona si el sentido en cada caso será el indicado en el esquema como A (horario visto desde arriba) o el B (antihorario visto desde arriba). Explica por qué no son iguales si el valor del campo es en ambos momentos igual a $3\\,\\text{T}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Flujo magnético en t=2 s",
+          "contenido": "Para una bobina de $N$ espiras de área $S$ inmersa en un campo uniforme:\n\n$$\\Phi=NBS\\cos\\theta,$$\n\ndonde $\\theta$ es el ángulo entre $\\vec B$ y el vector normal al plano de la espira (eje de la bobina).\n\nCada espira tiene área $S=\\pi r^{2}=\\pi(0{,}15)^{2}=0{,}0707\\,\\text{m}^{2}$. Con $N=50$, $B(t)=4-(t-2)^{2}\\,\\text{T}$ y $\\theta=30^{\\circ}$:\n\n$$\\Phi(t)=50\\,[4-(t-2)^{2}\\cos30^{\\circ}.$$\n\nEn $t=2\\,\\text{s}$, $B=4\\,\\text{T}$ y $\\cos30^{\\circ}=0{,}866$:\n\n$$\\Phi(2)=50\\cdot4\\cdot0{,}0707\\cdot0{,}866\\approx12{,}2\\,\\text{Wb}.$$"
+        },
+        {
+          "titulo": "Corriente inducida en función del tiempo",
+          "contenido": "La fuerza electromotriz inducida es:\n\n$$\\varepsilon=-\\frac{d\\Phi}{dt}.$$\n\nCon $\\Phi(t)=N S\\cos\\theta\\,[4-(t-2)^{2}]$, derivando:\n\n$$\\frac{d\\Phi}{dt}=N S\\cos\\theta\\,[-2(t-2)].$$\n\nAplicando el signo negativo:\n\n$$\\varepsilon=2N S\\cos\\theta\\,(t-2).$$\n\nEl factor $N S\\cos\\theta=50\\cdot0{,}0707\\cdot0{,}866\\approx3{,}06$. Por tanto:\n\n$$\\varepsilon(t)\\approx6{,}12(t-2)\\,\\text{V}.$$\n\nCon $R=5\\,\\Omega$, la corriente inducida es:\n\n$$I(t)=\\frac{\\varepsilon(t)}{R}\\approx1{,}22(t-2)\\,\\text{A}.$$"
+        },
+        {
+          "titulo": "Corriente en t=1 s y t=3 s; sentido",
+          "contenido": "En $t=1\\,\\text{s}$:\n\n$$I(1)=1{,}22(1-2)=-1{,}22\\,\\text{A}.$$\n\nEn $t=3\\,\\text{s}$:\n\n$$I(3)=1{,}22(3-2)=+1{,}22\\,\\text{A}.$$\n\nEn módulo son iguales ($1{,}22\\,\\text{A}$), pero sus signos son opuestos.\n\nEl ángulo entre $\\vec B$ y la normal es $30^{\\circ}$, por lo que el flujo tiene el signo del propio $B$. En $t=1\\,\\text{s}$, $B$ está creciendo (la parábola aún sube hacia su máximo en $t=2$), así que el flujo aumenta: la corriente inducida debe oponerse a ese aumento creando un campo inducido contrario a $\\vec B$, es decir, una corriente en sentido horario visto desde arriba, sentido A. En $t=3\\,\\text{s}$, $B$ está decreciendo, el flujo disminuye: la corriente inducida debe reforzar el flujo, generando un campo inducido en el mismo sentido que $\\vec B$, lo que requiere corriente antihoraria vista desde arriba, sentido B.\n\nAunque el módulo del campo es el mismo ($3\\,\\text{T}$) en ambos instantes, lo que induce la fem no es el valor del flujo, sino su ritmo de cambio: $\\varepsilon=-d\\Phi/dt$. En $t=1\\,\\text{s}$, $dB/dt=+2\\,\\text{T}\\,\\text{s}^{-1}$ (creciente), y en $t=3\\,\\text{s}$, $dB/dt=-2\\,\\text{T}\\,\\text{s}^{-1}$ (decreciente). Los signos opuestos de $d\\Phi/dt$ producen fems opuestas y, en consecuencia, corrientes en sentidos opuestos."
+        }
+      ],
+      "resultado": "$\\Phi(2)\\approx12{,}2\\,\\text{Wb}$.\n$I(t)\\approx1{,}22(t-2)\\,\\text{A}$.\n$I(1)\\approx-1{,}22\\,\\text{A}$ (sentido A, horario visto desde arriba); $I(3)\\approx+1{,}22\\,\\text{A}$ (sentido B, antihorario visto desde arriba)."
+    },
+    {
+      "numero": 4,
+      "titulo": "Lente convergente: imagen invertida y caso $s<f$",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "No especificada",
+      "enunciado": "A una distancia de $15\\,\\text{cm}$ a la derecha de una lente convergente de $5\\,\\text{cm}$ de focal se registra una imagen óptica de $3\\,\\text{cm}$ de alto en posición invertida.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "No especificada",
+          "enunciado": "Realiza un trazado de rayos para localizar la posición y tamaño del objeto que produce dicha imagen, explicando las reglas de trazado para los rayos que uses."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "No especificada",
+          "enunciado": "Determina numéricamente el tamaño y posición del objeto, así como el aumento lateral de este sistema óptico."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "No especificada",
+          "enunciado": "¿Qué características de la imagen cambian si el objeto se sitúa a $3{,}5\\,\\text{cm}$ a la izquierda de la lente? Realiza un trazado de rayos para ilustrarlo y determina la posición de la imagen y el aumento lateral para este caso, indicando razonadamente si la imagen es real o virtual."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Trazado de rayos: caso s'=+15 cm, imagen invertida",
+          "contenido": "Tres rayos principales permiten localizar la imagen partiendo del extremo superior del objeto: (1) el rayo paralelo al eje óptico sale de la lente pasando por el foco imagen $F'$ (a la derecha de la lente, a $+5\\,\\text{cm}$); (2) el rayo que pasa por el foco objeto $F$ (a la izquierda, a $-5\\,\\text{cm}$) sale paralelo al eje óptico tras atravesar la lente; (3) el rayo que pasa por el centro óptico de la lente no se desvía.\n\nComo la imagen es invertida y real ($s'=+15\\,\\text{cm}$ a la derecha de la lente), el objeto debe estar a la izquierda de la lente, más allá del foco objeto. Trazando los tres rayos descritos, los rayos refractados convergen en un punto situado $15\\,\\text{cm}$ a la derecha de la lente y $3\\,\\text{cm}$ por debajo del eje (imagen invertida, $y'=-3\\,\\text{cm}$). Recorriendo hacia atrás los rayos para localizar el objeto, este queda a $s=-7{,}5\\,\\text{cm}$ (a la izquierda de la lente) y con altura $y=+1{,}5\\,\\text{cm}$ por encima del eje. El trazado debe ser cualitativamente correcto, aunque no se realice a escala."
+        },
+        {
+          "titulo": "Cálculo numérico de posición, tamaño y aumento",
+          "contenido": "Se usa la fórmula de Gauss con el criterio DIN:\n\n$$\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f'},$$\n\ncon $f'=+5\\,\\text{cm}$, $s'=+15\\,\\text{cm}$ e $y'=-3\\,\\text{cm}$.\n\nDespejando $s$:\n\n$$\\frac{1}{15}-\\frac{1}{s}=\\frac{1}{5}\\Rightarrow -\\frac{1}{s}=\\frac{1}{5}-\\frac{1}{15}=\\frac{2}{15}\\Rightarrow s=-7{,}5\\,\\text{cm}.$$\n\nEl signo negativo significa que el objeto está a la izquierda de la lente.\n\nEl aumento lateral se relaciona con las posiciones por:\n\n$$A=\\frac{y'}{y}=\\frac{s'}{s}.$$\n\nDespejando $y$:\n\n$$y=\\frac{y'}{A}.$$\n\nCon $A=s'/s=15/(-7{,}5)=-2$, se obtiene $y=-3/(-2)=+1{,}5\\,\\text{cm}$. El signo negativo del aumento confirma que la imagen es invertida; el módulo $2$ indica que el tamaño se duplica."
+        },
+        {
+          "titulo": "Caso s=-3,5 cm: imagen virtual",
+          "contenido": "Ahora $|s|=3{,}5\\,\\text{cm}<f'=5\\,\\text{cm}$, por lo que se espera una imagen virtual, derecha y aumentada, funcionamiento típico de una lupa.\n\nAplicando la fórmula de Gauss con $f'=+5\\,\\text{cm}$ y $s=-3{,}5\\,\\text{cm}$:\n\n$$\\frac{1}{s'}-\\frac{1}{-3{,}5}=\\frac{1}{5}\\Rightarrow \\frac{1}{s'}+\\frac{1}{3{,}5}=0{,}2\\Rightarrow s'\\approx-11{,}7\\,\\text{cm}.$$\n\nEl signo negativo confirma carácter virtual (a la izquierda de la lente, en el mismo lado que el objeto).\n\nEl tamaño del objeto es $y=+1{,}5\\,\\text{cm}$. El aumento es:\n\n$$A=\\frac{s'}{s}=\\frac{-11{,}7}{-3{,}5}\\approx+3{,}33.$$\n\nEl tamaño de la imagen es $y'=A y\\approx+5{,}0\\,\\text{cm}$.\n\nLa imagen es virtual, derecha y aumentada. En el trazado de rayos, dos rayos refractados emergentes divergen al salir de la lente; sus prolongaciones hacia atrás se cortan en el punto-imagen virtual."
+        }
+      ],
+      "resultado": "Caso inicial: $s=-7{,}5\\,\\text{cm}$; $y=+1{,}5\\,\\text{cm}$; $A=-2$ (imagen real, invertida y de doble tamaño).\nCaso $s=-3{,}5\\,\\text{cm}$: $s'\\approx-11{,}7\\,\\text{cm}$; $y'\\approx+5{,}0\\,\\text{cm}$; $A\\approx+3{,}33$ (imagen virtual, derecha y aumentada)."
+    },
+    {
+      "numero": 5,
+      "titulo": "Longitudes de onda de De Broglie: electrón y pelota de tenis",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "No especificada",
+      "enunciado": "¿Cuál es la longitud de onda asociada de un electrón cuya velocidad es la mitad de la velocidad de la luz? ¿Y la de una pelota de tenis de $50\\,\\text{g}$ que se mueve a una velocidad de $400\\,\\text{m}\\,\\text{s}^{-1}$? Teniendo en cuenta que el tamaño de un núcleo atómico es del orden de $10^{-15}\\,\\text{m}$, ¿qué conclusión sacas de los valores calculados para las longitudes de onda? Datos: $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Cálculo y discusión",
+          "contenido": "Toda partícula material de masa $m$ que se mueve con velocidad $v$ lleva asociada una onda de longitud:\n\n$$\\lambda=\\frac{h}{mv}.$$\n\nPara el electrón, $v=c/2=1{,}5\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$:\n\n$$\\lambda_e=\\frac{6{,}63\\cdot10^{-34}}{(9{,}11\\cdot10^{-31})(1{,}5\\cdot10^{8})}\\approx4{,}85\\cdot10^{-12}\\,\\text{m}.$$\n\nPara la pelota de tenis, $m=0{,}05\\,\\text{kg}$ y $v=400\\,\\text{m}\\,\\text{s}^{-1}$:\n\n$$\\lambda_{\\text{pelota}}=\\frac{6{,}63\\cdot10^{-34}}{0{,}05\\cdot400}\\approx3{,}32\\cdot10^{-35}\\,\\text{m}.$$\n\nEl tamaño nuclear es del orden de $10^{-15}\\,\\text{m}$. La longitud de onda del electrón, $4{,}85\\cdot10^{-12}\\,\\text{m}$, es unas $1000$ a $10\\,000$ veces mayor que un núcleo, así que el comportamiento ondulatorio del electrón es manifiesto en experimentos a escala atómica y subatómica. En cambio, $3{,}32\\cdot10^{-35}\\,\\text{m}$ es unos $20$ órdenes de magnitud menor que el núcleo: en la práctica es imposible diseñar ningún experimento que ponga de manifiesto el carácter ondulatorio de la pelota."
+        }
+      ],
+      "resultado": "$\\lambda_e\\approx4{,}85\\cdot10^{-12}\\,\\text{m}$; $\\lambda_{\\text{pelota}}\\approx3{,}32\\cdot10^{-35}\\,\\text{m}$. El electrón sí muestra carácter ondulatorio detectable a escala subatómica; la pelota no lo manifiesta a ninguna escala observable."
+    },
+    {
+      "numero": 6,
+      "titulo": "Efecto fotoeléctrico: energía y frecuencia del fotón",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica",
+      "puntuacion": "No especificada",
+      "enunciado": "El potencial de detención de un metal es $0{,}1\\,\\text{V}$ y el trabajo de extracción del metal es $10^{-18}\\,\\text{J}$. ¿Cuánto vale la energía del fotón incidente? ¿Y su frecuencia? Datos: $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $q_e=1{,}602\\cdot10^{-19}\\,\\text{C}$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Aplicación de la ecuación fotoeléctrica",
+          "contenido": "El potencial de detención $V_0$ es el potencial eléctrico que detiene completamente al electrón más rápido emitido. La energía cinética máxima del electrón es:\n\n$$K_{\\text{max}}=q_eV_0=(1{,}602\\cdot10^{-19})(0{,}1)=1{,}602\\cdot10^{-20}\\,\\text{J}.$$\n\nLa ecuación fotoeléctrica de Einstein indica que el fotón cede toda su energía al electrón; parte se usa en arrancarlo del metal (trabajo de extracción $W$) y el resto queda como energía cinética del electrón liberado:\n\n$$E_{\\text{fotón}}=W+K_{\\text{max}}.$$\n\nPor tanto:\n\n$$E_{\\text{fotón}}=10^{-18}+1{,}602\\cdot10^{-20}=1{,}016\\cdot10^{-18}\\,\\text{J}.$$\n\nLa frecuencia se obtiene mediante la ley de Planck:\n\n$$E=hf\\Rightarrow f=\\frac{E}{h}=\\frac{1{,}016\\cdot10^{-18}}{6{,}63\\cdot10^{-34}}\\approx1{,}53\\cdot10^{15}\\,\\text{Hz}.$$"
+        }
+      ],
+      "resultado": "$E_{\\text{fotón}}\\approx1{,}016\\cdot10^{-18}\\,\\text{J}$; $f\\approx1{,}53\\cdot10^{15}\\,\\text{Hz}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Desintegración del Np-241: $2\\beta+\\alpha$",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares",
+      "puntuacion": "No especificada",
+      "enunciado": "Escribe las reacciones nucleares que tienen lugar cuando el Neptunio (Np-241) se desintegra emitiendo dos partículas $\\beta$ seguidas de una partícula $\\alpha$. Puedes ayudarte del siguiente fragmento de la tabla periódica para obtener información necesaria, incluyendo los números atómicos: 90 Th Torio; 91 Pa Protactinio; 92 U Uranio; 93 Np Neptunio; 94 Pu Plutonio; 95 Am Americio; 96 Cm Curio.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Reacciones nucleares paso a paso",
+          "contenido": "Una partícula $\\alpha$ es un núcleo de helio: 2 protones y 2 neutrones, símbolo $^{4}_{2}\\text{He}$ ($Z=2$, $A=4$). Una partícula $\\beta^{-}$ es un electrón emitido por la conversión interna de un neutrón en un protón, símbolo $^{0}_{-1}\\text{e}$ ($Z=-1$, $A=0$): aumenta $Z$ en una unidad sin cambiar la masa atómica.\n\nPrimera desintegración $\\beta$:\n\n$$^{241}_{93}\\text{Np}\\rightarrow{}^{241}_{94}\\text{Pu}+{}^{0}_{-1}\\text{e}.$$\n\nEl $Z$ pasa de 93 a 94 (Pu, plutonio), la masa atómica $A$ se mantiene en 241.\n\nSegunda desintegración $\\beta$:\n\n$$^{241}_{94}\\text{Pu}\\rightarrow{}^{241}_{95}\\text{Am}+{}^{0}_{-1}\\text{e}.$$\n\nEl $Z$ pasa de 94 a 95 (Am, americio), la masa atómica se mantiene en 241.\n\nDesintegración $\\alpha$:\n\n$$^{241}_{95}\\text{Am}\\rightarrow{}^{237}_{93}\\text{Np}+{}^{4}_{2}\\text{He}.$$\n\nEl $Z$ disminuye en 2 (de 95 a 93, vuelve a neptunio) y la masa atómica disminuye en 4 (de 241 a 237).\n\nBalance global: $\\Delta Z=+1+1-2=0$ ($Z$ final $=93$); $\\Delta A=0+0-4=-4$ ($A$ final $=237$). Reacción global:\n\n$$^{241}_{93}\\text{Np}\\rightarrow{}^{237}_{93}\\text{Np}+2{}^{0}_{-1}\\text{e}+{}^{4}_{2}\\text{He}.$$"
+        }
+      ],
+      "resultado": "Reacciones: $^{241}_{93}\\text{Np}\\rightarrow{}^{241}_{94}\\text{Pu}+{}^{0}_{-1}\\text{e}$; $^{241}_{94}\\text{Pu}\\rightarrow{}^{241}_{95}\\text{Am}+{}^{0}_{-1}\\text{e}$; $^{241}_{95}\\text{Am}\\rightarrow{}^{237}_{93}\\text{Np}+{}^{4}_{2}\\text{He}$. Resultado global: $^{241}_{93}\\text{Np}\\rightarrow{}^{237}_{93}\\text{Np}+2{}^{0}_{-1}\\text{e}+{}^{4}_{2}\\text{He}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Elongación de una onda armónica en $t=T/4$, $x=\\lambda/4$",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "No especificada",
+      "enunciado": "Calcular para el instante $t=T/4$ la elongación de un punto cuya distancia a un foco emisor de ondas es $x=\\lambda/4$, sabiendo que la amplitud de la vibración es $2\\,\\text{cm}$ y que la onda se desplaza de izquierda a derecha. ¿Y si viaja en sentido contrario?",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Cálculo de la elongación en ambos sentidos",
+          "contenido": "Para una onda armónica que viaja en sentido $+x$ (izquierda a derecha), con $A=2\\,\\text{cm}$ y fase inicial nula:\n\n$$y(x,t)=A\\text{sen}\\left(\\omega t-kx\\right).$$\n\nSabemos que $\\omega=\\frac{2\\pi}{T}$ y $k=\\frac{2\\pi}{\\lambda}$. Para $t=T/4$:\n\n$$\\omega t=\\frac{2\\pi}{T}\\frac{T}{4}=\\frac{\\pi}{2}.$$\n\nPara $x=\\lambda/4$:\n\n$$kx=\\frac{2\\pi}{\\lambda}\\frac{\\lambda}{4}=\\frac{\\pi}{2}.$$\n\nEntonces:\n\n$$y=A\\text{sen}\\left(\\frac{\\pi}{2}-\\frac{\\pi}{2}\\right)=0.$$\n\nEl punto está en su posición de equilibrio en ese instante.\n\nPara una onda que viaja en sentido $-x$, la ecuación cambia el signo del término espacial:\n\n$$y(x,t)=A\\text{sen}\\left(\\omega t+kx\\right).$$\n\nCon los mismos valores:\n\n$$y=A\\text{sen}\\left(\\frac{\\pi}{2}+\\frac{\\pi}{2}\\right)=A\\text{sen}(\\pi)=0.$$\n\nTambién está pasando por el equilibrio en ese instante."
+        }
+      ],
+      "resultado": "Sentido $+x$: $y=0$. Sentido $-x$: $y=0$. En ambos casos el punto pasa por la posición de equilibrio."
+    },
+    {
+      "numero": 9,
+      "titulo": "Potencial de dos esferas conductoras al ponerse en contacto",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "No especificada",
+      "enunciado": "Dos esferas metálicas de radios $R_1=R$ y $R_2=2R$ están cargadas con una carga $Q$ cada una de ellas. Determina la relación entre sus potenciales $V_1/V_2$ y si intercambiarán carga entre ellas al ponerlas en contacto: en caso afirmativo indica cuál de ellas da carga y cuál recibe; en caso negativo justifica por qué.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Análisis del potencial y del contacto",
+          "contenido": "Una esfera conductora aislada de radio $R$ con carga $Q$ tiene en su superficie, y en cualquier punto exterior a distancia $R$ del centro, un potencial:\n\n$$V=K\\frac{Q}{R}.$$\n\nPor tanto:\n\n$$V_1=K\\frac{Q}{R},\\qquad V_2=K\\frac{Q}{2R}.$$\n\nAsí:\n\n$$\\frac{V_1}{V_2}=2.$$\n\nLa esfera pequeña está a doble potencial que la grande, pese a tener la misma carga.\n\nAl ponerse en contacto eléctrico se forma un único conductor. La carga se redistribuye automáticamente para igualar el potencial en todos los puntos del conductor (condición de equilibrio electrostático). Por tanto, sí habrá intercambio de carga.\n\nLa carga fluye espontáneamente desde el potencial más alto hacia el más bajo. Como $V_1>V_2$, la esfera 1 cederá carga positiva a la esfera 2 hasta igualar potenciales."
+        }
+      ],
+      "resultado": "$\\frac{V_1}{V_2}=2$. Sí intercambian carga: la esfera 1 (más pequeña, mayor potencial) cede carga a la esfera 2 (más grande)."
+    },
+    {
+      "numero": 10,
+      "titulo": "Energía cinética de satélites: comparación por radio y por masa",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "No especificada",
+      "enunciado": "Dos satélites de igual masa, A y B, describen órbitas circulares de diferentes radios alrededor de la Tierra: $r_A>r_B$. Contesta razonadamente a las siguientes preguntas.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "No especificada",
+          "enunciado": "¿Cuál de los dos tiene mayor energía cinética?"
+        },
+        {
+          "letra": "b",
+          "puntuacion": "No especificada",
+          "enunciado": "Si los dos satélites estuvieran en la misma órbita $r_A=r_B$ y tuviesen distinta masa $m_A<m_B$, ¿cuál de los dos tendría más energía cinética?"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Análisis con la fórmula de la energía cinética orbital",
+          "contenido": "La fuerza gravitatoria sobre el satélite proporciona la fuerza centrípeta:\n\n$$G\\frac{M_Tm}{r^{2}}=m\\frac{v^{2}}{r}\\Rightarrow v^{2}=\\frac{GM_T}{r}.$$\n\nLa energía cinética orbital es:\n\n$$K=\\frac{1}{2}mv^{2}=\\frac{GM_Tm}{2r}.$$\n\nEs decir, depende inversamente del radio orbital y proporcionalmente a la masa del satélite.\n\nEn el apartado (a), con masas iguales, $K\\propto \\frac{1}{r}$. Como $r_A>r_B$, se cumple $K_A<K_B$. El satélite B, más cercano a la Tierra, tiene mayor energía cinética.\n\nEn el apartado (b), con radios iguales, $K\\propto m$. Como $m_A<m_B$, se cumple $K_A<K_B$. El satélite B, más masivo, tiene mayor energía cinética."
+        }
+      ],
+      "resultado": "(a) $K_B>K_A$: el satélite B (radio menor) tiene mayor energía cinética.\n(b) $K_B>K_A$: el satélite B (masa mayor) tiene mayor energía cinética."
+    },
+    {
+      "numero": 11,
+      "titulo": "Refracción vidrio$\\rightarrow$aire y reflexión interna total",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
+      "puntuacion": "No especificada",
+      "enunciado": "En un experimento de refracción de luz hacemos que un haz que viaja por vidrio ($n=1{,}5$) llegue a la frontera de separación con el aire ($n=1$) a distintos ángulos de incidencia (en grados). Copia la siguiente tabla en tu cuadernillo de examen, completa las casillas que puedas y explica por qué alguna(s) tienen que quedarse en blanco. Tabla: ángulo incidente $4{,}4$, $25$, $35$, $45$, $55$; ángulo refractado $6{,}6$, $?$, $?$, $?$, $?$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Aplicación de la ley de Snell y discusión del ángulo crítico",
+          "contenido": "La ley de Snell relaciona los ángulos de incidencia y refracción en la frontera entre dos medios:\n\n$$n_1\\text{sen}\\,\\theta_i=n_2\\text{sen}\\,\\theta_t.$$\n\nCon $n_1=1{,}5$ (vidrio) y $n_2=1$ (aire):\n\n$$1{,}5\\,\\text{sen}\\,\\theta_i=\\text{sen}\\,\\theta_t.$$\n\nPara $\\theta_i=25^{\\circ}$:\n\n$$\\text{sen}\\,\\theta_t=1{,}5\\,\\text{sen}\\,25^{\\circ}=1{,}5\\cdot0{,}4226=0{,}6339\\Rightarrow \\theta_t\\approx39{,}3^{\\circ}.$$\n\nPara $\\theta_i=35^{\\circ}$:\n\n$$\\text{sen}\\,\\theta_t=1{,}5\\,\\text{sen}\\,35^{\\circ}=1{,}5\\cdot0{,}5736=0{,}8604\\Rightarrow \\theta_t\\approx59{,}3^{\\circ}.$$\n\nPara $\\theta_i=45^{\\circ}$:\n\n$$\\text{sen}\\,\\theta_t=1{,}5\\,\\text{sen}\\,45^{\\circ}=1{,}0607>1,$$\n\nsin solución real para $\\theta_t$. Para $\\theta_i=55^{\\circ}$:\n\n$$\\text{sen}\\,\\theta_t=1{,}5\\,\\text{sen}\\,55^{\\circ}=1{,}228>1,$$\n\ntambién sin solución. En estos dos casos no hay haz refractado al aire; se produce reflexión interna total.\n\nEl ángulo crítico se obtiene de:\n\n$$\\text{sen}\\,\\theta_c=\\frac{n_2}{n_1}=\\frac{1}{1{,}5}=0{,}6667\\Rightarrow \\theta_c\\approx41{,}8^{\\circ}.$$\n\nPara incidencias mayores que ese ángulo crítico ($45^{\\circ}>41{,}8^{\\circ}$ y $55^{\\circ}>41{,}8^{\\circ}$), toda la luz queda reflejada en el medio denso (vidrio), no pasa nada al aire.\n\nTabla completa: $\\theta_i=4{,}4^{\\circ}\\rightarrow\\theta_t=6{,}6^{\\circ}$; $25^{\\circ}\\rightarrow39{,}3^{\\circ}$; $35^{\\circ}\\rightarrow59{,}3^{\\circ}$; $45^{\\circ}\\rightarrow$ reflexión interna total; $55^{\\circ}\\rightarrow$ reflexión interna total."
+        }
+      ],
+      "resultado": "$\\theta_t(25^{\\circ})\\approx39{,}3^{\\circ}$; $\\theta_t(35^{\\circ})\\approx59{,}3^{\\circ}$. Para $45^{\\circ}$ y $55^{\\circ}$ hay reflexión interna total (no hay rayo refractado). Ángulo crítico $\\theta_c\\approx41{,}8^{\\circ}$."
+    },
+    {
+      "numero": 12,
+      "titulo": "Bobina aproximada a un imán: flujo y lectura del voltímetro",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "No especificada",
+      "enunciado": "Acercamos a un imán fijo una bobina a la que tenemos conectado un voltímetro, hasta que la bobina queda completamente dentro del imán, y la dejamos ahí unos segundos y la retiramos. Explica razonadamente cómo varían en este proceso el flujo del campo magnético que atraviesa la bobina y la lectura del voltímetro que tenemos conectado.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Análisis cualitativo en las tres fases",
+          "contenido": "El flujo magnético a través de la bobina es:\n\n$$\\Phi=BS\\cos\\theta.$$\n\nPara una geometría dada ($S$ y $\\theta$ fijos), $\\Phi$ depende exclusivamente del valor del campo $B$ en la región ocupada por la bobina.\n\nFase 1: aproximación de la bobina al imán. Al acercar la bobina, la intensidad del campo en su posición crece (los campos magnéticos son más intensos cerca de la fuente). Por tanto, $\\Phi$ aumenta de valor. Como $\\varepsilon=-d\\Phi/dt$, según la ley de Faraday la fuerza electromotriz inducida es no nula, de un signo determinado. El voltímetro indica una lectura no nula.\n\nFase 2: bobina parada dentro del imán. Mientras la bobina permanece quieta, $\\Phi$ no cambia en el tiempo, así que permanece constante en su valor máximo. Como $d\\Phi/dt=0$, la fem inducida vale cero y el voltímetro marca cero.\n\nFase 3: alejamiento de la bobina. Al retirar la bobina, $B$ en su posición disminuye progresivamente y, por tanto, $\\Phi$ también disminuye. Ahora $d\\Phi/dt\\neq0$, así que la fem inducida cambia de signo respecto a la fase 1. El voltímetro vuelve a marcar una lectura no nula, pero de polaridad opuesta a la del primer movimiento.\n\nSíntesis: el flujo aumenta, después permanece constante y finalmente disminuye, siempre con el mismo signo, pasando por un máximo intermedio. El voltímetro da una lectura no nula durante el acercamiento, cero mientras la bobina está parada y una lectura no nula con polaridad invertida durante el alejamiento."
+        }
+      ],
+      "resultado": "Flujo: crece al acercar, alcanza un máximo y permanece constante en reposo, y decrece al alejar. Voltímetro: lectura distinta de cero durante el acercamiento, cero mientras la bobina está parada y lectura distinta de cero con polaridad invertida durante el alejamiento."
+    }
+  ]
+}

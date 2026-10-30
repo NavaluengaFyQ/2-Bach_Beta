@@ -1,0 +1,456 @@
+{
+  "id": "fisica-cantabria-2024-extraordinaria",
+  "codigo": "EXA.FIS.CNT.2024.EXT.SOL",
+  "comunidad": "Cantabria",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2024,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la convocatoria extraordinaria de 2024 en Cantabria, con diez problemas de gravitación, electromagnetismo, vibraciones y ondas, óptica, física moderna y física nuclear.",
+  "objetivo": "Evaluar la aplicación de las leyes fundamentales de la Física a problemas de campo gravitatorio, campo electromagnético, ondas, óptica, cuántica y radiactividad, con cálculo numérico y razonamiento físico.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "El alumnado debe realizar un total de cuatro ejercicios, sin poder elegir dos ejercicios de un mismo bloque. Cada ejercicio se valora sobre $2{,}5\\,\\text{puntos}$. Las puntuaciones parciales de cada apartado se indican en cada problema."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "Se emplean las constantes habituales de la prueba: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$, $g_0=9{,}80\\,\\text{m}\\,\\text{s}^{-2}$, $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$, $k=9{,}00\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$, $c=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$, $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$, $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$, $e=1{,}60\\cdot10^{-19}\\,\\text{C}$ e $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "Campo y potencial gravitatorios; trabajo entre dos puntos",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo; A5. Potencial gravitatorio, equipotenciales y relación con el campo; A6. Trabajo, energía potencial y energía mecánica gravitatoria",
+      "puntuacion": "2,5 puntos (1 + 1 + 0,5)",
+      "enunciado": "Dos masas puntuales iguales, $m_1=m_2=20\\,\\text{kg}$, están situadas en los puntos $A=(-1,0)\\,\\text{m}$ y $B=(1,0)\\,\\text{m}$ respectivamente. a) [1 PUNTO] Hallar el campo gravitatorio y el potencial gravitatorio creado por ambas masas en el punto $P(0,1)\\,\\text{m}$. b) [1 PUNTO] Calcular el trabajo realizado por el campo gravitatorio creado por $m_1$ y $m_2$, para mover una tercera masa $m_3=5\\,\\text{kg}$, del punto $P$ al punto $Q(0,2)\\,\\text{m}$. c) [0,5 PUNTOS] Razonar brevemente el significado físico del signo del trabajo obtenido en el apartado b).",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Hallar el campo gravitatorio y el potencial gravitatorio creado por ambas masas en el punto $P(0,1)\\,\\text{m}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular el trabajo realizado por el campo gravitatorio creado por $m_1$ y $m_2$, para mover una tercera masa $m_3=5\\,\\text{kg}$, del punto $P$ al punto $Q(0,2)\\,\\text{m}$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Razonar brevemente el significado físico del signo del trabajo obtenido en el apartado b)."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancias y simetría",
+          "contenido": "Las distancias de cada masa al punto $P(0,1)$ son:\n\n$$r_1=r_2=\\sqrt{(-1-0)^2+(0-1)^2}=\\sqrt{2}\\,\\text{m}.$$\n\nPor simetría, las componentes horizontales del campo gravitatorio se cancelan y las componentes verticales se suman."
+        },
+        {
+          "titulo": "Campo y potencial en P",
+          "contenido": "Cada masa produce un campo de módulo:\n\n$$g_1=g_2=\\frac{G\\,m}{r^2}=\\frac{6{,}67\\cdot10^{-11}\\cdot20}{(\\sqrt{2})^2}=6{,}67\\cdot10^{-10}\\,\\text{N}\\,\\text{kg}^{-1}.$$\n\nLa componente vertical de cada contribución es $g\\cos45^{\\circ}=g\\frac{\\sqrt{2}}{2}$. Sumando las dos contribuciones:\n\n$$\\vec g_P=2g\\frac{\\sqrt{2}}{2}\\,\\hat j=\\sqrt{2}\\,g\\,\\hat j=9{,}43\\cdot10^{-10}\\,\\hat j\\ \\text{N}\\,\\text{kg}^{-1}.$$\n\nEl potencial gravitatorio es escalar y se suma algebraicamente:\n\n$$V_P=-\\frac{G\\,m_1}{r_1}-\\frac{G\\,m_2}{r_2}=-\\frac{2G\\,m}{\\sqrt{2}}=-1{,}89\\cdot10^{-9}\\,\\text{J}\\,\\text{kg}^{-1}.$$"
+        },
+        {
+          "titulo": "Potencial en Q",
+          "contenido": "En $Q(0,2)$ la distancia a cada masa es:\n\n$$r_Q=\\sqrt{1^2+2^2}=\\sqrt{5}\\,\\text{m}.$$\n\nPor tanto:\n\n$$V_Q=-\\frac{G\\,m_1}{r_Q}-\\frac{G\\,m_2}{r_Q}=-\\frac{2G\\,m}{\\sqrt{5}}=-1{,}19\\cdot10^{-9}\\,\\text{J}\\,\\text{kg}^{-1}.$$"
+        },
+        {
+          "titulo": "Trabajo del campo de P a Q",
+          "contenido": "Para un campo conservativo, el trabajo del campo es $W_{\\text{campo}}=-\\Delta U=m_3(V_P-V_Q)$:\n\n$$W_{\\text{campo}}=5\\left(-1{,}89\\cdot10^{-9}+1{,}19\\cdot10^{-9}\\right)=-3{,}47\\cdot10^{-9}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Interpretación del signo",
+          "contenido": "El trabajo del campo es negativo: el desplazamiento de $P$ a $Q$ no es espontáneo. Hay que aportar trabajo externo para alejar la masa de las dos masas fijas; la energía potencial gravitatoria del sistema aumenta y se hace menos negativa."
+        }
+      ],
+      "resultado": "$\\vec g_P=9{,}43\\cdot10^{-10}\\,\\hat j\\ \\text{N}\\,\\text{kg}^{-1}$; $V_P=-1{,}89\\cdot10^{-9}\\,\\text{J}\\,\\text{kg}^{-1}$; $W_{\\text{campo}}=-3{,}47\\cdot10^{-9}\\,\\text{J}$ (trabajo negativo: requiere aporte externo)."
+    },
+    {
+      "numero": 2,
+      "titulo": "Satélite a 2638 km: T, v, energías y g comparada",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2,5 puntos (1 + 1 + 0,5)",
+      "enunciado": "Un satélite de $1200\\,\\text{kg}$ de masa describe una órbita circular a una distancia de $2638\\,\\text{km}$ de la superficie de la Tierra. Calcular: a) [1 PUNTO] El periodo y la velocidad orbital del satélite. b) [1 PUNTO] La energía cinética, la energía potencial gravitatoria y la energía total del satélite. c) [0,5 PUNTOS] La relación de la aceleración de la gravedad a esa altura con la aceleración de la gravedad en la superficie terrestre.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular el periodo y la velocidad orbital del satélite."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular la energía cinética, la energía potencial gravitatoria y la energía total del satélite."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcular la relación de la aceleración de la gravedad a esa altura con la aceleración de la gravedad en la superficie terrestre."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Radio orbital",
+          "contenido": "La distancia a la superficie es $h=2638\\,\\text{km}=2{,}638\\cdot10^{6}\\,\\text{m}$. El radio orbital es:\n\n$$r=R_T+h=6{,}37\\cdot10^{6}+2{,}638\\cdot10^{6}=9{,}008\\cdot10^{6}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Velocidad orbital y periodo",
+          "contenido": "Para una órbita circular, la fuerza gravitatoria proporciona la fuerza centrípeta:\n\n$$\\frac{G\\,M_T\\,m}{r^2}=\\frac{m\\,v^2}{r}\\quad\\Rightarrow\\quad v=\\sqrt{\\frac{G\\,M_T}{r}}.$$\n\nCon $G\\,M_T=3{,}986\\cdot10^{14}\\,\\text{m}^{3}\\,\\text{s}^{-2}$:\n\n$$v=\\sqrt{\\frac{3{,}986\\cdot10^{14}}{9{,}008\\cdot10^{6}}}=6{,}65\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nEl periodo es:\n\n$$T=\\frac{2\\pi r}{v}=\\frac{2\\pi\\cdot9{,}008\\cdot10^{6}}{6{,}65\\cdot10^{3}}=8{,}51\\cdot10^{3}\\,\\text{s}\\approx2{,}36\\,\\text{h}.$$"
+        },
+        {
+          "titulo": "Energías",
+          "contenido": "La energía cinética es:\n\n$$E_c=\\frac{1}{2}m\\,v^2=\\frac{1}{2}\\cdot1200\\cdot(6{,}65\\cdot10^{3})^2=2{,}65\\cdot10^{10}\\,\\text{J}.$$\n\nLa energía potencial gravitatoria es:\n\n$$E_p=-\\frac{G\\,M_T\\,m}{r}=-m\\,v^2=-5{,}31\\cdot10^{10}\\,\\text{J}.$$\n\nLa energía total es:\n\n$$E_m=E_c+E_p=-\\frac{G\\,M_T\\,m}{2r}=-2{,}65\\cdot10^{10}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Relación g(h)/g0",
+          "contenido": "La aceleración de la gravedad cumple $g\\propto\\frac{1}{r^2}$:\n\n$$\\frac{g(h)}{g_0}=\\left(\\frac{R_T}{r}\\right)^2=\\left(\\frac{6{,}37\\cdot10^{6}}{9{,}008\\cdot10^{6}}\\right)^2=0{,}500.$$\n\nPor tanto, $g(h)=0{,}500\\,g_0=4{,}90\\,\\text{m}\\,\\text{s}^{-2}$."
+        }
+      ],
+      "resultado": "$v=6{,}65\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$; $T=8{,}51\\cdot10^{3}\\,\\text{s}\\approx2{,}36\\,\\text{h}$; $E_c=2{,}65\\cdot10^{10}\\,\\text{J}$; $E_p=-5{,}31\\cdot10^{10}\\,\\text{J}$; $E_m=-2{,}65\\cdot10^{10}\\,\\text{J}$; $\\frac{g(h)}{g_0}=0{,}500$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Triángulo equilátero con cargas: campo, potencial y trabajo",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2,5 puntos (1 + 0,75 + 0,75)",
+      "enunciado": "Dos cargas $q_1=-5\\,\\mu\\text{C}$ y $q_2=+5\\,\\mu\\text{C}$ están situadas en los vértices $B$ y $C$ de la base de un triángulo equilátero de $50\\,\\text{cm}$ de lado. Calcular: a) [1 PUNTO] El campo eléctrico en el vértice $A$. b) [0,75 PUNTOS] El potencial eléctrico en el punto $D$, equidistante de los puntos $A$ y $C$ del triángulo. c) [0,75 PUNTOS] El trabajo realizado por el campo eléctrico al mover una tercera carga, $q_3=+10\\,\\text{nC}$, desde el punto $D$ hasta un punto infinitamente alejado.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular el campo eléctrico en el vértice $A$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Calcular el potencial eléctrico en el punto $D$, equidistante de los puntos $A$ y $C$ del triángulo."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Calcular el trabajo realizado por el campo eléctrico al mover una tercera carga, $q_3=+10\\,\\text{nC}$, desde el punto $D$ hasta un punto infinitamente alejado."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Geometría del triángulo equilátero",
+          "contenido": "Tomamos $B=(0,0)$, $C=(0{,}5,0)$ y $A=(0{,}25,0{,}433)\\,\\text{m}$. El lado mide $L=0{,}5\\,\\text{m}$, por lo que las distancias de $A$ a $B$ y a $C$ son $r_1=r_2=L=0{,}5\\,\\text{m}$."
+        },
+        {
+          "titulo": "Módulo del campo creado por cada carga",
+          "contenido": "Cada carga produce en $A$ un campo de módulo:\n\n$$E_1=E_2=\\frac{k|q|}{L^2}=\\frac{9{,}00\\cdot10^{9}\\cdot5\\cdot10^{-6}}{0{,}5^2}=1{,}80\\cdot10^{5}\\,\\text{N}\\,\\text{C}^{-1}.$$"
+        },
+        {
+          "titulo": "Composición vectorial en A",
+          "contenido": "El campo debido a $q_1$ es atractivo y apunta de $A$ hacia $B$, con unitario $(-0{,}5,-0{,}866)$. El campo debido a $q_2$ es repulsivo y apunta de $C$ hacia $A$, con unitario $(-0{,}5,0{,}866)$. Al sumar:\n\n$$\\vec E_A=E(-0{,}5-0{,}5)\\,\\hat i+E(-0{,}866+0{,}866)\\,\\hat j=-1{,}80\\cdot10^{5}\\,\\hat i\\ \\text{N}\\,\\text{C}^{-1}.$$\n\nEl campo resultante es paralelo a la base y apunta hacia $B$."
+        },
+        {
+          "titulo": "Potencial en D",
+          "contenido": "Si $D$ es el punto medio de $AC$, sus distancias a las cargas son $r_{DB}=0{,}433\\,\\text{m}$ y $r_{DC}=0{,}25\\,\\text{m}$. El potencial en $D$ es:\n\n$$V_D=k\\left(\\frac{q_1}{r_{DB}}+\\frac{q_2}{r_{DC}}\\right)=9{,}00\\cdot10^{9}\\left(\\frac{-5\\cdot10^{-6}}{0{,}433}+\\frac{5\\cdot10^{-6}}{0{,}25}\\right)=7{,}61\\cdot10^{4}\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Trabajo de D a infinito",
+          "contenido": "El trabajo del campo al llevar $q_3$ desde $D$ hasta el infinito es:\n\n$$W_{\\text{campo}}=q_3(V_D-V_{\\infty})=10\\cdot10^{-9}\\cdot7{,}61\\cdot10^{4}=7{,}61\\cdot10^{-4}\\,\\text{J}.$$\n\nEl trabajo es positivo porque $q_3>0$ y $V_D>0$: el campo realiza el desplazamiento hacia potencial nulo."
+        }
+      ],
+      "resultado": "$\\vec E_A=-1{,}80\\cdot10^{5}\\,\\hat i\\ \\text{N}\\,\\text{C}^{-1}$; $V_D=7{,}61\\cdot10^{4}\\,\\text{V}$; $W_{\\text{campo}}=7{,}61\\cdot10^{-4}\\,\\text{J}$ (positivo)."
+    },
+    {
+      "numero": 4,
+      "titulo": "Bobina en plano YZ con campo magnético variable",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "2,5 puntos (1 + 1 + 0,5)",
+      "enunciado": "En la figura se muestra una bobina en el plano $YZ$, compuesta de $10$ espiras de radio $R=3\\,\\text{cm}$, en presencia de un campo magnético variable en el tiempo de valor $B(t)=B_0\\cos(\\omega t)$ en dirección $X$. a) [1 PUNTO] Obtener el flujo a través de cada espira de la bobina en función del tiempo. b) [1 PUNTO] Calcular la f.e.m. inducida sobre la bobina. c) [0,5 PUNTOS] Hacer un dibujo indicando razonadamente el sentido de la corriente inducida.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Obtener el flujo a través de cada espira de la bobina en función del tiempo."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular la f.e.m. inducida sobre la bobina."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Hacer un dibujo indicando razonadamente el sentido de la corriente inducida."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Flujo por espira",
+          "contenido": "El área de cada espira es:\n\n$$S=\\pi R^2=\\pi(0{,}03)^2=2{,}83\\cdot10^{-3}\\,\\text{m}^2.$$\n\nLa bobina está en el plano $YZ$, por lo que su normal es $\\hat i$ y el campo también es $\\hat i$. El flujo por espira es:\n\n$$\\Phi_1(t)=B(t)S=B_0\\pi R^2\\cos(\\omega t).$$"
+        },
+        {
+          "titulo": "F.e.m. inducida",
+          "contenido": "Aplicando la ley de Faraday-Henry a las $N=10$ espiras:\n\n$$\\varepsilon=-N\\frac{d\\Phi_1}{dt}=-N\\frac{d}{dt}\\left[B_0\\pi R^2\\cos(\\omega t)\\right]=N B_0\\pi R^2\\omega\\sin(\\omega t).$$"
+        },
+        {
+          "titulo": "Sentido de la corriente inducida",
+          "contenido": "Por la ley de Lenz, la corriente inducida se opone a la variación del flujo. Cuando $B$ disminuye, la corriente crea un campo en la misma dirección que el campo original, es decir, en $+X$. Vista desde $+X$, una corriente antihoraria produce un campo en $+X$. Cuando $B$ aumenta, la corriente invierte su sentido."
+        }
+      ],
+      "resultado": "$\\Phi_1(t)=B_0\\pi R^2\\cos(\\omega t)$; $\\varepsilon(t)=N B_0\\pi R^2\\omega\\sin(\\omega t)$; el sentido se opone a la variación de flujo según Lenz."
+    },
+    {
+      "numero": 5,
+      "titulo": "Onda transversal en cuerda en sentido -x",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2,5 puntos (1 + 0,75 + 0,75)",
+      "enunciado": "Una onda armónica transversal de frecuencia $5\\,\\text{Hz}$, de longitud de onda $40\\,\\text{cm}$ y amplitud $2\\,\\text{cm}$, se propaga por una cuerda en sentido negativo del eje $OX$. En el instante $t=0\\,\\text{s}$, la elongación del punto $x=0$ es $1\\,\\text{cm}$ y su velocidad es negativa. Hallar: a) [1 PUNTO] La expresión matemática de la onda en unidades SI. b) [0,75 PUNTOS] La velocidad de propagación de la onda. c) [0,75 PUNTOS] La velocidad transversal del punto de la onda situado en $x=5\\,\\text{cm}$ en función del tiempo.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Hallar la expresión matemática de la onda en unidades SI."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Calcular la velocidad de propagación de la onda."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Calcular la velocidad transversal del punto de la onda situado en $x=5\\,\\text{cm}$ en función del tiempo."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Parámetros de la onda",
+          "contenido": "En unidades SI: $A=0{,}02\\,\\text{m}$, $\\lambda=0{,}4\\,\\text{m}$, $f=5\\,\\text{Hz}$. Por tanto:\n\n$$\\omega=2\\pi f=10\\pi\\,\\text{rad}\\,\\text{s}^{-1},$$\n\n$$k=\\frac{2\\pi}{\\lambda}=\\frac{2\\pi}{0{,}4}=5\\pi\\,\\text{rad}\\,\\text{m}^{-1}.$$\n\nComo la onda se propaga en sentido $-x$, escribimos:\n\n$$y(x,t)=A\\sin(\\omega t+kx+\\varphi).$$"
+        },
+        {
+          "titulo": "Fase inicial",
+          "contenido": "En $t=0$ y $x=0$:\n\n$$0{,}01=0{,}02\\sin\\varphi\\quad\\Rightarrow\\quad\\sin\\varphi=0{,}5.$$\n\nLa velocidad transversal es $v_y=A\\omega\\cos(\\omega t+kx+\\varphi)$. En $t=0$, $x=0$:\n\n$$v_y(0,0)=A\\omega\\cos\\varphi<0\\quad\\Rightarrow\\quad\\cos\\varphi<0.$$\n\nPor ello, $\\varphi=\\frac{5\\pi}{6}$.\n\n$$y(x,t)=0{,}02\\sin\\left(10\\pi t+5\\pi x+\\frac{5\\pi}{6}\\right)\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Velocidad de propagación",
+          "contenido": "La velocidad de propagación es:\n\n$$v=\\lambda f=0{,}4\\cdot5=2\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nEl sentido es negativo del eje $OX$, por lo que $\\vec v=-2\\,\\hat i\\ \\text{m}\\,\\text{s}^{-1}$."
+        },
+        {
+          "titulo": "Velocidad transversal en x=5 cm",
+          "contenido": "La velocidad transversal general es:\n\n$$v_y(x,t)=\\frac{\\partial y}{\\partial t}=0{,}2\\pi\\cos\\left(10\\pi t+5\\pi x+\\frac{5\\pi}{6}\\right).$$\n\nPara $x=0{,}05\\,\\text{m}$:\n\n$$5\\pi x=5\\pi\\cdot0{,}05=\\frac{\\pi}{4}.$$\n\nAsí:\n\n$$v_y(0{,}05,t)=0{,}2\\pi\\cos\\left(10\\pi t+\\frac{\\pi}{4}+\\frac{5\\pi}{6}\\right)=0{,}2\\pi\\cos\\left(10\\pi t+\\frac{13\\pi}{12}\\right)\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$y(x,t)=0{,}02\\sin\\left(10\\pi t+5\\pi x+\\frac{5\\pi}{6}\\right)\\,\\text{m}$; $v=2\\,\\text{m}\\,\\text{s}^{-1}$ en sentido $-x$; $v_y(0{,}05,t)=0{,}2\\pi\\cos\\left(10\\pi t+\\frac{13\\pi}{12}\\right)\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Foco sonoro a 50 m de altura: potencia, distancia y dos focos",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2,5 puntos (0,75 + 0,75 + 1)",
+      "enunciado": "Un foco sonoro $F$ se encuentra a una altura de $50\\,\\text{m}$ sobre el suelo. El nivel de intensidad en el punto $A$ es $\\beta_A=90\\,\\text{dB}$, mientras que en el punto $B$ es $\\beta_B=70\\,\\text{dB}$. a) [0,75 PUNTOS] Calcular la potencia con la que emite el foco. b) [0,75 PUNTOS] Calcular la distancia $d$ entre el foco $F$ y el punto $B$. c) [1 PUNTO] ¿Cuál sería el nivel de intensidad en el punto $A$ si se agrega otro foco de igual potencia a una altura de $25\\,\\text{m}$ sobre la vertical de $A$? DATO: $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Calcular la potencia con la que emite el foco."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Calcular la distancia $d$ entre el foco $F$ y el punto $B$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "¿Cuál sería el nivel de intensidad en el punto $A$ si se agrega otro foco de igual potencia a una altura de $25\\,\\text{m}$ sobre la vertical de $A$?"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Intensidad y potencia en A",
+          "contenido": "El nivel de intensidad es:\n\n$$\\beta=10\\log_{10}\\left(\\frac{I}{I_0}\\right).$$\n\nPara $\\beta_A=90\\,\\text{dB}$:\n\n$$I_A=I_0\\cdot10^{\\frac{90}{10}}=10^{-12}\\cdot10^{9}=10^{-3}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nSi $A$ está directamente bajo $F$, la distancia es $r_A=50\\,\\text{m}$ y la potencia del foco es:\n\n$$P=4\\pi r_A^2 I_A=4\\pi(50)^2\\cdot10^{-3}=31{,}4\\,\\text{W}.$$"
+        },
+        {
+          "titulo": "Distancia al punto B",
+          "contenido": "Para $\\beta_B=70\\,\\text{dB}$:\n\n$$I_B=10^{-12}\\cdot10^{7}=10^{-5}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nLa distancia desde el foco es:\n\n$$r_B=\\sqrt{\\frac{P}{4\\pi I_B}}=\\sqrt{\\frac{31{,}4}{4\\pi\\cdot10^{-5}}}=5{,}00\\cdot10^{2}\\,\\text{m}.$$\n\nPor tanto, $d=500\\,\\text{m}$."
+        },
+        {
+          "titulo": "Nivel con dos focos",
+          "contenido": "El segundo foco está a $25\\,\\text{m}$ sobre la vertical de $A$, por lo que su distancia a $A$ es $r_2=25\\,\\text{m}$. Su intensidad en $A$ es:\n\n$$I_2=\\frac{P}{4\\pi r_2^2}=\\frac{31{,}4}{4\\pi(25)^2}=4{,}00\\cdot10^{-3}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nLa intensidad total en $A$ es:\n\n$$I_{\\text{total}}=I_A+I_2=10^{-3}+4{,}00\\cdot10^{-3}=5{,}00\\cdot10^{-3}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nEl nuevo nivel de intensidad es:\n\n$$\\beta_{\\text{total}}=10\\log_{10}\\left(\\frac{5{,}00\\cdot10^{-3}}{10^{-12}}\\right)=10\\log_{10}(5\\cdot10^{9})\\approx97\\,\\text{dB}.$$"
+        }
+      ],
+      "resultado": "$P=31{,}4\\,\\text{W}$; $d=500\\,\\text{m}$; $\\beta_{\\text{total}}\\approx97\\,\\text{dB}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Refracción y reflexión total",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
+      "puntuacion": "2,5 puntos (0,75 + 0,5 + 0,5 + 0,75)",
+      "enunciado": "Un rayo de luz de frecuencia $5\\cdot10^{14}\\,\\text{Hz}$ emerge del interior de un bloque de vidrio al aire. El ángulo de incidencia es de $23{,}7^{\\circ}$ y el ángulo de refracción es de $40^{\\circ}$. Calcular: a) [0,75 PUNTOS] El índice de refracción del vidrio. b) [0,5 PUNTOS] La velocidad de propagación de la luz en el vidrio. c) [0,5 PUNTOS] La longitud de onda del rayo de luz en el aire. d) [0,75 PUNTOS] ¿A partir de qué ángulo de incidencia se producirá la reflexión total? DATO: $n_{\\text{aire}}=1$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Calcular el índice de refracción del vidrio."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcular la velocidad de propagación de la luz en el vidrio."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcular la longitud de onda del rayo de luz en el aire."
+        },
+        {
+          "letra": "d",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "¿A partir de qué ángulo de incidencia se producirá la reflexión total?"
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Índice de refracción del vidrio",
+          "contenido": "Aplicando la ley de Snell de vidrio a aire:\n\n$$n_{\\text{vidrio}}\\text{sen}\\,i=n_{\\text{aire}}\\text{sen}\\,r.$$\n\n$$n_{\\text{vidrio}}=\\frac{\\text{sen}\\,40^{\\circ}}{\\text{sen}\\,23{,}7^{\\circ}}=\\frac{0{,}643}{0{,}402}=1{,}60.$$"
+        },
+        {
+          "titulo": "Velocidad en el vidrio",
+          "contenido": "La velocidad de la luz en el vidrio es:\n\n$$v=\\frac{c}{n}=\\frac{3{,}00\\cdot10^{8}}{1{,}60}=1{,}88\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Longitud de onda en el aire",
+          "contenido": "En el aire, $n\\approx1$, por lo que:\n\n$$\\lambda_{\\text{aire}}=\\frac{c}{f}=\\frac{3{,}00\\cdot10^{8}}{5\\cdot10^{14}}=6{,}00\\cdot10^{-7}\\,\\text{m}=600\\,\\text{nm}.$$"
+        },
+        {
+          "titulo": "Ángulo crítico de reflexión total",
+          "contenido": "La reflexión total ocurre al pasar de vidrio a aire cuando el ángulo de refracción alcanza $90^{\\circ}$:\n\n$$\\text{sen}\\,\\theta_c=\\frac{n_{\\text{aire}}}{n_{\\text{vidrio}}}=\\frac{1}{1{,}60}=0{,}625.$$\n\n$$\\theta_c=\\text{arcsen}(0{,}625)=38{,}7^{\\circ}.$$\n\nPara ángulos de incidencia mayores que $38{,}7^{\\circ}$ se produce reflexión total."
+        }
+      ],
+      "resultado": "$n_{\\text{vidrio}}=1{,}60$; $v=1{,}88\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $\\lambda_{\\text{aire}}=6{,}00\\cdot10^{-7}\\,\\text{m}=600\\,\\text{nm}$; $\\theta_c=38{,}7^{\\circ}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Lente convergente y divergente con f=6 cm",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2,5 puntos (1,25 + 1,25)",
+      "enunciado": "Un objeto se encuentra situado a $8\\,\\text{cm}$ de una lente convergente de $6\\,\\text{cm}$ de distancia focal. a) [1,25 PUNTOS] ¿Dónde se deberá colocar una pantalla para obtener una imagen del objeto? ¿Cuál será el tamaño de la imagen obtenida? Representar el trazado de rayos. b) [1,25 PUNTOS] Si se sustituye la lente por otra divergente con la misma distancia focal, ¿dónde se formará la imagen? ¿Cuál será el tamaño? Representar el trazado de rayos.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,25 puntos",
+          "enunciado": "¿Dónde se deberá colocar una pantalla para obtener una imagen del objeto? ¿Cuál será el tamaño de la imagen obtenida? Representar el trazado de rayos."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,25 puntos",
+          "enunciado": "Si se sustituye la lente por otra divergente con la misma distancia focal, ¿dónde se formará la imagen? ¿Cuál será el tamaño? Representar el trazado de rayos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Lente convergente: posición de la imagen",
+          "contenido": "Con el convenio de signos habitual, la posición del objeto es $s=-8\\,\\text{cm}$ y la focal es $f'=+6\\,\\text{cm}$. La ecuación de las lentes es:\n\n$$\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f'}.$$\n\n$$\\frac{1}{s'}-\\frac{1}{-8}=\\frac{1}{6}\\quad\\Rightarrow\\quad\\frac{1}{s'}+\\frac{1}{8}=\\frac{1}{6}\\quad\\Rightarrow\\quad\\frac{1}{s'}=\\frac{1}{24}.$$\n\n$$s'=24\\,\\text{cm}.$$\n\nLa pantalla debe colocarse $24\\,\\text{cm}$ detrás de la lente."
+        },
+        {
+          "titulo": "Lente convergente: aumento y trazado de rayos",
+          "contenido": "El aumento lateral es:\n\n$$m=\\frac{s'}{s}=\\frac{24}{-8}=-3.$$\n\nLa imagen es real, invertida y tres veces mayor que el objeto. En el trazado de rayos, un rayo paralelo al eje pasa por el foco imagen y un rayo que pasa por el centro óptico no se desvía; ambos se cortan en el lado opuesto de la lente, a $24\\,\\text{cm}$."
+        },
+        {
+          "titulo": "Lente divergente: posición de la imagen",
+          "contenido": "Ahora $f'=-6\\,\\text{cm}$ y $s=-8\\,\\text{cm}$:\n\n$$\\frac{1}{s'}-\\frac{1}{-8}=\\frac{1}{-6}\\quad\\Rightarrow\\quad\\frac{1}{s'}+\\frac{1}{8}=-\\frac{1}{6}\\quad\\Rightarrow\\quad\\frac{1}{s'}=-\\frac{7}{24}.$$\n\n$$s'=-\\frac{24}{7}\\,\\text{cm}=-3{,}43\\,\\text{cm}.$$\n\nLa imagen es virtual y se forma delante de la lente."
+        },
+        {
+          "titulo": "Lente divergente: aumento y trazado de rayos",
+          "contenido": "El aumento lateral es:\n\n$$m=\\frac{s'}{s}=\\frac{-\\frac{24}{7}}{-8}=\\frac{3}{7}=0{,}429.$$\n\nLa imagen es virtual, derecha y menor que el objeto. En el trazado de rayos, el rayo paralelo al eje se separa como si procediera del foco imagen virtual y el rayo que pasa por el centro óptico no se desvía; sus prolongaciones se cortan delante de la lente."
+        }
+      ],
+      "resultado": "Lente convergente: $s'=24\\,\\text{cm}$, imagen real e invertida con $|m|=3$. Lente divergente: $s'=-3{,}43\\,\\text{cm}$, imagen virtual, derecha y menor con $m=0{,}429$."
+    },
+    {
+      "numero": 9,
+      "titulo": "Efecto fotoeléctrico con luz de 300 nm",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica",
+      "puntuacion": "2,5 puntos (0,75 + 0,75 + 1)",
+      "enunciado": "Cuando se incide sobre un metal con luz de $300\\,\\text{nm}$ se emiten electrones con velocidad de $9\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}$. Calcular: a) [0,75 PUNTOS] La energía de los fotones incidentes. b) [0,75 PUNTOS] La frecuencia umbral del material sobre el que se incide. c) [1 PUNTO] La diferencia de potencial necesaria para frenar completamente los electrones emitidos.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Calcular la energía de los fotones incidentes."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Calcular la frecuencia umbral del material sobre el que se incide."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcular la diferencia de potencial necesaria para frenar completamente los electrones emitidos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Energía de los fotones",
+          "contenido": "La energía de cada fotón es:\n\n$$E_{\\text{fotón}}=\\frac{hc}{\\lambda}=\\frac{6{,}63\\cdot10^{-34}\\cdot3{,}00\\cdot10^{8}}{300\\cdot10^{-9}}=6{,}63\\cdot10^{-19}\\,\\text{J}.$$\n\nEn electronvoltios:\n\n$$E_{\\text{fotón}}=\\frac{6{,}63\\cdot10^{-19}}{1{,}60\\cdot10^{-19}}=4{,}14\\,\\text{eV}.$$"
+        },
+        {
+          "titulo": "Frecuencia umbral",
+          "contenido": "La energía cinética máxima de los electrones es:\n\n$$E_c=\\frac{1}{2}m_e v^2=\\frac{1}{2}\\cdot9{,}11\\cdot10^{-31}\\cdot(9\\cdot10^{5})^2=3{,}69\\cdot10^{-19}\\,\\text{J}.$$\n\nEl trabajo de extracción es:\n\n$$W_0=E_{\\text{fotón}}-E_c=6{,}63\\cdot10^{-19}-3{,}69\\cdot10^{-19}=2{,}94\\cdot10^{-19}\\,\\text{J}.$$\n\nLa frecuencia umbral es:\n\n$$f_0=\\frac{W_0}{h}=\\frac{2{,}94\\cdot10^{-19}}{6{,}63\\cdot10^{-34}}=4{,}43\\cdot10^{14}\\,\\text{Hz}.$$"
+        },
+        {
+          "titulo": "Potencial de frenado",
+          "contenido": "El potencial de frenado cumple $e V_0=E_c$:\n\n$$V_0=\\frac{E_c}{e}=\\frac{3{,}69\\cdot10^{-19}}{1{,}60\\cdot10^{-19}}=2{,}31\\,\\text{V}.$$"
+        }
+      ],
+      "resultado": "$E_{\\text{fotón}}=6{,}63\\cdot10^{-19}\\,\\text{J}=4{,}14\\,\\text{eV}$; $f_0=4{,}43\\cdot10^{14}\\,\\text{Hz}$; $V_0=2{,}31\\,\\text{V}$."
+    },
+    {
+      "numero": 10,
+      "titulo": "Isótopo con T=600 años, 10²⁰ átomos",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2,5 puntos (0,75 + 1 + 0,75)",
+      "enunciado": "Se dispone de una muestra de $10^{20}$ átomos de un isótopo radiactivo, cuyo periodo de semidesintegración es de $600\\,\\text{años}$. a) [0,75 PUNTOS] Hallar la constante de desintegración y la vida media del isótopo. b) [1 PUNTO] ¿Cuánto tiempo tiene que transcurrir para que la muestra vea reducido su contenido en radioisótopos al $20\\%$ de su número inicial? c) [0,75 PUNTOS] Calcular las actividades inicial y final de la muestra.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Hallar la constante de desintegración y la vida media del isótopo."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "¿Cuánto tiempo tiene que transcurrir para que la muestra vea reducido su contenido en radioisótopos al $20\\%$ de su número inicial?"
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Calcular las actividades inicial y final de la muestra."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Constante de desintegración y vida media",
+          "contenido": "La constante de desintegración es:\n\n$$\\lambda=\\frac{\\ln 2}{T}=\\frac{0{,}693}{600}=1{,}155\\cdot10^{-3}\\,\\text{año}^{-1}.$$\n\nEn unidades SI, con $600\\,\\text{años}=1{,}892\\cdot10^{10}\\,\\text{s}$:\n\n$$\\lambda=3{,}66\\cdot10^{-11}\\,\\text{s}^{-1}.$$\n\nLa vida media es:\n\n$$\\tau=\\frac{1}{\\lambda}=\\frac{T}{\\ln 2}=865{,}6\\,\\text{años}.$$"
+        },
+        {
+          "titulo": "Tiempo para reducirse al 20 %",
+          "contenido": "La ley de desintegración es $N=N_0 e^{-\\lambda t}$. Para $N=0{,}20N_0$:\n\n$$0{,}20=e^{-\\lambda t}\\quad\\Rightarrow\\quad t=\\frac{\\ln 5}{\\lambda}.$$\n\n$$t=\\frac{1{,}609}{1{,}155\\cdot10^{-3}}=1{,}393\\,\\text{años}.$$"
+        },
+        {
+          "titulo": "Actividades inicial y final",
+          "contenido": "La actividad es $A=\\lambda N$. Inicialmente:\n\n$$A_0=\\lambda N_0=3{,}66\\cdot10^{-11}\\cdot10^{20}=3{,}66\\cdot10^{9}\\,\\text{Bq}.$$\n\nAl quedar el $20\\%$ de los núcleos, la actividad final es:\n\n$$A_f=0{,}20A_0=7{,}32\\cdot10^{8}\\,\\text{Bq}.$$"
+        }
+      ],
+      "resultado": "$\\lambda=1{,}155\\cdot10^{-3}\\,\\text{año}^{-1}=3{,}66\\cdot10^{-11}\\,\\text{s}^{-1}$; $\\tau=865{,}6\\,\\text{años}$; $t=1{,}393\\,\\text{años}$; $A_0=3{,}66\\cdot10^{9}\\,\\text{Bq}$; $A_f=7{,}32\\cdot10^{8}\\,\\text{Bq}$."
+    }
+  ]
+}

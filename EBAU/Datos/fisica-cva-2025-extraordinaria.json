@@ -1,0 +1,380 @@
+{
+  "id": "fisica-c-valenciana-2025-extraordinaria",
+  "codigo": "EXA.FIS.VAL.2025.EXT.SOL",
+  "comunidad": "Comunidad Valenciana",
+  "asignatura": "Física",
+  "convocatoria": "Extraordinaria",
+  "anio": 2025,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la PAU de la Comunidad Valenciana, convocatoria extraordinaria de 2025. Consta de seis preguntas con opciones A/B y un ejercicio obligatorio; se resuelven once problemas de gravitación, electromagnetismo, ondas, física moderna y relatividad.",
+  "objetivo": "Evaluar la aplicación de leyes y modelos físicos a situaciones reales y la capacidad de resolver problemas con cálculo vectorial, energías, ondas y física relativista.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "El alumnado realizará 6 preguntas: el ejercicio etiquetado como obligatorio más una de las opciones de cada una de las otras cinco preguntas propuestas. La puntuación máxima de cada problema es de 2 puntos y la de cada cuestión de 1,5 puntos."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $R_L=1{,}74\\cdot10^{3}\\,\\text{km}$; $k=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$; $q_p=1{,}6\\cdot10^{-19}\\,\\text{C}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$; $M_T=6\\cdot10^{24}\\,\\text{kg}$."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "Apolo 11 - Masa de la Luna y velocidad de escape",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A7. Movimiento planetario, satélites y velocidades características; A2. Leyes de Kepler y relación con la gravitación; A6. Trabajo, energía potencial y energía mecánica gravitatoria",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "En el año 1969 el módulo de mando Columbia de la misión Apolo 11 orbitaba con trayectoria circular, a 100 km de altura sobre la superficie de la Luna y con un periodo de 118 minutos.\na) La expresión para calcular la masa de la Luna y obtén su valor. Determina la velocidad de escape desde la superficie lunar. (1 punto)\nb) La velocidad con la que el módulo de aterrizaje Eagle debe despegar de la superficie lunar para llegar a la órbita del módulo Columbia y con la misma velocidad a la que orbita el Columbia. (1 punto)\nDatos: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $R_L=1{,}74\\cdot10^{3}\\,\\text{km}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "La expresión para calcular la masa de la Luna y obtén su valor. Determina la velocidad de escape desde la superficie lunar."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "La velocidad con la que el módulo de aterrizaje Eagle debe despegar de la superficie lunar para llegar a la órbita del módulo Columbia y con la misma velocidad a la que orbita el Columbia."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Datos y planteamiento",
+          "contenido": "El módulo Columbia orbita a una altura $h=100\\,\\text{km}=1{,}00\\cdot10^{5}\\,\\text{m}$ sobre la Luna. El radio orbital es:\n\n$$r=R_L+h=1{,}74\\cdot10^{6}+1{,}00\\cdot10^{5}=1{,}84\\cdot10^{6}\\,\\text{m}.$$\n\nEl periodo es $T=118\\,\\text{min}=7080\\,\\text{s}$. Para una órbita circular, la fuerza gravitatoria proporciona la fuerza centrípeta."
+        },
+        {
+          "titulo": "Deducción de la expresión de la masa de la Luna",
+          "contenido": "Igualando fuerza gravitatoria y centrípeta:\n\n$$\\frac{G\\,M_L\\,m}{r^{2}}=\\frac{m\\,v^{2}}{r}.$$\n\nComo $v=\\frac{2\\pi r}{T}$, se obtiene:\n\n$$\\frac{G\\,M_L}{r}=\\frac{4\\pi^{2}r^{2}}{T^{2}}\\quad\\Rightarrow\\quad M_L=\\frac{4\\pi^{2}r^{3}}{G\\,T^{2}}.$$"
+        },
+        {
+          "titulo": "Cálculo numérico de la masa de la Luna",
+          "contenido": "Sustituyendo:\n\n$$M_L=\\frac{4\\pi^{2}(1{,}84\\cdot10^{6})^{3}}{6{,}67\\cdot10^{-11}(7080)^{2}}\\approx7{,}36\\cdot10^{22}\\,\\text{kg}.$$"
+        },
+        {
+          "titulo": "Velocidad de escape desde la superficie lunar",
+          "contenido": "La velocidad de escape se obtiene igualando la energía cinética a la energía potencial gravitatoria en la superficie:\n\n$$\\frac{1}{2}m\\,v_e^{2}=\\frac{G\\,M_L\\,m}{R_L}\\quad\\Rightarrow\\quad v_e=\\sqrt{\\frac{2G\\,M_L}{R_L}}.$$\n\n$$v_e=\\sqrt{\\frac{2(6{,}67\\cdot10^{-11})(7{,}36\\cdot10^{22})}{1{,}74\\cdot10^{6}}}\\approx2{,}38\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Velocidad orbital del Columbia",
+          "contenido": "La velocidad orbital del Columbia a la altura $h$ es:\n\n$$v_o=\\sqrt{\\frac{G\\,M_L}{r}}=\\sqrt{\\frac{(6{,}67\\cdot10^{-11})(7{,}36\\cdot10^{22})}{1{,}84\\cdot10^{6}}}\\approx1{,}63\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Conservación de la energía para el despegue",
+          "contenido": "El Eagle despega desde la superficie lunar con velocidad $v$ y llega a la órbita con velocidad $v_o$. Aplicando conservación de la energía mecánica:\n\n$$\\frac{1}{2}m\\,v^{2}-\\frac{G\\,M_L\\,m}{R_L}=\\frac{1}{2}m\\,v_o^{2}-\\frac{G\\,M_L\\,m}{r}.$$\n\nDespejando:\n\n$$v=\\sqrt{v_o^{2}+2G\\,M_L\\left(\\frac{1}{R_L}-\\frac{1}{r}\\right)}\\approx1{,}72\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$M_L\\approx7{,}36\\cdot10^{22}\\,\\text{kg}$; $v_e\\approx2{,}38\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$; $v_{\\text{despegue}}\\approx1{,}72\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Nanosatélite en órbita elíptica - Velocidad y energías en el apogeo",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A3. Momento angular en campo gravitatorio y fuerzas centrales; A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Un nanosatélite artificial, de masa 1 kg, gira alrededor de la Tierra describiendo una órbita elíptica. En el apogeo el módulo del momento angular vale $5{,}6\\cdot10^{10}\\,\\text{kg}\\,\\text{m}^{2}\\,\\text{s}^{-1}$.\na) Calcula el módulo de su velocidad en el apogeo. En el perigeo, ¿es la velocidad mayor o menor que en el apogeo? (1 punto)\nb) Determina las energías cinética y potencial gravitatoria en el apogeo, así como la energía mecánica del satélite. (1 punto)\nDatos: $r_a=7000\\,\\text{km}$; $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $M_T=6\\cdot10^{24}\\,\\text{kg}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcula el módulo de su velocidad en el apogeo. En el perigeo, ¿es la velocidad mayor o menor que en el apogeo?"
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Determina las energías cinética y potencial gravitatoria en el apogeo, así como la energía mecánica del satélite."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Velocidad en el apogeo a partir del momento angular",
+          "contenido": "El momento angular del satélite en el apogeo es $L=m\\,r_a\\,v_a$ (ya que en el apogeo la velocidad es perpendicular al radio vector). Despejando:\n\n$$v_a=\\frac{L}{m\\,r_a}=\\frac{5{,}6\\cdot10^{10}}{(1)(7{,}0\\cdot10^{6})}=8{,}0\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Comparación apogeo-perigeo",
+          "contenido": "En una órbita elíptica, el momento angular se conserva: $L=m\\,r\\,v\\,\\text{sen}\\,\\alpha$. En el perigeo, como en el apogeo, la velocidad es perpendicular al radio, por lo que $L=m\\,r_p\\,v_p$. Como $r_p<r_a$, se cumple $v_p>v_a$. Por tanto, la velocidad en el perigeo es mayor que en el apogeo. Esto es consistente con la segunda ley de Kepler: el satélite barre áreas iguales en tiempos iguales y se mueve más rápido cuando está más cerca del cuerpo central."
+        },
+        {
+          "titulo": "Energía cinética en el apogeo",
+          "contenido": "$$E_c=\\frac{1}{2}m\\,v_a^{2}=\\frac{1}{2}(1)(8{,}0\\cdot10^{3})^{2}=3{,}2\\cdot10^{7}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Energía potencial gravitatoria en el apogeo",
+          "contenido": "$$E_p=-\\frac{G\\,M_T\\,m}{r_a}=-\\frac{(6{,}67\\cdot10^{-11})(6\\cdot10^{24})(1)}{7{,}0\\cdot10^{6}}\\approx-5{,}72\\cdot10^{7}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Energía mecánica",
+          "contenido": "$$E_m=E_c+E_p=3{,}2\\cdot10^{7}-5{,}72\\cdot10^{7}=-2{,}52\\cdot10^{7}\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$v_a=8{,}0\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$; $v_p>v_a$; $E_c=3{,}2\\cdot10^{7}\\,\\text{J}$; $E_p\\approx-5{,}72\\cdot10^{7}\\,\\text{J}$; $E_m\\approx-2{,}52\\cdot10^{7}\\,\\text{J}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Campo eléctrico y potencial de tres cargas",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B4. Potencial eléctrico, equipotenciales y campo uniforme; B8. Líneas de campo eléctrico y magnético en distribuciones sencillas",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Tres cargas ($+Q$, $-2Q$, $-Q$) se sitúan en los vértices de un cuadrado de lado $d$, con el punto $P$ en el cuarto vértice. Representa los vectores campo eléctrico en $P$. Si el potencial de $+Q$ en $P$ es 100 V, calcula el potencial total en $P$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Análisis de la geometría",
+          "contenido": "De la figura del examen, las tres cargas y el punto $P$ se sitúan en los vértices de un cuadrado de lado $d$. Las cargas son $+Q$ (a distancia $d$ de $P$), $-2Q$ (a distancia $d$ de $P$) y $-Q$ (a distancia $\\sqrt{2}d$ de $P$, en la diagonal opuesta)."
+        },
+        {
+          "titulo": "Vectores campo eléctrico individuales",
+          "contenido": "El campo de $+Q$ en $P$ apunta desde $+Q$ hacia $P$ (alejándose de la carga positiva), con módulo $E_1=kQ/d^{2}$. El campo de $-2Q$ en $P$ apunta desde $P$ hacia $-2Q$ (atraído hacia la carga negativa), con módulo $E_2=2kQ/d^{2}$. El campo de $-Q$ en $P$ apunta desde $P$ hacia $-Q$ (atraído hacia la carga negativa), con módulo $E_3=kQ/(2d^{2})$. Los tres campos se combinan vectorialmente; según la figura, la suma total corresponde al vector III."
+        },
+        {
+          "titulo": "Cálculo del potencial eléctrico total en P",
+          "contenido": "El potencial es escalar y se suma algebraicamente:\n\n$$V_P=\\frac{k(+Q)}{d}+\\frac{k(-2Q)}{d}+\\frac{k(-Q)}{\\sqrt{2}d}.$$\n\nComo el potencial de $+Q$ en $P$ es $100\\,\\text{V}$, se tiene $kQ/d=100\\,\\text{V}$. Por tanto:\n\n$$V_P=100\\left(1-2-\\frac{1}{\\sqrt{2}}\\right)=-170{,}7\\,\\text{V}.$$"
+        }
+      ],
+      "resultado": "$V_P\\approx-170{,}7\\,\\text{V}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Selector de velocidades - Equilibrio entre fuerza eléctrica y magnética",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Una partícula con carga $q=-10^{-6}\\,\\text{C}$ tiene MRU en sentido positivo del eje $x$, con $v=15\\,\\text{km}\\,\\text{s}^{-1}$ y $\\vec{B}=-0{,}8\\,\\hat{k}\\,\\text{T}$. Calcula la fuerza eléctrica y el campo eléctrico. Representa fuerzas y campos.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Datos y condición de equilibrio",
+          "contenido": "La partícula tiene MRU, lo que implica que la fuerza neta es nula: $\\vec{F}_e+\\vec{F}_m=0$. Datos: $q=-10^{-6}\\,\\text{C}$, $\\vec{v}=1{,}5\\cdot10^{4}\\,\\hat{i}\\,\\text{m}\\,\\text{s}^{-1}$, $\\vec{B}=-0{,}8\\,\\hat{k}\\,\\text{T}$."
+        },
+        {
+          "titulo": "Cálculo de la fuerza magnética",
+          "contenido": "$$\\vec{F}_m=q\\,\\vec{v}\\times\\vec{B}=(-10^{-6})(1{,}5\\cdot10^{4}\\,\\hat{i}\\times(-0{,}8\\,\\hat{k})).$$\n\nComo $\\hat{i}\\times\\hat{k}=-\\hat{j}$, resulta:\n\n$$\\vec{F}_m=(-10^{-6})(1{,}5\\cdot10^{4})(-0{,}8)(-\\hat{j})=-1{,}2\\cdot10^{-2}\\,\\hat{j}\\,\\text{N}.$$"
+        },
+        {
+          "titulo": "Fuerza eléctrica",
+          "contenido": "Para que la fuerza neta sea nula:\n\n$$\\vec{F}_e=-\\vec{F}_m=+1{,}2\\cdot10^{-2}\\,\\hat{j}\\,\\text{N}.$$"
+        },
+        {
+          "titulo": "Campo eléctrico",
+          "contenido": "$$\\vec{E}=\\frac{\\vec{F}_e}{q}=\\frac{1{,}2\\cdot10^{-2}\\,\\hat{j}}{-10^{-6}}=-1{,}2\\cdot10^{4}\\,\\hat{j}\\,\\text{N}\\,\\text{C}^{-1}.$$"
+        }
+      ],
+      "resultado": "$\\vec{F}_m=-1{,}2\\cdot10^{-2}\\,\\hat{j}\\,\\text{N}$; $\\vec{F}_e=+1{,}2\\cdot10^{-2}\\,\\hat{j}\\,\\text{N}$; $\\vec{E}=-1{,}2\\cdot10^{4}\\,\\hat{j}\\,\\text{N}\\,\\text{C}^{-1}$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Dos cargas puntuales - Campo eléctrico, energía potencial y trabajo",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Dos cargas $q_A$ y $q_B$ en $A(-1,0)\\,\\text{m}$ y $B(1,0)\\,\\text{m}$. El campo en $C(0,1)\\,\\text{m}$ es $\\vec{E}=1{,}1\\,\\hat{j}\\,\\text{kN}\\,\\text{C}^{-1}$.\na) El valor de ambas cargas. (1 punto)\nb) La energía potencial de $q'=5{,}0\\cdot10^{-6}\\,\\text{C}$ en $C$ y el trabajo al desplazarla a $D(0,-1)\\,\\text{m}$. (1 punto)\nDato: $k=9\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "El valor de ambas cargas."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "La energía potencial de $q'=5{,}0\\cdot10^{-6}\\,\\text{C}$ en $C$ y el trabajo al desplazarla a $D(0,-1)\\,\\text{m}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Geometría del problema",
+          "contenido": "Las cargas están en $A(-1,0)$ y $B(1,0)$. El punto $C$ está en $(0,1)$. Distancia de $A$ a $C$: $\\sqrt{2}\\,\\text{m}$. Distancia de $B$ a $C$: $\\sqrt{2}\\,\\text{m}$. Ambas cargas están a la misma distancia de $C$."
+        },
+        {
+          "titulo": "Vectores unitarios desde A y B hacia C",
+          "contenido": "$$\\hat{u}_A=\\frac{(1,1)}{\\sqrt{2}},\\qquad \\hat{u}_B=\\frac{(-1,1)}{\\sqrt{2}}.$$"
+        },
+        {
+          "titulo": "Campo eléctrico total en C",
+          "contenido": "La componente $x$ del campo total es nula:\n\n$$E_x=\\frac{k}{2\\sqrt{2}}(q_A-q_B)=0\\quad\\Rightarrow\\quad q_A=q_B.$$\n\nLa componente $y$ vale $1{,}1\\cdot10^{3}\\,\\text{N}\\,\\text{C}^{-1}$:\n\n$$E_y=\\frac{k}{2\\sqrt{2}}(q_A+q_B)=\\frac{k\\,q}{\\sqrt{2}}=1{,}1\\cdot10^{3}.$$\n\nDespejando $q$:\n\n$$q=\\frac{1{,}1\\cdot10^{3}\\sqrt{2}}{9\\cdot10^{9}}\\approx1{,}73\\cdot10^{-7}\\,\\text{C}.$$"
+        },
+        {
+          "titulo": "Potencial eléctrico en C",
+          "contenido": "$$V_C=\\frac{k\\,q_A}{\\sqrt{2}}+\\frac{k\\,q_B}{\\sqrt{2}}=\\frac{2k\\,q}{\\sqrt{2}}=\\sqrt{2}\\,k\\,q\\approx2{,}20\\cdot10^{3}\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Energía potencial de q' en C",
+          "contenido": "$$U_C=q'\\,V_C=(5{,}0\\cdot10^{-6})(2{,}20\\cdot10^{3})\\approx1{,}1\\cdot10^{-2}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Potencial en D y trabajo",
+          "contenido": "El punto $D(0,-1)$ tiene las mismas distancias a $A$ y $B$ que el punto $C$, por simetría respecto del eje $x$. Por tanto $V_D=V_C$. El trabajo realizado por el campo al desplazar $q'$ de $C$ a $D$ es:\n\n$$W_{C\\to D}=q'(V_C-V_D)=0.$$"
+        }
+      ],
+      "resultado": "$q_A=q_B\\approx1{,}73\\cdot10^{-7}\\,\\text{C}$; $U_C\\approx1{,}1\\cdot10^{-2}\\,\\text{J}$; $W_{C\\to D}=0$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Campo magnético de dos conductores y fuerza sobre un protón",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Dos conductores largos y rectilíneos en los ejes $x$ e $y$ transportan $I_1=15\\,\\text{A}$ e $I_2=10\\,\\text{A}$. Calcula:\na) El campo magnético en $P(2,2,0)\\,\\text{cm}$.\nb) La fuerza magnética sobre un protón en $P$ con $v=5{,}0\\cdot10^{6}\\,\\text{m}\\,\\text{s}^{-1}$ paralela a $I_2$.\nDatos: $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$; $q=1{,}6\\cdot10^{-19}\\,\\text{C}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "El campo magnético en $P(2,2,0)\\,\\text{cm}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "La fuerza magnética sobre un protón en $P$ con $v=5{,}0\\cdot10^{6}\\,\\text{m}\\,\\text{s}^{-1}$ paralela a $I_2$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancias desde los conductores al punto P",
+          "contenido": "El punto está en $P(0{,}02,0{,}02,0)\\,\\text{m}$. El conductor 1 está sobre el eje $x$ y transporta $15\\,\\text{A}$ en sentido positivo de $x$; su distancia a $P$ es $0{,}02\\,\\text{m}$. El conductor 2 está sobre el eje $y$ y transporta $10\\,\\text{A}$ en sentido positivo de $y$; su distancia a $P$ es $0{,}02\\,\\text{m}$."
+        },
+        {
+          "titulo": "Campo del conductor 1 (eje x) en P",
+          "contenido": "Usando la regla de la mano derecha, para un conductor en el eje $x$ con corriente en $+x$, en un punto situado en $+y$ el campo apunta en $+\\hat{k}$:\n\n$$\\vec{B}_1=\\frac{\\mu_0 I_1}{2\\pi d_1}\\,\\hat{k}=\\frac{4\\pi\\cdot10^{-7}(15)}{2\\pi(0{,}02)}\\,\\hat{k}=1{,}5\\cdot10^{-4}\\,\\hat{k}\\,\\text{T}.$$"
+        },
+        {
+          "titulo": "Campo del conductor 2 (eje y) en P",
+          "contenido": "Para un conductor en el eje $y$ con corriente en $+y$, en un punto situado en $+x$ el campo apunta en $-\\hat{k}$:\n\n$$\\vec{B}_2=\\frac{\\mu_0 I_2}{2\\pi d_2}(-\\hat{k})=\\frac{4\\pi\\cdot10^{-7}(10)}{2\\pi(0{,}02)}(-\\hat{k})=-1{,}0\\cdot10^{-4}\\,\\hat{k}\\,\\text{T}.$$"
+        },
+        {
+          "titulo": "Campo total",
+          "contenido": "$$\\vec{B}=\\vec{B}_1+\\vec{B}_2=(1{,}5-1{,}0)\\cdot10^{-4}\\,\\hat{k}=5{,}0\\cdot10^{-5}\\,\\hat{k}\\,\\text{T}.$$"
+        },
+        {
+          "titulo": "Fuerza sobre el protón",
+          "contenido": "El protón se mueve paralelo a $I_2$: $\\vec{v}=5{,}0\\cdot10^{6}\\,\\hat{j}\\,\\text{m}\\,\\text{s}^{-1}$. Entonces:\n\n$$\\vec{F}=q\\,\\vec{v}\\times\\vec{B}=(1{,}6\\cdot10^{-19})(5{,}0\\cdot10^{6}\\,\\hat{j}\\times5{,}0\\cdot10^{-5}\\,\\hat{k}).$$\n\nComo $\\hat{j}\\times\\hat{k}=\\hat{i}$:\n\n$$\\vec{F}=4{,}0\\cdot10^{-17}\\,\\hat{i}\\,\\text{N}.$$"
+        }
+      ],
+      "resultado": "$\\vec{B}=5{,}0\\cdot10^{-5}\\,\\hat{k}\\,\\text{T}$; $\\vec{F}=4{,}0\\cdot10^{-17}\\,\\hat{i}\\,\\text{N}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Intensidad sonora, potencia y nivel de decibelios de un petardo (OBLIGATORIA)",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Al explotar un petardo de una mascletà en Alicante, se midió un nivel sonoro de 90 dB a 75 m. Suponiendo ondas esféricas, calcula la intensidad a 75 m, la potencia sonora y la intensidad a 125 m.\nDato: $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Intensidad a 75 m a partir del nivel sonoro",
+          "contenido": "El nivel de intensidad sonora se define como:\n\n$$L=10\\log\\frac{I}{I_0}.$$\n\nDespejando $I$:\n\n$$I=I_0\\,10^{L/10}=10^{-12}\\,10^{90/10}=10^{-3}\\,\\text{W}\\,\\text{m}^{-2}.$$"
+        },
+        {
+          "titulo": "Potencia sonora del petardo",
+          "contenido": "Para ondas esféricas:\n\n$$I=\\frac{P}{4\\pi r^{2}}\\quad\\Rightarrow\\quad P=4\\pi r^{2}I.$$\n\n$$P=4\\pi(75)^{2}(10^{-3})\\approx70{,}7\\,\\text{W}.$$"
+        },
+        {
+          "titulo": "Intensidad a 125 m",
+          "contenido": "Usando la relación inversa al cuadrado de la distancia:\n\n$$I_2=I_1\\left(\\frac{r_1}{r_2}\\right)^{2}=10^{-3}\\left(\\frac{75}{125}\\right)^{2}=3{,}6\\cdot10^{-4}\\,\\text{W}\\,\\text{m}^{-2}.$$"
+        }
+      ],
+      "resultado": "$I_{75}=10^{-3}\\,\\text{W}\\,\\text{m}^{-2}$; $P\\approx70{,}7\\,\\text{W}$; $I_{125}=3{,}6\\cdot10^{-4}\\,\\text{W}\\,\\text{m}^{-2}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "MAS - Frecuencia angular, energía y velocidad desde gráfica",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "En la figura se representa la posición de una partícula de masa 1 kg que describe un MAS sobre el eje $x$. De la gráfica: amplitud $A=10\\,\\text{cm}$, periodo $T=1\\,\\text{s}$. Obtén la frecuencia angular, la energía mecánica y la velocidad en $t=2\\,\\text{s}$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Lectura de la gráfica",
+          "contenido": "De la gráfica se observa: amplitud $A=10\\,\\text{cm}=0{,}10\\,\\text{m}$; periodo $T=1\\,\\text{s}$; en $t=0$ la partícula está en $x=0$ y se mueve hacia posiciones positivas; masa $m=1\\,\\text{kg}$."
+        },
+        {
+          "titulo": "Frecuencia angular",
+          "contenido": "$$\\omega=\\frac{2\\pi}{T}=2\\pi\\,\\text{rad}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Energía mecánica",
+          "contenido": "La energía mecánica total de un MAS es:\n\n$$E=\\frac{1}{2}m\\,\\omega^{2}A^{2}=\\frac{1}{2}(1)(2\\pi)^{2}(0{,}10)^{2}\\approx0{,}197\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Velocidad en t = 2 s",
+          "contenido": "La ecuación del movimiento, ajustada a la gráfica, es $x=A\\,\\text{sen}(\\omega t)$. La velocidad es $v=A\\,\\omega\\cos(\\omega t)$. En $t=2\\,\\text{s}=2T$:\n\n$$v=A\\,\\omega\\cos(4\\pi)=A\\,\\omega=0{,}10(2\\pi)\\approx0{,}628\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$\\omega=2\\pi\\,\\text{rad}\\,\\text{s}^{-1}$; $E\\approx0{,}197\\,\\text{J}$; $v(2\\,\\text{s})\\approx0{,}628\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 9,
+      "titulo": "Refracción láser aire-vidrio: índice de refracción y velocidad",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias; C5. Naturaleza de la luz y óptica física básica",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Un haz láser incide desde el aire sobre un vidrio. De la imagen: ángulo de incidencia $\\theta_1=40^{\\circ}$, ángulo de refracción $\\theta_2=64{,}63^{\\circ}$ (medido desde la superficie, es decir, complementario). Determina $n$ y la velocidad de la luz en el vidrio.\nDatos: $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$, $n_a=1{,}00$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Interpretación de los ángulos de la figura",
+          "contenido": "De la geometría de la figura, el ángulo marcado está entre el rayo y la superficie, no respecto a la normal. Por ello, el ángulo de incidencia respecto a la normal es $90^{\\circ}-40^{\\circ}=50^{\\circ}$. Análogamente, el ángulo de refracción medido desde la superficie es $64{,}63^{\\circ}$, por lo que respecto a la normal vale $90^{\\circ}-64{,}63^{\\circ}=25{,}37^{\\circ}$."
+        },
+        {
+          "titulo": "Ley de Snell",
+          "contenido": "$$n_a\\,\\text{sen}\\,\\theta_1=n\\,\\text{sen}\\,\\theta_2.$$\n\n$$n=\\frac{n_a\\,\\text{sen}\\,50^{\\circ}}{\\text{sen}\\,25{,}37^{\\circ}}\\approx1{,}79.$$"
+        },
+        {
+          "titulo": "Velocidad de la luz en el vidrio",
+          "contenido": "$$v=\\frac{c}{n}=\\frac{3\\cdot10^{8}}{1{,}79}\\approx1{,}68\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$n\\approx1{,}79$; $v\\approx1{,}68\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 10,
+      "titulo": "Efecto fotoeléctrico: explicación y dependencia con frecuencia e intensidad",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Se ilumina un metal con luz monocromática y emite electrones. Nombra y explica el fenómeno. ¿Cómo varía la $E_c$ de los electrones si se aumenta la frecuencia? ¿Qué cambia si se aumenta la intensidad sin modificar la frecuencia?",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Nombre y explicación del fenómeno",
+          "contenido": "El fenómeno descrito es el efecto fotoeléctrico. Consiste en la emisión de electrones por parte de un material metálico cuando sobre él incide radiación electromagnética de frecuencia suficientemente alta. La explicación fue propuesta por Einstein en 1905: la luz está compuesta por fotones, cada uno con energía $E=h\\nu$. Cuando un fotón incide sobre el metal, transfiere toda su energía a un electrón. Si la energía del fotón supera el trabajo de extracción (función de trabajo $W_0$), el electrón es emitido con una energía cinética máxima:\n\n$$K_{\\text{max}}=h\\nu-W_0.$$"
+        },
+        {
+          "titulo": "Efecto de aumentar la frecuencia",
+          "contenido": "Si se aumenta la frecuencia de la luz incidente manteniendo la misma intensidad, la energía de cada fotón individual aumenta ($E=h\\nu$). La energía cinética máxima de los electrones emitidos aumenta linealmente: $K_{\\text{max}}=h\\nu-W_0$. El número de fotones por segundo disminuye a intensidad constante, por lo que el número de electrones emitidos disminuye, pero cada uno sale con mayor energía cinética."
+        },
+        {
+          "titulo": "Efecto de aumentar la intensidad sin cambiar la frecuencia",
+          "contenido": "Si se aumenta la intensidad de la luz sin modificar la frecuencia, la energía de cada fotón individual no cambia. La energía cinética máxima de cada electrón emitido no cambia. Lo que aumenta es el número de fotones que inciden por unidad de tiempo y, por tanto, el número de electrones emitidos por segundo: la corriente fotoeléctrica aumenta. La intensidad afecta a la cantidad de fotoelectrones, no a su energía individual."
+        }
+      ],
+      "resultado": "Efecto fotoeléctrico; al aumentar la frecuencia aumenta $K_{\\text{max}}=h\\nu-W_0$; al aumentar la intensidad sin cambiar la frecuencia no cambia $K_{\\text{max}}$ y aumenta el número de electrones emitidos."
+    },
+    {
+      "numero": 11,
+      "titulo": "Contracción de longitudes y energía relativista de un módulo espacial",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D1. Relatividad especial y consecuencias",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Un módulo espacial tiene $M_0=10^{4}\\,\\text{kg}$ y longitud propia $L_0=11{,}0\\,\\text{m}$. Desde la Tierra se mide $L=10{,}0\\,\\text{m}$. Calcula la velocidad $v$ y la energía total relativista.\nDato: $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Contracción de longitudes",
+          "contenido": "La contracción de Lorentz relaciona la longitud propia con la longitud medida:\n\n$$L=L_0\\sqrt{1-\\frac{v^{2}}{c^{2}}}.$$\n\nDespejando:\n\n$$\\frac{L}{L_0}=\\sqrt{1-\\frac{v^{2}}{c^{2}}}\\quad\\Rightarrow\\quad v=c\\sqrt{1-\\left(\\frac{L}{L_0}\\right)^{2}}.$$\n\n$$v=3\\cdot10^{8}\\sqrt{1-\\left(\\frac{10}{11}\\right)^{2}}\\approx1{,}25\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Factor de Lorentz",
+          "contenido": "$$\\gamma=\\frac{1}{\\sqrt{1-\\frac{v^{2}}{c^{2}}}}=\\frac{L_0}{L}=\\frac{11}{10}=1{,}1.$$"
+        },
+        {
+          "titulo": "Energía total relativista",
+          "contenido": "$$E=\\gamma M_0 c^{2}=1{,}1(10^{4})(3\\cdot10^{8})^{2}\\approx9{,}9\\cdot10^{20}\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$v\\approx1{,}25\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $\\gamma=1{,}1$; $E\\approx9{,}9\\cdot10^{20}\\,\\text{J}$."
+    }
+  ]
+}

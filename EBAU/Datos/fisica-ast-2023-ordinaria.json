@@ -1,0 +1,352 @@
+{
+  "id": "fisica-ast-2023-ordinaria",
+  "codigo": "EXA.FIS.AST.2023.ORD.SOL",
+  "comunidad": "Asturias",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2023,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen de Física de la PAU de Asturias, convocatoria ordinaria de 2023, con diez problemas resueltos de gravitación, electromagnetismo, ondas, óptica y física moderna.",
+  "objetivo": "Evaluar la aplicación de los conceptos y leyes fundamentales de la Física a situaciones problemáticas propias del nivel de 2º de Bachillerato, incluyendo cálculo, interpretación física y justificación de resultados.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "El examen consta de diez preguntas. El alumno debe responder en el pliego a un máximo de cinco preguntas cualesquiera de entre las diez. Todas las preguntas se califican con un máximo de 2 puntos. Agrupaciones que sumen más de 10 puntos conllevan la anulación de las últimas."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $k=9{,}0\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $m_p=1{,}67\\cdot10^{-27}\\,\\text{kg}$; $c=3{,}00\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$; $e=1{,}60\\cdot10^{-19}\\,\\text{C}$; $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{N}\\,\\text{A}^{-2}$; $M_T=5{,}97\\cdot10^{24}\\,\\text{kg}$."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "Campo gravitatorio nulo y potencial entre 2 masas",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A1. Ley de la Gravitación Universal y superposición vectorial; A4. Intensidad de campo gravitatorio y líneas de campo; A5. Potencial gravitatorio, equipotenciales y relación con el campo",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Dos partículas puntuales $m_1=5\\,\\text{kg}$ y $m_2=20\\,\\text{kg}$ en el eje X ($x_1=0$, $x_2=6\\,\\text{m}$).\na) Determine el punto del eje X en el que se anula el campo gravitatorio. (1 punto)\nb) Potencial gravitatorio en $x_A=-1\\,\\text{m}$ y $x_B=7\\,\\text{m}$. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Determine el punto del eje X en el que se anula el campo gravitatorio."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcule el potencial gravitatorio en $x_A=-1\\,\\text{m}$ y $x_B=7\\,\\text{m}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): posición donde g=0",
+          "contenido": "Se elige el eje X con $m_1=5\\,\\text{kg}$ en $x_1=0$ y $m_2=20\\,\\text{kg}$ en $x_2=6\\,\\text{m}$. El campo gravitatorio se anula en un punto intermedio porque allí los campos de ambas masas tienen sentidos opuestos.\n\nSi $x$ es la distancia a $m_1$, la igualdad de módulos es:\n\n$$\\frac{G\\,m_1}{x^{2}}=\\frac{G\\,m_2}{(6-x)^{2}}.$$\n\nSimplificando $G$:\n\n$$\\frac{5}{x^{2}}=\\frac{20}{(6-x)^{2}}\\Rightarrow (6-x)^{2}=4x^{2}.$$\n\nTomando la raíz positiva compatible con $0<x<6$:\n\n$$6-x=2x\\Rightarrow x=2\\,\\text{m}.$$\n\nEl punto pedido es $x=2\\,\\text{m}$."
+        },
+        {
+          "titulo": "Apartado b): potenciales en xA=-1 y xB=7",
+          "contenido": "El potencial gravitatorio debido a dos masas puntuales es:\n\n$$V(x)=-G\\left(\\frac{m_1}{|x|}+\\frac{m_2}{|x-6|}\\right).$$\n\nEn $x_A=-1\\,\\text{m}$:\n\n$$V_A=-6{,}67\\cdot10^{-11}\\left(\\frac{5}{1}+\\frac{20}{7}\\right)=-5{,}24\\cdot10^{-10}\\,\\text{J}\\,\\text{kg}^{-1}.$$\n\nEn $x_B=7\\,\\text{m}$:\n\n$$V_B=-6{,}67\\cdot10^{-11}\\left(\\frac{5}{7}+\\frac{20}{1}\\right)=-1{,}38\\cdot10^{-9}\\,\\text{J}\\,\\text{kg}^{-1}.$$"
+        }
+      ],
+      "resultado": "$x=2\\,\\text{m}$; $V_A=-5{,}24\\cdot10^{-10}\\,\\text{J}\\,\\text{kg}^{-1}$; $V_B=-1{,}38\\cdot10^{-9}\\,\\text{J}\\,\\text{kg}^{-1}$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Satelite artificial: gravedad, velocidad angular y peso relativo",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 0,5 + 0,5)",
+      "enunciado": "Satélite de $1500\\,\\text{kg}$ en órbita circular alrededor de la Tierra con radio $r=3{,}5\\cdot10^{4}\\,\\text{m}$. Calcule:\na) Valor de la gravedad a dicha altura. (1 punto)\nb) Velocidad angular del satélite. (0,5 puntos)\nc) Relación del peso del satélite en la órbita respecto a su peso en la superficie. (0,5 puntos)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcule el valor de la gravedad a dicha altura."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcule la velocidad angular del satélite."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcule la relación del peso del satélite en la órbita respecto a su peso en la superficie."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): interpretación del radio y cálculo de g",
+          "contenido": "El dato $r=3{,}5\\cdot10^{4}\\,\\text{m}$ corresponde a una altura de $35\\,\\text{km}$ sobre la superficie terrestre. Por tanto, la distancia al centro de la Tierra es:\n\n$$r_{\\text{orb}}=R_T+h=6{,}37\\cdot10^{6}+3{,}5\\cdot10^{4}=6{,}405\\cdot10^{6}\\,\\text{m}.$$\n\nLa gravedad a esa altura es:\n\n$$g=\\frac{G\\,M_T}{r_{\\text{orb}}^{2}}=\\frac{6{,}67\\cdot10^{-11}\\cdot5{,}97\\cdot10^{24}}{(6{,}405\\cdot10^{6})^{2}}=9{,}72\\,\\text{m}\\,\\text{s}^{-2}.$$\n\nSi se tomara literalmente $r$ como distancia al centro, se obtendría $g=3{,}25\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-2}$, valor no físico; por ello se interpreta como altura."
+        },
+        {
+          "titulo": "Apartado b): velocidad angular orbital",
+          "contenido": "Para una órbita circular, la fuerza gravitatoria proporciona la fuerza centrípeta:\n\n$$\\frac{G\\,M_T\\,m}{r_{\\text{orb}}^{2}}=m\\,\\omega^{2}\\,r_{\\text{orb}}.$$\n\nDespejando:\n\n$$\\omega=\\sqrt{\\frac{G\\,M_T}{r_{\\text{orb}}^{3}}}=\\sqrt{\\frac{6{,}67\\cdot10^{-11}\\cdot5{,}97\\cdot10^{24}}{(6{,}405\\cdot10^{6})^{3}}}=1{,}23\\cdot10^{-3}\\,\\text{rad}\\,\\text{s}^{-1}.$$\n\nEl periodo correspondiente es $T=\\frac{2\\pi}{\\omega}\\approx5{,}1\\cdot10^{3}\\,\\text{s}\\approx85\\,\\text{min}$."
+        },
+        {
+          "titulo": "Apartado c): razón de pesos",
+          "contenido": "El peso en la órbita y en la superficie vale, respectivamente, $P_{\\text{orb}}=m\\,g$ y $P_{\\text{sup}}=m\\,g_0$. Por tanto:\n\n$$\\frac{P_{\\text{orb}}}{P_{\\text{sup}}}=\\frac{g}{g_0}=\\left(\\frac{R_T}{r_{\\text{orb}}}\\right)^{2}=\\left(\\frac{6{,}37\\cdot10^{6}}{6{,}405\\cdot10^{6}}\\right)^{2}=0{,}989.$$\n\nEl peso a $35\\,\\text{km}$ de altura es aproximadamente el $98{,}9\\%$ del peso en la superficie."
+        }
+      ],
+      "resultado": "$g\\approx9{,}72\\,\\text{m}\\,\\text{s}^{-2}$; $\\omega\\approx1{,}23\\cdot10^{-3}\\,\\text{rad}\\,\\text{s}^{-1}$; $P_{\\text{orb}}/P_{\\text{sup}}\\approx0{,}989$ ($98{,}9\\%$)."
+    },
+    {
+      "numero": 3,
+      "titulo": "Campo electrico en (1,0) y trabajo a origen",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Dos cargas eléctricas positivas de igual valor $+q=3\\,\\mu\\text{C}$ en $(0,1)\\,\\text{m}$ y $(0,-1)\\,\\text{m}$.\na) Determine el valor del campo eléctrico en el punto $(1,0)\\,\\text{m}$. (1 punto)\nb) Calcule el trabajo para llevar una partícula $+q_0=1{,}6\\cdot10^{-19}\\,\\text{C}$ desde $(1,0)\\,\\text{m}$ hasta el origen. ¿Dicho trabajo lo realizan las fuerzas del campo eléctrico o fuerzas externas? Justifique. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Determine el valor del campo eléctrico en el punto $(1,0)\\,\\text{m}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcule el trabajo para llevar una partícula $+q_0=1{,}6\\cdot10^{-19}\\,\\text{C}$ desde $(1,0)\\,\\text{m}$ hasta el origen e indique si lo realizan las fuerzas del campo o fuerzas externas."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): vectores y simetría",
+          "contenido": "Las cargas están en $(0,1)\\,\\text{m}$ y $(0,-1)\\,\\text{m}$. La distancia de cada carga al punto $(1,0)\\,\\text{m}$ es:\n\n$$r=\\sqrt{1^{2}+1^{2}}=\\sqrt{2}\\,\\text{m}.$$\n\nEl módulo del campo creado por cada carga es:\n\n$$E_1=E_2=\\frac{k\\,q}{r^{2}}=\\frac{9{,}0\\cdot10^{9}\\cdot3\\cdot10^{-6}}{2}=1{,}35\\cdot10^{4}\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nPor simetría respecto al eje X, las componentes $y$ se cancelan. La componente $x$ de cada campo es:\n\n$$E_{1x}=E_{2x}=E\\cos45^{\\circ}=\\frac{E}{\\sqrt{2}}=9{,}55\\cdot10^{3}\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nLa suma vectorial queda:\n\n$$\\vec E=2E_x\\,\\hat i=1{,}91\\cdot10^{4}\\,\\hat i\\,\\text{N}\\,\\text{C}^{-1}.$$"
+        },
+        {
+          "titulo": "Apartado b): potenciales y trabajo",
+          "contenido": "El potencial en $(1,0)\\,\\text{m}$ es:\n\n$$V(1,0)=2\\frac{k\\,q}{\\sqrt{2}}=3{,}82\\cdot10^{4}\\,\\text{V}.$$\n\nEl potencial en el origen es:\n\n$$V(0,0)=2\\frac{k\\,q}{1}=5{,}40\\cdot10^{4}\\,\\text{V}.$$\n\nLa variación de potencial es:\n\n$$\\Delta V=V(0,0)-V(1,0)=1{,}58\\cdot10^{4}\\,\\text{V}.$$\n\nEl trabajo realizado por fuerzas externas es:\n\n$$W_{\\text{ext}}=q_0\\,\\Delta V=1{,}6\\cdot10^{-19}\\cdot1{,}58\\cdot10^{4}=2{,}53\\cdot10^{-15}\\,\\text{J}.$$\n\nComo $W_{\\text{ext}}>0$, el trabajo lo realizan fuerzas externas en contra del campo. El campo eléctrico realiza un trabajo igual a $-2{,}53\\cdot10^{-15}\\,\\text{J}$."
+        }
+      ],
+      "resultado": "$\\vec E=1{,}91\\cdot10^{4}\\,\\hat i\\,\\text{N}\\,\\text{C}^{-1}$; $W_{\\text{ext}}=+2{,}53\\cdot10^{-15}\\,\\text{J}$, realizado por fuerzas externas."
+    },
+    {
+      "numero": 4,
+      "titulo": "Campo magnetico de dos hilos paralelos al eje OY",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B8. Líneas de campo eléctrico y magnético en distribuciones sencillas",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Dos hilos paralelos en el plano XY: el primero sobre el eje OY con $I_1=2\\,\\text{A}$ en sentido $+y$. El segundo a la derecha del primero, paralelo, a distancia horizontal $d=0{,}4\\,\\text{m}$.\na) Calcule la intensidad y sentido en el segundo conductor para que el campo magnético resultante se anule a $0{,}1\\,\\text{m}$ a la izquierda del primero. (1 punto)\nb) Si la corriente en el segundo conductor tiene mismo valor pero sentido opuesto al primero, determine el campo magnético resultante en el punto medio entre ambos. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcule la intensidad y sentido en el segundo conductor para que el campo magnético resultante se anule a $0{,}1\\,\\text{m}$ a la izquierda del primero."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Si la corriente en el segundo conductor tiene mismo valor pero sentido opuesto al primero, determine el campo magnético resultante en el punto medio entre ambos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): distancias al punto P e intensidad I2",
+          "contenido": "El punto $P$ está a $0{,}1\\,\\text{m}$ a la izquierda del primer hilo, es decir, en $x=-0{,}1\\,\\text{m}$. Las distancias a los hilos son:\n\n$$d_1=0{,}1\\,\\text{m},\\qquad d_2=0{,}1+0{,}4=0{,}5\\,\\text{m}.$$\n\nEl campo magnético creado por el primer hilo en $P$ tiene módulo:\n\n$$B_1=\\frac{\\mu_0\\,I_1}{2\\pi\\,d_1}=\\frac{4\\pi\\cdot10^{-7}\\cdot2}{2\\pi\\cdot0{,}1}=4\\cdot10^{-6}\\,\\text{T}.$$\n\nPara que el campo resultante se anule, el segundo hilo debe crear en $P$ un campo de igual módulo y sentido contrario:\n\n$$B_2=\\frac{\\mu_0\\,I_2}{2\\pi\\,d_2}=B_1.$$\n\nSustituyendo:\n\n$$\\frac{4\\pi\\cdot10^{-7}\\,I_2}{2\\pi\\cdot0{,}5}=4\\cdot10^{-6}\\Rightarrow I_2=10\\,\\text{A}.$$\n\nEl sentido debe ser opuesto al de $I_1$, es decir, $-y$, para que el campo magnético en $P$ tenga sentido contrario al creado por el primer hilo."
+        },
+        {
+          "titulo": "Apartado b): campo en el punto medio con I2 opuesta",
+          "contenido": "El punto medio entre ambos hilos está en $x=0{,}2\\,\\text{m}$, a $0{,}2\\,\\text{m}$ de cada hilo. Ahora $I_2=2\\,\\text{A}$ en sentido $-y$.\n\nLos módulos de los campos son iguales:\n\n$$B_1=B_2=\\frac{\\mu_0\\,I}{2\\pi\\,d}=\\frac{4\\pi\\cdot10^{-7}\\cdot2}{2\\pi\\cdot0{,}2}=2\\cdot10^{-6}\\,\\text{T}.$$\n\nAplicando la regla de la mano derecha, ambos campos tienen el mismo sentido en el punto medio, por lo que se suman:\n\n$$B_{\\text{total}}=B_1+B_2=4\\cdot10^{-6}\\,\\text{T}.$$\n\nEl sentido resultante es entrante al plano del papel."
+        }
+      ],
+      "resultado": "$I_2=10\\,\\text{A}$ en sentido $-y$; en el punto medio, $B=4\\cdot10^{-6}\\,\\text{T}$ entrante al plano."
+    },
+    {
+      "numero": 5,
+      "titulo": "Onda armonica: omega, k, A, fase y velocidad de vibracion",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía; C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Onda transversal en sentido $+X$ con $v=3/4\\,\\text{m}\\,\\text{s}^{-1}$, $y(x,t)=A\\,\\text{sen}(kx-\\omega t+\\varphi)$. En $t=1\\,\\text{s}$, $x=1\\,\\text{m}$: $a=27\\pi^{2}\\,\\text{cm}\\,\\text{s}^{-2}$ y elongación $-3\\,\\text{cm}$. En $t=0$, $x=0$: máxima elongación $y=3\\,\\text{cm}$. Determine:\na) frecuencia angular, número de onda, amplitud y fase inicial. (1 punto)\nb) velocidad de vibración en $x=25\\,\\text{cm}$ en $t=2\\,\\text{s}$. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Determine la frecuencia angular, el número de onda, la amplitud y la fase inicial."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcule la velocidad de vibración en $x=25\\,\\text{cm}$ en $t=2\\,\\text{s}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): determinación de A, fase, omega y k",
+          "contenido": "En $t=0$ y $x=0$ la elongación es máxima y vale $3\\,\\text{cm}$. Por tanto:\n\n$$A=3\\,\\text{cm}=0{,}03\\,\\text{m},\\qquad \\varphi=\\frac{\\pi}{2}.$$\n\nLa ecuación de onda puede escribirse como:\n\n$$y(x,t)=3\\,\\text{sen}\\left(kx-\\omega t+\\frac{\\pi}{2}\\right)=3\\cos(kx-\\omega t)\\,\\text{cm}.$$\n\nEn $x=1\\,\\text{m}$, $t=1\\,\\text{s}$, la elongación es $y=-3\\,\\text{cm}$ y la aceleración es $a=27\\pi^{2}\\,\\text{cm}\\,\\text{s}^{-2}$. Como en un movimiento armónico $a=-\\omega^{2}y$:\n\n$$27\\pi^{2}=-\\omega^{2}(-3)=3\\omega^{2}\\Rightarrow \\omega^{2}=9\\pi^{2}\\Rightarrow \\omega=3\\pi\\,\\text{rad}\\,\\text{s}^{-1}.$$\n\nCon $v=\\frac{\\omega}{k}$:\n\n$$k=\\frac{\\omega}{v}=\\frac{3\\pi}{0{,}75}=4\\pi\\,\\text{rad}\\,\\text{m}^{-1}.$$"
+        },
+        {
+          "titulo": "Apartado b): velocidad de vibración",
+          "contenido": "Derivando la elongación respecto del tiempo:\n\n$$v_y=\\frac{\\partial y}{\\partial t}=3\\omega\\,\\text{sen}(kx-\\omega t)\\,\\text{cm}\\,\\text{s}^{-1}.$$\n\nEn $x=0{,}25\\,\\text{m}$ y $t=2\\,\\text{s}$:\n\n$$kx=4\\pi\\cdot0{,}25=\\pi,\\qquad \\omega t=3\\pi\\cdot2=6\\pi.$$\n\nEl argumento es $\\pi-6\\pi=-5\\pi$, y $\\text{sen}(-5\\pi)=0$. Por tanto:\n\n$$v_y=0\\,\\text{cm}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$\\omega=3\\pi\\,\\text{rad}\\,\\text{s}^{-1}$; $k=4\\pi\\,\\text{rad}\\,\\text{m}^{-1}$; $A=3\\,\\text{cm}$; $\\varphi=\\frac{\\pi}{2}$; $v_y(0{,}25\\,\\text{m},2\\,\\text{s})=0\\,\\text{cm}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Timbre: potencia, nivel a 100 m y distancia perceptible",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2 puntos (0,5 + 0,5 + 1)",
+      "enunciado": "Timbre del patio de un colegio: a $10\\,\\text{m}$, $80\\,\\text{dB}$. Foco puntual.\na) Potencia de emisión. (0,5 puntos)\nb) Nivel a $100\\,\\text{m}$. (0,5 puntos)\nc) Distancia desde la cual deja de ser perceptible si la sonoridad ambiental es $70\\,\\text{dB}$. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcule la potencia de emisión."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Calcule el nivel a $100\\,\\text{m}$."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcule la distancia desde la cual deja de ser perceptible si la sonoridad ambiental es $70\\,\\text{dB}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): potencia de emisión",
+          "contenido": "El nivel de intensidad sonora es:\n\n$$L=10\\log\\left(\\frac{I}{I_0}\\right),\\qquad I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nPara $L=80\\,\\text{dB}$:\n\n$$80=10\\log\\left(\\frac{I}{10^{-12}}\\right)\\Rightarrow I=10^{-4}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nPara un foco puntual, $I=\\frac{P}{4\\pi r^{2}}$. Con $r=10\\,\\text{m}$:\n\n$$P=I\\,4\\pi r^{2}=10^{-4}\\cdot4\\pi\\cdot10^{2}=0{,}126\\,\\text{W}.$$"
+        },
+        {
+          "titulo": "Apartado b): nivel a 100 m",
+          "contenido": "A $100\\,\\text{m}$, la intensidad es:\n\n$$I'=\\frac{P}{4\\pi(100)^{2}}=\\frac{0{,}126}{4\\pi\\cdot10^{4}}=10^{-6}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nEl nivel sonoro es:\n\n$$L'=10\\log\\left(\\frac{10^{-6}}{10^{-12}}\\right)=60\\,\\text{dB}.$$"
+        },
+        {
+          "titulo": "Apartado c): distancia límite para 70 dB",
+          "contenido": "Para $L=70\\,\\text{dB}$:\n\n$$70=10\\log\\left(\\frac{I_{70}}{10^{-12}}\\right)\\Rightarrow I_{70}=10^{-5}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nLa distancia correspondiente es:\n\n$$r=\\sqrt{\\frac{P}{4\\pi I_{70}}}=\\sqrt{\\frac{0{,}126}{4\\pi\\cdot10^{-5}}}=31{,}6\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$P\\approx0{,}126\\,\\text{W}$; $L(100\\,\\text{m})=60\\,\\text{dB}$; distancia límite $r\\approx31{,}6\\,\\text{m}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Lente divergente: imagen de objeto a 15 cm y 5 cm",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Lente divergente de $0{,}10\\,\\text{m}$ de distancia focal, objeto de $1\\,\\text{cm}$ a:\na) $15\\,\\text{cm}$ de la lente. (1 punto)\nb) $5\\,\\text{cm}$ de la lente. (1 punto)\nRealice diagrama de rayos en ambos casos.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Determine la imagen para un objeto a $15\\,\\text{cm}$ de la lente y realice el diagrama de rayos."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Determine la imagen para un objeto a $5\\,\\text{cm}$ de la lente y realice el diagrama de rayos."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): objeto a 15 cm",
+          "contenido": "Para una lente divergente, $f=-10\\,\\text{cm}$. Con $s=15\\,\\text{cm}$, la ecuación de las lentes delgadas es:\n\n$$\\frac{1}{f}=\\frac{1}{s}+\\frac{1}{s'}.$$\n\nSustituyendo:\n\n$$\\frac{1}{s'}=\\frac{1}{-10}-\\frac{1}{15}=-\\frac{1}{10}-\\frac{1}{15}=-\\frac{1}{6}.$$\n\nPor tanto:\n\n$$s'=-6\\,\\text{cm}.$$\n\nLa imagen es virtual, derecha y se forma en el mismo lado que el objeto. El aumento lateral es:\n\n$$m=-\\frac{s'}{s}=-\\frac{-6}{15}=0{,}4.$$\n\nLa altura de la imagen es $y'=m\\,y=0{,}4\\,\\text{cm}$.\n\nEn el diagrama de rayos, el rayo paralelo al eje diverge como si procediera del foco imagen, y el rayo que pasa por el centro óptico no se desvía; sus prolongaciones se cortan en la imagen virtual."
+        },
+        {
+          "titulo": "Apartado b): objeto a 5 cm",
+          "contenido": "Con $s=5\\,\\text{cm}$ y $f=-10\\,\\text{cm}$:\n\n$$\\frac{1}{s'}=\\frac{1}{-10}-\\frac{1}{5}=-\\frac{1}{10}-\\frac{2}{10}=-\\frac{3}{10}.$$\n\nAsí:\n\n$$s'=-\\frac{10}{3}\\,\\text{cm}\\approx-3{,}33\\,\\text{cm}.$$\n\nLa imagen es virtual, derecha y se forma en el mismo lado que el objeto. El aumento lateral es:\n\n$$m=-\\frac{s'}{s}=-\\frac{-10/3}{5}=\\frac{2}{3}\\approx0{,}667.$$\n\nLa altura de la imagen es $y'=m\\,y\\approx0{,}667\\,\\text{cm}$.\n\nEl trazado de rayos es análogo al caso anterior: la imagen virtual se obtiene prolongando los rayos divergentes."
+        }
+      ],
+      "resultado": "a) $s'=-6\\,\\text{cm}$, $y'=0{,}4\\,\\text{cm}$, imagen virtual y derecha.\nb) $s'=-\\frac{10}{3}\\,\\text{cm}\\approx-3{,}33\\,\\text{cm}$, $y'\\approx0{,}667\\,\\text{cm}$, imagen virtual y derecha."
+    },
+    {
+      "numero": 8,
+      "titulo": "Refraccion en sistema agua-ambar-aire y reflexion total",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias; C5. Naturaleza de la luz y óptica física básica",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Lámina de ámbar ($n=1{,}55$) flota sobre agua ($n=1{,}33$), encima aire. Rayo de luz monocromática $f=7\\cdot10^{14}\\,\\text{Hz}$ incide desde el agua hacia el ámbar.\na) Determine longitudes de onda y frecuencias en agua y ámbar. (1 punto)\nb) Calcule el ángulo de incidencia en la interfase agua-ámbar para el que se produce reflexión total interna en la superficie ámbar-aire. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Determine las longitudes de onda y frecuencias en agua y ámbar."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcule el ángulo de incidencia en la interfase agua-ámbar para el que se produce reflexión total interna en la superficie ámbar-aire."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): frecuencias y longitudes de onda",
+          "contenido": "La frecuencia es invariante al cambiar de medio:\n\n$$f_{\\text{agua}}=f_{\\text{ambar}}=7\\cdot10^{14}\\,\\text{Hz}.$$\n\nLa longitud de onda en el vacío es:\n\n$$\\lambda_0=\\frac{c}{f}=\\frac{3{,}00\\cdot10^{8}}{7\\cdot10^{14}}=4{,}29\\cdot10^{-7}\\,\\text{m}=429\\,\\text{nm}.$$\n\nEn el agua:\n\n$$\\lambda_{\\text{agua}}=\\frac{\\lambda_0}{n_{\\text{agua}}}=\\frac{429}{1{,}33}=322\\,\\text{nm}.$$\n\nEn el ámbar:\n\n$$\\lambda_{\\text{ambar}}=\\frac{\\lambda_0}{n_{\\text{ambar}}}=\\frac{429}{1{,}55}=277\\,\\text{nm}.$$"
+        },
+        {
+          "titulo": "Apartado b): ángulo crítico ámbar-aire y ángulo de incidencia",
+          "contenido": "En la interfase ámbar-aire, el ángulo crítico para reflexión total interna cumple:\n\n$$\\text{sen}\\,\\theta_c=\\frac{n_{\\text{aire}}}{n_{\\text{ambar}}}=\\frac{1}{1{,}55}=0{,}645\\Rightarrow \\theta_c=40{,}2^{\\circ}.$$\n\nPara que el rayo alcance la superficie ámbar-aire con ese ángulo, debe entrar desde el agua al ámbar con un ángulo $\\theta_w$ dado por la ley de Snell:\n\n$$n_{\\text{agua}}\\,\\text{sen}\\,\\theta_w=n_{\\text{ambar}}\\,\\text{sen}\\,\\theta_c.$$\n\nComo $n_{\\text{ambar}}\\,\\text{sen}\\,\\theta_c=1$, resulta:\n\n$$\\text{sen}\\,\\theta_w=\\frac{1}{n_{\\text{agua}}}=\\frac{1}{1{,}33}=0{,}752\\Rightarrow \\theta_w=48{,}8^{\\circ}.$$\n\nEquivalentemente, es el ángulo crítico directo agua-aire, pues las láminas de caras paralelas no modifican el ángulo global de reflexión total interna."
+        }
+      ],
+      "resultado": "$f_{\\text{agua}}=f_{\\text{ambar}}=7\\cdot10^{14}\\,\\text{Hz}$; $\\lambda_{\\text{agua}}=322\\,\\text{nm}$; $\\lambda_{\\text{ambar}}=277\\,\\text{nm}$; $\\theta_c(\\text{ámbar-aire})=40{,}2^{\\circ}$; $\\theta_w=48{,}8^{\\circ}$."
+    },
+    {
+      "numero": 9,
+      "titulo": "De Broglie: pelota tenis y proton relativista 3 GeV",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D1. Relatividad especial y consecuencias; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "El tenista Samuel Groth golpeó una pelota a $263\\,\\text{km/h}$. Masa de la pelota $58\\,\\text{g}$. Calcule:\na) Longitud de onda de De Broglie asociada al saque. (1 punto)\nb) Velocidad máxima de protones acelerados a $3\\,\\text{GeV}$ en el Bevatron de Brookhaven. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcule la longitud de onda de De Broglie asociada al saque."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcule la velocidad máxima de protones acelerados a $3\\,\\text{GeV}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): longitud de onda de De Broglie",
+          "contenido": "La velocidad de la pelota es:\n\n$$v=263\\,\\text{km}\\,\\text{h}^{-1}=\\frac{263}{3{,}6}=73{,}1\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nSu cantidad de movimiento es:\n\n$$p=m\\,v=0{,}058\\cdot73{,}1=4{,}24\\,\\text{kg}\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nLa longitud de onda de De Broglie es:\n\n$$\\lambda=\\frac{h}{p}=\\frac{6{,}63\\cdot10^{-34}}{4{,}24}=1{,}56\\cdot10^{-34}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Apartado b): velocidad relativista del protón",
+          "contenido": "La energía en reposo del protón es:\n\n$$E_0=m_p\\,c^{2}=1{,}67\\cdot10^{-27}\\cdot(3{,}00\\cdot10^{8})^{2}=1{,}50\\cdot10^{-10}\\,\\text{J}=0{,}938\\,\\text{GeV}.$$\n\nLa energía total para $K=3\\,\\text{GeV}$ es:\n\n$$E=K+E_0=3+0{,}938=3{,}938\\,\\text{GeV}.$$\n\nEl factor de Lorentz es:\n\n$$\\gamma=\\frac{E}{E_0}=\\frac{3{,}938}{0{,}938}=4{,}20.$$\n\nLa velocidad relativista es:\n\n$$v=c\\sqrt{1-\\frac{1}{\\gamma^{2}}}=c\\sqrt{1-\\frac{1}{4{,}20^{2}}}=0{,}971\\,c=2{,}91\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$\\lambda=1{,}56\\cdot10^{-34}\\,\\text{m}$; $v=0{,}971\\,c\\approx2{,}91\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 10,
+      "titulo": "Efecto fotoelectrico: trabajo de extraccion y energia cinetica maxima",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "La longitud de onda umbral para el efecto fotoeléctrico de un metal es $565\\,\\text{nm}$.\na) Calcule el trabajo de extracción del metal y la energía cinética máxima de los electrones emitidos cuando se ilumina con radiación de $340\\,\\text{nm}$. (1 punto)\nb) Si se irradia otro metal distinto con la misma radiación ($340\\,\\text{nm}$) y se observa potencial de frenado $V_f=1{,}36\\,\\text{V}$, calcule el trabajo de extracción para este nuevo metal. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcule el trabajo de extracción del metal y la energía cinética máxima de los electrones emitidos con radiación de $340\\,\\text{nm}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Calcule el trabajo de extracción para el segundo metal si con la misma radiación se observa $V_f=1{,}36\\,\\text{V}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Apartado a): trabajo de extracción y energía cinética máxima",
+          "contenido": "El trabajo de extracción se obtiene con la longitud de onda umbral:\n\n$$W=\\frac{h\\,c}{\\lambda_0}=\\frac{6{,}63\\cdot10^{-34}\\cdot3{,}00\\cdot10^{8}}{565\\cdot10^{-9}}=3{,}52\\cdot10^{-19}\\,\\text{J}=2{,}20\\,\\text{eV}.$$\n\nLa energía de la radiación incidente de $340\\,\\text{nm}$ es:\n\n$$E=\\frac{h\\,c}{\\lambda}=\\frac{6{,}63\\cdot10^{-34}\\cdot3{,}00\\cdot10^{8}}{340\\cdot10^{-9}}=5{,}85\\cdot10^{-19}\\,\\text{J}=3{,}65\\,\\text{eV}.$$\n\nLa energía cinética máxima es:\n\n$$K_{\\text{max}}=E-W=5{,}85\\cdot10^{-19}-3{,}52\\cdot10^{-19}=2{,}33\\cdot10^{-19}\\,\\text{J}=1{,}45\\,\\text{eV}.$$"
+        },
+        {
+          "titulo": "Apartado b): trabajo de extracción del segundo metal",
+          "contenido": "El potencial de frenado se relaciona con la energía cinética máxima mediante:\n\n$$K_{\\text{max}}=e\\,V_f=1{,}36\\,\\text{eV}=2{,}18\\cdot10^{-19}\\,\\text{J}.$$\n\nPara el segundo metal, con la misma radiación de $340\\,\\text{nm}$:\n\n$$W_2=E-K_{\\text{max}}=5{,}85\\cdot10^{-19}-2{,}18\\cdot10^{-19}=3{,}67\\cdot10^{-19}\\,\\text{J}=2{,}29\\,\\text{eV}.$$"
+        }
+      ],
+      "resultado": "a) $W=3{,}52\\cdot10^{-19}\\,\\text{J}=2{,}20\\,\\text{eV}$; $K_{\\text{max}}=2{,}33\\cdot10^{-19}\\,\\text{J}=1{,}45\\,\\text{eV}$.\nb) $W_2=3{,}67\\cdot10^{-19}\\,\\text{J}=2{,}29\\,\\text{eV}$."
+    }
+  ]
+}

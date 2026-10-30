@@ -1,0 +1,410 @@
+{
+  "id": "fisica-c-valenciana-2025-ordinaria",
+  "codigo": "EXA.FIS.VAL.2025.ORD.SOL",
+  "comunidad": "Comunidad Valenciana",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2025,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen resuelto de Física de la Comunidad Valenciana, convocatoria Ordinaria 2025, con 11 problemas de campo gravitatorio, campo electromagnético, vibraciones y ondas, y física moderna.",
+  "objetivo": "Evaluar la aplicación de leyes y modelos de la Física a problemas tipo PAU, incluyendo cálculo vectorial, interpretación física de resultados, resolución de ecuaciones y justificación de fenómenos.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "El alumnado realizará 6 preguntas: el ejercicio etiquetado como obligatorio más una de las opciones de cada una de las otras cinco preguntas propuestas. La puntuación máxima de cada problema es de 2 puntos y la de cada cuestión es de 1,5 puntos."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "Datos aportados en los enunciados: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $d=5\\cdot10^{9}\\,\\text{m}$; $M_A=3{,}3\\cdot10^{30}\\,\\text{kg}$; $M_B=2{,}3\\cdot10^{30}\\,\\text{kg}$; $g_0=9\\,\\text{m}\\,\\text{s}^{-2}$; $R=5500\\,\\text{km}$; $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$; $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "Sistema binario IK Pegasi - Campo gravitatorio y velocidad de escape",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A1. Ley de la Gravitación Universal y superposición vectorial; A4. Intensidad de campo gravitatorio y líneas de campo; A5. Potencial gravitatorio, equipotenciales y relación con el campo; A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Dos estrellas A y B del sistema IK Pegasi están separadas $6d$. Posiciones: A en $(-3d, 0)$ y B en $(3d, 0)$.\na) El vector campo gravitatorio total en $P(0, 4d)$. (1 punto)\nb) La energía potencial de un cuerpo de $1\\,\\text{kg}$ en $P$. Velocidad mínima para escapar del sistema desde $P$. (1 punto)\nDatos: $d=5\\cdot10^{9}\\,\\text{m}$; $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $M_A=3{,}3\\cdot10^{30}\\,\\text{kg}$; $M_B=2{,}3\\cdot10^{30}\\,\\text{kg}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Vector campo gravitatorio total en $P$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Energía potencial en $P$ y velocidad de escape."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Geometría y distancias",
+          "contenido": "De la figura: A está en $(-3d,0)$ y B en $(3d,0)$. El punto $P$ está en $(0,4d)$.\n\nDistancia $AP$:\n\n$$AP=\\sqrt{(3d)^{2}+(4d)^{2}}=5d.$$\n\nDistancia $BP$:\n\n$$BP=\\sqrt{(-3d)^{2}+(4d)^{2}}=5d.$$\n\nAmbas estrellas están a la misma distancia de $P$."
+        },
+        {
+          "titulo": "Vectores unitarios de A y B hacia P",
+          "contenido": "El campo gravitatorio apunta hacia la masa (atractivo), es decir, de $P$ hacia $A$:\n\n$$\\hat u_A=\\frac{(-3d,-4d)}{5d}=\\left(-\\frac{3}{5},-\\frac{4}{5}\\right).$$\n\nEl campo debido a $B$ apunta de $P$ hacia $B$:\n\n$$\\hat u_B=\\frac{(3d,-4d)}{5d}=\\left(\\frac{3}{5},-\\frac{4}{5}\\right).$$"
+        },
+        {
+          "titulo": "Campos individuales",
+          "contenido": "Los módulos de los campos individuales en $P$ son:\n\n$$g_A=\\frac{G\\,M_A}{(5d)^{2}},\\qquad g_B=\\frac{G\\,M_B}{(5d)^{2}}.$$\n\nComponente $x$:\n\n$$g_x=-g_A\\frac{3}{5}+g_B\\frac{3}{5}.$$\n\nComponente $y$:\n\n$$g_y=-g_A\\frac{4}{5}-g_B\\frac{4}{5}.$$"
+        },
+        {
+          "titulo": "Cálculo numérico",
+          "contenido": "Con $d=5\\cdot10^{9}\\,\\text{m}$, $5d=2{,}5\\cdot10^{10}\\,\\text{m}$:\n\n$$g_A=\\frac{6{,}67\\cdot10^{-11}\\cdot3{,}3\\cdot10^{30}}{(2{,}5\\cdot10^{10})^{2}}=3{,}52\\cdot10^{-1}\\,\\text{m}\\,\\text{s}^{-2},$$\n\n$$g_B=\\frac{6{,}67\\cdot10^{-11}\\cdot2{,}3\\cdot10^{30}}{(2{,}5\\cdot10^{10})^{2}}=2{,}45\\cdot10^{-1}\\,\\text{m}\\,\\text{s}^{-2}.$$\n\nComponente $x$:\n\n$$g_x=-3{,}52\\cdot10^{-1}\\cdot\\frac{3}{5}+2{,}45\\cdot10^{-1}\\cdot\\frac{3}{5}=-6{,}40\\cdot10^{-2}\\,\\text{m}\\,\\text{s}^{-2}.$$\n\nComponente $y$:\n\n$$g_y=-3{,}52\\cdot10^{-1}\\cdot\\frac{4}{5}-2{,}45\\cdot10^{-1}\\cdot\\frac{4}{5}=-4{,}78\\cdot10^{-1}\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        },
+        {
+          "titulo": "Energía potencial gravitatoria en P",
+          "contenido": "La energía potencial de una masa $m=1\\,\\text{kg}$ en $P$ es:\n\n$$U=-\\frac{G\\,m\\,M_A}{5d}-\\frac{G\\,m\\,M_B}{5d}=-\\frac{G\\,m(M_A+M_B)}{5d}.$$\n\nSustituyendo:\n\n$$U=-\\frac{6{,}67\\cdot10^{-11}\\cdot1\\cdot(3{,}3+2{,}3)\\cdot10^{30}}{2{,}5\\cdot10^{10}}=-1{,}49\\cdot10^{10}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Velocidad de escape desde P",
+          "contenido": "Para que el cuerpo escape, su energía mecánica total debe ser al menos cero:\n\n$$E_m=\\frac{1}{2}m v_{\\text{escape}}^{2}+U=0.$$\n\nPor tanto:\n\n$$v_{\\text{escape}}=\\sqrt{\\frac{2G(M_A+M_B)}{5d}}.$$\n\nSustituyendo:\n\n$$v_{\\text{escape}}=\\sqrt{\\frac{2\\cdot6{,}67\\cdot10^{-11}\\cdot5{,}6\\cdot10^{30}}{2{,}5\\cdot10^{10}}}=1{,}73\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$\\vec g=(-6{,}40\\cdot10^{-2}\\,\\hat i-4{,}78\\cdot10^{-1}\\,\\hat j)\\,\\text{m}\\,\\text{s}^{-2}$, $g=4{,}82\\cdot10^{-1}\\,\\text{m}\\,\\text{s}^{-2}$\n$U=-1{,}49\\cdot10^{10}\\,\\text{J}$\n$v_{\\text{escape}}=1{,}73\\cdot10^{5}\\,\\text{m}\\,\\text{s}^{-1}$"
+    },
+    {
+      "numero": 2,
+      "titulo": "Estacion espacial en orbita circular - Altura y gravedad",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Una estación espacial orbita un planeta con $v=6{,}7\\,\\text{km}\\,\\text{s}^{-1}$.\na) Expresión simbólica de la altura $h$ en función de $v$, $g_0$ y $R$. Valor numérico.\nb) Expresión de $g$ en función de $h$ y $g_0$. Valor numérico.\nDatos: $g_0=9\\,\\text{m}\\,\\text{s}^{-2}$; $R=5500\\,\\text{km}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Expresión y valor numérico de la altura $h$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Expresión y valor numérico de la aceleración $g$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Altura de la órbita",
+          "contenido": "Para una órbita circular de radio $r=R+h$, la fuerza gravitatoria proporciona la fuerza centrípeta:\n\n$$\\frac{G\\,M\\,m}{r^{2}}=m\\frac{v^{2}}{r}.$$\n\nEn la superficie: $g_0=\\frac{GM}{R^{2}}$, por lo que $GM=g_0R^{2}$. Sustituyendo:\n\n$$v^{2}=\\frac{g_0R^{2}}{R+h}.$$\n\nDespejando $h$:\n\n$$h=\\frac{g_0R^{2}}{v^{2}}-R.$$"
+        },
+        {
+          "titulo": "Cálculo numérico de h",
+          "contenido": "Con $v=6{,}7\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$, $R=5{,}5\\cdot10^{6}\\,\\text{m}$:\n\n$$h=\\frac{9\\cdot(5{,}5\\cdot10^{6})^{2}}{(6{,}7\\cdot10^{3})^{2}}-5{,}5\\cdot10^{6}=5{,}65\\cdot10^{5}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Aceleración de la gravedad a la altura h",
+          "contenido": "La aceleración de la gravedad a una altura $h$ es:\n\n$$g=\\frac{GM}{(R+h)^{2}}=\\frac{g_0R^{2}}{(R+h)^{2}}.$$\n\nSustituyendo:\n\n$$g=\\frac{9\\cdot(5{,}5\\cdot10^{6})^{2}}{(5{,}5\\cdot10^{6}+5{,}65\\cdot10^{5})^{2}}=7{,}40\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        }
+      ],
+      "resultado": "$h=5{,}65\\cdot10^{5}\\,\\text{m}$\n$g=7{,}40\\,\\text{m}\\,\\text{s}^{-2}$"
+    },
+    {
+      "numero": 3,
+      "titulo": "Campo magnetico de un cable industrial y normativa de seguridad (OBLIGATORIA)",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B5. Magnetismo, experiencia de Oersted y carácter no conservativo del campo magnético; B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Una trabajadora realiza mantenimiento bajo un cable con $I=18\\,\\text{kA}$. El cable está a $y=4\\,\\text{m}$ sobre el suelo. La cabeza de la trabajadora está a $h=1{,}6\\,\\text{m}$. Calcula el campo magnético y verifica si cumple la normativa ($B<2\\,\\text{T}$).\nDato: $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$.",
+      "apartados": [
+        {
+          "letra": "",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Campo magnético sobre la cabeza de la trabajadora y verificación normativa."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancia del cable a la trabajadora",
+          "contenido": "El cable está a $4\\,\\text{m}$ del suelo y la cabeza de la trabajadora a $1{,}6\\,\\text{m}$. La distancia entre el cable y la cabeza es:\n\n$$r=4-1{,}6=2{,}4\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Ley de Biot-Savart para un conductor recto infinito",
+          "contenido": "Para un conductor rectilíneo e indefinido, el campo magnético a una distancia $r$ es:\n\n$$B=\\frac{\\mu_0 I}{2\\pi r}.$$\n\nLas magnitudes que intervienen son: $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$, $I=18\\cdot10^{3}\\,\\text{A}$ y $r=2{,}4\\,\\text{m}$."
+        },
+        {
+          "titulo": "Cálculo numérico",
+          "contenido": "Sustituyendo:\n\n$$B=\\frac{4\\pi\\cdot10^{-7}\\cdot18\\cdot10^{3}}{2\\pi\\cdot2{,}4}=1{,}5\\cdot10^{-3}\\,\\text{T}=1{,}5\\,\\text{mT}.$$"
+        },
+        {
+          "titulo": "Dirección del campo",
+          "contenido": "El campo magnético rodea al conductor en círculos. Para un punto directamente debajo del cable, el vector campo es horizontal y perpendicular al cable. El sentido se determina con la regla de la mano derecha según el sentido de la corriente."
+        },
+        {
+          "titulo": "Verificación de la normativa",
+          "contenido": "El Real Decreto 299/2016 establece que la exposición a un campo magnético estático no debe superar los $2\\,\\text{T}$. El campo calculado es $1{,}5\\cdot10^{-3}\\,\\text{T}$, mucho menor que $2\\,\\text{T}$ (unas $1300$ veces menor)."
+        }
+      ],
+      "resultado": "$B=1{,}5\\cdot10^{-3}\\,\\text{T}=1{,}5\\,\\text{mT}$; cumple la normativa: $B\\ll2\\,\\text{T}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Campo electrico de un dipolo: sentido en tres regiones del eje x",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B8. Líneas de campo eléctrico y magnético en distribuciones sencillas",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Una carga $+q$ en el origen y $-q$ en $(a,0)$ con $a>0$. Obtén razonadamente el sentido del campo eléctrico total en $x<0$, $x>a$ y $0<x<a$.",
+      "apartados": [
+        {
+          "letra": "",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Sentido del campo eléctrico en las tres regiones."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Región x < 0 (a la izquierda de +q)",
+          "contenido": "En un punto a la izquierda de $+q$:\n\n$\\vec E_+$ apunta hacia la izquierda ($-\\hat i$), alejándose de la carga positiva.\n\n$\\vec E_-$ apunta hacia la derecha ($+\\hat i$), hacia la carga negativa.\n\nEl punto está más cerca de $+q$ que de $-q$, por lo que $|\\vec E_+|>|\\vec E_-|$. El campo total apunta en la dirección $-\\hat i$ (hacia la izquierda), en el sentido del campo de la carga positiva que domina."
+        },
+        {
+          "titulo": "Región x > a (a la derecha de -q)",
+          "contenido": "En un punto a la derecha de $-q$:\n\n$\\vec E_+$ apunta hacia la derecha ($+\\hat i$), alejándose de la carga positiva.\n\n$\\vec E_-$ apunta hacia la izquierda ($-\\hat i$), hacia la carga negativa.\n\nEl punto está más cerca de $-q$ que de $+q$, por lo que $|\\vec E_-|>|\\vec E_+|$. El campo total apunta en la dirección $-\\hat i$ (hacia la izquierda), en el sentido del campo de la carga negativa que domina."
+        },
+        {
+          "titulo": "Región 0 < x < a (entre las dos cargas)",
+          "contenido": "En un punto entre $+q$ y $-q$:\n\n$\\vec E_+$ apunta hacia la derecha ($+\\hat i$), alejándose de la carga positiva.\n\n$\\vec E_-$ apunta hacia la derecha ($+\\hat i$), hacia la carga negativa.\n\nAmbos campos apuntan en la misma dirección ($+\\hat i$), por lo que se refuerzan. El campo total apunta en la dirección $+\\hat i$ (de la carga positiva a la negativa) y es mayor que en las otras regiones."
+        }
+      ],
+      "resultado": "$x<0$: $-\\hat i$; $x>a$: $-\\hat i$; $0<x<a$: $+\\hat i$."
+    },
+    {
+      "numero": 5,
+      "titulo": "FEM inducida en una espira cuadrada por campo magnetico variable",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Una espira cuadrada de $20\\,\\text{cm}$ de lado en un campo magnético uniforme perpendicular a su plano. El campo varía linealmente de $0$ a $2\\,\\text{mT}$ en $2\\,\\text{s}$ según la gráfica. Calcula la fem inducida, dibuja el campo y la corriente inducida.",
+      "apartados": [
+        {
+          "letra": "",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "FEM inducida, representación del campo y corriente."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Datos",
+          "contenido": "Lado de la espira: $L=20\\,\\text{cm}=0{,}2\\,\\text{m}$.\n\nÁrea:\n\n$$A=L^{2}=(0{,}2)^{2}=0{,}04\\,\\text{m}^{2}.$$\n\nEl campo es perpendicular al plano de la espira. De la gráfica: aumenta linealmente de $0$ a $2\\,\\text{mT}=2\\cdot10^{-3}\\,\\text{T}$ en un tiempo de $2\\,\\text{s}$."
+        },
+        {
+          "titulo": "Cálculo del flujo magnético y la fem",
+          "contenido": "El flujo magnético a través de la espira es:\n\n$$\\Phi=B\\,A.$$\n\nLa fem inducida (ley de Faraday):\n\n$$\\varepsilon=-\\frac{d\\Phi}{dt}=-A\\frac{dB}{dt}.$$\n\nDe la gráfica, $\\frac{dB}{dt}$ es constante:\n\n$$\\frac{dB}{dt}=\\frac{2\\cdot10^{-3}-0}{2}=1\\cdot10^{-3}\\,\\text{T}\\,\\text{s}^{-1}.$$\n\nPor tanto:\n\n$$\\varepsilon=-0{,}04\\cdot1\\cdot10^{-3}=-4\\cdot10^{-5}\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Sentido de la corriente inducida",
+          "contenido": "Según la ley de Lenz, la corriente inducida se opone al cambio de flujo que la produce. Como el campo magnético perpendicular a la espira está aumentando, la corriente inducida generará un campo que se oponga a ese aumento, es decir, un campo en sentido contrario al campo externo. Si el campo externo entra perpendicular al plano de la espira (por ejemplo, hacia dentro de la página), la corriente inducida circulará en sentido antihorario (vista desde el lado por donde entra el campo), para generar un campo que salga de la página y se oponga al aumento."
+        }
+      ],
+      "resultado": "$\\varepsilon=-4\\cdot10^{-5}\\,\\text{V}$; en valor absoluto, $|\\varepsilon|=4\\cdot10^{-5}\\,\\text{V}$. Corriente inducida en sentido antihorario si el campo externo aumenta entrando en el plano."
+    },
+    {
+      "numero": 6,
+      "titulo": "Onda armonica transversal: parametros a partir de graficas",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Una onda armónica transversal se propaga en sentido positivo del eje X. Las gráficas muestran la elongación en $t=0\\,\\text{s}$ y en $x=0\\,\\text{m}$. Determina amplitud, periodo, pulsación, longitud de onda y velocidad de propagación.",
+      "apartados": [
+        {
+          "letra": "",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Amplitud, periodo, pulsación, longitud de onda y velocidad."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Lectura de las gráficas",
+          "contenido": "De la gráfica espacial se obtiene la amplitud y la longitud de onda:\n\n$$A=2\\,\\text{cm}=0{,}02\\,\\text{m},$$\n\n$$\\lambda=8\\,\\text{cm}=0{,}08\\,\\text{m}.$$\n\nDe la gráfica temporal se obtiene el periodo:\n\n$$T=0{,}8\\,\\text{s}.$$"
+        },
+        {
+          "titulo": "Frecuencia angular (pulsación)",
+          "contenido": "La pulsación es:\n\n$$\\omega=\\frac{2\\pi}{T}=\\frac{2\\pi}{0{,}8}=2{,}5\\pi\\,\\text{rad}\\,\\text{s}^{-1}\\approx7{,}85\\,\\text{rad}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Velocidad de propagación",
+          "contenido": "La velocidad de propagación es:\n\n$$v=\\frac{\\lambda}{T}=\\frac{0{,}08}{0{,}8}=0{,}10\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$A=0{,}02\\,\\text{m}$; $T=0{,}8\\,\\text{s}$; $\\omega=7{,}85\\,\\text{rad}\\,\\text{s}^{-1}$; $\\lambda=0{,}08\\,\\text{m}$; $v=0{,}10\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Nivel sonoro de dos compresores y potencia del segundo",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Dos compresores separados $100\\,\\text{m}$. El primero emite $P_1=4\\,\\mu\\text{W}$. El nivel sonoro en el punto equidistante es $25\\,\\text{dB}$. Calcula el nivel de cada compresor y la potencia del segundo.\nDato: $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Nivel sonoro de cada compresor y potencia del segundo."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Intensidad total en el punto equidistante",
+          "contenido": "El punto equidistante está a $r=50\\,\\text{m}$ de cada compresor. El nivel sonoro total es $25\\,\\text{dB}$:\n\n$$L_{\\text{total}}=10\\log_{10}\\frac{I_{\\text{total}}}{I_0}=25.$$\n\nPor tanto:\n\n$$I_{\\text{total}}=I_0\\cdot10^{25/10}=10^{-12}\\cdot10^{2{,}5}=3{,}16\\cdot10^{-10}\\,\\text{W}\\,\\text{m}^{-2}.$$"
+        },
+        {
+          "titulo": "Intensidad y nivel del compresor 1",
+          "contenido": "La intensidad del compresor 1 en el punto es:\n\n$$I_1=\\frac{P_1}{4\\pi r^{2}}=\\frac{4\\cdot10^{-6}}{4\\pi\\cdot50^{2}}=1{,}27\\cdot10^{-10}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nSu nivel sonoro es:\n\n$$L_1=10\\log_{10}\\frac{I_1}{I_0}=10\\log_{10}\\frac{1{,}27\\cdot10^{-10}}{10^{-12}}=21{,}05\\,\\text{dB}.$$"
+        },
+        {
+          "titulo": "Intensidad y nivel del compresor 2",
+          "contenido": "Las intensidades se suman (fuentes incoherentes):\n\n$$I_{\\text{total}}=I_1+I_2.$$\n\nPor tanto:\n\n$$I_2=I_{\\text{total}}-I_1=(3{,}16-1{,}27)\\cdot10^{-10}=1{,}89\\cdot10^{-10}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nEl nivel sonoro del compresor 2 es:\n\n$$L_2=10\\log_{10}\\frac{I_2}{I_0}=10\\log_{10}\\frac{1{,}89\\cdot10^{-10}}{10^{-12}}=22{,}76\\,\\text{dB}.$$"
+        },
+        {
+          "titulo": "Potencia del segundo compresor",
+          "contenido": "La potencia del segundo compresor es:\n\n$$P_2=I_2\\,4\\pi r^{2}=1{,}89\\cdot10^{-10}\\cdot4\\pi\\cdot50^{2}=5{,}94\\cdot10^{-6}\\,\\text{W}.$$"
+        }
+      ],
+      "resultado": "$L_1=21{,}05\\,\\text{dB}$; $L_2=22{,}76\\,\\text{dB}$; $P_2=5{,}94\\cdot10^{-6}\\,\\text{W}\\approx5{,}94\\,\\mu\\text{W}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "MAS: periodo, posicion, velocidad y energias",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "$x(t)=0{,}10\\cos(10\\pi t+\\pi/2)$ en SI, $m=1{,}5\\,\\text{g}$.\na) Tipo de movimiento, periodo, posición y velocidad en $t=1\\,\\text{s}$.\nb) Energía mecánica total, $E_c$ y $E_p$ cuando $x=A/2$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Tipo de movimiento, periodo, posición y velocidad en $t=1\\,\\text{s}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Energía mecánica, cinética y potencial cuando $x=A/2$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Tipo de movimiento y parámetros",
+          "contenido": "La ecuación describe un movimiento armónico simple (MAS), ya que la posición es una función sinusoidal del tiempo.\n\nDe la ecuación:\n\n$$A=0{,}10\\,\\text{m},\\qquad \\omega=10\\pi\\,\\text{rad}\\,\\text{s}^{-1},\\qquad \\varphi_0=\\frac{\\pi}{2}.$$\n\nEl periodo es:\n\n$$T=\\frac{2\\pi}{\\omega}=\\frac{2\\pi}{10\\pi}=0{,}2\\,\\text{s}.$$"
+        },
+        {
+          "titulo": "Posición en t = 1 s",
+          "contenido": "Como $10\\pi\\cdot1=5\\cdot2\\pi$:\n\n$$x(1)=0{,}10\\cos\\left(10\\pi+\\frac{\\pi}{2}\\right)=0{,}10\\cos\\left(\\frac{\\pi}{2}\\right)=0\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Velocidad en t = 1 s",
+          "contenido": "La velocidad es:\n\n$$v(t)=-A\\omega\\,\\text{sen}(\\omega t+\\varphi_0).$$\n\nEn $t=1\\,\\text{s}$:\n\n$$v(1)=-0{,}10\\cdot10\\pi\\,\\text{sen}\\left(10\\pi+\\frac{\\pi}{2}\\right)=-\\pi\\,\\text{m}\\,\\text{s}^{-1}\\approx-3{,}14\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Energía mecánica total",
+          "contenido": "La masa es $m=1{,}5\\,\\text{g}=1{,}5\\cdot10^{-3}\\,\\text{kg}$.\n\n$$E_m=\\frac{1}{2}m\\omega^{2}A^{2}=\\frac{1}{2}\\cdot1{,}5\\cdot10^{-3}\\cdot(10\\pi)^{2}\\cdot(0{,}10)^{2}=7{,}40\\cdot10^{-3}\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Energías cuando x = A/2",
+          "contenido": "La energía potencial cuando $x=A/2$ es:\n\n$$E_p=\\frac{1}{2}m\\omega^{2}\\left(\\frac{A}{2}\\right)^{2}=\\frac{1}{4}E_m=1{,}85\\cdot10^{-3}\\,\\text{J}.$$\n\nLa energía cinética es:\n\n$$E_c=E_m-E_p=\\frac{3}{4}E_m=5{,}55\\cdot10^{-3}\\,\\text{J}.$$"
+        }
+      ],
+      "resultado": "$T=0{,}2\\,\\text{s}$; $x(1)=0\\,\\text{m}$; $v(1)=-\\pi\\,\\text{m}\\,\\text{s}^{-1}\\approx-3{,}14\\,\\text{m}\\,\\text{s}^{-1}$\n$E_m=7{,}40\\cdot10^{-3}\\,\\text{J}$; $E_p=1{,}85\\cdot10^{-3}\\,\\text{J}$; $E_c=5{,}55\\cdot10^{-3}\\,\\text{J}$."
+    },
+    {
+      "numero": 9,
+      "titulo": "Lente convergente: posicion y tamano de imagen",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "Objeto de $12\\,\\text{cm}$ a $15\\,\\text{cm}$ de una lente de $4$ dioptrías.\na) Posición y tamaño de la imagen. Características.\nb) Distancia a mover el objeto para imagen invertida de $4\\,\\text{cm}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Posición, tamaño y características de la imagen."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Distancia a mover para imagen invertida de $4\\,\\text{cm}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Distancia focal",
+          "contenido": "La potencia de la lente es $P=4$ dioptrías, por lo que:\n\n$$f=\\frac{1}{P}=\\frac{1}{4}=0{,}25\\,\\text{m}=25\\,\\text{cm}.$$\n\nEs una lente convergente ($f>0$)."
+        },
+        {
+          "titulo": "Imagen con la lente de 4 dioptrías",
+          "contenido": "Con $s=15\\,\\text{cm}$ (objeto real) y $f=25\\,\\text{cm}$, usando la ecuación de la lente delgada:\n\n$$\\frac{1}{f}=\\frac{1}{s}+\\frac{1}{s'}.$$\n\nSustituyendo:\n\n$$\\frac{1}{25}=\\frac{1}{15}+\\frac{1}{s'}\\quad\\Rightarrow\\quad \\frac{1}{s'}=\\frac{1}{25}-\\frac{1}{15}=-\\frac{2}{75}.$$\n\nPor tanto:\n\n$$s'=-37{,}5\\,\\text{cm}.$$\n\nLa imagen se forma a $37{,}5\\,\\text{cm}$ al mismo lado que el objeto (imagen virtual)."
+        },
+        {
+          "titulo": "Aumento lateral y tamaño",
+          "contenido": "El aumento lateral es:\n\n$$m=-\\frac{s'}{s}=-\\frac{-37{,}5}{15}=2{,}5.$$\n\nEl tamaño de la imagen es:\n\n$$y'=m\\,y=2{,}5\\cdot12=30\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "Posición para imagen invertida de 4 cm",
+          "contenido": "La imagen debe ser invertida ($m<0$) y de tamaño $y'=-4\\,\\text{cm}$ con $y=12\\,\\text{cm}$:\n\n$$m=\\frac{y'}{y}=\\frac{-4}{12}=-\\frac{1}{3}.$$\n\nComo $m=-\\frac{s'}{s}$:\n\n$$-\\frac{s'}{s}=-\\frac{1}{3}\\quad\\Rightarrow\\quad s'=\\frac{s}{3}.$$\n\nSustituyendo en la ecuación de la lente:\n\n$$\\frac{1}{25}=\\frac{1}{s}+\\frac{3}{s}=\\frac{4}{s}.$$\n\nPor tanto:\n\n$$s=100\\,\\text{cm}.$$\n\nEl objeto debe estar a $100\\,\\text{cm}$ de la lente. Inicialmente estaba a $15\\,\\text{cm}$, por lo que hay que moverlo $85\\,\\text{cm}$ alejándolo de la lente."
+        }
+      ],
+      "resultado": "a) $s'=-37{,}5\\,\\text{cm}$; $y'=30\\,\\text{cm}$; imagen virtual, derecha y aumentada.\nb) $s=100\\,\\text{cm}$; hay que alejar el objeto $85\\,\\text{cm}$ de la lente."
+    },
+    {
+      "numero": 10,
+      "titulo": "Desintegracion alfa del Po-218 y ley de desintegracion radiactiva",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares; D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "El $^{218}_{84}\\text{Po}$ se desintegra con $t_{1/2}=183\\,\\text{s}$ emitiendo partículas alfa, transformándose en plomo. Determina los números másico y atómico del plomo. Si ahora hay $1{,}0\\,\\text{mg}$ de Po-218, calcula la masa que había $10$ minutos antes.",
+      "apartados": [
+        {
+          "letra": "",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Números del plomo y masa inicial de Po-218."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Desintegración alfa: números másico y atómico",
+          "contenido": "En una desintegración alfa, el núcleo padre emite una partícula alfa ($^{4}_{2}\\text{He}$):\n\n$$^{218}_{84}\\text{Po}\\rightarrow ^{A}_{Z}\\text{Pb}+^{4}_{2}\\text{He}.$$\n\nConservación del número másico:\n\n$$218=A+4\\quad\\Rightarrow\\quad A=214.$$\n\nConservación del número atómico:\n\n$$84=Z+2\\quad\\Rightarrow\\quad Z=82.$$"
+        },
+        {
+          "titulo": "Masa de Po-218 hace 10 minutos",
+          "contenido": "La ley de desintegración radiactiva establece:\n\n$$N=N_0e^{-\\lambda t},\\qquad \\lambda=\\frac{\\ln 2}{t_{1/2}}.$$\n\nCon $t_{1/2}=183\\,\\text{s}$:\n\n$$\\lambda=\\frac{0{,}693}{183}=3{,}79\\cdot10^{-3}\\,\\text{s}^{-1}.$$\n\nEl tiempo transcurrido es $t=10\\,\\text{min}=600\\,\\text{s}$. Conocemos la masa actual $m=1{,}0\\,\\text{mg}$ y queremos la masa inicial:\n\n$$m=m_0e^{-\\lambda t}\\quad\\Rightarrow\\quad m_0=me^{\\lambda t}.$$\n\nSustituyendo:\n\n$$m_0=1{,}0\\cdot e^{3{,}79\\cdot10^{-3}\\cdot600}=9{,}70\\,\\text{mg}.$$"
+        }
+      ],
+      "resultado": "$^{214}_{82}\\text{Pb}$; $m_0=9{,}70\\,\\text{mg}$."
+    },
+    {
+      "numero": 11,
+      "titulo": "Dilatacion temporal: viaje a la estrella de Barnard",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D1. Relatividad especial y consecuencias",
+      "puntuacion": "1,5 puntos",
+      "enunciado": "Una nave viaja con $v=2{,}1\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$ a la estrella de Barnard ($d=5{,}98$ años luz). ¿En cuál de los dos sistemas se mide el tiempo propio? Duración del viaje en cada sistema.\nDato: $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$.",
+      "apartados": [
+        {
+          "letra": "",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Tiempo propio, duración en la Tierra y en la nave."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Tiempo propio",
+          "contenido": "El tiempo propio es el medido en el sistema de referencia donde los dos eventos (salida y llegada) ocurren en el mismo lugar. En la nave, el astronauta permanece en el mismo sitio durante todo el viaje: la salida y la llegada ocurren ambas en la nave. Por tanto, el tiempo propio se mide en la nave. Desde la Tierra, la partida y la llegada ocurren en lugares distintos (la Tierra y la estrella de Barnard), por lo que el tiempo medido en la Tierra es el tiempo dilatado (mayor)."
+        },
+        {
+          "titulo": "Duración del viaje medida desde la Tierra",
+          "contenido": "Desde la Tierra, la distancia es $d=5{,}98$ años luz y la velocidad es $v=2{,}1\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}=0{,}7c$. El tiempo medido en la Tierra es:\n\n$$t_{\\text{Tierra}}=\\frac{d}{v}=\\frac{5{,}98\\,\\text{años luz}}{0{,}7c}=8{,}54\\,\\text{años}.$$"
+        },
+        {
+          "titulo": "Factor de Lorentz",
+          "contenido": "El factor de Lorentz es:\n\n$$\\gamma=\\frac{1}{\\sqrt{1-\\frac{v^{2}}{c^{2}}}}=\\frac{1}{\\sqrt{1-0{,}7^{2}}}=1{,}40.$$"
+        },
+        {
+          "titulo": "Tiempo propio en la nave",
+          "contenido": "El tiempo propio medido en la nave es:\n\n$$t_{\\text{nave}}=\\frac{t_{\\text{Tierra}}}{\\gamma}=\\frac{8{,}54}{1{,}40}=6{,}10\\,\\text{años}.$$"
+        }
+      ],
+      "resultado": "Tiempo propio: en la nave.\n$t_{\\text{Tierra}}=8{,}54\\,\\text{años}$; $t_{\\text{nave}}=6{,}10\\,\\text{años}$."
+    }
+  ]
+}

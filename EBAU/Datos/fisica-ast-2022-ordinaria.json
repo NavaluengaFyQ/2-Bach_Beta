@@ -1,0 +1,411 @@
+{
+  "id": "fisica-ast-2022-ordinaria",
+  "codigo": "EXA.FIS.AST.2022.ORD.SOL",
+  "comunidad": "Asturias",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2022,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen oficial de Física de la PAU de Asturias, convocatoria ordinaria de 2022. Consta de diez problemas organizados en cinco pares A/B; el alumnado debe responder cinco preguntas, una de cada par.",
+  "objetivo": "Evaluar el dominio de gravitación, electromagnetismo, ondas, óptica y física moderna mediante problemas de aplicación con cálculo y justificación física.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "Después de leer atentamente el examen, responda cinco preguntas cualesquiera a elegir entre las diez que se proponen (1A o 1B; 2A o 2B; 3A o 3B; 4A o 4B; 5A o 5B).\n\nTiempo y calificación: 90 minutos. Todas las preguntas se calificarán con un máximo de 2 puntos."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{kg}^{-2}$; $k=9{,}0\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$; $c=3{,}0\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $\\mu_0=4\\pi\\cdot10^{-7}\\,\\text{T}\\,\\text{m}\\,\\text{A}^{-1}$; $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$; $e=1{,}6\\cdot10^{-19}\\,\\text{C}$; $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$; $m_p=1{,}67\\cdot10^{-27}\\,\\text{kg}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\,\\text{s}$; $n_{\\text{aire}}=1$; $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$; $N_A=6{,}02\\cdot10^{23}\\,\\text{mol}^{-1}$."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "Distancia para g0/2 y g0/3 + velocidad minima entre A y B",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo; A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "1A. La intensidad del campo gravitatorio de un planeta de radio $R_T$ es $g_0=9{,}80\\,\\text{m}\\,\\text{s}^{-2}$.\n\na) Determina a qué distancia desde el centro del planeta la intensidad de la gravedad disminuye a la mitad de su valor $g_0/2$ (punto A), y a la tercera parte $g_0/3$ (punto B). (1 punto)\n\nb) Calcula la velocidad mínima que ha de llevar un cohete en el punto A para que llegue justo hasta el punto B. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Distancias $r_A$ y $r_B$ para $g_0/2$ y $g_0/3$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad mínima en A para llegar a B."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Relación entre g(r) y g0 en superficie",
+          "contenido": "La intensidad del campo gravitatorio a distancia $r$ del centro del planeta es\n\n$$g(r)=\\frac{G\\,M}{r^{2}}.$$\n\nEn la superficie, $r=R_T$, se cumple\n\n$$g_0=\\frac{G\\,M}{R_T^{2}}.$$\n\nDividiendo ambas expresiones:\n\n$$\\frac{g(r)}{g_0}=\\frac{R_T^{2}}{r^{2}}.$$"
+        },
+        {
+          "titulo": "Distancias rA y rB",
+          "contenido": "Para $g(r_A)=g_0/2$:\n\n$$\\frac{1}{2}=\\frac{R_T^{2}}{r_A^{2}}\\Rightarrow r_A=R_T\\sqrt{2}.$$\n\nCon $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$:\n\n$$r_A=6{,}37\\cdot10^{6}\\sqrt{2}=9{,}01\\cdot10^{6}\\,\\text{m}.$$\n\nPara $g(r_B)=g_0/3$:\n\n$$\\frac{1}{3}=\\frac{R_T^{2}}{r_B^{2}}\\Rightarrow r_B=R_T\\sqrt{3}.$$\n\n$$r_B=6{,}37\\cdot10^{6}\\sqrt{3}=1{,}10\\cdot10^{7}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Conservación de la energía entre A y B",
+          "contenido": "La velocidad mínima en A para llegar justo a B implica que en B la velocidad tiende a cero. Por conservación de la energía mecánica:\n\n$$E_A=E_B,$$\n\n$$\\frac{1}{2}m\\,v_A^{2}-\\frac{G\\,M\\,m}{r_A}=-\\frac{G\\,M\\,m}{r_B}.$$\n\nSimplificando la masa $m$:\n\n$$\\frac{1}{2}v_A^{2}=G\\,M\\left(\\frac{1}{r_A}-\\frac{1}{r_B}\\right).$$\n\nComo $G\\,M=g_0R_T^{2}$:\n\n$$v_A=\\sqrt{2g_0R_T^{2}\\left(\\frac{1}{r_A}-\\frac{1}{r_B}\\right)}.$$"
+        },
+        {
+          "titulo": "Cálculo numérico",
+          "contenido": "Sustituyendo $g_0=9{,}80\\,\\text{m}\\,\\text{s}^{-2}$, $R_T=6{,}37\\cdot10^{6}\\,\\text{m}$, $r_A=9{,}01\\cdot10^{6}\\,\\text{m}$ y $r_B=1{,}10\\cdot10^{7}\\,\\text{m}$:\n\n$$v_A=\\sqrt{2\\cdot9{,}80\\cdot(6{,}37\\cdot10^{6})^{2}\\left(\\frac{1}{9{,}01\\cdot10^{6}}-\\frac{1}{1{,}10\\cdot10^{7}}\\right)}.$$\n\n$$v_A\\approx4{,}0\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        }
+      ],
+      "resultado": "$r_A=9{,}01\\cdot10^{6}\\,\\text{m}$; $r_B=1{,}10\\cdot10^{7}\\,\\text{m}$; $v_{A,\\text{mín}}\\approx4{,}0\\cdot10^{3}\\,\\text{m}\\,\\text{s}^{-1}$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Peso en planetas con distinto radio o masa que Marte",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "1B. La masa de un cuerpo es de $100\\,\\text{kg}$ sobre la superficie de Marte, donde la intensidad del campo gravitatorio es de $3{,}7\\,\\text{m}\\,\\text{s}^{-2}$.\n\na) ¿Cuál es el peso de dicho cuerpo sobre la superficie de un planeta de igual masa que la de Marte, pero con la mitad de su radio? (1 punto)\n\nb) ¿Cuál sería el nuevo peso del cuerpo si se encuentra sobre la superficie de un tercer planeta de igual radio que Marte, pero con la tercera parte de la masa de este? (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Peso en planeta con $M_{\\text{Marte}}$ y $R/2$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Peso en planeta con $R_{\\text{Marte}}$ y $M/3$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Relación gravedad superficial con M y R",
+          "contenido": "En la superficie de un planeta:\n\n$$g=\\frac{G\\,M}{R^{2}}.$$\n\nSi se mantiene la masa $M$ y el radio se reduce a $R/2$:\n\n$$g'=\\frac{G\\,M}{(R/2)^{2}}=4\\frac{G\\,M}{R^{2}}=4g_{\\text{Marte}}.$$\n\nPor tanto:\n\n$$g'=4\\cdot3{,}7=14{,}8\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        },
+        {
+          "titulo": "Peso del cuerpo en el nuevo planeta",
+          "contenido": "El peso es $P'=m\\,g'$:\n\n$$P'=100\\cdot14{,}8=1{,}48\\cdot10^{3}\\,\\text{N}.$$"
+        },
+        {
+          "titulo": "Gravedad con M/3 y mismo R",
+          "contenido": "Si se mantiene el radio $R$ y la masa se reduce a $M/3$:\n\n$$g''=\\frac{G(M/3)}{R^{2}}=\\frac{1}{3}\\frac{G\\,M}{R^{2}}=\\frac{g_{\\text{Marte}}}{3}.$$\n\n$$g''=\\frac{3{,}7}{3}=1{,}23\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        },
+        {
+          "titulo": "Peso final",
+          "contenido": "El nuevo peso es:\n\n$$P''=m\\,g''=100\\cdot1{,}23=1{,}23\\cdot10^{2}\\,\\text{N}.$$"
+        }
+      ],
+      "resultado": "$P'=1{,}48\\cdot10^{3}\\,\\text{N}$; $P''=1{,}23\\cdot10^{2}\\,\\text{N}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Trabajo desde infinito y punto de equilibrio entre cargas",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "2A. Una carga eléctrica positiva $q_1=6\\,\\mu\\text{C}$ se coloca en el origen de coordenadas. Otra carga eléctrica positiva $q_2=3\\,\\mu\\text{C}$ se acerca desde el infinito hasta una distancia de $9\\,\\text{m}$ de $q_1$ sobre el eje $X$ positivo.\n\na) Calcula el trabajo realizado para llevar la carga eléctrica $q_2$ hasta dicho punto. Especifica si es un trabajo realizado por el campo eléctrico de la carga $q_1$ o contrario al campo. (1 punto)\n\nb) Determina el punto del eje $X$ situado entre ambas cargas positivas en el que una carga negativa $-q$ estaría en equilibrio electrostático. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Trabajo desde infinito hasta $r=9\\,\\text{m}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Punto de equilibrio entre dos cargas positivas."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Relación trabajo y diferencia de potencial",
+          "contenido": "El trabajo de una fuerza externa para llevar $q_2$ desde el infinito hasta un punto a distancia $r=9\\,\\text{m}$ de $q_1$ es:\n\n$$W_{\\text{ext}}=q_2\\,V(r)-q_2\\,V(\\infty).$$\n\nTomando $V(\\infty)=0$ y $V(r)=k\\,q_1/r$:\n\n$$W_{\\text{ext}}=k\\frac{q_1q_2}{r}.$$"
+        },
+        {
+          "titulo": "Cálculo numérico",
+          "contenido": "Sustituyendo $k=9{,}0\\cdot10^{9}\\,\\text{N}\\,\\text{m}^{2}\\,\\text{C}^{-2}$, $q_1=6\\cdot10^{-6}\\,\\text{C}$, $q_2=3\\cdot10^{-6}\\,\\text{C}$ y $r=9\\,\\text{m}$:\n\n$$W_{\\text{ext}}=9{,}0\\cdot10^{9}\\frac{(6\\cdot10^{-6})(3\\cdot10^{-6})}{9}=1{,}8\\cdot10^{-2}\\,\\text{J}.$$\n\nEl trabajo es positivo y se realiza contra el campo de $q_1$: las dos cargas son positivas, se repelen y hay que aportar energía para acercarlas."
+        },
+        {
+          "titulo": "Condición de equilibrio para -q entre las cargas positivas",
+          "contenido": "Sea $x$ la distancia desde $q_1$ al punto de equilibrio. La carga $-q$ está atraída por $q_1$ hacia la izquierda y por $q_2$ hacia la derecha. Para el equilibrio los módulos de las fuerzas deben ser iguales:\n\n$$k\\frac{q_1q}{x^{2}}=k\\frac{q_2q}{(9-x)^{2}}.$$"
+        },
+        {
+          "titulo": "Despeje de x",
+          "contenido": "Simplificando $k$ y $q$:\n\n$$\\frac{q_1}{x^{2}}=\\frac{q_2}{(9-x)^{2}}.$$\n\nTomando raíz positiva:\n\n$$\\frac{\\sqrt{q_1}}{x}=\\frac{\\sqrt{q_2}}{9-x}.$$\n\n$$x=\\frac{9\\sqrt{q_1}}{\\sqrt{q_1}+\\sqrt{q_2}}.$$\n\nCon $q_1=6\\,\\mu\\text{C}$ y $q_2=3\\,\\mu\\text{C}$:\n\n$$x=\\frac{9\\sqrt{6}}{\\sqrt{6}+\\sqrt{3}}=5{,}27\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$W_{\\text{ext}}=1{,}8\\cdot10^{-2}\\,\\text{J}=18\\,\\text{mJ}$, trabajo contra el campo; punto de equilibrio a $x=5{,}27\\,\\text{m}$ de $q_1$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Campo magnetico de hilos rectilineos paralelos",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro; B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos",
+      "puntuacion": "2 puntos (0,5 + 1,5)",
+      "enunciado": "2B. Dos hilos conductores rectilíneos de longitud indefinida se hallan situados en el plano $XY$, uno de ellos a lo largo del eje $OX$ y el otro de forma paralela a una distancia determinada. La intensidad de corriente que recorre el hilo conductor del eje $OX$ tiene un valor de $2\\,\\text{A}$ y circula en el sentido positivo del eje. La intensidad de corriente en el segundo conductor es de $3\\,\\text{A}$.\n\na) Determina el módulo, dirección y sentido del campo magnético creado por el primer conductor en el punto de coordenadas $(-1,-1)$. (0,5 puntos)\n\nb) Determina el sentido de circulación de la corriente que circula por el segundo conductor y la posición a la que se encuentra respecto del primero, para que el vector campo magnético $\\vec B$ resultante sea nulo en el punto de coordenadas $(1,1)$ expresadas en unidades del S.I. Justifica las dos posibles soluciones. (1,5 puntos)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "$\\vec B$ del primer hilo en $(-1,-1)$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "Posición y sentido de $I_2$ para $\\vec B$ nulo en $(1,1)$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Módulo de B de hilo infinito",
+          "contenido": "El campo creado por un hilo infinito a distancia perpendicular $d$ es:\n\n$$B=\\frac{\\mu_0I}{2\\pi d}.$$\n\nEl primer hilo está sobre el eje $OX$. El punto $(-1,-1)$ dista $d=1\\,\\text{m}$ del eje $OX$."
+        },
+        {
+          "titulo": "Dirección y sentido (regla mano derecha)",
+          "contenido": "Con $I_1=2\\,\\text{A}$ en sentido $+OX$, en el punto $(-1,-1)$ el vector posición perpendicular desde el eje al punto apunta en $y$ negativo. Aplicando la regla de la mano derecha, el campo magnético apunta en sentido $-z$, es decir, hacia dentro del plano $XY$.\n\n$$B_1=\\frac{4\\pi\\cdot10^{-7}\\cdot2}{2\\pi\\cdot1}=4\\cdot10^{-7}\\,\\text{T}.$$"
+        },
+        {
+          "titulo": "Campo B1 en (1,1) por el primer hilo",
+          "contenido": "En $(1,1)$, la distancia al eje $OX$ es $d=1\\,\\text{m}$ y el módulo es:\n\n$$B_1=\\frac{4\\pi\\cdot10^{-7}\\cdot2}{2\\pi\\cdot1}=4\\cdot10^{-7}\\,\\text{T}.$$\n\nEl vector posición desde el eje al punto apunta en $y$ positivo, por lo que el campo sale del plano $XY$: $\\vec B_1=+4\\cdot10^{-7}\\,\\hat k\\,\\text{T}$."
+        },
+        {
+          "titulo": "Condición para B resultante nulo en (1,1)",
+          "contenido": "Para que $\\vec B_1+\\vec B_2=0$ se necesita:\n\n$$\\vec B_2=-4\\cdot10^{-7}\\,\\hat k\\,\\text{T},$$\n\nes decir, un campo entrante al plano en $(1,1)$. El segundo hilo es paralelo al eje $OX$ y lleva $I_2=3\\,\\text{A}$."
+        },
+        {
+          "titulo": "Cálculo de la distancia",
+          "contenido": "El módulo del campo del segundo hilo en $(1,1)$ debe ser $4\\cdot10^{-7}\\,\\text{T}$:\n\n$$\\frac{\\mu_0I_2}{2\\pi d}=4\\cdot10^{-7}.$$\n\n$$\\frac{4\\pi\\cdot10^{-7}\\cdot3}{2\\pi d}=4\\cdot10^{-7}\\Rightarrow \\frac{6\\cdot10^{-7}}{d}=4\\cdot10^{-7}\\Rightarrow d=1{,}5\\,\\text{m}.$$\n\nPor tanto, el segundo hilo puede estar en $y=1+1{,}5=2{,}5\\,\\text{m}$ o en $y=1-1{,}5=-0{,}5\\,\\text{m}$.\n\nSi está en $y=2{,}5\\,\\text{m}$, para que en $(1,1)$ el campo sea entrante la corriente $I_2$ debe circular en sentido $+OX$.\n\nSi está en $y=-0{,}5\\,\\text{m}$, para que en $(1,1)$ el campo sea entrante la corriente $I_2$ debe circular en sentido $-OX$."
+        }
+      ],
+      "resultado": "a) $B_1=4\\cdot10^{-7}\\,\\text{T}$, dirección $-z$ (hacia dentro del plano $XY$).\nb) Solución 1: hilo 2 en $y=2{,}5\\,\\text{m}$ con $I_2=3\\,\\text{A}$ en sentido $+OX$.\nSolución 2: hilo 2 en $y=-0{,}5\\,\\text{m}$ con $I_2=3\\,\\text{A}$ en sentido $-OX$."
+    },
+    {
+      "numero": 5,
+      "titulo": "Potencia, distancia y numero de personas con sonometro",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "2 puntos (1 + 0,5 + 0,5)",
+      "enunciado": "3A. Un sonómetro mide el nivel de intensidad sonora en el centro de una plaza circular en la que se celebra un concierto de música. El cantante se encuentra a $4\\,\\text{m}$ del centro y el sonómetro marca $75\\,\\text{dB}$. Una persona del público grita y el sonómetro mide $51{,}16\\,\\text{dB}$. Después, todo el público grita al unísono y se mide $78{,}08\\,\\text{dB}$. Asumiendo que todos los asistentes gritan con la misma potencia $P=2{,}01\\cdot10^{-3}\\,\\text{W}$, calcula:\n\na) Potencia del grito del cantante. (1 punto)\n\nb) Distancia del público al centro de la plaza. (0,5 puntos)\n\nc) Número de personas que asisten al concierto. (0,5 puntos)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Potencia del cantante."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Distancia del público."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Número de asistentes."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Relación intensidad-potencia para foco puntual",
+          "contenido": "Para un foco puntual:\n\n$$I=\\frac{P}{4\\pi r^{2}}.$$\n\nEl nivel de intensidad sonora es:\n\n$$\\beta=10\\log\\left(\\frac{I}{I_0}\\right),\\qquad I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}.$$"
+        },
+        {
+          "titulo": "Cálculo de I y P del cantante",
+          "contenido": "Para el cantante, $r=4\\,\\text{m}$ y $\\beta=75\\,\\text{dB}$:\n\n$$I=10^{-12}\\cdot10^{75/10}=10^{-12}\\cdot10^{7{,}5}=3{,}16\\cdot10^{-5}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\n$$P=I\\,4\\pi r^{2}=3{,}16\\cdot10^{-5}\\cdot4\\pi\\cdot4^{2}=6{,}36\\cdot10^{-3}\\,\\text{W}.$$"
+        },
+        {
+          "titulo": "Distancia del público desde 51.16 dB de un grito",
+          "contenido": "Para un grito individual, $\\beta=51{,}16\\,\\text{dB}$:\n\n$$I=10^{-12}\\cdot10^{51{,}16/10}=1{,}31\\cdot10^{-7}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nCon $P=2{,}01\\cdot10^{-3}\\,\\text{W}$:\n\n$$r=\\sqrt{\\frac{P}{4\\pi I}}=\\sqrt{\\frac{2{,}01\\cdot10^{-3}}{4\\pi\\cdot1{,}31\\cdot10^{-7}}}=35{,}0\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Reajuste numérico",
+          "contenido": "Recalculando con mayor precisión:\n\n$$r\\approx35{,}0\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Intensidad total con N personas gritando",
+          "contenido": "Para todo el público, $\\beta=78{,}08\\,\\text{dB}$:\n\n$$I_{\\text{total}}=10^{-12}\\cdot10^{78{,}08/10}=6{,}43\\cdot10^{-5}\\,\\text{W}\\,\\text{m}^{-2}.$$\n\nCada persona contribuye con $I_{\\text{persona}}=1{,}31\\cdot10^{-7}\\,\\text{W}\\,\\text{m}^{-2}$ y todas están a la misma distancia:\n\n$$N=\\frac{I_{\\text{total}}}{I_{\\text{persona}}}=\\frac{6{,}43\\cdot10^{-5}}{1{,}31\\cdot10^{-7}}=4{,}92\\cdot10^{2}.$$"
+        }
+      ],
+      "resultado": "$P_{\\text{cantante}}=6{,}36\\cdot10^{-3}\\,\\text{W}$; $r_{\\text{público}}=35{,}0\\,\\text{m}$; $N\\approx4{,}92\\cdot10^{2}$ personas."
+    },
+    {
+      "numero": 6,
+      "titulo": "Onda transversal en cuerda: lambda, frec, amplitud y velocidades",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "3B. Una onda transversal se propaga por una cuerda tensa en el sentido positivo del eje $X$, según la ecuación:\n\n$$y(x,t)=0{,}75\\,\\text{sen}\\,(5x-10t+\\pi/4),$$\n\nexpresada en unidades del SI. Determina:\n\na) La longitud de onda, frecuencia, amplitud y velocidad de propagación de la onda. (1 punto)\n\nb) La velocidad de vibración y aceleración en el punto de la cuerda $x=5\\,\\text{m}$, en el instante $t=2\\,\\text{s}$. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "$\\lambda$, $f$, $A$ y $v$ de propagación."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad de vibración y aceleración en $x=5\\,\\text{m}$, $t=2\\,\\text{s}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Identificación de parámetros",
+          "contenido": "Comparando con la ecuación general\n\n$$y(x,t)=A\\,\\text{sen}\\,(kx-\\omega t+\\varphi_0),$$\n\nse identifica:\n\n$$A=0{,}75\\,\\text{m},\\qquad k=5\\,\\text{rad}\\,\\text{m}^{-1},\\qquad \\omega=10\\,\\text{rad}\\,\\text{s}^{-1},\\qquad \\varphi_0=\\frac{\\pi}{4}\\,\\text{rad}.$$\n\nLa longitud de onda es:\n\n$$\\lambda=\\frac{2\\pi}{k}=\\frac{2\\pi}{5}=1{,}26\\,\\text{m}.$$\n\nLa frecuencia es:\n\n$$f=\\frac{\\omega}{2\\pi}=\\frac{10}{2\\pi}=1{,}59\\,\\text{Hz}.$$\n\nLa velocidad de propagación es:\n\n$$v=\\frac{\\omega}{k}=\\frac{10}{5}=2{,}0\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Velocidad de vibración",
+          "contenido": "La velocidad de vibración es:\n\n$$v_y=\\frac{\\partial y}{\\partial t}=-A\\omega\\cos(kx-\\omega t+\\varphi_0).$$\n\nEn $x=5\\,\\text{m}$ y $t=2\\,\\text{s}$:\n\n$$kx-\\omega t+\\varphi_0=5\\cdot5-10\\cdot2+\\frac{\\pi}{4}=5{,}785\\,\\text{rad}.$$\n\n$$\\cos(5{,}785)=\\cos(-0{,}498)=0{,}879.$$\n\n$$v_y=-0{,}75\\cdot10\\cdot0{,}879=-6{,}59\\,\\text{m}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Aceleración de vibración",
+          "contenido": "La aceleración de vibración es:\n\n$$a_y=\\frac{\\partial^{2}y}{\\partial t^{2}}=-\\omega^{2}y.$$\n\nLa elongación en ese punto e instante es:\n\n$$y=0{,}75\\,\\text{sen}\\,(5{,}785)=-0{,}358\\,\\text{m}.$$\n\n$$a_y=-10^{2}\\cdot(-0{,}358)=35{,}8\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        }
+      ],
+      "resultado": "$A=0{,}75\\,\\text{m}$; $\\lambda=1{,}26\\,\\text{m}$; $f=1{,}59\\,\\text{Hz}$; $v=2{,}0\\,\\text{m}\\,\\text{s}^{-1}$; $v_y=-6{,}59\\,\\text{m}\\,\\text{s}^{-1}$; $a_y=35{,}8\\,\\text{m}\\,\\text{s}^{-2}$."
+    },
+    {
+      "numero": 7,
+      "titulo": "Lente convergente: imagen de objeto a 15 cm y 5 cm",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "4A. Determina las características (real/virtual, derecha/invertida, mayor/menor), el tamaño y posición de la imagen formada por una lente convergente de $0{,}1\\,\\text{m}$ de distancia focal, si se sitúa un objeto de $2\\,\\text{cm}$ de tamaño a una distancia de:\n\na) $15\\,\\text{cm}$ de la lente. (1 punto)\n\nb) $5\\,\\text{cm}$ de la lente. (1 punto)\n\nRealiza en ambos casos el diagrama de rayos correspondiente.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Objeto a $15\\,\\text{cm}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Objeto a $5\\,\\text{cm}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Convención de signos y fórmula de Gauss",
+          "contenido": "Se utiliza la convención DIN/europea: distancias contadas desde la lente, positivas a la derecha. El objeto real está a la izquierda, por lo que $s=-15\\,\\text{cm}$. La lente es convergente, $f=+10\\,\\text{cm}$.\n\nLa ecuación de Gauss es:\n\n$$\\frac{1}{s'}-\\frac{1}{s}=\\frac{1}{f}.$$\n\nPara $s=-15\\,\\text{cm}$:\n\n$$\\frac{1}{s'}=\\frac{1}{10}+\\frac{1}{-15}=\\frac{1}{10}-\\frac{1}{15}=\\frac{1}{30}.$$\n\n$$s'=30\\,\\text{cm}.$$"
+        },
+        {
+          "titulo": "Aumento y características",
+          "contenido": "El aumento lateral es:\n\n$$m=\\frac{s'}{s}=\\frac{30}{-15}=-2.$$\n\nEl tamaño de la imagen es:\n\n$$y'=m\\,y=(-2)(2)=-4\\,\\text{cm}.$$\n\nLa imagen es real ($s'>0$), invertida ($m<0$) y mayor ($|m|>1$)."
+        },
+        {
+          "titulo": "Aplicación de la ecuación para objeto a 5 cm",
+          "contenido": "Para $s=-5\\,\\text{cm}$ y $f=+10\\,\\text{cm}$:\n\n$$\\frac{1}{s'}=\\frac{1}{10}+\\frac{1}{-5}=\\frac{1}{10}-\\frac{2}{10}=-\\frac{1}{10}.$$\n\n$$s'=-10\\,\\text{cm}.$$\n\nLa imagen es virtual, al mismo lado que el objeto. El aumento es:\n\n$$m=\\frac{s'}{s}=\\frac{-10}{-5}=2.$$\n\nEl tamaño es:\n\n$$y'=m\\,y=2\\cdot2=4\\,\\text{cm}.$$\n\nLa imagen es virtual, derecha y mayor."
+        }
+      ],
+      "resultado": "a) $s'=30\\,\\text{cm}$, imagen real, invertida y mayor; $y'=-4\\,\\text{cm}$.\nb) $s'=-10\\,\\text{cm}$, imagen virtual, derecha y mayor; $y'=4\\,\\text{cm}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Refraccion en piscina: posicion del objeto y angulo limite",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "4B. Un bañista situado al borde de un trampolín descubre un objeto en el fondo de la piscina, que tiene una profundidad de $2\\,\\text{m}$. Para observarlo ha necesitado mirar con un ángulo de $60^{\\circ}$ respecto a la normal a la superficie del agua, estando su ojo situado a $3\\,\\text{m}$ de altura sobre el agua. Dado que $n_{\\text{agua}}=1{,}33$, calcula:\n\na) La distancia horizontal a la que se encuentra el objeto respecto a la vertical desde el borde del trampolín. (1 punto)\n\nb) El ángulo límite entre ambos medios, realizando un esquema que indique la marcha del rayo. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Distancia horizontal del objeto."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Ángulo límite."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Refracción: ángulo en el aire y en el agua",
+          "contenido": "El rayo que llega al ojo procede del objeto y atraviesa la superficie agua-aire. En el aire forma $60^{\\circ}$ con la normal. Aplicando la ley de Snell en sentido ojo-agua (equivalente al inverso):\n\n$$n_{\\text{aire}}\\,\\text{sen}\\,60^{\\circ}=n_{\\text{agua}}\\,\\text{sen}\\,r.$$\n\n$$1\\cdot\\frac{\\sqrt{3}}{2}=1{,}33\\,\\text{sen}\\,r.$$\n\n$$\\text{sen}\\,r=\\frac{0{,}866}{1{,}33}=0{,}651\\Rightarrow r=40{,}6^{\\circ}.$$"
+        },
+        {
+          "titulo": "Distancias horizontales",
+          "contenido": "Sea $P$ el punto donde el rayo cruza la superficie. Desde el ojo, situado a $3\\,\\text{m}$ de altura, la distancia horizontal hasta $P$ es:\n\n$$x_{\\text{aire}}=3\\tan60^{\\circ}=3\\cdot1{,}732=5{,}20\\,\\text{m}.$$\n\nDesde $P$ al objeto, situado a $2\\,\\text{m}$ de profundidad, la distancia horizontal es:\n\n$$x_{\\text{agua}}=2\\tan r=2\\tan40{,}6^{\\circ}=2\\cdot0{,}857=1{,}71\\,\\text{m}.$$\n\nLa distancia horizontal total es:\n\n$$x=x_{\\text{aire}}+x_{\\text{agua}}=5{,}20+1{,}71=6{,}91\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Ángulo límite agua->aire",
+          "contenido": "El ángulo límite en el medio más denso cumple:\n\n$$\\text{sen}\\,\\theta_c=\\frac{n_{\\text{aire}}}{n_{\\text{agua}}}=\\frac{1}{1{,}33}=0{,}752.$$\n\n$$\\theta_c=48{,}8^{\\circ}.$$"
+        }
+      ],
+      "resultado": "$x=6{,}91\\,\\text{m}$; $\\theta_c=48{,}8^{\\circ}$."
+    },
+    {
+      "numero": 9,
+      "titulo": "Onda de De Broglie de electron acelerado a 30 kV",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "2 puntos (1,5 + 0,5)",
+      "enunciado": "5A. En un microscopio electrónico de barrido se aceleran haces colimados de electrones mediante un campo eléctrico para producir imágenes de alta resolución de la superficie de materiales. Determina:\n\na) La longitud de onda asociada a un electrón que se acelera mediante una diferencia de potencial de $30\\,\\text{kV}$. (1,5 puntos)\n\nb) Justifica la certeza o falsedad de la siguiente afirmación: «La longitud de onda asociada a un protón acelerado con la misma diferencia de potencial será mayor que en el caso de un electrón». (0,5 puntos)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1,5 puntos",
+          "enunciado": "$\\lambda$ de De Broglie del electrón."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "0,5 puntos",
+          "enunciado": "Comparación electrón vs protón."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Energía cinética adquirida y velocidad",
+          "contenido": "La energía cinética adquirida por el electrón es:\n\n$$E_c=eV=1{,}6\\cdot10^{-19}\\cdot3{,}0\\cdot10^{4}=4{,}8\\cdot10^{-15}\\,\\text{J}.$$\n\nUsando la expresión clásica $E_c=\\frac{1}{2}m_ev^{2}$:\n\n$$v=\\sqrt{\\frac{2E_c}{m_e}}=\\sqrt{\\frac{2\\cdot4{,}8\\cdot10^{-15}}{9{,}11\\cdot10^{-31}}}=1{,}03\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nLa comprobación relativista muestra que $v$ es apreciable, pero se utiliza la expresión clásica según el nivel de PAU."
+        },
+        {
+          "titulo": "Longitud de onda de De Broglie",
+          "contenido": "La longitud de onda asociada es:\n\n$$\\lambda=\\frac{h}{p}=\\frac{h}{m_ev}.$$\n\n$$\\lambda=\\frac{6{,}63\\cdot10^{-34}}{9{,}11\\cdot10^{-31}\\cdot1{,}03\\cdot10^{8}}=7{,}09\\cdot10^{-12}\\,\\text{m}.$$"
+        },
+        {
+          "titulo": "Comparación lambda_p vs lambda_e",
+          "contenido": "Con la misma diferencia de potencial, el protón adquiere la misma energía cinética $E_c=eV$. Como\n\n$$\\lambda=\\frac{h}{\\sqrt{2mE_c}},$$\n\nse tiene:\n\n$$\\frac{\\lambda_p}{\\lambda_e}=\\sqrt{\\frac{m_e}{m_p}}.$$\n\nComo $m_p\\gg m_e$, resulta $\\lambda_p<\\lambda_e$. Por tanto, la afirmación es falsa: la longitud de onda del protón será menor que la del electrón.\n\n$$\\lambda_p=7{,}09\\cdot10^{-12}\\sqrt{\\frac{9{,}11\\cdot10^{-31}}{1{,}67\\cdot10^{-27}}}=1{,}66\\cdot10^{-13}\\,\\text{m}.$$"
+        }
+      ],
+      "resultado": "$\\lambda_e=7{,}09\\cdot10^{-12}\\,\\text{m}$; la afirmación es falsa, $\\lambda_p<\\lambda_e$ ($\\lambda_p\\approx1{,}66\\cdot10^{-13}\\,\\text{m}$)."
+    },
+    {
+      "numero": 10,
+      "titulo": "Vida media, tiempo y actividad de Cs-137",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares; D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "2 puntos (1 + 1)",
+      "enunciado": "5B. Un laboratorio de medicina nuclear tiene $20\\,\\text{mg}$ de $^{137}\\text{Cs}$, cuyo periodo de semidesintegración es de $30{,}23$ años y masa atómica de $137\\,\\text{u}$. Calcula:\n\na) La vida media del isótopo y el tiempo transcurrido para que la cantidad de muestra se reduzca a $4\\,\\text{mg}$. (1 punto)\n\nb) Las actividades radiactivas de la masa inicial y una vez reducida a $4\\,\\text{mg}$. (1 punto)",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Vida media $\\tau$ y tiempo hasta $4\\,\\text{mg}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Actividades inicial y a $4\\,\\text{mg}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Constante de desintegración y vida media",
+          "contenido": "La constante de desintegración es:\n\n$$\\lambda=\\frac{\\ln2}{T_{1/2}}=\\frac{0{,}693}{30{,}23}=2{,}29\\cdot10^{-2}\\,\\text{año}^{-1}.$$\n\nLa vida media es:\n\n$$\\tau=\\frac{1}{\\lambda}=\\frac{T_{1/2}}{\\ln2}=43{,}6\\,\\text{años}.$$"
+        },
+        {
+          "titulo": "Tiempo para reducir 20 mg a 4 mg",
+          "contenido": "La ley exponencial para la masa es:\n\n$$m=m_0e^{-\\lambda t}.$$\n\n$$\\frac{4}{20}=e^{-\\lambda t}\\Rightarrow 0{,}2=e^{-\\lambda t}.$$\n\n$$t=-\\frac{\\ln0{,}2}{\\lambda}=\\frac{\\ln5}{2{,}29\\cdot10^{-2}}=70{,}2\\,\\text{años}.$$"
+        },
+        {
+          "titulo": "Número de átomos inicial y final",
+          "contenido": "El número de átomos iniciales es:\n\n$$N_0=\\frac{m_0}{M}N_A=\\frac{20\\cdot10^{-3}}{137}\\cdot6{,}02\\cdot10^{23}=8{,}79\\cdot10^{19}\\ \\text{átomos}.$$\n\nPara $4\\,\\text{mg}$:\n\n$$N=N_0\\frac{4}{20}=1{,}76\\cdot10^{19}\\ \\text{átomos}.$$"
+        },
+        {
+          "titulo": "Actividades A=lambda*N",
+          "contenido": "La constante en unidades del SI es:\n\n$$\\lambda=\\frac{2{,}29\\cdot10^{-2}}{365{,}25\\cdot24\\cdot3600}=7{,}27\\cdot10^{-10}\\,\\text{s}^{-1}.$$\n\nLa actividad inicial es:\n\n$$A_0=\\lambda N_0=7{,}27\\cdot10^{-10}\\cdot8{,}79\\cdot10^{19}=6{,}39\\cdot10^{10}\\,\\text{Bq}.$$\n\nLa actividad final es:\n\n$$A=\\lambda N=7{,}27\\cdot10^{-10}\\cdot1{,}76\\cdot10^{19}=1{,}28\\cdot10^{10}\\,\\text{Bq}.$$"
+        }
+      ],
+      "resultado": "$\\lambda=2{,}29\\cdot10^{-2}\\,\\text{año}^{-1}$; $\\tau=43{,}6\\,\\text{años}$; $t=70{,}2\\,\\text{años}$; $A_0=6{,}39\\cdot10^{10}\\,\\text{Bq}$; $A=1{,}28\\cdot10^{10}\\,\\text{Bq}$."
+    }
+  ]
+}

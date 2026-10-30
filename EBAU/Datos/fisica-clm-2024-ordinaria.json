@@ -1,0 +1,500 @@
+{
+  "id": "fisica-clm-2024-ordinaria",
+  "codigo": "EXA.FIS.CLM.2024.ORD.SOL",
+  "comunidad": "Castilla la Mancha",
+  "asignatura": "Física",
+  "convocatoria": "Ordinaria",
+  "anio": 2024,
+  "nivel": "PAU",
+  "curso": "2º Bachillerato",
+  "enunciado_general": "Examen oficial de Física de la PAU de Castilla la Mancha, convocatoria Ordinaria 2024, con 12 ejercicios resueltos paso a paso: 4 problemas de 3 puntos (se eligen 2), 6 cuestiones de 1 punto (se eligen 3) y 2 cuestiones experimentales de 1 punto (se elige 1).",
+  "objetivo": "Evaluar la comprensión y aplicación de los contenidos de Física de 2º de Bachillerato: ondas, gravitación, electrostática, electromagnetismo, oscilaciones, acústica, física moderna y nuclear, inducción y óptica, con resolución de problemas y análisis experimental.",
+  "procedimiento": [
+    {
+      "titulo": "Estructura del examen",
+      "contenido": "El examen se estructura en tres secciones: (1) Problemas: 4 problemas numerados 1-4 de 3 puntos cada uno; se eligen 2. (2) Cuestiones: 6 cuestiones numeradas 5-10 de 1 punto cada una; se eligen 3. (3) Cuestiones experimentales: 2 cuestiones numeradas 11-12 de 1 punto; se elige 1. En caso de exceder el número de preguntas contestadas, se corrigen las de número de orden más bajo dentro de cada sección. Pueden usarse regla y calculadora sin almacenamiento masivo ni comunicación inalámbrica (tipos 1 y 2). Se permite usar colores excepto rojo y lápiz."
+    },
+    {
+      "titulo": "Constantes y datos",
+      "contenido": "$G=6{,}67\\cdot10^{-11}\\,\\text{N}\\cdot\\text{m}^{2}\\cdot\\text{kg}^{-2}$; $K=9\\cdot10^{9}\\,\\text{N}\\cdot\\text{m}^{2}\\cdot\\text{C}^{-2}$; $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\cdot\\text{s}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $m_e=9{,}1\\cdot10^{-31}\\,\\text{kg}$; $q_e=-1{,}6\\cdot10^{-19}\\,\\text{C}$; $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$ (cuestión 7). Datos específicos por ejercicio: radio de Mercurio $2440\\,\\text{km}$, masa $3{,}3\\cdot10^{23}\\,\\text{kg}$; periodo de semidesintegración del C-14 $=5730$ años."
+    }
+  ],
+  "ejercicios": [
+    {
+      "numero": 1,
+      "titulo": "Onda armónica: número de ondas, desfase, velocidades y aceleración",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía; C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda",
+      "puntuacion": "3 puntos (0,75 + 1 + 1)",
+      "enunciado": "Sección 1, Problema 1.- (3 puntos) Una onda armónica se propaga por el espacio a una velocidad de $350\\,\\text{m}\\,\\text{s}^{-1}$, y viene descrita por la siguiente función de onda: $y(x,t)=5\\,\\text{sen}(k\\,x-10\\pi\\,t+\\varphi)$, todas las unidades en el SI. Sabiendo que $y(0,0)=2{,}5\\,\\text{m}$ y que la velocidad de oscilación en $(0,0)$ es negativa, determina, justificadamente, lo siguiente: a) Valores del número de ondas y del desfase inicial. b) Valor numérico de la velocidad de oscilación en $(0,0)$ y velocidad máxima de oscilación de un punto cualquiera del espacio $(x)$. c) Aceleración máxima de oscilación de un punto cualquiera $(x)$, y diferencia de fase (expresada en grados) para un punto cualquiera entre dos instantes de tiempo separados $0{,}025\\,\\text{s}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "0,75 puntos",
+          "enunciado": "Número de ondas $k$ y desfase inicial $\\varphi$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Velocidad de oscilación en $(0,0)$ y velocidad máxima de oscilación."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Aceleración máxima y diferencia de fase para $\\Delta t=0{,}025\\,\\text{s}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Aplicación de la condición y(0,0)=2,5 m",
+          "contenido": "Evaluamos la función de onda en $x=0$, $t=0$:\n\n$$y(0,0)=5\\,\\text{sen}(\\varphi)=2{,}5\\;\\Rightarrow\\;\\text{sen}(\\varphi)=\\frac{1}{2}.$$\n\nLa ecuación admite dos soluciones principales en $[0,2\\pi)$:\n\n$$\\varphi_1=\\frac{\\pi}{6}=30^{\\circ},\\qquad \\varphi_2=\\pi-\\frac{\\pi}{6}=\\frac{5\\pi}{6}=150^{\\circ}.$$\n\nLa función seno toma el valor $1/2$ en dos puntos por periodo, separados $\\pi$. Necesitamos otro dato para discriminar."
+        },
+        {
+          "titulo": "Discriminación mediante la velocidad de oscilación en (0,0)",
+          "contenido": "La velocidad de oscilación es $v_y=\\dfrac{\\partial y}{\\partial t}$. Derivando respecto a $t$ (con $x$ constante):\n\n$$v_y(x,t)=\\frac{\\partial}{\\partial t}\\left[5\\,\\text{sen}(k\\,x-10\\pi\\,t+\\varphi)\\right]=-50\\pi\\,\\cos(k\\,x-10\\pi\\,t+\\varphi).$$\n\nEn $x=0$, $t=0$:\n\n$$v_y(0,0)=-50\\pi\\,\\cos(\\varphi).$$\n\nEl enunciado indica que $v_y(0,0)<0$, luego $\\cos(\\varphi)>0$. De los dos candidatos:\n\n- $\\varphi_1=\\dfrac{\\pi}{6}$: $\\cos\\left(\\dfrac{\\pi}{6}\\right)=\\dfrac{\\sqrt{3}}{2}>0$ ✓\n- $\\varphi_2=\\dfrac{5\\pi}{6}$: $\\cos\\left(\\dfrac{5\\pi}{6}\\right)=-\\dfrac{\\sqrt{3}}{2}<0$ ✗\n\nPor tanto: $\\varphi=\\dfrac{\\pi}{6}\\,\\text{rad}=30^{\\circ}$. La condición selecciona uno de los dos valores compatibles con $y(0,0)=2{,}5\\,\\text{m}$."
+        },
+        {
+          "titulo": "Cálculo del número de ondas",
+          "contenido": "La relación entre velocidad de propagación, frecuencia angular y número de ondas es $v=\\dfrac{\\omega}{k}$. La frecuencia angular se lee de la ecuación: $\\omega=10\\pi\\,\\text{rad}\\,\\text{s}^{-1}$. Y $v=350\\,\\text{m}\\,\\text{s}^{-1}$:\n\n$$k=\\frac{\\omega}{v}=\\frac{10\\pi}{350}=\\frac{\\pi}{35}\\approx0{,}0898\\,\\text{rad}\\,\\text{m}^{-1}.$$"
+        },
+        {
+          "titulo": "Velocidad de oscilación en (0,0)",
+          "contenido": "Sustituyendo en la expresión derivada en el apartado anterior:\n\n$$v_y(0,0)=-50\\pi\\,\\cos\\left(\\frac{\\pi}{6}\\right)=-50\\pi\\cdot\\frac{\\sqrt{3}}{2}=-25\\pi\\sqrt{3}\\approx-136{,}0\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nNuméricamente: $v_y(0,0)\\approx-136\\,\\text{m}\\,\\text{s}^{-1}$. El signo negativo confirma lo que dijo el enunciado: en ese instante el punto se mueve en sentido $-y$."
+        },
+        {
+          "titulo": "Velocidad máxima de oscilación",
+          "contenido": "La velocidad de oscilación es $v_y=-50\\pi\\,\\cos(k\\,x-10\\pi\\,t+\\varphi)$, cuyo valor máximo en módulo es:\n\n$$v_{\\text{max}}=50\\pi\\approx157{,}1\\,\\text{m}\\,\\text{s}^{-1}.$$\n\nEsta velocidad máxima corresponde a los instantes en los que el punto pasa por la posición de equilibrio ($y=0$)."
+        },
+        {
+          "titulo": "Aceleración de oscilación",
+          "contenido": "Derivando $v_y$ respecto a $t$:\n\n$$a_y=\\frac{\\partial v_y}{\\partial t}=-500\\pi^{2}\\,\\text{sen}(k\\,x-10\\pi\\,t+\\varphi).$$\n\nEquivalentemente, $a_y=-\\omega^{2}y$ (típico de MAS): $a_y=-100\\pi^{2}\\,y$. El valor máximo en módulo es:\n\n$$a_{\\text{max}}=500\\pi^{2}\\approx4934{,}8\\,\\text{m}\\,\\text{s}^{-2}.$$\n\nLa aceleración máxima se alcanza cuando $y=\\pm5\\,\\text{m}$ (puntos de máxima elongación), porque $a_y=-\\omega^{2}y$."
+        },
+        {
+          "titulo": "Diferencia de fase para Δt = 0,025 s",
+          "contenido": "La fase de la onda en un punto fijo es $\\phi(t)=k\\,x-10\\pi\\,t+\\varphi$. La diferencia de fase entre dos instantes $t_1$ y $t_2=t_1+\\Delta t$ es:\n\n$$\\Delta\\phi=\\phi(t_1)-\\phi(t_2)=10\\pi\\,\\Delta t.$$\n\nEs independiente del punto considerado, como pide el enunciado. Con $\\Delta t=0{,}025\\,\\text{s}$:\n\n$$\\Delta\\phi=10\\pi\\cdot0{,}025=\\frac{\\pi}{4}\\,\\text{rad}=45^{\\circ}.$$\n\nConvirtiendo a grados: $\\Delta\\phi=45^{\\circ}$."
+        }
+      ],
+      "resultado": "a) $k=\\dfrac{\\pi}{35}\\approx0{,}0898\\,\\text{rad}\\,\\text{m}^{-1}$; $\\varphi=\\dfrac{\\pi}{6}\\,\\text{rad}=30^{\\circ}$.\nb) $v_y(0,0)=-25\\pi\\sqrt{3}\\approx-136\\,\\text{m}\\,\\text{s}^{-1}$; $v_{\\text{max}}=50\\pi\\approx157\\,\\text{m}\\,\\text{s}^{-1}$.\nc) $a_{\\text{max}}=500\\pi^{2}\\approx4935\\,\\text{m}\\,\\text{s}^{-2}$; $\\Delta\\phi=45^{\\circ}$."
+    },
+    {
+      "numero": 2,
+      "titulo": "Mercurio: gravedad, velocidad de escape y altura máxima",
+      "Bloque": "A. Campo gravitatorio",
+      "Tema": "A4. Intensidad de campo gravitatorio y líneas de campo; A6. Trabajo, energía potencial y energía mecánica gravitatoria; A7. Movimiento planetario, satélites y velocidades características",
+      "puntuacion": "3 puntos (1 + 1 + 1)",
+      "enunciado": "Sección 1, Problema 2.- (3 puntos) Nos encontramos en una nave espacial de $50\\,000\\,\\text{kg}$ sobre la superficie de Mercurio. Sabemos que el radio de este planeta es $2440\\,\\text{km}$ y su masa $3{,}3\\cdot10^{23}\\,\\text{kg}$. a) Determina el valor de la gravedad en la superficie de Mercurio y el peso que tendrá allí la nave. b) Deduce la expresión de la velocidad que necesita la nave para abandonar el planeta y calcula su valor para este caso. c) Suponiendo que cuando se encuentre a una altura de 9 veces el radio de Mercurio su velocidad sea $1\\,\\text{km}\\,\\text{s}^{-1}$, determina a qué altura (en km) se parará antes de volver a caer sobre Mercurio. Datos: $G=6{,}67\\cdot10^{-11}\\,\\text{N}\\cdot\\text{m}^{2}\\cdot\\text{kg}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Gravedad superficial y peso de la nave."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Deducción y cálculo de la velocidad de escape."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Altura máxima tras alcanzar $h=9R$ con $v=1\\,\\text{km}\\,\\text{s}^{-1}$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Deducción de la gravedad superficial",
+          "contenido": "En la superficie, la fuerza gravitatoria es el peso del cuerpo. Igualando la ley de gravitación universal a $mg$:\n\n$$\\frac{G\\,M\\,m}{R^{2}}=m\\,g\\;\\Rightarrow\\;g=\\frac{G\\,M}{R^{2}}.$$\n\nLa aceleración de la gravedad en la superficie es independiente de la masa del cuerpo (principio de equivalencia)."
+        },
+        {
+          "titulo": "Cálculo de g en Mercurio",
+          "contenido": "Con $M=3{,}3\\cdot10^{23}\\,\\text{kg}$, $R=2440\\,\\text{km}=2{,}44\\cdot10^{6}\\,\\text{m}$:\n\n$$g=\\frac{6{,}67\\cdot10^{-11}\\cdot3{,}3\\cdot10^{23}}{(2{,}44\\cdot10^{6})^{2}}=\\frac{2{,}2011\\cdot10^{13}}{5{,}9536\\cdot10^{12}}\\approx3{,}70\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        },
+        {
+          "titulo": "Peso de la nave en Mercurio",
+          "contenido": "El peso es $P=m\\,g$, con $m=50\\,000\\,\\text{kg}$:\n\n$$P=50\\,000\\cdot3{,}70\\approx1{,}85\\cdot10^{5}\\,\\text{N}.$$"
+        },
+        {
+          "titulo": "Concepto y deducción de la velocidad de escape",
+          "contenido": "La velocidad de escape es la velocidad mínima que necesita un cuerpo en la superficie del planeta para alejarse hasta el infinito sin retornar. En el límite, el cuerpo llega al infinito con energía cinética nula y, como la energía potencial gravitatoria también es cero en el infinito, la energía mecánica total debe ser cero a lo largo de todo el viaje:\n\n$$E_m=\\frac{1}{2}m\\,v_e^{2}-\\frac{G\\,M\\,m}{R}=0.$$\n\nSustituyendo las expresiones:\n\n$$\\frac{1}{2}m\\,v_e^{2}=\\frac{G\\,M\\,m}{R}\\;\\Rightarrow\\;v_e=\\sqrt{\\frac{2\\,G\\,M}{R}}.$$\n\nDespejando: $v_e=\\sqrt{\\dfrac{2\\,G\\,M}{R}}$. La velocidad de escape no depende de la masa del cuerpo lanzado. Esta es la deducción rigurosa exigida por el enunciado (\"deduce la expresión\"). No basta con escribir la fórmula final."
+        },
+        {
+          "titulo": "Cálculo numérico de la velocidad de escape",
+          "contenido": "$$v_e=\\sqrt{\\frac{2\\cdot6{,}67\\cdot10^{-11}\\cdot3{,}3\\cdot10^{23}}{2{,}44\\cdot10^{6}}}=\\sqrt{\\frac{4{,}4022\\cdot10^{13}}{2{,}44\\cdot10^{6}}}=\\sqrt{1{,}804\\cdot10^{7}}\\approx4248\\,\\text{m}\\,\\text{s}^{-1}\\approx4{,}25\\,\\text{km}\\,\\text{s}^{-1}.$$"
+        },
+        {
+          "titulo": "Planteamiento por conservación de la energía",
+          "contenido": "La energía mecánica se conserva durante el ascenso libre (sin fuerzas no conservativas). Sean:\n\n- Estado inicial: a altura $h_i=9R$ sobre la superficie, es decir distancia $r_i=R+9R=10R$ desde el centro del planeta, con velocidad $v_i=1\\,\\text{km}\\,\\text{s}^{-1}=1000\\,\\text{m}\\,\\text{s}^{-1}$.\n- Estado final: altura máxima $h_f$ sobre la superficie, distancia $r_f=R+h_f$, velocidad cero.\n\nConservación de la energía mecánica:\n\n$$\\frac{1}{2}m\\,v_i^{2}-\\frac{G\\,M\\,m}{r_i}=-\\frac{G\\,M\\,m}{r_f}.$$\n\nLa energía potencial gravitatoria se mide desde el centro del planeta, no desde la superficie. Hay que sumar a la altura para tener la distancia $r$."
+        },
+        {
+          "titulo": "Cálculo de la energía mecánica inicial",
+          "contenido": "Producto auxiliar $G\\,M=6{,}67\\cdot10^{-11}\\cdot3{,}3\\cdot10^{23}=2{,}2011\\cdot10^{13}\\,\\text{m}^{3}\\,\\text{s}^{-2}$. Energía potencial inicial (a distancia $r_i=10R=2{,}44\\cdot10^{7}\\,\\text{m}$):\n\n$$U_i=-\\frac{G\\,M\\,m}{r_i}=-\\frac{2{,}2011\\cdot10^{13}\\cdot5\\cdot10^{4}}{2{,}44\\cdot10^{7}}\\approx-4{,}51\\cdot10^{10}\\,\\text{J}.$$\n\nEnergía cinética inicial:\n\n$$K_i=\\frac{1}{2}m\\,v_i^{2}=\\frac{1}{2}\\cdot5\\cdot10^{4}\\cdot(1000)^{2}=2{,}5\\cdot10^{10}\\,\\text{J}.$$\n\nEnergía mecánica total:\n\n$$E_m=K_i+U_i=2{,}5\\cdot10^{10}-4{,}51\\cdot10^{10}=-2{,}01\\cdot10^{10}\\,\\text{J}.$$\n\nAproximamos a $-2{,}0\\cdot10^{10}\\,\\text{J}$ siguiendo el criterio oficial. El signo negativo indica que la nave está ligada gravitatoriamente: no escapa, regresará."
+        },
+        {
+          "titulo": "Cálculo de la altura máxima",
+          "contenido": "En el punto más alto, $v_f=0$ y $r_f=R+h_f$:\n\n$$E_m=-\\frac{G\\,M\\,m}{r_f}\\;\\Rightarrow\\;r_f=-\\frac{G\\,M\\,m}{E_m}=-\\frac{2{,}2011\\cdot10^{13}\\cdot5\\cdot10^{4}}{-2{,}01\\cdot10^{10}}\\approx5{,}48\\cdot10^{7}\\,\\text{m}.$$\n\n(Usando $E_m=-2{,}0\\cdot10^{10}\\,\\text{J}$ obtenemos $r_f\\approx5{,}5\\cdot10^{7}\\,\\text{m}$, valor que coincide con el criterio oficial.) Altura sobre la superficie:\n\n$$h_f=r_f-R=5{,}48\\cdot10^{7}-2{,}44\\cdot10^{6}\\approx5{,}24\\cdot10^{7}\\,\\text{m}\\approx5{,}2\\cdot10^{4}\\,\\text{km}.$$"
+        }
+      ],
+      "resultado": "a) $g\\approx3{,}70\\,\\text{m}\\,\\text{s}^{-2}$; $P\\approx1{,}85\\cdot10^{5}\\,\\text{N}$.\nb) $v_e=\\sqrt{\\dfrac{2\\,G\\,M}{R}}\\approx4{,}25\\,\\text{km}\\,\\text{s}^{-1}$.\nc) $h_f\\approx5{,}2\\cdot10^{4}\\,\\text{km}$."
+    },
+    {
+      "numero": 3,
+      "titulo": "Tres cargas en plano: carga incógnita, trabajo y campo eléctrico",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico; B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas; B4. Potencial eléctrico, equipotenciales y campo uniforme",
+      "puntuacion": "3 puntos (1 + 1 + 1)",
+      "enunciado": "Sección 1, Problema 3.- (3 puntos) Tres cargas: A, B y C se colocan en los puntos $(-1,0)$, $(2,0)$ y $(1,2)$ respectivamente como se muestra en el esquema (coordenadas en metros). Las cargas A y B valen $2\\,\\mu\\text{C}$, y sabemos que el potencial en el punto $(0,1)$ es $1685{,}9\\,\\text{V}$. [Se adjunta esquema en el PDF original: triángulo con vértices A(-1,0) y B(2,0) sobre el eje x, y C(1,2) por encima. Ejes en metros, escala de 1.] a) Determina el valor de la carga C. b) Trabajo necesario para mover una carga de $5\\,\\mu\\text{C}$ desde el punto $(0,1)$ hasta $(1,0)$. Interpreta el signo del trabajo obtenido. c) Determina el valor del vector campo eléctrico en este último punto $(1,0)$ debido a las cargas A, B y C. Datos: $K=9\\cdot10^{9}\\,\\text{N}\\cdot\\text{m}^{2}\\cdot\\text{C}^{-2}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Valor de la carga C dada $V(0,1)=1685{,}9\\,\\text{V}$."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Trabajo para mover $5\\,\\mu\\text{C}$ desde $(0,1)$ hasta $(1,0)$ e interpretación del signo."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Vector campo eléctrico en $(1,0)$."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Potencial creado por cada carga puntual",
+          "contenido": "Una carga puntual crea, a distancia $r$ de ella, un potencial:\n\n$$V=K\\,\\frac{Q}{r}.$$\n\nEl potencial total en un punto es la suma escalar de los potenciales que crea cada carga:\n\n$$V_{\\text{total}}=K\\left(\\frac{Q_A}{r_A}+\\frac{Q_B}{r_B}+\\frac{Q_C}{r_C}\\right).$$\n\nEl potencial es escalar, así que sólo se suman magnitudes (con signo)."
+        },
+        {
+          "titulo": "Cálculo de las distancias desde (0,1) a cada carga",
+          "contenido": "Aplicando el teorema de Pitágoras:\n\n- Distancia de $(-1,0)$ a $(0,1)$: $r_A=\\sqrt{1^{2}+1^{2}}=\\sqrt{2}\\approx1{,}414\\,\\text{m}$\n- Distancia de $(2,0)$ a $(0,1)$: $r_B=\\sqrt{2^{2}+1^{2}}=\\sqrt{5}\\approx2{,}236\\,\\text{m}$\n- Distancia de $(1,2)$ a $(0,1)$: $r_C=\\sqrt{1^{2}+1^{2}}=\\sqrt{2}\\approx1{,}414\\,\\text{m}$\n\nConviene calcular las tres distancias antes de sustituir, para no perder claridad."
+        },
+        {
+          "titulo": "Despeje de Q_C",
+          "contenido": "Imponiendo $V=1685{,}9\\,\\text{V}$ con $Q_A=Q_B=2\\cdot10^{-6}\\,\\text{C}$:\n\n$$1685{,}9=9\\cdot10^{9}\\left(\\frac{2\\cdot10^{-6}}{\\sqrt{2}}+\\frac{2\\cdot10^{-6}}{\\sqrt{5}}+\\frac{Q_C}{\\sqrt{2}}\\right).$$\n\nDespejando los términos conocidos:\n\n$$\\frac{1685{,}9}{9\\cdot10^{9}}=1{,}8732\\cdot10^{-7}.$$\n\n$$\\frac{2\\cdot10^{-6}}{\\sqrt{2}}+\\frac{2\\cdot10^{-6}}{\\sqrt{5}}=1{,}4142\\cdot10^{-6}+8{,}944\\cdot10^{-7}=2{,}3086\\cdot10^{-6}.$$\n\nSumando: $2{,}3086\\cdot10^{-6}+\\dfrac{Q_C}{\\sqrt{2}}=1{,}8732\\cdot10^{-7}$... Reordenando correctamente:\n\n$$\\frac{Q_C}{\\sqrt{2}}=1{,}8732\\cdot10^{-7}-2{,}3086\\cdot10^{-6}=-2{,}1213\\cdot10^{-6}.$$\n\nPor tanto el término que contiene $Q_C$ vale $-2{,}1213\\cdot10^{-6}$. Despejando $Q_C$:\n\n$$Q_C=-2{,}1213\\cdot10^{-6}\\cdot\\sqrt{2}\\approx-3{,}0\\cdot10^{-6}\\,\\text{C}.$$"
+        },
+        {
+          "titulo": "Trabajo del campo eléctrico",
+          "contenido": "El trabajo del campo eléctrico (campo conservativo) al desplazar una carga $q$ del punto inicial $i$ al final $f$ es:\n\n$$W_{\\text{campo}}=q\\,(V_i-V_f).$$\n\nEs el trabajo que realiza el propio campo eléctrico sobre la carga. Si es negativo, significa que el campo se opone al desplazamiento y hay que aportar trabajo externo. Esta es la fórmula estándar del trabajo electrostático. El signo final indicará si el trabajo lo hace el campo (espontáneo) o lo hace un agente externo."
+        },
+        {
+          "titulo": "Cálculo del potencial en (1,0)",
+          "contenido": "Distancias desde $(1,0)$ a cada carga:\n\n- A$(-1,0)$: $r_A=2\\,\\text{m}$\n- B$(2,0)$: $r_B=1\\,\\text{m}$\n- C$(1,2)$: $r_C=2\\,\\text{m}$\n\nPotencial en $(1,0)$:\n\n$$V_{(1,0)}=9\\cdot10^{9}\\left(\\frac{2\\cdot10^{-6}}{2}+\\frac{2\\cdot10^{-6}}{1}+\\frac{-3{,}0\\cdot10^{-6}}{2}\\right)=9\\cdot10^{9}\\left(10^{-6}+2\\cdot10^{-6}-1{,}5\\cdot10^{-6}\\right)=9\\cdot10^{9}\\cdot1{,}5\\cdot10^{-6}=13\\,500\\,\\text{V}.$$"
+        },
+        {
+          "titulo": "Cálculo del trabajo",
+          "contenido": "Aplicando la fórmula con $q=5\\cdot10^{-6}\\,\\text{C}$, $V_i=1685{,}9\\,\\text{V}$, $V_f=13\\,500\\,\\text{V}$:\n\n$$W_{\\text{campo}}=5\\cdot10^{-6}\\,(1685{,}9-13\\,500)=5\\cdot10^{-6}\\cdot(-11\\,814{,}1)\\approx-0{,}059\\,\\text{J}.$$"
+        },
+        {
+          "titulo": "Interpretación del signo",
+          "contenido": "El trabajo del campo es negativo ($W_{\\text{campo}}=-0{,}059\\,\\text{J}$). El trabajo externo necesario es $W_{\\text{ext}}=-W_{\\text{campo}}=+0{,}059\\,\\text{J}$: hay que empujar la carga desde $(0,1)$ hasta $(1,0)$ en contra del campo. La carga gana esa cantidad de energía potencial electrostática."
+        },
+        {
+          "titulo": "Módulo del campo creado por cada carga",
+          "contenido": "El campo eléctrico creado por una carga puntual a distancia $r$ tiene módulo:\n\n$$E=K\\,\\frac{|Q|}{r^{2}}.$$\n\nCon dirección a lo largo de la línea que une la carga y el punto (saliente si $Q>0$, entrante si $Q<0$). Usando las distancias del apartado b) ($r_A=2\\,\\text{m}$, $r_B=1\\,\\text{m}$, $r_C=2\\,\\text{m}$):\n\n$$E_A=9\\cdot10^{9}\\cdot\\frac{2\\cdot10^{-6}}{2^{2}}=4500\\,\\text{N}\\,\\text{C}^{-1},$$\n\n$$E_B=9\\cdot10^{9}\\cdot\\frac{2\\cdot10^{-6}}{1^{2}}=18\\,000\\,\\text{N}\\,\\text{C}^{-1},$$\n\n$$E_C=9\\cdot10^{9}\\cdot\\frac{3\\cdot10^{-6}}{2^{2}}=6750\\,\\text{N}\\,\\text{C}^{-1}.$$\n\n$Q_C$ es negativa, pero para el módulo se usa $|Q_C|$. El signo se considera al asignar el sentido al vector."
+        },
+        {
+          "titulo": "Dirección y sentido de cada contribución",
+          "contenido": "El punto de cálculo es $(1,0)$.\n\n- $\\vec E_A$: creado por $Q_A$ positiva. Apunta desde $(-1,0)$ hacia $(1,0)$, es decir en sentido $+x$ (a la derecha): $\\vec E_A=+4500\\,\\hat i\\ \\text{N}\\,\\text{C}^{-1}$.\n- $\\vec E_B$: creado por $Q_B$ positiva. Apunta desde $(2,0)$ hacia $(1,0)$, es decir en sentido $-x$ (a la izquierda, pues $Q_B$ está a la derecha de $(1,0)$): $\\vec E_B=-18\\,000\\,\\hat i\\ \\text{N}\\,\\text{C}^{-1}$.\n- $\\vec E_C$: creado por $Q_C$ negativa. Apunta DESDE $(1,0)$ HACIA $(1,2)$ (el campo de una carga negativa entra hacia ella), es decir en sentido $+y$: $\\vec E_C=+6750\\,\\hat j\\ \\text{N}\\,\\text{C}^{-1}$.\n\nEs crucial recordar: campo eléctrico SALIENTE para cargas positivas y ENTRANTE para cargas negativas. Aquí $Q_C$ es negativa, así que su campo en $(1,0)$ apunta hacia ella, no en sentido opuesto."
+        },
+        {
+          "titulo": "Suma vectorial",
+          "contenido": "Sumando componentes:\n\nComponente $x$: $E_x=4500-18\\,000=-13\\,500\\,\\text{N}\\,\\text{C}^{-1}$.\n\nComponente $y$: $E_y=6750\\,\\text{N}\\,\\text{C}^{-1}$.\n\nVector campo eléctrico total:\n\n$$\\vec E=-13\\,500\\,\\hat i+6750\\,\\hat j\\ \\text{N}\\,\\text{C}^{-1}.$$\n\nMódulo:\n\n$$|\\vec E|=\\sqrt{13\\,500^{2}+6750^{2}}\\approx15\\,093\\,\\text{N}\\,\\text{C}^{-1}.$$\n\nDirección (ángulo con $+x$):\n\n$$\\tan\\theta=\\frac{6750}{-13\\,500}=-0{,}5\\;\\Rightarrow\\;\\theta=180^{\\circ}-26{,}6^{\\circ}=153{,}4^{\\circ}$$ (segundo cuadrante)."
+        }
+      ],
+      "resultado": "a) $Q_C\\approx-3{,}0\\,\\mu\\text{C}$.\nb) $W_{\\text{campo}}\\approx-0{,}059\\,\\text{J}$; $W_{\\text{ext}}\\approx+0{,}059\\,\\text{J}$ (en contra del campo).\nc) $\\vec E=-13\\,500\\,\\hat i+6750\\,\\hat j\\ \\text{N}\\,\\text{C}^{-1}$; $|\\vec E|\\approx15\\,093\\,\\text{N}\\,\\text{C}^{-1}$; $\\theta\\approx153{,}4^{\\circ}$."
+    },
+    {
+      "numero": 4,
+      "titulo": "Electrones en campo magnético: trayectoria circular y selector de velocidades",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz; B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos",
+      "puntuacion": "3 puntos (1 + 1 + 1)",
+      "enunciado": "Sección 1, Problema 4.- (3 puntos) Un haz de electrones circula en la dirección horizontal (eje $+X$) dentro de un tubo de vacío con una velocidad de $10^{6}\\,\\text{m}\\,\\text{s}^{-1}$, y entra en una región donde aplicamos mediante un imán un campo magnético de $0{,}04\\,\\text{T}$ en la dirección vertical (eje $+Y$). a) Escribe la expresión vectorial de la fuerza que aparece sobre los electrones en este caso, y describe cualitativamente en base a ella la trayectoria que seguirán incluyendo un esquema. b) Calcula los valores numéricos del radio y periodo del movimiento deduciendo las expresiones correspondientes. c) Queremos añadir un campo eléctrico que pueda mantener la trayectoria lineal original. Indicar en qué dirección y sentido tendríamos que aplicarlo y cuál debería ser su valor. Datos: $m_e=9{,}1\\cdot10^{-31}\\,\\text{kg}$; $q_e=-1{,}6\\cdot10^{-19}\\,\\text{C}$.",
+      "apartados": [
+        {
+          "letra": "a",
+          "puntuacion": "1 punto",
+          "enunciado": "Fuerza vectorial sobre el electrón, descripción de la trayectoria y esquema."
+        },
+        {
+          "letra": "b",
+          "puntuacion": "1 punto",
+          "enunciado": "Radio y periodo de la trayectoria circular (con deducción)."
+        },
+        {
+          "letra": "c",
+          "puntuacion": "1 punto",
+          "enunciado": "Campo eléctrico para mantener trayectoria lineal: dirección, sentido y valor."
+        }
+      ],
+      "resolucion": [
+        {
+          "titulo": "Fuerza de Lorentz",
+          "contenido": "Sobre una partícula cargada que se mueve en un campo magnético actúa la fuerza de Lorentz:\n\n$$\\vec F=q\\,(\\vec v\\times\\vec B).$$\n\nEn nuestro caso, inicialmente con $\\vec v=10^{6}\\,\\hat i\\ \\text{m}\\,\\text{s}^{-1}$ y con $\\vec B=0{,}04\\,\\hat j\\ \\text{T}$:\n\n$$\\vec v\\times\\vec B=(10^{6}\\hat i)\\times(0{,}04\\hat j)=10^{6}\\cdot0{,}04\\,(\\hat i\\times\\hat j)=40\\,000\\,\\hat k\\ \\text{m}\\,\\text{s}^{-1}\\cdot\\text{T}.$$\n\nLa carga del electrón es negativa ($q_e=-1{,}6\\cdot10^{-19}\\,\\text{C}$), así que:\n\n$$\\vec F=-1{,}6\\cdot10^{-19}\\cdot40\\,000\\,\\hat k=-6{,}4\\cdot10^{-15}\\,\\hat k\\ \\text{N}.$$\n\nLa fuerza inicial apunta en sentido $-z$ (eje $Z$, hacia abajo si tomamos $Y$ como vertical). Numéricamente: $\\vec F=-6{,}4\\cdot10^{-15}\\,\\hat k\\ \\text{N}$.\n\nAplicamos la regla de la mano derecha para $\\vec v\\times\\vec B$ (que da $+\\hat k$), y luego invertimos el sentido por ser carga negativa: va en $-\\hat k$."
+        },
+        {
+          "titulo": "Descripción cualitativa de la trayectoria",
+          "contenido": "La fuerza magnética es siempre perpendicular a la velocidad (por la definición de producto vectorial). Como consecuencia:\n\n- No realiza trabajo: $W=\\vec F\\cdot\\Delta\\vec r=0$, ya que $\\vec F\\perp\\vec v$.\n- El módulo de la velocidad se mantiene constante.\n- Sólo cambia la dirección de $\\vec v$ con el tiempo.\n- Al cambiar $\\vec v$, también cambia $\\vec F$, manteniéndose siempre perpendicular a $\\vec v$.\n- La trayectoria resultante es una circunferencia en el plano perpendicular a $\\vec B$ (es decir, en el plano $XZ$ en nuestro caso, ya que $\\vec B\\parallel\\hat j$).\n- El sentido de giro inicial es desde $+x$ hacia $-z$: visto desde el extremo positivo de $Y$ ($+\\hat j$), el electrón gira en sentido antihorario.\n\nEsto es el principio del ciclotrón: una carga en campo magnético uniforme realiza movimiento circular uniforme. El plano del círculo es perpendicular a $\\vec B$."
+        },
+        {
+          "titulo": "Esquema cualitativo",
+          "contenido": "Vista desde $+Y$ ($\\vec B$ saliendo del papel hacia el observador): el electrón describe una circunferencia en el plano $XZ$. Sentido inicial: $+X$, fuerza inicial $-Z$, gira hacia abajo y luego vuelve hacia atrás ($-X$) y arriba ($+Z$), completando el ciclo:\n\n(1) $v$ en $+X$, $F$ en $-Z$ →\n(2) $v$ en $-Z$, $F$ en $-X$ →\n(3) $v$ en $-X$, $F$ en $+Z$ →\n(4) $v$ en $+Z$, $F$ en $+X$ (vuelve al inicio).\n\nEl haz de electrones describe una trayectoria circular de radio constante en el plano $XZ$, perpendicular a $\\vec B$."
+        },
+        {
+          "titulo": "Deducción del radio",
+          "contenido": "Como la fuerza magnética es centrípeta del movimiento circular, igualamos sus módulos:\n\n$$|q|\\,v\\,B=\\frac{m\\,v^{2}}{R}.$$\n\nDespejando $R$:\n\n$$R=\\frac{m\\,v}{|q|\\,B}.$$\n\nEl módulo de la velocidad se mantiene constante (no hay trabajo de $\\vec B$), por eso podemos usar la fórmula del MCU."
+        },
+        {
+          "titulo": "Cálculo numérico del radio",
+          "contenido": "$$R=\\frac{9{,}1\\cdot10^{-31}\\cdot10^{6}}{1{,}6\\cdot10^{-19}\\cdot0{,}04}=\\frac{9{,}1\\cdot10^{-25}}{6{,}4\\cdot10^{-21}}\\approx1{,}42\\cdot10^{-4}\\,\\text{m}=0{,}142\\,\\text{mm}.$$"
+        },
+        {
+          "titulo": "Deducción del periodo",
+          "contenido": "El periodo es el tiempo en recorrer una circunferencia completa de radio $R$ a velocidad $v$:\n\n$$T=\\frac{2\\pi\\,R}{v}.$$\n\nSustituyendo $R=\\dfrac{m\\,v}{|q|\\,B}$:\n\n$$T=\\frac{2\\pi}{v}\\cdot\\frac{m\\,v}{|q|\\,B}=\\frac{2\\pi\\,m}{|q|\\,B}.$$\n\nObservación importante: el periodo NO depende ni de la velocidad ni del radio. Sólo depende de las propiedades de la partícula ($m$, $|q|$) y del campo $B$. Este es un resultado clave en ciclotrones: todas las partículas idénticas tienen el mismo periodo independientemente de su energía. Es lo que permite que un ciclotrón funcione con una sola frecuencia de cavidad."
+        },
+        {
+          "titulo": "Cálculo numérico del periodo",
+          "contenido": "$$T=\\frac{2\\pi\\cdot9{,}1\\cdot10^{-31}}{1{,}6\\cdot10^{-19}\\cdot0{,}04}=\\frac{5{,}718\\cdot10^{-30}}{6{,}4\\cdot10^{-21}}\\approx8{,}93\\cdot10^{-10}\\,\\text{s}.$$"
+        },
+        {
+          "titulo": "Condición de fuerza neta cero",
+          "contenido": "Para que la trayectoria del electrón se mantenga lineal (dirección original $+x$), la fuerza neta debe ser cero. La única fuerza inicial era la magnética en $-z$. El campo eléctrico debe producir una fuerza igual y opuesta:\n\n$$q\\,\\vec E+q\\,(\\vec v\\times\\vec B)=0\\;\\Rightarrow\\;\\vec E=-(\\vec v\\times\\vec B).$$\n\nDividiendo por $q$: $\\vec E=-\\vec v\\times\\vec B$. La condición de selector de velocidades funciona igual independientemente del signo de $q$: no depende de $q$."
+        },
+        {
+          "titulo": "Dirección y sentido de E",
+          "contenido": "$\\vec v\\times\\vec B$ apunta inicialmente en $+\\hat k$ (calculado en el apartado a). Por tanto:\n\n$$\\vec E=-(\\vec v\\times\\vec B)=-40\\,000\\,\\hat k\\ \\text{V}\\,\\text{m}^{-1}.$$\n\nEl campo eléctrico apunta en sentido $-z$ (eje $Z$, hacia abajo). Comprobación: $\\vec F_E=q\\,\\vec E=(-1{,}6\\cdot10^{-19})(-40\\,000\\,\\hat k)=+6{,}4\\cdot10^{-15}\\,\\hat k$. Apunta en $+\\hat k$, opuesta a $\\vec F_B$ que iba en $-\\hat k$. Se cancelan. ✓\n\nPara un electrón (carga negativa), la fuerza eléctrica va en sentido opuesto al campo. Aquí va en $+\\hat k$ y $\\vec F_B$ va en $-\\hat k$, lo cual cancela la fuerza magnética que iba en $-\\hat k$."
+        },
+        {
+          "titulo": "Módulo del campo eléctrico",
+          "contenido": "Igualando módulos: $|q|E=|q|vB\\;\\Rightarrow\\;E=vB$. Sustituyendo:\n\n$$E=10^{6}\\cdot0{,}04=40\\,000\\,\\text{V}\\,\\text{m}^{-1}.$$\n\nVector campo eléctrico completo: $\\vec E=-40\\,000\\,\\hat k\\ \\text{V}\\,\\text{m}^{-1}$. Intensidad $40\\,000\\,\\text{V}\\,\\text{m}^{-1}$, dirección $Z$, sentido negativo."
+        }
+      ],
+      "resultado": "a) $\\vec F=-6{,}4\\cdot10^{-15}\\,\\hat k\\ \\text{N}$; trayectoria circular en el plano $XZ$, sentido antihorario visto desde $+Y$.\nb) $R\\approx1{,}42\\cdot10^{-4}\\,\\text{m}$; $T\\approx8{,}93\\cdot10^{-10}\\,\\text{s}$.\nc) $\\vec E=-40\\,000\\,\\hat k\\ \\text{V}\\,\\text{m}^{-1}$ (dirección $-Z$, sentido negativo, módulo $40\\,000\\,\\text{V}\\,\\text{m}^{-1}$)."
+    },
+    {
+      "numero": 5,
+      "titulo": "Medida de masa con muelle y cronómetro",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía",
+      "puntuacion": "1 punto",
+      "enunciado": "Sección 2, Cuestión 5.- (1 punto) Si dispusieras de un cronómetro como único aparato de medida, ¿podrías determinar la masa de un objeto colgándolo de un muelle de constante elástica conocida ($k$) y dejándolo oscilar unas cuantas veces? En caso afirmativo explica cómo lo calcularías. ¿Se obtendrían los mismos resultados en La Luna? Justifica tu respuesta.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Ecuación del MAS de la masa colgada del muelle",
+          "contenido": "Partimos del equilibrio: la masa cuelga del muelle, ya estirado por el peso. Si la sacamos de esa posición de equilibrio una distancia $x$, la única fuerza neta es la restauradora elástica de Hooke (el peso ya está compensado por la elongación de equilibrio):\n\n$$F=-k\\,x=m\\,a\\;\\Rightarrow\\;a=-\\frac{k}{m}\\,x.$$\n\nEsto es la ecuación de un movimiento armónico simple (MAS) con frecuencia angular:\n\n$$\\omega=\\sqrt{\\frac{k}{m}}.$$\n\nTomar como origen de la posición de equilibrio (no la longitud natural del muelle) elimina automáticamente el peso de la ecuación: queda sólo la ley de Hooke."
+        },
+        {
+          "titulo": "Procedimiento experimental con cronómetro",
+          "contenido": "El periodo del MAS es:\n\n$$T=\\frac{2\\pi}{\\omega}=2\\pi\\sqrt{\\frac{m}{k}}.$$\n\nProcedimiento con cronómetro:\n1. Colgar la masa del muelle. Esperar al equilibrio.\n2. Tirar de la masa hacia abajo una distancia pequeña y soltar.\n3. Cronometrar el tiempo de $n$ oscilaciones completas (por ejemplo $n=10$ ó $n=20$ para reducir error).\n4. Calcular el periodo: $T=\\dfrac{t}{n}$.\n\nDespejando $m$ de la fórmula:\n\n$$m=\\frac{k\\,T^{2}}{4\\pi^{2}}.$$\n\nCronometrar varias oscilaciones y promediar reduce el error relativo del cronómetro humano (típicamente $0{,}2\\,\\text{s}$) al dividir entre $n$."
+        },
+        {
+          "titulo": "¿Se obtienen los mismos resultados en la Luna?",
+          "contenido": "Inspeccionemos qué parámetros aparecen en la fórmula $m=\\dfrac{k\\,T^{2}}{4\\pi^{2}}$:\n\n- $k$ es la constante elástica del muelle, propiedad intrínseca del muelle (no depende del lugar).\n- $T$ se mide con el cronómetro y depende del MAS, que como vimos queda regido por $\\omega=\\sqrt{k/m}$, donde tampoco aparece $g$.\n- $\\pi$ es una constante matemática.\n\nNinguno de los parámetros depende de la gravedad $g$. En la Luna se obtendría exactamente el mismo valor de $m$. Lo único que cambiaría es la posición de equilibrio inicial: en la Luna el muelle se estiraría 6 veces menos (gravedad lunar $\\approx g/6$), pero el MAS alrededor de esa nueva posición tendría el mismo periodo."
+        }
+      ],
+      "resultado": "Sí es posible: $m=\\dfrac{k\\,T^{2}}{4\\pi^{2}}$, midiendo $T=t/n$ con el cronómetro. En la Luna se obtendría el mismo resultado porque ni $k$ ni $T$ dependen de $g$."
+    },
+    {
+      "numero": 6,
+      "titulo": "Distancia a la que un nivel de 150 dB cae a 65 dB",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C3. Energía, potencia e intensidad de una onda",
+      "puntuacion": "1 punto",
+      "enunciado": "Sección 2, Cuestión 6.- (1 punto) Un avión produce $150\\,\\text{dB}$ a $1\\,\\text{m}$ de distancia. ¿A qué distancia del avión el nivel de intensidad sonora se encuentra al máximo de lo que establece la ley, es decir $65\\,\\text{dB}$?",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Definición del nivel de intensidad sonora",
+          "contenido": "El nivel de intensidad sonora se mide en decibelios (dB):\n\n$$\\beta=10\\log\\left(\\frac{I}{I_0}\\right),$$\n\ndonde $I_0=10^{-12}\\,\\text{W}\\,\\text{m}^{-2}$ es la intensidad umbral de audición. Despejando $I$ en función de $\\beta$:\n\n$$I=I_0\\cdot10^{\\beta/10}.$$\n\nLa escala logarítmica de decibelios refleja la respuesta psicoacústica del oído humano, sensible a razones de intensidades (no a diferencias)."
+        },
+        {
+          "titulo": "Intensidades en los dos puntos",
+          "contenido": "Punto 1 (avión, $r_1=1\\,\\text{m}$): $\\beta_1=150\\,\\text{dB}$, así que:\n\n$$I_1=I_0\\cdot10^{150/10}=I_0\\cdot10^{15}.$$\n\nPunto 2 (a determinar, $r_2$): $\\beta_2=65\\,\\text{dB}$:\n\n$$I_2=I_0\\cdot10^{65/10}=I_0\\cdot10^{6{,}5}.$$\n\nNo necesitaremos el valor numérico de $I_0$: se cancelará al hacer el cociente."
+        },
+        {
+          "titulo": "Ley de la inversa del cuadrado de la distancia",
+          "contenido": "Una onda esférica emitida por una fuente puntual o cuasi-puntual reparte su potencia sobre la superficie de la esfera. La intensidad a distancia $r$ es:\n\n$$I=\\frac{P}{4\\pi\\,r^{2}}.$$\n\nPor tanto, si $P$ es constante (mismo avión emitiendo):\n\n$$\\frac{I_1}{I_2}=\\frac{r_2^{2}}{r_1^{2}}\\;\\Rightarrow\\;r_2=r_1\\sqrt{\\frac{I_1}{I_2}}.$$\n\nEsta ley aplica bien a fuentes puntuales en aire libre, sin reflexiones ni absorción. Para distancias grandes hay correcciones por absorción atmosférica, pero se desprecian aquí."
+        },
+        {
+          "titulo": "Cálculo numérico de r_2",
+          "contenido": "$$r_2=1\\cdot\\sqrt{\\frac{I_0\\cdot10^{15}}{I_0\\cdot10^{6{,}5}}}=\\sqrt{10^{8{,}5}}=10^{4{,}25}\\approx17\\,783\\,\\text{m}\\approx17{,}8\\,\\text{km}.$$\n\nNuméricamente: $r_2\\approx17{,}8\\,\\text{km}$."
+        }
+      ],
+      "resultado": "$r_2\\approx17{,}8\\,\\text{km}$ (unos $17\\,783\\,\\text{m}$)."
+    },
+    {
+      "numero": 7,
+      "titulo": "Efecto fotoeléctrico: trabajo de extracción y frecuencia umbral",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D2. Problemas precursores de la física cuántica; D3. Dualidad onda-corpúsculo, cuantización e incertidumbre",
+      "puntuacion": "1 punto",
+      "enunciado": "Sección 2, Cuestión 7.- (1 punto) Al llegar a una superficie, una radiación arranca electrones con una velocidad de $10^{5}\\,\\text{m}\\,\\text{s}^{-1}$. Si dicha radiación tiene una longitud de onda $\\lambda=1{,}5\\,\\mu\\text{m}$, calcular el trabajo de extracción y la frecuencia umbral del elemento. Datos: $h=6{,}63\\cdot10^{-34}\\,\\text{J}\\cdot\\text{s}$; $c=3\\cdot10^{8}\\,\\text{m}\\,\\text{s}^{-1}$; $m_e=9{,}11\\cdot10^{-31}\\,\\text{kg}$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Energía del fotón incidente",
+          "contenido": "La energía de un fotón de longitud de onda $\\lambda$ es:\n\n$$E_{\\text{fotón}}=\\frac{h\\,c}{\\lambda}.$$\n\nCon $\\lambda=1{,}5\\,\\mu\\text{m}=1{,}5\\cdot10^{-6}\\,\\text{m}$:\n\n$$E_{\\text{fotón}}=\\frac{6{,}63\\cdot10^{-34}\\cdot3\\cdot10^{8}}{1{,}5\\cdot10^{-6}}=\\frac{1{,}989\\cdot10^{-25}}{1{,}5\\cdot10^{-6}}\\approx1{,}326\\cdot10^{-19}\\,\\text{J}.$$\n\n$1{,}5\\,\\mu\\text{m}$ es del orden del infrarrojo cercano: muy poca energía por fotón."
+        },
+        {
+          "titulo": "Energía cinética de los electrones emitidos",
+          "contenido": "Los electrones salen con velocidad $v=10^{5}\\,\\text{m}\\,\\text{s}^{-1}$. Su energía cinética es:\n\n$$K_{\\text{max}}=\\frac{1}{2}m_e\\,v^{2}=\\frac{1}{2}\\cdot9{,}11\\cdot10^{-31}\\cdot(10^{5})^{2}=4{,}555\\cdot10^{-21}\\,\\text{J}.$$\n\nVelocidad $10^{5}\\,\\text{m}\\,\\text{s}^{-1}$ es no relativista ($\\sim c/3000$), así que usamos cinemática clásica."
+        },
+        {
+          "titulo": "Trabajo de extracción (ecuación de Einstein)",
+          "contenido": "La ecuación de Einstein del efecto fotoeléctrico establece la conservación de la energía:\n\n$$E_{\\text{fotón}}=W_{\\text{ext}}+K_{\\text{max}},$$\n\ndonde $W_{\\text{ext}}$ es el trabajo de extracción (energía mínima para arrancar un electrón). Despejando:\n\n$$W_{\\text{ext}}=E_{\\text{fotón}}-K_{\\text{max}}=1{,}326\\cdot10^{-19}-4{,}555\\cdot10^{-21}\\approx1{,}281\\cdot10^{-19}\\,\\text{J}.$$\n\n$W_{\\text{ext}}$ es positivo y menor que la energía del fotón: hay emisión y los electrones escapan con la cinética sobrante."
+        },
+        {
+          "titulo": "Frecuencia umbral",
+          "contenido": "La frecuencia umbral es la frecuencia mínima que un fotón debe tener para arrancar electrones (sin sobrar energía cinética). Cumple:\n\n$$h\\,\\nu_0=W_{\\text{ext}}\\;\\Rightarrow\\;\\nu_0=\\frac{W_{\\text{ext}}}{h}.$$\n\nSustituyendo:\n\n$$\\nu_0=\\frac{1{,}281\\cdot10^{-19}}{6{,}63\\cdot10^{-34}}\\approx1{,}93\\cdot10^{14}\\,\\text{Hz}.$$"
+        }
+      ],
+      "resultado": "$W_{\\text{ext}}\\approx1{,}28\\cdot10^{-19}\\,\\text{J}$; $\\nu_0\\approx1{,}93\\cdot10^{14}\\,\\text{Hz}$."
+    },
+    {
+      "numero": 8,
+      "titulo": "Datación por C-14 de los Manuscritos del Mar Muerto",
+      "Bloque": "D. Física relativista, cuántica, nuclear y de partículas",
+      "Tema": "D5. Núcleos atómicos, radiactividad y reacciones nucleares; D6. Leyes de desintegración radiactiva y actividad",
+      "puntuacion": "1 punto",
+      "enunciado": "Sección 2, Cuestión 8.- (1 punto) Un trozo de papel (producido a partir de materia vegetal antiguamente viva), extraído de los Manuscritos del Mar Muerto, tiene una actividad de $10{,}93$ desintegraciones por minuto por gramo de Carbono. Calcula la edad de los Manuscritos sabiendo que la actividad radioactiva del carbono atmosférico (C-14) es $13{,}6$ desintegraciones por minuto por gramo de Carbono. Dato: Periodo de semidesintegración del C-14 $=5730$ años.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Ley de desintegración radiactiva",
+          "contenido": "La actividad de una muestra (número de desintegraciones por unidad de tiempo) decae exponencialmente:\n\n$$A(t)=A_0\\,e^{-\\lambda t},$$\n\ndonde:\n\n- $A_0$ es la actividad inicial (cuando la muestra dejó de intercambiar carbono con la atmósfera, es decir, cuando la materia vegetal murió).\n- $\\tau=1/\\lambda$ es la vida media (constante de tiempo del decaimiento).\n\nEquivalentemente: $A(t)=A_0\\,e^{-t/\\tau}$, con $\\lambda$ constante de desintegración. La datación por C-14 se basa en que el carbono atmosférico tiene una proporción constante de C-14, asimilada por la planta mientras vive. Al morir, deja de captarlo y la proporción comienza a decaer exponencialmente."
+        },
+        {
+          "titulo": "Relación entre vida media y periodo de semidesintegración",
+          "contenido": "El periodo de semidesintegración $T_{1/2}$ es el tiempo para que la actividad se reduzca a la mitad. Imponiendo $A(T_{1/2})=\\dfrac{A_0}{2}$:\n\n$$e^{-\\lambda T_{1/2}}=\\frac{1}{2}\\;\\Rightarrow\\;\\lambda=\\frac{\\ln 2}{T_{1/2}}.$$\n\nCon $T_{1/2}=5730$ años:\n\n$$\\lambda=\\frac{0{,}693}{5730}\\approx1{,}21\\cdot10^{-4}\\,\\text{años}^{-1}.$$"
+        },
+        {
+          "titulo": "Despeje de la edad",
+          "contenido": "Sustituyendo los valores en la ley de desintegración:\n\n$$10{,}93=13{,}6\\,e^{-\\lambda t}\\;\\Rightarrow\\;e^{-\\lambda t}=\\frac{10{,}93}{13{,}6}=0{,}8037.$$\n\nTomando logaritmo natural:\n\n$$-\\lambda t=\\ln(0{,}8037)=-0{,}2186\\;\\Rightarrow\\;t=\\frac{0{,}2186}{1{,}21\\cdot10^{-4}}\\approx1807\\,\\text{años}.$$"
+        }
+      ],
+      "resultado": "$t\\approx1807$ años."
+    },
+    {
+      "numero": 9,
+      "titulo": "Esferas conductoras unidas: redistribución de carga",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B4. Potencial eléctrico, equipotenciales y campo uniforme; B2. Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico",
+      "puntuacion": "1 punto",
+      "enunciado": "Sección 2, Cuestión 9.- (1 punto) Dos esferas conductoras de radios $80\\,\\text{cm}$ y $40\\,\\text{cm}$, tienen una carga de $16\\,\\mu\\text{C}$ cada una. Se colocan en el vacío y muy alejadas entre sí. Determina la carga final de cada una tras unirlas mediante un hilo conductor de capacidad despreciable.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Condición de equilibrio: igualdad de potenciales",
+          "contenido": "Al unir las esferas con un hilo conductor, los electrones libres se redistribuyen hasta que el potencial eléctrico de ambas esferas sea idéntico (de lo contrario seguiría habiendo corriente en el hilo):\n\n$$V_1=V_2.$$\n\nEl potencial en la superficie de una esfera conductora aislada es $V=K\\dfrac{Q}{R}$. Por tanto:\n\n$$K\\,\\frac{Q_1}{R_1}=K\\,\\frac{Q_2}{R_2}\\;\\Rightarrow\\;\\frac{Q_1}{R_1}=\\frac{Q_2}{R_2}.$$\n\nEstar muy alejadas justifica tratar cada esfera como aislada y usar $V=KQ/R$ sin correcciones por inducción mutua."
+        },
+        {
+          "titulo": "Conservación de la carga total",
+          "contenido": "El sistema es aislado eléctricamente (no hay tierra). La carga total se conserva:\n\n$$Q_1+Q_2=Q_{\\text{total}}=16+16=32\\,\\mu\\text{C}.$$\n\nLos electrones sólo se mueven entre las dos esferas a través del hilo, no entran ni salen del sistema."
+        },
+        {
+          "titulo": "Resolución del sistema",
+          "contenido": "Combinando las dos ecuaciones:\n\n$$\\frac{Q_1}{R_1}=\\frac{Q_2}{R_2}\\;\\Rightarrow\\;Q_2=\\frac{R_2}{R_1}\\,Q_1=\\frac{40}{80}\\,Q_1=\\frac{1}{2}\\,Q_1.$$\n\nDe la primera: $Q_1=2\\,Q_2$. Sustituyendo en la segunda:\n\n$$2\\,Q_2+Q_2=32\\;\\Rightarrow\\;3\\,Q_2=32\\;\\Rightarrow\\;Q_2=10{,}67\\,\\mu\\text{C}.$$\n\n$$Q_1=2\\cdot10{,}67=21{,}33\\,\\mu\\text{C}.$$"
+        },
+        {
+          "titulo": "Carga transferida",
+          "contenido": "Inicialmente ambas tenían $16\\,\\mu\\text{C}$. Tras unirlas:\n\n- La esfera grande ganó $21{,}33-16=5{,}33\\,\\mu\\text{C}$.\n- La esfera pequeña perdió $16-10{,}67=5{,}33\\,\\mu\\text{C}$.\n\nFluyeron $5{,}33\\,\\mu\\text{C}$ desde la esfera pequeña hacia la grande. Esto es coherente: ambas comenzaron con la misma carga, pero la pequeña tenía mayor potencial ($V\\propto1/R$), así que la corriente fluyó desde la de mayor potencial (pequeña) hasta la de menor (grande) hasta igualarlos."
+        }
+      ],
+      "resultado": "$Q_1\\approx21{,}33\\,\\mu\\text{C}$ (esfera de $80\\,\\text{cm}$); $Q_2\\approx10{,}67\\,\\mu\\text{C}$ (esfera de $40\\,\\text{cm}$). Transferencia: $5{,}33\\,\\mu\\text{C}$ de la pequeña a la grande."
+    },
+    {
+      "numero": 10,
+      "titulo": "Inducción en espira con campo magnético variable B(t)=0,014t² k̂",
+      "Bloque": "B. Campo electromagnético",
+      "Tema": "B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz",
+      "puntuacion": "1 punto",
+      "enunciado": "Sección 2, Cuestión 10.- (1 punto) Una espira conductora circular descansa sobre el plano $XY$ y está sometida a un campo magnético uniforme cuyo valor es $\\vec B(t)=0{,}014\\cdot t^{2}\\,\\hat k$, donde el campo y el tiempo están en unidades del S.I. Razona si aparecerá corriente en la espira (no hay que calcular su valor). En caso de producirse, explica su sentido y dibújalo en un esquema donde aparezca la dirección y sentido de $\\vec B$.",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Flujo magnético a través de la espira",
+          "contenido": "El flujo magnético es:\n\n$$\\Phi_B=\\vec B\\cdot\\vec S=B\\,S\\,\\cos\\theta.$$\n\nLa espira está en el plano $XY$, así que su vector área es perpendicular a ese plano, es decir, paralelo al eje $Z$ ($\\vec S=S\\,\\hat k$). El campo es también paralelo a $\\hat k$ (con módulo $B=0{,}014\\,t^{2}$). Por tanto $\\theta=0$:\n\n$$\\Phi_B(t)=0{,}014\\,t^{2}\\,S,$$\n\nque maximiza el producto escalar."
+        },
+        {
+          "titulo": "Variación temporal del flujo",
+          "contenido": "$S$ es constante (la espira no se deforma ni gira). Pero $\\Phi_B$ aumenta con el tiempo:\n\n$$\\frac{d\\Phi_B}{dt}=0{,}014\\cdot2t\\,S=0{,}028\\,t\\,S>0.$$\n\nPara $t>0$, $\\dfrac{d\\Phi_B}{dt}>0$ (el flujo crece). Esto induce una fuerza electromotriz:\n\n$$\\varepsilon=-\\frac{d\\Phi_B}{dt}\\neq0.$$\n\nComo $\\varepsilon\\neq0$, aparecerá corriente inducida en la espira (por la ley de Ohm con la resistencia de la espira). Para $t=0$ no hay variación instantánea ($d\\Phi_B/dt=0$), pero para cualquier $t>0$ sí la hay."
+        },
+        {
+          "titulo": "Sentido de la corriente inducida (ley de Lenz)",
+          "contenido": "La ley de Lenz establece que la corriente inducida se opone a la variación que la origina. Como el flujo en sentido $+\\hat k$ está aumentando, la corriente inducida debe generar un campo magnético propio que apunte en sentido $-\\hat k$ (oponiéndose al aumento). Por la regla de la mano derecha aplicada al sentido de la corriente:\n\n- Si los dedos curvados de la mano derecha apuntan en el sentido de la corriente, el pulgar marca el campo magnético dentro de la espira.\n- Para que el pulgar marque $-\\hat k$ (hacia abajo, hacia $-Z$), los dedos deben curvar en sentido horario visto desde $+Z$ (es decir, desde arriba).\n\nConclusión: la corriente inducida circula en sentido HORARIO vista desde la parte positiva del eje $Z$ (desde arriba)."
+        },
+        {
+          "titulo": "Esquema",
+          "contenido": "Vista desde $+Z$: eje $Z$ hacia arriba, $\\vec B(t)$ creciente en $+\\hat k$. La espira está en el plano $XY$; la corriente inducida circula en sentido horario (opuesta a las agujas del reloj vista desde arriba), generando un campo $\\vec B_{\\text{inducido}}$ en $-\\hat k$."
+        }
+      ],
+      "resultado": "Sí aparece corriente inducida, pues $\\dfrac{d\\Phi_B}{dt}\\neq0$ para $t>0$. Sentido: horario visto desde $+Z$ (desde arriba), generando $\\vec B_{\\text{inducido}}$ en $-\\hat k$."
+    },
+    {
+      "numero": 11,
+      "titulo": "Medida experimental de g en Kepler-442b con un péndulo",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C1. Movimiento armónico simple: cinemática y energía",
+      "puntuacion": "1 punto",
+      "enunciado": "Sección 3, Cuestión 11.- (1 punto) El exoplaneta Kepler-442b es de momento el más parecido a la Tierra de todos los descubiertos. Si hiciésemos un experimento de medida del periodo de un péndulo de $m=20\\,\\text{g}$ para determinar su valor, contando el tiempo que tarda en oscilar 5 veces, obtendríamos los siguientes resultados cuando la longitud del péndulo es $30\\,\\text{cm}$: $t_5$ (s): 4,95; 5,02; 5,12; 4,92; 4,89; 4,91. Explica el procedimiento para determinar el valor de la gravedad en la superficie del planeta y calcula su valor. ¿Qué valor habríamos obtenido con un péndulo que tuviera el doble de masa?",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Periodo de un péndulo simple",
+          "contenido": "Para oscilaciones de pequeña amplitud, el péndulo simple realiza un movimiento armónico simple con periodo:\n\n$$T=2\\pi\\sqrt{\\frac{L}{g}}.$$\n\nDespejando $g$:\n\n$$g=\\frac{4\\pi^{2}L}{T^{2}}.$$\n\nSi conocemos $L$ (longitud del hilo) y medimos $T$ con un cronómetro, podemos calcular $g$. La fórmula es válida para amplitudes $\\theta<15^{\\circ}$, donde $\\text{sen}\\,\\theta\\approx\\theta$ y el movimiento es aproximadamente armónico."
+        },
+        {
+          "titulo": "Procedimiento experimental",
+          "contenido": "Para mejorar la precisión, en vez de cronometrar una sola oscilación se mide el tiempo de $n=5$ oscilaciones completas (aquí $n=5$). El periodo es entonces:\n\n$$T=\\frac{t_5}{5}.$$\n\nSe repite la medida varias veces (6 en este caso) y se promedia para reducir el error aleatorio del cronómetro humano (típicamente $0{,}2\\,\\text{s}$ por medida individual). Promediar medidas reduce la incertidumbre estadística en un factor $\\sqrt{N}$."
+        },
+        {
+          "titulo": "Cálculo del tiempo medio y periodo",
+          "contenido": "Tiempos medidos: $4{,}95$; $5{,}02$; $5{,}12$; $4{,}92$; $4{,}89$; $4{,}91\\,\\text{s}$. Tiempo medio:\n\n$$\\bar t_5=\\frac{4{,}95+5{,}02+5{,}12+4{,}92+4{,}89+4{,}91}{6}=\\frac{29{,}81}{6}\\approx4{,}968\\,\\text{s}.$$\n\nPeriodo medio:\n\n$$T=\\frac{\\bar t_5}{5}=\\frac{4{,}968}{5}\\approx0{,}9937\\,\\text{s}.$$\n\nCalcular primero el tiempo medio de 5 oscilaciones y luego dividir es ligeramente más preciso que calcular cada $T$ y promediar (aunque equivalente matemáticamente)."
+        },
+        {
+          "titulo": "Cálculo de la gravedad",
+          "contenido": "Con $L=30\\,\\text{cm}=0{,}30\\,\\text{m}$ y $T=0{,}9937\\,\\text{s}$:\n\n$$g=\\frac{4\\pi^{2}\\cdot0{,}30}{(0{,}9937)^{2}}=\\frac{11{,}844}{0{,}9874}\\approx11{,}99\\,\\text{m}\\,\\text{s}^{-2}.$$"
+        },
+        {
+          "titulo": "¿Qué ocurriría con el doble de masa?",
+          "contenido": "Inspeccionemos la fórmula del periodo: $T=2\\pi\\sqrt{\\dfrac{L}{g}}$. No aparece la masa del péndulo. Esto se debe a que en la ecuación del movimiento del péndulo:\n\n$$m\\,g\\,\\text{sen}\\,\\theta=m\\,L\\,\\alpha,$$\n\nla masa se cancela en ambos lados. Por tanto: con un péndulo de doble masa obtendríamos exactamente el mismo periodo y, en consecuencia, la misma medida de $g$."
+        }
+      ],
+      "resultado": "$g\\approx12{,}0\\,\\text{m}\\,\\text{s}^{-2}$ (Kepler-442b). Con el doble de masa se obtendría el mismo periodo y la misma $g$, porque la masa se cancela en la ecuación del péndulo."
+    },
+    {
+      "numero": 12,
+      "titulo": "Leyes de Snell: índice de refracción y reflexión total",
+      "Bloque": "C. Vibraciones y ondas",
+      "Tema": "C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias; C6. Formación de imágenes y sistemas ópticos",
+      "puntuacion": "1 punto",
+      "enunciado": "Sección 3, Cuestión 12.- (1 punto) En un experimento de las leyes de Snell la luz puede viajar por el aire (fondo blanco) o por un cristal desconocido (fondo oscuro). Extrae de los casos (a) y (b) los ángulos de incidencia y refracción, y determina justificadamente el índice de refracción del vidrio, justificando si es o no el mismo material en los dos casos. Explica por qué en el caso (c) no se observa rayo refractado. [Se adjuntan tres figuras en el PDF original: (a) luz incidente desde el aire (fondo blanco) hacia el cristal (fondo oscuro), ángulo de incidencia $30^{\\circ}$ y refractado $20^{\\circ}$; (b) luz desde el cristal hacia el aire, ángulo de incidencia $30^{\\circ}$ y refractado $45^{\\circ}$; (c) luz desde el cristal hacia el aire con ángulo de incidencia $70^{\\circ}$, sin rayo refractado visible (sólo reflejado).]",
+      "apartados": [],
+      "resolucion": [
+        {
+          "titulo": "Leyes de Snell",
+          "contenido": "Cuando la luz pasa de un medio (índice $n_1$) a otro (índice $n_2$) sufre refracción según la ley de Snell:\n\n$$n_1\\,\\text{sen}\\,\\theta_1=n_2\\,\\text{sen}\\,\\theta_2.$$\n\nAdicionalmente, parte de la luz se refleja con $\\theta_r=\\theta_i$. Los ángulos se miden respecto a la NORMAL a la superficie de separación. La ley se deduce del principio de Fermat (camino óptico mínimo) o del modelo ondulatorio de Huygens. El índice de refracción es siempre $n\\ge1$."
+        },
+        {
+          "titulo": "Caso (a): aire → vidrio",
+          "contenido": "Datos extraídos de la figura: $\\theta_1=30^{\\circ}$ (en el aire), $\\theta_2=20^{\\circ}$ (en el vidrio). Aplicando la ley de Snell con $n_{\\text{aire}}=1$ y $n_v$ el del vidrio:\n\n$$1\\cdot\\text{sen}\\,30^{\\circ}=n_v\\cdot\\text{sen}\\,20^{\\circ}\\;\\Rightarrow\\;n_v=\\frac{\\text{sen}\\,30^{\\circ}}{\\text{sen}\\,20^{\\circ}}=\\frac{0{,}5}{0{,}342}\\approx1{,}46.$$\n\nRedondeando a una cifra significativa razonable (compatibles con la lectura limitada del transportador): $n_v\\approx1{,}5$. Tomar $n_v\\approx1{,}5$ es consistente con la lectura del transportador que sólo permite leer hasta enteros."
+        },
+        {
+          "titulo": "Caso (b): vidrio → aire",
+          "contenido": "Datos: $\\theta_1=30^{\\circ}$ (en el vidrio), $\\theta_2=45^{\\circ}$ (en el aire). Ahora el medio de incidencia es el vidrio, $n_1=n_v$ (incógnita), y el medio refractado es el aire ($n_2=1$):\n\n$$n_v\\cdot\\text{sen}\\,30^{\\circ}=1\\cdot\\text{sen}\\,45^{\\circ}\\;\\Rightarrow\\;n_v=\\frac{\\text{sen}\\,45^{\\circ}}{\\text{sen}\\,30^{\\circ}}=\\frac{0{,}707}{0{,}5}\\approx1{,}414.$$\n\nRedondeando: $n_v\\approx1{,}4$."
+        },
+        {
+          "titulo": "¿Es el mismo material en ambos casos?",
+          "contenido": "Los dos índices coinciden dentro del error experimental: $n_v\\approx1{,}46$ vs $n_v\\approx1{,}41$. Sí, se trata del mismo material ($n_v\\approx1{,}4$–$1{,}5$). La ley de Snell predice exactamente esta consistencia: el índice de refracción es una propiedad del material, no depende de la dirección del haz luminoso. Nota: si se toman más decimales, $1{,}46$ vs $1{,}41$, hay una pequeña discrepancia (3 %) atribuible al error experimental de lectura con transportador. Se aceptan ambas conclusiones (mismo material o materiales muy similares)."
+        },
+        {
+          "titulo": "Caso (c): ausencia de rayo refractado — reflexión total",
+          "contenido": "Datos: $\\theta_1=70^{\\circ}$ (en el vidrio), no se observa rayo refractado. Aplicando la ley de Snell intentaríamos:\n\n$$n_v\\,\\text{sen}\\,70^{\\circ}=1\\cdot\\text{sen}\\,\\theta_2\\;\\Rightarrow\\;\\text{sen}\\,\\theta_2=1{,}45\\cdot\\text{sen}\\,70^{\\circ}=1{,}45\\cdot0{,}9397\\approx1{,}36.$$\n\n¡Pero $\\text{sen}\\,\\theta_2$ no puede superar 1! La ecuación no tiene solución real para $\\theta_2$. Físicamente esto significa que no hay refracción posible: toda la luz se refleja de vuelta al vidrio (REFLEXIÓN TOTAL INTERNA). El ángulo a partir del cual ocurre la reflexión total se llama ángulo crítico y se define imponiendo $\\theta_2=90^{\\circ}$:\n\n$$n_v\\,\\text{sen}\\,\\theta_c=1\\;\\Rightarrow\\;\\text{sen}\\,\\theta_c=\\frac{1}{n_v}\\approx\\frac{1}{1{,}45}\\approx0{,}69\\;\\Rightarrow\\;\\theta_c\\approx43{,}6^{\\circ}.$$\n\nComo $70^{\\circ}>43{,}6^{\\circ}$, se produce reflexión total. No hay rayo refractado, sólo reflejado."
+        }
+      ],
+      "resultado": "a) $n_v\\approx1{,}46$ (≈1,5). b) $n_v\\approx1{,}41$ (≈1,4); mismo material dentro del error experimental. c) No hay refracción porque $\\text{sen}\\,\\theta_2>1$: reflexión total interna; ángulo crítico $\\theta_c\\approx43{,}6^{\\circ}<70^{\\circ}$."
+    }
+  ]
+}
