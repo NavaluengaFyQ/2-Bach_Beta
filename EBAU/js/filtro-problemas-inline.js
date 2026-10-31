@@ -115,11 +115,6 @@ function ordenarTemas(a, b) {
 // título, enunciado, tema, bloque, apartados con texto, resolución
 // con texto o resultado. Da igual qué id/examenId/codigo tenga:
 // si no hay contenido que mostrar, no se lista.
-//
-// Esto cubre el caso problemático del fallback: un fichero de examen
-// en ./Datos/ que está completamente vacío pero cuyo id viene relleno
-// desde indice.json → sus ejercicios tendrían examenId válido pero
-// contenido vacío, así que ahora sí se descartan.
 function problemaVacio(p) {
     if (!p) return true;
 
@@ -128,8 +123,8 @@ function problemaVacio(p) {
     const tieneTitulo     = !vacio(p.titulo);
     const tieneEnunciado  = !vacio(p.enunciado);
     const tieneResultado  = !vacio(p.resultado);
-    const tieneTema       = !vacio(p.temaPrincipal || p.tema);
-    const tieneBloque     = !vacio(p.bloquePrincipal || p.bloque);
+    const tieneTema       = !vacio(p.temaPrincipal || p.tema || p.Tema);
+    const tieneBloque     = !vacio(p.bloquePrincipal || p.bloque || p.Bloque);
 
     const tieneApartados = Array.isArray(p.apartados) && p.apartados.some(a =>
         a && (!vacio(a.enunciado) || !vacio(a.letra))
@@ -226,18 +221,13 @@ function enriquecerProblema(p) {
         bloques,
         temaPrincipal: p.temaPrincipal || temas[0] || '',
         bloquePrincipal: p.bloquePrincipal || bloques[0] || '',
+        // Aseguramos que siempre exista examenId (distintos alias por si
+        // algún consolidado lo llama de otra forma).
+        examenId: p.examenId || p.examen_id || p.examId || p.exam_id || p.examenid || ''
     };
 }
 
 // ─── Parser de consultas ──────────────────────────────────────
-// Gramática:
-//   query   := orExpr
-//   orExpr  := andExpr ( '|' andExpr )*
-//   andExpr := term ( '+' term )*
-//   term    := PHRASE | WORD
-// Las frases van entre "..." o «...» (también se aceptan comillas tipográficas).
-// Si entre dos términos no hay operador explícito, se usa la lógica por defecto
-// (OR salvo que el usuario marque «Todas las palabras»).
 const QUOTE_CHARS = /["\u00AB\u00BB\u201C\u201D\u2018\u2019]/;
 
 function parsearConsulta(query) {
@@ -250,18 +240,16 @@ function parsearConsulta(query) {
         if (c === '+') { tokens.push({ type: 'AND' }); i++; continue; }
         if (c === '|') { tokens.push({ type: 'OR' });  i++; continue; }
 
-        // Frase entrecomillada
         if (QUOTE_CHARS.test(c)) {
             i++;
             let phrase = '';
             while (i < s.length && !QUOTE_CHARS.test(s[i])) phrase += s[i++];
-            if (i < s.length) i++; // consumir cierre
+            if (i < s.length) i++;
             const val = normalizarTexto(phrase.trim());
             if (val) tokens.push({ type: 'term', value: val, isPhrase: true });
             continue;
         }
 
-        // Palabra suelta
         let word = '';
         while (i < s.length && !/[\s+|]/.test(s[i]) && !QUOTE_CHARS.test(s[i])) {
             word += s[i++];
@@ -274,10 +262,6 @@ function parsearConsulta(query) {
     return tokens;
 }
 
-// Agrupa tokens en una estructura "OR de ANDs".
-// - Un '|' crea un grupo nuevo.
-// - Un '+' (o la lógica por defecto cuando no hay operador explícito) mantiene
-//   el término en el grupo actual.
 function construirGrupos(tokens, defaultLogic) {
     const groups = [[]];
     let pendingOp = null;
@@ -327,7 +311,6 @@ async function comprobarPdf(url) {
     return promesa;
 }
 
-// Observador perezoso: solo comprueba el PDF cuando el enlace entra en viewport.
 let pdfObserver = null;
 function getPdfObserver() {
     if (pdfObserver) return pdfObserver;
@@ -373,7 +356,11 @@ function observarPdfsEn(nodos) {
 
 // ─── Carga de datos ────────────────────────────────────────────
 async function cargarProblemasCrudos() {
-    // 1) JSON consolidado (recomendado): 1 sola petición.
+    // 1) JSON consolidado — DESACTIVADO: no incluye examenId por ejercicio,
+    //    lo que rompía los enlaces "Ver examen completo" (salían ?id=).
+    //    Si en el futuro regeneras problemas.json con examenId en cada
+    //    ejercicio, puedes reactivar este bloque.
+    /*
     try {
         const r = await fetch('./Datos/problemas.json', { cache: 'no-cache' });
         if (r.ok) {
@@ -384,7 +371,8 @@ async function cargarProblemasCrudos() {
                     .filter(p => !problemaVacio(p));
             }
         }
-    } catch { /* no existe: seguimos con el fallback */ }
+    } catch { }
+    */
 
     // 2) Fallback: índice + N ficheros, con concurrencia limitada (6).
     const resIndice = await fetch('./Datos/indice.json');
@@ -405,9 +393,6 @@ async function cargarProblemasCrudos() {
                 if (!res.ok) throw new Error(`No se encontró ${ex.id}.json`);
                 const data = await res.json();
 
-                // Antes de sobrescribir data.id: si el fichero cargado está
-                // totalmente vacío, lo saltamos para no generar ejercicios
-                // fantasma con examenId válido pero contenido vacío.
                 const vacio = v => v == null || String(v).trim() === '';
                 const examenesVacios =
                     vacio(data.id) &&
@@ -457,21 +442,18 @@ async function cargarProblemasCrudos() {
 // ─── Índices de búsqueda por ámbito ───────────────────────────
 function precalcularIndiceBusqueda() {
     todosLosProblemas.forEach(p => {
-        // ── Enunciado ──
         const camposEnunciado = [p.titulo, p.enunciado];
         (p.apartados || []).forEach(ap => {
             if (ap.letra)     camposEnunciado.push(ap.letra);
             if (ap.enunciado) camposEnunciado.push(ap.enunciado);
         });
 
-        // ── Resolución ──
         const camposResolucion = [p.resultado];
         (p.resolucion || []).forEach(paso => {
             if (paso.titulo)    camposResolucion.push(paso.titulo);
             if (paso.contenido) camposResolucion.push(paso.contenido);
         });
 
-        // ── Metadatos ──
         const camposMeta = [
             p.comunidad, p.asignatura, p.nivel, p.curso,
             ...(p.temas || []),
@@ -523,8 +505,6 @@ async function cargarDatos() {
     contenedor.innerHTML = '<p style="text-align:center; color:#64748b; padding: 20px;">Cargando problemas...</p>';
 
     try {
-        // Filtro final de seguridad en la carga: `todosLosProblemas`
-        // nunca contendrá problemas sin contenido real.
         todosLosProblemas = (await cargarProblemasCrudos())
             .filter(p => !problemaVacio(p));
         precalcularIndiceBusqueda();
@@ -538,7 +518,6 @@ async function cargarDatos() {
 
 // ─── Filtros ───────────────────────────────────────────────────
 function inicializarFiltros() {
-    // Años
     const anios = [...new Set(todosLosProblemas.map(p => p.anio))]
         .filter(a => a != null)
         .sort((a, b) => b - a);
@@ -554,7 +533,6 @@ function inicializarFiltros() {
         });
     }
 
-    // Convocatorias
     const convocatorias = [...new Set(todosLosProblemas.map(p => p.convocatoria))]
         .filter(c => c)
         .sort();
@@ -570,7 +548,6 @@ function inicializarFiltros() {
         });
     }
 
-    // Comunidades
     const comunidades = [...new Set(
         todosLosProblemas.map(p => p.comunidad).filter(c => c)
     )].sort((a, b) => a.localeCompare(b));
@@ -596,7 +573,6 @@ function inicializarFiltros() {
         });
     }
 
-    // Bloques
     const bloquesMap = new Map();
     todosLosProblemas.forEach(p => (p.bloques || []).forEach(b => {
         if (!bloquesMap.has(b)) bloquesMap.set(b, b);
@@ -625,10 +601,8 @@ function inicializarFiltros() {
         });
     }
 
-    // Temas: dependientes de los bloques
     renderFiltroTemas();
 
-    // Eventos (todos con `on()` defensivo: si el elemento no existe, no rompe)
     on('select-orden', 'change', renderizarResultados);
     on('select-ambito', 'change', renderizarResultados);
     on('check-and-default', 'change', renderizarResultados);
@@ -698,7 +672,6 @@ function renderizarResultados() {
     const check = $id('check-mostrar-enunciado');
     const mostrarEnunciado = !!(check && check.checked);
 
-    // ─── Búsqueda con parser de consultas + ámbito ───
     const queryRaw = valorDe('input-busqueda', '');
     const checkAnd = $id('check-and-default');
     const logica   = (checkAnd && checkAnd.checked) ? 'AND' : 'OR';
@@ -708,7 +681,6 @@ function renderizarResultados() {
     const hayBusqueda = grupos.some(g => g.length > 0);
 
     let filtrados = todosLosProblemas.filter(p => {
-        // Seguro final: nunca mostrar problemas sin contenido.
         if (problemaVacio(p)) return false;
 
         const cumpleAnio = aniosSeleccionados.length === 0 || aniosSeleccionados.includes(p.anio);

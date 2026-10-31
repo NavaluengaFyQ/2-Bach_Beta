@@ -1,0 +1,949 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   PAU Física · Buscador de problemas resueltos
+   Hoja de estilos principal — css/estilos.css
+   ───────────────────────────────────────────────────────────────────────
+   ÍNDICE DE SECCIONES
+   § 01  Variables globales (:root)
+   § 02  Reset y base tipográfica (html, body)
+   § 03  Contenedor principal (.wrap)
+   § 04  Cabecera / Hero
+   § 05  Bloques y secciones (<section class="block">)
+   § 06  Buscador (input y selects)
+   § 07  Ayuda de sintaxis del buscador
+   § 08  Grupos de filtros (año, convocatoria, comunidad, bloque, tema)
+   § 09  Estado de los botones de PDF (enlaces no disponibles)
+   § 10  Toolbar (barra de acciones inferior)
+   § 11  Control segmentado (modo de vista)
+   § 12  Botón «Sorpréndeme» (problema aleatorio)
+   § 13  Resultados (contador y tarjetas)
+   § 14  Tarjeta desplegable del problema
+   § 15  Etiquetas / badges
+   § 16  Cabecera de la tarjeta (título + ver examen)
+   § 17  Botones mini de PDF
+   § 18  Resumen del enunciado (opcional)
+   § 19  Detalle abierto de la tarjeta
+   § 20  Resolución (pasos y resultado final)
+   § 21  Resolución plegable (<details>)
+   § 22  Enlace «Volver al inicio» al final de cada problema
+   § 23  Cabeceras de grupo (tema, bloque, año, comunidad)
+   § 24  Botón «Cargar más»
+   § 25  Botón flotante «Volver arriba»
+   § 26  Pie de página
+   § 27  Ajustes para MathJax
+   § 28  Responsive (móvil)
+   § 29  Accesibilidad: movimiento reducido
+   ───────────────────────────────────────────────────────────────────────
+   Convenciones
+   · Variables de color y medidas en :root (sección 01).
+   · Prefijos: .badge-* = etiquetas; .btn-* = botones; .grupo-* = cabeceras
+     de agrupación; .pdf-* = controles de descarga.
+   · Los estilos dinámicos que aplica el JS (resaltado del problema aleatorio,
+     apertura/cierre del <details> de resolución) viven en el propio JS.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 01 · Variables globales
+   ───────────────────────────────────────────────────────────────────────
+   Paleta, radios y sombras. Cambiar aquí afecta a todo el sitio.
+   ═══════════════════════════════════════════════════════════════════════ */
+:root{
+  --bg:            #f4f6fb;
+  --surface:       #ffffff;
+  --surface-2:     #f8fafc;
+  --text:          #1f2937;
+  --text-soft:     #4b5563;
+  --text-mute:     #6b7280;
+  --line:          #e2e8f0;
+  --line-strong:   #cbd5e1;
+
+  --a: #4f46e5;  --a-bg:#eef2ff;
+  --b: #b45309;  --b-bg:#fef3c7;
+  --c: #0f766e;  --c-bg:#ccfbf1;
+  --d: #9d174d;  --d-bg:#fce7f3;
+
+  --ok:  #047857;
+  --ok-bg:#d1fae5;
+
+  --radius: 16px;
+  --shadow: 0 1px 2px rgba(16,24,40,.05), 0 8px 24px -8px rgba(16,24,40,.12);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 02 · Reset y base tipográfica
+   ───────────────────────────────────────────────────────────────────────
+   Box-sizing universal, scroll suave y tipografía base del body.
+   ═══════════════════════════════════════════════════════════════════════ */
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+body{
+  margin:0;
+  padding: 0 1rem 4rem;
+  background: var(--bg);
+  background-image:
+    radial-gradient(1200px 500px at 50% -200px, #e0e7ff 0%, transparent 70%);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui, sans-serif;
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 03 · Contenedor principal
+   ───────────────────────────────────────────────────────────────────────
+   Centra el contenido y limita el ancho máximo de lectura.
+   ═══════════════════════════════════════════════════════════════════════ */
+.wrap{ max-width: 980px; margin: 0 auto; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 04 · Cabecera / Hero
+   ───────────────────────────────────────────────────────────────────────
+   Bloque superior con degradado, kicker, título, subtítulo, chips y logo.
+   El ::after genera el halo radial decorativo de la esquina inferior derecha.
+   ═══════════════════════════════════════════════════════════════════════ */
+header.hero{
+  margin: 2rem 0 1.5rem;
+  padding: 2rem 1.75rem;
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 45%, #4338ca 100%);
+  color: #fff;
+  border-radius: 22px;
+  box-shadow: 0 20px 45px -20px rgba(49,46,129,.7);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+header.hero::after{
+  content:"";
+  position:absolute; inset:auto -60px -110px auto;
+  width: 320px; height: 320px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+  pointer-events: none;
+}
+
+.hero-main{
+  flex: 1 1 320px;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-brand{
+  flex: 0 0 auto;
+  width: 160px;
+  max-width: 42vw;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,.45);
+  position: relative;
+  z-index: 1;
+}
+.hero-brand img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.hero .kicker{
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font-size:.74rem; letter-spacing:.16em; text-transform:uppercase;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
+  padding:.28rem .75rem; border-radius:999px; font-weight:700;
+  margin-bottom:.9rem;
+}
+.kicker-icon{
+  width: 20px;
+  height: auto;
+  display: block;
+}
+
+header.hero h1{
+  margin:0 0 .5rem; font-size: clamp(1.45rem, 3.6vw, 2.15rem);
+  line-height:1.25; font-weight:800; letter-spacing:-.02em;
+}
+header.hero p.sub{
+  margin:0 0 1.25rem; color:#c7d2fe; font-size:1rem; max-width: 70ch;
+}
+.metachips{ display:flex; flex-wrap:wrap; gap:.5rem; position:relative; z-index:1;}
+.metachips span{
+  font-size:.8rem; font-weight:600;
+  background: rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.22);
+  padding:.3rem .7rem; border-radius:8px;
+  backdrop-filter: blur(4px);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 05 · Bloques y secciones
+   ───────────────────────────────────────────────────────────────────────
+   Tarjetas blancas que agrupan buscador, filtros y resultados.
+   El ::before del h2 genera la barra vertical de acento.
+   ═══════════════════════════════════════════════════════════════════════ */
+section.block{
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 1.6rem;
+  margin-bottom: 1.5rem;
+}
+section.block > h2{
+  margin: 0 0 1rem;
+  font-size: 1.12rem;
+  letter-spacing:.02em;
+  text-transform: uppercase;
+  color: #312e81;
+  display:flex; align-items:center; gap:.6rem;
+}
+section.block > h2::before{
+  content:""; width:6px; height:22px; border-radius:3px;
+  background: linear-gradient(180deg,#6366f1,#4338ca);
+  flex: 0 0 auto;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 06 · Buscador
+   ───────────────────────────────────────────────────────────────────────
+   Fila con input de búsqueda y selector de ámbito. Foco con halo índigo.
+   ═══════════════════════════════════════════════════════════════════════ */
+.search-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+#input-busqueda{
+  flex: 1 1 260px;
+  padding: .72rem .95rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  transition: .15s ease;
+}
+#input-busqueda::placeholder{ color: #94a3b8; }
+#input-busqueda:focus{
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px #c7d2fe;
+}
+#select-orden, #select-ambito{
+  font-family: inherit;
+  font-size: .9rem;
+  padding: .55rem .75rem;
+  border-radius: 10px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: .15s ease;
+}
+#select-orden:focus, #select-ambito:focus{
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px #c7d2fe;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 07 · Ayuda de sintaxis del buscador
+   ───────────────────────────────────────────────────────────────────────
+   Texto pequeño bajo el buscador que explica comillas, + y |.
+   ═══════════════════════════════════════════════════════════════════════ */
+.search-hint{
+  font-size: .78rem;
+  color: var(--text-mute);
+  margin: -.35rem 0 .9rem;
+  line-height: 1.6;
+}
+.search-hint code{
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: .05rem .35rem;
+  font-size: .77rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: #312e81;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 08 · Grupos de filtros
+   ───────────────────────────────────────────────────────────────────────
+   Año, convocatoria, comunidad autónoma, bloque y tema. Cada grupo tiene
+   una etiqueta y una fila de pills (.btn-filtro) generadas por JS.
+   ═══════════════════════════════════════════════════════════════════════ */
+.filtros-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .85rem;
+  margin-bottom: .5rem;
+}
+.filtro-hint{
+  font-size: .82rem;
+  color: var(--text-mute);
+  font-style: italic;
+  margin: 0;
+  padding: .2rem 0;
+}
+.filtro-grupo > label{
+  display: block;
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: .4rem;
+}
+.filtro-grupo .botones{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  min-height: 1px;
+}
+.btn-filtro{
+  font-family: inherit;
+  font-size: .82rem;
+  padding: .35rem .75rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: .15s ease;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn-filtro:hover{
+  border-color: #a5b4fc;
+  color: #312e81;
+  background: #eef2ff;
+}
+.btn-filtro.activo{
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: #fff;
+  box-shadow: 0 4px 12px -4px rgba(79,70,229,.55);
+}
+
+/* Los filtros de tema y bloque pueden ser largos: se permite wrap */
+#filtros-tema .btn-filtro,
+#filtros-bloque .btn-filtro{
+  max-width: 100%;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 09 · Estado de los botones de PDF
+   ───────────────────────────────────────────────────────────────────────
+   Enlaces a PDFs no disponibles: tachados, con fondo rojo suave y sin
+   eventos de puntero.
+   ═══════════════════════════════════════════════════════════════════════ */
+.pdf-mini-buttons a.pdf-missing{
+  opacity: .55;
+  cursor: not-allowed;
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #b91c1c;
+  text-decoration: line-through;
+  pointer-events: none;
+}
+.pdf-mini-buttons a.pdf-missing:hover{
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 10 · Toolbar
+   ───────────────────────────────────────────────────────────────────────
+   Barra de acciones bajo los filtros: modo de vista, orden, botón
+   aleatorio y botón limpiar. Los botones concretos se estilan en § 11,
+   § 12 y en la parte de .btn-limpiar de esta misma sección.
+   ═══════════════════════════════════════════════════════════════════════ */
+.toolbar{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  margin-top: .75rem;
+}
+.toolbar label{
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .88rem;
+  color: var(--text-soft);
+  cursor: pointer;
+  user-select: none;
+}
+.toolbar label input[type="checkbox"]{
+  width: 16px; height: 16px; accent-color: #4f46e5;
+}
+.btn-limpiar{
+  margin-left: auto;
+  font-family: inherit;
+  font-size: .85rem;
+  font-weight: 700;
+  padding: .45rem .9rem;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+  background: #fee2e2;
+  color: #b91c1c;
+  cursor: pointer;
+  transition: .15s ease;
+}
+.btn-limpiar:hover{ background: #fecaca; border-color: #fca5a5; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 11 · Control segmentado (modo de vista)
+   ───────────────────────────────────────────────────────────────────────
+   Dos botones excluyentes: «Enunciado + solución» / «Solo enunciado».
+   El estado activo se marca con la clase .activo.
+   ═══════════════════════════════════════════════════════════════════════ */
+.segmented{
+  display: inline-flex;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--surface);
+  flex-shrink: 0;
+}
+.seg-btn{
+  font-family: inherit;
+  font-size: .82rem;
+  font-weight: 600;
+  padding: .45rem .85rem;
+  border: none;
+  background: transparent;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease;
+  white-space: nowrap;
+}
+.seg-btn + .seg-btn{ border-left: 1px solid var(--line-strong); }
+.seg-btn:hover{ background: var(--surface-2); color: #312e81; }
+.seg-btn.activo{ background: #4f46e5; color: #fff; }
+.seg-btn.activo:hover{ background: #4338ca; color: #fff; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 12 · Botón «Sorpréndeme» (problema aleatorio)
+   ───────────────────────────────────────────────────────────────────────
+   Botón con degradado morado-rosa y microanimación al pulsar.
+   Nota: el resaltado temporal de la tarjeta sorteada se aplica por JS
+   (borderColor y boxShadow en línea sobre el elemento elegido).
+   ═══════════════════════════════════════════════════════════════════════ */
+.btn-aleatorio{
+  font-family: inherit;
+  font-size: .9rem;
+  font-weight: 800;
+  letter-spacing: .01em;
+  padding: .55rem 1.05rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 18px -8px rgba(124,58,237,.6), 0 4px 10px -4px rgba(219,39,119,.4);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  white-space: nowrap;
+}
+.btn-aleatorio:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 14px 24px -8px rgba(124,58,237,.7), 0 6px 14px -4px rgba(219,39,119,.55);
+}
+.btn-aleatorio:active{
+  transform: translateY(0);
+  filter: brightness(.95);
+}
+.btn-aleatorio:focus-visible{
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 13 · Resultados
+   ───────────────────────────────────────────────────────────────────────
+   Contador superior y contenedor donde el JS pinta las tarjetas.
+   ═══════════════════════════════════════════════════════════════════════ */
+#contador-resultados{
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--text-mute);
+  margin: 0 0 1rem;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 14 · Tarjeta desplegable del problema
+   ───────────────────────────────────────────────────────────────────────
+   <details> nativo. content-visibility optimiza el render de listas largas.
+   El ::after de h4 (en § 16) dibuja la flecha del desplegable.
+   ═══════════════════════════════════════════════════════════════════════ */
+.tarjeta-problema-desplegable{
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(16,24,40,.04);
+  margin-bottom: .9rem;
+  overflow: hidden;
+  transition: border-color .15s ease, box-shadow .15s ease;
+
+  content-visibility: auto;
+  contain-intrinsic-size: auto 150px;
+}
+.tarjeta-problema-desplegable[open]{
+  border-color: #c7d2fe;
+  box-shadow: var(--shadow);
+  content-visibility: visible;
+}
+.tarjeta-problema-desplegable > summary{
+  display: block;
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 1.15rem;
+  user-select: none;
+  transition: background .15s ease;
+}
+.tarjeta-problema-desplegable > summary::-webkit-details-marker{ display: none; }
+.tarjeta-problema-desplegable > summary:hover{ background: var(--surface-2); }
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 15 · Etiquetas / badges
+   ───────────────────────────────────────────────────────────────────────
+   Pills de metadatos: tema, examen, puntos y bloque. Cada variante tiene
+   su paleta (--a, --b, --ok).
+   ═══════════════════════════════════════════════════════════════════════ */
+.etiquetas{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin-bottom: .55rem;
+}
+.badge{
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  padding: .2rem .55rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  display: inline-block;
+}
+.badge-tema{
+  background: var(--a-bg);
+  color: var(--a);
+  border-color: #c7d2fe;
+  cursor: default;
+}
+.badge-examen{
+  background: var(--surface-2);
+  color: var(--text-soft);
+  border-color: var(--line-strong);
+}
+.badge-puntos{
+  background: var(--ok-bg);
+  color: var(--ok);
+  border-color: #6ee7b7;
+}
+.badge-bloque{
+  background: var(--b-bg);
+  color: var(--b);
+  border-color: #fde68a;
+  white-space: normal;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 16 · Cabecera de la tarjeta (título + ver examen)
+   ───────────────────────────────────────────────────────────────────────
+   Fila con el título h4 (que incluye la flecha ▾) y el enlace lateral
+   «Ver examen».
+   ═══════════════════════════════════════════════════════════════════════ */
+.header-top-row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem .75rem;
+  margin-bottom: .35rem;
+}
+.header-top-row h4{
+  margin: 0;
+  flex: 1 1 auto;
+  font-size: 1.03rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.35;
+}
+.header-top-row h4::after{
+  content: "▾";
+  margin-left: .35rem;
+  color: var(--text-mute);
+  font-weight: 400;
+  display: inline-block;
+  transition: transform .2s ease;
+}
+.tarjeta-problema-desplegable[open] .header-top-row h4::after{
+  transform: rotate(180deg);
+}
+.btn-ver-examen{
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--a);
+  text-decoration: none;
+  padding: .28rem .7rem;
+  border-radius: 8px;
+  background: var(--a-bg);
+  border: 1px solid #c7d2fe;
+  white-space: nowrap;
+  transition: .15s ease;
+}
+.btn-ver-examen:hover{ background: #e0e7ff; border-color: #a5b4fc; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 17 · Botones mini de PDF
+   ───────────────────────────────────────────────────────────────────────
+   Enlaces compactos de descarga (enunciado y solución) dentro de la
+   cabecera de cada tarjeta. El estado no-disponible vive en § 09.
+   ═══════════════════════════════════════════════════════════════════════ */
+.pdf-mini-buttons{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: .35rem 0 .55rem;
+}
+.pdf-mini-buttons a{
+  font-size: .78rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-soft);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: .2rem .55rem;
+  transition: .15s ease;
+}
+.pdf-mini-buttons a:hover{
+  border-color: #a5b4fc;
+  color: var(--a);
+  background: var(--a-bg);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 18 · Resumen del enunciado (opcional)
+   ───────────────────────────────────────────────────────────────────────
+   Por defecto oculto. Se muestra cuando #resultados tiene la clase
+   .mostrar-enunciado (comportamiento controlado por JS).
+   ═══════════════════════════════════════════════════════════════════════ */
+.resumen-enunciado{
+  display: none;
+  margin: .4rem 0 0;
+  font-size: .9rem;
+  color: var(--text-soft);
+  padding-left: .65rem;
+  border-left: 3px solid var(--line-strong);
+}
+#resultados.mostrar-enunciado .resumen-enunciado{ display: block; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 19 · Detalle abierto de la tarjeta
+   ───────────────────────────────────────────────────────────────────────
+   Contenedor del contenido visible al desplegar: separador superior
+   discontinuo y estilos de párrafos.
+   ═══════════════════════════════════════════════════════════════════════ */
+.detalle-problema{
+  padding: 0 1.15rem 1.15rem;
+  border-top: 1px dashed var(--line);
+}
+.enunciado-ej{
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin: .85rem 0 .35rem;
+}
+.detalle-problema > p{
+  margin: 0 0 .65rem;
+  color: var(--text);
+  text-align: justify;
+}
+.detalle-problema > p strong{ color: var(--text); }
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 20 · Resolución (pasos y resultado final)
+   ───────────────────────────────────────────────────────────────────────
+   .paso = cada paso numerado con barra verde a la izquierda.
+   .resultado-final = bloque destacado en verde con la respuesta.
+   ═══════════════════════════════════════════════════════════════════════ */
+.resolucion{ margin-top: .85rem; }
+.paso{
+  padding: .7rem .9rem;
+  border-left: 3px solid #10b981;
+  background: linear-gradient(180deg,#f0fdf4,#ffffff 70%);
+  border-radius: 0 8px 8px 0;
+  margin-bottom: .55rem;
+  color: var(--text-soft);
+  text-align: justify;
+  overflow-x: auto;
+  font-size: .94rem;
+}
+.paso strong{ color: #065f46; }
+
+.resultado-final{
+  margin-top: .7rem;
+  padding: .8rem 1rem;
+  background: var(--ok-bg);
+  border: 1px solid #6ee7b7;
+  border-radius: 10px;
+  color: #065f46;
+  font-size: .92rem;
+  text-align: justify;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 21 · Resolución plegable
+   ───────────────────────────────────────────────────────────────────────
+   <details class="resolucion-fold"> que envuelve .resolucion cuando el
+   modo de vista es «Solo enunciado». Cabecera índigo pulsable y flecha
+   que rota al abrir.
+   ═══════════════════════════════════════════════════════════════════════ */
+.resolucion-fold{
+  margin-top: .85rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.resolucion-fold > summary{
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .6rem .9rem;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--a);
+  background: var(--a-bg);
+  transition: background .15s ease;
+}
+.resolucion-fold > summary::-webkit-details-marker{ display: none; }
+.resolucion-fold > summary:hover{ background: #e0e7ff; }
+.resolucion-fold > summary::after{
+  content: "▾";
+  margin-left: auto;
+  font-weight: 400;
+  transition: transform .2s ease;
+}
+.resolucion-fold[open] > summary::after{ transform: rotate(180deg); }
+.resolucion-fold > .resolucion{
+  margin-top: 0;
+  padding: .75rem .9rem .25rem;
+}
+.resolucion-fold[open] > .resolucion{
+  animation: fadeIn .2s ease;
+}
+@keyframes fadeIn{
+  from{ opacity: 0; transform: translateY(-4px); }
+  to{   opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce){
+  .resolucion-fold[open] > .resolucion{ animation: none; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 22 · Enlace «Volver al inicio» al final de cada problema
+   ───────────────────────────────────────────────────────────────────────
+   Enlace <a href="#top"> inyectado por JS al final de .detalle-problema.
+   ═══════════════════════════════════════════════════════════════════════ */
+.volver-arriba-card{
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  margin-top: 1.1rem;
+  padding: .4rem .85rem;
+  font-size: .82rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-soft);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  transition: .15s ease;
+}
+.volver-arriba-card:hover{
+  color: var(--a);
+  background: var(--a-bg);
+  border-color: #c7d2fe;
+  transform: translateY(-1px);
+}
+.volver-arriba-card:focus-visible{
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 23 · Cabeceras de grupo
+   ───────────────────────────────────────────────────────────────────────
+   Títulos <h3> que separan los problemas al agrupar por tema, bloque,
+   año o comunidad autónoma.
+   ═══════════════════════════════════════════════════════════════════════ */
+.grupo-tema-titulo{
+  margin: 1.5rem 0 .75rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #312e81;
+  padding-bottom: .3rem;
+  border-bottom: 2px solid #c7d2fe;
+}
+.grupo-tema-titulo:first-child{ margin-top: 0; }
+
+.grupo-bloque-titulo{
+  margin: 1.5rem 0 .75rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #312e81;
+  padding-bottom: .3rem;
+  border-bottom: 2px solid #cbd5e1;
+}
+.grupo-bloque-titulo:first-child{ margin-top: 0; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 24 · Botón «Cargar más»
+   ───────────────────────────────────────────────────────────────────────
+   Botón centrado al pie del listado de resultados.
+   ═══════════════════════════════════════════════════════════════════════ */
+.cargar-mas-container{
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0 0;
+}
+.btn-cargar-mas{
+  font-family: inherit;
+  font-size: .92rem;
+  font-weight: 700;
+  padding: .7rem 1.4rem;
+  border-radius: 10px;
+  border: 1px solid #4f46e5;
+  background: #4f46e5;
+  color: #fff;
+  cursor: pointer;
+  transition: .15s ease;
+  box-shadow: 0 10px 20px -10px rgba(79,70,229,.6);
+}
+.btn-cargar-mas:hover{
+  background: #4338ca;
+  border-color: #4338ca;
+  transform: translateY(-1px);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 25 · Botón flotante «Volver arriba»
+   ───────────────────────────────────────────────────────────────────────
+   Círculo fijo en la esquina inferior derecha con ancla a #top.
+   ═══════════════════════════════════════════════════════════════════════ */
+.top-link{
+  position: fixed; right: 1.1rem; bottom: 1.1rem;
+  width: 46px; height:46px; border-radius: 50%;
+  display:grid; place-items:center;
+  background:#312e81; color:#fff; text-decoration:none;
+  box-shadow: 0 10px 24px -8px rgba(49,46,129,.8);
+  font-size:1.15rem; z-index:50;
+  transition: transform .18s ease, background .18s ease;
+}
+.top-link:hover{ transform: translateY(-3px); background:#4338ca; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 26 · Pie de página
+   ───────────────────────────────────────────────────────────────────────
+   Nota inferior y estilos para el <code> con la ruta del JSON.
+   ═══════════════════════════════════════════════════════════════════════ */
+footer.foot{
+  text-align:center; color: var(--text-mute);
+  font-size:.83rem; padding: 1.5rem 0 .5rem;
+}
+footer.foot code{
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 0 .35rem;
+  font-size: .82rem;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 27 · Ajustes para MathJax
+   ───────────────────────────────────────────────────────────────────────
+   Evita desbordamientos horizontales en fórmulas largas y normaliza el
+   margen vertical de las fórmulas display.
+   ═══════════════════════════════════════════════════════════════════════ */
+mjx-container{ overflow-x:auto; overflow-y:hidden; max-width:100%; }
+mjx-container[display="true"]{ margin: .75em 0 !important; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 28 · Responsive (móvil)
+   ───────────────────────────────────────────────────────────────────────
+   Ajustes para pantallas ≤ 640px: tipografía, paddings y tamaños del logo.
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 640px){
+  body{ font-size: 15px; padding: 0 .6rem 3.5rem; }
+  header.hero{ padding: 1.5rem 1.15rem; border-radius:18px; }
+  .hero-brand{ width: 120px; max-width: 38vw; padding: 8px; }
+  section.block{ padding: 1.15rem 1.05rem; }
+  .toolbar{ gap: .5rem; }
+  .btn-limpiar{ margin-left: 0; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   § 29 · Accesibilidad: movimiento reducido
+   ───────────────────────────────────────────────────────────────────────
+   Desactiva transiciones globales si el usuario lo solicita en su SO.
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce){
+  *{ transition: none !important; }
+}

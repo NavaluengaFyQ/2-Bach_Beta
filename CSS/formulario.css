@@ -1,0 +1,761 @@
+/* ============================================================
+   ESTILOS COMUNES PARA LOS FORMULARIOS
+   IES Valle del Alberche · Física
+   ------------------------------------------------------------
+   Este archivo lo enlazan TODOS los HTML de formularios
+   (TemaD6-Formulario.html, U99c06 - Formulario de U06...)
+   mediante:
+       <link rel="stylesheet" href="../css/formulario.css">
+   ------------------------------------------------------------
+   Es INDEPENDIENTE de unidades.css: los formularios tienen su
+   propio diseño (tarjetas en grid, tablas de magnitudes, etc.).
+   ============================================================ */
+
+
+/* ============================================================
+   1. BASE / RESET SUAVE
+   ============================================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 24px 16px;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   2. CABECERA
+   ============================================================ */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 28px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.header .subtitulo {
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+.header .codigo {
+    display: inline-block;
+    background: rgba(255,255,255,0.22);
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.header .badge-centro {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+/* Estructura de cabecera con logo + subtítulo */
+.header-sub {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    font-size: 1em;
+    flex-wrap: wrap;
+}
+
+.header-sub img {
+    max-height: 28px;
+    width: auto;
+    border-radius: 4px;
+}
+
+.texto {
+    font-weight: 500;
+}
+
+.header-right img {
+    max-height: 70px;
+    max-width: 180px;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* ============================================================
+   3. GRID DE TARJETAS
+   ============================================================ */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
+    gap: 22px;
+    padding: 28px;
+}
+
+.span-all { grid-column: 1 / -1; }
+
+
+/* ============================================================
+   4. TARJETAS DE FÓRMULA
+   ============================================================ */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px 22px 22px 22px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    border-left: 5px solid #667eea;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Variantes de color por categoría */
+.card.c-1 { border-left-color: #667eea; }
+.card.c-2 { border-left-color: #ed8936; }
+.card.c-3 { border-left-color: #4299e1; }
+.card.c-4 { border-left-color: #48bb78; }
+.card.c-5 { border-left-color: #38b2ac; }
+
+.card .cabecera {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 8px;
+}
+
+.card .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    background: #667eea;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.card.c-1 .num { background: #667eea; }
+.card.c-2 .num { background: #ed8936; }
+.card.c-3 .num { background: #4299e1; }
+.card.c-4 .num { background: #48bb78; }
+.card.c-5 .num { background: #38b2ac; }
+
+.card h2 {
+    font-size: 1.12rem;
+    color: #2d3748;
+    font-weight: 700;
+}
+
+/* Etiqueta pequeña de categoría dentro de la cabecera de la tarjeta */
+.card .cabecera .badge-centro {
+    padding: 3px 10px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: #edf2f7;
+    border: 1px solid #cbd5e0;
+    color: #4a5568;
+    border-radius: 20px;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+
+/* ============================================================
+   5. CABECERA INTRODUCTORIA «¿QUÉ SE CALCULA?»
+   ============================================================ */
+.intro {
+    background: #faf5ff;
+    border-left: 4px solid #b794f4;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    color: #44337a;
+    line-height: 1.5;
+}
+
+.intro .etiqueta {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #6b46c1;
+    margin-bottom: 3px;
+}
+
+.intro .etiqueta::before {
+    content: "🎯 ";
+    font-size: 0.85em;
+}
+
+
+/* ============================================================
+   6. CAJAS DE FÓRMULA
+   ============================================================ */
+.formula-box {
+    background: #edf2f7;
+    border: 2px solid #cbd5e0;
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+    font-size: 1.08rem;
+    overflow-x: auto;
+}
+
+
+/* ============================================================
+   7. NOTAS Y ESTRATEGIAS EBAU
+   ============================================================ */
+.note {
+    background: #fffbeb;
+    border-left: 4px solid #f6e05e;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    color: #744210;
+}
+
+.note .pregunta {
+    display: block;
+    font-weight: 700;
+    color: #975a16;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+}
+
+.note .pregunta::before { content: "❓ "; }
+
+.note .respuesta {
+    display: block;
+    color: #744210;
+    padding-left: 18px;
+}
+
+.note .respuesta::before { content: "💡 "; }
+
+/* Etiqueta de estrategia EBAU: MEMORIZAR / FAMILIARIZARSE / DEDUCIR */
+.note .estrategia {
+    display: inline-block;
+    background: #fff7d6;
+    border: 1px solid #f6e05e;
+    padding: 1px 8px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.78rem;
+    color: #975a16;
+    margin-right: 6px;
+    letter-spacing: 0.3px;
+}
+
+
+/* ============================================================
+   8. EJEMPLOS
+   ============================================================ */
+.ejemplo {
+    background: #ebf8ff;
+    border-left: 4px solid #4299e1;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    color: #2a4365;
+}
+
+.ejemplo strong { color: #2b6cb0; }
+
+
+/* ============================================================
+   9. OBSERVACIONES DE INTERÉS
+   ============================================================ */
+.obs {
+    background: #f0fff4;
+    border-left: 4px solid #48bb78;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    color: #22543d;
+}
+
+.obs strong { color: #276749; }
+
+.obs ul {
+    margin: 6px 0 0 18px;
+    padding: 0;
+}
+
+.obs li { margin-bottom: 4px; }
+
+.obs .titulo-obs {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #276749;
+    letter-spacing: 0.3px;
+}
+
+
+/* ============================================================
+   10. TABLAS DE MAGNITUDES
+   ============================================================ */
+.mag-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+.mag-table thead th {
+    background: #667eea;
+    color: #fff;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.88rem;
+    letter-spacing: 0.3px;
+}
+
+.mag-table tbody td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+}
+
+.mag-table tbody tr:nth-child(even) { background: #f7fafc; }
+
+.mag-table tbody td:first-child {
+    font-weight: 600;
+    color: #2b6cb0;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   11. GLOSARIO DESPLEGABLE (details.glosario)
+   ============================================================ */
+details.glosario {
+    margin: 10px 28px 20px 28px;
+    background: #f8fafc;
+    border-radius: 16px;
+    border: 2px solid #dbeafe;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.3s ease;
+}
+
+details.glosario[open] {
+    background: #ffffff;
+    border-color: #3b82f6;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.12);
+}
+
+details.glosario > summary {
+    list-style: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    padding: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+}
+
+details.glosario > summary::-webkit-details-marker { display: none; }
+details.glosario > summary::marker { content: ""; }
+
+details.glosario > summary::after {
+    content: "▶";
+    font-size: 0.7em;
+    opacity: 0.5;
+    color: #718096;
+    transition: transform 0.3s ease;
+    margin-left: auto;
+}
+
+details.glosario[open] > summary::after {
+    transform: rotate(90deg);
+}
+
+
+/* ============================================================
+   12. BOTÓN «VOLVER AL INICIO» Y PIE
+   ============================================================ */
+.footer-cta {
+    text-align: center;
+    padding: 22px 20px 30px 20px;
+}
+
+.footer-cta a {
+    display: inline-block;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    box-shadow: 0 6px 18px rgba(102,126,234,0.45);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.footer-cta a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(102,126,234,0.6);
+}
+
+
+/* ============================================================
+   13. RESPONSIVE
+   ============================================================ */
+@media (max-width: 620px) {
+    .header {
+        padding: 22px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header h1 { font-size: 1.5rem; }
+    .grid { padding: 18px 14px; gap: 16px; }
+    .card { padding: 16px 16px 18px 16px; }
+
+    /* Tablas como tarjetas apiladas */
+    .mag-table thead { display: none; }
+    .mag-table, .mag-table tbody, .mag-table tr, .mag-table td {
+        display: block;
+        width: 100%;
+    }
+    .mag-table tr {
+        margin-bottom: 12px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 6px 0;
+        background: #f7fafc;
+    }
+    .mag-table td {
+        border: none;
+        padding: 6px 12px;
+        text-align: left;
+    }
+    .mag-table td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #4a5568;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+    }
+
+    details.glosario { margin: 10px 14px 18px 14px; }
+}
+
+/* ============================================================
+   14. LEYENDA EPISTÉMICA · Categorización de fórmulas
+   ------------------------------------------------------------
+   Cada fórmula pertenece a una categoría epistémica y se domina
+   con un verbo distinto. Los chips de las tarjetas y esta leyenda
+   comparten la misma paleta que las tarjetas c-1…c-5.
+   ============================================================ */
+
+/* ---- Chips epistémicos en cada ficha ---- */
+.epi-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 2px 0 2px 0;
+}
+
+.epi-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.epi-chip.definicion  { background: #4299e1; }
+.epi-chip.comprender  { background: #667eea; }
+.epi-chip.deducir     { background: #ed8936; }
+.epi-chip.aplicar     { background: #38b2ac; }
+.epi-chip.automatizar { background: #48bb78; }
+
+
+/* ---- Tarjeta de leyenda epistémica ---- */
+.card.leyenda-epi {
+    padding: 24px 26px 22px 26px;
+    border-left-color: #764ba2;
+}
+
+.leyenda-epi-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+}
+
+.leyenda-epi-header h2 {
+    font-size: 1.2rem;
+    color: #2d3748;
+    margin: 0;
+    font-weight: 700;
+}
+
+.leyenda-epi-intro {
+    color: #4a5568;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin: 0 0 18px 0;
+}
+
+.leyenda-epi-intro strong { color: #2d3748; }
+
+/* ---- Rejilla de categorías ---- */
+.leyenda-epi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.epi-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px 14px 12px 14px;
+    border-left: 5px solid #cbd5e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.epi-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.epi-item .epi-icono { font-size: 1.5rem; line-height: 1; }
+
+.epi-item .epi-nombre {
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: #2d3748;
+    margin: 0;
+}
+
+.epi-item .epi-verbo {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    align-self: flex-start;
+}
+
+.epi-item .epi-desc {
+    font-size: 0.85rem;
+    color: #4a5568;
+    line-height: 1.45;
+    margin: 0;
+}
+
+.epi-item .epi-desc em { color: #2d3748; }
+
+.epi-item .epi-ej {
+    font-size: 0.78rem;
+    color: #718096;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 8px;
+    margin-top: auto;
+    line-height: 1.4;
+}
+
+.epi-item .epi-ej strong {
+    color: #2d3748;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 0.75rem;
+}
+
+/* Colores por categoría (coinciden con las tarjetas c-1…c-5) */
+.epi-item.definicion       { border-left-color: #4299e1; }
+.epi-item.definicion .epi-verbo       { background: #4299e1; }
+.epi-item.comprender       { border-left-color: #667eea; }
+.epi-item.comprender .epi-verbo       { background: #667eea; }
+.epi-item.deducir          { border-left-color: #ed8936; }
+.epi-item.deducir .epi-verbo          { background: #ed8936; }
+.epi-item.aplicar          { border-left-color: #38b2ac; }
+.epi-item.aplicar .epi-verbo          { background: #38b2ac; }
+.epi-item.automatizar      { border-left-color: #48bb78; }
+.epi-item.automatizar .epi-verbo      { background: #48bb78; }
+
+/* ---- Tabla resumen ---- */
+.leyenda-epi-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.86rem;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.leyenda-epi-tabla thead th {
+    background: #2d3748;
+    color: #fff;
+    padding: 9px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.leyenda-epi-tabla tbody td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+}
+
+.leyenda-epi-tabla tbody tr:nth-child(even) { background: #f7fafc; }
+.leyenda-epi-tabla tbody tr:last-child td { border-bottom: none; }
+
+.leyenda-epi-tabla .epi-dot {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-radius: 3px;
+    margin-right: 7px;
+    vertical-align: middle;
+}
+
+.leyenda-epi-tabla .epi-mini-verbo {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* ---- Aviso «regla de oro» ---- */
+.leyenda-epi-aviso {
+    background: #fffaf0;
+    border-left: 4px solid #f6ad55;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: 0.88rem;
+    color: #744210;
+    margin-top: 16px;
+    line-height: 1.5;
+}
+
+.leyenda-epi-aviso strong { color: #7b341e; }
+
+/* ---- Mini-referencia de colores de tarjetas ---- */
+.leyenda-epi-colores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px dashed #cbd5e0;
+    font-size: 0.8rem;
+    color: #4a5568;
+}
+
+.leyenda-epi-colores .leyenda-epi-color {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.leyenda-epi-colores .leyenda-epi-color span.chip {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 620px) {
+    .card.leyenda-epi { padding: 18px 16px; }
+    .leyenda-epi-grid { grid-template-columns: 1fr; }
+
+    .leyenda-epi-tabla { font-size: 0.8rem; }
+    .leyenda-epi-tabla thead { display: none; }
+    .leyenda-epi-tabla,
+    .leyenda-epi-tabla tbody,
+    .leyenda-epi-tabla tr,
+    .leyenda-epi-tabla td { display: block; width: 100%; }
+    .leyenda-epi-tabla tr {
+        margin-bottom: 10px;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        padding: 6px 0;
+        background: #f7fafc;
+    }
+    .leyenda-epi-tabla td { border: none; padding: 6px 12px; }
+    .leyenda-epi-tabla td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #4a5568;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        margin-bottom: 2px;
+    }
+}

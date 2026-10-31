@@ -183,6 +183,7 @@ details.desmitificando .contenido-ejercicios {
     margin-bottom: 1.8rem;
     overflow: hidden;
     border: 1px solid #d6bcf0;
+    scroll-margin-top: 20px;
 }
 .ejercicio-header {
     background: linear-gradient(135deg, #805ad5 0%, #6b46c1 100%);
@@ -381,7 +382,7 @@ details.desmitificando .contenido-ejercicios {
     <!-- ======================================== -->
     <!-- BLOQUE DESPLEGABLE: EJERCICIOS RESUELTOS -->
     <!-- ======================================== -->
-    <details class="desmitificando" id="desplegable-ejercicios">
+    <details class="desmitificando" id="desplegable-ejercicios" open>
         <summary>
             <i class="fas fa-chevron-circle-down"></i>
             <span>🧪 DESMITIFICANDO — Problemas resueltos paso a paso</span>
@@ -440,14 +441,17 @@ details.desmitificando .contenido-ejercicios {
 
 <!-- ==================================================================
      SCRIPT DE RENDERIZADO
-     Uso: examen.html?id=fisica-cyl-2026-extraordinaria
+     Uso: examen.html?id=fisica-cyl-2026-extraordinaria#p3
      ================================================================== -->
 <script>
 (function () {
     'use strict';
 
-    /* --- Ruta a los JSON (ajusta si mueves el fichero) --- */
-    var DATOS_PATH = 'datos/';
+    /* --- Ruta a los JSON. La carpeta real se llama "Datos" (con mayúscula,
+           igual que en filtro-problemas-inline.js). Dejamos un fallback a
+           "datos" por si en algún despliegue se renombró. --- */
+    var DATOS_PATH     = 'Datos/';
+    var DATOS_PATH_ALT = 'datos/';
 
     /* --- 1. Obtener identificador del examen --- */
     var params = new URLSearchParams(window.location.search);
@@ -456,25 +460,31 @@ details.desmitificando .contenido-ejercicios {
     if (!examId) {
         mostrarError(
             'Falta el parámetro <code>?id=</code> en la URL.<br>' +
-            'Ejemplo: <code>examen.html?id=fisica-cyl-2026-extraordinaria</code>'
+            'Ejemplo: <code>examen.html?id=fisica-and-2020-ordinaria#p1</code>'
         );
         return;
     }
 
-    /* --- 2. Cargar JSON --- */
-    fetch(DATOS_PATH + examId + '.json')
-        .then(function (r) {
-            if (!r.ok) {
-                throw new Error(
-                    'No se encontró el examen <code>' + examId + '</code> ' +
-                    '(HTTP ' + r.status + '). Revisa que exista <code>' +
-                    DATOS_PATH + examId + '.json</code>.'
-                );
-            }
+    /* --- 2. Cargar JSON (Datos/ primero, datos/ como fallback) --- */
+    function intentarCargar(ruta) {
+        return fetch(ruta).then(function (r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
             return r.json();
+        });
+    }
+
+    intentarCargar(DATOS_PATH + examId + '.json')
+        .catch(function () {
+            return intentarCargar(DATOS_PATH_ALT + examId + '.json');
         })
         .then(render)
-        .catch(function (err) { mostrarError(err.message || String(err)); });
+        .catch(function (err) {
+            mostrarError(
+                'No se encontró el examen <code>' + examId + '</code>.<br>' +
+                'Revisa que el archivo <code>' + examId + '.json</code> esté ' +
+                'dentro de la carpeta <code>Datos</code>.'
+            );
+        });
 
     /* --- 3. Helpers --- */
     function txt(s) { return s == null ? '' : String(s); }
@@ -490,7 +500,7 @@ details.desmitificando .contenido-ejercicios {
         caja.className = 'error-carga';
         caja.innerHTML = '<strong>⚠️ Error al cargar el examen</strong><br><br>' + msgHtml;
         var container = document.querySelector('.container');
-        container.insertBefore(caja, container.children[1] || null);
+        if (container) container.insertBefore(caja, container.children[1] || null);
     }
 
     /* --- 4. Render principal --- */
@@ -532,10 +542,11 @@ details.desmitificando .contenido-ejercicios {
                 '<thead><tr><th>#</th><th>Tema</th><th>Resultado principal</th></tr></thead>';
             var tbody = document.createElement('tbody');
             data.ejercicios.forEach(function (ej) {
+                var temaEj = ej.Tema || ej.tema || '';
                 var tr = document.createElement('tr');
                 tr.innerHTML =
                     '<td><strong>' + txt(ej.numero) + '</strong></td>' +
-                    '<td>' + txt(ej.tema) + '</td>' +
+                    '<td>' + txt(temaEj) + '</td>' +
                     '<td>' + txt(ej.resultado) + '</td>';
                 tbody.appendChild(tr);
             });
@@ -574,13 +585,15 @@ details.desmitificando .contenido-ejercicios {
     function buildEjercicio(ej) {
         var card = document.createElement('div');
         card.className = 'ejercicio-card';
+        card.id = 'p' + ej.numero;   // ← necesario para que #pN haga scroll
 
         var head = document.createElement('div');
         head.className = 'ejercicio-header';
+        var temaEj = ej.Tema || ej.tema || '';
         var htmlHead =
             '<span class="num">' + txt(ej.numero) + '</span>' +
             '<span>' + txt(ej.titulo) + '</span>';
-        if (ej.tema)       htmlHead += '<span class="materia">' + txt(ej.tema) + '</span>';
+        if (temaEj)        htmlHead += '<span class="materia">' + txt(temaEj) + '</span>';
         if (ej.puntuacion) htmlHead += '<span class="puntos">' + txt(ej.puntuacion) + '</span>';
         head.innerHTML = htmlHead;
         card.appendChild(head);
@@ -615,7 +628,7 @@ details.desmitificando .contenido-ejercicios {
         return card;
     }
 
-    /* --- 5. Tipografiar fórmulas (espera a que MathJax esté listo) --- */
+    /* --- 5. Tipografiar fórmulas y hacer scroll al hash --- */
     function typesetMathJax() {
         var tries = 0;
         var interval = setInterval(function () {
@@ -627,11 +640,31 @@ details.desmitificando .contenido-ejercicios {
                     : Promise.resolve();
                 ready.then(function () {
                     return window.MathJax.typesetPromise([document.body]);
-                }).catch(function (e) { console.warn('MathJax:', e); });
-            } else if (tries > 200) {   // ~20 s
+                })
+                .catch(function (e) { console.warn('MathJax:', e); })
+                .finally(hacerScrollAlProblema);
+            } else if (tries > 200) {
                 clearInterval(interval);
                 console.warn('MathJax no se cargó a tiempo.');
+                hacerScrollAlProblema();
             }
+        }, 100);
+    }
+
+    function hacerScrollAlProblema() {
+        if (!window.location.hash) return;
+        var id = window.location.hash.substring(1);
+        var el = document.getElementById(id);
+        if (!el) return;
+
+        var det = el.closest('details');
+        if (det && !det.open) det.open = true;
+
+        setTimeout(function () {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            el.style.transition = 'background-color 0.5s';
+            el.style.backgroundColor = '#e0f2fe';
+            setTimeout(function () { el.style.backgroundColor = ''; }, 2000);
         }, 100);
     }
 })();

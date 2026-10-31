@@ -207,34 +207,6 @@
     box-shadow: 0 0 0 3px #c7d2fe;
   }
 
-  /* Checkbox «Todas las palabras» */
-  .toggle-inline{
-    display: inline-flex;
-    align-items: center;
-    gap: .4rem;
-    font-size: .88rem;
-    color: var(--text-soft);
-    cursor: pointer;
-    user-select: none;
-    padding: .55rem .85rem;
-    background: var(--surface);
-    border: 1px solid var(--line-strong);
-    border-radius: 10px;
-    transition: .15s ease;
-    white-space: nowrap;
-  }
-  .toggle-inline:hover{
-    border-color: #a5b4fc;
-    color: #312e81;
-    background: #eef2ff;
-  }
-  .toggle-inline input[type="checkbox"]{
-    width: 15px; height: 15px;
-    accent-color: #4f46e5;
-    margin: 0;
-    cursor: pointer;
-  }
-
   /* ─── AYUDA DE SINTAXIS ─────────────────────────────────── */
   .search-hint{
     font-size: .78rem;
@@ -329,7 +301,7 @@
     max-width: 100%;
   }
 
-  /* ─── TOOLBAR INFERIOR ──────────────────────────────────── */
+  /* ─── TOOLBAR ───────────────────────────────────────────── */
   .toolbar{
     display: flex;
     flex-wrap: wrap;
@@ -365,6 +337,65 @@
     transition: .15s ease;
   }
   .btn-limpiar:hover{ background: #fecaca; border-color: #fca5a5; }
+
+  /* ─── SEGMENTED CONTROL (modo de vista) ────────────────── */
+  .segmented{
+    display: inline-flex;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--surface);
+    flex-shrink: 0;
+  }
+  .seg-btn{
+    font-family: inherit;
+    font-size: .82rem;
+    font-weight: 600;
+    padding: .45rem .85rem;
+    border: none;
+    background: transparent;
+    color: var(--text-soft);
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease;
+    white-space: nowrap;
+  }
+  .seg-btn + .seg-btn{ border-left: 1px solid var(--line-strong); }
+  .seg-btn:hover{ background: var(--surface-2); color: #312e81; }
+  .seg-btn.activo{ background: #4f46e5; color: #fff; }
+  .seg-btn.activo:hover{ background: #4338ca; color: #fff; }
+
+  /* ─── BOTÓN PROBLEMA ALEATORIO ─────────────────────────── */
+  .btn-aleatorio{
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 800;
+    letter-spacing: .01em;
+    padding: .55rem 1.05rem;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 8px 18px -8px rgba(124,58,237,.6), 0 4px 10px -4px rgba(219,39,119,.4);
+    transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    white-space: nowrap;
+  }
+  .btn-aleatorio:hover{
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+    box-shadow: 0 14px 24px -8px rgba(124,58,237,.7), 0 6px 14px -4px rgba(219,39,119,.55);
+  }
+  .btn-aleatorio:active{
+    transform: translateY(0);
+    filter: brightness(.95);
+  }
+  .btn-aleatorio:focus-visible{
+    outline: 2px solid #fbbf24;
+    outline-offset: 2px;
+  }
 
   /* ─── RESULTADOS ────────────────────────────────────────── */
   #contador-resultados{
@@ -560,6 +591,79 @@
     text-align: justify;
   }
 
+  /* ─── RESOLUCIÓN PLEGABLE ──────────────────────────────── */
+  .resolucion-fold{
+    margin-top: .85rem;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .resolucion-fold > summary{
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .6rem .9rem;
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    font-size: .88rem;
+    font-weight: 700;
+    color: var(--a);
+    background: var(--a-bg);
+    transition: background .15s ease;
+  }
+  .resolucion-fold > summary::-webkit-details-marker{ display: none; }
+  .resolucion-fold > summary:hover{ background: #e0e7ff; }
+  .resolucion-fold > summary::after{
+    content: "▾";
+    margin-left: auto;
+    font-weight: 400;
+    transition: transform .2s ease;
+  }
+  .resolucion-fold[open] > summary::after{ transform: rotate(180deg); }
+  .resolucion-fold > .resolucion{
+    margin-top: 0;
+    padding: .75rem .9rem .25rem;
+  }
+  .resolucion-fold[open] > .resolucion{
+    animation: fadeIn .2s ease;
+  }
+  @keyframes fadeIn{
+    from{ opacity: 0; transform: translateY(-4px); }
+    to{   opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .resolucion-fold[open] > .resolucion{ animation: none; }
+  }
+
+  /* ─── ENLACE «VOLVER AL INICIO» AL FINAL DE CADA PROBLEMA ── */
+  .volver-arriba-card{
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    margin-top: 1.1rem;
+    padding: .4rem .85rem;
+    font-size: .82rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-soft);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    transition: .15s ease;
+  }
+  .volver-arriba-card:hover{
+    color: var(--a);
+    background: var(--a-bg);
+    border-color: #c7d2fe;
+    transform: translateY(-1px);
+  }
+  .volver-arriba-card:focus-visible{
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+  }
+
   /* ─── CABECERAS DE GRUPO ───────────────────────────────── */
   .grupo-tema-titulo{
     margin: 1.5rem 0 .75rem;
@@ -681,7 +785,7 @@
   <section class="block">
     <h2>Búsqueda y filtros</h2>
 
-    <!-- Buscador + ámbito + checkbox AND -->
+    <!-- Buscador + ámbito -->
     <div class="search-row">
       <input type="text" id="input-busqueda"
              placeholder='Buscar por título, enunciado, tema… (usa "frase" y + / |)'
@@ -692,10 +796,6 @@
         <option value="enunciado">Solo enunciado</option>
         <option value="resolucion">Solo resolución</option>
       </select>
-      <label class="toggle-inline" title="Si está marcado, las palabras sin operador se combinan con AND">
-        <input type="checkbox" id="check-and-default">
-        Todas las palabras
-      </label>
     </div>
 
     <!-- Ayuda de sintaxis -->
@@ -703,7 +803,7 @@
       Usa comillas (<code>"…"</code> o <code>«…»</code>) para buscar frases exactas
       y combínalas con <code>+</code> (Y) o <code>|</code> (O).
       Ej.: <code>"fuerza gravitatoria" + experimenta</code>.
-      Sin operador, el espacio significa <em>OR</em> (o <em>AND</em> si marcas «Todas las palabras»).
+      Sin operador, el espacio significa <em>OR</em>.
     </p>
 
     <!-- Botones de filtro (los rellena el JS) -->
@@ -730,17 +830,31 @@
       </div>
     </div>
 
-    <!-- Orden, resumen y limpiar -->
+    <!-- Modo de vista, orden, problema aleatorio y limpiar -->
     <div class="toolbar">
+      <div class="segmented" role="group" aria-label="Modo de visualización">
+        <button type="button" class="seg-btn activo" data-modo="completo"
+                title="Al abrir un problema se ve el enunciado y la resolución completa">
+          Enunciado + solución
+        </button>
+        <button type="button" class="seg-btn" data-modo="plegado"
+                title="Al abrir un problema se ve solo el enunciado; la resolución queda plegada">
+          Solo enunciado
+        </button>
+      </div>
       <select id="select-orden" title="Orden de los resultados">
         <option value="num">Ordenar por número</option>
         <option value="tema">Agrupar por tema</option>
+        <option value="bloque">Agrupar por bloque</option>
+        <option value="anio">Agrupar por año</option>
+        <option value="comunidad">Agrupar por comunidad autónoma</option>
+        <option value="alfabetico">Orden alfabético por título</option>
+        <option value="puntos">Ordenar por puntuación (mayor a menor)</option>
       </select>
-      <label>
-        <input type="checkbox" id="check-mostrar-enunciado">
-        Mostrar resumen del enunciado
-      </label>
-      <button id="btn-limpiar" class="btn-limpiar" style="display:none">Limpiar filtros</button>
+      <button id="btn-aleatorio" class="btn-aleatorio"
+              title="Abre un problema al azar entre los resultados filtrados"
+              type="button">🎲 Sorpréndeme</button>
+      <button id="btn-limpiar" class="btn-limpiar" style="display:none" type="button">Limpiar filtros</button>
     </div>
   </section>
 
@@ -757,8 +871,355 @@
 
 <a href="#top" class="top-link" title="Volver arriba" aria-label="Volver arriba">↑</a>
 
-<!-- Carga del script de filtrado -->
+<!--
+  Compatibilidad con el JS externo: se mantienen (ocultos) los antiguos checkboxes
+  para que el script de filtrado no falle si accede a ellos por id.
+-->
+<input type="checkbox" id="check-and-default" hidden>
+<input type="checkbox" id="check-mostrar-enunciado" hidden>
+
+<!-- Carga del script de filtrado (externo) -->
 <script src="./js/filtro-problemas-inline.js"></script>
+
+<!-- Comportamientos añadidos: limpiar buscador, problema aleatorio y ordenación ampliada -->
+<script>
+(function () {
+  'use strict';
+
+  /* ───────────────────────────────────────────────────────────
+     0. Referencias
+  ─────────────────────────────────────────────────────────── */
+  const inputBusqueda      = document.getElementById('input-busqueda');
+  const btnLimpiar         = document.getElementById('btn-limpiar');
+  const btnAleatorio       = document.getElementById('btn-aleatorio');
+  const selectOrden        = document.getElementById('select-orden');
+  const resultados         = document.getElementById('resultados');
+  const contadorResultados = document.getElementById('contador-resultados');
+
+  if (!resultados) return;
+
+  /* ───────────────────────────────────────────────────────────
+     1. Visibilidad de «Limpiar filtros»
+  ─────────────────────────────────────────────────────────── */
+  const hayFiltrosActivos = () => document.querySelectorAll('.btn-filtro.activo').length > 0;
+  const hayTexto          = () => !!(inputBusqueda && inputBusqueda.value.trim().length);
+
+  function actualizarBotonLimpiar() {
+    if (!btnLimpiar) return;
+    btnLimpiar.style.display = (hayTexto() || hayFiltrosActivos()) ? 'inline-block' : 'none';
+  }
+
+  if (inputBusqueda) {
+    inputBusqueda.addEventListener('input',  actualizarBotonLimpiar);
+    inputBusqueda.addEventListener('change', actualizarBotonLimpiar);
+  }
+
+  const contenedoresFiltro = [
+    'filtros-anio', 'filtros-convocatoria', 'filtros-comunidad',
+    'filtros-bloque', 'filtros-tema'
+  ].map(id => document.getElementById(id)).filter(Boolean);
+
+  if (contenedoresFiltro.length) {
+    const obsFiltros = new MutationObserver(actualizarBotonLimpiar);
+    contenedoresFiltro.forEach(el =>
+      obsFiltros.observe(el, { subtree: true, attributes: true, attributeFilter: ['class'] })
+    );
+  }
+
+  requestAnimationFrame(actualizarBotonLimpiar);
+
+  /* ───────────────────────────────────────────────────────────
+     2. «Limpiar filtros»: borrar también el texto de búsqueda
+  ─────────────────────────────────────────────────────────── */
+  if (btnLimpiar) {
+    btnLimpiar.addEventListener('click', function () {
+      if (inputBusqueda && inputBusqueda.value) {
+        inputBusqueda.value = '';
+        inputBusqueda.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+      setTimeout(actualizarBotonLimpiar, 0);
+    });
+  }
+
+  /* ───────────────────────────────────────────────────────────
+     3. «Sorpréndeme»: abre un problema al azar de los filtrados
+  ─────────────────────────────────────────────────────────── */
+  function esVisible(el) {
+    let cur = el;
+    while (cur && cur !== document.body) {
+      const st = getComputedStyle(cur);
+      if (st.display === 'none' || st.visibility === 'hidden') return false;
+      cur = cur.parentElement;
+    }
+    return true;
+  }
+
+  if (btnAleatorio) {
+    btnAleatorio.addEventListener('click', function () {
+      const tarjetas = Array.from(
+        resultados.querySelectorAll('details.tarjeta-problema-desplegable')
+      ).filter(esVisible);
+
+      if (!tarjetas.length) {
+        if (contadorResultados) {
+          const original = contadorResultados.textContent;
+          contadorResultados.textContent = '⚠️ No hay problemas con los filtros actuales.';
+          contadorResultados.style.color = '#b91c1c';
+          setTimeout(function () {
+            contadorResultados.textContent = original;
+            contadorResultados.style.color = '';
+          }, 2500);
+        }
+        return;
+      }
+
+      const elegida = tarjetas[Math.floor(Math.random() * tarjetas.length)];
+      elegida.open = true;
+
+      elegida.style.transition = 'box-shadow .4s ease, border-color .4s ease';
+      elegida.style.borderColor = '#fbbf24';
+      elegida.style.boxShadow =
+        '0 0 0 4px rgba(251,191,36,.35), 0 12px 30px -6px rgba(251,191,36,.5)';
+      elegida.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      setTimeout(function () {
+        elegida.style.borderColor = '';
+        elegida.style.boxShadow   = '';
+        elegida.style.transition  = '';
+      }, 2500);
+
+      if (window.MathJax && MathJax.typesetPromise) {
+        setTimeout(function () {
+          MathJax.typesetPromise([elegida]).catch(function () {});
+        }, 100);
+      }
+    });
+  }
+
+  /* ───────────────────────────────────────────────────────────
+     4. Ordenación ampliada
+  ─────────────────────────────────────────────────────────── */
+  const MODOS_CUSTOM = ['bloque', 'anio', 'comunidad', 'alfabetico', 'puntos'];
+  let aplicando = false;
+  let timer = null;
+
+  const getBadge = (card, cls) => {
+    const el = card.querySelector('.' + cls);
+    return el ? el.textContent.trim() : '';
+  };
+  const getTitulo   = c => { const h = c.querySelector('h4'); return h ? h.textContent.trim() : ''; };
+  const getAnio     = c => {
+    const m = getBadge(c, 'badge-examen').match(/\b(19|20)\d{2}\b/);
+    return m ? m[0] : '—— Sin año';
+  };
+  const getComunidad = c => {
+    const directa = getBadge(c, 'badge-comunidad');
+    if (directa) return directa;
+    const examen = getBadge(c, 'badge-examen');
+    if (!examen) return '—— Sin comunidad';
+    const partes = examen.split(/[·|•,–—-]/).map(s => s.trim()).filter(Boolean);
+    if (partes.length >= 3) return partes[partes.length - 1];
+    if (partes.length === 2) return partes[1];
+    return examen;
+  };
+  const getPuntos = c => {
+    const m = getBadge(c, 'badge-puntos').match(/(\d+(?:[.,]\d+)?)/);
+    return m ? parseFloat(m[1].replace(',', '.')) : -1;
+  };
+  const getBloque = c => getBadge(c, 'badge-bloque') || '—— Sin bloque';
+
+  function limpiarCabeceras() {
+    resultados
+      .querySelectorAll('.grupo-tema-titulo, .grupo-bloque-titulo, .grupo-custom-titulo')
+      .forEach(el => el.remove());
+  }
+
+  function aplicarOrdenCustom() {
+    const modo = selectOrden ? selectOrden.value : '';
+    if (!MODOS_CUSTOM.includes(modo) || aplicando) return;
+
+    aplicando = true;
+    try {
+      const tarjetas = Array.from(
+        resultados.querySelectorAll('details.tarjeta-problema-desplegable')
+      );
+      if (!tarjetas.length) return;
+
+      tarjetas.forEach(c => c.remove());
+      limpiarCabeceras();
+
+      const items = tarjetas.map(card => {
+        let key = '', num = 0;
+        switch (modo) {
+          case 'bloque':     key = getBloque(card);     break;
+          case 'anio':       key = getAnio(card);       break;
+          case 'comunidad':  key = getComunidad(card);  break;
+          case 'alfabetico': key = getTitulo(card);     break;
+          case 'puntos':     num = getPuntos(card); key = String(num); break;
+        }
+        return { card, key, num };
+      });
+
+      if (modo === 'puntos') {
+        items.sort((a, b) => b.num - a.num);
+      } else if (modo === 'alfabetico') {
+        items.sort((a, b) => a.key.localeCompare(b.key, 'es', { sensitivity: 'base' }));
+      } else {
+        items.sort((a, b) => {
+          const aSin = a.key.startsWith('——') ? 1 : 0;
+          const bSin = b.key.startsWith('——') ? 1 : 0;
+          if (aSin !== bSin) return aSin - bSin;
+          return a.key.localeCompare(b.key, 'es', { numeric: true });
+        });
+      }
+
+      const agrupar = ['bloque', 'anio', 'comunidad'].includes(modo);
+      let grupoActual = null;
+
+      items.forEach(({ card, key }) => {
+        if (agrupar && key !== grupoActual) {
+          grupoActual = key;
+          const h = document.createElement('h3');
+          h.className = 'grupo-custom-titulo ' +
+            (modo === 'bloque' ? 'grupo-bloque-titulo' : 'grupo-tema-titulo');
+          h.textContent = key;
+          resultados.appendChild(h);
+        }
+        resultados.appendChild(card);
+      });
+    } finally {
+      setTimeout(() => { aplicando = false; }, 0);
+    }
+  }
+
+  if (selectOrden) {
+    selectOrden.addEventListener('change', function () {
+      clearTimeout(timer);
+      timer = setTimeout(aplicarOrdenCustom, 50);
+    });
+  }
+
+  const obsResultados = new MutationObserver(function () {
+    if (aplicando) return;
+    const modo = selectOrden ? selectOrden.value : '';
+    if (!MODOS_CUSTOM.includes(modo)) return;
+    clearTimeout(timer);
+    timer = setTimeout(aplicarOrdenCustom, 30);
+  });
+  obsResultados.observe(resultados, { childList: true, subtree: false });
+
+  requestAnimationFrame(function () {
+    if (selectOrden && MODOS_CUSTOM.includes(selectOrden.value)) {
+      aplicarOrdenCustom();
+    }
+    actualizarBotonLimpiar();
+  });
+})();
+</script>
+
+<!--
+  Modo de vista («Enunciado + solución» / «Solo enunciado»)
+  + Enlace «Volver al inicio» al final de cada problema.
+-->
+<script>
+(function () {
+  'use strict';
+
+  const resultados = document.getElementById('resultados');
+  if (!resultados) return;
+
+  let modoVista = 'completo';
+
+  /* ── Segmented control del modo de vista ── */
+  const segBtns = document.querySelectorAll('.seg-btn');
+  segBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      segBtns.forEach(b => b.classList.remove('activo'));
+      btn.classList.add('activo');
+      modoVista = btn.dataset.modo;
+      aplicarModo(modoVista);
+    });
+  });
+
+  function aplicarModo(modo) {
+    resultados.querySelectorAll('details.resolucion-fold').forEach(d => {
+      d.open = (modo === 'completo');
+    });
+  }
+
+  /* ── Envuelve .resolucion en un <details> ── */
+  function wrapResolucion(resolucion) {
+    const details = document.createElement('details');
+    details.className = 'resolucion-fold';
+
+    let summaryText = '📝 Ver resolución paso a paso';
+
+    const prev = resolucion.previousElementSibling;
+    if (prev && prev.classList.contains('enunciado-ej')) {
+      summaryText = '📝 ' + prev.textContent.trim();
+      prev.remove();
+    } else {
+      const first = resolucion.firstElementChild;
+      if (first && first.classList.contains('enunciado-ej')) {
+        summaryText = '📝 ' + first.textContent.trim();
+        first.remove();
+      }
+    }
+
+    const summary = document.createElement('summary');
+    summary.textContent = summaryText;
+    details.appendChild(summary);
+
+    resolucion.parentNode.insertBefore(details, resolucion);
+    details.appendChild(resolucion);
+    details.open = (modoVista === 'completo');
+
+    return details;
+  }
+
+  /* ── Añade el enlace «↑ Volver al inicio» al final de la tarjeta ── */
+  function addVolverArriba(card) {
+    const detalle = card.querySelector('.detalle-problema');
+    if (!detalle) return;
+    if (detalle.querySelector('.volver-arriba-card')) return;
+
+    const link = document.createElement('a');
+    link.href = '#top';
+    link.className = 'volver-arriba-card';
+    link.textContent = '↑ Volver al inicio para otra búsqueda';
+    link.title = 'Volver al principio de la página';
+    detalle.appendChild(link);
+  }
+
+  /* ── Procesa todas las tarjetas ── */
+  function procesarTarjetas() {
+    const tarjetas = resultados.querySelectorAll('details.tarjeta-problema-desplegable');
+    tarjetas.forEach(card => {
+      const resolucion = card.querySelector('.resolucion');
+      if (resolucion &&
+          !(resolucion.parentElement &&
+            resolucion.parentElement.classList.contains('resolucion-fold'))) {
+        wrapResolucion(resolucion);
+      }
+      addVolverArriba(card);
+    });
+  }
+
+  /* Batch de mutaciones para no repetir trabajo */
+  let pendiente = false;
+  const obs = new MutationObserver(() => {
+    if (pendiente) return;
+    pendiente = true;
+    requestAnimationFrame(() => {
+      pendiente = false;
+      procesarTarjetas();
+    });
+  });
+  obs.observe(resultados, { childList: true, subtree: true });
+
+  requestAnimationFrame(procesarTarjetas);
+})();
+</script>
 
 </body>
 </html>

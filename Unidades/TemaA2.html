@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema A2. Leyes de Kepler y relación con la gravitación</title>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA A2.- </span>
+                <span class="texto">Leyes de Kepler y relación con la gravitación</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- MAPA DE BLOQUES Y TEMAS (DESPLEGABLE)                         -->
+    <!-- ============================================================ -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque A. Campo gravitatorio</strong> del currículo de Física de 2º de Bachillerato (Decreto 40/2022, BOCYL-D-30092022-4).</p>
+
+        <div class="mapa-bloques">
+            <!-- BLOQUE A (ACTUAL) -->
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">A1</span>
+                    <span class="tema-chip actual">A2</span>
+                    <span class="tema-chip">A3</span>
+                    <span class="tema-chip">A4</span>
+                    <span class="tema-chip">A5</span>
+                    <span class="tema-chip">A6</span>
+                    <span class="tema-chip">A7</span>
+                    <span class="tema-chip">A8</span>
+                </div>
+            </div>
+            <!-- BLOQUE B -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span>
+                    <span class="tema-chip">B2</span>
+                    <span class="tema-chip">B3</span>
+                    <span class="tema-chip">B4</span>
+                    <span class="tema-chip">B5</span>
+                    <span class="tema-chip">B6</span>
+                    <span class="tema-chip">B7</span>
+                    <span class="tema-chip">B8</span>
+                    <span class="tema-chip">B9</span>
+                </div>
+            </div>
+            <!-- BLOQUE C -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">C1</span>
+                    <span class="tema-chip">C2</span>
+                    <span class="tema-chip">C3</span>
+                    <span class="tema-chip">C4</span>
+                    <span class="tema-chip">C5</span>
+                    <span class="tema-chip">C6</span>
+                </div>
+            </div>
+            <!-- BLOQUE D -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">D1</span>
+                    <span class="tema-chip">D2</span>
+                    <span class="tema-chip">D3</span>
+                    <span class="tema-chip">D4</span>
+                    <span class="tema-chip">D5</span>
+                    <span class="tema-chip">D6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque A · Tema A2:</strong> <span class="texto-resaltado">Leyes de Kepler y relación con la gravitación.</span>
+            <br>
+            <em>En este tema estudiaremos:</em> las tres leyes empíricas de Johannes Kepler (órbitas elípticas, ley de las áreas y ley de los periodos), su justificación teórica a partir de la ley de gravitación universal de Newton, la constante de Kepler para el Sistema Solar, la determinación de la masa central de un sistema a partir de los parámetros orbitales de un satélite, y el estudio de órbitas elípticas con sus puntos característicos (perihelio, afelio) y velocidades asociadas.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- OBJETIVOS (DESPLEGABLE)                                       -->
+    <!-- ============================================================ -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Enunciar e interpretar correctamente las tres leyes de Kepler, comprendiendo las magnitudes implicadas y sus unidades en el S.I.</li>
+            <li>Demostrar que la tercera ley de Kepler es una consecuencia directa de la ley de gravitación universal de Newton en el caso de órbitas circulares.</li>
+            <li>Comprender que la constante de Kepler \( T^2/a^3 \) depende únicamente de la masa central del sistema, y aplicarla correctamente a la comparación de órbitas dentro del mismo sistema.</li>
+            <li>Determinar la masa central de un sistema (Sol, Tierra, Júpiter, etc.) a partir del periodo y del radio orbital de un cuerpo que orbite a su alrededor.</li>
+            <li>Calcular el periodo, el radio orbital o la velocidad orbital de un satélite o un planeta conocidos los datos pertinentes.</li>
+            <li>Relacionar la segunda ley de Kepler con la conservación del momento angular y comprender su significado físico.</li>
+            <li>Analizar órbitas elípticas: perihelio, afelio, semieje mayor, relación entre velocidades y distancias en los ápsides.</li>
+            <li>Resolver problemas numéricos y de razonamiento característicos de la PAU/EBAU de Castilla y León sobre este tema.</li>
+        </ul>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- CONTENIDO TEÓRICO (DESPLEGABLE)                               -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">1</span>
+                <strong>Del geocentrismo a las leyes de Kepler.</strong>
+            </summary>
+            <p>Durante casi veinte siglos dominó el <strong>modelo geocéntrico</strong> de Ptolomeo, con la Tierra inmóvil en el centro del universo y los astros girando en esferas perfectas. En 1543, Nicolás Copérnico publicó <em>De revolutionibus orbium coelestium</em>, proponiendo un <strong>modelo heliocéntrico</strong> en el que la Tierra y los demás planetas giran alrededor del Sol. Tycho Brahe (1546-1601) realizó observaciones astronómicas de una precisión sin precedentes, sobre todo de la posición de Marte. Su discípulo <strong>Johannes Kepler</strong> (1571-1630), trabajando con esos datos durante años, descartó las órbitas circulares y descubrió que los datos encajaban con <strong>órbitas elípticas</strong>.</p>
+            <p>Kepler publicó sus dos primeras leyes en 1609 (<em>Astronomia Nova</em>) y la tercera en 1619 (<em>Harmonices Mundi</em>). Son leyes <strong>empíricas</strong>: se obtienen del análisis de los datos observacionales sin un modelo dinámico previo. Poco después, Newton (1687) demostraría que todas ellas son consecuencias directas de la <strong>ley de gravitación universal</strong> y de sus tres leyes de la dinámica, cerrándose así el círculo entre cinemática observada y dinámica causal.</p>
+            <div class="formula-box">
+                \[
+                \text{Ptolomeo (geocentrismo)} \;\to\; \text{Copérnico (heliocentrismo)} \;\to\; \text{Kepler (3 leyes)} \;\to\; \text{Newton (gravitación)}
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">2</span>
+                <strong>Primera ley de Kepler: ley de las órbitas.</strong>
+            </summary>
+            <p><strong>Enunciado:</strong> «Todos los planetas se mueven alrededor del Sol describiendo <strong>órbitas elípticas</strong>, en uno de cuyos <strong>focos</strong> se encuentra el Sol.»</p>
+            <p>Una elipse es el lugar geométrico de los puntos cuya suma de distancias a dos focos \(F_1\) y \(F_2\) es constante (\(2a\), con \(a\) el semieje mayor). Las órbitas planetarias reales son elipses de <strong>excentricidad muy pequeña</strong>: la de la Tierra, por ejemplo, tiene \(e\approx0{,}0167\), por lo que su forma es casi circular. La excentricidad se define como \( e = c/a \), donde \(c\) es la distancia de un foco al centro y \(a\) el semieje mayor. Se cumple \( c^2 = a^2 - b^2 \) (con \(b\) el semieje menor) y \( 0 \le e < 1 \) para elipses. \( e = 0 \) corresponde a una circunferencia.</p>
+            <p>Puntos característicos de la órbita:</p>
+            <ul>
+                <li><strong>Perihelio (o perigeo, si es la Tierra):</strong> punto de la órbita más próximo al foco ocupado por el Sol. \( r_{\min} = a(1-e) \).</li>
+                <li><strong>Afelio (o apogeo):</strong> punto más alejado. \( r_{\max} = a(1+e) \).</li>
+                <li>La suma de distancias a los dos focos es constante: \( r_{\text{perihelio}} + r_{\text{afelio}} = 2a \).</li>
+            </ul>
+            <div class="formula-box">
+                \[
+                r_{\text{perihelio}} = a(1-e), \qquad r_{\text{afelio}} = a(1+e)
+                \]
+            </div>
+            <p>La primera ley rompió con la idea de la «perfección circular» de la física aristotélica. En el caso particular de órbitas circulares (\(e=0\)), los radios orbitales son constantes y las leyes de Kepler siguen aplicándose como caso límite.</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">3</span>
+                <strong>Segunda ley de Kepler: ley de las áreas.</strong>
+            </summary>
+            <p><strong>Enunciado:</strong> «El segmento (radio vector) que une el Sol con cada planeta barre <strong>áreas iguales en tiempos iguales</strong>.»</p>
+            <p>En términos cuantitativos, la <strong>velocidad areolar</strong> es constante:</p>
+            <div class="formula-box">
+                \[
+                \frac{dA}{dt} = \frac{L}{2m} = \text{constante}
+                \]
+            </div>
+            <p>donde \( L = m\,r\,v\,\text{sen}\,\theta \) es el <strong>momento angular</strong> del planeta respecto del Sol. Esta ley es una consecuencia directa del carácter <strong>central</strong> de la fuerza gravitatoria: como \( \vec F \parallel \vec r \), el momento de la fuerza respecto del Sol es nulo y el momento angular se conserva.</p>
+            <p><strong>Consecuencias físicas:</strong></p>
+            <ul>
+                <li>Los planetas se mueven <strong>más rápido</strong> cerca del Sol (perihelio) y <strong>más despacio</strong> lejos de él (afelio).</li>
+                <li>En los ápsides (perihelio y afelio), \( \vec v \perp \vec r \), por lo que \( L = m\,r\,v \) y se cumple:
+                \[
+                r_{\text{perihelio}}\,v_{\text{perihelio}} = r_{\text{afelio}}\,v_{\text{afelio}}
+                \]</li>
+                <li>Como \( r_{\text{perihelio}} < r_{\text{afelio}} \), necesariamente \( v_{\text{perihelio}} > v_{\text{afelio}} \).</li>
+            </ul>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">4</span>
+                <strong>Tercera ley de Kepler: ley de los periodos.</strong>
+            </summary>
+            <p><strong>Enunciado:</strong> «El cuadrado del periodo orbital de un planeta es directamente proporcional al cubo del <strong>semieje mayor</strong> de su órbita elíptica.»</p>
+            <div class="formula-box">
+                \[
+                T^2 = k\,a^3 \qquad \Longleftrightarrow \qquad \frac{T^2}{a^3} = \text{constante para todos los planetas de un mismo sistema}
+                \]
+            </div>
+            <p>La constante \( k \) depende solo del <strong>astro central</strong>: para todos los planetas del Sistema Solar, \( k \) toma el mismo valor; para todos los satélites de Júpiter, otro distinto; para todos los satélites artificiales de la Tierra, otro. Las magnitudes implicadas son:</p>
+            <ul>
+                <li>\( T \): periodo orbital, en segundos (\( \text{s} \)).</li>
+                <li>\( a \): semieje mayor de la elipse, en metros (\( \text{m} \)). En órbitas circulares se identifica con el radio orbital \( r \).</li>
+                <li>\( k \): constante de Kepler del sistema, con unidades \( \text{s}^2\,\text{m}^{-3} \).</li>
+            </ul>
+            <p>Esta ley permite <strong>predecir</strong> periodos o radios de órbitas desconocidas a partir de otras conocidas del mismo sistema. Es la más útil de las tres desde el punto de vista práctico y la que con mayor frecuencia aparece en los exámenes de EBAU.</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">5</span>
+                <strong>Deducción de la tercera ley desde la gravitación newtoniana.</strong>
+            </summary>
+            <p>Para una <strong>órbita circular</strong> de radio \( r \) alrededor de una masa central \( M \) (con \( M \gg m \), aproximación razonable para planetas alrededor del Sol o satélites alrededor de la Tierra), la única fuerza es la gravitatoria, que actúa como centrípeta:</p>
+            <div class="formula-box">
+                \[
+                \frac{G\,M\,m}{r^2} = \frac{m\,v^2}{r} \quad \Longrightarrow \quad v^2 = \frac{G\,M}{r}
+                \]
+            </div>
+            <p>Como la velocidad orbital se relaciona con el periodo por \( v = \frac{2\pi r}{T} \), elevando al cuadrado:</p>
+            <div class="formula-box">
+                \[
+                \frac{4\pi^2 r^2}{T^2} = \frac{G\,M}{r} \quad \Longrightarrow \quad T^2 = \frac{4\pi^2}{G\,M}\,r^3
+                \]
+            </div>
+            <p>Identificando \( a = r \) y comparando con \( T^2 = k\,a^3 \), obtenemos la expresión teórica de la <strong>constante de Kepler</strong>:</p>
+            <div class="formula-box">
+                \[
+                k = \frac{4\pi^2}{G\,M}
+                \]
+            </div>
+            <p>Por tanto, la constante de Kepler depende <strong>únicamente de la masa central</strong> \( M \) y de constantes universales. Esto explica por qué todos los planetas del Sistema Solar comparten el mismo valor de \( k \), mientras que los satélites de Júpiter tendrían otro. Esta es la primera ley de Kepler que Newton pudo demostrar a partir de su teoría, y con ello se cerró el vínculo entre cinemática (Kepler) y dinámica (Newton).</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">6</span>
+                <strong>La constante de Kepler del Sistema Solar.</strong>
+            </summary>
+            <p>Sustituyendo los datos del Sol en la expresión teórica:</p>
+            <div class="formula-box">
+                \[
+                k_{\text{Sol}} = \frac{4\pi^2}{G\,M_\odot} = \frac{4\pi^2}{6{,}67\cdot10^{-11}\cdot1{,}99\cdot10^{30}} \approx 2{,}97\cdot10^{-19}\,\text{s}^2\,\text{m}^{-3}
+                \]
+            </div>
+            <p>Este valor debe coincidir con el cociente \( T^2/a^3 \) de cualquier planeta. Por ejemplo, para la Tierra:</p>
+            <div class="formula-box">
+                \[
+                \frac{T_T^2}{a_T^3} = \frac{(3{,}156\cdot10^7)^2}{(1{,}496\cdot10^{11})^3} \approx 2{,}98\cdot10^{-19}\,\text{s}^2\,\text{m}^{-3}
+                \]
+            </div>
+            <p>En problemas de <strong>comparación de órbitas del mismo sistema</strong>, es muy útil trabajar con la relación directa:</p>
+            <div class="formula-box">
+                \[
+                \frac{T_1^2}{a_1^3} = \frac{T_2^2}{a_2^3} \quad \Longrightarrow \quad T_2 = T_1\left(\frac{a_2}{a_1}\right)^{3/2}
+                \]
+            </div>
+            <p>De esta forma se evita calcular explícitamente la masa central, y basta con conocer una órbita de referencia.</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">7</span>
+                <strong>Determinación de la masa central.</strong>
+            </summary>
+            <p>La tercera ley, despejada en función de \( M \), proporciona un método para <strong>pesar</strong> el astro central a partir de la observación de un cuerpo que orbite a su alrededor:</p>
+            <div class="formula-box">
+                \[
+                M = \frac{4\pi^2\,a^3}{G\,T^2}
+                \]
+            </div>
+            <p>Este procedimiento se ha empleado históricamente para medir la masa del Sol (a partir del movimiento de los planetas), la masa de la Tierra (a partir de la Luna o de satélites artificiales), la masa de Júpiter (a partir de sus lunas galileanas), la de Saturno (a partir de Titán), etc. Es también el método que se utiliza actualmente para determinar la masa de <strong>exoplanetas</strong> y de <strong>agujeros negros</strong> (a partir del movimiento de estrellas compañeras).</p>
+            <p><strong>Procedimiento de resolución:</strong></p>
+            <ol>
+                <li>Identificar el cuerpo central de masa \( M \) y el cuerpo orbitante de masa \( m \ll M \).</li>
+                <li>Identificar el periodo \( T \) y el semieje mayor \( a \) (o radio orbital \( r \) si la órbita es circular).</li>
+                <li>Homogeneizar todas las unidades al S.I. (días → s, km → m, etc.).</li>
+                <li>Aplicar \( M = \frac{4\pi^2 a^3}{G\,T^2} \).</li>
+            </ol>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">8</span>
+                <strong>Órbitas elípticas: velocidades en los ápsides.</strong>
+            </summary>
+            <p>En una órbita elíptica, la segunda ley de Kepler conduce a la conservación del momento angular. En los <strong>ápsides</strong> (perihelio y afelio), la velocidad es perpendicular al radio vector, por lo que \( L = m\,r\,v \) y:</p>
+            <div class="formula-box">
+                \[
+                r_p\,v_p = r_a\,v_a
+                \]
+            </div>
+            <p>La <strong>conservación de la energía mecánica</strong> proporciona una segunda ecuación:</p>
+            <div class="formula-box">
+                \[
+                \frac{1}{2}m\,v_p^2 - \frac{G\,M\,m}{r_p} = \frac{1}{2}m\,v_a^2 - \frac{G\,M\,m}{r_a}
+                \]
+            </div>
+            <p>Combinando ambas, y usando \( r_p + r_a = 2a \), se obtiene la <strong>velocidad en cada ápside</strong>:</p>
+            <div class="formula-box">
+                \[
+                v_p = \sqrt{\frac{G\,M}{a}\,\frac{1+e}{1-e}}, \qquad v_a = \sqrt{\frac{G\,M}{a}\,\frac{1-e}{1+e}}
+                \]
+            </div>
+            <p>La energía mecánica total de una órbita elíptica (o circular) depende solo del semieje mayor \( a \):</p>
+            <div class="formula-box">
+                \[
+                E_m = -\frac{G\,M\,m}{2a}
+                \]
+            </div>
+            <p>Y si la órbita es circular (\( a = r \)), se recupera \( E_m = -\frac{G\,M\,m}{2r} \), expresión ya conocida del tema A6.</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">9</span>
+                <strong>Aplicaciones modernas de las leyes de Kepler.</strong>
+            </summary>
+            <p>Las leyes de Kepler, formuladas para los planetas del Sistema Solar, se aplican hoy a cualquier sistema ligado por gravedad:</p>
+            <ul>
+                <li><strong>Satélites artificiales:</strong> el diseño de órbitas LEO, MEO, GEO y heliosíncronas se basa directamente en la tercera ley. Conocida la altura, se calcula el periodo, y viceversa.</li>
+                <li><strong>Exoplanetas:</strong> el método de los tránsitos y el de las velocidades radiales miden \( T \) y \( a \) del planeta alrededor de su estrella; aplicando la tercera ley se infiere la masa de la estrella, y con datos adicionales la del planeta.</li>
+                <li><strong>Agujeros negros:</strong> la estrella S2 orbita el agujero negro supermasivo Sagitario A* con \( T \approx 16 \) años y \( a \approx 1000\,\text{ua} \); aplicando \( M = 4\pi^2 a^3/(GT^2) \) se obtuvo una de las primeras determinaciones de su masa (unas 4 millones de masas solares).</li>
+                <li><strong>Materia oscura:</strong> las curvas de rotación de galaxias no siguen la predicción kepleriana \( v \propto 1/\sqrt{r} \), lo que constituye una de las evidencias de la existencia de materia oscura.</li>
+                <li><strong>Misiones espaciales:</strong> el diseño de transferencias orbitales (Hohmann, bi-elípticas, asistencias gravitatorias) se apoya en las leyes de Kepler.</li>
+            </ul>
+            <div class="formula-box">
+                \[
+                \text{LEO} \;(h \sim 400\,\text{km}) \;\to\; T \sim 90\,\text{min} \qquad\qquad \text{GEO} \;(h \sim 36\,000\,\text{km}) \;\to\; T = 24\,\text{h}
+                \]
+            </div>
+        </details>
+
+        <div class="note">
+            <strong>💡 Observaciones sobre el alumnado:</strong> los errores más frecuentes son (i) confundir el <em>semieje mayor</em> \( a \) con la distancia entre los focos o con el radio de la circunferencia inscrita; (ii) medir la altura sobre la superficie en lugar de la distancia al centro del astro; (iii) no homogeneizar las unidades al S.I. (días → segundos, km → m); (iv) olvidar que la constante de Kepler cambia al cambiar de sistema (Sol vs. Tierra vs. Júpiter); (v) mezclar la ley de las áreas con la conservación de la energía; (vi) pensar que la velocidad orbital es constante en una elipse (solo lo es en una circunferencia). Recomendamos trabajar siempre con esquemas y escribir explícitamente la relación \( T_1^2/a_1^3 = T_2^2/a_2^3 \) antes de sustituir.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- ANÁLISIS DE FÓRMULAS (DESPLEGABLE)                            -->
+    <!-- ============================================================ -->
+    <details class="section resultado">
+        <summary><h2>🧮 Análisis de las fórmulas del tema A2</h2></summary>
+        <p>Recogemos en una tabla las expresiones clave del tema, con su significado físico, las variables implicadas y las condiciones de aplicación:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Fórmula</th>
+                    <th>Significado físico</th>
+                    <th>Variables y unidades</th>
+                    <th>Condiciones de aplicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>\( \dfrac{T^2}{a^3} = k \)</td>
+                    <td>Tercera ley de Kepler: ley de los periodos.</td>
+                    <td>\( T \) en s; \( a \) en m; \( k \) en \( \text{s}^2\,\text{m}^{-3} \).</td>
+                    <td>Cualquier órbita elíptica alrededor de una masa central \( M \).</td>
+                </tr>
+                <tr>
+                    <td>\( k = \dfrac{4\pi^2}{G\,M} \)</td>
+                    <td>Constante de Kepler en función de la masa central.</td>
+                    <td>\( k \) en \( \text{s}^2\,\text{m}^{-3} \); \( M \) en kg.</td>
+                    <td>Sistema con masa central \( M \gg m \) (cuerpo orbitante).</td>
+                </tr>
+                <tr>
+                    <td>\( M = \dfrac{4\pi^2 a^3}{G\,T^2} \)</td>
+                    <td>Determinación de la masa central a partir de una órbita.</td>
+                    <td>\( M \) en kg; \( a \) en m; \( T \) en s.</td>
+                    <td>Aproximación \( M \gg m \); órbitas circulares o elípticas con semieje \( a \).</td>
+                </tr>
+                <tr>
+                    <td>\( v = \sqrt{\dfrac{G\,M}{r}} \)</td>
+                    <td>Velocidad orbital en una órbita circular.</td>
+                    <td>\( v \) en m/s; \( M \) en kg; \( r \) en m.</td>
+                    <td>Órbita circular de radio \( r \) alrededor de masa \( M \).</td>
+                </tr>
+                <tr>
+                    <td>\( T = 2\pi\sqrt{\dfrac{r^3}{G\,M}} \)</td>
+                    <td>Periodo orbital en una órbita circular.</td>
+                    <td>\( T \) en s; \( r \) en m; \( M \) en kg.</td>
+                    <td>Órbita circular de radio \( r \).</td>
+                </tr>
+                <tr>
+                    <td>\( r_p\,v_p = r_a\,v_a \)</td>
+                    <td>Segunda ley de Kepler aplicada a los ápsides (conservación de \( L \)).</td>
+                    <td>\( r \) en m; \( v \) en m/s.</td>
+                    <td>Perihelio y afelio de una órbita elíptica ( \( \vec v \perp \vec r \) ).</td>
+                </tr>
+                <tr>
+                    <td>\( r_{\text{perihelio}} = a(1-e), \quad r_{\text{afelio}} = a(1+e) \)</td>
+                    <td>Distancias en los ápsides de una elipse.</td>
+                    <td>\( r \) en m; \( a \) en m; \( e \) adimensional.</td>
+                    <td>Órbita elíptica con semieje mayor \( a \) y excentricidad \( e \).</td>
+                </tr>
+                <tr>
+                    <td>\( E_m = -\dfrac{G\,M\,m}{2a} \)</td>
+                    <td>Energía mecánica total de una órbita elíptica (o circular con \( a = r \)).</td>
+                    <td>\( E_m \) en J; \( a \) en m; \( M, m \) en kg.</td>
+                    <td>Cualquier órbita ligada; origen de \( E_p \) en el infinito.</td>
+                </tr>
+                <tr>
+                    <td>\( v_p = \sqrt{\dfrac{G\,M}{a}\,\dfrac{1+e}{1-e}}, \quad v_a = \sqrt{\dfrac{G\,M}{a}\,\dfrac{1-e}{1+e}} \)</td>
+                    <td>Velocidades en perihelio y afelio de una elipse.</td>
+                    <td>\( v \) en m/s; \( a \) en m; \( e \) adimensional.</td>
+                    <td>Órbita elíptica de semieje \( a \) y excentricidad \( e \).</td>
+                </tr>
+                <tr>
+                    <td>\( \dfrac{T_1^2}{a_1^3} = \dfrac{T_2^2}{a_2^3} \)</td>
+                    <td>Comparación de órbitas del mismo sistema sin calcular \( M \).</td>
+                    <td>\( T \) en s; \( a \) en m.</td>
+                    <td>Dos cuerpos orbitando el mismo astro central.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note">
+            <strong>⚠️ Errores frecuentes:</strong> confundir el semieje mayor \( a \) con el radio de la circunferencia que pasa por los ápsides o con la distancia focal; medir \( r \) desde la superficie del astro central en lugar de desde su centro; no convertir días a segundos o km a m; creer que la constante \( k \) es universal (depende del astro central); aplicar la ley de las áreas para concluir que la velocidad es constante (solo lo es en órbita circular); y confundir el periodo orbital con el periodo de rotación del astro central.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- PROBLEMAS RESUELTOS (EBAU Castilla y León y otras)           -->
+    <!-- ============================================================ -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🔭 Problemas resueltos de EBAU — Castilla y León y otras comunidades (Tema A2)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas</strong> de las pruebas de acceso a la universidad, priorizando <strong>Castilla y León</strong> y completando con otras comunidades. Todos ellos están relacionados con el tema A2 (leyes de Kepler y relación con la gravitación). Se indica la comunidad, el año, la convocatoria (ordinaria/extraordinaria) y el número de problema.
+            </p>
+
+            <!-- PROBLEMA 1 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Velocidad orbital de Marte y masa del Sol con la 3ª ley de Kepler</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Ordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Las distancias al Sol desde la Tierra y desde Marte son \( 1{,}466\cdot10^{8}\,\text{km} \) y \( 2{,}279\cdot10^{8}\,\text{km} \), respectivamente. Calcule la velocidad orbital de Marte y la masa del Sol. Periodo de traslación terrestre \( T = 365 \) días.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> Masa del Sol con la 3ª ley de Kepler aplicada a la Tierra. Para una órbita circular alrededor del Sol:</div>
+                    <div class="formula-box">
+                        \[
+                        T^{2}=\frac{4\pi^{2}}{GM_{\odot}}r^{3}
+                        \]
+                    </div>
+                    <div class="paso">Aplicado a la Tierra, con \( r_T=1{,}466\cdot10^{8}\,\text{km}=1{,}466\cdot10^{11}\,\text{m} \) y \( T=365\,\text{días}=365\cdot86400\,\text{s} \), se obtiene:</div>
+                    <div class="formula-box">
+                        \[
+                        M_{\odot}=\frac{4\pi^{2}r_T^{3}}{G\,T^{2}}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        M_{\odot}=\frac{4\pi^{2}(1{,}466\cdot10^{11})^{3}}{6{,}67\cdot10^{-11}(3{,}1536\cdot10^{7})^{2}}\approx1{,}99\cdot10^{30}\,\text{kg}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> Velocidad orbital de Marte. Para una órbita circular se cumple \( v^{2}=\frac{GM_{\odot}}{r_M} \), así que:</div>
+                    <div class="formula-box">
+                        \[
+                        v_M=\sqrt{\frac{GM_{\odot}}{r_M}}, \qquad r_M=2{,}279\cdot10^{11}\,\text{m}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        v_M=\sqrt{\frac{6{,}67\cdot10^{-11}\cdot1{,}99\cdot10^{30}}{2{,}279\cdot10^{11}}}=2{,}41\cdot10^{4}\,\text{m}\,\text{s}^{-1}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \( M_{\odot}\approx1{,}99\cdot10^{30}\,\text{kg} \); \( v_M\approx2{,}41\cdot10^{4}\,\text{m}\,\text{s}^{-1} \).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 2 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Periodo orbital de la Luna al duplicar la masa de la Tierra</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Problema 12</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Justifique si la siguiente afirmación es verdadera o falsa: «Si la masa de la Tierra se duplicara, el periodo orbital de la Luna también se duplicaría».</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> Tercera ley de Kepler. Para la Luna orbitando alrededor de la Tierra, a igual radio orbital \( r \):</div>
+                    <div class="formula-box">
+                        \[
+                        T=2\pi\sqrt{\frac{r^{3}}{GM_T}}
+                        \]
+                    </div>
+                    <div class="paso">Por tanto, \( T\propto\frac{1}{\sqrt{M_T}} \).</div>
+                    <div class="paso"><strong>b)</strong> Efecto de duplicar la masa de la Tierra. Si \( M_T'=2M_T \), el nuevo periodo es:</div>
+                    <div class="formula-box">
+                        \[
+                        T'=2\pi\sqrt{\frac{r^{3}}{G(2M_T)}}=\frac{T}{\sqrt{2}}
+                        \]
+                    </div>
+                    <div class="paso">El periodo no se duplica: se reduce en un factor \( \sqrt{2} \). La afirmación es falsa.</div>
+                    <div class="paso"><strong>Resultado:</strong> FALSA. \( T'=\frac{T}{\sqrt{2}} \); el periodo disminuye, no aumenta.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 3 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Órbita geoestacionaria y energía del satélite Astra 2C</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Ordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>El satélite Astra 2C, de masa 6000 kg, empleado para emitir señales de televisión, describe una órbita circular geoestacionaria.</p>
+                    <p>a) Calcule la altura a la que orbita respecto a la superficie de la Tierra y la velocidad con la que se mueve.</p>
+                    <p>b) Calcule la energía necesaria para llevar al Astra 2C desde la superficie de la Tierra hasta su órbita.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> Una órbita geoestacionaria está en el plano ecuatorial, con el mismo sentido y periodo que la rotación terrestre. Usamos \( T=24\,\text{h}=86400\,\text{s} \). La gravedad proporciona la aceleración centrípeta:</div>
+                    <div class="formula-box">
+                        \[
+                        \frac{GM_T}{r^2}=\frac{4\pi^2}{T^2}r \quad\Longrightarrow\quad r=\left(\frac{GM_T T^2}{4\pi^2}\right)^{1/3}=4{,}225\cdot10^{7}\,\text{m}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        H=r-R_T=3{,}587\cdot10^{7}\,\text{m}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        v=\frac{2\pi r}{T}=3{,}073\cdot10^{3}\,\text{m}\,\text{s}^{-1}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> Energía de lanzamiento. Tomando el satélite inicialmente en reposo en la superficie y despreciando la rotación terrestre:</div>
+                    <div class="formula-box">
+                        \[
+                        E_i=-\frac{GM_Tm}{R_T}, \qquad E_f=\frac{1}{2}mv^2-\frac{GM_Tm}{r}=-\frac{GM_Tm}{2r}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        W=E_f-E_i=GM_Tm\left(\frac{1}{R_T}-\frac{1}{2r}\right)=3{,}468\cdot10^{11}\,\text{J}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \( H\approx3{,}59\cdot10^{7}\,\text{m} \) (35900 km); \( v\approx3{,}07\cdot10^{3}\,\text{m}\,\text{s}^{-1} \); \( W\approx3{,}47\cdot10^{11}\,\text{J} \).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 4 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Energía y movimiento de un satélite entre dos órbitas terrestres</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un satélite de 900 kg se coloca inicialmente en una órbita LEO a una altura de 1200 km sobre la superficie terrestre.</p>
+                    <p>a) Calcule su aceleración y energía mecánica en la órbita, así como el número de vueltas que realiza en un día.</p>
+                    <p>Posteriormente, una empresa de streaming quiere utilizarlo como satélite de telecomunicaciones en una órbita geoestacionaria.</p>
+                    <p>b) Determine la energía que habría que suministrar al satélite para que efectúe dicho cambio de órbita.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> Gravedad y energía de una órbita circular. Adoptamos órbita circular de radio \( r_1=R_T+H=7{,}58\cdot10^{6}\,\text{m} \). La aceleración es centrípeta y apunta hacia el centro terrestre:</div>
+                    <div class="formula-box">
+                        \[
+                        a=-\frac{GM_T}{r_1^2}\,\vec r=-6{,}94\,\vec r\ \text{m}\,\text{s}^{-2}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        E_{m,1}=-\frac{GM_Tm}{2r_1}=-2{,}37\cdot10^{10}\,\text{J}
+                        \]
+                    </div>
+                    <div class="paso">Periodo orbital y vueltas diarias:</div>
+                    <div class="formula-box">
+                        \[
+                        T_1=2\pi\sqrt{\frac{r_1^3}{GM_T}}=6{,}57\cdot10^{3}\,\text{s}, \qquad N=\frac{86400}{T_1}=13{,}16
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> Diferencia de energías de las órbitas. Tomando \( T_2=86400\,\text{s} \):</div>
+                    <div class="formula-box">
+                        \[
+                        r_2=\left(\frac{GM_T T_2^2}{4\pi^2}\right)^{1/3}=4{,}225\cdot10^{7}\,\text{m}, \qquad E_{m,2}=-\frac{GM_Tm}{2r_2}=-4{,}25\cdot10^{9}\,\text{J}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        \Delta E=E_{m,2}-E_{m,1}=\frac{GM_Tm}{2}\left(\frac{1}{r_1}-\frac{1}{r_2}\right)=1{,}94\cdot10^{10}\,\text{J}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \( a=-6{,}94\,\vec r\ \text{m}\,\text{s}^{-2} \); \( E_m=-2{,}37\cdot10^{10}\,\text{J} \); \( N=13{,}16 \) vueltas/día; \( \Delta E\approx1{,}94\cdot10^{10}\,\text{J} \).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 5 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Satélite Swift: velocidad orbital, periodo y peso de un sensor</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Ordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>El satélite artificial Swift se dedica al estudio de las explosiones de rayos gamma y describe una órbita circular a una altura de 290 km sobre la superficie terrestre.</p>
+                    <p>a) Determine la velocidad orbital y el periodo de la órbita.</p>
+                    <p>b) Determine el peso de un sensor de rayos X que lleva acoplado, cuya masa es de 150 kg.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> Radio orbital:</div>
+                    <div class="formula-box">
+                        \[
+                        r=R_T+H=6{,}38\cdot10^{6}+2{,}90\cdot10^{5}=6{,}67\cdot10^{6}\,\text{m}
+                        \]
+                    </div>
+                    <div class="paso">Velocidad orbital y periodo:</div>
+                    <div class="formula-box">
+                        \[
+                        v=\sqrt{\frac{GM_T}{r}}=\sqrt{\frac{6{,}67\cdot10^{-11}\cdot5{,}98\cdot10^{24}}{6{,}67\cdot10^{6}}}=7{,}73\cdot10^{3}\,\text{m}\,\text{s}^{-1}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        T=\frac{2\pi r}{v}=\frac{2\pi\cdot6{,}67\cdot10^{6}}{7{,}73\cdot10^{3}}=5{,}42\cdot10^{3}\,\text{s}\approx90{,}3\,\text{min}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> Aceleración gravitatoria a la altura de la órbita:</div>
+                    <div class="formula-box">
+                        \[
+                        g'=\frac{GM_T}{r^2}=\frac{6{,}67\cdot10^{-11}\cdot5{,}98\cdot10^{24}}{(6{,}67\cdot10^{6})^2}\approx8{,}97\,\text{m}\,\text{s}^{-2}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        P=mg'=150\cdot8{,}97\approx1{,}35\cdot10^{3}\,\text{N}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \( v\approx7{,}73\cdot10^{3}\,\text{m}\,\text{s}^{-1} \); \( T\approx5{,}42\cdot10^{3}\,\text{s}\approx90{,}3\,\text{min} \); \( P\approx1{,}35\cdot10^{3}\,\text{N} \).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 6 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Intensidad gravitatoria de Marte en la órbita de Deimos</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Deimos es un satélite que gira alrededor de Marte en una órbita circular de \( 23\,460\,\text{km} \) de radio con un periodo orbital de \( 30{,}3\,\text{h} \). Determine el valor de la intensidad gravitatoria debida a Marte en un punto de la órbita de Deimos.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> Planteamiento dinámico. En una órbita circular, la fuerza gravitatoria que Marte ejerce sobre Deimos proporciona toda la fuerza centrípeta. Por tanto, el módulo del campo gravitatorio que crea Marte en un punto de la órbita coincide con la aceleración centrípeta de Deimos:</div>
+                    <div class="formula-box">
+                        \[
+                        g=\frac{v^{2}}{r}=\frac{4\pi^{2}r}{T^{2}}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> Sustitución numérica. Con \( r=2{,}346\cdot10^{7}\,\text{m} \) y \( T=1{,}0908\cdot10^{5}\,\text{s} \):</div>
+                    <div class="formula-box">
+                        \[
+                        g=\frac{4\pi^{2}(2{,}346\cdot10^{7})}{(1{,}0908\cdot10^{5})^{2}}=7{,}79\cdot10^{-2}\,\text{m}\,\text{s}^{-2}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \( g=7{,}79\cdot10^{-2}\,\text{m}\,\text{s}^{-2} \) hacia el centro de Marte.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Masa del Sol y periodos orbitales de Venus y Marte (3.ª ley de Kepler)</span>
+                    <span class="meta-ej">Aragón · 2025 · Ordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Suponiendo que los planetas del Sistema Solar se mueven en órbitas circulares con los radios orbitales dados en la tabla (Venus \( 106\cdot10^{6}\,\text{km} \); Tierra \( 147\cdot10^{6}\,\text{km} \); Marte \( 223\cdot10^{6}\,\text{km} \); periodo terrestre \( 365\,\text{días} \)), obtenga la masa del Sol (0,75 puntos) y el periodo orbital de Venus y Marte (0,75 puntos).</p>
+                    <p>Datos: \( G=6{,}67\cdot10^{-11}\,\text{N}\cdot\text{m}^2\cdot\text{kg}^{-2} \); \( M_T=5{,}972\cdot10^{24}\,\text{kg} \).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> Aplicación de la 3.ª ley de Kepler con los datos de la Tierra. Para una órbita circular:</div>
+                    <div class="formula-box">
+                        \[
+                        \frac{GM_Sm}{r^2}=\frac{mv^2}{r}, \qquad v=\frac{2\pi r}{T} \quad\Longrightarrow\quad T^2=\frac{4\pi^2r^3}{GM_S}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        M_S=\frac{4\pi^2r_T^3}{G\,T_T^2}
+                        \]
+                    </div>
+                    <div class="paso">Con \( r_T=1{,}47\cdot10^{11}\,\text{m} \) y \( T_T=3{,}1536\cdot10^{7}\,\text{s} \):</div>
+                    <div class="formula-box">
+                        \[
+                        M_S\approx1{,}89\cdot10^{30}\,\text{kg}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> Periodo orbital de Venus. De la 3.ª ley de Kepler:</div>
+                    <div class="formula-box">
+                        \[
+                        T_V=T_T\left(\frac{r_V}{r_T}\right)^{3/2}=365\left(\frac{106}{147}\right)^{3/2}\approx223\,\text{días}
+                        \]
+                    </div>
+                    <div class="paso"><strong>c)</strong> Periodo orbital de Marte:</div>
+                    <div class="formula-box">
+                        \[
+                        T_M=365\left(\frac{223}{147}\right)^{3/2}\approx682\,\text{días}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \( M_S\approx1{,}89\cdot10^{30}\,\text{kg} \); \( T_V\approx223\,\text{días} \); \( T_M\approx682\,\text{días} \).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 8 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Órbita geoestacionaria deducida a partir de la órbita lunar</span>
+                    <span class="meta-ej">Navarra · 2026 · Ordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un estudiante de 2º de Bachillerato sabe que un satélite geoestacionario tiene un periodo orbital aproximado de un día. También sabe que el radio de la órbita de la Luna alrededor de la Tierra, supuesta circular, es \( R_L\approx3{,}8\cdot10^{5}\,\text{km} \) y que su periodo orbital es aproximadamente de 28 días. Sin embargo, no dispone de los datos de la masa de la Tierra ni de la constante de gravitación universal.</p>
+                    <p>a) Con los datos del enunciado, calcular el radio \( R_S \) de la órbita de un satélite geoestacionario.</p>
+                    <p>b) Con los datos del enunciado, calcular la energía mecánica total de un satélite geoestacionario de 100 kg de masa.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> Tercera ley de Kepler. Para órbitas circulares alrededor de la misma Tierra:</div>
+                    <div class="formula-box">
+                        \[
+                        \frac{T_S^{2}}{T_L^{2}}=\frac{R_S^{3}}{R_L^{3}}, \qquad R_S=R_L\left(\frac{T_S}{T_L}\right)^{2/3}
+                        \]
+                    </div>
+                    <div class="paso">Se usa solo la razón de periodos, \( \frac{T_S}{T_L}=\frac{1}{28} \); no hace falta conocer ni \( G \) ni \( M_T \).</div>
+                    <div class="formula-box">
+                        \[
+                        R_S=(3{,}8\cdot10^{5})\left(\frac{1}{28}\right)^{2/3}=4{,}121\cdot10^{4}\,\text{km}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> Velocidad orbital y energía. La velocidad orbital es:</div>
+                    <div class="formula-box">
+                        \[
+                        v_S=\frac{2\pi R_S}{T_S}=2{,}997\cdot10^{3}\,\text{m}\,\text{s}^{-1}
+                        \]
+                    </div>
+                    <div class="paso">En una órbita circular, la condición centrípeta implica \( \frac{GM_T}{R_S}=v_S^{2} \). Así, \( U=-\frac{GM_Tm}{R_S}=-mv_S^{2}=-2K \), y la energía total es:</div>
+                    <div class="formula-box">
+                        \[
+                        E=K+U=-K=-\frac{mv_S^{2}}{2}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        E_S=-\frac{1}{2}(100)(2{,}997\cdot10^{3})^{2}=-4{,}49\cdot10^{8}\,\text{J}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \( R_S\approx4{,}12\cdot10^{4}\,\text{km} \); \( E_S\approx-4{,}49\cdot10^{8}\,\text{J} \).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 9 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">Órbita de Urano y gravedad en su superficie</span>
+                    <span class="meta-ej">La Rioja · 2026 · Ordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>a) El planeta Urano tiene un periodo orbital alrededor del Sol de 84,3 años terrestres. La masa del Sol es de \( 2\cdot10^{30}\,\text{kg} \). Suponiendo que Urano describe una órbita circular alrededor del Sol, calcular el radio de la órbita de Urano.</p>
+                    <p>b) El radio del planeta Urano es de \( 2{,}54\cdot10^{4}\,\text{km} \). La velocidad mínima inicial que debe tener un cuerpo en la superficie de Urano para poder escapar de su atracción gravitatoria es de \( 21{,}3\,\text{km}\,\text{s}^{-1} \). Calcular el valor de la aceleración de la gravedad en la superficie de Urano.</p>
+                    <p>Dato: \( G=6{,}67\cdot10^{-11}\,\text{N}\cdot\text{m}^2\cdot\text{kg}^{-2} \).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> Radio orbital de Urano. La fuerza gravitatoria proporciona la aceleración centrípeta:</div>
+                    <div class="formula-box">
+                        \[
+                        \frac{GM_Sm}{r^2}=m\frac{v^2}{r}, \qquad v=\frac{2\pi r}{T} \quad\Longrightarrow\quad r^3=\frac{GM_ST^2}{4\pi^2}
+                        \]
+                    </div>
+                    <div class="paso">Con \( T=84{,}3\cdot365\cdot86400=2{,}6585\cdot10^{9}\,\text{s} \):</div>
+                    <div class="formula-box">
+                        \[
+                        r=\left(\frac{6{,}67\cdot10^{-11}\cdot2\cdot10^{30}\cdot(2{,}6585\cdot10^{9})^2}{4\pi^2}\right)^{1/3}=2{,}88\cdot10^{12}\,\text{m}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> Gravedad superficial. La velocidad de escape cumple \( v_e^2=\frac{2GM_U}{R_U} \). Como \( g_U=\frac{GM_U}{R_U^2} \), resulta \( g_U=\frac{v_e^2}{2R_U} \). Con \( R_U=2{,}54\cdot10^{7}\,\text{m} \) y \( v_e=2{,}13\cdot10^{4}\,\text{m}\,\text{s}^{-1} \):</div>
+                    <div class="formula-box">
+                        \[
+                        g_U=\frac{(2{,}13\cdot10^{4})^2}{2(2{,}54\cdot10^{7})}=8{,}93\,\text{m}\,\text{s}^{-2}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \( r\approx2{,}88\cdot10^{12}\,\text{m} \); \( g_U\approx8{,}93\,\text{m}\,\text{s}^{-2} \).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">Enunciado de las tres leyes de Kepler y masa de la Tierra desde la órbita lunar</span>
+                    <span class="meta-ej">Aragón · 2024 · Extraordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>a) Enuncia y explica las tres leyes de Kepler. Indica qué magnitudes están involucradas y cuáles son sus unidades.</p>
+                    <p>b) Utiliza la tercera ley de Kepler para calcular la masa de la Tierra, sabiendo que la Luna tarda 27,32 días en dar una vuelta completa a la Tierra y que su radio orbital promedio es de 384.402 km.</p>
+                    <p>Datos: \( G=6{,}67\cdot10^{-11}\,\text{N}\cdot\text{m}^2\cdot\text{kg}^{-2} \).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> Primera ley (ley de las órbitas). Todos los planetas se mueven alrededor del Sol describiendo órbitas elípticas, en uno de cuyos focos se encuentra el Sol. Las órbitas planetarias son elipses de excentricidad pequeña; por ejemplo, \( e\approx0{,}017 \) para la Tierra.</div>
+                    <div class="paso"><strong>a)</strong> Segunda ley (ley de las áreas). El radio vector que une el Sol con cada planeta barre áreas iguales en tiempos iguales. Equivalentemente, la velocidad areolar es constante. Es consecuencia de la conservación del momento angular, ya que la fuerza gravitatoria es central. Implica que los planetas se mueven más rápido en el perihelio y más lentos en el afelio.</div>
+                    <div class="paso"><strong>a)</strong> Tercera ley (ley de los periodos). El cuadrado del periodo orbital de un planeta es directamente proporcional al cubo del semieje mayor de su órbita:</div>
+                    <div class="formula-box">
+                        \[
+                        T^2=\frac{4\pi^2}{GM}\,a^3
+                        \]
+                    </div>
+                    <div class="paso">Magnitudes: \( T \) = periodo orbital, en segundos; \( a \) = semieje mayor de la órbita (radio orbital si es circular), en metros; \( G \) = constante de gravitación universal, \( 6{,}67\cdot10^{-11}\,\text{N}\cdot\text{m}^2\cdot\text{kg}^{-2} \); \( M \) = masa del astro central, en kg.</div>
+                    <div class="paso"><strong>b)</strong> Masa de la Tierra a partir de la órbita lunar. Despeje de \( M_T \):</div>
+                    <div class="formula-box">
+                        \[
+                        M_T=\frac{4\pi^2r^3}{G\,T^2}
+                        \]
+                    </div>
+                    <div class="paso">Conversión de unidades al S.I.: \( T=27{,}32\,\text{días}=2{,}360\cdot10^{6}\,\text{s} \); \( r=3{,}84402\cdot10^{8}\,\text{m} \). Cálculo:</div>
+                    <div class="formula-box">
+                        \[
+                        M_T=\frac{4\pi^2(3{,}84402\cdot10^{8})^3}{6{,}67\cdot10^{-11}(2{,}360\cdot10^{6})^2}=6{,}04\cdot10^{24}\,\text{kg}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \( M_T\approx6{,}04\cdot10^{24}\,\text{kg} \).</div>
+                </div>
+            </details>
+
+            <!-- PIE DIDÁCTICO -->
+            <div class="pie-clave">
+                <i class="fas fa-lightbulb"></i>
+                <span><strong>Observaciones clave:</strong> en todos estos problemas, el patrón de resolución es: (1) identificar el astro central y el cuerpo que orbita; (2) comprobar si la órbita es circular o elíptica; (3) homogeneizar todas las unidades al S.I. (días → s, km → m); (4) aplicar la 3.ª ley de Kepler \( T^2/a^3 = 4\pi^2/(GM) \) o su forma comparativa \( T_1^2/a_1^3 = T_2^2/a_2^3 \); (5) para órbitas elípticas, recordar \( r_{\text{perihelio}} = a(1-e) \), \( r_{\text{afelio}} = a(1+e) \) y la conservación del momento angular \( r_pv_p = r_av_a \); (6) comprobar el orden de magnitud del resultado. Recuerda que la constante de Kepler depende del astro central: no es universal. Y que la segunda ley de Kepler (ley de las áreas) es la que explica que los planetas se muevan más rápido en el perihelio que en el afelio.</span>
+            </div>
+
+        </div> <!-- fin contenido-desplegable -->
+    </details>
+
+    <!-- ============================================ -->
+    <!-- BLOQUE "ES HORA DE"                          -->
+    <!-- ============================================ -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p>
+                <br> Domina las leyes de Kepler y su relación con la gravitación newtoniana.<br>
+                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
+            </p>
+
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- ===================FIN DE ES HORA DE ==================== -->
+
+</div> <!-- fin container -->
+</body>
+</html>

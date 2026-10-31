@@ -1,3 +1,4 @@
+El bat tiene 
 @echo off
 chcp 65001 >nul
 cd /d "%~dp0"

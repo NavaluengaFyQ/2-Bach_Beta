@@ -778,79 +778,64 @@
 
 
 
-
-
-
 <!-- ────────────────────────────────────────────────────────────────────── -->
-<!-- Búsqueda fijada · Efecto fotoeléctrico · Castilla y León              -->
-<!-- Bloque: D. Física relativista, cuántica, nuclear y de partículas      -->
+<!-- Búsqueda fijada con toggle · Efecto fotoeléctrico · Castilla y León   -->
+<!-- Bloque: D. Física relativista, cuántica, nuclear y de partículas       -->
 <!-- Tema:   D2. Problemas precursores de la física cuántica               -->
+<!--                                                                        -->
+<!-- Extiende el script original con:                                       -->
+<!--   · Estado ACTIVO que permite liberar/volver a fijar la búsqueda      -->
+<!--   · Botón flotante (esquina inferior derecha) para alternar el filtro -->
+<!--   · Guardado del estado original del input (value/readOnly/title)     -->
+<!--   · Trazabilidad de los botones de filtro pulsados (ACTIVADOS)        -->
+<!--     para poder deseleccionarlos al liberar                            -->
+<!--   · Los setInterval dejan de re-aplicar mientras ACTIVO === false     -->
 <!-- ────────────────────────────────────────────────────────────────────── -->
 <script>
 (function () {
   'use strict';
 
-  /* ── Criterios de búsqueda (texto) ────────────────────────────────── */
+  var ACTIVO = true;                                    // ← estado del filtro
+  var ORIGINAL = { value: null, readOnly: null, title: null, guardado: false };
+  var ACTIVADOS = [];                                   // botones que hemos pulsado
 
+  /* ── Criterios de búsqueda ────────────────────────────────────────── */
   var TERMINOS_EFECTO = [
-    'efecto fotoeléctrico',
-    'fotón',
-    'trabajo de extracción',
-    'frecuencia umbral',
-    'potencial de frenado',
-    'ecuación de Einstein'
+    'efecto fotoeléctrico','fotón','trabajo de extracción',
+    'frecuencia umbral','potencial de frenado','ecuación de Einstein'
   ];
-
   var TERMINOS_FOTOELECTRONES = [
-    'energía cinética máxima',
-    'potencial de frenado',
-    'longitud de onda umbral',
-    'frecuencia incidente',
-    'fotoelectrones'
+    'energía cinética máxima','potencial de frenado','longitud de onda umbral',
+    'frecuencia incidente','fotoelectrones'
   ];
-
   var CONSULTA = Array.from(
     new Set(TERMINOS_EFECTO.concat(TERMINOS_FOTOELECTRONES))
   ).map(function (t) { return '"' + t + '"'; }).join(' | ');
 
-  /* ── Criterios de filtrado (comunidad, bloque y tema) ─────────────── */
-
   var FILTROS = {
-    /* FILTROS
-     * comunidad: nombre de la comunidad autónoma (minúsculas, sin acentos)
-     * bloque:    nombre del bloque (minúsculas, sin acentos)
-     * tema:      nombre del tema (minúsculas, sin acentos)
-     */
     comunidad: 'castilla y leon',
     bloque:    'd. fisica relativista, cuantica, nuclear y de particulas',
     tema:      'd2. problemas precursores de la fisica cuantica'
   };
 
   /* ── Utilidades ───────────────────────────────────────────────────── */
-
   function norm(t) {
     return (t || '').toLowerCase()
       .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
       .replace(/\s+/g, ' ').trim();
   }
-
   function disparar(el, tipo) {
     el.dispatchEvent(new Event(tipo, { bubbles: true }));
   }
 
-  /* ── Coincidencias de filtro ──────────────────────────────────────── */
-
-  function coincideComunidad(t) {
-    return t === FILTROS.comunidad;
-  }
-
+  /* ── Coincidencias ───────────────────────────────────────────────── */
+  function coincideComunidad(t) { return t === FILTROS.comunidad; }
   function coincideBloque(t) {
     if (!t) return false;
     if (t === FILTROS.bloque) return true;
     if (t.indexOf(FILTROS.bloque) === 0) return true;
     return t.indexOf('d.') === 0 && t.indexOf('relativista') !== -1;
   }
-
   function coincideTema(t) {
     if (!t) return false;
     if (t === FILTROS.tema) return true;
@@ -858,65 +843,122 @@
     return t.indexOf('d2') === 0 && t.indexOf('precursores') !== -1;
   }
 
-  /* ── Campo de búsqueda fijado ─────────────────────────────────────── */
+  /* ── Caja de búsqueda ────────────────────────────────────────────── */
+  function guardarOriginal(inp) {
+    if (ORIGINAL.guardado) return;
+    ORIGINAL.value    = inp.value;
+    ORIGINAL.readOnly = inp.readOnly;
+    ORIGINAL.title    = inp.title;
+    ORIGINAL.guardado = true;
+  }
 
   function fijarCaja() {
+    if (!ACTIVO) return false;
     var inp = document.getElementById('input-busqueda');
     if (!inp) return false;
+    guardarOriginal(inp);
     if (inp.value !== CONSULTA) {
       inp.value = CONSULTA;
       disparar(inp, 'input');
       disparar(inp, 'change');
     }
-    if (!inp.readOnly) {
-      inp.readOnly = true;
-      inp.title = 'Búsqueda fijada';
-    }
+    if (!inp.readOnly) inp.readOnly = true;
+    inp.title = 'Búsqueda fijada (pulsa el botón flotante para liberar)';
     return true;
   }
 
-  /* ── Pulsar un botón de filtro si aún no está activo ──────────────── */
+  function liberarCaja() {
+    var inp = document.getElementById('input-busqueda');
+    if (!inp || !ORIGINAL.guardado) return;
+    inp.readOnly = ORIGINAL.readOnly;
+    inp.title    = ORIGINAL.title || '';
+    if (inp.value !== ORIGINAL.value) {
+      inp.value = ORIGINAL.value;
+      disparar(inp, 'input');
+      disparar(inp, 'change');
+    }
+  }
 
+  /* ── Botones de filtro ───────────────────────────────────────────── */
   function pulsar(contenedorId, prueba) {
+    if (!ACTIVO) return false;
     var cont = document.getElementById(contenedorId);
     if (!cont) return false;
     var btns = cont.querySelectorAll('.btn-filtro');
     for (var i = 0; i < btns.length; i++) {
       if (prueba(norm(btns[i].textContent))) {
-        if (!btns[i].classList.contains('activo')) btns[i].click();
+        if (!btns[i].classList.contains('activo')) {
+          btns[i].click();
+          ACTIVADOS.push(btns[i]);
+        }
         return true;
       }
     }
     return false;
   }
 
-  /* ── Aplicación de los tres filtros agrupados ─────────────────────── */
-
   function fijarFiltros() {
+    if (!ACTIVO) return;
     pulsar('filtros-comunidad', coincideComunidad);
     pulsar('filtros-bloque',    coincideBloque);
     pulsar('filtros-tema',      coincideTema);
   }
 
-  /* ── Ciclo de vida ────────────────────────────────────────────────── */
+  function liberarFiltros() {
+    for (var i = 0; i < ACTIVADOS.length; i++) {
+      var b = ACTIVADOS[i];
+      if (b && b.isConnected && b.classList.contains('activo')) {
+        b.click();                       // clic en un activo = deseleccionar
+      }
+    }
+    ACTIVADOS.length = 0;
+  }
 
-  function aplicar() { fijarCaja(); fijarFiltros(); }
+  /* ── Ciclo de vida ───────────────────────────────────────────────── */
+  function aplicar() { if (!ACTIVO) return; fijarCaja(); fijarFiltros(); }
 
-  document.addEventListener('DOMContentLoaded', aplicar);
-  window.addEventListener('load', aplicar);
+  function crearBoton() {
+    if (document.getElementById('toggle-filtro-btn')) return;
+    var b = document.createElement('button');
+    b.id = 'toggle-filtro-btn';
+    b.style.cssText =
+      'position:fixed;bottom:16px;right:16px;z-index:2147483647;' +
+      'padding:8px 12px;border-radius:8px;border:1px solid #888;' +
+      'background:#fff;color:#000;cursor:pointer;font:13px sans-serif;' +
+      'box-shadow:0 2px 6px rgba(0,0,0,.25);';
+    b.addEventListener('click', alternar);
+    document.body.appendChild(b);
+    actualizarBoton();
+  }
+
+  function actualizarBoton() {
+    var b = document.getElementById('toggle-filtro-btn');
+    if (!b) return;
+    b.textContent = ACTIVO
+      ? '🔒 Filtro fijado — clic para liberar'
+      : '🔓 Filtro liberado — clic para volver a fijar';
+  }
+
+  function alternar() {
+    ACTIVO = !ACTIVO;
+    if (ACTIVO) {
+      aplicar();
+    } else {
+      liberarCaja();
+      liberarFiltros();
+    }
+    actualizarBoton();
+  }
+
+  document.addEventListener('DOMContentLoaded', function () { crearBoton(); aplicar(); });
+  window.addEventListener('load',            function () { crearBoton(); aplicar(); });
   [150, 400, 900, 1600, 2600, 4000].forEach(function (ms) {
-    setTimeout(aplicar, ms);
+    setTimeout(function () { crearBoton(); aplicar(); }, ms);
   });
 
-  /* Vigilancia ligera: mantiene la búsqueda y los filtros fijados */
-  setInterval(fijarCaja, 600);
-  setInterval(fijarFiltros, 900);
+  setInterval(function () { crearBoton(); aplicar(); }, 900);
 })();
 </script>
-
-
-
-
 
 
 
