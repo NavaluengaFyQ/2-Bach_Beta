@@ -1,3 +1,80 @@
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- problemas-inline v04.html                                              -->
+<!-- Plantilla BASE del buscador de problemas resueltos de PAU · Física     -->
+<!-- (versión SIN filtro prefijado).                                        -->
+<!--                                                                        -->
+<!-- QUÉ HACE                                                               -->
+<!--   Muestra el catálogo completo de problemas (cargados desde            -->
+<!--   ./Datos/indice.json por el script externo                            -->
+<!--   ./js/filtro-problemas-inline.js) y permite filtrarlos por texto,     -->
+<!--   año, convocatoria, comunidad, bloque y tema.                         -->
+<!--   No aplica ningún filtro al cargar: arranca en «estado limpio» para   -->
+<!--   que el usuario explore libremente todo el catálogo.                  -->
+<!--                                                                        -->
+<!-- RELACIÓN CON LAS DEMÁS PÁGINAS                                         -->
+<!--   · Es el DESTINO del botón «Limpiar filtros» de la variante           -->
+<!--     «problemas-inline v04-Filtro prefijado.html»: al pulsar ese botón  -->
+<!--     desde un tema (TemaA1, TemaA2, …) se navega aquí para liberar el   -->
+<!--     prefijo y ver el catálogo completo.                                -->
+<!--   · Esta versión NO lee parámetros de URL ni aplica prefijos: no       -->
+<!--     contiene el bloque <script> que fija input/filtros.               -->
+<!--   · Las cabeceras, scripts de mejora y estilos son idénticos a la      -->
+<!--     variante prefijada (a excepción del bloque de prefijo).            -->
+<!--                                                                        -->
+<!-- CONTROLES VISIBLES PARA EL USUARIO                                     -->
+<!--   · Buscador de texto (#input-busqueda) con sintaxis:                  -->
+<!--       "frase exacta"  +  (Y)   |  (O)   espacio = OR                   -->
+<!--   · Selector de ámbito (#select-ambito): todo / ambas / enunciado /    -->
+<!--     resolución.                                                        -->
+<!--   · Botones de filtro: año, convocatoria, comunidad, bloque y tema     -->
+<!--     (los rellena dinámicamente el JS externo a partir del índice).     -->
+<!--   · Segmented «Enunciado + solución» / «Solo enunciado»: decide si     -->
+<!--     la resolución aparece desplegada o plegada al abrir cada tarjeta.  -->
+<!--   · Selector de orden (#select-orden): número, tema, bloque, año,      -->
+<!--     comunidad, alfabético o puntuación.                                -->
+<!--   · Botón «🎲 Sorpréndeme»: abre un problema al azar entre los         -->
+<!--     resultados actualmente visibles.                                   -->
+<!--   · Botón «Limpiar filtros» (#btn-limpiar, oculto hasta que hay texto  -->
+<!--     o filtros activos): en ESTA versión sólo vacía el input de         -->
+<!--     búsqueda y dispara 'input' para que el motor refiltre.             -->
+<!--     No navega a ninguna otra página (aquí ya estamos en el catálogo    -->
+<!--     completo).                                                         -->
+<!--                                                                        -->
+<!-- COMPORTAMIENTO DE LOS SCRIPTS INCLUIDOS                                -->
+<!--   1. Script «comportamientos añadidos»:                                -->
+<!--      · Muestra/oculta #btn-limpiar según haya texto o filtros activos. -->
+<!--      · «Limpiar filtros» vacía el input (aquí NO navega).              -->
+<!--      · «Sorpréndeme» abre una tarjeta aleatoria visible y la resalta.  -->
+<!--      · Ordenación ampliada (bloque, año, comunidad, alfabético,        -->
+<!--        puntuación) con agrupación por cabeceras h3.                    -->
+<!--   2. Script «modo de vista + volver al inicio»:                        -->
+<!--      · Alterna entre resolución desplegada o plegada (details).        -->
+<!--      · Envuelve cada .resolucion en un <details class="resolucion-fold">-->
+<!--        con summary «📝 Ver resolución paso a paso».                    -->
+<!--      · Añade al final de cada tarjeta el enlace                         -->
+<!--        «↑ Volver al inicio para otra búsqueda» (#top).                 -->
+<!--                                                                        -->
+<!-- CÓMO SE USA                                                            -->
+<!--   · Abrir directamente para explorar el catálogo completo.             -->
+<!--   · Es el «fallback» al que redirigen las lanzaderas temáticas         -->
+<!--     (TemaA1-ProblemasEBAU.html, etc.) cuando el usuario decide         -->
+<!--     liberar el filtro prefijado y ver todo.                            -->
+<!--                                                                        -->
+<!-- DEPENDENCIAS                                                           -->
+<!--   · ./css/estilos.css                                                  -->
+<!--   · ./js/filtro-problemas-inline.js  (motor de filtrado)               -->
+<!--   · ./Datos/indice.json              (datos de los problemas)          -->
+<!--   · MathJax (CDN) para renderizar fórmulas LaTeX.                      -->
+<!--   · Imágenes: ../img_comunes/Cápsula.png                               -->
+<!--                ../img_comunes/Valle del Alberche v2-Small.png          -->
+<!--                                                                        -->
+<!-- COMPATIBILIDAD                                                         -->
+<!--   · Conserva los checkboxes antiguos (#check-and-default,              -->
+<!--     #check-mostrar-enunciado) ocultos, por si el JS externo los usa.   -->
+<!--   · Los scripts de mejora observan el DOM con MutationObserver, así    -->
+<!--     que toleran cargas asíncronas del índice y de MathJax.             -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

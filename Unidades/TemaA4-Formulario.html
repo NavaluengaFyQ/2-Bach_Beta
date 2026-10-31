@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA A4 (Formulario).- Intensidad de campo gravitatorio y líneas de campo</title>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- CSS PROPIO DE FORMULARIOS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================ CABECERA ============================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA A4 (Formulario).- </span>
+                <span class="texto">Intensidad de campo gravitatorio y líneas de campo</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================ GRID ============================ -->
+    <div class="grid">
+
+        <!-- FICHA 1 · DEFINICIÓN DE INTENSIDAD DE CAMPO GRAVITATORIO -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Definición de intensidad de campo gravitatorio</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La fuerza gravitatoria por unidad de masa que actuaría sobre una masa de prueba \(m\) situada en un punto del espacio. Se aplica para caracterizar el campo gravitatorio en cada punto sin necesidad de especificar la masa que lo experimenta. Es una magnitud vectorial y equivale a una aceleración.
+            </div>
+            <div class="formula-box">
+                \[
+                \vec g = \frac{\vec F}{m}
+                \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es una definición. Hay que saber que \(\vec g\) es la fuerza gravitatoria por unidad de masa, que es una magnitud vectorial y que su unidad \(\text{N}\cdot\text{kg}^{-1}\) equivale a \(\text{m}\cdot\text{s}^{-2}\) (una aceleración). No se deduce: se establece.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec g\)</td><td data-label="Significado">Intensidad del campo gravitatorio</td><td data-label="Unidades">N·kg⁻¹ = m·s⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec F\)</td><td data-label="Significado">Fuerza gravitatoria sobre la masa de prueba</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa de prueba situada en el punto</td><td data-label="Unidades">kg</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> en la superficie terrestre, una masa de \(1\,\text{kg}\) experimenta una fuerza gravitatoria de \(9{,}8\,\text{N}\). Por tanto, \(g=9{,}8\,\text{N}\cdot\text{kg}^{-1}=9{,}8\,\text{m}\cdot\text{s}^{-2}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es una magnitud <strong>vectorial</strong>: tiene dirección y sentido en cada punto.</li>
+                    <li>No depende de la masa de prueba \(m\): es una propiedad del campo.</li>
+                    <li>Su unidad \(\text{N}\cdot\text{kg}^{-1}\) es equivalente a \(\text{m}\cdot\text{s}^{-2}\).</li>
+                    <li>El campo gravitatorio es siempre <strong>atractivo</strong>: apunta hacia la masa que lo crea.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 · CAMPO GRAVITATORIO DE UNA MASA PUNTUAL -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Campo gravitatorio de una masa puntual</h2>
+                <span class="badge-centro">Campo</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El campo gravitatorio creado por una masa puntual \(M\) en un punto situado a distancia \(r\) de ella. Se aplica para describir el campo de astros esféricos en su exterior y para calcular la intensidad de la gravedad a cualquier distancia del centro. La expresión vectorial incluye la dirección radial y el carácter atractivo.
+            </div>
+            <div class="formula-box">
+                \[
+                \vec g(\vec r) = -\,G\,\frac{M}{r^{2}}\,\hat u_r
+                \qquad\Longrightarrow\qquad
+                g = G\,\frac{M}{r^{2}}
+                \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se obtiene de la ley de gravitación universal dividiendo por la masa de prueba. Memoriza el módulo \(g=GM/r^{2}\) y el signo negativo (la fuerza es atractiva). La dependencia \(1/r^{2}\) es clave: al duplicar la distancia, el campo se reduce a la cuarta parte.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec g\)</td><td data-label="Significado">Campo gravitatorio en el punto</td><td data-label="Unidades">N·kg⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(G\)</td><td data-label="Significado">Constante de gravitación universal</td><td data-label="Unidades">6,67·10⁻¹¹ N·m²·kg⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa creadora del campo</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia desde el centro de \(M\) al punto</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\hat u_r\)</td><td data-label="Significado">Vector unitario radial desde \(M\) al punto</td><td data-label="Unidades">adimensional</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para la Tierra (\(M_T\approx5{,}98\cdot10^{24}\,\text{kg}\), \(R_T\approx6{,}37\cdot10^{6}\,\text{m}\)), en la superficie \(g=GM_T/R_T^{2}\approx9{,}80\,\text{m}\cdot\text{s}^{-2}\). A una distancia \(r=2R_T\), \(g=GM_T/(4R_T^{2})\approx2{,}45\,\text{m}\cdot\text{s}^{-2}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El campo es <strong>radial</strong>: sus líneas apuntan hacia la masa creadora.</li>
+                    <li>Decae con \(1/r^{2}\): se debilita rápidamente al alejarse.</li>
+                    <li>En el exterior de una esfera, se comporta como si toda la masa estuviera en el centro.</li>
+                    <li>Es un campo <strong>conservativo</strong>: deriva de un potencial escalar.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 · LÍNEAS DE CAMPO GRAVITATORIO -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Líneas de campo gravitatorio</h2>
+                <span class="badge-centro">Representación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No se calcula una fórmula, sino que se interpretan las líneas imaginarias tangentes al vector \(\vec g\) en cada punto. Se aplican para visualizar la dirección, el sentido y la intensidad del campo gravitatorio. Su densidad relativa indica dónde el campo es más fuerte.
+            </div>
+            <div class="formula-box">
+                \[
+                \text{Radiales · hacia la masa · densidad} \propto |\vec g| \text{ · no se cruzan · perpendiculares a equipotenciales}
+                \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">📖 COMPRENDER</span>No es una fórmula: es un concepto gráfico. Hay que entender <strong>por qué</strong> son radiales y hacia la masa (carácter atractivo y central), por qué la densidad de líneas indica la intensidad del campo y por qué nunca se cruzan (el campo tiene un único valor en cada punto).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Propiedad</th><th>Descripción</th><th>Implicación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Propiedad">Dirección</td><td data-label="Descripción">Radial: pasan por el centro de la masa</td><td data-label="Implicación">El campo es central</td></tr>
+                    <tr><td data-label="Propiedad">Sentido</td><td data-label="Descripción">Hacia la masa creadora</td><td data-label="Implicación">La gravedad es atractiva</td></tr>
+                    <tr><td data-label="Propiedad">Densidad</td><td data-label="Descripción">Número de líneas por unidad de área perpendicular</td><td data-label="Implicación">Proporcional al módulo del campo</td></tr>
+                    <tr><td data-label="Propiedad">Cruce</td><td data-label="Descripción">Nunca se cruzan</td><td data-label="Implicación">El campo es único en cada punto</td></tr>
+                    <tr><td data-label="Propiedad">Equipotenciales</td><td data-label="Descripción">Perpendiculares a las superficies equipotenciales</td><td data-label="Implicación">El campo es gradiente del potencial</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> alrededor de la Tierra, las líneas de campo apuntan hacia su centro. Cerca de la superficie son casi paralelas y equidistantes; a gran altura se separan, indicando que el campo se debilita.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Las líneas de campo <strong>siempre entran</strong> en la masa: no salen de ella.</li>
+                    <li>Donde las líneas están más juntas, el campo es <strong>más intenso</strong>.</li>
+                    <li>Son <strong>perpendiculares</strong> a las superficies equipotenciales.</li>
+                    <li>No confundir líneas de campo (vectorial) con equipotenciales (escalar).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 · GRAVEDAD SUPERFICIAL -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Gravedad superficial</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo del campo gravitatorio en la superficie de un astro esférico de masa \(M\) y radio \(R\). Se aplica para comparar la gravedad de distintos planetas y para relacionar \(G\), \(M\) y \(R\) en problemas de astronomía y satélites. Determina el peso de los cuerpos en la superficie.
+            </div>
+            <div class="formula-box">
+                \[
+                g_0 = G\,\frac{M}{R^{2}}
+                \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla aparte: es la fórmula del campo gravitatorio particularizada en \(r=R\). Si sabes \(g=GM/r^{2}\), la gravedad superficial se obtiene sustituyendo \(r\) por el radio del astro. Útil para comparar planetas: \(g_0\) crece con \(M\) y decrece con \(R^{2}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(g_0\)</td><td data-label="Significado">Gravedad superficial del astro</td><td data-label="Unidades">m·s⁻² = N·kg⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(G\)</td><td data-label="Significado">Constante de gravitación universal</td><td data-label="Unidades">6,67·10⁻¹¹ N·m²·kg⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa del astro</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(R\)</td><td data-label="Significado">Radio del astro</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para la Luna (\(M_L\approx7{,}35\cdot10^{22}\,\text{kg}\), \(R_L\approx1{,}74\cdot10^{6}\,\text{m}\)): \(g_{0,L}\approx1{,}62\,\text{m}\cdot\text{s}^{-2}\), unas seis veces menor que la terrestre. Un cuerpo de \(70\,\text{kg}\) pesaría allí unos \(113\,\text{N}\) frente a \(686\,\text{N}\) en la Tierra.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La gravedad superficial caracteriza a cada astro y permite comparar planetas.</li>
+                    <li>No depende de la masa del objeto que cae: \(g_0\) es una propiedad del astro.</li>
+                    <li>Disminuye con la altura: a una altura \(h\), \(g=GM/(R+h)^{2}<g_0\).</li>
+                    <li>Se usa como dato en problemas de satélites y de energía potencial.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 · CAMPO A ALTURA h Y EN ÓRBITAS -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Campo gravitatorio a una altura \(h\) y en órbitas</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · Órbitas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El campo gravitatorio a una altura \(h\) sobre la superficie de un astro y el campo en una órbita circular. Se aplica en problemas de satélites, estaciones espaciales y astros en órbita. A una altura \(h\), la distancia al centro es \(r=R+h\); en una órbita circular, la fuerza gravitatoria proporciona la aceleración centrípeta.
+            </div>
+            <div class="formula-box">
+                \[
+                g(h) = G\,\frac{M}{(R+h)^{2}}
+                \qquad\qquad
+                g_{\text{orb}} = \frac{v^{2}}{r} = G\,\frac{M}{r^{2}}
+                \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR · ⚖️ APLICAR</span>La primera es \(g=GM/r^{2}\) con \(r=R+h\): no hay que memorizarla aparte, solo recordar que la distancia se mide desde el centro. La segunda se obtiene igualando la fuerza gravitatoria a la fuerza centrípeta: \(GMm/r^{2}=mv^{2}/r\). Error típico: confundir \(r\) con \(h\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(g(h)\)</td><td data-label="Significado">Campo gravitatorio a altura \(h\)</td><td data-label="Unidades">N·kg⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(h\)</td><td data-label="Significado">Altura sobre la superficie</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(R\)</td><td data-label="Significado">Radio del astro</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Radio de la órbita (\(r=R+h\))</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Velocidad orbital del satélite</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> la ISS orbita a \(h\approx420\,\text{km}\). Entonces \(r=R_T+420\,\text{km}\approx6{,}79\cdot10^{6}\,\text{m}\) y \(g=GM_T/r^{2}\approx8{,}66\,\text{m}\cdot\text{s}^{-2}\), un \(88\,\%\) de la gravedad superficial. La velocidad orbital es \(v=\sqrt{GM_T/r}\approx7{,}66\,\text{km}\cdot\text{s}^{-1}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La distancia \(r\) se mide <strong>siempre desde el centro</strong> del astro, no desde la superficie.</li>
+                    <li>En una órbita circular, el campo gravitatorio es la <strong>aceleración centrípeta</strong>.</li>
+                    <li>La ingravidez aparente en órbita no significa que \(g=0\), sino que todo cae libremente.</li>
+                    <li>El campo disminuye con la altura: \(g(h)<g_0\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 · PRINCIPIO DE SUPERPOSICIÓN VECTORIAL -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Principio de superposición vectorial</h2>
+                <span class="badge-centro">Principio</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Principio universal</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El campo gravitatorio resultante de varias masas puntuales en un mismo punto. Se aplica en cualquier problema con dos o más masas: se calcula cada contribución por separado y se suman vectorialmente. Es imprescindible descomponer en componentes cartesianas y dibujar un esquema.
+            </div>
+            <div class="formula-box">
+                \[
+                \vec g_{\text{total}} = \vec g_1 + \vec g_2 + \dots + \vec g_n
+                \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es un <strong>principio</strong>, no una fórmula: se aplica siempre. Lo esencial es no olvidar que los campos se suman <strong>vectorialmente</strong> (componente a componente). Error típico en la EBAU: sumar módulos de campos en vez de componentes. Dibuja siempre los vectores y descompón.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Magnitud</th><th>Tipo de suma</th><th>Expresión</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Magnitud">Campo \(\vec g\)</td><td data-label="Tipo de suma">Vectorial</td><td data-label="Expresión">\(\vec g_{\text{total}}=\sum\vec g_i\)</td></tr>
+                    <tr><td data-label="Magnitud">Fuerza \(\vec F\)</td><td data-label="Tipo de suma">Vectorial</td><td data-label="Expresión">\(\vec F_{\text{total}}=\sum\vec F_i\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos masas \(m_1=2\,\text{kg}\) y \(m_2=4\,\text{kg}\) en \((0,0)\) y \((4,0)\,\text{m}\). En \((0,2)\): \(g_1=G\cdot2/4\approx3{,}34\cdot10^{-11}\), \(g_2=G\cdot4/20\approx1{,}33\cdot10^{-11}\). Sumando componentes: \(\vec g_{\text{total}}\approx(1{,}19\hat i-3{,}93\hat j)\cdot10^{-11}\,\text{N}\cdot\text{kg}^{-1}\), módulo \(\approx4{,}11\cdot10^{-11}\,\text{N}\cdot\text{kg}^{-1}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es un <strong>principio universal</strong>: se aplica a cualquier número de masas y en cualquier punto.</li>
+                    <li>Para campos: <strong>descomponer en componentes cartesianas</strong> y sumar por separado.</li>
+                    <li>El módulo final se obtiene con Pitágoras: \(|\vec g|=\sqrt{g_x^{2}+g_y^{2}+g_z^{2}}\).</li>
+                    <li>No confundir con la suma de potenciales, que es escalar (no tratada en este tema).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 · PUNTO DE CAMPO GRAVITATORIO NULO -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Punto de campo gravitatorio nulo entre dos masas</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La posición del punto entre dos masas puntuales donde el campo gravitatorio total es nulo. Se aplica en problemas típicos de EBAU donde se pide localizar el punto de equilibrio gravitatorio entre dos cuerpos. Ese punto está siempre entre las masas y más cerca de la menor.
+            </div>
+            <div class="formula-box">
+                \[
+                \frac{G\,m}{x^{2}} = \frac{G\,M}{(d-x)^{2}}
+                \quad\Longrightarrow\quad
+                x = d\,\frac{\sqrt{m}}{\sqrt{m}+\sqrt{M}}
+                \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es solo igualar los módulos de los dos campos (que en ese punto tienen sentidos opuestos) y resolver la ecuación. Estrategia EBAU: plantear \(Gm/x^{2}=GM/(d-x)^{2}\), sacar raíz cuadrada en ambos lados y despejar \(x\). El punto está más cerca de la masa menor. El potencial en ese punto NO es nulo (sigue siendo negativo).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(x\)</td><td data-label="Significado">Distancia del punto nulo a la masa menor \(m\)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(d\)</td><td data-label="Significado">Distancia total entre las dos masas</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa menor (\(m<M\))</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa mayor</td><td data-label="Unidades">kg</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(m=2\,\text{kg}\) y \(M=4\,\text{kg}\) separadas \(d=4\,\text{m}\): \(x=4\cdot\sqrt{2}/(\sqrt{2}+2)\approx1{,}66\,\text{m}\) desde la masa menor. Comprobación: \(g_m=G\cdot2/1{,}66^{2}\approx g_M=G\cdot4/(4-1{,}66)^{2}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El punto de campo nulo está <strong>siempre entre las dos masas</strong> y más cerca de la menor.</li>
+                    <li>En ese punto, los campos tienen <strong>igual módulo y sentidos opuestos</strong>.</li>
+                    <li>El <strong>potencial NO es nulo</strong>: sigue siendo negativo (suma de dos negativos).</li>
+                    <li>Si las masas son iguales, el punto está en el <strong>punto medio</strong> (\(x=d/2\)).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             LEYENDA EPISTÉMICA
+             ============================================================ -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
+                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
+                consecuencia matemática, principio de conservación o conversión de unidades— y cada
+                categoría se domina con un <strong>verbo distinto</strong>. Identificar el tipo
+                <em>antes</em> de estudiar ahorra tiempo y evita memorizar lo que se puede deducir.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física.
+                        No se demuestra, se establece. Se domina cuando puedes enunciarla sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A4</strong>
+                        \(\vec g=\vec F/m\)
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es el <em>punto de partida</em> del tema: describe cómo funciona la naturaleza.
+                        No se deriva de otra cosa; se entiende el porqué y las condiciones en las que aplica.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A4</strong>
+                        \(F=G\,m_1m_2/r^{2}\) &nbsp;·&nbsp; líneas de campo (radiales, hacia la masa)
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> integrando, despejando o sustituyendo una ley fundamental o una
+                        definición. No se memoriza: se reconstruye en 2–3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A4</strong>
+                        \(g=GM/r^{2}\) &nbsp;·&nbsp; \(g_0=GM/R^{2}\) &nbsp;·&nbsp;
+                        \(g(h)=GM/(R+h)^{2}\) &nbsp;·&nbsp; \(g_{\text{orb}}=v^{2}/r\)
+                        &nbsp;·&nbsp; \(x=d\sqrt{m}/(\sqrt{m}+\sqrt{M})\)
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Principio / conservación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Es una <em>regla universal</em> que restringe los procesos posibles. No se demuestra
+                        ni se deduce: se aplica como filtro a cada problema concreto.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A4</strong>
+                        \(\vec g_{\text{total}}=\sum\vec g_i\)
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Conversión / operación</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes
+                        equivalentes. Debe salir sin pensar, como un reflejo.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A4</strong>
+                        \(\text{N}\cdot\text{kg}^{-1}\leftrightarrow\text{m}\cdot\text{s}^{-2}\) &nbsp;·&nbsp;
+                        \(\text{km}\leftrightarrow\text{m}\) &nbsp;·&nbsp; \(\text{g}\leftrightarrow\text{kg}\)
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tabla resumen -->
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Punto de partida físico</td>
+                        <td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Regla universal de conservación</td>
+                        <td data-label="¿Cómo se domina?">Plantearla en cada reacción</td>
+                        <td data-label="Autoevaluación">¿La aplico como filtro al problema?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Herramienta mecánica</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿Me sale sin pensar?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Regla de oro -->
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
+                pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si sale de otra fórmula integrando, despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
+                Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender).
+                Si solo asigna un nombre → <strong>definición</strong> (memorizar).
+                Si es una regla que se cumple siempre → <strong>principio</strong> (aplicar).
+            </div>
+
+            <!-- Mini-referencia de colores de las tarjetas -->
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Fundamento y definición</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Campo gravitatorio</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Aplicaciones (punto nulo)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Principios</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================ GLOSARIO ============================ -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema A4</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \vec g = \dfrac{\vec F}{m} \]</td><td data-label="Nombre">Definición de intensidad de campo gravitatorio</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ \vec g = -G\,\dfrac{M}{r^{2}}\,\hat u_r \]</td><td data-label="Nombre">Campo gravitatorio de una masa puntual (vectorial)</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ g = G\,\dfrac{M}{r^{2}} \]</td><td data-label="Nombre">Módulo del campo gravitatorio</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ g_0 = G\,\dfrac{M}{R^{2}} \]</td><td data-label="Nombre">Gravedad superficial</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ g(h) = G\,\dfrac{M}{(R+h)^{2}} \]</td><td data-label="Nombre">Campo gravitatorio a una altura \(h\)</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ g_{\text{orb}} = \dfrac{v^{2}}{r} = G\,\dfrac{M}{r^{2}} \]</td><td data-label="Nombre">Campo gravitatorio en una órbita circular</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ \vec g_{\text{total}} = \sum_i \vec g_i \]</td><td data-label="Nombre">Superposición vectorial de campos</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ x = d\,\dfrac{\sqrt{m}}{\sqrt{m}+\sqrt{M}} \]</td><td data-label="Nombre">Punto de campo gravitatorio nulo entre dos masas</td><td data-label="Ficha">7</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> confundir \(r\) (distancia al centro) con \(h\) (altura sobre la superficie); olvidar el signo negativo en la expresión vectorial del campo; sumar módulos de campos en lugar de componentes vectoriales; no dibujar las líneas de campo hacia la masa; confundir la gravedad superficial con la gravedad a una altura \(h\); y no homogeneizar las unidades al S.I.
+        </div>
+    </details>
+
+    <!-- ============================ RECORDATORIO + BOTÓN ============================ -->
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en este tema, la definición \(\vec g=\vec F/m\) y la expresión \(g=GM/r^{2}\) son la base. Recuerda que el campo gravitatorio es <strong>vectorial</strong> y se suma por componentes, mientras que la distancia \(r\) se mide <strong>siempre desde el centro</strong> del astro. No confundas \(r\) con \(h\). Las líneas de campo son radiales y hacia la masa; su densidad indica la intensidad. Homogeneiza siempre las unidades al S.I.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+</body>
+</html>

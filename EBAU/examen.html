@@ -1,3 +1,148 @@
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- SECTOR 0 · IDENTIFICACIÓN DEL ARCHIVO                                  -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- Archivo   : «examen.html»                                              -->
+<!-- Ubicación : «raíz/EBAU/»                                               -->
+<!-- Tipo      : Visor / renderizador de exámenes resueltos (EBAU)          -->
+<!-- Carga     : «Datos/<id>.json»  (fallback: «datos/<id>.json»)           -->
+<!-- Versión   : «v0X»                                                      -->
+<!-- Depende   : MathJax 3 · FontAwesome 6 (CDN)                            -->
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- SECTOR 1 · QUÉ HACE                                                    -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!--   · Lee el parámetro «?id=» de la URL y carga el JSON correspondiente. -->
+<!--   · Rellena cabecera (código + asignatura + comunidad + año).          -->
+<!--   · Pinta cuatro secciones fijas:                                      -->
+<!--       📋 Enunciado   🎯 Objetivo   🔧 Procedimiento   ✅ Resultado     -->
+<!--   · Genera el bloque desplegable «DESMITIFICANDO» con un card por      -->
+<!--     ejercicio (enunciado + apartados + resolución + resultado final).  -->
+<!--   · Si el JSON trae «resultado_intro / resultado_cierre», los inserta. -->
+<!--   · Si el JSON trae «pie_clave», lo añade como nota final.             -->
+<!--   · Si el JSON trae «titulo_desplegable», renombra el summary.         -->
+<!--   · Tipografía las fórmulas con MathJax y, al terminar, hace scroll    -->
+<!--     suave al ancla «#pN» si venía en la URL.                           -->
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- SECTOR 2 · POR QUÉ EXISTE                                              -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- Separar DATOS (JSON) de PRESENTACIÓN (HTML). Un solo «examen.html»     -->
+<!-- sirve para cualquier examen: basta con añadir un JSON nuevo en         -->
+<!-- «Datos/» y enlazar con «examen.html?id=<slug>#pN».                     -->
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- SECTOR 3 · ENTRADA (parámetros de URL)                                 -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!--   · «?id=<slug>»   → OBLIGATORIO. Nombre del JSON sin extensión.       -->
+<!--                      Si falta, se muestra caja de error.                -->
+<!--   · «#pN»          → OPCIONAL. Ancla al ejercicio N.                   -->
+<!--                      Abre el <details> si estaba cerrado y hace        -->
+<!--                      scrollIntoView + resaltado temporal.              -->
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- SECTOR 4 · FUENTE DE DATOS (JSON)                                      -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- Ruta preferente : «Datos/<id>.json»                                    -->
+<!-- Ruta fallback   : «datos/<id>.json»                                    -->
+<!--                                                                        -->
+<!-- Campos que consume el render (todos opcionales salvo los marcados *): -->
+<!--   * codigo · asignatura · comunidad · convocatoria · anio              -->
+<!--   · enunciado_general | enunciado                                      -->
+<!--   · objetivo                                                           -->
+<!--   · procedimiento : [ { titulo, contenido }, … ]                       -->
+<!--   · resultado_intro · resultado_cierre · pie_clave                     -->
+<!--   · titulo_desplegable                                                 -->
+<!--   · ejercicios : [ {                                                   -->
+<!--         numero · titulo · Tema|tema · puntuacion · enunciado ·         -->
+<!--         resultado · apartados:[{letra,enunciado,puntuacion}] ·         -->
+<!--         resolucion:[{titulo,contenido}]                                -->
+<!--       } ]                                                              -->
+<!--                                                                        -->
+<!-- El campo «Tema» se acepta con mayúscula (formato EBAU) y como alias    -->
+<!-- «tema» en minúscula, para tolerar JSON antiguos.                       -->
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- SECTOR 5 · ESTRUCTURA VISUAL DE LA PÁGINA                              -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!--   .container                                                           -->
+<!--     .header          → logo + código + título                          -->
+<!--     .section.enunciado      → 📋 Enunciado                             -->
+<!--     .section.objetivo       → 🎯 Objetivo                              -->
+<!--     .section.procedimiento  → 🔧 Procedimiento (steps numerados)       -->
+<!--     .section.resultado      → ✅ Resultado (tabla resumen)             -->
+<!--     details.desmitificando  → ejercicios paso a paso (abierto por def.)-->
+<!--       .ejercicio-card#pN    → una card por ejercicio                   -->
+<!--     «Es hora de»            → bloque fijo con enlace a index.html      -->
+<!--                                                                        -->
+<!-- Clases de estilo reutilizables: .step / .step-num / .note /            -->
+<!-- .resolucion / .resultado-final / .tabla-resumen / .pie-clave /         -->
+<!-- .cargando / .error-carga                                               -->
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- SECTOR 6 · RENDERIZADO (JS al final del <body>)                        -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!--   IIFE autocontenida, sin dependencias más allá de fetch + MathJax.    -->
+<!--   Pasos:                                                               -->
+<!--     1. Leer «?id=» (o «window.EXAM_ID»).                               -->
+<!--     2. fetch(Datos/<id>.json) → catch → fetch(datos/<id>.json).        -->
+<!--     3. render(data): cabecera, secciones, tabla, ejercicios, pie.      -->
+<!--     4. buildEjercicio(ej): card con id «pN» para el ancla.             -->
+<!--     5. typesetMathJax(): espera activa hasta 20 s a MathJax, luego     -->
+<!--        typesetPromise([document.body]) y por último hacerScroll.       -->
+<!--     6. hacerScrollAlProblema(): abre <details>, scrollIntoView suave   -->
+<!--        y resaltado temporal (#e0f2fe) de 2 s.                          -->
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- SECTOR 7 · DEPENDENCIAS EXTERNAS (CDN)                                 -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!--   · MathJax 3 (tex-mml-chtml)  → jsdelivr                              -->
+<!--       La configuración DEBE declararse en un <script> ANTES del        -->
+<!--       <script async src=…>. Si se cambia el orden, no tipografía.     -->
+<!--   · FontAwesome 6 (CDN)        → iconos fa-*                           -->
+<!--   · Logos locales: «img_comunes/Cápsula.png» y                       -->
+<!--                    «img_comunes/Valle del Alberche v2-Small.png»       -->
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- SECTOR 8 · DEEP LINKING / HASH                                         -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- Ejemplo de enlace externo:                                             -->
+<!--   examen.html?id=fisica-cyl-2026-extraordinaria#p3                     -->
+<!--   → carga el examen «fisica-cyl-2026-extraordinaria» y salta al       -->
+<!--     ejercicio nº 3 (id «p3» en el DOM).                                -->
+<!-- El hash se resuelve DESPUÉS de que MathJax haya tipografiado, para     -->
+<!-- que las alturas de las fórmulas ya estén calculadas.                   -->
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- SECTOR 9 · COMPORTAMIENTO ANTE FALLOS                                  -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!--   · Sin «?id=»       → caja .error-carga con instrucciones y ejemplo.  -->
+<!--   · JSON inexistente → caja .error-carga indicando «<id>.json» y que   -->
+<!--                        debe estar en «Datos/».                         -->
+<!--   · Campos ausentes  → se renderizan vacíos (no rompen).               -->
+<!--   · MathJax tardío   → a los ~20 s se avisa por consola y se hace el   -->
+<!--                        scroll igualmente (fórmulas sin tipografiar).   -->
+<!--   · Hash inválido    → no se hace scroll; la página queda intacta.     -->
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- SECTOR 10 · CÓMO SE USA (checklist para nuevos exámenes)               -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!--   1. Crear «Datos/<slug>.json» con el esquema del SECTOR 4.           -->
+<!--   2. Enlazar desde donde se quiera:                                    -->
+<!--         <a href="examen.html?id=<slug>">Abrir examen</a>               -->
+<!--   3. Para enlazar a un ejercicio concreto: añadir «#pN».              -->
+<!--   4. NO hace falta tocar este HTML: todo lo específico va en el JSON.  -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+ 
 <!DOCTYPE html>
 <html lang="es">
 <head>

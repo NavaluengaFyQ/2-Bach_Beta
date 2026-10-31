@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA A3 (Formulario).- Momento angular y fuerzas centrales</title>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- CSS PROPIO DE FORMULARIOS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================ CABECERA ============================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA A3 (Formulario).- </span>
+                <span class="texto">Momento angular y fuerzas centrales</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================ GRID ============================ -->
+    <div class="grid">
+
+        <!-- FICHA 1 · FUERZA CENTRAL -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Fuerza central</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                Una fuerza es central cuando su línea de acción pasa siempre por un punto fijo (centro de fuerzas) y su módulo depende únicamente de la distancia a dicho centro. La fuerza gravitatoria es el ejemplo paradigmático: \(\vec F = -G\frac{Mm}{r^2}\hat r\). Reconocer este carácter central es clave para deducir la conservación del momento angular.
+            </div>
+            <div class="formula-box">
+                \[ \vec F(\vec r) = F(r)\,\hat r \qquad\qquad \vec F_{\text{grav}} = -G\,\frac{M\,m}{r^{2}}\,\hat r \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No es una fórmula para memorizar, sino un concepto: reconocer que la fuerza gravitatoria es central. Esto implica que el momento angular se conserva y el movimiento es plano. La expresión \(\vec F = F(r)\hat r\) es la definición general; la gravitatoria es un caso particular con \(F(r) = -GMm/r^2\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec F\)</td><td data-label="Significado">Fuerza central (vector)</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(F(r)\)</td><td data-label="Significado">Módulo de la fuerza en función de \(r\)</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(\hat r\)</td><td data-label="Significado">Vector unitario radial desde el centro</td><td data-label="Unidades">adimensional</td></tr>
+                    <tr><td data-label="Símbolo">\(G\)</td><td data-label="Significado">Constante de gravitación universal</td><td data-label="Unidades">6,67·10⁻¹¹ N·m²·kg⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(M,\,m\)</td><td data-label="Significado">Masas de los cuerpos</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia al centro de fuerzas</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> la fuerza gravitatoria entre el Sol y un planeta es central: apunta siempre hacia el Sol y su módulo depende de la distancia. También lo es la fuerza eléctrica entre cargas puntuales.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es <strong>central</strong>: la línea de acción pasa por un punto fijo.</li>
+                    <li>Es <strong>conservativa</strong>: deriva de una energía potencial.</li>
+                    <li>La fuerza gravitatoria es <strong>atractiva</strong> (signo negativo).</li>
+                    <li>El carácter central es la condición que garantiza la <strong>conservación del momento angular</strong>.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 · MOMENTO ANGULAR DE UNA PARTÍCULA -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Momento angular de una partícula</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El momento angular \(\vec L\) de una partícula respecto a un punto \(O\) es el producto vectorial de su vector de posición \(\vec r\) por su momento lineal \(\vec p = m\vec v\). Es una magnitud vectorial que caracteriza la rotación y que resulta imprescindible en el estudio de órbitas y fuerzas centrales.
+            </div>
+            <div class="formula-box">
+                \[ \vec L = \vec r \times m\vec v \qquad\qquad L = m\,r\,v\,\sin\theta \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es una definición fundamental. Memoriza \(\vec L = \vec r \times m\vec v\) y su módulo \(L = mrv\sin\theta\). Las unidades son \(\text{kg}\cdot\text{m}^2/\text{s}\). Recuerda que \(\vec L\) es perpendicular al plano formado por \(\vec r\) y \(\vec v\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec L\)</td><td data-label="Significado">Momento angular de la partícula</td><td data-label="Unidades">kg·m²/s</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec r\)</td><td data-label="Significado">Vector de posición respecto a \(O\)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa de la partícula</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec v\)</td><td data-label="Significado">Velocidad de la partícula</td><td data-label="Unidades">m/s</td></tr>
+                    <tr><td data-label="Símbolo">\(\theta\)</td><td data-label="Significado">Ángulo entre \(\vec r\) y \(\vec v\)</td><td data-label="Unidades">rad</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una partícula de \(2\,\text{kg}\) que se mueve en una órbita circular de radio \(3\,\text{m}\) con velocidad \(4\,\text{m/s}\) tiene \(L = mrv = 2\cdot3\cdot4 = 24\,\text{kg}\cdot\text{m}^2/\text{s}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es una magnitud <strong>vectorial</strong>: tiene dirección y sentido.</li>
+                    <li>Depende del punto \(O\) respecto al que se calcula.</li>
+                    <li>En un campo central, \(\vec L\) se conserva.</li>
+                    <li>Si \(\vec r\) y \(\vec v\) son perpendiculares, \(\sin\theta = 1\) y \(L = mrv\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 · TEOREMA DEL MOMENTO ANGULAR -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Teorema del momento angular</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La variación temporal del momento angular de una partícula es igual al momento de la fuerza neta (torque) que actúa sobre ella, respecto al mismo punto \(O\). Es la Segunda Ley de Newton para rotaciones.
+            </div>
+            <div class="formula-box">
+                \[ \frac{d\vec L}{dt} = \vec M = \vec r \times \vec F \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se obtiene derivando \(\vec L = \vec r \times m\vec v\) respecto al tiempo. Es la expresión general del teorema. Válido en sistemas inerciales. Si la fuerza es central, \(\vec M = 0\) y \(\vec L\) se conserva.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\frac{d\vec L}{dt}\)</td><td data-label="Significado">Variación temporal del momento angular</td><td data-label="Unidades">kg·m²/s²</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec M\)</td><td data-label="Significado">Momento de la fuerza (torque)</td><td data-label="Unidades">N·m</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec r\)</td><td data-label="Significado">Vector de posición</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec F\)</td><td data-label="Significado">Fuerza neta aplicada</td><td data-label="Unidades">N</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si la fuerza es central, \(\vec r \parallel \vec F\), entonces \(\vec M = \vec r \times \vec F = 0\) y \(\frac{d\vec L}{dt} = 0\), luego \(\vec L = \text{constante}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es la <strong>Segunda Ley de Newton</strong> para rotaciones.</li>
+                    <li>El torque \(\vec M\) es el análogo rotacional de la fuerza.</li>
+                    <li>Si \(\vec M = 0\), el momento angular se conserva.</li>
+                    <li>Válido en sistemas de referencia inerciales.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 · CONSERVACIÓN DEL MOMENTO ANGULAR -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Conservación del momento angular</h2>
+                <span class="badge-centro">Principio</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Principio de conservación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                En un campo de fuerzas centrales, el momento de la fuerza es nulo (\(\vec r \parallel \vec F\)), por lo que el momento angular se conserva: \(\vec L = \text{constante}\). Este principio es la base de la segunda ley de Kepler y de la relación de velocidades en órbitas elípticas.
+            </div>
+            <div class="formula-box">
+                \[ \vec M = 0 \quad\Longrightarrow\quad \vec L = \text{constante} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es un <strong>principio</strong>, no una fórmula: se aplica siempre que la fuerza sea central (gravitatoria, eléctrica entre cargas). Implica movimiento plano y velocidad areolar constante. No confundir con la conservación de la energía mecánica: son dos leyes distintas que se cumplen simultáneamente en campos centrales.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Magnitud</th><th>Condición</th><th>Consecuencia</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Magnitud">Momento angular \(\vec L\)</td><td data-label="Condición">Fuerza central (\(\vec M=0\))</td><td data-label="Consecuencia">\(\vec L = \text{constante}\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un planeta en órbita elíptica conserva su momento angular en todos los puntos de la órbita. Por eso se mueve más rápido en el perihelio y más lento en el afelio.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Consecuencia directa de que la fuerza sea <strong>central</strong>.</li>
+                    <li>Implica que el movimiento es <strong>plano</strong>.</li>
+                    <li>Implica la <strong>segunda ley de Kepler</strong> (velocidad areolar constante).</li>
+                    <li>Permite relacionar velocidades en distintos puntos de la órbita.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 · MOVIMIENTO PLANO BAJO FUERZA CENTRAL -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Movimiento plano bajo fuerza central</h2>
+                <span class="badge-centro">Consecuencia</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                Como \(\vec L\) es constante y perpendicular al plano formado por \(\vec r\) y \(\vec v\), la partícula se mueve siempre en un plano fijo perpendicular a \(\vec L\). Este plano contiene al centro de fuerzas.
+            </div>
+            <div class="formula-box">
+                \[ \vec L \perp \text{plano de la órbita} \quad\Longrightarrow\quad \text{movimiento plano} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>Se deduce de la conservación de \(\vec L\). El plano orbital está definido por \(\vec L\) y contiene al centro de fuerzas. Esto explica por qué las órbitas planetarias son planas y por qué el plano debe contener al Sol.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Concepto</th><th>Relación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Concepto">Vector momento angular \(\vec L\)</td><td data-label="Relación">Perpendicular al plano de la órbita</td></tr>
+                    <tr><td data-label="Concepto">Plano orbital</td><td data-label="Relación">Contiene al centro de fuerzas</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> las órbitas de los planetas alrededor del Sol son planas (plano de la eclíptica). El vector \(\vec L\) de cada planeta apunta en una dirección fija perpendicular a ese plano.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El plano orbital es <strong>perpendicular</strong> a \(\vec L\).</li>
+                    <li>Si \(\vec L\) cambia, el plano cambia (no ocurre en fuerzas centrales).</li>
+                    <li>El centro de fuerzas siempre está contenido en el plano orbital.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 · VELOCIDAD AREOLAR Y SEGUNDA LEY DE KEPLER -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Velocidad areolar y segunda ley de Kepler</h2>
+                <span class="badge-centro">Consecuencia</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La conservación de \(\vec L\) implica que el área barrida por el radio vector por unidad de tiempo (velocidad areolar) es constante: \(\frac{dA}{dt} = \frac{L}{2m}\). Esta es precisamente la segunda ley de Kepler.
+            </div>
+            <div class="formula-box">
+                \[ \frac{dA}{dt} = \frac{L}{2m} = \text{constante} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>Se deduce de la conservación de \(\vec L\). Es la segunda ley de Kepler: el radio vector que une el Sol con un planeta barre áreas iguales en tiempos iguales. No hace falta memorizarla si se comprende que \(L = 2m\frac{dA}{dt}\) es constante.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\frac{dA}{dt}\)</td><td data-label="Significado">Velocidad areolar (área barrida por unidad de tiempo)</td><td data-label="Unidades">m²/s</td></tr>
+                    <tr><td data-label="Símbolo">\(L\)</td><td data-label="Significado">Momento angular</td><td data-label="Unidades">kg·m²/s</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa de la partícula</td><td data-label="Unidades">kg</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un planeta se mueve más rápido cerca del Sol (perihelio) y más lento lejos (afelio) para barrer la misma área en el mismo tiempo. Esa es la esencia de la segunda ley de Kepler.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La velocidad areolar constante es una consecuencia directa de la fuerza central.</li>
+                    <li>Equivale a la <strong>segunda ley de Kepler</strong>.</li>
+                    <li>Explica por qué la velocidad orbital varía a lo largo de la órbita.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 · ÓRBITAS ELÍPTICAS: PERIHELIO Y AFELIO -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Órbitas elípticas: perihelio y afelio</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Conservación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                En los puntos de máximo acercamiento (perihelio) y máximo alejamiento (afelio), el vector de posición y la velocidad son perpendiculares. Por tanto, la conservación de \(\vec L\) se escribe: \(m r_p v_p = m r_a v_a\), luego \(r_p v_p = r_a v_a\).
+            </div>
+            <div class="formula-box">
+                \[ m\,r_p\,v_p = m\,r_a\,v_a \quad\Longrightarrow\quad r_p\,v_p = r_a\,v_a \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Se aplica la conservación de \(\vec L\) en los ápsides (perihelio y afelio). La velocidad es mayor en el perihelio (\(r\) menor) y menor en el afelio (\(r\) mayor). No hace falta memorizar la fórmula: basta con igualar \(L = mrv\) en ambos puntos.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(r_p\)</td><td data-label="Significado">Distancia en el perihelio</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(v_p\)</td><td data-label="Significado">Velocidad en el perihelio</td><td data-label="Unidades">m/s</td></tr>
+                    <tr><td data-label="Símbolo">\(r_a\)</td><td data-label="Significado">Distancia en el afelio</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(v_a\)</td><td data-label="Significado">Velocidad en el afelio</td><td data-label="Unidades">m/s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para un cometa, si \(r_a = 4 r_p\), entonces \(v_p = 4 v_a\). La velocidad en el perihelio es cuatro veces mayor que en el afelio.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Relación muy útil para problemas de órbitas elípticas.</li>
+                    <li>La energía mecánica también se conserva, pero la relación de velocidades proviene solo del momento angular.</li>
+                    <li>En los ápsides, \(\vec v \perp \vec r\), por lo que \(L = mrv\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 · ÓRBITAS CIRCULARES -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Órbitas circulares</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Conservación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                En una órbita circular, la velocidad es siempre perpendicular al radio, por lo que el módulo del momento angular es \(L = m r v\). Se conserva constante en módulo, dirección y sentido a lo largo de toda la órbita.
+            </div>
+            <div class="formula-box">
+                \[ L = m\,r\,v \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es un caso particular de la definición de momento angular. En una órbita circular, \(\vec v \perp \vec r\), luego \(\sin\theta = 1\) y \(L = mrv\). Se conserva constante. Útil para satélites y órbitas circulares.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(L\)</td><td data-label="Significado">Momento angular</td><td data-label="Unidades">kg·m²/s</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa del satélite</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Radio de la órbita</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Velocidad orbital</td><td data-label="Unidades">m/s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un satélite geoestacionario de \(1000\,\text{kg}\) en una órbita de radio \(4{,}22\cdot10^{7}\,\text{m}\) con velocidad \(3{,}07\cdot10^{3}\,\text{m/s}\) tiene \(L = 1000\cdot4{,}22\cdot10^{7}\cdot3{,}07\cdot10^{3} \approx 1{,}30\cdot10^{14}\,\text{kg}\cdot\text{m}^2/\text{s}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La velocidad orbital es constante en módulo.</li>
+                    <li>\(\vec L\) es perpendicular al plano de la órbita.</li>
+                    <li>Se conserva constante en módulo, dirección y sentido.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             LEYENDA EPISTÉMICA
+             ============================================================ -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
+                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
+                consecuencia matemática, principio de conservación o conversión de unidades— y cada
+                categoría se domina con un <strong>verbo distinto</strong>. Identificar el tipo
+                <em>antes</em> de estudiar ahorra tiempo y evita memorizar lo que se puede deducir.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física.
+                        No se demuestra, se establece. Se domina cuando puedes enunciarla sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A3</strong>
+                        \(\vec L = \vec r \times m\vec v\) &nbsp;·&nbsp; \(\vec F = F(r)\hat r\)
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es el <em>punto de partida</em> del tema: describe cómo funciona la naturaleza.
+                        No se deriva de otra cosa; se entiende el porqué y las condiciones en las que aplica.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A3</strong>
+                        Fuerza central &nbsp;·&nbsp; Conservación del momento angular
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> integrando, despejando o sustituyendo una ley fundamental o una
+                        definición. No se memoriza: se reconstruye en 2–3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A3</strong>
+                        \(\frac{d\vec L}{dt} = \vec r \times \vec F\) &nbsp;·&nbsp; \(\frac{dA}{dt} = \frac{L}{2m}\) &nbsp;·&nbsp; Movimiento plano
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Principio / conservación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Es una <em>regla universal</em> que restringe los procesos posibles. No se demuestra
+                        ni se deduce: se aplica como filtro a cada problema concreto.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A3</strong>
+                        \(r_p v_p = r_a v_a\) &nbsp;·&nbsp; \(L = mrv\) (órbita circular)
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Conversión / operación</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes
+                        equivalentes. Debe salir sin pensar, como un reflejo.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A3</strong>
+                        \(\text{kg}\cdot\text{m}^2/\text{s}\) &nbsp;·&nbsp; \(\text{N}\cdot\text{m}\) &nbsp;·&nbsp; \(\text{rad}\leftrightarrow\text{grados}\)
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tabla resumen -->
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Punto de partida físico</td>
+                        <td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Regla universal de conservación</td>
+                        <td data-label="¿Cómo se domina?">Plantearla en cada reacción</td>
+                        <td data-label="Autoevaluación">¿La aplico como filtro al problema?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Herramienta mecánica</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿Me sale sin pensar?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Regla de oro -->
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
+                pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si sale de otra fórmula integrando, despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
+                Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender).
+                Si solo asigna un nombre → <strong>definición</strong> (memorizar).
+                Si es una regla que se cumple siempre → <strong>principio</strong> (aplicar).
+            </div>
+
+            <!-- Mini-referencia de colores de las tarjetas -->
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Fundamento y definiciones</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Teorema y derivadas</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Consecuencias y leyes</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Aplicaciones orbitales</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Principios de conservación</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================ GLOSARIO ============================ -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema A3</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \vec F(\vec r) = F(r)\,\hat r \]</td><td data-label="Nombre">Fuerza central</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ \vec F = -G\,\dfrac{M\,m}{r^{2}}\,\hat r \]</td><td data-label="Nombre">Fuerza gravitatoria (central)</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ \vec L = \vec r \times m\vec v \]</td><td data-label="Nombre">Momento angular de una partícula</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ L = m\,r\,v\,\sin\theta \]</td><td data-label="Nombre">Módulo del momento angular</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ \frac{d\vec L}{dt} = \vec M = \vec r \times \vec F \]</td><td data-label="Nombre">Teorema del momento angular</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ \vec L = \text{constante} \]</td><td data-label="Nombre">Conservación del momento angular</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ \vec L \perp \text{plano orbital} \]</td><td data-label="Nombre">Movimiento plano bajo fuerza central</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \frac{dA}{dt} = \frac{L}{2m} \]</td><td data-label="Nombre">Velocidad areolar (2.ª ley de Kepler)</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ r_p\,v_p = r_a\,v_a \]</td><td data-label="Nombre">Relación de velocidades en perihelio y afelio</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ L = m\,r\,v \]</td><td data-label="Nombre">Momento angular en órbita circular</td><td data-label="Ficha">8</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> olvidar que el momento angular es un vector y sumar módulos en lugar de componentes; no tener en cuenta que la conservación del momento angular implica movimiento plano; confundir la conservación del momento angular con la conservación de la energía mecánica (ambas se conservan en campos centrales, pero son magnitudes distintas); y creer que la velocidad es constante en una órbita elíptica (solo lo es el módulo del momento angular, no la rapidez).
+        </div>
+    </details>
+
+    <!-- ============================ RECORDATORIO + BOTÓN ============================ -->
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en el tema A3, la <strong>fuerza central</strong> es el punto de partida: al ser paralela al vector de posición, su momento es nulo y el <strong>momento angular se conserva</strong>. Esto implica que el movimiento es plano y que la velocidad areolar es constante (2.ª ley de Kepler). A partir de ahí se deducen las relaciones de velocidades en órbitas elípticas (\(r_p v_p = r_a v_a\)) y circulares (\(L = mrv\)). No confundas momento angular (vectorial) con energía mecánica (escalar); ambos se conservan en campos centrales, pero son leyes independientes. Recuerda medir \(r\) desde el centro de fuerzas y homogeneizar las unidades al S.I.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- TemaA1-ProblemasEBAU.html                                              -->
+<!-- Página «lanzadera» del Tema A1 · Efecto fotoeléctrico                  -->
+<!--                                                                        -->
+<!-- QUÉ HACE                                                               -->
+<!--   Al abrirse, muestra durante ~0,5 s los criterios de búsqueda que va   -->
+<!--   a aplicar y redirige automáticamente a la plantilla del buscador     -->
+<!--   ("problemas-inline v04-Filtro prefijado.html") pasándole esos        -->
+<!--   criterios como parámetros de URL.                                    -->
+<!--                                                                        -->
+<!-- POR QUÉ EXISTE                                                        -->
+<!--   Sirve como «enlace temático»: un archivo por tema que encapsula los  -->
+<!--   criterios (términos + comunidad + bloque + tema) y lanza el buscador -->
+<!--   ya filtrado, sin que el usuario tenga que escribir nada.             -->
+<!--                                                                        -->
+<!-- CRITERIOS QUE FIJA (objeto CRITERIOS del script)                       -->
+<!--   · q         → términos de búsqueda (con | y "frase")                 -->
+<!--   · comunidad → comunidad autónoma                                     -->
+<!--   · bloque    → bloque                                                 -->
+<!--   · tema      → tema                                                   -->
+<!--   · fuente    → etiqueta informativa (p. ej. "TemaA1")                 -->
+<!--                                                                        -->
+<!-- CÓMO SE USA                                                            -->
+<!--   1. Duplicar este archivo y renombrarlo (ej. TemaA2-…html, B1-…html). -->
+<!--   2. Cambiar SOLO el objeto CRITERIOS del <script> final.              -->
+<!--   3. El resto (URL, redirección, spinner, fallback) es automático.     -->
+<!--                                                                        -->
+<!-- DESTINO                                                                -->
+<!--   problemas-inline v04-Filtro prefijado.html?q=…&comunidad=…&bloque=…  -->
+<!--                                          &tema=…&fuente=…               -->
+<!--                                                                        -->
+<!-- DEPENDENCIAS                                                          -->
+<!--   · Ninguna (HTML + JS autocontenido).                                 -->
+<!--   · Debe convivir en la misma carpeta que la plantilla destino, o      -->
+<!--     ajustar la ruta 'problemas-inline v04-Filtro prefijado.html'.      -->
+<!--                                                                        -->
+<!-- COMPORTAMIENTO ANTE FALLOS                                            -->
+<!--   · Si la redirección no ocurre, se muestra un enlace de respaldo.    -->
+<!--   · Usa location.replace() para no contaminar el historial.           -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- TemaA1-ProblemasEBAU.html                                              -->
+<!-- Ubicación: raíz/Unidades/                                              -->
+<!-- Lanzadera del Tema A1 · Efecto fotoeléctrico                           -->
+<!--                                                                        -->
+<!-- DESTINO: raíz/EBAU/problemas-inline v04-Filtro prefijado.html          -->
+<!--          (ruta relativa: ../EBAU/problemas-inline v04-Filtro …html)    -->
+<!--                                                                        -->
+<!-- Prueba varios candidatos por si renombras sin espacios el destino.     -->
+<!-- Si ninguno existe, muestra en pantalla las rutas probadas.             -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- TemaA1-ProblemasEBAU.html                                              -->
+<!-- Ubicación: raíz/Unidades/                                              -->
+<!-- Lanzadera del Tema A1 · Efecto fotoeléctrico                           -->
+<!--                                                                        -->
+<!-- DESTINO: raíz/EBAU/problemas-inline v04-Filtro prefijado.html          -->
+<!--                                                                        -->
+<!-- Diseño anti-parpadeo:                                                  -->
+<!--   · Fondo = mismo que el destino (#f5f7fb) → sin flash de color        -->
+<!--   · Sin spinner ni animaciones continuas                               -->
+<!--   · Sin retardo artificial (antes 350 ms)                              -->
+<!--   · <link rel="prefetch"> del destino → el navegador lo va cacheando   -->
+<!--   · Fade-out de 120 ms antes de navegar (opcional, muy sutil)          -->
+<!--   · Si todos los candidatos fallan, se muestra UNA caja de error       -->
+<!--     (no antes: no hay «loading» visible en el caso normal)             -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema A1 · EBAU Física</title>
+
+<!-- El navegador empieza a traer el destino mientras ejecutamos el JS -->
+<link rel="prefetch" href="../EBAU/problemas-inline v04-Filtro prefijado.html">
+<link rel="prefetch" href="../EBAU/problemas-inline-v04-Filtro-prefijado.html">
+
+<style>
+  html, body {
+    margin:0; padding:0; min-height:100%;
+    /* MISMO color que la página destino → el flash de navegación no se nota */
+    background:#f5f7fb;
+    color:#1e293b;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  body { opacity:1; transition: opacity .12s linear; }
+  body.saliendo { opacity:0; }
+
+  .error-box {
+    max-width:600px; margin:60px auto; padding:20px 24px;
+    background:#fff; border:1px solid #fecaca; border-radius:12px;
+    color:#b91c1c; font-size:.88rem; line-height:1.55;
+    box-shadow:0 4px 20px -8px rgba(15,23,42,.12);
+  }
+  .error-box strong { display:block; margin-bottom:8px; }
+  .error-box ul { margin:8px 0 0; padding-left:22px; }
+  .error-box li { margin:3px 0; }
+  .error-box code {
+    background:#fee2e2; padding:1px 6px; border-radius:4px;
+    font-size:.8rem; word-break:break-all;
+  }
+</style>
+</head>
+<body>
+
+<div id="error-container"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Criterios del Tema A1 (cámbialos para otros temas) ── */
+  var CRITERIOS = {
+    q:         '"potencial gravitatorio" | "superficies equipotenciales" | "gradiente" | "energía potencial por unidad de masa" | "campo conservativo" | "potencial en un punto" | "diferencia de potencial gravitatorio" | "trabajo gravitatorio" | "equipotenciales" | "energía potencial"',
+    comunidad: 'Castilla y León',
+    bloque:    'A. Campo gravitatorio',
+    tema:      'A5. Potencial gravitatorio, equipotenciales y relación con el campo'
+  };
+
+  /* ── Candidatos en orden de preferencia ── */
+  var CANDIDATOS = [
+    '../EBAU/problemas-inline v04-Filtro prefijado.html',
+    '../EBAU/problemas-inline-v04-Filtro-prefijado.html',
+    'problemas-inline v04-Filtro prefijado.html',
+    'problemas-inline-v04-Filtro-prefijado.html'
+  ];
+
+  /* ── Query string ── */
+  var params = new URLSearchParams();
+  params.set('q',         CRITERIOS.q);
+  params.set('comunidad', CRITERIOS.comunidad);
+  params.set('bloque',    CRITERIOS.bloque);
+  params.set('tema',      CRITERIOS.tema);
+  params.set('fuente',    'TemaA1');
+  var query = params.toString();
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' })[c];
+    });
+  }
+
+  function mostrarError(probadas) {
+    document.getElementById('error-container').innerHTML =
+      '<div class="error-box">' +
+        '<strong>⚠️ No se ha encontrado el archivo del buscador.</strong>' +
+        'He probado estas rutas (todas devuelven 404):' +
+        '<ul>' + probadas.map(function (p) {
+          return '<li><code>' + escapeHtml(p) + '</code></li>';
+        }).join('') + '</ul>' +
+        'Comprueba que existe <code>raíz/EBAU/problemas-inline v04-Filtro prefijado.html</code> ' +
+        'y que el nombre coincide exactamente (mayúsculas, espacios, acentos, guiones…).' +
+      '</div>';
+  }
+
+  /* ── Navegación inmediata, sin retardo ── */
+  function ir(destino) {
+    document.body.classList.add('saliendo');
+    // 120 ms de fade-out sutil; si prefieres 0 ms, quita el setTimeout
+    setTimeout(function () { window.location.replace(destino); }, 120);
+  }
+
+  function probar(i) {
+    if (i >= CANDIDATOS.length) { mostrarError(CANDIDATOS); return; }
+
+    fetch(CANDIDATOS[i], { method: 'HEAD', cache: 'no-store' })
+      .then(function (r) {
+        if (r.ok) {
+          ir(CANDIDATOS[i] + '?' + query);
+        } else {
+          probar(i + 1);
+        }
+      })
+      .catch(function () { probar(i + 1); });
+  }
+
+  // Arranca la comprobación al cargar el DOM (muy rápido: fetch HEAD)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { probar(0); });
+  } else {
+    probar(0);
+  }
+})();
+</script>
+</body>
+</html>

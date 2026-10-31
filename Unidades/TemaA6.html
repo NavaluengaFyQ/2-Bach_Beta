@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema A6. Trabajo, energía potencial y energía mecánica gravitatoria</title>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                <span class="codigo">#TEMA A6.- </span>
+                <span class="texto">Trabajo, energía potencial y energía mecánica gravitatoria</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- MAPA DE BLOQUES Y TEMAS (DESPLEGABLE)                         -->
+    <!-- ============================================================ -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque A. Campo gravitatorio</strong> del currículo de Física de 2º de Bachillerato (Decreto 40/2022, BOCYL-D-30092022-4).</p>
+
+        <div class="mapa-bloques">
+            <!-- BLOQUE A (ACTUAL) -->
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">A1</span>
+                    <span class="tema-chip">A2</span>
+                    <span class="tema-chip">A3</span>
+                    <span class="tema-chip">A4</span>
+                    <span class="tema-chip">A5</span>
+                    <span class="tema-chip actual">A6</span>
+                    <span class="tema-chip">A7</span>
+                    <span class="tema-chip">A8</span>
+                </div>
+            </div>
+            <!-- BLOQUE B -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span>
+                    <span class="tema-chip">B2</span>
+                    <span class="tema-chip">B3</span>
+                    <span class="tema-chip">B4</span>
+                    <span class="tema-chip">B5</span>
+                    <span class="tema-chip">B6</span>
+                    <span class="tema-chip">B7</span>
+                    <span class="tema-chip">B8</span>
+                    <span class="tema-chip">B9</span>
+                </div>
+            </div>
+            <!-- BLOQUE C -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">C1</span>
+                    <span class="tema-chip">C2</span>
+                    <span class="tema-chip">C3</span>
+                    <span class="tema-chip">C4</span>
+                    <span class="tema-chip">C5</span>
+                    <span class="tema-chip">C6</span>
+                </div>
+            </div>
+            <!-- BLOQUE D -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">D1</span>
+                    <span class="tema-chip">D2</span>
+                    <span class="tema-chip">D3</span>
+                    <span class="tema-chip">D4</span>
+                    <span class="tema-chip">D5</span>
+                    <span class="tema-chip">D6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque A · Tema A6:</strong> <span class="texto-resaltado">Trabajo, energía potencial y energía mecánica gravitatoria.</span>
+            <br>
+            <em>En este tema estudiaremos:</em> el trabajo realizado por la fuerza gravitatoria, la energía potencial gravitatoria y su relación con el potencial, la energía mecánica de satélites en órbita, la conservación de la energía mecánica en el campo gravitatorio, el concepto de pozo gravitatorio y las velocidades características (orbital y de escape), así como el trabajo necesario para poner un satélite en órbita.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- OBJETIVOS (DESPLEGABLE)                                       -->
+    <!-- ============================================================ -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Comprender el carácter conservativo del campo gravitatorio y calcular el trabajo realizado por la fuerza gravitatoria en distintos desplazamientos.</li>
+            <li>Definir y calcular la energía potencial gravitatoria de una masa en un campo gravitatorio, interpretando su signo y su origen.</li>
+            <li>Deducir y aplicar la expresión de la energía mecánica de un satélite en órbita circular.</li>
+            <li>Aplicar el principio de conservación de la energía mecánica a problemas de movimiento de cuerpos en campos gravitatorios.</li>
+            <li>Calcular la energía necesaria para poner un satélite en órbita desde la superficie terrestre.</li>
+            <li>Determinar la velocidad de escape y analizar el concepto de pozo gravitatorio.</li>
+            <li>Relacionar la energía cinética y la potencial en órbitas circulares (teorema del virial).</li>
+            <li>Resolver problemas numéricos y de razonamiento característicos de la PAU/EBAU de Castilla y León sobre este tema.</li>
+        </ul>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- CONTENIDO TEÓRICO (DESPLEGABLE)                               -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <!-- Step 1: Trabajo gravitatorio -->
+        <details class="step">
+            <summary><span class="step-num">1</span><strong>Trabajo realizado por la fuerza gravitatoria.</strong></summary>
+            <p>La fuerza gravitatoria es conservativa, por lo que el trabajo que realiza al desplazar una masa entre dos puntos depende únicamente de las posiciones inicial y final, no del camino seguido.</p>
+            <p>Para una masa \(m\) que se desplaza en el campo creado por una masa \(M\) desde una distancia \(r_A\) hasta \(r_B\):</p>
+            <div class="formula-box">
+                \[
+                W_{A\to B}^{\text{grav}} = \int_{r_A}^{r_B} \vec F_g \cdot d\vec r = GMm\left(\frac{1}{r_B}-\frac{1}{r_A}\right) = -\Delta E_p
+                \]
+            </div>
+            <p>El trabajo del campo gravitatorio es positivo cuando la masa se acerca a la masa creadora (\(r_B<r_A\)): la gravedad realiza trabajo a favor del movimiento. Es negativo cuando la masa se aleja.</p>
+            <p>El trabajo realizado por un agente externo para mover la masa sin cambiar su energía cinética es el opuesto del trabajo del campo:</p>
+            <div class="formula-box">
+                \[
+                W_{\text{ext}} = -W_{\text{campo}} = \Delta E_p
+                \]
+            </div>
+        </details>
+
+        <!-- Step 2: Energía potencial gravitatoria -->
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Energía potencial gravitatoria.</strong></summary>
+            <p>La energía potencial gravitatoria de una masa \(m\) situada a una distancia \(r\) de una masa \(M\) es:</p>
+            <div class="formula-box">
+                \[
+                E_p = -\frac{GMm}{r}
+                \]
+            </div>
+            <p>Con el origen de energía potencial en el infinito: \(E_p(\infty)=0\).</p>
+            <p><strong>Propiedades:</strong></p>
+            <ul>
+                <li>Es siempre negativa para distancias finitas, lo que refleja el carácter atractivo de la gravedad.</li>
+                <li>Aumenta (se hace menos negativa) cuando la masa se aleja de \(M\), y disminuye (se hace más negativa) cuando se acerca.</li>
+                <li>El potencial gravitatorio es la energía potencial por unidad de masa: \(V = E_p/m = -GM/r\).</li>
+                <li>Para un sistema de varias masas, la energía potencial total es la suma algebraica de las contribuciones de cada masa.</li>
+            </ul>
+            <div class="note">
+                <strong>Importante:</strong> en las proximidades de la superficie terrestre, si \(h\ll R_T\), se puede aproximar \(E_p \approx mgh\) tomando como origen la superficie. Esta expresión es un caso particular de la energía potencial gravitatoria general.
+            </div>
+        </details>
+
+        <!-- Step 3: Energía mecánica de un satélite en órbita circular -->
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Energía mecánica de un satélite en órbita circular.</strong></summary>
+            <p>Para un satélite de masa \(m\) en órbita circular de radio \(r\) alrededor de un planeta de masa \(M\), la fuerza gravitatoria proporciona la fuerza centrípeta:</p>
+            <div class="formula-box">
+                \[
+                \frac{GMm}{r^2} = \frac{mv^2}{r} \quad\Rightarrow\quad v^2 = \frac{GM}{r}
+                \]
+            </div>
+            <p>La energía cinética es:</p>
+            <div class="formula-box">
+                \[
+                E_c = \frac{1}{2}mv^2 = \frac{GMm}{2r}
+                \]
+            </div>
+            <p>La energía potencial es:</p>
+            <div class="formula-box">
+                \[
+                E_p = -\frac{GMm}{r}
+                \]
+            </div>
+            <p>La energía mecánica total es:</p>
+            <div class="formula-box">
+                \[
+                E_m = E_c + E_p = -\frac{GMm}{2r}
+                \]
+            </div>
+            <p>Relaciones notables:</p>
+            <ul>
+                <li>\(E_c = -E_p/2\) (teorema del virial).</li>
+                <li>\(E_m = E_p/2 = -E_c\).</li>
+                <li>La energía mecánica es negativa: el satélite está ligado al planeta.</li>
+            </ul>
+        </details>
+
+        <!-- Step 4: Conservación de la energía mecánica -->
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Conservación de la energía mecánica en el campo gravitatorio.</strong></summary>
+            <p>Como la fuerza gravitatoria es conservativa, si no actúan fuerzas no conservativas (rozamiento, propulsión, etc.), la energía mecánica se conserva:</p>
+            <div class="formula-box">
+                \[
+                E_m = E_c + E_p = \text{constante}
+                \]
+            </div>
+            <p>Entre dos puntos \(A\) y \(B\):</p>
+            <div class="formula-box">
+                \[
+                \frac{1}{2}mv_A^2 - \frac{GMm}{r_A} = \frac{1}{2}mv_B^2 - \frac{GMm}{r_B}
+                \]
+            </div>
+            <p>Esta relación permite resolver problemas de lanzamiento vertical, satélites en órbitas elípticas y transferencias entre órbitas.</p>
+        </details>
+
+        <!-- Step 5: Velocidad de escape y pozo gravitatorio -->
+        <details class="step">
+            <summary><span class="step-num">5</span><strong>Velocidad de escape y pozo gravitatorio.</strong></summary>
+            <p>La <strong>velocidad de escape</strong> es la velocidad mínima necesaria para que un cuerpo lanzado desde la superficie de un astro escape de su campo gravitatorio, alcanzando el infinito con velocidad nula. Imponiendo \(E_m=0\):</p>
+            <div class="formula-box">
+                \[
+                \frac{1}{2}mv_e^2 - \frac{GMm}{R} = 0 \quad\Rightarrow\quad v_e = \sqrt{\frac{2GM}{R}}
+                \]
+            </div>
+            <p>También se puede expresar en función de la gravedad superficial \(g_0 = GM/R^2\):</p>
+            <div class="formula-box">
+                \[
+                v_e = \sqrt{2g_0R}
+                \]
+            </div>
+            <p>El <strong>pozo gravitatorio</strong> es la representación de la energía potencial gravitatoria en función de la distancia: una "depresión" que se hace más profunda cuanto más cerca se está de la masa. Para escapar, un cuerpo debe recibir energía suficiente para salir de ese pozo, es decir, para que su energía mecánica total sea al menos cero.</p>
+        </details>
+
+        <!-- Step 6: Trabajo para poner un satélite en órbita -->
+        <details class="step">
+            <summary><span class="step-num">6</span><strong>Trabajo para poner un satélite en órbita.</strong></summary>
+            <p>Para colocar un satélite de masa \(m\) en órbita circular de radio \(r\) desde la superficie de un planeta de radio \(R\), suponiendo que parte del reposo en la superficie, el trabajo externo necesario es la variación de energía mecánica:</p>
+            <div class="formula-box">
+                \[
+                W_{\text{ext}} = E_{m,\text{órbita}} - E_{m,\text{superficie}}
+                \]
+            </div>
+            <p>Con \(E_{m,\text{órbita}} = -GMm/(2r)\) y \(E_{m,\text{superficie}} = -GMm/R\):</p>
+            <div class="formula-box">
+                \[
+                W_{\text{ext}} = GMm\left(\frac{1}{R} - \frac{1}{2r}\right)
+                \]
+            </div>
+            <p>Este trabajo es siempre positivo: hay que aportar energía al satélite para subirlo y dotarlo de velocidad orbital.</p>
+            <div class="note">
+                <strong>Observación:</strong> si se tiene en cuenta la rotación terrestre, el trabajo se reduce ligeramente porque el satélite ya posee una velocidad inicial debida a la rotación. En la mayoría de los problemas de EBAU se desprecia este efecto salvo que se indique lo contrario.
+            </div>
+        </details>
+
+        <!-- Step 7: Relación entre energía cinética y potencial en órbita circular -->
+        <details class="step">
+            <summary><span class="step-num">7</span><strong>Relación entre \(E_c\) y \(E_p\) en una órbita circular.</strong></summary>
+            <p>Para una órbita circular, combinando \(v^2 = GM/r\) con las expresiones de \(E_c\) y \(E_p\):</p>
+            <div class="formula-box">
+                \[
+                E_c = \frac{GMm}{2r} = -\frac{1}{2}E_p
+                \]
+            </div>
+            <p>Por tanto, la energía cinética es la mitad del valor absoluto de la energía potencial, y la energía mecánica es:</p>
+            <div class="formula-box">
+                \[
+                E_m = E_c + E_p = \frac{E_p}{2} = -E_c
+                \]
+            </div>
+            <p>Este resultado es una consecuencia del teorema del virial aplicado al potencial gravitatorio \(U\propto 1/r\).</p>
+        </details>
+
+        <!-- Step 8: Energía en órbitas elípticas (breve) -->
+        <details class="step">
+            <summary><span class="step-num">8</span><strong>Energía mecánica en órbitas elípticas (ampliación).</strong></summary>
+            <p>Para una órbita elíptica de semieje mayor \(a\), la energía mecánica total es:</p>
+            <div class="formula-box">
+                \[
+                E_m = -\frac{GMm}{2a}
+                \]
+            </div>
+            <p>Esta expresión generaliza la de la órbita circular (donde \(a=r\)). La energía mecánica sigue siendo negativa para órbitas ligadas.</p>
+            <p>En los puntos de máxima y mínima distancia (apogeo y perigeo), la velocidad se puede relacionar con la distancia mediante la conservación del momento angular y de la energía.</p>
+        </details>
+
+        <div class="note">
+            <strong>💡 Observaciones sobre el alumnado:</strong> los errores más frecuentes son: (i) olvidar el signo negativo de \(E_p\) y \(E_m\); (ii) confundir energía potencial con potencial; (iii) no distinguir entre trabajo del campo y trabajo externo; (iv) aplicar \(mgh\) fuera de su rango de validez (\(h\ll R_T\)); (v) no conservar la energía mecánica cuando hay fuerzas no conservativas; (vi) confundir velocidad orbital con velocidad de escape.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- ANÁLISIS DE FÓRMULAS (DESPLEGABLE)                            -->
+    <!-- ============================================================ -->
+    <details class="section resultado">
+        <summary><h2>🧮 Análisis de las fórmulas del tema A6</h2></summary>
+        <table>
+            <thead>
+                <tr><th>Fórmula</th><th>Significado físico</th><th>Variables y unidades</th><th>Condiciones de aplicación</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>\(W_{A\to B}=GMm\left(\frac{1}{r_B}-\frac{1}{r_A}\right)\)</td><td>Trabajo de la fuerza gravitatoria entre dos puntos.</td><td>\(W\) en J; \(M,m\) en kg; \(r\) en m.</td><td>Campo gravitatorio de una masa puntual o esférica en su exterior.</td></tr>
+                <tr><td>\(E_p=-\frac{GMm}{r}\)</td><td>Energía potencial gravitatoria.</td><td>\(E_p\) en J; \(M,m\) en kg; \(r\) en m.</td><td>Origen en el infinito; masa puntual o esférica en su exterior.</td></tr>
+                <tr><td>\(V=-\frac{GM}{r}\)</td><td>Potencial gravitatorio.</td><td>\(V\) en J/kg; \(M\) en kg; \(r\) en m.</td><td>Origen en el infinito.</td></tr>
+                <tr><td>\(E_m=E_c+E_p\)</td><td>Energía mecánica total.</td><td>\(E_m\) en J.</td><td>Sistemas conservativos.</td></tr>
+                <tr><td>\(E_c=\frac{GMm}{2r}\)</td><td>Energía cinética en órbita circular.</td><td>\(E_c\) en J.</td><td>Órbita circular.</td></tr>
+                <tr><td>\(E_m=-\frac{GMm}{2r}\)</td><td>Energía mecánica en órbita circular.</td><td>\(E_m\) en J.</td><td>Órbita circular.</td></tr>
+                <tr><td>\(E_c=-\frac{1}{2}E_p\)</td><td>Relación entre energía cinética y potencial en órbita circular.</td><td>—</td><td>Órbita circular.</td></tr>
+                <tr><td>\(v_{\text{orb}}=\sqrt{\frac{GM}{r}}\)</td><td>Velocidad orbital en órbita circular.</td><td>\(v\) en m/s; \(M\) en kg; \(r\) en m.</td><td>Órbita circular de radio \(r\).</td></tr>
+                <tr><td>\(v_e=\sqrt{\frac{2GM}{R}}\)</td><td>Velocidad de escape desde la superficie.</td><td>\(v_e\) en m/s; \(M\) en kg; \(R\) en m.</td><td>Desde la superficie de un astro esférico.</td></tr>
+                <tr><td>\(W_{\text{ext}}=GMm\left(\frac{1}{R}-\frac{1}{2r}\right)\)</td><td>Trabajo para poner un satélite en órbita circular desde la superficie.</td><td>\(W_{\text{ext}}\) en J.</td><td>Partiendo del reposo en la superficie; sin rotación.</td></tr>
+                <tr><td>\(E_p\approx mgh\)</td><td>Energía potencial en las proximidades de la superficie.</td><td>\(m\) en kg; \(g\) en m/s²; \(h\) en m.</td><td>\(h\ll R_T\); origen en la superficie.</td></tr>
+            </tbody>
+        </table>
+        <div class="note">
+            <strong>⚠️ Errores frecuentes:</strong> olvidar el signo negativo de \(E_p\) y \(E_m\); confundir energía potencial con potencial; no distinguir trabajo del campo y trabajo externo; aplicar \(mgh\) cuando \(h\) no es pequeña comparada con \(R_T\); no conservar la energía mecánica cuando hay fuerzas no conservativas; confundir velocidad orbital con velocidad de escape.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- PROBLEMAS RESUELTOS (EBAU Castilla y León y otras)            -->
+    <!-- ============================================================ -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🔭 Problemas resueltos de EBAU — Castilla y León y otras comunidades (Tema A6)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas</strong> de las pruebas de acceso a la universidad, priorizando <strong>Castilla y León</strong>. Todos ellos están relacionados con el tema A6 (trabajo, energía potencial y energía mecánica gravitatoria). Se indica la comunidad, el año, la convocatoria (ordinaria/extraordinaria) y el número de problema.
+            </p>
+
+            <!-- PROBLEMA 1 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Órbita geoestacionaria y energía del satélite Astra 2C</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Ordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>El satélite Astra 2C, de masa 6000 kg, empleado para emitir señales de televisión, describe una órbita circular geoestacionaria.</p>
+                    <p>a) Calcule la altura a la que orbita respecto a la superficie de la Tierra y la velocidad con la que se mueve.</p>
+                    <p>b) Calcule la energía necesaria para llevar al Astra 2C desde la superficie de la Tierra hasta su órbita.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Altura y velocidad orbital</strong></div>
+                    <p>Una órbita geoestacionaria es circular, ecuatorial y tiene el mismo periodo que la rotación terrestre: \(T=24\,\text{h}=86400\,\text{s}\).</p>
+                    <p>Igualando la fuerza gravitatoria a la fuerza centrípeta:</p>
+                    <div class="formula-box">
+                        \[
+                        \frac{GM_T}{r^2} = \frac{4\pi^2}{T^2}r \quad\Rightarrow\quad r = \left(\frac{GM_T T^2}{4\pi^2}\right)^{1/3}
+                        \]
+                    </div>
+                    <p>Sustituyendo \(G=6{,}67\cdot10^{-11}\), \(M_T=5{,}98\cdot10^{24}\,\text{kg}\), \(T=86400\,\text{s}\):</p>
+                    <div class="formula-box">
+                        \[
+                        r \approx 4{,}225\cdot10^{7}\,\text{m}
+                        \]
+                    </div>
+                    <p>La altura sobre la superficie es:</p>
+                    <div class="formula-box">
+                        \[
+                        h = r - R_T = 4{,}225\cdot10^{7} - 6{,}38\cdot10^{6} \approx 3{,}587\cdot10^{7}\,\text{m}
+                        \]
+                    </div>
+                    <p>La velocidad orbital es:</p>
+                    <div class="formula-box">
+                        \[
+                        v = \frac{2\pi r}{T} = \frac{2\pi(4{,}225\cdot10^{7})}{86400} \approx 3{,}07\cdot10^{3}\,\text{m/s}
+                        \]
+                    </div>
+                    <p><strong>Resultado:</strong> \(h\approx3{,}59\cdot10^{7}\,\text{m}\) (35 900 km); \(v\approx3{,}07\cdot10^{3}\,\text{m/s}\).</p>
+
+                    <div class="paso"><strong>b) Energía para ponerlo en órbita</strong></div>
+                    <p>Tomamos el satélite inicialmente en reposo en la superficie y despreciamos la rotación terrestre. La energía mecánica en la superficie es:</p>
+                    <div class="formula-box">
+                        \[
+                        E_i = -\frac{GM_Tm}{R_T}
+                        \]
+                    </div>
+                    <p>La energía mecánica en la órbita circular es:</p>
+                    <div class="formula-box">
+                        \[
+                        E_f = \frac{1}{2}mv^2 - \frac{GM_Tm}{r} = -\frac{GM_Tm}{2r}
+                        \]
+                    </div>
+                    <p>El trabajo externo necesario es:</p>
+                    <div class="formula-box">
+                        \[
+                        W = E_f - E_i = GM_Tm\left(\frac{1}{R_T} - \frac{1}{2r}\right)
+                        \]
+                    </div>
+                    <p>Sustituyendo \(m=6000\,\text{kg}\):</p>
+                    <div class="formula-box">
+                        \[
+                        W \approx 3{,}47\cdot10^{11}\,\text{J}
+                        \]
+                    </div>
+                    <p><strong>Resultado:</strong> \(W\approx3{,}47\cdot10^{11}\,\text{J}\).</p>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 2 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Altura de un proyectil lanzado con media velocidad de escape</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Ordinaria · Problema 5</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Se dispara verticalmente un proyectil desde la superficie de la Tierra con una velocidad cuyo módulo es la mitad de la velocidad de escape. Despreciando el rozamiento con la atmósfera, calcule la máxima altura sobre la superficie que alcanzará el proyectil.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Conservación de la energía</strong></div>
+                    <p>La velocidad de escape satisface \(v_e^2 = 2GM_T/R_T\). Por tanto, la velocidad inicial es:</p>
+                    <div class="formula-box">
+                        \[
+                        v_0^2 = \frac{v_e^2}{4} = \frac{GM_T}{2R_T}
+                        \]
+                    </div>
+                    <p>En la altura máxima la velocidad se anula. Por conservación de la energía mecánica:</p>
+                    <div class="formula-box">
+                        \[
+                        \frac{1}{2}mv_0^2 - \frac{GM_Tm}{R_T} = -\frac{GM_Tm}{R_T+h}
+                        \]
+                    </div>
+                    <p>Sustituyendo \(v_0^2\):</p>
+                    <div class="formula-box">
+                        \[
+                        \frac{GM_Tm}{4R_T} - \frac{GM_Tm}{R_T} = -\frac{GM_Tm}{R_T+h}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        -\frac{3GM_Tm}{4R_T} = -\frac{GM_Tm}{R_T+h}
+                        \]
+                    </div>
+                    <p>Simplificando:</p>
+                    <div class="formula-box">
+                        \[
+                        R_T+h = \frac{4R_T}{3}
+                        \]
+                    </div>
+                    <p>Por tanto:</p>
+                    <div class="formula-box">
+                        \[
+                        h = \frac{R_T}{3} = \frac{6{,}37\cdot10^{6}}{3} \approx 2{,}12\cdot10^{6}\,\text{m}
+                        \]
+                    </div>
+                    <p><strong>Resultado:</strong> \(h\approx2{,}12\cdot10^{6}\,\text{m}\approx2120\,\text{km}\).</p>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 3 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Energía y movimiento de un satélite entre dos órbitas terrestres</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un satélite de 900 kg se coloca inicialmente en una órbita LEO a una altura de 1200 km sobre la superficie terrestre.</p>
+                    <p>a) Calcule su aceleración y energía mecánica en la órbita, así como el número de vueltas que realiza en un día.</p>
+                    <p>b) Determine la energía que habría que suministrar al satélite para que efectúe el cambio a una órbita geoestacionaria.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Aceleración, energía y vueltas</strong></div>
+                    <p>Radio orbital inicial: \(r_1 = R_T + H = 6{,}38\cdot10^{6} + 1{,}20\cdot10^{6} = 7{,}58\cdot10^{6}\,\text{m}\).</p>
+                    <p>La aceleración es centrípeta y apunta hacia el centro terrestre:</p>
+                    <div class="formula-box">
+                        \[
+                        a = -\frac{GM_T}{r_1^2}\,\vec r = -6{,}94\,\vec r\ \text{m/s}^2
+                        \]
+                    </div>
+                    <p>La energía mecánica en órbita circular es:</p>
+                    <div class="formula-box">
+                        \[
+                        E_{m,1} = -\frac{GM_Tm}{2r_1} = -2{,}37\cdot10^{10}\,\text{J}
+                        \]
+                    </div>
+                    <p>El periodo orbital es:</p>
+                    <div class="formula-box">
+                        \[
+                        T_1 = 2\pi\sqrt{\frac{r_1^3}{GM_T}} = 6{,}57\cdot10^{3}\,\text{s}
+                        \]
+                    </div>
+                    <p>El número de vueltas en un día:</p>
+                    <div class="formula-box">
+                        \[
+                        N = \frac{86400}{T_1} = 13{,}16
+                        \]
+                    </div>
+                    <p><strong>Resultado:</strong> \(a=-6{,}94\,\vec r\ \text{m/s}^2\); \(E_{m,1}=-2{,}37\cdot10^{10}\,\text{J}\); \(N=13{,}16\) vueltas/día.</p>
+
+                    <div class="paso"><strong>b) Energía para el cambio de órbita</strong></div>
+                    <p>La órbita geoestacionaria tiene \(T_2=86400\,\text{s}\). Su radio es:</p>
+                    <div class="formula-box">
+                        \[
+                        r_2 = \left(\frac{GM_T T_2^2}{4\pi^2}\right)^{1/3} = 4{,}225\cdot10^{7}\,\text{m}
+                        \]
+                    </div>
+                    <p>La energía mecánica en la nueva órbita es:</p>
+                    <div class="formula-box">
+                        \[
+                        E_{m,2} = -\frac{GM_Tm}{2r_2} = -4{,}25\cdot10^{9}\,\text{J}
+                        \]
+                    </div>
+                    <p>La energía suministrada es:</p>
+                    <div class="formula-box">
+                        \[
+                        \Delta E = E_{m,2} - E_{m,1} = \frac{GM_Tm}{2}\left(\frac{1}{r_1} - \frac{1}{r_2}\right) = 1{,}94\cdot10^{10}\,\text{J}
+                        \]
+                    </div>
+                    <p><strong>Resultado:</strong> \(\Delta E\approx1{,}94\cdot10^{10}\,\text{J}\).</p>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 4 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Lanzamiento vertical y tamaño de un asteroide para escapar</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Problema 4</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Se lanza verticalmente un objeto desde la superficie de la Tierra, de forma que alcanza una altura de 4 m.</p>
+                    <p>a) Despreciando el rozamiento con el aire, determine la velocidad inicial con la que fue lanzado.</p>
+                    <p>b) Si se hubiese lanzado con la misma velocidad desde la superficie de un asteroide esférico, cuya densidad media es la mitad que la de la Tierra, ¿cuál debería ser el diámetro máximo del asteroide para que el objeto escape de su acción gravitatoria?</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Velocidad inicial</strong></div>
+                    <p>Como \(H\ll R_T\), se puede usar \(g_0\) constante y conservación de la energía en la forma \(v_0^2 = 2g_0H\):</p>
+                    <div class="formula-box">
+                        \[
+                        v_0 = \sqrt{2\cdot9{,}80\cdot4} = 8{,}85\,\text{m/s}
+                        \]
+                    </div>
+                    <p><strong>Resultado:</strong> \(v_0\approx8{,}85\,\text{m/s}\).</p>
+
+                    <div class="paso"><strong>b) Diámetro máximo del asteroide</strong></div>
+                    <p>La velocidad de escape de un cuerpo esférico de masa \(M_a\) y radio \(R_a\) es \(v_e = \sqrt{2GM_a/R_a}\). Si la densidad es la mitad que la terrestre:</p>
+                    <div class="formula-box">
+                        \[
+                        M_a = \frac{1}{2}\left(\frac{R_a}{R_T}\right)^3 M_T
+                        \]
+                    </div>
+                    <p>Imponiendo \(v_0 = v_e\):</p>
+                    <div class="formula-box">
+                        \[
+                        v_0^2 = \frac{GM_T}{R_T^3}R_a^2 \quad\Rightarrow\quad R_{a,\max} = v_0\sqrt{\frac{R_T^3}{GM_T}}
+                        \]
+                    </div>
+                    <p>Sustituyendo los datos:</p>
+                    <div class="formula-box">
+                        \[
+                        R_{a,\max} \approx 7{,}14\cdot10^{3}\,\text{m} \quad\Rightarrow\quad D_{\max} = 2R_{a,\max} \approx 1{,}43\cdot10^{4}\,\text{m} \approx 14{,}3\,\text{km}
+                        \]
+                    </div>
+                    <p><strong>Resultado:</strong> \(D_{\max}\approx14{,}3\,\text{km}\). Para diámetros menores, el objeto también escapa.</p>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 5 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Verdadero/falso sobre energía de un cuerpo en campo gravitatorio</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Ordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Considere un objeto que se mueve estando únicamente bajo el efecto de un campo gravitatorio. Razone cuáles de las siguientes afirmaciones son verdaderas:</p>
+                    <p>a) Aumenta su energía potencial.</p>
+                    <p>b) Conserva su energía mecánica.</p>
+                    <p>c) Disminuye su energía cinética.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Aumenta su energía potencial</strong></div>
+                    <p>Falsa en general. Sin más información sobre la trayectoria, la energía potencial gravitatoria puede aumentar o disminuir. Por ejemplo, un cuerpo en caída libre tiene energía potencial decreciente, mientras que uno lanzado verticalmente hacia arriba tiene energía potencial creciente mientras sube.</p>
+                    <p><strong>Resultado:</strong> falsa (depende del sentido del movimiento).</p>
+
+                    <div class="paso"><strong>b) Conserva su energía mecánica</strong></div>
+                    <p>Verdadera. El campo gravitatorio es conservativo y, si es la única fuerza que actúa sobre el cuerpo, no hay rozamiento, no hay propulsión y no hay fuerzas externas, la energía mecánica se conserva:</p>
+                    <div class="formula-box">
+                        \[
+                        \Delta E_m = \Delta E_c + \Delta E_p = 0
+                        \]
+                    </div>
+                    <p><strong>Resultado:</strong> verdadera (campo conservativo, no hay fuerzas no conservativas).</p>
+
+                    <div class="paso"><strong>c) Disminuye su energía cinética</strong></div>
+                    <p>Falsa en general. Como la energía mecánica se conserva, la energía cinética puede aumentar si el cuerpo cae hacia el centro del campo, ya que disminuye \(E_p\) y aumenta \(E_c\), o disminuir si se aleja, ya que aumenta \(E_p\) y disminuye \(E_c\). Sin saber el sentido del movimiento, no puede afirmarse.</p>
+                    <p><strong>Resultado:</strong> falsa (depende del sentido del movimiento).</p>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 6 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Diferencia entre el peso de un satélite en órbita y en la superficie terrestre</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un satélite artificial de masa 1500 kg se lanza desde la Tierra para situarlo en una órbita circular de 12.500 km de radio. Determine la diferencia entre el peso del satélite en la órbita y el que tenía en la superficie terrestre.</p>
+                    <p>Datos: \(g_0=9{,}80\,\text{m/s}^2\); \(G=6{,}67\cdot10^{-11}\,\text{N}\cdot\text{m}^2/\text{kg}^2\); \(R_T=6{,}37\cdot10^{6}\,\text{m}\); \(M_T=5{,}98\cdot10^{24}\,\text{kg}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Peso en la superficie terrestre</strong></div>
+                    <div class="formula-box">
+                        \[
+                        P_{\text{sup}} = mg_0 = 1500\cdot9{,}80 = 1{,}47\cdot10^{4}\,\text{N}
+                        \]
+                    </div>
+
+                    <div class="paso"><strong>Peso en la órbita</strong></div>
+                    <p>A la distancia \(r=12\,500\,\text{km}=1{,}25\cdot10^{7}\,\text{m}\) del centro de la Tierra, la aceleración gravitatoria vale:</p>
+                    <div class="formula-box">
+                        \[
+                        g_{\text{orb}} = \frac{GM_T}{r^2} = 2{,}55\,\text{m/s}^2
+                        \]
+                    </div>
+                    <p>Por tanto:</p>
+                    <div class="formula-box">
+                        \[
+                        P_{\text{orb}} = mg_{\text{orb}} = \frac{GM_Tm}{r^2} = 3{,}83\cdot10^{3}\,\text{N}
+                        \]
+                    </div>
+
+                    <div class="paso"><strong>Diferencia de pesos</strong></div>
+                    <div class="formula-box">
+                        \[
+                        \Delta P = P_{\text{sup}} - P_{\text{orb}} = 1{,}47\cdot10^{4} - 3{,}83\cdot10^{3} = 1{,}09\cdot10^{4}\,\text{N}
+                        \]
+                    </div>
+                    <p><strong>Resultado:</strong> \(\Delta P=1{,}09\cdot10^{4}\,\text{N}\); el peso en órbita es mucho menor que en la superficie.</p>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Energía potencial gravitatoria en el punto medio Tierra–Luna</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>La masa de la Tierra es, aproximadamente, 81 veces la masa de la Luna y la distancia entre sus centros es \(3{,}84\cdot10^{5}\,\text{km}\). Calcule la energía potencial de un meteorito de 400 kg situado en el punto medio del segmento que une los centros de la Tierra y la Luna.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Datos y planteamiento</strong></div>
+                    <p>La masa de la Tierra es \(M_T=5{,}98\cdot10^{24}\,\text{kg}\) y \(M_T=81M_L\), de donde \(M_L=7{,}38\cdot10^{22}\,\text{kg}\). La distancia entre centros es \(d=3{,}84\cdot10^{8}\,\text{m}\), así que el punto medio dista \(r=1{,}92\cdot10^{8}\,\text{m}\) de cada centro.</p>
+                    <p>La energía potencial gravitatoria de un cuerpo de masa \(m\) en presencia de dos masas es la suma escalar de las contribuciones de cada una:</p>
+                    <div class="formula-box">
+                        \[
+                        U = -\frac{GM_Tm}{r} - \frac{GM_Lm}{r}
+                        \]
+                    </div>
+
+                    <div class="paso"><strong>Contribución de la Tierra</strong></div>
+                    <div class="formula-box">
+                        \[
+                        U_T = -\frac{GM_Tm}{r} = -8{,}31\cdot10^{8}\,\text{J}
+                        \]
+                    </div>
+
+                    <div class="paso"><strong>Contribución de la Luna</strong></div>
+                    <div class="formula-box">
+                        \[
+                        U_L = -\frac{GM_Lm}{r} = -1{,}03\cdot10^{7}\,\text{J}
+                        \]
+                    </div>
+
+                    <div class="paso"><strong>Energía potencial total</strong></div>
+                    <div class="formula-box">
+                        \[
+                        U = U_T + U_L = -8{,}41\cdot10^{8}\,\text{J}
+                        \]
+                    </div>
+                    <p><strong>Resultado:</strong> \(U=-8{,}41\cdot10^{8}\,\text{J}\).</p>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 8 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Relación entre energía cinética y potencial de un satélite en órbita circular</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 12</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Deduzca la relación entre la energía cinética y la energía potencial de un satélite que describe una órbita circular alrededor de un planeta.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Igualdad fuerza gravitatoria – fuerza centrípeta</strong></div>
+                    <p>Para un satélite de masa \(m\) en órbita circular de radio \(r\) alrededor de un planeta de masa \(M\):</p>
+                    <div class="formula-box">
+                        \[
+                        \frac{GMm}{r^2} = \frac{mv^2}{r}
+                        \]
+                    </div>
+
+                    <div class="paso"><strong>Energía cinética</strong></div>
+                    <p>De la igualdad anterior: \(v^2 = GM/r\). Por tanto:</p>
+                    <div class="formula-box">
+                        \[
+                        E_c = \frac{1}{2}mv^2 = \frac{GMm}{2r}
+                        \]
+                    </div>
+
+                    <div class="paso"><strong>Energía potencial gravitatoria</strong></div>
+                    <div class="formula-box">
+                        \[
+                        E_p = -\frac{GMm}{r}
+                        \]
+                    </div>
+
+                    <div class="paso"><strong>Relación entre \(E_c\) y \(E_p\)</strong></div>
+                    <p>Comparando:</p>
+                    <div class="formula-box">
+                        \[
+                        E_c = \frac{GMm}{2r} = -\frac{1}{2}E_p
+                        \]
+                    </div>
+                    <p>De ahí la energía mecánica:</p>
+                    <div class="formula-box">
+                        \[
+                        E_m = E_c + E_p = \frac{GMm}{2r} - \frac{GMm}{r} = -\frac{GMm}{2r}
+                        \]
+                    </div>
+                    <p><strong>Resultado:</strong> \(E_c = -E_p/2\); \(E_m = -GMm/(2r)\).</p>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 9 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">Radio de la órbita y masa de un satélite a partir de su energía mecánica y su velocidad</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un satélite artificial describe una órbita circular alrededor de la Tierra. La energía mecánica del satélite en la órbita es \(-4{,}5\cdot10^{9}\,\text{J}\) y su velocidad \(7610\,\text{m/s}\). Calcule el radio de la órbita y la masa del satélite.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Relación entre energía mecánica y energía cinética en órbita circular</strong></div>
+                    <p>Para una órbita circular se cumple \(E_m = -E_c\). Por tanto:</p>
+                    <div class="formula-box">
+                        \[
+                        E_c = -E_m = 4{,}5\cdot10^{9}\,\text{J}
+                        \]
+                    </div>
+                    <p>Como \(E_c = \frac{1}{2}mv^2\), la masa del satélite es:</p>
+                    <div class="formula-box">
+                        \[
+                        m = \frac{2E_c}{v^2} = \frac{2\cdot4{,}5\cdot10^{9}}{7610^2} = 1{,}55\cdot10^{2}\,\text{kg}
+                        \]
+                    </div>
+
+                    <div class="paso"><strong>Cálculo del radio orbital</strong></div>
+                    <p>En una órbita circular, \(v^2 = GM_T/r\), de donde:</p>
+                    <div class="formula-box">
+                        \[
+                        r = \frac{GM_T}{v^2} = \frac{6{,}67\cdot10^{-11}\cdot5{,}98\cdot10^{24}}{7610^2} = 6{,}88\cdot10^{6}\,\text{m}
+                        \]
+                    </div>
+                    <p><strong>Resultado:</strong> \(m=1{,}55\cdot10^{2}\,\text{kg}\); \(r=6{,}88\cdot10^{6}\,\text{m}\).</p>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">Energía para escapar desde una órbita circular</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Ordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un objeto de masa \(m=10^{4}\,\text{kg}\) se encuentra en una órbita circular a \(30\,000\,\text{km}\) de la superficie de la Tierra. ¿Qué energía será necesario aportarle para que pueda escapar de la gravedad terrestre?</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Energía mecánica en órbita circular</strong></div>
+                    <p>En una órbita circular de radio \(r\), la energía mecánica es:</p>
+                    <div class="formula-box">
+                        \[
+                        E_m = -\frac{GM_Tm}{2r}
+                        \]
+                    </div>
+                    <p>Para escapar hasta el infinito con velocidad nula, \(E_{\text{inf}}=0\). La energía adicional necesaria es:</p>
+                    <div class="formula-box">
+                        \[
+                        \Delta E = E_{\text{inf}} - E_m = \frac{GM_Tm}{2r}
+                        \]
+                    </div>
+
+                    <div class="paso"><strong>Sustitución numérica</strong></div>
+                    <p>Con \(r = R_T + 30\,000\,\text{km} = 6{,}37\cdot10^{6} + 3{,}00\cdot10^{7} = 3{,}637\cdot10^{7}\,\text{m}\):</p>
+                    <div class="formula-box">
+                        \[
+                        \Delta E = \frac{6{,}67\cdot10^{-11}\cdot5{,}97\cdot10^{24}\cdot10^{4}}{2\cdot3{,}637\cdot10^{7}} \approx 5{,}47\cdot10^{10}\,\text{J}
+                        \]
+                    </div>
+                    <p><strong>Resultado:</strong> \(\Delta E\approx5{,}47\cdot10^{10}\,\text{J}\).</p>
+                </div>
+            </details>
+
+            <!-- PIE DIDÁCTICO -->
+
+ <!-- PIE DIDÁCTICO: SÍNTESIS DEL TEMA A6 -->
+            <div class="pie-clave">
+                <i class="fas fa-lightbulb"></i>
+                <span>
+                    <strong>Ideas fuerza del tema A6:</strong>
+                    (1) la fuerza gravitatoria es <em>conservativa</em>: el trabajo depende solo de \(r_A\) y \(r_B\), no del camino;
+                    (2) su trabajo es \(W_{\text{campo}}=-\Delta E_p=GMm\!\left(\tfrac{1}{r_B}-\tfrac{1}{r_A}\right)\) y el trabajo externo es \(W_{\text{ext}}=+\Delta E_p\);
+                    (3) con origen en el infinito, \(E_p=-\dfrac{GMm}{r}<0\) para todo \(r\) finito;
+                    (4) en órbita circular \(E_c=-E_p/2\), \(E_m=-\dfrac{GMm}{2r}<0\) (satélite ligado);
+                    (5) la velocidad orbital es \(v_{\text{orb}}=\sqrt{GM/r}\) y la de escape \(v_e=\sqrt{2GM/R}=\sqrt{2g_0R}\);
+                    (6) el <em>pozo gravitatorio</em> explica por qué hay que <em>aportar</em> energía para subir de órbita o escapar.
+                </span>
+            </div>
+
+            <!-- CHECKLIST DE AUTOCONTROL -->
+            <div class="formula-box">
+                <strong>✅ Antes de dar el tema por cerrado, comprueba que sabes…</strong>
+                <ul>
+                    <li>Distinguir <strong>trabajo del campo</strong> (\(W=-\Delta E_p\)) de <strong>trabajo externo</strong> (\(W=+\Delta E_p\)).</li>
+                    <li>Justificar por qué \(E_p\) y \(E_m\) son <strong>negativas</strong> y qué significa físicamente (sistema ligado).</li>
+                    <li>Elegir entre \(E_p=-\dfrac{GMm}{r}\) y \(E_p\approx mgh\) según el valor de \(h\) frente a \(R\).</li>
+                    <li>Deducir \(E_m=-\dfrac{GMm}{2r}\) y \(E_c=-E_p/2\) a partir de \(GMm/r^2=mv^2/r\).</li>
+                    <li>No confundir <strong>velocidad orbital</strong> \(\sqrt{GM/r}\) con <strong>velocidad de escape</strong> \(\sqrt{2GM/R}\).</li>
+                    <li>Calcular el trabajo para poner un satélite en órbita: \(W=GMm\!\left(\tfrac{1}{R}-\tfrac{1}{2r}\right)\).</li>
+                    <li>Sumar <strong>algebraicamente</strong> las energías potenciales debidas a varias masas.</li>
+                    <li>Trabajar siempre en <strong>S.I.</strong> y medir \(r\) desde el <strong>centro</strong> del astro, no desde su superficie.</li>
+                </ul>
+            </div>
+
+        </div> <!-- fin contenido-desplegable -->
+    </details>
+
+    <!-- ============================================ -->
+    <!-- BLOQUE "ES HORA DE"                          -->
+    <!-- ============================================ -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p>
+                <strong>🚀 Es hora de cerrar el tema A6:</strong> trabajo gravitatorio, energía potencial y energía mecánica de satélites.<br>
+                <span style="font-size:0.95em;">
+                    Repasa el <em>pozo gravitatorio</em>, las relaciones \(E_c=-E_p/2\) y \(E_m=E_p/2\),
+                    y practica el cálculo del trabajo para poner un satélite en órbita desde la superficie.
+                </span>
+            </p>
+            <p>
+                <em>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</em>
+            </p>
+
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- ===================FIN DE ES HORA DE ==================== -->            
+
+
+    <!-- ===================FIN DE ES HORA DE ==================== -->
+
+</div> <!-- fin container -->
+</body>
+</html>

@@ -1,3 +1,73 @@
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- problemas-inline v04-Filtro prefijado.html                            -->
+<!-- Plantilla del buscador de problemas resueltos de PAU · Física         -->
+<!-- con FILTRO PREFIJADO configurable por URL.                            -->
+<!--                                                                        -->
+<!-- QUÉ HACE                                                               -->
+<!--   Muestra el catálogo de problemas (cargados desde ./Datos/indice.json -->
+<!--   por el script externo filtro-problemas-inline.js) y permite          -->
+<!--   filtrarlos por texto, año, convocatoria, comunidad, bloque y tema.   -->
+<!--   Además, al cargar, aplica un FILTRO PREFIJADO: deja el buscador con  -->
+<!--   una consulta fija (readOnly) y pulsa automáticamente los botones     -->
+<!--   de comunidad, bloque y tema indicados.                               -->
+<!--                                                                        -->
+<!-- DOBLE MODO DE USO                                                      -->
+<!--   A) SIN parámetros (apertura directa):                                -->
+<!--      Usa los CRITERIOS por defecto del script final (efecto           -->
+<!--      fotoeléctrico, Castilla y León, bloque D, tema D2).               -->
+<!--   B) CON parámetros de URL (invocada desde un archivo temático como    -->
+<!--      TemaA1-ProblemasEBAU.html):                                       -->
+<!--        ?q=…          Términos de búsqueda (admiten | y "frase")        -->
+<!--        &comunidad=…  Comunidad autónoma                                -->
+<!--        &bloque=…     Bloque                                            -->
+<!--        &tema=…       Tema                                              -->
+<!--        &fuente=…     Etiqueta libre (informativa, no usada en filtro)  -->
+<!--      Los criterios pasados por URL sobrescriben a los defaults.        -->
+<!--                                                                        -->
+<!-- CONTROLES VISIBLES PARA EL USUARIO                                     -->
+<!--   · 🔒 / 🔓 Botón flotante (abajo-derecha, encima del «↑ arriba»):     -->
+<!--       alterna entre «filtro fijado» y «filtro liberado». Al liberar,   -->
+<!--       restaura el input y deselecciona solo los botones pulsados por   -->
+<!--       el prefijo (no toca los que hubiera pulsado el usuario).         -->
+<!--   · «Limpiar filtros»: navega a problemas-inline v04.html (catálogo    -->
+<!--     completo, sin prefijo). Si el prefijo está activo, expone           -->
+<!--     window.filtroPrefijadoLiberar() para liberarlo antes.              -->
+<!--   · Segmented «Enunciado + solución» / «Solo enunciado»: decide si     -->
+<!--     la resolución aparece desplegada o plegada al abrir cada tarjeta.  -->
+<!--   · Selector de orden: número, tema, bloque, año, comunidad,           -->
+<!--     alfabético o puntuación.                                           -->
+<!--   · Botón «🎲 Sorpréndeme»: abre un problema al azar entre los         -->
+<!--     resultados actualmente visibles.                                   -->
+<!--                                                                        -->
+<!-- CÓMO AMPLIAR / CREAR NUEVOS TEMAS                                      -->
+<!--   1. Crear un archivo «lanzadera» (ver TemaA1-ProblemasEBAU.html).     -->
+<!--   2. En él, definir el objeto CRITERIOS con los términos, comunidad,   -->
+<!--      bloque y tema deseados y redirigir a ESTA plantilla con ellos en  -->
+<!--      la query string.                                                  -->
+<!--   3. No hay que tocar esta plantilla: lee los criterios de la URL.     -->
+<!--                                                                        -->
+<!-- MECANISMO DE APLICACIÓN DEL PREFIJO                                    -->
+<!--   · Se reaplica cada 900 ms (y en load / DOMContentLoaded / varios     -->
+<!--     timeouts) mientras ACTIVO === true, para tolerar cargas           -->
+<!--     asíncronas del índice y del script externo de filtrado.            -->
+<!--   · ACTIVADOS guarda referencias a los botones pulsados por el         -->
+<!--     prefijo; al liberar, se hace clic solo sobre ellos.                -->
+<!--                                                                        -->
+<!-- DEPENDENCIAS                                                          -->
+<!--   · ./css/estilos.css                                                  -->
+<!--   · ./js/filtro-problemas-inline.js  (motor de filtrado)               -->
+<!--   · ./Datos/indice.json              (datos de los problemas)          -->
+<!--   · MathJax (CDN) para renderizar fórmulas LaTeX.                      -->
+<!--   · Imágenes: ../img_comunes/Cápsula.png                               -->
+<!--                ../img_comunes/Valle del Alberche v2-Small.png          -->
+<!--                                                                        -->
+<!-- COMPATIBILIDAD                                                        -->
+<!--   · Conserva los checkboxes antiguos (#check-and-default,              -->
+<!--     #check-mostrar-enunciado) ocultos, por si el JS externo los usa.   -->
+<!--   · Respeta el modo de vista y el orden al reaplicar el prefijo (los   -->
+<!--     scripts de mejora observan el DOM y no entran en conflicto).       -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,7 +91,6 @@
 <script id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-<!-- Hoja de estilos -->
 <link rel="stylesheet" href="./css/estilos.css">
 </head>
 <body>
@@ -55,7 +124,6 @@
   <section class="block">
     <h2>Búsqueda y filtros</h2>
 
-    <!-- Buscador + ámbito -->
     <div class="search-row">
       <input type="text" id="input-busqueda"
              placeholder='Buscar por título, enunciado, tema… (usa "frase" y + / |)'
@@ -68,7 +136,6 @@
       </select>
     </div>
 
-    <!-- Ayuda de sintaxis -->
     <p class="search-hint">
       Usa comillas (<code>"…"</code> o <code>«…»</code>) para buscar frases exactas
       y combínalas con <code>+</code> (Y) o <code>|</code> (O).
@@ -76,7 +143,6 @@
       Sin operador, el espacio significa <em>OR</em>.
     </p>
 
-    <!-- Botones de filtro (los rellena el JS) -->
     <div class="filtros-grid">
       <div class="filtro-grupo">
         <label>Año</label>
@@ -100,7 +166,6 @@
       </div>
     </div>
 
-    <!-- Modo de vista, orden, problema aleatorio y limpiar -->
     <div class="toolbar">
       <div class="segmented" role="group" aria-label="Modo de visualización">
         <button type="button" class="seg-btn activo" data-modo="completo"
@@ -141,24 +206,19 @@
 
 <a href="#top" class="top-link" title="Volver arriba" aria-label="Volver arriba">↑</a>
 
-<!--
-  Compatibilidad con el JS externo: se mantienen (ocultos) los antiguos checkboxes
-  para que el script de filtrado no falle si accede a ellos por id.
--->
+<!-- Compatibilidad con el JS externo -->
 <input type="checkbox" id="check-and-default" hidden>
 <input type="checkbox" id="check-mostrar-enunciado" hidden>
 
-<!-- Carga del script de filtrado (externo) -->
+<!-- Script de filtrado -->
 <script src="./js/filtro-problemas-inline.js"></script>
 
-<!-- Comportamientos añadidos: limpiar buscador, problema aleatorio y ordenación ampliada -->
+<!-- Comportamientos añadidos: limpiar, aleatorio y ordenación -->
 <script>
 (function () {
   'use strict';
 
-  /* ───────────────────────────────────────────────────────────
-     0. Referencias
-  ─────────────────────────────────────────────────────────── */
+  /* 0. Referencias */
   const inputBusqueda      = document.getElementById('input-busqueda');
   const btnLimpiar         = document.getElementById('btn-limpiar');
   const btnAleatorio       = document.getElementById('btn-aleatorio');
@@ -168,9 +228,7 @@
 
   if (!resultados) return;
 
-  /* ───────────────────────────────────────────────────────────
-     1. Visibilidad de «Limpiar filtros»
-  ─────────────────────────────────────────────────────────── */
+  /* 1. Visibilidad de «Limpiar filtros» */
   const hayFiltrosActivos = () => document.querySelectorAll('.btn-filtro.activo').length > 0;
   const hayTexto          = () => !!(inputBusqueda && inputBusqueda.value.trim().length);
 
@@ -198,22 +256,14 @@
 
   requestAnimationFrame(actualizarBotonLimpiar);
 
-  /* ───────────────────────────────────────────────────────────
-     2. «Limpiar filtros»: borrar también el texto de búsqueda
-  ─────────────────────────────────────────────────────────── */
+  /* 2. «Limpiar filtros» → catálogo completo (versión sin prefijo) */
   if (btnLimpiar) {
     btnLimpiar.addEventListener('click', function () {
-      if (inputBusqueda && inputBusqueda.value) {
-        inputBusqueda.value = '';
-        inputBusqueda.dispatchEvent(new Event('input', { bubbles: true }));
-      }
-      setTimeout(actualizarBotonLimpiar, 0);
+      window.location.href = 'problemas-inline v04.html';
     });
   }
 
-  /* ───────────────────────────────────────────────────────────
-     3. «Sorpréndeme»: abre un problema al azar de los filtrados
-  ─────────────────────────────────────────────────────────── */
+  /* 3. «Sorpréndeme»: abre un problema al azar entre los filtrados */
   function esVisible(el) {
     let cur = el;
     while (cur && cur !== document.body) {
@@ -266,9 +316,7 @@
     });
   }
 
-  /* ───────────────────────────────────────────────────────────
-     4. Ordenación ampliada
-  ─────────────────────────────────────────────────────────── */
+  /* 4. Ordenación ampliada */
   const MODOS_CUSTOM = ['bloque', 'anio', 'comunidad', 'alfabetico', 'puntos'];
   let aplicando = false;
   let timer = null;
@@ -387,10 +435,7 @@
 })();
 </script>
 
-<!--
-  Modo de vista («Enunciado + solución» / «Solo enunciado»)
-  + Enlace «Volver al inicio» al final de cada problema.
--->
+<!-- Modo de vista + «Volver al inicio» -->
 <script>
 (function () {
   'use strict';
@@ -400,7 +445,6 @@
 
   let modoVista = 'completo';
 
-  /* ── Segmented control del modo de vista ── */
   const segBtns = document.querySelectorAll('.seg-btn');
   segBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -417,7 +461,6 @@
     });
   }
 
-  /* ── Envuelve .resolucion en un <details> ── */
   function wrapResolucion(resolucion) {
     const details = document.createElement('details');
     details.className = 'resolucion-fold';
@@ -447,7 +490,6 @@
     return details;
   }
 
-  /* ── Añade el enlace «↑ Volver al inicio» al final de la tarjeta ── */
   function addVolverArriba(card) {
     const detalle = card.querySelector('.detalle-problema');
     if (!detalle) return;
@@ -461,7 +503,6 @@
     detalle.appendChild(link);
   }
 
-  /* ── Procesa todas las tarjetas ── */
   function procesarTarjetas() {
     const tarjetas = resultados.querySelectorAll('details.tarjeta-problema-desplegable');
     tarjetas.forEach(card => {
@@ -475,7 +516,6 @@
     });
   }
 
-  /* Batch de mutaciones para no repetir trabajo */
   let pendiente = false;
   const obs = new MutationObserver(() => {
     if (pendiente) return;
@@ -491,83 +531,66 @@
 })();
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ────────────────────────────────────────────────────────────────────── -->
-<!-- Búsqueda fijada con toggle · Efecto fotoeléctrico · Castilla y León   -->
-<!-- Bloque: D. Física relativista, cuántica, nuclear y de partículas       -->
-<!-- Tema:   D2. Problemas precursores de la física cuántica               -->
-<!--                                                                        -->
-<!-- Extiende el script original con:                                       -->
-<!--   · Estado ACTIVO que permite liberar/volver a fijar la búsqueda      -->
-<!--   · Botón flotante (esquina inferior derecha) para alternar el filtro -->
-<!--   · Guardado del estado original del input (value/readOnly/title)     -->
-<!--   · Trazabilidad de los botones de filtro pulsados (ACTIVADOS)        -->
-<!--     para poder deseleccionarlos al liberar                            -->
-<!--   · Los setInterval dejan de re-aplicar mientras ACTIVO === false     -->
-<!-- ────────────────────────────────────────────────────────────────────── -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- PREFIJO CONFIGURABLE POR URL                                        -->
+<!--                                                                     -->
+<!-- Parámetros admitidos (todos opcionales):                            -->
+<!--   ?q=…          Términos de búsqueda completos (puede usar | y "")  -->
+<!--   &comunidad=…  Comunidad autónoma                                  -->
+<!--   &bloque=…     Bloque                                              -->
+<!--   &tema=…       Tema                                                -->
+<!--   &fuente=…     Etiqueta libre (informativa)                        -->
+<!--                                                                     -->
+<!-- Si no se pasa ningún parámetro, se usan los valores por defecto     -->
+<!-- (equivalente a la maqueta de referencia: efecto fotoeléctrico,     -->
+<!-- Castilla y León, bloque D y tema D2).                              -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
 <script>
 (function () {
   'use strict';
 
-  var ACTIVO = true;                                    // ← estado del filtro
-  var ORIGINAL = { value: null, readOnly: null, title: null, guardado: false };
-  var ACTIVADOS = [];                                   // botones que hemos pulsado
+  /* ── Criterios: URL → defaults ─────────────────────────────────────── */
+  var params = new URLSearchParams(window.location.search);
 
-  /* ── Criterios de búsqueda ────────────────────────────────────────── */
-  var TERMINOS_EFECTO = [
-    'efecto fotoeléctrico','fotón','trabajo de extracción',
-    'frecuencia umbral','potencial de frenado','ecuación de Einstein'
-  ];
-  var TERMINOS_FOTOELECTRONES = [
-    'energía cinética máxima','potencial de frenado','longitud de onda umbral',
-    'frecuencia incidente','fotoelectrones'
-  ];
-  var CONSULTA = Array.from(
-    new Set(TERMINOS_EFECTO.concat(TERMINOS_FOTOELECTRONES))
-  ).map(function (t) { return '"' + t + '"'; }).join(' | ');
-
-  var FILTROS = {
-    comunidad: 'castilla y leon',
-    bloque:    'd. fisica relativista, cuantica, nuclear y de particulas',
-    tema:      'd2. problemas precursores de la fisica cuantica'
+  var DEFAULTS = {
+    q:         '"efecto fotoeléctrico" | "fotón" | "trabajo de extracción" | "frecuencia umbral" | "potencial de frenado" | "ecuación de Einstein" | "energía cinética máxima" | "longitud de onda umbral" | "frecuencia incidente" | "fotoelectrones"',
+    comunidad: 'Castilla y León',
+    bloque:    'D. Física relativista, cuántica, nuclear y de partículas',
+    tema:      'D2. Problemas precursores de la física cuántica'
   };
 
-  /* ── Utilidades ───────────────────────────────────────────────────── */
+  var CRITERIOS = {
+    q:         params.get('q')         || DEFAULTS.q,
+    comunidad: params.get('comunidad') || DEFAULTS.comunidad,
+    bloque:    params.get('bloque')    || DEFAULTS.bloque,
+    tema:      params.get('tema')      || DEFAULTS.tema
+  };
+
+  /* ── Normalización ─────────────────────────────────────────────────── */
   function norm(t) {
     return (t || '').toLowerCase()
       .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
       .replace(/\s+/g, ' ').trim();
   }
+
+  var CONSULTA = CRITERIOS.q;
+
+  var FILTROS = {
+    comunidad: norm(CRITERIOS.comunidad),
+    bloque:    norm(CRITERIOS.bloque),
+    tema:      norm(CRITERIOS.tema)
+  };
+
+  /* ── Estado ────────────────────────────────────────────────────────── */
+  var ACTIVO = true;
+  var ORIGINAL = { value: null, readOnly: null, title: null, guardado: false };
+  var ACTIVADOS = [];
+
   function disparar(el, tipo) {
     el.dispatchEvent(new Event(tipo, { bubbles: true }));
   }
 
-  /* ── Coincidencias ───────────────────────────────────────────────── */
+  /* ── Coincidencias ─────────────────────────────────────────────────── */
   function coincideComunidad(t) { return t === FILTROS.comunidad; }
   function coincideBloque(t) {
     if (!t) return false;
@@ -582,7 +605,7 @@
     return t.indexOf('d2') === 0 && t.indexOf('precursores') !== -1;
   }
 
-  /* ── Caja de búsqueda ────────────────────────────────────────────── */
+  /* ── Caja de búsqueda ──────────────────────────────────────────────── */
   function guardarOriginal(inp) {
     if (ORIGINAL.guardado) return;
     ORIGINAL.value    = inp.value;
@@ -618,7 +641,7 @@
     }
   }
 
-  /* ── Botones de filtro ───────────────────────────────────────────── */
+  /* ── Botones de filtro ─────────────────────────────────────────────── */
   function pulsar(contenedorId, prueba) {
     if (!ACTIVO) return false;
     var cont = document.getElementById(contenedorId);
@@ -647,13 +670,13 @@
     for (var i = 0; i < ACTIVADOS.length; i++) {
       var b = ACTIVADOS[i];
       if (b && b.isConnected && b.classList.contains('activo')) {
-        b.click();                       // clic en un activo = deseleccionar
+        b.click();
       }
     }
     ACTIVADOS.length = 0;
   }
 
-  /* ── Ciclo de vida ───────────────────────────────────────────────── */
+  /* ── Ciclo de vida ─────────────────────────────────────────────────── */
   function aplicar() { if (!ACTIVO) return; fijarCaja(); fijarFiltros(); }
 
   function crearBoton() {
@@ -661,7 +684,7 @@
     var b = document.createElement('button');
     b.id = 'toggle-filtro-btn';
     b.style.cssText =
-      'position:fixed;bottom:16px;right:16px;z-index:2147483647;' +
+      'position:fixed;bottom:76px;right:16px;z-index:2147483647;' +
       'padding:8px 12px;border-radius:8px;border:1px solid #888;' +
       'background:#fff;color:#000;cursor:pointer;font:13px sans-serif;' +
       'box-shadow:0 2px 6px rgba(0,0,0,.25);';
@@ -689,66 +712,23 @@
     actualizarBoton();
   }
 
+  /* API pública para que «Limpiar filtros» pueda liberar el prefijo */
+  window.filtroPrefijadoLiberar = function () {
+    if (!ACTIVO) return;
+    ACTIVO = false;
+    liberarCaja();
+    liberarFiltros();
+    actualizarBoton();
+  };
+
   document.addEventListener('DOMContentLoaded', function () { crearBoton(); aplicar(); });
   window.addEventListener('load',            function () { crearBoton(); aplicar(); });
   [150, 400, 900, 1600, 2600, 4000].forEach(function (ms) {
     setTimeout(function () { crearBoton(); aplicar(); }, ms);
   });
-
   setInterval(function () { crearBoton(); aplicar(); }, 900);
 })();
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>

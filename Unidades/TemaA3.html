@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema A3. Momento angular y fuerzas centrales</title>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                <span class="codigo">#TEMA A3.- </span>
+                <span class="texto">Momento angular y fuerzas centrales</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- MAPA DE BLOQUES Y TEMAS (DESPLEGABLE)                         -->
+    <!-- ============================================================ -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque A. Campo gravitatorio</strong> del currículo de Física de 2º de Bachillerato (Decreto 40/2022, BOCYL-D-30092022-4).</p>
+
+        <div class="mapa-bloques">
+            <!-- BLOQUE A (ACTUAL) -->
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">A1</span>
+                    <span class="tema-chip">A2</span>
+                    <span class="tema-chip actual">A3</span>
+                    <span class="tema-chip">A4</span>
+                    <span class="tema-chip">A5</span>
+                    <span class="tema-chip">A6</span>
+                    <span class="tema-chip">A7</span>
+                    <span class="tema-chip">A8</span>
+                </div>
+            </div>
+            <!-- BLOQUE B -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span>
+                    <span class="tema-chip">B2</span>
+                    <span class="tema-chip">B3</span>
+                    <span class="tema-chip">B4</span>
+                    <span class="tema-chip">B5</span>
+                    <span class="tema-chip">B6</span>
+                    <span class="tema-chip">B7</span>
+                    <span class="tema-chip">B8</span>
+                    <span class="tema-chip">B9</span>
+                </div>
+            </div>
+            <!-- BLOQUE C -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">C1</span>
+                    <span class="tema-chip">C2</span>
+                    <span class="tema-chip">C3</span>
+                    <span class="tema-chip">C4</span>
+                    <span class="tema-chip">C5</span>
+                    <span class="tema-chip">C6</span>
+                </div>
+            </div>
+            <!-- BLOQUE D -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">D1</span>
+                    <span class="tema-chip">D2</span>
+                    <span class="tema-chip">D3</span>
+                    <span class="tema-chip">D4</span>
+                    <span class="tema-chip">D5</span>
+                    <span class="tema-chip">D6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque A · Tema A3:</strong> <span class="texto-resaltado">Momento angular y fuerzas centrales.</span>
+            <br>
+            <em>En este tema estudiaremos:</em> el carácter central de la fuerza gravitatoria, el momento angular de una partícula, su conservación en campos de fuerzas centrales, la relación con la segunda ley de Kepler, el plano orbital y sus aplicaciones al movimiento de planetas y satélites.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- OBJETIVOS (DESPLEGABLE)                                       -->
+    <!-- ============================================================ -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Comprender el concepto de <strong>fuerza central</strong> y reconocer la fuerza gravitatoria como un ejemplo de ella.</li>
+            <li>Definir el <strong>momento angular</strong> de una partícula y calcularlo en distintas situaciones (órbita circular, elíptica, etc.).</li>
+            <li>Demostrar que el momento angular se <strong>conserva</strong> cuando la fuerza es central.</li>
+            <li>Relacionar la conservación del momento angular con la <strong>segunda ley de Kepler</strong> (ley de las áreas).</li>
+            <li>Deducir que el movimiento bajo una fuerza central es <strong>plano</strong>.</li>
+            <li>Aplicar la conservación del momento angular para resolver problemas de <strong>órbitas elípticas</strong> (perihelio y afelio) y circulares.</li>
+            <li>Analizar el <strong>plano orbital</strong> en órbitas circulares y elípticas y justificar por qué debe contener al centro de fuerzas.</li>
+        </ul>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- CONTENIDO TEÓRICO (DESPLEGABLE)                               -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">1</span> <strong>Fuerzas centrales.</strong></summary>
+            <p>Una fuerza es <strong>central</strong> cuando su línea de acción pasa siempre por un punto fijo llamado <strong>centro de fuerzas</strong> y su módulo depende únicamente de la distancia a dicho centro:</p>
+            <div class="formula-box">
+                \[
+                \vec F(\vec r) = F(r)\,\hat r
+                \]
+            </div>
+            <p>La fuerza gravitatoria es un ejemplo de fuerza central:</p>
+            <div class="formula-box">
+                \[
+                \vec F = -G\frac{Mm}{r^2}\,\hat r
+                \]
+            </div>
+            <p>El signo negativo indica que es atractiva (apunta hacia el centro de fuerzas).</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span> <strong>Momento angular de una partícula.</strong></summary>
+            <p>El <strong>momento angular</strong> \(\vec L\) de una partícula de masa \(m\) que se mueve con velocidad \(\vec v\), respecto a un punto \(O\), se define como el producto vectorial de su vector de posición \(\vec r\) por su momento lineal \(\vec p = m\vec v\):</p>
+            <div class="formula-box">
+                \[
+                \vec L = \vec r \times \vec p = \vec r \times (m\vec v)
+                \]
+            </div>
+            <p>Su módulo es \(L = m\,r\,v\,\text{sen}\,\theta\), donde \(\theta\) es el ángulo entre \(\vec r\) y \(\vec v\). Sus unidades en el S.I. son \(\text{kg}\cdot\text{m}^2\cdot\text{s}^{-1}\).</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span> <strong>Teorema del momento angular.</strong></summary>
+            <p>La variación temporal del momento angular de una partícula es igual al <strong>momento de la fuerza neta</strong> (torque) que actúa sobre ella, respecto al mismo punto \(O\):</p>
+            <div class="formula-box">
+                \[
+                \frac{d\vec L}{dt} = \vec M = \vec r \times \vec F
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span> <strong>Conservación del momento angular.</strong></summary>
+            <p>Si la fuerza que actúa sobre la partícula es <strong>central</strong>, entonces \(\vec r\) y \(\vec F\) son paralelos, por lo que el producto vectorial es nulo: \(\vec M = \vec r \times \vec F = 0\). En consecuencia:</p>
+            <div class="formula-box">
+                \[
+                \frac{d\vec L}{dt} = 0 \quad\Longrightarrow\quad \vec L = \text{constante}
+                \]
+            </div>
+            <p>El momento angular se conserva en todo campo de fuerzas centrales.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">5</span> <strong>Movimiento plano.</strong></summary>
+            <p>Como \(\vec L = \vec r \times m\vec v\) es un vector constante y perpendicular al plano formado por \(\vec r\) y \(\vec v\), la partícula se mueve siempre en un <strong>plano fijo</strong> perpendicular a \(\vec L\). Este plano contiene al centro de fuerzas.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">6</span> <strong>Relación con la segunda ley de Kepler.</strong></summary>
+            <p>La conservación del momento angular implica que la <strong>velocidad areolar</strong> (área barrida por el radio vector por unidad de tiempo) es constante:</p>
+            <div class="formula-box">
+                \[
+                \frac{dA}{dt} = \frac{L}{2m} = \text{constante}
+                \]
+            </div>
+            <p>Esta es precisamente la segunda ley de Kepler: el radio vector que une el Sol con un planeta barre áreas iguales en tiempos iguales.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">7</span> <strong>Órbitas elípticas: perihelio y afelio.</strong></summary>
+            <p>En los puntos de máximo acercamiento (perihelio) y máximo alejamiento (afelio), el vector de posición y la velocidad son perpendiculares. Por tanto, la conservación del momento angular se escribe:</p>
+            <div class="formula-box">
+                \[
+                m\,r_p\,v_p = m\,r_a\,v_a \quad\Longrightarrow\quad r_p\,v_p = r_a\,v_a
+                \]
+            </div>
+            <p>donde \(r_p\) y \(v_p\) son la distancia y la velocidad en el perihelio, y \(r_a\) y \(v_a\) en el afelio.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">8</span> <strong>Órbitas circulares.</strong></summary>
+            <p>En una órbita circular, la velocidad es siempre perpendicular al radio, por lo que el módulo del momento angular es:</p>
+            <div class="formula-box">
+                \[
+                L = m\,r\,v
+                \]
+            </div>
+            <p>y se conserva constante en módulo, dirección y sentido a lo largo de toda la órbita.</p>
+        </details>
+
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- ANÁLISIS DE FÓRMULAS (DESPLEGABLE)                            -->
+    <!-- ============================================================ -->
+    <details class="section resultado">
+        <summary><h2>🧮 Análisis de las fórmulas del tema A3</h2></summary>
+        <p>Recogemos en una tabla las expresiones clave del tema, con su significado físico, las variables implicadas y las condiciones de aplicación:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Fórmula</th>
+                    <th>Significado físico</th>
+                    <th>Variables y unidades</th>
+                    <th>Condiciones de aplicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>\(\vec L = \vec r \times m\vec v\)</td>
+                    <td>Definición de momento angular de una partícula.</td>
+                    <td>\(\vec L\) en \(\text{kg}\cdot\text{m}^2/\text{s}\); \(\vec r\) en m; \(\vec v\) en m/s.</td>
+                    <td>Respecto a un punto \(O\) fijo.</td>
+                </tr>
+                <tr>
+                    <td>\(\frac{d\vec L}{dt} = \vec r \times \vec F\)</td>
+                    <td>Teorema del momento angular (variación del momento angular = torque).</td>
+                    <td>\(\vec M\) en \(\text{N}\cdot\text{m}\).</td>
+                    <td>Válido en cualquier sistema inercial.</td>
+                </tr>
+                <tr>
+                    <td>\(\vec L = \text{constante}\)</td>
+                    <td>Conservación del momento angular en campos de fuerzas centrales.</td>
+                    <td>—</td>
+                    <td>Fuerza central (\(\vec F \parallel \vec r\)).</td>
+                </tr>
+                <tr>
+                    <td>\(r_p v_p = r_a v_a\)</td>
+                    <td>Relación de velocidades en perihelio y afelio de una órbita elíptica.</td>
+                    <td>\(r\) en m; \(v\) en m/s.</td>
+                    <td>Órbita elíptica bajo fuerza central; \(\vec v \perp \vec r\) en los ápsides.</td>
+                </tr>
+                <tr>
+                    <td>\(L = mrv\)</td>
+                    <td>Momento angular en órbita circular.</td>
+                    <td>\(m\) en kg; \(r\) en m; \(v\) en m/s.</td>
+                    <td>Órbita circular: \(\vec v \perp \vec r\).</td>
+                </tr>
+                <tr>
+                    <td>\(\frac{dA}{dt} = \frac{L}{2m}\)</td>
+                    <td>Velocidad areolar constante (2.ª ley de Kepler).</td>
+                    <td>\(\frac{dA}{dt}\) en \(\text{m}^2/\text{s}\).</td>
+                    <td>Fuerza central; movimiento plano.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note">
+            <strong>⚠️ Errores frecuentes:</strong> olvidar que el momento angular es un vector y sumar módulos en lugar de componentes; no tener en cuenta que la conservación del momento angular implica movimiento plano; confundir la conservación del momento angular con la conservación de la energía mecánica (ambas se conservan en campos centrales, pero son magnitudes distintas); y creer que la velocidad es constante en una órbita elíptica (solo lo es el módulo del momento angular, no la rapidez).
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- PROBLEMAS RESUELTOS (EBAU Castilla y León y otras)           -->
+    <!-- ============================================================ -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🔭 Problemas resueltos de EBAU — Castilla y León y otras comunidades (Tema A3)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas</strong> de las pruebas de acceso a la universidad, priorizando <strong>Castilla y León</strong> y completando con otras comunidades. Todos ellos están relacionados con el tema A3 (momento angular y fuerzas centrales). Se indica la comunidad, el año, la convocatoria y el número de problema.
+            </p>
+
+            <!-- PROBLEMA 1 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Plano de una órbita circular bajo una fuerza central</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>¿Puede un satélite describir una órbita circular alrededor de un planeta en un plano paralelo al ecuatorial? Razone y justifique la respuesta. (1 punto)</p>
+                    <p>[Imagen adjunta: planeta esférico y trayectoria circular en un plano paralelo al ecuatorial, desplazado del centro del planeta.]</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Respuesta:</strong> No, bajo la acción exclusiva de la gravedad. La fuerza gravitatoria es una fuerza central dirigida siempre hacia el centro del planeta. En una órbita circular, la aceleración centrípeta debe apuntar hacia el centro de la circunferencia y estar contenida en su plano.</div>
+                    <div class="paso">Si la órbita estuviera en un plano \(z=z_0\) distinto del ecuatorial (\(z=0\)), la gravedad tendría una componente perpendicular al plano:</div>
+                    <div class="formula-box">
+                        \[
+                        a_z = -\frac{GM\,z_0}{(x^2+y^2+z_0^2)^{3/2}} \neq 0
+                        \]
+                    </div>
+                    <div class="paso">Sin embargo, una trayectoria contenida en un plano fijo \(z=z_0\) exige \(a_z=0\). Por tanto, el plano de la órbita debe contener al centro del planeta. Sí es posible una órbita en el plano ecuatorial o en cualquier plano inclinado que pase por el centro.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 2 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Satélite en órbita elíptica: conservación del momento angular</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un satélite de comunicaciones orbita alrededor de la Tierra en una trayectoria elíptica cuyo apogeo se encuentra a 39.700 km de altitud sobre la superficie de la Tierra. Si el satélite da una vuelta completa cada 12 h, determine:</p>
+                    <p>a) La altura sobre la superficie terrestre a la que se encontrará el satélite en el perigeo y la relación entre sus velocidades en el perigeo y en el apogeo (\(v_p/v_a\)).</p>
+                    <p>b) La velocidad del satélite en el perigeo y la velocidad hasta la que habría que reducir al satélite para que pasase de una órbita elíptica a una órbita circular de radio igual a la distancia al perigeo.</p>
+                    <p>Datos: \(G=6{,}67\cdot10^{-11}\,\text{N}\cdot\text{m}^2\cdot\text{kg}^{-2}\); \(M_T=5{,}97\cdot10^{24}\,\text{kg}\); \(R_T=6{,}37\cdot10^{6}\,\text{m}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Semieje mayor y altura del perigeo:</strong> A partir de la 3.ª ley de Kepler, \(a = \left(\frac{GM_T T^2}{4\pi^2}\right)^{1/3} = 2{,}66\cdot10^{7}\,\text{m}\).</div>
+                    <div class="paso">La distancia al apogeo es \(r_a = R_T + h_a = 4{,}607\cdot10^{7}\,\text{m}\). El semieje mayor es la media: \(a = (r_a + r_p)/2\), de donde \(r_p = 2a - r_a = 7{,}13\cdot10^{6}\,\text{m}\).</div>
+                    <div class="paso">La altura en el perigeo es \(h_p = r_p - R_T = 7{,}6\cdot10^{5}\,\text{m} = 760\,\text{km}\).</div>
+                    <div class="paso"><strong>Relación de velocidades:</strong> Por conservación del momento angular, \(r_p v_p = r_a v_a\), luego \(v_p/v_a = r_a/r_p = 6{,}46\).</div>
+                    <div class="paso"><strong>b) Velocidad en el perigeo:</strong> Por conservación de la energía mecánica entre perigeo y apogeo, \(v_p = \sqrt{GM_T(2/r_p - 1/a)} = 9{,}84\cdot10^{3}\,\text{m/s}\).</div>
+                    <div class="paso">La velocidad para la órbita circular de radio \(r_p\) es \(v_c = \sqrt{GM_T/r_p} = 7{,}47\cdot10^{3}\,\text{m/s}\). La reducción necesaria es \(\Delta v = v_p - v_c \approx 2{,}37\cdot10^{3}\,\text{m/s}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 3 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Sicorax: momento angular y velocidad orbital mínima</span>
+                    <span class="meta-ej">Navarra · 2025 · Ordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Sicorax es un satélite de Urano. La distancia entre ambos oscila entre 5,8 y 18,5 millones de km.</p>
+                    <p>a) Calcular el trabajo realizado por el campo gravitatorio en el tránsito del punto más cercano al más alejado de la órbita del satélite alrededor del planeta.</p>
+                    <p>b) ¿En qué punto de la trayectoria del satélite alrededor de Urano será mínima la velocidad orbital?</p>
+                    <p>c) Calcular la velocidad orbital mínima referida en el apartado b), sabiendo que la energía mecánica del satélite es \(-4{,}8\cdot10^{23}\,\text{J}\).</p>
+                    <p>Datos: \(M_U=8{,}7\cdot10^{25}\,\text{kg}\); \(M_S=2\cdot10^{18}\,\text{kg}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Trabajo gravitatorio:</strong> \(W = GM_U M_S (1/r_f - 1/r_i)\), con \(r_i = 5{,}8\cdot10^{9}\,\text{m}\) y \(r_f = 1{,}85\cdot10^{10}\,\text{m}\). Resultado: \(W \approx -1{,}37\cdot10^{24}\,\text{J}\). El trabajo es negativo porque el satélite se aleja y el campo se opone.</div>
+                    <div class="paso"><strong>b) Punto de velocidad mínima:</strong> Por conservación del momento angular, \(v\) es mínima cuando \(r\) es máximo, es decir, en el apo-Urano (\(r = 1{,}85\cdot10^{10}\,\text{m}\)).</div>
+                    <div class="paso"><strong>c) Velocidad mínima:</strong> A partir de la energía mecánica total \(E_m = \frac{1}{2}M_S v^2 - \frac{GM_U M_S}{r}\), se despeja \(v\) y se obtiene \(v \approx 3{,}84\cdot10^{2}\,\text{m/s}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 4 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Fuerza central y momento angular en el campo gravitatorio</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>En un cierto punto A la intensidad de la gravedad es la mitad que en la superficie de la Tierra, mientras que en otro punto B es la cuarta parte. Determine la distancia de ambos puntos al centro de la Tierra y la velocidad mínima que debe llevar un objeto en A para poder alcanzar el punto B.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Distancias:</strong> \(g = GM_T/r^2\). En A, \(g_A = g_0/2 \Rightarrow r_A = R_T\sqrt{2} = 9{,}01\cdot10^{6}\,\text{m}\). En B, \(g_B = g_0/4 \Rightarrow r_B = 2R_T = 1{,}274\cdot10^{7}\,\text{m}\).</div>
+                    <div class="paso"><strong>Velocidad mínima en A:</strong> Por conservación de la energía mecánica entre A y B (con \(v_B = 0\)): \(v_A = \sqrt{2GM_T(1/r_A - 1/r_B)} = 5{,}08\cdot10^{3}\,\text{m/s}\).</div>
+                    <div class="paso"><strong>Conexión con el momento angular:</strong> En este problema, la fuerza gravitatoria es central, por lo que el momento angular del objeto se conserva a lo largo de la trayectoria. Aunque no se pide explícitamente, este hecho garantiza que el movimiento sea plano y permite relacionar las velocidades en distintos puntos de la trayectoria si fuera necesario.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 5 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Nave en órbita circular: momento angular y energía</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Una nave espacial describe una órbita circular en torno a un planeta esférico. La velocidad orbital de la nave es de \(25\,000\,\text{km/h}\) y tarda 5 h en dar una vuelta completa.</p>
+                    <p>a) Determinar el radio de la órbita y la masa del planeta.</p>
+                    <p>b) Si el radio del planeta es \(R = 5900\,\text{km}\), calcular la aceleración de la gravedad en su superficie.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Radio y masa:</strong> \(v = 6{,}94\cdot10^{3}\,\text{m/s}\), \(T = 1{,}80\cdot10^{4}\,\text{s}\). \(r = vT/(2\pi) = 1{,}99\cdot10^{7}\,\text{m}\). La masa del planeta se obtiene de \(v^2 = GM/r\): \(M = v^2 r/G = 1{,}44\cdot10^{25}\,\text{kg}\).</div>
+                    <div class="paso"><strong>b) Gravedad superficial:</strong> \(g = GM/R^2 = 27{,}6\,\text{m/s}^2\).</div>
+                    <div class="paso"><strong>Momento angular:</strong> El momento angular de la nave respecto al centro del planeta es \(L = mrv = m\cdot1{,}99\cdot10^{7}\cdot6{,}94\cdot10^{3} = 1{,}38\cdot10^{11}m\,\text{kg}\cdot\text{m}^2/\text{s}\). Se conserva constante en la órbita circular.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 6 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Satélite geoestacionario SpainSat NG-I</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Ordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>El satélite español de comunicaciones seguras SpainSat NG-I, de 6 toneladas, orbitará sobre el ecuador terrestre con un periodo de revolución igual al de la rotación de la Tierra.</p>
+                    <p>a) ¿A qué altura sobre la superficie de la Tierra orbitará el satélite?</p>
+                    <p>b) ¿Cuál será la energía total del satélite en órbita?</p>
+                    <p>c) ¿Cuál es el trabajo necesario para llevar el satélite hasta esa altura?</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Altura geoestacionaria:</strong> Con \(T = 86400\,\text{s}\), \(r = (GM_T T^2/4\pi^2)^{1/3} = 4{,}22\cdot10^{7}\,\text{m}\). \(h = r - R_T = 3{,}58\cdot10^{7}\,\text{m}\).</div>
+                    <div class="paso"><strong>b) Energía total:</strong> \(E_m = -GM_T m/(2r) = -2{,}83\cdot10^{10}\,\text{J}\).</div>
+                    <div class="paso"><strong>c) Trabajo de puesta en órbita:</strong> \(W = E_m - E_{m,\text{sup}} = -2{,}83\cdot10^{10} - (-3{,}75\cdot10^{11}) = 3{,}47\cdot10^{11}\,\text{J}\).</div>
+                    <div class="paso"><strong>Momento angular:</strong> \(L = mrv = m\sqrt{GM_T r}\). Con \(m=6000\,\text{kg}\) y \(r=4{,}22\cdot10^{7}\,\text{m}\), \(L = 6000\cdot\sqrt{6{,}67\cdot10^{-11}\cdot5{,}97\cdot10^{24}\cdot4{,}22\cdot10^{7}} \approx 1{,}55\cdot10^{14}\,\text{kg}\cdot\text{m}^2/\text{s}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Órbita geoestacionaria del satélite Astra 2C</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Ordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>El satélite Astra 2C, de masa 6000 kg, describe una órbita circular geoestacionaria.</p>
+                    <p>a) Calcule la altura a la que orbita respecto a la superficie de la Tierra y la velocidad con la que se mueve.</p>
+                    <p>b) Calcule la energía necesaria para llevar al Astra 2C desde la superficie de la Tierra hasta su órbita.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Altura y velocidad:</strong> \(r = 4{,}225\cdot10^{7}\,\text{m}\), \(H = r - R_T = 3{,}587\cdot10^{7}\,\text{m}\). \(v = 2\pi r/T = 3{,}073\cdot10^{3}\,\text{m/s}\).</div>
+                    <div class="paso"><strong>b) Energía de lanzamiento:</strong> \(W = GM_T m(1/R_T - 1/(2r)) = 3{,}468\cdot10^{11}\,\text{J}\).</div>
+                    <div class="paso"><strong>Momento angular:</strong> \(L = mrv = 6000\cdot4{,}225\cdot10^{7}\cdot3{,}073\cdot10^{3} = 7{,}79\cdot10^{14}\,\text{kg}\cdot\text{m}^2/\text{s}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 8 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Sonda en órbita circular: momento angular y fuerzas centrales</span>
+                    <span class="meta-ej">Cantabria · 2026 · Ordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Una sonda espacial de 500 kg describe una trayectoria circular de radio \(r\) en torno a Marte, realizando una revolución cada 100 min. La energía mecánica de la sonda en órbita es \(-3{,}16\cdot10^{9}\,\text{J}\).</p>
+                    <p>a) Deduzca la expresión del periodo de la órbita en función de \(G\), \(M_M\) y \(r\).</p>
+                    <p>b) Calcule el radio de la órbita y la masa de Marte.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Deducción:</strong> Igualando la fuerza gravitatoria a la centrípeta y usando \(v = 2\pi r/T\), se obtiene \(T = 2\pi\sqrt{r^3/(GM_M)}\).</div>
+                    <div class="paso"><strong>b) Radio y masa:</strong> De \(E_m = -GM_M m/(2r)\), \(r = -GM_M m/(2E_m)\). Combinando con la expresión del periodo, se llega a \(r = 3{,}40\cdot10^{6}\,\text{m}\) y \(M_M = 6{,}43\cdot10^{23}\,\text{kg}\).</div>
+                    <div class="paso"><strong>Momento angular:</strong> Al ser una órbita circular, \(L = mrv = m\sqrt{GM_M r} = 500\cdot\sqrt{6{,}67\cdot10^{-11}\cdot6{,}43\cdot10^{23}\cdot3{,}40\cdot10^{6}} \approx 1{,}91\cdot10^{12}\,\text{kg}\cdot\text{m}^2/\text{s}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 9 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">Satélite en órbita circular: periodo y velocidad orbital</span>
+                    <span class="meta-ej">La Rioja · 2025 · Ordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un satélite de masa \(m=300\,\text{kg}\) se mueve en órbita circular alrededor de la Tierra a una altura de \(50\,000\,\text{km}\) sobre la superficie terrestre.</p>
+                    <p>a) ¿Cuál es la fuerza gravitatoria que ejerce la Tierra sobre el satélite?</p>
+                    <p>b) ¿Cuál es la velocidad orbital del satélite?</p>
+                    <p>c) ¿Cuál es el periodo orbital del satélite?</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Fuerza gravitatoria:</strong> \(r = R_T + h = 5{,}64\cdot10^{7}\,\text{m}\). \(F = GM_T m/r^2 = 37{,}7\,\text{N}\).</div>
+                    <div class="paso"><strong>b) Velocidad orbital:</strong> \(v = \sqrt{GM_T/r} = 2{,}66\cdot10^{3}\,\text{m/s}\).</div>
+                    <div class="paso"><strong>c) Periodo:</strong> \(T = 2\pi r/v = 1{,}33\cdot10^{5}\,\text{s} \approx 36{,}96\,\text{h}\).</div>
+                    <div class="paso"><strong>Momento angular:</strong> \(L = mrv = 300\cdot5{,}64\cdot10^{7}\cdot2{,}66\cdot10^{3} \approx 4{,}50\cdot10^{13}\,\text{kg}\cdot\text{m}^2/\text{s}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">Radio orbital, periodo y escape de un satélite</span>
+                    <span class="meta-ej">Madrid · 2026 · Ordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Se ha situado un satélite de comunicaciones de masa \(1500\,\text{kg}\) en una órbita circular alrededor de la Tierra. La energía mecánica del satélite en su órbita es \(-4{,}51\cdot10^{10}\,\text{J}\).</p>
+                    <p>a) Calcule el radio de la órbita y la velocidad del satélite en ella.</p>
+                    <p>b) ¿Cuántas vueltas alrededor de la Tierra da el satélite en un día?</p>
+                    <p>c) Determine la velocidad de escape del satélite desde su órbita.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Radio y velocidad:</strong> \(r = -GM_T m/(2E_m) = 6{,}62\cdot10^{6}\,\text{m}\). \(v = \sqrt{GM_T/r} = 7{,}76\cdot10^{3}\,\text{m/s}\).</div>
+                    <div class="paso"><strong>b) Vueltas en un día:</strong> \(T = 2\pi r/v = 5{,}36\cdot10^{3}\,\text{s}\). \(N = 86400/T = 16{,}1\) vueltas.</div>
+                    <div class="paso"><strong>c) Velocidad de escape:</strong> \(v_{\text{escape}} = \sqrt{2GM_T/r} = \sqrt{2}\,v = 1{,}10\cdot10^{4}\,\text{m/s}\).</div>
+                    <div class="paso"><strong>Momento angular:</strong> \(L = mrv = 1500\cdot6{,}62\cdot10^{6}\cdot7{,}76\cdot10^{3} \approx 7{,}70\cdot10^{13}\,\text{kg}\cdot\text{m}^2/\text{s}\). Se conserva constante en la órbita circular.</div>
+                </div>
+            </details>
+
+            <!-- PIE DIDÁCTICO -->
+            <div class="pie-clave">
+                <i class="fas fa-lightbulb"></i>
+                <span><strong>Observaciones clave:</strong> en todos estos problemas, el patrón de resolución es: (1) identificar que la fuerza gravitatoria es central, por lo que el momento angular se conserva; (2) dibujar un esquema con el centro de fuerzas, el vector de posición y la velocidad; (3) aplicar la conservación del momento angular (\(r_p v_p = r_a v_a\) en órbitas elípticas, \(L = mrv\) en circulares); (4) relacionar con la segunda ley de Kepler cuando sea necesario; (5) comprobar que el plano orbital contiene al centro de fuerzas. Recuerda que el momento angular es un vector y que su conservación implica movimiento plano.</span>
+            </div>
+
+        </div> <!-- fin contenido-desplegable -->
+    </details>
+
+    <!-- ============================================ -->
+    <!-- BLOQUE "ES HORA DE"                          -->
+    <!-- ============================================ -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p>
+                <br> Domina el momento angular y las fuerzas centrales para la EBAU.<br>
+                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
+            </p>
+
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- ===================FIN DE ES HORA DE ==================== -->
+
+</div> <!-- fin container -->
+</body>
+</html>
