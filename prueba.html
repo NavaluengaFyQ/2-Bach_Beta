@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema D6. Leyes de desintegración radiactiva y actividad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ============================================
+           ESTILO GENERAL
+           ============================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+        }
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .header-left { display: flex; flex-direction: column; justify-content: center; }
+        .header-left h1 { font-size: 1.8em; margin: 0; }
+        .header-left p { margin: 6px 0 0 0; font-size: 1em; }
+        .header-sub { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+        .header-sub img { max-height: 28px; width: auto; border-radius: 4px; background: white; padding: 2px; }
+        .header-sub .codigo { font-weight: 700; font-size: 1.1em; }
+        .header-sub .texto { font-size: 1.1em; }
+        .header-right img { max-height: 70px; max-width: 180px; object-fit: contain; display: block; }
+        .section {
+            padding: 25px 30px;
+            margin: 15px;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        .enunciado { background: #f7fafc; border-color: #a0aec0; }
+        .objetivo  { background: #fffaf0; border-color: #ed8936; }
+        .procedimiento { background: #f0fff4; border-color: #48bb78; }
+        .resultado { background: #ebf8ff; border-color: #4299e1; }
+        .section h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .enunciado h2 { color: #4a5568; }
+        .objetivo h2  { color: #c05621; }
+        .procedimiento h2 { color: #276749; }
+        .resultado h2 { color: #2b6cb0; }
+        .formula-box {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        .step {
+            background: white;
+            border-left: 4px solid #a0aec0;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .note {
+            background: #fffbeb;
+            border: 1px solid #f6e05e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #744210;
+        }
+        p { line-height: 1.7; margin-bottom: 10px; }
+        ul, ol { padding-left: 25px; line-height: 1.7; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #cbd5e0; padding: 8px 12px; text-align: left; vertical-align: top; }
+        th { background: #edf2f7; }
+
+        /* ============================================
+           MAPA DE BLOQUES Y TEMAS
+           ============================================ */
+        .mapa-bloques {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .bloque-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 12px;
+            transition: all 0.3s ease;
+        }
+        .bloque-card.actual {
+            background: #eef2ff;
+            border-color: #3b82f6;
+            box-shadow: 0 8px 20px rgba(59,130,246,0.15);
+        }
+        .bloque-titulo {
+            font-weight: 700; color: #1e3a8a; font-size: 0.95em;
+            margin-bottom: 8px; padding-bottom: 6px;
+            border-bottom: 1px solid #cbd5e0; line-height: 1.3;
+        }
+        .bloque-card.actual .bloque-titulo { color: #1e40af; border-bottom-color: #93c5fd; }
+        .tema-lista { display: flex; flex-wrap: wrap; gap: 4px; }
+        .tema-chip {
+            display: inline-block; background: #e2e8f0; color: #475569;
+            padding: 2px 8px; border-radius: 12px;
+            font-size: 0.75em; font-weight: 500;
+        }
+        .bloque-card.actual .tema-chip { background: #dbeafe; color: #1e40af; }
+        .bloque-card.actual .tema-chip.actual {
+            background: #2563eb; color: white; font-weight: 700;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.4);
+        }
+        @media (max-width: 800px) { .mapa-bloques { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 480px) { .mapa-bloques { grid-template-columns: 1fr; } }
+
+        /* ============================================
+           BLOQUE DESPLEGABLE
+           ============================================ */
+        details {
+            margin: 30px 15px 15px 15px;
+            background: #f8fafc;
+            border-radius: 20px;
+            border: 2px solid #dbeafe;
+            padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+        details[open] {
+            background: #ffffff;
+            border-color: #3b82f6;
+            box-shadow: 0 8px 20px rgba(59,130,246,0.12);
+        }
+        summary {
+            list-style: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e3a8a;
+            padding: 0.8rem 0.5rem 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            user-select: none;
+            flex-wrap: wrap;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary i {
+            font-size: 1.8rem;
+            color: #2563eb;
+            transition: transform 0.3s ease;
+        }
+        details[open] summary i { transform: rotate(180deg); }
+        summary .titulo-principal { flex: 1; }
+        summary .badge-pulsa {
+            background: #dbeafe;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #1e40af;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .contenido-desplegable {
+            padding: 0.5rem 0.8rem 1.8rem 0.8rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 0.5rem;
+        }
+        .tarjeta-ejercicio {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 1.5rem 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .tarjeta-ejercicio.oculto { display: none; }
+        .tarjeta-ejercicio .cabecera-ej {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            border-bottom: 2px dashed #bfdbfe;
+            padding-bottom: 0.6rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .cabecera-ej .num-ej {
+            background: #2563eb;
+            color: white;
+            font-weight: 700;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+        }
+        .cabecera-ej .titulo-ej {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #0b1e33;
+        }
+        .cabecera-ej .meta-ej {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            margin-left: auto;
+        }
+        .enunciado-ej {
+            margin-bottom: 1rem;
+            background: #f9fafb;
+            padding: 0.8rem 1.2rem;
+            border-radius: 12px;
+            border-left: 4px solid #94a3b8;
+        }
+        .pie-clave {
+            margin-top: 1.8rem;
+            padding: 1rem 1.8rem;
+            background: #eef2ff;
+            border-radius: 40px;
+            border-left: 6px solid #3b82f6;
+            font-weight: 500;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .pie-clave i { font-size: 1.6rem; color: #2563eb; }
+
+        /* ============================================
+           RESOLUCIÓN DESPLEGABLE (nuevo)
+           ============================================ */
+        details.resolucion-ej {
+            background: #f1f5f9;
+            border-radius: 16px;
+            border: 1px solid #cbd5e1;
+            font-size: 0.98rem;
+            margin: 0.8rem 0 0 0;
+            padding: 0;
+        }
+        details.resolucion-ej[open] {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+            box-shadow: none;
+        }
+        details.resolucion-ej > summary.resumen-resolucion {
+            cursor: pointer;
+            list-style: none;
+            padding: 0.9rem 1.4rem;
+            font-weight: 600;
+            color: #1e40af;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 16px;
+            transition: background 0.2s;
+            font-size: 1rem;
+        }
+        details.resolucion-ej > summary.resumen-resolucion::-webkit-details-marker { display: none; }
+        details.resolucion-ej > summary.resumen-resolucion:hover { background: #e2e8f0; }
+        details.resolucion-ej[open] > summary.resumen-resolucion {
+            border-bottom: 1px dashed #cbd5e1;
+            border-radius: 16px 16px 0 0;
+        }
+        details.resolucion-ej > summary.resumen-resolucion i {
+            font-size: 1.05rem;
+            color: #2563eb;
+            transition: transform 0.3s ease;
+        }
+        details.resolucion-ej[open] > summary.resumen-resolucion i {
+            transform: rotate(180deg);
+        }
+        details.resolucion-ej .cuerpo-resolucion {
+            padding: 1.2rem 1.8rem;
+        }
+        details.resolucion-ej .cuerpo-resolucion .paso {
+            margin: 0.6rem 0;
+        }
+        details.resolucion-ej .cuerpo-resolucion .paso strong {
+            color: #1e40af;
+        }
+
+        /* ============================================
+           FILTRO INTERACTIVO (nuevo)
+           ============================================ */
+        .filtro-interactivo {
+            background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+            border: 2px solid #bfdbfe;
+            border-radius: 18px;
+            padding: 1.4rem 1.6rem;
+            margin: 0 0 2rem 0;
+            box-shadow: 0 2px 8px rgba(59,130,246,0.06);
+        }
+        .filtro-interactivo h3 {
+            margin: 0 0 1rem;
+            color: #1e3a8a;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .filtro-interactivo .filtro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 0.8rem;
+        }
+        .filtro-interactivo .filtro-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .filtro-interactivo .filtro-item label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .filtro-interactivo .filtro-item select {
+            padding: 0.55rem 0.7rem;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 10px;
+            background: white;
+            font-size: 0.93rem;
+            color: #1e293b;
+            font-family: inherit;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .filtro-interactivo .filtro-item select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+        }
+        .filtro-interactivo .filtro-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 1.1rem;
+            flex-wrap: wrap;
+        }
+        .filtro-interactivo .filtro-info .contador {
+            background: #d1fae5;
+            color: #047857;
+            padding: 0.35rem 1rem;
+            border-radius: 999px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            border: 1px solid #6ee7b7;
+        }
+        .filtro-interactivo .filtro-info .boton-reset {
+            background: #eef2ff;
+            color: #1e40af;
+            border: 1px solid #c7d2fe;
+            padding: 0.45rem 1rem;
+            border-radius: 999px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.2s;
+        }
+        .filtro-interactivo .filtro-info .boton-reset:hover { background: #dbeafe; }
+        .sin-resultados {
+            background: #fff7ed;
+            border: 1px dashed #fdba74;
+            border-radius: 12px;
+            padding: 1.2rem 1.6rem;
+            color: #9a3412;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+        }
+        .sin-resultados.visible { display: block; }
+
+        /* ============================================
+           BÚSQUEDA FILTRADA
+           ============================================ */
+        .busqueda-filtros {
+            margin: 30px 15px 15px 15px;
+            padding: 1.5rem 1.8rem;
+            background: linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
+            border-radius: 20px;
+            border: 2px solid #dbeafe;
+            box-shadow: 0 8px 20px rgba(59,130,246,0.08);
+        }
+        .busqueda-filtros > h2 {
+            margin: 0 0 1rem;
+            color: #1e3a8a;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .busqueda-filtros > h2 i { color: #2563eb; font-size: 1.6rem; }
+        .filtros-chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.2rem; }
+        .filtros-chips .chip {
+            font-size: .82rem; font-weight: 700;
+            background: #eef2ff; color: #1e40af;
+            border: 1px solid #c7d2fe;
+            padding: .3rem .8rem; border-radius: 999px;
+        }
+        .total-badge {
+            display: inline-block;
+            font-weight: 800; font-size: .85rem;
+            color: #047857; background: #d1fae5;
+            border: 1px solid #6ee7b7;
+            padding: .25rem .8rem; border-radius: 999px;
+            margin-bottom: 1rem;
+        }
+        .subfiltros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem; margin-bottom: 1.2rem;
+        }
+        .subfiltro-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 1rem 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border-top: 4px solid #4f46e5;
+        }
+        .subfiltro-card.p-d6 { border-top-color: #0f766e; }
+        .subfiltro-card h3 {
+            margin: 0 0 .5rem; font-size: 1rem; color: #1e3a8a;
+            display: flex; align-items: center; gap: .45rem; flex-wrap: wrap;
+        }
+        .subfiltro-card h3 .codigo {
+            background: #4f46e5; color: white;
+            font-size: .72rem; font-weight: 800;
+            padding: .15rem .55rem; border-radius: 999px;
+        }
+        .subfiltro-card.p-d6 h3 .codigo { background: #0f766e; }
+        .stats-row { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .6rem; }
+        .stats-row .stat {
+            font-size: .78rem; font-weight: 700;
+            background: #f1f5f9; color: #334155;
+            border: 1px solid #cbd5e1;
+            padding: .15rem .55rem; border-radius: 999px;
+        }
+        .stats-row .stat.subida {
+            background: #d1fae5; color: #047857; border-color: #6ee7b7;
+        }
+        .keywords-row { display: flex; flex-wrap: wrap; gap: .3rem; margin-bottom: .6rem; }
+        .keywords-row .kw {
+            font-size: .74rem; background: #eef2ff; color: #3730a3;
+            border: 1px solid #c7d2fe;
+            padding: .12rem .5rem; border-radius: 6px; font-style: italic;
+        }
+        .subfiltro-card.p-d6 .keywords-row .kw {
+            background: #ecfeff; color: #155e75; border-color: #a5f3fc;
+        }
+        .problemas-ref { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .3rem; }
+        .problemas-ref .ref {
+            font-size: .76rem; background: #f8fafc; color: #475569;
+            border: 1px solid #cbd5e1;
+            padding: .18rem .55rem; border-radius: 6px;
+        }
+        .problemas-ref .ref strong { color: #1e40af; }
+        .json-bloque { margin-top: 1.2rem; }
+        .json-bloque > summary {
+            cursor: pointer; font-weight: 700; color: #1e3a8a;
+            padding: .5rem 0; font-size: .98rem;
+        }
+        .json-bloque pre {
+            background: #0f172a; color: #e2e8f0;
+            border-radius: 12px; padding: 1rem 1.15rem;
+            overflow-x: auto; font-size: .78rem; line-height: 1.55;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            max-height: 560px; overflow-y: auto; margin: 0;
+        }
+        .json-bloque pre code { color: inherit; background: transparent; padding: 0; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                <span class="codigo">#TEMA D6.- </span>
+                <span class="texto">Leyes de desintegración radiactiva y actividad</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- MAPA DE BLOQUES Y TEMAS -->
+    <div class="section enunciado">
+        <h2>🗺️ Ubicación en el currículo</h2>
+        <p>Este tema pertenece al <strong>Bloque D. Física relativista, cuántica, nuclear y de partículas</strong> del currículo de Física de 2º de Bachillerato (Decreto 40/2022, BOCYL-D-30092022-4). Se marca en azul el bloque actual y, dentro de él, el tema que estamos desarrollando.</p>
+        <div class="mapa-bloques">
+            <div class="bloque-card">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">A1</span><span class="tema-chip">A2</span><span class="tema-chip">A3</span><span class="tema-chip">A4</span><span class="tema-chip">A5</span><span class="tema-chip">A6</span><span class="tema-chip">A7</span><span class="tema-chip">A8</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span><span class="tema-chip">B2</span><span class="tema-chip">B3</span><span class="tema-chip">B4</span><span class="tema-chip">B5</span><span class="tema-chip">B6</span><span class="tema-chip">B7</span><span class="tema-chip">B8</span><span class="tema-chip">B9</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">C1</span><span class="tema-chip">C2</span><span class="tema-chip">C3</span><span class="tema-chip">C4</span><span class="tema-chip">C5</span><span class="tema-chip">C6</span>
+                </div>
+            </div>
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">D1</span><span class="tema-chip">D2</span><span class="tema-chip">D3</span><span class="tema-chip">D4</span><span class="tema-chip">D5</span><span class="tema-chip actual">D6</span>
+                </div>
+            </div>
+        </div>
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque D · Tema D6:</strong> Leyes de desintegración radiactiva y actividad.
+            <br>
+            <em>En este tema estudiaremos:</em> la ley de desintegración radiactiva exponencial, la constante radiactiva, el periodo de semidesintegración y la vida media, la actividad y sus unidades (becquerel, curio), la relación entre número de núcleos y masa, y las aplicaciones a la datación radiactiva.
+        </div>
+    </div>
+
+    <!-- OBJETIVOS -->
+    <div class="section objetivo">
+        <h2>🎯 Objetivos de aprendizaje</h2>
+        <ul>
+            <li>Comprender el carácter aleatorio de la desintegración radiactiva y aplicar la ley exponencial \(N(t)=N_0 e^{-\lambda t}\).</li>
+            <li>Definir y aplicar la constante radiactiva \(\lambda\), el periodo de semidesintegración \(T_{1/2}\) y la vida media \(\tau\).</li>
+            <li>Relacionar la actividad de una muestra con el número de núcleos: \(A=\lambda N\) y \(A(t)=A_0 e^{-\lambda t}\).</li>
+            <li>Manejar correctamente las unidades de actividad (Bq, Ci) y la conversión entre masa y número de núcleos mediante el número de Avogadro.</li>
+            <li>Resolver problemas de decaimiento radiactivo: actividad inicial y final, masa restante, número de núcleos desintegrados.</li>
+            <li>Plantear problemas de datación radiactiva aplicando la ley exponencial a isótopos como el \(^{14}\text{C}\), el \(^{40}\text{K}\) o el \(^{238}\text{U}\).</li>
+            <li>Conocer las leyes de desplazamiento radiactivo (Soddy-Fajans) y su aplicación a emisiones \(\alpha\), \(\beta\) y \(\gamma\).</li>
+        </ul>
+    </div>
+
+    <!-- CONTENIDO TEÓRICO -->
+    <div class="section procedimiento">
+        <h2>📚 Contenido teórico</h2>
+
+        <div class="step">
+            <span class="step-num">1</span>
+            <strong>Naturaleza aleatoria de la radiactividad.</strong>
+            <p>La radiactividad es un proceso <strong>espontáneo</strong> y <strong>aleatorio</strong>: es imposible predecir qué núcleo concreto se desintegrará y cuándo. Sin embargo, para un conjunto muy grande de núcleos idénticos, el número de desintegraciones por unidad de tiempo es <strong>proporcional al número de núcleos presentes</strong>. Esto es consecuencia del carácter probabilístico del proceso.</p>
+            <p>Si \(N\) es el número de núcleos radiactivos presentes en un instante \(t\) y \(\lambda\) es la probabilidad de desintegración por unidad de tiempo de cada núcleo, la ley diferencial es:</p>
+            <div class="formula-box">\[\frac{dN}{dt}=-\lambda N\]</div>
+            <p>El signo negativo refleja que \(N\) disminuye con el tiempo. Esta ecuación diferencial, junto con la condición inicial \(N(0)=N_0\), conduce a la ley de desintegración exponencial.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-num">2</span>
+            <strong>Ley de desintegración radiactiva.</strong>
+            <p>Integrando la ecuación diferencial entre \(t=0\) y \(t\), y entre \(N_0\) y \(N(t)\):</p>
+            <div class="formula-box">\[\int_{N_0}^{N}\frac{dN}{N}=-\lambda\int_0^t dt\quad\Longrightarrow\quad\ln\frac{N}{N_0}=-\lambda t\]</div>
+            <p>Despejando \(N\), obtenemos la <strong>ley de desintegración radiactiva</strong>:</p>
+            <div class="formula-box">\[N(t)=N_0\,e^{-\lambda t}\]</div>
+            <p>Propiedades clave:</p>
+            <ul>
+                <li>\(N(t)\) es una exponencial decreciente: el número de núcleos disminuye asintóticamente hacia cero, pero nunca se anula del todo en tiempo finito.</li>
+                <li>En la práctica, tras \(\sim 10\,T_{1/2}\) la cantidad restante es inferior a \(0{,}1\%\) del valor inicial y puede considerarse despreciable.</li>
+                <li>La ley exponencial no depende de la masa total ni de la temperatura, presión u otras condiciones externas: es una propiedad intrínseca del núcleo.</li>
+                <li>Para masas, la misma ley se aplica: \(m(t)=m_0 e^{-\lambda t}\), ya que \(m\propto N\).</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <span class="step-num">3</span>
+            <strong>Constante radiactiva.</strong>
+            <p>La <strong>constante de desintegración</strong> \(\lambda\) es la probabilidad por unidad de tiempo de que un núcleo concreto se desintegre. Sus dimensiones son de inverso de tiempo y en el S.I. se mide en \(\text{s}^{-1}\). Es una magnitud característica de cada isótopo radiactivo.</p>
+            <div class="formula-box">\[\lambda=\frac{\text{probabilidad de desintegración}}{\text{unidad de tiempo}}\quad\Longrightarrow\quad[\lambda]=\text{s}^{-1}\]</div>
+            <p>Es también útil su interpretación estadística: si en un instante \(t\) hay \(N\) núcleos, el número de desintegraciones en un intervalo pequeño \(dt\) es \(\lambda N\,dt\). En notación diferencial, \(\lambda=-\frac{1}{N}\frac{dN}{dt}\).</p>
+        </div>
+
+        <div class="step">
+            <span class="step-num">4</span>
+            <strong>Periodo de semidesintegración (semivida).</strong>
+            <p>El <strong>periodo de semidesintegración</strong> \(T_{1/2}\) (o <strong>semivida</strong>) es el tiempo necesario para que el número de núcleos radiactivos se reduzca a la mitad. Se obtiene imponiendo \(N(T_{1/2})=N_0/2\) en la ley exponencial:</p>
+            <div class="formula-box">\[\frac{N_0}{2}=N_0\,e^{-\lambda T_{1/2}}\quad\Longrightarrow\quad T_{1/2}=\frac{\ln 2}{\lambda}=\frac{0{,}693}{\lambda}\]</div>
+            <p>Por tanto, entre \(T_{1/2}\) y la constante \(\lambda\) existe una relación biunívoca:</p>
+            <div class="formula-box">\[\lambda=\frac{\ln 2}{T_{1/2}}\]</div>
+            <p>Propiedades:</p>
+            <ul>
+                <li>Es independiente del número inicial de núcleos y de las condiciones externas.</li>
+                <li>Es habitual expresarlo en segundos, días, años... según el orden de magnitud del isótopo (p. ej., \(T_{1/2}(^{14}\text{C})\approx 5730\) años; \(T_{1/2}(^{131}\text{I})\approx 8{,}02\) días; \(T_{1/2}(^{99\text{m}}\text{Tc})\approx 6\) horas).</li>
+                <li>Se usa con frecuencia como "reloj" para comparar la rapidez de decaimiento de distintos isótopos.</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <span class="step-num">5</span>
+            <strong>Vida media.</strong>
+            <p>La <strong>vida media</strong> \(\tau\) es el tiempo promedio que un núcleo permanece sin desintegrarse. Estadísticamente, se define como la inversa de la constante radiactiva:</p>
+            <div class="formula-box">\[\tau=\frac{1}{\lambda}=\frac{T_{1/2}}{\ln 2}\approx 1{,}44\,T_{1/2}\]</div>
+            <p>Se puede deducir de la ley exponencial como el valor medio de \(t\) ponderado por la probabilidad de supervivencia:</p>
+            <div class="formula-box">\[\tau=\frac{\int_0^{\infty} t\,e^{-\lambda t}\,dt}{\int_0^{\infty} e^{-\lambda t}\,dt}=\frac{1}{\lambda}\]</div>
+            <p>Observe que \(\tau>T_{1/2}\): la vida media es mayor que la semivida, porque algunos núcleos sobreviven mucho tiempo y elevan la media.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-num">6</span>
+            <strong>Actividad y sus unidades.</strong>
+            <p>La <strong>actividad</strong> \(A(t)\) de una muestra radiactiva es el número de desintegraciones que se producen por unidad de tiempo. Coincide con el módulo de la velocidad de desintegración:</p>
+            <div class="formula-box">\[A(t)=-\frac{dN}{dt}=\lambda N(t)=\lambda N_0\,e^{-\lambda t}=A_0\,e^{-\lambda t}\]</div>
+            <p>donde \(A_0=\lambda N_0\) es la actividad inicial. Como \(N(t)\) decae exponencialmente, la actividad lo hace del mismo modo, con la misma constante \(\lambda\).</p>
+            <p><strong>Unidades de actividad:</strong></p>
+            <ul>
+                <li><strong>Becquerel (Bq):</strong> unidad del S.I., equivale a 1 desintegración por segundo (\(1\,\text{Bq}=1\,\text{s}^{-1}\)).</li>
+                <li><strong>Curio (Ci):</strong> unidad histórica, definida como la actividad de 1 g de \(^{226}\text{Ra}\). Equivale a \(3{,}7\cdot10^{10}\,\text{Bq}\).</li>
+                <li><strong>Múltiplos habituales:</strong> kBq (\(10^{3}\,\text{Bq}\)), MBq (\(10^{6}\,\text{Bq}\)), GBq (\(10^{9}\,\text{Bq}\)), TBq (\(10^{12}\,\text{Bq}\)).</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <span class="step-num">7</span>
+            <strong>Relación entre masa y número de núcleos.</strong>
+            <p>En muchos problemas se da la masa de la muestra en lugar del número de núcleos. La relación es:</p>
+            <div class="formula-box">\[N=\frac{m}{M}\,N_A\]</div>
+            <p>donde \(m\) es la masa de la muestra (en gramos, si \(M\) se expresa en \(\text{g/mol}\)), \(M\) es la masa molar del isótopo (numéricamente igual a su número másico en \(\text{u}\), expresado en \(\text{g/mol}\)), y \(N_A=6{,}022\cdot10^{23}\,\text{mol}^{-1}\) es el número de Avogadro. Combinando con la ley de desintegración:</p>
+            <div class="formula-box">\[m(t)=m_0\,e^{-\lambda t}\]</div>
+            <p>Por tanto, la masa del isótopo radiactivo decae con la misma ley exponencial que el número de núcleos y que la actividad.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-num">8</span>
+            <strong>Datación radiactiva.</strong>
+            <p>El decaimiento radiactivo puede usarse como un "reloj" para datar muestras. Si conocemos la actividad inicial \(A_0\) (o el número inicial \(N_0\), o la masa inicial \(m_0\)) y medimos la actividad actual \(A(t)\), el tiempo transcurrido se obtiene despejando de la ley exponencial:</p>
+            <div class="formula-box">\[t=\frac{1}{\lambda}\ln\frac{A_0}{A(t)}=\frac{T_{1/2}}{\ln 2}\ln\frac{A_0}{A(t)}\]</div>
+            <p>El método más conocido es la <strong>datación por carbono-14</strong>: los seres vivos incorporan \(^{14}\text{C}\) en equilibrio con la atmósfera; al morir, dejan de incorporarlo y el \(^{14}\text{C}\) comienza a desintegrarse (\(T_{1/2}\approx 5730\) años). Midiendo la actividad residual se calcula la edad. Para rocas se usan isótopos de vida media mucho mayor: \(^{40}\text{K}\to{}^{40}\text{Ar}\) (\(T_{1/2}\approx 1{,}25\cdot10^9\) años), \(^{238}\text{U}\to{}^{206}\text{Pb}\) (\(T_{1/2}\approx 4{,}5\cdot10^9\) años), etc.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-num">9</span>
+            <strong>Leyes de Soddy-Fajans (desplazamiento radiactivo).</strong>
+            <p>Las transformaciones nucleares cumplen la <strong>conservación del número másico \(A\)</strong> y del <strong>número atómico \(Z\)</strong>. Las tres emisiones principales modifican \((A,Z)\) de la forma:</p>
+            <div class="formula-box">\[\text{Emisión }\alpha:\quad {}^{A}_{Z}X\;\to\;{}^{A-4}_{Z-2}Y+{}^{4}_{2}\text{He}\]</div>
+            <div class="formula-box">\[\text{Emisión }\beta^{-}:\quad {}^{A}_{Z}X\;\to\;{}^{A}_{Z+1}Y+e^{-}+\bar{\nu}_e\]</div>
+            <div class="formula-box">\[\text{Emisión }\gamma:\quad {}^{A}_{Z}X^{*}\;\to\;{}^{A}_{Z}X+\gamma\]</div>
+            <p>La emisión \(\alpha\) reduce \(Z\) en 2 y \(A\) en 4; la emisión \(\beta^{-}\) aumenta \(Z\) en 1 sin cambiar \(A\); la emisión \(\gamma\) no altera ni \(A\) ni \(Z\) (solo libera energía de excitación). También existe la emisión \(\beta^{+}\) (positrón) que reduce \(Z\) en 1 sin cambiar \(A\).</p>
+        </div>
+
+        <div class="note">
+            <strong>💡 Observaciones sobre el alumnado:</strong> los errores más frecuentes son (i) confundir semivida con vida media; (ii) usar \(\lambda\) en unidades distintas a las del tiempo; (iii) olvidar convertir la masa de la muestra a número de núcleos; (iv) no distinguir entre «se ha desintegrado el 25 %» (queda el 75 %) y «queda el 25 %»; y (v) mezclar actividad con número de núcleos. Recomendamos trabajar siempre en el S.I. y comprobar el orden de magnitud.
+        </div>
+    </div>
+
+    <!-- ANÁLISIS DE FÓRMULAS -->
+    <div class="section resultado">
+        <h2>🧮 Análisis de las fórmulas del tema D6</h2>
+        <p>Recogemos en una tabla las expresiones clave del tema, con su significado físico, las variables implicadas y las condiciones de aplicación:</p>
+        <table>
+            <thead>
+                <tr><th>Fórmula</th><th>Significado físico</th><th>Variables y unidades</th><th>Condiciones de aplicación</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>\(\dfrac{dN}{dt}=-\lambda N\)</td><td>Ecuación diferencial de la desintegración radiactiva.</td><td>\(N\) en núcleos; \(\lambda\) en \(\text{s}^{-1}\); \(t\) en s.</td><td>Muestra de núcleos idénticos con probabilidad de desintegración constante.</td></tr>
+                <tr><td>\(N(t)=N_0\,e^{-\lambda t}\)</td><td>Ley exponencial de desintegración radiactiva.</td><td>\(N\), \(N_0\) en núcleos; \(\lambda\) en \(\text{s}^{-1}\); \(t\) en s.</td><td>Isótopo radiactivo aislado; sin producción simultánea.</td></tr>
+                <tr><td>\(\lambda=\dfrac{\ln 2}{T_{1/2}}\)</td><td>Relación entre constante radiactiva y semivida.</td><td>\(\lambda\) en \(\text{s}^{-1}\); \(T_{1/2}\) en s.</td><td>Válida siempre; \(\lambda\) y \(T_{1/2}\) son inversamente proporcionales.</td></tr>
+                <tr><td>\(T_{1/2}=\dfrac{\ln 2}{\lambda}\)</td><td>Semivida o periodo de semidesintegración.</td><td>\(T_{1/2}\) en s; \(\lambda\) en \(\text{s}^{-1}\).</td><td>Misma condición que la anterior.</td></tr>
+                <tr><td>\(\tau=\dfrac{1}{\lambda}\)</td><td>Vida media (tiempo medio de supervivencia de un núcleo).</td><td>\(\tau\) en s; \(\lambda\) en \(\text{s}^{-1}\).</td><td>Desintegración exponencial pura.</td></tr>
+                <tr><td>\(A(t)=\lambda N(t)=A_0e^{-\lambda t}\)</td><td>Actividad de una muestra radiactiva en función del tiempo.</td><td>\(A\) en Bq; \(\lambda\) en \(\text{s}^{-1}\); \(N\) en núcleos.</td><td>Muestra radiactiva; misma ley exponencial que \(N(t)\).</td></tr>
+                <tr><td>\(N=\dfrac{m}{M}\,N_A\)</td><td>Número de núcleos a partir de la masa de la muestra.</td><td>\(N\) en núcleos; \(m\) en g; \(M\) en \(\text{g/mol}\); \(N_A=6{,}022\cdot10^{23}\,\text{mol}^{-1}\).</td><td>Isótopo puro; \(M\) numéricamente igual al número másico en \(\text{g/mol}\).</td></tr>
+                <tr><td>\(t=\dfrac{T_{1/2}}{\ln 2}\ln\dfrac{N_0}{N(t)}\)</td><td>Tiempo transcurrido (datación) a partir de la relación de núcleos o actividades.</td><td>\(t\) en la unidad de \(T_{1/2}\); el cociente \(N_0/N\) es adimensional.</td><td>Muestras cuyo \(N_0\) inicial (o \(A_0\)) sea conocido o pueda estimarse.</td></tr>
+            </tbody>
+        </table>
+        <div class="note">
+            <strong>⚠️ Errores frecuentes:</strong> confundir \(T_{1/2}\) (tiempo para reducir a la mitad) con \(\tau\) (tiempo medio de vida, siempre mayor); no homogeneizar unidades de \(\lambda\) y \(t\); interpretar «se ha desintegrado el 20 %» como «queda el 20 %»; usar \(m=m_0e^{-\lambda t}\) sin verificar que la masa medida corresponde al isótopo radiactivo; y olvidar que \(A_0\) en muchos problemas es dato indirecto.
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- PROBLEMAS RESUELTOS (EBAU Castilla y León)                   -->
+    <!-- ============================================================ -->
+    <details open>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🧪 Problemas resueltos de EBAU — Castilla y León (Tema D6)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+
+            <!-- ==================================================== -->
+            <!-- FILTRO INTERACTIVO                                   -->
+            <!-- ==================================================== -->
+            <div class="filtro-interactivo">
+                <h3><i class="fas fa-filter"></i> Filtrar problemas</h3>
+                <div class="filtro-grid">
+                    <div class="filtro-item">
+                        <label for="f-comunidad">Comunidad</label>
+                        <select id="f-comunidad">
+                            <option value="">Todas</option>
+                            <option value="Castilla y León">Castilla y León</option>
+                            <option value="Madrid">Madrid</option>
+                            <option value="Cataluña">Cataluña</option>
+                            <option value="Andalucía">Andalucía</option>
+                            <option value="Otras">Otras</option>
+                        </select>
+                    </div>
+                    <div class="filtro-item">
+                        <label for="f-anio">Año</label>
+                        <select id="f-anio">
+                            <option value="">Todos</option>
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                        </select>
+                    </div>
+                    <div class="filtro-item">
+                        <label for="f-convocatoria">Convocatoria</label>
+                        <select id="f-convocatoria">
+                            <option value="">Todas</option>
+                            <option value="Ordinaria">Ordinaria</option>
+                            <option value="Extraordinaria">Extraordinaria</option>
+                        </select>
+                    </div>
+                    <div class="filtro-item">
+                        <label for="f-bloque">Bloque</label>
+                        <select id="f-bloque">
+                            <option value="">Todos</option>
+                            <option value="A">A. Campo gravitatorio</option>
+                            <option value="B">B. Campo electromagnético</option>
+                            <option value="C">C. Vibraciones y ondas</option>
+                            <option value="D">D. Física moderna y nuclear</option>
+                        </select>
+                    </div>
+                    <div class="filtro-item">
+                        <label for="f-tema">Tema</label>
+                        <select id="f-tema">
+                            <option value="">Todos</option>
+                            <option value="D1">D1</option>
+                            <option value="D2">D2</option>
+                            <option value="D3">D3</option>
+                            <option value="D4">D4</option>
+                            <option value="D5">D5</option>
+                            <option value="D6">D6. Desintegración radiactiva</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filtro-info">
+                    <span class="contador" id="contador-ejs">Mostrando 10 de 10 problemas</span>
+                    <button class="boton-reset" id="reset-filtros" type="button">
+                        <i class="fas fa-undo"></i> Restablecer filtros
+                    </button>
+                </div>
+            </div>
+
+            <div class="sin-resultados" id="sin-resultados">
+                😕 No hay problemas que coincidan con los filtros seleccionados. Prueba a restablecer los filtros.
+            </div>
+
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas</strong> de las pruebas de acceso a la universidad de <strong>Castilla y León</strong>, todos ellos relacionados con el tema D6 (leyes de desintegración radiactiva y actividad). Se indica la comunidad, el año, la convocatoria (ordinaria/extraordinaria) y el número de problema. Pulsa en <em>«Ver resolución»</em> dentro de cada ejercicio.
+            </p>
+
+            <!-- ==================== PROBLEMA 1 ==================== -->
+            <div class="tarjeta-ejercicio" data-comunidad="Castilla y León" data-anio="2026" data-convocatoria="Ordinaria" data-bloque="D" data-tema="D6" data-subcat="P-D6">
+                <div class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Datación de una roca mediante potasio y argón</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Ordinaria · Problema 11</span>
+                </div>
+                <div class="enunciado-ej">
+                    <p>Para datar rocas o cenizas volcánicas de gran antigüedad se suele utilizar una técnica basada en la desintegración del \(^{40}_{19}\text{K}\) en \(^{40}_{18}\text{Ar}\), cuyo periodo de semidesintegración es 1248 millones de años. Determine la edad de una muestra de roca en la que se hallaron 73 mg de \(^{40}_{18}\text{Ar}\) y 12 mg de \(^{40}_{19}\text{K}\). Suponga que en el momento de su formación la roca no contenía nada de Ar. (1 punto)</p>
+                </div>
+                <details class="resolucion-ej">
+                    <summary class="resumen-resolucion"><i class="fas fa-chevron-down"></i> Ver resolución paso a paso</summary>
+                    <div class="cuerpo-resolucion">
+                        <div class="paso"><strong>Modelo:</strong> como no hay Ar inicial, todo el \(^{40}\text{Ar}\) medido procede de la desintegración del \(^{40}\text{K}\). Por tanto \(N_0(\text{K}) = N(\text{K}) + N(\text{Ar})\) actuales.</div>
+                        <div class="paso"><strong>Como las masas molares nominales son iguales</strong> (40 g/mol en ambos casos), la relación de masas coincide con la relación de núcleos: \(N(\text{K})/N_0 = 12/(12+73) = 12/85\).</div>
+                        <div class="formula-box">\[t=\frac{T_{1/2}}{\ln 2}\,\ln\!\left(\frac{N_0}{N}\right)=\frac{1248\cdot10^{6}}{0{,}693}\,\ln\!\left(\frac{85}{12}\right)\]</div>
+                        <div class="formula-box">\[t\approx 1{,}8007\cdot10^{9}\cdot 1{,}957\approx 3{,}52\cdot10^{9}\ \text{años}\]</div>
+                        <div class="paso"><strong>Resultado:</strong> \(t\approx3{,}52\cdot10^{9}\,\text{años}\) (3525 millones de años).</div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- ==================== PROBLEMA 2 ==================== -->
+            <div class="tarjeta-ejercicio" data-comunidad="Castilla y León" data-anio="2025" data-convocatoria="Ordinaria" data-bloque="D" data-tema="D6" data-subcat="C-D6">
+                <div class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Actividad y vida residual del estroncio-90</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Ordinaria · Problema 10</span>
+                </div>
+                <div class="enunciado-ej">
+                    <p>El \(^{90}_{38}\text{Sr}\) es un núcleo radiactivo cuyo periodo de semidesintegración es de 28 años. Calcule, expresando los resultados en unidades del SI:<br>
+                    a) La actividad de una muestra de 1 mg de esta sustancia.<br>
+                    b) El tiempo necesario para que la anterior muestra se reduzca a 0,15 mg.<br>
+                    Datos: \(N_A=6{,}022\cdot10^{23}\,\text{mol}^{-1}\).</p>
+                </div>
+                <details class="resolucion-ej">
+                    <summary class="resumen-resolucion"><i class="fas fa-chevron-down"></i> Ver resolución paso a paso</summary>
+                    <div class="cuerpo-resolucion">
+                        <div class="paso"><strong>a)</strong> Constante de desintegración:</div>
+                        <div class="formula-box">\[\lambda=\frac{\ln 2}{T_{1/2}}=\frac{0{,}693}{28\cdot365\cdot24\cdot3600}\approx 7{,}85\cdot10^{-10}\ \text{s}^{-1}\]</div>
+                        <div class="paso">Número de núcleos en 1 mg (M ≈ 90 g/mol):</div>
+                        <div class="formula-box">\[N_0=\frac{10^{-6}}{0{,}090}\,6{,}022\cdot10^{23}\approx 6{,}69\cdot10^{18}\ \text{núcleos}\]</div>
+                        <div class="formula-box">\[A_0=\lambda N_0 = 7{,}85\cdot10^{-10}\cdot6{,}69\cdot10^{18}\approx 5{,}25\cdot10^{9}\ \text{Bq}\]</div>
+                        <div class="paso"><strong>b)</strong> Imponiendo \(m/m_0=0{,}15\):</div>
+                        <div class="formula-box">\[t=\frac{1}{\lambda}\ln\!\left(\frac{m_0}{m}\right)=\frac{1}{7{,}85\cdot10^{-10}}\ln\!\left(\frac{1}{0{,}15}\right)\approx 2{,}42\cdot10^{9}\ \text{s}\approx 76{,}6\ \text{años}\]</div>
+                        <div class="paso"><strong>Resultado:</strong> \(A_0\approx5{,}25\cdot10^{9}\,\text{Bq}\); \(t\approx76{,}6\,\text{años}\).</div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- ==================== PROBLEMA 3 ==================== -->
+            <div class="tarjeta-ejercicio" data-comunidad="Castilla y León" data-anio="2025" data-convocatoria="Extraordinaria" data-bloque="D" data-tema="D6" data-subcat="C-D6">
+                <div class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Tecnecio-99 metaestable: masa inyectada y tiempo hasta una actividad dada</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Extraordinaria · Problema 10</span>
+                </div>
+                <div class="enunciado-ej">
+                    <p>Un paciente se somete a una prueba diagnóstica en la que se le inyecta un fármaco que contiene tecnecio-99 metaestable (\(^{99}\text{Tc-m}\)), cuyo periodo de semidesintegración es de 6 h. La actividad inicial de la sustancia inyectada debe ser \(5\cdot10^{8}\,\text{Bq}\). Calcule:<br>
+                    a) La masa de isótopo radiactivo que hay que inyectarle.<br>
+                    b) El tiempo que ha de transcurrir para que la actividad del isótopo sea de \(10^{4}\,\text{Bq}\).<br>
+                    Datos: \(N_A=6{,}022\cdot10^{23}\,\text{mol}^{-1}\); masa atómica \(M=99\,\text{u}\).</p>
+                </div>
+                <details class="resolucion-ej">
+                    <summary class="resumen-resolucion"><i class="fas fa-chevron-down"></i> Ver resolución paso a paso</summary>
+                    <div class="cuerpo-resolucion">
+                        <div class="paso"><strong>a)</strong> Constante de desintegración:</div>
+                        <div class="formula-box">\[\lambda=\frac{\ln 2}{6\cdot3600}=3{,}21\cdot10^{-5}\ \text{s}^{-1}\]</div>
+                        <div class="formula-box">\[N_0=\frac{A_0}{\lambda}=\frac{5\cdot10^{8}}{3{,}21\cdot10^{-5}}\approx1{,}56\cdot10^{13}\ \text{núcleos}\]</div>
+                        <div class="formula-box">\[m=\frac{N_0 M}{N_A}=\frac{1{,}56\cdot10^{13}\cdot99}{6{,}022\cdot10^{23}}\approx2{,}56\cdot10^{-12}\ \text{kg}=2{,}56\ \text{pg}\]</div>
+                        <div class="paso"><strong>b)</strong> Despejando \(t\):</div>
+                        <div class="formula-box">\[t=\frac{1}{\lambda}\ln\!\left(\frac{A_0}{A}\right)=\frac{1}{3{,}21\cdot10^{-5}}\ln\!\left(\frac{5\cdot10^{8}}{10^{4}}\right)\approx3{,}37\cdot10^{5}\ \text{s}\approx93{,}7\ \text{h}\approx3{,}9\ \text{días}\]</div>
+                        <div class="paso"><strong>Resultado:</strong> \(m\approx2{,}56\cdot10^{-12}\,\text{kg}\); \(t\approx93{,}7\,\text{h}\).</div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- ==================== PROBLEMA 4 ==================== -->
+            <div class="tarjeta-ejercicio" data-comunidad="Castilla y León" data-anio="2024" data-convocatoria="Extraordinaria" data-bloque="D" data-tema="D6" data-subcat="C-D6">
+                <div class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Masa de \(^{131}\text{I}\) correspondiente a una actividad dada</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 10</span>
+                </div>
+                <div class="enunciado-ej">
+                    <p>La leche de las vacas próximas a una central nuclear se analiza para detectar su posible contenido en \(^{131}\text{I}\) (periodo de semidesintegración 8,02 días). Según el reglamento, la actividad correspondiente a 1 L de leche debe ser inferior a \(3{,}7\cdot10^{-2}\,\text{Bq}\). ¿Qué masa de \(^{131}\text{I}\) tiene esa actividad?<br>
+                    Datos: \(N_A=6{,}022\cdot10^{23}\,\text{mol}^{-1}\); masa atómica 131 u.</p>
+                </div>
+                <details class="resolucion-ej">
+                    <summary class="resumen-resolucion"><i class="fas fa-chevron-down"></i> Ver resolución paso a paso</summary>
+                    <div class="cuerpo-resolucion">
+                        <div class="paso"><strong>Constante de desintegración:</strong></div>
+                        <div class="formula-box">\[\lambda=\frac{\ln 2}{8{,}02\cdot86400}\approx1{,}00\cdot10^{-6}\ \text{s}^{-1}\]</div>
+                        <div class="paso"><strong>Número de núcleos para esa actividad:</strong></div>
+                        <div class="formula-box">\[N=\frac{A}{\lambda}=\frac{3{,}7\cdot10^{-2}}{1{,}00\cdot10^{-6}}\approx3{,}70\cdot10^{4}\ \text{átomos}\]</div>
+                        <div class="paso"><strong>Masa correspondiente (M = 0,131 kg/mol):</strong></div>
+                        <div class="formula-box">\[m=N\,\frac{M}{N_A}=3{,}70\cdot10^{4}\cdot\frac{0{,}131}{6{,}022\cdot10^{23}}\approx8{,}05\cdot10^{-21}\ \text{kg}\]</div>
+                        <div class="paso"><strong>Resultado:</strong> \(m\approx8{,}05\cdot10^{-21}\,\text{kg}\).</div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- ==================== PROBLEMA 5 ==================== -->
+            <div class="tarjeta-ejercicio" data-comunidad="Castilla y León" data-anio="2023" data-convocatoria="Extraordinaria" data-bloque="D" data-tema="D6" data-subcat="C-D6">
+                <div class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Tiempo hasta una actividad dada en una muestra con \(10^{20}\) núcleos</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 10</span>
+                </div>
+                <div class="enunciado-ej">
+                    <p>Se dispone de una muestra de \(10^{20}\) núcleos de un material radiactivo cuyo periodo de semidesintegración es 29 años. ¿Cuánto tiempo debe transcurrir para que su actividad sea \(600\,\text{Bq}\)?</p>
+                </div>
+                <details class="resolucion-ej">
+                    <summary class="resumen-resolucion"><i class="fas fa-chevron-down"></i> Ver resolución paso a paso</summary>
+                    <div class="cuerpo-resolucion">
+                        <div class="paso"><strong>Constante de desintegración:</strong></div>
+                        <div class="formula-box">\[\lambda=\frac{\ln 2}{29\cdot365\cdot24\cdot3600}\approx7{,}58\cdot10^{-10}\ \text{s}^{-1}\]</div>
+                        <div class="paso"><strong>Número de núcleos para \(A=600\,\text{Bq}\):</strong></div>
+                        <div class="formula-box">\[N=\frac{A}{\lambda}=\frac{600}{7{,}58\cdot10^{-10}}\approx7{,}92\cdot10^{11}\ \text{núcleos}\]</div>
+                        <div class="paso"><strong>Tiempo transcurrido:</strong></div>
+                        <div class="formula-box">\[t=\frac{1}{\lambda}\ln\!\left(\frac{N_0}{N}\right)=\frac{1}{7{,}58\cdot10^{-10}}\ln\!\left(\frac{10^{20}}{7{,}92\cdot10^{11}}\right)\approx2{,}46\cdot10^{10}\ \text{s}\]</div>
+                        <div class="formula-box">\[t\approx\frac{2{,}46\cdot10^{10}}{3{,}156\cdot10^{7}}\approx780\ \text{años}\]</div>
+                        <div class="paso"><strong>Resultado:</strong> \(t\approx2{,}46\cdot10^{10}\,\text{s}\approx780\,\text{años}\).</div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- ==================== PROBLEMA 6 ==================== -->
+            <div class="tarjeta-ejercicio" data-comunidad="Castilla y León" data-anio="2022" data-convocatoria="Ordinaria" data-bloque="D" data-tema="D6" data-subcat="P-D6">
+                <div class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Masa de \(^{234}\text{U}\) sin desintegrar tras 50 000 años</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Ordinaria · Problema 11</span>
+                </div>
+                <div class="enunciado-ej">
+                    <p>El isótopo uranio \(^{234}_{92}\text{U}\) tiene un periodo de semidesintegración (semivida) de \(2{,}5\cdot10^{5}\) años. Si se parte de una muestra de \(10\,\text{g}\) de dicha sustancia, determine la masa que quedará sin desintegrar después de \(5\cdot10^{4}\) años.</p>
+                </div>
+                <details class="resolucion-ej">
+                    <summary class="resumen-resolucion"><i class="fas fa-chevron-down"></i> Ver resolución paso a paso</summary>
+                    <div class="cuerpo-resolucion">
+                        <div class="paso"><strong>Ley de desintegración aplicada a la masa:</strong></div>
+                        <div class="formula-box">\[m(t)=m_0\left(\frac{1}{2}\right)^{t/T_{1/2}}\]</div>
+                        <div class="formula-box">\[\frac{t}{T_{1/2}}=\frac{5\cdot10^{4}}{2{,}5\cdot10^{5}}=0{,}2\]</div>
+                        <div class="formula-box">\[m=10\left(\frac{1}{2}\right)^{0{,}2}=10\cdot0{,}8706\approx8{,}71\ \text{g}\]</div>
+                        <div class="paso"><strong>Resultado:</strong> \(m\approx8{,}71\,\text{g}\).</div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- ==================== PROBLEMA 7 ==================== -->
+            <div class="tarjeta-ejercicio" data-comunidad="Castilla y León" data-anio="2021" data-convocatoria="Extraordinaria" data-bloque="D" data-tema="D6" data-subcat="C-D6">
+                <div class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Actividad inicial de \(1\,\mu\text{g}\) de \(^{131}\text{I}\)</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Extraordinaria · Problema 11</span>
+                </div>
+                <div class="enunciado-ej">
+                    <p>El yodo radiactivo, \(^{131}\text{I}\), tiene un período de semidesintegración de \(8{,}02\,\text{días}\). Calcule la actividad inicial de \(1\,\mu\text{g}\) de dicho isótopo. Exprese el resultado en unidades del SI.<br>
+                    Datos: \(N_A=6{,}022\cdot10^{23}\,\text{mol}^{-1}\); \(M=131\,\text{u}\).</p>
+                </div>
+                <details class="resolucion-ej">
+                    <summary class="resumen-resolucion"><i class="fas fa-chevron-down"></i> Ver resolución paso a paso</summary>
+                    <div class="cuerpo-resolucion">
+                        <div class="paso"><strong>Constante de desintegración:</strong></div>
+                        <div class="formula-box">\[\lambda=\frac{\ln 2}{8{,}02\cdot86400}\approx1{,}00\cdot10^{-6}\ \text{s}^{-1}\]</div>
+                        <div class="paso"><strong>Número de núcleos en \(1\,\mu\text{g}\):</strong></div>
+                        <div class="formula-box">\[N_0=\frac{m}{M}N_A=\frac{1{,}00\cdot10^{-6}}{131}\,6{,}022\cdot10^{23}\approx4{,}60\cdot10^{15}\ \text{núcleos}\]</div>
+                        <div class="paso"><strong>Actividad inicial:</strong></div>
+                        <div class="formula-box">\[A_0=\lambda N_0=1{,}00\cdot10^{-6}\cdot4{,}60\cdot10^{15}\approx4{,}60\cdot10^{9}\ \text{Bq}\]</div>
+                        <div class="paso"><strong>Resultado:</strong> \(A_0\approx4{,}60\cdot10^{9}\,\text{Bq}\).</div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- ==================== PROBLEMA 8 ==================== -->
+            <div class="tarjeta-ejercicio" data-comunidad="Castilla y León" data-anio="2021" data-convocatoria="Ordinaria" data-bloque="D" data-tema="D6" data-subcat="P-D6">
+                <div class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Tiempo para que se desintegre el 25 % del cobalto-60</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Ordinaria · Problema 10</span>
+                </div>
+                <div class="enunciado-ej">
+                    <p>Un dispositivo usado en radioterapia contiene \(0{,}20\,\text{g}\) de \(^{60}\text{Co}\), emisor gamma de semivida (período de semidesintegración) 5,27 años. ¿Cuánto tiempo debe pasar para que se desintegre el 25 % del cobalto inicial?</p>
+                </div>
+                <details class="resolucion-ej">
+                    <summary class="resumen-resolucion"><i class="fas fa-chevron-down"></i> Ver resolución paso a paso</summary>
+                    <div class="cuerpo-resolucion">
+                        <div class="paso"><strong>Interpretación:</strong> «se desintegre el 25 %» ⇒ queda el 75 %. Por tanto \(m/m_0 = 0{,}75\).</div>
+                        <div class="formula-box">\[t=\frac{T_{1/2}}{\ln 2}\ln\!\left(\frac{1}{0{,}75}\right)=\frac{5{,}27}{0{,}693}\,\cdot\ln\!\left(\frac{4}{3}\right)\]</div>
+                        <div class="formula-box">\[t\approx7{,}605\cdot0{,}2877\approx2{,}19\ \text{años}\]</div>
+                        <div class="paso"><strong>Resultado:</strong> \(t\approx2{,}19\,\text{años}\).</div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- ==================== PROBLEMA 9 ==================== -->
+            <div class="tarjeta-ejercicio" data-comunidad="Castilla y León" data-anio="2020" data-convocatoria="Extraordinaria" data-bloque="D" data-tema="D6" data-subcat="C-D6">
+                <div class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">Tiempo hasta que quede el 40 % del cobalto-60</span>
+                    <span class="meta-ej">Castilla y León · 2020 · Extraordinaria · Problema 11</span>
+                </div>
+                <div class="enunciado-ej">
+                    <p>Un dispositivo usado en radioterapia contiene cierta cantidad de \(^{60}\text{Co}\), emisor gamma cuya semivida o periodo de semidesintegración es 5,27 años. ¿Cuánto tiempo deberá transcurrir para que solo quede el 40 % del cobalto inicial?</p>
+                </div>
+                <details class="resolucion-ej">
+                    <summary class="resumen-resolucion"><i class="fas fa-chevron-down"></i> Ver resolución paso a paso</summary>
+                    <div class="cuerpo-resolucion">
+                        <div class="paso"><strong>Constante de desintegración:</strong></div>
+                        <div class="formula-box">\[\lambda=\frac{\ln 2}{T_{1/2}}=\frac{0{,}693}{5{,}27}\approx0{,}1315\ \text{año}^{-1}\]</div>
+                        <div class="paso"><strong>Ley exponencial con \(m/m_0 = 0{,}40\):</strong></div>
+                        <div class="formula-box">\[t=-\frac{\ln(0{,}40)}{\lambda}=\frac{0{,}9163}{0{,}1315}\approx6{,}97\ \text{años}\]</div>
+                        <div class="paso"><strong>Resultado:</strong> \(t\approx6{,}97\,\text{años}\).</div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- ==================== PROBLEMA 10 ==================== -->
+            <div class="tarjeta-ejercicio" data-comunidad="Castilla y León" data-anio="2020" data-convocatoria="Ordinaria" data-bloque="D" data-tema="D6" data-subcat="C-D6">
+                <div class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">Desintegración del 25 % en dispositivo de cobalto-60 (variante)</span>
+                    <span class="meta-ej">Castilla y León · 2020 · Ordinaria · Problema 10</span>
+                </div>
+                <div class="enunciado-ej">
+                    <p>Un dispositivo usado en radioterapia contiene \(0{,}20\,\text{g}\) de \(^{60}\text{Co}\), emisor gamma de semivida (período de semidesintegración) 5,27 años. ¿Cuánto tiempo debe pasar para que se desintegre el 25 % del cobalto inicial?</p>
+                </div>
+                <details class="resolucion-ej">
+                    <summary class="resumen-resolucion"><i class="fas fa-chevron-down"></i> Ver resolución paso a paso</summary>
+                    <div class="cuerpo-resolucion">
+                        <div class="paso"><strong>Interpretación:</strong> «se desintegre el 25 %» ⇒ queda el 75 % de la masa inicial.</div>
+                        <div class="formula-box">\[\frac{m}{m_0}=\left(\frac{1}{2}\right)^{\,t/T_{1/2}}=0{,}75\]</div>
+                        <div class="paso"><strong>Resolviendo para t:</strong></div>
+                        <div class="formula-box">\[t=\frac{T_{1/2}}{\ln 2}\ln\!\left(\frac{1}{0{,}75}\right)=\frac{5{,}27}{0{,}693}\cdot0{,}2877\approx2{,}19\ \text{años}\]</div>
+                        <div class="paso"><strong>Resultado:</strong> \(t\approx2{,}19\,\text{años}\) (≈ 2 años, 2 meses y 8 días).</div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- PIE DIDÁCTICO -->
+            <div class="pie-clave">
+                <i class="fas fa-lightbulb"></i>
+                <span><strong>Observaciones claves:</strong> en todos estos problemas, el patrón de resolución es siempre el mismo: (1) identificar la magnitud dada y la pedida (masa, núcleos, actividad, tiempo…); (2) escribir la ley exponencial en la forma adecuada \(N=N_0e^{-\lambda t}\), \(A=A_0e^{-\lambda t}\) o \(m=m_0e^{-\lambda t}\); (3) calcular \(\lambda\) a partir de \(T_{1/2}\) si no viene dada directamente, prestando atención a las unidades; (4) usar el número de Avogadro para convertir masa ↔ número de núcleos cuando sea necesario; (5) despejar el tiempo con logaritmos neperianos. En los problemas de datación, recordar que «se ha desintegrado X %» significa «queda \((100-X)\) %».</span>
+            </div>
+        </div>
+    </details>
+
+    <!-- BÚSQUEDA FILTRADA · TEMA D6 -->
+    <div class="busqueda-filtros" id="busqueda-filtrada-d6">
+        <h2><i class="fas fa-filter"></i> Búsqueda filtrada · Tema D6</h2>
+        <div class="filtros-chips">
+            <span class="chip">🎯 Tema: D6. Leyes de desintegración radiactiva y actividad</span>
+            <span class="chip">📚 Bloque D · Física relativista, cuántica, nuclear y de partículas</span>
+            <span class="chip">🌍 Castilla y León · 2020–2026</span>
+        </div>
+        <div class="total-badge">📊 <span id="total-badge-filtrada">10</span> problemas · 2 subcategorías</div>
+        <div class="subfiltros-grid">
+            <div class="subfiltro-card c-d6">
+                <h3><span class="codigo">C-D6</span> Ley de desintegración, semivida y actividad</h3>
+                <div class="stats-row">
+                    <span class="stat">% = 12.2 %</span>
+                    <span class="stat">media = 10.1 %</span>
+                    <span class="stat subida">Δ = +2.1 pp</span>
+                </div>
+                <div class="keywords-row">
+                    <span class="kw">"ley de desintegración"</span>
+                    <span class="kw">"periodo de semidesintegración"</span>
+                    <span class="kw">"constante radiactiva"</span>
+                    <span class="kw">"actividad"</span>
+                    <span class="kw">"becquerel"</span>
+                    <span class="kw">"vida media"</span>
+                </div>
+                <div class="problemas-ref" id="refs-C-D6">
+                    <span class="ref"><strong>Ej. 2</strong> Sr-90</span>
+                    <span class="ref"><strong>Ej. 3</strong> Tc-99m</span>
+                    <span class="ref"><strong>Ej. 4</strong> I-131</span>
+                    <span class="ref"><strong>Ej. 5</strong> 10²⁰ núcleos</span>
+                    <span class="ref"><strong>Ej. 7</strong> I-131 act.</span>
+                    <span class="ref"><strong>Ej. 9</strong> Co-60 40%</span>
+                    <span class="ref"><strong>Ej. 10</strong> Co-60 25%</span>
+                </div>
+            </div>
+            <div class="subfiltro-card p-d6">
+                <h3><span class="codigo">P-D6</span> Problemas de decaimiento radiactivo y datación</h3>
+                <div class="stats-row">
+                    <span class="stat">% = 12.2 %</span>
+                    <span class="stat">media = 10.1 %</span>
+                    <span class="stat subida">Δ = +2.1 pp</span>
+                </div>
+                <div class="keywords-row">
+                    <span class="kw">"actividad inicial"</span>
+                    <span class="kw">"tiempo de semidesintegración"</span>
+                    <span class="kw">"datación"</span>
+                    <span class="kw">"número de núcleos"</span>
+                    <span class="kw">"masa restante"</span>
+                </div>
+                <div class="problemas-ref" id="refs-P-D6">
+                    <span class="ref"><strong>Ej. 1</strong> K-Ar datación</span>
+                    <span class="ref"><strong>Ej. 6</strong> U-234 masa</span>
+                    <span class="ref"><strong>Ej. 8</strong> Co-60 25%</span>
+                </div>
+            </div>
+        </div>
+
+        <details class="json-bloque">
+            <summary>📄 Ver JSON completo de la búsqueda filtrada</summary>
+            <pre><code>{
+  "filtros_aplicados": {
+    "tema": "D6. Leyes de desintegración radiactiva y actividad",
+    "subcategorias": ["C-D6", "P-D6"],
+    "comunidad": "Castilla y León"
+  },
+  "descripcion": "Leyes de desintegración radiactiva y actividad — Castilla y León",
+  "total_resultados": 10,
+  "subcategorias": {
+    "C-D6": {
+      "titulo": "Ley de desintegración, semivida y actividad",
+      "porcentaje": 12.2, "media": 10.1, "delta_pp": 2.1,
+      "palabras_clave": ["ley de desintegración", "periodo de semidesintegración", "constante radiactiva", "actividad", "becquerel", "vida media"],
+      "problemas": [
+        {"ref": "Ej. 2",  "anio": 2025, "convocatoria": "Ordinaria",     "numero": 10},
+        {"ref": "Ej. 3",  "anio": 2025, "convocatoria": "Extraordinaria", "numero": 10},
+        {"ref": "Ej. 4",  "anio": 2024, "convocatoria": "Extraordinaria", "numero": 10},
+        {"ref": "Ej. 5",  "anio": 2023, "convocatoria": "Extraordinaria", "numero": 10},
+        {"ref": "Ej. 7",  "anio": 2021, "convocatoria": "Extraordinaria", "numero": 11},
+        {"ref": "Ej. 9",  "anio": 2020, "convocatoria": "Extraordinaria", "numero": 11},
+        {"ref": "Ej. 10", "anio": 2020, "convocatoria": "Ordinaria",      "numero": 10}
+      ]
+    },
+    "P-D6": {
+      "titulo": "Problemas de decaimiento radiactivo y datación",
+      "porcentaje": 12.2, "media": 10.1, "delta_pp": 2.1,
+      "aplica": "C-D6",
+      "palabras_clave": ["actividad inicial", "tiempo de semidesintegración", "datación", "número de núcleos", "masa restante"],
+      "problemas": [
+        {"ref": "Ej. 1", "anio": 2026, "convocatoria": "Ordinaria", "numero": 11},
+        {"ref": "Ej. 6", "anio": 2022, "convocatoria": "Ordinaria", "numero": 11},
+        {"ref": "Ej. 8", "anio": 2021, "convocatoria": "Ordinaria", "numero": 10}
+      ]
+    }
+  }
+}</code></pre>
+        </details>
+    </div>
+
+
+
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     WIDGET EMBEBIBLE · Buscador de problemas PAU Física
+     ─────────────────────────────────────────────────────────────────
+     USO:
+       1) Pega todo este bloque <div id="pau-widget">…</div> en tu página
+          (por ejemplo al final del <body>, o dentro de un contenedor).
+       2) Ajusta los atributos data-* del div para preconfigurar la
+          búsqueda inicial:
+            data-comunidad → etiqueta exacta de la comunidad ("Madrid")
+            data-bloque    → etiqueta exacta del bloque
+            data-tema      → etiqueta exacta del tema
+            data-busqueda  → expresión de búsqueda: admite "frases",
+                             + (Y), | (O)
+            data-ambito    → "todo" | "ambas" | "enunciado" | "resolucion"
+            data-and       → "true" para «Todas las palabras»
+            data-orden     → "num" | "tema"
+       3) Comprueba que las rutas del script y del JSON son accesibles
+          desde la página donde embebas el widget.
+     ─────────────────────────────────────────────────────────────────
+     El usuario puede modificar los filtros después; el «Limpiar filtros»
+     seguirá funcionando igual que antes.
+     ═══════════════════════════════════════════════════════════════════ -->
+
+<div id="pau-widget"
+     data-comunidad="Madrid"
+     data-bloque=""
+     data-tema=""
+     data-busqueda='"actividad inicial" | "tiempo de semidesintegración" | "datación" | "número de núcleos" | "masa restante"'
+     data-ambito="todo"
+     data-and="false"
+     data-orden="num">
+
+  <!-- ─── MathJax (config + loader) ──────────────────────────────── -->
+  <script>
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          processEscapes: true
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      };
+    }
+  </script>
+  <script id="pau-mathjax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- ─── CSS (todo scopeado con #pau-widget) ───────────────────── -->
+  <style>
+    #pau-widget{
+      --bg:            #f4f6fb;
+      --surface:       #ffffff;
+      --surface-2:     #f8fafc;
+      --text:          #1f2937;
+      --text-soft:     #4b5563;
+      --text-mute:     #6b7280;
+      --line:          #e2e8f0;
+      --line-strong:   #cbd5e1;
+
+      --a: #4f46e5;  --a-bg:#eef2ff;
+      --b: #b45309;  --b-bg:#fef3c7;
+      --c: #0f766e;  --c-bg:#ccfbf1;
+      --d: #9d174d;  --d-bg:#fce7f3;
+      --ok:  #047857;
+      --ok-bg:#d1fae5;
+
+      --radius: 16px;
+      --shadow: 0 1px 2px rgba(16,24,40,.05), 0 8px 24px -8px rgba(16,24,40,.12);
+
+      margin: 0;
+      padding: 1.5rem 1rem 3rem;
+      background: var(--bg);
+      background-image:
+        radial-gradient(1200px 500px at 50% -200px, #e0e7ff 0%, transparent 70%);
+      color: var(--text);
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui, sans-serif;
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      border-radius: 12px;
+      scroll-behavior: smooth;
+    }
+    #pau-widget *, #pau-widget *::before, #pau-widget *::after{ box-sizing: border-box; }
+
+    #pau-widget .wrap{ max-width: 980px; margin: 0 auto; }
+
+    /* ─── HERO ──────────────────────────────────────────────────── */
+    #pau-widget header.hero{
+      margin: 2rem 0 1.5rem;
+      padding: 2rem 1.75rem;
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 45%, #4338ca 100%);
+      color: #fff;
+      border-radius: 22px;
+      box-shadow: 0 20px 45px -20px rgba(49,46,129,.7);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    #pau-widget header.hero::after{
+      content:"";
+      position:absolute; inset:auto -60px -110px auto;
+      width: 320px; height: 320px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+      pointer-events: none;
+    }
+    #pau-widget .hero-main{ flex: 1 1 320px; min-width: 0; position: relative; z-index: 1; }
+    #pau-widget .hero-brand{
+      flex: 0 0 auto; width: 160px; max-width: 42vw;
+      background: #ffffff; border-radius: 14px; padding: 10px;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,.45);
+      position: relative; z-index: 1;
+    }
+    #pau-widget .hero-brand img{ width: 100%; height: auto; display: block; border-radius: 6px; }
+    #pau-widget .hero .kicker{
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-size:.74rem; letter-spacing:.16em; text-transform:uppercase;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      padding:.28rem .75rem; border-radius:999px; font-weight:700;
+      margin-bottom:.9rem;
+    }
+    #pau-widget .kicker-icon{ width: 20px; height: auto; display: block; }
+    #pau-widget header.hero h1{
+      margin:0 0 .5rem; font-size: clamp(1.45rem, 3.6vw, 2.15rem);
+      line-height:1.25; font-weight:800; letter-spacing:-.02em;
+    }
+    #pau-widget header.hero p.sub{
+      margin:0 0 1.25rem; color:#c7d2fe; font-size:1rem; max-width: 70ch;
+    }
+    #pau-widget .metachips{ display:flex; flex-wrap:wrap; gap:.5rem; position:relative; z-index:1;}
+    #pau-widget .metachips span{
+      font-size:.8rem; font-weight:600;
+      background: rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.22);
+      padding:.3rem .7rem; border-radius:8px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* ─── BLOQUES / SECCIONES ───────────────────────────────────── */
+    #pau-widget section.block{
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+    #pau-widget section.block > h2{
+      margin: 0 0 1rem;
+      font-size: 1.12rem; letter-spacing:.02em; text-transform: uppercase;
+      color: #312e81;
+      display:flex; align-items:center; gap:.6rem;
+    }
+    #pau-widget section.block > h2::before{
+      content:""; width:6px; height:22px; border-radius:3px;
+      background: linear-gradient(180deg,#6366f1,#4338ca);
+      flex: 0 0 auto;
+    }
+
+    /* ─── BUSCADOR ──────────────────────────────────────────────── */
+    #pau-widget .search-row{
+      display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem;
+    }
+    #pau-widget #input-busqueda{
+      flex: 1 1 260px;
+      padding: .72rem .95rem;
+      font-size: 1rem;
+      font-family: inherit;
+      border: 1px solid var(--line-strong);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--text);
+      transition: .15s ease;
+    }
+    #pau-widget #input-busqueda::placeholder{ color: #94a3b8; }
+    #pau-widget #input-busqueda:focus{
+      outline: none; border-color: #6366f1; box-shadow: 0 0 0 3px #c7d2fe;
+    }
+    #pau-widget #select-orden,
+    #pau-widget #select-ambito{
+      font-family: inherit; font-size: .9rem;
+      padding: .55rem .75rem; border-radius: 10px;
+      border: 1px solid var(--line-strong);
+      background: var(--surface); color: var(--text);
+      cursor: pointer; transition: .15s ease;
+    }
+    #pau-widget #select-orden:focus,
+    #pau-widget #select-ambito:focus{
+      outline: none; border-color: #6366f1; box-shadow: 0 0 0 3px #c7d2fe;
+    }
+    #pau-widget .toggle-inline{
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .88rem; color: var(--text-soft); cursor: pointer;
+      user-select: none; padding: .55rem .85rem;
+      background: var(--surface);
+      border: 1px solid var(--line-strong); border-radius: 10px;
+      transition: .15s ease; white-space: nowrap;
+    }
+    #pau-widget .toggle-inline:hover{
+      border-color: #a5b4fc; color: #312e81; background: #eef2ff;
+    }
+    #pau-widget .toggle-inline input[type="checkbox"]{
+      width: 15px; height: 15px; accent-color: #4f46e5;
+      margin: 0; cursor: pointer;
+    }
+
+    /* ─── AYUDA DE SINTAXIS ─────────────────────────────────────── */
+    #pau-widget .search-hint{
+      font-size: .78rem; color: var(--text-mute);
+      margin: -.35rem 0 .9rem; line-height: 1.6;
+    }
+    #pau-widget .search-hint code{
+      background: var(--surface-2);
+      border: 1px solid var(--line); border-radius: 4px;
+      padding: .05rem .35rem; font-size: .77rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: #312e81;
+    }
+
+    /* ─── GRUPOS DE FILTRO ──────────────────────────────────────── */
+    #pau-widget .filtros-grid{
+      display: grid; grid-template-columns: 1fr;
+      gap: .85rem; margin-bottom: .5rem;
+    }
+    #pau-widget .filtro-grupo > label{
+      display: block; font-size: .74rem; font-weight: 800;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-mute); margin-bottom: .4rem;
+    }
+    #pau-widget .filtro-grupo .botones{
+      display: flex; flex-wrap: wrap; gap: .35rem; min-height: 1px;
+    }
+    #pau-widget .btn-filtro{
+      font-family: inherit; font-size: .82rem;
+      padding: .35rem .75rem; border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: var(--surface); color: var(--text-soft);
+      cursor: pointer; transition: .15s ease; white-space: nowrap;
+      max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+    }
+    #pau-widget .btn-filtro:hover{
+      border-color: #a5b4fc; color: #312e81; background: #eef2ff;
+    }
+    #pau-widget .btn-filtro.activo{
+      background: #4f46e5; border-color: #4f46e5; color: #fff;
+      box-shadow: 0 4px 12px -4px rgba(79,70,229,.55);
+    }
+
+    /* ─── Estado de los botones PDF ─────────────────────────────── */
+    #pau-widget .pdf-mini-buttons a.pdf-missing{
+      opacity: .55; cursor: not-allowed;
+      background: #fef2f2; border-color: #fecaca; color: #b91c1c;
+      text-decoration: line-through; pointer-events: none;
+    }
+    #pau-widget .pdf-mini-buttons a.pdf-missing:hover{
+      background: #fef2f2; border-color: #fecaca; color: #b91c1c;
+    }
+    #pau-widget #filtros-tema .btn-filtro,
+    #pau-widget #filtros-bloque .btn-filtro{ max-width: 100%; }
+
+    /* ─── TOOLBAR ───────────────────────────────────────────────── */
+    #pau-widget .toolbar{
+      display: flex; flex-wrap: wrap; gap: .75rem; align-items: center;
+      padding-top: 1rem; border-top: 1px solid var(--line);
+      margin-top: .75rem;
+    }
+    #pau-widget .toolbar label{
+      display: flex; align-items: center; gap: .4rem;
+      font-size: .88rem; color: var(--text-soft); cursor: pointer;
+      user-select: none;
+    }
+    #pau-widget .toolbar label input[type="checkbox"]{
+      width: 16px; height: 16px; accent-color: #4f46e5;
+    }
+    #pau-widget .btn-limpiar{
+      margin-left: auto; font-family: inherit; font-size: .85rem;
+      font-weight: 700; padding: .45rem .9rem; border-radius: 8px;
+      border: 1px solid #fecaca; background: #fee2e2; color: #b91c1c;
+      cursor: pointer; transition: .15s ease;
+    }
+    #pau-widget .btn-limpiar:hover{ background: #fecaca; border-color: #fca5a5; }
+
+    /* ─── RESULTADOS ────────────────────────────────────────────── */
+    #pau-widget #contador-resultados{
+      font-size: .9rem; font-weight: 600;
+      color: var(--text-mute); margin: 0 0 1rem;
+    }
+    #pau-widget .tarjeta-problema-desplegable{
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 14px; box-shadow: 0 1px 2px rgba(16,24,40,.04);
+      margin-bottom: .9rem; overflow: hidden;
+      transition: border-color .15s ease, box-shadow .15s ease;
+      content-visibility: auto; contain-intrinsic-size: auto 150px;
+    }
+    #pau-widget .tarjeta-problema-desplegable[open]{
+      border-color: #c7d2fe; box-shadow: var(--shadow); content-visibility: visible;
+    }
+    #pau-widget .tarjeta-problema-desplegable > summary{
+      display: block; list-style: none; cursor: pointer;
+      padding: 1rem 1.15rem; user-select: none;
+      transition: background .15s ease;
+    }
+    #pau-widget .tarjeta-problema-desplegable > summary::-webkit-details-marker{ display: none; }
+    #pau-widget .tarjeta-problema-desplegable > summary:hover{ background: var(--surface-2); }
+
+    #pau-widget .etiquetas{
+      display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .55rem;
+    }
+    #pau-widget .badge{
+      font-size: .72rem; font-weight: 700; letter-spacing: .03em;
+      padding: .2rem .55rem; border-radius: 999px;
+      border: 1px solid transparent; white-space: nowrap; display: inline-block;
+    }
+    #pau-widget .badge-tema{ background: var(--a-bg); color: var(--a); border-color: #c7d2fe; cursor: default; }
+    #pau-widget .badge-examen{ background: var(--surface-2); color: var(--text-soft); border-color: var(--line-strong); }
+    #pau-widget .badge-puntos{ background: var(--ok-bg); color: var(--ok); border-color: #6ee7b7; }
+    #pau-widget .badge-bloque{ background: var(--b-bg); color: var(--b); border-color: #fde68a; white-space: normal; }
+
+    #pau-widget .header-top-row{
+      display: flex; flex-wrap: wrap; align-items: baseline;
+      justify-content: space-between; gap: .5rem .75rem; margin-bottom: .35rem;
+    }
+    #pau-widget .header-top-row h4{
+      margin: 0; flex: 1 1 auto; font-size: 1.03rem; font-weight: 800;
+      color: var(--text); line-height: 1.35;
+    }
+    #pau-widget .header-top-row h4::after{
+      content: "▾"; margin-left: .35rem; color: var(--text-mute);
+      font-weight: 400; display: inline-block; transition: transform .2s ease;
+    }
+    #pau-widget .tarjeta-problema-desplegable[open] .header-top-row h4::after{
+      transform: rotate(180deg);
+    }
+    #pau-widget .btn-ver-examen{
+      font-size: .82rem; font-weight: 700; color: var(--a);
+      text-decoration: none; padding: .28rem .7rem; border-radius: 8px;
+      background: var(--a-bg); border: 1px solid #c7d2fe;
+      white-space: nowrap; transition: .15s ease;
+    }
+    #pau-widget .btn-ver-examen:hover{ background: #e0e7ff; border-color: #a5b4fc; }
+
+    #pau-widget .pdf-mini-buttons{
+      display: flex; flex-wrap: wrap; gap: .4rem; margin: .35rem 0 .55rem;
+    }
+    #pau-widget .pdf-mini-buttons a{
+      font-size: .78rem; font-weight: 600; text-decoration: none;
+      color: var(--text-soft); background: var(--surface-2);
+      border: 1px solid var(--line); border-radius: 7px;
+      padding: .2rem .55rem; transition: .15s ease;
+    }
+    #pau-widget .pdf-mini-buttons a:hover{
+      border-color: #a5b4fc; color: var(--a); background: var(--a-bg);
+    }
+    #pau-widget .resumen-enunciado{
+      display: none; margin: .4rem 0 0; font-size: .9rem;
+      color: var(--text-soft); padding-left: .65rem;
+      border-left: 3px solid var(--line-strong);
+    }
+    #pau-widget #resultados.mostrar-enunciado .resumen-enunciado{ display: block; }
+
+    /* ─── DETALLE ABIERTO ───────────────────────────────────────── */
+    #pau-widget .detalle-problema{
+      padding: 0 1.15rem 1.15rem; border-top: 1px dashed var(--line);
+    }
+    #pau-widget .enunciado-ej{
+      font-size: .74rem; font-weight: 800; letter-spacing: .1em;
+      text-transform: uppercase; color: #6366f1; margin: .85rem 0 .35rem;
+    }
+    #pau-widget .detalle-problema > p{
+      margin: 0 0 .65rem; color: var(--text); text-align: justify;
+    }
+    #pau-widget .detalle-problema > p strong{ color: var(--text); }
+
+    #pau-widget .resolucion{ margin-top: .85rem; }
+    #pau-widget .paso{
+      padding: .7rem .9rem; border-left: 3px solid #10b981;
+      background: linear-gradient(180deg,#f0fdf4,#ffffff 70%);
+      border-radius: 0 8px 8px 0; margin-bottom: .55rem;
+      color: var(--text-soft); text-align: justify;
+      overflow-x: auto; font-size: .94rem;
+    }
+    #pau-widget .paso strong{ color: #065f46; }
+    #pau-widget .resultado-final{
+      margin-top: .7rem; padding: .8rem 1rem;
+      background: var(--ok-bg); border: 1px solid #6ee7b7;
+      border-radius: 10px; color: #065f46; font-size: .92rem;
+      text-align: justify;
+    }
+
+    /* ─── CABECERAS DE GRUPO ────────────────────────────────────── */
+    #pau-widget .grupo-tema-titulo{
+      margin: 1.5rem 0 .75rem; font-size: 1.05rem; font-weight: 800;
+      color: #312e81; padding-bottom: .3rem;
+      border-bottom: 2px solid #c7d2fe;
+    }
+    #pau-widget .grupo-tema-titulo:first-child{ margin-top: 0; }
+    #pau-widget .grupo-bloque-titulo{
+      margin: 1.5rem 0 .75rem; font-size: 1.05rem; font-weight: 800;
+      color: #312e81; padding-bottom: .3rem;
+      border-bottom: 2px solid #cbd5e1;
+    }
+    #pau-widget .grupo-bloque-titulo:first-child{ margin-top: 0; }
+
+    /* ─── CARGAR MÁS ───────────────────────────────────────────── */
+    #pau-widget .cargar-mas-container{
+      display: flex; justify-content: center; margin: 1.5rem 0 0;
+    }
+    #pau-widget .btn-cargar-mas{
+      font-family: inherit; font-size: .92rem; font-weight: 700;
+      padding: .7rem 1.4rem; border-radius: 10px;
+      border: 1px solid #4f46e5; background: #4f46e5; color: #fff;
+      cursor: pointer; transition: .15s ease;
+      box-shadow: 0 10px 20px -10px rgba(79,70,229,.6);
+    }
+    #pau-widget .btn-cargar-mas:hover{
+      background: #4338ca; border-color: #4338ca; transform: translateY(-1px);
+    }
+
+    /* ─── VOLVER ARRIBA ────────────────────────────────────────── */
+    #pau-widget .top-link{
+      position: fixed; right: 1.1rem; bottom: 1.1rem;
+      width: 46px; height:46px; border-radius: 50%;
+      display:grid; place-items:center;
+      background:#312e81; color:#fff; text-decoration:none;
+      box-shadow: 0 10px 24px -8px rgba(49,46,129,.8);
+      font-size:1.15rem; z-index:50;
+      transition: transform .18s ease, background .18s ease;
+    }
+    #pau-widget .top-link:hover{ transform: translateY(-3px); background:#4338ca; }
+
+    /* ─── PIE ──────────────────────────────────────────────────── */
+    #pau-widget footer.foot{
+      text-align:center; color: var(--text-mute);
+      font-size:.83rem; padding: 1.5rem 0 .5rem;
+    }
+    #pau-widget footer.foot code{
+      background: var(--surface-2); border: 1px solid var(--line);
+      border-radius: 5px; padding: 0 .35rem; font-size: .82rem;
+    }
+
+    /* ─── MathJax ──────────────────────────────────────────────── */
+    #pau-widget mjx-container{ overflow-x:auto; overflow-y:hidden; max-width:100%; }
+    #pau-widget mjx-container[display="true"]{ margin: .75em 0 !important; }
+
+    /* ─── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 640px){
+      #pau-widget{ font-size: 15px; padding: 0 .6rem 3.5rem; }
+      #pau-widget header.hero{ padding: 1.5rem 1.15rem; border-radius:18px; }
+      #pau-widget .hero-brand{ width: 120px; max-width: 38vw; padding: 8px; }
+      #pau-widget section.block{ padding: 1.15rem 1.05rem; }
+      #pau-widget .toolbar{ gap: .5rem; }
+      #pau-widget .btn-limpiar{ margin-left: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      #pau-widget *{ transition: none !important; }
+    }
+  </style>
+
+  <!-- ─── CONTENIDO ────────────────────────────────────────────── -->
+  <div class="wrap" id="top">
+
+    <header class="hero">
+      <div class="hero-main">
+        <span class="kicker">
+          <img src="../img_comunes/Cápsula.png" alt="" width="20" height="auto" class="kicker-icon">
+          PAU · Física
+        </span>
+        <h1>Buscador de problemas resueltos</h1>
+        <p class="sub">
+          Explora y filtra los ejercicios de Física de las pruebas de acceso a la universidad.
+          Busca por título, enunciado, tema o bloque y combina con los filtros de año,
+          convocatoria y comunidad autónoma.
+        </p>
+        <div class="metachips">
+          <span>2.º Bachillerato</span>
+          <span>Enunciados + resoluciones paso a paso</span>
+          <span>Filtros por bloque y tema</span>
+        </div>
+      </div>
+
+      <div class="hero-brand" title="IES Valle del Alberche">
+        <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo IES Valle del Alberche">
+      </div>
+    </header>
+
+    <section class="block">
+      <h2>Búsqueda y filtros</h2>
+
+      <div class="search-row">
+        <input type="text" id="input-busqueda"
+               placeholder='Buscar por título, enunciado, tema… (usa "frase" y + / |)'
+               autocomplete="off" spellcheck="false">
+        <select id="select-ambito" title="Dónde buscar el texto">
+          <option value="todo" selected>Todo (incluye metadatos)</option>
+          <option value="ambas">Enunciado + resolución</option>
+          <option value="enunciado">Solo enunciado</option>
+          <option value="resolucion">Solo resolución</option>
+        </select>
+        <label class="toggle-inline" title="Si está marcado, las palabras sin operador se combinan con AND">
+          <input type="checkbox" id="check-and-default">
+          Todas las palabras
+        </label>
+      </div>
+
+      <p class="search-hint">
+        Usa comillas (<code>"…"</code> o <code>«…»</code>) para buscar frases exactas
+        y combínalas con <code>+</code> (Y) o <code>|</code> (O).
+        Ej.: <code>"fuerza gravitatoria" + experimenta</code>.
+        Sin operador, el espacio significa <em>OR</em> (o <em>AND</em> si marcas «Todas las palabras»).
+      </p>
+
+      <div class="filtros-grid">
+        <div class="filtro-grupo">
+          <label>Año</label>
+          <div class="botones" id="filtros-anio"></div>
+        </div>
+        <div class="filtro-grupo">
+          <label>Convocatoria</label>
+          <div class="botones" id="filtros-convocatoria"></div>
+        </div>
+        <div class="filtro-grupo">
+          <label>Comunidad autónoma</label>
+          <div class="botones" id="filtros-comunidad"></div>
+        </div>
+        <div class="filtro-grupo">
+          <label>Bloque</label>
+          <div class="botones" id="filtros-bloque"></div>
+        </div>
+        <div class="filtro-grupo">
+          <label>Tema</label>
+          <div class="botones" id="filtros-tema"></div>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <select id="select-orden" title="Orden de los resultados">
+          <option value="num">Ordenar por número</option>
+          <option value="tema">Agrupar por tema</option>
+        </select>
+        <label>
+          <input type="checkbox" id="check-mostrar-enunciado">
+          Mostrar resumen del enunciado
+        </label>
+        <button id="btn-limpiar" class="btn-limpiar" style="display:none">Limpiar filtros</button>
+      </div>
+    </section>
+
+    <section class="block">
+      <p id="contador-resultados">Cargando…</p>
+      <div id="resultados"></div>
+    </section>
+
+    <footer class="foot">
+      <p>PAU · Física · Buscador de problemas resueltos · Los datos se cargan desde <code>./Datos/indice.json</code>.</p>
+    </footer>
+
+  </div>
+
+  <a href="#top" class="top-link" title="Volver arriba" aria-label="Volver arriba">↑</a>
+
+  <!-- ─── Lógica de filtrado (externa, igual que antes) ─────────── -->
+  <script src="./js/filtro-problemas-inline.js"></script>
+
+  <!-- ─── Inicialización de filtros por defecto (data-*) ───────── -->
+  <script>
+  (function initPauWidgetDefaults(){
+    const widget = document.getElementById('pau-widget');
+    if (!widget) return;
+
+    const cfg = {
+      comunidad: (widget.dataset.comunidad || '').trim(),
+      bloque:    (widget.dataset.bloque    || '').trim(),
+      tema:      (widget.dataset.tema      || '').trim(),
+      busqueda:  widget.dataset.busqueda || '',
+      ambito:    widget.dataset.ambito || '',
+      and:       widget.dataset.and === 'true',
+      orden:     widget.dataset.orden || ''
+    };
+
+    const applied = { comunidad: false, bloque: false, tema: false };
+
+    function clickBtnByName(containerId, name, flag) {
+      if (!name || applied[flag]) return true;
+      const cont = widget.querySelector('#' + containerId);
+      if (!cont) return false;
+      const btns = cont.querySelectorAll('.btn-filtro');
+      if (!btns.length) return false;
+      for (const b of btns) {
+        if (b.textContent.trim() === name) {
+          if (!b.classList.contains('activo')) b.click();
+          applied[flag] = true;
+          return true;
+        }
+      }
+      // etiqueta no encontrada: no reintentar
+      applied[flag] = true;
+      return true;
+    }
+
+    function apply() {
+      // 1) Texto de búsqueda
+      const inp = widget.querySelector('#input-busqueda');
+      if (inp && cfg.busqueda && inp.value !== cfg.busqueda) {
+        inp.value = cfg.busqueda;
+        inp.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+
+      // 2) Ámbito
+      const amb = widget.querySelector('#select-ambito');
+      if (amb && cfg.ambito && amb.value !== cfg.ambito) {
+        amb.value = cfg.ambito;
+        amb.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+
+      // 3) Checkbox AND
+      const chk = widget.querySelector('#check-and-default');
+      if (chk && cfg.and && !chk.checked) {
+        chk.checked = true;
+        chk.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+
+      // 4) Orden
+      const ord = widget.querySelector('#select-orden');
+      if (ord && cfg.orden && ord.value !== cfg.orden) {
+        ord.value = cfg.orden;
+        ord.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+
+      // 5) Botones de filtro (los pinta el JS externo, hay que esperar)
+      const okC = clickBtnByName('filtros-comunidad', cfg.comunidad, 'comunidad');
+      const okB = clickBtnByName('filtros-bloque',    cfg.bloque,    'bloque');
+      const okT = clickBtnByName('filtros-tema',      cfg.tema,      'tema');
+
+      return okC && okB && okT;
+    }
+
+    let attempts = 0;
+    const MAX_ATTEMPTS = 60; // ~9 s a 150 ms
+    function loop() {
+      attempts++;
+      const done = apply();
+      if (!done && attempts < MAX_ATTEMPTS) {
+        setTimeout(loop, 150);
+      }
+    }
+
+    if (document.readyState === 'complete') {
+      setTimeout(loop, 200);
+    } else {
+      window.addEventListener('load', () => setTimeout(loop, 200));
+    }
+  })();
+  </script>
+</div>
+<!-- ════════════════ FIN DEL WIDGET PAU FÍSICA ════════════════ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- BLOQUE "ES HORA DE" -->
+    <div style="padding: 25px 15px; text-align: center; background: white; margin: 20px;">
+        <div style="max-width:100%; padding:15px; margin:10px auto; text-align:center; background:#f8fafc; border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+            <p style="font-size:clamp(0.95rem,3vw,1.2rem); color:#2d3748; margin-top:0; margin-bottom:12px; padding:0 10px;">
+                <br> Trabaja la ley de desintegración radiactiva, la actividad y la datación con seguridad.<br>
+                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
+            </p>
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" style="display:inline-block; padding:12px 24px; background:#0078D4; color:white; text-decoration:none; border-radius:12px; font-weight:bold;">
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- JAVASCRIPT: FILTRO INTERACTIVO                -->
+<!-- ============================================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const selects = {
+        comunidad:    document.getElementById('f-comunidad'),
+        anio:         document.getElementById('f-anio'),
+        convocatoria: document.getElementById('f-convocatoria'),
+        bloque:       document.getElementById('f-bloque'),
+        tema:         document.getElementById('f-tema')
+    };
+    const tarjetas  = Array.from(document.querySelectorAll('.tarjeta-ejercicio[data-anio]'));
+    const contador  = document.getElementById('contador-ejs');
+    const sinRes    = document.getElementById('sin-resultados');
+    const totalBadge = document.getElementById('total-badge-filtrada');
+    const refsC = document.getElementById('refs-C-D6');
+    const refsP = document.getElementById('refs-P-D6');
+    const total  = tarjetas.length;
+
+    function aplicarFiltros() {
+        let visibles = 0;
+        tarjetas.forEach(function (t) {
+            const d = t.dataset;
+            const ok =
+                (!selects.comunidad.value    || d.comunidad    === selects.comunidad.value) &&
+                (!selects.anio.value         || d.anio         === selects.anio.value) &&
+                (!selects.convocatoria.value || d.convocatoria === selects.convocatoria.value) &&
+                (!selects.bloque.value       || d.bloque       === selects.bloque.value) &&
+                (!selects.tema.value         || d.tema         === selects.tema.value);
+            t.classList.toggle('oculto', !ok);
+            if (ok) visibles++;
+        });
+        contador.textContent = 'Mostrando ' + visibles + ' de ' + total + ' problemas';
+        sinRes.classList.toggle('visible', visibles === 0);
+        if (totalBadge) totalBadge.textContent = visibles;
+
+        // Refrescar "refs" de cada subcategoría según los visibles
+        if (refsC && refsP) {
+            refsC.innerHTML = '';
+            refsP.innerHTML = '';
+            let nC = 0, nP = 0;
+            tarjetas.forEach(function (t) {
+                if (t.classList.contains('oculto')) return;
+                const num  = t.querySelector('.num-ej').textContent.replace('Ejercicio ', 'Ej.');
+                const tit  = t.querySelector('.titulo-ej').textContent;
+                const ref  = document.createElement('span');
+                ref.className = 'ref';
+                ref.innerHTML = '<strong>' + num + '</strong> ' + tit.substring(0, 18) + (tit.length > 18 ? '…' : '');
+                if (t.dataset.subcat === 'C-D6') { refsC.appendChild(ref); nC++; }
+                else if (t.dataset.subcat === 'P-D6') { refsP.appendChild(ref); nP++; }
+            });
+            if (nC === 0) refsC.innerHTML = '<span class="ref" style="color:#94a3b8;font-style:italic;">Sin resultados</span>';
+            if (nP === 0) refsP.innerHTML = '<span class="ref" style="color:#94a3b8;font-style:italic;">Sin resultados</span>';
+        }
+    }
+
+    Object.values(selects).forEach(function (s) {
+        if (s) s.addEventListener('change', aplicarFiltros);
+    });
+
+    document.getElementById('reset-filtros').addEventListener('click', function () {
+        Object.values(selects).forEach(function (s) { if (s) s.value = ''; });
+        aplicarFiltros();
+    });
+
+    // Ejecutar al cargar para dejar el contador correcto
+    aplicarFiltros();
+});
+</script>
+</body>
+</html>
