@@ -110,6 +110,8 @@ strong {
     max-width: 180px;
     object-fit: contain;
     display: block;
+    width: auto; 
+    height: auto;
 }
 
 
@@ -713,3 +715,69 @@ details.tarjeta-ejercicio > summary.cabecera-ej:hover .titulo-ej {
     color: #2563eb;
 }
 
+/* ============================================================
+   18. AJUSTES RESPONSIVE Y DEFENSIVOS
+   ============================================================ */
+
+/* Imágenes responsivas (defensivo) */
+img { max-width: 100%; height: auto; }
+
+/* Evita scroll horizontal por desbordes puntuales */
+html, body { overflow-x: hidden; }
+
+/* Rompe palabras muy largas en pantallas pequeñas */
+body { word-wrap: break-word; overflow-wrap: break-word; }
+
+/* Móvil: <= 640 px */
+@media (max-width: 640px) {
+
+    body { padding: 10px; }
+
+    .container { margin: 10px auto; border-radius: 12px; }
+
+    /* Header apilado verticalmente */
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px 18px;
+        gap: 12px;
+    }
+    .header-left h1 { font-size: 1.35em; }
+    .header-sub { justify-content: center; flex-wrap: wrap; }
+    .header-sub .texto { font-size: 0.95em; }
+    .header-right img { max-height: 55px; max-width: 130px; }
+
+    /* Secciones más compactas */
+    .section { padding: 15px 14px; margin: 10px 0; }
+    .section h2 { font-size: 1.1em; }
+
+    details:not(.section) {
+        margin: 15px 0;
+        padding: 0.4rem 0.4rem 0.4rem 0.9rem;
+    }
+    details:not(.section) > summary { font-size: 1.15rem; }
+
+    details.step { padding: 12px; margin: 10px 0; }
+
+    /* Tarjetas de ejercicio más estrechas */
+    .tarjeta-ejercicio { padding: 1rem; border-radius: 12px; }
+    .enunciado-ej { padding: 0.7rem 0.9rem; }
+    .resolucion-ej { padding: 0.9rem 1rem; font-size: 0.95rem; }
+    .cabecera-ej .titulo-ej { font-size: 1.05rem; }
+    .cabecera-ej .meta-ej { margin-left: 0; }
+
+    /* Tablas legibles */
+    th, td { padding: 5px 6px; font-size: 0.85em; }
+
+    /* Mapa de bloques a una columna */
+    .mapa-bloques { grid-template-columns: 1fr; gap: 8px; }
+
+    /* CTA y pie */
+    .pie-clave { padding: 0.9rem 1rem; border-radius: 12px; font-size: 0.95em; }
+    .bloque-cta { padding: 15px 5px; }
+    .bloque-cta p { font-size: 1em; }
+
+    /* Formulario de fórmulas: que pueda hacer scroll interno si es muy ancho */
+    .formula-box { padding: 10px; font-size: 1em; }
+}
