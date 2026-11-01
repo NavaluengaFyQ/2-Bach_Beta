@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas</title>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .apartados-ej { margin-top: 8px; }
+        .apartados-ej p { margin: 7px 0; }
+        .puntuacion-total { color: #64748b; font-size: .88em; margin-top: 12px; }
+        .puntuacion-apartado { color: #64748b; font-weight: 500; font-size: .9em; }
+        .resultado-problema { margin-top: 1.2rem !important; padding-top: .7rem; border-top: 1px dashed #94a3b8; }
+        .formula-box { overflow-x: auto; }
+        .tabla-signos td:first-child { font-weight: 700; white-space: nowrap; }
+        @media (max-width: 700px) {
+            .header { flex-wrap: wrap; }
+            .header-sub { flex-wrap: wrap; }
+            .section { padding: 20px 18px; margin: 10px; }
+            .tarjeta-ejercicio { padding: 1rem; }
+            .cabecera-ej .meta-ej { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA B3.- </span>
+                <span class="texto">Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- MAPA DE BLOQUES Y TEMAS -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque B. Campo electromagnético</strong> del currículo de Física de 2.º de Bachillerato (Decreto 40/2022, BOCYL-D-30092022-4). Se mantiene el orden de bloques y temas de la clasificación curricular aportada.</p>
+        <div class="mapa-bloques">
+            <div class="bloque-card"><div class="bloque-titulo">A. Campo gravitatorio</div><div class="tema-lista"><span class="tema-chip">A1</span><span class="tema-chip">A2</span><span class="tema-chip">A3</span><span class="tema-chip">A4</span><span class="tema-chip">A5</span><span class="tema-chip">A6</span><span class="tema-chip">A7</span><span class="tema-chip">A8</span></div></div>
+            <div class="bloque-card actual"><div class="bloque-titulo">B. Campo electromagnético</div><div class="tema-lista"><span class="tema-chip">B1</span><span class="tema-chip">B2</span><span class="tema-chip actual">B3</span><span class="tema-chip">B4</span><span class="tema-chip">B5</span><span class="tema-chip">B6</span><span class="tema-chip">B7</span><span class="tema-chip">B8</span><span class="tema-chip">B9</span></div></div>
+            <div class="bloque-card"><div class="bloque-titulo">C. Vibraciones y ondas</div><div class="tema-lista"><span class="tema-chip">C1</span><span class="tema-chip">C2</span><span class="tema-chip">C3</span><span class="tema-chip">C4</span><span class="tema-chip">C5</span><span class="tema-chip">C6</span></div></div>
+            <div class="bloque-card"><div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div><div class="tema-lista"><span class="tema-chip">D1</span><span class="tema-chip">D2</span><span class="tema-chip">D3</span><span class="tema-chip">D4</span><span class="tema-chip">D5</span><span class="tema-chip">D6</span></div></div>
+        </div>
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque B · Tema B3:</strong> <span class="texto-resaltado">Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas.</span><br>
+            <em>En este tema estudiaremos:</em> el trabajo realizado por el campo electrostático y por un agente externo, el carácter conservativo del campo eléctrico electrostático, la energía potencial de una carga y de un sistema de cargas, el trabajo necesario para trasladar cargas y la interpretación física del signo del trabajo y de la variación de energía potencial.
+        </div>
+        <p><strong>Relación con los temas vecinos:</strong> B2 proporciona el campo eléctrico creado por las cargas; B3 estudia el trabajo y la energía asociados a ese campo; B4 desarrolla el potencial eléctrico, las superficies equipotenciales y el campo uniforme. En B3 se utilizará la diferencia de potencial como herramienta para calcular el trabajo, sin desplazar el foco del tema.</p>
+        <p><strong>Identificación de contenidos:</strong> <strong>C-B3</strong> — trabajo eléctrico y energía potencial electrostática (8,7 %; media 10,1 %; diferencia −1,4 puntos porcentuales). <strong>P-B3</strong> — trabajo para trasladar cargas y energía de configuraciones; aplica C-B3.</p>
+        <p><strong>Palabras clave:</strong> trabajo eléctrico · energía potencial electrostática · campo conservativo · energía de distribución · diferencia de potencial · trabajo para trasladar carga · energía potencial del sistema · configuración de cargas · trabajo externo · signo del trabajo.</p>
+        <div class="note"><strong>Referencia curricular utilizada:</strong> el archivo de bloques y temas adjunto identifica B3 dentro del Bloque B. El desarrollo de esta página está concretado al nivel de 2.º de Bachillerato y a los tipos de cuestión presentes en el banco EBAU facilitado.</div>
+    </details>
+
+    <!-- OBJETIVOS -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Comprender que el campo electrostático es conservativo y que el trabajo entre dos puntos no depende de la trayectoria seguida.</li>
+            <li>Calcular el trabajo realizado por el campo eléctrico al desplazar una carga entre dos posiciones.</li>
+            <li>Relacionar el trabajo del campo con la variación de energía potencial eléctrica.</li>
+            <li>Distinguir el trabajo realizado por el campo eléctrico del trabajo realizado por un agente externo, especialmente cuando el desplazamiento es cuasiestático.</li>
+            <li>Calcular la energía potencial de dos cargas puntuales y la energía potencial total de una configuración de varias cargas.</li>
+            <li>Determinar el trabajo necesario para montar una configuración de cargas inicialmente separadas en el infinito.</li>
+            <li>Interpretar correctamente el signo del trabajo y de la energía potencial según el signo de las cargas y el sentido del desplazamiento.</li>
+            <li>Resolver problemas numéricos y cuestiones de razonamiento característicos de la EBAU de Castilla y León relacionados con B3.</li>
+        </ul>
+    </details>
+
+    <!-- CONTENIDO TEÓRICO -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">1</span><strong>Trabajo realizado por el campo eléctrico.</strong></summary>
+            <p>Cuando una carga eléctrica <strong>q</strong> se desplaza en un campo eléctrico, la fuerza eléctrica que actúa sobre ella es \(\vec F_e=q\vec E\). El trabajo elemental realizado por esta fuerza durante un desplazamiento infinitesimal \(d\vec r\) es el producto escalar entre fuerza y desplazamiento:</p>
+            <div class="formula-box">\[dW_{\text{campo}}=\vec F_e\cdot d\vec r=q\,\vec E\cdot d\vec r\]</div>
+            <p>Entre dos puntos A y B, el trabajo total se obtiene integrando a lo largo de la trayectoria:</p>
+            <div class="formula-box">\[W_{A\to B}^{\text{campo}}=q\int_A^B\vec E\cdot d\vec r\]</div>
+            <p>El signo depende del sentido de la fuerza eléctrica respecto al desplazamiento:</p>
+            <ul>
+                <li>Si la fuerza eléctrica tiene componente en el sentido del desplazamiento, el trabajo del campo es positivo.</li>
+                <li>Si la fuerza eléctrica se opone al desplazamiento, el trabajo del campo es negativo.</li>
+                <li>Si la fuerza es perpendicular al desplazamiento en todo momento, el trabajo es nulo.</li>
+            </ul>
+            <div class="note"><strong>Importante:</strong> el signo de la fuerza depende del signo de la carga que se mueve. Una carga positiva experimenta una fuerza en el sentido de \(\vec E\); una carga negativa, en sentido contrario.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>El campo electrostático es conservativo.</strong></summary>
+            <p>En electrostática, el trabajo realizado por el campo eléctrico al trasladar una carga entre dos puntos depende únicamente de las posiciones inicial y final. <strong>No depende del camino</strong> que siga la carga para ir de A a B.</p>
+            <p>Por tanto, dos trayectorias distintas que unan los mismos puntos producen el mismo trabajo. Una consecuencia equivalente es que el trabajo del campo a lo largo de cualquier trayectoria cerrada es cero:</p>
+            <div class="formula-box">\[\oint\vec E\cdot d\vec r=0\]</div>
+            <p>Esta propiedad permite introducir una energía potencial eléctrica: el trabajo del campo se puede expresar mediante la variación de dicha energía.</p>
+            <div class="note"><strong>Alcance:</strong> nos referimos al campo electrostático creado por cargas en reposo. No debe generalizarse esta propiedad al campo eléctrico inducido por un campo magnético variable.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Energía potencial eléctrica de una carga.</strong></summary>
+            <p>La <strong>energía potencial eléctrica</strong> representa la energía asociada a la posición de una carga dentro de un campo eléctrico. Su variación entre A y B es igual al trabajo realizado por un agente externo que traslada la carga lentamente, sin variar su energía cinética:</p>
+            <div class="formula-box">\[\Delta E_p=E_{p,B}-E_{p,A}=W_{\text{ext}}\]</div>
+            <p>Como el campo electrostático es conservativo, el trabajo que realiza el propio campo es el opuesto a la variación de energía potencial:</p>
+            <div class="formula-box">\[W_{A\to B}^{\text{campo}}=-\Delta E_p=E_{p,A}-E_{p,B}\]</div>
+            <p>Por tanto, en un desplazamiento cuasiestático:</p>
+            <div class="formula-box">\[W_{\text{ext}}=-W_{A\to B}^{\text{campo}}\]</div>
+            <p>Si no se especifica que el desplazamiento sea lento o cuasiestático, conviene identificar qué trabajo se está preguntando y aplicar el teorema de la energía cinética cuando corresponda.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Trabajo y diferencia de potencial.</strong></summary>
+            <p>El potencial eléctrico \(V\) es la energía potencial eléctrica por unidad de carga. Para una carga de prueba \(q\):</p>
+            <div class="formula-box">\[E_p=qV\]</div>
+            <p>La variación de energía potencial al trasladarla desde A hasta B es:</p>
+            <div class="formula-box">\[\Delta E_p=q(V_B-V_A)=q\,\Delta V\]</div>
+            <p>Así, el trabajo realizado por el campo y el trabajo externo cuasiestático son, respectivamente:</p>
+            <div class="formula-box">\[W_{A\to B}^{\text{campo}}=q(V_A-V_B)=-q\,\Delta V\]</div>
+            <div class="formula-box">\[W_{\text{ext}}=q(V_B-V_A)=q\,\Delta V\]</div>
+            <p>La diferencia de potencial también puede relacionarse con el campo a lo largo de una trayectoria:</p>
+            <div class="formula-box">\[V_B-V_A=-\int_A^B\vec E\cdot d\vec r\]</div>
+            <div class="note"><strong>Atención:</strong> no basta con conocer si el potencial aumenta o disminuye para decidir el signo de \(\Delta E_p\). Hay que tener en cuenta también el signo de la carga que se desplaza, porque \(\Delta E_p=q\,\Delta V\).</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">5</span><strong>Energía potencial de dos cargas puntuales.</strong></summary>
+            <p>La energía potencial eléctrica de un sistema formado por dos cargas puntuales \(q_1\) y \(q_2\), separadas una distancia \(r\), tomando como referencia energía potencial nula cuando están infinitamente alejadas, es:</p>
+            <div class="formula-box">\[E_p=K_0\,\frac{q_1q_2}{r}\]</div>
+            <p>Donde \(K_0=9{,}00\cdot10^9\,\text{N}\cdot\text{m}^2\cdot\text{C}^{-2}\) en el vacío (aproximadamente).</p>
+            <p><strong>Interpretación del signo:</strong></p>
+            <ul>
+                <li><strong>Cargas del mismo signo:</strong> \(q_1q_2&gt;0\), por lo que \(E_p&gt;0\). Es necesario aportar trabajo para acercarlas desde el infinito.</li>
+                <li><strong>Cargas de signo contrario:</strong> \(q_1q_2&lt;0\), por lo que \(E_p&lt;0\). Al acercarlas desde el infinito, el campo realiza trabajo positivo y la energía potencial disminuye.</li>
+            </ul>
+            <p>Para una pareja de cargas, si cambia su separación, la variación de energía potencial se calcula restando el valor inicial al final:</p>
+            <div class="formula-box">\[\Delta E_p=K_0q_1q_2\left(\frac{1}{r_f}-\frac{1}{r_i}\right)\]</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">6</span><strong>Energía potencial de una configuración de varias cargas.</strong></summary>
+            <p>La energía potencial eléctrica de una configuración de varias cargas puntuales es la suma de las energías potenciales de <strong>todas las parejas distintas</strong>. Cada pareja se cuenta una sola vez:</p>
+            <div class="formula-box">\[E_{p,\text{sistema}}=\sum_{i&lt;j}K_0\,\frac{q_iq_j}{r_{ij}}\]</div>
+            <p>Para tres cargas:</p>
+            <div class="formula-box">\[E_{p,\text{sistema}}=K_0\left(\frac{q_1q_2}{r_{12}}+\frac{q_1q_3}{r_{13}}+\frac{q_2q_3}{r_{23}}\right)\]</div>
+            <p>Si las tres cargas iguales están en los vértices de un triángulo equilátero de lado \(l\), las tres separaciones son iguales:</p>
+            <div class="formula-box">\[E_{p,\text{sistema}}=3K_0\,\frac{q^2}{l}\]</div>
+            <p>La energía es una magnitud <strong>escalar</strong>: se suman algebraicamente las contribuciones de cada pareja, teniendo en cuenta el signo del producto \(q_iq_j\).</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">7</span><strong>Trabajo para formar una configuración de cargas.</strong></summary>
+            <p>Imaginemos que las cargas están inicialmente muy alejadas entre sí, de modo que la energía potencial inicial del sistema es cero. Si se trasladan lentamente hasta formar una configuración final, el trabajo del agente externo es igual al aumento de energía potencial:</p>
+            <div class="formula-box">\[W_{\text{ext}}=\Delta E_p=E_{p,f}-E_{p,i}=E_{p,f}\]</div>
+            <p>Por tanto, el trabajo necesario para montar la configuración desde el infinito coincide con la energía potencial electrostática final del sistema. El trabajo realizado por el campo durante el montaje es el opuesto:</p>
+            <div class="formula-box">\[W_{\text{campo}}=-E_{p,f}\]</div>
+            <div class="note"><strong>Idea clave:</strong> para ensamblar cargas del mismo signo hay que vencer la repulsión y el trabajo externo es positivo. Para ensamblar cargas de signo contrario, la atracción puede favorecer el proceso y el trabajo externo puede ser negativo.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">8</span><strong>Interpretación del signo del trabajo.</strong></summary>
+            <p>En los problemas de EBAU es fundamental indicar si se pide el trabajo del campo eléctrico o el trabajo que debe realizar un agente externo. Para un traslado cuasiestático, los signos son opuestos:</p>
+            <table class="tabla-signos">
+                <thead><tr><th>Magnitud</th><th>Signo positivo</th><th>Signo negativo</th></tr></thead>
+                <tbody>
+                    <tr><td>\(W_{\text{campo}}\)</td><td>El campo favorece el desplazamiento; la energía potencial disminuye.</td><td>El campo se opone al desplazamiento; la energía potencial aumenta.</td></tr>
+                    <tr><td>\(W_{\text{ext}}\)</td><td>El agente externo debe aportar energía al sistema.</td><td>El campo puede realizar el desplazamiento; el agente externo retira energía.</td></tr>
+                    <tr><td>\(\Delta E_p\)</td><td>La energía potencial aumenta.</td><td>La energía potencial disminuye.</td></tr>
+                </tbody>
+            </table>
+            <p>El signo de \(\Delta E_p\) no se deduce únicamente del desplazamiento: depende del signo de las cargas y de cómo cambia la separación. Por ejemplo, al alejar una carga negativa de una positiva, la energía potencial aumenta (se hace menos negativa).</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">9</span><strong>Procedimiento general para resolver problemas tipo.</strong></summary>
+            <ol>
+                <li><strong>Identificar el sistema:</strong> distinguir las cargas fijas, la carga que se desplaza y las posiciones inicial y final.</li>
+                <li><strong>Determinar qué trabajo se pide:</strong> el realizado por el campo eléctrico o el que debe realizar un agente externo.</li>
+                <li><strong>Calcular los potenciales</strong> en los puntos inicial y final, si el problema proporciona o permite obtenerlos. El potencial total se suma de forma escalar.</li>
+                <li><strong>Calcular la variación de energía potencial:</strong> \(\Delta E_p=q(V_B-V_A)\), o bien utilizar la energía de las parejas si cambia la configuración de las cargas.</li>
+                <li><strong>Relacionar trabajo y energía:</strong> \(W_{\text{campo}}=-\Delta E_p\) y, en un desplazamiento cuasiestático, \(W_{\text{ext}}=+\Delta E_p\).</li>
+                <li><strong>Comprobar el signo y las unidades:</strong> expresar el trabajo en julios y explicar si el campo favorece o se opone al desplazamiento.</li>
+            </ol>
+        </details>
+    </details>
+
+    <!-- ANÁLISIS DE FÓRMULAS -->
+    <details class="section resultado" id="formulas">
+        <summary><h2>🧮 Análisis de las fórmulas del tema B3</h2></summary>
+        <p>Se recogen las expresiones fundamentales, su significado físico y las condiciones de aplicación:</p>
+        <table>
+            <thead><tr><th>Fórmula</th><th>Significado físico</th><th>Variables y unidades</th><th>Condiciones de aplicación</th></tr></thead>
+            <tbody>
+                <tr><td>\(dW_{\text{campo}}=q\vec E\cdot d\vec r\)</td><td>Trabajo elemental realizado por la fuerza eléctrica.</td><td>\(W\) en J; \(q\) en C; \(E\) en N·C⁻¹; \(d r\) en m.</td><td>Desplazamiento infinitesimal de una carga en un campo eléctrico.</td></tr>
+                <tr><td>\(W_{A\to B}^{\text{campo}}=q\int_A^B\vec E\cdot d\vec r\)</td><td>Trabajo del campo sobre una carga entre dos puntos.</td><td>\(W\) en J; carga en C.</td><td>Campo electrostático; la integral es independiente de la trayectoria.</td></tr>
+                <tr><td>\(\oint\vec E\cdot d\vec r=0\)</td><td>Carácter conservativo del campo electrostático.</td><td>\(E\) en N·C⁻¹; longitud en m.</td><td>Campo electrostático, no campo eléctrico inducido.</td></tr>
+                <tr><td>\(W_{\text{campo}}=-\Delta E_p\)</td><td>Trabajo del campo y variación de energía potencial.</td><td>Ambas magnitudes en J.</td><td>Fuerza electrostática conservativa.</td></tr>
+                <tr><td>\(W_{\text{ext}}=\Delta E_p\)</td><td>Trabajo externo necesario para un traslado cuasiestático.</td><td>Trabajo y energía en J.</td><td>Desplazamiento lento, sin variación neta de energía cinética.</td></tr>
+                <tr><td>\(\Delta E_p=q(V_B-V_A)\)</td><td>Variación de energía potencial de una carga.</td><td>\(q\) en C; potencial en V; energía en J.</td><td>Se conoce la diferencia de potencial entre A y B.</td></tr>
+                <tr><td>\(W_{\text{campo}}=q(V_A-V_B)\)</td><td>Trabajo realizado por el campo eléctrico.</td><td>Trabajo en J; carga en C; potencial en V.</td><td>Desplazamiento entre dos puntos en un campo electrostático.</td></tr>
+                <tr><td>\(E_p=K_0\dfrac{q_1q_2}{r}\)</td><td>Energía potencial de dos cargas puntuales.</td><td>Cargas en C; distancia en m; energía en J.</td><td>Referencia \(E_p=0\) en el infinito.</td></tr>
+                <tr><td>\(E_{p,\text{sistema}}=\displaystyle\sum_{i&lt;j}K_0\dfrac{q_iq_j}{r_{ij}}\)</td><td>Energía potencial de una configuración de cargas.</td><td>Se suman todas las parejas, una sola vez.</td><td>Cargas puntuales; superposición de las energías de pareja.</td></tr>
+                <tr><td>\(W_{\text{ext}}=E_{p,f}\)</td><td>Trabajo para montar una configuración desde el infinito.</td><td>Trabajo en J.</td><td>Configuración inicial con cargas infinitamente separadas y montaje cuasiestático.</td></tr>
+            </tbody>
+        </table>
+        <div class="note"><strong>Errores frecuentes:</strong> intercambiar \(W_{\text{campo}}\) y \(W_{\text{ext}}\); olvidar que tienen signos opuestos en un traslado cuasiestático; usar \(q(V_A-V_B)\) para el trabajo externo en vez del trabajo del campo; olvidar el signo de una de las cargas en \(K_0q_1q_2/r\); contar dos veces una misma pareja; y confundir energía potencial de una carga con energía potencial total de una configuración.</div>
+    </details>
+
+    <!-- PROBLEMAS EBAU -->
+    <details id="problemas" open>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🔭 Problemas resueltos de EBAU — Castilla y León (Tema B3)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas</strong> extraídos del banco EBAU adjunto. Se han elegido los <strong>diez registros de Castilla y León</strong> etiquetados con B3. Se indica la comunidad, el año, la convocatoria y el número de problema. La selección combina ejercicios de cálculo, trabajo de configuración y razonamiento sobre signos.
+            </p>
+            
+  <!-- EJERCICIO 1: Castilla y León · 2026 · Extraordinaria · Problema 6 -->
+  <details class="tarjeta-ejercicio">
+    <summary class="cabecera-ej">
+      <span class="num-ej">Ejercicio 1</span>
+      <span class="titulo-ej">Campo de un dipolo y trabajo para trasladar una carga</span>
+      <span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Problema 6</span>
+    </summary>
+    <div class="enunciado-ej">
+      <p>Dos cargas puntuales de -2 μC y +2 μC se encuentran situadas, respectivamente, en los puntos (-2, 0) y (2, 0) del plano XY, con las coordenadas expresadas en unidades del S.I.</p>
+<div class="apartados-ej"><p><strong>a)</strong> <span class="puntuacion-apartado">(1 punto)</span> Determine el vector campo eléctrico en el punto A (2, 3). Represente el vector campo eléctrico que crea cada carga en el punto, así como el campo eléctrico total.</p>
+<p><strong>b)</strong> <span class="puntuacion-apartado">(1 punto)</span> Calcule el trabajo necesario para llevar otra carga de valor -3 μC desde el origen hasta el punto A. Interprete el signo del resultado.</p></div>
+      <p class="puntuacion-total"><strong>Puntuación:</strong> 2 puntos (1 + 1)</p>
+    </div>
+    <div class="resolucion-ej">
+      <div class="paso"><strong>Campo de cada carga y suma vectorial</strong></div>
+<p>Los vectores desde las cargas hasta A son \(\vec r_1=(4,3)\,\text{m}\), de módulo 5 m, y \(\vec r_2=(0,3)\,\text{m}\), de módulo 3 m. Aplicamos \(\vec E_i=\frac{K_0q_i\vec r_i}{r_i^{3}}\):</p>
+<div class="formula-box">\[
+\vec E_1=\frac{K_0(-2\cdot10^{-6})(4\hat i+3\hat j)}{5^{3}}=(-576\hat i-432\hat j)\,\text{N}\,\text{C}^{-1},
+\]</div>
+<div class="formula-box">\[
+\vec E_2=\frac{K_0(2\cdot10^{-6})(3\hat j)}{3^{3}}=2000\hat j\,\text{N}\,\text{C}^{-1}.
+\]</div>
+<div class="formula-box">\[
+\vec E_A=\vec E_1+\vec E_2=(-576\hat i+1568\hat j)\,\text{N}\,\text{C}^{-1}.
+\]</div>
+<p>El campo de la carga negativa apunta hacia ella; el de la positiva se aleja verticalmente de ella. La suma apunta hacia arriba y a la izquierda. En el esquema, \(\vec E_2\) apunta verticalmente hacia arriba desde A; \(\vec E_1\) apunta hacia la carga negativa, hacia abajo a la izquierda; la resultante \(\vec E_A\) apunta hacia arriba y a la izquierda.</p>
+<div class="paso"><strong>Diferencia de potencial y energía potencial</strong></div>
+<p>El potencial en el origen se anula, ya que las cargas tienen módulos iguales y distan 2 m. En A:</p>
+<div class="formula-box">\[
+V_O=0,\qquad V_A=K_0\left(\frac{q_1}{r_1}+\frac{q_2}{r_2}\right)=9{,}00\cdot10^{9}\left(\frac{-2\cdot10^{-6}}{5}+\frac{2\cdot10^{-6}}{3}\right)=2400\,\text{V}.
+\]</div>
+<p>El trabajo de un agente externo que traslada la carga sin cambiar su energía cinética es el aumento de energía potencial:</p>
+<div class="formula-box">\[
+W_{\text{ext}}=\Delta U=q'(V_A-V_O)=(-3\cdot10^{-6})(2400)=-7{,}20\cdot10^{-3}\,\text{J}.
+\]</div>
+<p>El signo negativo significa que el agente externo retira energía durante el traslado: el campo realiza trabajo positivo, \(W_{\text{campo}}=-\Delta U=+7{,}20\cdot10^{-3}\,\text{J}\). Si se deja mover libremente, esa disminución del potencial se transforma en energía cinética.</p>
+      <div class="paso resultado-problema"><strong>Resultado:</strong></div>
+      <p>\(\vec E_A=(-576\hat i+1568\hat j)\,\text{N}\,\text{C}^{-1}\); módulo \(1{,}67\cdot10^{3}\,\text{N}\,\text{C}^{-1}\).<br>
+\(W_{\text{ext}}=-7{,}20\cdot10^{-3}\,\text{J}\); \(W_{\text{campo}}=+7{,}20\cdot10^{-3}\,\text{J}\).</p>
+    </div>
+  </details>
+
+  <!-- EJERCICIO 2: Castilla y León · 2025 · Ordinaria · Problema 5 -->
+  <details class="tarjeta-ejercicio">
+    <summary class="cabecera-ej">
+      <span class="num-ej">Ejercicio 2</span>
+      <span class="titulo-ej">Energía de configuración y fuerza neta en tres cargas equiláteras</span>
+      <span class="meta-ej">Castilla y León · 2025 · Ordinaria · Problema 5</span>
+    </summary>
+    <div class="enunciado-ej">
+      <p>Tres cargas eléctricas negativas, de valor absoluto 20 nC, se sitúan sobre los vértices de un triángulo equilátero cuyos lados miden 3 cm. a) Determine el trabajo que ha sido necesario para alcanzar esa configuración, teniendo en cuenta que inicialmente las cargas se encontraban muy alejadas entre sí. Interprete el signo del resultado. b) Calcule el módulo de la fuerza que experimenta cada una de las cargas por acción de las otras y realice un esquema ilustrativo en el que se muestren las fuerzas sobre cada una. ¿Es coherente este esquema con el resultado obtenido en el apartado anterior? Dato: \(K_0=9{,}00\cdot10^{9}\,\text{N}\,\text{m}^{2}\,\text{C}^{-2}\).</p>
+<div class="apartados-ej"><p><strong>a)</strong> <span class="puntuacion-apartado">(1 punto)</span> Trabajo de configuración e interpretación del signo.</p>
+<p><strong>b)</strong> <span class="puntuacion-apartado">(1 punto)</span> Fuerza neta sobre cada carga, esquema y coherencia.</p></div>
+      <p class="puntuacion-total"><strong>Puntuación:</strong> 2 puntos (1 + 1)</p>
+    </div>
+    <div class="resolucion-ej">
+      <div class="paso"><strong>Energía potencial del sistema de tres cargas</strong></div>
+<p>La energía potencial eléctrica de un sistema de tres cargas iguales, cada una de valor \(q=-20\cdot10^{-9}\,\text{C}\), en un triángulo equilátero de lado \(l=0{,}03\,\text{m}\) es la suma de las tres parejas:</p>
+<div class="formula-box">\[
+U=3\,\frac{K_0\,q^{2}}{l}.
+\]</div>
+<p>Sustituyendo:</p>
+<div class="formula-box">\[
+U=3\cdot\frac{9{,}00\cdot10^{9}\cdot(20\cdot10^{-9})^{2}}{0{,}03}=3{,}6\cdot10^{-4}\,\text{J}.
+\]</div>
+<div class="paso"><strong>Trabajo necesario e interpretación del signo</strong></div>
+<p>El trabajo realizado por un agente externo para llevar las cargas desde el infinito, donde \(U_{\infty}=0\), hasta esta configuración es:</p>
+<div class="formula-box">\[
+W_{\text{ext}}=\Delta U=U_{\text{final}}-U_{\text{inicial}}=3{,}6\cdot10^{-4}\,\text{J}.
+\]</div>
+<p>El signo positivo significa que ha sido necesario aportar energía al sistema, ya que las tres cargas son del mismo signo, todas negativas, y se repelen entre sí. Vencer la repulsión mutua requiere trabajo externo positivo. Equivalentemente, las cargas no se moverían espontáneamente a esa configuración, sino que tienden a alejarse.</p>
+<div class="paso"><strong>Fuerza de un par sobre una carga</strong></div>
+<p>El módulo de la fuerza entre dos cargas iguales separadas una distancia \(l\) es:</p>
+<div class="formula-box">\[
+F=K_0\,\frac{q^{2}}{l^{2}}=9{,}00\cdot10^{9}\cdot\frac{(20\cdot10^{-9})^{2}}{(0{,}03)^{2}}=4{,}0\cdot10^{-3}\,\text{N}.
+\]</div>
+<div class="paso"><strong>Suma vectorial sobre una carga del vértice</strong></div>
+<p>Sobre una carga del vértice actúan las repulsiones de las otras dos, de igual módulo \(F\), que forman un ángulo de \(60^{\circ}\) entre sí, ángulo del triángulo equilátero. Su resultante tiene módulo:</p>
+<div class="formula-box">\[
+F_{\text{neta}}=2F\cos(30^{\circ})=\sqrt{3}\,F\approx6{,}9\cdot10^{-3}\,\text{N}.
+\]</div>
+<p>La fuerza neta sobre cada carga apunta hacia fuera del triángulo, según la bisectriz del ángulo interno de su vértice.</p>
+<div class="paso"><strong>Esquema y coherencia con el trabajo positivo</strong></div>
+<p>Esquema descriptivo: triángulo equilátero con las tres cargas negativas en los vértices. Sobre cada carga, el vector fuerza neta apunta a lo largo de la mediatriz que va desde el centro del triángulo hacia el vértice, es decir, las tres fuerzas son centrífugas y apuntan radialmente hacia fuera del baricentro.</p>
+<p>Esto es coherente con \(W_{\text{ext}}&gt;0\) del apartado a): si las cargas se soltasen, la fuerza neta sobre cada una las alejaría hacia el infinito, devolviendo la energía aportada en forma de energía cinética. Para mantener la configuración hay que sostener el sistema contra esas fuerzas centrífugas; el agente que las acerca debe hacer trabajo positivo, exactamente \(3{,}6\cdot10^{-4}\,\text{J}\).</p>
+      <div class="paso resultado-problema"><strong>Resultado:</strong></div>
+      <p>a) \(W_{\text{ext}}=+3{,}6\cdot10^{-4}\,\text{J}\); es positivo porque hay que vencer la repulsión entre cargas del mismo signo.<br>
+b) \(F_{\text{neta}}\approx6{,}9\cdot10^{-3}\,\text{N}\) sobre cada carga, dirigida hacia fuera del triángulo.</p>
+    </div>
+  </details>
+
+  <!-- EJERCICIO 3: Castilla y León · 2025 · Extraordinaria · Problema 7 -->
+  <details class="tarjeta-ejercicio">
+    <summary class="cabecera-ej">
+      <span class="num-ej">Ejercicio 3</span>
+      <span class="titulo-ej">Punto de campo eléctrico nulo entre dos cargas y trabajo asociado</span>
+      <span class="meta-ej">Castilla y León · 2025 · Extraordinaria · Problema 7</span>
+    </summary>
+    <div class="enunciado-ej">
+      <p>Dos cargas eléctricas puntuales \(q_A=8\,\mu\text{C}\) y \(q_B=2\,\mu\text{C}\), situadas sobre el eje X, están separadas 60 cm.<br>
+a) Calcule en qué punto entre ambas cargas el valor del campo eléctrico es nulo. Razone si puede anularse en un punto que no esté en dicho eje.<br>
+b) Calcule el trabajo necesario para llevar \(q_A\) desde su posición original hasta el punto calculado previamente. Dato: \(K_0=9{,}00\cdot10^{9}\,\text{N}\,\text{m}^{2}\,\text{C}^{-2}\).</p>
+<div class="apartados-ej"><p><strong>a)</strong> <span class="puntuacion-apartado">(1 punto)</span> Punto de campo nulo entre las cargas y posibilidad fuera del eje.</p>
+<p><strong>b)</strong> <span class="puntuacion-apartado">(1 punto)</span> Trabajo para mover \(q_A\) al punto calculado.</p></div>
+      <p class="puntuacion-total"><strong>Puntuación:</strong> 2 puntos (1 + 1)</p>
+    </div>
+    <div class="resolucion-ej">
+      <div class="paso"><strong>Planteamiento del punto de campo nulo entre las cargas</strong></div>
+<p>Tomamos \(q_A\) en el origen y \(q_B\) a \(0{,}60\,\text{m}\) sobre el eje X positivo. Ambas cargas son positivas, así que en el segmento entre ambas los campos se oponen. Sea \(x\) la distancia desde \(q_A\) al punto de campo nulo. Igualando módulos:</p>
+<div class="formula-box">\[
+K_0\frac{q_A}{x^{2}}=K_0\frac{q_B}{(0{,}60-x)^{2}}.
+\]</div>
+<p>Simplificando:</p>
+<div class="formula-box">\[
+\frac{8}{x^{2}}=\frac{2}{(0{,}60-x)^{2}}.
+\]</div>
+<p>Tomando la raíz positiva:</p>
+<div class="formula-box">\[
+\frac{\sqrt{8}}{x}=\frac{\sqrt{2}}{0{,}60-x}\quad\Rightarrow\quad\frac{2}{x}=\frac{1}{0{,}60-x}.
+\]</div>
+<p>Resolviendo:</p>
+<div class="formula-box">\[
+2(0{,}60-x)=x\quad\Rightarrow\quad1{,}20-2x=x\quad\Rightarrow\quad x=0{,}40\,\text{m}.
+\]</div>
+<p>El punto está a \(0{,}40\,\text{m}\) de \(q_A\) y a \(0{,}20\,\text{m}\) de \(q_B\).</p>
+<div class="paso"><strong>¿Puede haber otro punto de campo nulo fuera del eje?</strong></div>
+<p>No. Las dos cargas son positivas y están en el eje X. En cualquier punto fuera del eje, los dos vectores campo tienen componentes perpendiculares al eje del mismo signo, ya que ambos apuntan radialmente alejándose del eje. Esas componentes no pueden cancelarse y, por tanto, la resultante perpendicular al eje no es nula. La única posibilidad de campo nulo es sobre el eje y, además, entre las dos cargas.</p>
+<div class="paso"><strong>Energía potencial inicial y final</strong></div>
+<p>Inicialmente, la separación entre \(q_A\) y \(q_B\) es \(0{,}60\,\text{m}\):</p>
+<div class="formula-box">\[
+U_i=K_0\frac{q_Aq_B}{0{,}60}.
+\]</div>
+<p>Al llevar \(q_A\) hasta \(x=0{,}40\,\text{m}\), la nueva separación entre las cargas es \(0{,}20\,\text{m}\):</p>
+<div class="formula-box">\[
+U_f=K_0\frac{q_Aq_B}{0{,}20}.
+\]</div>
+<div class="paso"><strong>Trabajo del agente externo</strong></div>
+<p>El trabajo que debe realizar un agente externo, cuasi-estáticamente, es la variación de energía potencial del sistema:</p>
+<div class="formula-box">\[
+W_{\text{ext}}=\Delta U=U_f-U_i=K_0q_Aq_B\left(\frac{1}{0{,}20}-\frac{1}{0{,}60}\right).
+\]</div>
+<p>Sustituyendo:</p>
+<div class="formula-box">\[
+W_{\text{ext}}=9{,}00\cdot10^{9}\cdot8\cdot10^{-6}\cdot2\cdot10^{-6}\left(5-\frac{5}{3}\right)=+0{,}48\,\text{J}.
+\]</div>
+      <div class="paso resultado-problema"><strong>Resultado:</strong></div>
+      <p>a) El campo se anula a \(0{,}40\,\text{m}\) de \(q_A\) y a \(0{,}20\,\text{m}\) de \(q_B\), sobre el segmento que une ambas cargas; no puede anularse fuera del eje.<br>
+b) \(W_{\text{ext}}=+0{,}48\,\text{J}\).</p>
+    </div>
+  </details>
+
+  <!-- EJERCICIO 4: Castilla y León · 2024 · Extraordinaria · Problema 13 -->
+  <details class="tarjeta-ejercicio">
+    <summary class="cabecera-ej">
+      <span class="num-ej">Ejercicio 4</span>
+      <span class="titulo-ej">Movimiento espontáneo de una carga negativa y signo de la diferencia de potencial</span>
+      <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 13</span>
+    </summary>
+    <div class="enunciado-ej">
+      <p>Una carga eléctrica negativa se libera, desde el reposo, en un punto \(A\) de una región del espacio en la que existe únicamente un cierto campo eléctrico. Si se observa que se dirige desde este punto hacia otro punto \(B\), ¿en cuál de ellos será menor el potencial eléctrico? Razone la respuesta.</p>
+      <p class="puntuacion-total"><strong>Puntuación:</strong> 1 punto</p>
+    </div>
+    <div class="resolucion-ej">
+      <div class="paso"><strong>Trabajo del campo y variación de energía potencial</strong></div>
+<p>Una carga liberada desde el reposo y que adquiere energía cinética es porque el campo realiza trabajo positivo sobre ella, lo que equivale a una disminución de su energía potencial eléctrica:</p>
+<div class="formula-box">\[
+W_{\text{campo}}=-\Delta U=U_A-U_B>0\quad\Rightarrow\quad U_B<U_A.
+\]</div>
+<div class="paso"><strong>Relación entre energía potencial y potencial para carga negativa</strong></div>
+<p>La energía potencial eléctrica de una carga en un punto de potencial \(V\) es \(U=q\,V\). Para una carga negativa (\(q&lt;0\)), si \(U_B&lt;U_A\) entonces:</p>
+<div class="formula-box">\[
+q\,V_B<q\,V_A\quad\Rightarrow\quad V_B>V_A.
+\]</div>
+<div class="paso"><strong>Conclusión</strong></div>
+<p>El potencial eléctrico es menor en el punto \(A\). Equivalentemente, las cargas negativas se mueven espontáneamente desde regiones de menor potencial hacia regiones de mayor potencial, al revés que las cargas positivas.</p>
+      <div class="paso resultado-problema"><strong>Resultado:</strong></div>
+      <p>El potencial es menor en \(A\): \(V_A&lt;V_B\).</p>
+    </div>
+  </details>
+
+  <!-- EJERCICIO 5: Castilla y León · 2023 · Extraordinaria · Problema 3 -->
+  <details class="tarjeta-ejercicio">
+    <summary class="cabecera-ej">
+      <span class="num-ej">Ejercicio 5</span>
+      <span class="titulo-ej">Trabajo necesario para trasladar una carga entre dos puntos en un campo de Coulomb</span>
+      <span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 3</span>
+    </summary>
+    <div class="enunciado-ej">
+      <p>Se tiene una carga de \(10\,\text{nC}\) situada en el punto \((0,0)\) del plano \(XY\). En un punto \(A\), el campo creado por dicha carga es \(\vec E=-25\,\vec i+25\,\vec j\,\text{N}\,\text{C}^{-1}\). Calcule el trabajo necesario para trasladar una carga de \(2\,\text{nC}\) desde el punto \(A\) al punto \((0,3)\,\text{m}\).</p>
+      <p class="puntuacion-total"><strong>Puntuación:</strong> 1 punto</p>
+    </div>
+    <div class="resolucion-ej">
+      <div class="paso"><strong>Determinación de la posición del punto A</strong></div>
+<p>El módulo del campo en \(A\) es \(E=\sqrt{25^{2}+25^{2}}=25\sqrt{2}=35{,}36\,\text{N}\,\text{C}^{-1}\). Como \(E=\dfrac{kq}{r^{2}}\), se tiene:</p>
+<div class="formula-box">\[
+r_A=\sqrt{\frac{kq}{E}}=\sqrt{\frac{9\cdot10^{9}\cdot10\cdot10^{-9}}{35{,}36}}=1{,}60\,\text{m}.
+\]</div>
+<p>La dirección del campo es la de \((-\vec i+\vec j)/\sqrt{2}\) y, al ser la carga creadora positiva, apunta desde el origen hacia \(A\). Por tanto:</p>
+<div class="formula-box">\[
+A=\left(-\frac{1{,}60}{\sqrt{2}},\frac{1{,}60}{\sqrt{2}}\right)\approx(-1{,}13,\,1{,}13)\,\text{m}.
+\]</div>
+<div class="paso"><strong>Potencial eléctrico en A y B</strong></div>
+<p>El potencial en \(A\) es:</p>
+<div class="formula-box">\[
+V_A=\frac{kq}{r_A}=\frac{9\cdot10^{9}\cdot10\cdot10^{-9}}{1{,}60}=56{,}3\,\text{V}.
+\]</div>
+<p>El punto \(B\) es \((0,3)\,\text{m}\), por lo que \(r_B=3\,\text{m}\) y:</p>
+<div class="formula-box">\[
+V_B=\frac{kq}{r_B}=\frac{9\cdot10^{9}\cdot10\cdot10^{-9}}{3}=30{,}0\,\text{V}.
+\]</div>
+<div class="paso"><strong>Trabajo necesario para trasladar la carga</strong></div>
+<p>El trabajo realizado por una fuerza externa que mueve la carga \(q'=2\,\text{nC}\) en cuasi-equilibrio desde \(A\) hasta \(B\) es:</p>
+<div class="formula-box">\[
+W_{\text{ext}}=q'(V_B-V_A)=2\cdot10^{-9}(30{,}0-56{,}3)=-5{,}26\cdot10^{-8}\,\text{J}.
+\]</div>
+<p>Equivalentemente, el trabajo realizado por el campo electrostático es \(W_{\text{campo}}=+5{,}26\cdot10^{-8}\,\text{J}\).</p>
+      <div class="paso resultado-problema"><strong>Resultado:</strong></div>
+      <p>\(W_{\text{ext}}=-5{,}26\cdot10^{-8}\,\text{J}\); \(W_{\text{campo}}=+5{,}26\cdot10^{-8}\,\text{J}\).</p>
+    </div>
+  </details>
+
+  <!-- EJERCICIO 6: Castilla y León · 2022 · Extraordinaria · Problema 3 -->
+  <details class="tarjeta-ejercicio">
+    <summary class="cabecera-ej">
+      <span class="num-ej">Ejercicio 6</span>
+      <span class="titulo-ej">Trabajo eléctrico al desplazar una carga entre dos puntos</span>
+      <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Problema 3</span>
+    </summary>
+    <div class="enunciado-ej">
+      <p>Dos cargas puntuales de \(4\,\mu\text{C}\) se encuentran situadas en los puntos \(A(2,0)\,\text{m}\) y \(B(-2,0)\,\text{m}\). Calcule el trabajo necesario para trasladar una carga de \(2\,\mu\text{C}\) desde el punto \(C(-1,0)\,\text{m}\) hasta el \(D(0,-3)\,\text{m}\). Razone si dicho trabajo se ha realizado a favor o en contra del campo.</p>
+      <p class="puntuacion-total"><strong>Puntuación:</strong> 1 punto</p>
+    </div>
+    <div class="resolucion-ej">
+      <div class="paso"><strong>Potencial creado por las dos cargas en C y D</strong></div>
+<p>Las cargas \(q_A=q_B=4\,\mu\text{C}\) generan en un punto el potencial \(V=k\left(\dfrac{q_A}{r_A}+\dfrac{q_B}{r_B}\right)\), con \(k=9\cdot10^{9}\,\text{N}\,\text{m}^{2}\,\text{C}^{-2}\). En \(C(-1,0)\,\text{m}\): \(r_A=3\,\text{m}\), \(r_B=1\,\text{m}\), luego</p>
+<div class="formula-box">\[
+V_C=9\cdot10^{9}\cdot4\cdot10^{-6}\left(\dfrac{1}{3}+1\right)=4{,}80\cdot10^{4}\,\text{V}.
+\]</div>
+<p>En \(D(0,-3)\,\text{m}\): \(r_A=r_B=\sqrt{13}\,\text{m}\), luego</p>
+<div class="formula-box">\[
+V_D=2\cdot9\cdot10^{9}\cdot\dfrac{4\cdot10^{-6}}{\sqrt{13}}=1{,}997\cdot10^{4}\,\text{V}.
+\]</div>
+<div class="paso"><strong>Trabajo realizado por el campo y por la fuerza externa</strong></div>
+<p>El trabajo realizado por la fuerza eléctrica al pasar la carga \(q=2\,\mu\text{C}\) de \(C\) a \(D\) es</p>
+<div class="formula-box">\[
+W_{\text{el}}=q(V_C-V_D)=2\cdot10^{-6}(4{,}80\cdot10^{4}-1{,}997\cdot10^{4})=5{,}61\cdot10^{-2}\,\text{J}.
+\]</div>
+<p>Como \(W_{\text{el}}&gt;0\), el desplazamiento se produce espontáneamente a favor del campo. El trabajo que debe realizar un agente externo es el opuesto:</p>
+<div class="formula-box">\[
+W_{\text{ext}}=-5{,}61\cdot10^{-2}\,\text{J}.
+\]</div>
+      <div class="paso resultado-problema"><strong>Resultado:</strong></div>
+      <p>\(W_{\text{ext}}=-5{,}61\cdot10^{-2}\,\text{J}\); se realiza a favor del campo.</p>
+    </div>
+  </details>
+
+  <!-- EJERCICIO 7: Castilla y León · 2021 · Ordinaria · Problema 3 -->
+  <details class="tarjeta-ejercicio">
+    <summary class="cabecera-ej">
+      <span class="num-ej">Ejercicio 7</span>
+      <span class="titulo-ej">A.3 — Carga puntual, fuerza y trabajo eléctrico</span>
+      <span class="meta-ej">Castilla y León · 2021 · Ordinaria · Problema 3</span>
+    </summary>
+    <div class="enunciado-ej">
+      <p>A una distancia \(d=20\,\text{m}\) de una carga puntual positiva \(q\), otra carga puntual \(q_0=2\cdot10^{-6}\,\text{C}\) experimenta una fuerza de magnitud \(F=15\cdot10^{-6}\,\text{N}\). ¿Qué valor tiene la carga \(q\)? ¿Qué trabajo será necesario para acercar la carga \(q_0\) a \(10\,\text{m}\) de la carga \(q\)? Discútase el signo de este último resultado.</p>
+<div class="apartados-ej"><p><strong>a)</strong> <span class="puntuacion-apartado">(No especificada)</span> Valor de la carga \(q\).</p>
+<p><strong>b)</strong> <span class="puntuacion-apartado">(No especificada)</span> Trabajo para acercar \(q_0\) a \(10\,\text{m}\) y discusión del signo.</p></div>
+      <p class="puntuacion-total"><strong>Puntuación:</strong> 1 punto</p>
+    </div>
+    <div class="resolucion-ej">
+      <div class="paso"><strong>Valor de la carga q</strong></div>
+<p>Ley de Coulomb:</p>
+<div class="formula-box">\[
+F=k\,\frac{|q\,q_0|}{d^{2}}\Rightarrow q=\frac{F\,d^{2}}{k\,q_0}.
+\]</div>
+<p>Con \(k=9\cdot10^{9}\,\text{N}\,\text{m}^{2}\,\text{C}^{-2}\), \(d=20\,\text{m}\), \(q_0=2\cdot10^{-6}\,\text{C}\) y \(F=15\cdot10^{-6}\,\text{N}\):</p>
+<div class="formula-box">\[
+q=\frac{15\cdot10^{-6}\cdot20^{2}}{9\cdot10^{9}\cdot2\cdot10^{-6}}\approx3{,}33\cdot10^{-7}\,\text{C}.
+\]</div>
+<div class="paso"><strong>Trabajo para acercar la carga</strong></div>
+<p>Potencial a \(20\,\text{m}\) y a \(10\,\text{m}\):</p>
+<div class="formula-box">\[
+V_{20}=k\,\frac{q}{20}\approx149{,}9\,\text{V},\qquad V_{10}=k\,\frac{q}{10}\approx299{,}7\,\text{V}.
+\]</div>
+<p>Trabajo del agente externo:</p>
+<div class="formula-box">\[
+W_{\text{ext}}=q_0\,(V_{10}-V_{20})\approx2\cdot10^{-6}\cdot149{,}8\approx3{,}0\cdot10^{-4}\,\text{J}.
+\]</div>
+<p>El trabajo es positivo porque ambas cargas son positivas y hay que vencer la repulsión eléctrica al acercarlas.</p>
+      <div class="paso resultado-problema"><strong>Resultado:</strong></div>
+      <p>\(q\approx3{,}33\cdot10^{-7}\,\text{C}\); \(W_{\text{ext}}\approx3{,}0\cdot10^{-4}\,\text{J}\), positivo.</p>
+    </div>
+  </details>
+
+  <!-- EJERCICIO 8: Castilla y León · 2020 · Extraordinaria · Problema 3 -->
+  <details class="tarjeta-ejercicio">
+    <summary class="cabecera-ej">
+      <span class="num-ej">Ejercicio 8</span>
+      <span class="titulo-ej">A.3 — Potencial en un punto y trabajo desde el infinito</span>
+      <span class="meta-ej">Castilla y León · 2020 · Extraordinaria · Problema 3</span>
+    </summary>
+    <div class="enunciado-ej">
+      <p>A.3) Dos cargas puntuales de \(3\ \mu\text{C}\) se encuentran en los puntos \((1,\,0)\) y \((0,\,-4)\), las coordenadas en unidades del S.I. Calcule el potencial eléctrico en el punto \(P\,(3,\,0)\) y el trabajo necesario para trasladar una carga de \(1\ \mu\text{C}\) desde un punto infinitamente alejado hasta el punto \(P\). Interprete el signo del resultado.</p>
+<div class="apartados-ej"><p><strong>a)</strong> <span class="puntuacion-apartado">(0,5 puntos)</span> Calcule el potencial eléctrico en el punto \(P\,(3,\,0)\).</p>
+<p><strong>b)</strong> <span class="puntuacion-apartado">(0,5 puntos)</span> Calcule el trabajo necesario para trasladar una carga de \(1\ \mu\text{C}\) desde un punto infinitamente alejado hasta el punto \(P\). Interprete el signo del resultado.</p></div>
+      <p class="puntuacion-total"><strong>Puntuación:</strong> 1 punto</p>
+    </div>
+    <div class="resolucion-ej">
+      <div class="paso"><strong>Distancias desde \(P\) a cada carga</strong></div>
+<p>Las cargas están en \(q_1\) en \((1,\,0)\) y \(q_2\) en \((0,\,-4)\). El punto es \(P\,(3,\,0)\). Las distancias son:</p>
+<div class="formula-box">\[
+r_1=\sqrt{(3-1)^{2}+0^{2}}=2\,\text{m},
+\]</div>
+<div class="formula-box">\[
+r_2=\sqrt{(3-0)^{2}+(0+4)^{2}}=\sqrt{9+16}=5\,\text{m}.
+\]</div>
+<div class="paso"><strong>Potencial total en \(P\)</strong></div>
+<p>El potencial eléctrico debido a varias cargas puntuales es la suma escalar:</p>
+<div class="formula-box">\[
+V_P=k\left(\frac{q_1}{r_1}+\frac{q_2}{r_2}\right).
+\]</div>
+<p>Con \(q_1=q_2=3\cdot10^{-6}\,\text{C}\), \(k=9{,}00\cdot10^{9}\,\text{N}\,\text{m}^{2}\,\text{C}^{-2}\):</p>
+<div class="formula-box">\[
+V_P=9{,}00\cdot10^{9}\cdot3\cdot10^{-6}\left(\frac{1}{2}+\frac{1}{5}\right)=1{,}89\cdot10^{4}\,\text{V}.
+\]</div>
+<div class="paso"><strong>Trabajo desde el infinito</strong></div>
+<p>El trabajo del agente externo para traer una carga \(q\) desde el infinito hasta \(P\) es:</p>
+<div class="formula-box">\[
+W_{\text{ext}}=q\,(V_P-V_{\infty})=q\,V_P,
+\]</div>
+<p>ya que se toma \(V_{\infty}=0\).</p>
+<p>Con \(q=1\cdot10^{-6}\,\text{C}\):</p>
+<div class="formula-box">\[
+W_{\text{ext}}=1\cdot10^{-6}\cdot1{,}89\cdot10^{4}=1{,}89\cdot10^{-2}\,\text{J}.
+\]</div>
+<p>El signo positivo indica que el agente externo debe realizar trabajo contra el campo eléctrico para acercar la carga positiva al punto \(P\), donde el potencial es positivo.</p>
+      <div class="paso resultado-problema"><strong>Resultado:</strong></div>
+      <p>\(V_P=1{,}89\cdot10^{4}\,\text{V}\)\n\(W_{\text{ext}}=1{,}89\cdot10^{-2}\,\text{J}\) (trabajo positivo del agente externo)</p>
+    </div>
+  </details>
+
+  <!-- EJERCICIO 9: Castilla y León · 2020 · Extraordinaria · Problema 13 -->
+  <details class="tarjeta-ejercicio">
+    <summary class="cabecera-ej">
+      <span class="num-ej">Ejercicio 9</span>
+      <span class="titulo-ej">B.2 — Energía potencial de dos cargas de signo opuesto</span>
+      <span class="meta-ej">Castilla y León · 2020 · Extraordinaria · Problema 13</span>
+    </summary>
+    <div class="enunciado-ej">
+      <p>B.2) En una región del espacio se encuentran dos cargas eléctricas. La primera, de carga positiva, está fija, y la segunda, de carga negativa, se mueve alejándose de la primera. La energía potencial del sistema formado por ambas partículas ¿aumentará, disminuirá o se mantendrá constante? Razone la respuesta.</p>
+      <p class="puntuacion-total"><strong>Puntuación:</strong> 1 punto</p>
+    </div>
+    <div class="resolucion-ej">
+      <div class="paso"><strong>Expresión de la energía potencial de dos cargas puntuales</strong></div>
+<p>La energía potencial eléctrica de dos cargas puntuales es:</p>
+<div class="formula-box">\[
+E_p=k\frac{q_1 q_2}{r}.
+\]</div>
+<p>Con \(q_1&gt;0\) y \(q_2&lt;0\), el producto \(q_1 q_2\) es negativo y, por tanto, \(E_p&lt;0\) para todo \(r\) finito. Se toma como referencia \(E_p=0\) en \(r\to\infty\).</p>
+<div class="paso"><strong>Análisis cualitativo cuando \(r\) aumenta</strong></div>
+<p>Si \(r\) aumenta porque la carga negativa se aleja, \(E_p\) es una cantidad negativa cuyo módulo disminuye al dividir entre un denominador mayor. Eso significa que \(E_p\) se acerca a \(0\) desde valores negativos, es decir, aumenta y se hace menos negativa. En el límite \(r\to\infty\), \(E_p\to0\).</p>
+<div class="paso"><strong>Razonamiento energético complementario</strong></div>
+<p>Dos cargas de signo opuesto se atraen. Al alejarse, un agente externo tiene que realizar trabajo positivo contra la fuerza atractiva. Ese trabajo se transforma en aumento de energía potencial del sistema, lo que confirma que \(E_p\) debe aumentar. Si las cargas fuesen del mismo signo, separarse liberaría energía potencial repulsiva y \(E_p\) disminuiría hacia \(0\) desde valores positivos.</p>
+      <div class="paso resultado-problema"><strong>Resultado:</strong></div>
+      <p>La energía potencial del sistema aumenta (se hace menos negativa al aumentar la distancia).</p>
+    </div>
+  </details>
+
+  <!-- EJERCICIO 10: Castilla y León · 2020 · Ordinaria · Problema 3 -->
+  <details class="tarjeta-ejercicio">
+    <summary class="cabecera-ej">
+      <span class="num-ej">Ejercicio 10</span>
+      <span class="titulo-ej">A.3 — Trabajo de un dipolo eléctrico (configuración simétrica)</span>
+      <span class="meta-ej">Castilla y León · 2020 · Ordinaria · Problema 3</span>
+    </summary>
+    <div class="enunciado-ej">
+      <p>A.3) Dos cargas puntuales, \(q_1=3\,\mu\text{C}\) y \(q_2=-3\,\mu\text{C}\), están situadas en los puntos \(P_1(0,3)\) y \(P_2(0,-3)\), respectivamente (unidades en el S.I.). Calcule el trabajo necesario para transportar otra carga \(q_3=4\,\mu\text{C}\) desde el punto \(P_3(4,0)\) al punto \(P_4(-4,0)\). Interprete el resultado.</p>
+      <p class="puntuacion-total"><strong>Puntuación:</strong> 1 punto</p>
+    </div>
+    <div class="resolucion-ej">
+      <div class="paso"><strong>Distancias y potencial en \(P_3\) y \(P_4\)</strong></div>
+<p>Las distancias de \(P_3(4,0)\) a \(P_1(0,3)\) y a \(P_2(0,-3)\) son \(\sqrt{4^{2}+3^{2}}=5\,\text{m}\). Las distancias de \(P_4(-4,0)\) a ambas cargas también son \(5\,\text{m}\) por simetría. Por tanto:</p>
+<div class="formula-box">\[
+V(P_3)=k\left(\frac{q_1}{5}+\frac{q_2}{5}\right)=k\frac{3\,\mu\text{C}-3\,\mu\text{C}}{5}=0.
+\]</div>
+<div class="formula-box">\[
+V(P_4)=k\left(\frac{q_1}{5}+\frac{q_2}{5}\right)=0.
+\]</div>
+<div class="paso"><strong>Trabajo del agente externo</strong></div>
+<p>El trabajo del agente externo, en ausencia de fuerzas no conservativas, es la variación de energía potencial:</p>
+<div class="formula-box">\[
+W_{\text{ext}}=q_3[V(P_4)-V(P_3)]=q_3(0-0)=0.
+\]</div>
+<p>El trabajo es nulo porque \(P_3\) y \(P_4\) están sobre la mediatriz del dipolo, donde el potencial eléctrico creado por cargas iguales y opuestas se anula.</p>
+      <div class="paso resultado-problema"><strong>Resultado:</strong></div>
+      <p>\(W_{\text{ext}}=0\,\text{J}\).</p>
+    </div>
+  </details>
+            <div class="pie-clave"><i class="fas fa-lightbulb"></i><span>Clave EBAU: escribe siempre qué trabajo calculas (campo o agente externo), relaciona su signo con \(\Delta E_p\) y justifica físicamente el resultado.</span></div>
+        </div>
+    </details>
+
+    <!-- RECURSOS DEL TEMA -->
+    <div style="padding: 20px 30px;">
+        <h2 style="color:#1e3a8a; border-bottom:3px solid #3b82f6; padding-bottom:10px;">📎 Recursos del Tema B3</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; margin-top:20px;">
+            <a href="#formulas" style="text-decoration:none; color:inherit;">
+                <div class="recurso-card" style="background:white; border-radius:16px; padding:22px 18px; text-align:center; height:100%; border:3px solid #e2e8f0; box-shadow:0 6px 16px rgba(0,0,0,0.15);">
+                    <div style="width:62px;height:62px;margin:4px auto 14px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1.7em;"><i class="fas fa-book"></i></div>
+                    <div style="font-weight:700;color:#1e3a8a;font-size:1.1em;margin-bottom:6px;">Formulario B3</div>
+                    <div style="font-size:.85em;color:#64748b;line-height:1.5;">Fórmulas y relaciones clave del tema</div>
+                </div>
+            </a>
+            <a href="#problemas" style="text-decoration:none; color:inherit;">
+                <div class="recurso-card" style="background:white; border-radius:16px; padding:22px 18px; text-align:center; height:100%; border:3px solid #e2e8f0; box-shadow:0 6px 16px rgba(0,0,0,0.15);">
+                    <div style="width:62px;height:62px;margin:4px auto 14px;background:linear-gradient(135deg,#10b981,#059669);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1.7em;"><i class="fas fa-pen-to-square"></i></div>
+                    <div style="font-weight:700;color:#1e3a8a;font-size:1.1em;margin-bottom:6px;">Problemas EBAU · B3</div>
+                    <div style="font-size:.85em;color:#64748b;line-height:1.5;">Diez ejercicios seleccionados y resueltos</div>
+                </div>
+            </a>
+            <a href="../EBAU/problemas-inline%20v04.html" style="text-decoration:none; color:inherit;">
+                <div class="recurso-card" style="background:white; border-radius:16px; padding:22px 18px; text-align:center; height:100%; border:3px solid #e2e8f0; box-shadow:0 6px 16px rgba(0,0,0,0.15);">
+                    <div style="width:62px;height:62px;margin:4px auto 14px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1.7em;"><i class="fas fa-database"></i></div>
+                    <div style="font-weight:700;color:#1e3a8a;font-size:1.1em;margin-bottom:6px;">Filtrado EBAU general</div>
+                    <div style="font-size:.85em;color:#64748b;line-height:1.5;">Banco completo de problemas de todas las unidades</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- BLOQUE FINAL -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p><br>Domina el trabajo eléctrico, el carácter conservativo del campo electrostático y la energía potencial de las configuraciones de cargas.<br>
+            <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i></p>
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">Volver al inicio</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
