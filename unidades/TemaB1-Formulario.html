@@ -1,0 +1,753 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA B1 (Formulario).- Campos eléctrico y magnético sobre cargas libres</title>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- CSS PROPIO DE FORMULARIOS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================ CABECERA ============================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA B1 (Formulario).- </span>
+                <span class="texto">Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================ GRID ============================ -->
+    <div class="grid">
+
+        <!-- FICHA 1 · LEY DE COULOMB (MÓDULO) -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Ley de Coulomb (módulo)</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo de la fuerza electrostática entre dos cargas puntuales en reposo. Se aplica cuando se conocen las dos cargas y la distancia que las separa, y se quiere describir la interacción eléctrica que las une. Es la ley fundacional de la electrostática: de ella se deducen el campo, el potencial y la energía potencial electrostática.
+            </div>
+            <div class="formula-box">
+                \[ F = K\,\frac{|q_1\,q_2|}{r^{2}} \qquad K=\frac{1}{4\pi\varepsilon_0}\approx 9\cdot10^{9}\ \text{N}\cdot\text{m}^{2}\cdot\text{C}^{-2} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>¡Sí, imprescindible! Es la ley fundamental de la electrostática. Memoriza el módulo \(F=K|q_1q_2|/r^{2}\) y el valor de \(K\approx 9\cdot10^{9}\,\text{N}\cdot\text{m}^{2}\cdot\text{C}^{-2}\). Todas las demás fórmulas del tema se deducen a partir de ella. Si la dominas y comprendes su dependencia con \(1/r^{2}\), puedes resolver cualquier problema de electrostática de la EBAU.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(F\)</td><td data-label="Significado">Módulo de la fuerza electrostática</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(K\)</td><td data-label="Significado">Constante de Coulomb</td><td data-label="Unidades">9·10⁹ N·m²·C⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(q_1,\,q_2\)</td><td data-label="Significado">Cargas de los dos cuerpos puntuales</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia entre las cargas</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos cargas de \(1\,\mu\text{C}\) separadas \(1\,\text{m}\) se repelen con \(F=9\cdot10^{-3}\,\text{N}\). Si se duplica la distancia, la fuerza se reduce a la cuarta parte (\(2{,}25\cdot10^{-3}\,\text{N}\)), porque \(F\propto1/r^{2}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es una fuerza <strong>universal</strong>: describe desde la atracción entre un protón y un electrón hasta la cohesión de la materia.</li>
+                    <li>Puede ser <strong>atractiva</strong> (cargas de signo opuesto) o <strong>repulsiva</strong> (cargas del mismo signo).</li>
+                    <li>Es <strong>central</strong> (su dirección pasa por la recta que une las cargas) y <strong>conservativa</strong> (deriva de un potencial).</li>
+                    <li>Es de <strong>largo alcance</strong>: decae con \(1/r^{2}\) pero nunca se anula del todo.</li>
+                    <li>Es mucho <strong>más intensa</strong> que la gravitatoria: \(F_e/F_g\sim10^{36}\) para dos protones.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 · FORMA VECTORIAL DE COULOMB -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Forma vectorial de la fuerza de Coulomb</h2>
+                <span class="badge-centro">Vector</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El vector fuerza que una carga ejerce sobre otra, incluyendo su dirección y sentido. Se aplica en problemas con varias cargas, donde hay que sumar contribuciones vectoriales y no basta con el módulo. Es la forma correcta de trabajar con el principio de superposición.
+            </div>
+            <div class="formula-box">
+                \[ \vec F_{1\to 2} = K\,\frac{q_1\,q_2}{r^{2}}\,\hat u_{12} = K\,q_1\,q_2\,\frac{\vec r_2-\vec r_1}{|\vec r_2-\vec r_1|^{3}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se construye a partir del módulo \(F=K|q_1q_2|/r^{2}\) multiplicándolo por el vector unitario que va de \(q_1\) a \(q_2\). El signo del producto \(q_1q_2\) determina automáticamente si la fuerza es atractiva (producto negativo) o repulsiva (producto positivo). Con \(\vec r=\vec r_2-\vec r_1\) y \(r=|\vec r|\), la expresión \(K\,q_1q_2\,\vec r/r^{3}\) es la forma práctica de calcularla.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec F_{1\to 2}\)</td><td data-label="Significado">Fuerza que \(q_1\) ejerce sobre \(q_2\)</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec r=\vec r_2-\vec r_1\)</td><td data-label="Significado">Vector de posición de \(q_1\) a \(q_2\)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(r=|\vec r|\)</td><td data-label="Significado">Distancia entre las cargas</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\hat u_{12}=\vec r/r\)</td><td data-label="Significado">Vector unitario de \(q_1\) a \(q_2\)</td><td data-label="Unidades">adimensional</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(q_1=5\,\mu\text{C}\) en \((0,0)\) y \(q_2=-3\,\mu\text{C}\) en \((3,4)\,\text{m}\). Entonces \(\vec r=(3,4)\,\text{m}\), \(r=5\,\text{m}\) y \(\vec F_{1\to 2}=K\cdot(-15\cdot10^{-12})\cdot(3,4)/125\approx(-3{,}24\hat i-4{,}32\hat j)\cdot10^{-3}\,\text{N}\) (atractiva, hacia \(q_1\)).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Por la <strong>tercera ley de Newton</strong>, \(\vec F_{2\to 1}=-\vec F_{1\to 2}\) (acción-reacción).</li>
+                    <li>El signo del producto \(q_1q_2\) codifica el carácter <strong>atractivo o repulsivo</strong>.</li>
+                    <li>La forma \(\vec F=K\,q_1q_2\,\vec r/r^{3}\) evita calcular \(\hat u\) por separado.</li>
+                    <li>Es la expresión que se usa cuando hay <strong>más de dos cargas</strong>: se suman los vectores (principio de superposición).</li>
+                    <li>El campo eléctrico resultante se obtiene dividiendo la fuerza neta por la carga de prueba: \(\vec E=\vec F_{\text{neta}}/q_0\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 · CAMPO ELÉCTRICO -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Campo eléctrico</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La fuerza electrostática por unidad de carga positiva que una carga \(Q\) ejerce sobre un punto del espacio. Se aplica para describir el campo creado por una distribución de cargas sin necesidad de especificar la carga de prueba. Es una magnitud vectorial y equivale a una fuerza por unidad de carga.
+            </div>
+            <div class="formula-box">
+                \[ \vec E(\vec r) = \frac{\vec F}{q_0} = K\,\frac{Q}{r^{2}}\,\hat u_r \qquad\Longrightarrow\qquad E = K\,\frac{|Q|}{r^{2}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: el módulo \(E=K|Q|/r^{2}\) y su dirección (hacia la carga si es negativa, alejándose si es positiva) son imprescindibles. Se deduce de la ley de Coulomb dividiendo por la carga de prueba \(q_0\). Es una de las fórmulas más usadas de la EBAU, tanto en problemas de campo como en los de movimiento de cargas. Cuidado con las unidades: \(\text{N}\cdot\text{C}^{-1}=\text{V}\cdot\text{m}^{-1}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec E\)</td><td data-label="Significado">Campo eléctrico en un punto</td><td data-label="Unidades">N·C⁻¹ = V·m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(K\)</td><td data-label="Significado">Constante de Coulomb</td><td data-label="Unidades">9·10⁹ N·m²·C⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(Q\)</td><td data-label="Significado">Carga creadora del campo</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia desde la carga al punto</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(Q=2\,\mu\text{C}\) a \(r=0{,}5\,\text{m}\): \(E=K\cdot2\cdot10^{-6}/0{,}5^{2}=7{,}2\cdot10^{4}\,\text{N}\cdot\text{C}^{-1}\). Si \(Q\) fuese negativa, el campo apuntaría hacia ella.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El campo eléctrico es <strong>vectorial</strong>: sale de las cargas positivas y entra en las negativas.</li>
+                    <li>Su unidad \(\text{N}\cdot\text{C}^{-1}\) equivale a \(\text{V}\cdot\text{m}^{-1}\), porque es fuerza por unidad de carga.</li>
+                    <li>Es <strong>conservativo</strong>: deriva de un potencial escalar \(V\) (fórmula 4).</li>
+                    <li>En el exterior de una esfera cargada, se comporta como si toda la carga estuviera en el centro.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 · POTENCIAL ELÉCTRICO -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Potencial eléctrico</h2>
+                <span class="badge-centro">Potencial</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía potencial electrostática por unidad de carga en un punto del campo. Se aplica para caracterizar escalarmente el campo eléctrico, para calcular trabajos y para determinar superficies equipotenciales. Es una magnitud escalar que puede ser positiva o negativa según el signo de la carga creadora.
+            </div>
+            <div class="formula-box">
+                \[ V = K\,\frac{Q}{r} \qquad [V] = \text{J}\cdot\text{C}^{-1} = \text{V} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(V=KQ/r\) con el <strong>signo de \(Q\)</strong>. Es una magnitud escalar (no vectorial) que aparece continuamente en problemas de trabajo y energía. Recuerda: el origen de potencial se toma en el infinito (\(V(\infty)=0\)), por lo que \(V>0\) cerca de cargas positivas y \(V<0\) cerca de cargas negativas. Para varias cargas se suma algebraicamente.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(V\)</td><td data-label="Significado">Potencial eléctrico</td><td data-label="Unidades">V = J·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(K\)</td><td data-label="Significado">Constante de Coulomb</td><td data-label="Unidades">9·10⁹ N·m²·C⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(Q\)</td><td data-label="Significado">Carga creadora del potencial (con su signo)</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia desde la carga al punto</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(Q=2\,\mu\text{C}\) a \(r=0{,}5\,\text{m}\): \(V=K\cdot2\cdot10^{-6}/0{,}5=3{,}6\cdot10^{4}\,\text{V}\). Para una carga \(q=1\,\mu\text{C}\) situada allí, su energía potencial sería \(E_p=qV=3{,}6\cdot10^{-2}\,\text{J}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es <strong>escalar</strong> (no vectorial): no tiene dirección ni sentido, pero sí signo.</li>
+                    <li>Con el origen en el infinito, \(V>0\) para cargas positivas y \(V<0\) para negativas.</li>
+                    <li>Las <strong>superficies equipotenciales</strong> son esferas centradas en la carga creadora.</li>
+                    <li>Se relaciona con el campo mediante \(\vec E=-\nabla V\): el campo apunta hacia donde \(V\) disminuye más rápido.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 · FUERZA DE LORENTZ -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Fuerza de Lorentz</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La fuerza total que actúa sobre una carga \(q\) que se mueve con velocidad \(\vec v\) en una región donde coexisten un campo eléctrico \(\vec E\) y un campo magnético \(\vec B\). Se aplica en cualquier problema de movimiento de cargas en campos: aceleradores, espectrómetros, tubos de rayos catódicos, etc.
+            </div>
+            <div class="formula-box">
+                \[ \vec F = q\left(\vec E + \vec v\times\vec B\right) \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la ley fundamental del electromagnetismo y aparece en casi todos los problemas de la EBAU. Memoriza la estructura \(\vec F=q(\vec E+\vec v\times\vec B)\) y comprende que la parte eléctrica \(q\vec E\) actúa siempre, mientras que la parte magnética \(q\vec v\times\vec B\) solo actúa si la carga se mueve. La dirección y sentido de la parte magnética se obtienen con la regla de la mano derecha, invirtiendo el resultado si \(q<0\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec F\)</td><td data-label="Significado">Fuerza total sobre la carga</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga de la partícula (con su signo)</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec E\)</td><td data-label="Significado">Campo eléctrico en la región</td><td data-label="Unidades">N·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec v\)</td><td data-label="Significado">Velocidad de la carga</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec B\)</td><td data-label="Significado">Campo magnético en la región</td><td data-label="Unidades">T</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un electrón (\(q=-e\)) con \(v=10^{6}\,\text{m/s}\) en \(\vec B=0{,}8\,\text{T}\) perpendicular: \(F_m=evB=1{,}28\cdot10^{-13}\,\text{N}\), perpendicular a \(\vec v\) y \(\vec B\). La fuerza eléctrica sería \(F_e=eE\) en el sentido opuesto a \(\vec E\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La parte <strong>eléctrica</strong> \(q\vec E\) realiza trabajo y modifica la energía cinética.</li>
+                    <li>La parte <strong>magnética</strong> \(q\vec v\times\vec B\) es perpendicular a \(\vec v\): <strong>no realiza trabajo</strong> ni cambia el módulo de la velocidad.</li>
+                    <li>Si \(\vec v\parallel\vec B\), la fuerza magnética es nula (\(\mathrm{sen}\,0=0\)).</li>
+                    <li>La regla de la mano derecha da el sentido de \(\vec v\times\vec B\); si \(q<0\), se invierte.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 · FUERZA MAGNÉTICA -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Fuerza magnética sobre una carga en movimiento</h2>
+                <span class="badge-centro">Vectorial</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Expresión vectorial</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo y la dirección de la fuerza magnética que un campo \(\vec B\) ejerce sobre una carga \(q\) que se mueve con velocidad \(\vec v\). Se aplica cuando solo actúa el campo magnético (no hay campo eléctrico) y se quiere describir la desviación de la carga.
+            </div>
+            <div class="formula-box">
+                \[ \vec F_m = q\,\vec v\times\vec B \qquad\qquad |\vec F_m| = |q|\,v\,B\,\mathrm{sen}\,\theta \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>No es una fórmula para memorizar, sino para aplicar con cuidado. Lo esencial es recordar que \(\vec F_m\perp\vec v\) y \(\vec F_m\perp\vec B\), que el módulo es máximo cuando \(\vec v\perp\vec B\) y nulo cuando \(\vec v\parallel\vec B\), y que el sentido se obtiene con la regla de la mano derecha, invirtiendo si \(q<0\). Error típico en la EBAU: olvidar el signo de la carga al aplicar la regla.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec F_m\)</td><td data-label="Significado">Fuerza magnética sobre la carga</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga de la partícula (con su signo)</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec v\)</td><td data-label="Significado">Velocidad de la carga</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec B\)</td><td data-label="Significado">Campo magnético</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(\theta\)</td><td data-label="Significado">Ángulo entre \(\vec v\) y \(\vec B\)</td><td data-label="Unidades">rad o °</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un protón (\(q=+e\)) con \(v=2{,}77\cdot10^{7}\,\text{m/s}\) en \(\vec B=3\,\text{T}\) perpendicular: \(F_m=qvB=1{,}33\cdot10^{-11}\,\text{N}\). La fuerza es perpendicular a \(\vec v\) y a \(\vec B\), y actúa como fuerza centrípeta.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es <strong>perpendicular</strong> simultáneamente a \(\vec v\) y a \(\vec B\).</li>
+                    <li>No realiza trabajo: \(W_m=\int\vec F_m\cdot d\vec r=0\).</li>
+                    <li>Máxima si \(\vec v\perp\vec B\) (\(\theta=90°\)); nula si \(\vec v\parallel\vec B\) (\(\theta=0°\)).</li>
+                    <li>Regla de la mano derecha: dedo índice en \(\vec v\), corazón en \(\vec B\), pulgar en \(\vec v\times\vec B\); si \(q<0\), se invierte.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 · CAMPO ELÉCTRICO UNIFORME -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Campo eléctrico uniforme entre placas</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El valor del campo eléctrico uniforme creado entre dos placas paralelas con una diferencia de potencial \(\Delta V\) separadas una distancia \(d\). Se aplica en problemas de movimiento de cargas entre placas (aceleradores, tubos de rayos catódicos, condensadores) y para relacionar potencial y campo.
+            </div>
+            <div class="formula-box">
+                \[ E = \frac{|\Delta V|}{d} \qquad\qquad \vec a = \frac{q\vec E}{m} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla aparte: es la relación entre potencial y campo para un campo uniforme, \(E=|\Delta V|/d\). Si sabes que el campo es la variación de potencial por unidad de longitud, la fórmula es inmediata. Útil para calcular la aceleración constante de una carga entre placas: \(\vec a=q\vec E/m\), y a partir de ahí usar las ecuaciones del movimiento uniformemente acelerado.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E\)</td><td data-label="Significado">Módulo del campo eléctrico uniforme</td><td data-label="Unidades">V·m⁻¹ = N·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(|\Delta V|\)</td><td data-label="Significado">Diferencia de potencial entre placas</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(d\)</td><td data-label="Significado">Distancia entre las placas</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec a\)</td><td data-label="Significado">Aceleración de la carga en el campo</td><td data-label="Unidades">m·s⁻²</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> con \(\Delta V=1000\,\text{V}\) y \(d=1\,\text{cm}\): \(E=10^{5}\,\text{V/m}\). Un protón entre esas placas experimenta \(a=qE/m\approx9{,}6\cdot10^{12}\,\text{m/s}^{2}\), una aceleración enorme.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El campo es <strong>uniforme</strong> lejos de los bordes: módulo, dirección y sentido constantes.</li>
+                    <li>La fuerza \(q\vec E\) es <strong>constante</strong>: movimiento rectilíneo uniformemente acelerado si \(\vec v_0\parallel\vec E\).</li>
+                    <li>Si \(\vec v_0\perp\vec E\), la trayectoria es <strong>parabólica</strong> (como un tiro horizontal).</li>
+                    <li>El trabajo eléctrico entre placas es \(W=q\Delta V\), que se invierte en variar la energía cinética.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 · TRABAJO ELÉCTRICO -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Trabajo eléctrico y energía</h2>
+                <span class="badge-centro">Energía</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · Conservación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El trabajo realizado por el campo eléctrico al desplazar una carga \(q\) entre dos puntos \(A\) y \(B\) con potenciales \(V_A\) y \(V_B\). Se aplica en problemas de energía, movimiento de cargas entre placas y conservación de la energía mecánica. Al ser una fuerza conservativa, el trabajo no depende del camino.
+            </div>
+            <div class="formula-box">
+                \[ W_{A\to B} = q\,(V_A - V_B) = -\Delta U = \Delta K \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se deduce del carácter conservativo de la fuerza eléctrica (\(W=-\Delta U\)). Memoriza solo la idea: <strong>el campo eléctrico realiza trabajo positivo si la carga positiva se mueve hacia potenciales menores</strong> (disminuye su energía potencial). Muchos problemas de EBAU combinan este trabajo con la variación de energía cinética: \(q\Delta V=\tfrac12mv^{2}-\tfrac12mv_0^{2}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(W_{A\to B}\)</td><td data-label="Significado">Trabajo realizado por el campo eléctrico</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga que se desplaza (con su signo)</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(V_A,\,V_B\)</td><td data-label="Significado">Potencial eléctrico en \(A\) y en \(B\)</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta U\)</td><td data-label="Significado">Variación de energía potencial electrostática</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta K\)</td><td data-label="Significado">Variación de energía cinética</td><td data-label="Unidades">J</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una carga \(q=2\,\mu\text{C}\) se mueve entre \(V_A=1000\,\text{V}\) y \(V_B=500\,\text{V}\). \(W_{\text{campo}}=q(V_A-V_B)=2\cdot10^{-6}\cdot500=10^{-3}\,\text{J}\) (positivo: el campo favorece el movimiento hacia potenciales menores).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La fuerza eléctrica es <strong>conservativa</strong>: \(W\) no depende del camino, solo de \(A\) y \(B\).</li>
+                    <li>\(W_{\text{campo}}>0\) si la carga positiva se mueve hacia <strong>potenciales menores</strong>.</li>
+                    <li>Si la carga parte del reposo y se acelera con \(\Delta V\): \(q\Delta V=\tfrac12mv^{2}\).</li>
+                    <li>El trabajo del <strong>agente externo</strong> es \(W_{\text{ext}}=-W_{\text{campo}}\).</li>
+                    <li>En un campo uniforme: \(W=qEd\) si la carga se mueve paralelamente al campo.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 · SELECTOR DE VELOCIDADES -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Selector de velocidades</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Principio</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La velocidad de las partículas que atraviesan sin desviarse una región donde coexisten un campo eléctrico y un campo magnético perpendiculares entre sí y a la velocidad. Se aplica en espectrómetros de masas y en problemas de filtrado de partículas cargadas.
+            </div>
+            <div class="formula-box">
+                \[ qE = qvB \quad\Longrightarrow\quad v = \frac{E}{B} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>No es una fórmula para memorizar, sino una <strong>condición de equilibrio</strong> que se plantea en cada problema: la fuerza eléctrica y la magnética deben ser iguales y opuestas. Lo esencial es recordar que \(E\perp B\perp v\) y que la velocidad seleccionada es \(v=E/B\). Error típico: invertir la fórmula y escribir \(v=EB\). Comprueba las unidades: \([E]/[B]=\text{m/s}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Velocidad seleccionada (sin desviación)</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(E\)</td><td data-label="Significado">Módulo del campo eléctrico</td><td data-label="Unidades">V·m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(B\)</td><td data-label="Significado">Módulo del campo magnético</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga de la partícula (se cancela)</td><td data-label="Unidades">C</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> con \(E=4\cdot10^{5}\,\text{V/m}\) y \(B=2\,\text{T}\): \(v=E/B=2\cdot10^{5}\,\text{m/s}\). Solo los iones con esa velocidad atraviesan el selector sin desviarse; los más rápidos o más lentos se desvían.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La condición de equilibrio es \(q\vec E+q\vec v\times\vec B=0\), es decir, \(\vec F_e=-\vec F_m\).</li>
+                    <li>Solo pasan las partículas con \(v=E/B\); las demás se desvían.</li>
+                    <li>La carga \(q\) <strong>se cancela</strong>: la velocidad seleccionada no depende de ella.</li>
+                    <li>Es el primer elemento de un <strong>espectrómetro de masas</strong>: después, un segundo campo magnético separa las partículas según su \(q/m\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 10 · MOVIMIENTO CIRCULAR EN CAMPO MAGNÉTICO -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Movimiento circular en campo magnético uniforme</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Principio</span>
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El radio, el periodo y la frecuencia del movimiento circular que describe una carga que entra perpendicularmente a un campo magnético uniforme. Se aplica en problemas de ciclotrones, espectrómetros de masas y trayectorias de partículas cargadas en campos magnéticos.
+            </div>
+            <div class="formula-box">
+                \[ r = \frac{mv}{|q|B} \qquad\quad T = \frac{2\pi m}{|q|B} \qquad\quad f = \frac{|q|B}{2\pi m} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarlas: se deducen igualando la fuerza magnética a la fuerza centrípeta, \(|q|vB=mv^{2}/r\). Lo importante es comprender: el radio crece con \(v\) y con \(m\), y decrece con \(|q|\) y \(B\). El <strong>periodo no depende de la velocidad</strong> (hecho clave del ciclotrón). Si la velocidad no es perpendicular a \(\vec B\), la trayectoria es <strong>helicoidal</strong> y hay que descomponer \(\vec v\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Radio de la trayectoria circular</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa de la partícula</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Velocidad (perpendicular a \(\vec B\))</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga de la partícula</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(B\)</td><td data-label="Significado">Campo magnético uniforme</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(T,\,f\)</td><td data-label="Significado">Periodo y frecuencia del movimiento circular</td><td data-label="Unidades">s, Hz</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un protón con \(v=10^{6}\,\text{m/s}\) en \(B=0{,}8\,\text{T}\): \(r=mv/(qB)=1{,}30\cdot10^{-2}\,\text{m}\) y \(T=2\pi m/(qB)=1{,}31\cdot10^{-7}\,\text{s}\). Si se duplica \(v\), \(r\) se duplica pero \(T\) no cambia.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La fuerza magnética es <strong>centrípeta</strong>: \(qvB=mv^{2}/r\).</li>
+                    <li>El <strong>periodo no depende de \(v\)</strong> (régimen no relativista): es la base del ciclotrón.</li>
+                    <li>Si \(\vec v\) no es perpendicular a \(\vec B\), la trayectoria es <strong>helicoidal</strong> (hélice).</li>
+                    <li>El sentido de giro se obtiene con la regla de la mano derecha, invirtiendo si \(q<0\).</li>
+                    <li>La relación \(|q|/m\) se obtiene del radio: \(|q|/m=v/(Br)\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 11 · RELACIÓN CARGA/MASA Y SIGNO -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">11</span>
+                <h2>Relación carga/masa y signo de la carga</h2>
+                <span class="badge-centro">Relación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Principio</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación carga/masa \(|q|/m\) de una partícula a partir del radio de su trayectoria circular en un campo magnético, y el signo de su carga a partir del sentido de curvatura. Se aplica en problemas de espectrometría de masas y en la identificación de partículas.
+            </div>
+            <div class="formula-box">
+                \[ \frac{|q|}{m} = \frac{v}{B\,r} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>No es una fórmula para memorizar: se obtiene despejando de \(r=mv/(|q|B)\). Lo importante es aplicar correctamente el razonamiento: <strong>menor radio de curvatura implica mayor relación carga/masa</strong> (para la misma \(v\) y \(B\)). Para el signo, se aplica la regla de la mano derecha a \(\vec v\times\vec B\) y se compara con el sentido de la fuerza centrípeta observado: si coinciden, \(q>0\); si no, \(q<0\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(|q|/m\)</td><td data-label="Significado">Relación carga/masa de la partícula</td><td data-label="Unidades">C·kg⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Velocidad de la partícula</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(B\)</td><td data-label="Significado">Campo magnético uniforme</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Radio de la trayectoria circular</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una partícula describe \(r=1\,\text{cm}\) con \(v=10^{6}\,\text{m/s}\) en \(B=0{,}5\,\text{T}\). Entonces \(|q|/m=v/(Br)=2\cdot10^{8}\,\text{C/kg}\). Si se curva hacia abajo con \(\vec B\) saliente y \(\vec v\) hacia la derecha, \(q>0\); si se curva hacia arriba, \(q<0\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li><strong>Signo de la carga:</strong> se compara \(\vec v\times\vec B\) con el sentido de la fuerza centrípeta.</li>
+                    <li><strong>Mayor \(|q|/m\)</strong> implica <strong>menor radio</strong> de curvatura (para la misma \(v\) y \(B\)).</li>
+                    <li>El electrón tiene \(|q|/m\approx1{,}76\cdot10^{11}\,\text{C/kg}\), mucho mayor que el protón.</li>
+                    <li>Es el principio del <strong>espectrómetro de masas</strong>: separa isótopos por su relación \(q/m\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             LEYENDA EPISTÉMICA
+             ============================================================ -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
+                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
+                consecuencia matemática, principio de conservación o conversión de unidades— y cada
+                categoría se domina con un <strong>verbo distinto</strong>. Identificar el tipo
+                <em>antes</em> de estudiar ahorra tiempo y evita memorizar lo que se puede deducir.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física.
+                        No se demuestra, se establece. Se domina cuando puedes enunciarla sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B1</strong>
+                        \(\vec E=\vec F/q_0\) &nbsp;·&nbsp; \(V=E_p/q\) &nbsp;·&nbsp; \(\vec F_m=q\vec v\times\vec B\)
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es el <em>punto de partida</em> del tema: describe cómo funciona la naturaleza.
+                        No se deriva de otra cosa; se entiende el porqué y las condiciones en las que aplica.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B1</strong>
+                        \(F=K\,|q_1q_2|/r^{2}\) &nbsp;·&nbsp; \(\vec F=q(\vec E+\vec v\times\vec B)\)
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> integrando, despejando o sustituyendo una ley fundamental o una
+                        definición. No se memoriza: se reconstruye en 2–3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B1</strong>
+                        \(E=K|Q|/r^{2}\) &nbsp;·&nbsp; \(V=KQ/r\) &nbsp;·&nbsp; \(E=|\Delta V|/d\) &nbsp;·&nbsp;
+                        \(W=q(V_A-V_B)\) &nbsp;·&nbsp; \(r=mv/(|q|B)\) &nbsp;·&nbsp; \(v=E/B\)
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Principio / conservación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Es una <em>regla universal</em> que restringe los procesos posibles. No se demuestra
+                        ni se deduce: se aplica como filtro a cada problema concreto.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B1</strong>
+                        \(\vec E_{\text{total}}=\sum\vec E_i\) &nbsp;·&nbsp; \(\vec F_{\text{total}}=\sum\vec F_i\)
+                        &nbsp;·&nbsp; \(q\vec E+qv\vec B=0\) (selector)
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Conversión / operación</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes
+                        equivalentes. Debe salir sin pensar, como un reflejo.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B1</strong>
+                        \(\text{MeV}\leftrightarrow\text{J}\) &nbsp;·&nbsp; \(\mu\text{C}\leftrightarrow\text{C}\) &nbsp;·&nbsp;
+                        \(\text{cm}\leftrightarrow\text{m}\) &nbsp;·&nbsp; \(\text{u}\leftrightarrow\text{kg}\) &nbsp;·&nbsp;
+                        \(\text{N·C}^{-1}\leftrightarrow\text{V·m}^{-1}\)
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tabla resumen -->
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Punto de partida físico</td>
+                        <td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Regla universal de conservación</td>
+                        <td data-label="¿Cómo se domina?">Plantearla en cada problema</td>
+                        <td data-label="Autoevaluación">¿La aplico como filtro al problema?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Herramienta mecánica</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿Me sale sin pensar?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Regla de oro -->
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
+                pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si sale de otra fórmula integrando, despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
+                Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender).
+                Si solo asigna un nombre → <strong>definición</strong> (memorizar).
+                Si es una regla que se cumple siempre → <strong>principio</strong> (aplicar).
+            </div>
+
+            <!-- Mini-referencia de colores de las tarjetas -->
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Ley de Coulomb y fuerza de Lorentz</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Potencial y trabajo eléctrico</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Campo eléctrico</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Aplicaciones (fuerza magnética, selector, q/m)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Movimiento circular en campos</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================ GLOSARIO ============================ -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema B1</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ F=K\,\dfrac{|q_1q_2|}{r^{2}} \]</td><td data-label="Nombre">Ley de Coulomb (módulo)</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ \vec F_{1\to2}=K\,q_1q_2\,\dfrac{\vec r}{r^{3}} \]</td><td data-label="Nombre">Forma vectorial de la fuerza de Coulomb</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ \vec E=K\,\dfrac{Q}{r^{2}}\,\hat u_r \]</td><td data-label="Nombre">Campo eléctrico de una carga puntual</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ V=K\,\dfrac{Q}{r} \]</td><td data-label="Nombre">Potencial eléctrico de una carga puntual</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ \vec F=q\left(\vec E+\vec v\times\vec B\right) \]</td><td data-label="Nombre">Fuerza de Lorentz</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ F_m=|q|\,v\,B\,\mathrm{sen}\,\theta \]</td><td data-label="Nombre">Módulo de la fuerza magnética</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ E=\dfrac{|\Delta V|}{d} \]</td><td data-label="Nombre">Campo eléctrico uniforme entre placas</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ W_{A\to B}=q\,(V_A-V_B)=-\Delta U \]</td><td data-label="Nombre">Trabajo eléctrico</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ v=\dfrac{E}{B} \]</td><td data-label="Nombre">Selector de velocidades</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ r=\dfrac{mv}{|q|B} \]</td><td data-label="Nombre">Radio de giro en campo magnético uniforme</td><td data-label="Ficha">10</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ T=\dfrac{2\pi m}{|q|B} \]</td><td data-label="Nombre">Periodo del movimiento circular</td><td data-label="Ficha">10</td></tr>
+                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ f=\dfrac{|q|B}{2\pi m} \]</td><td data-label="Nombre">Frecuencia del movimiento circular</td><td data-label="Ficha">10</td></tr>
+                <tr><td data-label="#">13</td><td data-label="Fórmula">\[ \dfrac{|q|}{m}=\dfrac{v}{B\,r} \]</td><td data-label="Nombre">Relación carga/masa a partir del radio</td><td data-label="Ficha">11</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> confundir campo (vectorial) con potencial (escalar); olvidar el signo de la carga al aplicar la regla de la mano derecha; sumar módulos de campos o fuerzas en vez de componentes vectoriales; no homogeneizar las unidades al S.I. (μC → C, cm → m, u → kg); creer que la fuerza magnética realiza trabajo (no lo hace); invertir la fórmula del selector de velocidades (\(v=E/B\), no \(v=EB\)); usar \(r=mv/(qB)\) sin comprobar que \(\vec v\perp\vec B\); y olvidar que el periodo ciclotrón no depende de la velocidad en el régimen no relativista.
+        </div>
+    </details>
+
+    <!-- ============================ RECORDATORIO + BOTÓN ============================ -->
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en electromagnetismo, la <strong>ley de Coulomb</strong> \(F=K|q_1q_2|/r^{2}\) es la base de la electrostática, y la <strong>fuerza de Lorentz</strong> \(\vec F=q(\vec E+\vec v\times\vec B)\) es la base de todo el electromagnetismo. Si dominas ambas y comprendes que los campos y fuerzas son vectoriales (se suman por componentes) mientras que el potencial y la energía son escalares (se suman algebraicamente), puedes resolver cualquier problema de la EBAU sin memorizar el resto. Recuerda siempre medir \(r\) desde el centro de las cargas, aplicar correctamente la regla de la mano derecha (invirtiendo el sentido si \(q<0\)) y homogeneizar las unidades al S.I.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+</body>
+</html>
+```

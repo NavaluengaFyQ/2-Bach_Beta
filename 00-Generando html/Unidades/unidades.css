@@ -1,0 +1,783 @@
+/* ============================================================
+   ESTILOS COMUNES PARA TODAS LAS UNIDADES
+   IES Valle del Alberche · Física
+   ------------------------------------------------------------
+   Este archivo lo enlazan TODOS los HTML de la carpeta
+   "Unidades" mediante:
+       <link rel="stylesheet" href="../css/unidades.css">
+   ============================================================ */
+
+
+/* ===========================================================
+   1. BASE / RESET SUAVE
+   ============================================================ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0;
+    padding: 20px;
+    color: #2d3748;
+}
+
+p {
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+ul, ol {
+    padding-left: 25px;
+    line-height: 1.7;
+}
+
+strong {
+    color: #1e3a8a;
+}
+
+
+/* ============================================================
+   2. CONTENEDOR PRINCIPAL
+   ============================================================ */
+.container {
+    max-width: 1100px;
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+
+/* ============================================================
+   3. CABECERA (header)
+   ============================================================ */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-left h1 {
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.header-left p {
+    margin: 6px 0 0 0;
+    font-size: 1em;
+}
+
+.header-sub {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.header-sub img {
+    max-height: 28px;
+    width: auto;
+    border-radius: 4px;
+    background: white;
+    padding: 2px;
+}
+
+.header-sub .codigo {
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.header-sub .texto {
+    font-size: 1.1em;
+}
+
+.header-right img {
+    max-height: 70px;
+    max-width: 180px;
+    object-fit: contain;
+    display: block;
+    width: auto; 
+    height: auto;
+}
+
+
+/* ============================================================
+   4. SECCIONES (enunciado, objetivo, procedimiento, resultado)
+   ------------------------------------------------------------
+   Cada sección tiene un color distinto según su tipo.
+   Añade nuevas variantes copiando el patrón .tipo { ... }.
+   ============================================================ */
+.section {
+    padding: 25px 30px;
+    margin: 15px;
+    border-radius: 12px;
+    border-left: 5px solid;
+}
+
+.section h2 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Variantes de sección */
+.enunciado     { background: #f7fafc; border-color: #a0aec0; }
+.enunciado h2  { color: #4a5568; }
+
+.objetivo      { background: #fffaf0; border-color: #ed8936; }
+.objetivo h2   { color: #c05621; }
+
+.procedimiento { background: #f0fff4; border-color: #48bb78; }
+.procedimiento h2 { color: #276749; }
+
+.resultado     { background: #ebf8ff; border-color: #4299e1; }
+.resultado h2  { color: #2b6cb0; }
+
+
+/* ============================================================
+   5. CAJAS DE FÓRMULA
+   ============================================================ */
+.formula-box {
+    background: #edf2f7;
+    border: 2px solid #cbd5e0;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 1.1em;
+    overflow-x: auto;
+}
+
+
+/* ============================================================
+   6. PASOS NUMERADOS (dentro de secciones teóricas)
+   ============================================================ */
+.step {
+    background: white;
+    border-left: 4px solid #a0aec0;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.step-num {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
+/* ============================================================
+   7. NOTAS / AVISOS
+   ============================================================ */
+.note {
+    background: #fffbeb;
+    border: 1px solid #f6e05e;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 0.95em;
+    color: #744210;
+}
+
+
+/* ============================================================
+   8. TABLAS
+   ============================================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+th, td {
+    border: 1px solid #cbd5e0;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #edf2f7;
+}
+
+
+/* ============================================================
+   9. MAPA DE BLOQUES Y TEMAS
+   ============================================================ */
+.mapa-bloques {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.bloque-card {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+.bloque-card.actual {
+    background: #eef2ff;
+    border-color: #3b82f6;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+}
+
+.bloque-titulo {
+    font-weight: 700;
+    color: #1e3a8a;
+    font-size: 0.95em;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #cbd5e0;
+    line-height: 1.3;
+}
+
+.bloque-card.actual .bloque-titulo {
+    color: #1e40af;
+    border-bottom-color: #93c5fd;
+}
+
+.tema-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.tema-chip {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #475569;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.bloque-card.actual .tema-chip {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.bloque-card.actual .tema-chip.actual {
+    background: #2563eb;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+}
+
+@media (max-width: 800px) {
+    .mapa-bloques { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+    .mapa-bloques { grid-template-columns: 1fr; }
+}
+
+
+/* ============================================================
+   10. BLOQUES DESPLEGABLES GENÉRICOS (details)
+   ------------------------------------------------------------
+   Excluimos .section porque las secciones usan su propio estilo.
+   ============================================================ */
+details:not(.section) {
+    margin: 30px 15px 15px 15px;
+    background: #f8fafc;
+    border-radius: 20px;
+    border: 2px solid #dbeafe;
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+details:not(.section)[open] {
+    background: #ffffff;
+    border-color: #3b82f6;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.12);
+}
+
+details:not(.section) > summary {
+    list-style: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    padding: 0.8rem 0.5rem 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+    flex-wrap: wrap;
+}
+
+details:not(.section) > summary::-webkit-details-marker {
+    display: none;
+}
+
+details:not(.section) > summary i {
+    font-size: 1.8rem;
+    color: #2563eb;
+    transition: transform 0.3s ease;
+}
+
+details:not(.section)[open] > summary i {
+    transform: rotate(180deg);
+}
+
+details:not(.section) > summary .titulo-principal {
+    flex: 1;
+}
+
+details:not(.section) > summary .badge-pulsa {
+    background: #dbeafe;
+    padding: 0.2rem 1rem;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    color: #1e40af;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.contenido-desplegable {
+    padding: 0.5rem 0.8rem 1.8rem 0.8rem;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 0.5rem;
+}
+
+
+/* ============================================================
+   11. TARJETAS DE EJERCICIO
+   ============================================================ */
+.tarjeta-ejercicio {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.cabecera-ej {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    border-bottom: 2px dashed #bfdbfe;
+    padding-bottom: 0.6rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.cabecera-ej .num-ej {
+    background: #2563eb;
+    color: white;
+    font-weight: 700;
+    padding: 0.2rem 1rem;
+    border-radius: 40px;
+    font-size: 0.9rem;
+}
+
+.cabecera-ej .titulo-ej {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #0b1e33;
+}
+
+.cabecera-ej .meta-ej {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 0.2rem 0.8rem;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+.enunciado-ej {
+    margin-bottom: 1rem;
+    background: #f9fafb;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    border-left: 4px solid #94a3b8;
+}
+
+.resolucion-ej {
+    background: #f1f5f9;
+    padding: 1.2rem 1.8rem;
+    border-radius: 16px;
+    border: 1px solid #cbd5e1;
+    font-size: 0.98rem;
+}
+
+.resolucion-ej .paso {
+    margin: 0.6rem 0;
+}
+
+.resolucion-ej .paso strong {
+    color: #1e40af;
+}
+
+
+/* ============================================================
+   12. PIE DIDÁCTICO (dentro del bloque de problemas)
+   ============================================================ */
+.pie-clave {
+    margin-top: 1.8rem;
+    padding: 1rem 1.8rem;
+    background: #eef2ff;
+    border-radius: 40px;
+    border-left: 6px solid #3b82f6;
+    font-weight: 500;
+    color: #1e3a8a;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pie-clave i {
+    font-size: 1.6rem;
+    color: #2563eb;
+}
+
+
+/* ============================================================
+   13. SECCIONES COMO DESPLEGABLES (details.section)
+   ============================================================ */
+details.section > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    font-weight: normal;
+    color: inherit;
+    flex-wrap: wrap;
+}
+
+details.section > summary::-webkit-details-marker {
+    display: none;
+}
+
+details.section > summary::marker {
+    content: "";
+}
+
+details.section > summary h2 {
+    margin: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+details.section > summary::after {
+    content: "▶";
+    font-size: 0.7em;
+    opacity: 0.5;
+    transition: transform 0.3s ease;
+    color: #718096;
+    flex-shrink: 0;
+}
+
+details.section[open] > summary::after {
+    transform: rotate(90deg);
+}
+
+details.section[open] > summary {
+    margin-bottom: 12px;
+}
+
+
+/* ============================================================
+   14. BOTONES Y BLOQUE "ES HORA DE"
+   ============================================================ */
+.boton-volver {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #0078D4;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.boton-volver:hover {
+    background: #005a9e;
+    transform: translateY(-2px);
+}
+
+.bloque-cta {
+    padding: 25px 15px;
+    text-align: center;
+    background: white;
+    margin: 20px;
+}
+
+.bloque-cta .tarjeta-cta {
+    max-width: 100%;
+    padding: 15px;
+    margin: 10px auto;
+    text-align: center;
+    background: #f8fafc;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.bloque-cta p {
+    font-size: clamp(0.95rem, 3vw, 1.2rem);
+    color: #2d3748;
+    margin-top: 0;
+    margin-bottom: 12px;
+    padding: 0 10px;
+}
+
+/* ============================================================
+   15. TEXTO RESALTADO (para títulos de tema)
+   ------------------------------------------------------------
+   Efecto "rotulador": fondo amarillo + texto azul oscuro.
+   Funciona sobre fondos claros y sobre el degradado del header.
+   Uso:  <span class="texto-resaltado">…</span>
+   ============================================================ */
+.texto-resaltado {
+    display: inline-block;
+    background: #fef08a;              /* amarillo suave */
+    color: #1e3a8a;                   /* azul oscuro */
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    line-height: 1.4;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ============================================================
+   16. PASOS DESPLEGABLES (details.step)
+   Mantienen el aspecto visual del antiguo .step, pero como
+   bloque colapsable. Se añaden DESPUÉS de las reglas genéricas
+   de details para que ganen en el orden de cascada.
+   ============================================================ */
+details.step {
+    background: white;
+    border: none;
+    border-left: 4px solid #a0aec0;
+    border-radius: 0 8px 8px 0;
+    padding: 15px;
+    margin: 12px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+details.step[open] {
+    background: white;
+    border-color: #a0aec0;
+    border-left-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+details.step > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    flex-wrap: wrap;
+}
+
+details.step > summary::-webkit-details-marker {
+    display: none;
+}
+
+details.step > summary::marker {
+    content: "";
+}
+
+/* El círculo del número no necesita margen extra: ya hay gap en el summary */
+details.step > summary .step-num {
+    margin-right: 0;
+    flex-shrink: 0;
+}
+
+details.step > summary strong {
+    color: #1e3a8a;
+}
+
+/* Triángulo indicador a la derecha del título */
+details.step > summary::after {
+    content: "▶";
+    font-size: 0.7em;
+    opacity: 0.5;
+    color: #718096;
+    transition: transform 0.3s ease;
+    margin-left: auto;
+}
+
+details.step[open] > summary::after {
+    transform: rotate(90deg);
+}
+
+/* Separador sutil entre el título y el contenido al abrir */
+details.step[open] > summary {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #cbd5e0;
+}
+
+
+/* ============================================================
+   17. TARJETAS DE EJERCICIO COMO DESPLEGABLES
+   ------------------------------------------------------------
+   Cada .tarjeta-ejercicio es ahora un <details> con un
+   <summary> en lugar de la cabecera <div>. Plegado por defecto.
+   ============================================================ */
+details.tarjeta-ejercicio > summary.cabecera-ej {
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    padding: 0.2rem 0;
+    border-bottom: none;
+    margin-bottom: 0;
+    transition: color 0.2s ease;
+}
+
+/* Ocultar el triángulo nativo del navegador */
+details.tarjeta-ejercicio > summary.cabecera-ej::-webkit-details-marker { display: none; }
+details.tarjeta-ejercicio > summary.cabecera-ej::marker { content: ""; }
+
+/* Flecha indicadora */
+details.tarjeta-ejercicio > summary.cabecera-ej::after {
+    content: "▶";
+    font-size: 0.75em;
+    color: #2563eb;
+    opacity: 0.7;
+    margin-left: 6px;
+    flex-shrink: 0;
+    align-self: center;
+    transition: transform 0.3s ease;
+}
+
+/* Cuando está abierto: recuperar el borde inferior y márgenes originales */
+details.tarjeta-ejercicio[open] > summary.cabecera-ej {
+    padding-bottom: 0.6rem;
+    border-bottom: 2px dashed #bfdbfe;
+    margin-bottom: 1rem;
+}
+
+/* Rotar la flecha al abrir */
+details.tarjeta-ejercicio[open] > summary.cabecera-ej::after {
+    transform: rotate(90deg);
+}
+
+/* Feedback al pasar el ratón por el título */
+details.tarjeta-ejercicio > summary.cabecera-ej:hover .titulo-ej {
+    color: #2563eb;
+}
+
+/* ============================================================
+   18. AJUSTES RESPONSIVE Y DEFENSIVOS
+   ============================================================ */
+
+/* Imágenes responsivas (defensivo) */
+img { max-width: 100%; height: auto; }
+
+/* Evita scroll horizontal por desbordes puntuales */
+html, body { overflow-x: hidden; }
+
+/* Rompe palabras muy largas en pantallas pequeñas */
+body { word-wrap: break-word; overflow-wrap: break-word; }
+
+/* Móvil: <= 640 px */
+@media (max-width: 640px) {
+
+    body { padding: 10px; }
+
+    .container { margin: 10px auto; border-radius: 12px; }
+
+    /* Header apilado verticalmente */
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px 18px;
+        gap: 12px;
+    }
+    .header-left h1 { font-size: 1.35em; }
+    .header-sub { justify-content: center; flex-wrap: wrap; }
+    .header-sub .texto { font-size: 0.95em; }
+    .header-right img { max-height: 55px; max-width: 130px; }
+
+    /* Secciones más compactas */
+    .section { padding: 15px 14px; margin: 10px 0; }
+    .section h2 { font-size: 1.1em; }
+
+    details:not(.section) {
+        margin: 15px 0;
+        padding: 0.4rem 0.4rem 0.4rem 0.9rem;
+    }
+    details:not(.section) > summary { font-size: 1.15rem; }
+
+    details.step { padding: 12px; margin: 10px 0; }
+
+    /* Tarjetas de ejercicio más estrechas */
+    .tarjeta-ejercicio { padding: 1rem; border-radius: 12px; }
+    .enunciado-ej { padding: 0.7rem 0.9rem; }
+    .resolucion-ej { padding: 0.9rem 1rem; font-size: 0.95rem; }
+    .cabecera-ej .titulo-ej { font-size: 1.05rem; }
+    .cabecera-ej .meta-ej { margin-left: 0; }
+
+    /* Tablas legibles */
+    th, td { padding: 5px 6px; font-size: 0.85em; }
+
+    /* Mapa de bloques a una columna */
+    .mapa-bloques { grid-template-columns: 1fr; gap: 8px; }
+
+    /* CTA y pie */
+    .pie-clave { padding: 0.9rem 1rem; border-radius: 12px; font-size: 0.95em; }
+    .bloque-cta { padding: 15px 5px; }
+    .bloque-cta p { font-size: 1em; }
+
+    /* Formulario de fórmulas: que pueda hacer scroll interno si es muy ancho */
+    .formula-box { padding: 10px; font-size: 1em; }
+}

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema B2. Campo eléctrico de distribuciones discretas y continuas; flujo</title>
+
+    <!-- Iconos y hoja de estilos común del proyecto -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax: se utilizan delimitadores \(...\) y \[...\] -->
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+            options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <style>
+        .dato-frecuencia { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:16px 0; }
+        .dato-frecuencia > div { background:#fff; border:1px solid #cbd5e0; border-radius:12px; padding:12px 15px; }
+        .dato-frecuencia strong { display:block; color:#1e40af; margin-bottom:5px; }
+        .dato-frecuencia .valor { font-size:1.35rem; font-weight:800; color:#0f172a; }
+        .tag-b2,.tag-puntos { display:inline-block; border-radius:30px; padding:3px 10px; font-size:.78rem; font-weight:700; margin-right:6px; }
+        .tag-b2 { background:#dbeafe; color:#1e40af; }
+        .tag-puntos { background:#f1f5f9; color:#475569; }
+        .apartados-ej { margin:10px 0 0 0; padding-left:24px; }
+        .apartados-ej li { margin:7px 0; }
+        .puntuacion-apartado { color:#64748b; font-size:.88em; }
+        .nota-alcance { background:#fffbeb; border-left:4px solid #f59e0b; padding:10px 14px; border-radius:8px; margin:10px 0 15px; color:#78350f; }
+        .resolucion-ej h3 { margin-top:0; color:#1e3a8a; }
+        .resolucion-ej h4 { color:#1e40af; margin:18px 0 6px; }
+        .resolucion-ej p { margin:8px 0; }
+        .formula-box { overflow-x:auto; }
+        .grid-diagramas { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:18px 0; }
+        .diagrama { background:#fff; border:1px solid #cbd5e1; border-radius:14px; padding:12px; min-width:0; }
+        .diagrama h4 { margin:0 0 8px; color:#1e3a8a; }
+        .diagrama svg { display:block; width:100%; height:auto; max-height:300px; }
+        .diagrama figcaption { color:#475569; font-size:.9rem; line-height:1.5; margin-top:8px; }
+        .leyenda-vector { display:flex; gap:14px; flex-wrap:wrap; font-size:.88rem; margin:8px 0; }
+        .leyenda-vector span { display:inline-flex; align-items:center; gap:5px; }
+        .muestra { width:18px; height:4px; display:inline-block; border-radius:3px; }
+        .muestra.e1 { background:#2563eb; } .muestra.e2 { background:#ea580c; } .muestra.er { background:#15803d; }
+        .dos-columnas { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+        .mini-card { background:#fff; border:1px solid #dbeafe; border-radius:12px; padding:14px 16px; margin:10px 0; }
+        .mini-card h4 { color:#1e40af; margin:0 0 8px; }
+        .nota-curricular { background:#eff6ff; border-left:5px solid #3b82f6; border-radius:10px; padding:13px 16px; margin:15px 0; }
+        .tabla-formulas td:first-child { min-width:190px; }
+        @media(max-width:700px) {
+            .dato-frecuencia,.grid-diagramas,.dos-columnas { grid-template-columns:1fr; }
+            .diagrama svg { max-height:260px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA B2.- </span>
+                <span class="texto">Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- UBICACIÓN EN EL CURRÍCULO -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque B. Campo electromagnético</strong> de Física de 2.º de Bachillerato. En la organización de bloques y temas facilitada para el Decreto 40/2022 (BOCYL-D-30092022-4), aparece identificado como:</p>
+        <div class="formula-box" style="font-size:1em">
+            <strong>Bloque B · Tema B2:</strong> <span class="texto-resaltado">Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico.</span>
+        </div>
+        <div class="mapa-bloques">
+            <div class="bloque-card">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista"><span class="tema-chip">A1</span><span class="tema-chip">A2</span><span class="tema-chip">A3</span><span class="tema-chip">A4</span><span class="tema-chip">A5</span><span class="tema-chip">A6</span><span class="tema-chip">A7</span><span class="tema-chip">A8</span></div>
+            </div>
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span><span class="tema-chip actual">B2</span><span class="tema-chip">B3</span><span class="tema-chip">B4</span><span class="tema-chip">B5</span><span class="tema-chip">B6</span><span class="tema-chip">B7</span><span class="tema-chip">B8</span><span class="tema-chip">B9</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista"><span class="tema-chip">C1</span><span class="tema-chip">C2</span><span class="tema-chip">C3</span><span class="tema-chip">C4</span><span class="tema-chip">C5</span><span class="tema-chip">C6</span></div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista"><span class="tema-chip">D1</span><span class="tema-chip">D2</span><span class="tema-chip">D3</span><span class="tema-chip">D4</span><span class="tema-chip">D5</span><span class="tema-chip">D6</span></div>
+            </div>
+        </div>
+        <p><strong>Relación con otros temas:</strong> B1 aporta la ley de Coulomb, de la que se obtiene el campo de una carga puntual. B3 y B4 aparecen a veces combinados con B2 en un mismo problema (potencial y trabajo), pero su desarrollo específico corresponde a esos temas. B8 trata las líneas de campo; aquí se emplean como apoyo para representar direcciones y sentidos.</p>
+        <div class="nota-curricular"><strong>En este tema:</strong> se estudia cómo calcular y representar el campo eléctrico creado por una o varias cargas, cómo extender el razonamiento a distribuciones continuas y cómo interpretar el flujo eléctrico y el teorema de Gauss.</div>
+    </details>
+
+    <!-- FRECUENCIA / IMPORTANCIA EBAU -->
+    <details class="section enunciado">
+        <summary><h2>📊 Presencia en los problemas EBAU</h2></summary>
+        <p>Según los indicadores proporcionados para C-B2 y P-B2, ambos presentan la misma frecuencia estimada:</p>
+        <div class="dato-frecuencia">
+            <div><strong>C-B2 · Conceptos</strong><span class="valor">11,3 %</span><div>Media: 10,1 % · Diferencia: +1,2 pp</div></div>
+            <div><strong>P-B2 · Problemas tipo</strong><span class="valor">11,3 %</span><div>Media: 10,1 % · Diferencia: +1,2 pp</div></div>
+        </div>
+        <p>Las palabras clave que orientan el estudio son <strong>campo eléctrico</strong>, <strong>distribución discreta</strong>, <strong>principio de superposición</strong>, <strong>vector campo eléctrico</strong> y <strong>flujo eléctrico</strong>. Para los problemas tipo se añaden configuraciones de dos o tres cargas, cuadrados, triángulos y diagramas vectoriales.</p>
+    </details>
+
+    <!-- OBJETIVOS -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Definir el campo eléctrico como fuerza por unidad de carga de prueba positiva e identificarlo como una magnitud vectorial.</li>
+            <li>Calcular el campo eléctrico creado por una carga puntual y determinar correctamente su dirección y sentido según el signo de la carga.</li>
+            <li>Aplicar el principio de superposición para obtener el campo resultante de dos o más cargas puntuales.</li>
+            <li>Descomponer los vectores campo en componentes cartesianas y reconstruir el módulo, la dirección y el sentido del campo resultante.</li>
+            <li>Resolver configuraciones geométricas habituales de PAU/EBAU: puntos sobre un eje, triángulos, cuadrados y distribuciones simétricas.</li>
+            <li>Reconocer la diferencia entre una distribución discreta de cargas y una distribución continua, e interpretar las densidades lineal, superficial y volumétrica.</li>
+            <li>Definir el flujo eléctrico y calcularlo en una superficie plana dentro de un campo uniforme.</li>
+            <li>Enunciar y aplicar el teorema de Gauss en situaciones de simetría adecuada, relacionando flujo y carga encerrada.</li>
+            <li>Representar mediante un diagrama los campos individuales y el campo resultante antes de efectuar los cálculos.</li>
+        </ul>
+    </details>
+
+    <!-- CONTENIDO TEÓRICO -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step" open>
+            <summary><span class="step-num">1</span><strong>Campo eléctrico: definición y carácter vectorial.</strong></summary>
+            <p>Una carga eléctrica modifica las propiedades del espacio que la rodea: crea un <strong>campo eléctrico</strong>. Para caracterizarlo en un punto se coloca una carga de prueba positiva, suficientemente pequeña para no alterar la distribución creadora. El campo es la fuerza eléctrica por unidad de carga de prueba:</p>
+            <div class="formula-box">\[\boxed{\vec E=\frac{\vec F}{q_0}}\]</div>
+            <p>El campo eléctrico es una magnitud <strong>vectorial</strong>. Su unidad en el Sistema Internacional es el \(\text{N}\,\text{C}^{-1}\), equivalente a \(\text{V}\,\text{m}^{-1}\). El sentido de \(\vec E\) se define como el que tendría la fuerza sobre una carga de prueba positiva.</p>
+            <div class="note"><strong>Importante:</strong> el campo lo crean las cargas fuente; no depende del valor de la carga de prueba utilizada para medirlo. Una carga de prueba negativa experimentaría una fuerza de sentido contrario al campo.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Campo eléctrico creado por una carga puntual.</strong></summary>
+            <p>Una carga puntual \(q\), situada a una distancia \(r\) del punto de observación, crea un campo cuyo módulo es:</p>
+            <div class="formula-box">\[\boxed{E=K_0\,\frac{|q|}{r^2}}\]</div>
+            <p>donde \(K_0=\dfrac{1}{4\pi\varepsilon_0}\approx9{,}00\cdot10^9\,\text{N}\,\text{m}^2\,\text{C}^{-2}\) es la constante de Coulomb en el vacío.</p>
+            <p><strong>Dirección y sentido:</strong></p>
+            <ul>
+                <li>Si \(q&gt;0\), el campo apunta radialmente <strong>hacia fuera</strong> de la carga.</li>
+                <li>Si \(q&lt;0\), el campo apunta radialmente <strong>hacia la carga</strong>.</li>
+            </ul>
+            <p>Si la carga está en el origen y \(\vec r\) es el vector de posición del punto donde se calcula el campo:</p>
+            <div class="formula-box">\[\boxed{\vec E(\vec r)=K_0\,\frac{q}{r^3}\,\vec r}\]</div>
+            <p>Para una carga situada en \(\vec r_i\) y un punto de observación \(P\), se utiliza el vector que va desde la carga hasta el punto: \(\vec r_P-\vec r_i\).</p>
+            <div class="formula-box">\[\boxed{\vec E_i(P)=K_0q_i\,\frac{\vec r_P-\vec r_i}{|\vec r_P-\vec r_i|^3}}\]</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Principio de superposición de campos eléctricos.</strong></summary>
+            <p>Cuando varias cargas crean campo en un mismo punto, el campo total es la <strong>suma vectorial</strong> de los campos que produciría cada carga por separado:</p>
+            <div class="formula-box">\[\boxed{\vec E_{\mathrm{R}}=\vec E_1+\vec E_2+\cdots+\vec E_n=\sum_i\vec E_i}\]</div>
+            <p>Para una distribución discreta de cargas puntuales:</p>
+            <div class="formula-box">\[\boxed{\vec E(P)=K_0\sum_i q_i\,\frac{\vec r_P-\vec r_i}{|\vec r_P-\vec r_i|^3}}\]</div>
+            <p>La suma no se realiza, en general, sumando módulos. Es necesario tener en cuenta la dirección y el sentido de cada contribución.</p>
+            <p><strong>En el plano XY:</strong> se calculan las componentes de cada campo y se suman por separado:</p>
+            <div class="formula-box">\[E_x=\sum_i E_{ix}\qquad E_y=\sum_i E_{iy}\]</div>
+            <p>Una vez obtenidas las componentes:</p>
+            <div class="formula-box">\[E_{\mathrm R}=\sqrt{E_x^2+E_y^2}\qquad \tan\alpha=\frac{E_y}{E_x}\]</div>
+            <div class="note"><strong>Atención al ángulo:</strong> el cociente anterior proporciona el ángulo de referencia. El cuadrante correcto se determina a partir de los signos de \(E_x\) y \(E_y\).</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Diagramas vectoriales: triángulos y cuadrados.</strong></summary>
+            <p>En un problema de superposición, el esquema debe realizarse <strong>antes de operar</strong>. En el punto donde se calcula el campo se dibuja cada vector individual con su dirección radial y su sentido correcto. Después se representa la suma vectorial.</p>
+            <div class="grid-diagramas">
+                <figure class="diagrama">
+                    <h4>Dos cargas en la base de un triángulo equilátero</h4>
+                    <svg viewBox="0 0 360 250" role="img" aria-label="Dos cargas positivas en la base de un triángulo equilátero y campos en el vértice superior">
+                        <defs>
+                            <marker id="b2blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/></marker>
+                            <marker id="b2orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ea580c"/></marker>
+                            <marker id="b2green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#15803d"/></marker>
+                        </defs>
+                        <path d="M75 220 L285 220 L180 70 Z" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="6 4"/>
+                        <circle cx="75" cy="220" r="13" fill="#dc2626"/><circle cx="285" cy="220" r="13" fill="#dc2626"/>
+                        <text x="75" y="225" text-anchor="middle" font-size="16" fill="white" font-weight="bold">+</text><text x="285" y="225" text-anchor="middle" font-size="16" fill="white" font-weight="bold">+</text>
+                        <circle cx="180" cy="70" r="4" fill="#0f172a"/><text x="192" y="63" font-size="13" fill="#0f172a">P</text>
+                        <path d="M180 70 L224 8" stroke="#2563eb" stroke-width="4" marker-end="url(#b2blue)" fill="none"/>
+                        <path d="M180 70 L136 8" stroke="#ea580c" stroke-width="4" marker-end="url(#b2orange)" fill="none"/>
+                        <path d="M180 70 L180 4" stroke="#15803d" stroke-width="4" marker-end="url(#b2green)" fill="none"/>
+                        <text x="230" y="22" font-size="13" fill="#2563eb">E₁</text><text x="112" y="22" font-size="13" fill="#ea580c">E₂</text><text x="190" y="28" font-size="13" fill="#15803d">Eᵣ</text>
+                        <text x="180" y="242" text-anchor="middle" font-size="12" fill="#475569">Las componentes horizontales se cancelan</text>
+                    </svg>
+                    <div class="leyenda-vector"><span><i class="muestra e1"></i> \(\vec E_1\)</span><span><i class="muestra e2"></i> \(\vec E_2\)</span><span><i class="muestra er"></i> \(\vec E_R\)</span></div>
+                    <figcaption>Para dos cargas positivas iguales, los campos en el vértice superior tienen el mismo módulo. Las componentes horizontales se anulan y las verticales se suman.</figcaption>
+                </figure>
+                <figure class="diagrama">
+                    <h4>Tres cargas en tres vértices de un cuadrado</h4>
+                    <svg viewBox="0 0 360 245" role="img" aria-label="Tres cargas en tres vértices de un cuadrado y campo resultante en el cuarto vértice">
+                        <defs>
+                            <marker id="sqblue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/></marker>
+                            <marker id="sqorange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ea580c"/></marker>
+                            <marker id="sqgreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#15803d"/></marker>
+                            <marker id="sqpurple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#9333ea"/></marker>
+                        </defs>
+                        <rect x="88" y="38" width="170" height="170" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="6 4"/>
+                        <circle cx="88" cy="208" r="12" fill="#dc2626"/><text x="88" y="213" text-anchor="middle" fill="white" font-size="15">+</text>
+                        <circle cx="258" cy="208" r="12" fill="#dc2626"/><text x="258" y="213" text-anchor="middle" fill="white" font-size="15">+</text>
+                        <circle cx="88" cy="38" r="12" fill="#dc2626"/><text x="88" y="43" text-anchor="middle" fill="white" font-size="15">+</text>
+                        <circle cx="258" cy="38" r="4" fill="#0f172a"/><text x="272" y="34" font-size="13" fill="#0f172a">P</text>
+                        <path d="M258 38 L258 5" stroke="#2563eb" stroke-width="4" marker-end="url(#sqblue)"/>
+                        <path d="M258 38 L328 38" stroke="#ea580c" stroke-width="4" marker-end="url(#sqorange)"/>
+                        <path d="M258 38 L288 8" stroke="#9333ea" stroke-width="4" marker-end="url(#sqpurple)"/>
+                        <path d="M258 38 L318 0" stroke="#15803d" stroke-width="4" stroke-dasharray="5 3" marker-end="url(#sqgreen)"/>
+                        <text x="265" y="13" font-size="12" fill="#2563eb">E₁</text><text x="312" y="29" font-size="12" fill="#ea580c">E₂</text><text x="291" y="17" font-size="12" fill="#9333ea">E₃</text><text x="306" y="4" font-size="12" fill="#15803d">Eᵣ</text>
+                        <text x="173" y="230" text-anchor="middle" font-size="12" fill="#475569">Esquema ilustrativo: dibujar cada contribución por separado</text>
+                    </svg>
+                    <div class="leyenda-vector"><span><i class="muestra e1"></i> Campos individuales</span><span><i class="muestra er"></i> Resultante (discontinua)</span></div>
+                    <figcaption>Esquema vectorial ilustrativo para tres cargas positivas: desde P se dibujan los tres campos individuales y, con línea discontinua, su resultante. En un problema real hay que respetar los signos y las distancias del enunciado.</figcaption>
+                </figure>
+            </div>
+            <p>En configuraciones simétricas conviene identificar las componentes que se cancelan antes de calcular. Esta observación reduce operaciones y ayuda a comprobar que la dirección final es razonable.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">5</span><strong>Distribuciones discretas y distribuciones continuas.</strong></summary>
+            <p>En una <strong>distribución discreta</strong> hay un número finito de cargas puntuales y el campo se obtiene mediante una suma. En una <strong>distribución continua</strong>, la carga se considera repartida a lo largo de una línea, una superficie o un volumen. La suma se sustituye por una integral de las contribuciones diferenciales:</p>
+            <div class="formula-box">\[\mathrm d\vec E=K_0\,\frac{\mathrm dq}{r^2}\,\hat u_r\qquad\Longrightarrow\qquad\vec E=K_0\int\frac{\hat u_r}{r^2}\,\mathrm dq\]</div>
+            <p>Para describir cómo se distribuye la carga se utilizan densidades:</p>
+            <div class="dos-columnas">
+                <div class="mini-card"><h4>Densidad lineal</h4><p>\(\displaystyle\lambda=\frac{\mathrm dq}{\mathrm dl}\)</p><p>Unidad: \(\text{C}\,\text{m}^{-1}\).</p><p>Elemento de carga: \(\mathrm dq=\lambda\,\mathrm dl\).</p></div>
+                <div class="mini-card"><h4>Densidad superficial</h4><p>\(\displaystyle\sigma=\frac{\mathrm dq}{\mathrm dS}\)</p><p>Unidad: \(\text{C}\,\text{m}^{-2}\).</p><p>Elemento de carga: \(\mathrm dq=\sigma\,\mathrm dS\).</p></div>
+                <div class="mini-card"><h4>Densidad volumétrica</h4><p>\(\displaystyle\rho=\frac{\mathrm dq}{\mathrm dV}\)</p><p>Unidad: \(\text{C}\,\text{m}^{-3}\).</p><p>Elemento de carga: \(\mathrm dq=\rho\,\mathrm dV\).</p></div>
+                <div class="mini-card"><h4>Idea clave</h4><p>El campo total es la suma/integral vectorial de las aportaciones de todos los elementos de carga, respetando su geometría y signo.</p></div>
+            </div>
+            <div class="note"><strong>En la resolución:</strong> primero se identifica la simetría. Si no existe una simetría que permita simplificar, el cálculo del campo de una distribución continua puede exigir una integral que excede los ejercicios de superposición discreta más habituales.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">6</span><strong>Flujo eléctrico.</strong></summary>
+            <p>El <strong>flujo eléctrico</strong> mide cuánto campo eléctrico atraviesa una superficie. Para un campo uniforme que atraviesa una superficie plana de área \(S\):</p>
+            <div class="formula-box">\[\boxed{\Phi_E=\vec E\cdot\vec S=E\,S\cos\theta}\]</div>
+            <p>El vector superficie \(\vec S\) es perpendicular a la superficie. Por tanto, \(\theta\) es el ángulo entre el campo eléctrico y la <strong>normal</strong> a la superficie, no el ángulo entre el campo y el plano de la superficie.</p>
+            <ul>
+                <li>\(\theta=0^\circ\): el campo es perpendicular a la superficie y el flujo es máximo y positivo.</li>
+                <li>\(\theta=90^\circ\): el campo es paralelo a la superficie y el flujo es nulo.</li>
+                <li>\(\theta=180^\circ\): el campo atraviesa la superficie en sentido contrario a la normal y el flujo es negativo.</li>
+            </ul>
+            <p>La unidad del flujo eléctrico en el S.I. es \(\text{N}\,\text{m}^2\,\text{C}^{-1}\) (equivalente a \(\text{V}\,\text{m}\)).</p>
+            <p>Para una superficie cerrada se suman las contribuciones de todos sus elementos:</p>
+            <div class="formula-box">\[\Phi_E=\oint_S\vec E\cdot\mathrm d\vec S\]</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">7</span><strong>Teorema de Gauss.</strong></summary>
+            <p>El teorema de Gauss establece que el flujo eléctrico neto a través de cualquier superficie cerrada es igual a la carga neta encerrada dividida por la permitividad eléctrica del vacío:</p>
+            <div class="formula-box">\[\boxed{\oint_S\vec E\cdot\mathrm d\vec S=\frac{Q_{\mathrm{enc}}}{\varepsilon_0}}\]</div>
+            <p>La carga encerrada es la suma algebraica de las cargas contenidas en el interior de la superficie. Las cargas exteriores pueden crear campo en la superficie, pero su contribución al flujo neto total a través de la superficie cerrada es cero.</p>
+            <div class="note"><strong>Muy importante:</strong> el teorema de Gauss es válido para cualquier superficie cerrada. Sin embargo, solo permite calcular el campo de forma sencilla cuando existe suficiente simetría para conocer la dirección del campo y asegurar que su módulo es constante en la superficie gaussiana elegida.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">8</span><strong>Aplicación de Gauss a distribuciones con simetría.</strong></summary>
+            <p>La elección de la superficie gaussiana debe adaptarse a la simetría de la distribución de carga. Los tres modelos ideales más habituales son:</p>
+            <div class="mini-card"><h4>Simetría esférica</h4><p>Para una carga puntual o una distribución esférica, se elige una esfera concéntrica. Fuera de una distribución esférica de carga total \(Q\):</p><div class="formula-box">\[E\,4\pi r^2=\frac{Q}{\varepsilon_0}\quad\Longrightarrow\quad E=K_0\frac{|Q|}{r^2}\]</div><p>El campo exterior coincide con el de una carga puntual \(Q\) situada en el centro.</p></div>
+            <div class="mini-card"><h4>Simetría cilíndrica: hilo rectilíneo muy largo</h4><p>Para una densidad lineal uniforme \(\lambda\), se elige un cilindro coaxial:</p><div class="formula-box">\[E\,(2\pi rL)=\frac{\lambda L}{\varepsilon_0}\quad\Longrightarrow\quad E=\frac{|\lambda|}{2\pi\varepsilon_0r}\]</div></div>
+            <div class="mini-card"><h4>Simetría plana: plano infinito uniformemente cargado</h4><p>Para una densidad superficial uniforme \(\sigma\), se utiliza una superficie gaussiana tipo pastilla:</p><div class="formula-box">\[2ES=\frac{|\sigma|S}{\varepsilon_0}\quad\Longrightarrow\quad E=\frac{|\sigma|}{2\varepsilon_0}\]</div></div>
+            <p>Estas expresiones corresponden a modelos ideales con simetría suficiente. Antes de aplicarlas hay que comprobar que la distribución descrita en el enunciado cumple las hipótesis del modelo.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">9</span><strong>Puntos donde el campo resultante es nulo.</strong></summary>
+            <p>El campo resultante se anula cuando la suma vectorial de todas las contribuciones es el vector cero. En el caso particular de dos cargas del mismo signo sobre una misma recta, el punto de campo nulo se encuentra entre ellas, donde los campos tienen sentidos opuestos y módulos iguales.</p>
+            <div class="formula-box">\[K_0\frac{|q_1|}{x^2}=K_0\frac{|q_2|}{(d-x)^2}\]</div>
+            <p>Al tomar raíces y despejar:</p>
+            <div class="formula-box">\[\boxed{x=d\,\frac{\sqrt{|q_1|}}{\sqrt{|q_1|}+\sqrt{|q_2|}}}\]</div>
+            <p>La expresión anterior se refiere a dos cargas del mismo signo y a un punto situado entre ellas. Para signos opuestos o para puntos fuera del segmento, hay que analizar por separado la dirección de los campos; no se debe aplicar esta fórmula sin justificar la geometría.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">10</span><strong>Relación entre campo eléctrico y fuerza.</strong></summary>
+            <p>Una vez conocido el campo en un punto, la fuerza eléctrica sobre una carga \(q\) situada allí se obtiene mediante:</p>
+            <div class="formula-box">\[\boxed{\vec F=q\,\vec E}\]</div>
+            <p>Si \(q&gt;0\), fuerza y campo tienen el mismo sentido; si \(q&lt;0\), tienen sentidos contrarios. Esta relación permite conectar los problemas de fuerza de Coulomb con el cálculo del campo resultante, sin confundir ambas magnitudes.</p>
+        </details>
+    </details>
+
+    <!-- PLANTILLA DE RESOLUCIÓN -->
+    <details class="section objetivo">
+        <summary><h2>🧭 Método general para resolver problemas tipo</h2></summary>
+        <ol>
+            <li><strong>Identificar los datos y el punto de observación.</strong> Pasar todas las distancias al S.I. y dibujar la posición de cada carga.</li>
+            <li><strong>Representar los campos individuales.</strong> Desde el punto de observación, dibujar cada vector: sale de una carga positiva y apunta hacia una carga negativa.</li>
+            <li><strong>Calcular cada módulo.</strong> Aplicar \(E_i=K_0|q_i|/r_i^2\), sin olvidar que cada carga puede estar a una distancia distinta del punto.</li>
+            <li><strong>Descomponer en ejes.</strong> Utilizar la geometría del triángulo, cuadrado o coordenadas para obtener las componentes con su signo.</li>
+            <li><strong>Sumar componentes.</strong> Calcular \(E_x=\sum E_{ix}\) y \(E_y=\sum E_{iy}\). Aprovechar simetrías y cancelaciones.</li>
+            <li><strong>Obtener módulo y dirección.</strong> Aplicar Pitágoras y determinar el cuadrante con los signos de las componentes.</li>
+            <li><strong>Comprobar el resultado.</strong> Revisar unidades, orden de magnitud y coherencia del sentido con el diagrama vectorial.</li>
+        </ol>
+        <div class="note"><strong>Regla práctica:</strong> primero el dibujo, después las componentes y, por último, el módulo. No se suman directamente los módulos de campos que no tienen la misma dirección y sentido.</div>
+    </details>
+
+    <!-- ANÁLISIS DE FÓRMULAS -->
+    <details class="section resultado">
+        <summary><h2>🧮 Análisis de las fórmulas del tema B2</h2></summary>
+        <p>Tabla de referencia con el significado, las unidades y las condiciones de aplicación de las expresiones fundamentales:</p>
+        <table class="tabla-formulas">
+            <thead><tr><th>Fórmula</th><th>Significado físico</th><th>Variables y unidades</th><th>Condiciones de aplicación</th></tr></thead>
+            <tbody>
+                <tr><td>\(\vec E=\vec F/q_0\)</td><td>Definición de campo eléctrico.</td><td>\(E\): N/C; \(F\): N; \(q_0\): C.</td><td>Definición mediante una carga de prueba positiva.</td></tr>
+                <tr><td>\(E=K_0|q|/r^2\)</td><td>Módulo del campo de una carga puntual.</td><td>\(q\): C; \(r\): m; \(E\): N/C.</td><td>Carga puntual o exterior de una distribución esférica.</td></tr>
+                <tr><td>\(\vec E=K_0q\vec r/r^3\)</td><td>Campo vectorial de una carga puntual en el origen.</td><td>\(\vec r\): vector desde la carga al punto; m.</td><td>El signo de \(q\) fija el sentido radial.</td></tr>
+                <tr><td>\(\vec E_R=\sum_i\vec E_i\)</td><td>Principio de superposición.</td><td>Todos los campos en N/C.</td><td>Distribución discreta; suma vectorial.</td></tr>
+                <tr><td>\(E_x=\sum E_{ix}\), \(E_y=\sum E_{iy}\)</td><td>Suma por componentes.</td><td>Componentes cartesianas en N/C.</td><td>Problemas en el plano XY.</td></tr>
+                <tr><td>\(\mathrm d\vec E=K_0\,\mathrm dq\,\hat u_r/r^2\)</td><td>Contribución diferencial de una distribución continua.</td><td>\(\mathrm dq\): C; \(r\): m.</td><td>Se integra sobre la línea, superficie o volumen cargado.</td></tr>
+                <tr><td>\(\lambda=\mathrm dq/\mathrm dl\)</td><td>Densidad lineal de carga.</td><td>C/m.</td><td>Carga distribuida sobre una línea.</td></tr>
+                <tr><td>\(\sigma=\mathrm dq/\mathrm dS\)</td><td>Densidad superficial de carga.</td><td>C/m².</td><td>Carga distribuida sobre una superficie.</td></tr>
+                <tr><td>\(\rho=\mathrm dq/\mathrm dV\)</td><td>Densidad volumétrica de carga.</td><td>C/m³.</td><td>Carga distribuida en un volumen.</td></tr>
+                <tr><td>\(\Phi_E=ES\cos\theta\)</td><td>Flujo en una superficie plana con campo uniforme.</td><td>\(S\): m²; \(\Phi_E\): N·m²/C.</td><td>\(\theta\) se mide desde la normal a la superficie.</td></tr>
+                <tr><td>\(\Phi_E=\oint\vec E\cdot\mathrm d\vec S\)</td><td>Flujo neto por una superficie cerrada.</td><td>N·m²/C.</td><td>La normal exterior define el signo del flujo.</td></tr>
+                <tr><td>\(\Phi_E=Q_{enc}/\varepsilon_0\)</td><td>Teorema de Gauss.</td><td>\(Q_{enc}\): C; \(\varepsilon_0\): F/m.</td><td>Válido para cualquier superficie cerrada; simplifica el cálculo de E con simetría.</td></tr>
+                <tr><td>\(\vec F=q\vec E\)</td><td>Fuerza sobre una carga situada en el campo.</td><td>F: N; q: C; E: N/C.</td><td>El signo de q determina si la fuerza sigue u opone al campo.</td></tr>
+            </tbody>
+        </table>
+        <div class="note"><strong>Constante y permitividad:</strong> \(K_0=1/(4\pi\varepsilon_0)\approx8{,}99\cdot10^9\,\text{N}\,\text{m}^2\,\text{C}^{-2}\); \(\varepsilon_0\approx8{,}85\cdot10^{-12}\,\text{C}^2\,\text{N}^{-1}\,\text{m}^{-2}\).</div>
+    </details>
+
+    <!-- PROBLEMAS EBAU -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🔭 Problemas resueltos de EBAU — Tema B2</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas.</strong> Se prioriza Castilla y León (7 ejercicios) y se incorporan tres complementos de otras comunidades para cubrir <strong>tres cargas en un cuadrado</strong>, <strong>flujo eléctrico mediante Gauss</strong> y <strong>una distribución esférica continua</strong>. Los enunciados y los datos identificativos proceden del archivo de problemas facilitado.
+            </p>
+            <p><strong>Nota de alcance:</strong> algunos enunciados mezclan B2 con B3 o B4. En esos casos se incluye la resolución que figura en el banco y se señala qué apartado pertenece directamente al campo eléctrico y cuál constituye una conexión con potencial o trabajo.</p>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Campo y potencial en un triángulo equilátero con dos cargas</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Ordinaria · Problema 6</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <div class="etiquetas-ej"><span class="tag-b2">B2</span><span class="tag-puntos">2 puntos (1,5 + 0,5)</span></div>
+                    <p>En cada uno de los vértices de la base de un triángulo equilátero, cuyos lados miden tres metros, hay una carga de 10 μC.</p><ul class="apartados-ej"><li><strong>A)</strong> Calcule el campo y el potencial eléctricos en el tercer vértice. <span class="puntuacion-apartado">(1,5 puntos)</span></li><li><strong>B)</strong> Represente el vector campo eléctrico creado por cada carga en dicho vértice y el campo resultante. <span class="puntuacion-apartado">(0,5 puntos)</span></li></ul>
+                </div>
+                <p class="nota-alcance"><strong>Alcance:</strong> se incluye porque contiene un apartado directamente relacionado con B2. Los apartados de potencial o trabajo son conexiones con B3/B4 y se identifican como tales.</p>
+                <div class="resolucion-ej">
+                    <h3>Resolución</h3>
+                    <h4>Campo y potencial eléctricos</h4><p>Situamos la base horizontal y el tercer vértice por encima. Cada carga positiva produce un campo:</p>
+<div class="formula-box">\[E_0=K_0\frac{q}{L^2}=\frac{(9{,}00\cdot10^{9})(10\cdot10^{-6})}{3^2}=1{,}00\cdot10^{4}\,\text{N}\,\text{C}^{-1}.\]</div>
+<p>Los campos forman \(30^{\circ}\) con la altura. Las componentes horizontales se cancelan y las verticales se suman:</p>
+<div class="formula-box">\[E=2E_0\cos30^{\circ}=\sqrt{3}E_0=1{,}73\cdot10^{4}\,\text{N}\,\text{C}^{-1}.\]</div>
+<p>El potencial es escalar:</p>
+<div class="formula-box">\[V=2K_0\frac{q}{L}=2\frac{(9{,}00\cdot10^{9})(10\cdot10^{-6})}{3}=6{,}00\cdot10^{4}\,\text{V}.\]</div>
+<p>Resultado: \(E\approx1{,}73\cdot10^{4}\,\text{N}\,\text{C}^{-1}\), perpendicular a la base y alejándose de ella; \(V=6{,}00\cdot10^{4}\,\text{V}\).</p><h4>Esquema del campo</h4><p>En el tercer vértice, el campo creado por la carga izquierda va hacia arriba y a la derecha; el creado por la carga derecha va hacia arriba y a la izquierda. El campo resultante sigue la altura, según la mediatriz de la base.</p>
+<p>Resultado: \(\vec E=\vec E_1+\vec E_2\), perpendicular a la base y hacia fuera del triángulo.</p>
+                    <div class="note"><strong>Resultado del banco:</strong><p>\(E\approx1{,}73\cdot10^{4}\,\text{N}\,\text{C}^{-1}\), perpendicular a la base y alejándose de ella; \(V=6{,}00\cdot10^{4}\,\text{V}\).</p></div>
+                </div>
+            </details>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Campo de un dipolo y trabajo para trasladar una carga</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Problema 6</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <div class="etiquetas-ej"><span class="tag-b2">B2</span><span class="tag-puntos">2 puntos (1 + 1)</span></div>
+                    <p>Dos cargas puntuales de -2 μC y +2 μC se encuentran situadas, respectivamente, en los puntos (-2, 0) y (2, 0) del plano XY, con las coordenadas expresadas en unidades del S.I.</p><ul class="apartados-ej"><li><strong>A)</strong> Determine el vector campo eléctrico en el punto A (2, 3). Represente el vector campo eléctrico que crea cada carga en el punto, así como el campo eléctrico total. <span class="puntuacion-apartado">(1 punto)</span></li><li><strong>B)</strong> Calcule el trabajo necesario para llevar otra carga de valor -3 μC desde el origen hasta el punto A. Interprete el signo del resultado. <span class="puntuacion-apartado">(1 punto)</span></li></ul>
+                </div>
+                <p class="nota-alcance"><strong>Alcance:</strong> se incluye porque contiene un apartado directamente relacionado con B2. Los apartados de potencial o trabajo son conexiones con B3/B4 y se identifican como tales.</p>
+                <div class="resolucion-ej">
+                    <h3>Resolución</h3>
+                    <h4>Campo de cada carga y suma vectorial</h4><p>Los vectores desde las cargas hasta A son \(\vec r_1=(4,3)\,\text{m}\), de módulo 5 m, y \(\vec r_2=(0,3)\,\text{m}\), de módulo 3 m. Aplicamos \(\vec E_i=\frac{K_0q_i\vec r_i}{r_i^{3}}\):</p>
+<div class="formula-box">\[\vec E_1=\frac{K_0(-2\cdot10^{-6})(4\hat i+3\hat j)}{5^{3}}=(-576\hat i-432\hat j)\,\text{N}\,\text{C}^{-1},\]</div>
+<div class="formula-box">\[\vec E_2=\frac{K_0(2\cdot10^{-6})(3\hat j)}{3^{3}}=2000\hat j\,\text{N}\,\text{C}^{-1}.\]</div>
+<div class="formula-box">\[\vec E_A=\vec E_1+\vec E_2=(-576\hat i+1568\hat j)\,\text{N}\,\text{C}^{-1}.\]</div>
+<p>El campo de la carga negativa apunta hacia ella; el de la positiva se aleja verticalmente de ella. La suma apunta hacia arriba y a la izquierda. En el esquema, \(\vec E_2\) apunta verticalmente hacia arriba desde A; \(\vec E_1\) apunta hacia la carga negativa, hacia abajo a la izquierda; la resultante \(\vec E_A\) apunta hacia arriba y a la izquierda.</p><h4>Diferencia de potencial y energía potencial</h4><p>El potencial en el origen se anula, ya que las cargas tienen módulos iguales y distan 2 m. En A:</p>
+<div class="formula-box">\[V_O=0,\qquad V_A=K_0\left(\frac{q_1}{r_1}+\frac{q_2}{r_2}\right)=9{,}00\cdot10^{9}\left(\frac{-2\cdot10^{-6}}{5}+\frac{2\cdot10^{-6}}{3}\right)=2400\,\text{V}.\]</div>
+<p>El trabajo de un agente externo que traslada la carga sin cambiar su energía cinética es el aumento de energía potencial:</p>
+<div class="formula-box">\[W_{\text{ext}}=\Delta U=q'(V_A-V_O)=(-3\cdot10^{-6})(2400)=-7{,}20\cdot10^{-3}\,\text{J}.\]</div>
+<p>El signo negativo significa que el agente externo retira energía durante el traslado: el campo realiza trabajo positivo, \(W_{\text{campo}}=-\Delta U=+7{,}20\cdot10^{-3}\,\text{J}\). Si se deja mover libremente, esa disminución del potencial se transforma en energía cinética.</p>
+                    <div class="note"><strong>Resultado del banco:</strong><p>\(\vec E_A=(-576\hat i+1568\hat j)\,\text{N}\,\text{C}^{-1}\); módulo \(1{,}67\cdot10^{3}\,\text{N}\,\text{C}^{-1}\).<br>\(W_{\text{ext}}=-7{,}20\cdot10^{-3}\,\text{J}\); \(W_{\text{campo}}=+7{,}20\cdot10^{-3}\,\text{J}\).</p></div>
+                </div>
+            </details>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Punto de campo eléctrico nulo entre dos cargas y trabajo asociado</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Extraordinaria · Problema 7</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <div class="etiquetas-ej"><span class="tag-b2">B2</span><span class="tag-puntos">2 puntos (1 + 1)</span></div>
+                    <p>Dos cargas eléctricas puntuales \(q_A=8\,\mu\text{C}\) y \(q_B=2\,\mu\text{C}\), situadas sobre el eje X, están separadas 60 cm.<br>a) Calcule en qué punto entre ambas cargas el valor del campo eléctrico es nulo. Razone si puede anularse en un punto que no esté en dicho eje.<br>b) Calcule el trabajo necesario para llevar \(q_A\) desde su posición original hasta el punto calculado previamente. Dato: \(K_0=9{,}00\cdot10^{9}\,\text{N}\,\text{m}^{2}\,\text{C}^{-2}\).</p><ul class="apartados-ej"><li><strong>A)</strong> Punto de campo nulo entre las cargas y posibilidad fuera del eje. <span class="puntuacion-apartado">(1 punto)</span></li><li><strong>B)</strong> Trabajo para mover \(q_A\) al punto calculado. <span class="puntuacion-apartado">(1 punto)</span></li></ul>
+                </div>
+                <p class="nota-alcance"><strong>Alcance:</strong> se incluye porque contiene un apartado directamente relacionado con B2. Los apartados de potencial o trabajo son conexiones con B3/B4 y se identifican como tales.</p>
+                <div class="resolucion-ej">
+                    <h3>Resolución</h3>
+                    <h4>Planteamiento del punto de campo nulo entre las cargas</h4><p>Tomamos \(q_A\) en el origen y \(q_B\) a \(0{,}60\,\text{m}\) sobre el eje X positivo. Ambas cargas son positivas, así que en el segmento entre ambas los campos se oponen. Sea \(x\) la distancia desde \(q_A\) al punto de campo nulo. Igualando módulos:</p>
+<div class="formula-box">\[K_0\frac{q_A}{x^{2}}=K_0\frac{q_B}{(0{,}60-x)^{2}}.\]</div>
+<p>Simplificando:</p>
+<div class="formula-box">\[\frac{8}{x^{2}}=\frac{2}{(0{,}60-x)^{2}}.\]</div>
+<p>Tomando la raíz positiva:</p>
+<div class="formula-box">\[\frac{\sqrt{8}}{x}=\frac{\sqrt{2}}{0{,}60-x}\quad\Rightarrow\quad\frac{2}{x}=\frac{1}{0{,}60-x}.\]</div>
+<p>Resolviendo:</p>
+<div class="formula-box">\[2(0{,}60-x)=x\quad\Rightarrow\quad1{,}20-2x=x\quad\Rightarrow\quad x=0{,}40\,\text{m}.\]</div>
+<p>El punto está a \(0{,}40\,\text{m}\) de \(q_A\) y a \(0{,}20\,\text{m}\) de \(q_B\).</p><h4>¿Puede haber otro punto de campo nulo fuera del eje?</h4><p>No. Las dos cargas son positivas y están en el eje X. En cualquier punto fuera del eje, los dos vectores campo tienen componentes perpendiculares al eje del mismo signo, ya que ambos apuntan radialmente alejándose del eje. Esas componentes no pueden cancelarse y, por tanto, la resultante perpendicular al eje no es nula. La única posibilidad de campo nulo es sobre el eje y, además, entre las dos cargas.</p><h4>Energía potencial inicial y final</h4><p>Inicialmente, la separación entre \(q_A\) y \(q_B\) es \(0{,}60\,\text{m}\):</p>
+<div class="formula-box">\[U_i=K_0\frac{q_Aq_B}{0{,}60}.\]</div>
+<p>Al llevar \(q_A\) hasta \(x=0{,}40\,\text{m}\), la nueva separación entre las cargas es \(0{,}20\,\text{m}\):</p>
+<div class="formula-box">\[U_f=K_0\frac{q_Aq_B}{0{,}20}.\]</div><h4>Trabajo del agente externo</h4><p>El trabajo que debe realizar un agente externo, cuasi-estáticamente, es la variación de energía potencial del sistema:</p>
+<div class="formula-box">\[W_{\text{ext}}=\Delta U=U_f-U_i=K_0q_Aq_B\left(\frac{1}{0{,}20}-\frac{1}{0{,}60}\right).\]</div>
+<p>Sustituyendo:</p>
+<div class="formula-box">\[W_{\text{ext}}=9{,}00\cdot10^{9}\cdot8\cdot10^{-6}\cdot2\cdot10^{-6}\left(5-\frac{5}{3}\right)=+0{,}48\,\text{J}.\]</div>
+                    <div class="note"><strong>Resultado del banco:</strong><p>a) El campo se anula a \(0{,}40\,\text{m}\) de \(q_A\) y a \(0{,}20\,\text{m}\) de \(q_B\), sobre el segmento que une ambas cargas; no puede anularse fuera del eje.<br>b) \(W_{\text{ext}}=+0{,}48\,\text{J}\).</p></div>
+                </div>
+            </details>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Carga que anula el campo eléctrico en un punto dado</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <div class="etiquetas-ej"><span class="tag-b2">B2</span><span class="tag-puntos">1 punto</span></div>
+                    <p>Dos cargas eléctricas de \(1\,\mu\text{C}\) se sitúan, respectivamente, en los puntos \(A(0,2)\,\text{m}\) y \(B(0,-2)\,\text{m}\). ¿Qué carga eléctrica debe colocarse en el punto \(C(-2,0)\,\text{m}\) para que el campo eléctrico en el punto \(D(2,0)\,\text{m}\) sea nulo? Dato: \(K_0=9{,}00\cdot10^{9}\,\text{N}\,\text{m}^{2}\,\text{C}^{-2}\).</p>
+                </div>
+                <p class="nota-alcance"><strong>Alcance:</strong> la fuerza de Coulomb se interpreta mediante el campo resultante usando \(ec F=qec E\); la suma vectorial es la destreza central de B2.</p>
+                <div class="resolucion-ej">
+                    <h3>Resolución</h3>
+                    <h4>Campo creado por las cargas en A y B en el punto D</h4><p>Los vectores desde las cargas a \(D\) son \(\vec r_A=(2,-2)\,\text{m}\) y \(\vec r_B=(2,2)\,\text{m}\), ambos con módulo \(\sqrt{8}\,\text{m}\). Como ambas cargas son positivas, cada una crea un campo radial saliente desde su posición; por simetría las componentes verticales se cancelan y solo subsiste la componente \(x\), dirigida en el sentido \(+x\). El módulo de cada campo es:</p>
+<div class="formula-box">\[E_A=E_B=\frac{K_0\,q}{(\sqrt{8})^{2}}=\frac{9{,}00\cdot10^{9}\cdot10^{-6}}{8}=1{,}125\cdot10^{3}\,\text{N}\,\text{C}^{-1}.\]</div>
+<p>La componente \(x\) de cada campo vale \(E_A\frac{2}{\sqrt{8}}=795\,\text{N}\,\text{C}^{-1}\). Sumando ambas:</p>
+<div class="formula-box">\[E_{A+B,x}=2\cdot795=1{,}59\cdot10^{3}\,\text{N}\,\text{C}^{-1}.\]</div><h4>Campo necesario en D creado por la carga en C</h4><p>El vector desde \(C(-2,0)\) hasta \(D(2,0)\) es \((4,0)\,\text{m}\), con módulo \(4\,\text{m}\) y dirección \(+x\). Para anular el campo total en \(D\), la carga en \(C\) debe crear un campo de módulo \(1{,}59\cdot10^{3}\,\text{N}\,\text{C}^{-1}\) y sentido \(-x\). Si \(q_C\) es negativa, el campo apunta hacia \(C\), que es lo buscado.</p><h4>Magnitud de la carga</h4><div class="formula-box">\[|q_C|=\frac{E\,r^{2}}{K_0}=\frac{1{,}59\cdot10^{3}\cdot4^{2}}{9{,}00\cdot10^{9}}=2{,}83\cdot10^{-6}\,\text{C}.\]</div>
+<p>Por tanto, \(q_C=-2{,}83\,\mu\text{C}\).</p>
+                    <div class="note"><strong>Resultado del banco:</strong><p>\(q_C=-2{,}83\cdot10^{-6}\,\text{C}\).</p></div>
+                </div>
+            </details>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Fuerza eléctrica sobre una carga en un arco de circunferencia</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Ordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <div class="etiquetas-ej"><span class="tag-b2">B2</span><span class="tag-puntos">1 punto</span></div>
+                    <p>Sobre un arco de circunferencia se depositan tres cargas puntuales, según se muestra en la figura. Teniendo en cuenta que \(a=5\,\text{cm}\) y \(q=4\,\text{nC}\), determine la fuerza que experimenta la carga situada en el punto P. Configuración (figura): tres cargas sobre la circunferencia de radio \(a\) centrada en \(O\): \(-q\) en \((-a,0)\), \(+q\) en \((0,a)\) y \(+q\) en el punto \(P\,(a,0)\).</p>
+                </div>
+                <p class="nota-alcance"><strong>Alcance:</strong> la fuerza de Coulomb se interpreta mediante el campo resultante usando \(ec F=qec E\); la suma vectorial es la destreza central de B2.</p>
+                <div class="resolucion-ej">
+                    <h3>Resolución</h3>
+                    <h4>Fuerza sobre \(+q\) en \(P\) debida a la carga en \((-a,0)\)</h4><p>La distancia entre ambas cargas es \(2a=0{,}10\,\text{m}\) y la fuerza es atractiva, dirigida hacia la carga negativa situada a la izquierda:</p>
+<div class="formula-box">\[\vec F_1=-\frac{k q^{2}}{(2a)^{2}}\,\hat i=-\frac{9{,}0\cdot10^{9}\cdot(4\cdot10^{-9})^{2}}{(0{,}10)^{2}}\,\hat i=-1{,}44\cdot10^{-5}\,\hat i\ \text{N}.\]</div><h4>Fuerza sobre \(+q\) en \(P\) debida a la carga en \((0,a)\)</h4><p>La distancia entre las cargas es \(a\sqrt{2}\) y la fuerza es repulsiva, dirigida desde \((0,a)\) hacia \((a,0)\), con vector unitario \(\frac{1}{\sqrt{2}}(\hat i-\hat j)\). Por tanto:</p>
+<div class="formula-box">\[F_2=\frac{k q^{2}}{(a\sqrt{2})^{2}}=\frac{9{,}0\cdot10^{9}\cdot(4\cdot10^{-9})^{2}}{2(0{,}05)^{2}}=2{,}88\cdot10^{-5}\,\text{N},\]</div>
+<div class="formula-box">\[\vec F_2=2{,}88\cdot10^{-5}\left(\frac{1}{\sqrt{2}}\hat i-\frac{1}{\sqrt{2}}\hat j\right)=(2{,}04\cdot10^{-5}\,\hat i-2{,}04\cdot10^{-5}\,\hat j)\,\text{N}.\]</div><h4>Fuerza resultante sobre la carga en \(P\)</h4><p>Sumando vectorialmente:</p>
+<div class="formula-box">\[\vec F=\vec F_1+\vec F_2=(5{,}96\cdot10^{-6}\,\hat i-2{,}04\cdot10^{-5}\,\hat j)\,\text{N}.\]</div>
+<p>Su módulo es:</p>
+<div class="formula-box">\[|\vec F|=\sqrt{(5{,}96\cdot10^{-6})^{2}+(2{,}04\cdot10^{-5})^{2}}\approx2{,}12\cdot10^{-5}\,\text{N}.\]</div>
+<p>La dirección forma un ángulo \(\theta=\arctan\left(\frac{2{,}04\cdot10^{-5}}{5{,}96\cdot10^{-6}}\right)\approx73{,}7^{\circ}\) por debajo del eje \(+x\).</p>
+                    <div class="note"><strong>Resultado del banco:</strong><p>\(\vec F\approx(5{,}96\cdot10^{-6}\,\hat i-2{,}04\cdot10^{-5}\,\hat j)\,\text{N}\); \(|\vec F|\approx2{,}12\cdot10^{-5}\,\text{N}\), formando unos \(73{,}7^{\circ}\) por debajo del eje \(+x\).</p></div>
+                </div>
+            </details>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Valor de dos cargas puntuales para producir un campo eléctrico dado</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Ordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <div class="etiquetas-ej"><span class="tag-b2">B2</span><span class="tag-puntos">1 punto</span></div>
+                    <p>Dos cargas puntuales \(q_1\) y \(q_2\) se encuentran en la posición \((0, 1)\) y \((0, -1)\), respectivamente (unidades del S.I.). Halle el valor de las cargas para que el campo eléctrico en \((1, 0)\) sea \(\vec{E} = 4{,}5\cdot 10^{3}\,\vec{i}\) (N·C\(^{-1}\)).</p>
+                </div>
+                
+                <div class="resolucion-ej">
+                    <h3>Resolución</h3>
+                    <h4>Geometría de los vectores</h4><p>El punto de medida está a distancia \(\sqrt{2}\,\text{m}\) de cada una de las cargas. Los vectores unitarios desde cada carga hacia \((1,0)\) son</p>
+<div class="formula-box">\[\hat u_1=\frac{(1,-1)}{\sqrt{2}},\qquad \hat u_2=\frac{(1,1)}{\sqrt{2}}.\]</div><h4>Campos creados en \((1,0)\)</h4><p>Los campos eléctricos son</p>
+<div class="formula-box">\[\vec E_1=k\,q_1\frac{(1,-1)}{2\sqrt{2}},\qquad \vec E_2=k\,q_2\frac{(1,1)}{2\sqrt{2}}.\]</div>
+<p>Sumando,</p>
+<div class="formula-box">\[\vec E=\frac{k}{2\sqrt{2}}\left(q_1+q_2,\,-q_1+q_2\right).\]</div><h4>Imposición del campo dado y resolución</h4><p>Como \(\vec E=4{,}5\cdot10^{3}\,\vec i\), igualando componentes:</p>
+<p>(i) Componente \(x\): \(\frac{k(q_1+q_2)}{2\sqrt{2}}=4{,}5\cdot10^{3}\).</p>
+<p>(ii) Componente \(y\): \(\frac{k(-q_1+q_2)}{2\sqrt{2}}=0\), de donde \(q_1=q_2=q\).</p>
+<p>De (i) se sigue</p>
+<div class="formula-box">\[q=\frac{4{,}5\cdot10^{3}\sqrt{2}}{k}\approx 7{,}07\cdot10^{-7}\,\text{C}=707\,\text{nC}.\]</div>
+                    <div class="note"><strong>Resultado del banco:</strong><p>\(q_1=q_2=\frac{4{,}5\cdot10^{3}\sqrt{2}}{k}\approx 7{,}07\cdot10^{-7}\,\text{C}=707\,\text{nC}\).</p></div>
+                </div>
+            </details>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Campo y potencial en el centro de una distribución de cuatro cargas</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Ordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <div class="etiquetas-ej"><span class="tag-b2">B2</span><span class="tag-puntos">1 punto</span></div>
+                    <p>Cuatro cargas puntuales están distribuidas según se muestra en la figura, siendo \(Q=2\,\mu\text{C}\) y \(d=5\,\text{cm}\). Determine el vector campo eléctrico y el potencial en el punto O, equidistante de las cuatro cargas. Configuración: las cuatro cargas se sitúan en los vértices de un cuadrado rotado \(45^{\circ}\) centrado en O. Por la figura, \(+Q\) está a la izquierda y abajo de O, en los vértices \((-d,0)\) y \((0,-d)\), mientras que \(-Q\) está a la derecha y arriba, en los vértices \((+d,0)\) y \((0,+d)\).</p>
+                </div>
+                <p class="nota-alcance"><strong>Alcance:</strong> se incluye porque contiene un apartado directamente relacionado con B2. Los apartados de potencial o trabajo son conexiones con B3/B4 y se identifican como tales.</p>
+                <div class="resolucion-ej">
+                    <h3>Resolución</h3>
+                    <h4>Potencial en O</h4><p>Las cuatro cargas equidistan de O una distancia \(d\). El potencial eléctrico en O es la suma escalar de las contribuciones:</p>
+<div class="formula-box">\[V_O=k\sum_i\frac{q_i}{d}=\frac{k}{d}\left(Q-Q+Q-Q\right)=0.\]</div>
+<p>Por tanto, el potencial en el centro del cuadrado es nulo.</p><h4>Vector campo eléctrico en O</h4><p>Cada carga contribuye con un vector campo de módulo:</p>
+<div class="formula-box">\[E_0=k\frac{Q}{d^{2}}.\]</div>
+<p>El campo de una carga positiva apunta alejándose de la carga y el de una carga negativa apunta hacia ella. La carga \(+Q\) situada en \((-d,0)\) produce en O un campo en la dirección \(+x\); la carga \(-Q\) situada en \((+d,0)\) produce también un campo en la dirección \(+x\). La carga \(+Q\) situada en \((0,-d)\) produce en O un campo en la dirección \(+y\); la carga \(-Q\) situada en \((0,+d)\) produce también un campo en la dirección \(+y\).</p>
+<p>Así, las componentes del campo total son:</p>
+<div class="formula-box">\[E_x=2E_0,\qquad E_y=2E_0.\]</div><h4>Cálculo numérico</h4><p>Con \(k=9{,}0\cdot10^{9}\,\text{N}\,\text{m}^{2}\,\text{C}^{-2}\), \(Q=2{,}0\cdot10^{-6}\,\text{C}\) y \(d=5{,}0\cdot10^{-2}\,\text{m}\):</p>
+<div class="formula-box">\[E_0=9{,}0\cdot10^{9}\frac{2{,}0\cdot10^{-6}}{(5{,}0\cdot10^{-2})^{2}}=7{,}2\cdot10^{6}\,\text{N}\,\text{C}^{-1}.\]</div>
+<p>Cada componente vale \(2E_0=1{,}44\cdot10^{7}\,\text{N}\,\text{C}^{-1}\). El módulo es:</p>
+<div class="formula-box">\[E=\sqrt{E_x^{2}+E_y^{2}}=2\sqrt{2}E_0\approx2{,}04\cdot10^{7}\,\text{N}\,\text{C}^{-1}.\]</div>
+<p>El campo está dirigido a \(45^{\circ}\) en el primer cuadrante.</p>
+                    <div class="note"><strong>Resultado del banco:</strong><p>\(V_O=0\); \(\vec{E}_O\approx2{,}04\cdot10^{7}\,\text{N}\,\text{C}^{-1}\) dirigido a \(45^{\circ}\) en el primer cuadrante.</p></div>
+                </div>
+            </details>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Campo, potencial y trabajo con tres cargas en cuadrado</span>
+                    <span class="meta-ej">País Vasco · 2023 · Ordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <div class="etiquetas-ej"><span class="tag-b2">B2</span><span class="tag-puntos">3 puntos</span></div>
+                    <p>Tres cargas eléctricas puntuales se encuentran situadas en los vértices de un cuadrado de lado \(l=2\,\text{m}\), dos de ellas con carga positiva \(q\) colocadas en los puntos \((2,0)\) y \((0,2)\), respectivamente, mientras que la tercera carga negativa tiene un valor \(-2q\) y se encuentra situada en el origen \((0,0)\), siendo \(q=1\cdot10^{-6}\,\text{C}\).</p><ul class="apartados-ej"><li><strong>A)</strong> Determina el campo eléctrico resultante y el potencial eléctrico en el punto \((2,2)\). <span class="puntuacion-apartado">(1,5 puntos)</span></li><li><strong>B)</strong> Calcula el trabajo que debe realizarse para trasladar una carga negativa \(-q\) desde el vértice del cuadrado en el punto \((2,2)\), hasta el centro, en el punto de coordenadas \((1,1)\). <span class="puntuacion-apartado">(1,5 puntos)</span></li></ul>
+                </div>
+                <p class="nota-alcance"><strong>Alcance:</strong> el apartado (a) trabaja directamente B2; el potencial y el trabajo del apartado (b) enlazan con B3 y B4.</p>
+                <div class="resolucion-ej">
+                    <h3>Resolución</h3>
+                    <h4>Apartado a) Campo eléctrico y potencial en (2,2)</h4><p>En el punto \(P=(2,2)\) actúan los campos de las tres cargas. La carga \(+q\) en \((2,0)\) produce un campo vertical hacia arriba:</p>
+<div class="formula-box">\[\vec E_1=\frac{K\,q}{2^{2}}\,\hat j=2{,}25\cdot10^{3}\,\hat j\ \text{N}\,\text{C}^{-1}.\]</div>
+<p>La carga \(+q\) en \((0,2)\) produce un campo horizontal hacia la derecha:</p>
+<div class="formula-box">\[\vec E_2=\frac{K\,q}{2^{2}}\,\hat i=2{,}25\cdot10^{3}\,\hat i\ \text{N}\,\text{C}^{-1}.\]</div>
+<p>La carga \(-2q\) en el origen produce un campo dirigido hacia el origen, de magnitud:</p>
+<div class="formula-box">\[E_3=\frac{K(2q)}{(2\sqrt{2})^{2}}=2{,}25\cdot10^{3}\,\text{N}\,\text{C}^{-1},\]</div>
+<p>con componentes \(E_{3x}=E_{3y}=-\frac{2{,}25\cdot10^{3}}{\sqrt{2}}=-1{,}59\cdot10^{3}\,\text{N}\,\text{C}^{-1}\).</p>
+<p>Sumando componentes:</p>
+<div class="formula-box">\[\vec E_P=(6{,}59\cdot10^{2}\,\hat i+6{,}59\cdot10^{2}\,\hat j)\,\text{N}\,\text{C}^{-1},\]</div>
+<div class="formula-box">\[|\vec E_P|\approx9{,}32\cdot10^{2}\,\text{N}\,\text{C}^{-1}.\]</div>
+<p>El campo resultante apunta a lo largo de la diagonal saliente del origen. El potencial en \(P\) es:</p>
+<div class="formula-box">\[V_P=K\left(\frac{q}{2}+\frac{q}{2}+\frac{-2q}{2\sqrt{2}}\right)=K\,q\left(1-\frac{1}{\sqrt{2}}\right)\approx2{,}64\cdot10^{3}\,\text{V}.\]</div><h4>Apartado b) Trabajo para trasladar -q de (2,2) a (1,1)</h4><p>El potencial en el centro \(C=(1,1)\) es nulo porque las tres cargas están a la misma distancia \(\sqrt{2}\,\text{m}\) y sus cargas suman \(q+q-2q=0\):</p>
+<div class="formula-box">\[V_C=K\left(\frac{q}{\sqrt{2}}+\frac{q}{\sqrt{2}}+\frac{-2q}{\sqrt{2}}\right)=0.\]</div>
+<p>Para trasladar la carga \(-q\) desde \(P\) hasta \(C\), el trabajo externo es:</p>
+<div class="formula-box">\[W_{\text{ext}}=\Delta U=(-q)(V_C-V_P)=q\,V_P.\]</div>
+<p>Sustituyendo:</p>
+<div class="formula-box">\[W_{\text{ext}}=(1\cdot10^{-6})(2{,}64\cdot10^{3})\approx2{,}64\cdot10^{-3}\,\text{J}.\]</div>
+<p>El trabajo es positivo: el agente externo aporta energía al sistema.</p>
+                    <div class="note"><strong>Resultado del banco:</strong><p>a) \(\vec E_P\approx(6{,}59\cdot10^{2}\,\hat i+6{,}59\cdot10^{2}\,\hat j)\,\text{N}\,\text{C}^{-1}\); \(|\vec E_P|\approx9{,}32\cdot10^{2}\,\text{N}\,\text{C}^{-1}\); \(V_P\approx2{,}64\cdot10^{3}\,\text{V}\)<br>b) \(W_{\text{ext}}\approx2{,}64\cdot10^{-3}\,\text{J}\), positivo</p></div>
+                </div>
+            </details>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">Teorema de Gauss aplicado a una carga puntual</span>
+                    <span class="meta-ej">Madrid · 2021 · Ordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <div class="etiquetas-ej"><span class="tag-b2">B2</span><span class="tag-puntos">2 puntos (1 + 1)</span></div>
+                    <p>Pregunta A.3.- Una carga puntual de \(2\,\mu\text{C}\) se encuentra situada en el origen de coordenadas. a) Aplicando el teorema de Gauss, obtenga el flujo del campo eléctrico a través de una superficie esférica de \(10\,\text{mm}\) de diámetro centrada en el origen. b) Utilizando el valor del flujo obtenido en el apartado anterior, calcule el módulo del campo eléctrico en puntos situados a \(5\,\text{mm}\) de la carga. Dato: Permitividad eléctrica del vacío, \(\varepsilon_0=8{,}85\cdot10^{-12}\,\text{C}^{2}\,\text{N}^{-1}\,\text{m}^{-2}\).</p><ul class="apartados-ej"><li><strong>A)</strong> Flujo eléctrico por la esfera mediante el teorema de Gauss. <span class="puntuacion-apartado">(1 punto)</span></li><li><strong>B)</strong> Módulo del campo eléctrico a \(5\,\text{mm}\) de la carga. <span class="puntuacion-apartado">(1 punto)</span></li></ul>
+                </div>
+                <p class="nota-alcance"><strong>Complemento:</strong> ejercicio incorporado para cubrir de forma explícita el flujo eléctrico y la aplicación del teorema de Gauss, contenidos que no aparecen con tanta presencia en los problemas de Castilla y León seleccionados.</p>
+                <div class="resolucion-ej">
+                    <h3>Resolución</h3>
+                    <h4>Teorema de Gauss</h4><p>El teorema de Gauss establece que el flujo del campo eléctrico a través de una superficie cerrada es proporcional a la carga neta encerrada:</p>
+<div class="formula-box">\[\Phi_E=\frac{Q_{\text{enc}}}{\varepsilon_0}.\]</div>
+<p>La superficie esférica de \(10\,\text{mm}\) de diámetro centrada en el origen contiene la carga \(Q=2\cdot10^{-6}\,\text{C}\).</p><h4>Cálculo del flujo</h4><div class="formula-box">\[\Phi_E=\frac{2\cdot10^{-6}}{8{,}85\cdot10^{-12}}=2{,}26\cdot10^{5}\,\text{N}\,\text{m}^{2}\,\text{C}^{-1}.\]</div><h4>Simetría esférica y teorema de Gauss</h4><p>Por simetría esférica de la carga puntual, el campo tiene módulo constante en cualquier esfera centrada en la carga y es radial. Para una esfera de radio \(r=5\,\text{mm}=5\cdot10^{-3}\,\text{m}\), el flujo es:</p>
+<div class="formula-box">\[\Phi_E=E\,4\pi r^{2}.\]</div>
+<p>Despejando \(E\):</p>
+<div class="formula-box">\[E=\frac{\Phi_E}{4\pi r^{2}}.\]</div><h4>Cálculo numérico</h4><p>El flujo a través de cualquier esfera centrada en la carga es el mismo, no depende del radio, luego usamos \(\Phi_E=2{,}26\cdot10^{5}\,\text{N}\,\text{m}^{2}\,\text{C}^{-1}\) calculado en el apartado a):</p>
+<div class="formula-box">\[E=\frac{2{,}26\cdot10^{5}}{4\pi(5\cdot10^{-3})^{2}}=7{,}19\cdot10^{8}\,\text{N}\,\text{C}^{-1}.\]</div>
+                    <div class="note"><strong>Resultado del banco:</strong><p>\(\Phi_E=2{,}26\cdot10^{5}\,\text{N}\,\text{m}^{2}\,\text{C}^{-1}\); \(E=7{,}19\cdot10^{8}\,\text{N}\,\text{C}^{-1}\).</p></div>
+                </div>
+            </details>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">Campo exterior de una esfera maciza con carga uniforme (teorema de Gauss)</span>
+                    <span class="meta-ej">Región de Murcia · 2026 · Extraordinaria · Problema 2 (apartado a)</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <div class="etiquetas-ej"><span class="tag-b2">B2</span><span class="tag-puntos">1,5 puntos</span></div>
+                    <p>Enuncie el teorema de Gauss en electrostática (no es necesario demostrarlo) y aplíquelo razonadamente para explicar por qué el campo eléctrico en cualquier punto del exterior de una esfera maciza con carga total \(Q\) uniformemente distribuida es igual al creado por una carga puntual de igual valor \(Q\) situada en su centro.</p>
+                </div>
+                
+                <div class="resolucion-ej">
+                    <h3>Resolución</h3>
+                    <h4>Enunciado del teorema de Gauss</h4><p>El flujo eléctrico a través de una superficie cerrada es igual a la carga encerrada dividida por la permitividad del vacío:</p>
+<div class="formula-box">\[\oint_S \vec E\cdot d\vec S=\frac{Q_{\text{enc}}}{\varepsilon_0}.\]</div><h4>Aplicación a una esfera cargada</h4><p>Para \(r&gt;R\), se elige una superficie gaussiana esférica de radio \(r\), concéntrica con la distribución. Por simetría el campo es radial y su componente radial es constante en esa superficie, que encierra la carga total \(Q\).</p>
+<div class="formula-box">\[E_r\,4\pi r^{2}=\frac{Q}{\varepsilon_0}\quad\Rightarrow\quad E(r)=\frac{Q}{4\pi\varepsilon_0 r^{2}}\,\hat r.\]</div>
+<p>Esta expresión coincide con el campo de una carga puntual \(Q\) en el centro. Si \(Q&gt;0\) apunta hacia fuera y si \(Q&lt;0\) hacia dentro.</p>
+                    <div class="note"><strong>Resultado del banco:</strong><p>Para r&gt;R: \(\vec E(r)=\dfrac{Q}{4\pi\varepsilon_0r^2}\,\hat r\); coincide con el campo de una carga puntual Q situada en el centro.</p></div>
+                </div>
+            </details>
+            <div class="pie-clave"><i class="fas fa-lightbulb"></i><span>En todos los ejercicios de superposición, el diagrama vectorial es parte del razonamiento: representa cada campo por separado antes de sumar sus componentes.</span></div>
+        </div>
+    </details>
+
+    <!-- CIERRE -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p><strong>Domina el campo eléctrico desde el vector individual hasta la superposición de varias cargas.</strong><br>Recuerda: identifica el sentido, descompón los vectores y suma por componentes. Para el flujo, elige bien la normal y la superficie gaussiana.</p>
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">Volver al inicio</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA B2 (Formulario).- Campo eléctrico de distribuciones discretas y continuas; flujo</title>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- CSS PROPIO DE FORMULARIOS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================ CABECERA ============================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA B2 (Formulario).- </span>
+                <span class="texto">Campo eléctrico de distribuciones discretas y continuas; flujo eléctrico</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================ GRID ============================ -->
+    <div class="grid">
+
+        <!-- FICHA 1 · DEFINICIÓN DE CAMPO ELÉCTRICO -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Campo eléctrico (definición)</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La fuerza eléctrica por unidad de carga de prueba positiva que una distribución de carga ejerce en un punto del espacio. Se aplica para describir el campo creado por cualquier configuración sin especificar la carga que se va a colocar después. Es la magnitud fundamental de todo el tema: de ella se deducen la fuerza sobre una carga, la superposición y el flujo.
+            </div>
+            <div class="formula-box">
+                \[ \vec E = \frac{\vec F}{q_0} \qquad [E] = \text{N}\cdot\text{C}^{-1} = \text{V}\cdot\text{m}^{-1} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>¡Sí, imprescindible! Es la <strong>definición</strong> del campo eléctrico: \(q_0\) es una carga de prueba positiva, suficientemente pequeña para no alterar la distribución creadora. El campo es una magnitud <strong>vectorial</strong> y su sentido es el que tendría la fuerza sobre una carga positiva. No depende de \(q_0\): el campo lo crean las cargas fuente.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec E\)</td><td data-label="Significado">Vector campo eléctrico en un punto</td><td data-label="Unidades">N·C⁻¹ = V·m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec F\)</td><td data-label="Significado">Fuerza eléctrica sobre la carga de prueba</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(q_0\)</td><td data-label="Significado">Carga de prueba positiva (muy pequeña)</td><td data-label="Unidades">C</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si una carga de prueba \(q_0=2\,\mu\text{C}\) situada en un punto experimenta una fuerza de \(6\cdot10^{-3}\,\text{N}\) hacia la derecha, el campo en ese punto vale \(E=F/q_0=3\cdot10^{3}\,\text{N}\cdot\text{C}^{-1}\), dirigido también hacia la derecha.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es una magnitud <strong>vectorial</strong>: tiene módulo, dirección y sentido.</li>
+                    <li>El campo <strong>no depende</strong> de la carga de prueba \(q_0\); lo crean las cargas fuente.</li>
+                    <li>Una carga de prueba <strong>negativa</strong> experimentaría una fuerza de sentido contrario al campo.</li>
+                    <li>Su unidad \(\text{N}\cdot\text{C}^{-1}\) equivale a \(\text{V}\cdot\text{m}^{-1}\).</li>
+                    <li>Se relaciona con la fuerza sobre una carga \(q\) mediante \(\vec F=q\vec E\) (fórmula 12).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 · CAMPO DE UNA CARGA PUNTUAL (MÓDULO) -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Campo eléctrico de una carga puntual (módulo)</h2>
+                <span class="badge-centro">Ley de Coulomb</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo del campo eléctrico creado por una carga puntual \(q\) a una distancia \(r\) de ella. Se aplica siempre que la carga se pueda considerar puntual (o cuando el punto está en el exterior de una distribución esférica de carga). Es el punto de partida del tema: de aquí se deduce la expresión vectorial, el potencial y el teorema de Gauss.
+            </div>
+            <div class="formula-box">
+                \[ E = K_0\,\frac{|q|}{r^{2}} \qquad K_0 = \frac{1}{4\pi\varepsilon_0} \approx 9{,}00\cdot10^{9}\,\text{N}\cdot\text{m}^{2}\cdot\text{C}^{-2} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>¡Sí! Memoriza \(E=K_0|q|/r^{2}\) y el valor \(K_0\approx9{,}00\cdot10^{9}\,\text{N}\cdot\text{m}^{2}\cdot\text{C}^{-2}\). Es el análogo eléctrico de la ley de gravitación universal. Atención al <strong>valor absoluto</strong> de \(q\): el signo se traduce en sentido (hacia fuera si \(q>0\), hacia dentro si \(q<0\)), pero no en el módulo.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E\)</td><td data-label="Significado">Módulo del campo eléctrico</td><td data-label="Unidades">N·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(K_0\)</td><td data-label="Significado">Constante de Coulomb en el vacío</td><td data-label="Unidades">9,00·10⁹ N·m²·C⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(\varepsilon_0\)</td><td data-label="Significado">Permitividad eléctrica del vacío</td><td data-label="Unidades">8,85·10⁻¹² C²·N⁻¹·m⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga creadora del campo</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia desde la carga al punto</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una carga \(q=1\,\mu\text{C}\) crea a \(r=0{,}10\,\text{m}\) un campo de módulo \(E=9\cdot10^{9}\cdot10^{-6}/0{,}01=9\cdot10^{5}\,\text{N}\cdot\text{C}^{-1}\). Si se duplica la distancia, el campo se reduce a la cuarta parte (\(2{,}25\cdot10^{5}\,\text{N}\cdot\text{C}^{-1}\)), porque \(E\propto1/r^{2}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es una ley <strong>fundamental</strong>: no se deduce de otra cosa; describe cómo funciona la naturaleza.</li>
+                    <li>Análoga a la ley de gravitación, pero con <strong>dos signos posibles</strong>.</li>
+                    <li>Decae con \(1/r^{2}\): es de <strong>largo alcance</strong>, pero mucho más intensa que la gravedad.</li>
+                    <li>En el exterior de una esfera uniformemente cargada, coincide con la de una carga puntual.</li>
+                    <li>Ojo: se mide \(r\) <strong>desde la carga</strong>, no desde una superficie.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 · CAMPO VECTORIAL DE UNA CARGA PUNTUAL -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Campo vectorial de una carga puntual</h2>
+                <span class="badge-centro">Vector</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Expresión vectorial</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El vector campo que una carga puntual \(q\) crea en un punto \(P\), con su dirección y sentido. Se aplica cuando hay varias cargas y hay que sumar contribuciones vectoriales. Es la forma correcta de trabajar antes de aplicar superposición.
+            </div>
+            <div class="formula-box">
+                \[ \vec E(\vec r) = K_0\,\frac{q}{r^{3}}\,\vec r \qquad\qquad \vec E_i(P) = K_0\,q_i\,\frac{\vec r_P-\vec r_i}{|\vec r_P-\vec r_i|^{3}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se construye a partir del módulo \(E=K_0|q|/r^{2}\) multiplicándolo por el vector unitario \(\hat u_r=\vec r/r\). El truco \(-Gm_1m_2\vec r/r^{3}\) del tema de gravitación se traslada aquí cambiando \(G\,m_1m_2\) por \(-K_0 q q'\). La expresión \(\vec E_i=K_0q_i(\vec r_P-\vec r_i)/|\vec r_P-\vec r_i|^{3}\) es la forma práctica para superponer.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec E(\vec r)\)</td><td data-label="Significado">Campo en el punto de posición \(\vec r\)</td><td data-label="Unidades">N·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec r\)</td><td data-label="Significado">Vector de posición desde la carga al punto</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(r=|\vec r|\)</td><td data-label="Significado">Distancia entre carga y punto</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec r_P-\vec r_i\)</td><td data-label="Significado">Vector desde la carga \(i\) al punto \(P\)</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(q=2\,\mu\text{C}\) en el origen y \(P=(3,4)\,\text{m}\). Entonces \(\vec r=(3,4)\), \(r=5\,\text{m}\) y \(\vec E=K_0\cdot2\cdot10^{-6}\cdot(3,4)/125\approx(4{,}32\hat i+5{,}76\hat j)\cdot10^{2}\,\text{N}\cdot\text{C}^{-1}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El signo de \(q\) <strong>ya está incluido</strong> en la expresión: si \(q>0\) el campo sale; si \(q<0\) entra.</li>
+                    <li>La forma \(\vec E=K_0q\,\vec r/r^{3}\) evita calcular \(\hat u\) por separado.</li>
+                    <li>Es la expresión que se usa cuando hay <strong>más de una carga</strong> y hay que sumar vectores.</li>
+                    <li>Por comodidad, en problemas con varias cargas conviene escribir directamente \(\vec E_i=K_0q_i(\vec r_P-\vec r_i)/|\vec r_P-\vec r_i|^{3}\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 · PRINCIPIO DE SUPERPOSICIÓN -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Principio de superposición</h2>
+                <span class="badge-centro">Principio</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Principio universal</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El campo eléctrico resultante de varias cargas puntuales en un mismo punto. Se aplica en cualquier problema con dos o más cargas: se calcula cada contribución por separado y se suman vectorialmente. Es el <strong>principio central</strong> de los problemas tipo B2.
+            </div>
+            <div class="formula-box">
+                \[ \vec E_R = \vec E_1 + \vec E_2 + \dots + \vec E_n = \sum_i \vec E_i \qquad\qquad \vec E(P) = K_0\sum_i q_i\,\frac{\vec r_P-\vec r_i}{|\vec r_P-\vec r_i|^{3}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es un <strong>principio</strong>, no una fórmula: se aplica siempre. Lo esencial es no olvidar que los campos se suman <strong>vectorialmente</strong>, no sumando módulos. Error típico en la EBAU: sumar módulos de campos con direcciones distintas. Dibuja siempre los vectores y descompón en componentes antes de operar.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Magnitud</th><th>Tipo de suma</th><th>Expresión</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Magnitud">Campo \(\vec E\)</td><td data-label="Tipo de suma">Vectorial</td><td data-label="Expresión">\(\vec E_R=\sum\vec E_i\)</td></tr>
+                    <tr><td data-label="Magnitud">Fuerza \(\vec F\)</td><td data-label="Tipo de suma">Vectorial</td><td data-label="Expresión">\(\vec F_R=\sum\vec F_i\)</td></tr>
+                    <tr><td data-label="Magnitud">Potencial \(V\)</td><td data-label="Tipo de suma">Escalar (algebraica)</td><td data-label="Expresión">\(V_R=\sum V_i\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos cargas positivas iguales separadas una distancia \(d\), en el punto medio: los campos tienen igual módulo y sentidos opuestos, luego \(\vec E_R=0\). En el vértice de un triángulo equilátero, los dos campos forman \(60^{\circ}\) y su suma tiene módulo \(2E_0\cos30^{\circ}=\sqrt{3}E_0\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es un <strong>principio universal</strong>: se aplica a cualquier número de cargas y en cualquier punto.</li>
+                    <li>Para campos: <strong>descomponer en componentes cartesianas</strong> y sumar por separado.</li>
+                    <li>Identifica <strong>simetrías</strong> antes de operar: las componentes que se cancelan ahorran cuentas.</li>
+                    <li>No confundir con el potencial: \(V\) se suma escalarmente, no vectorialmente.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 · COMPONENTES Y MÓDULO DEL CAMPO RESULTANTE -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Suma por componentes y módulo resultante</h2>
+                <span class="badge-centro">Operación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Descomposición</span>
+                <span class="epi-chip deducir">🧮 Deducir · Resultado</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                Las componentes cartesianas del campo total y, a partir de ellas, el módulo y la dirección del campo resultante. Se aplica siempre que haya que sumar campos que no son colineales: en triángulos, cuadrados y configuraciones arbitrarias del plano XY.
+            </div>
+            <div class="formula-box">
+                \[ E_x = \sum_i E_{ix} \qquad E_y = \sum_i E_{iy} \qquad\qquad E_R = \sqrt{E_x^{2}+E_y^{2}} \qquad \tan\alpha = \frac{E_y}{E_x} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es simplemente el teorema de Pitágoras aplicado a las componentes. Lo que hay que dominar es la <strong>descomposición correcta</strong> con signos y el <strong>cuadrante</strong> del ángulo final. El cociente \(E_y/E_x\) da el ángulo de referencia; el cuadrante lo determinan los signos de \(E_x\) y \(E_y\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E_x,\,E_y\)</td><td data-label="Significado">Componentes cartesianas del campo total</td><td data-label="Unidades">N·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(E_R\)</td><td data-label="Significado">Módulo del campo resultante</td><td data-label="Unidades">N·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\alpha\)</td><td data-label="Significado">Ángulo de referencia respecto al eje \(x\)</td><td data-label="Unidades">rad o °</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si tras sumar componentes se obtiene \(E_x=-576\,\text{N}\cdot\text{C}^{-1}\) y \(E_y=+1568\,\text{N}\cdot\text{C}^{-1}\), el módulo es \(E_R\approx1{,}67\cdot10^{3}\,\text{N}\cdot\text{C}^{-1}\), y la dirección apunta al segundo cuadrante (arriba y a la izquierda).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li><strong>Dibuja siempre</strong> los vectores antes de descomponer.</li>
+                    <li>Respeta los signos de cada componente al sumar.</li>
+                    <li>El ángulo \(\alpha=\arctan(E_y/E_x)\) da la <strong>referencia</strong>; el cuadrante se decide por los signos.</li>
+                    <li>Comprueba el resultado con el diagrama: la dirección debe ser coherente con el dibujo.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 · DENSIDADES DE CARGA EN DISTRIBUCIONES CONTINUAS -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Densidades de carga en distribuciones continuas</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+                <span class="epi-chip automatizar">🔄 Automatizar · Unidades</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La cantidad de carga por unidad de longitud, superficie o volumen en una distribución continua. Se aplica para describir cómo se reparte la carga antes de integrar y para expresar \(\mathrm dq\) en función de la geometría.
+            </div>
+            <div class="formula-box">
+                \[ \lambda = \frac{\mathrm dq}{\mathrm dl} \qquad \sigma = \frac{\mathrm dq}{\mathrm dS} \qquad \rho = \frac{\mathrm dq}{\mathrm dV} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí, pero son sencillas: son <strong>densidades</strong> de carga. Memoriza las tres definiciones y sus unidades: \(\lambda\) en C·m⁻¹, \(\sigma\) en C·m⁻² y \(\rho\) en C·m⁻³. Con ellas se construye el elemento de carga: \(\mathrm dq=\lambda\,\mathrm dl=\sigma\,\mathrm dS=\rho\,\mathrm dV\). Automatiza el cambio de unidades.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Densidad</th><th>Definición</th><th>Unidades</th><th>Elemento de carga</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Densidad">Lineal</td><td data-label="Definición">\(\lambda=\mathrm dq/\mathrm dl\)</td><td data-label="Unidades">C·m⁻¹</td><td data-label="Elemento">\(\mathrm dq=\lambda\,\mathrm dl\)</td></tr>
+                    <tr><td data-label="Densidad">Superficial</td><td data-label="Definición">\(\sigma=\mathrm dq/\mathrm dS\)</td><td data-label="Unidades">C·m⁻²</td><td data-label="Elemento">\(\mathrm dq=\sigma\,\mathrm dS\)</td></tr>
+                    <tr><td data-label="Densidad">Volumétrica</td><td data-label="Definición">\(\rho=\mathrm dq/\mathrm dV\)</td><td data-label="Unidades">C·m⁻³</td><td data-label="Elemento">\(\mathrm dq=\rho\,\mathrm dV\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un hilo de \(2\,\text{m}\) con carga total \(4\,\mu\text{C}\) uniformemente repartida tiene \(\lambda=2\cdot10^{-6}\,\text{C}\cdot\text{m}^{-1}\). Una lámina de \(0{,}5\,\text{m}^{2}\) con \(1\,\text{nC}\) tiene \(\sigma=2\cdot10^{-9}\,\text{C}\cdot\text{m}^{-2}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Si la carga no es uniforme, \(\lambda\), \(\sigma\) o \(\rho\) dependen de la posición.</li>
+                    <li>Las tres densidades se usan para pasar de una descripción global a una local.</li>
+                    <li>Ojo con las unidades: confundir \(\text{C}\cdot\text{m}^{-2}\) con \(\text{C}\cdot\text{m}^{-1}\) es un error típico.</li>
+                    <li>En un mismo problema pueden aparecer varias densidades (por ejemplo, hilo y plano).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 · CAMPO DE UNA DISTRIBUCIÓN CONTINUA -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Campo de una distribución continua</h2>
+                <span class="badge-centro">Integral</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Integral</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El campo eléctrico creado por una distribución continua de carga (hilo, superficie o volumen). Se aplica cuando la carga no está concentrada en puntos y hay que sumar la contribución de todos los elementos de carga. La suma se convierte en una integral vectorial.
+            </div>
+            <div class="formula-box">
+                \[ \mathrm d\vec E = K_0\,\frac{\mathrm dq}{r^{2}}\,\hat u_r \qquad\Longrightarrow\qquad \vec E = K_0\int\frac{\hat u_r}{r^{2}}\,\mathrm dq \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">📖 FAMILIARIZARSE</span>Familiarízate con ella: es la <strong>generalización continua</strong> del campo puntual. No se aplica en la EBAU con integrales complicadas: se estudia sobre todo en casos con simetría (hilo, plano, esfera), donde el teorema de Gauss permite evitar la integral (fórmula 10). Reconoce el planteamiento diferencial y la idea de sumar contribuciones.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\mathrm d\vec E\)</td><td data-label="Significado">Campo diferencial de un elemento de carga</td><td data-label="Unidades">N·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\mathrm dq\)</td><td data-label="Significado">Elemento de carga (\(\lambda\,\mathrm dl\), \(\sigma\,\mathrm dS\) o \(\rho\,\mathrm dV\))</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(\hat u_r\)</td><td data-label="Significado">Vector unitario desde el elemento al punto</td><td data-label="Unidades">adimensional</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia del elemento al punto</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para un hilo rectilíneo muy largo con \(\lambda\) uniforme, la integral se resuelve aplicando Gauss y da \(E=|\lambda|/(2\pi\varepsilon_0 r)\). Para un plano infinito uniformemente cargado, \(E=|\sigma|/(2\varepsilon_0)\), independiente de la distancia.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La integral es <strong>vectorial</strong>: hay que descomponer cada \(\mathrm d\vec E\) y aprovechar simetrías.</li>
+                    <li>Cuando hay simetría suficiente, se usa el <strong>teorema de Gauss</strong> en lugar de integrar.</li>
+                    <li>El campo de una distribución continua se estudia típicamente con hilo, plano y esfera.</li>
+                    <li>No confundir el elemento de carga (\(\mathrm dq\)) con la carga total (\(Q\)).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 · FLUJO ELÉCTRICO -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Flujo eléctrico</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La cantidad de campo eléctrico que atraviesa una superficie. Se aplica para cuantificar el campo a través de una superficie plana en un campo uniforme y como paso previo al teorema de Gauss. Es una magnitud escalar, no vectorial.
+            </div>
+            <div class="formula-box">
+                \[ \Phi_E = \vec E\cdot\vec S = E\,S\cos\theta \qquad [\Phi_E] = \text{N}\cdot\text{m}^{2}\cdot\text{C}^{-1} = \text{V}\cdot\text{m} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es una definición muy usada en la EBAU. Memoriza \(\Phi_E=\vec E\cdot\vec S=ES\cos\theta\), con \(\theta\) medido <strong>respecto a la normal</strong> a la superficie (no respecto al plano). Los casos límite son fáciles de recordar: \(\theta=0^\circ\) flujo máximo, \(\theta=90^\circ\) flujo nulo, \(\theta=180^\circ\) flujo negativo.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\Phi_E\)</td><td data-label="Significado">Flujo eléctrico a través de una superficie</td><td data-label="Unidades">N·m²·C⁻¹ = V·m</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec E\)</td><td data-label="Significado">Vector campo eléctrico</td><td data-label="Unidades">N·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec S\)</td><td data-label="Significado">Vector superficie (perpendicular al plano)</td><td data-label="Unidades">m²</td></tr>
+                    <tr><td data-label="Símbolo">\(\theta\)</td><td data-label="Significado">Ángulo entre \(\vec E\) y la normal a la superficie</td><td data-label="Unidades">rad o °</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un campo \(E=5\cdot10^{3}\,\text{N}\cdot\text{C}^{-1}\) atraviesa perpendicularmente una superficie plana de \(0{,}02\,\text{m}^{2}\): \(\Phi_E=E\cdot S=100\,\text{N}\cdot\text{m}^{2}\cdot\text{C}^{-1}\). Si el campo forma \(60^{\circ}\) con la normal, \(\Phi_E=E\cdot S\cos60^{\circ}=50\,\text{N}\cdot\text{m}^{2}\cdot\text{C}^{-1}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(\theta\) es el ángulo con la <strong>normal</strong>, no con el plano.</li>
+                    <li><strong>Signo</strong>: depende de si el campo sale o entra respecto a la normal elegida.</li>
+                    <li>En una superficie cerrada, la normal se toma <strong>saliente</strong>.</li>
+                    <li>Para una superficie curva: \(\Phi_E=\int\vec E\cdot\mathrm d\vec S\) (fórmula 9).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 · TEOREMA DE GAUSS -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Teorema de Gauss</h2>
+                <span class="badge-centro">Ley fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El flujo eléctrico neto a través de cualquier superficie cerrada, igual a la carga neta encerrada dividida por \(\varepsilon_0\). Se aplica para calcular campos de distribuciones con simetría (esfera, cilindro, plano) y para relacionar flujo y carga.
+            </div>
+            <div class="formula-box">
+                \[ \oint_S \vec E\cdot\mathrm d\vec S = \frac{Q_{\text{enc}}}{\varepsilon_0} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es una de las <strong>cuatro ecuaciones de Maxwell</strong>. Memoriza el enunciado: <em>el flujo neto a través de cualquier superficie cerrada es igual a la carga encerrada dividida por \(\varepsilon_0\)</em>. Se cumple siempre, pero <strong>solo permite calcular \(E\) fácilmente</strong> cuando hay suficiente simetría. Las cargas exteriores no contribuyen al flujo neto.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\oint_S\vec E\cdot\mathrm d\vec S\)</td><td data-label="Significado">Flujo eléctrico neto por la superficie cerrada \(S\)</td><td data-label="Unidades">N·m²·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(Q_{\text{enc}}\)</td><td data-label="Significado">Carga neta encerrada por la superficie</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(\varepsilon_0\)</td><td data-label="Significado">Permitividad eléctrica del vacío</td><td data-label="Unidades">8,85·10⁻¹² C²·N⁻¹·m⁻²</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una esfera gaussiana centrada en una carga puntual \(q=2\,\mu\text{C}\): el flujo neto es \(\Phi_E=q/\varepsilon_0\approx2{,}26\cdot10^{5}\,\text{N}\cdot\text{m}^{2}\cdot\text{C}^{-1}\), sea cual sea el radio de la esfera. Si la esfera no encerrase la carga, el flujo neto sería cero.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Válido para <strong>cualquier superficie cerrada</strong>, pero solo útil para calcular \(E\) con simetría.</li>
+                    <li>Las <strong>cargas exteriores</strong> contribuyen al campo pero no al flujo neto.</li>
+                    <li>La normal se toma siempre <strong>saliente</strong>.</li>
+                    <li>\(Q_{\text{enc}}\) es la suma algebraica de las cargas encerradas.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 10 · APLICACIÓN DE GAUSS CON SIMETRÍA -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Aplicación de Gauss con simetría</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El campo eléctrico de distribuciones continuas con simetría esférica, cilíndrica o plana, eligiendo la superficie gaussiana adecuada. Se aplica a esferas cargadas, hilos indefinidos y planos infinitos; es la forma práctica de usar el teorema de Gauss sin integrales complicadas.
+            </div>
+            <div class="formula-box">
+                \[ E = K_0\,\frac{|Q|}{r^{2}} \qquad E = \frac{|\lambda|}{2\pi\varepsilon_0 r} \qquad E = \frac{|\sigma|}{2\varepsilon_0} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarlas: se obtienen aplicando Gauss con la superficie adecuada. Lo que sí hay que recordar es el <strong>método</strong>: 1) identificar la simetría; 2) elegir superficie gaussiana (esfera, cilindro o caja); 3) plantear \(\oint\vec E\cdot\mathrm d\vec S=Q_{\text{enc}}/\varepsilon_0\); 4) despejar \(E\). El resultado esférico coincide con el de una carga puntual en el centro.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Simetría</th><th>Superficie gaussiana</th><th>Campo resultante</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Simetría">Esférica</td><td data-label="Superficie">Esfera concéntrica de radio \(r\)</td><td data-label="Campo">\(E=K_0|Q|/r^{2}\) (exterior)</td></tr>
+                    <tr><td data-label="Simetría">Cilíndrica</td><td data-label="Superficie">Cilindro coaxial de radio \(r\) y longitud \(L\)</td><td data-label="Campo">\(E=|\lambda|/(2\pi\varepsilon_0 r)\)</td></tr>
+                    <tr><td data-label="Simetría">Plana</td><td data-label="Superficie">Caja (pastilla) que atraviesa el plano</td><td data-label="Campo">\(E=|\sigma|/(2\varepsilon_0)\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un hilo con \(\lambda=2\,\text{nC}\cdot\text{m}^{-1}\): a \(r=5\,\text{cm}\), \(E=|\lambda|/(2\pi\varepsilon_0 r)\approx7{,}19\cdot10^{2}\,\text{N}\cdot\text{C}^{-1}\). Un plano con \(\sigma=10\,\text{nC}\cdot\text{m}^{-2}\): \(E=\sigma/(2\varepsilon_0)\approx5{,}65\cdot10^{2}\,\text{N}\cdot\text{C}^{-1}\), constante.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>En el <strong>exterior</strong> de una esfera uniformemente cargada, el campo es el de una carga puntual \(Q\) en el centro.</li>
+                    <li>En el <strong>interior</strong> de una esfera hueca uniformemente cargada, \(E=0\).</li>
+                    <li>El campo de un <strong>plano infinito uniforme</strong> no depende de la distancia.</li>
+                    <li>Estos modelos son ideales: hay que comprobar que la distribución cumple la simetría.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 11 · PUNTO DE CAMPO ELÉCTRICO NULO -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">11</span>
+                <h2>Punto de campo eléctrico nulo entre dos cargas</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La posición del punto entre dos cargas del mismo signo donde el campo eléctrico total se anula. Se aplica en problemas típicos de EBAU con dos cargas positivas separadas una distancia \(d\). El punto está siempre entre ellas y más cerca de la de menor valor absoluto.
+            </div>
+            <div class="formula-box">
+                \[ K_0\,\frac{|q_1|}{x^{2}} = K_0\,\frac{|q_2|}{(d-x)^{2}} \quad\Longrightarrow\quad x = d\,\frac{\sqrt{|q_1|}}{\sqrt{|q_1|}+\sqrt{|q_2|}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se obtiene igualando los módulos de los dos campos (que en ese punto tienen sentidos opuestos) y resolviendo. La expresión solo es válida para <strong>dos cargas del mismo signo y un punto entre ellas</strong>. Para signos opuestos o puntos exteriores, hay que analizar la geometría por separado.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(x\)</td><td data-label="Significado">Distancia del punto nulo a la carga \(q_1\)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(d\)</td><td data-label="Significado">Distancia total entre las dos cargas</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(|q_1|,\,|q_2|\)</td><td data-label="Significado">Valores absolutos de las cargas</td><td data-label="Unidades">C</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(q_1=8\,\mu\text{C}\) y \(q_2=2\,\mu\text{C}\), separadas \(d=0{,}60\,\text{m}\). \(x=0{,}60\cdot\sqrt{8}/(\sqrt{8}+\sqrt{2})=0{,}40\,\text{m}\) desde \(q_1\). Comprobación: \(K_0\cdot8/0{,}16=K_0\cdot2/0{,}04\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El punto nulo está <strong>entre las cargas</strong> y más cerca de la de menor valor absoluto.</li>
+                    <li>En ese punto los campos tienen <strong>igual módulo y sentidos opuestos</strong>.</li>
+                    <li>Si las cargas son iguales, el punto nulo está en el <strong>punto medio</strong>.</li>
+                    <li>Si las cargas tienen <strong>signos opuestos</strong>, no hay punto nulo entre ellas.</li>
+                    <li>El <strong>potencial no se anula</strong> en ese punto (sigue siendo no nulo, salvo simetría especial).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 12 · FUERZA SOBRE UNA CARGA EN UN CAMPO -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">12</span>
+                <h2>Fuerza eléctrica sobre una carga</h2>
+                <span class="badge-centro">Relación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Relación</span>
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La fuerza eléctrica que experimenta una carga \(q\) al colocarla en un punto donde existe un campo \(\vec E\). Se aplica para conectar los problemas de fuerza de Coulomb con los de campo y para determinar el movimiento de cargas en campos eléctricos.
+            </div>
+            <div class="formula-box">
+                \[ \vec F = q\,\vec E \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>Se deduce directamente de la definición \(\vec E=\vec F/q_0\). Memoriza solo la relación y su lectura: si \(q>0\), \(\vec F\) y \(\vec E\) tienen <strong>el mismo sentido</strong>; si \(q<0\), sentidos contrarios. Esta es la forma correcta de resolver problemas de fuerza de Coulomb sin confundirla con el campo.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec F\)</td><td data-label="Significado">Fuerza eléctrica sobre la carga \(q\)</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga situada en el punto</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec E\)</td><td data-label="Significado">Campo eléctrico en ese punto</td><td data-label="Unidades">N·C⁻¹</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> en un punto donde \(\vec E=2\cdot10^{3}\,\hat i\,\text{N}\cdot\text{C}^{-1}\), una carga \(q=-3\,\mu\text{C}\) experimenta \(\vec F=q\vec E=-6\cdot10^{-3}\,\hat i\,\text{N}\) (fuerza hacia el sentido negativo del eje \(x\), opuesta al campo, porque \(q<0\)).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Si \(q>0\): \(\vec F\) y \(\vec E\) tienen el <strong>mismo sentido</strong>.</li>
+                    <li>Si \(q<0\): \(\vec F\) y \(\vec E\) tienen <strong>sentidos contrarios</strong>.</li>
+                    <li>Es la forma práctica de calcular fuerzas de Coulomb a partir de campos.</li>
+                    <li>No confundir: \(\vec E\) existe aunque no haya carga; \(\vec F\) solo si hay carga \(q\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             LEYENDA EPISTÉMICA
+             ============================================================ -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
+                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
+                consecuencia matemática, principio de conservación o conversión de unidades— y cada
+                categoría se domina con un <strong>verbo distinto</strong>. Identificar el tipo
+                <em>antes</em> de estudiar ahorra tiempo y evita memorizar lo que se puede deducir.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física.
+                        No se demuestra, se establece. Se domina cuando puedes enunciarla sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B2</strong>
+                        \(\vec E=\vec F/q_0\) &nbsp;·&nbsp; \(\Phi_E=\vec E\cdot\vec S\) &nbsp;·&nbsp;
+                        \(\lambda=\mathrm dq/\mathrm dl\) &nbsp;·&nbsp; \(\sigma=\mathrm dq/\mathrm dS\) &nbsp;·&nbsp;
+                        \(\rho=\mathrm dq/\mathrm dV\)
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es el <em>punto de partida</em> del tema: describe cómo funciona la naturaleza.
+                        No se deriva de otra cosa; se entiende el porqué y las condiciones en las que aplica.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B2</strong>
+                        \(E=K_0|q|/r^{2}\) &nbsp;·&nbsp;
+                        \(\oint_S\vec E\cdot\mathrm d\vec S=Q_{\text{enc}}/\varepsilon_0\)
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> integrando, despejando o sustituyendo una ley fundamental o una
+                        definición. No se memoriza: se reconstruye en 2–3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B2</strong>
+                        \(\vec E=K_0q\vec r/r^{3}\) &nbsp;·&nbsp;
+                        \(E=|\lambda|/(2\pi\varepsilon_0r)\) &nbsp;·&nbsp;
+                        \(E=|\sigma|/(2\varepsilon_0)\) &nbsp;·&nbsp;
+                        \(x=d\sqrt{|q_1|}/(\sqrt{|q_1|}+\sqrt{|q_2|})\) &nbsp;·&nbsp;
+                        \(\vec F=q\vec E\)
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Principio / conservación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Es una <em>regla universal</em> que restringe los procesos posibles. No se demuestra
+                        ni se deduce: se aplica como filtro a cada problema concreto.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B2</strong>
+                        \(\vec E_R=\sum_i\vec E_i\) &nbsp;·&nbsp;
+                        \(E_x=\sum_iE_{ix},\ E_y=\sum_iE_{iy}\)
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Conversión / operación</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes
+                        equivalentes. Debe salir sin pensar, como un reflejo.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B2</strong>
+                        \(\text{N}\cdot\text{C}^{-1}\leftrightarrow\text{V}\cdot\text{m}^{-1}\) &nbsp;·&nbsp;
+                        \(\mu\text{C}\leftrightarrow\text{C}\) &nbsp;·&nbsp;
+                        \(\text{nC}\leftrightarrow\text{C}\) &nbsp;·&nbsp;
+                        \(\text{cm}\leftrightarrow\text{m}\) &nbsp;·&nbsp;
+                        \(\text{mm}\leftrightarrow\text{m}\)
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tabla resumen -->
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Punto de partida físico</td>
+                        <td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Regla universal de conservación</td>
+                        <td data-label="¿Cómo se domina?">Plantearla en cada problema</td>
+                        <td data-label="Autoevaluación">¿La aplico como filtro al problema?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Herramienta mecánica</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿Me sale sin pensar?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Regla de oro -->
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
+                pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si sale de otra fórmula integrando, despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
+                Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender).
+                Si solo asigna un nombre → <strong>definición</strong> (memorizar).
+                Si es una regla que se cumple siempre → <strong>principio</strong> (aplicar).
+            </div>
+
+            <!-- Mini-referencia de colores de las tarjetas -->
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Definición y campo puntual</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Forma vectorial y superposición</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Distribuciones continuas</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Flujo y teorema de Gauss</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Aplicaciones</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================ GLOSARIO ============================ -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema B2</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \vec E = \dfrac{\vec F}{q_0} \]</td><td data-label="Nombre">Definición de campo eléctrico</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ E = K_0\,\dfrac{|q|}{r^{2}} \]</td><td data-label="Nombre">Campo eléctrico de una carga puntual (módulo)</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ \vec E = K_0\,\dfrac{q}{r^{3}}\,\vec r \]</td><td data-label="Nombre">Campo vectorial de una carga puntual</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ \vec E_R = \sum_i \vec E_i \]</td><td data-label="Nombre">Principio de superposición</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ E_R=\sqrt{E_x^{2}+E_y^{2}},\ \tan\alpha=\dfrac{E_y}{E_x} \]</td><td data-label="Nombre">Módulo y dirección del campo resultante</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ \lambda=\dfrac{\mathrm dq}{\mathrm dl},\ \sigma=\dfrac{\mathrm dq}{\mathrm dS},\ \rho=\dfrac{\mathrm dq}{\mathrm dV} \]</td><td data-label="Nombre">Densidades de carga en distribuciones continuas</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ \vec E=K_0\displaystyle\int\dfrac{\hat u_r}{r^{2}}\,\mathrm dq \]</td><td data-label="Nombre">Campo de una distribución continua</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \Phi_E=\vec E\cdot\vec S=E\,S\cos\theta \]</td><td data-label="Nombre">Flujo eléctrico</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ \oint_S \vec E\cdot\mathrm d\vec S=\dfrac{Q_{\text{enc}}}{\varepsilon_0} \]</td><td data-label="Nombre">Teorema de Gauss</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ E=K_0\dfrac{|Q|}{r^{2}},\ E=\dfrac{|\lambda|}{2\pi\varepsilon_0 r},\ E=\dfrac{|\sigma|}{2\varepsilon_0} \]</td><td data-label="Nombre">Campos con simetría esférica, cilíndrica y plana</td><td data-label="Ficha">10</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ x=d\,\dfrac{\sqrt{|q_1|}}{\sqrt{|q_1|}+\sqrt{|q_2|}} \]</td><td data-label="Nombre">Punto de campo eléctrico nulo entre dos cargas (mismo signo)</td><td data-label="Ficha">11</td></tr>
+                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ \vec F = q\,\vec E \]</td><td data-label="Nombre">Fuerza eléctrica sobre una carga</td><td data-label="Ficha">12</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> sumar módulos de campos en lugar de componentes vectoriales; confundir el ángulo del flujo (se mide respecto a la <strong>normal</strong>, no al plano); olvidar que el campo de una carga negativa apunta <strong>hacia</strong> ella; mezclar \(K_0\) y \(\varepsilon_0\) (recordar \(K_0=1/(4\pi\varepsilon_0)\)); no homogeneizar las unidades (pasar siempre \(\mu\text{C}\), \(\text{nC}\), \(\text{cm}\), \(\text{mm}\) al S.I.); aplicar el teorema de Gauss sin comprobar la simetría; y usar la fórmula del punto nulo con cargas de signo opuesto o fuera del segmento que las une.
+        </div>
+    </details>
+
+    <!-- ============================ RECORDATORIO + BOTÓN ============================ -->
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en electrostática, la <strong>ley de Coulomb</strong> \(E=K_0|q|/r^{2}\) es la base de todas las fórmulas del tema: multiplicando por el vector unitario se obtiene la expresión vectorial, sumando vectorialmente se aplica el principio de superposición, y aplicando el teorema de Gauss se deducen los campos de distribuciones continuas con simetría. Para resolver cualquier problema de la EBAU: <strong>dibuja los vectores, descompón en componentes y suma por separado</strong>. No olvides que el campo es vectorial (se suma vectorialmente) mientras que el flujo y el potencial son escalares. Y recuerda siempre medir \(r\) <strong>desde la carga</strong> y homogeneizar las unidades al S.I.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+</body>
+</html>

@@ -275,6 +275,64 @@
             box-shadow: 0 4px 10px rgba(194, 65, 12, 0.35);
         }
 
+        /* ───────── VERIFICACIÓN DE DISPONIBILIDAD ───────── */
+        .tema-enlaces a.verificando {
+            opacity: 0.55;
+            pointer-events: none;
+        }
+
+        .tema-enlaces a.no-disponible {
+            opacity: 0.4;
+            cursor: not-allowed !important;
+            text-decoration: line-through;
+            filter: grayscale(0.7);
+            border-style: dashed !important;
+        }
+        .tema-enlaces a.no-disponible::after {
+            content: " ✕";
+            font-weight: 800;
+            color: #dc2626;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 2px;
+        }
+        .tema-enlaces a.no-disponible:hover {
+            transform: none !important;
+            box-shadow: none !important;
+            background: inherit !important;
+            color: inherit !important;
+        }
+
+        .contador .indicador-disponibilidad {
+            font-weight: 800;
+            margin-left: 3px;
+        }
+
+        .barra-verificacion {
+            background: #eff6ff;
+            color: #1e40af;
+            padding: 10px 30px;
+            font-size: 0.85em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid #bfdbfe;
+        }
+        .barra-verificacion .fa-spin { animation: fa-spin 1s linear infinite; }
+
+        .aviso-verificacion {
+            margin-top: 14px;
+            padding: 10px 14px;
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            border-radius: 6px;
+            font-size: 0.88em;
+            color: #78350f;
+            line-height: 1.5;
+        }
+        .aviso-verificacion i { color: #d97706; margin-right: 4px; }
+
         /* ───────── PIE ───────── */
         .footer {
             text-align: center;
@@ -298,6 +356,7 @@
             .tema-enlaces a { flex: 1; justify-content: center; }
             .nav-bloques { padding: 14px 20px; }
             .bloques { padding: 12px 20px 24px; }
+            .barra-verificacion { padding: 10px 20px; }
         }
     </style>
 </head>
@@ -693,6 +752,177 @@
     </div>
 
 </div><!-- fin .container -->
+
+<!-- ============================================================ -->
+<!-- VERIFICACIÓN DE DISPONIBILIDAD DE RECURSOS                   -->
+<!-- ============================================================ -->
+<script>
+(function () {
+    'use strict';
+
+    const ES_LOCAL = location.protocol === 'file:';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        if (ES_LOCAL) {
+            mostrarAvisoLocal();
+            return;
+        }
+        iniciarVerificacion();
+    });
+
+    /* ────────────────────────────────────────────────
+       Aviso cuando se abre como archivo local (file://)
+       ──────────────────────────────────────────────── */
+    function mostrarAvisoLocal() {
+        const intro = document.querySelector('.intro');
+        if (!intro) return;
+        const aviso = document.createElement('div');
+        aviso.className = 'aviso-verificacion';
+        aviso.innerHTML =
+            '<i class="fas fa-exclamation-triangle"></i>' +
+            '<strong>Verificación desactivada:</strong> la página se ha abierto directamente ' +
+            'como archivo local (<code>file://</code>), por lo que no es posible comprobar ' +
+            'qué recursos existen realmente. Ábrela desde un servidor web (por ejemplo, ' +
+            'el servidor del centro) para ver marcados los archivos que faltan.';
+        intro.appendChild(aviso);
+    }
+
+    /* ────────────────────────────────────────────────
+       Barra superior "Verificando disponibilidad…"
+       ──────────────────────────────────────────────── */
+    function mostrarBarraVerificacion() {
+        const contenedor = document.querySelector('.container');
+        if (!contenedor) return null;
+        const barra = document.createElement('div');
+        barra.id = 'barra-verificacion';
+        barra.className = 'barra-verificacion';
+        barra.innerHTML =
+            '<i class="fas fa-circle-notch fa-spin"></i>' +
+            ' Verificando disponibilidad de recursos…';
+        contenedor.prepend(barra);
+        return barra;
+    }
+
+    /* ────────────────────────────────────────────────
+       Inicio del proceso
+       ──────────────────────────────────────────────── */
+    async function iniciarVerificacion() {
+        const barra = mostrarBarraVerificacion();
+        const enlaces = Array.from(document.querySelectorAll('.tema-enlaces a'));
+
+        // Lotes de 8 para no saturar la red
+        const LOTE = 8;
+        for (let i = 0; i < enlaces.length; i += LOTE) {
+            await Promise.all(enlaces.slice(i, i + LOTE).map(verificarEnlace));
+        }
+
+        if (barra) barra.remove();
+        actualizarResumenes();
+    }
+
+    /* ────────────────────────────────────────────────
+       Verificación individual de un enlace
+       ──────────────────────────────────────────────── */
+    async function verificarEnlace(a) {
+        const url = a.getAttribute('href');
+        if (!url) return;
+
+        a.classList.add('verificando');
+        let ok = null; // true / false / null (no verificable)
+
+        // 1) Intentar HEAD
+        try {
+            const resp = await fetch(url, { method: 'HEAD', cache: 'no-cache' });
+            if (resp.ok) {
+                ok = true;
+            } else if (resp.status === 405 || resp.status === 501) {
+                ok = null; // HEAD no permitido → probar GET
+            } else {
+                ok = false; // 404, 403, 500… → no disponible
+            }
+        } catch (e) {
+            ok = null; // error de red o CORS → probar GET
+        }
+
+        // 2) Fallback con GET
+        if (ok === null) {
+            try {
+                const resp = await fetch(url, { cache: 'no-cache' });
+                ok = resp.ok;
+            } catch (e) {
+                ok = null; // tampoco se puede verificar
+            }
+        }
+
+        a.classList.remove('verificando');
+
+        if (ok === false) {
+            marcarNoDisponible(a);
+        }
+    }
+
+    /* ────────────────────────────────────────────────
+       Marcar como no disponible
+       ──────────────────────────────────────────────── */
+    function marcarNoDisponible(a) {
+        a.classList.add('no-disponible');
+        a.dataset.disponible = 'no';
+        a.setAttribute('aria-disabled', 'true');
+        a.title = 'Este recurso aún no está disponible (archivo no encontrado)';
+
+        // Bloquear cualquier clic (conservando el aspecto visual)
+        a.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+        }, true);
+    }
+
+    /* ────────────────────────────────────────────────
+       Actualizar los contadores de cada bloque
+       ──────────────────────────────────────────────── */
+    function actualizarResumenes() {
+        document.querySelectorAll('details.bloque').forEach((bloque) => {
+            const temas = bloque.querySelectorAll('.tema');
+            const total = temas.length;
+            let disponibles = 0;
+            let incompletos = 0;
+            let vacios = 0;
+
+            temas.forEach((tema) => {
+                const enlaces = tema.querySelectorAll('.tema-enlaces a');
+                const noDisp = tema.querySelectorAll('.tema-enlaces a.no-disponible');
+                if (noDisp.length === 0) {
+                    disponibles++;
+                } else if (noDisp.length === enlaces.length) {
+                    vacios++;
+                } else {
+                    incompletos++;
+                }
+            });
+
+            // Si todo está disponible, no se toca nada
+            if (disponibles === total) return;
+
+            const contador = bloque.querySelector('.contador');
+            if (!contador) return;
+
+            // Añadir el indicador "X/Y" al contador
+            const span = document.createElement('span');
+            span.className = 'indicador-disponibilidad';
+            span.textContent = ' · ' + disponibles + '/' + total;
+            contador.appendChild(span);
+
+            if (vacios === total) {
+                contador.style.background = '#fee2e2';
+                contador.style.color = '#991b1b';
+            } else if (vacios + incompletos > 0) {
+                contador.style.background = '#fef3c7';
+                contador.style.color = '#92400e';
+            }
+        });
+    }
+})();
+</script>
 
 </body>
 </html>

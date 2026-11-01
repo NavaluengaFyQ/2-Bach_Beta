@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz</title>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body> 
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                <span class="codigo">#TEMA B1.- </span>
+                <span class="texto">Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- MAPA DE BLOQUES Y TEMAS (DESPLEGABLE)                         -->
+    <!-- =========================================================== -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque B. Campo electromagnético</strong> del currículo de Física de 2º de Bachillerato (Decreto 40/2022, BOCYL-D-30092022-4).</p>
+
+        <div class="mapa-bloques">
+            <!-- BLOQUE A -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">A1</span>
+                    <span class="tema-chip">A2</span>
+                    <span class="tema-chip">A3</span>
+                    <span class="tema-chip">A4</span>
+                    <span class="tema-chip">A5</span>
+                    <span class="tema-chip">A6</span>
+                    <span class="tema-chip">A7</span>
+                    <span class="tema-chip">A8</span>
+                </div>
+            </div>
+            <!-- BLOQUE B (ACTUAL) -->
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip actual">B1</span>
+                    <span class="tema-chip">B2</span>
+                    <span class="tema-chip">B3</span>
+                    <span class="tema-chip">B4</span>
+                    <span class="tema-chip">B5</span>
+                    <span class="tema-chip">B6</span>
+                    <span class="tema-chip">B7</span>
+                    <span class="tema-chip">B8</span>
+                    <span class="tema-chip">B9</span>
+                </div>
+            </div>
+            <!-- BLOQUE C -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">C1</span>
+                    <span class="tema-chip">C2</span>
+                    <span class="tema-chip">C3</span>
+                    <span class="tema-chip">C4</span>
+                    <span class="tema-chip">C5</span>
+                    <span class="tema-chip">C6</span>
+                </div>
+            </div>
+            <!-- BLOQUE D -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">D1</span>
+                    <span class="tema-chip">D2</span>
+                    <span class="tema-chip">D3</span>
+                    <span class="tema-chip">D4</span>
+                    <span class="tema-chip">D5</span>
+                    <span class="tema-chip">D6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque B · Tema B1:</strong> <span class="texto-resaltado">Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz.</span>
+            <br>
+            <em>En este tema estudiaremos:</em> la ley de Coulomb y su forma vectorial, el campo eléctrico creado por cargas puntuales, la fuerza de Lorentz (fuerza magnética sobre cargas en movimiento), el movimiento de cargas en campos eléctricos y magnéticos uniformes, las trayectorias circulares y helicoidales, el radio de giro y el periodo, el selector de velocidades y el principio de superposición aplicado a la resolución de problemas de EBAU.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- OBJETIVOS (DESPLEGABLE)                                       -->
+    <!-- ============================================================ -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Enunciar y aplicar la ley de Coulomb en forma escalar y vectorial, comprendiendo el papel de la constante \(K\) y de la distancia.</li>
+            <li>Definir el campo eléctrico como fuerza por unidad de carga y calcularlo para distribuciones discretas de cargas puntuales.</li>
+            <li>Escribir y aplicar la fuerza de Lorentz \(\vec F=q(\vec E+\vec v\times\vec B)\) a cargas en movimiento en campos eléctricos y magnéticos.</li>
+            <li>Determinar la fuerza magnética sobre una carga en movimiento: módulo, dirección y sentido, aplicando el producto vectorial y la regla de la mano derecha.</li>
+            <li>Analizar el movimiento de cargas en un campo eléctrico uniforme (aceleración, deflexión, energía).</li>
+            <li>Analizar el movimiento de cargas en un campo magnético uniforme: trayectoria circular, radio de giro \(R=mv/(|q|B)\) y periodo \(T=2\pi m/(|q|B)\).</li>
+            <li>Comprender el concepto de selector de velocidades y la condición de equilibrio \(v=E/B\).</li>
+            <li>Resolver problemas numéricos y de razonamiento característicos de la PAU/EBAU de Castilla y León sobre este tema.</li>
+        </ul>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- CONTENIDO TEÓRICO (DESPLEGABLE)                               -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">1</span>
+                <strong>Ley de Coulomb: fuerza entre cargas puntuales.</strong>
+            </summary>
+            <p>La <strong>ley de Coulomb</strong> establece que dos cargas puntuales \(q_1\) y \(q_2\) separadas una distancia \(r\) se atraen o se repelen con una fuerza cuyo módulo es directamente proporcional al producto de las cargas e inversamente proporcional al cuadrado de la distancia que las separa:</p>
+            <div class="formula-box">
+                \[
+                F=K\,\frac{|q_1q_2|}{r^{2}}
+                \]
+            </div>
+            <p>donde \(K=9\cdot10^{9}\,\text{N}\cdot\text{m}^{2}\cdot\text{C}^{-2}\) es la <strong>constante de Coulomb</strong> en el vacío. En forma vectorial, la fuerza que \(q_1\) ejerce sobre \(q_2\) es:</p>
+            <div class="formula-box">
+                \[
+                \vec F_{1\to2}=K\,\frac{q_1q_2}{r^{2}}\,\hat u_{12}
+                \]
+            </div>
+            <p>siendo \(\hat u_{12}\) el vector unitario dirigido de \(q_1\) hacia \(q_2\). El signo del producto \(q_1q_2\) determina el carácter atractivo (producto negativo) o repulsivo (producto positivo) de la fuerza.</p>
+            <p><strong>Propiedades esenciales:</strong></p>
+            <ul>
+                <li>Es una fuerza <strong>central</strong>: su dirección pasa por la recta que une las dos cargas.</li>
+                <li>Es una fuerza <strong>conservativa</strong>: deriva de un potencial, por lo que el trabajo depende solo de las posiciones inicial y final.</li>
+                <li>Cumple la <strong>tercera ley de Newton</strong>: \(\vec F_{1\to2}=-\vec F_{2\to1}\).</li>
+                <li>Es una <strong>interacción de largo alcance</strong>: su intensidad decae con el cuadrado de la distancia pero no se anula.</li>
+                <li>Es mucho más intensa que la gravedad entre partículas elementales (del orden de \(10^{39}\) veces mayor entre dos electrones).</li>
+            </ul>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">2</span>
+                <strong>Campo eléctrico y principio de superposición.</strong>
+            </summary>
+            <p>El <strong>campo eléctrico</strong> en un punto del espacio es la fuerza eléctrica por unidad de carga positiva colocada en dicho punto:</p>
+            <div class="formula-box">
+                \[
+                \vec E=\frac{\vec F}{q_0}
+                \]
+            </div>
+            <p>Para una carga puntual \(Q\) situada en el origen:</p>
+            <div class="formula-box">
+                \[
+                \vec E=K\,\frac{Q}{r^{2}}\,\hat u_r
+                \]
+            </div>
+            <p>El campo apunta alejándose de la carga si \(Q>0\) y hacia la carga si \(Q<0\). Su unidad en el S.I. es \(\text{N}\cdot\text{C}^{-1}\), equivalente a \(\text{V}\cdot\text{m}^{-1}\).</p>
+            <p>Cuando hay varias cargas, el campo total en un punto es la <strong>suma vectorial</strong> de los campos individuales (principio de superposición):</p>
+            <div class="formula-box">
+                \[
+                \vec E_{\text{total}}=\sum_i \vec E_i=\sum_i K\,\frac{Q_i}{r_i^{2}}\,\hat u_{ri}
+                \]
+            </div>
+            <p>Las líneas de campo eléctrico son tangentes al vector \(\vec E\) en cada punto. Salen de las cargas positivas y terminan en las negativas; su densidad indica la intensidad del campo.</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">3</span>
+                <strong>Fuerza de Lorentz: fuerza magnética sobre cargas en movimiento.</strong>
+            </summary>
+            <p>Una carga \(q\) que se mueve con velocidad \(\vec v\) en una región donde existe un campo magnético \(\vec B\) experimenta una fuerza magnética dada por la <strong>ley de Lorentz</strong> (parte magnética):</p>
+            <div class="formula-box">
+                \[
+                \vec F_m=q\,(\vec v\times\vec B)
+                \]
+            </div>
+            <p>Su módulo es:</p>
+            <div class="formula-box">
+                \[
+                F_m=|q|\,v\,B\,\text{sen}\,\theta
+                \]
+            </div>
+            <p>donde \(\theta\) es el ángulo entre \(\vec v\) y \(\vec B\).</p>
+            <p><strong>Propiedades esenciales:</strong></p>
+            <ul>
+                <li>La fuerza magnética es <strong>perpendicular</strong> a \(\vec v\) y a \(\vec B\) (regla de la mano derecha).</li>
+                <li>Es <strong>proporcional a \(v\)</strong>: si la carga está en reposo, no hay fuerza magnética.</li>
+                <li><strong>No realiza trabajo</strong>: \(\vec F_m\cdot\vec v=0\), por lo que no cambia la energía cinética ni el módulo de la velocidad; solo cambia su dirección.</li>
+                <li>Si \(\vec v\parallel\vec B\) (\(\theta=0\) o \(\theta=180^\circ\)), la fuerza es nula.</li>
+                <li>El sentido de \(\vec F_m\) se invierte al cambiar el signo de \(q\).</li>
+            </ul>
+            <p>Cuando coexisten un campo eléctrico y un campo magnético, la fuerza total es la <strong>fuerza de Lorentz completa</strong>:</p>
+            <div class="formula-box">
+                \[
+                \vec F=q\,(\vec E+\vec v\times\vec B)
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">4</span>
+                <strong>Movimiento de cargas en un campo eléctrico uniforme.</strong>
+            </summary>
+            <p>En un campo eléctrico uniforme \(\vec E\), la fuerza eléctrica sobre una carga \(q\) es constante: \(\vec F=q\vec E\). Por tanto, la carga experimenta una aceleración constante:</p>
+            <div class="formula-box">
+                \[
+                \vec a=\frac{q\vec E}{m}
+                \]
+            </div>
+            <p>El movimiento es análogo al de un proyectil en el campo gravitatorio terrestre. Si la carga entra con velocidad inicial \(\vec v_0\):</p>
+            <ul>
+                <li><strong>Aceleración:</strong> constante y paralela (o antiparalela) a \(\vec E\).</li>
+                <li><strong>Trayectoria:</strong> rectilínea si \(\vec v_0\parallel\vec E\), parabólica si \(\vec v_0\) tiene componente perpendicular a \(\vec E\).</li>
+                <li><strong>Energía:</strong> el trabajo eléctrico \(W=q\,\Delta V\) se convierte en variación de energía cinética: \(\frac{1}{2}mv^2-\frac{1}{2}mv_0^2=q(V_i-V_f)\).</li>
+            </ul>
+            <p>Este es el principio del tubo de rayos catódicos, de los aceleradores lineales y de la impresión láser.</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">5</span>
+                <strong>Movimiento de cargas en un campo magnético uniforme: trayectoria circular.</strong>
+            </summary>
+            <p>Si una carga \(q\) penetra con velocidad \(\vec v\) <strong>perpendicular</strong> a un campo magnético uniforme \(\vec B\), la fuerza magnética actúa como fuerza centrípeta:</p>
+            <div class="formula-box">
+                \[
+                |q|\,v\,B=\frac{m\,v^{2}}{R}
+                \]
+            </div>
+            <p>Por tanto, la carga describe una <strong>trayectoria circular</strong> de radio:</p>
+            <div class="formula-box">
+                \[
+                R=\frac{m\,v}{|q|\,B}
+                \]
+            </div>
+            <p>y su periodo (tiempo en dar una vuelta completa) es:</p>
+            <div class="formula-box">
+                \[
+                T=\frac{2\pi R}{v}=\frac{2\pi m}{|q|\,B}
+                \]
+            </div>
+            <p>La <strong>frecuencia ciclotrón</strong> \(f=1/T\) no depende de la velocidad, lo que permite aplicaciones como el ciclotrón y el espectrómetro de masas.</p>
+            <p>El sentido de giro depende del signo de la carga: positiva y negativa giran en sentidos opuestos. El centro de la circunferencia se determina por la dirección de \(\vec F_m=q(\vec v\times\vec B)\) en el instante inicial.</p>
+            <p>Si la velocidad tiene una componente paralela a \(\vec B\), el movimiento resultante es una <strong>hélice</strong> cuyo eje es paralelo al campo.</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">6</span>
+                <strong>Selector de velocidades.</strong>
+            </summary>
+            <p>Un <strong>selector de velocidades</strong> es una región donde coexisten un campo eléctrico \(\vec E\) y un campo magnético \(\vec B\), perpendiculares entre sí y perpendiculares a la velocidad de la carga. Para que una partícula cargada atraviese la región sin desviarse, la fuerza eléctrica debe compensar exactamente a la fuerza magnética:</p>
+            <div class="formula-box">
+                \[
+                q\vec E+q(\vec v\times\vec B)=0
+                \]
+            </div>
+            <p>Si \(\vec E\), \(\vec B\) y \(\vec v\) son mutuamente perpendiculares, los módulos deben cumplir:</p>
+            <div class="formula-box">
+                \[
+                |q|\,E=|q|\,v\,B\quad\Rightarrow\quad v=\frac{E}{B}
+                \]
+            </div>
+            <p>Solo las partículas con esa velocidad pasan sin desviarse. Este es el principio del <strong>filtro de Wien</strong>, del espectrómetro de masas y de los experimentos de Thomson para determinar la relación \(q/m\) del electrón.</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">7</span>
+                <strong>Comparación entre fuerza eléctrica y fuerza magnética.</strong>
+            </summary>
+            <p>Ambas son fuerzas electromagnéticas, pero presentan diferencias esenciales:</p>
+            <ul>
+                <li>La fuerza eléctrica actúa sobre cualquier carga (en reposo o en movimiento); la magnética solo sobre cargas en movimiento y nunca en la dirección de \(\vec v\).</li>
+                <li>La fuerza eléctrica es <strong>conservativa</strong> (deriva de un potencial); la magnética <strong>no realiza trabajo</strong> y no puede describirse mediante un potencial escalar.</li>
+                <li>Las líneas de campo eléctrico son abiertas (salen de las cargas positivas y terminan en las negativas); las de campo magnético son cerradas (no existen monopolos magnéticos).</li>
+                <li>La fuerza eléctrica \(\vec F_E=q\vec E\) es paralela a \(\vec E\); la fuerza magnética \(\vec F_m=q(\vec v\times\vec B)\) es perpendicular a \(\vec v\) y a \(\vec B\).</li>
+                <li>La fuerza magnética puede cambiar la dirección del movimiento pero nunca su rapidez; la fuerza eléctrica puede cambiar tanto la dirección como el módulo de la velocidad.</li>
+            </ul>
+        </details>
+
+        <div class="note">
+            <strong>💡 Observaciones sobre el alumnado:</strong> los errores más frecuentes son (i) confundir la dirección de la fuerza magnética con la del campo magnético; (ii) olvidar que la fuerza magnética no realiza trabajo; (iii) no descomponer correctamente \(\vec v\) en componente paralela y perpendicular a \(\vec B\); (iv) aplicar la fórmula del radio \(R=mv/(|q|B)\) con la velocidad total cuando la órbita es helicoidal; (v) no invertir el sentido de giro al cambiar el signo de la carga. Recomendamos trabajar siempre con esquemas vectoriales y comprobar la regla de la mano derecha.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- ANÁLISIS DE FÓRMULAS (DESPLEGABLE)                            -->
+    <!-- ============================================================ -->
+    <details class="section resultado">
+        <summary><h2>🧮 Análisis de las fórmulas del tema B1</h2></summary>
+        <p>Recogemos en una tabla las expresiones clave del tema, con su significado físico, las variables implicadas y las condiciones de aplicación:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Fórmula</th>
+                    <th>Significado físico</th>
+                    <th>Variables y unidades</th>
+                    <th>Condiciones de aplicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>\(F=K\dfrac{|q_1q_2|}{r^{2}}\)</td>
+                    <td>Ley de Coulomb (módulo).</td>
+                    <td>\(F\) en N; \(q_1,q_2\) en C; \(r\) en m; \(K=9\cdot10^{9}\,\text{N}\cdot\text{m}^{2}\cdot\text{C}^{-2}\).</td>
+                    <td>Cargas puntuales en reposo; o distribuciones esféricas en su exterior.</td>
+                </tr>
+                <tr>
+                    <td>\(\vec F_{1\to2}=K\dfrac{q_1q_2}{r^{2}}\hat u_{12}\)</td>
+                    <td>Ley de Coulomb vectorial.</td>
+                    <td>\(\vec F\) en N; \(\hat u_{12}\) unitario de \(q_1\) a \(q_2\).</td>
+                    <td>Mismas condiciones que la anterior.</td>
+                </tr>
+                <tr>
+                    <td>\(\vec E=K\dfrac{Q}{r^{2}}\hat u_r\)</td>
+                    <td>Campo eléctrico de una carga puntual.</td>
+                    <td>\(\vec E\) en \(\text{N}\cdot\text{C}^{-1}\); \(Q\) en C; \(r\) en m.</td>
+                    <td>Carga puntual; apunta hacia fuera si \(Q>0\) y hacia dentro si \(Q<0\).</td>
+                </tr>
+                <tr>
+                    <td>\(\vec F=q\vec E\)</td>
+                    <td>Fuerza eléctrica sobre una carga.</td>
+                    <td>\(\vec F\) en N; \(q\) en C; \(\vec E\) en \(\text{N}\cdot\text{C}^{-1}\).</td>
+                    <td>Válida para cualquier campo eléctrico.</td>
+                </tr>
+                <tr>
+                    <td>\(\vec F_m=q(\vec v\times\vec B)\)</td>
+                    <td>Fuerza de Lorentz (parte magnética).</td>
+                    <td>\(\vec F_m\) en N; \(q\) en C; \(\vec v\) en \(\text{m}\cdot\text{s}^{-1}\); \(\vec B\) en T.</td>
+                    <td>Carga en movimiento; \(\vec F_m\perp\vec v\) y \(\vec F_m\perp\vec B\).</td>
+                </tr>
+                <tr>
+                    <td>\(F_m=|q|vB\,\text{sen}\,\theta\)</td>
+                    <td>Módulo de la fuerza magnética.</td>
+                    <td>\(F_m\) en N; \(\theta\) es el ángulo entre \(\vec v\) y \(\vec B\).</td>
+                    <td>Válida para cualquier ángulo \(\theta\).</td>
+                </tr>
+                <tr>
+                    <td>\(\vec F=q(\vec E+\vec v\times\vec B)\)</td>
+                    <td>Fuerza de Lorentz completa.</td>
+                    <td>\(\vec F\) en N; \(\vec E\) en \(\text{V}\cdot\text{m}^{-1}\); \(\vec B\) en T.</td>
+                    <td>Región con campos eléctrico y magnético simultáneos.</td>
+                </tr>
+                <tr>
+                    <td>\(R=\dfrac{mv}{|q|B}\)</td>
+                    <td>Radio de la trayectoria circular en campo magnético.</td>
+                    <td>\(R\) en m; \(m\) en kg; \(v\) en \(\text{m}\cdot\text{s}^{-1}\); \(q\) en C; \(B\) en T.</td>
+                    <td>\(\vec v\perp\vec B\); campo uniforme.</td>
+                </tr>
+                <tr>
+                    <td>\(T=\dfrac{2\pi m}{|q|B}\)</td>
+                    <td>Periodo de la órbita circular.</td>
+                    <td>\(T\) en s; resto en unidades del SI.</td>
+                    <td>\(\vec v\perp\vec B\); campo uniforme; régimen no relativista.</td>
+                </tr>
+                <tr>
+                    <td>\(v=\dfrac{E}{B}\)</td>
+                    <td>Condición del selector de velocidades.</td>
+                    <td>\(v\) en \(\text{m}\cdot\text{s}^{-1}\); \(E\) en \(\text{V}\cdot\text{m}^{-1}\); \(B\) en T.</td>
+                    <td>\(\vec E\), \(\vec B\) y \(\vec v\) mutuamente perpendiculares; fuerza neta nula.</td>
+                </tr>
+                <tr>
+                    <td>\(\frac{1}{2}mv^{2}-\frac{1}{2}mv_0^{2}=q\,V\)</td>
+                    <td>Balance energético en campo eléctrico.</td>
+                    <td>Todos en unidades del SI.</td>
+                    <td>Campo eléctrico conservativo; sin otras fuerzas.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note">
+            <strong>⚠️ Errores frecuentes:</strong> confundir la dirección de \(\vec F_m\) con la de \(\vec B\); olvidar que la fuerza magnética no realiza trabajo; no invertir el sentido de giro al cambiar el signo de la carga; aplicar \(R=mv/(|q|B)\) con la velocidad total cuando la componente paralela a \(\vec B\) también existe; medir distancias desde la superficie en lugar de desde el centro; no identificar cuándo el movimiento es helicoidal y cuándo circular.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- PROBLEMAS RESUELTOS (EBAU Castilla y León y otras)           -->
+    <!-- ============================================================ -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🔭 Problemas resueltos de EBAU — Castilla y León y otras comunidades (Tema B1)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas</strong> de las pruebas de acceso a la universidad, priorizando <strong>Castilla y León</strong> y completando con otras comunidades. Todos ellos están relacionados con el tema B1 (ley de Coulomb, fuerza de Lorentz, movimiento de cargas en campos eléctricos y magnéticos, trayectorias circulares y selector de velocidades). Se indica la comunidad, el año, la convocatoria (ordinaria/extraordinaria) y el número de problema.
+            </p>
+
+            <!-- PROBLEMA 1 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Fuerzas eléctrica y magnética sobre un electrón</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Ordinaria · Pregunta 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un electrón viaja a lo largo del sentido positivo del eje X y penetra en una región donde existe un campo eléctrico y un campo magnético. El campo eléctrico apunta en el sentido positivo del eje Y y el magnético apunta en el sentido positivo del eje Z. Dibuje sobre un diagrama las fuerzas que actúan sobre el electrón. (1 punto)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Datos y sistema de referencia:</strong> la carga del electrón es \(q=-e=-1{,}60\cdot10^{-19}\,\text{C}\). Tomamos \(\vec v=v\,\hat i\), \(\vec E=E\,\hat j\), \(\vec B=B\,\hat k\), con \(v,E,B>0\).</div>
+                    <div class="paso"><strong>Fuerza eléctrica:</strong> \(\vec F_e=q\vec E=-eE\,\hat j\). Apunta en el sentido negativo del eje Y (hacia abajo).</div>
+                    <div class="formula-box">
+                        \[
+                        \vec F_e=-eE\,\hat j
+                        \]
+                    </div>
+                    <div class="paso"><strong>Fuerza magnética:</strong> \(\vec F_m=q(\vec v\times\vec B)=(-e)(v\hat i\times B\hat k)\). Como \(\hat i\times\hat k=-\hat j\):</div>
+                    <div class="formula-box">
+                        \[
+                        \vec F_m=(-e)\,vB\,(-\hat j)=+evB\,\hat j
+                        \]
+                    </div>
+                    <div class="paso">La fuerza magnética apunta en el sentido positivo del eje Y (hacia arriba), opuesta a la fuerza eléctrica.</div>
+                    <div class="paso"><strong>Diagrama:</strong> en el plano XY, el electrón se mueve hacia \(+X\). El vector \(\vec E\) apunta hacia \(+Y\); \(\vec F_m\) también apunta hacia \(+Y\) (fuerza magnética sobre carga negativa). El vector \(\vec F_e\) apunta hacia \(-Y\). El campo \(\vec B\) sale del plano XY (sentido \(+Z\)).</div>
+                    <div class="paso"><strong>Resultado:</strong> \(\vec F_e=-eE\,\hat j\) (hacia \(-Y\)), \(\vec F_m=+evB\,\hat j\) (hacia \(+Y\)).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 2 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Aceleración y trayectoria magnética de iones de deuterio</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Pregunta 5</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>En la cámara de ionización de un espectrómetro de masas se obtienen iones del isótopo deuterio o deuterones (\(^{2}\mathrm{H}^{+}\)). Estos iones, en primer lugar, se aceleran en línea recta desde el reposo mediante la aplicación de una diferencia de potencial de \(1500\,\text{V}\). Posteriormente penetran en un campo magnético uniforme de \(0{,}1\,\text{T}\) perpendicular a la velocidad de los iones. Determine:</p>
+                    <p>a) La velocidad con la que los iones penetran en el campo magnético.</p>
+                    <p>b) El radio de la órbita circular que describen los iones en el interior de dicho campo.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Aceleración eléctrica.</strong> Un deuterón tiene carga \(q=+e=1{,}60\cdot10^{-19}\,\text{C}\) y masa aproximadamente \(m_d\approx2\,\text{u}=3{,}32\cdot10^{-27}\,\text{kg}\). El trabajo eléctrico se convierte íntegramente en energía cinética:</div>
+                    <div class="formula-box">
+                        \[
+                        q\,V=\frac{1}{2}m_d v^{2}\quad\Rightarrow\quad v=\sqrt{\frac{2qV}{m_d}}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        v=\sqrt{\frac{2\cdot1{,}60\cdot10^{-19}\cdot1500}{3{,}32\cdot10^{-27}}}=3{,}80\cdot10^{5}\,\text{m}\,\text{s}^{-1}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b) Radio de la órbita circular.</strong> En el campo magnético, la fuerza de Lorentz es centrípeta. Como \(\vec v\perp\vec B\):</div>
+                    <div class="formula-box">
+                        \[
+                        qvB=\frac{m_dv^{2}}{R}\quad\Rightarrow\quad R=\frac{m_dv}{qB}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        R=\frac{(3{,}32\cdot10^{-27})(3{,}80\cdot10^{5})}{(1{,}60\cdot10^{-19})(0{,}1)}=7{,}89\cdot10^{-2}\,\text{m}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(v\approx3{,}80\cdot10^{5}\,\text{m}\,\text{s}^{-1}\); \(R\approx7{,}9\,\text{cm}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 3 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Electrón que no se desvía: ¿implica ausencia de campo magnético?</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Pregunta 14</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Si un electrón penetra en una región del espacio y no se desvía, ¿se puede afirmar que en dicha región no existe campo magnético? Razone la respuesta.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Fuerza magnética:</strong> la fuerza de Lorentz sobre una carga en movimiento es \(\vec F_m=q(\vec v\times\vec B)\), con módulo \(F_m=|q|vB\,\text{sen}\,\theta\).</div>
+                    <div class="paso"><strong>Casos en que la fuerza magnética es nula sin que \(B=0\):</strong></div>
+                    <ul>
+                        <li>Velocidad paralela o antiparalela al campo magnético (\(\theta=0^\circ\) o \(\theta=180^\circ\)): \(\text{sen}\,\theta=0\), luego \(\vec F_m=0\) aunque exista \(\vec B\).</li>
+                        <li>Compensación con un campo eléctrico (selector de velocidades): si en la región coexisten \(\vec E\) y \(\vec B\) y se cumple \(q\vec E+q(\vec v\times\vec B)=0\), la fuerza neta es nula y el electrón se mueve en línea recta.</li>
+                    </ul>
+                    <div class="paso"><strong>Conclusión:</strong> no se puede afirmar que no exista campo magnético. La ausencia de desviación solo implica que la fuerza neta sobre el electrón es nula, lo que puede ocurrir aunque \(\vec B\neq0\) (velocidad paralela al campo o compensación con un campo eléctrico).</div>
+                    <div class="paso"><strong>Resultado:</strong> No; la ausencia de desviación no implica ausencia de campo magnético. Puede ocurrir si \(\vec v\parallel\vec B\) o si un campo eléctrico compensa la fuerza magnética.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 4 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Signo de la carga y razón carga/masa según trayectorias en un campo magnético</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Pregunta 14</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Tres partículas \(a\), \(b\) y \(c\), que se mueven con la misma velocidad, penetran en una zona en la que existe un campo magnético uniforme, según se muestra en la figura. Si sus trayectorias son las indicadas, ¿qué puede decir del signo de sus cargas? ¿Cuál de las partículas tiene mayor relación carga/masa? Justifique sus respuestas.</p>
+                    <p>Figura: el campo \(\vec B\) es uniforme y sale del plano (\(\odot\)). Las partículas entran horizontalmente desde la izquierda. La trayectoria de \(a\) se curva hacia abajo; la de \(b\) continúa recta o se curva ligeramente hacia arriba, con radio grande; la de \(c\) se curva fuertemente hacia arriba, con radio pequeño.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Fuerza de Lorentz y curvatura:</strong> \(\vec F_m=q(\vec v\times\vec B)\). Con \(\vec v\) hacia la derecha (\(+\hat i\)) y \(\vec B\) saliente al lector (\(+\hat k\)), el producto \(\vec v\times\vec B=\hat i\times\hat k=-\hat j\), es decir, apunta hacia abajo.</div>
+                    <div class="paso"><strong>Signo de cada carga:</strong></div>
+                    <ul>
+                        <li>Partícula \(a\): se desvía hacia abajo, igual que \(\vec v\times\vec B\). Por tanto \(q_a>0\).</li>
+                        <li>Partícula \(b\): si no se desvía, \(q_b=0\); si se curva ligeramente hacia arriba, la fuerza apunta hacia arriba (opuesta a \(\vec v\times\vec B\)), luego \(q_b<0\).</li>
+                        <li>Partícula \(c\): se curva fuertemente hacia arriba, luego \(q_c<0\).</li>
+                    </ul>
+                    <div class="paso"><strong>Relación carga/masa:</strong> en un campo magnético uniforme, la trayectoria es circular de radio</div>
+                    <div class="formula-box">
+                        \[
+                        R=\frac{mv}{|q|B}
+                        \]
+                    </div>
+                    <div class="paso">Con \(v\) y \(B\) iguales para las tres partículas, \(R\) es inversamente proporcional a \(|q|/m\). Por tanto, la partícula con menor radio tiene mayor relación carga/masa. La partícula \(c\) tiene el radio más pequeño, luego es la de mayor \(|q|/m\).</div>
+                    <div class="paso"><strong>Resultado:</strong> \(q_a>0\); \(q_b<0\) (o \(q_b=0\) si no se desvía); \(q_c<0\). La partícula \(c\) tiene la mayor relación carga/masa.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 5 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Fuerza de Lorentz sobre un protón en un campo de 3 T</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Pregunta 4</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un protón penetra perpendicularmente a un campo magnético uniforme de \(3\,\text{T}\). Si el protón se mueve con una energía cinética de \(4\,\text{MeV}\), ¿qué fuerza ejerce el campo sobre el protón?</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Energía cinética y velocidad:</strong> \(K=4\,\text{MeV}=4\cdot10^{6}\cdot1{,}60\cdot10^{-19}=6{,}40\cdot10^{-13}\,\text{J}\). Al ser no relativista:</div>
+                    <div class="formula-box">
+                        \[
+                        K=\frac{1}{2}m_pv^{2}\quad\Rightarrow\quad v=\sqrt{\frac{2K}{m_p}}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        v=\sqrt{\frac{2\cdot6{,}40\cdot10^{-13}}{1{,}67\cdot10^{-27}}}=2{,}77\cdot10^{7}\,\text{m}\,\text{s}^{-1}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Fuerza magnética:</strong> como \(\vec v\perp\vec B\), \(F=qvB\).</div>
+                    <div class="formula-box">
+                        \[
+                        F=(1{,}60\cdot10^{-19})(2{,}77\cdot10^{7})(3)=1{,}33\cdot10^{-11}\,\text{N}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(F\approx1{,}33\cdot10^{-11}\,\text{N}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 6 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Velocidad de un electrón en una órbita circular en campo magnético</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Ordinaria · Pregunta 4</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un electrón entra en una región donde existe un campo magnético uniforme de dirección perpendicular a su velocidad y módulo \(B=10^{-3}\,\text{T}\). Calcule la velocidad del electrón si en la zona del campo describe circunferencias de \(3\,\text{cm}\) de diámetro.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Datos:</strong> diámetro \(D=3\,\text{cm}=3\cdot10^{-2}\,\text{m}\), luego \(r=1{,}5\cdot10^{-2}\,\text{m}\). \(B=10^{-3}\,\text{T}\); \(m_e=9{,}11\cdot10^{-31}\,\text{kg}\); \(e=1{,}60\cdot10^{-19}\,\text{C}\).</div>
+                    <div class="paso"><strong>Equilibrio fuerza magnética–centrípeta:</strong></div>
+                    <div class="formula-box">
+                        \[
+                        evB=\frac{m_ev^{2}}{r}\quad\Rightarrow\quad v=\frac{eBr}{m_e}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        v=\frac{(1{,}60\cdot10^{-19})(10^{-3})(1{,}5\cdot10^{-2})}{9{,}11\cdot10^{-31}}=2{,}63\cdot10^{6}\,\text{m}\,\text{s}^{-1}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(v\approx2{,}63\cdot10^{6}\,\text{m}\,\text{s}^{-1}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Trayectorias de electrón, protón y neutrón en campo magnético</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Ordinaria · Pregunta 14</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un electrón, un protón y un neutrón se desplazan con igual velocidad y entran perpendicularmente en un campo magnético uniforme y constante. Compare razonadamente las trayectorias descritas por cada una de las partículas.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Fuerza magnética:</strong> \(\vec F_m=q(\vec v\times\vec B)\). Su módulo es \(F_m=|q|vB\,\text{sen}\,\theta\).</div>
+                    <div class="paso"><strong>Neutrón:</strong> \(q=0\), luego \(\vec F_m=0\). El neutrón no se desvía y sigue una trayectoria rectilínea con velocidad constante.</div>
+                    <div class="paso"><strong>Electrón y protón:</strong> ambos tienen carga \(e\) en valor absoluto, por lo que describen trayectorias circulares de radio</div>
+                    <div class="formula-box">
+                        \[
+                        R=\frac{mv}{|q|B}
+                        \]
+                    </div>
+                    <div class="paso">y periodo</div>
+                    <div class="formula-box">
+                        \[
+                        T=\frac{2\pi m}{|q|B}
+                        \]
+                    </div>
+                    <div class="paso">Como la carga en valor absoluto es la misma y \(v\) y \(B\) también, el radio y el periodo son proporcionales a la masa. Con \(m_p\approx1836\,m_e\), el radio del protón es unas \(1836\) veces mayor que el del electrón, y lo mismo ocurre con el periodo. El protón describe una circunferencia mucho más amplia y lenta.</div>
+                    <div class="paso"><strong>Sentido de giro:</strong> al tener cargas de signo opuesto, giran en sentidos contrarios (el electrón en un sentido y el protón en el opuesto).</div>
+                    <div class="paso"><strong>Resultado:</strong> neutrón en línea recta; electrón y protón en circunferencias de sentidos opuestos, con \(R_p\approx1836\,R_e\) y \(T_p\approx1836\,T_e\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 8 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Radio de la trayectoria circular en un campo magnético y signo de la carga</span>
+                    <span class="meta-ej">Castilla y León · 2020 · Ordinaria · Pregunta 13</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Una partícula de masa \(m\) y carga \(q\) entra con velocidad \(\vec v\) en una zona donde existe un campo magnético uniforme \(\vec B\) (perpendicular a \(\vec v\)) y describe una trayectoria circular de radio \(R\). Deduzca la expresión de \(R\) en términos de \(m\), \(q\), \(v\) y \(B\) y determine razonadamente el signo de \(q\).</p>
+                    <p>Figura: la región está rellena de cruces \(\otimes\) (campo \(\vec B\) entrando en el plano del papel, \(\vec B=-B\hat k\)). La partícula entra por la izquierda con \(\vec v\) inicialmente horizontal hacia la derecha y curva su trayectoria hacia arriba.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Fuerza de Lorentz como fuerza centrípeta:</strong> la fuerza magnética es \(\vec F_m=q(\vec v\times\vec B)\). Como \(\vec v\perp\vec B\), su módulo es \(|q|vB\) y es siempre perpendicular a \(\vec v\). Por tanto actúa como fuerza centrípeta:</div>
+                    <div class="formula-box">
+                        \[
+                        |q|vB=\frac{mv^{2}}{R}\quad\Rightarrow\quad R=\frac{mv}{|q|B}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Signo de \(q\):</strong> con \(\vec v=v\hat i\) y \(\vec B=-B\hat k\), el producto \(\vec v\times\vec B=v\hat i\times(-B\hat k)=+vB\,\hat j\) apunta hacia arriba. La partícula se curva hacia arriba, luego la fuerza neta apunta hacia arriba. Como \(\vec F_m=q(\vec v\times\vec B)\), para que \(\vec F_m\) tenga el mismo sentido que \(\vec v\times\vec B\) debe ser \(q>0\).</div>
+                    <div class="paso"><strong>Resultado:</strong> \(R=mv/(qB)\) (con \(|q|\) en general); \(q>0\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 9 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">Campo eléctrico y conservación de energía: electrón y positrón</span>
+                    <span class="meta-ej">Madrid · 2025 · Ordinaria · Pregunta 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un electrón de carga \(-e\) y un positrón de carga \(+e\) se encuentran inicialmente fijos en el plano \(xy\) en las posiciones \((0,6)\,\text{nm}\) y \((0,-6)\,\text{nm}\), respectivamente.</p>
+                    <p>Datos: \(K=9\cdot10^{9}\,\text{N}\,\text{m}^{2}\,\text{C}^{-2}\); \(e=1{,}6\cdot10^{-19}\,\text{C}\); \(m_e=9{,}1\cdot10^{-31}\,\text{kg}\).</p>
+                    <p>a) Obtenga el campo eléctrico en el punto \((8,0)\,\text{nm}\) debido a ambas partículas.</p>
+                    <p>b) Si al positrón se le imprime una velocidad de \(-1{,}5\cdot10^{5}\,\text{m}\,\text{s}^{-1}\,\vec j\), permaneciendo fijo el electrón, determine la máxima distancia de alejamiento entre ambas partículas.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Distancia de cada carga al punto P:</strong> el electrón está en \((0,6)\,\text{nm}\) y el positrón en \((0,-6)\,\text{nm}\). La distancia de cada uno al punto \(P=(8,0)\,\text{nm}\) es:</div>
+                    <div class="formula-box">
+                        \[
+                        r=\sqrt{8^{2}+6^{2}}\,\text{nm}=10\,\text{nm}=1{,}0\cdot10^{-8}\,\text{m}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Módulo del campo de cada carga:</strong></div>
+                    <div class="formula-box">
+                        \[
+                        E_1=E_2=\frac{Ke}{r^{2}}=\frac{(9\cdot10^{9})(1{,}6\cdot10^{-19})}{(1{,}0\cdot10^{-8})^{2}}=1{,}44\cdot10^{7}\,\text{N}\,\text{C}^{-1}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Direcciones:</strong> el campo del electrón apunta hacia la carga (hacia arriba); el del positrón apunta alejándose de la carga (también hacia arriba). Por simetría, las componentes horizontales se cancelan y las verticales se suman:</div>
+                    <div class="formula-box">
+                        \[
+                        \vec E=2E_1\,\text{sen}\,\theta\,\vec j=2(1{,}44\cdot10^{7})(0{,}6)\,\vec j=1{,}73\cdot10^{7}\,\vec j\ \text{N}\,\text{C}^{-1}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b) Energía cinética inicial del positrón:</strong> \(\vec v_0=-1{,}5\cdot10^{5}\,\vec j\ \text{m}\,\text{s}^{-1}\):</div>
+                    <div class="formula-box">
+                        \[
+                        K_i=\frac{1}{2}m_ev_0^{2}=\frac{1}{2}(9{,}1\cdot10^{-31})(1{,}5\cdot10^{5})^{2}=1{,}02\cdot10^{-20}\,\text{J}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Energía potencial eléctrica inicial:</strong> la distancia inicial es \(r_i=12\,\text{nm}=1{,}2\cdot10^{-8}\,\text{m}\). Al ser cargas de signo opuesto:</div>
+                    <div class="formula-box">
+                        \[
+                        U_i=-\frac{Ke^{2}}{r_i}=-\frac{(9\cdot10^{9})(1{,}6\cdot10^{-19})^{2}}{1{,}2\cdot10^{-8}}=-1{,}92\cdot10^{-20}\,\text{J}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Conservación de la energía:</strong> en la distancia máxima, \(v=0\), \(U_f=-Ke^{2}/r_f\):</div>
+                    <div class="formula-box">
+                        \[
+                        K_i+U_i=U_f\quad\Rightarrow\quad r_f=\frac{Ke^{2}}{-(K_i+U_i)}=\frac{2{,}304\cdot10^{-28}}{8{,}96\cdot10^{-21}}=2{,}57\cdot10^{-8}\,\text{m}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(\vec E\approx1{,}73\cdot10^{7}\,\vec j\ \text{N}\,\text{C}^{-1}\); \(r_{\text{max}}\approx2{,}57\cdot10^{-8}\,\text{m}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">Trayectoria de un electrón y compensación de la fuerza magnética</span>
+                    <span class="meta-ej">La Rioja · 2026 · Ordinaria · Pregunta 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un electrón se mueve en línea recta a lo largo del semieje Y negativo con velocidad \(\vec v=5{,}5\cdot10^{6}\,\hat\jmath\ \text{m}\,\text{s}^{-1}\). Cuando llega al origen O, se activa en esa zona un campo magnético uniforme \(\vec B\) de módulo \(7{,}8\cdot10^{-3}\,\text{T}\) perpendicular a \(\vec v\) de manera que el electrón se desvía y describe una órbita circular de radio \(R\) en el plano YZ como muestra la figura.</p>
+                    <p>a) Calcular el módulo de la fuerza magnética \(\vec F_m\) que actúa sobre el electrón y el radio \(R\) de la órbita circular que describe.</p>
+                    <p>b) Determina de manera razonada la dirección y sentido de \(\vec B\) y \(\vec F_m\) cuando el electrón pasa por el origen O.</p>
+                    <p>c) Calcular el módulo, dirección y sentido del campo eléctrico \(\vec E\) que habría que activar al mismo tiempo que \(\vec B\) para que el electrón no se desviara y siguiera su trayectoria recta inicial.</p>
+                    <p>Datos: \(q\approx-1{,}6\cdot10^{-19}\,\text{C}\); \(m\approx9{,}1\cdot10^{-31}\,\text{kg}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a) Fuerza magnética y radio:</strong> como \(\vec v\perp\vec B\):</div>
+                    <div class="formula-box">
+                        \[
+                        F_m=|q|vB=(1{,}6\cdot10^{-19})(5{,}5\cdot10^{6})(7{,}8\cdot10^{-3})=6{,}86\cdot10^{-15}\,\text{N}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        R=\frac{mv}{|q|B}=\frac{(9{,}1\cdot10^{-31})(5{,}5\cdot10^{6})}{(1{,}6\cdot10^{-19})(7{,}8\cdot10^{-3})}=4{,}01\cdot10^{-3}\,\text{m}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b) Direcciones de \(\vec B\) y \(\vec F_m\):</strong> en el origen, la fuerza centrípeta apunta hacia el centro de la circunferencia, que está sobre el semieje \(Z\) positivo (\(+\hat k\)). Puesto que \(\vec F_m=q(\vec v\times\vec B)\) y \(q<0\), el producto \(\vec v\times\vec B\) debe apuntar en sentido \(-Z\) para que, al multiplicar por \(q<0\), la fuerza resulte en \(+Z\). Con \(\vec v\) en \(+\hat\jmath\), se necesita \(\vec B=+B\hat i\). Verificación: \(\hat\jmath\times\hat i=-\hat k\), luego \(q(\vec v\times\vec B)=(-e)(-vB\hat k)=+evB\hat k\), es decir, fuerza hacia \(+Z\).</div>
+                    <div class="formula-box">
+                        \[
+                        \vec B=7{,}8\cdot10^{-3}\,\hat i\ \text{T};\qquad \vec F_m=6{,}86\cdot10^{-15}\,\hat k\ \text{N}
+                        \]
+                    </div>
+                    <div class="paso"><strong>c) Campo eléctrico compensador:</strong> para que la fuerza total sea nula:</div>
+                    <div class="formula-box">
+                        \[
+                        q(\vec E+\vec v\times\vec B)=0\quad\Rightarrow\quad \vec E=-\vec v\times\vec B
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        \vec E=(5{,}5\cdot10^{6})(7{,}8\cdot10^{-3})\,\hat k=4{,}29\cdot10^{4}\,\hat k\ \text{N}\,\text{C}^{-1}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(F_m\approx6{,}86\cdot10^{-15}\,\text{N}\); \(R\approx4{,}01\,\text{mm}\); \(\vec B=7{,}8\cdot10^{-3}\,\hat i\,\text{T}\), \(\vec F_m=6{,}86\cdot10^{-15}\,\hat k\,\text{N}\); \(\vec E=4{,}29\cdot10^{4}\,\hat k\,\text{N}\,\text{C}^{-1}\).</div>
+                </div>
+            </details>
+
+            <!-- PIE DIDÁCTICO -->
+            <div class="pie-clave">
+                <i class="fas fa-lightbulb"></i>
+                <span><strong>Observaciones clave:</strong> en todos estos problemas, el patrón de resolución es: (1) identificar los datos y las incógnitas; (2) dibujar un esquema con las cargas, las velocidades y los campos; (3) calcular los módulos de las fuerzas o de los campos con las expresiones \(F=K|q_1q_2|/r^{2}\) y \(F_m=|q|vB\,\text{sen}\,\theta\); (4) determinar direcciones y sentidos con la regla de la mano derecha y el signo de la carga; (5) descomponer en componentes y sumar vectorialmente; (6) para trayectorias circulares, aplicar \(R=mv/(|q|B)\) y \(T=2\pi m/(|q|B)\); (7) para el selector de velocidades, imponer \(v=E/B\); (8) comprobar el orden de magnitud del resultado. Recuerda siempre homogeneizar las unidades al S.I. y no confundir campo (vectorial) con potencial (escalar), ni la fuerza eléctrica con la magnética.</span>
+            </div>
+
+        </div> <!-- fin contenido-desplegable -->
+    </details>
+
+
+
+<!-- ============================================================ -->
+<!-- BLOQUE DE RECURSOS Y NAVEGACIÓN DEL TEMA B1                  -->
+<!-- ============================================================ -->
+<div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
+    <style>
+        .recursos-tema-b1 .recurso-card {
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        }
+        .recursos-tema-b1 .recurso-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 32px rgba(37, 99, 235, 0.28) !important;
+            border-color: #3b82f6 !important;
+        }
+        .recursos-tema-b1 .recurso-card:hover .recurso-icono {
+            transform: scale(1.1) rotate(-6deg);
+        }
+        .recursos-tema-b1 .recurso-icono {
+            transition: transform 0.28s ease;
+        }
+        @media (max-width: 700px) {
+            .recursos-tema-b1 .recurso-grid { grid-template-columns: 1fr !important; }
+        }
+    </style>
+
+    <div class="recursos-tema-b1" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 20px; padding: 30px 25px 32px 25px;
+                box-shadow: 0 15px 40px rgba(102, 126, 234, 0.35);">
+
+        <h2 style="margin: 0 0 8px 0; color: white; text-align: center;
+                   font-size: 1.5em; display: flex; align-items: center;
+                   justify-content: center; gap: 12px;">
+            <i class="fas fa-compass"></i>
+            Recursos del Tema B1
+        </h2>
+        <p style="text-align: center; color: rgba(255,255,255,0.9);
+                  margin: 0 0 25px 0; font-size: 0.95em;">
+            Accede directamente a los materiales y bancos de problemas
+        </p>
+
+        <div class="recurso-grid" style="display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 18px;">
+
+            <!-- ── TARJETA 1: FORMULARIO ── -->
+            <a href="TemaB1-Formulario.html" style="text-decoration: none; color: inherit;">
+                <div class="recurso-card" style="background: white; border-radius: 16px;
+                            padding: 22px 18px; text-align: center; height: 100%;
+                            border: 3px solid #fbbf24; position: relative;
+                            box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                    <div style="position: absolute; top: 12px; right: 12px;
+                                background: #fbbf24; color: #78350f;
+                                padding: 3px 10px; border-radius: 20px;
+                                font-size: 0.7em; font-weight: 800;
+                                letter-spacing: 0.5px;">
+                        AQUÍ
+                    </div>
+                    <div class="recurso-icono" style="width: 62px; height: 62px;
+                                margin: 4px auto 14px;
+                                background: linear-gradient(135deg, #667eea, #764ba2);
+                                border-radius: 50%; display: flex; align-items: center;
+                                justify-content: center; color: white; font-size: 1.7em;">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                margin-bottom: 6px;">
+                        Formulario B1
+                    </div>
+                    <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                        Todas las fórmulas y relaciones clave del tema
+                    </div>
+                </div>
+            </a>
+
+            <!-- ── TARJETA 2: PROBLEMAS EBAU DEL TEMA B1 ── -->
+            <a href="TemaB1-ProblemasEBAU.html" style="text-decoration: none; color: inherit;">
+                <div class="recurso-card" style="background: white; border-radius: 16px;
+                            padding: 22px 18px; text-align: center; height: 100%;
+                            border: 3px solid #e2e8f0;
+                            box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                    <div class="recurso-icono" style="width: 62px; height: 62px;
+                                margin: 4px auto 14px;
+                                background: linear-gradient(135deg, #10b981, #059669);
+                                border-radius: 50%; display: flex; align-items: center;
+                                justify-content: center; color: white; font-size: 1.7em;">
+                        <i class="fas fa-pen-to-square"></i>
+                    </div>
+                    <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                margin-bottom: 6px;">
+                        Problemas EBAU · B1
+                    </div>
+                    <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                        Ejercicios filtrados del tema, resueltos y comentados
+                    </div>
+                </div>
+            </a>
+
+            <!-- ── TARJETA 3: FILTRADO EBAU GENERAL ── -->
+            <a href="../EBAU/problemas-inline%20v04.html" style="text-decoration: none; color: inherit;">
+                <div class="recurso-card" style="background: white; border-radius: 16px;
+                            padding: 22px 18px; text-align: center; height: 100%;
+                            border: 3px solid #e2e8f0;
+                            box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                    <div class="recurso-icono" style="width: 62px; height: 62px;
+                                margin: 4px auto 14px;
+                                background: linear-gradient(135deg, #f59e0b, #d97706);
+                                border-radius: 50%; display: flex; align-items: center;
+                                justify-content: center; color: white; font-size: 1.7em;">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                margin-bottom: 6px;">
+                        Filtrado EBAU general
+                    </div>
+                    <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                        Banco completo de problemas de todas las unidades
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- ============================================================ -->
+<!-- FIN DEL BLOQUE DE RECURSOS                                   -->
+<!-- ============================================================ -->
+
+
+
+    
+
+    <!-- ============================================ -->
+    <!-- BLOQUE "ES HORA DE"                          -->
+    <!-- ============================================ -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p>
+                <br> Domina la ley de Coulomb y la fuerza de Lorentz sobre cargas libres.<br>
+                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
+            </p>
+
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- ===================FIN DE ES HORA DE ==================== -->
+
+</div> <!-- fin container -->
+</body>
+</html>
