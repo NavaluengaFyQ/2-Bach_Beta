@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz</title>
+
+    <!-- FontAwesome, igual que en el tema de referencia -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS común del proyecto -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <style>
+        .frecuencia-box { background:#eef2ff; border-left:5px solid #3b82f6; border-radius:12px; padding:14px 18px; margin:14px 0; color:#1e3a8a; }
+        .tipo-intro { background:#f8fafc; border:1px solid #dbeafe; border-radius:12px; padding:14px 18px; margin:12px 0 18px; }
+        .clave-lenz { background:#fffbeb; border:1px solid #f6e05e; border-radius:10px; padding:12px 15px; margin:12px 0; }
+        .etiqueta { display:inline-block; padding:3px 9px; border-radius:20px; background:#dbeafe; color:#1e40af; font-weight:700; font-size:.82em; margin:2px 4px 2px 0; }
+        .tabla-resumen td:first-child { font-weight:700; color:#1e3a8a; }
+        .tabla-resumen td, .tabla-resumen th { vertical-align:middle; }
+        .formula-box p { margin:0; }
+        @media (max-width:700px) { .tabla-resumen { font-size:.9em; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA B9.- </span>
+                <span class="texto">Inducción electromagnética: flujo, Faraday-Henry y Lenz</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- MAPA CURRICULAR -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema se encuadra en el <strong>Bloque B. Campo electromagnético</strong> de Física de 2.º de Bachillerato. En el esquema de bloques y temas facilitado para el Decreto 40/2022 (BOCYL-D-30092022-4), corresponde al <strong>B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz</strong>.</p>
+
+        <div class="mapa-bloques">
+            <div class="bloque-card">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">A1</span><span class="tema-chip">A2</span><span class="tema-chip">A3</span><span class="tema-chip">A4</span>
+                    <span class="tema-chip">A5</span><span class="tema-chip">A6</span><span class="tema-chip">A7</span><span class="tema-chip">A8</span>
+                </div>
+            </div>
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span><span class="tema-chip">B2</span><span class="tema-chip">B3</span><span class="tema-chip">B4</span>
+                    <span class="tema-chip">B5</span><span class="tema-chip">B6</span><span class="tema-chip">B7</span><span class="tema-chip">B8</span>
+                    <span class="tema-chip actual">B9</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">C1</span><span class="tema-chip">C2</span><span class="tema-chip">C3</span>
+                    <span class="tema-chip">C4</span><span class="tema-chip">C5</span><span class="tema-chip">C6</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">D1</span><span class="tema-chip">D2</span><span class="tema-chip">D3</span>
+                    <span class="tema-chip">D4</span><span class="tema-chip">D5</span><span class="tema-chip">D6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque B · Tema B9:</strong> <span class="texto-resaltado">Inducción electromagnética: flujo, Faraday-Henry y Lenz.</span>
+            <br><br>
+            <em>En este tema estudiaremos:</em> el flujo magnético a través de una superficie, los factores de los que depende, la fuerza electromotriz inducida, la ley de Faraday-Henry, el sentido de la corriente inducida según la ley de Lenz y la inducción en espiras y bobinas, incluidas las que giran en un campo magnético.
+        </div>
+
+
+    </details>
+
+    <!-- OBJETIVOS -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Definir el flujo magnético e identificar su dependencia con el campo magnético, el área atravesada y la orientación de la superficie.</li>
+            <li>Calcular el flujo a través de una espira y el flujo concatenado en una bobina de varias espiras, utilizando correctamente el ángulo entre el campo y la normal.</li>
+            <li>Explicar que una variación temporal del flujo magnético puede deberse a cambios de intensidad del campo, de superficie o de orientación.</li>
+            <li>Enunciar y aplicar la ley de Faraday-Henry, tanto en variaciones medias como instantáneas del flujo.</li>
+            <li>Interpretar el signo negativo de la ley de Faraday mediante la ley de Lenz y determinar el sentido de la corriente inducida.</li>
+            <li>Resolver situaciones de inversión o variación temporal del campo magnético, espiras móviles y bobinas giratorias.</li>
+            <li>Obtener la expresión temporal del flujo y de la fem inducida, así como sus valores máximos, periodo y frecuencia en un alternador sencillo.</li>
+            <li>Resolver problemas numéricos y cuestiones de razonamiento característicos de la PAU/EBAU de Castilla y León.</li>
+        </ul>
+    </details>
+
+    <!-- CONTENIDO TEÓRICO -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step" open>
+            <summary><span class="step-num">1</span><strong>Flujo magnético.</strong></summary>
+            <p>El <strong>flujo magnético</strong> mide la cantidad de campo magnético que atraviesa una superficie. Para un campo uniforme y una superficie plana:</p>
+            <div class="formula-box">\[\Phi_B=\vec B\cdot\vec S=B\,S\cos\theta\]</div>
+            <p>En esta expresión, \(\vec S=S\,\hat n\) es el vector superficie, perpendicular al plano de la espira, y \(\theta\) es el ángulo entre \(\vec B\) y la <strong>normal</strong> a la superficie (no el ángulo con el plano).</p>
+            <ul>
+                <li>\(\Phi_B\): flujo magnético, en weber (Wb).</li>
+                <li>\(B\): módulo del campo magnético, en tesla (T).</li>
+                <li>\(S\): área atravesada, en \(\text{m}^2\).</li>
+                <li>\(\theta=0^\circ\): flujo máximo positivo; \(\theta=90^\circ\): flujo nulo; \(\theta=180^\circ\): flujo máximo negativo.</li>
+            </ul>
+            <div class="note"><strong>Atención al ángulo:</strong> si el enunciado proporciona el ángulo entre el campo y el <em>plano</em> de la espira, hay que convertirlo al ángulo con la normal. En los casos habituales, ambos ángulos son complementarios.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Flujo en espiras y bobinas. Flujo concatenado.</strong></summary>
+            <p>Una bobina está formada por \(N\) espiras. Si todas tienen la misma área y están sometidas al mismo campo y orientación, el flujo concatenado total es:</p>
+            <div class="formula-box">\[\Psi=N\,\Phi_B=NBS\cos\theta\]</div>
+            <p>Conviene distinguir la notación:</p>
+            <ul>
+                <li>\(\Phi_B\): flujo magnético que atraviesa <strong>una espira</strong>.</li>
+                <li>\(\Psi=N\Phi_B\): flujo concatenado de una bobina de \(N\) espiras.</li>
+            </ul>
+            <p>El flujo puede variar porque cambia \(B\), cambia el área \(S\), gira la espira y cambia \(\theta\), o se combinan varias de estas causas.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Inducción electromagnética y ley de Faraday-Henry.</strong></summary>
+            <p>Cuando cambia con el tiempo el flujo magnético concatenado por un circuito, aparece una <strong>fuerza electromotriz inducida</strong> (fem). La ley de Faraday-Henry establece:</p>
+            <div class="formula-box">\[\varepsilon=-\frac{d\Psi}{dt}=-N\frac{d\Phi_B}{dt}\]</div>
+            <p>Para una variación media durante un intervalo de tiempo:</p>
+            <div class="formula-box">\[\varepsilon_{\text{media}}=-\frac{\Delta\Psi}{\Delta t}=-N\frac{\Delta\Phi_B}{\Delta t}\]</div>
+            <p>El módulo de la fem depende de la rapidez con que cambia el flujo. No depende del valor del flujo por sí solo.</p>
+            <ul>
+                <li>Si el flujo permanece constante, \(\varepsilon=0\).</li>
+                <li>Si el flujo cambia linealmente, la fem es constante.</li>
+                <li>Si el flujo cambia de forma no lineal, se deriva su expresión para obtener \(\varepsilon(t)\).</li>
+            </ul>
+            <p>La unidad de la fem es el voltio (V), equivalente a \(\text{Wb}\,\text{s}^{-1}\).</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Ley de Lenz: sentido de la corriente inducida.</strong></summary>
+            <p>El signo negativo de Faraday expresa la <strong>ley de Lenz</strong>: la corriente inducida aparece en el sentido que crea un campo magnético que se opone a la <em>variación del flujo</em> que la produce.</p>
+            <div class="clave-lenz"><strong>La corriente inducida no se opone necesariamente al campo externo:</strong> se opone a que el flujo aumente o disminuya. Si el flujo entrante disminuye, intenta mantenerlo entrante; si aumenta, crea un campo saliente para contrarrestar el aumento.</div>
+            <p>Para una espira vista de frente:</p>
+            <table>
+                <thead><tr><th>Campo que debe crear la corriente</th><th>Sentido de la corriente (vista de frente)</th></tr></thead>
+                <tbody>
+                    <tr><td>Saliente del papel (hacia el observador)</td><td><strong>Antihorario</strong></td></tr>
+                    <tr><td>Entrante en el papel (hacia dentro)</td><td><strong>Horario</strong></td></tr>
+                </tbody>
+            </table>
+            <p><strong>Procedimiento recomendado:</strong> (1) determina el sentido del campo externo a través de la espira; (2) decide si el flujo aumenta o disminuye; (3) establece qué campo inducido se opone a ese cambio; (4) aplica la regla de la mano derecha para obtener el sentido de la corriente.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">5</span><strong>Variación del flujo: campo, área y orientación.</strong></summary>
+            <p>En un campo uniforme, \(\Phi_B=BS\cos\theta\). Por tanto:</p>
+            <ul>
+                <li><strong>Campo variable:</strong> si cambia \(B(t)\) y se mantienen constantes el área y la orientación, \(\varepsilon=-NS\cos\theta\,dB/dt\).</li>
+                <li><strong>Área variable:</strong> si cambia \(S(t)\) y se mantienen constantes el campo y la orientación, \(\varepsilon=-NB\cos\theta\,dS/dt\).</li>
+                <li><strong>Espira giratoria:</strong> si cambia \(\theta(t)\), el flujo varía aunque el campo y el área permanezcan constantes.</li>
+            </ul>
+            <p>En las espiras que entran o salen de una región donde existe campo magnético, el flujo cambia mientras varía la parte de la superficie que queda dentro de la región. Cuando toda la espira está dentro de un campo uniforme y no cambia su orientación ni su posición relativa, el flujo es constante y no se induce fem.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">6</span><strong>Espira giratoria. Alternador o generador de corriente alterna.</strong></summary>
+            <p>Una bobina de \(N\) espiras y área \(S\) gira con velocidad angular constante \(\omega\) en un campo uniforme \(B\). Si en \(t=0\) la normal a la bobina es paralela al campo, \(\theta=\omega t\):</p>
+            <div class="formula-box">\[\Psi(t)=NBS\cos(\omega t)\]</div>
+            <p>Derivando:</p>
+            <div class="formula-box">\[\varepsilon(t)=NBS\omega\,\operatorname{sen}(\omega t)\]</div>
+            <p>La fem máxima, el periodo y la frecuencia son:</p>
+            <div class="formula-box">\[\varepsilon_{\max}=NBS\omega\qquad T=\frac{2\pi}{\omega}\qquad f=\frac{1}{T}=\frac{\omega}{2\pi}\]</div>
+            <p>La fem cambia de signo periódicamente, por lo que se genera corriente alterna si el circuito está cerrado. Si se pide la velocidad angular a partir de revoluciones por minuto:</p>
+            <div class="formula-box">\[\omega=\text{rpm}\cdot\frac{2\pi}{60}\quad (\text{rad}\,\text{s}^{-1})\]</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">7</span><strong>Corriente inducida y fem.</strong></summary>
+            <p>La fem inducida representa la energía transferida por unidad de carga. Si el circuito está cerrado y su resistencia total es \(R\), se puede obtener la corriente inducida mediante la ley de Ohm:</p>
+            <div class="formula-box">\[I=\frac{\varepsilon}{R}\]</div>
+            <p>El signo o sentido de \(I\) debe interpretarse con el convenio elegido para el circuito. En las cuestiones cualitativas, la ley de Lenz determina primero el sentido; después, si se conoce \(R\), se calcula el módulo de la corriente.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">8</span><strong>Lectura de gráficas y funciones temporales.</strong></summary>
+            <p>En los problemas con \(B(t)\) o \(\Phi(t)\), la fem se obtiene derivando la magnitud que varía:</p>
+            <table>
+                <thead><tr><th>Flujo concatenado \(\Psi(t)\)</th><th>Fem inducida \(\varepsilon(t)\)</th><th>Interpretación</th></tr></thead>
+                <tbody>
+                    <tr><td>Constante</td><td>\(0\)</td><td>No hay variación del flujo.</td></tr>
+                    <tr><td>\(\Psi_0+kt\)</td><td>\(-k\)</td><td>Fem constante.</td></tr>
+                    <tr><td>\(a+bt^2\)</td><td>\(-2bt\)</td><td>Fem lineal en el tiempo.</td></tr>
+                    <tr><td>\(\Psi_0\cos(\omega t)\)</td><td>\(\Psi_0\omega\,\text{sen}(\omega t)\)</td><td>Fem sinusoidal.</td></tr>
+                </tbody>
+            </table>
+            <p>En una gráfica por tramos, calcula la pendiente de cada tramo. Una pendiente nula implica fem nula; una pendiente positiva o negativa da una fem de signo opuesto, según Faraday.</p>
+        </details>
+    </details>
+
+    <!-- FORMULARIO RESUMEN -->
+    <details class="section resultado">
+        <summary><h2>🧮 Formulario y análisis de las expresiones clave</h2></summary>
+        <p>Resumen de las fórmulas que conviene reconocer y saber aplicar en los problemas del tema:</p>
+        <table class="tabla-resumen">
+            <thead><tr><th>Expresión</th><th>Significado físico</th><th>Condiciones de aplicación</th></tr></thead>
+            <tbody>
+                <tr><td>\(\Phi_B=BS\cos\theta\)</td><td>Flujo magnético por una espira.</td><td>Campo uniforme y superficie plana; \(\theta\) con la normal.</td></tr>
+                <tr><td>\(\Psi=N\Phi_B\)</td><td>Flujo concatenado de una bobina.</td><td>\(N\) espiras iguales sometidas al mismo flujo.</td></tr>
+                <tr><td>\(\varepsilon=-d\Psi/dt\)</td><td>Ley de Faraday-Henry-Lenz.</td><td>Forma instantánea general.</td></tr>
+                <tr><td>\(\varepsilon_{\text{media}}=-\Delta\Psi/\Delta t\)</td><td>Fem media inducida.</td><td>Variación en un intervalo finito de tiempo.</td></tr>
+                <tr><td>\(I=\varepsilon/R\)</td><td>Corriente inducida.</td><td>Circuito cerrado y resistencia total conocida.</td></tr>
+                <tr><td>\(\Psi(t)=NBS\cos(\omega t)\)</td><td>Flujo concatenado de una bobina giratoria.</td><td>Giro uniforme; normal paralela a \(\vec B\) en \(t=0\).</td></tr>
+                <tr><td>\(\varepsilon(t)=NBS\omega\,\text{sen}(\omega t)\)</td><td>Fem instantánea en el alternador.</td><td>Mismo convenio angular que la expresión anterior.</td></tr>
+                <tr><td>\(\varepsilon_{\max}=NBS\omega\)</td><td>Fem máxima en una bobina giratoria.</td><td>Campo uniforme y velocidad angular constante.</td></tr>
+                <tr><td>\(\omega=2\pi f=2\pi/T\)</td><td>Relación entre magnitudes angulares y temporales.</td><td>Movimiento periódico.</td></tr>
+            </tbody>
+        </table>
+        <div class="note"><strong>Errores frecuentes:</strong> usar el ángulo con el plano en vez del ángulo con la normal; olvidar multiplicar por \(N\) en una bobina; confundir el flujo con su variación temporal; perder el signo negativo de Faraday; afirmar que la corriente se opone siempre al campo externo (se opone al cambio de flujo); y calcular fem cuando el flujo es grande sin comprobar si está variando.</div>
+    </details>
+
+    <!-- PROBLEMAS TIPO RESUELTOS -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🧩 Problemas tipo resueltos — Inducción electromagnética (B9)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+            <p>Ejemplos modelo para practicar los procedimientos habituales antes de abordar los enunciados de convocatorias reales.</p>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej"><span class="num-ej">Tipo 1</span><span class="titulo-ej">Flujo magnético en una bobina oblicua</span><span class="meta-ej">Flujo · número de espiras</span></summary>
+                <div class="enunciado-ej"><p>Una bobina de 50 espiras, cada una de área \(20\,\text{cm}^2\), se encuentra en un campo uniforme de \(0{,}40\,\text{T}\). El campo forma \(30^\circ\) con la normal a las espiras. Calcula el flujo por espira y el flujo concatenado total.</p></div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>1. Conversión de unidades y ángulo.</strong> \(S=20\cdot10^{-4}=2{,}0\cdot10^{-3}\,\text{m}^2\), \(N=50\), \(\theta=30^\circ\).</div>
+                    <div class="formula-box">\[\Phi_B=BS\cos\theta=0{,}40\cdot2{,}0\cdot10^{-3}\cdot\cos30^\circ=6{,}93\cdot10^{-4}\,\text{Wb}\]</div>
+                    <div class="paso"><strong>2. Flujo concatenado.</strong></div>
+                    <div class="formula-box">\[\Psi=N\Phi_B=50\cdot6{,}93\cdot10^{-4}=3{,}46\cdot10^{-2}\,\text{Wb}\]</div>
+                    <div class="paso"><strong>Resultado:</strong> flujo por espira \(6{,}93\cdot10^{-4}\,\text{Wb}\); flujo concatenado \(3{,}46\cdot10^{-2}\,\text{Wb}\).</div>
+                </div>
+            </details>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej"><span class="num-ej">Tipo 2</span><span class="titulo-ej">Fem media al reducirse el campo magnético</span><span class="meta-ej">Faraday · variación lineal</span></summary>
+                <div class="enunciado-ej"><p>Una bobina de 150 espiras circulares y radio \(4{,}0\,\text{cm}\) está sometida a un campo perpendicular a su plano. El campo disminuye uniformemente de \(0{,}60\,\text{T}\) a cero en \(0{,}20\,\text{s}\). Calcula el módulo de la fem media inducida.</p></div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>1. Área de una espira.</strong></div>
+                    <div class="formula-box">\[S=\pi r^2=\pi(0{,}040)^2=5{,}03\cdot10^{-3}\,\text{m}^2\]</div>
+                    <div class="paso"><strong>2. Variación de flujo concatenado.</strong> Como el campo es perpendicular al plano, \(\cos\theta=1\), y \(|\Delta B|=0{,}60\,\text{T}\).</div>
+                    <div class="formula-box">\[|\varepsilon|=N\frac{S|\Delta B|}{\Delta t}=150\frac{(5{,}03\cdot10^{-3})(0{,}60)}{0{,}20}=2{,}26\,\text{V}\]</div>
+                    <div class="paso"><strong>Resultado:</strong> \(|\varepsilon_{\text{media}}|\approx2{,}26\,\text{V}\). El sentido se obtiene con Lenz: la corriente intenta mantener el flujo que está disminuyendo.</div>
+                </div>
+            </details>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej"><span class="num-ej">Tipo 3</span><span class="titulo-ej">Campo variable definido mediante una función</span><span class="meta-ej">Faraday · derivada</span></summary>
+                <div class="enunciado-ej"><p>Una bobina de 80 espiras y área \(1{,}5\cdot10^{-2}\,\text{m}^2\) se sitúa perpendicularmente a un campo uniforme \(B(t)=0{,}10+0{,}04t^2\) (S.I.). Obtén \(\Psi(t)\), \(\varepsilon(t)\) y la fem en \(t=3\,\text{s}\).</p></div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>1. Flujo concatenado.</strong></div>
+                    <div class="formula-box">\[\Psi(t)=N S B(t)=80\cdot1{,}5\cdot10^{-2}(0{,}10+0{,}04t^2)=0{,}12+0{,}048t^2\,\text{Wb}\]</div>
+                    <div class="paso"><strong>2. Derivada temporal y ley de Faraday.</strong></div>
+                    <div class="formula-box">\[\varepsilon(t)=-\frac{d\Psi}{dt}=-0{,}096t\,\text{V}\]</div>
+                    <div class="paso"><strong>3. Instante pedido.</strong> \(\varepsilon(3)=-0{,}288\,\text{V}\).</div>
+                    <div class="paso"><strong>Resultado:</strong> \(\Psi(t)=0{,}12+0{,}048t^2\,\text{Wb}\); \(\varepsilon(t)=-0{,}096t\,\text{V}\); \(\varepsilon(3)=-0{,}288\,\text{V}\).</div>
+                </div>
+            </details>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej"><span class="num-ej">Tipo 4</span><span class="titulo-ej">Bobina giratoria y fem máxima de un alternador</span><span class="meta-ej">Espira giratoria · c.a.</span></summary>
+                <div class="enunciado-ej"><p>Una bobina de 100 espiras y área \(50\,\text{cm}^2\) gira en un campo uniforme de \(0{,}25\,\text{T}\) a una frecuencia de \(50\,\text{Hz}\). Si en \(t=0\) la normal es paralela al campo, determina \(\omega\), \(\Phi(t)\) concatenado y \(\varepsilon_{\max}\).</p></div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>1. Datos en el S.I.</strong> \(S=50\cdot10^{-4}=5{,}0\cdot10^{-3}\,\text{m}^2\).</div>
+                    <div class="formula-box">\[\omega=2\pi f=100\pi\approx314{,}2\,\text{rad}\,\text{s}^{-1}\]</div>
+                    <div class="paso"><strong>2. Flujo concatenado.</strong></div>
+                    <div class="formula-box">\[\Psi(t)=NBS\cos(\omega t)=0{,}125\cos(100\pi t)\,\text{Wb}\]</div>
+                    <div class="paso"><strong>3. Fem máxima.</strong></div>
+                    <div class="formula-box">\[\varepsilon_{\max}=NBS\omega=0{,}125\cdot314{,}2\approx39{,}3\,\text{V}\]</div>
+                    <div class="paso"><strong>Resultado:</strong> \(\varepsilon(t)=39{,}3\,\text{sen}(100\pi t)\,\text{V}\); \(\varepsilon_{\max}\approx39{,}3\,\text{V}\).</div>
+                </div>
+            </details>
+
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej"><span class="num-ej">Tipo 5</span><span class="titulo-ej">Sentido de la corriente inducida: aplicación de Lenz</span><span class="meta-ej">Razonamiento · regla de la mano derecha</span></summary>
+                <div class="enunciado-ej"><p>Una espira está en un campo magnético perpendicular a su plano. Determina el sentido de la corriente inducida en cada caso, observando la espira de frente.</p>
+                    <ol><li>El campo externo entra en el papel y aumenta.</li><li>El campo externo entra en el papel y disminuye.</li><li>El campo externo sale del papel y aumenta.</li><li>El campo externo sale del papel y disminuye.</li></ol>
+                </div>
+                <div class="resolucion-ej">
+                    <table><thead><tr><th>Situación</th><th>Campo inducido</th><th>Corriente</th></tr></thead><tbody>
+                        <tr><td>Entrante aumenta</td><td>Saliente</td><td><strong>Antihoraria</strong></td></tr>
+                        <tr><td>Entrante disminuye</td><td>Entrante</td><td><strong>Horaria</strong></td></tr>
+                        <tr><td>Saliente aumenta</td><td>Entrante</td><td><strong>Horaria</strong></td></tr>
+                        <tr><td>Saliente disminuye</td><td>Saliente</td><td><strong>Antihoraria</strong></td></tr>
+                    </tbody></table>
+                    <div class="paso"><strong>Clave:</strong> la corriente crea un campo que se opone a la variación del flujo. No basta con memorizar un sentido: hay que decidir primero si el flujo externo aumenta o disminuye y hacia dónde apunta.</div>
+                </div>
+            </details>
+
+            <div class="pie-clave"><i class="fas fa-lightbulb"></i><span>Antes de sustituir números, escribe siempre \(\Phi_B=BS\cos\theta\), define el ángulo con la normal y decide si necesitas flujo por espira o flujo concatenado.</span></div>
+        </div>
+    </details>
+
+    <!-- PROBLEMAS EBAU REALES -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🔭 Problemas resueltos de EBAU — Castilla y León (Tema B9)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas reales</strong> del banco <code>problemas.json</code> facilitado. Los diez pertenecen a <strong>Castilla y León</strong>. Se indica comunidad, año, convocatoria y número de problema tal como figuran en el archivo. Se han escogido para cubrir flujo, variaciones de campo, ley de Faraday, ley de Lenz y espiras/bobinas giratorias.
+            </p>
+            <div class="tipo-intro"><strong>Orientación de estudio:</strong> comienza por los ejercicios de cálculo de flujo y fem media; continúa con funciones temporales y gráficas; termina con las cuestiones conceptuales de Lenz y el alternador. Las etiquetas de convocatoria y número permiten localizar cada prueba en el banco original.</div>
+            <div class="frecuencia-box"><strong>Selección:</strong> 10/10 ejercicios de Castilla y León, entre 2020 y 2025. Se incluyen convocatorias ordinarias y extraordinarias, y problemas tanto numéricos como de razonamiento.</div>
+            <!-- PROBLEMA 1 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Flujo magnético y fem inducida al invertir el campo en una bobina</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Ordinaria · Problema 6</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Consideremos una bobina de 200 espiras circulares de 5 cm de radio, situadas en un plano horizontal. Un campo magnético uniforme de \(2\cdot10^{-6}\,\text{T}\) atraviesa de abajo hacia arriba la bobina formando un ángulo de \(30^{\circ}\) con la vertical. a) Determine el flujo magnético a través de la bobina. b) A continuación, se invierte el sentido del campo magnético, empleando \(0{,}05\,\text{s}\) en el proceso. Calcule la fuerza electromotriz inducida en la bobina suponiendo que la variación del campo con el tiempo se ha llevado a cabo de forma lineal.</p>
+                    <p><strong>Puntuación:</strong> 2 puntos (1 + 1)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Vector normal y ángulo</strong></div>
+                    <p>La bobina está en un plano horizontal, así que su vector normal es vertical. El campo forma \(30^{\circ}\) con la vertical, es decir, \(30^{\circ}\) con la normal a la bobina. Por tanto, el coseno relevante es \(\cos 30^{\circ}=\frac{\sqrt{3}}{2}\).</p>
+                    <div class="paso"><strong>Área y flujo</strong></div>
+                    <p>Área de una espira:</p>
+<div class="formula-box">\[A=\pi r^{2}=\pi(0{,}05)^{2}=7{,}85\cdot10^{-3}\,\text{m}^{2}.\]</div>
+<p>Flujo total a través de las \(N=200\) espiras:</p>
+<div class="formula-box">\[\Phi=N\,B\,A\,\cos\theta=200\cdot2\cdot10^{-6}\cdot7{,}85\cdot10^{-3}\cdot\cos 30^{\circ}\approx2{,}72\cdot10^{-6}\,\text{Wb}.\]</div>
+                    <div class="paso"><strong>Variación del flujo al invertir el campo</strong></div>
+                    <p>Al invertir el sentido del campo, el flujo pasa de \(+2{,}72\cdot10^{-6}\,\text{Wb}\) a \(-2{,}72\cdot10^{-6}\,\text{Wb}\). La variación total es:</p>
+<div class="formula-box">\[\Delta\Phi=-2\Phi_{\text{inicial}}=-5{,}44\cdot10^{-6}\,\text{Wb}.\]</div>
+                    <div class="paso"><strong>FEM media inducida (variación lineal)</strong></div>
+                    <p>Como la variación es lineal en el tiempo, la fem media es constante e igual a:</p>
+<div class="formula-box">\[\varepsilon=-\frac{\Delta\Phi}{\Delta t}=-\frac{-5{,}44\cdot10^{-6}}{0{,}05}\approx1{,}09\cdot10^{-4}\,\text{V}.\]</div>
+                    <div class="paso"><strong>Resultado final:</strong> a) \(\Phi\approx2{,}72\cdot10^{-6}\,\text{Wb}\).<br>b) \(\varepsilon\approx1{,}09\cdot10^{-4}\,\text{V}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 2 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Flujo y fem inducida en una bobina con $B(t)=0{,}02+0{,}08\,t^{2}$</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Extraordinaria · Problema 6</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Se dispone de una bobina formada por 30 espiras de 7 cm de radio que se coloca en el seno de un campo magnético uniforme que forma 30º con el eje de la bobina. Si el módulo de dicho campo varía con el tiempo de acuerdo con la función \(B(t)=0{,}02+0{,}08\,t^{2}\) (unidades del S.I.):<br>a) Calcule el flujo magnético a través de la bobina.<br>b) Determine la variación temporal de la fuerza electromotriz inducida en la bobina y represéntela.</p>
+                    <p><strong>Puntuación:</strong> 2 puntos (1 + 1)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Área de cada espira y ángulo entre $\vec{B}$ y la normal</strong></div>
+                    <p>El eje de la bobina coincide con su vector normal, y el campo forma \(30^{\circ}\) con dicho eje. Por tanto, el ángulo entre \(\vec{B}\) y la normal es \(30^{\circ}\). El área de cada espira es:</p>
+<div class="formula-box">\[A=\pi r^{2}=\pi(0{,}07)^{2}=1{,}54\cdot10^{-2}\,\text{m}^{2}.\]</div>
+                    <div class="paso"><strong>Flujo total a través de las 30 espiras</strong></div>
+                    <p>El flujo total es:</p>
+<div class="formula-box">\[\Phi(t)=NBA\cos30^{\circ}=30(0{,}02+0{,}08t^{2})(1{,}54\cdot10^{-2})\frac{\sqrt{3}}{2}.\]</div>
+<p>Agrupando el factor numérico:</p>
+<div class="formula-box">\[\Phi(t)=0{,}008+0{,}032t^{2}\,\text{Wb}.\]</div>
+                    <div class="paso"><strong>Derivada del flujo y fuerza electromotriz</strong></div>
+                    <p>Aplicando la ley de Faraday-Henry:</p>
+<div class="formula-box">\[\varepsilon(t)=-\frac{d\Phi}{dt}=-0{,}064t\,\text{V}.\]</div>
+<p>La fuerza electromotriz es una función lineal del tiempo, con ordenada en el origen nula y pendiente \(-0{,}064\,\text{V}\,\text{s}^{-1}\). Su gráfica es una recta que pasa por el origen y desciende hacia valores negativos al aumentar \(t\).</p>
+                    <div class="paso"><strong>Resultado final:</strong> a) \(\Phi(t)=0{,}008+0{,}032t^{2}\,\text{Wb}\).<br>b) \(\varepsilon(t)=-0{,}064t\,\text{V}\); recta que pasa por el origen con pendiente \(-0{,}064\,\text{V}\,\text{s}^{-1}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 3 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Flujo y fem inducida en una bobina rotatoria (generador de corriente alterna)</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Ordinaria · Problema 5</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Una bobina rectangular de 100 espiras, de dimensiones \(10\,\text{cm}\times15\,\text{cm}\), gira a \(2000\,\text{rpm}\) alrededor de un eje contenido en el plano de la bobina y perpendicular a un campo magnético uniforme de \(0{,}8\,\text{T}\). Determine la expresión del flujo en función del tiempo y la fem máxima que es capaz de suministrar la bobina.</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Datos y velocidad angular</strong></div>
+                    <p>Número de espiras \(N=100\), área de la bobina \(A=0{,}10\cdot0{,}15=0{,}015\,\text{m}^{2}\), campo \(B=0{,}8\,\text{T}\), velocidad de giro \(2000\,\text{rpm}\). La velocidad angular es:</p>
+<div class="formula-box">\[\omega=2000\cdot\frac{2\pi}{60}=209{,}4\,\text{rad}\,\text{s}^{-1}.\]</div>
+                    <div class="paso"><strong>Flujo magnético en función del tiempo</strong></div>
+                    <p>Si en el instante \(t=0\) la normal a la bobina es paralela al campo, el ángulo entre la normal y \(\vec B\) vale \(\omega t\) y el flujo magnético total a través de las espiras es:</p>
+<div class="formula-box">\[\Phi(t)=N B A\cos(\omega t).\]</div>
+<p>Como \(N B A=100\cdot0{,}8\cdot0{,}015=1{,}2\,\text{Wb}\):</p>
+<div class="formula-box">\[\Phi(t)=1{,}2\cos(209{,}4\,t)\,\text{Wb}.\]</div>
+                    <div class="paso"><strong>Fuerza electromotriz inducida y su valor máximo</strong></div>
+                    <p>Aplicando la ley de Faraday-Lenz:</p>
+<div class="formula-box">\[\varepsilon=-\frac{d\Phi}{dt}=1{,}2\cdot209{,}4\,\text{sen}(209{,}4\,t)=2{,}51\cdot10^{2}\,\text{sen}(209{,}4\,t)\,\text{V}.\]</div>
+<p>Por tanto, la fem máxima es \(\varepsilon_{\text{max}}=2{,}51\cdot10^{2}\,\text{V}\).</p>
+                    <div class="paso"><strong>Resultado final:</strong> \(\Phi(t)=1{,}2\cos(209{,}4\,t)\,\text{Wb}\); \(\varepsilon_{\text{max}}\approx2{,}51\cdot10^{2}\,\text{V}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 4 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Variación del flujo y sentido de la corriente inducida en una espira</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Ordinaria · Problema 14</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Una espira cuadrada de lado \(a\) se encuentra en una región en la que existe un campo magnético uniforme \(\vec B\) y perpendicular al plano de la espira. Explique cómo varía el flujo magnético si reducimos progresivamente la intensidad del campo magnético a la mitad y, a continuación, aumentamos progresivamente la longitud de los lados de la espira al doble. Razone el sentido de la corriente inducida en ambas etapas del proceso. Configuración (figura): el campo \(\vec B\) entra perpendicularmente al plano de la espira (símbolos \(\otimes\) en la figura).</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Flujo inicial</strong></div>
+                    <p>Como \(\vec B\) es perpendicular al plano de la espira, \(\Phi_0=B a^{2}\), tomando como sentido positivo de la normal el que entra al plano (mismo sentido que \(\vec B\), valor positivo).</p>
+                    <div class="paso"><strong>Etapa 1: reducción del campo a la mitad</strong></div>
+                    <p>El área permanece constante y \(B\) pasa progresivamente de \(B\) a \(B/2\). El flujo evoluciona desde \(\Phi_0=B a^{2}\) hasta \(\Phi_0/2\), esto es, disminuye. Por la ley de Lenz, la corriente inducida circulará en el sentido que se oponga a la disminución de flujo entrante; por tanto, la corriente inducida genera un campo magnético en el mismo sentido que \(\vec B\) (entrante al plano), lo cual, vista la espira desde fuera del papel (lado del lector), corresponde a circulación en sentido horario.</p>
+                    <div class="paso"><strong>Etapa 2: aumento del lado al doble</strong></div>
+                    <p>Ahora \(B\) es constante (valor \(B/2\)) y el área crece progresivamente de \(a^{2}\) a \((2a)^{2}=4a^{2}\). El flujo evoluciona desde \(B a^{2}/2\) hasta \(2B a^{2}\), esto es, aumenta. Por Lenz, la corriente inducida se opone al aumento de flujo entrante creando un campo inducido opuesto al externo (saliente del plano), lo que corresponde a circulación en sentido antihorario vista desde el lado del lector.</p>
+                    <div class="paso"><strong>Resultado final:</strong> Etapa 1 (\(B\) disminuye): corriente en sentido horario (vista desde fuera del papel). Etapa 2 (área aumenta): corriente en sentido antihorario.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 5 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Flujo magnético en una espira circular inclinada y fem inducida</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 5</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Una espira circular de \(4\,\text{cm}\) de radio forma un ángulo de \(45^{\circ}\) con un campo magnético uniforme. Durante un intervalo de tiempo de \(0{,}2\,\text{s}\) el valor del campo magnético varía linealmente de \(250\,\text{mT}\) a \(310\,\text{mT}\). Determine la expresión del flujo en función del tiempo y calcule la fuerza electromotriz inducida en la espira.</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Área y geometría</strong></div>
+                    <p>El área de la espira es:</p>
+<div class="formula-box">\[A=\pi r^{2}=\pi(0{,}04)^{2}=5{,}03\cdot10^{-3}\,\text{m}^{2}.\]</div>
+<p>Como el plano de la espira forma \(45^{\circ}\) con \(\vec B\), el ángulo entre la normal a la espira y \(\vec B\) es \(45^{\circ}\), por lo que \(\cos\theta=\cos45^{\circ}=\dfrac{\sqrt{2}}{2}\).</p>
+                    <div class="paso"><strong>Campo magnético en función del tiempo</strong></div>
+                    <p>El campo varía linealmente de \(0{,}250\,\text{T}\) a \(0{,}310\,\text{T}\) en \(0{,}2\,\text{s}\), por lo que:</p>
+<div class="formula-box">\[B(t)=0{,}250+\frac{0{,}310-0{,}250}{0{,}2}\,t=0{,}250+0{,}300\,t\,\text{T}.\]</div>
+                    <div class="paso"><strong>Flujo en función del tiempo y fuerza electromotriz</strong></div>
+                    <p>El flujo magnético es:</p>
+<div class="formula-box">\[\Phi(t)=BA\cos\theta=5{,}03\cdot10^{-3}\cdot\frac{\sqrt{2}}{2}(0{,}250+0{,}300\,t).\]</div>
+<p>Numéricamente:</p>
+<div class="formula-box">\[\Phi(t)=8{,}89\cdot10^{-4}+1{,}07\cdot10^{-3}\,t\,\text{Wb}.\]</div>
+<p>La fuerza electromotriz inducida es:</p>
+<div class="formula-box">\[\varepsilon=-\frac{d\Phi}{dt}=-1{,}07\cdot10^{-3}\,\text{V}.\]</div>
+<p>El signo negativo indica, según la ley de Lenz, que la corriente inducida se opone al aumento del flujo.</p>
+                    <div class="paso"><strong>Resultado final:</strong> \(\Phi(t)=8{,}89\cdot10^{-4}+1{,}07\cdot10^{-3}\,t\,\text{Wb}\); \(\varepsilon=-1{,}07\cdot10^{-3}\,\text{V}\), con \(|\varepsilon|=1{,}07\,\text{mV}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 6 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">¿Puede ser la fem inducida no nula cuando el flujo es nulo?</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Ordinaria · Problema 14</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>¿Puede ser distinta de cero la fuerza electromotriz inducida sobre una espira en un instante en el que el flujo magnético sea nulo? Razone la respuesta.</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Ley de Faraday-Lenz</strong></div>
+                    <p>La fem inducida en una espira viene dada por</p>
+<div class="formula-box">\[\varepsilon=-\frac{d\Phi_B}{dt},\]</div>
+<p>es decir, depende de la tasa de variación temporal del flujo magnético, no del valor instantáneo del flujo en sí.</p>
+                    <div class="paso"><strong>Sí es posible: ejemplo concreto</strong></div>
+                    <p>Considérese una espira que gira en un campo magnético uniforme. El flujo es \(\Phi_B=BA\cos(\omega t)\) y la fem inducida es \(\varepsilon=BA\omega\,\text{sen}(\omega t)\). En los instantes en que \(\cos(\omega t)=0\) (esto es, \(\Phi_B=0\)), \(\text{sen}(\omega t)=\pm1\), así que \(|\varepsilon|\) es máxima. Conclusión: sí, la fem puede ser máxima exactamente cuando el flujo es cero.</p>
+                    <div class="paso"><strong>Generalización</strong></div>
+                    <p>Lo que cuenta es cómo cambia el flujo, no su valor absoluto. Otros ejemplos con \(\Phi_B=0\) y \(\varepsilon\neq0\): (i) espira atravesada por un campo cuya intensidad acaba de invertirse y pasa por cero (cambio rápido grande); (ii) espira que se mueve atravesando una frontera donde cambia rápidamente.</p>
+                    <div class="paso"><strong>Resultado final:</strong> Sí. La fem inducida depende de \(\frac{d\Phi_B}{dt}\), no de \(\Phi_B\) en sí. Es posible que \(\Phi_B=0\) y \(\varepsilon\neq0\) simultáneamente. Ejemplo canónico: una espira que gira en un campo uniforme tiene fem máxima cuando el flujo es cero.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Fem inducida en una espira con B(t) variable</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Problema 5</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Una espira rectangular, cuyos lados miden \(40\,\text{cm}\) y \(50\,\text{cm}\), respectivamente, se sitúa en una región del espacio en la que existe un campo magnético uniforme cuyo módulo varía con el tiempo según se observa en la figura. Si el plano de la espira es perpendicular a la dirección del campo magnético, determine y represente la variación temporal de la fuerza electromotriz inducida en ella en el intervalo mostrado. Lectura de la figura: \(B(t)\) en \(\text{mT}\) frente a \(t\) en \(\text{s}\), con tres tramos: (i) de \(t=0\) a \(t=5\,\text{s}\), \(B\) crece linealmente desde \(0\) hasta \(90\,\text{mT}\); (ii) de \(t=5\,\text{s}\) a \(t=10\,\text{s}\), \(B\) permanece constante en \(90\,\text{mT}\); (iii) de \(t=10\,\text{s}\) a \(t=20\,\text{s}\), \(B\) decrece linealmente desde \(90\,\text{mT}\) hasta \(0\).</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Ley de Faraday aplicada a la espira</strong></div>
+                    <p>Como \(\vec B\perp\) plano, el flujo es \(\Phi_B=BA\), con \(A=0{,}40\cdot0{,}50=0{,}20\,\text{m}^{2}\). La fem inducida es</p>
+<div class="formula-box">\[\varepsilon=-\dfrac{d\Phi_B}{dt}=-A\dfrac{dB}{dt}.\]</div>
+                    <div class="paso"><strong>Tramo (i): $0\le t\le5\,\text{s}$</strong></div>
+                    <p>\(\dfrac{dB}{dt}=\dfrac{0{,}090}{5}=0{,}018\,\text{T}\,\text{s}^{-1}\), luego</p>
+<div class="formula-box">\[\varepsilon=-0{,}20\cdot0{,}018=-3{,}6\cdot10^{-3}\,\text{V}.\]</div>
+                    <div class="paso"><strong>Tramo (ii): $5\le t\le10\,\text{s}$</strong></div>
+                    <p>\(\dfrac{dB}{dt}=0\), luego \(\varepsilon=0\,\text{V}\).</p>
+                    <div class="paso"><strong>Tramo (iii): $10\le t\le20\,\text{s}$</strong></div>
+                    <p>\(\dfrac{dB}{dt}=\dfrac{0-0{,}090}{10}=-0{,}009\,\text{T}\,\text{s}^{-1}\), luego</p>
+<div class="formula-box">\[\varepsilon=-0{,}20(-0{,}009)=1{,}8\cdot10^{-3}\,\text{V}.\]</div>
+                    <div class="paso"><strong>Resultado final:</strong> \(\varepsilon=-3{,}6\,\text{mV}\) en \(0\le t\le5\,\text{s}\); \(0\) en \(5\le t\le10\,\text{s}\); \(+1{,}8\,\text{mV}\) en \(10\le t\le20\,\text{s}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 8 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Fem inducida en una bobina con campo que decrece linealmente</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Ordinaria · Problema 5</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Una bobina de 300 espiras circulares de radio \(r=10\,\text{cm}\) está situada en un campo magnético uniforme, de módulo \(B=0{,}9\,\text{T}\), perpendicular al plano de las espiras. Si el campo disminuye de manera lineal hasta anularse en un intervalo de \(0{,}3\,\text{s}\), calcule la fuerza electromotriz inducida en la bobina.</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Flujo concatenado y ley de Faraday</strong></div>
+                    <p>El área de cada espira es:</p>
+<div class="formula-box">\[A=\pi r^{2}=\pi(0{,}10)^{2}=3{,}14\cdot10^{-2}\,\text{m}^{2}.\]</div>
+<p>El flujo concatenado por las \(N=300\) espiras es \(\Phi=N B A\). Como el campo decrece linealmente hasta anularse, la variación de flujo es \(\Delta\Phi=-N B A\) en \(\Delta t=0{,}3\,\text{s}\).</p>
+<p>La fuerza electromotriz inducida, en valor absoluto, es:</p>
+<div class="formula-box">\[|\varepsilon|=N\frac{|\Delta\Phi|}{\Delta t}=N\frac{B A}{\Delta t}.\]</div>
+                    <div class="paso"><strong>Cálculo numérico</strong></div>
+                    <p>Sustituyendo:</p>
+<div class="formula-box">\[|\varepsilon|=300\frac{0{,}9\cdot3{,}14\cdot10^{-2}}{0{,}3}\approx28{,}3\,\text{V}.\]</div>
+                    <div class="paso"><strong>Resultado final:</strong> \(|\varepsilon|\approx28{,}3\,\text{V}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 9 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">Fem inducida y sentido de la corriente en una espira con B(t) duplicándose</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Extraordinaria · Problema 5</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Una espira circular de \(18\,\text{cm}\) de radio se encuentra en el seno de un campo magnético uniforme de \(0{,}1\,\text{T}\). El campo es perpendicular al plano de la espira. Si el valor del campo magnético se duplica en un tiempo de \(0{,}3\,\text{s}\), determine el valor de la fuerza electromotriz inducida en la espira y el sentido de giro de la corriente. Sentido del campo: entra perpendicularmente al plano del papel.</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Variación de flujo y fem inducida</strong></div>
+                    <p>El área de la espira es:</p>
+<div class="formula-box">\[S=\pi(0{,}18)^{2}=1{,}02\cdot10^{-1}\,\text{m}^{2}.\]</div>
+<p>La variación del campo es \(\Delta B=0{,}1\,\text{T}\) en \(\Delta t=0{,}3\,\text{s}\). Por la ley de Faraday:</p>
+<div class="formula-box">\[\varepsilon=-\frac{\Delta\Phi}{\Delta t}=-S\frac{\Delta B}{\Delta t}=1{,}02\cdot10^{-1}\cdot\frac{0{,}1}{0{,}3}\approx3{,}39\cdot10^{-2}\,\text{V}.\]</div>
+                    <div class="paso"><strong>Sentido de la corriente (Lenz)</strong></div>
+                    <p>El campo externo entra en el papel y aumenta. La corriente inducida debe generar un campo saliente del papel para oponerse al aumento. Por la regla de la mano derecha, la corriente circula en sentido antihorario visto desde el lector.</p>
+                    <div class="paso"><strong>Resultado final:</strong> \(\varepsilon\approx3{,}39\cdot10^{-2}\,\text{V}\); corriente en sentido antihorario visto desde el lector.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">A.5 — Fuerza electromotriz inducida (flujo cuadrático en t)</span>
+                    <span class="meta-ej">Castilla y León · 2020 · Ordinaria · Problema 5</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>A.5) El flujo que atraviesa una espira viene dado por \(\phi=(t^{2}-5t)\cdot10^{-1}\), en unidades del S.I. Calcule el valor de la fuerza electromotriz inducida en el instante \(t=2{,}5\,\text{s}\) y represente gráficamente la dependencia de la fem con el tiempo entre los instantes \(t=0\,\text{s}\) y \(t=10\,\text{s}\).</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Ley de Faraday — derivar el flujo</strong></div>
+                    <div class="formula-box">\[\varepsilon=-\frac{d\phi}{dt}=-\frac{d}{dt}\left[(t^{2}-5t)\cdot10^{-1}\right]=-(2t-5)\cdot10^{-1}=(5-2t)\cdot10^{-1}\,\text{V}.\]</div>
+                    <div class="paso"><strong>Valor en $t=2{,}5\,\text{s}$</strong></div>
+                    <div class="formula-box">\[\varepsilon(2{,}5)=(5-2(2{,}5))\cdot10^{-1}=0\,\text{V}.\]</div>
+                    <div class="paso"><strong>Gráfica $\varepsilon(t)$ entre $0$ y $10\,\text{s}$</strong></div>
+                    <p>La función a representar es una recta decreciente:</p>
+<div class="formula-box">\[\varepsilon(t)=0{,}5-0{,}2t\quad(\text{V}).\]</div>
+<p>Pasa por los puntos \((0;0{,}5)\), \((2{,}5;0)\), \((5;-0{,}5)\) y \((10;-1{,}5)\). El eje horizontal representa \(t\) en segundos y el eje vertical \(\varepsilon\) en voltios.</p>
+                    <div class="paso"><strong>Resultado final:</strong> \(\varepsilon(2{,}5)=0\,\text{V}\). Gráfica: recta \(\varepsilon(t)=0{,}5-0{,}2t\,\text{V}\) entre \(t=0\) y \(t=10\,\text{s}\).</div>
+                </div>
+            </details>
+
+        </div>
+    </details>
+
+
+
+
+    
+
+<!-- ============================================================ -->
+<!-- BLOQUE DE RECURSOS Y NAVEGACIÓN DEL TEMA A1                  -->
+<!-- ============================================================ -->
+<div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
+    <style>
+        .recursos-tema-b9 .recurso-card {
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        }
+        .recursos-tema-b9 .recurso-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 32px rgba(37, 99, 235, 0.28) !important;
+            border-color: #3b82f6 !important;
+        }
+        .recursos-tema-b9 .recurso-card:hover .recurso-icono {
+            transform: scale(1.1) rotate(-6deg);
+        }
+        .recursos-tema-b9 .recurso-icono {
+            transition: transform 0.28s ease;
+        }
+        @media (max-width: 700px) {
+            .recursos-tema-b9 .recurso-grid { grid-template-columns: 1fr !important; }
+        }
+    </style>
+
+    <div class="recursos-tema-b9" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 20px; padding: 30px 25px 32px 25px;
+                box-shadow: 0 15px 40px rgba(102, 126, 234, 0.35);">
+
+        <h2 style="margin: 0 0 8px 0; color: white; text-align: center;
+                   font-size: 1.5em; display: flex; align-items: center;
+                   justify-content: center; gap: 12px;">
+            <i class="fas fa-compass"></i>
+            Recursos del Tema B9
+        </h2>
+        <p style="text-align: center; color: rgba(255,255,255,0.9);
+                  margin: 0 0 25px 0; font-size: 0.95em;">
+            Accede directamente a los materiales y bancos de problemas
+        </p>
+
+        <div class="recurso-grid" style="display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 18px;">
+
+            <!-- ── TARJETA 1: FORMULARIO (página actual) ── -->
+            <a href="TemaB9-Formulario.html" style="text-decoration: none; color: inherit;">
+                <div class="recurso-card" style="background: white; border-radius: 16px;
+                            padding: 22px 18px; text-align: center; height: 100%;
+                            border: 3px solid #fbbf24; position: relative;
+                            box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                    <div style="position: absolute; top: 12px; right: 12px;
+                                background: #fbbf24; color: #78350f;
+                                padding: 3px 10px; border-radius: 20px;
+                                font-size: 0.7em; font-weight: 800;
+                                letter-spacing: 0.5px;">
+                        AQUÍ
+                    </div>
+                    <div class="recurso-icono" style="width: 62px; height: 62px;
+                                margin: 4px auto 14px;
+                                background: linear-gradient(135deg, #667eea, #764ba2);
+                                border-radius: 50%; display: flex; align-items: center;
+                                justify-content: center; color: white; font-size: 1.7em;">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                margin-bottom: 6px;">
+                        Formulario B9
+                    </div>
+                    <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                        Todas las fórmulas y relaciones clave del tema
+                    </div>
+                </div>
+            </a>
+
+            <!-- ── TARJETA 2: PROBLEMAS EBAU DEL TEMA B9 ── -->
+            <a href="TemaB91-ProblemasEBAU.html" style="text-decoration: none; color: inherit;">
+                <div class="recurso-card" style="background: white; border-radius: 16px;
+                            padding: 22px 18px; text-align: center; height: 100%;
+                            border: 3px solid #e2e8f0;
+                            box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                    <div class="recurso-icono" style="width: 62px; height: 62px;
+                                margin: 4px auto 14px;
+                                background: linear-gradient(135deg, #10b981, #059669);
+                                border-radius: 50%; display: flex; align-items: center;
+                                justify-content: center; color: white; font-size: 1.7em;">
+                        <i class="fas fa-pen-to-square"></i>
+                    </div>
+                    <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                margin-bottom: 6px;">
+                        Problemas EBAU · B9
+                    </div>
+                    <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                        Ejercicios filtrados del tema, resueltos y comentados
+                    </div>
+                </div>
+            </a>
+
+            <!-- ── TARJETA 3: FILTRADO EBAU GENERAL ── -->
+            <a href="../EBAU/problemas-inline%20v04.html" style="text-decoration: none; color: inherit;">
+                <div class="recurso-card" style="background: white; border-radius: 16px;
+                            padding: 22px 18px; text-align: center; height: 100%;
+                            border: 3px solid #e2e8f0;
+                            box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                    <div class="recurso-icono" style="width: 62px; height: 62px;
+                                margin: 4px auto 14px;
+                                background: linear-gradient(135deg, #f59e0b, #d97706);
+                                border-radius: 50%; display: flex; align-items: center;
+                                justify-content: center; color: white; font-size: 1.7em;">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                margin-bottom: 6px;">
+                        Filtrado EBAU general
+                    </div>
+                    <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                        Banco completo de problemas de todas las unidades
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- ============================================================ -->
+<!-- FIN DEL BLOQUE DE RECURSOS                                   -->
+<!-- ============================================================ -->
+
+
+
+    
+
+
+
+
+    <!-- PIE DIDÁCTICO -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p>
+                Domina el flujo magnético, la ley de Faraday-Henry y el sentido de la corriente inducida según Lenz.<br>
+                <i>En los problemas de EBAU, identifica qué magnitud cambia antes de calcular la fem y justifica siempre el sentido de la corriente.</i>
+            </p>
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">Volver al inicio</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
