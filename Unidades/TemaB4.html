@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema B4. Potencial eléctrico, equipotenciales y campo uniforme</title>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES. Se mantiene la ruta del modelo TemaA1.html. -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA B4.- </span>
+                <span class="texto">Potencial eléctrico, equipotenciales y campo uniforme</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- MAPA DE BLOQUES Y TEMAS (DESPLEGABLE)                         -->
+    <!-- ============================================================ -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque B. Campo electromagnético</strong> del currículo de Física de 2.º de Bachillerato (Decreto 40/2022, BOCYL-D-30092022-4). Se corresponde con el tema <strong>B4. Potencial eléctrico, equipotenciales y campo uniforme</strong>.</p>
+
+        <div class="mapa-bloques">
+            <div class="bloque-card">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">A1</span><span class="tema-chip">A2</span>
+                    <span class="tema-chip">A3</span><span class="tema-chip">A4</span>
+                    <span class="tema-chip">A5</span><span class="tema-chip">A6</span>
+                    <span class="tema-chip">A7</span><span class="tema-chip">A8</span>
+                </div>
+            </div>
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span><span class="tema-chip">B2</span>
+                    <span class="tema-chip">B3</span><span class="tema-chip actual">B4</span>
+                    <span class="tema-chip">B5</span><span class="tema-chip">B6</span>
+                    <span class="tema-chip">B7</span><span class="tema-chip">B8</span>
+                    <span class="tema-chip">B9</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">C1</span><span class="tema-chip">C2</span>
+                    <span class="tema-chip">C3</span><span class="tema-chip">C4</span>
+                    <span class="tema-chip">C5</span><span class="tema-chip">C6</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">D1</span><span class="tema-chip">D2</span>
+                    <span class="tema-chip">D3</span><span class="tema-chip">D4</span>
+                    <span class="tema-chip">D5</span><span class="tema-chip">D6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque B · Tema B4:</strong>
+            <span class="texto-resaltado">Potencial eléctrico, equipotenciales y campo uniforme.</span>
+            <br>
+            <em>En este tema estudiaremos:</em> el potencial eléctrico como energía potencial por unidad de carga; el potencial creado por cargas puntuales y distribuciones discretas; el trabajo y la diferencia de potencial; las superficies equipotenciales; la relación entre el campo eléctrico y el gradiente del potencial; y el campo uniforme entre placas paralelas.
+        </div>
+
+        <div class="formula-box" style="font-size:0.96em;">
+            <strong>Indicadores de referencia del tema:</strong>
+            <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:10px;">
+                <div style="flex:1 1 230px; background:#f8fafc; padding:10px 14px; border-radius:9px;">
+                    <strong>C-B4 · Conceptos</strong><br>
+                    <span>Potencial eléctrico, superficies equipotenciales, campo eléctrico uniforme, diferencia de potencial y gradiente.</span><br>
+                    <span style="font-size:0.9em; color:#475569;">% = 11,3 % · media = 10,1 % · Δ = +1,2 pp</span>
+                </div>
+                <div style="flex:1 1 230px; background:#f8fafc; padding:10px 14px; border-radius:9px;">
+                    <strong>P-B4 · Problemas tipo</strong><br>
+                    <span>Potencial en un punto, campo entre placas, equipotenciales, trabajo y potencial, condensador plano.</span><br>
+                    <span style="font-size:0.9em; color:#475569;">% = 11,3 % · media = 10,1 % · Δ = +1,2 pp</span>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- OBJETIVOS                                                     -->
+    <!-- ============================================================ -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Definir el potencial eléctrico en un punto como energía potencial eléctrica por unidad de carga y expresar su unidad en el S.I.</li>
+            <li>Calcular el potencial creado por una carga puntual y por varias cargas mediante el principio de superposición escalar.</li>
+            <li>Distinguir el potencial eléctrico, que es escalar, del campo eléctrico, que es vectorial.</li>
+            <li>Relacionar la diferencia de potencial con la variación de energía potencial y con el trabajo realizado por el campo o por un agente externo.</li>
+            <li>Interpretar el signo del trabajo y del cambio de potencial para cargas positivas y negativas.</li>
+            <li>Definir las superficies equipotenciales y explicar por qué el campo eléctrico es perpendicular a ellas.</li>
+            <li>Relacionar el campo eléctrico con el gradiente del potencial y obtener el campo a partir de una expresión o gráfica de potencial.</li>
+            <li>Describir el campo y las superficies equipotenciales en el espacio entre dos placas paralelas, despreciando los efectos de borde.</li>
+            <li>Resolver problemas de la PAU/EBAU sobre potencial, campo, trabajo, equipotenciales y condensadores planos.</li>
+        </ul>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- CONTENIDO TEÓRICO                                            -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">1</span><strong>Potencial eléctrico y energía potencial eléctrica.</strong></summary>
+            <p>Una carga eléctrica situada en una región donde existe un campo eléctrico puede tener <strong>energía potencial eléctrica</strong>. El <strong>potencial eléctrico</strong> en un punto es la energía potencial eléctrica por unidad de carga:</p>
+            <div class="formula-box">
+                \[
+                V=\frac{E_p}{q}
+                \qquad\Longleftrightarrow\qquad
+                E_p=qV
+                \]
+            </div>
+            <p>El potencial es una magnitud <strong>escalar</strong>: en cada punto tiene un valor, pero no una dirección ni un sentido. No depende de la carga de prueba utilizada para medirlo. La energía potencial sí depende de la carga que situemos en ese punto.</p>
+            <p>En el Sistema Internacional, el potencial se mide en voltios:</p>
+            <div class="formula-box">
+                \[
+                1\,\text{V}=1\,\frac{\text{J}}{\text{C}}
+                \]
+            </div>
+            <p>El origen del potencial es convencional. Para cargas puntuales aisladas se toma habitualmente el potencial nulo en el infinito, \(V(\infty)=0\).</p>
+            <div class="note"><strong>Distinción importante:</strong> el potencial eléctrico \(V\) es una propiedad del campo en un punto; la energía potencial \(E_p=qV\) corresponde a una carga concreta situada en ese punto.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Potencial creado por una carga puntual.</strong></summary>
+            <p>Una carga puntual \(Q\), situada en el vacío, crea a una distancia \(r\) un potencial eléctrico:</p>
+            <div class="formula-box">
+                \[
+                V(r)=k\,\frac{Q}{r}
+                \qquad\text{con}\qquad
+                k=\frac{1}{4\pi\varepsilon_0}\approx9{,}0\cdot10^9\,
+                \frac{\text{N}\,\text{m}^2}{\text{C}^2}
+                \]
+            </div>
+            <p>El signo del potencial depende del signo de la carga creadora:</p>
+            <ul>
+                <li>Si \(Q&gt;0\), el potencial es positivo.</li>
+                <li>Si \(Q&lt;0\), el potencial es negativo.</li>
+                <li>Si \(Q=0\), el potencial creado por esa carga es nulo.</li>
+            </ul>
+            <p>El potencial disminuye en módulo al aumentar la distancia. Para una misma distancia, dos cargas de igual módulo y signo opuesto crean potenciales opuestos.</p>
+            <p>La expresión anterior se refiere al potencial creado por una carga puntual, tomando como referencia \(V(\infty)=0\).</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Principio de superposición del potencial.</strong></summary>
+            <p>Cuando varias cargas puntuales \(Q_1,Q_2,\ldots,Q_n\) crean un campo eléctrico, el potencial total en un punto es la <strong>suma algebraica</strong> de los potenciales individuales:</p>
+            <div class="formula-box">
+                \[
+                V(P)=V_1+V_2+\cdots+V_n
+                =k\sum_{i=1}^{n}\frac{Q_i}{r_i}
+                \]
+            </div>
+            <p>Las distancias \(r_i\) se miden desde cada carga hasta el punto \(P\). Hay que conservar el signo de cada carga al sustituir.</p>
+            <p>El campo eléctrico también cumple el principio de superposición, pero su suma es <strong>vectorial</strong>:</p>
+            <div class="formula-box">
+                \[
+                \vec E(P)=\sum_i\vec E_i(P)
+                \qquad\text{mientras que}\qquad
+                V(P)=\sum_i V_i(P)
+                \]
+            </div>
+            <div class="note"><strong>Estrategia:</strong> para el potencial, suma directamente los valores con su signo. Para el campo, dibuja los vectores, calcula componentes y suma componente a componente. No se debe sumar el módulo de los campos salvo que tengan la misma dirección y sentido.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Diferencia de potencial, trabajo y energía.</strong></summary>
+            <p>La diferencia de potencial entre dos puntos \(A\) y \(B\) es:</p>
+            <div class="formula-box">
+                \[
+                \Delta V=V_B-V_A
+                \]
+            </div>
+            <p>Al trasladar una carga \(q\) de \(A\) a \(B\), la variación de energía potencial eléctrica es:</p>
+            <div class="formula-box">
+                \[
+                \Delta E_p=E_{p,B}-E_{p,A}=q\,(V_B-V_A)=q\,\Delta V
+                \]
+            </div>
+            <p>El trabajo realizado por el <strong>campo eléctrico</strong> es el opuesto a la variación de energía potencial:</p>
+            <div class="formula-box">
+                \[
+                W_{\text{campo},\,A\to B}=-\Delta E_p
+                =q\,(V_A-V_B)
+                \]
+            </div>
+            <p>Si un agente externo desplaza la carga lentamente, de modo que no cambia su energía cinética, el trabajo externo es:</p>
+            <div class="formula-box">
+                \[
+                W_{\text{ext},\,A\to B}=\Delta E_p
+                =q\,(V_B-V_A)
+                =-W_{\text{campo}}
+                \]
+            </div>
+            <p><strong>Interpretación de signos:</strong></p>
+            <ul>
+                <li>Si \(W_{\text{campo}}&gt;0\), el campo favorece el desplazamiento y la energía potencial disminuye.</li>
+                <li>Si \(W_{\text{campo}}&lt;0\), el campo se opone al desplazamiento y un agente externo debe aportar energía.</li>
+                <li>Para una carga positiva, una disminución de energía potencial implica una disminución del potencial.</li>
+                <li>Para una carga negativa, una disminución de energía potencial implica un aumento del potencial.</li>
+            </ul>
+            <div class="note"><strong>Atención a la redacción:</strong> «trabajo del campo» y «trabajo necesario del agente externo» tienen signos opuestos cuando el desplazamiento se realiza sin variar la energía cinética.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">5</span><strong>Superficies equipotenciales.</strong></summary>
+            <p>Una <strong>superficie equipotencial</strong> es el conjunto de puntos del espacio que tienen el mismo potencial eléctrico. En una representación plana se habla de líneas equipotenciales.</p>
+            <p>Sus propiedades principales son:</p>
+            <ul>
+                <li>El potencial tiene el mismo valor en todos sus puntos: \(V=\text{constante}\).</li>
+                <li>El trabajo del campo eléctrico al desplazar una carga entre dos puntos de la misma superficie es nulo, porque \(\Delta V=0\).</li>
+                <li>El campo eléctrico es perpendicular a las superficies equipotenciales en cada punto.</li>
+                <li>El campo apunta hacia los potenciales decrecientes.</li>
+                <li>Las superficies equipotenciales de un mismo campo no se cortan entre sí.</li>
+            </ul>
+            <p>En el caso de una carga puntual, las superficies equipotenciales son <strong>esferas concéntricas</strong> centradas en la carga. En un dibujo plano aparecen como circunferencias concéntricas.</p>
+            <figure style="margin:14px auto; max-width:560px; text-align:center;">
+                <svg viewBox="0 0 520 250" role="img" aria-label="Carga positiva con superficies equipotenciales circulares y líneas de campo radiales" style="width:100%; height:auto; background:#ffffff; border:1px solid #dbe3ea; border-radius:10px;">
+                    <defs>
+                        <marker id="flechaB4a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/></marker>
+                    </defs>
+                    <circle cx="155" cy="124" r="32" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="5 4"/>
+                    <circle cx="155" cy="124" r="66" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="5 4"/>
+                    <circle cx="155" cy="124" r="100" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="5 4"/>
+                    <circle cx="155" cy="124" r="13" fill="#ef4444" stroke="#991b1b" stroke-width="1.5"/>
+                    <text x="155" y="129" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">+</text>
+                    <path d="M155 110 L155 34" stroke="#2563eb" stroke-width="2.5" marker-end="url(#flechaB4a)"/>
+                    <path d="M169 124 L246 124" stroke="#2563eb" stroke-width="2.5" marker-end="url(#flechaB4a)"/>
+                    <path d="M155 138 L155 214" stroke="#2563eb" stroke-width="2.5" marker-end="url(#flechaB4a)"/>
+                    <path d="M141 124 L64 124" stroke="#2563eb" stroke-width="2.5" marker-end="url(#flechaB4a)"/>
+                    <text x="300" y="75" fill="#166534" font-size="14">Circunferencias:</text>
+                    <text x="300" y="95" fill="#166534" font-size="14">equipotenciales</text>
+                    <line x1="300" y1="125" x2="350" y2="125" stroke="#16a34a" stroke-width="2" stroke-dasharray="5 4"/>
+                    <text x="300" y="163" fill="#1d4ed8" font-size="14">Flechas:</text>
+                    <text x="300" y="183" fill="#1d4ed8" font-size="14">líneas de campo</text>
+                    <line x1="300" y1="205" x2="350" y2="205" stroke="#2563eb" stroke-width="2.5" marker-end="url(#flechaB4a)"/>
+                </svg>
+                <figcaption style="font-size:0.88em; color:#64748b;">Esquema cualitativo de una carga positiva: las líneas de campo cortan perpendicularmente las equipotenciales.</figcaption>
+            </figure>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">6</span><strong>Relación entre campo eléctrico y potencial: el gradiente.</strong></summary>
+            <p>El campo eléctrico está relacionado con la variación espacial del potencial mediante el <strong>gradiente cambiado de signo</strong>:</p>
+            <div class="formula-box">
+                \[
+                \boxed{\vec E=-\nabla V}
+                \]
+                \[
+                \vec E=-\left(\frac{\partial V}{\partial x}\,\hat i
+                +\frac{\partial V}{\partial y}\,\hat j
+                +\frac{\partial V}{\partial z}\,\hat k\right)
+                \]
+            </div>
+            <p>El gradiente indica cómo varía una magnitud en el espacio y en qué dirección aumenta más rápidamente. El signo negativo indica que el campo eléctrico señala hacia donde el potencial disminuye más deprisa.</p>
+            <p>En una dimensión, si el campo solo tiene componente en el eje \(x\):</p>
+            <div class="formula-box">
+                \[
+                E_x=-\frac{dV}{dx}
+                \]
+            </div>
+            <p>Por tanto, si se representa el potencial frente a la posición, la componente del campo es la pendiente de la gráfica cambiada de signo:</p>
+            <ul>
+                <li>Si \(V\) disminuye al aumentar \(x\), entonces \(E_x&gt;0\).</li>
+                <li>Si \(V\) aumenta al aumentar \(x\), entonces \(E_x&lt;0\).</li>
+                <li>Si el potencial no cambia en una dirección, la componente del campo en esa dirección es nula.</li>
+            </ul>
+            <div class="note"><strong>Consecuencia geométrica:</strong> como el campo es el gradiente negativo del potencial, las líneas de campo son perpendiculares a las superficies equipotenciales.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">7</span><strong>Campo eléctrico uniforme y diferencia de potencial.</strong></summary>
+            <p>Un campo eléctrico es <strong>uniforme</strong> cuando el vector campo tiene el mismo módulo, dirección y sentido en todos los puntos de una región. Una aproximación de campo uniforme se obtiene entre dos placas planas, paralelas y extensas, con cargas opuestas, despreciando los efectos de borde.</p>
+            <p>El campo está dirigido desde la placa positiva hacia la negativa. Las superficies equipotenciales son planos paralelos a las placas y perpendiculares al campo.</p>
+            <figure style="margin:14px auto; max-width:650px; text-align:center;">
+                <svg viewBox="0 0 620 260" role="img" aria-label="Campo eléctrico uniforme entre dos placas paralelas y líneas equipotenciales paralelas a las placas" style="width:100%; height:auto; background:#ffffff; border:1px solid #dbe3ea; border-radius:10px;">
+                    <defs>
+                        <marker id="flechaB4b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/></marker>
+                    </defs>
+                    <rect x="55" y="35" width="510" height="16" rx="3" fill="#dc2626"/>
+                    <rect x="55" y="209" width="510" height="16" rx="3" fill="#2563eb"/>
+                    <text x="38" y="48" text-anchor="end" fill="#b91c1c" font-size="17" font-weight="bold">−</text>
+                    <text x="38" y="222" text-anchor="end" fill="#1d4ed8" font-size="17" font-weight="bold">+</text>
+                    <g stroke="#16a34a" stroke-width="2" stroke-dasharray="7 5">
+                        <line x1="70" y1="85" x2="550" y2="85"/><line x1="70" y1="115" x2="550" y2="115"/><line x1="70" y1="145" x2="550" y2="145"/><line x1="70" y1="175" x2="550" y2="175"/>
+                    </g>
+                    <g stroke="#2563eb" stroke-width="2.6" marker-end="url(#flechaB4b)">
+                        <line x1="150" y1="190" x2="150" y2="65"/><line x1="255" y1="190" x2="255" y2="65"/><line x1="360" y1="190" x2="360" y2="65"/><line x1="465" y1="190" x2="465" y2="65"/>
+                    </g>
+                    <text x="310" y="25" text-anchor="middle" fill="#b91c1c" font-size="14">Placa negativa</text>
+                    <text x="310" y="249" text-anchor="middle" fill="#1d4ed8" font-size="14">Placa positiva</text>
+                    <text x="505" y="105" fill="#166534" font-size="12">V = cte.</text>
+                    <text x="505" y="132" fill="#2563eb" font-size="13">E</text>
+                </svg>
+                <figcaption style="font-size:0.88em; color:#64748b;">Entre las placas, el campo es aproximadamente uniforme; las equipotenciales son paralelas a las placas.</figcaption>
+            </figure>
+            <p>En un desplazamiento \(\Delta\vec r\) dentro de un campo uniforme:</p>
+            <div class="formula-box">
+                \[
+                V_B-V_A=-\vec E\cdot(\vec r_B-\vec r_A)
+                =-E\,d\cos\theta
+                \]
+            </div>
+            <p>Si el desplazamiento es paralelo al campo, el potencial disminuye en el sentido del campo. Si es perpendicular, la diferencia de potencial es cero.</p>
+            <p>Entre placas separadas una distancia \(d\), cuando el campo es perpendicular a ellas:</p>
+            <div class="formula-box">
+                \[
+                E=\frac{|\Delta V|}{d}
+                \qquad\Longleftrightarrow\qquad
+                |\Delta V|=E\,d
+                \]
+            </div>
+            <p>La expresión permite calcular el campo si se conoce la diferencia de potencial entre las placas y su separación.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">8</span><strong>Condensador plano.</strong></summary>
+            <p>Un condensador plano ideal está formado por dos placas conductoras paralelas, con cargas de igual módulo y signo opuesto. Al conectarlo a una fuente, entre sus placas aparece una diferencia de potencial y, despreciando los efectos de borde, un campo aproximadamente uniforme.</p>
+            <p>La capacidad eléctrica relaciona la carga almacenada en una placa con la diferencia de potencial entre ellas:</p>
+            <div class="formula-box">
+                \[
+                C=\frac{|Q|}{|\Delta V|}
+                \qquad\Longleftrightarrow\qquad
+                |Q|=C\,|\Delta V|
+                \]
+            </div>
+            <p>Para un condensador plano ideal, con un medio de permitividad \(\varepsilon\) entre las placas:</p>
+            <div class="formula-box">
+                \[
+                C=\varepsilon\,\frac{S}{d}
+                \]
+            </div>
+            <p>En el vacío, \(\varepsilon=\varepsilon_0\). Si se introduce un dieléctrico, debe utilizarse la permitividad del medio. Estas expresiones se aplican al modelo ideal de placas paralelas, lejos de los bordes.</p>
+            <div class="note"><strong>No confundir:</strong> la capacidad \(C\) depende de la geometría y del medio entre las placas; la carga \(Q\) y la diferencia de potencial \(\Delta V\) dependen también de cómo se conecte o cargue el condensador.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">9</span><strong>Movimiento espontáneo de las cargas y signo del potencial.</strong></summary>
+            <p>Si una carga se libera desde el reposo y solo actúa la fuerza eléctrica, el campo realiza trabajo positivo y la energía potencial eléctrica disminuye. Como \(E_p=qV\), el sentido de variación del potencial depende del signo de la carga:</p>
+            <ul>
+                <li>Una carga positiva tiende a desplazarse hacia potenciales menores.</li>
+                <li>Una carga negativa tiende a desplazarse hacia potenciales mayores.</li>
+            </ul>
+            <p>Esto no significa que el campo apunte siempre hacia una carga positiva o negativa en cualquier configuración, sino que el campo eléctrico apunta localmente hacia donde decrece el potencial.</p>
+        </details>
+
+        <div class="note">
+            <strong>💡 Errores frecuentes:</strong> (i) sumar potenciales como si fueran vectores; (ii) olvidar el signo de las cargas al calcular \(V\); (iii) confundir potencial con energía potencial; (iv) cambiar el signo del trabajo del campo por el del trabajo externo; (v) afirmar que un potencial nulo implica campo nulo; (vi) dibujar las equipotenciales paralelas al campo en lugar de perpendiculares; y (vii) utilizar \(E=|\Delta V|/d\) cuando el desplazamiento no es paralelo al campo o el campo no es uniforme.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- PROCEDIMIENTOS TIPO                                          -->
+    <!-- ============================================================ -->
+    <details class="section enunciado">
+        <summary><h2>🧭 Procedimientos de resolución de problemas tipo (P-B4)</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">1</span><strong>Potencial en un punto debido a varias cargas.</strong></summary>
+            <ol>
+                <li>Representar las cargas y localizar el punto donde se calcula el potencial.</li>
+                <li>Calcular las distancias desde cada carga hasta ese punto.</li>
+                <li>Expresar todas las cargas en culombios y las distancias en metros.</li>
+                <li>Aplicar \(V(P)=k\sum_i Q_i/r_i\), respetando el signo de cada carga.</li>
+                <li>Sumar algebraicamente las contribuciones y expresar el resultado en voltios.</li>
+            </ol>
+            <div class="formula-box">\[V(P)=k\left(\frac{Q_1}{r_1}+\frac{Q_2}{r_2}+\cdots\right)\]</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Trabajo al trasladar una carga entre dos puntos.</strong></summary>
+            <ol>
+                <li>Calcular el potencial inicial \(V_A\) y el final \(V_B\).</li>
+                <li>Determinar la diferencia \(\Delta V=V_B-V_A\).</li>
+                <li>Identificar qué trabajo solicita el enunciado: campo eléctrico o agente externo.</li>
+                <li>Usar \(W_{\text{campo}}=q(V_A-V_B)\) o \(W_{\text{ext}}=q(V_B-V_A)\), si no cambia la energía cinética.</li>
+                <li>Interpretar el signo en función del desplazamiento y del signo de la carga.</li>
+            </ol>
+            <div class="note">Antes de operar, escribe explícitamente quién realiza el trabajo. Es la forma más eficaz de evitar errores de signo.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Campo y potencial creados por una distribución discreta.</strong></summary>
+            <ol>
+                <li>Calcular por separado el potencial de cada carga y sumarlo como escalar.</li>
+                <li>Calcular el campo creado por cada carga, determinando dirección y sentido.</li>
+                <li>Descomponer los campos en componentes cartesianas.</li>
+                <li>Sumar las componentes para obtener el campo resultante y calcular su módulo y dirección.</li>
+                <li>Comprobar si la simetría permite cancelar algunas componentes.</li>
+            </ol>
+            <div class="formula-box">
+                \[
+                V(P)=k\sum_i\frac{Q_i}{r_i}
+                \qquad ; \qquad
+                \vec E(P)=\sum_i k\frac{Q_i}{r_i^2}\,\hat u_i
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Campo uniforme entre placas paralelas.</strong></summary>
+            <ol>
+                <li>Identificar cuál es la placa positiva y cuál la negativa.</li>
+                <li>Dibujar el campo desde la placa positiva hacia la negativa.</li>
+                <li>Relacionar el módulo del campo con la diferencia de potencial y la separación: \(E=|\Delta V|/d\).</li>
+                <li>Para una carga situada entre las placas, aplicar \(\vec F_e=q\vec E\), teniendo en cuenta el signo de \(q\).</li>
+                <li>Si hay equilibrio con el peso, plantear la suma vectorial de fuerzas igual a cero.</li>
+            </ol>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">5</span><strong>Cuestiones de equipotenciales y gradiente.</strong></summary>
+            <ol>
+                <li>Recordar que una equipotencial es una superficie con \(V\) constante.</li>
+                <li>Utilizar que el desplazamiento sobre una equipotencial no requiere trabajo del campo.</li>
+                <li>Representar las líneas de campo perpendiculares a las equipotenciales.</li>
+                <li>Aplicar \(\vec E=-\nabla V\); en una dimensión, \(E_x=-dV/dx\).</li>
+                <li>No deducir el campo a partir del valor del potencial en un único punto: se necesita conocer cómo varía el potencial en el entorno.</li>
+            </ol>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- ANÁLISIS DE FÓRMULAS                                         -->
+    <!-- ============================================================ -->
+    <details class="section resultado">
+        <summary><h2>🧮 Análisis de las fórmulas del tema B4</h2></summary>
+        <p>Recogemos las expresiones fundamentales, su significado físico y las condiciones de aplicación:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fórmula</th>
+                    <th>Significado físico</th>
+                    <th>Variables y unidades</th>
+                    <th>Condiciones de aplicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>\(V=E_p/q\)</td>
+                    <td>Definición de potencial eléctrico.</td>
+                    <td>\(V\) en V; \(E_p\) en J; \(q\) en C.</td>
+                    <td>Definición del potencial en un punto.</td>
+                </tr>
+                <tr>
+                    <td>\(V=kQ/r\)</td>
+                    <td>Potencial creado por una carga puntual.</td>
+                    <td>\(Q\) en C; \(r\) en m; \(k\approx9,0\cdot10^9\,\text{N m}^2\text{/C}^2\).</td>
+                    <td>Carga puntual; referencia habitual \(V(\infty)=0\).</td>
+                </tr>
+                <tr>
+                    <td>\(V(P)=k\sum_i Q_i/r_i\)</td>
+                    <td>Superposición del potencial eléctrico.</td>
+                    <td>\(Q_i\) en C; \(r_i\) en m; resultado en V.</td>
+                    <td>Distribución discreta de cargas puntuales.</td>
+                </tr>
+                <tr>
+                    <td>\(E_p=qV\)</td>
+                    <td>Energía potencial de una carga en un punto.</td>
+                    <td>\(E_p\) en J; \(q\) en C; \(V\) en V.</td>
+                    <td>La carga \(q\) situada en el potencial \(V\).</td>
+                </tr>
+                <tr>
+                    <td>\(\Delta E_p=q(V_B-V_A)\)</td>
+                    <td>Variación de energía potencial.</td>
+                    <td>\(\Delta E_p\) en J; diferencia de potencial en V.</td>
+                    <td>Traslado de una carga de A a B.</td>
+                </tr>
+                <tr>
+                    <td>\(W_{\rm campo}=q(V_A-V_B)\)</td>
+                    <td>Trabajo del campo eléctrico.</td>
+                    <td>\(W\) en J.</td>
+                    <td>Campo electrostático conservativo.</td>
+                </tr>
+                <tr>
+                    <td>\(W_{\rm ext}=q(V_B-V_A)\)</td>
+                    <td>Trabajo externo en un traslado cuasiestático.</td>
+                    <td>\(W\) en J.</td>
+                    <td>Sin variación de energía cinética; trabajo externo opuesto al del campo.</td>
+                </tr>
+                <tr>
+                    <td>\(\vec E=-\nabla V\)</td>
+                    <td>Relación entre campo y potencial.</td>
+                    <td>\(\vec E\) en N/C; gradiente de \(V\) en V/m.</td>
+                    <td>Campo electrostático.</td>
+                </tr>
+                <tr>
+                    <td>\(E_x=-dV/dx\)</td>
+                    <td>Componente del campo a partir de la pendiente del potencial.</td>
+                    <td>\(E_x\) en V/m o N/C.</td>
+                    <td>Variación del potencial en una dimensión.</td>
+                </tr>
+                <tr>
+                    <td>\(\Delta V=-\vec E\cdot\Delta\vec r\)</td>
+                    <td>Diferencia de potencial en un campo uniforme.</td>
+                    <td>\(E\) en N/C; desplazamiento en m.</td>
+                    <td>Campo uniforme; producto escalar.</td>
+                </tr>
+                <tr>
+                    <td>\(E=|\Delta V|/d\)</td>
+                    <td>Módulo del campo uniforme entre placas.</td>
+                    <td>\(\Delta V\) en V; \(d\) en m.</td>
+                    <td>Desplazamiento perpendicular a las placas; efectos de borde despreciables.</td>
+                </tr>
+                <tr>
+                    <td>\(C=|Q|/|\Delta V|\)</td>
+                    <td>Definición de capacidad eléctrica.</td>
+                    <td>\(C\) en F; \(Q\) en C; \(\Delta V\) en V.</td>
+                    <td>Condensador; Q es el módulo de la carga de una placa.</td>
+                </tr>
+                <tr>
+                    <td>\(C=\varepsilon S/d\)</td>
+                    <td>Capacidad de un condensador plano ideal.</td>
+                    <td>\(\varepsilon\) en F/m; \(S\) en m²; \(d\) en m.</td>
+                    <td>Placas paralelas grandes frente a su separación; medio homogéneo entre ellas.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="note">
+            <strong>Comprobaciones rápidas:</strong> el potencial se expresa en voltios; el campo, en N/C o V/m; la energía y el trabajo, en julios; la capacidad, en faradios. En un campo uniforme, la diferencia de potencial depende de la componente del desplazamiento paralela al campo.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- PROBLEMAS RESUELTOS EBAU: SELECCIÓN CASTILLA Y LEÓN          -->
+    <!-- ============================================================ -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">⚡ Problemas resueltos de EBAU — Castilla y León (Tema B4)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas oficiales</strong> del banco de pruebas PAU/EBAU, todos de <strong>Castilla y León</strong>. Se han escogido para cubrir potencial de distribuciones discretas, campo y potencial simultáneos, trabajo eléctrico, placas paralelas, equipotenciales y razonamiento sobre el gradiente. En cada ejercicio se indica comunidad, año, convocatoria y número de problema.
+            </p>
+
+            <!-- PROBLEMA 1 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Campo y potencial en un triángulo equilátero con dos cargas</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Ordinaria · Problema 6</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>En cada uno de los vértices de la base de un triángulo equilátero, cuyos lados miden tres metros, hay una carga de \(10\,\mu\text{C}\).</p>
+                    <p><strong>a)</strong> Calcule el campo y el potencial eléctricos en el tercer vértice. (1,5 puntos)<br>
+                    <strong>b)</strong> Represente el vector campo eléctrico creado por cada carga en dicho vértice y el campo resultante. (0,5 puntos)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>1. Campo creado por cada carga.</strong> La distancia de cada carga al vértice superior es \(L=3\,\text{m}\):</div>
+                    <div class="formula-box">\[E_0=k\frac{|Q|}{L^2}=\frac{9{,}00\cdot10^9\cdot10\cdot10^{-6}}{3^2}=1{,}00\cdot10^4\,\text{N/C}\]</div>
+                    <div class="paso"><strong>2. Suma vectorial.</strong> Por simetría, las componentes horizontales se anulan y las verticales se suman. Cada campo forma \(30^\circ\) con la altura:</div>
+                    <div class="formula-box">\[E=2E_0\cos30^\circ=\sqrt3\,E_0=1{,}73\cdot10^4\,\text{N/C}\]</div>
+                    <div class="paso"><strong>3. Potencial.</strong> El potencial es escalar, por lo que se suman directamente las dos contribuciones:</div>
+                    <div class="formula-box">\[V=2k\frac{Q}{L}=2\,\frac{9{,}00\cdot10^9\cdot10\cdot10^{-6}}{3}=6{,}00\cdot10^4\,\text{V}\]</div>
+                    <div class="paso"><strong>Resultado:</strong> \(E=1{,}73\cdot10^4\,\text{N/C}\), perpendicular a la base y alejándose de ella; \(V=6{,}00\cdot10^4\,\text{V}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 2 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Campo de un dipolo y trabajo para trasladar una carga</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Problema 6</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Dos cargas puntuales de \(-2\,\mu\text{C}\) y \(+2\,\mu\text{C}\) se encuentran situadas, respectivamente, en los puntos \((-2,0)\) y \((2,0)\) del plano XY, con las coordenadas expresadas en unidades del S.I.</p>
+                    <p><strong>a)</strong> Determine el vector campo eléctrico en el punto \(A(2,3)\). Represente el vector campo eléctrico que crea cada carga en el punto, así como el campo eléctrico total. (1 punto)<br>
+                    <strong>b)</strong> Calcule el trabajo necesario para llevar otra carga de valor \(-3\,\mu\text{C}\) desde el origen hasta el punto A. Interprete el signo del resultado. (1 punto)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>1. Campo eléctrico en A.</strong> Los vectores desde las cargas hasta A son \(\vec r_1=(4,3)\,\text{m}\), con módulo 5 m, y \(\vec r_2=(0,3)\,\text{m}\), con módulo 3 m. Usamos \(\vec E_i=kQ_i\vec r_i/r_i^3\):</div>
+                    <div class="formula-box">\[\vec E_1=(-576\,\hat i-432\,\hat j)\,\text{N/C}\qquad\vec E_2=2000\,\hat j\,\text{N/C}\]</div>
+                    <div class="formula-box">\[\vec E_A=\vec E_1+\vec E_2=(-576\,\hat i+1568\,\hat j)\,\text{N/C}\]</div>
+                    <div class="paso">El campo de la carga negativa apunta desde A hacia esa carga; el de la positiva se aleja verticalmente de ella. El resultante apunta hacia arriba y a la izquierda.</div>
+                    <div class="paso"><strong>2. Potencial en O y en A.</strong> En el origen los potenciales se cancelan, porque las cargas tienen el mismo módulo y están a la misma distancia. En A:</div>
+                    <div class="formula-box">\[V_O=0\qquad V_A=k\left(\frac{-2\cdot10^{-6}}{5}+\frac{2\cdot10^{-6}}{3}\right)=2400\,\text{V}\]</div>
+                    <div class="paso"><strong>3. Trabajo externo.</strong> Para un traslado sin cambio de energía cinética:</div>
+                    <div class="formula-box">\[W_{\text{ext}}=q'(V_A-V_O)=(-3\cdot10^{-6})(2400)=-7{,}20\cdot10^{-3}\,\text{J}\]</div>
+                    <div class="paso"><strong>Resultado:</strong> \(\vec E_A=(-576\,\hat i+1568\,\hat j)\,\text{N/C}\), de módulo \(1{,}67\cdot10^3\,\text{N/C}\); \(W_{\text{ext}}=-7{,}20\cdot10^{-3}\,\text{J}\). El campo realiza \(+7{,}20\cdot10^{-3}\,\text{J}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 3 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Movimiento espontáneo de una carga negativa y signo de la diferencia de potencial</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 13</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Una carga eléctrica negativa se libera, desde el reposo, en un punto A de una región del espacio en la que existe únicamente un cierto campo eléctrico. Si se observa que se dirige desde este punto hacia otro punto B, ¿en cuál de ellos será menor el potencial eléctrico? Razone la respuesta. (1 punto)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>1. Variación de energía potencial.</strong> Al liberarse desde el reposo, la carga adquiere energía cinética. El campo realiza trabajo positivo y la energía potencial disminuye:</div>
+                    <div class="formula-box">\[W_{\text{campo}}=-\Delta E_p=E_{p,A}-E_{p,B}&gt;0\quad\Rightarrow\quad E_{p,B}&lt;E_{p,A}\]</div>
+                    <div class="paso"><strong>2. Relación con el potencial.</strong> Como \(E_p=qV\) y la carga es negativa, al dividir la desigualdad por \(q&lt;0\) se invierte el sentido:</div>
+                    <div class="formula-box">\[qV_B&lt;qV_A\quad\Rightarrow\quad V_B&gt;V_A\]</div>
+                    <div class="paso"><strong>Resultado:</strong> el potencial es menor en A: \(V_A&lt;V_B\). Las cargas negativas se desplazan espontáneamente hacia potenciales mayores cuando solo actúa el campo eléctrico.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 4 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Equilibrio de una partícula cargada entre dos planos paralelos</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Ordinaria · Problema 13</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Una partícula cargada se coloca entre dos planos uniformemente cargados, horizontales y paralelos. El superior está cargado negativamente y el inferior positivamente. Si la partícula queda en equilibrio bajo la acción de las fuerzas eléctrica y gravitatoria, ¿cuál será el signo de la carga de la partícula? Razone la respuesta. (1 punto)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>1. Sentido del campo.</strong> Entre los planos, el campo uniforme va desde el plano positivo hacia el negativo. Como el positivo está abajo y el negativo arriba, el campo apunta verticalmente hacia arriba.</div>
+                    <div class="paso"><strong>2. Equilibrio de fuerzas.</strong> El peso apunta hacia abajo. Para compensarlo, la fuerza eléctrica debe apuntar hacia arriba. Puesto que \(\vec F_e=q\vec E\), la carga debe ser positiva:</div>
+                    <div class="formula-box">\[qE-mg=0\qquad\Rightarrow\qquad q=\frac{mg}{E}&gt;0\]</div>
+                    <div class="paso"><strong>Resultado:</strong> la partícula debe tener carga positiva. Si fuese negativa, la fuerza eléctrica apuntaría hacia abajo y se sumaría al peso.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 5 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Trabajo para trasladar una carga entre dos puntos en un campo de Coulomb</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Se tiene una carga de \(10\,\text{nC}\) situada en el punto \((0,0)\) del plano XY. En un punto A, el campo creado por dicha carga es \(\vec E=-25\,\vec i+25\,\vec j\,\text{N/C}\). Calcule el trabajo necesario para trasladar una carga de \(2\,\text{nC}\) desde el punto A al punto \((0,3)\,\text{m}\). (1 punto)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>1. Localización de A.</strong> El módulo del campo en A es:</div>
+                    <div class="formula-box">\[E=\sqrt{(-25)^2+25^2}=25\sqrt2=35{,}36\,\text{N/C}\]</div>
+                    <div class="paso">Como la carga creadora es positiva, el campo apunta desde el origen hacia A. A partir de \(E=kQ/r_A^2\):</div>
+                    <div class="formula-box">\[r_A=\sqrt{\frac{kQ}{E}}\approx1{,}60\,\text{m}\qquad A\approx(-1{,}13,1{,}13)\,\text{m}\]</div>
+                    <div class="paso"><strong>2. Potenciales inicial y final.</strong> En A, \(r_A\approx1{,}60\,\text{m}\); en B=(0,3), \(r_B=3\,\text{m}\):</div>
+                    <div class="formula-box">\[V_A=k\frac{Q}{r_A}\approx56{,}3\,\text{V}\qquad V_B=k\frac{Q}{r_B}=30{,}0\,\text{V}\]</div>
+                    <div class="paso"><strong>3. Trabajo externo.</strong> Para \(q'=2\,\text{nC}\):</div>
+                    <div class="formula-box">\[W_{\text{ext}}=q'(V_B-V_A)=2\cdot10^{-9}(30{,}0-56{,}3)=-5{,}26\cdot10^{-8}\,\text{J}\]</div>
+                    <div class="paso"><strong>Resultado:</strong> \(W_{\text{ext}}=-5{,}26\cdot10^{-8}\,\text{J}\); el campo realiza \(+5{,}26\cdot10^{-8}\,\text{J}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 6 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Trabajo eléctrico al desplazar una carga entre dos puntos</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Dos cargas puntuales de \(4\,\mu\text{C}\) se encuentran situadas en los puntos A(2,0) m y B(−2,0) m. Calcule el trabajo necesario para trasladar una carga de \(2\,\mu\text{C}\) desde el punto C(−1,0) m hasta D(0,−3) m. Razone si dicho trabajo se ha realizado a favor o en contra del campo. (1 punto)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>1. Potencial en C.</strong> Las distancias a las cargas son 3 m y 1 m:</div>
+                    <div class="formula-box">\[V_C=k\,4\cdot10^{-6}\left(\frac13+1\right)=4{,}80\cdot10^4\,\text{V}\]</div>
+                    <div class="paso"><strong>2. Potencial en D.</strong> Las dos cargas están a la misma distancia \(\sqrt{13}\,\text{m}\):</div>
+                    <div class="formula-box">\[V_D=2k\frac{4\cdot10^{-6}}{\sqrt{13}}\approx1{,}997\cdot10^4\,\text{V}\]</div>
+                    <div class="paso"><strong>3. Trabajo.</strong> El trabajo del campo al trasladar \(q=2\,\mu\text{C}\) es:</div>
+                    <div class="formula-box">\[W_{\text{campo}}=q(V_C-V_D)\approx+5{,}61\cdot10^{-2}\,\text{J}\]</div>
+                    <div class="paso">El trabajo externo correspondiente es \(W_{\text{ext}}=-5{,}61\cdot10^{-2}\,\text{J}\).</div>
+                    <div class="paso"><strong>Resultado:</strong> el desplazamiento se realiza a favor del campo eléctrico, ya que \(W_{\text{campo}}&gt;0\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Campo y potencial en el centro de una distribución de cuatro cargas</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Ordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Cuatro cargas puntuales están distribuidas según se muestra en la figura, siendo \(Q=2\,\mu\text{C}\) y \(d=5\,\text{cm}\). Determine el vector campo eléctrico y el potencial en el punto O, equidistante de las cuatro cargas. La configuración es la siguiente: \(+Q\) está a la izquierda y abajo de O, en los vértices \((-d,0)\) y \((0,-d)\); \(-Q\) está a la derecha y arriba, en \((+d,0)\) y \((0,+d)\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>1. Potencial en O.</strong> Las cuatro cargas están a distancia d. Al sumar algebraicamente las contribuciones:</div>
+                    <div class="formula-box">\[V_O=\frac{k}{d}(Q-Q+Q-Q)=0\,\text{V}\]</div>
+                    <div class="paso"><strong>2. Campo eléctrico.</strong> Cada carga crea un campo de módulo:</div>
+                    <div class="formula-box">\[E_0=k\frac{Q}{d^2}=9{,}0\cdot10^9\frac{2{,}0\cdot10^{-6}}{(5{,}0\cdot10^{-2})^2}=7{,}2\cdot10^6\,\text{N/C}\]</div>
+                    <div class="paso">Por la orientación de las cargas, las cuatro contribuciones apuntan hacia el primer cuadrante. Dos suman en el eje X y otras dos en el eje Y:</div>
+                    <div class="formula-box">\[E_x=2E_0\qquad E_y=2E_0\qquad E=\sqrt{E_x^2+E_y^2}=2\sqrt2E_0\]</div>
+                    <div class="formula-box">\[E\approx2{,}04\cdot10^7\,\text{N/C}\qquad\theta=45^\circ\]</div>
+                    <div class="paso"><strong>Resultado:</strong> \(V_O=0\,\text{V}\), pero \(\vec E_O\neq\vec0\): su módulo es \(2{,}04\cdot10^7\,\text{N/C}\) y apunta a 45° en el primer cuadrante. Este ejercicio muestra que potencial nulo no implica campo nulo.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 8 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Carga puntual a partir del potencial y del campo en un punto</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Extraordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>El potencial eléctrico en un punto a una distancia d de una carga puntual q es 600 V y el módulo del campo eléctrico en dicho punto es \(200\,\text{N/C}\). Determine los valores de d y q. (1 punto)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>1. Ecuaciones de partida.</strong> Para una carga puntual:</div>
+                    <div class="formula-box">\[V=\frac{kq}{d}\qquad E=\frac{k|q|}{d^2}\]</div>
+                    <div class="paso"><strong>2. Distancia.</strong> Como el potencial dado es positivo, la carga también es positiva. Dividiendo las expresiones:</div>
+                    <div class="formula-box">\[\frac{V}{E}=d=\frac{600}{200}=3{,}00\,\text{m}\]</div>
+                    <div class="paso"><strong>3. Valor de la carga.</strong></div>
+                    <div class="formula-box">\[q=\frac{Vd}{k}=\frac{600\cdot3{,}00}{9{,}00\cdot10^9}=2{,}00\cdot10^{-7}\,\text{C}\]</div>
+                    <div class="paso"><strong>Resultado:</strong> \(d=3{,}00\,\text{m}\); \(q=2{,}00\cdot10^{-7}\,\text{C}=0{,}200\,\mu\text{C}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 9 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">Conocer el potencial en un punto no determina el campo eléctrico</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Ordinaria · Problema 13</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Si se conoce el potencial electrostático en un solo punto, ¿se puede determinar el campo eléctrico en dicho punto? Razone la respuesta. (1 punto)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>1. Relación entre campo y potencial.</strong> El campo eléctrico depende de cómo varía el potencial en el espacio:</div>
+                    <div class="formula-box">\[\vec E=-\nabla V\]</div>
+                    <div class="paso"><strong>2. Información necesaria.</strong> Para calcular el gradiente se necesita conocer la variación del potencial en un entorno del punto, no solo su valor aislado. Un mismo valor de potencial en un punto puede corresponder a distribuciones de carga con campos distintos.</div>
+                    <div class="paso"><strong>Resultado:</strong> no. Conocer \(V\) en un único punto no permite determinar \(\vec E\); hace falta conocer cómo cambia el potencial alrededor de ese punto.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">Trabajo de un dipolo eléctrico en una configuración simétrica</span>
+                    <span class="meta-ej">Castilla y León · 2020 · Ordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Dos cargas puntuales, \(q_1=3\,\mu\text{C}\) y \(q_2=-3\,\mu\text{C}\), están situadas en los puntos \(P_1(0,3)\) y \(P_2(0,-3)\), respectivamente (unidades en el S.I.). Calcule el trabajo necesario para transportar otra carga \(q_3=4\,\mu\text{C}\) desde el punto \(P_3(4,0)\) al punto \(P_4(-4,0)\). Interprete el resultado.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>1. Potencial en P3.</strong> Ambas cargas están a 5 m de P3. Al ser iguales y de signo opuesto, sus potenciales se anulan:</div>
+                    <div class="formula-box">\[V(P_3)=k\left(\frac{3\cdot10^{-6}}5-\frac{3\cdot10^{-6}}5\right)=0\,\text{V}\]</div>
+                    <div class="paso"><strong>2. Potencial en P4.</strong> Por simetría, ambas cargas también están a 5 m de P4:</div>
+                    <div class="formula-box">\[V(P_4)=k\left(\frac{3\cdot10^{-6}}5-\frac{3\cdot10^{-6}}5\right)=0\,\text{V}\]</div>
+                    <div class="paso"><strong>3. Trabajo externo.</strong> La variación de energía potencial es nula:</div>
+                    <div class="formula-box">\[W_{\text{ext}}=q_3\,[V(P_4)-V(P_3)]=4\cdot10^{-6}(0-0)=0\,\text{J}\]</div>
+                    <div class="paso"><strong>Resultado:</strong> \(W_{\text{ext}}=0\,\text{J}\). Los dos puntos están en la mediatriz del dipolo y tienen el mismo potencial, por lo que el trabajo neto entre ellos es nulo.</div>
+                </div>
+            </details>
+
+            <div class="note" style="margin-top:16px;">
+                <strong>Nota de selección:</strong> los diez ejercicios proceden de los registros de Castilla y León del archivo <em>problemas.json</em> cuyo campo «Tema» incluye B4. Se ha dejado fuera algún ejercicio adicional de B4 para mantener una selección manejable y evitar repeticiones de planteamiento.
+            </div>
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- BLOQUE FINAL                                                  -->
+    <!-- ============================================================ -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p>
+                <br> Domina el potencial eléctrico, el trabajo y la relación entre el campo y las superficies equipotenciales.<br>
+                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
+            </p>
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">Volver al inicio</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

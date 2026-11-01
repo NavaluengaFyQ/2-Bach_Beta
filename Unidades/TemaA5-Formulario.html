@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA A5 (Formulario).- Potencial gravitatorio y equipotenciales</title>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- CSS PROPIO DE FORMULARIOS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================ CABECERA ============================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" alt="Cápsula">
+                <span class="codigo">#TEMA A5 (Formulario).- </span>
+                <span class="texto">Potencial gravitatorio y equipotenciales</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle%20del%20Alberche%20v2-Small.png" alt="Logo del centro" width="150">
+        </div>
+    </div>
+
+    <!-- ============================ GRID ============================ -->
+    <div class="grid">
+
+        <!-- FICHA 1 · POTENCIAL GRAVITATORIO: DEFINICIÓN Y EXPRESIÓN -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Potencial gravitatorio: definición y expresión</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El potencial gravitatorio \(V\) en un punto del espacio, es decir, la energía potencial gravitatoria por unidad de masa que adquiriría una masa de prueba situada en ese punto. Se aplica para caracterizar escalarmente el campo gravitatorio, para calcular energías potenciales y trabajos sin necesidad de operar con vectores. Es la magnitud fundacional de todo el tema A5: de ella se deducen la energía potencial, el trabajo, el gradiente y las equipotenciales.
+            </div>
+            <div class="formula-box">
+                \[ V = \frac{E_p}{m} \qquad\Longrightarrow\qquad V = -\,G\,\frac{M}{r} \qquad [V]=\text{J}\cdot\text{kg}^{-1} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>¡Sí, imprescindible! Memoriza \(V=-G\,M/r\) <strong>con el signo negativo</strong> y el convenio \(V(\infty)=0\). Recuerda que es una magnitud <strong>escalar</strong> (no vectorial), <strong>siempre negativa</strong> para masas positivas y que depende solo de la masa creadora \(M\) y de la distancia \(r\) al centro, no de la masa de prueba. A partir de ella se deducen la energía potencial, el trabajo y la relación con el campo. Error típico en la EBAU: olvidar el signo o tratarla como vector.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(V\)</td><td data-label="Significado">Potencial gravitatorio en un punto</td><td data-label="Unidades">J·kg⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(E_p\)</td><td data-label="Significado">Energía potencial gravitatoria de una masa \(m\)</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa de prueba situada en el punto</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(G\)</td><td data-label="Significado">Constante de gravitación universal</td><td data-label="Unidades">6,67·10⁻¹¹ N·m²·kg⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa creadora del potencial</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia desde el centro de \(M\) al punto</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> en la superficie terrestre (\(M_T\approx5{,}98\cdot10^{24}\,\text{kg}\), \(R_T\approx6{,}37\cdot10^{6}\,\text{m}\)): \(V=-GM_T/R_T\approx-6{,}25\cdot10^{7}\,\text{J}\cdot\text{kg}^{-1}\). Una masa de \(1\,\text{kg}\) situada allí tendría \(E_p=mV\approx-6{,}25\cdot10^{7}\,\text{J}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es una magnitud <strong>escalar</strong>: no tiene dirección ni sentido, solo valor y signo.</li>
+                    <li>Con \(V(\infty)=0\), es <strong>siempre negativa</strong> en presencia de masas positivas (fuerza atractiva).</li>
+                    <li>Es <strong>aditivo algebraicamente</strong>: el potencial total de varias masas es la suma con su signo.</li>
+                    <li>No depende de la masa de prueba: es una propiedad del campo, no del cuerpo que lo «siente».</li>
+                    <li>Su unidad \(\text{J}\cdot\text{kg}^{-1}\) equivale a \(\text{m}^{2}\cdot\text{s}^{-2}\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 · SUPERFICIES EQUIPOTENCIALES -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Superficies equipotenciales</h2>
+                <span class="badge-centro">Geometría</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Interpretación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El lugar geométrico de todos los puntos del espacio que tienen el mismo valor del potencial gravitatorio. Se aplica para visualizar la estructura del campo, para razonar sobre trabajos nulos y para resolver problemas geométricos de equipotenciales. Son la «topografía» del campo: en ellas se apoya toda la interpretación cualitativa del potencial.
+            </div>
+            <div class="formula-box">
+                \[ V(x,y,z) = \text{constante} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">📖 FAMILIARIZARSE</span>No hay una fórmula que memorizar: es un <strong>concepto geométrico</strong>. Lo esencial es retener tres propiedades: (1) las líneas de campo son <strong>perpendiculares</strong> a las equipotenciales; (2) el campo apunta en el sentido de <strong>potencial decreciente</strong>; (3) el trabajo del campo entre dos puntos de la misma equipotencial es <strong>nulo</strong> (\(W=m(V_A-V_B)=0\)). En la EBAU suele preguntarse de forma conceptual: «¿cómo son las equipotenciales de un campo uniforme?» (planos paralelos) o «¿de una masa puntual?» (esferas concéntricas).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Configuración</th><th>Forma de las equipotenciales</th><th>Observación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Configuración">Masa puntual</td><td data-label="Forma">Esferas concéntricas</td><td data-label="Observación">Centradas en la masa; \(V\) constante en cada esfera</td></tr>
+                    <tr><td data-label="Configuración">Campo uniforme</td><td data-label="Forma">Planos paralelos</td><td data-label="Observación">Perpendiculares a \(\vec g\) (p. ej. cerca de la superficie terrestre)</td></tr>
+                    <tr><td data-label="Configuración">Dipolo gravitatorio</td><td data-label="Forma">Superficies curvas en torno a ambas masas</td><td data-label="Observación">Simétricas respecto al plano mediador si las masas son iguales</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para la Tierra, la equipotencial que pasa por la superficie es una esfera de radio \(R_T\). Si un satélite se mueve en una órbita circular, toda la órbita está contenida en una misma superficie equipotencial: el campo no realiza trabajo sobre él a lo largo de la trayectoria.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Las <strong>líneas de campo son perpendiculares</strong> a las equipotenciales en cada punto (\(\vec g\perp V=\text{cte}\)).</li>
+                    <li>El campo apunta siempre en el sentido de <strong>potencial decreciente</strong>.</li>
+                    <li>El trabajo entre dos puntos de la misma equipotencial es <strong>nulo</strong>.</li>
+                    <li>Dos equipotenciales <strong>no se cruzan nunca</strong>: \(V\) tiene un único valor en cada punto.</li>
+                    <li>Cuanto más <strong>juntas</strong> están las equipotenciales, más <strong>intenso</strong> es el campo en esa zona.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 · RELACIÓN CAMPO-POTENCIAL (GRADIENTE) -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Relación entre campo y potencial (gradiente)</h2>
+                <span class="badge-centro">Relación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación local entre el campo gravitatorio y el potencial: el campo es el gradiente cambiado de signo del potencial. Se aplica para deducir el campo a partir del potencial (o viceversa) y para justificar geométricamente la perpendicularidad entre líneas de campo y superficies equipotenciales.
+            </div>
+            <div class="formula-box">
+                \[ \vec g = -\,\nabla V = -\left(\frac{\partial V}{\partial x}\,\hat i + \frac{\partial V}{\partial y}\,\hat j + \frac{\partial V}{\partial z}\,\hat k\right) \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">📖 FAMILIARIZARSE</span>Familiarízate con ella más que memorizarla: expresa que el campo apunta en el sentido en que el potencial <strong>disminuye más rápidamente</strong> y que su módulo es la variación de \(V\) por unidad de longitud. Consecuencia clave: las <strong>líneas de campo son perpendiculares a las superficies equipotenciales</strong>. En la EBAU se pregunta poco de forma directa, pero entenderla evita confusiones entre campo y potencial. En un caso unidimensional, \(g_x=-dV/dx\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec g\)</td><td data-label="Significado">Campo gravitatorio (vector)</td><td data-label="Unidades">N·kg⁻¹ = m·s⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(V\)</td><td data-label="Significado">Potencial gravitatorio (escalar)</td><td data-label="Unidades">J·kg⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\nabla\)</td><td data-label="Significado">Operador gradiente</td><td data-label="Unidades">m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\partial V/\partial x\)</td><td data-label="Significado">Derivada parcial de \(V\) respecto a \(x\)</td><td data-label="Unidades">J·kg⁻¹·m⁻¹</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para una masa puntual \(M\) en el origen, \(V=-GM/r\). En coordenadas esféricas, \(g_r=-\partial V/\partial r=-GM/r^{2}\), que es exactamente la expresión del campo. Otro ejemplo: en un campo uniforme \(g_0\) paralelo a \(X\), \(V=-g_0x+C\); las equipotenciales son planos \(x=\text{cte}\), perpendiculares a \(\vec g\), como debe ser.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El campo apunta en el sentido de <strong>\(V\) decreciente</strong>.</li>
+                    <li>Las <strong>líneas de campo son perpendiculares</strong> a las superficies equipotenciales.</li>
+                    <li>En una región donde \(V\) es constante, \(\vec g=0\) (equilibrio, p. ej. interior de corteza esférica).</li>
+                    <li>No confundir: \(\vec g\) es vectorial; \(V\) es escalar.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 · PRINCIPIO DE SUPERPOSICIÓN ESCALAR -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Superposición escalar de potenciales</h2>
+                <span class="badge-centro">Principio</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Principio universal</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El potencial gravitatorio total creado por varias masas puntuales en un punto del espacio. Se aplica en cualquier problema con dos o más masas: se calcula cada contribución por separado y se suman <strong>algebraicamente</strong> (con su signo). A diferencia del campo, que se suma vectorialmente, el potencial se suma como escalares.
+            </div>
+            <div class="formula-box">
+                \[ V_{\text{total}} = \sum_{i=1}^{n} V_i = -\,G\sum_{i=1}^{n}\frac{M_i}{r_i} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es un <strong>principio</strong>, no una fórmula: se aplica siempre. Lo esencial es no olvidar que los potenciales se suman <strong>algebraicamente con su signo</strong> (todos negativos para masas positivas), mientras que los campos se suman <strong>vectorialmente</strong>. Error típico en la EBAU: sumar módulos de campos en vez de componentes, o tratar los potenciales como si fueran vectores. El potencial total de masas positivas nunca se anula en un punto finito: siempre es negativo.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Magnitud</th><th>Tipo de suma</th><th>Expresión</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Magnitud">Campo \(\vec g\)</td><td data-label="Tipo de suma">Vectorial</td><td data-label="Expresión">\(\vec g_{\text{total}}=\sum\vec g_i\)</td></tr>
+                    <tr><td data-label="Magnitud">Potencial \(V\)</td><td data-label="Tipo de suma">Escalar (algebraica)</td><td data-label="Expresión">\(V_{\text{total}}=\sum V_i\)</td></tr>
+                    <tr><td data-label="Magnitud">Energía \(E_p\)</td><td data-label="Tipo de suma">Escalar (algebraica)</td><td data-label="Expresión">\(E_{p,\text{total}}=m\,V_{\text{total}}\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos masas \(m_1=2\,\text{kg}\) y \(m_2=4\,\text{kg}\) en \((0,0)\) y \((4,0)\,\text{m}\). En \((0,2)\,\text{m}\): \(r_1=2\,\text{m}\), \(r_2=\sqrt{20}\approx4{,}47\,\text{m}\). Potencial total: \(V_{\text{total}}=-G(2/2+4/4{,}47)\approx-G\cdot(1+0{,}894)\approx-1{,}26\cdot10^{-10}\,\text{J}\cdot\text{kg}^{-1}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es un <strong>principio universal</strong>: se aplica a cualquier número de masas y en cualquier punto.</li>
+                    <li>Para <strong>potenciales</strong>: sumar <strong>con su signo</strong> (todos negativos para masas positivas).</li>
+                    <li>Para <strong>campos</strong>: descomponer en componentes cartesianas y sumar por separado.</li>
+                    <li>El potencial total de masas positivas <strong>nunca se anula</strong> en un punto finito: es siempre negativo.</li>
+                    <li>No confundir: donde el campo se anula, el potencial <strong>no tiene por qué anularse</strong>.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 · ENERGÍA POTENCIAL GRAVITATORIA -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Energía potencial gravitatoria</h2>
+                <span class="badge-centro">Energía</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía que posee una masa \(m\) por encontrarse dentro del campo gravitatorio creado por otra masa \(M\). Se aplica en problemas de trabajo, conservación de la energía mecánica, velocidad de escape, órbitas y satélites. Es siempre negativa con el origen en el infinito y caracteriza los estados ligados.
+            </div>
+            <div class="formula-box">
+                \[ E_p = m\,V = -\,G\,\frac{M\,m}{r} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es simplemente \(E_p=m\,V\), con \(V=-GM/r\) (ficha 1). Lo que sí hay que recordar es el <strong>signo negativo</strong> y que la energía potencial se hace <strong>menos negativa al alejarse</strong> (aumenta) y <strong>más negativa al acercarse</strong> (disminuye). Aparece continuamente en problemas de energía mecánica, velocidad de escape y órbitas de la EBAU.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E_p\)</td><td data-label="Significado">Energía potencial gravitatoria del sistema \(M\)-\(m\)</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa que se mueve en el campo de \(M\)</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(V\)</td><td data-label="Significado">Potencial gravitatorio en el punto que ocupa \(m\)</td><td data-label="Unidades">J·kg⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(G\)</td><td data-label="Significado">Constante de gravitación universal</td><td data-label="Unidades">6,67·10⁻¹¹ N·m²·kg⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa creadora del campo</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia entre los centros de \(M\) y \(m\)</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un satélite de \(1500\,\text{kg}\) en una órbita de \(r=12\,500\,\text{km}\) alrededor de la Tierra tiene \(E_p=-G\,M_T\,m/r\approx-4{,}79\cdot10^{10}\,\text{J}\). Su energía mecánica será \(E_m=E_c+E_p=-GM_Tm/(2r)\), también negativa (órbita ligada).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es <strong>negativa</strong> con el origen en el infinito; se hace <strong>menos negativa</strong> al alejarse.</li>
+                    <li>Para varias masas: \(E_{p,\text{total}}=m\,V_{\text{total}}\) (suma algebraica de potenciales).</li>
+                    <li>La fuerza gravitatoria es conservativa: \(E_p\) depende solo de \(r\).</li>
+                    <li>Energía mecánica de un satélite en órbita circular: \(E_m=-\dfrac{GMm}{2r}\) (es la mitad de \(E_p\)).</li>
+                    <li>Energía cinética orbital: \(E_c=\dfrac{GMm}{2r}\) (teorema del virial).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 · TRABAJO GRAVITATORIO Y DIFERENCIA DE POTENCIAL -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Trabajo gravitatorio y diferencia de potencial</h2>
+                <span class="badge-centro">Trabajo</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · Conservación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El trabajo realizado por la fuerza gravitatoria al desplazar una masa \(m\) entre dos puntos \(A\) y \(B\) del campo, y la diferencia de potencial entre ambos puntos. Se aplica en problemas de energía, conservación de la energía mecánica y movimiento bajo gravedad. Al ser la gravedad una fuerza conservativa, el trabajo no depende del camino seguido.
+            </div>
+            <div class="formula-box">
+                \[ W_{A\to B}^{\text{campo}} = -\Delta E_p = E_{p,A}-E_{p,B} = m\,(V_A-V_B) \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se deduce del carácter conservativo de la gravedad (\(W=-\Delta E_p\)) y de la definición \(E_p=mV\). Memoriza solo la idea: <strong>el trabajo del campo es positivo si la masa se acerca a la masa atractora</strong> (baja \(E_p\)) y <strong>negativo si se aleja</strong> (sube \(E_p\)). Muchos problemas de EBAU piden el trabajo del agente externo, que es el opuesto: \(W_{\text{ext}}=-W_{\text{campo}}=m(V_B-V_A)\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(W_{A\to B}\)</td><td data-label="Significado">Trabajo realizado por el campo gravitatorio</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa que se desplaza</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(V_A,\,V_B\)</td><td data-label="Significado">Potencial gravitatorio en \(A\) y en \(B\)</td><td data-label="Unidades">J·kg⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(E_{p,A},\,E_{p,B}\)</td><td data-label="Significado">Energías potenciales en \(A\) y en \(B\)</td><td data-label="Unidades">J</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> masa \(M=10\,\text{kg}\) en el origen; \(m=1\,\text{kg}\) se mueve de \(A(5,0)\) a \(B(2,0)\,\text{m}\). \(V_A=-2G\), \(V_B=-5G\). \(W_{\text{campo}}=m(V_A-V_B)=1\cdot(-2G+5G)=3G\approx2{,}00\cdot10^{-10}\,\text{J}\) (positivo: el campo favorece el acercamiento).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La gravedad es <strong>conservativa</strong>: \(W\) no depende del camino, solo de \(A\) y \(B\).</li>
+                    <li>\(W_{\text{campo}}>0\) si la masa se <strong>acerca</strong> (disminuye \(E_p\)).</li>
+                    <li>\(W_{\text{campo}}<0\) si la masa se <strong>aleja</strong> (aumenta \(E_p\)).</li>
+                    <li>El trabajo del <strong>agente externo</strong> es \(W_{\text{ext}}=-W_{\text{campo}}=m(V_B-V_A)\).</li>
+                    <li>Sobre una equipotencial (\(V_A=V_B\)): \(W_{\text{campo}}=0\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 · POTENCIAL EN EL INTERIOR Y EXTERIOR DE UNA ESFERA -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Potencial en el interior y en el exterior de una esfera</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El potencial gravitatorio creado por una esfera maciza uniforme de masa \(M\) y radio \(R\), tanto en su exterior como en su interior. Se aplica para planetas y estrellas cuando interesa el campo o el potencial dentro de ellos, y para justificar por qué en el interior el campo disminuye linealmente mientras el potencial sigue siendo finito y negativo.
+            </div>
+            <div class="formula-box">
+                \[ V_{\text{ext}}(r) = -\,G\,\frac{M}{r} \quad (r\ge R) \]
+                \[ V_{\text{int}}(r) = -\,\frac{G\,M}{2R}\left(3-\frac{r^{2}}{R^{2}}\right) \quad (r&lt;R) \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>La fórmula del exterior es la misma que la de masa puntual (ficha 1) y <strong>debe memorizarse</strong>. La del interior no hace falta memorizarla al detalle: basta con saber que en el centro vale \(V(0)=-3GM/(2R)\), que es continua con la superficial (\(V(R)=-GM/R\)) y que en el interior \(V\) <strong>no es constante</strong> (aunque el campo sí es nulo en el centro). Para una corteza esférica (hueca), en el interior \(V\) es constante e igual al valor superficial.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(V_{\text{ext}}(r)\)</td><td data-label="Significado">Potencial en el exterior (\(r\ge R\))</td><td data-label="Unidades">J·kg⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(V_{\text{int}}(r)\)</td><td data-label="Significado">Potencial en el interior (\(r&lt;R\))</td><td data-label="Unidades">J·kg⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(V(0)\)</td><td data-label="Significado">Potencial en el centro de la esfera</td><td data-label="Unidades">J·kg⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa total de la esfera</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(R\)</td><td data-label="Significado">Radio de la esfera</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia desde el centro</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para la Tierra (\(M_T\approx5{,}98\cdot10^{24}\,\text{kg}\), \(R_T\approx6{,}37\cdot10^{6}\,\text{m}\)): \(V(R_T)\approx-6{,}25\cdot10^{7}\,\text{J}\cdot\text{kg}^{-1}\) y \(V(0)=-3GM_T/(2R_T)=-1{,}5\cdot V(R_T)\approx-9{,}38\cdot10^{7}\,\text{J}\cdot\text{kg}^{-1}\). El potencial en el centro no es cero aunque el campo sí lo sea.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>En el exterior, la esfera se comporta como si toda su masa estuviera concentrada en el centro.</li>
+                    <li>En el interior, el campo \(g(r)=GMr/R^{3}\) es <strong>proporcional a \(r\)</strong> y vale cero en el centro.</li>
+                    <li>El potencial <strong>no es nulo</strong> en el centro: \(V(0)=-3GM/(2R)\).</li>
+                    <li>Para una <strong>corteza esférica</strong> (hueca), \(V\) es constante en el interior e igual a \(-GM/R\).</li>
+                    <li>\(V\) es continua en \(r=R\): el exterior y el interior coinciden en la superficie.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 · APROXIMACIÓN Ep ≈ mgh CERCA DE LA SUPERFICIE -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Aproximación \(E_p \approx m\,g\,h\) cerca de la superficie</h2>
+                <span class="badge-centro">Aproximación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · Caso límite</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía potencial gravitatoria de una masa \(m\) situada a una altura \(h\) sobre la superficie terrestre, suponiendo \(g\) constante. Se aplica en problemas de caída libre, lanzamientos y péndulos a escala de laboratorio o de pocos kilómetros. Es un <strong>caso límite</strong> de la expresión general \(E_p=-GMm/r\) cuando \(h\ll R_T\).
+            </div>
+            <div class="formula-box">
+                \[ E_p(h) \approx m\,g\,h \qquad\text{con}\qquad g = \frac{G\,M_T}{R_T^{2}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>La fórmula \(E_p=mgh\) es un <strong>caso límite</strong> de la energía potencial general. No hay que memorizarla aparte: se obtiene de \(E_p=-GMm/r\) tomando \(r=R_T+h\), restando el valor en la superficie y aproximando \(h\ll R_T\). Condición de validez: \(h\ll R_T\approx6400\,\text{km}\). Para alturas de cientos de km (satélites, ISS, Luna) hay que usar la expresión completa \(E_p=-GMm/r\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E_p(h)\)</td><td data-label="Significado">Energía potencial a altura \(h\) (referencia en superficie)</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa del cuerpo</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(g\)</td><td data-label="Significado">Gravedad superficial terrestre</td><td data-label="Unidades">m·s⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(h\)</td><td data-label="Significado">Altura sobre la superficie</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(R_T\)</td><td data-label="Significado">Radio terrestre (\(\approx6{,}37\cdot10^{6}\,\text{m}\))</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un cuerpo de \(2\,\text{kg}\) a \(100\,\text{m}\) de altura tiene \(E_p\approx2\cdot9{,}8\cdot100\approx1960\,\text{J}\) con la fórmula aproximada. Con la exacta: \(\Delta E_p=GM_Tm\,h/[R_T(R_T+h)]\), prácticamente idéntico (error relativo \(\sim h/R_T\approx1{,}6\cdot10^{-5}\)). A \(h=1000\,\text{km}\), en cambio, la aproximación falla por completo.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Válida solo si \(h\ll R_T\) (\(h\) de pocos km frente a \(6400\,\text{km}\)).</li>
+                    <li>Se toma \(E_p=0\) en la superficie terrestre (cambia la escala, no las diferencias).</li>
+                    <li>Va implícita la hipótesis de \(g\) <strong>constante</strong> en todo el intervalo de alturas.</li>
+                    <li>Para satélites y órbitas hay que usar \(E_p=-GMm/r\) (ficha 5).</li>
+                    <li>El trabajo del peso en caída: \(W=mg\,h\), positivo (baja \(h\)).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 · PUNTO DE CAMPO NULO Y PUNTO DE POTENCIAL NULO -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Punto de campo nulo y punto de potencial nulo</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Distinción</span>
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La posición del punto entre dos masas puntuales donde el campo gravitatorio total se anula, y la <strong>distinción conceptual</strong> respecto al punto de potencial nulo. Se aplica en problemas típicos de EBAU donde se pide localizar el punto de equilibrio gravitatorio entre dos masas y razonar si el potencial se anula allí.
+            </div>
+            <div class="formula-box">
+                \[ \frac{G\,m}{x^{2}} = \frac{G\,M}{(d-x)^{2}} \quad\Longrightarrow\quad x = d\,\frac{\sqrt{m}}{\sqrt{m}+\sqrt{M}} \qquad V(x)\neq0 \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>La fórmula de \(x\) no hace falta memorizarla: se deduce igualando los módulos de los dos campos (que en ese punto tienen sentidos opuestos) y resolviendo. Estrategia EBAU: plantear \(Gm/x^{2}=GM/(d-x)^{2}\), sacar raíz cuadrada en ambos lados y despejar \(x\). El punto está siempre entre las masas y más cerca de la menor. <strong>Cuidado con el error clásico</strong>: en ese punto el <strong>potencial NO es nulo</strong> (sigue siendo negativo, suma de dos negativos). Con masas positivas no existe ningún punto finito de potencial nulo.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(x\)</td><td data-label="Significado">Distancia del punto nulo a la masa menor \(m\)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(d\)</td><td data-label="Significado">Distancia total entre las dos masas</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa menor (\(m&lt;M\))</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa mayor</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(V(x)\)</td><td data-label="Significado">Potencial en el punto de campo nulo (¡NO es cero!)</td><td data-label="Unidades">J·kg⁻¹</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(m=2\,\text{kg}\) y \(M=4\,\text{kg}\) separadas \(d=4\,\text{m}\): \(x=4\cdot\sqrt{2}/(\sqrt{2}+2)\approx1{,}66\,\text{m}\) desde la masa menor. Comprobación: \(g_m=G\cdot2/1{,}66^{2}\approx g_M=G\cdot4/(4-1{,}66)^{2}\). En ese punto \(V=-(G\cdot2/1{,}66+G\cdot4/2{,}34)\approx-G\cdot2{,}91\neq0\) (negativo).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El punto de <strong>campo nulo</strong> está <strong>siempre entre las dos masas</strong> y más cerca de la menor.</li>
+                    <li>En ese punto, los campos tienen <strong>igual módulo y sentidos opuestos</strong>.</li>
+                    <li>El <strong>potencial NO es nulo</strong>: sigue siendo negativo (suma de dos negativos).</li>
+                    <li>Si las masas son iguales, el punto de campo nulo está en el <strong>punto medio</strong> (\(x=d/2\)).</li>
+                    <li>Con masas positivas <strong>no existe</strong> punto de potencial nulo en el espacio finito (solo en el infinito).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             LEYENDA EPISTÉMICA
+             ============================================================ -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
+                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
+                consecuencia matemática, principio de conservación o conversión de unidades— y cada
+                categoría se domina con un <strong>verbo distinto</strong>. Identificar el tipo
+                <em>antes</em> de estudiar ahorra tiempo y evita memorizar lo que se puede deducir.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física.
+                        No se demuestra, se establece. Se domina cuando puedes enunciarla sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A5</strong>
+                        \(V=E_p/m\) &nbsp;·&nbsp; \(V=-GM/r\) &nbsp;·&nbsp; \(g_0=GM/R^{2}\)
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es el <em>punto de partida</em> del tema: describe cómo funciona la naturaleza.
+                        No se deriva de otra cosa; se entiende el porqué y las condiciones en las que aplica.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A5</strong>
+                        \(V(x,y,z)=\text{cte}\) (equipotencial) &nbsp;·&nbsp; \(\vec g\perp\) equipotenciales
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> integrando, despejando o sustituyendo una ley fundamental o una
+                        definición. No se memoriza: se reconstruye en 2–3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A5</strong>
+                        \(E_p=mV=-GMm/r\) &nbsp;·&nbsp; \(W_{A\to B}=m(V_A-V_B)\) &nbsp;·&nbsp;
+                        \(V_{\text{int}}=-\dfrac{GM}{2R}\left(3-\dfrac{r^2}{R^2}\right)\) &nbsp;·&nbsp;
+                        \(E_p\approx mgh\) &nbsp;·&nbsp; \(x=d\sqrt{m}/(\sqrt{m}+\sqrt{M})\)
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Principio / conservación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Es una <em>regla universal</em> que restringe los procesos posibles. No se demuestra
+                        ni se deduce: se aplica como filtro a cada problema concreto.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A5</strong>
+                        \(V_{\text{total}}=\sum V_i\) (superposición escalar) &nbsp;·&nbsp;
+                        \(W=-\Delta E_p\) (conservación)
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Conversión / operación</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes
+                        equivalentes. Debe salir sin pensar, como un reflejo.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A5</strong>
+                        \(\text{J}\cdot\text{kg}^{-1}\leftrightarrow\text{m}^{2}\cdot\text{s}^{-2}\) &nbsp;·&nbsp;
+                        \(\text{N}\cdot\text{kg}^{-1}\leftrightarrow\text{m}\cdot\text{s}^{-2}\) &nbsp;·&nbsp;
+                        \(\text{km}\leftrightarrow\text{m}\)
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tabla resumen -->
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Punto de partida físico</td>
+                        <td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Regla universal de conservación</td>
+                        <td data-label="¿Cómo se domina?">Plantearla en cada reacción</td>
+                        <td data-label="Autoevaluación">¿La aplico como filtro al problema?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Herramienta mecánica</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿Me sale sin pensar?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Regla de oro -->
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
+                pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si sale de otra fórmula integrando, despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
+                Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender).
+                Si solo asigna un nombre → <strong>definición</strong> (memorizar).
+                Si es una regla que se cumple siempre → <strong>principio</strong> (aplicar).
+            </div>
+
+            <!-- Mini-referencia de colores de las tarjetas -->
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Fundamento (potencial y esferas)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Potencial y energía</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Campo y equipotenciales</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Aplicaciones y aproximaciones</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Principios</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================ GLOSARIO ============================ -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema A5</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ V = \dfrac{E_p}{m} \]</td><td data-label="Nombre">Potencial gravitatorio (definición)</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ V = -G\,\dfrac{M}{r} \]</td><td data-label="Nombre">Potencial de una masa puntual</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ V(x,y,z) = \text{cte} \]</td><td data-label="Nombre">Superficie equipotencial</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ \vec g = -\nabla V \]</td><td data-label="Nombre">Relación campo-potencial (gradiente)</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ V_{\text{total}} = \sum_i V_i \]</td><td data-label="Nombre">Superposición escalar de potenciales</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ E_p = m\,V = -G\,\dfrac{M\,m}{r} \]</td><td data-label="Nombre">Energía potencial gravitatoria</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ W_{A\to B} = m\,(V_A-V_B) = -\Delta E_p \]</td><td data-label="Nombre">Trabajo gravitatorio y diferencia de potencial</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ V_{\text{int}}(r) = -\dfrac{GM}{2R}\left(3-\dfrac{r^{2}}{R^{2}}\right) \]</td><td data-label="Nombre">Potencial en el interior de una esfera maciza</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ E_p(h) \approx m\,g\,h \]</td><td data-label="Nombre">Energía potencial cerca de la superficie</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ x = d\,\dfrac{\sqrt{m}}{\sqrt{m}+\sqrt{M}} \]</td><td data-label="Nombre">Punto de campo gravitatorio nulo entre dos masas</td><td data-label="Ficha">9</td></tr>
+            </tbody>
+        </table>
+
+        <p class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> confundir campo (vectorial) con potencial (escalar); olvidar el signo negativo en \(V\) y en \(E_p\); sumar potenciales como vectores en vez de escalares; creer que en el punto de campo nulo el potencial es nulo (¡no lo es!); usar \(mgh\) para alturas grandes (satélites, ISS, Luna); medir \(r\) desde la superficie en lugar de desde el centro; y no interpretar correctamente el signo del trabajo gravitatorio (positivo al acercarse, negativo al alejarse).
+        </p>
+    </details>
+
+    <!-- ============================ RECORDATORIO + BOTÓN ============================ -->
+    <p class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en este tema, el <strong>potencial gravitatorio</strong> \(V=-GM/r\) es la magnitud fundacional: de ella se deducen la energía potencial (\(E_p=mV\)), el trabajo (\(W=m\Delta V\)), la relación con el campo (\(\vec g=-\nabla V\)) y las equipotenciales (\(V=\text{cte}\)). Recuerda siempre: \(V\) y \(E_p\) son <strong>escalares negativos</strong> y se suman algebraicamente; \(\vec g\) es <strong>vectorial</strong> y se suma por componentes. El punto donde \(\vec g=0\) NO es el punto donde \(V=0\). Mide siempre \(r\) desde el centro de las masas y usa \(E_p=mgh\) solo si \(h\ll R_T\).
+    </p>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+</body>
+</html>

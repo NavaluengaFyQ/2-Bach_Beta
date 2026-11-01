@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema A4. Intensidad de campo gravitatorio y líneas de campo</title>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA A4.- </span>
+                <span class="texto">Intensidad de campo gravitatorio y líneas de campo</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- MAPA DE BLOQUES Y TEMAS (DESPLEGABLE)                         -->
+    <!-- ============================================================ -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque A. Campo gravitatorio</strong> del currículo de Física de 2º de Bachillerato (Decreto 40/2022, BOCYL-D-30092022-4).</p>
+
+        <div class="mapa-bloques">
+            <!-- BLOQUE A (ACTUAL) -->
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">A1</span>
+                    <span class="tema-chip">A2</span>
+                    <span class="tema-chip">A3</span>
+                    <span class="tema-chip actual">A4</span>
+                    <span class="tema-chip">A5</span>
+                    <span class="tema-chip">A6</span>
+                    <span class="tema-chip">A7</span>
+                    <span class="tema-chip">A8</span>
+                </div>
+            </div>
+            <!-- BLOQUE B -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span>
+                    <span class="tema-chip">B2</span>
+                    <span class="tema-chip">B3</span>
+                    <span class="tema-chip">B4</span>
+                    <span class="tema-chip">B5</span>
+                    <span class="tema-chip">B6</span>
+                    <span class="tema-chip">B7</span>
+                    <span class="tema-chip">B8</span>
+                    <span class="tema-chip">B9</span>
+                </div>
+            </div>
+            <!-- BLOQUE C -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">C1</span>
+                    <span class="tema-chip">C2</span>
+                    <span class="tema-chip">C3</span>
+                    <span class="tema-chip">C4</span>
+                    <span class="tema-chip">C5</span>
+                    <span class="tema-chip">C6</span>
+                </div>
+            </div>
+            <!-- BLOQUE D -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">D1</span>
+                    <span class="tema-chip">D2</span>
+                    <span class="tema-chip">D3</span>
+                    <span class="tema-chip">D4</span>
+                    <span class="tema-chip">D5</span>
+                    <span class="tema-chip">D6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque A · Tema A4:</strong> <span class="texto-resaltado">Intensidad de campo gravitatorio y líneas de campo.</span>
+            <br>
+            <em>En este tema estudiaremos:</em> la definición de intensidad de campo gravitatorio, su expresión vectorial, las líneas de campo, la dependencia con la distancia (\(1/r^2\)), el campo radial, la gravedad superficial, el campo gravitatorio a altura y en órbitas, así como la superposición de campos debidos a varias masas.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- OBJETIVOS (DESPLEGABLE)                                       -->
+    <!-- ============================================================ -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Definir la intensidad del campo gravitatorio y escribir su expresión vectorial para una masa puntual.</li>
+            <li>Interpretar el significado físico de las líneas de campo gravitatorio y sus propiedades (dirección, sentido, densidad).</li>
+            <li>Comprender la dependencia de la intensidad del campo con el cuadrado de la distancia (\(1/r^2\)) y el carácter radial del campo.</li>
+            <li>Calcular la gravedad superficial en planetas y astros esféricos.</li>
+            <li>Determinar el campo gravitatorio a una altura \(h\) sobre la superficie y en órbitas circulares.</li>
+            <li>Aplicar el principio de superposición vectorial para calcular el campo resultante debido a varias masas puntuales.</li>
+            <li>Localizar puntos donde el campo gravitatorio total se anula.</li>
+            <li>Relacionar el campo gravitatorio con la aceleración centrípeta en órbitas circulares.</li>
+            <li>Resolver problemas numéricos y de razonamiento característicos de la PAU/EBAU de Castilla y León sobre este tema.</li>
+        </ul>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- CONTENIDO TEÓRICO (DESPLEGABLE)                               -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">1</span>
+                <strong>Definición de intensidad de campo gravitatorio.</strong>
+            </summary>
+            <p>La <strong>intensidad del campo gravitatorio</strong> \(\vec g\) en un punto del espacio se define como la fuerza gravitatoria por unidad de masa que actuaría sobre una masa de prueba \(m\) situada en dicho punto:</p>
+            <div class="formula-box">
+                \[
+                \vec g = \frac{\vec F}{m}
+                \]
+            </div>
+            <p>Es una magnitud <strong>vectorial</strong> que depende de la posición y de la masa o masas que crean el campo, pero no de la masa de prueba. Su unidad en el S.I. es el \(\text{N}\cdot\text{kg}^{-1}\), que es equivalente al \(\text{m}\cdot\text{s}^{-2}\) (es una aceleración).</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">2</span>
+                <strong>Campo gravitatorio creado por una masa puntual.</strong>
+            </summary>
+            <p>Para una masa puntual \(M\) situada en el origen de coordenadas, el campo gravitatorio en un punto a distancia \(r\) es radial y apunta siempre hacia la masa (carácter atractivo):</p>
+            <div class="formula-box">
+                \[
+                \vec g(\vec r) = -\,G\,\frac{M}{r^{2}}\,\hat u_r
+                \]
+            </div>
+            <p>donde \(\hat u_r\) es el vector unitario que va desde la masa hasta el punto. El módulo del campo es:</p>
+            <div class="formula-box">
+                \[
+                g = G\,\frac{M}{r^{2}}
+                \]
+            </div>
+            <p>Esta expresión muestra la <strong>dependencia inversa con el cuadrado de la distancia</strong> (\(1/r^2\)): el campo se debilita rápidamente al alejarse de la masa.</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">3</span>
+                <strong>Líneas de campo gravitatorio.</strong>
+            </summary>
+            <p>Las <strong>líneas de campo</strong> son líneas imaginarias que se dibujan de modo que en cada punto son tangentes al vector \(\vec g\). Proporcionan una representación gráfica del campo gravitatorio.</p>
+            <p><strong>Propiedades:</strong></p>
+            <ul>
+                <li>Las líneas de campo gravitatorio son <strong>radiales</strong> y apuntan <strong>hacia la masa</strong> que crea el campo (siempre entrantes).</li>
+                <li>La <strong>densidad</strong> de líneas (número de líneas por unidad de área perpendicular) es proporcional al módulo del campo: donde las líneas están más juntas, el campo es más intenso.</li>
+                <li>Las líneas de campo <strong>nunca se cruzan</strong> (el campo tiene un único valor y dirección en cada punto).</li>
+                <li>El campo es <strong>central</strong>: todas las líneas convergen en el centro de la masa.</li>
+                <li>Las líneas de campo son perpendiculares a las superficies equipotenciales.</li>
+            </ul>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">4</span>
+                <strong>Gravedad superficial.</strong>
+            </summary>
+            <p>La <strong>gravedad superficial</strong> \(g_0\) es el módulo del campo gravitatorio en la superficie de un astro esférico de masa \(M\) y radio \(R\):</p>
+            <div class="formula-box">
+                \[
+                g_0 = G\,\frac{M}{R^{2}}
+                \]
+            </div>
+            <p>Este valor determina el peso de los cuerpos en la superficie (\(P = m\,g_0\)) y es una constante característica de cada planeta o estrella.</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">5</span>
+                <strong>Campo gravitatorio a una altura \(h\) y en órbitas.</strong>
+            </summary>
+            <p>A una altura \(h\) sobre la superficie, la distancia al centro del astro es \(r = R + h\). El módulo del campo es:</p>
+            <div class="formula-box">
+                \[
+                g(h) = G\,\frac{M}{(R+h)^{2}}
+                \]
+            </div>
+            <p>En una órbita circular de radio \(r\), la fuerza gravitatoria proporciona la aceleración centrípeta necesaria para mantener el movimiento circular:</p>
+            <div class="formula-box">
+                \[
+                \frac{G\,M\,m}{r^{2}} = \frac{m\,v^{2}}{r} \quad\Longrightarrow\quad g_{\text{orb}} = \frac{v^{2}}{r}
+                \]
+            </div>
+            <p>Por tanto, la aceleración centrípeta en la órbita coincide con la intensidad del campo gravitatorio en ese punto: \(g_{\text{orb}} = G\,M/r^{2}\).</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">6</span>
+                <strong>Principio de superposición vectorial.</strong>
+            </summary>
+            <p>Cuando varias masas puntuales \(M_1, M_2, \dots, M_n\) crean un campo gravitatorio en un mismo punto, el campo total es la <strong>suma vectorial</strong> de los campos individuales:</p>
+            <div class="formula-box">
+                \[
+                \vec g_{\text{total}} = \vec g_1 + \vec g_2 + \dots + \vec g_n
+                \]
+            </div>
+            <p>Cada \(\vec g_i\) se calcula con la expresión vectorial \(-\,G\,M_i\,\vec r_i / r_i^{3}\) y se suman componente a componente. Es fundamental dibujar un esquema con los vectores para no equivocarse en los signos y direcciones.</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">7</span>
+                <strong>Punto de campo gravitatorio nulo entre dos masas.</strong>
+            </summary>
+            <p>Entre dos masas puntuales \(m\) (menor) y \(M\) (mayor) separadas una distancia \(d\), existe un punto donde los campos individuales tienen igual módulo y sentidos opuestos, anulándose el campo total. La distancia \(x\) desde la masa menor viene dada por:</p>
+            <div class="formula-box">
+                \[
+                x = d\,\frac{\sqrt{m}}{\sqrt{m}+\sqrt{M}}
+                \]
+            </div>
+            <p>Este punto está siempre entre ambas masas y más cerca de la masa menor.</p>
+        </details>
+
+        <div class="note">
+            <strong>💡 Observaciones sobre el alumnado:</strong> los errores más frecuentes son (i) confundir la distancia \(r\) con la altura \(h\) (hay que sumar el radio del astro); (ii) olvidar que el campo gravitatorio es siempre atractivo (signo negativo en la expresión vectorial); (iii) sumar módulos en lugar de componentes vectoriales; (iv) no dibujar las líneas de campo correctamente (deben ser radiales y hacia la masa); (v) confundir la gravedad superficial con la gravedad a una altura determinada. Se recomienda trabajar siempre con esquemas y homogeneizar las unidades al S.I.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- ANÁLISIS DE FÓRMULAS (DESPLEGABLE)                            -->
+    <!-- ============================================================ -->
+    <details class="section resultado">
+        <summary><h2>🧮 Análisis de las fórmulas del tema A4</h2></summary>
+        <p>Recogemos en una tabla las expresiones clave del tema, con su significado físico, las variables implicadas y las condiciones de aplicación:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Fórmula</th>
+                    <th>Significado físico</th>
+                    <th>Variables y unidades</th>
+                    <th>Condiciones de aplicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>\(\vec g = \dfrac{\vec F}{m}\)</td>
+                    <td>Definición de intensidad de campo gravitatorio.</td>
+                    <td>\(\vec g\) en \(\text{N}\cdot\text{kg}^{-1}\); \(\vec F\) en \(\text{N}\); \(m\) en \(\text{kg}\).</td>
+                    <td>Válida en cualquier punto del espacio.</td>
+                </tr>
+                <tr>
+                    <td>\(\vec g = -\,G\,\dfrac{M}{r^{2}}\,\hat u_r\)</td>
+                    <td>Campo gravitatorio de una masa puntual (forma vectorial).</td>
+                    <td>\(\vec g\) en \(\text{N}\cdot\text{kg}^{-1}\); \(M\) en \(\text{kg}\); \(r\) en \(\text{m}\); \(\hat u_r\) vector unitario radial.</td>
+                    <td>Masa puntual o distribución esférica en su exterior.</td>
+                </tr>
+                <tr>
+                    <td>\(g = G\,\dfrac{M}{r^{2}}\)</td>
+                    <td>Módulo del campo gravitatorio a distancia \(r\).</td>
+                    <td>\(g\) en \(\text{N}\cdot\text{kg}^{-1}\); \(M\) en \(\text{kg}\); \(r\) en \(\text{m}\).</td>
+                    <td>Masa puntual o esfera en su exterior.</td>
+                </tr>
+                <tr>
+                    <td>\(g_0 = G\,\dfrac{M}{R^{2}}\)</td>
+                    <td>Gravedad superficial de un astro esférico.</td>
+                    <td>\(g_0\) en \(\text{m}\cdot\text{s}^{-2}\); \(M\) en \(\text{kg}\); \(R\) en \(\text{m}\).</td>
+                    <td>Superficie de un cuerpo esférico.</td>
+                </tr>
+                <tr>
+                    <td>\(g(h) = G\,\dfrac{M}{(R+h)^{2}}\)</td>
+                    <td>Campo gravitatorio a una altura \(h\) sobre la superficie.</td>
+                    <td>\(g(h)\) en \(\text{N}\cdot\text{kg}^{-1}\); \(h\) en \(\text{m}\).</td>
+                    <td>Punto exterior a un astro esférico.</td>
+                </tr>
+                <tr>
+                    <td>\(g_{\text{orb}} = \dfrac{v^{2}}{r}\)</td>
+                    <td>Relación entre el campo gravitatorio y la aceleración centrípeta en una órbita circular.</td>
+                    <td>\(g_{\text{orb}}\) en \(\text{m}\cdot\text{s}^{-2}\); \(v\) en \(\text{m}\cdot\text{s}^{-1}\); \(r\) en \(\text{m}\).</td>
+                    <td>Órbita circular alrededor de una masa central.</td>
+                </tr>
+                <tr>
+                    <td>\(\vec g_{\text{total}} = \sum_i \vec g_i\)</td>
+                    <td>Principio de superposición vectorial.</td>
+                    <td>\(\vec g_{\text{total}}\) en \(\text{N}\cdot\text{kg}^{-1}\).</td>
+                    <td>Varias masas puntuales; suma componente a componente.</td>
+                </tr>
+                <tr>
+                    <td>\(x = d\,\dfrac{\sqrt{m}}{\sqrt{m}+\sqrt{M}}\)</td>
+                    <td>Posición del punto de campo nulo entre dos masas.</td>
+                    <td>\(x\) y \(d\) en \(\text{m}\); \(m\) y \(M\) en \(\text{kg}\) (\(m<M\)).</td>
+                    <td>Punto entre las dos masas, más cerca de la menor.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note">
+            <strong>⚠️ Errores frecuentes:</strong> confundir \(r\) (distancia al centro) con \(h\) (altura sobre la superficie); olvidar el signo negativo en la expresión vectorial del campo; sumar módulos en lugar de componentes vectoriales; no dibujar las líneas de campo hacia la masa; y confundir la gravedad superficial con la gravedad a una altura \(h\).
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- PROBLEMAS RESUELTOS (EBAU Castilla y León y otras)           -->
+    <!-- ============================================================ -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🔭 Problemas resueltos de EBAU — Castilla y León (Tema A4)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas</strong> de las pruebas de acceso a la universidad de <strong>Castilla y León</strong>, todos ellos relacionados con el tema A4 (intensidad de campo gravitatorio y líneas de campo). Se indica la comunidad, el año, la convocatoria (ordinaria/extraordinaria) y el número de problema.
+            </p>
+
+            <!-- PROBLEMA 1 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Peso de un satélite en órbita vs. en la superficie terrestre</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un satélite artificial de masa \(1500\,\text{kg}\) se lanza desde la Tierra para situarlo en una órbita circular de \(12\,500\,\text{km}\) de radio. Determine la diferencia entre el peso del satélite en la órbita y el que tenía en la superficie terrestre. Datos: \(g_0=9{,}80\,\text{m}\cdot\text{s}^{-2}\); \(G=6{,}67\cdot10^{-11}\,\text{N}\cdot\text{m}^{2}\cdot\text{kg}^{-2}\); \(R_T=6{,}37\cdot10^{6}\,\text{m}\); \(M_T=5{,}98\cdot10^{24}\,\text{kg}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Peso en la superficie:</strong> \(P_{\text{sup}}=m\,g_0=1500\cdot9{,}80\approx1{,}47\cdot10^{4}\,\text{N}\).</div>
+                    <div class="paso"><strong>Campo gravitatorio en la órbita:</strong> \(r=1{,}25\cdot10^{7}\,\text{m}\). \(g_{\text{orb}}=G\,M_T/r^{2}=6{,}67\cdot10^{-11}\cdot5{,}98\cdot10^{24}/(1{,}25\cdot10^{7})^{2}\approx2{,}55\,\text{m}\cdot\text{s}^{-2}\).</div>
+                    <div class="paso"><strong>Peso en la órbita:</strong> \(P_{\text{orb}}=m\,g_{\text{orb}}\approx3{,}83\cdot10^{3}\,\text{N}\).</div>
+                    <div class="formula-box">
+                        \[
+                        \Delta P=P_{\text{sup}}-P_{\text{orb}}\approx1{,}09\cdot10^{4}\,\text{N}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(\Delta P\approx1{,}09\cdot10^{4}\,\text{N}\). El peso en órbita es mucho menor que en la superficie.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 2 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Intensidad de gravedad a distintas distancias del centro terrestre</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>En un cierto punto \(A\) la intensidad de la gravedad es la mitad que en la superficie de la Tierra, mientras que en otro punto \(B\) es la cuarta parte. Determine la distancia de ambos puntos al centro de la Tierra y la velocidad mínima que debe llevar un objeto en \(A\) para poder alcanzar el punto \(B\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Radios en \(A\) y \(B\):</strong> \(g = G\,M_T/r^{2}\). En \(A\): \(g_A=g_0/2 \Rightarrow r_A=R_T\sqrt{2}\approx9{,}01\cdot10^{6}\,\text{m}\). En \(B\): \(g_B=g_0/4 \Rightarrow r_B=2R_T=1{,}274\cdot10^{7}\,\text{m}\).</div>
+                    <div class="paso"><strong>Velocidad mínima en \(A\) para alcanzar \(B\):</strong> Por conservación de la energía mecánica entre \(A\) y \(B\) (con \(v_B=0\)):</div>
+                    <div class="formula-box">
+                        \[
+                        \frac{1}{2}m v_A^{2}-\frac{G M_T m}{r_A}=-\frac{G M_T m}{r_B} \Rightarrow v_A=\sqrt{2GM_T\left(\frac{1}{r_A}-\frac{1}{r_B}\right)}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        v_A\approx5{,}08\cdot10^{3}\,\text{m}\cdot\text{s}^{-1}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(r_A=9{,}01\cdot10^{6}\,\text{m}\); \(r_B=1{,}274\cdot10^{7}\,\text{m}\); \(v_{A,\text{mín}}=5{,}08\cdot10^{3}\,\text{m}\cdot\text{s}^{-1}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 3 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Satélite con \(g_{\text{orbital}} = g_0/2\): energía cinética y potencial</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Ordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un satélite artificial de \(100\,\text{kg}\) describe una órbita circular alrededor de la Tierra. La gravedad en un punto de su órbita es la mitad que la gravedad en la superficie terrestre. Determine el valor de su energía cinética y potencial.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Radio de la órbita:</strong> \(g_{\text{orb}}=g_0/2 \Rightarrow r=R_T\sqrt{2}\).</div>
+                    <div class="paso"><strong>Velocidad orbital:</strong> \(v^{2}=g_{\text{orb}}\,r\).</div>
+                    <div class="paso"><strong>Energía cinética:</strong> \(E_c=\frac{1}{2}m v^{2}=\frac{1}{2}m\,g_{\text{orb}}\,r\).</div>
+                    <div class="paso"><strong>Energía potencial:</strong> \(E_p=-m\,g_{\text{orb}}\,r\).</div>
+                    <div class="formula-box">
+                        \[
+                        E_c=\frac{GM_T m}{2r}=\frac{1}{2}m\,g_{\text{orb}}\,r; \qquad E_p=-\frac{GM_T m}{r}=-m\,g_{\text{orb}}\,r
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(E_c=\frac{1}{2}m\,g_{\text{orb}}\,r\); \(E_p=-m\,g_{\text{orb}}\,r\), con \(r=R_T\sqrt{2}\) y \(g_{\text{orb}}=g_0/2\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 4 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Intensidad gravitatoria de Marte en la órbita de Deimos</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Deimos es un satélite que gira alrededor de Marte en una órbita circular de \(23\,460\,\text{km}\) de radio con un periodo orbital de \(30{,}3\,\text{h}\). Determine el valor de la intensidad gravitatoria debida a Marte en un punto de la órbita de Deimos.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Relación entre campo y aceleración centrípeta:</strong> en órbita circular, \(g=v^{2}/r=4\pi^{2}r/T^{2}\).</div>
+                    <div class="paso"><strong>Sustitución:</strong> \(r=2{,}346\cdot10^{7}\,\text{m}\); \(T=1{,}0908\cdot10^{5}\,\text{s}\).</div>
+                    <div class="formula-box">
+                        \[
+                        g=\frac{4\pi^{2}(2{,}346\cdot10^{7})}{(1{,}0908\cdot10^{5})^{2}}=7{,}79\cdot10^{-2}\,\text{m}\cdot\text{s}^{-2}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(g=7{,}79\cdot10^{-2}\,\text{m}\cdot\text{s}^{-2}\) hacia el centro de Marte.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 5 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Densidad media de un planeta a partir de su gravedad superficial</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Extraordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Calcule la densidad media de un planeta esférico de \(6000\,\text{km}\) de diámetro si la aceleración de la gravedad en su superficie es \(4\,\text{m}\cdot\text{s}^{-2}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Radio:</strong> \(R=3000\,\text{km}=3{,}00\cdot10^{6}\,\text{m}\).</div>
+                    <div class="paso"><strong>Masa a partir de \(g\):</strong> \(M=gR^{2}/G\).</div>
+                    <div class="paso"><strong>Densidad:</strong> \(\rho=M/V=\frac{3g}{4\pi G R}\).</div>
+                    <div class="formula-box">
+                        \[
+                        \rho=\frac{3\cdot4}{4\pi\cdot6{,}67\cdot10^{-11}\cdot3{,}00\cdot10^{6}}\approx4{,}77\cdot10^{3}\,\text{kg}\cdot\text{m}^{-3}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(\rho\approx4{,}77\cdot10^{3}\,\text{kg}\cdot\text{m}^{-3}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 6 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Punto donde se anula el campo gravitatorio entre dos masas</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Extraordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Dos masas puntuales \(m_1=8\,\text{kg}\) y \(m_2=15\,\text{kg}\) se encuentran a una distancia \(5a\), con \(a=1\,\text{m}\). Determine: a) la aceleración que adquiere la partícula de masa \(m=5\,\text{kg}\) en el punto donde el campo gravitatorio se anula; b) la energía potencial gravitatoria de la partícula de masa \(m=5\,\text{kg}\) en ese punto. Dato: \(G=6{,}7\cdot10^{-11}\,\text{N}\cdot\text{m}^{2}\cdot\text{kg}^{-2}\).</div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Punto de campo nulo:</strong> entre las masas, a distancia \(x\) de \(m_1\): \(\sqrt{8}/x = \sqrt{15}/(5-x) \Rightarrow x=2{,}11\,\text{m}\).</div>
+                    <div class="paso"><strong>Aceleración en ese punto:</strong> como el campo resultante es nulo, la fuerza neta sobre cualquier masa colocada allí es nula: \(a=0\,\text{m}\cdot\text{s}^{-2}\).</div>
+                    <div class="paso"><strong>Energía potencial:</strong> \(U=-G\,m\left(m_1/r_1+m_2/r_2\right)\) con \(r_1=2{,}11\,\text{m}\) y \(r_2=2{,}89\,\text{m}\).</div>
+                    <div class="formula-box">
+                        \[
+                        U=-6{,}7\cdot10^{-11}\cdot5\left(\frac{8}{2{,}11}+\frac{15}{2{,}89}\right)=-3{,}01\cdot10^{-9}\,\text{J}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(a=0\,\text{m}\cdot\text{s}^{-2}\); \(U=-3{,}01\cdot10^{-9}\,\text{J}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Líneas de campo y superficies equipotenciales (cuestión teórica)</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Extraordinaria · Problema 1 (cuestión)</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Razone si la siguiente afirmación es verdadera o falsa: «Las líneas del campo gravitatorio son tangentes en cada punto a las superficies equipotenciales».</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Relación campo-potencial:</strong> \(\vec g=-\nabla V\). El campo es perpendicular a las superficies equipotenciales (donde \(V=\text{cte}\)), no tangente.</div>
+                    <div class="paso"><strong>Conclusión:</strong> la afirmación es falsa. Las líneas de campo gravitatorio son perpendiculares a las superficies equipotenciales en cada punto. Si fueran tangentes, no habría variación de potencial a lo largo de la línea de campo, lo cual es absurdo.</div>
+                    <div class="formula-box">
+                        \[
+                        \vec g \perp \text{superficies equipotenciales}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> Falsa. Las líneas de campo son perpendiculares, no tangentes, a las superficies equipotenciales.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 8 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Energía para poner el satélite CHEOPS en órbita (incluye \(g\) a altura)</span>
+                    <span class="meta-ej">Castilla y León · 2020 · Extraordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>CHEOPS es un satélite de la Agencia Espacial Europea, de \(300\,\text{kg}\) de masa, que se encuentra orbitando a \(700\,\text{km}\) de altura sobre la superficie terrestre en una órbita aproximadamente circular. Calcule la energía requerida para que, desde la superficie de la Tierra, el satélite pasara a describir dicha órbita.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Energía en superficie:</strong> \(E_{\text{sup}}=-GM_T m/R_T\).</div>
+                    <div class="paso"><strong>Energía en órbita:</strong> \(E_{\text{orb}}=-GM_T m/(2r)\), con \(r=R_T+h\).</div>
+                    <div class="paso"><strong>Diferencia:</strong> \(\Delta E=GM_T m\left(1/R_T-1/(2r)\right)\).</div>
+                    <div class="formula-box">
+                        \[
+                        \Delta E\approx1{,}03\cdot10^{10}\,\text{J}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(\Delta E\approx1{,}03\cdot10^{10}\,\text{J}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 9 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">Relación entre energía cinética y potencial en órbita circular</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 12</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Deduzca la relación entre la energía cinética y la energía potencial de un satélite que describe una órbita circular alrededor de un planeta.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Igualdad gravedad-centrípeta:</strong> \(GMm/r^{2}=mv^{2}/r \Rightarrow v^{2}=GM/r\).</div>
+                    <div class="paso"><strong>Energía cinética:</strong> \(E_c=\frac{1}{2}mv^{2}=\frac{GMm}{2r}\).</div>
+                    <div class="paso"><strong>Energía potencial:</strong> \(E_p=-GMm/r\).</div>
+                    <div class="formula-box">
+                        \[
+                        E_c=-\frac{1}{2}E_p
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(E_c=-E_p/2\); la energía mecánica total es \(E_m=E_c+E_p=-GMm/(2r)\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">Energía aportada para elevar la ISS 360 m (variación de \(g\) con la altura)</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>En abril del 2021 se corrigió la altitud sobre la superficie de la Tierra a la que orbita la Estación Espacial Internacional, de forma que su valor alcanzó los \(420\,\text{km}\) tras un aumento de \(360\,\text{m}\). Sabiendo que su masa es \(4{,}2\cdot10^{5}\,\text{kg}\), determine la energía que aportaron sus motores para conseguir esa modificación.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Energía mecánica en órbita circular:</strong> \(E_m=-GM_T m/(2r)\).</div>
+                    <div class="paso"><strong>Diferencia:</strong> \(\Delta E=\frac{GM_T m}{2}\left(1/r_1-1/r_2\right)\), con \(r_1=R_T+419\,640\,\text{m}\) y \(r_2=R_T+420\,000\,\text{m}\).</div>
+                    <div class="formula-box">
+                        \[
+                        \Delta E\approx6{,}55\cdot10^{8}\,\text{J}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(\Delta E=6{,}55\cdot10^{8}\,\text{J}\).</div>
+                </div>
+            </details>
+
+            <!-- PIE DIDÁCTICO -->
+            <div class="pie-clave">
+                <i class="fas fa-lightbulb"></i>
+                <span><strong>Observaciones clave:</strong> en todos estos problemas, el patrón de resolución es: (1) identificar los datos y las incógnitas; (2) dibujar un esquema con las masas y los vectores campo implicados; (3) calcular las distancias desde los centros de las masas (no desde la superficie); (4) aplicar \(g=GM/r^{2}\) o \(g=GM/(R+h)^{2}\) para cada masa; (5) descomponer en componentes y sumar vectorialmente; (6) recordar que el campo gravitatorio es siempre atractivo (hacia la masa). Recuerda siempre homogeneizar las unidades al S.I. y no confundir campo (vectorial) con potencial (escalar).</span>
+            </div>
+
+        </div> <!-- fin contenido-desplegable -->
+    </details>
+
+    <!-- ============================================ -->
+    <!-- BLOQUE "ES HORA DE"                          -->
+    <!-- ============================================ -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p>
+                <br> Domina la intensidad de campo gravitatorio y las líneas de campo.<br>
+                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
+            </p>
+
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- ===================FIN DE ES HORA DE ==================== -->
+
+</div> <!-- fin container -->
+</body>
+</html>

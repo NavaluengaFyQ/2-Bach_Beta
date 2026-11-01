@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema A1. Ley de la gravitación universal y superposición vectorial</title>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body> 
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                <span class="codigo">#TEMA A1.- </span>
+                <span class="texto">Ley de la gravitación universal y superposición vectorial</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- MAPA DE BLOQUES Y TEMAS (DESPLEGABLE)                         -->
+    <!-- =========================================================== -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque A. Campo gravitatorio</strong> del currículo de Física de 2º de Bachillerato (Decreto 40/2022, BOCYL-D-30092022-4).</p>
+
+        <div class="mapa-bloques">
+            <!-- BLOQUE A (ACTUAL) -->
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista">
+                    <span class="tema-chip actual">A1</span>
+                    <span class="tema-chip">A2</span>
+                    <span class="tema-chip">A3</span>
+                    <span class="tema-chip">A4</span>
+                    <span class="tema-chip">A5</span>
+                    <span class="tema-chip">A6</span>
+                    <span class="tema-chip">A7</span>
+                    <span class="tema-chip">A8</span>
+                </div>
+            </div>
+            <!-- BLOQUE B -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span>
+                    <span class="tema-chip">B2</span>
+                    <span class="tema-chip">B3</span>
+                    <span class="tema-chip">B4</span>
+                    <span class="tema-chip">B5</span>
+                    <span class="tema-chip">B6</span>
+                    <span class="tema-chip">B7</span>
+                    <span class="tema-chip">B8</span>
+                    <span class="tema-chip">B9</span>
+                </div>
+            </div>
+            <!-- BLOQUE C -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">C1</span>
+                    <span class="tema-chip">C2</span>
+                    <span class="tema-chip">C3</span>
+                    <span class="tema-chip">C4</span>
+                    <span class="tema-chip">C5</span>
+                    <span class="tema-chip">C6</span>
+                </div>
+            </div>
+            <!-- BLOQUE D -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">D1</span>
+                    <span class="tema-chip">D2</span>
+                    <span class="tema-chip">D3</span>
+                    <span class="tema-chip">D4</span>
+                    <span class="tema-chip">D5</span>
+                    <span class="tema-chip">D6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque A · Tema A1:</strong> <span class="texto-resaltado">Ley de la Gravitación Universal y superposición vectorial.</span>
+            <br>
+            <em>En este tema estudiaremos:</em> la ley de gravitación universal de Newton, el concepto de masa puntual, la constante de gravitación universal \(G\), el campo gravitatorio, el potencial gravitatorio y el principio de superposición vectorial aplicado a la resolución de problemas con varias masas puntuales.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- OBJETIVOS (DESPLEGABLE)                                       -->
+    <!-- ============================================================ -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Enunciar y aplicar la ley de gravitación universal de Newton, comprendiendo el significado de cada una de sus magnitudes y su dependencia con la distancia.</li>
+            <li>Identificar el carácter universal, atractivo, central y conservativo de la fuerza gravitatoria.</li>
+            <li>Comprender el concepto de masa puntual y la equivalencia, en el exterior, con distribuciones esféricas de masa.</li>
+            <li>Aplicar el principio de superposición vectorial para calcular la fuerza resultante o el campo gravitatorio resultante debido a varias masas puntuales.</li>
+            <li>Determinar el campo gravitatorio creado por una o varias masas puntuales en un punto del espacio, así como el potencial gravitatorio y la energía potencial.</li>
+            <li>Localizar el punto (o la recta) donde el campo gravitatorio resultante se anula entre dos masas puntuales.</li>
+            <li>Relacionar campo y potencial gravitatorios y utilizar el concepto de trabajo gravitatorio.</li>
+            <li>Resolver problemas numéricos y de razonamiento característicos de la PAU/EBAU de Castilla y León sobre este tema.</li>
+        </ul>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- CONTENIDO TEÓRICO (DESPLEGABLE)                               -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">1</span>
+                <strong>Ley de la Gravitación Universal.</strong>
+            </summary>
+            <p>Formulada por Isaac Newton en 1687 en sus <em>Philosophiæ Naturalis Principia Mathematica</em>, la ley de gravitación universal establece que <strong>dos masas puntuales cualesquiera se atraen mutuamente</strong> con una fuerza cuya dirección pasa por la línea que une sus centros y cuyo módulo es directamente proporcional al producto de las masas e inversamente proporcional al cuadrado de la distancia que las separa:</p>
+            <div class="formula-box">
+                \[
+                F = G\,\frac{m_1\,m_2}{r^{2}}
+                \]
+            </div>
+            <p>donde \(G=6{,}67\cdot10^{-11}\,\text{N}\cdot\text{m}^{2}\cdot\text{kg}^{-2}\) es la <strong>constante de gravitación universal</strong>, cuyo valor no depende del medio ni de las masas que interaccionan.</p>
+            <p><strong>Propiedades esenciales:</strong></p>
+            <ul>
+                <li>Es una fuerza <strong>universal</strong>: la misma ley describe la caída de una manzana, el movimiento de los planetas, la órbita de los satélites y la dinámica de las galaxias.</li>
+                <li>Es una fuerza <strong>siempre atractiva</strong>: no existen masas negativas, por lo que dos masas cualesquiera siempre se atraen.</li>
+                <li>Es una fuerza <strong>central</strong>: su dirección pasa por la recta que une las dos masas.</li>
+                <li>Es una fuerza <strong>conservativa</strong>: deriva de un potencial, por lo que el trabajo realizado depende solo de las posiciones inicial y final, no del camino seguido.</li>
+                <li>Es una <strong>interacción de largo alcance</strong>: su intensidad decae con el cuadrado de la distancia, pero nunca se anula del todo.</li>
+                <li>Es la <strong>más débil</strong> de las cuatro interacciones fundamentales (gravedad, electromagnetismo, nuclear fuerte, nuclear débil). Su dominio a escala astronómica se debe a que es acumulativa (siempre atractiva) y de largo alcance.</li>
+            </ul>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">2</span>
+                <strong>Masa puntual y distribuciones esféricas.</strong>
+            </summary>
+            <p>La ley de gravitación se enuncia para <strong>masas puntuales</strong>, es decir, para partículas sin extensión espacial. Sin embargo, el <strong>teorema de la corteza de Newton</strong> demuestra que una distribución esférica de masa con densidad que solo dependa del radio se comporta, en su <strong>exterior</strong>, como si toda su masa estuviera concentrada en su centro. Por eso podemos aplicar la ley con \(r\) igual a la distancia entre los centros de dos cuerpos esféricos, como planetas, estrellas o satélites.</p>
+            <div class="note">
+                <strong>Importante:</strong> en el interior de una esfera hueca, la fuerza gravitatoria neta es cero; en el interior de una esfera maciza, la fuerza es proporcional a la distancia al centro.
+            </div>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">3</span>
+                <strong>Expresión vectorial de la fuerza gravitatoria.</strong>
+            </summary>
+            <p>Para trabajar correctamente con varias masas, es necesario escribir la fuerza gravitatoria en forma vectorial. Si \(m_1\) y \(m_2\) están en posiciones \(\vec r_1\) y \(\vec r_2\), el vector que va de \(m_1\) a \(m_2\) es \(\vec r = \vec r_2 - \vec r_1\), y su módulo \(r = |\vec r|\). La fuerza que \(m_1\) ejerce sobre \(m_2\) es:</p>
+            <div class="formula-box">
+                \[
+                \vec F_{1\to 2}
+                = -\,G\,\frac{m_1\,m_2}{r^{2}}\,\hat u_{12}
+                = -\,G\,\frac{m_1\,m_2}{r^{3}}\,\vec r
+                \]
+            </div>
+            <p>El signo negativo indica el carácter atractivo: la fuerza sobre \(m_2\) apunta en sentido opuesto a \(\vec r\), es decir, hacia \(m_1\). Por la tercera ley de Newton, \(\vec F_{2\to 1} = -\vec F_{1\to 2}\).</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">4</span>
+                <strong>Campo gravitatorio.</strong>
+            </summary>
+            <p>El <strong>campo gravitatorio</strong> es una magnitud vectorial que representa la fuerza gravitatoria por unidad de masa. Para una masa puntual \(M\) en el origen:</p>
+            <div class="formula-box">
+                \[
+                \vec g(\vec r) = \frac{\vec F}{m} = -\,G\,\frac{M}{r^{2}}\,\hat u_{r}
+                \]
+            </div>
+            <p>Módulo:</p>
+            <div class="formula-box">
+                \[
+                g = G\,\frac{M}{r^{2}}
+                \]
+            </div>
+            <p>El campo gravitatorio en un punto siempre apunta hacia la masa creadora. Su unidad en el S.I. es el \(\text{N}\cdot\text{kg}^{-1}\), equivalente al \(\text{m}\cdot\text{s}^{-2}\) (es una aceleración). En la superficie de un astro de masa \(M\) y radio \(R\), el módulo se llama <strong>gravedad superficial</strong>:</p>
+            <div class="formula-box">
+                \[
+                g_0 = G\,\frac{M}{R^{2}}
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">5</span>
+                <strong>Principio de superposición vectorial.</strong>
+            </summary>
+            <p>Cuando una masa de prueba \(m\) está sometida a la acción de varias masas puntuales \(M_1, M_2, \dots, M_n\), la fuerza gravitatoria resultante es la <strong>suma vectorial</strong> de las fuerzas individuales:</p>
+            <div class="formula-box">
+                \[
+                \vec F_{\text{total}} = \vec F_1 + \vec F_2 + \dots + \vec F_n
+                \]
+            </div>
+            <p>Análogamente, el campo gravitatorio total en un punto es la suma vectorial de los campos creados por cada masa:</p>
+            <div class="formula-box">
+                \[
+                \vec g_{\text{total}} = \vec g_1 + \vec g_2 + \dots + \vec g_n
+                \]
+            </div>
+            <p><strong>Procedimiento de resolución:</strong></p>
+            <ol>
+                <li>Dibujar un esquema con las masas y el punto donde se calcula el campo o la fuerza.</li>
+                <li>Dibujar cada vector \(\vec g_i\) (o \(\vec F_i\)) apuntando hacia su masa correspondiente.</li>
+                <li>Calcular el módulo de cada contribución con \(g_i = G M_i / r_i^{2}\).</li>
+                <li>Descomponer cada vector en componentes cartesianas utilizando los cosenos directores del vector unitario.</li>
+                <li>Sumar componente a componente.</li>
+                <li>Calcular el módulo final con el teorema de Pitágoras y dar la dirección mediante un ángulo o un vector unitario.</li>
+            </ol>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">6</span>
+                <strong>Potencial gravitatorio.</strong>
+            </summary>
+            <p>El <strong>potencial gravitatorio</strong> \(V\) en un punto es la energía potencial gravitatoria por unidad de masa. Con el origen de potencial fijado en el infinito (\(V(\infty)=0\)):</p>
+            <div class="formula-box">
+                \[
+                V = -\,G\,\frac{M}{r}
+                \]
+            </div>
+            <p>El potencial es una magnitud <strong>escalar</strong> (no vectorial) y siempre negativa. Su unidad en el S.I. es el \(\text{J}\cdot\text{kg}^{-1}\). Para varias masas, el potencial total es la suma algebraica (escalar) de los potenciales individuales:</p>
+            <div class="formula-box">
+                \[
+                V_{\text{total}} = \sum_i V_i = -\,G\,\sum_i \frac{M_i}{r_i}
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">7</span>
+                <strong>Energía potencial gravitatoria.</strong>
+            </summary>
+            <p>La <strong>energía potencial gravitatoria</strong> de una masa \(m\) situada a distancia \(r\) de una masa \(M\) es:</p>
+            <div class="formula-box">
+                \[
+                E_p = -\,G\,\frac{M\,m}{r}
+                \]
+            </div>
+            <p>Para varias masas, la energía potencial total es:</p>
+            <div class="formula-box">
+                \[
+                E_{p,\text{total}} = m\,V_{\text{total}} = -\,G\,m\,\sum_i \frac{M_i}{r_i}
+                \]
+            </div>
+            <p>Como la fuerza gravitatoria es conservativa, el trabajo realizado por el campo al desplazar una masa entre dos puntos \(A\) y \(B\) es:</p>
+            <div class="formula-box">
+                \[
+                W_{A\to B} = m\,(V_A - V_B) = -\Delta E_p = E_{p,A} - E_{p,B}
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">8</span>
+                <strong>Relación entre campo y potencial.</strong>
+            </summary>
+            <p>El campo gravitatorio es el gradiente cambiado de signo del potencial:</p>
+            <div class="formula-box">
+                \[
+                \vec g = -\,\nabla V
+                = -\left(\frac{\partial V}{\partial x}\,\hat i
+                + \frac{\partial V}{\partial y}\,\hat j
+                + \frac{\partial V}{\partial z}\,\hat k\right)
+                \]
+            </div>
+            <p>Consecuencia geométrica: las líneas de campo son perpendiculares a las superficies equipotenciales y apuntan en el sentido de \(V\) decreciente.</p>
+        </details>
+
+        <details class="step">
+            <summary>
+                <span class="step-num">9</span>
+                <strong>Punto de campo gravitatorio nulo entre dos masas.</strong>
+            </summary>
+            <p>Entre dos masas puntuales \(m\) (menor) y \(M\) (mayor) separadas una distancia \(d\), existe un punto donde el campo gravitatorio resultante se anula. En ese punto los campos individuales tienen igual módulo y sentidos opuestos:</p>
+            <div class="formula-box">
+                \[
+                G\,\frac{m}{x^{2}} = G\,\frac{M}{(d-x)^{2}}
+                \quad\Longrightarrow\quad
+                \frac{\sqrt{m}}{x} = \frac{\sqrt{M}}{d-x}
+                \]
+            </div>
+            <p>Despejando \(x\) (distancia a la masa menor):</p>
+            <div class="formula-box">
+                \[
+                x = d\,\frac{\sqrt{m}}{\sqrt{m}+\sqrt{M}}
+                \]
+            </div>
+            <p>El punto de campo nulo está siempre entre las dos masas y más cerca de la menor. En ese punto el potencial gravitatorio total es negativo, no nulo.</p>
+        </details>
+
+        <div class="note">
+            <strong>💡 Observaciones sobre el alumnado:</strong> los errores más frecuentes son (i) medir la distancia desde la superficie en lugar del centro; (ii) sumar módulos en lugar de componentes vectoriales; (iii) confundir el campo con el potencial; (iv) olvidar el signo negativo del potencial y de la energía potencial; (v) mezclar el punto de campo nulo con el de potencial nulo. Recomendamos trabajar siempre con esquemas vectoriales y homogeneizar las unidades al S.I. antes de aplicar cualquier fórmula.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- ANÁLISIS DE FÓRMULAS (DESPLEGABLE)                            -->
+    <!-- ============================================================ -->
+    <details class="section resultado">
+        <summary><h2>🧮 Análisis de las fórmulas del tema A1</h2></summary>
+        <p>Recogemos en una tabla las expresiones clave del tema, con su significado físico, las variables implicadas y las condiciones de aplicación:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Fórmula</th>
+                    <th>Significado físico</th>
+                    <th>Variables y unidades</th>
+                    <th>Condiciones de aplicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>\(F=G\dfrac{m_1m_2}{r^{2}}\)</td>
+                    <td>Ley de gravitación universal (módulo).</td>
+                    <td>\(F\) en N; \(m_1,m_2\) en kg; \(r\) en m; \(G=6{,}67\cdot10^{-11}\,\text{N}\cdot\text{m}^{2}\cdot\text{kg}^{-2}\).</td>
+                    <td>Masas puntuales; o masas esféricas con \(r\) = distancia entre centros.</td>
+                </tr>
+                <tr>
+                    <td>\(\vec F=-G\dfrac{m_1m_2}{r^{3}}\,\vec r\)</td>
+                    <td>Ley de gravitación universal (forma vectorial).</td>
+                    <td>\(\vec F\) en N; \(\vec r\) es el vector de \(m_1\) a \(m_2\), en m.</td>
+                    <td>Mismas condiciones que la anterior.</td>
+                </tr>
+                <tr>
+                    <td>\(g=G\dfrac{M}{r^{2}}\)</td>
+                    <td>Módulo del campo gravitatorio creado por una masa puntual.</td>
+                    <td>\(g\) en \(\text{N}\cdot\text{kg}^{-1}\) (= \(\text{m}\cdot\text{s}^{-2}\)); \(M\) en kg; \(r\) en m.</td>
+                    <td>Masa puntual o esférica en su exterior.</td>
+                </tr>
+                <tr>
+                    <td>\(\vec g=\sum_i\vec g_i\)</td>
+                    <td>Principio de superposición vectorial para el campo gravitatorio.</td>
+                    <td>\(\vec g\) en \(\text{N}\cdot\text{kg}^{-1}\).</td>
+                    <td>Varias masas puntuales; los vectores se suman componente a componente.</td>
+                </tr>
+                <tr>
+                    <td>\(V=-G\dfrac{M}{r}\)</td>
+                    <td>Potencial gravitatorio creado por una masa puntual.</td>
+                    <td>\(V\) en \(\text{J}\cdot\text{kg}^{-1}\); \(M\) en kg; \(r\) en m.</td>
+                    <td>Origen de potencial en el infinito; magnitud escalar (siempre negativa).</td>
+                </tr>
+                <tr>
+                    <td>\(V_{\text{total}}=\sum_iV_i\)</td>
+                    <td>Superposición del potencial gravitatorio.</td>
+                    <td>\(V\) en \(\text{J}\cdot\text{kg}^{-1}\).</td>
+                    <td>Suma algebraica (escalar) de los potenciales individuales.</td>
+                </tr>
+                <tr>
+                    <td>\(E_p=-G\dfrac{Mm}{r}\)</td>
+                    <td>Energía potencial gravitatoria de una masa \(m\) en el campo de \(M\).</td>
+                    <td>\(E_p\) en J; \(M,m\) en kg; \(r\) en m.</td>
+                    <td>Origen en el infinito; \(E_p\) negativa para sistemas ligados.</td>
+                </tr>
+                <tr>
+                    <td>\(\vec g=-\nabla V\)</td>
+                    <td>Relación local entre campo y potencial gravitatorios.</td>
+                    <td>\(\vec g\) en \(\text{N}\cdot\text{kg}^{-1}\); \(V\) en \(\text{J}\cdot\text{kg}^{-1}\).</td>
+                    <td>Campo conservativo; las líneas de campo son perpendiculares a las superficies equipotenciales.</td>
+                </tr>
+                <tr>
+                    <td>\(g_0=G\dfrac{M}{R^{2}}\)</td>
+                    <td>Gravedad superficial en un astro esférico.</td>
+                    <td>\(g_0\) en \(\text{m}\cdot\text{s}^{-2}\); \(M\) en kg; \(R\) en m.</td>
+                    <td>Superficie de un cuerpo esférico de masa \(M\) y radio \(R\).</td>
+                </tr>
+                <tr>
+                    <td>\(x=d\dfrac{\sqrt{m}}{\sqrt{m}+\sqrt{M}}\)</td>
+                    <td>Posición del punto de campo gravitatorio nulo entre dos masas.</td>
+                    <td>\(x,d\) en m; \(m,M\) en kg (\(m<M\)).</td>
+                    <td>Punto entre las dos masas (siempre más cerca de la menor).</td>
+                </tr>
+                <tr>
+                    <td>\(W_{A\to B}=m(V_A-V_B)\)</td>
+                    <td>Trabajo realizado por el campo gravitatorio entre dos puntos.</td>
+                    <td>\(W\) en J; \(m\) en kg; \(V\) en \(\text{J}\cdot\text{kg}^{-1}\).</td>
+                    <td>Fuerza gravitatoria conservativa; independiente del camino.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note">
+            <strong>⚠️ Errores frecuentes:</strong> confundir campo (vectorial) con potencial (escalar); olvidar el signo negativo del potencial y de la energía potencial; medir \(r\) desde la superficie en vez de desde el centro; no homogeneizar unidades; sumar módulos en vez de componentes vectoriales; y confundir el punto de campo nulo (entre las masas) con el de potencial nulo (que no existe para dos masas positivas).
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- PROBLEMAS RESUELTOS (EBAU Castilla y León y otras)           -->
+    <!-- ============================================================ -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🔭 Problemas resueltos de EBAU — Castilla y León y otras comunidades (Tema A1)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas</strong> de las pruebas de acceso a la universidad, priorizando <strong>Castilla y León</strong> y completando con otras comunidades. Todos ellos están relacionados con el tema A1 (ley de gravitación universal y superposición vectorial). Se indica la comunidad, el año, la convocatoria (ordinaria/extraordinaria) y el número de problema.
+            </p>
+
+            <!-- PROBLEMA 1 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Atracción gravitatoria y masas de dos cuerpos puntuales</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Ordinaria · Problema 4</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>La fuerza de atracción entre dos cuerpos, supuestos puntuales, tiene un valor de \(6\,\text{nN}\) cuando se encuentran separados \(10\,\text{cm}\). ¿Cuál será su valor cuando la distancia entre ambos se triplique? ¿Cuál es el valor de sus masas si la de uno de ellos es el doble que la del otro? (1 punto)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> La ley de gravitación universal establece \(F=G\,m_1m_2/r^{2}\). Si la distancia se triplica, \(r'=3r\), la fuerza se reduce al cuadrado del factor: \(F'=F/9\).</div>
+                    <div class="formula-box">
+                        \[
+                        F'=\frac{6\cdot10^{-9}}{9}\approx6{,}67\cdot10^{-10}\ \text{N}=0{,}667\ \text{nN}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> Si \(m_2=2m_1\) y \(r=0{,}10\,\text{m}\), despejamos \(m_1\) de la ley de gravitación:</div>
+                    <div class="formula-box">
+                        \[
+                        6\cdot10^{-9}=G\,\frac{m_1\cdot2m_1}{(0{,}10)^{2}}
+                        \quad\Longrightarrow\quad
+                        m_1=\sqrt{\frac{6\cdot10^{-9}\cdot(0{,}10)^{2}}{2G}}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        m_1\approx0{,}671\ \text{kg};\qquad m_2\approx1{,}34\ \text{kg}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(F'=0{,}667\,\text{nN}\); \(m_1\approx0{,}671\,\text{kg}\), \(m_2\approx1{,}34\,\text{kg}\) (intercambiables).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 2 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Lanzamiento vertical y tamaño de un asteroide para escapar</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Problema 4</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Se lanza verticalmente un objeto desde la superficie de la Tierra, de forma que alcanza una altura de \(4\,\text{m}\).<br>
+                    a) Despreciando el rozamiento con el aire, determine la velocidad inicial con la que fue lanzado. (0,8 puntos)<br>
+                    b) Si se hubiese lanzado con la misma velocidad desde la superficie de un asteroide esférico, cuya densidad media es la mitad que la de la Tierra, ¿cuál debería ser el diámetro máximo del asteroide para que el objeto escape de su acción gravitatoria? (1,2 puntos)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> Como \(H\ll R_T\), podemos usar \(g_0\) constante y conservación de la energía mecánica en la forma \(v_0^{2}=2g_0H\):</div>
+                    <div class="formula-box">
+                        \[
+                        v_0=\sqrt{2\cdot9{,}80\cdot4}\approx8{,}85\ \text{m}\cdot\text{s}^{-1}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> La velocidad de escape de un cuerpo esférico de masa \(M_a\) y radio \(R_a\) es \(v_e=\sqrt{2GM_a/R_a}\). Si la densidad es la mitad que la terrestre, \(M_a=\tfrac{1}{2}(R_a/R_T)^{3}M_T\). Imponiendo \(v_0=v_e\):</div>
+                    <div class="formula-box">
+                        \[
+                        v_0^{2}=\frac{GM_T}{R_T^{3}}\,R_a^{2}
+                        \quad\Longrightarrow\quad
+                        R_{a,\max}=v_0\sqrt{\frac{R_T^{3}}{GM_T}}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        R_{a,\max}\approx7{,}14\cdot10^{3}\ \text{m}
+                        \quad\Longrightarrow\quad
+                        D_{\max}=2R_{a,\max}\approx1{,}43\cdot10^{4}\ \text{m}\approx14{,}3\ \text{km}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(v_0\approx8{,}85\,\text{m}\cdot\text{s}^{-1}\); \(D_{\max}\approx14{,}3\,\text{km}\) (para diámetros menores, el objeto también escapa).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 3 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Diferencia entre el peso de un satélite en órbita y en la superficie terrestre</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 1</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un satélite artificial de masa \(1500\,\text{kg}\) se lanza desde la Tierra para situarlo en una órbita circular de \(12\,500\,\text{km}\) de radio. Determine la diferencia entre el peso del satélite en la órbita y el que tenía en la superficie terrestre.<br>
+                    Datos: \(g_0=9{,}80\,\text{m}\cdot\text{s}^{-2}\); \(G=6{,}67\cdot10^{-11}\,\text{N}\cdot\text{m}^{2}\cdot\text{kg}^{-2}\); \(R_T=6{,}37\cdot10^{6}\,\text{m}\); \(M_T=5{,}98\cdot10^{24}\,\text{kg}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Peso en la superficie:</strong></div>
+                    <div class="formula-box">
+                        \[
+                        P_{\text{sup}}=m\,g_0=1500\cdot9{,}80\approx1{,}47\cdot10^{4}\ \text{N}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Peso en la órbita:</strong> con \(r=1{,}25\cdot10^{7}\,\text{m}\):</div>
+                    <div class="formula-box">
+                        \[
+                        g_{\text{orb}}=\frac{GM_T}{r^{2}}
+                        =\frac{6{,}67\cdot10^{-11}\cdot5{,}98\cdot10^{24}}{(1{,}25\cdot10^{7})^{2}}
+                        \approx2{,}55\ \text{m}\cdot\text{s}^{-2}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        P_{\text{orb}}=m\,g_{\text{orb}}\approx3{,}83\cdot10^{3}\ \text{N}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Diferencia:</strong></div>
+                    <div class="formula-box">
+                        \[
+                        \Delta P=P_{\text{sup}}-P_{\text{orb}}\approx1{,}09\cdot10^{4}\ \text{N}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(\Delta P\approx1{,}09\cdot10^{4}\,\text{N}\). El peso en órbita es mucho menor que en la superficie.</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 4 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Punto de campo nulo y superposición de campos gravitatorios</span>
+                    <span class="meta-ej">Madrid · 2026 · Ordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Dos masas puntuales, \(m_1=2\,\text{kg}\) y \(m_2=4\,\text{kg}\), están situadas en el origen de coordenadas y en el punto \((4,0)\,\text{m}\) del plano \(xy\), respectivamente. Calcule:<br>
+                    a) El punto del eje \(x\) entre ambas masas en el que el campo gravitatorio creado por las dos masas es nulo.<br>
+                    b) El campo gravitatorio total debido a ambas masas en el punto \((0,2)\,\text{m}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> Entre las masas los campos se oponen. Igualando módulos:</div>
+                    <div class="formula-box">
+                        \[
+                        \frac{m_1}{x^{2}}=\frac{m_2}{(d-x)^{2}}
+                        \quad\Longrightarrow\quad
+                        x=d\,\frac{\sqrt{m_1}}{\sqrt{m_1}+\sqrt{m_2}}
+                        =4\cdot\frac{\sqrt{2}}{\sqrt{2}+2}\approx1{,}66\ \text{m}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> En \((0,2)\), la distancia a \(m_1\) es \(r_1=2\,\text{m}\), y a \(m_2\), \(r_2=\sqrt{4^{2}+2^{2}}=\sqrt{20}\,\text{m}\). Los módulos son:</div>
+                    <div class="formula-box">
+                        \[
+                        g_1=\frac{G\cdot2}{2^{2}}=3{,}34\cdot10^{-11}\ \text{N}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        g_2=\frac{G\cdot4}{20}=1{,}33\cdot10^{-11}\ \text{N}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="paso">Ambos apuntan hacia sus respectivas masas: \(\vec g_1\) en dirección \(-y\), y \(\vec g_2\) en dirección \((-4,-2)/\sqrt{20}\). Sumando componentes:</div>
+                    <div class="formula-box">
+                        \[
+                        \vec g_{\text{total}}\approx\left(1{,}19\cdot10^{-11}\,\hat i-3{,}93\cdot10^{-11}\,\hat j\right)\ \text{N}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        |\vec g_{\text{total}}|\approx4{,}11\cdot10^{-11}\ \text{N}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(x\approx1{,}66\,\text{m}\) desde \(m_1\); \(\vec g_{\text{total}}\approx(1{,}19\,\hat i-3{,}93\,\hat j)\cdot10^{-11}\,\text{N}\cdot\text{kg}^{-1}\), módulo \(\approx4{,}11\cdot10^{-11}\,\text{N}\cdot\text{kg}^{-1}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 5 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Campo gravitatorio de dos masas y trabajo gravitatorio</span>
+                    <span class="meta-ej">Madrid · 2025 · Extraordinaria · Problema 3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Dos partículas idénticas de masas \(m_1=m_2=3\,\text{kg}\), situadas en \(P_1(0,0)\,\text{m}\) y \(P_2(6,0)\,\text{m}\).<br>
+                    a) Halle el campo gravitatorio creado por ambas partículas en el punto \((3,3)\,\text{m}\).<br>
+                    b) Calcule el trabajo que realiza la fuerza gravitatoria para llevar una partícula de masa \(m=1\,\text{kg}\) desde \((3,3)\,\text{m}\) al punto \((0,3)\,\text{m}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> Las distancias a ambas masas son \(r_1=r_2=\sqrt{3^{2}+3^{2}}=3\sqrt{2}\,\text{m}\). Cada campo tiene módulo \(g_1=g_2=Gm/r^{2}\), y por simetría las componentes horizontales se cancelan mientras que las verticales se suman:</div>
+                    <div class="formula-box">
+                        \[
+                        g=2\,g_1\,\frac{1}{\sqrt{2}}=\frac{\sqrt{2}\,G\,m}{r^{2}}
+                        \approx1{,}57\cdot10^{-11}\ \text{N}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="paso">Dirección: vertical, hacia abajo (si tomamos \(y\) positivo hacia arriba) o hacia arriba (según convenio). \(\vec g\approx1{,}57\cdot10^{-11}\,\hat j\,\text{N}\cdot\text{kg}^{-1}\).</div>
+                    <div class="paso"><strong>b)</strong> Potenciales:</div>
+                    <div class="formula-box">
+                        \[
+                        V(3,3)=-G\,\frac{2m}{r}\approx-9{,}43\cdot10^{-11}\ \text{J}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        V(0,3)=-G\,m\left(\frac{1}{3}+\frac{1}{6{,}71}\right)\approx-9{,}65\cdot10^{-11}\ \text{J}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        W_{\text{grav}}=m\,(V_i-V_f)\approx2{,}2\cdot10^{-12}\ \text{J}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(\vec g\approx1{,}57\cdot10^{-11}\,\hat j\,\text{N}\cdot\text{kg}^{-1}\); \(W_{\text{grav}}\approx2{,}2\cdot10^{-12}\,\text{J}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 6 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Campo gravitatorio de dos masas y trabajo de desplazamiento</span>
+                    <span class="meta-ej">Cantabria · 2026 · Ordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Dos masas puntuales idénticas de valor \(m_1=m_2=10\,\text{kg}\) se encuentran situadas en los puntos \(P_1(0,0)\,\text{m}\) y \(P_2(0,10)\,\text{m}\) respectivamente del plano \(xy\).<br>
+                    a) Calcular y representar gráficamente el vector campo gravitatorio debido a las masas \(m_1\) y \(m_2\) en el punto \((5,5)\,\text{m}\).<br>
+                    b) Calcular el trabajo realizado por el campo gravitatorio creado por \(m_1\) y \(m_2\) para transportar una masa puntual \(m_3=1\,\text{kg}\) desde el punto \((5,5)\,\text{m}\) al punto \((0,5)\,\text{m}\).<br>
+                    c) Razonar brevemente el significado físico del signo del trabajo obtenido.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> Las distancias desde \((5,5)\) a ambas masas son \(d=\sqrt{5^{2}+5^{2}}=5\sqrt{2}\,\text{m}\). Cada campo apunta hacia su masa; por simetría las componentes verticales se cancelan y las horizontales se suman hacia la izquierda:</div>
+                    <div class="formula-box">
+                        \[
+                        \vec g=-\frac{100\,G}{(5\sqrt{2})^{3}}\,\hat i\approx-1{,}89\cdot10^{-11}\,\hat i\ \text{N}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> Potenciales en los puntos inicial y final:</div>
+                    <div class="formula-box">
+                        \[
+                        V(5,5)=-\frac{2G\cdot10}{5\sqrt{2}}\approx-1{,}887\cdot10^{-10}\ \text{J}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        V(0,5)=-\frac{G\cdot10}{5}-\frac{G\cdot10}{5}\approx-2{,}668\cdot10^{-10}\ \text{J}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        W_{\text{grav}}=m_3\,(V_i-V_f)\approx+7{,}81\cdot10^{-11}\ \text{J}
+                        \]
+                    </div>
+                    <div class="paso"><strong>c)</strong> El trabajo es positivo: el campo favorece el desplazamiento, porque al acercarse a las masas disminuye la energía potencial gravitatoria (se hace más negativa). Si solo actuase la gravedad, la masa ganaría energía cinética.</div>
+                    <div class="paso"><strong>Resultado:</strong> \(\vec g\approx-1{,}89\cdot10^{-11}\,\hat i\,\text{N}\cdot\text{kg}^{-1}\); \(W_{\text{grav}}\approx+7{,}81\cdot10^{-11}\,\text{J}\) (proceso espontáneo).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Campo gravitatorio y trabajo externo entre dos posiciones</span>
+                    <span class="meta-ej">Cantabria · 2026 · Extraordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Dos cuerpos de masas \(m_1=2\,\text{kg}\) y \(m_2=4\,\text{kg}\), se encuentran fijos en los puntos \((-5,0)\,\text{m}\) y \((10,0)\,\text{m}\) respectivamente.<br>
+                    a) Calcular y representar gráficamente el vector campo gravitatorio debido a las masas \(m_1\) y \(m_2\) en el origen de coordenadas.<br>
+                    b) Calcular el trabajo externo necesario para transportar una tercera masa de \(1\,\text{kg}\) desde el origen de coordenadas hasta el punto \((0,5)\,\text{m}\).<br>
+                    c) Razonar brevemente el significado físico del signo del trabajo obtenido.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> En el origen, \(m_1\) está a \(5\,\text{m}\) a la izquierda y \(m_2\) a \(10\,\text{m}\) a la derecha. Los campos apuntan hacia las masas respectivas:</div>
+                    <div class="formula-box">
+                        \[
+                        \vec g_1=-G\,\frac{2}{5^{2}}\,\hat i=-5{,}336\cdot10^{-12}\,\hat i
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        \vec g_2=+G\,\frac{4}{10^{2}}\,\hat i=+2{,}668\cdot10^{-12}\,\hat i
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        \vec g_O=\vec g_1+\vec g_2=-2{,}668\cdot10^{-12}\,\hat i\ \text{m}\cdot\text{s}^{-2}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> Potenciales en el origen y en \((0,5)\):</div>
+                    <div class="formula-box">
+                        \[
+                        V_O=-G\left(\frac{2}{5}+\frac{4}{10}\right)=-5{,}336\cdot10^{-11}\ \text{J}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        V_P=-G\left(\frac{2}{\sqrt{50}}+\frac{4}{\sqrt{125}}\right)=-4{,}273\cdot10^{-11}\ \text{J}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        W_{\text{ext}}=m\,(V_P-V_O)\approx+1{,}06\cdot10^{-11}\ \text{J}
+                        \]
+                    </div>
+                    <div class="paso"><strong>c)</strong> El trabajo externo es positivo: hay que aportar energía para llevar la masa desde el origen hasta \((0,5)\), porque se aleja de las dos masas atractivas y su energía potencial gravitatoria aumenta (se hace menos negativa). La gravedad se opone al desplazamiento.</div>
+                    <div class="paso"><strong>Resultado:</strong> \(\vec g_O\approx-2{,}67\cdot10^{-12}\,\hat i\,\text{m}\cdot\text{s}^{-2}\); \(W_{\text{ext}}\approx+1{,}06\cdot10^{-11}\,\text{J}\) (hay que aportar energía).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 8 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Campo gravitatorio de una masa puntual y distancia máxima</span>
+                    <span class="meta-ej">Cantabria · 2025 · Ordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un cuerpo de masa \(m_1=10\,\text{kg}\) permanece fijo en el punto \((4,-3)\,\text{m}\).<br>
+                    a) Calcular el campo gravitatorio generado por dicho cuerpo en el origen de coordenadas.<br>
+                    b) Calcular la fuerza que experimentará un segundo cuerpo de masa \(m_2=5\,\text{kg}\) situado en el origen de coordenadas.<br>
+                    c) Se pretende alejar el segundo cuerpo, transmitiéndole una velocidad de \(10^{-2}\,\text{mm}\cdot\text{s}^{-1}\) según la dirección que une ambos cuerpos, alejándole del primero. Hallar la distancia máxima a la que llegará el segundo cuerpo con respecto al primero.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> La distancia entre \((4,-3)\) y el origen es \(r=\sqrt{4^{2}+(-3)^{2}}=5\,\text{m}\). El vector unitario desde el origen hacia \(m_1\) es \((4,-3)/5\):</div>
+                    <div class="formula-box">
+                        \[
+                        \vec g=\frac{G\cdot10}{5^{2}}\cdot\frac{(4,-3)}{5}
+                        \approx\left(2{,}13\cdot10^{-11}\,\hat i-1{,}60\cdot10^{-11}\,\hat j\right)\ \text{N}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> \(\vec F=m_2\,\vec g\approx(1{,}07\cdot10^{-10}\,\hat i-8{,}01\cdot10^{-11}\,\hat j)\,\text{N}\). Módulo \(F\approx1{,}33\cdot10^{-10}\,\text{N}\), dirigida hacia \(m_1\).</div>
+                    <div class="paso"><strong>c)</strong> Conservación de la energía mecánica con \(v_0=10^{-5}\,\text{m}\cdot\text{s}^{-1}\) y \(r_0=5\,\text{m}\). En la distancia máxima \(v=0\):</div>
+                    <div class="formula-box">
+                        \[
+                        \frac{1}{2}v_0^{2}-\frac{Gm_1}{r_0}
+                        =-\frac{Gm_1}{r_{\max}}
+                        \quad\Longrightarrow\quad
+                        \frac{1}{r_{\max}}=\frac{1}{r_0}-\frac{v_0^{2}}{2Gm_1}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        r_{\max}\approx8{,}0\ \text{m}
+                        \]
+                    </div>
+                    <div class="paso"><strong>Resultado:</strong> \(\vec g\approx(2{,}13\,\hat i-1{,}60\,\hat j)\cdot10^{-11}\,\text{N}\cdot\text{kg}^{-1}\); \(\vec F\approx(1{,}07\,\hat i-8{,}01\,\hat j)\cdot10^{-10}\,\text{N}\); \(r_{\max}\approx8{,}0\,\text{m}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 9 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">Campo gravitatorio de dos masas puntuales</span>
+                    <span class="meta-ej">Cantabria · 2025 · Extraordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Dos cuerpos de masas \(m_1=100\,\text{kg}\) y \(m_2=500\,\text{kg}\), se encuentran fijos en los puntos \((-5,0)\,\text{m}\) y \((10,0)\,\text{m}\) respectivamente.<br>
+                    a) Calcular y representar gráficamente el vector campo gravitatorio debido a las masas \(m_1\) y \(m_2\) en el origen de coordenadas.<br>
+                    b) Calcular el valor del potencial gravitatorio en el origen de coordenadas.<br>
+                    c) Calcular el trabajo realizado por el campo gravitatorio sobre un objeto de \(10\,\text{kg}\) cuando se desplaza desde el origen de coordenadas hasta un punto infinitamente alejado de \(m_1\) y \(m_2\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> En el origen, \(m_1\) está a \(5\,\text{m}\) a la izquierda y \(m_2\) a \(10\,\text{m}\) a la derecha:</div>
+                    <div class="formula-box">
+                        \[
+                        \vec g_1=-G\,\frac{100}{5^{2}}\,\hat i=-2{,}668\cdot10^{-10}\,\hat i
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        \vec g_2=+G\,\frac{500}{10^{2}}\,\hat i=+3{,}335\cdot10^{-10}\,\hat i
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        \vec g_O=+6{,}67\cdot10^{-11}\,\hat i\ \text{N}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="paso">El campo apunta hacia \(m_2\) (hacia la derecha), porque aunque \(m_2\) está más lejos, su masa es 5 veces mayor.</div>
+                    <div class="paso"><strong>b)</strong> Potencial en el origen:</div>
+                    <div class="formula-box">
+                        \[
+                        V_O=-G\left(\frac{100}{5}+\frac{500}{10}\right)=-4{,}67\cdot10^{-9}\ \text{J}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="paso"><strong>c)</strong> Trabajo del campo desde el origen hasta el infinito:</div>
+                    <div class="formula-box">
+                        \[
+                        W_{\text{campo}}=m\,(V_O-V_\infty)=-4{,}67\cdot10^{-8}\ \text{J}
+                        \]
+                    </div>
+                    <div class="paso">El trabajo es negativo: hay que vencer la atracción gravitatoria. Un agente externo tendría que aportar \(+4{,}67\cdot10^{-8}\,\text{J}\) para llevar el objeto al infinito.</div>
+                    <div class="paso"><strong>Resultado:</strong> \(\vec g_O\approx+6{,}67\cdot10^{-11}\,\hat i\,\text{N}\cdot\text{kg}^{-1}\); \(V_O\approx-4{,}67\cdot10^{-9}\,\text{J}\cdot\text{kg}^{-1}\); \(W_{\text{campo}}\approx-4{,}67\cdot10^{-8}\,\text{J}\).</div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">Partícula en el campo gravitatorio</span>
+                    <span class="meta-ej">La Rioja · 2023 · Extraordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Una partícula de masa \(M_1\) se encuentra en el origen de coordenadas \(O\). La componente \(x\) del campo gravitatorio creado por esta partícula en el punto \((2,2)\,\text{m}\) es \(-1{,}18\cdot10^{-11}\,\text{N}\cdot\text{kg}^{-1}\).<br>
+                    a) Calcular el valor de la masa \(M_1\).<br>
+                    b) ¿Cuál es el trabajo que realiza el campo gravitatorio creado por la masa \(M_1\) para llevar otra partícula de masa \(M_2=5\,\text{kg}\) desde el punto \((4,0)\,\text{m}\) al punto \((2,2)\,\text{m}\)?</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>a)</strong> En \((2,2)\), el vector unitario radial es \((1/\sqrt{2},\,1/\sqrt{2})\). La componente \(x\) del campo es:</div>
+                    <div class="formula-box">
+                        \[
+                        g_x=-G\,\frac{M_1}{r^{2}}\cdot\frac{1}{\sqrt{2}}
+                        \quad\Longrightarrow\quad
+                        M_1=\frac{|g_x|\,r^{2}\sqrt{2}}{G}
+                        \]
+                    </div>
+                    <div class="paso">Con \(r=\sqrt{8}=2\sqrt{2}\,\text{m}\):</div>
+                    <div class="formula-box">
+                        \[
+                        M_1=\frac{1{,}18\cdot10^{-11}\cdot8\cdot\sqrt{2}}{6{,}67\cdot10^{-11}}
+                        \approx2{,}00\ \text{kg}
+                        \]
+                    </div>
+                    <div class="paso"><strong>b)</strong> Potenciales:</div>
+                    <div class="formula-box">
+                        \[
+                        V(4,0)=-\frac{G\cdot2}{4}=-3{,}335\cdot10^{-11}\ \text{J}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        V(2,2)=-\frac{G\cdot2}{\sqrt{8}}=-4{,}717\cdot10^{-11}\ \text{J}\cdot\text{kg}^{-1}
+                        \]
+                    </div>
+                    <div class="formula-box">
+                        \[
+                        W_{\text{grav}}=M_2\,(V(4,0)-V(2,2))
+                        \approx5\cdot1{,}382\cdot10^{-11}\approx6{,}91\cdot10^{-11}\ \text{J}
+                        \]
+                    </div>
+                    <div class="paso">El trabajo es positivo (el campo favorece el acercamiento a la masa \(M_1\)).</div>
+                    <div class="paso"><strong>Resultado:</strong> \(M_1\approx2{,}00\,\text{kg}\); \(W_{\text{grav}}\approx6{,}91\cdot10^{-11}\,\text{J}\).</div>
+                </div>
+            </details>
+
+            <!-- PIE DIDÁCTICO -->
+            <div class="pie-clave">
+                <i class="fas fa-lightbulb"></i>
+                <span><strong>Observaciones clave:</strong> en todos estos problemas, el patrón de resolución es: (1) identificar los datos y las incógnitas; (2) dibujar un esquema con las masas y los vectores campo o fuerza implicados; (3) calcular las distancias desde los centros de las masas (no desde la superficie); (4) aplicar \(F=Gm_1m_2/r^{2}\) o \(g=GM/r^{2}\) para cada masa; (5) descomponer en componentes y sumar vectorialmente; (6) para el trabajo, utilizar \(W=m(V_i-V_f)\); (7) comprobar el signo del trabajo y el orden de magnitud del resultado. Recuerda siempre homogeneizar las unidades al S.I. y no confundir campo (vectorial) con potencial (escalar).</span>
+            </div>
+
+        </div> <!-- fin contenido-desplegable -->
+    </details>
+
+
+
+<!-- ============================================================ -->
+<!-- BLOQUE DE RECURSOS Y NAVEGACIÓN DEL TEMA A1                  -->
+<!-- ============================================================ -->
+<div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
+    <style>
+        .recursos-tema-a1 .recurso-card {
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        }
+        .recursos-tema-a1 .recurso-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 32px rgba(37, 99, 235, 0.28) !important;
+            border-color: #3b82f6 !important;
+        }
+        .recursos-tema-a1 .recurso-card:hover .recurso-icono {
+            transform: scale(1.1) rotate(-6deg);
+        }
+        .recursos-tema-a1 .recurso-icono {
+            transition: transform 0.28s ease;
+        }
+        @media (max-width: 700px) {
+            .recursos-tema-a1 .recurso-grid { grid-template-columns: 1fr !important; }
+        }
+    </style>
+
+    <div class="recursos-tema-a1" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 20px; padding: 30px 25px 32px 25px;
+                box-shadow: 0 15px 40px rgba(102, 126, 234, 0.35);">
+
+        <h2 style="margin: 0 0 8px 0; color: white; text-align: center;
+                   font-size: 1.5em; display: flex; align-items: center;
+                   justify-content: center; gap: 12px;">
+            <i class="fas fa-compass"></i>
+            Recursos del Tema A1
+        </h2>
+        <p style="text-align: center; color: rgba(255,255,255,0.9);
+                  margin: 0 0 25px 0; font-size: 0.95em;">
+            Accede directamente a los materiales y bancos de problemas
+        </p>
+
+        <div class="recurso-grid" style="display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 18px;">
+
+            <!-- ── TARJETA 1: FORMULARIO (página actual) ── -->
+            <a href="TemaA1-Formulario.html" style="text-decoration: none; color: inherit;">
+                <div class="recurso-card" style="background: white; border-radius: 16px;
+                            padding: 22px 18px; text-align: center; height: 100%;
+                            border: 3px solid #fbbf24; position: relative;
+                            box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                    <div style="position: absolute; top: 12px; right: 12px;
+                                background: #fbbf24; color: #78350f;
+                                padding: 3px 10px; border-radius: 20px;
+                                font-size: 0.7em; font-weight: 800;
+                                letter-spacing: 0.5px;">
+                        AQUÍ
+                    </div>
+                    <div class="recurso-icono" style="width: 62px; height: 62px;
+                                margin: 4px auto 14px;
+                                background: linear-gradient(135deg, #667eea, #764ba2);
+                                border-radius: 50%; display: flex; align-items: center;
+                                justify-content: center; color: white; font-size: 1.7em;">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                margin-bottom: 6px;">
+                        Formulario A1
+                    </div>
+                    <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                        Todas las fórmulas y relaciones clave del tema
+                    </div>
+                </div>
+            </a>
+
+            <!-- ── TARJETA 2: PROBLEMAS EBAU DEL TEMA A1 ── -->
+            <a href="TemaA1-ProblemasEBAU.html" style="text-decoration: none; color: inherit;">
+                <div class="recurso-card" style="background: white; border-radius: 16px;
+                            padding: 22px 18px; text-align: center; height: 100%;
+                            border: 3px solid #e2e8f0;
+                            box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                    <div class="recurso-icono" style="width: 62px; height: 62px;
+                                margin: 4px auto 14px;
+                                background: linear-gradient(135deg, #10b981, #059669);
+                                border-radius: 50%; display: flex; align-items: center;
+                                justify-content: center; color: white; font-size: 1.7em;">
+                        <i class="fas fa-pen-to-square"></i>
+                    </div>
+                    <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                margin-bottom: 6px;">
+                        Problemas EBAU · A1
+                    </div>
+                    <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                        Ejercicios filtrados del tema, resueltos y comentados
+                    </div>
+                </div>
+            </a>
+
+            <!-- ── TARJETA 3: FILTRADO EBAU GENERAL ── -->
+            <a href="../EBAU/problemas-inline%20v04.html" style="text-decoration: none; color: inherit;">
+                <div class="recurso-card" style="background: white; border-radius: 16px;
+                            padding: 22px 18px; text-align: center; height: 100%;
+                            border: 3px solid #e2e8f0;
+                            box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                    <div class="recurso-icono" style="width: 62px; height: 62px;
+                                margin: 4px auto 14px;
+                                background: linear-gradient(135deg, #f59e0b, #d97706);
+                                border-radius: 50%; display: flex; align-items: center;
+                                justify-content: center; color: white; font-size: 1.7em;">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                margin-bottom: 6px;">
+                        Filtrado EBAU general
+                    </div>
+                    <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                        Banco completo de problemas de todas las unidades
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- ============================================================ -->
+<!-- FIN DEL BLOQUE DE RECURSOS                                   -->
+<!-- ============================================================ -->
+
+
+
+    
+
+    <!-- ============================================ -->
+    <!-- BLOQUE "ES HORA DE"                          -->
+    <!-- ============================================ -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p>
+                <br> Domina la ley de gravitación universal y el principio de superposición vectorial.<br>
+                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
+            </p>
+
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- ===================FIN DE ES HORA DE ==================== -->
+
+</div> <!-- fin container -->
+</body>
+</html>

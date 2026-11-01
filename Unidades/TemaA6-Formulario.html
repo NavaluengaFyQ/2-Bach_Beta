@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA A6 (Formulario).- Trabajo, energía potencial y energía mecánica gravitatoria</title>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- CSS PROPIO DE FORMULARIOS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================ CABECERA ============================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA A6 (Formulario).- </span>
+                <span class="texto">Trabajo, energía potencial y energía mecánica gravitatoria</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================ GRID ============================ -->
+    <div class="grid">
+
+        <!-- FICHA 1 · TRABAJO DEL CAMPO GRAVITATORIO -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Trabajo realizado por la fuerza gravitatoria</h2>
+                <span class="badge-centro">Trabajo</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · Conservación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El trabajo que realiza la fuerza gravitatoria al desplazar una masa \(m\) entre dos puntos \(A\) y \(B\) del campo creado por otra masa \(M\). Se aplica en problemas de energía, movimiento bajo gravedad y conservación de la energía mecánica. Al ser una fuerza conservativa, el trabajo no depende del camino seguido, solo de las posiciones inicial y final.
+            </div>
+            <div class="formula-box">
+                \[ W_{A\to B}^{\text{grav}} = GMm\!\left(\frac{1}{r_B}-\frac{1}{r_A}\right) = -\Delta E_p \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se deduce del carácter conservativo de la gravedad (\(W=-\Delta E_p\)) integrando la fuerza gravitatoria entre \(r_A\) y \(r_B\). Memoriza solo la idea: <strong>el trabajo del campo es positivo si la masa se acerca</strong> (disminuye \(E_p\)) y <strong>negativo si se aleja</strong> (aumenta \(E_p\)). Es una de las expresiones más rentables de la EBAU: con ella se resuelven los problemas de energía mecánica.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(W_{A\to B}\)</td><td data-label="Significado">Trabajo del campo gravitatorio entre \(A\) y \(B\)</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(G\)</td><td data-label="Significado">Constante de gravitación universal</td><td data-label="Unidades">6,67·10⁻¹¹ N·m²·kg⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(M,\,m\)</td><td data-label="Significado">Masas creadora y desplazada</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(r_A,\,r_B\)</td><td data-label="Significado">Distancias inicial y final al centro de \(M\)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta E_p\)</td><td data-label="Significado">Variación de energía potencial (\(E_{p,B}-E_{p,A}\))</td><td data-label="Unidades">J</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(M=10\,\text{kg}\) en el origen, \(m=1\,\text{kg}\) se mueve de \(A(5,0)\) a \(B(2,0)\,\text{m}\). \(V_A=-G\cdot10/5=-2G\), \(V_B=-G\cdot10/2=-5G\). \(W_{\text{campo}}=GMm(1/r_B-1/r_A)=10G(1/2-1/5)=3G\approx2{,}00\cdot10^{-10}\,\text{J}\) (positivo: el campo favorece el acercamiento).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La gravedad es <strong>conservativa</strong>: \(W\) no depende del camino, solo de \(A\) y \(B\).</li>
+                    <li>\(W_{\text{campo}}>0\) si la masa se <strong>acerca</strong> (disminuye \(E_p\)).</li>
+                    <li>\(W_{\text{campo}}<0\) si la masa se <strong>aleja</strong> (aumenta \(E_p\)).</li>
+                    <li>Si \(B\) está en el infinito (\(V_\infty=0\)): \(W_{A\to\infty}=mV_A\) (siempre negativo).</li>
+                    <li>Al invertir el sentido del desplazamiento: \(W_{B\to A}=-W_{A\to B}\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 · TRABAJO EXTERNO -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Trabajo de un agente externo</h2>
+                <span class="badge-centro">Trabajo</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El trabajo que debe realizar un agente externo para desplazar una masa entre dos puntos del campo gravitatorio <em>sin cambiar su energía cinética</em> (movimiento cuasiestático). Se aplica en problemas donde se pide «la energía necesaria para…» subir un satélite, separar dos masas, etc. Es el opuesto del trabajo del campo.
+            </div>
+            <div class="formula-box">
+                \[ W_{\text{ext}} = -\,W_{\text{campo}} = \Delta E_p = E_{p,B} - E_{p,A} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No: se deduce directamente de la conservación de la energía. Si el agente externo compensa exactamente la fuerza gravitatoria, el trabajo que realiza se invierte íntegro en variar \(E_p\). <strong>Truco EBAU:</strong> lee bien si el enunciado pide «trabajo del campo» o «trabajo del agente externo»: tienen signos opuestos y es un error muy penalizado.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(W_{\text{ext}}\)</td><td data-label="Significado">Trabajo del agente externo</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(W_{\text{campo}}\)</td><td data-label="Significado">Trabajo de la fuerza gravitatoria</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta E_p\)</td><td data-label="Significado">Variación de energía potencial</td><td data-label="Unidades">J</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> con el mismo sistema de la ficha 1, \(W_{\text{ext}}=-3G\approx-2{,}00\cdot10^{-10}\,\text{J}\). El signo negativo indica que el agente externo <em>extrae</em> energía del sistema cuando la masa se acerca; si la alejáramos de \(A(5)\) a \(C(10)\), el agente externo tendría que hacer un trabajo positivo.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(W_{\text{ext}}=+|\Delta E_p|\) si la masa se <strong>aleja</strong> (hay que aportar energía).</li>
+                    <li>\(W_{\text{ext}}<0\) si la masa se <strong>acerca</strong> (el campo ya hace el trabajo).</li>
+                    <li>Coincide con la <strong>energía mecánica mínima</strong> que hay que suministrar al sistema.</li>
+                    <li>Se usa directamente en «trabajo para poner un satélite en órbita» (fórmula 10).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 · ENERGÍA POTENCIAL GRAVITATORIA -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Energía potencial gravitatoria</h2>
+                <span class="badge-centro">Potencial</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía que posee una masa \(m\) por encontrarse dentro del campo gravitatorio creado por otra masa \(M\). Se aplica en problemas de trabajo, conservación de la energía mecánica, velocidad de escape y órbitas. Es siempre negativa (con el origen en el infinito) y sirve para caracterizar sistemas ligados.
+            </div>
+            <div class="formula-box">
+                \[ E_p = -\,G\,\frac{M\,m}{r} \qquad [E_p] = \text{J} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(E_p=-GMm/r\) con el <strong>signo negativo</strong>. Lo esencial es entender que se hace <strong>menos negativa al alejarse</strong> (aumenta) y <strong>más negativa al acercarse</strong> (disminuye), justo al revés que la energía cinética en caída libre. Es la fórmula base de todo el tema: de ella salen el trabajo (ficha 1), la energía mecánica (ficha 7) y la velocidad de escape (ficha 9).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E_p\)</td><td data-label="Significado">Energía potencial gravitatoria del sistema \(M\)-\(m\)</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(G\)</td><td data-label="Significado">Constante de gravitación universal</td><td data-label="Unidades">6,67·10⁻¹¹ N·m²·kg⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(M,\,m\)</td><td data-label="Significado">Masas de los dos cuerpos</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia entre sus centros</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un satélite de \(1500\,\text{kg}\) en una órbita de \(r=12\,500\,\text{km}\) alrededor de la Tierra tiene \(E_p=-G\,M_T\,m/r\approx-4{,}79\cdot10^{10}\,\text{J}\). Obsérvese que es negativa y que, si lo subimos a \(r'=25\,000\,\text{km}\), su \(E_p\) se hace «menos negativa» (mayor, más cercana a cero).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es <strong>negativa</strong> con el origen en el infinito; se hace <strong>menos negativa</strong> al alejarse.</li>
+                    <li>Para varias masas: \(E_{p,\text{total}}=m\,V_{\text{total}}\) (suma algebraica).</li>
+                    <li>La fuerza gravitatoria es conservativa: \(E_p\) depende solo de \(r\).</li>
+                    <li>En las proximidades de la superficie terrestre: \(E_p\approx mgh\) (fórmula 11).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 · CONSERVACIÓN DE LA ENERGÍA MECÁNICA -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Conservación de la energía mecánica en el campo gravitatorio</h2>
+                <span class="badge-centro">Principio</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Principio de conservación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación entre las energías cinética y potencial en dos puntos de una trayectoria cuando solo actúa la gravedad. Se aplica en lanzamientos verticales, satélites en órbitas elípticas, transferencias entre órbitas y cualquier problema en el que no haya rozamiento ni propulsión.
+            </div>
+            <div class="formula-box">
+                \[ E_m = E_c + E_p = \text{constante} \quad\Longrightarrow\quad \tfrac{1}{2}mv_A^{2} - \frac{GMm}{r_A} = \tfrac{1}{2}mv_B^{2} - \frac{GMm}{r_B} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>No es una fórmula que se memorice: es un <strong>principio</strong> que se aplica siempre que la gravedad sea la única fuerza que realiza trabajo. La estrategia EBAU consiste en: (1) identificar los dos puntos \(A\) y \(B\); (2) escribir \(E_m\) en cada uno; (3) igualar. Cuidado: si hay rozamiento o propulsión, \(E_m\) no se conserva y hay que usar el teorema de la energía cinética o el trabajo externo.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E_m\)</td><td data-label="Significado">Energía mecánica total del sistema</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(E_c=\tfrac{1}{2}mv^{2}\)</td><td data-label="Significado">Energía cinética</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(E_p=-GMm/r\)</td><td data-label="Significado">Energía potencial gravitatoria</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(r_A,\,r_B\)</td><td data-label="Significado">Distancias al centro de \(M\) en \(A\) y \(B\)</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> se lanza un proyectil verticalmente desde la superficie terrestre con \(v_e/2\). Por conservación: \(\tfrac{1}{2}m(v_e/2)^2-GM_Tm/R_T=-GM_Tm/(R_T+h)\). Con \(v_e^2=2GM_T/R_T\) se obtiene \(h=R_T/3\approx2120\,\text{km}\) (cfr. ejercicio 2 de EBAU).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Solo se aplica si <strong>no hay fuerzas no conservativas</strong> (rozamiento, propulsión, etc.).</li>
+                    <li>Si \(E_m<0\) el sistema está <strong>ligado</strong>; si \(E_m\ge0\) escapa.</li>
+                    <li>Es la herramienta clave de los problemas de <strong>lanzamiento vertical</strong> y <strong>órbitas elípticas</strong>.</li>
+                    <li>En caída libre: \(\Delta E_c=-\Delta E_p\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 · VELOCIDAD ORBITAL -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Velocidad orbital en órbita circular</h2>
+                <span class="badge-centro">Órbita</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La velocidad a la que se mueve un satélite en una órbita circular de radio \(r\) alrededor de un cuerpo de masa \(M\). Se aplica en todos los problemas de satélites (LEO, geoestacionarias, GPS…), tanto para calcular velocidades como para deducir periodos, alturas o energías.
+            </div>
+            <div class="formula-box">
+                \[ \frac{GMm}{r^{2}} = \frac{mv^{2}}{r} \quad\Longrightarrow\quad v_{\text{orb}} = \sqrt{\frac{GM}{r}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No: se deduce igualando la fuerza gravitatoria a la fuerza centrípeta, condición de toda órbita circular. Si memorizas esta idea, puedes reconstruir \(v=\sqrt{GM/r}\) (y de aquí el periodo \(T=2\pi\sqrt{r^3/GM}\), la energía cinética y la energía mecánica) en dos líneas. <strong>Error típico EBAU:</strong> medir \(r\) desde la superficie en lugar del centro; recuerda siempre \(r=R+h\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(v_{\text{orb}}\)</td><td data-label="Significado">Velocidad orbital del satélite</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(G\)</td><td data-label="Significado">Constante de gravitación universal</td><td data-label="Unidades">6,67·10⁻¹¹ N·m²·kg⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa del astro central</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Radio orbital (desde el centro de \(M\))</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para una órbita geoestacionaria, \(r\approx4{,}225\cdot10^{7}\,\text{m}\): \(v=\sqrt{GM_T/r}\approx3{,}07\cdot10^{3}\,\text{m/s}\approx3{,}07\,\text{km/s}\). La ISS, a \(r\approx6{,}78\cdot10^{6}\,\text{m}\), orbita a \(v\approx7{,}67\,\text{km/s}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Cuanto mayor es \(r\), <strong>menor es \(v_{\text{orb}}\)</strong> (\(v\propto r^{-1/2}\)).</li>
+                    <li>El periodo orbital es \(T=2\pi\sqrt{r^{3}/(GM)}\) (3ª ley de Kepler).</li>
+                    <li>No depende de la <strong>masa del satélite</strong>, solo de \(M\) y \(r\).</li>
+                    <li>La velocidad orbital <strong>no es la de escape</strong>: \(v_e=\sqrt{2}\,v_{\text{orb}}\) desde la misma órbita.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 · ENERGÍA CINÉTICA EN ÓRBITA CIRCULAR -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Energía cinética en una órbita circular</h2>
+                <span class="badge-centro">Energía</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía cinética que posee un satélite de masa \(m\) en una órbita circular de radio \(r\) alrededor de un cuerpo de masa \(M\). Se aplica en problemas de energía mecánica, transferencias de órbita y comparación entre energías cinética y potencial (teorema del virial).
+            </div>
+            <div class="formula-box">
+                \[ E_c = \tfrac{1}{2}mv^{2} = \frac{GMm}{2r} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No: basta con sustituir \(v^{2}=GM/r\) en \(E_c=\tfrac{1}{2}mv^{2}\). Ten siempre presente que <strong>\(E_c\) es positiva</strong> y que su valor es la mitad del valor absoluto de \(E_p\). Esta relación se usa constantemente para deducir la energía mecánica (ficha 7).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E_c\)</td><td data-label="Significado">Energía cinética del satélite en órbita</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(G\)</td><td data-label="Significado">Constante de gravitación universal</td><td data-label="Unidades">6,67·10⁻¹¹ N·m²·kg⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa del astro central</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa del satélite</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Radio orbital</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> satélite de \(1500\,\text{kg}\) en \(r=12\,500\,\text{km}\): \(E_c=GM_Tm/(2r)\approx2{,}39\cdot10^{10}\,\text{J}\) (positiva). Su \(E_p\) era \(-4{,}79\cdot10^{10}\,\text{J}\) (ficha 3): en efecto, \(E_c=-E_p/2\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Siempre es <strong>positiva</strong> (al contrario que \(E_p\)).</li>
+                    <li>Disminuye al aumentar \(r\): \(E_c\propto1/r\).</li>
+                    <li>Es la mitad del valor absoluto de \(E_p\): \(E_c=-E_p/2\) (ficha 8).</li>
+                    <li>En el fondo del <strong>pozo gravitatorio</strong>, \(E_c\) es máxima.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 · ENERGÍA MECÁNICA EN ÓRBITA CIRCULAR -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Energía mecánica en una órbita circular</h2>
+                <span class="badge-centro">Energía</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía total (cinética + potencial) de un satélite en órbita circular. Se aplica para decidir si una órbita está ligada, para calcular la energía necesaria en transferencias entre órbitas y para deducir la energía de escape. Es la magnitud clave en los problemas de satélites de la EBAU.
+            </div>
+            <div class="formula-box">
+                \[ E_m = E_c + E_p = \frac{GMm}{2r} - \frac{GMm}{r} = -\,\frac{GMm}{2r} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No: se obtiene sumando \(E_c\) (ficha 6) y \(E_p\) (ficha 3). Memoriza el resultado \(E_m=-GMm/(2r)\) <strong>con el signo negativo</strong>. Es negativa para toda órbita circular ligada. La relación \(E_m=E_p/2=-E_c\) (ficha 8) permite reconstruirla al instante.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E_m\)</td><td data-label="Significado">Energía mecánica del satélite en órbita circular</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(G\)</td><td data-label="Significado">Constante de gravitación universal</td><td data-label="Unidades">6,67·10⁻¹¹ N·m²·kg⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa del astro central</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa del satélite</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Radio orbital</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> satélite de \(1500\,\text{kg}\) en \(r=12\,500\,\text{km}\): \(E_m=-GM_Tm/(2r)\approx-2{,}39\cdot10^{10}\,\text{J}\). Negativa: el satélite está <em>ligado</em> al planeta. Para llevarlo al infinito habría que aportar exactamente \(+2{,}39\cdot10^{10}\,\text{J}\) (ficha 9).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es <strong>negativa</strong> para toda órbita ligada (elíptica o circular).</li>
+                    <li>Al subir de órbita (\(r\) mayor), \(E_m\) se hace <strong>menos negativa</strong> (aumenta).</li>
+                    <li>La energía para <strong>escapar</strong> desde una órbita circular es \(|E_m|=GMm/(2r)\).</li>
+                    <li>En una órbita elíptica: \(E_m=-GMm/(2a)\) (ficha 12).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 · RELACIÓN VIRIAL -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Relación entre \(E_c\) y \(E_p\) en órbita circular (virial)</h2>
+                <span class="badge-centro">Relación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación de proporcionalidad entre la energía cinética y la energía potencial en una órbita circular. Se aplica para resolver problemas de satélites sin necesidad de conocer \(r\) o \(v\) por separado: basta con una de las dos energías para deducir la otra y la energía mecánica total.
+            </div>
+            <div class="formula-box">
+                \[ E_c = -\,\frac{1}{2}E_p \qquad E_m = \frac{E_p}{2} = -\,E_c \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No: es una <strong>consecuencia directa</strong> de las expresiones de \(E_c\) y \(E_p\) en órbita circular. Basta comparar \(E_c=GMm/(2r)\) con \(E_p=-GMm/r\) para ver que \(E_c=-E_p/2\). Se llama <em>teorema del virial</em> porque aplica a todo potencial central del tipo \(U\propto1/r\). En la EBAU es una pregunta teórica recurrente (cfr. ejercicio 8).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Relación</th><th>Significado</th><th>Comentario</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Relación">\(E_c=-E_p/2\)</td><td data-label="Significado">La \(E_c\) es la mitad del valor absoluto de \(E_p\)</td><td data-label="Comentario">Ambas positivas en módulo</td></tr>
+                    <tr><td data-label="Relación">\(E_m=E_p/2\)</td><td data-label="Significado">La \(E_m\) es la mitad de \(E_p\)</td><td data-label="Comentario">Negativa (ligada)</td></tr>
+                    <tr><td data-label="Relación">\(E_m=-E_c\)</td><td data-label="Significado">La \(E_m\) es el opuesto de \(E_c\)</td><td data-label="Comentario">Útil para calcular \(E_c\) desde \(E_m\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si un satélite en órbita circular tiene \(E_m=-4{,}5\cdot10^{9}\,\text{J}\), automáticamente \(E_c=+4{,}5\cdot10^{9}\,\text{J}\) y \(E_p=-9{,}0\cdot10^{9}\,\text{J}\). Esta es la clave del ejercicio 9 de EBAU: con la energía mecánica y la velocidad se obtiene la masa del satélite.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El cociente \(E_c/|E_p|=1/2\) es <strong>constante</strong> en toda órbita circular.</li>
+                    <li>Consecuencia: la \(E_m\) de un satélite es <strong>siempre negativa</strong>.</li>
+                    <li>Para <strong>escapar</strong> desde la órbita hay que aportar \(|E_m|=E_c\) (ficha 9).</li>
+                    <li>Solo vale para potencial gravitatorio; no para muelles (\(U\propto r^2\)).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 · VELOCIDAD DE ESCAPE Y POZO GRAVITATORIO -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Velocidad de escape y pozo gravitatorio</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · Conservación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La velocidad mínima que hay que comunicar a un cuerpo desde la superficie de un astro para que escape definitivamente de su campo gravitatorio, llegando al infinito con velocidad nula. Se aplica en problemas de lanzamiento, atmósferas planetarias, agujeros negros y en el concepto de <em>pozo gravitatorio</em>.
+            </div>
+            <div class="formula-box">
+                \[ \tfrac{1}{2}mv_e^{2} - \frac{GMm}{R} = 0 \quad\Longrightarrow\quad v_e = \sqrt{\frac{2GM}{R}} = \sqrt{2g_0 R} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No: se deduce imponiendo \(E_m=0\) en la superficie (energía justa para llegar al infinito con \(v=0\)). Memoriza la idea: <strong>\(v_e=\sqrt{2}\,v_{\text{orb}}\)</strong> desde la misma órbita, y \(v_e=\sqrt{2g_0R}\) en superficie. El <strong>pozo gravitatorio</strong> es la representación gráfica de \(E_p(r)\): cuanto más profundo, más energía hay que aportar para escapar.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(v_e\)</td><td data-label="Significado">Velocidad de escape</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(G\)</td><td data-label="Significado">Constante de gravitación universal</td><td data-label="Unidades">6,67·10⁻¹¹ N·m²·kg⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa del astro</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(R\)</td><td data-label="Significado">Radio del astro (punto de lanzamiento)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(g_0\)</td><td data-label="Significado">Gravedad superficial \(GM/R^{2}\)</td><td data-label="Unidades">m·s⁻²</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> Tierra: \(v_e=\sqrt{2GM_T/R_T}\approx11{,}2\,\text{km/s}\). Luna: \(v_e\approx2{,}4\,\text{km/s}\). Si se lanza con \(v_e/2\), no escapa: alcanza \(h=R_T/3\approx2120\,\text{km}\) (cfr. ficha 4 y ejercicio 2 de EBAU).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>No depende de la <strong>masa del proyectil</strong> ni del ángulo de lanzamiento (despreciando atmósfera).</li>
+                    <li>\(v_e=\sqrt{2}\,v_{\text{orb}}\) desde la misma altura.</li>
+                    <li>Para escapar desde una órbita circular de radio \(r\): \(v_{\text{esc,órbita}}=\sqrt{2GM/r}\).</li>
+                    <li>El <strong>pozo gravitatorio</strong> explica por qué los cuerpos masivos retienen atmósferas.</li>
+                    <li>Si \(v_e\ge c\) aparecería un <em>agujero negro</em> (radio de Schwarzschild).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 10 · TRABAJO PARA PONER UN SATÉLITE EN ÓRBITA -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Trabajo para poner un satélite en órbita</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · Conservación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía mínima que hay que suministrar a un satélite de masa \(m\) para llevarlo desde la superficie de un planeta (supuesto en reposo) hasta una órbita circular de radio \(r\), o para transferirlo entre dos órbitas. Se aplica en todos los problemas de lanzamiento de satélites y transferencias orbitales de la EBAU.
+            </div>
+            <div class="formula-box">
+                \[ W_{\text{ext}} = E_{m,\text{órbita}} - E_{m,\text{superficie}} = GMm\!\left(\frac{1}{R}-\frac{1}{2r}\right) \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No: se obtiene como <strong>variación de energía mecánica</strong> entre la superficie (\(E_{m,s}=-GMm/R\)) y la órbita (\(E_{m,o}=-GMm/(2r)\)). El resultado es siempre positivo: hay que <em>aportar</em> energía para subir y acelerar el satélite. <strong>Truco:</strong> si el enunciado menciona «despreciando la rotación terrestre», aplica la fórmula tal cual; si no, habría que restar la energía cinética inicial debida a la rotación.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(W_{\text{ext}}\)</td><td data-label="Significado">Trabajo externo para poner el satélite en órbita</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(G\)</td><td data-label="Significado">Constante de gravitación universal</td><td data-label="Unidades">6,67·10⁻¹¹ N·m²·kg⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa del planeta</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa del satélite</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(R\)</td><td data-label="Significado">Radio del planeta (punto de partida)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Radio de la órbita circular destino</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> satélite de \(6000\,\text{kg}\) a una órbita geoestacionaria (\(r=4{,}225\cdot10^{7}\,\text{m}\)) desde la superficie terrestre: \(W_{\text{ext}}=GM_Tm(1/R_T-1/(2r))\approx3{,}47\cdot10^{11}\,\text{J}\). Para una transferencia LEO→GEO (ejercicio 3 de EBAU) sale \(\Delta E\approx1{,}94\cdot10^{10}\,\text{J}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Siempre es <strong>positivo</strong>: hay que aportar energía para subir y acelerar.</li>
+                    <li>Para una transferencia entre dos órbitas \(r_1\to r_2\): \(\Delta E=\tfrac{GMm}{2}(1/r_1-1/r_2)\).</li>
+                    <li>Si se tiene en cuenta la <strong>rotación terrestre</strong>, el trabajo necesario se reduce ligeramente (por eso se lanza hacia el este desde el ecuador).</li>
+                    <li>No confundir con el trabajo del <strong>campo</strong> (ficha 1), que es el opuesto.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 11 · APROXIMACIÓN Ep ≈ mgh -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">11</span>
+                <h2>Aproximación \(E_p\approx mgh\) en las proximidades de la superficie</h2>
+                <span class="badge-centro">Aproximación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Caso límite</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía potencial gravitatoria de una masa \(m\) a una altura \(h\) pequeña comparada con el radio del astro, tomando el origen en la superficie. Se aplica en problemas de caída libre, lanzamientos verticales de baja altura, péndulos y planos inclinados, donde \(g\) puede considerarse constante.
+            </div>
+            <div class="formula-box">
+                \[ E_p \approx mgh \qquad (\text{válido si } h\ll R) \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No: es un <strong>caso límite</strong> de \(E_p=-GMm/r\) cuando \(h\ll R\). Se obtiene desarrollando \(1/(R+h)\approx1/R-h/R^2\) y tomando el origen en la superficie. <strong>Cuidado EBAU:</strong> solo vale si \(h\ll R_T\) (típicamente \(h<10\,\text{km}\)). Si la altura es apreciable (satélites, lanzamientos orbitales), hay que usar la expresión general \(E_p=-GMm/r\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E_p\)</td><td data-label="Significado">Energía potencial (origen en la superficie)</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa del cuerpo</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(g\)</td><td data-label="Significado">Gravedad local (\(g_0\) si \(h\approx0\))</td><td data-label="Unidades">m·s⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(h\)</td><td data-label="Significado">Altura sobre la superficie (\(h\ll R\))</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un objeto de \(2\,\text{kg}\) a \(10\,\text{m}\) de altura tiene \(E_p\approx2\cdot9{,}8\cdot10=196\,\text{J}\). La expresión general daría \(E_p=-GM_Tm/(R_T+h)+GM_Tm/R_T\approx196\,\text{J}\); la diferencia es despreciable (\(h/R_T\sim10^{-6}\)).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Solo válida si \(h\ll R\) (usualmente \(h<10\,\text{km}\)).</li>
+                    <li>El origen de energía potencial está en la superficie (\(E_p(0)=0\)), no en el infinito.</li>
+                    <li>Es un caso particular de la expresión general, no una fórmula alternativa.</li>
+                    <li>Energía mecánica: \(E_m=\tfrac{1}{2}mv^{2}+mgh\) se conserva si no hay rozamiento.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 12 · ENERGÍA EN ÓRBITAS ELÍPTICAS -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">12</span>
+                <h2>Energía mecánica en órbitas elípticas (ampliación)</h2>
+                <span class="badge-centro">Ampliación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía mecánica total de un cuerpo en una órbita elíptica de semieje mayor \(a\). Se aplica en problemas de transferencias orbitales (órbita de Hohmann), cometas y satélites en órbitas no circulares. Generaliza el resultado de la órbita circular, que es un caso particular con \(a=r\).
+            </div>
+            <div class="formula-box">
+                \[ E_m = -\,\frac{GMm}{2a} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No: generaliza el resultado de la órbita circular sustituyendo \(r\) por el <strong>semieje mayor</strong> \(a\). La \(E_m\) sigue siendo negativa (órbita ligada). En los puntos de máxima y mínima distancia (apogeo y perigeo) se combinan la conservación de la energía y del momento angular para hallar velocidades.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E_m\)</td><td data-label="Significado">Energía mecánica en la órbita elíptica</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(G\)</td><td data-label="Significado">Constante de gravitación universal</td><td data-label="Unidades">6,67·10⁻¹¹ N·m²·kg⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa del astro central</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa del cuerpo en órbita</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(a\)</td><td data-label="Significado">Semieje mayor de la elipse</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un cometa con semieje mayor \(a=2\,\text{UA}\approx3{,}0\cdot10^{11}\,\text{m}\) alrededor del Sol: \(E_m=-GM_\odot m/(2a)\). Si en el perihelio está más cerca, su \(E_c\) aumenta; en el afelio, disminuye. La \(E_m\) se mantiene constante.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Para la órbita circular, \(a=r\): se recupera \(E_m=-GMm/(2r)\).</li>
+                    <li>La \(E_m\) <strong>solo depende de \(a\)</strong>, no de la excentricidad.</li>
+                    <li>Sigue siendo <strong>negativa</strong> para órbitas ligadas (elipses).</li>
+                    <li>Si \(E_m\ge0\), la trayectoria es parabólica (\(E_m=0\)) o hiperbólica (\(E_m>0\)).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             LEYENDA EPISTÉMICA
+             ============================================================ -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
+                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
+                consecuencia matemática, principio de conservación o conversión de unidades— y cada
+                categoría se domina con un <strong>verbo distinto</strong>. Identificar el tipo
+                <em>antes</em> de estudiar ahorra tiempo y evita memorizar lo que se puede deducir.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física.
+                        No se demuestra, se establece. Se domina cuando puedes enunciarla sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A6</strong>
+                        \(E_p=-GMm/r\) &nbsp;·&nbsp; \(V=E_p/m=-GM/r\)
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es el <em>punto de partida</em> del tema: describe cómo funciona la naturaleza.
+                        No se deriva de otra cosa; se entiende el porqué y las condiciones en las que aplica.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A6</strong>
+                        \(F=G\,m_1m_2/r^{2}\) &nbsp;·&nbsp; \(W_{\text{campo}}=-\Delta E_p\)
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> integrando, despejando o sustituyendo una ley fundamental o una
+                        definición. No se memoriza: se reconstruye en 2–3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A6</strong>
+                        \(E_c=\tfrac{GMm}{2r}\) &nbsp;·&nbsp; \(E_m=-\tfrac{GMm}{2r}\) &nbsp;·&nbsp;
+                        \(E_c=-E_p/2\) &nbsp;·&nbsp; \(v_e=\sqrt{2GM/R}\) &nbsp;·&nbsp;
+                        \(W_{\text{ext}}=GMm(1/R-1/(2r))\)
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Principio / conservación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Es una <em>regla universal</em> que restringe los procesos posibles. No se demuestra
+                        ni se deduce: se aplica como filtro a cada problema concreto.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A6</strong>
+                        \(E_m=E_c+E_p=\text{cte}\) &nbsp;·&nbsp;
+                        \(\tfrac{1}{2}mv_A^{2}-GMm/r_A=\tfrac{1}{2}mv_B^{2}-GMm/r_B\)
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Conversión / operación</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes
+                        equivalentes. Debe salir sin pensar, como un reflejo.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos A6</strong>
+                        \(\text{J}\leftrightarrow\text{kWh}\) &nbsp;·&nbsp; \(\text{km}\leftrightarrow\text{m}\) &nbsp;·&nbsp;
+                        \(\text{km/s}\leftrightarrow\text{m/s}\) &nbsp;·&nbsp; \(h\ll R\) antes de usar \(mgh\)
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tabla resumen -->
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Punto de partida físico</td>
+                        <td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Regla universal de conservación</td>
+                        <td data-label="¿Cómo se domina?">Plantearla en cada reacción</td>
+                        <td data-label="Autoevaluación">¿La aplico como filtro al problema?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Herramienta mecánica</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿Me sale sin pensar?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Regla de oro -->
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
+                pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si sale de otra fórmula integrando, despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
+                Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender).
+                Si solo asigna un nombre → <strong>definición</strong> (memorizar).
+                Si es una regla que se cumple siempre → <strong>principio</strong> (aplicar).
+            </div>
+
+            <!-- Mini-referencia de colores de las tarjetas -->
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Fundamento y forma vectorial</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Potencial y energía</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Órbitas y satélites</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Trabajo y aplicaciones energéticas</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Principios de conservación</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================ GLOSARIO ============================ -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema A6</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ W_{A\to B}^{\text{grav}} = GMm\!\left(\tfrac{1}{r_B}-\tfrac{1}{r_A}\right) = -\Delta E_p \]</td><td data-label="Nombre">Trabajo realizado por la fuerza gravitatoria</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ W_{\text{ext}} = -W_{\text{campo}} = \Delta E_p \]</td><td data-label="Nombre">Trabajo de un agente externo</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ E_p = -G\,\dfrac{M\,m}{r} \]</td><td data-label="Nombre">Energía potencial gravitatoria</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ E_m = E_c + E_p = \text{constante} \]</td><td data-label="Nombre">Conservación de la energía mecánica</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ v_{\text{orb}} = \sqrt{\dfrac{GM}{r}} \]</td><td data-label="Nombre">Velocidad orbital en órbita circular</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ E_c = \dfrac{GMm}{2r} \]</td><td data-label="Nombre">Energía cinética en órbita circular</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ E_m = -\dfrac{GMm}{2r} \]</td><td data-label="Nombre">Energía mecánica en órbita circular</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ E_c = -\tfrac{1}{2}E_p, \quad E_m = \tfrac{E_p}{2} = -E_c \]</td><td data-label="Nombre">Relación virial \(E_c\)-\(E_p\) en órbita circular</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ v_e = \sqrt{\dfrac{2GM}{R}} = \sqrt{2g_0 R} \]</td><td data-label="Nombre">Velocidad de escape y pozo gravitatorio</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ W_{\text{ext}} = GMm\!\left(\tfrac{1}{R}-\tfrac{1}{2r}\right) \]</td><td data-label="Nombre">Trabajo para poner un satélite en órbita</td><td data-label="Ficha">10</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ E_p \approx mgh \quad (h\ll R) \]</td><td data-label="Nombre">Aproximación de \(E_p\) en las proximidades de la superficie</td><td data-label="Ficha">11</td></tr>
+                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ E_m = -\dfrac{GMm}{2a} \]</td><td data-label="Nombre">Energía mecánica en órbitas elípticas</td><td data-label="Ficha">12</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> olvidar el signo negativo de \(E_p\) y \(E_m\); confundir energía potencial con potencial; no distinguir entre <em>trabajo del campo</em> (\(W=-\Delta E_p\)) y <em>trabajo externo</em> (\(W=+\Delta E_p\)); aplicar \(mgh\) cuando \(h\) no es pequeña comparada con \(R_T\); no conservar la energía mecánica cuando hay fuerzas no conservativas (rozamiento, propulsión); confundir velocidad orbital \(\sqrt{GM/r}\) con velocidad de escape \(\sqrt{2GM/R}\); medir \(r\) desde la superficie en lugar del centro; y no homogeneizar las unidades al S.I.
+        </div>
+    </details>
+
+    <!-- ============================ RECORDATORIO + BOTÓN ============================ -->
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> el tema A6 se construye sobre dos ideas que conviene tener siempre presentes: (1) la fuerza gravitatoria es <strong>conservativa</strong>, por lo que existe una energía potencial \(E_p=-GMm/r\) y se conserva \(E_m=E_c+E_p\); y (2) el <strong>pozo gravitatorio</strong> explica por qué hay que <em>aportar</em> energía para subir de órbita o escapar. A partir de ahí se deducen el trabajo (\(W=-\Delta E_p\)), la velocidad orbital (\(v=\sqrt{GM/r}\)), la energía mecánica en órbita circular (\(E_m=-GMm/(2r)\)) y la velocidad de escape (\(v_e=\sqrt{2GM/R}\)). Memoriza solo las definiciones y el principio de conservación; el resto se reconstruye en dos líneas. Recuerda medir siempre \(r\) <strong>desde el centro</strong> de las masas y homogeneizar las unidades al S.I.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+</body>
+</html>
