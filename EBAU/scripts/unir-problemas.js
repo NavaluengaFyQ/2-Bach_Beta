@@ -14,7 +14,7 @@
 // Sinónimo de "aplanar / merge": recorre el índice de exámenes, abre cada
 // JSON individual, fusiona los metadatos del examen con cada ejercicio y
 // vuelca todo en un único array plano `problemas.json`. Ese fichero es el
-// que consume el buscador (`problemas-inline v04-Filtro prefijado.html`).
+// que consume el buscador (`problemas-inline_v04-Filtro_prefijado.html`).
 // ════════════════════════════════════════════════════════════════════════
 
 

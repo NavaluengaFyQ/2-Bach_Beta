@@ -1,5 +1,5 @@
 <!-- ════════════════════════════════════════════════════════════════════════ -->
-<!-- problemas-inline v04-Filtro prefijado.html                            -->
+<!-- problemas-inline_v04-Filtro_prefijado.html                            -->
 <!-- Plantilla del buscador de problemas resueltos de PAU · Física         -->
 <!-- con FILTRO PREFIJADO configurable por URL.                            -->
 <!--                                                                        -->
@@ -29,7 +29,7 @@
 <!--       alterna entre «filtro fijado» y «filtro liberado». Al liberar,   -->
 <!--       restaura el input y deselecciona solo los botones pulsados por   -->
 <!--       el prefijo (no toca los que hubiera pulsado el usuario).         -->
-<!--   · «Limpiar filtros»: navega a problemas-inline v04.html (catálogo    -->
+<!--   · «Limpiar filtros»: navega a problemas-inline_v04.html (catálogo    -->
 <!--     completo, sin prefijo). Si el prefijo está activo, expone           -->
 <!--     window.filtroPrefijadoLiberar() para liberarlo antes.              -->
 <!--   · Segmented «Enunciado + solución» / «Solo enunciado»: decide si     -->
@@ -129,8 +129,8 @@
              placeholder='Buscar por título, enunciado, tema… (usa "frase" y + / |)'
              autocomplete="off" spellcheck="false">
       <select id="select-ambito" title="Dónde buscar el texto">
-        <option value="todo" selected>Todo (incluye metadatos)</option>
-        <option value="ambas">Enunciado + resolución</option>
+        <option value="todo">Todo (incluye metadatos)</option>
+        <option value="ambas" selected>Enunciado + resolución</option>
         <option value="enunciado">Solo enunciado</option>
         <option value="resolucion">Solo resolución</option>
       </select>
@@ -259,7 +259,7 @@
   /* 2. «Limpiar filtros» → catálogo completo (versión sin prefijo) */
   if (btnLimpiar) {
     btnLimpiar.addEventListener('click', function () {
-      window.location.href = 'problemas-inline v04.html';
+      window.location.href = 'problemas-inline_v04.html';
     });
   }
 

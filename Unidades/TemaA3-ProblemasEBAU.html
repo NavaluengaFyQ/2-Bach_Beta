@@ -5,7 +5,7 @@
 <!-- QUÉ HACE                                                               -->
 <!--   Al abrirse, muestra durante ~0,5 s los criterios de búsqueda que va   -->
 <!--   a aplicar y redirige automáticamente a la plantilla del buscador     -->
-<!--   ("problemas-inline v04-Filtro prefijado.html") pasándole esos        -->
+<!--   ("problemas-inline_v04-Filtro_prefijado.html") pasándole esos        -->
 <!--   criterios como parámetros de URL.                                    -->
 <!--                                                                        -->
 <!-- POR QUÉ EXISTE                                                        -->
@@ -26,13 +26,13 @@
 <!--   3. El resto (URL, redirección, spinner, fallback) es automático.     -->
 <!--                                                                        -->
 <!-- DESTINO                                                                -->
-<!--   problemas-inline v04-Filtro prefijado.html?q=…&comunidad=…&bloque=…  -->
+<!--   problemas-inline_v04-Filtro_prefijado.html?q=…&comunidad=…&bloque=…  -->
 <!--                                          &tema=…&fuente=…               -->
 <!--                                                                        -->
 <!-- DEPENDENCIAS                                                          -->
 <!--   · Ninguna (HTML + JS autocontenido).                                 -->
 <!--   · Debe convivir en la misma carpeta que la plantilla destino, o      -->
-<!--     ajustar la ruta 'problemas-inline v04-Filtro prefijado.html'.      -->
+<!--     ajustar la ruta 'problemas-inline_v04-Filtro_prefijado.html'.      -->
 <!--                                                                        -->
 <!-- COMPORTAMIENTO ANTE FALLOS                                            -->
 <!--   · Si la redirección no ocurre, se muestra un enlace de respaldo.    -->
@@ -45,7 +45,7 @@
 <!-- Ubicación: raíz/Unidades/                                              -->
 <!-- Lanzadera del Tema A1 · Efecto fotoeléctrico                           -->
 <!--                                                                        -->
-<!-- DESTINO: raíz/EBAU/problemas-inline v04-Filtro prefijado.html          -->
+<!-- DESTINO: raíz/EBAU/problemas-inline_v04-Filtro_prefijado.html          -->
 <!--          (ruta relativa: ../EBAU/problemas-inline v04-Filtro …html)    -->
 <!--                                                                        -->
 <!-- Prueba varios candidatos por si renombras sin espacios el destino.     -->
@@ -58,7 +58,7 @@
 <!-- Ubicación: raíz/Unidades/                                              -->
 <!-- Lanzadera del Tema A1 · Efecto fotoeléctrico                           -->
 <!--                                                                        -->
-<!-- DESTINO: raíz/EBAU/problemas-inline v04-Filtro prefijado.html          -->
+<!-- DESTINO: raíz/EBAU/problemas-inline_v04-Filtro_prefijado.html          -->
 <!--                                                                        -->
 <!-- Diseño anti-parpadeo:                                                  -->
 <!--   · Fondo = mismo que el destino (#f5f7fb) → sin flash de color        -->
@@ -77,7 +77,7 @@
 <title>Tema A3 · EBAU Física</title>
 
 <!-- El navegador empieza a traer el destino mientras ejecutamos el JS -->
-<link rel="prefetch" href="../EBAU/problemas-inline v04-Filtro prefijado.html">
+<link rel="prefetch" href="../EBAU/problemas-inline_v04-Filtro_prefijado.html">
 <link rel="prefetch" href="../EBAU/problemas-inline-v04-Filtro-prefijado.html">
 
 <style>
@@ -124,9 +124,9 @@
 
   /* ── Candidatos en orden de preferencia ── */
   var CANDIDATOS = [
-    '../EBAU/problemas-inline v04-Filtro prefijado.html',
+    '../EBAU/problemas-inline_v04-Filtro_prefijado.html',
     '../EBAU/problemas-inline-v04-Filtro-prefijado.html',
-    'problemas-inline v04-Filtro prefijado.html',
+    'problemas-inline_v04-Filtro_prefijado.html',
     'problemas-inline-v04-Filtro-prefijado.html'
   ];
 
@@ -153,7 +153,7 @@
         '<ul>' + probadas.map(function (p) {
           return '<li><code>' + escapeHtml(p) + '</code></li>';
         }).join('') + '</ul>' +
-        'Comprueba que existe <code>raíz/EBAU/problemas-inline v04-Filtro prefijado.html</code> ' +
+        'Comprueba que existe <code>raíz/EBAU/problemas-inline_v04-Filtro_prefijado.html</code> ' +
         'y que el nombre coincide exactamente (mayúsculas, espacios, acentos, guiones…).' +
       '</div>';
   }

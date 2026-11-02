@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tema C4 de Física de 2º de Bachillerato: propagación y fenómenos ondulatorios. Conceptos, fórmulas y problemas PAU/EBAU resueltos.">
+    <title>Tema C4. Propagación y fenómenos ondulatorios</title>
+
+
+
+    <!-- Para crear las consultas puntuales en la base de datos) -->
+    <script src="js/utils.js" defer></script>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    
+
+    <!-- MathJax -->
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Pequeños ajustes locales; la estructura visual principal procede de unidades.css -->
+    <style>
+        .dato-relevancia {
+            display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            margin: 14px 0 4px; padding: 12px 15px; border-radius: 12px;
+            background: #eef2ff; border-left: 5px solid #6366f1; color: #1e3a8a;
+        }
+        .dato-relevancia .dato {
+            background: white; border: 1px solid #c7d2fe; border-radius: 9px;
+            padding: 6px 10px; font-weight: 700; white-space: nowrap;
+        }
+        .ray-box {
+            background: #fff; border: 1px solid #dbe3ee; border-radius: 12px;
+            padding: 12px; margin: 16px auto; max-width: 780px; overflow-x: auto;
+        }
+        .ray-box svg { display: block; width: 100%; height: auto; min-width: 280px; }
+        .two-columns {
+            display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px; margin: 14px 0;
+        }
+        .mini-card {
+            border: 1px solid #dbe3ee; border-radius: 10px; background: #fff; padding: 13px;
+        }
+        .mini-card h4 { margin: 0 0 8px; color: #1e40af; }
+        .mini-card p:last-child { margin-bottom: 0; }
+        .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin: 10px 0; }
+        .tag {
+            display: inline-block; padding: 4px 9px; border-radius: 20px;
+            background: #e0e7ff; color: #3730a3; font-size: .82rem; font-weight: 700;
+        }
+        .meta-ej { line-height: 1.5; }
+        .nota-fuente {
+            font-size: .9rem; color: #475569; background: #f8fafc;
+            border: 1px dashed #94a3b8; border-radius: 10px; padding: 12px 15px;
+        }
+        .formula-box .small { font-size: .87em; color: #475569; }
+        .procedimiento-lista li { margin-bottom: 7px; }
+        .tabla-formulas td:first-child { font-weight: 700; color: #1e3a8a; width: 30%; }
+        .tabla-formulas td:nth-child(2) { text-align: center; }
+        .pie-clave { border-radius: 14px; }
+        @media (max-width: 700px) {
+            .two-columns { grid-template-columns: 1fr; }
+            .dato-relevancia { align-items: flex-start; }
+            .tabla-formulas td:first-child { width: auto; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================================================ -->
+    <!-- CABECERA                                                     -->
+    <!-- ============================================================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA C4.- </span>
+                <span class="texto">Propagación y fenómenos ondulatorios</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- UBICACIÓN CURRICULAR                                         -->
+    <!-- ============================================================ -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque C. Vibraciones y ondas</strong> del currículo de Física de 2.º de Bachillerato de Castilla y León, de acuerdo con el Decreto 40/2022 (BOCYL-D-30092022-4).</p>
+
+        <div class="mapa-bloques">
+            <div class="bloque-card">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">A1</span><span class="tema-chip">A2</span><span class="tema-chip">A3</span><span class="tema-chip">A4</span>
+                    <span class="tema-chip">A5</span><span class="tema-chip">A6</span><span class="tema-chip">A7</span><span class="tema-chip">A8</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span><span class="tema-chip">B2</span><span class="tema-chip">B3</span><span class="tema-chip">B4</span>
+                    <span class="tema-chip">B5</span><span class="tema-chip">B6</span><span class="tema-chip">B7</span><span class="tema-chip">B8</span><span class="tema-chip">B9</span>
+                </div>
+            </div>
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">C1</span><span class="tema-chip">C2</span><span class="tema-chip">C3</span>
+                    <span class="tema-chip actual">C4</span><span class="tema-chip">C5</span><span class="tema-chip">C6</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">D1</span><span class="tema-chip">D2</span><span class="tema-chip">D3</span>
+                    <span class="tema-chip">D4</span><span class="tema-chip">D5</span><span class="tema-chip">D6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-box" style="font-size: .98em; text-align:left;">
+            <strong>Bloque C · Tema C4:</strong>
+            <span class="texto-resaltado">Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias.</span>
+            <p style="margin:10px 0 0;">El trabajo de este tema se centra en describir cómo se propagan las ondas y qué sucede cuando encuentran una superficie de separación, una abertura u otras ondas. Se prestará especial atención a la luz, la ley de Snell, el ángulo límite y la reflexión total interna.</p>
+        </div>
+
+        <div class="dato-relevancia">
+            <strong>Referencia de frecuencia en EBAU:</strong>
+            <span class="dato">C-C4 / P-C4: 13,9 %</span>
+            <span class="dato">Media: 10,1 %</span>
+            <span class="dato">Δ: +3,8 pp</span>
+            <span style="font-size:.88rem;">Datos de seguimiento aportados para la planificación del tema.</span>
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- OBJETIVOS                                                    -->
+    <!-- ============================================================ -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Explicar la propagación de ondas mediante el principio de Huygens y reconocer la representación por frentes de onda y rayos.</li>
+            <li>Enunciar y aplicar las leyes de la reflexión, midiendo siempre los ángulos respecto a la normal.</li>
+            <li>Explicar la refracción y aplicar la ley de Snell para calcular ángulos, índices de refracción y velocidades.</li>
+            <li>Relacionar índice de refracción, velocidad, frecuencia y longitud de onda, distinguiendo qué magnitudes cambian al pasar de un medio a otro.</li>
+            <li>Calcular el ángulo límite y establecer las condiciones necesarias para que se produzca reflexión total interna.</li>
+            <li>Interpretar la difracción y predecir cómo depende de la longitud de onda y del tamaño de la abertura.</li>
+            <li>Aplicar las condiciones de interferencia constructiva y destructiva a dos focos coherentes.</li>
+            <li>Resolver situaciones de láminas plano-paralelas, prismas y fibras ópticas mediante geometría y leyes de propagación.</li>
+            <li>Resolver y justificar problemas de razonamiento y cálculo característicos de la PAU/EBAU de 2.º de Bachillerato.</li>
+        </ul>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- CONTENIDO TEÓRICO                                            -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2 id="teoria">📚 Contenido teórico</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">1</span><strong>Frentes de onda, rayos y principio de Huygens.</strong></summary>
+            <p>Un <strong>frente de onda</strong> es el lugar geométrico de los puntos que oscilan en la misma fase. Los <strong>rayos</strong> indican la dirección de propagación de la energía y, en un medio isótropo, son perpendiculares a los frentes de onda.</p>
+            <p>El <strong>principio de Huygens</strong> establece que cada punto de un frente de onda puede considerarse origen de ondas secundarias. La envolvente de esas ondas secundarias determina el frente de onda en un instante posterior. Este modelo permite interpretar la reflexión, la refracción y la difracción.</p>
+            <div class="two-columns">
+                <div class="mini-card">
+                    <h4>Frente de onda plano</h4>
+                    <p>Los frentes son líneas o superficies paralelas. Los rayos son paralelos entre sí y perpendiculares a ellos.</p>
+                </div>
+                <div class="mini-card">
+                    <h4>Frente de onda esférico</h4>
+                    <p>Se produce, por ejemplo, alrededor de un foco puntual. Los rayos son radiales y se separan al alejarse del foco.</p>
+                </div>
+            </div>
+            <div class="note"><strong>Idea clave:</strong> Huygens es un modelo geométrico para construir el frente de onda siguiente. No debe confundirse el frente de onda (superficie de igual fase) con el rayo (dirección de propagación).</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Reflexión de las ondas.</strong></summary>
+            <p>La <strong>reflexión</strong> ocurre cuando una onda llega a una superficie de separación y permanece en el medio de procedencia, cambiando su dirección de propagación. En una superficie plana se cumple:</p>
+            <div class="formula-box">
+                \[\boxed{\theta_i=\theta_r}\]
+                <span class="small">Ángulo de incidencia = ángulo de reflexión.</span>
+            </div>
+            <p>La normal es la recta perpendicular a la superficie en el punto de incidencia. Tanto el ángulo de incidencia \(\theta_i\) como el de reflexión \(\theta_r\) se miden entre el rayo correspondiente y la normal.</p>
+            <ul>
+                <li>El rayo incidente, el reflejado y la normal están en un mismo plano.</li>
+                <li>El rayo reflejado es simétrico al incidente respecto a la normal.</li>
+                <li>En reflexión especular, una superficie lisa produce una dirección reflejada bien definida; en reflexión difusa, una superficie irregular dispersa la onda en muchas direcciones.</li>
+            </ul>
+            <div class="ray-box">
+                <svg viewBox="0 0 640 285" role="img" aria-label="Diagrama de reflexión y refracción en una superficie plana">
+                    <defs>
+                        <marker id="arr-c4-a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#dc2626"/></marker>
+                        <marker id="arr-c4-b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#2563eb"/></marker>
+                    </defs>
+                    <rect x="18" y="18" width="604" height="249" rx="12" fill="#f8fafc"/>
+                    <rect x="19" y="143" width="602" height="123" fill="#dbeafe" opacity=".65"/>
+                    <line x1="20" y1="143" x2="620" y2="143" stroke="#334155" stroke-width="3"/>
+                    <line x1="320" y1="28" x2="320" y2="260" stroke="#64748b" stroke-width="2" stroke-dasharray="7 6"/>
+                    <line x1="150" y1="30" x2="320" y2="143" stroke="#dc2626" stroke-width="4" marker-end="url(#arr-c4-a)"/>
+                    <line x1="320" y1="143" x2="490" y2="30" stroke="#16a34a" stroke-width="4" marker-end="url(#arr-c4-b)"/>
+                    <line x1="320" y1="143" x2="410" y2="262" stroke="#2563eb" stroke-width="4" marker-end="url(#arr-c4-b)"/>
+                    <path d="M320 93 A50 50 0 0 0 278 116" fill="none" stroke="#dc2626" stroke-width="2"/>
+                    <path d="M320 93 A50 50 0 0 1 362 116" fill="none" stroke="#16a34a" stroke-width="2"/>
+                    <text x="198" y="59" font-size="16" fill="#991b1b" font-weight="700">Incidente</text>
+                    <text x="432" y="59" font-size="16" fill="#166534" font-weight="700">Reflejado</text>
+                    <text x="422" y="234" font-size="16" fill="#1d4ed8" font-weight="700">Refractado</text>
+                    <text x="330" y="37" font-size="14" fill="#475569">Normal</text>
+                    <text x="286" y="111" font-size="13" fill="#991b1b">i</text>
+                    <text x="345" y="111" font-size="13" fill="#166534">r</text>
+                    <text x="28" y="166" font-size="14" fill="#1e40af">Medio 2</text>
+                    <text x="28" y="42" font-size="14" fill="#334155">Medio 1</text>
+                    <text x="336" y="135" font-size="12" fill="#334155">Punto de incidencia</text>
+                </svg>
+            </div>
+            <p><strong>Lectura del esquema:</strong> los ángulos \(i\) y \(r\) de reflexión son iguales. El ángulo de refracción se mide también desde la normal, pero en el segundo medio.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Refracción y ley de Snell.</strong></summary>
+            <p>La <strong>refracción</strong> es el cambio de dirección y de velocidad de una onda al pasar de un medio a otro en el que se propaga con distinta velocidad. Si la incidencia no es normal, generalmente también cambia la dirección del rayo.</p>
+            <p>El índice de refracción absoluto de un medio para la luz se define como:</p>
+            <div class="formula-box">\[\boxed{n=\frac{c_0}{v}}\]</div>
+            <p>donde \(c_0\) es la velocidad de la luz en el vacío y \(v\) su velocidad en el medio. En medios habituales, \(n\geq 1\).</p>
+            <p>La ley de Snell relaciona los ángulos de incidencia y refracción:</p>
+            <div class="formula-box">\[\boxed{n_1\,\operatorname{sen}\theta_1=n_2\,\operatorname{sen}\theta_2}\]</div>
+            <ul>
+                <li>Si \(n_2&gt;n_1\), el rayo se acerca a la normal (\(\theta_2&lt;\theta_1\)).</li>
+                <li>Si \(n_2&lt;n_1\), el rayo se aleja de la normal (\(\theta_2&gt;\theta_1\)), siempre que exista rayo refractado.</li>
+                <li>Si la incidencia es normal (\(\theta_1=0\)), no cambia la dirección, aunque sí puede cambiar la velocidad y la longitud de onda.</li>
+            </ul>
+            <div class="note"><strong>Atención:</strong> si el enunciado proporciona el ángulo con la superficie, hay que convertirlo a ángulo con la normal: \(\theta=90^\circ-\alpha\).</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Qué cambia al pasar de un medio a otro.</strong></summary>
+            <p>La frecuencia la determina la fuente y se mantiene constante en la refracción. Como \(v=\lambda f\), al cambiar la velocidad cambia la longitud de onda.</p>
+            <div class="formula-box">\[\boxed{f_1=f_2\qquad T_1=T_2}\qquad\boxed{\frac{\lambda_2}{\lambda_1}=\frac{v_2}{v_1}=\frac{n_1}{n_2}}\]</div>
+            <table class="tabla-formulas">
+                <thead><tr><th>Magnitud</th><th>¿Cambia?</th><th>Relación</th></tr></thead>
+                <tbody>
+                    <tr><td>Frecuencia \(f\)</td><td>No</td><td>La fija el foco emisor.</td></tr>
+                    <tr><td>Periodo \(T\)</td><td>No</td><td>\(T=1/f\).</td></tr>
+                    <tr><td>Velocidad \(v\)</td><td>En general, sí</td><td>\(v=c_0/n\) para la luz.</td></tr>
+                    <tr><td>Longitud de onda \(\lambda\)</td><td>En general, sí</td><td>\(\lambda=v/f\).</td></tr>
+                    <tr><td>Dirección</td><td>En general, sí</td><td>La determina Snell; no cambia si la incidencia es normal.</td></tr>
+                </tbody>
+            </table>
+            <div class="note"><strong>Dispersión cromática:</strong> aparece cuando el índice depende de la longitud de onda, \(n=n(\lambda)\). Los distintos colores se refractan de forma diferente. La luz monocromática puede refractarse, pero no separarse en varios colores porque solo contiene una frecuencia.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">5</span><strong>Ángulo límite y reflexión total interna.</strong></summary>
+            <p>Cuando la luz pasa de un medio de índice mayor \(n_1\) a otro de índice menor \(n_2\), el rayo refractado se aleja de la normal. Al aumentar el ángulo de incidencia llega un momento en el que el rayo refractado sale paralelo a la superficie, es decir, \(\theta_2=90^\circ\). El ángulo de incidencia correspondiente se denomina <strong>ángulo límite</strong> o <strong>ángulo crítico</strong>.</p>
+            <div class="formula-box">\[\boxed{\operatorname{sen}\theta_c=\frac{n_2}{n_1}\quad (n_1&gt;n_2)}\]</div>
+            <p>Por tanto, solo hay ángulo límite si la luz intenta pasar de un medio de mayor índice a otro de menor índice. Como \(n=c_0/v\), también se cumple \(\operatorname{sen}\theta_c=v_1/v_2\).</p>
+            <div class="two-columns">
+                <div class="mini-card">
+                    <h4>En el ángulo límite</h4>
+                    <p>El rayo transmitido es rasante a la superficie: \(\theta_2=90^\circ\). Es la situación límite entre refracción y reflexión total.</p>
+                </div>
+                <div class="mini-card">
+                    <h4>Por encima del ángulo límite</h4>
+                    <p>Si \(\theta_i&gt;\theta_c\), no existe rayo refractado propagado: se produce <strong>reflexión total interna</strong>.</p>
+                </div>
+            </div>
+            <div class="ray-box">
+                <svg viewBox="0 0 640 270" role="img" aria-label="Comparación de refracción límite y reflexión total interna">
+                    <defs><marker id="arr-c4-c" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#2563eb"/></marker></defs>
+                    <rect x="8" y="10" width="306" height="250" rx="10" fill="#f8fafc"/>
+                    <rect x="326" y="10" width="306" height="250" rx="10" fill="#f8fafc"/>
+                    <text x="161" y="34" font-size="15" text-anchor="middle" font-weight="700" fill="#1e3a8a">i = θc</text>
+                    <text x="479" y="34" font-size="15" text-anchor="middle" font-weight="700" fill="#1e3a8a">i &gt; θc</text>
+                    <line x1="25" y1="100" x2="297" y2="100" stroke="#334155" stroke-width="2.5"/>
+                    <line x1="343" y1="100" x2="615" y2="100" stroke="#334155" stroke-width="2.5"/>
+                    <rect x="25" y="101" width="272" height="148" fill="#bfdbfe" opacity=".65"/>
+                    <rect x="343" y="101" width="272" height="148" fill="#bfdbfe" opacity=".65"/>
+                    <line x1="165" y1="45" x2="165" y2="225" stroke="#64748b" stroke-dasharray="5 5"/>
+                    <line x1="483" y1="45" x2="483" y2="225" stroke="#64748b" stroke-dasharray="5 5"/>
+                    <line x1="76" y1="222" x2="165" y2="100" stroke="#2563eb" stroke-width="3.5" marker-end="url(#arr-c4-c)"/>
+                    <line x1="165" y1="100" x2="254" y2="222" stroke="#16a34a" stroke-width="3.5" marker-end="url(#arr-c4-c)"/>
+                    <line x1="165" y1="100" x2="284" y2="100" stroke="#dc2626" stroke-width="3.5" marker-end="url(#arr-c4-c)"/>
+                    <line x1="394" y1="222" x2="483" y2="100" stroke="#2563eb" stroke-width="3.5" marker-end="url(#arr-c4-c)"/>
+                    <line x1="483" y1="100" x2="572" y2="222" stroke="#16a34a" stroke-width="3.5" marker-end="url(#arr-c4-c)"/>
+                    <text x="190" y="88" font-size="12" fill="#b91c1c">Refractado rasante</text>
+                    <text x="476" y="76" font-size="12" fill="#475569">Sin rayo transmitido</text>
+                    <text x="39" y="244" font-size="12" fill="#1e40af">n1 &gt; n2</text>
+                    <text x="357" y="244" font-size="12" fill="#1e40af">n1 &gt; n2</text>
+                </svg>
+            </div>
+            <p><strong>Aplicación: fibra óptica.</strong> La luz queda guiada por el núcleo si incide sobre la interfaz núcleo-revestimiento con un ángulo superior al crítico. Las reflexiones totales sucesivas permiten transmitir señales a largas distancias con pérdidas reducidas.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">6</span><strong>Difracción.</strong></summary>
+            <p>La <strong>difracción</strong> es la desviación y expansión de una onda al atravesar una abertura o bordear un obstáculo. Es un comportamiento característico de las ondas y se aprecia especialmente cuando el tamaño \(a\) de la abertura es comparable con la longitud de onda \(\lambda\), o menor que ella.</p>
+            <div class="formula-box">\[\boxed{\text{Difracción apreciable cuando } a\sim\lambda\text{ o }a&lt;\lambda}\]</div>
+            <ul>
+                <li>Si \(a\gg\lambda\), la onda se propaga casi rectilíneamente y la difracción es poco apreciable.</li>
+                <li>Si \(a\) es del orden de \(\lambda\), la onda se abre de forma notable tras la abertura.</li>
+                <li>A velocidad constante, \(\lambda=v/f\): al aumentar la frecuencia disminuye la longitud de onda y normalmente disminuye la difracción.</li>
+            </ul>
+            <div class="note"><strong>No confundir:</strong> difracción no significa que la onda cambie de medio. Se produce por la presencia de una abertura u obstáculo; la refracción sí implica el paso entre medios con distinta velocidad de propagación.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">7</span><strong>Interferencias.</strong></summary>
+            <p>La <strong>interferencia</strong> es el resultado de la superposición de dos o más ondas que coinciden en una región. Para observar un patrón estable se necesitan fuentes coherentes: misma frecuencia y diferencia de fase constante. En el caso habitual de dos fuentes inicialmente en fase, la diferencia de caminos determina si la interferencia es constructiva o destructiva.</p>
+            <div class="two-columns">
+                <div class="mini-card">
+                    <h4>Interferencia constructiva · máximo</h4>
+                    <p>Las ondas llegan en fase y sus amplitudes se refuerzan.</p>
+                    <div class="formula-box">\[\boxed{\Delta r=m\lambda}\]</div>
+                </div>
+                <div class="mini-card">
+                    <h4>Interferencia destructiva · mínimo</h4>
+                    <p>Las ondas llegan en oposición de fase y sus amplitudes se cancelan si tienen igual amplitud.</p>
+                    <div class="formula-box">\[\boxed{\Delta r=\left(m+\frac12\right)\lambda}\]</div>
+                </div>
+            </div>
+            <p>En estas expresiones \(m=0,1,2,\ldots\) es un entero y \(\Delta r=|r_2-r_1|\) es la diferencia de caminos. Como \(\lambda=v/f\), también se puede despejar la frecuencia cuando se conoce la diferencia de caminos.</p>
+            <div class="formula-box">\[\boxed{f_{\text{máx}}=m\,\frac{v}{\Delta r}}\qquad\boxed{f_{\text{mín}}=\left(m+\frac12\right)\frac{v}{\Delta r}}\]</div>
+            <div class="note"><strong>Matiz importante:</strong> dos focos incoherentes no producen un patrón de interferencia estable. En ese caso, para calcular la intensidad total se suman las intensidades medias de cada fuente.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">8</span><strong>Láminas plano-paralelas, prismas y aplicaciones.</strong></summary>
+            <p><strong>Lámina plano-paralela.</strong> En una lámina de caras paralelas, las normales de entrada y salida son paralelas. Si el medio exterior es el mismo a ambos lados, el rayo emergente sale paralelo al incidente, aunque desplazado lateralmente. Dentro de la lámina el recorrido es oblicuo.</p>
+            <div class="formula-box">\[L=\frac{e}{\cos r}\qquad t=\frac{L}{v}=\frac{nL}{c_0}\]</div>
+            <p>El desplazamiento lateral se obtiene mediante la geometría del recorrido y el espesor de la lámina.</p>
+            <p><strong>Prisma.</strong> Sus caras no son paralelas; por ello, la desviación total resulta de las dos refracciones y depende del ángulo del prisma y del índice de refracción. Para resolver un problema se dibujan las normales en ambas caras y se aplica Snell en cada interfaz, junto con la geometría del prisma.</p>
+            <p><strong>Fibra óptica.</strong> Se basa en la reflexión total interna dentro del núcleo, cuyo índice de refracción es mayor que el del revestimiento.</p>
+            <div class="note"><strong>Consejo EBAU:</strong> no apliques Snell directamente a un ángulo medido respecto a la superficie; identifica primero la normal de cada cara. En un prisma, las normales de las dos caras tienen direcciones distintas.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- FORMULARIO ESENCIAL                                          -->
+    <!-- ============================================================ -->
+    <details class="section resultado">
+        <summary><h2>🧾 Formulario esencial del tema</h2></summary>
+        <table class="tabla-formulas">
+            <thead><tr><th>Concepto</th><th>Expresión</th><th>Uso habitual</th></tr></thead>
+            <tbody>
+                <tr><td>Índice de refracción</td><td>\(n=c_0/v\)</td><td>Obtener la velocidad en un medio.</td></tr>
+                <tr><td>Ley de Snell</td><td>\(n_1\,\sin i=n_2\,\sin r\)</td><td>Calcular ángulos o índices.</td></tr>
+                <tr><td>Reflexión</td><td>\(i=r\)</td><td>Dirección del rayo reflejado.</td></tr>
+                <tr><td>Ángulo límite</td><td>\(\sin\theta_c=n_2/n_1\), \(n_1&gt;n_2\)</td><td>Umbral de reflexión total.</td></tr>
+                <tr><td>Onda al cambiar de medio</td><td>\(v=\lambda f\), \(f_1=f_2\)</td><td>Relacionar velocidades y longitudes de onda.</td></tr>
+                <tr><td>Longitud de onda de la luz</td><td>\(\lambda=v/f=c_0/(nf)\)</td><td>Calcular \(\lambda\) en un material.</td></tr>
+                <tr><td>Difracción</td><td>\(a\sim\lambda\)</td><td>Valorar si será apreciable.</td></tr>
+                <tr><td>Interferencia constructiva</td><td>\(\Delta r=m\lambda\)</td><td>Máximos de intensidad.</td></tr>
+                <tr><td>Interferencia destructiva</td><td>\(\Delta r=(m+1/2)\lambda\)</td><td>Mínimos de intensidad.</td></tr>
+                <tr><td>Recorrido en lámina</td><td>\(L=e/\cos r\)</td><td>Longitud de trayecto dentro de la lámina.</td></tr>
+                <tr><td>Tiempo de recorrido</td><td>\(t=L/v=nL/c_0\)</td><td>Tiempo de tránsito por un material.</td></tr>
+            </tbody>
+        </table>
+        <div class="note"><strong>Convenciones:</strong> \(i\), \(r\) y \(\theta_c\) se miden respecto a la normal; \(e\) es el espesor medido perpendicularmente a las caras; \(a\) es el tamaño característico de la abertura; \(m\) es un entero.</div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- PROCEDIMIENTOS TIPO                                          -->
+    <!-- ============================================================ -->
+    <details class="section objetivo">
+        <summary><h2 id="procedimientos">🧭 Procedimientos de resolución tipo EBAU</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">A</span><strong>Problemas de refracción: ley de Snell.</strong></summary>
+            <ol class="procedimiento-lista">
+                <li>Dibuja la superficie y la normal en el punto de incidencia.</li>
+                <li>Identifica los medios y anota sus índices de refracción.</li>
+                <li>Convierte cualquier ángulo dado respecto a la superficie en ángulo respecto a la normal.</li>
+                <li>Aplica \(n_1\sin i=n_2\sin r\) y despeja la incógnita.</li>
+                <li>Comprueba el resultado: al entrar en un medio de mayor índice, el rayo debe acercarse a la normal.</li>
+                <li>Si también piden velocidad o longitud de onda, usa \(v=c_0/n\) y \(\lambda=v/f\); recuerda que la frecuencia no cambia.</li>
+            </ol>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">B</span><strong>Problemas de ángulo límite y reflexión total.</strong></summary>
+            <ol class="procedimiento-lista">
+                <li>Comprueba primero que \(n_1&gt;n_2\) (equivalentemente, \(v_1&lt;v_2\)). Si no se cumple, no puede haber reflexión total al pasar de 1 a 2.</li>
+                <li>Calcula \(\sin\theta_c=n_2/n_1\) y después \(\theta_c=\arcsin(n_2/n_1)\).</li>
+                <li>Interpreta el resultado: en \(\theta_c\) el rayo refractado es rasante; para \(i&gt;\theta_c\) hay reflexión total.</li>
+                <li>Si aparece un prisma o bloque, traduce el ángulo respecto a una cara al ángulo respecto a la normal de la otra cara usando la geometría.</li>
+            </ol>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">C</span><strong>Problemas de reflexión y refracción con varios rayos.</strong></summary>
+            <ol class="procedimiento-lista">
+                <li>Usa la ley de la reflexión para obtener el ángulo reflejado.</li>
+                <li>Si el enunciado da el ángulo entre el incidente y el reflejado, recuerda que es \(2i\) en la geometría habitual.</li>
+                <li>Calcula el ángulo refractado con Snell.</li>
+                <li>Para el ángulo entre los rayos reflejado y refractado, realiza un esquema y suma los sectores angulares correspondientes; no confundas ese ángulo con el que forma cada rayo con la normal.</li>
+            </ol>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">D</span><strong>Problemas de láminas plano-paralelas.</strong></summary>
+            <ol class="procedimiento-lista">
+                <li>Resuelve la primera refracción para determinar el ángulo interno.</li>
+                <li>Calcula el trayecto dentro de la lámina: \(L=e/\cos r\).</li>
+                <li>Calcula la velocidad y el tiempo: \(v=c_0/n\), \(t=L/v\).</li>
+                <li>Para el desplazamiento lateral, usa la geometría del trayecto y comprueba si el enunciado pide la separación entre puntos de entrada y salida o entre dos rayos.</li>
+                <li>Al salir a un medio igual al de entrada, el rayo emergente será paralelo al incidente.</li>
+            </ol>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">E</span><strong>Problemas de interferencias de dos focos.</strong></summary>
+            <ol class="procedimiento-lista">
+                <li>Calcula la diferencia de caminos en el punto de observación: \(\Delta r=|r_2-r_1|\).</li>
+                <li>Para un máximo, impón \(\Delta r=m\lambda\); para un mínimo, \(\Delta r=(m+1/2)\lambda\).</li>
+                <li>Sustituye \(\lambda=v/f\) y despeja las frecuencias posibles.</li>
+                <li>Si hay un intervalo de frecuencias, selecciona solo los enteros \(m\) que produzcan frecuencias dentro del intervalo.</li>
+                <li>Si dos focos no son coherentes, no apliques condiciones de interferencia estable: suma las intensidades.</li>
+            </ol>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">F</span><strong>Preguntas conceptuales de difracción.</strong></summary>
+            <ol class="procedimiento-lista">
+                <li>Compara el tamaño de la abertura con la longitud de onda.</li>
+                <li>Si la velocidad es la misma en dos situaciones, utiliza \(\lambda=v/f\).</li>
+                <li>Explica la tendencia, no solo el resultado: mayor frecuencia implica menor longitud de onda y, por tanto, normalmente menor difracción para una abertura fija.</li>
+            </ol>
+        </details>
+
+        <div class="note"><strong>Errores frecuentes:</strong> medir los ángulos desde la superficie y no desde la normal; usar \(n_1/n_2\) invertido en el ángulo crítico; afirmar que hay reflexión total al pasar a un medio de mayor índice; cambiar la frecuencia al refractarse; confundir refracción con dispersión; y aplicar interferencia constructiva/destructiva sin comprobar que las fuentes sean coherentes.</div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- PROBLEMAS EBAU RESUELTOS                                     -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2 id="problemas">📝 Problemas resueltos de PAU/EBAU — selección de 10</h2></summary>
+        <p>Se han seleccionado diez ejercicios del banco <strong>problemas(1).json</strong>, atendiendo a su relación directa con C4 y a la variedad de técnicas. <strong>Ocho corresponden a Castilla y León</strong>; se añaden dos de otras comunidades para disponer de un ejercicio específico de lámina plano-paralela y otro de interferencias entre dos focos.</p>
+        <div class="nota-fuente">
+            <strong>Identificación de cada ejercicio:</strong> comunidad autónoma, año, convocatoria y número de problema según los metadatos del archivo proporcionado. Algunos ejercicios están etiquetados en el banco con más de un tema (por ejemplo, C4+C5 o C4+C6); se conservan aquí por su relación directa con los fenómenos de propagación. Los enunciados y resoluciones se basan en el contenido de ese banco.
+        </div>
+
+        <!-- PROBLEMA 1 -->
+        <details class="tarjeta-ejercicio">
+            <summary class="cabecera-ej">
+                <span class="num-ej">Ejercicio 1</span>
+                <span class="titulo-ej">Refracción, dispersión y comportamiento de la luz monocromática</span>
+                <span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Problema 2</span>
+            </summary>
+            <div class="enunciado-ej">
+                <p>Cuando la luz interacciona con la materia pueden ocurrir situaciones tan sorprendentes como los espejismos o el arco iris.</p>
+                <p><strong>a)</strong> Indique la diferencia entre los fenómenos de refracción y de dispersión y relaciónelos con las situaciones descritas.</p>
+                <p><strong>b)</strong> Explique razonadamente si la luz monocromática puede sufrir ambos fenómenos. (1 punto: 0,5 + 0,5).</p>
+            </div>
+            <div class="resolucion-ej">
+                <div class="paso"><strong>a) Refracción y dispersión.</strong> La refracción es el cambio de velocidad y, salvo incidencia normal, de dirección al propagarse la luz entre regiones de distinto índice de refracción. Se rige por la ley de Snell:</div>
+                <div class="formula-box">\[n_1\,\sin\theta_1=n_2\,\sin\theta_2\]</div>
+                <div class="paso">En un espejismo, el índice del aire varía con la temperatura y la altura; los rayos se curvan y llegan al observador como si procedieran de otro lugar.</div>
+                <div class="paso">La dispersión cromática es la separación de los colores porque el índice depende de la frecuencia o longitud de onda, \(n=n(\lambda)\). En el arco iris, las gotas refractan de manera distinta cada color, con reflexión interna y una nueva refracción a la salida; por ello los colores emergen con distintos ángulos.</div>
+                <div class="paso"><strong>b) Luz monocromática.</strong> La luz monocromática puede sufrir refracción: cambia de velocidad al cambiar de medio y puede cambiar de dirección; su frecuencia se conserva y cambia su longitud de onda, \(\lambda=v/f\). No se separa en diferentes colores por dispersión cromática, porque contiene una sola frecuencia.</div>
+                <div class="paso"><strong>Resultado:</strong> el espejismo se relaciona con la refracción en aire de índice variable y el arco iris con la dispersión cromática por refracción y reflexión interna en las gotas. La luz monocromática puede refractarse, pero no descomponerse en varios colores.</div>
+            </div>
+        </details>
+
+        <!-- PROBLEMA 2 -->
+        <details class="tarjeta-ejercicio">
+            <summary class="cabecera-ej">
+                <span class="num-ej">Ejercicio 2</span>
+                <span class="titulo-ej">Índice de refracción a partir del ángulo límite</span>
+                <span class="meta-ej">Castilla y León · 2025 · Ordinaria · Problema 8</span>
+            </summary>
+            <div class="enunciado-ej">
+                <p>El rayo de luz de la figura se propaga por el interior de cierto medio e incide sobre la superficie que lo separa del aire. Las dimensiones mostradas corresponden justamente al ángulo límite. La trayectoria del rayo dentro del medio tiene una componente vertical de \(15{,}0\,\text{cm}\), paralela a la normal, y una componente horizontal de \(13{,}4\,\text{cm}\), paralela a la superficie. El aire tiene índice \(n_1=1\). Determine el índice de refracción del medio.</p>
+            </div>
+            <div class="resolucion-ej">
+                <div class="paso"><strong>1. Ángulo límite a partir de la geometría.</strong> El ángulo del rayo respecto a la normal vertical cumple:</div>
+                <div class="formula-box">\[\tan\theta_L=\frac{13{,}4}{15{,}0}=0{,}893\quad\Rightarrow\quad\theta_L\approx41{,}8^\circ\]</div>
+                <div class="paso">También podemos obtener directamente su seno utilizando la hipotenusa:</div>
+                <div class="formula-box">\[\sin\theta_L=\frac{13{,}4}{\sqrt{15{,}0^2+13{,}4^2}}\approx0{,}666\]</div>
+                <div class="paso"><strong>2. Condición de ángulo límite.</strong> Para el paso del medio al aire:</div>
+                <div class="formula-box">\[\sin\theta_L=\frac{n_{\text{aire}}}{n_2}=\frac{1}{n_2}\]</div>
+                <div class="paso"><strong>Resultado:</strong></div>
+                <div class="formula-box">\[\boxed{n_2=\frac{1}{0{,}666}\approx1{,}50}\]</div>
+            </div>
+        </details>
+
+        <!-- PROBLEMA 3 -->
+        <details class="tarjeta-ejercicio">
+            <summary class="cabecera-ej">
+                <span class="num-ej">Ejercicio 3</span>
+                <span class="titulo-ej">Refracción en una piscina: velocidad en el agua y profundidad aparente</span>
+                <span class="meta-ej">Castilla y León · 2025 · Extraordinaria · Problema 9</span>
+            </summary>
+            <div class="enunciado-ej">
+                <p>La esquina inferior de una piscina se encuentra a \(2\,\text{m}\) bajo la superficie del agua (\(n=1{,}33\)). Desde esa esquina se emite un rayo de luz hacia arriba, que llega a la superficie del agua formando un ángulo de \(40^\circ\) con la vertical.</p>
+                <p><strong>a)</strong> ¿Cuál es la velocidad de la luz en el agua? ¿Qué ángulo forma con la vertical el rayo que sale del agua?</p>
+                <p><strong>b)</strong> Si un observador percibe este rayo, ¿a qué profundidad le parece que está la esquina de la piscina?</p>
+                <p>Dato: \(c_0=3{,}00\cdot10^8\,\text{m}\,\text{s}^{-1}\).</p>
+            </div>
+            <div class="resolucion-ej">
+                <div class="paso"><strong>a. Velocidad en el agua.</strong></div>
+                <div class="formula-box">\[v=\frac{c_0}{n}=\frac{3{,}00\cdot10^8}{1{,}33}=2{,}26\cdot10^8\,\text{m}\,\text{s}^{-1}\]</div>
+                <div class="paso"><strong>Ángulo de refracción al salir al aire.</strong> La vertical coincide con la normal a la superficie:</div>
+                <div class="formula-box">\[1{,}33\sin40^\circ=1\cdot\sin\theta_{\text{aire}}\]</div>
+                <div class="formula-box">\[\theta_{\text{aire}}=\arcsin(0{,}855)\approx58{,}7^\circ\]</div>
+                <div class="paso"><strong>b. Geometría y profundidad aparente.</strong> El desplazamiento horizontal real desde la esquina hasta la superficie es:</div>
+                <div class="formula-box">\[x=d\tan40^\circ=2\cdot0{,}839=1{,}68\,\text{m}\]</div>
+                <div class="paso">El observador prolonga hacia atrás el rayo refractado. La profundidad aparente resulta:</div>
+                <div class="formula-box">\[d'=\frac{x}{\tan58{,}7^\circ}=\frac{2\tan40^\circ}{\tan58{,}7^\circ}\approx1{,}02\,\text{m}\]</div>
+                <div class="paso"><strong>Resultado:</strong> \(v=2{,}26\cdot10^8\,\text{m}\,\text{s}^{-1}\); \(\theta_{\text{aire}}=58{,}7^\circ\); profundidad aparente \(d'=1{,}02\,\text{m}\).</div>
+            </div>
+        </details>
+
+        <!-- PROBLEMA 4 -->
+        <details class="tarjeta-ejercicio">
+            <summary class="cabecera-ej">
+                <span class="num-ej">Ejercicio 4</span>
+                <span class="titulo-ej">Refracción agua–aire: longitudes de onda y ángulo entre rayos</span>
+                <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 8</span>
+            </summary>
+            <div class="enunciado-ej">
+                <p>Un rayo de luz de frecuencia \(5{,}2\cdot10^{14}\,\text{Hz}\) incide desde el agua (\(n_{\text{agua}}=1{,}33\)) sobre la superficie de separación agua-aire de un lago, formando un ángulo de \(60^\circ\) respecto a la superficie del agua. Determine la longitud de onda del rayo en cada medio y el ángulo que forman entre sí el rayo reflejado y el refractado.</p>
+                <p>Dato: \(c_0=3{,}00\cdot10^8\,\text{m}\,\text{s}^{-1}\).</p>
+            </div>
+            <div class="resolucion-ej">
+                <div class="paso"><strong>1. Ángulo de incidencia.</strong> El dato está medido desde la superficie, por lo que:</div>
+                <div class="formula-box">\[i=90^\circ-60^\circ=30^\circ\]</div>
+                <div class="paso"><strong>2. Longitudes de onda.</strong> La frecuencia no cambia al pasar de medio. En el aire:</div>
+                <div class="formula-box">\[\lambda_{\text{aire}}=\frac{c_0}{f}=\frac{3{,}00\cdot10^8}{5{,}2\cdot10^{14}}=5{,}77\cdot10^{-7}\,\text{m}=577\,\text{nm}\]</div>
+                <div class="paso">En el agua:</div>
+                <div class="formula-box">\[\lambda_{\text{agua}}=\frac{\lambda_{\text{aire}}}{1{,}33}=4{,}34\cdot10^{-7}\,\text{m}=434\,\text{nm}\]</div>
+                <div class="paso"><strong>3. Ángulo de refracción.</strong> Aplicamos Snell:</div>
+                <div class="formula-box">\[1{,}33\sin30^\circ=\sin r\quad\Rightarrow\quad r\approx41{,}7^\circ\]</div>
+                <div class="paso"><strong>4. Ángulo entre el reflejado y el refractado.</strong> Por la ley de la reflexión, el reflejado forma \(30^\circ\) con la normal:</div>
+                <div class="formula-box">\[\alpha=180^\circ-30^\circ-41{,}7^\circ=108{,}3^\circ\]</div>
+                <div class="paso"><strong>Resultado:</strong> \(\lambda_{\text{aire}}=577\,\text{nm}\); \(\lambda_{\text{agua}}=434\,\text{nm}\); ángulo entre rayos \(108{,}3^\circ\).</div>
+            </div>
+        </details>
+
+        <!-- PROBLEMA 5 -->
+        <details class="tarjeta-ejercicio">
+            <summary class="cabecera-ej">
+                <span class="num-ej">Ejercicio 5</span>
+                <span class="titulo-ej">¿Puede haber reflexión total al pasar de un medio lento a otro más rápido?</span>
+                <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 16</span>
+            </summary>
+            <div class="enunciado-ej">
+                <p>Un haz de luz pasa de un medio en el que su velocidad de propagación es \(v_1\) a otro en el que su velocidad es \(v_2\), siendo \(v_2&gt;v_1\). Razone si puede tener lugar el fenómeno de reflexión total. (1 punto).</p>
+            </div>
+            <div class="resolucion-ej">
+                <div class="paso"><strong>1. Relación entre velocidad e índice.</strong> Como \(n=c_0/v\), si \(v_2&gt;v_1\), entonces \(n_2&lt;n_1\). La luz pasa de un medio de mayor índice a otro de menor índice.</div>
+                <div class="paso"><strong>2. Condición de reflexión total.</strong> Por la ley de Snell:</div>
+                <div class="formula-box">\[n_1\sin i=n_2\sin r\quad\Rightarrow\quad\sin r=\frac{n_1}{n_2}\sin i\]</div>
+                <div class="paso">Como \(n_1/n_2&gt;1\), para ángulos de incidencia suficientemente grandes el valor que exigiría la ecuación para \(\sin r\) sería mayor que 1. No existiría un rayo refractado real y se produciría reflexión total.</div>
+                <div class="paso"><strong>Resultado:</strong> sí puede haber reflexión total cuando \(v_2&gt;v_1\), siempre que \(i&gt;i_c\). La condición crítica es:</div>
+                <div class="formula-box">\[\boxed{\sin i_c=\frac{n_2}{n_1}=\frac{v_1}{v_2}}\]</div>
+            </div>
+        </details>
+
+        <!-- PROBLEMA 6 -->
+        <details class="tarjeta-ejercicio">
+            <summary class="cabecera-ej">
+                <span class="num-ej">Ejercicio 6</span>
+                <span class="titulo-ej">Ángulo entre rayo refractado y reflejado</span>
+                <span class="meta-ej">Castilla y León · 2023 · Ordinaria · Problema 8</span>
+            </summary>
+            <div class="enunciado-ej">
+                <p>Un rayo láser incide desde el aire sobre la superficie plana de un material con índice de refracción \(1{,}55\). El rayo incidente y el reflejado forman entre sí un ángulo de \(60^\circ\). Dibuje el diagrama de rayos y calcule el ángulo que formará el rayo refractado en el material con el rayo reflejado en el aire. (1 punto).</p>
+            </div>
+            <div class="resolucion-ej">
+                <div class="paso"><strong>1. Ángulo de incidencia.</strong> Por la ley de la reflexión, el ángulo incidente y el reflejado son iguales. El ángulo entre ambos rayos vale \(2i\):</div>
+                <div class="formula-box">\[2i=60^\circ\quad\Rightarrow\quad i=r_{\text{reflexión}}=30^\circ\]</div>
+                <div class="paso"><strong>2. Ángulo de refracción.</strong> Aplicamos la ley de Snell desde el aire al material:</div>
+                <div class="formula-box">\[1\cdot\sin30^\circ=1{,}55\sin\theta_t\]</div>
+                <div class="formula-box">\[\theta_t=\arcsin\left(\frac{0{,}5}{1{,}55}\right)\approx18{,}8^\circ\]</div>
+                <div class="paso"><strong>3. Ángulo entre los rayos reflejado y refractado.</strong></div>
+                <div class="formula-box">\[\alpha=180^\circ-30^\circ-18{,}8^\circ=131{,}2^\circ\]</div>
+                <div class="paso"><strong>Resultado:</strong> \(\theta_i=\theta_r=30^\circ\); \(\theta_t\approx18{,}8^\circ\); ángulo entre rayos \(\alpha\approx131{,}2^\circ\).</div>
+            </div>
+        </details>
+
+        <!-- PROBLEMA 7 -->
+        <details class="tarjeta-ejercicio">
+            <summary class="cabecera-ej">
+                <span class="num-ej">Ejercicio 7</span>
+                <span class="titulo-ej">Ángulo máximo de incidencia para reflexión total en un bloque</span>
+                <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Problema 8</span>
+            </summary>
+            <div class="enunciado-ej">
+                <p>Un rayo de luz incide desde el aire sobre la superficie lateral de un largo bloque rectangular de vidrio (\(n_V=1{,}62\)), sobre el que existe una película de agua (\(n_A=1{,}33\)). Determine el máximo valor del ángulo \(\alpha\) para que el rayo se refleje completamente en la cara superior del bloque. (1 punto).</p>
+            </div>
+            <div class="resolucion-ej">
+                <div class="paso"><strong>1. Geometría del bloque.</strong> Si el rayo se refracta dentro del vidrio formando un ángulo \(r\) con la normal a la cara lateral, el ángulo respecto a la normal de la cara superior es \(\theta=90^\circ-r\).</div>
+                <div class="paso"><strong>2. Ángulo crítico vidrio–agua.</strong></div>
+                <div class="formula-box">\[\sin\theta_c=\frac{n_A}{n_V}=\frac{1{,}33}{1{,}62}=0{,}821\]</div>
+                <div class="formula-box">\[\theta_c=\arcsin(0{,}821)\approx55{,}2^\circ\]</div>
+                <div class="paso"><strong>3. Condición para la reflexión total en la cara superior.</strong> Debe cumplirse \(\theta\geq\theta_c\), por lo que \(r\leq90^\circ-55{,}2^\circ=34{,}8^\circ\). El ángulo máximo de entrada se obtiene en el límite:</div>
+                <div class="formula-box">\[\sin\alpha_{\max}=n_V\sin34{,}8^\circ=1{,}62\sin34{,}8^\circ=0{,}923\]</div>
+                <div class="formula-box">\[\boxed{\alpha_{\max}=\arcsin(0{,}923)\approx67{,}4^\circ}\]</div>
+                <div class="paso"><strong>Resultado:</strong> \(\alpha_{\max}\approx67^\circ\).</div>
+            </div>
+        </details>
+
+        <!-- PROBLEMA 8 -->
+        <details class="tarjeta-ejercicio">
+            <summary class="cabecera-ej">
+                <span class="num-ej">Ejercicio 8</span>
+                <span class="titulo-ej">Difracción y dependencia con la frecuencia</span>
+                <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Problema 15</span>
+            </summary>
+            <div class="enunciado-ej">
+                <p>Razone si la siguiente afirmación es verdadera o falsa: «Si dos ondas se propagan con la misma velocidad, la difracción que experimentan sus frentes de ondas al alcanzar un orificio dependerá del valor de su frecuencia». (1 punto).</p>
+            </div>
+            <div class="resolucion-ej">
+                <div class="paso"><strong>1. Criterio de difracción.</strong> La difracción es apreciable cuando la longitud de onda es comparable con el tamaño del orificio o mayor que él. Cuanto menor sea \(\lambda\), menos apreciable será la difracción para una abertura fija.</div>
+                <div class="paso"><strong>2. Relación con la frecuencia.</strong> Si las ondas se propagan con la misma velocidad:</div>
+                <div class="formula-box">\[\lambda=\frac{v}{f}\]</div>
+                <div class="paso">A mayor frecuencia, menor longitud de onda y, por tanto, menor difracción. La frecuencia sí influye aunque la velocidad sea la misma.</div>
+                <div class="paso"><strong>Resultado:</strong> la afirmación es <strong>verdadera</strong>. A igual velocidad, distintas frecuencias implican distintas longitudes de onda y distinta difracción.</div>
+            </div>
+        </details>
+
+        <!-- PROBLEMA 9 -->
+        <details class="tarjeta-ejercicio">
+            <summary class="cabecera-ej">
+                <span class="num-ej">Ejercicio 9</span>
+                <span class="titulo-ej">Refracción y reflexión de un rayo en una lámina</span>
+                <span class="meta-ej">Madrid · 2026 · Ordinaria · Problema 5</span>
+            </summary>
+            <div class="enunciado-ej">
+                <p>Un rayo de luz incide desde el aire sobre una lámina de espesor \(e=3\,\text{cm}\), con un ángulo de incidencia de \(48^\circ\). El índice de refracción de la lámina es \(n=1{,}7\). El rayo, tras refractarse en la cara superior, se refleja en la cara inferior y vuelve a salir al aire. Determine:</p>
+                <p><strong>a)</strong> El ángulo de refracción en la cara superior. <strong>b)</strong> El tiempo que tarda el rayo refractado en llegar a la cara inferior. <strong>c)</strong> La separación \(x\) entre los rayos (1) y (2).</p>
+                <p>Datos: \(c=3\cdot10^8\,\text{m}\,\text{s}^{-1}\); \(n_{\text{aire}}=1\). (2,5 puntos: 0,5 + 1 + 1).</p>
+            </div>
+            <div class="resolucion-ej">
+                <div class="paso"><strong>a) Ley de Snell.</strong> Los ángulos se miden respecto a la normal:</div>
+                <div class="formula-box">\[1\cdot\sin48^\circ=1{,}7\sin\theta_r\]</div>
+                <div class="formula-box">\[\boxed{\theta_r=\arcsin\left(\frac{\sin48^\circ}{1{,}7}\right)=25{,}9^\circ}\]</div>
+                <div class="paso"><strong>b) Trayecto y tiempo hasta la cara inferior.</strong> El espesor es la proyección normal del trayecto:</div>
+                <div class="formula-box">\[L=\frac{e}{\cos\theta_r}=\frac{0{,}03}{\cos25{,}9^\circ}=0{,}0334\,\text{m}\]</div>
+                <div class="paso">La velocidad en la lámina es \(v=c/n\):</div>
+                <div class="formula-box">\[v=\frac{3\cdot10^8}{1{,}7}=1{,}765\cdot10^8\,\text{m}\,\text{s}^{-1}\]</div>
+                <div class="formula-box">\[t=\frac{L}{v}=\frac{0{,}0334}{1{,}765\cdot10^8}=1{,}89\cdot10^{-10}\,\text{s}\]</div>
+                <div class="paso"><strong>c) Separación horizontal.</strong> Según la geometría del recorrido de ida y vuelta:</div>
+                <div class="formula-box">\[x=2e\tan\theta_r=2\cdot0{,}03\cdot\tan25{,}9^\circ=0{,}0292\,\text{m}\]</div>
+                <div class="paso"><strong>Resultado:</strong> \(\theta_r=25{,}9^\circ\); \(t=1{,}89\cdot10^{-10}\,\text{s}\); \(x=0{,}029\,\text{m}=2{,}9\,\text{cm}\).</div>
+            </div>
+        </details>
+
+        <!-- PROBLEMA 10 -->
+        <details class="tarjeta-ejercicio">
+            <summary class="cabecera-ej">
+                <span class="num-ej">Ejercicio 10</span>
+                <span class="titulo-ej">Interferencia de dos altavoces e intensidad sonora</span>
+                <span class="meta-ej">Cataluña · 2024 · Extraordinaria · Problema 2</span>
+            </summary>
+            <div class="enunciado-ej">
+                <p>Dos altavoces separados una distancia \(2d\) emiten una señal armónica y en fase. El generador se puede ajustar entre 200 y 400 Hz. La persona A está a \(d_1=5{,}00\,\text{m}\) del altavoz 1 y a \(d_2=8{,}68\,\text{m}\) del altavoz 2. La persona B está a \(d'_1=8{,}14\,\text{m}\) del altavoz 1 y a \(d'_2=4{,}00\,\text{m}\) del altavoz 2.</p>
+                <p><strong>a)</strong> Calcule todas las frecuencias que puede escoger el generador para que A oiga máxima intensidad. ¿Qué frecuencia debe elegirse para que A oiga el máximo y B no oiga la señal?</p>
+                <p><strong>b)</strong> Se emite música por los dos altavoces con potencia \(2{,}36\cdot10^{-3}\,\text{W}\) cada uno. Calcule la intensidad sonora de cada altavoz en A y el nivel de intensidad sonora percibido. (2,5 puntos: 1,25 + 1,25).</p>
+            </div>
+            <div class="resolucion-ej">
+                <div class="paso"><strong>a) Diferencia de caminos para A.</strong></div>
+                <div class="formula-box">\[\Delta r_A=|d_2-d_1|=8{,}68-5{,}00=3{,}68\,\text{m}\]</div>
+                <div class="paso">Para interferencia constructiva, \(\Delta r_A=m\lambda\). Como \(\lambda=v/f\), con \(v=340\,\text{m}\,\text{s}^{-1}\):</div>
+                <div class="formula-box">\[f=m\frac{v}{\Delta r_A}=m\frac{340}{3{,}68}=m\cdot92{,}39\,\text{Hz}\]</div>
+                <div class="paso">Dentro del intervalo de 200 a 400 Hz:</div>
+                <div class="formula-box">\[m=3\Rightarrow f\approx277\,\text{Hz};\qquad m=4\Rightarrow f\approx370\,\text{Hz}\]</div>
+                <div class="paso"><strong>Condición de mínimo para B.</strong> Su diferencia de caminos es:</div>
+                <div class="formula-box">\[\Delta r_B=|8{,}14-4{,}00|=4{,}14\,\text{m}\]</div>
+                <div class="paso">Para interferencia destructiva, \(\Delta r_B=(m+1/2)\lambda\). Con \(f=277\,\text{Hz}\), \(\Delta r_B/\lambda\approx3{,}37\), que no es semientero. Con \(f=370\,\text{Hz}\), \(\lambda=340/370=0{,}920\,\text{m}\) y \(\Delta r_B/\lambda=4{,}5\). Por tanto, B está en un mínimo para 370 Hz.</div>
+                <div class="paso"><strong>b) Intensidades de la música en A.</strong> Para fuentes no coherentes, las intensidades medias se suman. Para propagación esférica:</div>
+                <div class="formula-box">\[I=\frac{P}{4\pi r^2}\]</div>
+                <div class="formula-box">\[I_1=\frac{2{,}36\cdot10^{-3}}{4\pi(5{,}00)^2}=7{,}51\cdot10^{-6}\,\text{W}\,\text{m}^{-2}\]</div>
+                <div class="formula-box">\[I_2=\frac{2{,}36\cdot10^{-3}}{4\pi(8{,}68)^2}=2{,}49\cdot10^{-6}\,\text{W}\,\text{m}^{-2}\]</div>
+                <div class="paso">La intensidad total es \(I_T=I_1+I_2=1{,}00\cdot10^{-5}\,\text{W}\,\text{m}^{-2}\). Con \(I_0=10^{-12}\,\text{W}\,\text{m}^{-2}\):</div>
+                <div class="formula-box">\[\beta=10\log_{10}\left(\frac{I_T}{I_0}\right)=70{,}0\,\text{dB}\]</div>
+                <div class="paso"><strong>Resultado:</strong> máximos para A a 277 Hz y 370 Hz; se elige 370 Hz para que B esté en un mínimo. En el apartado b), \(I_1=7{,}51\cdot10^{-6}\), \(I_2=2{,}49\cdot10^{-6}\), \(I_T=1{,}00\cdot10^{-5}\,\text{W}\,\text{m}^{-2}\) y \(\beta=70{,}0\,\text{dB}\).</div>
+            </div>
+        </details>
+
+        <div class="pie-clave">
+            <i class="fas fa-lightbulb"></i>
+            <span><strong>Clave de examen:</strong> antes de sustituir números, dibuja la superficie, la normal y los rayos. En C4, un buen esquema suele evitar los errores de ángulos y permite decidir correctamente si hay refracción, reflexión total, difracción o interferencia.</span>
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- CIERRE / REPASO                                              -->
+    <!-- ============================================================ -->
+    <details class="section enunciado">
+        <summary><h2>✅ Lista de comprobación antes del examen</h2></summary>
+        <ul>
+            <li>¿He medido todos los ángulos respecto a la normal?</li>
+            <li>¿He comprobado el sentido del cambio de dirección comparando los índices?</li>
+            <li>¿He recordado que la frecuencia y el periodo no cambian al pasar de medio?</li>
+            <li>¿He verificado que \(n_1&gt;n_2\) antes de calcular un ángulo límite?</li>
+            <li>¿He distinguido la situación límite (rayo rasante) de la reflexión total (incidencia superior al crítico)?</li>
+            <li>¿He relacionado la difracción con el cociente entre longitud de onda y tamaño de la abertura?</li>
+            <li>¿He comprobado la coherencia de las fuentes antes de aplicar las condiciones de interferencia?</li>
+            <li>¿He expresado los resultados con unidades y cifras significativas razonables?</li>
+        </ul>
+    </details>
+
+
+
+
+
+
+<!-- ============================================================ -->
+<!-- BLOQUE DE RECURSOS Y NAVEGACIÓN DEL TEMA C4                  -->
+<!-- ============================================================ -->
+<div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
+
+
+    <div class="recursos-tema" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 20px; padding: 30px 25px 32px 25px;
+                box-shadow: 0 15px 40px rgba(102, 126, 234, 0.35);">
+
+        <h2 style="margin: 0 0 8px 0; color: white; text-align: center;
+                   font-size: 1.5em; display: flex; align-items: center;
+                   justify-content: center; gap: 12px;">
+            <i class="fas fa-compass"></i>
+            Recursos del Tema C4
+        </h2>
+        <p style="text-align: center; color: rgba(255,255,255,0.9);
+                  margin: 0 0 25px 0; font-size: 0.95em;">
+            Accede directamente a los materiales y bancos de problemas
+        </p>
+
+        <div class="recurso-grid" style="display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 18px;">
+
+            <!-- ── TARJETA 1: FORMULARIO (página actual) ── -->
+            <a href="TemaC4-Formulario.html" style="text-decoration: none; color: inherit;">
+                <div class="recurso-card" style="background: white; border-radius: 16px;
+                            padding: 22px 18px; text-align: center; height: 100%;
+                            border: 3px solid #fbbf24; position: relative;
+                            box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                    <div style="position: absolute; top: 12px; right: 12px;
+                                background: #fbbf24; color: #78350f;
+                                padding: 3px 10px; border-radius: 20px;
+                                font-size: 0.7em; font-weight: 800;
+                                letter-spacing: 0.5px;">
+                        AQUÍ
+                    </div>
+                    <div class="recurso-icono" style="width: 62px; height: 62px;
+                                margin: 4px auto 14px;
+                                background: linear-gradient(135deg, #667eea, #764ba2);
+                                border-radius: 50%; display: flex; align-items: center;
+                                justify-content: center; color: white; font-size: 1.7em;">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                margin-bottom: 6px;">
+                        Formulario C4
+                    </div>
+                    <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                        Todas las fórmulas y relaciones clave del tema
+                    </div>
+                </div>
+            </a>
+
+            <!-- ── TARJETA 2: PROBLEMAS EBAU DEL TEMA C4 ── -->
+            <a href="TemaC4-ProblemasEBAU.html" style="text-decoration: none; color: inherit;">
+                <div class="recurso-card" style="background: white; border-radius: 16px;
+                            padding: 22px 18px; text-align: center; height: 100%;
+                            border: 3px solid #e2e8f0;
+                            box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                    <div class="recurso-icono" style="width: 62px; height: 62px;
+                                margin: 4px auto 14px;
+                                background: linear-gradient(135deg, #10b981, #059669);
+                                border-radius: 50%; display: flex; align-items: center;
+                                justify-content: center; color: white; font-size: 1.7em;">
+                        <i class="fas fa-pen-to-square"></i>
+                    </div>
+                    <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                margin-bottom: 6px;">
+                        Problemas EBAU · C4
+                    </div>
+                    <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                        Ejercicios filtrados del tema, resueltos y comentados
+                    </div>
+                </div>
+            </a>
+
+            <!-- ── TARJETA 3: FILTRADO EBAU GENERAL ── -->
+            <a href="../EBAU/problemas-inline_v04.html" style="text-decoration: none; color: inherit;">
+                <div class="recurso-card" style="background: white; border-radius: 16px;
+                            padding: 22px 18px; text-align: center; height: 100%;
+                            border: 3px solid #e2e8f0;
+                            box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                    <div class="recurso-icono" style="width: 62px; height: 62px;
+                                margin: 4px auto 14px;
+                                background: linear-gradient(135deg, #f59e0b, #d97706);
+                                border-radius: 50%; display: flex; align-items: center;
+                                justify-content: center; color: white; font-size: 1.7em;">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                margin-bottom: 6px;">
+                        Filtrado EBAU general
+                    </div>
+                    <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                        Banco completo de problemas de todas las unidades
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- ============================================================ -->
+<!-- FIN DEL BLOQUE DE RECURSOS                                   -->
+<!-- ============================================================ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p><strong>Domina la propagación y los fenómenos ondulatorios.</strong><br>
+            Practica el trazado de rayos, la ley de Snell, el ángulo límite y las condiciones de difracción e interferencia.<br>
+            <em>Los detalles sobre los contenidos de las pruebas escritas se publicarán periódicamente en M.Teams.</em></p>
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">Volver al inicio</a>
+            </div>
+        </div>
+    </div>
+
+</div><!-- fin container -->
+</body>
+</html>

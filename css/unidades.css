@@ -781,3 +781,133 @@ body { word-wrap: break-word; overflow-wrap: break-word; }
     /* Formulario de fórmulas: que pueda hacer scroll interno si es muy ancho */
     .formula-box { padding: 10px; font-size: 1em; }
 }
+
+
+/* ============================================================
+   19. BLOQUE DE RECURSOS DEL TEMA (reutilizable)
+   ------------------------------------------------------------
+   Bloque morado con tarjetas de acceso a formulario, problemas
+   EBAU filtrados, etc. Se usa en todos los HTML de tema.
+   Uso en el HTML:
+       <div class="recursos-tema"> ... </div>
+       <div class="recurso-grid">  ... </div>
+       <a><div class="recurso-card"> ... </div></a>
+       <div class="recurso-icono"><i class="fas fa-..."></i></div>
+   ============================================================ */
+
+.recursos-tema .recurso-card {
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.recursos-tema .recurso-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba(37, 99, 235, 0.28) !important;
+    border-color: #3b82f6 !important;
+}
+
+.recursos-tema .recurso-card:hover .recurso-icono {
+    transform: scale(1.1) rotate(-6deg);
+}
+
+.recursos-tema .recurso-icono {
+    transition: transform 0.28s ease;
+}
+
+/* El grid usa 3 columnas por defecto (definido inline en el HTML);
+   aquí solo forzamos 1 columna en pantallas pequeñas. */
+@media (max-width: 700px) {
+    .recursos-tema .recurso-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ============================================================
+   20. ANCLAS DE FÓRMULA (navegación cruzada desde el formulario)
+   ------------------------------------------------------------
+   Los enlaces del tipo
+       TemaA1-Formulario.html  →  TemaA1.html#formula-N
+   aterrizan en las cajas  .formula-box  con  id="formula-1"…"formula-15".
+   Sin margen, la fórmula queda pegada al borde superior del
+   viewport y se pierde el párrafo introductorio del paso.
+   scroll-margin-top deja ~90 px de aire: se ve el final del
+   contexto anterior y la fórmula entra completa en pantalla.
+   No afecta al resto de la página; solo se aplica al saltar
+   a un ancla.
+   ============================================================ */
+.formula-box {
+    scroll-margin-top: 90px;
+}
+
+
+/* ============================================================
+   21. RESALTADO TEMPORAL DE LA FÓRMULA DESTINO
+   ------------------------------------------------------------
+   Cuando el usuario pulsa una fórmula del formulario
+   (TemaA2-Formulario.html → TemaA2.html#formula-N), el div
+   .formula-box con ese id coincide con :target y se resalta
+   con una línea negra que se desvanece sola en ~2,5 s.
+   Se aplica a TODAS las unidades que sigan la convención
+   .formula-box + id="formula-N", sin tocar los HTML.
+   ============================================================ */
+
+/* .formula-box:target,
+/* .formula-box.formula-resaltada {
+    /* outline: 4px solid #000;
+    /* outline-offset: 6px;
+    /* animation: resaltar-formula 2.5s ease-out forwards;
+/* }
+/* 
+/* @keyframes resaltar-formula {
+    /* 0%   { outline-color: #000; }
+    /* 70%  { outline-color: #000; }
+    /* 100% { outline-color: transparent; }
+/* }
+/* 
+/* @media (prefers-reduced-motion: reduce) {
+    /* .formula-box:target,
+    /* .formula-box.formula-resaltada {
+        /* animation: none;
+        /* outline: 4px solid #000;
+        /* outline-offset: 6px;
+    /* }
+/* }
+
+/* ============================================================
+   21. RESALTADO TEMPORAL DE LA FÓRMULA DESTINO (azul)
+   ------------------------------------------------------------
+   Pulso de luz azul alrededor de la caja de la fórmula cuando
+   se llega con #formula-N desde el formulario (o al revés).
+   No toca fondo ni borde: solo box-shadow, así que es seguro
+   en cualquier variante de .formula-box.
+   ============================================================ */
+.formula-box:target,
+.formula-box.formula-resaltada {
+    animation: resaltar-formula 2.8s ease-out forwards;
+}
+
+@keyframes resaltar-formula {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0),
+                    0 0 0 0 rgba(59, 130, 246, 0);
+    }
+    15% {
+        box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.22),
+                    0 0 28px 8px rgba(59, 130, 246, 0.38);
+    }
+    65% {
+        box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.14),
+                    0 0 20px 6px rgba(59, 130, 246, 0.22);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0),
+                    0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .formula-box:target,
+    .formula-box.formula-resaltada {
+        animation: none;
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.35);
+    }
+}

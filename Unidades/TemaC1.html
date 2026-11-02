@@ -1,0 +1,4072 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema C1. Movimiento armónico simple: cinemática y energía</title>
+
+
+
+    <!-- Para crear las consultas puntuales en la base de datos) -->
+    <script src="js/utils.js" defer></script>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ============================================================ -->
+    <!-- CABECERA                                                      -->
+    <!-- ============================================================ -->
+
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA C1.- </span>
+                <span class="texto">Movimiento armónico simple: cinemática y energía</span>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+
+    <!-- ============================================================ -->
+    <!-- UBICACIÓN EN EL CURRÍCULO                                     -->
+    <!-- ============================================================ -->
+
+    <details class="section enunciado" open>
+
+        <summary>
+            <h2>🗺️ Ubicación en el currículo</h2>
+        </summary>
+
+        <p>
+            Este tema pertenece al <strong>Bloque C. Vibraciones y ondas</strong>
+            del currículo de Física de 2º de Bachillerato de Castilla y León.
+            Su correspondencia curricular se establece a partir del
+            Decreto 40/2022, de 29 de septiembre.
+        </p>
+
+        <div class="mapa-bloques">
+
+            <!-- BLOQUE A -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+
+                <div class="tema-lista">
+                    <span class="tema-chip">A1</span>
+                    <span class="tema-chip">A2</span>
+                    <span class="tema-chip">A3</span>
+                    <span class="tema-chip">A4</span>
+                    <span class="tema-chip">A5</span>
+                    <span class="tema-chip">A6</span>
+                    <span class="tema-chip">A7</span>
+                    <span class="tema-chip">A8</span>
+                </div>
+            </div>
+
+            <!-- BLOQUE B -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span>
+                    <span class="tema-chip">B2</span>
+                    <span class="tema-chip">B3</span>
+                    <span class="tema-chip">B4</span>
+                    <span class="tema-chip">B5</span>
+                    <span class="tema-chip">B6</span>
+                    <span class="tema-chip">B7</span>
+                    <span class="tema-chip">B8</span>
+                    <span class="tema-chip">B9</span>
+                </div>
+            </div>
+
+            <!-- BLOQUE C -->
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+
+                <div class="tema-lista">
+                    <span class="tema-chip actual">C1</span>
+                    <span class="tema-chip">C2</span>
+                    <span class="tema-chip">C3</span>
+                    <span class="tema-chip">C4</span>
+                    <span class="tema-chip">C5</span>
+                    <span class="tema-chip">C6</span>
+                </div>
+            </div>
+
+            <!-- BLOQUE D -->
+            <div class="bloque-card">
+                <div class="bloque-titulo">
+                    D. Física relativista, cuántica, nuclear y de partículas
+                </div>
+
+                <div class="tema-lista">
+                    <span class="tema-chip">D1</span>
+                    <span class="tema-chip">D2</span>
+                    <span class="tema-chip">D3</span>
+                    <span class="tema-chip">D4</span>
+                    <span class="tema-chip">D5</span>
+                    <span class="tema-chip">D6</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="formula-box" style="font-size:0.98em;">
+
+            <strong>Bloque C · Tema C1:</strong>
+
+            <span class="texto-resaltado">
+                Movimiento armónico simple: cinemática y energía
+            </span>
+
+            <p>
+                En este tema estudiaremos el movimiento periódico y oscilatorio,
+                la descripción matemática del movimiento armónico simple (MAS),
+                sus magnitudes características, las ecuaciones de posición,
+                velocidad y aceleración, los sistemas masa-muelle, el péndulo
+                simple y las transformaciones de energía durante una oscilación.
+            </p>
+
+            <p>
+                **Conceptos clave:**
+                movimiento armónico simple, amplitud, periodo, frecuencia,
+                frecuencia angular, fase inicial, elongación, muelle,
+                péndulo simple, velocidad máxima y energía mecánica.
+            </p>
+
+        </div>
+
+        <div class="note">
+            <strong>Referencia normativa:</strong>
+            <a href="https://bocyl.jcyl.es/eli/es-cl/d/2022/09/29/40/"
+               target="_blank">
+                Decreto 40/2022, de 29 de septiembre, por el que se establece
+                la ordenación y el currículo del bachillerato en Castilla y León.
+            </a>
+            También puede consultarse su
+            <a href="https://bocyl.jcyl.es/eli/es-cl/d/2022/10/05/40/corrigendum/20221005/"
+               target="_blank">
+                corrección de errores.
+            </a>
+        </div>
+
+        <div class="formula-box">
+
+            <strong>Indicadores de presencia en el banco de problemas:</strong>
+
+            <table>
+                <tr>
+                    <th>Identificador</th>
+                    <th>Contenido</th>
+                    <th>Porcentaje</th>
+                    <th>Media</th>
+                    <th>Diferencia</th>
+                </tr>
+
+                <tr>
+                    <td>C-C1</td>
+                    <td>Cinemática y energía del MAS</td>
+                    <td>6,1 %</td>
+                    <td>10,1 %</td>
+                    <td>-4,0 pp</td>
+                </tr>
+
+                <tr>
+                    <td>P-C1</td>
+                    <td>Problemas de muelles, péndulos y MAS</td>
+                    <td>6,1 %</td>
+                    <td>10,1 %</td>
+                    <td>-4,0 pp</td>
+                </tr>
+            </table>
+
+            <p>
+                **Palabras clave C-C1:** movimiento armónico simple,
+                amplitud, periodo, frecuencia angular, energía del MAS,
+                muelle.
+            </p>
+
+            <p>
+                **Palabras clave P-C1:** muelle, péndulo simple,
+                oscilador armónico, velocidad máxima,
+                energía mecánica del MAS.
+            </p>
+
+        </div>
+
+    </details>
+
+
+    <!-- ============================================================ -->
+    <!-- OBJETIVOS DE APRENDIZAJE                                      -->
+    <!-- ============================================================ -->
+
+    <details class="section objetivo">
+
+        <summary>
+            <h2>🎯 Objetivos de aprendizaje</h2>
+        </summary>
+
+        <p>Al finalizar el tema, el alumnado deberá ser capaz de:</p>
+
+        <ul>
+
+            <li>
+                Reconocer las características de un movimiento armónico simple
+                y diferenciarlo de otros movimientos periódicos.
+            </li>
+
+            <li>
+                Identificar y relacionar las magnitudes características:
+                elongación, amplitud, periodo, frecuencia, frecuencia angular
+                y fase inicial.
+            </li>
+
+            <li>
+                Obtener la ecuación de posición de un MAS a partir de sus
+                condiciones iniciales o de una representación gráfica.
+            </li>
+
+            <li>
+                Obtener las ecuaciones de la velocidad y de la aceleración
+                mediante la derivación de la ecuación de posición.
+            </li>
+
+            <li>
+                Calcular la velocidad y la aceleración en cualquier instante
+                o posición del movimiento.
+            </li>
+
+            <li>
+                Determinar la amplitud, el periodo, la frecuencia y la
+                frecuencia angular a partir de datos experimentales o
+                ecuaciones del movimiento.
+            </li>
+
+            <li>
+                Analizar el movimiento de una masa unida a un muelle,
+                tanto en posición horizontal como vertical.
+            </li>
+
+            <li>
+                Relacionar la constante elástica de un muelle con la masa
+                oscilante y el periodo del movimiento.
+            </li>
+
+            <li>
+                Comprender el comportamiento del péndulo simple para
+                pequeñas oscilaciones y calcular su periodo.
+            </li>
+
+            <li>
+                Aplicar el principio de conservación de la energía mecánica
+                para estudiar las transformaciones entre energía cinética
+                y potencial.
+            </li>
+
+            <li>
+                Representar e interpretar gráficamente la variación de
+                las energías cinética, potencial y mecánica con la posición.
+            </li>
+
+            <li>
+                Resolver problemas numéricos y de razonamiento característicos
+                de la EBAU/PAU de 2º de Bachillerato.
+            </li>
+
+        </ul>
+
+    </details>
+
+
+    <!-- ============================================================ -->
+    <!-- CONTENIDO TEÓRICO                                             -->
+    <!-- ============================================================ -->
+
+    <details class="section procedimiento">
+
+        <summary>
+            <h2>📚 Contenido teórico</h2>
+        </summary>
+
+
+        <!-- 1. DEFINICIÓN DEL MAS -->
+
+        <details class="step">
+
+            <summary>
+                <span class="step-num">1</span>
+                <strong>Movimiento armónico simple. Características.</strong>
+            </summary>
+
+            <p>
+                El <strong>movimiento armónico simple (MAS)</strong> es un
+                movimiento oscilatorio y periódico en el que la fuerza
+                recuperadora, y por tanto la aceleración, es directamente
+                proporcional al desplazamiento respecto de la posición
+                de equilibrio y tiene sentido contrario.
+            </p>
+
+            <p>
+                Si \(x\) representa la elongación respecto a la posición
+                de equilibrio, la fuerza recuperadora cumple:
+            </p>
+
+            <div class="formula-box">
+                \[
+                F=-kx
+                \]
+            </div>
+
+            <p>
+                Aplicando la segunda ley de Newton:
+            </p>
+
+            <div class="formula-box">
+                \[
+                ma=-kx
+                \]
+                \[
+                a=-\frac{k}{m}x
+                \]
+            </div>
+
+            <p>
+                El movimiento armónico simple se caracteriza por:
+            </p>
+
+            <ul>
+
+                <li>
+                    Ser un movimiento oscilatorio alrededor de una posición
+                    de equilibrio.
+                </li>
+
+                <li>
+                    Repetir su estado de movimiento a intervalos regulares
+                    de tiempo.
+                </li>
+
+                <li>
+                    Tener una fuerza recuperadora dirigida hacia la posición
+                    de equilibrio.
+                </li>
+
+                <li>
+                    Presentar una aceleración proporcional a la elongación
+                    y de sentido contrario.
+                </li>
+
+                <li>
+                    Tener una energía mecánica constante cuando no existen
+                    fuerzas disipativas.
+                </li>
+
+            </ul>
+
+            <div class="note">
+                <strong>Importante:</strong>
+                La elongación \(x\) siempre se mide desde la posición
+                de equilibrio, no necesariamente desde la longitud natural
+                del muelle.
+            </div>
+
+        </details>
+
+
+        <!-- 2. ECUACIÓN DE POSICIÓN -->
+
+        <details class="step">
+
+            <summary>
+                <span class="step-num">2</span>
+                <strong>Ecuación de posición. Amplitud y fase.</strong>
+            </summary>
+
+            <p>
+                La posición de una partícula que realiza un MAS puede
+                expresarse mediante una función sinusoidal:
+            </p>
+
+            <div class="formula-box">
+                \[
+                x(t)=A\cos(\omega t+\varphi_0)
+                \]
+            </div>
+
+            <p>
+                También se puede utilizar una función seno, modificando
+                convenientemente la fase inicial:
+            </p>
+
+            <div class="formula-box">
+                \[
+                x(t)=A\operatorname{sen}(\omega t+\varphi_0)
+                \]
+            </div>
+
+            <p>En estas expresiones:</p>
+
+            <ul>
+
+                <li>
+                    \(x(t)\): elongación o posición respecto al equilibrio,
+                    medida en metros.
+                </li>
+
+                <li>
+                    \(A\): amplitud, máxima distancia respecto a la posición
+                    de equilibrio. Se expresa en metros.
+                </li>
+
+                <li>
+                    \(\omega\): frecuencia angular o pulsación,
+                    expresada en radianes por segundo.
+                </li>
+
+                <li>
+                    \(t\): tiempo, expresado en segundos.
+                </li>
+
+                <li>
+                    \(\varphi_0\): fase inicial, expresada en radianes.
+                </li>
+
+            </ul>
+
+            <p>
+                La amplitud determina la extensión máxima de la oscilación.
+                La fase inicial determina la posición y el sentido del
+                movimiento en el instante inicial.
+            </p>
+
+            <div class="note">
+                <strong>Interpretación de la fase:</strong>
+                dos partículas pueden tener la misma amplitud y el mismo
+                periodo, pero encontrarse en estados de movimiento diferentes
+                debido a sus fases iniciales.
+            </div>
+
+        </details>
+
+
+        <!-- 3. PERIODO, FRECUENCIA Y FRECUENCIA ANGULAR -->
+
+        <details class="step">
+
+            <summary>
+                <span class="step-num">3</span>
+                <strong>Periodo, frecuencia y frecuencia angular.</strong>
+            </summary>
+
+            <p>
+                El <strong>periodo</strong> \(T\) es el tiempo necesario
+                para completar una oscilación.
+            </p>
+
+            <p>
+                La <strong>frecuencia</strong> \(f\) indica el número de
+                oscilaciones completas que se realizan por unidad de tiempo.
+            </p>
+
+            <div class="formula-box">
+                \[
+                f=\frac{1}{T}
+                \]
+            </div>
+
+            <p>
+                La <strong>frecuencia angular</strong> \(\omega\) representa
+                la rapidez con la que cambia la fase del movimiento.
+            </p>
+
+            <div class="formula-box">
+                \[
+                \omega=2\pi f
+                \]
+                \[
+                \boxed{\omega=\frac{2\pi}{T}}
+                \]
+            </div>
+
+            <table>
+
+                <tr>
+                    <th>Magnitud</th>
+                    <th>Símbolo</th>
+                    <th>Unidad S.I.</th>
+                </tr>
+
+                <tr>
+                    <td>Periodo</td>
+                    <td>\(T\)</td>
+                    <td>s</td>
+                </tr>
+
+                <tr>
+                    <td>Frecuencia</td>
+                    <td>\(f\)</td>
+                    <td>Hz</td>
+                </tr>
+
+                <tr>
+                    <td>Frecuencia angular</td>
+                    <td>\(\omega\)</td>
+                    <td>rad · s\(^{-1}\)</td>
+                </tr>
+
+            </table>
+
+            <div class="note">
+                **Relación fundamental para los problemas:**
+
+                Si conocemos el periodo podemos calcular directamente
+                la frecuencia angular. No debemos confundir la frecuencia
+                \(f\), medida en Hz, con la frecuencia angular \(\omega\),
+                medida en rad/s.
+            </div>
+
+        </details>
+
+
+        <!-- 4. VELOCIDAD -->
+
+        <details class="step">
+
+            <summary>
+                <span class="step-num">4</span>
+                <strong>Velocidad en el movimiento armónico simple.</strong>
+            </summary>
+
+            <p>
+                La velocidad se obtiene derivando la ecuación de posición
+                respecto al tiempo.
+            </p>
+
+            <p>
+                Partiendo de:
+            </p>
+
+            <div class="formula-box">
+                \[
+                x(t)=A\cos(\omega t+\varphi_0)
+                \]
+            </div>
+
+            <p>Derivamos:</p>
+
+            <div class="formula-box">
+                \[
+                v(t)=\frac{dx}{dt}
+                \]
+                \[
+                \boxed{
+                v(t)=-A\omega\operatorname{sen}(\omega t+\varphi_0)
+                }
+                \]
+            </div>
+
+            <p>
+                El módulo de la velocidad es máximo cuando el seno
+                vale 1 o -1. Esto sucede cuando la partícula pasa
+                por la posición de equilibrio.
+            </p>
+
+            <div class="formula-box">
+                \[
+                \boxed{v_{\text{máx}}=A\omega}
+                \]
+            </div>
+
+            <p>
+                En los extremos de la trayectoria, \(x=\pm A\),
+                la velocidad es cero.
+            </p>
+
+            <p>
+                También podemos calcular el módulo de la velocidad
+                en función de la posición sin necesidad de conocer
+                el instante:
+            </p>
+
+            <div class="formula-box">
+                \[
+                \boxed{
+                |v|=\omega\sqrt{A^2-x^2}
+                }
+                \]
+            </div>
+
+            <p>
+                Esta expresión resulta especialmente útil cuando
+                el enunciado proporciona una posición concreta
+                y pregunta por el módulo de la velocidad.
+            </p>
+
+            <table>
+
+                <tr>
+                    <th>Posición</th>
+                    <th>Velocidad</th>
+                </tr>
+
+                <tr>
+                    <td>Extremo positivo: \(x=A\)</td>
+                    <td>\(v=0\)</td>
+                </tr>
+
+                <tr>
+                    <td>Equilibrio: \(x=0\)</td>
+                    <td>\(|v|=v_{\text{máx}}\)</td>
+                </tr>
+
+                <tr>
+                    <td>Extremo negativo: \(x=-A\)</td>
+                    <td>\(v=0\)</td>
+                </tr>
+
+            </table>
+
+        </details>
+
+
+        <!-- 5. ACELERACIÓN -->
+
+        <details class="step">
+
+            <summary>
+                <span class="step-num">5</span>
+                <strong>Aceleración en el movimiento armónico simple.</strong>
+            </summary>
+
+            <p>
+                La aceleración se obtiene derivando la velocidad
+                respecto al tiempo.
+            </p>
+
+            <div class="formula-box">
+                \[
+                a(t)=\frac{dv}{dt}
+                \]
+                \[
+                a(t)=-A\omega^2\cos(\omega t+\varphi_0)
+                \]
+            </div>
+
+            <p>
+                Como \(x=A\cos(\omega t+\varphi_0)\), podemos expresar
+                la aceleración directamente en función de la posición:
+            </p>
+
+            <div class="formula-box">
+                \[
+                \boxed{a=-\omega^2x}
+                \]
+            </div>
+
+            <p>
+                El módulo máximo de la aceleración se alcanza en los
+                extremos de la trayectoria:
+            </p>
+
+            <div class="formula-box">
+                \[
+                \boxed{a_{\text{máx}}=\omega^2 A}
+                \]
+            </div>
+
+            <table>
+
+                <tr>
+                    <th>Posición</th>
+                    <th>Aceleración</th>
+                </tr>
+
+                <tr>
+                    <td>\(x=A\)</td>
+                    <td>\(a=-\omega^2 A\)</td>
+                </tr>
+
+                <tr>
+                    <td>\(x=0\)</td>
+                    <td>\(a=0\)</td>
+                </tr>
+
+                <tr>
+                    <td>\(x=-A\)</td>
+                    <td>\(a=+\omega^2 A\)</td>
+                </tr>
+
+            </table>
+
+            <div class="note">
+                **Relación fundamental:**
+
+                En un MAS, la aceleración siempre apunta hacia la posición
+                de equilibrio. Por eso tiene signo contrario a la elongación.
+            </div>
+
+        </details>
+
+
+        <!-- 6. OSCILADOR MASA-MUELLE -->
+
+        <details class="step">
+
+            <summary>
+                <span class="step-num">6</span>
+                <strong>Oscilador armónico: sistema masa-muelle.</strong>
+            </summary>
+
+            <p>
+                Un sistema formado por una masa unida a un muelle
+                ideal puede realizar un movimiento armónico simple
+                cuando se separa de su posición de equilibrio y se deja
+                oscilar sin rozamiento.
+            </p>
+
+            <p>
+                La fuerza elástica recuperadora viene dada por
+                la ley de Hooke:
+            </p>
+
+            <div class="formula-box">
+                \[
+                F=-kx
+                \]
+            </div>
+
+            <p>
+                Aplicando la segunda ley de Newton:
+            </p>
+
+            <div class="formula-box">
+                \[
+                ma=-kx
+                \]
+                \[
+                a=-\frac{k}{m}x
+                \]
+            </div>
+
+            <p>
+                Comparando esta expresión con la ecuación general
+                del MAS:
+            </p>
+
+            <div class="formula-box">
+                \[
+                a=-\omega^2x
+                \]
+                \[
+                \boxed{\omega=\sqrt{\frac{k}{m}}}
+                \]
+            </div>
+
+            <p>
+                Como \(\omega=2\pi/T\), podemos obtener el periodo:
+            </p>
+
+            <div class="formula-box">
+                \[
+                \boxed{
+                T=2\pi\sqrt{\frac{m}{k}}
+                }
+                \]
+            </div>
+
+            <p>
+                También podemos despejar la constante elástica
+                o la masa:
+            </p>
+
+            <div class="formula-box">
+                \[
+                \boxed{k=m\omega^2=\frac{4\pi^2m}{T^2}}
+                \]
+                \[
+                \boxed{m=\frac{kT^2}{4\pi^2}}
+                \]
+            </div>
+
+            <p><strong>Dependencias importantes:</strong></p>
+
+            <ul>
+
+                <li>
+                    Si aumenta la masa, aumenta el periodo.
+                </li>
+
+                <li>
+                    Si aumenta la constante elástica, disminuye el periodo.
+                </li>
+
+                <li>
+                    El periodo no depende de la amplitud en el modelo
+                    de muelle ideal.
+                </li>
+
+                <li>
+                    El periodo tampoco depende de la gravedad cuando
+                    las oscilaciones se realizan alrededor de la nueva
+                    posición de equilibrio.
+                </li>
+
+            </ul>
+
+            <p><strong>Muelle vertical.</strong></p>
+
+            <p>
+                Cuando el muelle está colocado verticalmente, el peso
+                de la masa produce un alargamiento inicial.
+                En la posición de equilibrio:
+            </p>
+
+            <div class="formula-box">
+                \[
+                k\Delta l_0=mg
+                \]
+                \[
+                \Delta l_0=\frac{mg}{k}
+                \]
+            </div>
+
+            <p>
+                Sin embargo, si medimos la elongación \(x\) desde esa
+                posición de equilibrio, la fuerza resultante responsable
+                de la oscilación es:
+            </p>
+
+            <div class="formula-box">
+                \[
+                F_{\text{resultante}}=-kx
+                \]
+            </div>
+
+            <p>
+                Por tanto, el periodo sigue siendo:
+            </p>
+
+            <div class="formula-box">
+                \[
+                T=2\pi\sqrt{\frac{m}{k}}
+                \]
+            </div>
+
+            <div class="note">
+                **Error frecuente en EBAU:**
+
+                En un muelle vertical no debemos introducir el peso
+                como una fuerza adicional en la ecuación del MAS si
+                estamos midiendo el desplazamiento desde la posición
+                de equilibrio.
+            </div>
+
+        </details>
+
+
+        <!-- 7. PÉNDULO SIMPLE -->
+
+        <details class="step">
+
+            <summary>
+                <span class="step-num">7</span>
+                <strong>Péndulo simple y pequeñas oscilaciones.</strong>
+            </summary>
+
+            <p>
+                Un péndulo simple ideal está formado por una masa puntual
+                suspendida de un hilo inextensible y de masa despreciable,
+                que puede oscilar bajo la acción de la gravedad.
+            </p>
+
+            <p>
+                Cuando el péndulo se separa un ángulo \(\theta\)
+                de la vertical, aparece una componente tangencial
+                del peso que actúa como fuerza recuperadora.
+            </p>
+
+            <p>
+                Para ángulos pequeños, podemos utilizar la aproximación:
+            </p>
+
+            <div class="formula-box">
+                \[
+                \operatorname{sen}\theta\approx\theta
+                \]
+            </div>
+
+            <p>
+                En estas condiciones, el movimiento del péndulo
+                se aproxima a un movimiento armónico simple.
+            </p>
+
+            <p>
+                La ecuación del movimiento angular es:
+            </p>
+
+            <div class="formula-box">
+                \[
+                \frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0
+                \]
+            </div>
+
+            <p>
+                Por comparación con la ecuación del MAS:
+            </p>
+
+            <div class="formula-box">
+                \[
+                \boxed{\omega=\sqrt{\frac{g}{L}}}
+                \]
+                \[
+                \boxed{
+                T=2\pi\sqrt{\frac{L}{g}}
+                }
+                \]
+            </div>
+
+            <p>Donde:</p>
+
+            <ul>
+
+                <li>
+                    \(L\): longitud del péndulo.
+                </li>
+
+                <li>
+                    \(g\): aceleración de la gravedad.
+                </li>
+
+                <li>
+                    \(T\): periodo de oscilación.
+                </li>
+
+            </ul>
+
+            <p><strong>Características fundamentales:</strong></p>
+
+            <ul>
+
+                <li>
+                    El periodo aumenta con la longitud del péndulo.
+                </li>
+
+                <li>
+                    El periodo disminuye cuando aumenta la gravedad.
+                </li>
+
+                <li>
+                    El periodo no depende de la masa de la bola.
+                </li>
+
+                <li>
+                    Para pequeñas oscilaciones, el periodo no depende
+                    de la amplitud.
+                </li>
+
+            </ul>
+
+            <p>
+                Si duplicamos la longitud del péndulo:
+            </p>
+
+            <div class="formula-box">
+                \[
+                T'=2\pi\sqrt{\frac{2L}{g}}
+                \]
+                \[
+                \boxed{T'=\sqrt{2}\,T}
+                \]
+            </div>
+
+            <div class="note">
+                **Importante:**
+
+                Duplicar la longitud no duplica el periodo.
+                El periodo se multiplica por \(\sqrt{2}\).
+                Para duplicar el periodo habría que cuadruplicar
+                la longitud del péndulo.
+            </div>
+
+        </details>
+
+
+        <!-- 8. ENERGÍA DEL MAS -->
+
+        <details class="step">
+
+            <summary>
+                <span class="step-num">8</span>
+                <strong>Energía cinética, potencial y mecánica del MAS.</strong>
+            </summary>
+
+            <p>
+                En un oscilador armónico ideal sin rozamiento,
+                la energía mecánica se conserva durante todo el movimiento.
+            </p>
+
+            <p>
+                La energía mecánica es la suma de la energía cinética
+                y la energía potencial elástica:
+            </p>
+
+            <div class="formula-box">
+                \[
+                E_m=E_c+E_p
+                \]
+            </div>
+
+            <p><strong>Energía potencial elástica.</strong></p>
+
+            <p>
+                Tomando como origen de energía potencial la posición
+                de equilibrio:
+            </p>
+
+            <div class="formula-box">
+                \[
+                \boxed{E_p=\frac{1}{2}kx^2}
+                \]
+            </div>
+
+            <p><strong>Energía cinética.</strong></p>
+
+            <div class="formula-box">
+                \[
+                E_c=\frac{1}{2}mv^2
+                \]
+            </div>
+
+            <p><strong>Energía mecánica total.</strong></p>
+
+            <p>
+                En los extremos de la trayectoria, la velocidad es
+                cero y toda la energía mecánica es potencial:
+            </p>
+
+            <div class="formula-box">
+                \[
+                E_m=E_p=\frac{1}{2}kA^2
+                \]
+            </div>
+
+            <p>
+                Por tanto, la energía mecánica total puede expresarse como:
+            </p>
+
+            <div class="formula-box">
+                \[
+                \boxed{
+                E_m=\frac{1}{2}kA^2
+                =\frac{1}{2}m\omega^2A^2
+                }
+                \]
+            </div>
+
+            <p>
+                Sustituyendo la expresión de la energía potencial:
+            </p>
+
+            <div class="formula-box">
+                \[
+                E_c=E_m-E_p
+                \]
+                \[
+                \boxed{
+                E_c=\frac{1}{2}k(A^2-x^2)
+                }
+                \]
+            </div>
+
+            <p>
+                Esta expresión permite calcular la energía cinética
+                en cualquier posición, sin necesidad de conocer
+                el instante de tiempo.
+            </p>
+
+            <p><strong>Velocidad a partir de la conservación de energía.</strong></p>
+
+            <p>
+                Igualando la energía mecánica en dos posiciones:
+            </p>
+
+            <div class="formula-box">
+                \[
+                \frac{1}{2}mv^2+\frac{1}{2}kx^2
+                =
+                \frac{1}{2}kA^2
+                \]
+            </div>
+
+            <p>
+                Despejando la velocidad:
+            </p>
+
+            <div class="formula-box">
+                \[
+                \boxed{
+                |v|=\omega\sqrt{A^2-x^2}
+                }
+                \]
+            </div>
+
+        </details>
+
+
+        <!-- 9. GRÁFICAS DE ENERGÍA -->
+
+        <details class="step">
+
+            <summary>
+                <span class="step-num">9</span>
+                <strong>Representación gráfica de las energías.</strong>
+            </summary>
+
+            <p>
+                La representación de las energías en función de la posición
+                es una cuestión característica de los problemas de EBAU/PAU.
+            </p>
+
+            <table>
+
+                <tr>
+                    <th>Magnitud</th>
+                    <th>Expresión</th>
+                    <th>Forma gráfica</th>
+                </tr>
+
+                <tr>
+                    <td>Energía potencial</td>
+                    <td>\(E_p=\frac{1}{2}kx^2\)</td>
+                    <td>Parábola convexa hacia arriba.</td>
+                </tr>
+
+                <tr>
+                    <td>Energía cinética</td>
+                    <td>\(E_c=\frac{1}{2}k(A^2-x^2)\)</td>
+                    <td>Parábola cóncava hacia abajo.</td>
+                </tr>
+
+                <tr>
+                    <td>Energía mecánica</td>
+                    <td>\(E_m=\frac{1}{2}kA^2\)</td>
+                    <td>Recta horizontal.</td>
+                </tr>
+
+            </table>
+
+            <p><strong>En los extremos de la trayectoria:</strong></p>
+
+            <div class="formula-box">
+                \[
+                x=\pm A
+                \]
+                \[
+                E_c=0,\qquad E_p=E_m
+                \]
+            </div>
+
+            <p><strong>En la posición de equilibrio:</strong></p>
+
+            <div class="formula-box">
+                \[
+                x=0
+                \]
+                \[
+                E_c=E_m,\qquad E_p=0
+                \]
+            </div>
+
+            <p>
+                Cuando ambas energías tienen el mismo valor:
+            </p>
+
+            <div class="formula-box">
+                \[
+                E_c=E_p=\frac{E_m}{2}
+                \]
+                \[
+                \frac{1}{2}kx^2=\frac{1}{4}kA^2
+                \]
+                \[
+                \boxed{|x|=\frac{A}{\sqrt{2}}}
+                \]
+            </div>
+
+            <div class="note">
+                **Interpretación gráfica:**
+
+                La energía mecánica es constante y las energías cinética
+                y potencial se transforman continuamente una en otra.
+                Cuando una aumenta, la otra disminuye en la misma cantidad.
+            </div>
+
+        </details>
+
+
+        <!-- 10. FASE Y CONDICIONES INICIALES -->
+
+        <details class="step">
+
+            <summary>
+                <span class="step-num">10</span>
+                <strong>Determinación de la fase inicial.</strong>
+            </summary>
+
+            <p>
+                En algunos problemas se proporciona la posición y la
+                velocidad iniciales de la partícula y se pide obtener
+                la ecuación del movimiento.
+            </p>
+
+            <p>
+                Partimos de la expresión:
+            </p>
+
+            <div class="formula-box">
+                \[
+                x(t)=A\cos(\omega t+\varphi_0)
+                \]
+            </div>
+
+            <p>
+                Para \(t=0\):
+            </p>
+
+            <div class="formula-box">
+                \[
+                x_0=A\cos\varphi_0
+                \]
+                \[
+                v_0=-A\omega\operatorname{sen}\varphi_0
+                \]
+            </div>
+
+            <p>
+                Por tanto:
+            </p>
+
+            <div class="formula-box">
+                \[
+                \cos\varphi_0=\frac{x_0}{A}
+                \]
+                \[
+                \operatorname{sen}\varphi_0=
+                -\frac{v_0}{A\omega}
+                \]
+            </div>
+
+            <p>
+                Es necesario tener en cuenta tanto la posición inicial
+                como el sentido de la velocidad inicial para identificar
+                correctamente el cuadrante de la fase.
+            </p>
+
+            <div class="note">
+                **Error frecuente:**
+
+                Conocer únicamente la posición inicial no siempre permite
+                determinar una fase única. Puede haber dos fases diferentes
+                que correspondan a la misma elongación, pero con sentidos
+                de movimiento opuestos.
+            </div>
+
+        </details>
+
+
+    </details>
+
+
+    <!-- ============================================================ -->
+    <!-- PROBLEMAS TIPO EBAU / PAU                                    -->
+    <!-- ============================================================ -->
+
+    <details class="section procedimiento">
+
+        <summary>
+            <h2>🧮 Problemas tipo. EBAU/PAU</h2>
+        </summary>
+
+        <div class="contenido-desplegable">
+
+            <p>
+                Se han seleccionado diez problemas del archivo
+                <strong>problemas.json</strong>, priorizando los de
+                Castilla y León y completando la selección con ejercicios
+                de otras comunidades autónomas.
+            </p>
+
+            <p>
+                La selección busca cubrir los principales modelos de
+                razonamiento y cálculo: ecuaciones del MAS, sistemas
+                masa-muelle, péndulos simples, condiciones iniciales,
+                velocidad máxima y conservación de la energía.
+            </p>
+
+            <div class="note">
+                <strong>Selección de Castilla y León:</strong>
+                en el archivo se han localizado dos ejercicios cuyo
+                enunciado corresponde realmente al tema C1:
+                Castilla y León 2026, ordinaria, pregunta 2, y
+                Castilla y León 2025, extraordinaria, pregunta 8.
+
+                Hay otro registro de Castilla y León, extraordinaria
+                de 2023, pregunta 6, etiquetado como C1, pero su
+                enunciado trata de propagación de ondas. Por ese motivo
+                no se ha incluido en esta selección de problemas de MAS.
+            </div>
+
+
+            <!-- TABLA DE SELECCIÓN -->
+
+            <h3>Relación de problemas seleccionados</h3>
+
+            <table>
+
+                <tr>
+                    <th>Nº</th>
+                    <th>Comunidad</th>
+                    <th>Año</th>
+                    <th>Convocatoria</th>
+                    <th>Problema</th>
+                    <th>Contenido principal</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>Castilla y León</td>
+                    <td>2026</td>
+                    <td>Ordinaria</td>
+                    <td>2</td>
+                    <td>Gráficas de energía y periodo.</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Castilla y León</td>
+                    <td>2025</td>
+                    <td>Extraordinaria</td>
+                    <td>8</td>
+                    <td>Puenting, energía y periodo.</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Aragón</td>
+                    <td>2023</td>
+                    <td>Extraordinaria</td>
+                    <td>5</td>
+                    <td>Muelle vertical, periodo y amplitud.</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Aragón</td>
+                    <td>2023</td>
+                    <td>Ordinaria</td>
+                    <td>5</td>
+                    <td>Ecuación, velocidad máxima y energía.</td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>Aragón</td>
+                    <td>2021</td>
+                    <td>Ordinaria</td>
+                    <td>1</td>
+                    <td>Posición, velocidad y aceleración.</td>
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td>Cataluña</td>
+                    <td>2024</td>
+                    <td>Extraordinaria</td>
+                    <td>7</td>
+                    <td>Muelle, fuerza y energía.</td>
+                </tr>
+
+                <tr>
+                    <td>7</td>
+                    <td>País Vasco</td>
+                    <td>2024</td>
+                    <td>Extraordinaria</td>
+                    <td>3</td>
+                    <td>Amplitud, fase y constante elástica.</td>
+                </tr>
+
+                <tr>
+                    <td>8</td>
+                    <td>Castilla la Mancha</td>
+                    <td>2024</td>
+                    <td>Ordinaria</td>
+                    <td>5</td>
+                    <td>Determinación experimental de una masa.</td>
+                </tr>
+
+                <tr>
+                    <td>9</td>
+                    <td>Castilla la Mancha</td>
+                    <td>2024</td>
+                    <td>Extraordinaria</td>
+                    <td>6</td>
+                    <td>Energía cinética y posición.</td>
+                </tr>
+
+                <tr>
+                    <td>10</td>
+                    <td>Castilla la Mancha</td>
+                    <td>2024</td>
+                    <td>Extraordinaria</td>
+                    <td>11</td>
+                    <td>Péndulo simple y periodo.</td>
+                </tr>
+
+            </table>
+
+
+            <!-- ==================================================== -->
+            <!-- PROBLEMA 1                                            -->
+            <!-- ==================================================== -->
+
+            <details class="tarjeta-ejercicio">
+
+                <summary class="cabecera-ej">
+
+                    <span class="num-ej">Ejercicio 1</span>
+
+                    <span class="titulo-ej">
+                        Energías y periodo de un oscilador unido a un muelle
+                    </span>
+
+                    <span class="meta-ej">
+                        Castilla y León · 2026 · Ordinaria · Pregunta 2 · 1 punto
+                    </span>
+
+                </summary>
+
+                <div class="enunciado-ej">
+
+                    <p>
+                        Un objeto de masa \(m\) ligado a un muelle realiza
+                        un movimiento oscilatorio de amplitud \(A\).
+                        En la gráfica adjunta se representa la variación
+                        de su energía cinética respecto a la posición
+                        a lo largo de una oscilación completa.
+                    </p>
+
+                    <p>
+                        Compare esta representación con la que se obtendría
+                        para otro objeto de masa \(4m\) ligado al mismo
+                        muelle si la amplitud de su oscilación fuese \(A/2\).
+                    </p>
+
+                    <p>
+                        Represente también la energía potencial y la mecánica
+                        en este caso. ¿Se modificaría el periodo de este
+                        movimiento respecto al del primer objeto?
+                        Razone la respuesta.
+                    </p>
+
+                </div>
+
+                <div class="resolucion-ej">
+
+                    <div class="paso">
+                        <strong>1. Energía mecánica del primer oscilador.</strong>
+
+                        <p>
+                            La energía mecánica de un oscilador masa-muelle
+                            ideal se conserva y viene determinada por su
+                            amplitud:
+                        </p>
+
+                        <div class="formula-box">
+                            \[
+                            E_{m,1}=\frac{1}{2}kA^2
+                            \]
+                        </div>
+
+                        <p>
+                            En la posición de equilibrio la energía potencial
+                            elástica es cero y la energía cinética es máxima.
+                            Por tanto:
+                        </p>
+
+                        \[
+                        E_{m,1}=E_{c,\text{máx}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>2. Energía mecánica del segundo oscilador.</strong>
+
+                        <p>
+                            La masa del segundo oscilador es \(4m\),
+                            pero la amplitud se reduce a \(A/2\).
+                            Como ambos utilizan el mismo muelle,
+                            la constante elástica es la misma.
+                        </p>
+
+                        \[
+                        E_{m,2}=\frac{1}{2}k\left(\frac{A}{2}\right)^2
+                        \]
+
+                        \[
+                        E_{m,2}=\frac{1}{8}kA^2
+                        \]
+
+                        \[
+                        \boxed{
+                        E_{m,2}=\frac{E_{c,\text{máx}}}{4}
+                        }
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>3. Energía potencial y cinética.</strong>
+
+                        <p>
+                            Tomando como origen de posiciones la posición
+                            de equilibrio:
+                        </p>
+
+                        \[
+                        E_{p,2}=\frac{1}{2}kx^2
+                        \]
+
+                        <p>
+                            Por conservación de la energía mecánica:
+                        </p>
+
+                        \[
+                        E_{c,2}=E_{m,2}-E_{p,2}
+                        \]
+
+                        \[
+                        \boxed{
+                        E_{c,2}=
+                        \frac{1}{8}kA^2-\frac{1}{2}kx^2
+                        }
+                        \]
+
+                        <p>
+                            El movimiento se desarrolla entre
+                            \(x=-A/2\) y \(x=A/2\).
+                        </p>
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>4. Interpretación gráfica.</strong>
+
+                        <ul>
+
+                            <li>
+                                La energía cinética es una parábola
+                                cóncava hacia abajo.
+                                Su valor máximo se alcanza en \(x=0\).
+                            </li>
+
+                            <li>
+                                La energía potencial es una parábola
+                                convexa hacia arriba.
+                                Su valor mínimo se alcanza en \(x=0\).
+                            </li>
+
+                            <li>
+                                La energía mecánica es una recta horizontal
+                                de valor constante.
+                            </li>
+
+                        </ul>
+
+                        <p>
+                            En los extremos de la trayectoria,
+                            \(x=\pm A/2\):
+                        </p>
+
+                        \[
+                        E_c=0
+                        \]
+
+                        \[
+                        E_p=E_m=\frac{E_{c,\text{máx}}}{4}
+                        \]
+
+                        <p>
+                            En el equilibrio, \(x=0\):
+                        </p>
+
+                        \[
+                        E_p=0
+                        \]
+
+                        \[
+                        E_c=E_m=\frac{E_{c,\text{máx}}}{4}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>5. Cambio del periodo.</strong>
+
+                        <p>
+                            El periodo del oscilador masa-muelle es:
+                        </p>
+
+                        \[
+                        T=2\pi\sqrt{\frac{m}{k}}
+                        \]
+
+                        <p>
+                            Para el primer objeto:
+                        </p>
+
+                        \[
+                        T_1=2\pi\sqrt{\frac{m}{k}}
+                        \]
+
+                        <p>
+                            Para el segundo:
+                        </p>
+
+                        \[
+                        T_2=2\pi\sqrt{\frac{4m}{k}}
+                        \]
+
+                        \[
+                        T_2=2\cdot2\pi\sqrt{\frac{m}{k}}
+                        \]
+
+                        \[
+                        \boxed{T_2=2T_1}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>Resultado final.</strong>
+
+                        \[
+                        \boxed{
+                        E_{m,2}=\frac{E_{c,\text{máx}}}{4}
+                        }
+                        \]
+
+                        \[
+                        \boxed{T_2=2T_1}
+                        \]
+
+                        <p>
+                            La energía mecánica depende de la amplitud
+                            y de la constante elástica, mientras que
+                            el periodo depende de la masa y de la constante
+                            elástica, pero no de la amplitud.
+                        </p>
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- ==================================================== -->
+            <!-- PROBLEMA 2                                            -->
+            <!-- ==================================================== -->
+
+            <details class="tarjeta-ejercicio">
+
+                <summary class="cabecera-ej">
+
+                    <span class="num-ej">Ejercicio 2</span>
+
+                    <span class="titulo-ej">
+                        Puenting: energías del MAS y masa a partir del periodo
+                    </span>
+
+                    <span class="meta-ej">
+                        Castilla y León · 2025 · Extraordinaria · Pregunta 8 · 2 puntos
+                    </span>
+
+                </summary>
+
+                <div class="enunciado-ej">
+
+                    <p>
+                        Dos amigas han quedado para hacer puenting y,
+                        tras lanzarse, oscilan verticalmente. Suponga
+                        que para ello utilizan una cuerda de masa
+                        despreciable, que se comporta de forma similar
+                        a un muelle. Asimismo, desprecie el rozamiento.
+                    </p>
+
+                    <p>
+                        <strong>a)</strong> La primera de ellas, de
+                        50 kg de masa, realiza 4 oscilaciones en 20 s.
+                        Si la amplitud de la oscilación es 2,8 m,
+                        determine la variación de las energías mecánica,
+                        cinética y potencial con la posición vertical
+                        y represéntelas.
+                    </p>
+
+                    <p>
+                        <strong>b)</strong> Si su amiga, en cambio,
+                        tarda 3 s en realizar media oscilación,
+                        ¿cuál es su masa?
+                    </p>
+
+                </div>
+
+                <div class="resolucion-ej">
+
+                    <div class="paso">
+                        <strong>a) Periodo y frecuencia angular.</strong>
+
+                        <p>
+                            Si realiza cuatro oscilaciones en veinte
+                            segundos:
+                        </p>
+
+                        \[
+                        T=\frac{20}{4}=5\,\text{s}
+                        \]
+
+                        \[
+                        \omega=\frac{2\pi}{T}
+                        =\frac{2\pi}{5}
+                        \]
+
+                        \[
+                        \boxed{\omega=1{,}257\,\text{rad}\,\text{s}^{-1}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>b) Constante elástica equivalente.</strong>
+
+                        <p>
+                            Para un oscilador masa-muelle:
+                        </p>
+
+                        \[
+                        \omega^2=\frac{k}{m}
+                        \]
+
+                        \[
+                        k=m\omega^2
+                        \]
+
+                        Sustituyendo:
+
+                        \[
+                        k=50\left(\frac{2\pi}{5}\right)^2
+                        \]
+
+                        \[
+                        \boxed{k=78{,}96\,\text{N}\,\text{m}^{-1}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>c) Energía mecánica total.</strong>
+
+                        <p>
+                            La energía mecánica es constante y depende
+                            de la constante elástica y de la amplitud:
+                        </p>
+
+                        \[
+                        E_m=\frac{1}{2}kA^2
+                        \]
+
+                        \[
+                        E_m=
+                        \frac{1}{2}\cdot78{,}96\cdot(2{,}8)^2
+                        \]
+
+                        \[
+                        \boxed{E_m=309{,}5\,\text{J}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>d) Energía potencial elástica.</strong>
+
+                        <p>
+                            Tomamos \(x=0\) en la posición de equilibrio
+                            del sistema:
+                        </p>
+
+                        \[
+                        E_p=\frac{1}{2}kx^2
+                        \]
+
+                        \[
+                        \boxed{E_p(x)=39{,}48x^2}
+                        \]
+
+                        <p>
+                            La energía potencial es una parábola convexa
+                            hacia arriba. Se anula en el equilibrio
+                            y alcanza su máximo en los extremos.
+                        </p>
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>e) Energía cinética.</strong>
+
+                        <p>
+                            Aplicamos la conservación de la energía:
+                        </p>
+
+                        \[
+                        E_c=E_m-E_p
+                        \]
+
+                        \[
+                        \boxed{E_c(x)=309{,}5-39{,}48x^2}
+                        \]
+
+                        <p>
+                            La energía cinética es máxima en el equilibrio
+                            y se anula en los extremos.
+                        </p>
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>f) Representación gráfica de las energías.</strong>
+
+                        <table>
+
+                            <tr>
+                                <th>Energía</th>
+                                <th>En \(x=0\)</th>
+                                <th>En \(x=\pm2{,}8\) m</th>
+                                <th>Representación</th>
+                            </tr>
+
+                            <tr>
+                                <td>\(E_m\)</td>
+                                <td>309,5 J</td>
+                                <td>309,5 J</td>
+                                <td>Horizontal</td>
+                            </tr>
+
+                            <tr>
+                                <td>\(E_p\)</td>
+                                <td>0 J</td>
+                                <td>309,5 J</td>
+                                <td>Parábola hacia arriba</td>
+                            </tr>
+
+                            <tr>
+                                <td>\(E_c\)</td>
+                                <td>309,5 J</td>
+                                <td>0 J</td>
+                                <td>Parábola hacia abajo</td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>g) Masa de la segunda amiga.</strong>
+
+                        <p>
+                            Si tarda 3 segundos en completar media
+                            oscilación:
+                        </p>
+
+                        \[
+                        \frac{T'}{2}=3
+                        \]
+
+                        \[
+                        T'=6\,\text{s}
+                        \]
+
+                        <p>
+                            Como la cuerda es la misma, la constante
+                            elástica no cambia:
+                        </p>
+
+                        \[
+                        T'=2\pi\sqrt{\frac{m'}{k}}
+                        \]
+
+                        Despejamos la masa:
+
+                        \[
+                        m'=\frac{kT'^2}{4\pi^2}
+                        \]
+
+                        \[
+                        m'=\frac{78{,}96\cdot36}{4\pi^2}
+                        \]
+
+                        \[
+                        \boxed{m'=72\,\text{kg}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>Resultado final.</strong>
+
+                        \[
+                        \boxed{E_m=309{,}5\,\text{J}}
+                        \]
+
+                        \[
+                        \boxed{E_p=39{,}48x^2\,\text{J}}
+                        \]
+
+                        \[
+                        \boxed{E_c=309{,}5-39{,}48x^2\,\text{J}}
+                        \]
+
+                        \[
+                        \boxed{m'=72\,\text{kg}}
+                        \]
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- ==================================================== -->
+            <!-- PROBLEMA 3                                            -->
+            <!-- ==================================================== -->
+
+            <details class="tarjeta-ejercicio">
+
+                <summary class="cabecera-ej">
+
+                    <span class="num-ej">Ejercicio 3</span>
+
+                    <span class="titulo-ej">
+                        Masa oscilando en un muelle vertical: periodo y amplitud
+                    </span>
+
+                    <span class="meta-ej">
+                        Aragón · 2023 · Extraordinaria · Problema 5 · 2,5 puntos
+                    </span>
+
+                </summary>
+
+                <div class="enunciado-ej">
+
+                    <p>
+                        Se tiene una masa de 2 kg oscilando verticalmente
+                        en un muelle de constante elástica
+                        \(50\,\text{N}\,\text{m}^{-1}\).
+                    </p>
+
+                    <p><strong>a)</strong> Obtén el periodo de la oscilación.</p>
+
+                    <p>
+                        <strong>b)</strong> Si la velocidad máxima es de
+                        \(37\,\text{cm}\,\text{s}^{-1}\), ¿cuál es
+                        la amplitud máxima de la oscilación?
+                    </p>
+
+                    <p>
+                        <strong>c)</strong> Si el muelle se estira hasta
+                        el punto más bajo y se suelta, dibuja un gráfico
+                        de la posición en función del tiempo.
+                    </p>
+
+                </div>
+
+                <div class="resolucion-ej">
+
+                    <div class="paso">
+                        <strong>a) Periodo de oscilación.</strong>
+
+                        <p>
+                            La frecuencia angular de un oscilador
+                            masa-muelle es:
+                        </p>
+
+                        \[
+                        \omega=\sqrt{\frac{k}{m}}
+                        \]
+
+                        \[
+                        \omega=\sqrt{\frac{50}{2}}
+                        \]
+
+                        \[
+                        \omega=5\,\text{rad}\,\text{s}^{-1}
+                        \]
+
+                        <p>
+                            El periodo será:
+                        </p>
+
+                        \[
+                        T=\frac{2\pi}{\omega}
+                        \]
+
+                        \[
+                        T=\frac{2\pi}{5}
+                        \]
+
+                        \[
+                        \boxed{T=1{,}257\,\text{s}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>b) Amplitud de la oscilación.</strong>
+
+                        <p>
+                            La velocidad máxima se alcanza en la posición
+                            de equilibrio:
+                        </p>
+
+                        \[
+                        v_{\text{máx}}=A\omega
+                        \]
+
+                        Despejamos la amplitud:
+
+                        \[
+                        A=\frac{v_{\text{máx}}}{\omega}
+                        \]
+
+                        Convertimos la velocidad al S.I.:
+
+                        \[
+                        37\,\text{cm}\,\text{s}^{-1}
+                        =0{,}37\,\text{m}\,\text{s}^{-1}
+                        \]
+
+                        Sustituimos:
+
+                        \[
+                        A=\frac{0{,}37}{5}
+                        \]
+
+                        \[
+                        \boxed{A=0{,}074\,\text{m}=7{,}4\,\text{cm}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>c) Ecuación de posición.</strong>
+
+                        <p>
+                            Tomamos el eje vertical positivo hacia arriba
+                            y el origen en la posición de equilibrio.
+                        </p>
+
+                        <p>
+                            Como la masa se suelta desde el punto más bajo:
+                        </p>
+
+                        \[
+                        x(0)=-A
+                        \]
+
+                        \[
+                        v(0)=0
+                        \]
+
+                        <p>
+                            La función que cumple estas condiciones es:
+                        </p>
+
+                        \[
+                        x(t)=-A\cos(\omega t)
+                        \]
+
+                        Sustituyendo:
+
+                        \[
+                        \boxed{
+                        x(t)=-0{,}074\cos(5t)\,\text{m}
+                        }
+                        \]
+
+                        <p>
+                            La gráfica es una cosinusoide invertida.
+                            En \(t=0\) comienza en el extremo inferior,
+                            \(x=-A\); a mitad de periodo alcanza
+                            \(x=+A\), y al finalizar un periodo
+                            vuelve a \(x=-A\).
+                        </p>
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>Resultado final.</strong>
+
+                        \[
+                        \boxed{T=1{,}257\,\text{s}}
+                        \]
+
+                        \[
+                        \boxed{A=7{,}4\,\text{cm}}
+                        \]
+
+                        \[
+                        \boxed{x(t)=-0{,}074\cos(5t)\,\text{m}}
+                        \]
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- ==================================================== -->
+            <!-- PROBLEMA 4                                            -->
+            <!-- ==================================================== -->
+
+            <details class="tarjeta-ejercicio">
+
+                <summary class="cabecera-ej">
+
+                    <span class="num-ej">Ejercicio 4</span>
+
+                    <span class="titulo-ej">
+                        MAS dado por una ecuación: frecuencia, velocidad máxima y energía
+                    </span>
+
+                    <span class="meta-ej">
+                        Aragón · 2023 · Ordinaria · Problema 5 · 2,5 puntos
+                    </span>
+
+                </summary>
+
+                <div class="enunciado-ej">
+
+                    <p>
+                        La siguiente ecuación describe un movimiento
+                        armónico simple de una masa de 2 kg colgada
+                        de un muelle:
+                    </p>
+
+                    \[
+                    x(t)=5\operatorname{sen}
+                    \left(14\pi t-\frac{\pi}{2}\right)
+                    \]
+
+                    <p>
+                        La posición está expresada en milímetros.
+                    </p>
+
+                    <p>
+                        <strong>a)</strong> Obtén la frecuencia angular
+                        y el periodo de la oscilación.
+                    </p>
+
+                    <p>
+                        <strong>b)</strong> ¿En qué momento o momentos
+                        del movimiento adquirirá su velocidad máxima?
+                        Calcúlala.
+                    </p>
+
+                    <p>
+                        <strong>c)</strong> Obtén la energía mecánica
+                        del oscilador para el punto en el que la velocidad
+                        es máxima.
+                    </p>
+
+                </div>
+
+                <div class="resolucion-ej">
+
+                    <div class="paso">
+                        <strong>1. Identificación de las magnitudes.</strong>
+
+                        <p>
+                            Comparamos con la expresión general:
+                        </p>
+
+                        \[
+                        x(t)=A\operatorname{sen}
+                        (\omega t+\varphi_0)
+                        \]
+
+                        Por tanto:
+
+                        \[
+                        A=5\,\text{mm}=0{,}005\,\text{m}
+                        \]
+
+                        \[
+                        \omega=14\pi\,\text{rad}\,\text{s}^{-1}
+                        \]
+
+                        \[
+                        \varphi_0=-\frac{\pi}{2}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>a) Periodo.</strong>
+
+                        \[
+                        T=\frac{2\pi}{\omega}
+                        \]
+
+                        \[
+                        T=\frac{2\pi}{14\pi}
+                        \]
+
+                        \[
+                        \boxed{T=\frac{1}{7}=0{,}143\,\text{s}}
+                        \]
+
+                        La frecuencia angular es:
+
+                        \[
+                        \boxed{\omega=14\pi=43{,}98\,\text{rad}\,\text{s}^{-1}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>b) Velocidad e instantes de velocidad máxima.</strong>
+
+                        <p>
+                            Derivamos la posición:
+                        </p>
+
+                        \[
+                        v(t)=A\omega
+                        \cos\left(14\pi t-\frac{\pi}{2}\right)
+                        \]
+
+                        Como:
+                        \[
+                        \cos\left(\alpha-\frac{\pi}{2}\right)
+                        =\operatorname{sen}\alpha
+                        \]
+
+                        obtenemos:
+
+                        \[
+                        v(t)=A\omega\operatorname{sen}(14\pi t)
+                        \]
+
+                        <p>
+                            El módulo de la velocidad es máximo
+                            cuando:
+                        </p>
+
+                        \[
+                        |\operatorname{sen}(14\pi t)|=1
+                        \]
+
+                        Por tanto:
+
+                        \[
+                        14\pi t=\frac{\pi}{2}+n\pi
+                        \]
+
+                        \[
+                        \boxed{
+                        t=\frac{1}{28}+\frac{n}{14}
+                        }
+                        \]
+
+                        <p>
+                            La velocidad máxima se produce cuando
+                            la partícula pasa por la posición de equilibrio.
+                        </p>
+
+                        \[
+                        v_{\text{máx}}=A\omega
+                        \]
+
+                        \[
+                        v_{\text{máx}}=5\cdot14\pi
+                        \]
+
+                        \[
+                        \boxed{
+                        v_{\text{máx}}=70\pi\,\text{mm}\,\text{s}^{-1}
+                        }
+                        \]
+
+                        \[
+                        \boxed{
+                        v_{\text{máx}}=0{,}220\,\text{m}\,\text{s}^{-1}
+                        }
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>c) Energía mecánica.</strong>
+
+                        <p>
+                            Primero calculamos la constante elástica:
+                        </p>
+
+                        \[
+                        k=m\omega^2
+                        \]
+
+                        \[
+                        k=2(14\pi)^2
+                        \]
+
+                        \[
+                        k=392\pi^2
+                        \]
+
+                        \[
+                        k\approx3868{,}9\,\text{N}\,\text{m}^{-1}
+                        \]
+
+                        <p>
+                            En el equilibrio, la energía potencial elástica
+                            es cero y toda la energía mecánica es cinética.
+                        </p>
+
+                        \[
+                        E_m=\frac{1}{2}mv_{\text{máx}}^2
+                        \]
+
+                        \[
+                        E_m=\frac{1}{2}\cdot2\cdot(0{,}2199)^2
+                        \]
+
+                        \[
+                        \boxed{E_m\approx0{,}0484\,\text{J}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>Resultado final.</strong>
+
+                        \[
+                        \boxed{\omega=14\pi\,\text{rad}\,\text{s}^{-1}}
+                        \]
+
+                        \[
+                        \boxed{T=0{,}143\,\text{s}}
+                        \]
+
+                        \[
+                        \boxed{v_{\text{máx}}=0{,}220\,\text{m}\,\text{s}^{-1}}
+                        \]
+
+                        \[
+                        \boxed{E_m=0{,}0484\,\text{J}}
+                        \]
+                    </div>
+
+                    <div class="note">
+                        En el registro original del banco de problemas,
+                        la función aparece escrita como \(A(t)\).
+                        Se interpreta como \(x(t)\), ya que representa
+                        la elongación del movimiento.
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- ==================================================== -->
+            <!-- PROBLEMA 5                                            -->
+            <!-- ==================================================== -->
+
+            <details class="tarjeta-ejercicio">
+
+                <summary class="cabecera-ej">
+
+                    <span class="num-ej">Ejercicio 5</span>
+
+                    <span class="titulo-ej">
+                        MAS de una masa unida a un muelle: posición, velocidad y aceleración
+                    </span>
+
+                    <span class="meta-ej">
+                        Aragón · 2021 · Ordinaria · Problema 1 · 2,5 puntos
+                    </span>
+
+                </summary>
+
+                <div class="enunciado-ej">
+
+                    <p>
+                        Una masa de 3 kg está unida a un muelle horizontal
+                        cuya constante recuperadora es
+                        \(K=12\,\text{N}\,\text{m}^{-1}\).
+                        El muelle se estira 4 cm desde la posición
+                        de equilibrio (\(x=0\)) y se deja en libertad.
+                    </p>
+
+                    <p>
+                        <strong>a)</strong> La expresión de la posición
+                        de la masa en función del tiempo, \(x=x(t)\),
+                        considerando \(t=0\) cuando atraviesa el punto
+                        en el que la velocidad es máxima.
+                    </p>
+
+                    <p>
+                        <strong>b)</strong> Los módulos de la velocidad
+                        y de la aceleración de la masa en un punto
+                        situado a 2 cm de la posición de equilibrio.
+                    </p>
+
+                    <p>
+                        <strong>c)</strong> La energía mecánica del
+                        sistema oscilante.
+                    </p>
+
+                </div>
+
+                <div class="resolucion-ej">
+
+                    <div class="paso">
+                        <strong>1. Frecuencia angular.</strong>
+
+                        \[
+                        \omega=\sqrt{\frac{K}{m}}
+                        \]
+
+                        \[
+                        \omega=\sqrt{\frac{12}{3}}
+                        \]
+
+                        \[
+                        \boxed{\omega=2\,\text{rad}\,\text{s}^{-1}}
+                        \]
+
+                        <p>
+                            La amplitud coincide con el estiramiento
+                            máximo:
+                        </p>
+
+                        \[
+                        A=4\,\text{cm}=0{,}04\,\text{m}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>a) Ecuación de posición.</strong>
+
+                        <p>
+                            El enunciado fija \(t=0\) cuando la masa
+                            atraviesa el punto de velocidad máxima,
+                            que corresponde a la posición de equilibrio.
+                        </p>
+
+                        \[
+                        x(0)=0
+                        \]
+
+                        <p>
+                            Utilizando una función seno:
+                        </p>
+
+                        \[
+                        x(t)=A\operatorname{sen}(\omega t+\varphi_0)
+                        \]
+
+                        <p>
+                            Escogemos \(\varphi_0=0\), de manera que
+                            la velocidad inicial sea positiva.
+                        </p>
+
+                        \[
+                        \boxed{
+                        x(t)=0{,}04\operatorname{sen}(2t)\,\text{m}
+                        }
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>b) Velocidad a 2 cm del equilibrio.</strong>
+
+                        <p>
+                            Utilizamos la expresión de la velocidad
+                            en función de la posición:
+                        </p>
+
+                        \[
+                        |v|=\omega\sqrt{A^2-x^2}
+                        \]
+
+                        Sustituimos:
+
+                        \[
+                        |v|=
+                        2\sqrt{(0{,}04)^2-(0{,}02)^2}
+                        \]
+
+                        \[
+                        |v|=2\sqrt{0{,}0012}
+                        \]
+
+                        \[
+                        \boxed{|v|=0{,}0693\,\text{m}\,\text{s}^{-1}}
+                        \]
+
+                        <p>
+                            **Aceleración en esa posición.**
+                        </p>
+
+                        Utilizamos:
+                        \[
+                        a=-\omega^2x
+                        \]
+
+                        Para su módulo:
+                        \[
+                        |a|=\omega^2|x|
+                        \]
+
+                        \[
+                        |a|=2^2\cdot0{,}02
+                        \]
+
+                        \[
+                        \boxed{|a|=0{,}08\,\text{m}\,\text{s}^{-2}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>c) Energía mecánica.</strong>
+
+                        <p>
+                            La energía mecánica se puede calcular
+                            en cualquiera de los extremos, donde
+                            la velocidad es cero.
+                        </p>
+
+                        \[
+                        E_m=\frac{1}{2}KA^2
+                        \]
+
+                        \[
+                        E_m=\frac{1}{2}\cdot12\cdot(0{,}04)^2
+                        \]
+
+                        \[
+                        \boxed{E_m=9{,}6\cdot10^{-3}\,\text{J}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>Resultado final.</strong>
+
+                        \[
+                        \boxed{x(t)=0{,}04\operatorname{sen}(2t)}
+                        \]
+
+                        \[
+                        \boxed{|v|=0{,}0693\,\text{m}\,\text{s}^{-1}}
+                        \]
+
+                        \[
+                        \boxed{|a|=0{,}08\,\text{m}\,\text{s}^{-2}}
+                        \]
+
+                        \[
+                        \boxed{E_m=9{,}6\cdot10^{-3}\,\text{J}}
+                        \]
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- ==================================================== -->
+            <!-- PROBLEMA 6                                            -->
+            <!-- ==================================================== -->
+
+            <details class="tarjeta-ejercicio">
+
+                <summary class="cabecera-ej">
+
+                    <span class="num-ej">Ejercicio 6</span>
+
+                    <span class="titulo-ej">
+                        Oscilador armónico: masa colgada de un muelle
+                    </span>
+
+                    <span class="meta-ej">
+                        Cataluña · 2024 · Extraordinaria · Problema 7 · 2,5 puntos
+                    </span>
+
+                </summary>
+
+                <div class="enunciado-ej">
+
+                    <p>
+                        Una masa de 100 g se hace oscilar colgada
+                        de un muelle. Se observa que realiza
+                        40 oscilaciones en un minuto y que la diferencia
+                        entre la posición más alta y la más baja
+                        es de 15 cm.
+                    </p>
+
+                    <p>
+                        <strong>a)</strong> Determine el periodo,
+                        la constante del muelle y la ecuación del movimiento
+                        si se empieza a contar cuando pasa por la posición
+                        más baja. Represente la fuerza elástica durante
+                        dos periodos.
+                    </p>
+
+                    <p>
+                        <strong>b)</strong> Calcule la energía mecánica
+                        del oscilador armónico y encuentre la expresión
+                        de la energía cinética en función de la posición.
+                        Calcule el módulo de la velocidad cuando la masa
+                        está 3 cm por encima de la posición de equilibrio.
+                    </p>
+
+                </div>
+
+                <div class="resolucion-ej">
+
+                    <div class="paso">
+                        <strong>1. Periodo.</strong>
+
+                        <p>
+                            Realiza 40 oscilaciones en 60 segundos:
+                        </p>
+
+                        \[
+                        T=\frac{60}{40}
+                        \]
+
+                        \[
+                        \boxed{T=1{,}5\,\text{s}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>2. Frecuencia angular y constante elástica.</strong>
+
+                        \[
+                        \omega=\frac{2\pi}{T}
+                        \]
+
+                        \[
+                        \omega=\frac{2\pi}{1{,}5}
+                        \]
+
+                        \[
+                        \boxed{\omega=4{,}19\,\text{rad}\,\text{s}^{-1}}
+                        \]
+
+                        <p>
+                            La masa es:
+                        </p>
+
+                        \[
+                        m=100\,\text{g}=0{,}100\,\text{kg}
+                        \]
+
+                        \[
+                        k=m\omega^2
+                        \]
+
+                        \[
+                        k=0{,}100\cdot(4{,}19)^2
+                        \]
+
+                        \[
+                        \boxed{k=1{,}75\,\text{N}\,\text{m}^{-1}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>3. Amplitud.</strong>
+
+                        <p>
+                            La distancia entre los extremos de la trayectoria
+                            es el doble de la amplitud:
+                        </p>
+
+                        \[
+                        2A=15\,\text{cm}
+                        \]
+
+                        \[
+                        \boxed{A=7{,}5\,\text{cm}=0{,}075\,\text{m}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>4. Ecuación del movimiento.</strong>
+
+                        <p>
+                            Tomamos el eje positivo hacia arriba,
+                            con origen en el equilibrio.
+                        </p>
+
+                        <p>
+                            Al comenzar a contar, la masa se encuentra
+                            en la posición más baja:
+                        </p>
+
+                        \[
+                        x(0)=-A
+                        \]
+
+                        <p>
+                            La ecuación de posición es:
+                        </p>
+
+                        \[
+                        x(t)=A\cos(\omega t+\pi)
+                        \]
+
+                        \[
+                        \boxed{
+                        x(t)=-0{,}075\cos(4{,}19t)\,\text{m}
+                        }
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>5. Fuerza elástica.</strong>
+
+                        <p>
+                            La fuerza recuperadora es:
+                        </p>
+
+                        \[
+                        F_e=-kx
+                        \]
+
+                        Sustituimos la ecuación de posición:
+
+                        \[
+                        F_e=-1{,}75[-0{,}075\cos(4{,}19t)]
+                        \]
+
+                        \[
+                        \boxed{
+                        F_e(t)=0{,}132\cos(4{,}19t)\,\text{N}
+                        }
+                        \]
+
+                        <p>
+                            La representación durante dos periodos,
+                            desde \(t=0\) hasta \(t=3\,\text{s}\),
+                            corresponde a una función coseno de amplitud
+                            \(0{,}132\,\text{N}\).
+                        </p>
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>6. Energía mecánica.</strong>
+
+                        \[
+                        E_m=\frac{1}{2}kA^2
+                        \]
+
+                        \[
+                        E_m=\frac{1}{2}\cdot1{,}75\cdot(0{,}075)^2
+                        \]
+
+                        \[
+                        \boxed{
+                        E_m=4{,}93\cdot10^{-3}\,\text{J}
+                        }
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>7. Energía cinética en función de la posición.</strong>
+
+                        \[
+                        E_c=E_m-E_p
+                        \]
+
+                        \[
+                        E_c=\frac{1}{2}kA^2-\frac{1}{2}kx^2
+                        \]
+
+                        \[
+                        \boxed{
+                        E_c=\frac{1}{2}k(A^2-x^2)
+                        }
+                        \]
+
+                        Sustituyendo:
+
+                        \[
+                        E_c=
+                        \frac{1}{2}\cdot1{,}75
+                        [(0{,}075)^2-x^2]
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>8. Velocidad a 3 cm del equilibrio.</strong>
+
+                        \[
+                        |v|=\omega\sqrt{A^2-x^2}
+                        \]
+
+                        Con \(x=0{,}030\,\text{m}\):
+
+                        \[
+                        |v|=4{,}19
+                        \sqrt{(0{,}075)^2-(0{,}030)^2}
+                        \]
+
+                        \[
+                        \boxed{|v|=0{,}288\,\text{m}\,\text{s}^{-1}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>Resultado final.</strong>
+
+                        \[
+                        \boxed{T=1{,}5\,\text{s}}
+                        \]
+
+                        \[
+                        \boxed{k=1{,}75\,\text{N}\,\text{m}^{-1}}
+                        \]
+
+                        \[
+                        \boxed{E_m=4{,}93\cdot10^{-3}\,\text{J}}
+                        \]
+
+                        \[
+                        \boxed{|v|=0{,}288\,\text{m}\,\text{s}^{-1}}
+                        \]
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- ==================================================== -->
+            <!-- PROBLEMA 7                                            -->
+            <!-- ==================================================== -->
+
+            <details class="tarjeta-ejercicio">
+
+                <summary class="cabecera-ej">
+
+                    <span class="num-ej">Ejercicio 7</span>
+
+                    <span class="titulo-ej">
+                        Movimiento armónico simple: amplitud, ecuación y energía
+                    </span>
+
+                    <span class="meta-ej">
+                        País Vasco · 2024 · Extraordinaria · Problema 3 · 3 puntos
+                    </span>
+
+                </summary>
+
+                <div class="enunciado-ej">
+
+                    <p>
+                        La energía mecánica de una partícula que realiza
+                        un movimiento armónico simple a lo largo del eje
+                        OX, y en torno al origen, vale
+                        \(3\cdot10^{-5}\,\text{J}\).
+                        Además, la fuerza máxima que actúa sobre ella
+                        es de \(1{,}5\cdot10^{-3}\,\text{N}\).
+                    </p>
+
+                    <p><strong>a)</strong> Obtén la amplitud del movimiento.</p>
+
+                    <p>
+                        <strong>b)</strong> Si el periodo de oscilación
+                        es de 2 s y en el instante inicial la partícula
+                        se encuentra en la posición
+                        \(x_0=2\,\text{cm}\), escribe la ecuación
+                        de movimiento.
+                    </p>
+
+                    <p>
+                        <strong>c)</strong> Obtén el valor de la constante
+                        de recuperación del muelle.
+                    </p>
+
+                </div>
+
+                <div class="resolucion-ej">
+
+                    <div class="paso">
+                        <strong>1. Amplitud a partir de la energía y de la fuerza máxima.</strong>
+
+                        <p>
+                            La energía mecánica de un MAS es:
+                        </p>
+
+                        \[
+                        E_m=\frac{1}{2}kA^2
+                        \]
+
+                        <p>
+                            La fuerza elástica máxima se alcanza en
+                            los extremos:
+                        </p>
+
+                        \[
+                        F_{\text{máx}}=kA
+                        \]
+
+                        <p>
+                            Despejando la constante elástica:
+                        </p>
+
+                        \[
+                        k=\frac{F_{\text{máx}}}{A}
+                        \]
+
+                        Sustituimos en la expresión de la energía:
+
+                        \[
+                        E_m=
+                        \frac{1}{2}\frac{F_{\text{máx}}}{A}A^2
+                        \]
+
+                        \[
+                        E_m=\frac{1}{2}F_{\text{máx}}A
+                        \]
+
+                        Por tanto:
+
+                        \[
+                        A=\frac{2E_m}{F_{\text{máx}}}
+                        \]
+
+                        Sustituimos:
+
+                        \[
+                        A=
+                        \frac{2\cdot3\cdot10^{-5}}
+                        {1{,}5\cdot10^{-3}}
+                        \]
+
+                        \[
+                        \boxed{A=0{,}04\,\text{m}=4\,\text{cm}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>2. Frecuencia angular.</strong>
+
+                        \[
+                        \omega=\frac{2\pi}{T}
+                        \]
+
+                        \[
+                        \omega=\frac{2\pi}{2}
+                        \]
+
+                        \[
+                        \boxed{\omega=\pi\,\text{rad}\,\text{s}^{-1}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>3. Fase inicial y ecuación del movimiento.</strong>
+
+                        <p>
+                            Utilizamos:
+                        </p>
+
+                        \[
+                        x(t)=A\operatorname{sen}(\omega t+\varphi_0)
+                        \]
+
+                        En el instante inicial:
+
+                        \[
+                        x_0=A\operatorname{sen}\varphi_0
+                        \]
+
+                        Sustituyendo:
+
+                        \[
+                        0{,}02=0{,}04\operatorname{sen}\varphi_0
+                        \]
+
+                        \[
+                        \operatorname{sen}\varphi_0=0{,}5
+                        \]
+
+                        <p>
+                            Existen dos soluciones posibles en un periodo:
+                        </p>
+
+                        \[
+                        \varphi_0=\frac{\pi}{6}
+                        \]
+
+                        o bien:
+
+                        \[
+                        \varphi_0=\frac{5\pi}{6}
+                        \]
+
+                        <p>
+                            Como el enunciado no indica el sentido
+                            de la velocidad inicial, no se puede determinar
+                            una única fase.
+                        </p>
+
+                        <p>
+                            Las dos ecuaciones posibles son:
+                        </p>
+
+                        \[
+                        \boxed{
+                        x_1(t)=0{,}04\operatorname{sen}
+                        \left(\pi t+\frac{\pi}{6}\right)
+                        }
+                        \]
+
+                        \[
+                        \boxed{
+                        x_2(t)=0{,}04\operatorname{sen}
+                        \left(\pi t+\frac{5\pi}{6}\right)
+                        }
+                        \]
+
+                        <p>
+                            La primera corresponde a velocidad inicial
+                            negativa y la segunda a velocidad inicial positiva.
+                        </p>
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>4. Constante de recuperación del muelle.</strong>
+
+                        \[
+                        F_{\text{máx}}=kA
+                        \]
+
+                        Despejamos:
+
+                        \[
+                        k=\frac{F_{\text{máx}}}{A}
+                        \]
+
+                        \[
+                        k=\frac{1{,}5\cdot10^{-3}}{0{,}04}
+                        \]
+
+                        \[
+                        \boxed{k=3{,}75\cdot10^{-2}\,\text{N}\,\text{m}^{-1}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>Resultado final.</strong>
+
+                        \[
+                        \boxed{A=0{,}04\,\text{m}}
+                        \]
+
+                        \[
+                        \boxed{\omega=\pi\,\text{rad}\,\text{s}^{-1}}
+                        \]
+
+                        \[
+                        \boxed{
+                        k=3{,}75\cdot10^{-2}\,\text{N}\,\text{m}^{-1}
+                        }
+                        \]
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- ==================================================== -->
+            <!-- PROBLEMA 8                                            -->
+            <!-- ==================================================== -->
+
+            <details class="tarjeta-ejercicio">
+
+                <summary class="cabecera-ej">
+
+                    <span class="num-ej">Ejercicio 8</span>
+
+                    <span class="titulo-ej">
+                        Medida experimental de una masa mediante un muelle
+                    </span>
+
+                    <span class="meta-ej">
+                        Castilla la Mancha · 2024 · Ordinaria · Pregunta 5 · 1 punto
+                    </span>
+
+                </summary>
+
+                <div class="enunciado-ej">
+
+                    <p>
+                        Si dispusieras de un cronómetro como único aparato
+                        de medida, ¿podrías determinar la masa de un objeto
+                        colgándolo de un muelle de constante elástica
+                        conocida (\(k\)) y dejándolo oscilar unas cuantas
+                        veces?
+                    </p>
+
+                    <p>
+                        En caso afirmativo explica cómo lo calcularías.
+                        ¿Se obtendrían los mismos resultados en la Luna?
+                        Justifica tu respuesta.
+                    </p>
+
+                </div>
+
+                <div class="resolucion-ej">
+
+                    <div class="paso">
+                        <strong>1. Ecuación del MAS de la masa colgada del muelle.</strong>
+
+                        <p>
+                            Partimos de la posición de equilibrio del muelle.
+                            En ella, el peso está compensado por la fuerza
+                            elástica.
+                        </p>
+
+                        <p>
+                            Si desplazamos la masa una distancia \(x\)
+                            desde esa posición:
+                        </p>
+
+                        \[
+                        F=-kx
+                        \]
+
+                        Aplicando la segunda ley de Newton:
+
+                        \[
+                        ma=-kx
+                        \]
+
+                        \[
+                        a=-\frac{k}{m}x
+                        \]
+
+                        <p>
+                            Comparando con la ecuación del MAS:
+                        </p>
+
+                        \[
+                        \boxed{\omega=\sqrt{\frac{k}{m}}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>2. Relación entre periodo, masa y constante elástica.</strong>
+
+                        \[
+                        T=\frac{2\pi}{\omega}
+                        \]
+
+                        \[
+                        T=2\pi\sqrt{\frac{m}{k}}
+                        \]
+
+                        Elevando al cuadrado:
+
+                        \[
+                        T^2=\frac{4\pi^2m}{k}
+                        \]
+
+                        Despejamos la masa:
+
+                        \[
+                        \boxed{m=\frac{kT^2}{4\pi^2}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>3. Procedimiento experimental.</strong>
+
+                        <ol>
+
+                            <li>
+                                Colgar el objeto del muelle y esperar
+                                a que alcance la posición de equilibrio.
+                            </li>
+
+                            <li>
+                                Separar ligeramente la masa de su posición
+                                de equilibrio y soltarla.
+                            </li>
+
+                            <li>
+                                Medir el tiempo que tarda en realizar
+                                un número \(n\) de oscilaciones completas.
+                            </li>
+
+                            <li>
+                                Calcular el periodo dividiendo el tiempo
+                                total entre el número de oscilaciones.
+                            </li>
+
+                            <li>
+                                Sustituir el periodo y la constante elástica
+                                conocida en la expresión de la masa.
+                            </li>
+
+                        </ol>
+
+                        Si se cronometra un tiempo total \(t\):
+
+                        \[
+                        T=\frac{t}{n}
+                        \]
+
+                        Por tanto:
+
+                        \[
+                        \boxed{
+                        m=\frac{k}{4\pi^2}
+                        \left(\frac{t}{n}\right)^2
+                        }
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>4. ¿Se obtendría el mismo resultado en la Luna?</strong>
+
+                        <p>
+                            Sí. La expresión que permite calcular
+                            la masa es:
+                        </p>
+
+                        \[
+                        m=\frac{kT^2}{4\pi^2}
+                        \]
+
+                        <p>
+                            En ella no aparece la aceleración de la gravedad.
+                        </p>
+
+                        <p>
+                            La gravedad modifica el alargamiento estático
+                            del muelle y, por tanto, su posición de equilibrio.
+                            Sin embargo, no modifica el periodo de oscilación
+                            alrededor de esa nueva posición de equilibrio.
+                        </p>
+
+                        <p>
+                            Por tanto, el valor de la masa calculado
+                            sería el mismo en la Tierra y en la Luna.
+                        </p>
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>Resultado final.</strong>
+
+                        \[
+                        \boxed{m=\frac{kT^2}{4\pi^2}}
+                        \]
+
+                        <p>
+                            La masa puede determinarse experimentalmente
+                            a partir del periodo de oscilación y de la
+                            constante elástica del muelle.
+                        </p>
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- ==================================================== -->
+            <!-- PROBLEMA 9                                            -->
+            <!-- ==================================================== -->
+
+            <details class="tarjeta-ejercicio">
+
+                <summary class="cabecera-ej">
+
+                    <span class="num-ej">Ejercicio 9</span>
+
+                    <span class="titulo-ej">
+                        Muelle vertical en MAS: energía cinética y posición
+                    </span>
+
+                    <span class="meta-ej">
+                        Castilla la Mancha · 2024 · Extraordinaria · Pregunta 6 · 1 punto
+                    </span>
+
+                </summary>
+
+                <div class="enunciado-ej">
+
+                    <p>
+                        Un cuerpo con un peso de 8 N cuelga de un muelle
+                        y se mueve con un MAS.
+                    </p>
+
+                    <p>
+                        Si la amplitud es de 25 cm y su velocidad máxima
+                        es de \(3\,\text{m}\,\text{s}^{-1}\), calcular
+                        la distancia medida desde la posición de equilibrio
+                        en la que la energía cinética es 1,3 J.
+                    </p>
+
+                </div>
+
+                <div class="resolucion-ej">
+
+                    <div class="paso">
+                        <strong>1. Frecuencia angular.</strong>
+
+                        \[
+                        v_{\text{máx}}=A\omega
+                        \]
+
+                        Despejamos:
+
+                        \[
+                        \omega=\frac{v_{\text{máx}}}{A}
+                        \]
+
+                        Sustituyendo:
+
+                        \[
+                        \omega=\frac{3}{0{,}25}
+                        \]
+
+                        \[
+                        \boxed{\omega=12\,\text{rad}\,\text{s}^{-1}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>2. Masa del cuerpo.</strong>
+
+                        <p>
+                            Conocemos el peso:
+                        </p>
+
+                        \[
+                        P=mg
+                        \]
+
+                        \[
+                        m=\frac{P}{g}
+                        \]
+
+                        \[
+                        m=\frac{8}{9{,}8}
+                        \]
+
+                        \[
+                        \boxed{m\approx0{,}816\,\text{kg}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>3. Constante elástica.</strong>
+
+                        \[
+                        \omega=\sqrt{\frac{k}{m}}
+                        \]
+
+                        \[
+                        k=m\omega^2
+                        \]
+
+                        \[
+                        k=0{,}816\cdot12^2
+                        \]
+
+                        \[
+                        \boxed{k\approx118\,\text{N}\,\text{m}^{-1}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>4. Energía mecánica total.</strong>
+
+                        \[
+                        E_m=\frac{1}{2}kA^2
+                        \]
+
+                        \[
+                        E_m=\frac{1}{2}\cdot118\cdot(0{,}25)^2
+                        \]
+
+                        \[
+                        \boxed{E_m\approx3{,}69\,\text{J}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>5. Energía potencial para una energía cinética de 1,3 J.</strong>
+
+                        <p>
+                            Utilizamos la conservación de la energía:
+                        </p>
+
+                        \[
+                        E_m=E_c+E_p
+                        \]
+
+                        \[
+                        E_p=E_m-E_c
+                        \]
+
+                        \[
+                        E_p=3{,}69-1{,}3
+                        \]
+
+                        \[
+                        E_p=2{,}39\,\text{J}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>6. Distancia desde el equilibrio.</strong>
+
+                        <p>
+                            La energía potencial elástica es:
+                        </p>
+
+                        \[
+                        E_p=\frac{1}{2}kx^2
+                        \]
+
+                        Despejamos:
+
+                        \[
+                        x^2=\frac{2E_p}{k}
+                        \]
+
+                        \[
+                        x^2=\frac{2\cdot2{,}39}{118}
+                        \]
+
+                        \[
+                        x^2\approx0{,}0405
+                        \]
+
+                        \[
+                        \boxed{|x|\approx0{,}201\,\text{m}}
+                        \]
+
+                        <p>
+                            Existen dos posiciones simétricas respecto
+                            al equilibrio en las que la energía cinética
+                            tiene ese valor:
+                        </p>
+
+                        \[
+                        \boxed{x=\pm0{,}201\,\text{m}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>Resultado final.</strong>
+
+                        \[
+                        \boxed{|x|\approx20{,}1\,\text{cm}}
+                        \]
+
+                        <p>
+                            La distancia a la posición de equilibrio
+                            es aproximadamente 20 cm.
+                        </p>
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- ==================================================== -->
+            <!-- PROBLEMA 10                                           -->
+            <!-- ==================================================== -->
+
+            <details class="tarjeta-ejercicio">
+
+                <summary class="cabecera-ej">
+
+                    <span class="num-ej">Ejercicio 10</span>
+
+                    <span class="titulo-ej">
+                        Péndulo simple: determinación de su longitud
+                    </span>
+
+                    <span class="meta-ej">
+                        Castilla la Mancha · 2024 · Extraordinaria · Pregunta 11 · 1 punto
+                    </span>
+
+                </summary>
+
+                <div class="enunciado-ej">
+
+                    <p>
+                        En lo más alto del monte Everest realizamos
+                        un experimento para medir el valor de la gravedad
+                        terrestre, que a esta altura es de
+                        \(9{,}77\,\text{m}\,\text{s}^{-2}\).
+                    </p>
+
+                    <p>
+                        Si medimos el periodo de oscilación varias veces,
+                        obtenemos los siguientes resultados:
+                    </p>
+
+                    \[
+                    T\,(\text{s}):
+                    0{,}89;\ 0{,}88;\ 0{,}90;\ 0{,}88;\ 0{,}91;\ 0{,}92
+                    \]
+
+                    <p>
+                        ¿Qué longitud tiene el péndulo que estamos usando?
+                        ¿Si duplicamos su longitud, el periodo de oscilación
+                        también se duplica? Justifica la respuesta.
+                    </p>
+
+                </div>
+
+                <div class="resolucion-ej">
+
+                    <div class="paso">
+                        <strong>1. Periodo medio.</strong>
+
+                        <p>
+                            Para mejorar la precisión experimental
+                            calculamos el promedio de las seis medidas:
+                        </p>
+
+                        \[
+                        T_{\text{medio}}=
+                        \frac{
+                        0{,}89+0{,}88+0{,}90+0{,}88+0{,}91+0{,}92
+                        }{6}
+                        \]
+
+                        \[
+                        \boxed{T_{\text{medio}}\approx0{,}897\,\text{s}}
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>2. Periodo de un péndulo simple.</strong>
+
+                        <p>
+                            Para pequeñas oscilaciones:
+                        </p>
+
+                        \[
+                        \boxed{
+                        T=2\pi\sqrt{\frac{L}{g}}
+                        }
+                        \]
+
+                        <p>
+                            Despejamos la longitud:
+                        </p>
+
+                        \[
+                        T^2=\frac{4\pi^2L}{g}
+                        \]
+
+                        \[
+                        \boxed{
+                        L=\frac{gT^2}{4\pi^2}
+                        }
+                        \]
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>3. Longitud del péndulo.</strong>
+
+                        <p>
+                            Sustituimos los datos:
+                        </p>
+
+                        \[
+                        L=
+                        \frac{9{,}77\cdot(0{,}897)^2}{4\pi^2}
+                        \]
+
+                        \[
+                        \boxed{L\approx0{,}199\,\text{m}}
+                        \]
+
+                        <p>
+                            La longitud del péndulo es aproximadamente
+                            19,9 cm.
+                        </p>
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>4. ¿Qué ocurre al duplicar la longitud?</strong>
+
+                        <p>
+                            El periodo es proporcional a la raíz cuadrada
+                            de la longitud:
+                        </p>
+
+                        \[
+                        T\propto\sqrt{L}
+                        \]
+
+                        Si duplicamos la longitud:
+                        \[
+                        L'=2L
+                        \]
+
+                        El nuevo periodo será:
+                        \[
+                        T'=2\pi\sqrt{\frac{2L}{g}}
+                        \]
+
+                        \[
+                        \boxed{T'=\sqrt{2}\,T}
+                        \]
+
+                        <p>
+                            Por tanto, el periodo no se duplica,
+                            sino que aumenta por un factor de
+                            \(\sqrt{2}\approx1{,}414\).
+                        </p>
+
+                        <p>
+                            Para duplicar el periodo habría que
+                            cuadruplicar la longitud.
+                        </p>
+                    </div>
+
+
+                    <div class="paso">
+                        <strong>Resultado final.</strong>
+
+                        \[
+                        \boxed{T_{\text{medio}}=0{,}897\,\text{s}}
+                        \]
+
+                        \[
+                        \boxed{L=0{,}199\,\text{m}}
+                        \]
+
+                        \[
+                        \boxed{T'=\sqrt{2}\,T}
+                        \]
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- ==================================================== -->
+            <!-- OBSERVACIONES FINALES                                 -->
+            <!-- ==================================================== -->
+
+            <div class="pie-clave">
+
+                <i class="fas fa-lightbulb"></i>
+
+                <span>
+
+                    <strong>Observaciones clave para resolver problemas de MAS:</strong>
+
+                    <ol>
+
+                        <li>
+                            Identificar si el movimiento corresponde
+                            a un sistema masa-muelle o a un péndulo simple.
+                        </li>
+
+                        <li>
+                            Convertir todos los datos al Sistema Internacional.
+                        </li>
+
+                        <li>
+                            Identificar la amplitud, el periodo y la
+                            frecuencia angular.
+                        </li>
+
+                        <li>
+                            Elegir correctamente el origen de posiciones.
+                            En los muelles verticales, utilizar como origen
+                            la posición de equilibrio.
+                        </li>
+
+                        <li>
+                            Determinar las condiciones iniciales para
+                            establecer la fase de la ecuación del movimiento.
+                        </li>
+
+                        <li>
+                            Derivar la posición para obtener la velocidad
+                            y la aceleración, prestando atención a los signos.
+                        </li>
+
+                        <li>
+                            Utilizar \(v_{\text{máx}}=A\omega\) cuando
+                            se pida la velocidad máxima.
+                        </li>
+
+                        <li>
+                            Aplicar la conservación de la energía mecánica
+                            cuando se relacionen velocidades, posiciones
+                            o energías.
+                        </li>
+
+                        <li>
+                            Recordar que la energía potencial elástica
+                            y la energía cinética se transforman
+                            continuamente, mientras que la energía
+                            mecánica permanece constante.
+                        </li>
+
+                        <li>
+                            En los péndulos, utilizar
+                            \(T=2\pi\sqrt{L/g}\), válida para pequeñas
+                            oscilaciones.
+                        </li>
+
+                        <li>
+                            Comprobar las unidades, los signos y la
+                            coherencia física de los resultados.
+                        </li>
+
+                    </ol>
+
+                    **Recuerda:** en los extremos la velocidad es cero
+                    y la aceleración tiene su valor máximo. En el equilibrio,
+                    la velocidad es máxima y la aceleración es cero.
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </details>
+
+
+    <!-- ============================================================ -->
+    <!-- RECURSOS Y NAVEGACIÓN                                         -->
+    <!-- ============================================================ -->
+
+    <div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
+
+        <div class="recursos-tema"
+             style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    border-radius: 20px;
+                    padding: 30px 25px 32px 25px;
+                    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.35);">
+
+            <h2 style="margin: 0 0 8px 0;
+                       color: white;
+                       text-align: center;
+                       font-size: 1.5em;
+                       display: flex;
+                       align-items: center;
+                       justify-content: center;
+                       gap: 12px;">
+
+                <i class="fas fa-compass"></i>
+                Recursos del Tema C1
+
+            </h2>
+
+            <p style="text-align: center;
+                      color: rgba(255,255,255,0.9);
+                      margin: 0 0 25px 0;
+                      font-size: 0.95em;">
+
+                Accede directamente a los materiales y bancos de problemas.
+
+            </p>
+
+
+            <div class="recurso-grid"
+                 style="display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 18px;">
+
+                <!-- TARJETA 1: FORMULARIO -->
+
+                <a href="TemaC1-Formulario.html"
+                   style="text-decoration: none; color: inherit;">
+
+                    <div class="recurso-card"
+                         style="background: white;
+                                border-radius: 16px;
+                                padding: 22px 18px;
+                                text-align: center;
+                                height: 100%;
+                                border: 3px solid #e2e8f0;
+                                box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+
+                        <div class="recurso-icono"
+                             style="width: 62px;
+                                    height: 62px;
+                                    margin: 4px auto 14px;
+                                    background: linear-gradient(135deg, #667eea, #764ba2);
+                                    border-radius: 50%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    color: white;
+                                    font-size: 1.7em;">
+
+                            <i class="fas fa-book"></i>
+
+                        </div>
+
+                        <div style="font-weight: 700;
+                                    color: #1e3a8a;
+                                    font-size: 1.1em;
+                                    margin-bottom: 6px;">
+
+                            Formulario C1
+
+                        </div>
+
+                        <div style="font-size: 0.85em;
+                                    color: #64748b;
+                                    line-height: 1.5;">
+
+                            Fórmulas y relaciones fundamentales
+                            del movimiento armónico simple.
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <!-- TARJETA 2: PROBLEMAS EBAU -->
+
+                <a href="TemaC1-ProblemasEBAU.html"
+                   style="text-decoration: none; color: inherit;">
+
+                    <div class="recurso-card"
+                         style="background: white;
+                                border-radius: 16px;
+                                padding: 22px 18px;
+                                text-align: center;
+                                height: 100%;
+                                border: 3px solid #e2e8f0;
+                                box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+
+                        <div class="recurso-icono"
+                             style="width: 62px;
+                                    height: 62px;
+                                    margin: 4px auto 14px;
+                                    background: linear-gradient(135deg, #10b981, #059669);
+                                    border-radius: 50%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    color: white;
+                                    font-size: 1.7em;">
+
+                            <i class="fas fa-pen-to-square"></i>
+
+                        </div>
+
+                        <div style="font-weight: 700;
+                                    color: #1e3a8a;
+                                    font-size: 1.1em;
+                                    margin-bottom: 6px;">
+
+                            Problemas EBAU · C1
+
+                        </div>
+
+                        <div style="font-size: 0.85em;
+                                    color: #64748b;
+                                    line-height: 1.5;">
+
+                            Colección de ejercicios del tema
+                            con sus soluciones desarrolladas.
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <!-- TARJETA 3: BANCO GENERAL -->
+
+                <a href="../EBAU/problemas-inline_v04.html"
+                   style="text-decoration: none; color: inherit;">
+
+                    <div class="recurso-card"
+                         style="background: white;
+                                border-radius: 16px;
+                                padding: 22px 18px;
+                                text-align: center;
+                                height: 100%;
+                                border: 3px solid #e2e8f0;
+                                box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+
+                        <div class="recurso-icono"
+                             style="width: 62px;
+                                    height: 62px;
+                                    margin: 4px auto 14px;
+                                    background: linear-gradient(135deg, #f59e0b, #d97706);
+                                    border-radius: 50%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    color: white;
+                                    font-size: 1.7em;">
+
+                            <i class="fas fa-database"></i>
+
+                        </div>
+
+                        <div style="font-weight: 700;
+                                    color: #1e3a8a;
+                                    font-size: 1.1em;
+                                    margin-bottom: 6px;">
+
+                            Banco EBAU general
+
+                        </div>
+
+                        <div style="font-size: 0.85em;
+                                    color: #64748b;
+                                    line-height: 1.5;">
+
+                            Banco completo de problemas
+                            de todas las unidades.
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================================================ -->
+    <!-- BLOQUE "ES HORA DE"                                           -->
+    <!-- ============================================================ -->
+
+    <div class="bloque-cta">
+
+        <div class="tarjeta-cta">
+
+            <p>
+                Domina el movimiento armónico simple, comprende sus
+                ecuaciones y aprende a resolver problemas de muelles,
+                péndulos y conservación de la energía.
+
+                <br><br>
+
+                <i>
+                    Los detalles sobre lo que entra en las pruebas
+                    escritas se publicarán periódicamente en M.Teams.
+                </i>
+            </p>
+
+            <div style="text-align:center;">
+
+                <a href="../index.html"
+                   target="_blank"
+                   class="boton-volver">
+
+                    Volver al inicio
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

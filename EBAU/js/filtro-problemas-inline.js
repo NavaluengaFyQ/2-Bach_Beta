@@ -6,7 +6,7 @@
 // Tipo      : Script de navegador (JS clásico, sin build, sin módulos)
 // Entrada   : Datos/indice.json + Datos/<id>.json  (o Datos/problemas.json)
 // Salida    : #resultados de la plantilla del buscador
-//             ("problemas-inline v04-Filtro prefijado.html")
+//             ("problemas-inline_v04-Filtro_prefijado.html")
 // Depende   : · MathJax 3 (opcional, para fórmulas)
 //             · IntersectionObserver (opcional, para comprobar PDFs)
 //             · fetch (obligatorio)

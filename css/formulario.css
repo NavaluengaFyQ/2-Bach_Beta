@@ -759,3 +759,67 @@ details.glosario[open] > summary::after {
         margin-bottom: 2px;
     }
 }
+
+/* ============================================================
+   15. ANCLAS DE FÓRMULA (navegación cruzada desde la unidad)
+   ------------------------------------------------------------
+   Los enlaces del tipo
+       TemaA1.html  →  TemaA1-Formulario.html#formula-N
+   aterrizan en las cajas  .formula-box  con  id="formula-1"…"formula-15".
+   En el formulario, la tarjeta tiene bastante contenido encima de
+   la fórmula (.cabecera, .epi-chips, .intro), así que se agradece
+   un poco más de margen que en la unidad: 100 px dejan ver el
+   final del .intro justo por encima de la fórmula sin comerse la
+   propia fórmula en pantallas pequeñas.
+   ============================================================ */
+.formula-box {
+    scroll-margin-top: 100px;
+}
+
+
+/* ============================================================
+   16. RESALTADO TEMPORAL DE LA FICHA DESTINO
+   ------------------------------------------------------------
+   Cuando se llega desde TemaA2.html → TemaA2-Formulario.html#formula-N
+   (o desde cualquier otra unidad), la tarjeta con id="formula-N"
+   coincide con :target y su caja de fórmula se rodea de una
+   línea negra que se desvanece sola en ~2,5 s.
+   ============================================================ */
+/* ============================================================
+   RESALTADO TEMPORAL DE LA FICHA DESTINO (azul)
+   ============================================================ */
+.formula-box:target,
+.formula-box.formula-resaltada,
+.card:target .formula-box,
+.card.formula-resaltada .formula-box {
+    animation: resaltar-formula 2.8s ease-out forwards;
+}
+
+@keyframes resaltar-formula {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0),
+                    0 0 0 0 rgba(59, 130, 246, 0);
+    }
+    15% {
+        box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.22),
+                    0 0 28px 8px rgba(59, 130, 246, 0.38);
+    }
+    65% {
+        box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.14),
+                    0 0 20px 6px rgba(59, 130, 246, 0.22);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0),
+                    0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .formula-box:target,
+    .formula-box.formula-resaltada,
+    .card:target .formula-box,
+    .card.formula-resaltada .formula-box {
+        animation: none;
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.35);
+    }
+}

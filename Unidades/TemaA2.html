@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema A2. Leyes de Kepler y relación con la gravitación</title>
 
+
+    <!-- Para crear las consultas puntuales en la base de datos) -->
+    <script src="js/utils.js" defer></script>
+
     <!-- FontAwesome CDN (versión 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -13,6 +17,9 @@
 
     <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    
 </head>
 <body>
 <div class="container">
@@ -131,10 +138,15 @@
             </summary>
             <p>Durante casi veinte siglos dominó el <strong>modelo geocéntrico</strong> de Ptolomeo, con la Tierra inmóvil en el centro del universo y los astros girando en esferas perfectas. En 1543, Nicolás Copérnico publicó <em>De revolutionibus orbium coelestium</em>, proponiendo un <strong>modelo heliocéntrico</strong> en el que la Tierra y los demás planetas giran alrededor del Sol. Tycho Brahe (1546-1601) realizó observaciones astronómicas de una precisión sin precedentes, sobre todo de la posición de Marte. Su discípulo <strong>Johannes Kepler</strong> (1571-1630), trabajando con esos datos durante años, descartó las órbitas circulares y descubrió que los datos encajaban con <strong>órbitas elípticas</strong>.</p>
             <p>Kepler publicó sus dos primeras leyes en 1609 (<em>Astronomia Nova</em>) y la tercera en 1619 (<em>Harmonices Mundi</em>). Son leyes <strong>empíricas</strong>: se obtienen del análisis de los datos observacionales sin un modelo dinámico previo. Poco después, Newton (1687) demostraría que todas ellas son consecuencias directas de la <strong>ley de gravitación universal</strong> y de sus tres leyes de la dinámica, cerrándose así el círculo entre cinemática observada y dinámica causal.</p>
-            <div class="formula-box">
-                \[
-                \text{Ptolomeo (geocentrismo)} \;\to\; \text{Copérnico (heliocentrismo)} \;\to\; \text{Kepler (3 leyes)} \;\to\; \text{Newton (gravitación)}
-                \]
+            <a href="TemaA2-Formulario.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-1">
+                    \[
+                    \text{Ptolomeo (geocentrismo)} \;\to\; \text{Copérnico (heliocentrismo)} \;\to\; \text{Kepler (3 leyes)} \;\to\; \text{Newton (gravitación)}
+                    \]
+                </div>
+            </a>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"Ptolomeo" | "geocentrismo" | "Copérnico" | "heliocentrismo" | "Tycho Brahe" | "Kepler" | "leyes de Kepler" | "Newton" | "gravitación universal"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Geocentrismo y heliocentrismo (CyL · A2)</a>
             </div>
         </details>
 
@@ -151,12 +163,17 @@
                 <li><strong>Afelio (o apogeo):</strong> punto más alejado. \( r_{\max} = a(1+e) \).</li>
                 <li>La suma de distancias a los dos focos es constante: \( r_{\text{perihelio}} + r_{\text{afelio}} = 2a \).</li>
             </ul>
-            <div class="formula-box">
-                \[
-                r_{\text{perihelio}} = a(1-e), \qquad r_{\text{afelio}} = a(1+e)
-                \]
-            </div>
+            <a href="TemaA2-Formulario.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-2">
+                    \[
+                    r_{\text{perihelio}} = a(1-e), \qquad r_{\text{afelio}} = a(1+e)
+                    \]
+                </div>
+            </a>
             <p>La primera ley rompió con la idea de la «perfección circular» de la física aristotélica. En el caso particular de órbitas circulares (\(e=0\)), los radios orbitales son constantes y las leyes de Kepler siguen aplicándose como caso límite.</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"primera ley de Kepler" | "ley de las órbitas" | "órbita elíptica" | "foco" | "excentricidad" | "perihelio" | "afelio" | "semieje mayor" | "perigeo" | "apogeo"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Primera ley de Kepler (CyL · A2)</a>
+            </div>
         </details>
 
         <details class="step">
@@ -166,11 +183,13 @@
             </summary>
             <p><strong>Enunciado:</strong> «El segmento (radio vector) que une el Sol con cada planeta barre <strong>áreas iguales en tiempos iguales</strong>.»</p>
             <p>En términos cuantitativos, la <strong>velocidad areolar</strong> es constante:</p>
-            <div class="formula-box">
-                \[
-                \frac{dA}{dt} = \frac{L}{2m} = \text{constante}
-                \]
-            </div>
+            <a href="TemaA2-Formulario.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-3">
+                    \[
+                    \frac{dA}{dt} = \frac{L}{2m} = \text{constante}
+                    \]
+                </div>
+            </a>
             <p>donde \( L = m\,r\,v\,\text{sen}\,\theta \) es el <strong>momento angular</strong> del planeta respecto del Sol. Esta ley es una consecuencia directa del carácter <strong>central</strong> de la fuerza gravitatoria: como \( \vec F \parallel \vec r \), el momento de la fuerza respecto del Sol es nulo y el momento angular se conserva.</p>
             <p><strong>Consecuencias físicas:</strong></p>
             <ul>
@@ -181,6 +200,9 @@
                 \]</li>
                 <li>Como \( r_{\text{perihelio}} < r_{\text{afelio}} \), necesariamente \( v_{\text{perihelio}} > v_{\text{afelio}} \).</li>
             </ul>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"segunda ley de Kepler" | "ley de las áreas" | "velocidad areolar" | "momento angular" | "fuerza central" | "perihelio" | "afelio" | "conservación del momento angular" | "radio vector"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Ley de las áreas (CyL · A2)</a>
+            </div>
         </details>
 
         <details class="step">
@@ -189,11 +211,13 @@
                 <strong>Tercera ley de Kepler: ley de los periodos.</strong>
             </summary>
             <p><strong>Enunciado:</strong> «El cuadrado del periodo orbital de un planeta es directamente proporcional al cubo del <strong>semieje mayor</strong> de su órbita elíptica.»</p>
-            <div class="formula-box">
-                \[
-                T^2 = k\,a^3 \qquad \Longleftrightarrow \qquad \frac{T^2}{a^3} = \text{constante para todos los planetas de un mismo sistema}
-                \]
-            </div>
+            <a href="TemaA2-Formulario.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-4">
+                    \[
+                    T^2 = k\,a^3 \qquad \Longleftrightarrow \qquad \frac{T^2}{a^3} = \text{constante para todos los planetas de un mismo sistema}
+                    \]
+                </div>
+            </a>
             <p>La constante \( k \) depende solo del <strong>astro central</strong>: para todos los planetas del Sistema Solar, \( k \) toma el mismo valor; para todos los satélites de Júpiter, otro distinto; para todos los satélites artificiales de la Tierra, otro. Las magnitudes implicadas son:</p>
             <ul>
                 <li>\( T \): periodo orbital, en segundos (\( \text{s} \)).</li>
@@ -201,6 +225,9 @@
                 <li>\( k \): constante de Kepler del sistema, con unidades \( \text{s}^2\,\text{m}^{-3} \).</li>
             </ul>
             <p>Esta ley permite <strong>predecir</strong> periodos o radios de órbitas desconocidas a partir de otras conocidas del mismo sistema. Es la más útil de las tres desde el punto de vista práctico y la que con mayor frecuencia aparece en los exámenes de EBAU.</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"tercera ley de Kepler" | "ley de los periodos" | "periodo orbital" | "semieje mayor" | "constante de Kepler" | "T^2/a^3" | "sistema solar" | "órbita elíptica" | "radio orbital"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Ley de los periodos (CyL · A2)</a>
+            </div>
         </details>
 
         <details class="step">
@@ -209,24 +236,33 @@
                 <strong>Deducción de la tercera ley desde la gravitación newtoniana.</strong>
             </summary>
             <p>Para una <strong>órbita circular</strong> de radio \( r \) alrededor de una masa central \( M \) (con \( M \gg m \), aproximación razonable para planetas alrededor del Sol o satélites alrededor de la Tierra), la única fuerza es la gravitatoria, que actúa como centrípeta:</p>
-            <div class="formula-box">
-                \[
-                \frac{G\,M\,m}{r^2} = \frac{m\,v^2}{r} \quad \Longrightarrow \quad v^2 = \frac{G\,M}{r}
-                \]
-            </div>
+            <a href="TemaA2-Formulario.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-5">
+                    \[
+                    \frac{G\,M\,m}{r^2} = \frac{m\,v^2}{r} \quad \Longrightarrow \quad v^2 = \frac{G\,M}{r}
+                    \]
+                </div>
+            </a>
             <p>Como la velocidad orbital se relaciona con el periodo por \( v = \frac{2\pi r}{T} \), elevando al cuadrado:</p>
-            <div class="formula-box">
-                \[
-                \frac{4\pi^2 r^2}{T^2} = \frac{G\,M}{r} \quad \Longrightarrow \quad T^2 = \frac{4\pi^2}{G\,M}\,r^3
-                \]
-            </div>
+            <a href="TemaA2-Formulario.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-6">
+                    \[
+                    \frac{4\pi^2 r^2}{T^2} = \frac{G\,M}{r} \quad \Longrightarrow \quad T^2 = \frac{4\pi^2}{G\,M}\,r^3
+                    \]
+                </div>
+            </a>
             <p>Identificando \( a = r \) y comparando con \( T^2 = k\,a^3 \), obtenemos la expresión teórica de la <strong>constante de Kepler</strong>:</p>
-            <div class="formula-box">
-                \[
-                k = \frac{4\pi^2}{G\,M}
-                \]
-            </div>
+            <a href="TemaA2-Formulario.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-7">
+                    \[
+                    k = \frac{4\pi^2}{G\,M}
+                    \]
+                </div>
+            </a>
             <p>Por tanto, la constante de Kepler depende <strong>únicamente de la masa central</strong> \( M \) y de constantes universales. Esto explica por qué todos los planetas del Sistema Solar comparten el mismo valor de \( k \), mientras que los satélites de Júpiter tendrían otro. Esta es la primera ley de Kepler que Newton pudo demostrar a partir de su teoría, y con ello se cerró el vínculo entre cinemática (Kepler) y dinámica (Newton).</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"deducción tercera ley Kepler" | "ley de gravitación universal" | "fuerza centrípeta" | "velocidad orbital" | "periodo orbital" | "constante de Kepler" | "masa central" | "órbita circular" | "Newton"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Deducción de la 3.ª ley (CyL · A2)</a>
+            </div>
         </details>
 
         <details class="step">
@@ -235,24 +271,33 @@
                 <strong>La constante de Kepler del Sistema Solar.</strong>
             </summary>
             <p>Sustituyendo los datos del Sol en la expresión teórica:</p>
-            <div class="formula-box">
-                \[
-                k_{\text{Sol}} = \frac{4\pi^2}{G\,M_\odot} = \frac{4\pi^2}{6{,}67\cdot10^{-11}\cdot1{,}99\cdot10^{30}} \approx 2{,}97\cdot10^{-19}\,\text{s}^2\,\text{m}^{-3}
-                \]
-            </div>
+            <a href="TemaA2-Formulario.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-8">
+                    \[
+                    k_{\text{Sol}} = \frac{4\pi^2}{G\,M_\odot} = \frac{4\pi^2}{6{,}67\cdot10^{-11}\cdot1{,}99\cdot10^{30}} \approx 2{,}97\cdot10^{-19}\,\text{s}^2\,\text{m}^{-3}
+                    \]
+                </div>
+            </a>
             <p>Este valor debe coincidir con el cociente \( T^2/a^3 \) de cualquier planeta. Por ejemplo, para la Tierra:</p>
-            <div class="formula-box">
-                \[
-                \frac{T_T^2}{a_T^3} = \frac{(3{,}156\cdot10^7)^2}{(1{,}496\cdot10^{11})^3} \approx 2{,}98\cdot10^{-19}\,\text{s}^2\,\text{m}^{-3}
-                \]
-            </div>
+            <a href="TemaA2-Formulario.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-9">
+                    \[
+                    \frac{T_T^2}{a_T^3} = \frac{(3{,}156\cdot10^7)^2}{(1{,}496\cdot10^{11})^3} \approx 2{,}98\cdot10^{-19}\,\text{s}^2\,\text{m}^{-3}
+                    \]
+                </div>
+            </a>
             <p>En problemas de <strong>comparación de órbitas del mismo sistema</strong>, es muy útil trabajar con la relación directa:</p>
-            <div class="formula-box">
-                \[
-                \frac{T_1^2}{a_1^3} = \frac{T_2^2}{a_2^3} \quad \Longrightarrow \quad T_2 = T_1\left(\frac{a_2}{a_1}\right)^{3/2}
-                \]
-            </div>
+            <a href="TemaA2-Formulario.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-10">
+                    \[
+                    \frac{T_1^2}{a_1^3} = \frac{T_2^2}{a_2^3} \quad \Longrightarrow \quad T_2 = T_1\left(\frac{a_2}{a_1}\right)^{3/2}
+                    \]
+                </div>
+            </a>
             <p>De esta forma se evita calcular explícitamente la masa central, y basta con conocer una órbita de referencia.</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"constante de Kepler" | "Sistema Solar" | "masa del Sol" | "T^2/a^3" | "comparación de órbitas" | "periodo orbital" | "semieje mayor" | "Tierra" | "k del Sol"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Constante de Kepler solar (CyL · A2)</a>
+            </div>
         </details>
 
         <details class="step">
@@ -261,11 +306,13 @@
                 <strong>Determinación de la masa central.</strong>
             </summary>
             <p>La tercera ley, despejada en función de \( M \), proporciona un método para <strong>pesar</strong> el astro central a partir de la observación de un cuerpo que orbite a su alrededor:</p>
-            <div class="formula-box">
-                \[
-                M = \frac{4\pi^2\,a^3}{G\,T^2}
-                \]
-            </div>
+            <a href="TemaA2-Formulario.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-11">
+                    \[
+                    M = \frac{4\pi^2\,a^3}{G\,T^2}
+                    \]
+                </div>
+            </a>
             <p>Este procedimiento se ha empleado históricamente para medir la masa del Sol (a partir del movimiento de los planetas), la masa de la Tierra (a partir de la Luna o de satélites artificiales), la masa de Júpiter (a partir de sus lunas galileanas), la de Saturno (a partir de Titán), etc. Es también el método que se utiliza actualmente para determinar la masa de <strong>exoplanetas</strong> y de <strong>agujeros negros</strong> (a partir del movimiento de estrellas compañeras).</p>
             <p><strong>Procedimiento de resolución:</strong></p>
             <ol>
@@ -274,6 +321,9 @@
                 <li>Homogeneizar todas las unidades al S.I. (días → s, km → m, etc.).</li>
                 <li>Aplicar \( M = \frac{4\pi^2 a^3}{G\,T^2} \).</li>
             </ol>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"determinación de la masa central" | "masa del Sol" | "masa de la Tierra" | "masa de Júpiter" | "exoplanetas" | "agujeros negros" | "periodo orbital" | "semieje mayor" | "satélite"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Masa central de un sistema (CyL · A2)</a>
+            </div>
         </details>
 
         <details class="step">
@@ -282,30 +332,41 @@
                 <strong>Órbitas elípticas: velocidades en los ápsides.</strong>
             </summary>
             <p>En una órbita elíptica, la segunda ley de Kepler conduce a la conservación del momento angular. En los <strong>ápsides</strong> (perihelio y afelio), la velocidad es perpendicular al radio vector, por lo que \( L = m\,r\,v \) y:</p>
-            <div class="formula-box">
-                \[
-                r_p\,v_p = r_a\,v_a
-                \]
-            </div>
+            <a href="TemaA2-Formulario.html#formula-12" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-12">
+                    \[
+                    r_p\,v_p = r_a\,v_a
+                    \]
+                </div>
+            </a>
             <p>La <strong>conservación de la energía mecánica</strong> proporciona una segunda ecuación:</p>
-            <div class="formula-box">
-                \[
-                \frac{1}{2}m\,v_p^2 - \frac{G\,M\,m}{r_p} = \frac{1}{2}m\,v_a^2 - \frac{G\,M\,m}{r_a}
-                \]
-            </div>
+            <a href="TemaA2-Formulario.html#formula-13" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-13">
+                    \[
+                    \frac{1}{2}m\,v_p^2 - \frac{G\,M\,m}{r_p} = \frac{1}{2}m\,v_a^2 - \frac{G\,M\,m}{r_a}
+                    \]
+                </div>
+            </a>
             <p>Combinando ambas, y usando \( r_p + r_a = 2a \), se obtiene la <strong>velocidad en cada ápside</strong>:</p>
-            <div class="formula-box">
-                \[
-                v_p = \sqrt{\frac{G\,M}{a}\,\frac{1+e}{1-e}}, \qquad v_a = \sqrt{\frac{G\,M}{a}\,\frac{1-e}{1+e}}
-                \]
-            </div>
+            <a href="TemaA2-Formulario.html#formula-14" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-14">
+                    \[
+                    v_p = \sqrt{\frac{G\,M}{a}\,\frac{1+e}{1-e}}, \qquad v_a = \sqrt{\frac{G\,M}{a}\,\frac{1-e}{1+e}}
+                    \]
+                </div>
+            </a>
             <p>La energía mecánica total de una órbita elíptica (o circular) depende solo del semieje mayor \( a \):</p>
-            <div class="formula-box">
-                \[
-                E_m = -\frac{G\,M\,m}{2a}
-                \]
-            </div>
+            <a href="TemaA2-Formulario.html#formula-15" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-15">
+                    \[
+                    E_m = -\frac{G\,M\,m}{2a}
+                    \]
+                </div>
+            </a>
             <p>Y si la órbita es circular (\( a = r \)), se recupera \( E_m = -\frac{G\,M\,m}{2r} \), expresión ya conocida del tema A6.</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"órbita elíptica" | "perihelio" | "afelio" | "ápsides" | "conservación del momento angular" | "conservación de la energía mecánica" | "velocidad en el perihelio" | "velocidad en el afelio" | "energía mecánica" | "semieje mayor"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Velocidades en los ápsides (CyL · A2)</a>
+            </div>
         </details>
 
         <details class="step">
@@ -321,10 +382,15 @@
                 <li><strong>Materia oscura:</strong> las curvas de rotación de galaxias no siguen la predicción kepleriana \( v \propto 1/\sqrt{r} \), lo que constituye una de las evidencias de la existencia de materia oscura.</li>
                 <li><strong>Misiones espaciales:</strong> el diseño de transferencias orbitales (Hohmann, bi-elípticas, asistencias gravitatorias) se apoya en las leyes de Kepler.</li>
             </ul>
-            <div class="formula-box">
-                \[
-                \text{LEO} \;(h \sim 400\,\text{km}) \;\to\; T \sim 90\,\text{min} \qquad\qquad \text{GEO} \;(h \sim 36\,000\,\text{km}) \;\to\; T = 24\,\text{h}
-                \]
+            <a href="TemaA2-Formulario.html#formula-16" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-16">
+                    \[
+                    \text{LEO} \;(h \sim 400\,\text{km}) \;\to\; T \sim 90\,\text{min} \qquad\qquad \text{GEO} \;(h \sim 36\,000\,\text{km}) \;\to\; T = 24\,\text{h}
+                    \]
+                </div>
+            </a>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"satélites artificiales" | "órbita LEO" | "órbita GEO" | "exoplanetas" | "agujeros negros" | "Sagitario A*" | "materia oscura" | "transferencia orbital" | "leyes de Kepler"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Aplicaciones de Kepler (CyL · A2)</a>
             </div>
         </details>
 
@@ -860,5 +926,41 @@
     <!-- ===================FIN DE ES HORA DE ==================== -->
 
 </div> <!-- fin container -->
+
+
+
+
+
+<!-- ===================PARA PONER UN MARCO TEMPORAL EN LA FÓRMULA CUANDO VENGA DEL FORMULARIO ==================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    // Abrir todos los <details> ancestros para que la fórmula sea visible
+    var el = target.parentElement;
+    while (el) {
+        if (el.tagName === 'DETAILS') el.open = true;
+        el = el.parentElement;
+    }
+
+    // Desplazar al centro de la pantalla
+    target.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    // Re-lanzar la animación por si ya se había consumido
+    target.classList.remove('formula-resaltada');
+    void target.offsetWidth;               // fuerza reflow → reinicia la animación
+    target.classList.add('formula-resaltada');
+    setTimeout(function () {
+        target.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
+
+
 </body>
 </html>

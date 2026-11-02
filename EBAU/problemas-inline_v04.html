@@ -1,5 +1,5 @@
 <!-- ════════════════════════════════════════════════════════════════════════ -->
-<!-- problemas-inline v04.html                                              -->
+<!-- problemas-inline_v04.html                                              -->
 <!-- Plantilla BASE del buscador de problemas resueltos de PAU · Física     -->
 <!-- (versión SIN filtro prefijado).                                        -->
 <!--                                                                        -->
@@ -13,7 +13,7 @@
 <!--                                                                        -->
 <!-- RELACIÓN CON LAS DEMÁS PÁGINAS                                         -->
 <!--   · Es el DESTINO del botón «Limpiar filtros» de la variante           -->
-<!--     «problemas-inline v04-Filtro prefijado.html»: al pulsar ese botón  -->
+<!--     «problemas-inline_v04-Filtro_prefijado.html»: al pulsar ese botón  -->
 <!--     desde un tema (TemaA1, TemaA2, …) se navega aquí para liberar el   -->
 <!--     prefijo y ver el catálogo completo.                                -->
 <!--   · Esta versión NO lee parámetros de URL ni aplica prefijos: no       -->
@@ -138,8 +138,8 @@
              placeholder='Buscar por título, enunciado, tema… (usa "frase" y + / |)'
              autocomplete="off" spellcheck="false">
       <select id="select-ambito" title="Dónde buscar el texto">
-        <option value="todo" selected>Todo (incluye metadatos)</option>
-        <option value="ambas">Enunciado + resolución</option>
+        <option value="todo">Todo (incluye metadatos)</option>
+        <option value="ambas" selected>Enunciado + resolución</option>
         <option value="enunciado">Solo enunciado</option>
         <option value="resolucion">Solo resolución</option>
       </select>
@@ -567,6 +567,192 @@
   requestAnimationFrame(procesarTarjetas);
 })();
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     LECTOR DE PARÁMETROS DE URL
+     CON ESTO ME PERMITE HACER ENLACES DIRECTOS A CUALQUIER FILTRO DEL CATÁLOGO
+     ES MUCHO MÁS CÓMODO SIN LA NECESIDAD DE CREAR HTML ADICIONALES PRA CADA FILTRADO
+     SE TRATA DE UNA VERSIÓN MEJORADA DEL SCRIPT DE FILTRADO PREFIJADO QUE USABA ANTES 02/11/2026
+     ──────────────────────────────────────────────────────────────────────
+     Permite enlaces con filtros precargados en el catálogo.
+
+     Parámetros admitidos (todos opcionales):
+       · q             → texto del buscador
+       · comunidad     → comunidad autónoma
+       · bloque        → bloque de contenido
+       · tema          → tema concreto
+       · anio          → año
+       · convocatoria  → convocatoria
+       · ambito        → todo | ambas | enunciado | resolucion
+       · modo          → completo | plegado
+       · orden         → num | tema | bloque | ...
+
+     Ejemplo de uso:
+       catalogo.html?comunidad=Madrid&anio=2023&ambito=enunciado
+
+     Notas:
+       · Si no llega ningún parámetro, el catálogo se muestra limpio.
+       · Los botones de filtro pueden generarse de forma asíncrona;
+         por eso se hace polling (máx. 10 s) hasta encontrarlos.
+       · El botón «Limpiar filtros» se activa solo mediante el
+         MutationObserver ya existente sobre .btn-filtro.activo.
+     ══════════════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  // ── 0) Lectura de parámetros ────────────────────────────────────────
+  const params = new URLSearchParams(window.location.search);
+
+  const q         = params.get('q');
+  const comunidad = params.get('comunidad');
+  const bloque    = params.get('bloque');
+  const tema      = params.get('tema');
+  const anio      = params.get('anio');
+  const conv      = params.get('convocatoria');
+  const ambito    = params.get('ambito');   // todo | ambas | enunciado | resolucion
+  const modo      = params.get('modo');     // completo | plegado
+  const orden     = params.get('orden');    // num | tema | bloque | ...
+
+  const hayAlgo = q || comunidad || bloque || tema || anio || conv || ambito || modo || orden;
+  if (!hayAlgo) return;   // nada que hacer: catálogo limpio
+
+  // ── a) Rellenar el buscador de texto ────────────────────────────────
+  const input = document.getElementById('input-busqueda');
+  if (q && input) {
+    input.value = q;
+    input.dispatchEvent(new Event('input',  { bubbles: true }));
+    input.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+
+  // ── b) Ámbito, orden y modo de vista ────────────────────────────────
+  const setSelect = (id, val) => {
+    if (!val) return;
+    const sel = document.getElementById(id);
+    if (!sel) return;
+    // Comparación tolerante (por si el value no coincide exactamente)
+    const opt = Array.from(sel.options).find(o =>
+      o.value.toLowerCase() === val.toLowerCase());
+    if (opt) {
+      sel.value = opt.value;
+      sel.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  };
+  setSelect('select-ambito', ambito);
+  setSelect('select-orden',  orden);
+
+  if (modo) {
+    const btn = document.querySelector(`.seg-btn[data-modo="${modo}"]`);
+    if (btn && !btn.classList.contains('activo')) btn.click();
+  }
+
+  // ── c) Pulsar los botones de filtro correspondientes ────────────────
+  const objetivos = [
+    ['filtros-anio',         anio],
+    ['filtros-convocatoria', conv],
+    ['filtros-comunidad',    comunidad],
+    ['filtros-bloque',       bloque],
+    ['filtros-tema',         tema],
+  ].filter(([, v]) => !!v);
+
+  if (!objetivos.length) return;
+
+  /**
+   * Intenta activar el botón de `containerId` cuyo texto (o data-*)
+   * coincida con `valor`. Devuelve:
+   *   'ok'    → encontrado (activo o recién clicado)
+   *   'vacio' → el contenedor aún no tiene botones (seguir esperando)
+   *   'nada'  → hay botones pero ninguno coincide (seguir esperando)
+   */
+  function activar(containerId, valor) {
+    const cont = document.getElementById(containerId);
+    if (!cont) return 'nada';
+
+    const btns = cont.querySelectorAll('.btn-filtro, button, .filtro-btn');
+    if (!btns.length) return 'vacio';
+
+    const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                       .toLowerCase().trim();
+    const v = norm(valor);
+
+    // 1) Coincidencia exacta por data-* o texto
+    for (const b of btns) {
+      const dataVal = b.dataset.value || b.dataset.valor || b.dataset.v ||
+                      b.dataset.filter || b.dataset.id || '';
+      const texto   = b.textContent || '';
+      const title   = b.getAttribute('title') || '';
+      if (norm(dataVal) === v || norm(texto) === v || norm(title) === v) {
+        if (!b.classList.contains('activo')) b.click();
+        return 'ok';
+      }
+    }
+    // 2) Coincidencia parcial (por si el label lleva contador, etc.)
+    for (const b of btns) {
+      const texto = norm(b.textContent || '');
+      if (texto && (texto.includes(v) || v.includes(texto))) {
+        if (!b.classList.contains('activo')) b.click();
+        return 'ok';
+      }
+    }
+    return 'nada';
+  }
+
+  // ── d) Polling hasta que el motor externo haya creado los botones ───
+  let intentos = 0;
+  const MAX = 100;                 // 100 × 100 ms = 10 s como máximo
+  const tick = () => {
+    intentos++;
+    let todosOk = true;
+    for (const [id, val] of objetivos) {
+      if (activar(id, val) !== 'ok') todosOk = false;
+    }
+    if (todosOk || intentos >= MAX) clearInterval(timer);
+  };
+  const timer = setInterval(tick, 100);
+  tick();  // primer intento inmediato
+
+  // (El botón «Limpiar filtros» se mostrará solo gracias al
+  //  MutationObserver que ya tienes sobre .btn-filtro.activo.)
+})();
+</script>
+<!-- ══════════════════════════════════════════════════════════════════════
+     Fin del lector de parámetros de URL
+     ══════════════════════════════════════════════════════════════════════ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tema C3 de Física de 2º de Bachillerato: energía, potencia e intensidad de onda, intensidad sonora, ondas esféricas y decibelios. Teoría y problemas EBAU resueltos.">
+    <title>Tema C3. Energía, potencia e intensidad de una onda</title>
+
+
+
+    <!-- Para crear las consultas puntuales en la base de datos) -->
+    <script src="js/utils.js" defer></script>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    
+</head>
+<body>
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA C3.- </span>
+                <span class="texto">Energía, potencia e intensidad de una onda</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- MAPA DE BLOQUES Y TEMAS -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque C. Vibraciones y ondas</strong> de Física de 2.º de Bachillerato, conforme a la organización por bloques y temas del material curricular adjunto (Decreto 40/2022, BOCYL-D-30092022-4).</p>
+
+        <div class="mapa-bloques">
+            <div class="bloque-card">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">A1</span><span class="tema-chip">A2</span><span class="tema-chip">A3</span><span class="tema-chip">A4</span>
+                    <span class="tema-chip">A5</span><span class="tema-chip">A6</span><span class="tema-chip">A7</span><span class="tema-chip">A8</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span><span class="tema-chip">B2</span><span class="tema-chip">B3</span><span class="tema-chip">B4</span><span class="tema-chip">B5</span>
+                    <span class="tema-chip">B6</span><span class="tema-chip">B7</span><span class="tema-chip">B8</span><span class="tema-chip">B9</span>
+                </div>
+            </div>
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">C1</span><span class="tema-chip">C2</span><span class="tema-chip actual">C3</span>
+                    <span class="tema-chip">C4</span><span class="tema-chip">C5</span><span class="tema-chip">C6</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">D1</span><span class="tema-chip">D2</span><span class="tema-chip">D3</span>
+                    <span class="tema-chip">D4</span><span class="tema-chip">D5</span><span class="tema-chip">D6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque C · Tema C3:</strong> <span class="texto-resaltado">Energía, potencia e intensidad de una onda.</span>
+            <br><br>
+            <em>En este tema estudiaremos:</em> la energía transportada por una onda, la potencia como energía transferida por unidad de tiempo, la intensidad como potencia por unidad de superficie, la distribución esférica de la energía de una fuente puntual y la escala logarítmica de nivel de intensidad sonora en decibelios.
+        </div>
+
+        <div class="formula-box" style="text-align:left; font-size:0.96em;">
+            <strong>C-C3 — Intensidad, potencia y nivel sonoro.</strong> Indicador facilitado: <strong>15,6 %</strong> · media: <strong>10,1 %</strong> · diferencia: <strong>+5,5 puntos porcentuales</strong>.<br>
+            Palabras clave: «intensidad sonora», «potencia sonora», «nivel de intensidad», «decibelios», «onda esférica» y «umbral auditivo».
+            <hr style="border:0; border-top:1px solid #cbd5e0; margin:12px 0;">
+            <strong>P-C3 — Problemas de sonido, potencia y decibelios.</strong> Aplica: <strong>C-C3</strong>. Indicador facilitado: <strong>15,6 %</strong> · media: <strong>10,1 %</strong> · diferencia: <strong>+5,5 puntos porcentuales</strong>.<br>
+            Palabras clave: «nivel sonoro», «dB», «intensidad», «potencia de altavoz» y «distancia y atenuación».
+        </div>
+
+        <div class="note">
+            <strong>Conexión con la EBAU:</strong> los ejercicios seleccionados se centran en intensidad sonora, potencia acústica, niveles en dB, umbral auditivo y dependencia con la distancia. Dos enunciados de 2026 están etiquetados en el banco como contenidos compartidos C2–C3.
+        </div>
+    </details>
+
+    <!-- OBJETIVOS -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Distinguir entre energía transportada por una onda, potencia e intensidad, e interpretar sus unidades en el S.I.</li>
+            <li>Calcular la potencia media a partir de la energía transferida y del intervalo de tiempo.</li>
+            <li>Relacionar la intensidad con la potencia y con el área atravesada por la onda.</li>
+            <li>Aplicar el modelo de fuente puntual isótropa y la ley del inverso del cuadrado de la distancia para ondas esféricas.</li>
+            <li>Convertir niveles de intensidad sonora expresados en decibelios en intensidades físicas y viceversa.</li>
+            <li>Calcular diferencias de nivel sonoro a partir de cocientes de intensidades o de distancias.</li>
+            <li>Resolver situaciones con varias fuentes sonoras, sumando intensidades cuando las fuentes son incoherentes.</li>
+            <li>Resolver problemas numéricos y cuestiones de razonamiento característicos de la PAU/EBAU de Castilla y León.</li>
+        </ul>
+    </details>
+
+    <!-- CONTENIDO TEÓRICO -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">1</span><strong>Energía transportada por una onda y potencia.</strong></summary>
+            <p>Una onda transmite energía de un lugar a otro sin que exista un transporte neto de materia a escala macroscópica. La <strong>energía transferida</strong> depende de la onda y del intervalo considerado. La <strong>potencia</strong> mide la rapidez con la que se transfiere esa energía: es la energía transmitida por unidad de tiempo.</p>
+            <div class="formula-box" id="formula-1">
+                \[ P_{\mathrm{media}}=\frac{\Delta E}{\Delta t} \]
+            </div>
+            <p>En el S.I., la potencia se mide en <strong>vatios</strong> (W), con \(1\,\text{W}=1\,\text{J}\,\text{s}^{-1}\). Si la potencia es constante durante un tiempo \(\Delta t\), la energía transferida es:</p>
+            <div class="formula-box">\[ \Delta E=P\,\Delta t \]</div>
+            <p>En ondas armónicas, para un mismo medio y frecuencia, la energía transportada y la intensidad son proporcionales al cuadrado de la amplitud: duplicar la amplitud supone cuadruplicar la intensidad.</p>
+            <div class="note"><strong>No confundir:</strong> energía (J), potencia (W) e intensidad (W·m<sup>−2</sup>) son magnitudes distintas.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Intensidad de una onda.</strong></summary>
+            <p>La <strong>intensidad</strong> \(I\) es la potencia que atraviesa cada unidad de superficie perpendicular a la dirección de propagación. Si la potencia se distribuye uniformemente sobre una superficie \(S\):</p>
+            <div class="formula-box" id="formula-2">\[ I=\frac{P}{S}=\frac{\Delta E}{S\,\Delta t} \]</div>
+            <p>Su unidad en el S.I. es el <strong>W·m<sup>−2</sup></strong>. De esta expresión también se obtiene la energía que atraviesa una superficie durante un intervalo de tiempo:</p>
+            <div class="formula-box">\[ \Delta E=I\,S\,\Delta t \]</div>
+            <p>Cuando la intensidad no es uniforme, se trabaja con la intensidad local o media adecuada al enunciado. En los problemas de este tema, la superficie suele ser perpendicular al avance de la onda y la distribución se considera uniforme sobre ella.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Fuentes puntuales: ondas esféricas y ley del inverso del cuadrado.</strong></summary>
+            <p>Una fuente puntual que emite uniformemente en todas las direcciones produce, idealmente, frentes de onda <strong>esféricos</strong>. A una distancia \(r\), la energía atraviesa la superficie de una esfera de área \(S=4\pi r^2\). Si no hay absorción ni obstáculos, la potencia total se conserva:</p>
+            <div class="formula-box" id="formula-3">\[ I=\frac{P}{4\pi r^2}\qquad\Longleftrightarrow\qquad P=4\pi r^2I \]</div>
+            <p>Para una misma fuente, \(P\) es constante y por tanto:</p>
+            <div class="formula-box">\[ I\propto\frac{1}{r^2}\qquad\text{y}\qquad I_1r_1^2=I_2r_2^2 \]</div>
+            <p>Si se duplica la distancia, la intensidad se reduce a la cuarta parte; si se triplica, a la novena parte. La intensidad disminuye porque la misma potencia se reparte sobre esferas cada vez mayores, <strong>no porque la energía se destruya por el mero hecho de alejarse</strong>.</p>
+            <div class="note"><strong>Condiciones del modelo:</strong> fuente puntual, emisión isótropa, propagación en un medio homogéneo y desprecio de absorción, reflexión y obstáculos. Si el enunciado no permite estas hipótesis, no debe aplicarse automáticamente \(I=P/(4\pi r^2)\).</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Nivel de intensidad sonora: escala de decibelios.</strong></summary>
+            <p>El oído puede detectar intensidades sonoras que abarcan un intervalo muy amplio. Por ello se utiliza una <strong>escala logarítmica</strong>, que expresa el nivel de intensidad sonora \(\beta\) en decibelios (dB), respecto a una intensidad de referencia:</p>
+            <div class="formula-box" id="formula-4">\[ \beta=10\log_{10}\!\left(\frac{I}{I_0}\right)\quad [\mathrm{dB}] \]</div>
+            <p>Para los problemas de EBAU se toma normalmente la <strong>intensidad umbral de audición</strong>:</p>
+            <div class="formula-box">\[ I_0=1{,}0\cdot10^{-12}\,\text{W}\,\text{m}^{-2} \]</div>
+            <p>Es la referencia convencional próxima al umbral auditivo para un sonido de alrededor de 1 kHz. Cuando \(I=I_0\), el nivel es \(0\,\text{dB}\). Un nivel de 10 dB corresponde a una intensidad diez veces mayor que \(I_0\); 20 dB, a cien veces; 60 dB, a \(10^6\) veces.</p>
+            <p>Despejando la intensidad física:</p>
+            <div class="formula-box" id="formula-5">\[ I=I_0\,10^{\beta/10} \]</div>
+            <div class="note"><strong>Atención con el logaritmo:</strong> en esta definición se usa \(10\log_{10}(I/I_0)\), porque se compara intensidad. No debe sustituirse por \(20\log_{10}\) en esta fórmula.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">5</span><strong>Diferencias de nivel y distancia al foco.</strong></summary>
+            <p>Al comparar dos puntos, el valor de referencia \(I_0\) se cancela:</p>
+            <div class="formula-box" id="formula-6">\[ \beta_2-\beta_1=10\log_{10}\!\left(\frac{I_2}{I_1}\right) \]</div>
+            <p>Para una misma fuente puntual isótropa, se combina con la ley del inverso del cuadrado:</p>
+            <div class="formula-box" id="formula-7">\[ \beta_2-\beta_1=-20\log_{10}\!\left(\frac{r_2}{r_1}\right) \]</div>
+            <p>La expresión anterior permite resolver directamente problemas donde solo se conoce la razón entre distancias. Por ejemplo, al cuadruplicar la distancia, el nivel disminuye aproximadamente 12 dB. Al duplicarla, disminuye aproximadamente 6 dB.</p>
+            <p>También conviene reconocer estos cambios:</p>
+            <table>
+                <thead><tr><th>Cambio de nivel</th><th>Cociente de intensidades</th><th>Interpretación</th></tr></thead>
+                <tbody>
+                    <tr><td>+3 dB</td><td>\(I_2/I_1\approx2\)</td><td>La intensidad aproximadamente se duplica.</td></tr>
+                    <tr><td>+10 dB</td><td>\(I_2/I_1=10\)</td><td>La intensidad se multiplica por 10.</td></tr>
+                    <tr><td>+20 dB</td><td>\(I_2/I_1=100\)</td><td>La intensidad se multiplica por 100.</td></tr>
+                    <tr><td>−6 dB</td><td>\(I_2/I_1\approx1/4\)</td><td>Corresponde aproximadamente a duplicar la distancia a la fuente.</td></tr>
+                </tbody>
+            </table>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">6</span><strong>Varias fuentes sonoras y energía recibida.</strong></summary>
+            <p>Cuando varias fuentes independientes e incoherentes contribuyen al sonido en un mismo punto, se suman las <strong>intensidades físicas</strong>:</p>
+            <div class="formula-box">\[ I_{\mathrm{total}}=I_1+I_2+\cdots+I_N \]</div>
+            <p>Para \(N\) fuentes iguales que producen individualmente un nivel \(\beta_1\), a la misma distancia del observador:</p>
+            <div class="formula-box">\[ \beta_{\mathrm{total}}=\beta_1+10\log_{10}N \]</div>
+            <p>Por tanto, no se suman directamente los decibelios. Por ejemplo, cien fuentes iguales e incoherentes aumentan el nivel en 20 dB respecto a una sola fuente.</p>
+            <p>Si una fuente emite con potencia acústica constante durante \(\Delta t\), la energía sonora emitida es \(E=P\Delta t\). La energía que atraviesa una superficie \(S\), si la intensidad se mantiene uniforme, es \(\Delta E=I S\Delta t\).</p>
+            <div class="note"><strong>Supuesto de suma:</strong> la suma directa de intensidades se aplica a fuentes incoherentes. Si el enunciado habla de fuentes coherentes y de interferencia, hay que considerar la superposición de ondas y no utilizar sin más la fórmula anterior.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">7</span><strong>Procedimiento general para problemas de sonido.</strong></summary>
+            <ol>
+                <li><strong>Extraer los datos:</strong> potencia, energía, tiempo, distancia, intensidad o nivel sonoro. Pasar todo al S.I.</li>
+                <li><strong>Identificar el modelo:</strong> fuente puntual e isótropa (esfera) o superficie plana dada en el enunciado.</li>
+                <li><strong>Obtener la potencia:</strong> si se conoce energía y tiempo, usar \(P=E/\Delta t\); si se conoce intensidad a una distancia, usar \(P=4\pi r^2I\).</li>
+                <li><strong>Convertir decibelios:</strong> si se conoce \(\beta\), calcular \(I=I_0 10^{\beta/10}\); si se conoce \(I\), calcular \(\beta=10\log_{10}(I/I_0)\).</li>
+                <li><strong>Relacionar distancias:</strong> para la misma fuente, usar \(I_1r_1^2=I_2r_2^2\) o la relación directa entre niveles y distancias.</li>
+                <li><strong>Comprobar:</strong> unidades, sentido físico y redondeo. Al alejarnos de una fuente puntual, la intensidad y el nivel deben disminuir.</li>
+            </ol>
+        </details>
+    </details>
+
+    <!-- RESUMEN DE FÓRMULAS -->
+    <details class="section resultado" id="resumen-formulas">
+        <summary><h2>🧮 Resumen de fórmulas y magnitudes</h2></summary>
+        <table>
+            <thead><tr><th>Magnitud / relación</th><th>Expresión</th><th>Unidades y observaciones</th></tr></thead>
+            <tbody>
+                <tr><td>Potencia media</td><td>\(P=\dfrac{\Delta E}{\Delta t}\)</td><td>\(P\) en W; \(\Delta E\) en J; \(\Delta t\) en s.</td></tr>
+                <tr><td>Intensidad</td><td>\(I=\dfrac{P}{S}\)</td><td>\(I\) en W·m<sup>−2</sup>; superficie perpendicular a la propagación.</td></tr>
+                <tr><td>Onda esférica</td><td>\(I=\dfrac{P}{4\pi r^2}\)</td><td>Fuente puntual isótropa, sin absorción.</td></tr>
+                <tr><td>Potencia acústica</td><td>\(P=4\pi r^2I\)</td><td>Reordenación de la expresión de onda esférica.</td></tr>
+                <tr><td>Nivel sonoro</td><td>\(\beta=10\log_{10}(I/I_0)\)</td><td>\(\beta\) en dB; \(I_0=10^{-12}\,\text{W}\,\text{m}^{-2}\).</td></tr>
+                <tr><td>Intensidad desde dB</td><td>\(I=I_0\,10^{\beta/10}\)</td><td>Inversa de la definición de nivel.</td></tr>
+                <tr><td>Atenuación geométrica</td><td>\(I_1r_1^2=I_2r_2^2\)</td><td>Se conserva la potencia de una misma fuente puntual.</td></tr>
+                <tr><td>Diferencia de nivel</td><td>\(\Delta\beta=10\log_{10}(I_2/I_1)\)</td><td>El cociente elimina la intensidad umbral.</td></tr>
+                <tr><td>Nivel y distancia</td><td>\(\Delta\beta=-20\log_{10}(r_2/r_1)\)</td><td>Misma fuente puntual isótropa.</td></tr>
+                <tr><td>Fuentes iguales incoherentes</td><td>\(\beta_N=\beta_1+10\log_{10}N\)</td><td>Primero se suman intensidades, no decibelios.</td></tr>
+                <tr><td>Energía emitida / recibida</td><td>\(E=P\Delta t\); \(\Delta E=IS\Delta t\)</td><td>\(E\) en J y \(S\) en m<sup>2</sup>.</td></tr>
+            </tbody>
+        </table>
+        <div class="note">
+            <strong>Errores frecuentes:</strong> usar el área \(4\pi r\) en vez de \(4\pi r^2\); olvidar convertir minutos a segundos; confundir W con W·m<sup>−2</sup>; introducir el nivel en dB sin despejar antes la intensidad cuando se necesita; sumar directamente niveles sonoros; usar \(20\log\) en la definición de nivel de intensidad; y aplicar la ley \(1/r^2\) sin que se cumplan las hipótesis de fuente puntual e isótropa.
+        </div>
+    </details>
+
+    <!-- PROBLEMAS RESUELTOS EBAU -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🔊 Problemas resueltos de EBAU — Tema C3</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Púlsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas oficiales registrados en el archivo <em>problemas.json</em>.</strong> Los diez pertenecen a <strong>Castilla y León</strong>, y se priorizan los ejercicios clasificados como C3. Se indica la comunidad, el año, la convocatoria y el número de problema tal como aparecen en el banco. Los ejercicios de 2026 están etiquetados como contenidos compartidos C2–C3 cuando así figura en el archivo fuente.
+            </p>
+
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>Ej.</th><th>Comunidad</th><th>Año</th><th>Convocatoria</th><th>N.º problema</th><th>Contenido principal</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td>Castilla y León</td><td>2026</td><td>Ordinaria</td><td>8</td><td>Frecuencia, longitud de onda y potencia acústica (C2+C3).</td></tr>
+                        <tr><td>2</td><td>Castilla y León</td><td>2026</td><td>Extraordinaria</td><td>7</td><td>Potencia de altavoz y distancia para un nivel sonoro (C2+C3).</td></tr>
+                        <tr><td>3</td><td>Castilla y León</td><td>2025</td><td>Ordinaria</td><td>7</td><td>Diferencia de nivel en dB e intensidad.</td></tr>
+                        <tr><td>4</td><td>Castilla y León</td><td>2024</td><td>Extraordinaria</td><td>7</td><td>Comparación de niveles a distancias distintas.</td></tr>
+                        <tr><td>5</td><td>Castilla y León</td><td>2024</td><td>Ordinaria</td><td>7</td><td>Energía por minuto, potencia e intensidad sonora.</td></tr>
+                        <tr><td>6</td><td>Castilla y León</td><td>2023</td><td>Extraordinaria</td><td>7</td><td>Energía de una explosión, potencia acústica y nivel.</td></tr>
+                        <tr><td>7</td><td>Castilla y León</td><td>2023</td><td>Ordinaria</td><td>7</td><td>Potencia a partir de dos niveles sonoros y distancias.</td></tr>
+                        <tr><td>8</td><td>Castilla y León</td><td>2022</td><td>Extraordinaria</td><td>7</td><td>Potencia conocida, nivel a una distancia y distancia objetivo.</td></tr>
+                        <tr><td>9</td><td>Castilla y León</td><td>2022</td><td>Ordinaria</td><td>7</td><td>Suma de intensidades de fuentes iguales.</td></tr>
+                        <tr><td>10</td><td>Castilla y León</td><td>2021</td><td>Extraordinaria</td><td>7</td><td>Distancia correspondiente a un nivel sonoro dado.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TARJETAS GENERADAS A PARTIR DE problemas.json -->
+                        <!-- EJERCICIO 1 · 2026 Ordinaria · PROBLEMA 8 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Longitud de onda y potencia de la voz de una soprano</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Ordinaria · Problema 8 · 2 puntos (0,75 + 1,25) · C2+C3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado</strong></p>
+                    <p>La voz de una soprano está en el intervalo de frecuencias comprendido entre 247 y 1056 Hz.</p><div class="apartado-enunciado"><strong>a)</strong> <p>Calcule la longitud de onda del sonido más agudo que es capaz de emitir.</p> <em>(0,75 puntos)</em></div><div class="apartado-enunciado"><strong>b)</strong> <p>Si emite una nota musical que registra un nivel de intensidad sonora de 80 dB a una distancia de 10 m, ¿cuál es la potencia del sonido emitido por la soprano? Datos: \(I_0=10^{-12}\,\text{W}\,\text{m}^{-2}\); \(v_{\text{sonido}}=340\,\text{m}\,\text{s}^{-1}\).</p> <em>(1,25 puntos)</em></div>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Resolución paso a paso</strong></div>
+                    <div class="paso"><strong>Sonido más agudo</strong></div>
+<p>El sonido más agudo corresponde a la frecuencia mayor, \(f=1056\,\text{Hz}\). Con \(v=340\,\text{m}\,\text{s}^{-1}\):</p><p>\[\lambda=\frac{v}{f}=\frac{340}{1056}=0{,}322\,\text{m}.\]</p><p>Resultado: \(\lambda\approx0{,}322\,\text{m}\).</p>
+<div class="paso"><strong>Potencia acústica</strong></div>
+<p>El nivel de intensidad sonora es \(\beta=10\log_{10}\left(\frac{I}{I_0}\right)\). Para \(\beta=80\,\text{dB}\):</p><p>\[I=I_0\,10^{\beta/10}=10^{-12}\cdot10^{8}=10^{-4}\,\text{W}\,\text{m}^{-2}.\]</p><p>Suponiendo emisión esférica uniforme y sin absorción, la potencia atraviesa una esfera de radio \(10\,\text{m}\):</p><p>\[P=4\pi r^2I=4\pi(10)^2(10^{-4})=0{,}126\,\text{W}.\]</p><p>Resultado: \(P\approx0{,}126\,\text{W}\).</p>
+<div class="paso"><strong>Resultado final:</strong></div>
+<p>\(\lambda\approx0{,}322\,\text{m}\).<br>\(P\approx0{,}126\,\text{W}\).</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 2 · 2026 Extraordinaria · PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Potencia de un altavoz y distancia para un nivel sonoro dado</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Problema 7 · 2 puntos (0,8 + 1,2) · C2+C3</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado</strong></p>
+                    <p>En una fiesta al aire libre disponen de un altavoz que actúa como una fuente sonora puntual, emitiendo sonido de manera uniforme en todas las direcciones (onda esférica).</p><div class="apartado-enunciado"><strong>a)</strong> <p>Uno de los invitados, situado a 3 m del altavoz, mide la intensidad sonora con una app de su móvil, que le indica que es \(0{,}44\,\text{W}\,\text{m}^{-2}\). ¿Cuál es la potencia con la que emite el altavoz?</p> <em>(0,8 puntos)</em></div><div class="apartado-enunciado"><strong>b)</strong> <p>¿A qué distancia del altavoz se tendrá un nivel de intensidad sonora de 70 dB?<br>Dato: Intensidad física umbral \(I_0=10^{-12}\,\text{W}\,\text{m}^{-2}\).</p> <em>(1,2 puntos)</em></div>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Resolución paso a paso</strong></div>
+                    <div class="paso"><strong>Intensidad en una onda esférica</strong></div>
+<p>En propagación esférica sin absorción, la potencia se distribuye en el área \(4\pi r^{2}\):</p><p>\[P=4\pi r^{2}I=4\pi(3)^{2}(0{,}44)=49{,}8\,\text{W}.\]</p>
+<div class="paso"><strong>Conversión del nivel e inversa del cuadrado</strong></div>
+<p>\[I_{70}=I_0\,10^{70/10}=10^{-12}\cdot10^{7}=10^{-5}\,\text{W}\,\text{m}^{-2}.\]</p><p>Usando la misma potencia:</p><p>\[r=\sqrt{\frac{P}{4\pi I_{70}}}=\sqrt{\frac{49{,}8}{4\pi\cdot10^{-5}}}=629\,\text{m}.\]</p>
+<div class="paso"><strong>Resultado final:</strong></div>
+<p>\(P\approx50\,\text{W}\).<br>\(r\approx6{,}3\cdot10^{2}\,\text{m}\) (630 m), despreciando absorción y obstáculos.</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 3 · 2025 Ordinaria · PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Intensidad sonora a partir de un incremento de nivel de 7 dB</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Ordinaria · Problema 7 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado</strong></p>
+                    <p>Calcule la intensidad de un sonido cuyo nivel de intensidad sonora es 7 dB más alto que otro de intensidad \(4\cdot10^{-9}\,\text{W}\,\text{m}^{-2}\). Dato: intensidad física umbral \(I_0=10^{-12}\,\text{W}\,\text{m}^{-2}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Resolución paso a paso</strong></div>
+                    <div class="paso"><strong>Diferencia de niveles</strong></div>
+<p>La diferencia entre dos niveles de intensidad sonora es:</p><p>\[\beta_2-\beta_1=10\log\left(\frac{I_2}{I_1}\right)=7\,\text{dB}.\]</p><p>Por tanto:</p><p>\[\frac{I_2}{I_1}=10^{0{,}7}\approx5{,}01.\]</p>
+<div class="paso"><strong>Cálculo de $I_2$</strong></div>
+<p>\[I_2=I_1\cdot10^{0{,}7}=4\cdot10^{-9}\cdot5{,}01\approx2{,}0\cdot10^{-8}\,\text{W}\,\text{m}^{-2}.\]</p>
+<div class="paso"><strong>Resultado final:</strong></div>
+<p>\(I_2\approx2{,}0\cdot10^{-8}\,\text{W}\,\text{m}^{-2}\).</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 4 · 2024 Extraordinaria · PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Diferencia de niveles de intensidad sonora entre dos espectadores</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 7 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado</strong></p>
+                    <p>Calcule la diferencia entre los niveles de intensidad sonora que perciben dos espectadores que escuchan a un cantante en un concierto, sabiendo que la distancia de uno de ellos al cantante es cuatro veces mayor que la del otro.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Resolución paso a paso</strong></div>
+                    <div class="paso"><strong>Dependencia de la intensidad con la distancia</strong></div>
+<p>Para una fuente puntual e isótropa, la intensidad sonora disminuye con el cuadrado de la distancia:</p><p>\[I=\frac{P}{4\pi r^{2}}.\]</p>
+<div class="paso"><strong>Cociente de intensidades</strong></div>
+<p>Sea el espectador 1 el más cercano y el 2 el lejano, con \(r_2=4r_1\):</p><p>\[\frac{I_2}{I_1}=\left(\frac{r_1}{r_2}\right)^{2}=\left(\frac{1}{4}\right)^{2}=\frac{1}{16}.\]</p>
+<div class="paso"><strong>Diferencia de niveles de intensidad sonora</strong></div>
+<p>Como \(\beta=10\log(I/I_0)\):</p><p>\[\Delta\beta=\beta_2-\beta_1=10\log\frac{I_2}{I_1}=10\log\frac{1}{16}=-12\,\text{dB}.\]</p>
+<div class="paso"><strong>Resultado final:</strong></div>
+<p>La diferencia es \(12\,\text{dB}\); el espectador más lejano percibe \(12\,\text{dB}\) menos.</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 5 · 2024 Ordinaria · PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Nivel de intensidad sonora de un foco puntual</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Ordinaria · Problema 7 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado</strong></p>
+                    <p>Un foco sonoro, considerado puntual, emite una energía de \(1{,}5\cdot10^{-2}\,\text{J}\) por minuto. Calcule el nivel de intensidad sonora que percibe una persona a \(20\,\text{m}\) del foco. Dato: Intensidad física umbral \(I_0=10^{-12}\,\text{W}\,\text{m}^{-2}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Resolución paso a paso</strong></div>
+                    <div class="paso"><strong>Potencia del foco</strong></div>
+<p>\[P=\frac{E}{t}=\frac{1{,}5\cdot10^{-2}}{60}=2{,}5\cdot10^{-4}\,\text{W}.\]</p>
+<div class="paso"><strong>Intensidad a 20 m</strong></div>
+<p>Para un foco puntual emitiendo ondas esféricas:</p><p>\[I=\frac{P}{4\pi r^{2}}=\frac{2{,}5\cdot10^{-4}}{4\pi\cdot20^{2}}=4{,}97\cdot10^{-8}\,\text{W}\,\text{m}^{-2}.\]</p>
+<div class="paso"><strong>Nivel de intensidad sonora</strong></div>
+<p>\[\beta=10\log\left(\frac{I}{I_0}\right)=10\log\left(\frac{4{,}97\cdot10^{-8}}{10^{-12}}\right)=10\log(4{,}97\cdot10^{4})\approx47\,\text{dB}.\]</p>
+<div class="paso"><strong>Resultado final:</strong></div>
+<p>\(\beta\approx47\,\text{dB}\).</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 6 · 2023 Extraordinaria · PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Nivel de intensidad sonora producido por una explosión</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 7 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado</strong></p>
+                    <p>Una explosión libera \(10^{6}\,\text{J}\) de energía en \(0{,}5\,\text{s}\). Se sabe que el \(50\,\%\) de esta energía se convierte en ondas sonoras. Si el sonido se propaga formando frentes de onda esféricos, ¿cuál es el nivel de intensidad sonora a una distancia de \(120\,\text{m}\)?</p><p>Dato: Intensidad física umbral \(I_0=10^{-12}\,\text{W}\,\text{m}^{-2}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Resolución paso a paso</strong></div>
+                    <div class="paso"><strong>Potencia sonora</strong></div>
+<p>La energía sonora total es \(E_{\text{son}}=0{,}50\cdot10^{6}=5{,}0\cdot10^{5}\,\text{J}\). La potencia sonora emitida durante la explosión es:</p><p>\[P=\frac{E_{\text{son}}}{t}=\frac{5{,}0\cdot10^{5}}{0{,}5}=1{,}0\cdot10^{6}\,\text{W}.\]</p>
+<div class="paso"><strong>Intensidad a 120 m</strong></div>
+<p>Para frentes de onda esféricos:</p><p>\[I=\frac{P}{4\pi r^{2}}=\frac{1{,}0\cdot10^{6}}{4\pi(120)^{2}}=5{,}53\,\text{W}\,\text{m}^{-2}.\]</p>
+<div class="paso"><strong>Nivel de intensidad sonora</strong></div>
+<p>El nivel de intensidad sonora es:</p><p>\[\beta=10\log_{10}\left(\frac{I}{I_0}\right)=10\log_{10}\left(\frac{5{,}53}{10^{-12}}\right)=127\,\text{dB}.\]</p>
+<div class="paso"><strong>Resultado final:</strong></div>
+<p>\(\beta=127\,\text{dB}\).</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 7 · 2023 Ordinaria · PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Potencia de un foco sonoro a partir de dos niveles sonoros</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Ordinaria · Problema 7 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado</strong></p>
+                    <p>El nivel de intensidad sonora a una distancia \(d\) de un foco emisor es 100 dB. A una distancia 100 m mayor, el nivel de intensidad sonora se reduce a 80 dB. Determine la potencia del foco. Dato: Intensidad física umbral \(I_0 = 10^{-12}\) W·m\(^{-2}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Resolución paso a paso</strong></div>
+                    <div class="paso"><strong>Relación entre intensidades a las dos distancias</strong></div>
+<p>De \(L=10\log(I/I_0)\), la diferencia de 20 dB se corresponde con</p><p>\[\frac{I_1}{I_2}=10^{20/10}=100.\]</p>
+<div class="paso"><strong>Cálculo de $d$ a partir de la ley del inverso del cuadrado</strong></div>
+<p>Para un foco puntual con ondas esféricas, \(I_1/I_2=(d+100)^{2}/d^{2}\). Por tanto,</p><p>\[\frac{(d+100)^{2}}{d^{2}}=100\Rightarrow d=\frac{100}{9}\,\text{m}.\]</p>
+<div class="paso"><strong>Potencia del foco</strong></div>
+<p>La intensidad a la distancia \(d\) es \(I_1=I_0 10^{100/10}=10^{-12}\cdot10^{10}=0{,}01\,\text{W}\,\text{m}^{-2}\). La potencia es</p><p>\[P=I_1 4\pi d^{2}=0{,}01\cdot4\pi\left(\frac{100}{9}\right)^{2}\approx 15{,}5\,\text{W}.\]</p>
+<div class="paso"><strong>Resultado final:</strong></div>
+<p>\(P=I_1 4\pi d^{2}\approx 15{,}5\,\text{W}\), con \(d=\frac{100}{9}\,\text{m}\) e \(I_1=0{,}01\,\text{W}\,\text{m}^{-2}\).</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 8 · 2022 Extraordinaria · PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Nivel sonoro a 10 m y distancia para β = 130 dB</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Problema 7 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado</strong></p>
+                    <p>Una fuente sonora puntual emite con una potencia de \(80\,\text{W}\). Determine el nivel de intensidad sonora en los puntos distantes \(10\,\text{m}\) de la fuente y la distancia a la fuente a la que el nivel de intensidad sonora es \(130\,\text{dB}\). Dato: intensidad física umbral \(I_0=10^{-12}\,\text{W}\,\text{m}^{-2}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Resolución paso a paso</strong></div>
+                    <div class="paso"><strong>Intensidad y nivel sonoro a 10 m</strong></div>
+<p>Para fuente puntual en aire libre, \(I=\dfrac{P}{4\pi r^{2}}\). A \(10\,\text{m}\):</p><p>\[I=\dfrac{80}{4\pi(10)^{2}}=6{,}37\cdot10^{-2}\,\text{W}\,\text{m}^{-2}.\]</p><p>El nivel de intensidad sonora es</p><p>\[\beta=10\log_{10}\left(\dfrac{I}{I_0}\right)=10\log_{10}\left(\dfrac{6{,}37\cdot10^{-2}}{10^{-12}}\right)=108\,\text{dB}.\]</p>
+<div class="paso"><strong>Distancia para $\beta=130\,\text{dB}$</strong></div>
+<p>\(130=10\log_{10}\left(\dfrac{I}{10^{-12}}\right)\), luego \(I=10\,\text{W}\,\text{m}^{-2}\). Despejando en \(I=\dfrac{P}{4\pi r^{2}}\):</p><p>\[r=\sqrt{\dfrac{P}{4\pi I}}=\sqrt{\dfrac{80}{4\pi\cdot10}}=0{,}798\,\text{m}.\]</p>
+<div class="paso"><strong>Resultado final:</strong></div>
+<p>\(\beta(10\,\text{m})=108\,\text{dB}\); \(r(130\,\text{dB})=0{,}80\,\text{m}\).</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 9 · 2022 Ordinaria · PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">Número de motores para subir de 80 dB a 100 dB</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Ordinaria · Problema 7 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado</strong></p>
+                    <p>Un motor produce un nivel de intensidad sonora de \(80\,\text{dB}\). ¿Cuántos motores iguales son necesarios para incrementar la intensidad sonora hasta \(100\,\text{dB}\)? Dato: intensidad física umbral \(I_0=10^{-12}\,\text{W}\,\text{m}^{-2}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Resolución paso a paso</strong></div>
+                    <div class="paso"><strong>Intensidades correspondientes a 80 dB y 100 dB</strong></div>
+<p>El nivel de intensidad sonora es:</p><p>\[L=10\log\frac{I}{I_0}.\]</p><p>Para \(80\,\text{dB}\):</p><p>\[I_{80}=I_0\,10^{8}=10^{-4}\,\text{W}\,\text{m}^{-2}.\]</p><p>Para \(100\,\text{dB}\):</p><p>\[I_{100}=I_0\,10^{10}=10^{-2}\,\text{W}\,\text{m}^{-2}.\]</p>
+<div class="paso"><strong>Número de motores</strong></div>
+<p>Suponiendo fuentes incoherentes y la misma distancia al observador, las intensidades se suman. Si cada motor aporta \(I_{80}\), el número \(N\) necesario cumple:</p><p>\[N=\frac{I_{100}}{I_{80}}=\frac{10^{-2}}{10^{-4}}=100.\]</p>
+<div class="paso"><strong>Resultado final:</strong></div>
+<p>\(N=100\) motores.</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 10 · 2021 Extraordinaria · PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">Distancia a la fuente con nivel de intensidad sonora de 60 dB</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Extraordinaria · Problema 7 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado</strong></p>
+                    <p>Una radio emite sonido con una potencia de \(0{,}7\,\text{W}\). Suponiendo que la radio es una fuente puntual y que las ondas sonoras son esféricas, ¿a qué distancia de la radio el nivel de intensidad sonora es \(60\,\text{dB}\)? Nota: intensidad física umbral \(I_0=10^{-12}\,\text{W}\,\text{m}^{-2}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Resolución paso a paso</strong></div>
+                    <div class="paso"><strong>Intensidad correspondiente a 60 dB</strong></div>
+<p>\[60=10\log\left(\frac{I}{I_0}\right)\quad\Rightarrow\quad I=I_0\cdot10^{6}=1{,}00\cdot10^{-6}\,\text{W}\,\text{m}^{-2}.\]</p>
+<div class="paso"><strong>Distancia con esa intensidad</strong></div>
+<p>Para una fuente puntual:</p><p>\[I=\frac{P}{4\pi r^{2}}\quad\Rightarrow\quad r=\sqrt{\frac{P}{4\pi I}}.\]</p><p>\[r=\sqrt{\frac{0{,}7}{4\pi\cdot1{,}00\cdot10^{-6}}}\approx2{,}36\cdot10^{2}\,\text{m}.\]</p>
+<div class="paso"><strong>Resultado final:</strong></div>
+<p>\(r\approx2{,}36\cdot10^{2}\,\text{m}\).</p>
+                </div>
+            </details>
+
+            <div class="pie-clave">
+                <i class="fas fa-lightbulb"></i>
+                <span><strong>Patrón común de resolución:</strong> pasar de dB a intensidad cuando sea necesario; calcular la potencia o intensidad mediante la geometría de propagación; aplicar la dependencia \(1/r^2\) para comparar distancias; y volver a dB al final. En preguntas con varias fuentes independientes, sumar primero las intensidades. En todos los casos, expresar las unidades y justificar las hipótesis del modelo es tan importante como obtener el número final.</span>
+            </div>
+        </div>
+    </details>
+
+    <!-- RECURSOS Y NAVEGACIÓN -->
+    <div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
+        <div class="recursos-tema" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius:20px; padding:30px 25px 32px 25px; box-shadow:0 15px 40px rgba(102,126,234,0.35);">
+            <h2 style="margin:0 0 8px 0; color:white; text-align:center; font-size:1.5em; display:flex; align-items:center; justify-content:center; gap:12px;">
+                <i class="fas fa-compass"></i> Recursos del Tema C3
+            </h2>
+            <p style="text-align:center; color:rgba(255,255,255,0.9); margin:0 0 25px 0; font-size:0.95em;">Acceso rápido a las fórmulas y al banco general de problemas</p>
+            <div class="recurso-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:18px;">
+                <a href="#resumen-formulas" style="text-decoration:none; color:inherit;">
+                    <div class="recurso-card" style="background:white; border-radius:16px; padding:22px 18px; text-align:center; height:100%; border:3px solid #fbbf24; box-shadow:0 6px 16px rgba(0,0,0,0.15);">
+                        <div class="recurso-icono" style="width:62px; height:62px; margin:4px auto 14px; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.7em;"><i class="fas fa-book"></i></div>
+                        <div style="font-weight:700; color:#1e3a8a; font-size:1.1em; margin-bottom:6px;">Fórmulas C3</div>
+                        <div style="font-size:0.85em; color:#64748b; line-height:1.5;">Ir a las relaciones de potencia, intensidad y decibelios</div>
+                    </div>
+                </a>
+                <a href="../EBAU/problemas-inline_v04.html" style="text-decoration:none; color:inherit;">
+                    <div class="recurso-card" style="background:white; border-radius:16px; padding:22px 18px; text-align:center; height:100%; border:3px solid #e2e8f0; box-shadow:0 6px 16px rgba(0,0,0,0.15);">
+                        <div class="recurso-icono" style="width:62px; height:62px; margin:4px auto 14px; background:linear-gradient(135deg,#10b981,#059669); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.7em;"><i class="fas fa-database"></i></div>
+                        <div style="font-weight:700; color:#1e3a8a; font-size:1.1em; margin-bottom:6px;">Filtrado EBAU general</div>
+                        <div style="font-size:0.85em; color:#64748b; line-height:1.5;">Banco completo de problemas de todas las unidades</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOQUE "ES HORA DE" -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p><br>Domina la relación entre energía, potencia e intensidad, y aprende a interpretar correctamente los decibelios.<br>
+            <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i></p>
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">Volver al inicio</a>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- fin container -->
+</body>
+</html>

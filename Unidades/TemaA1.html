@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema A1. Ley de la gravitación universal y superposición vectorial</title>
 
+
+    <!-- Para crear las consultas puntuales en la base de datos) -->
+    <script src="js/utils.js" defer></script>
+
     <!-- FontAwesome CDN (versión 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -13,6 +17,9 @@
 
     <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    
 </head>
 <body> 
 <div class="container">
@@ -130,11 +137,13 @@
                 <strong>Ley de la Gravitación Universal.</strong>
             </summary>
             <p>Formulada por Isaac Newton en 1687 en sus <em>Philosophiæ Naturalis Principia Mathematica</em>, la ley de gravitación universal establece que <strong>dos masas puntuales cualesquiera se atraen mutuamente</strong> con una fuerza cuya dirección pasa por la línea que une sus centros y cuyo módulo es directamente proporcional al producto de las masas e inversamente proporcional al cuadrado de la distancia que las separa:</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
                 \[
                 F = G\,\frac{m_1\,m_2}{r^{2}}
                 \]
             </div>
+            </a>
             <p>donde \(G=6{,}67\cdot10^{-11}\,\text{N}\cdot\text{m}^{2}\cdot\text{kg}^{-2}\) es la <strong>constante de gravitación universal</strong>, cuyo valor no depende del medio ni de las masas que interaccionan.</p>
             <p><strong>Propiedades esenciales:</strong></p>
             <ul>
@@ -145,6 +154,19 @@
                 <li>Es una <strong>interacción de largo alcance</strong>: su intensidad decae con el cuadrado de la distancia, pero nunca se anula del todo.</li>
                 <li>Es la <strong>más débil</strong> de las cuatro interacciones fundamentales (gravedad, electromagnetismo, nuclear fuerte, nuclear débil). Su dominio a escala astronómica se debe a que es acumulativa (siempre atractiva) y de largo alcance.</li>
             </ul>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html"
+                   data-q='"ley de gravitación universal" | "fuerza gravitatoria" | "constante G" | "masas puntuales" | "atracción gravitatoria" | "Newton"'
+                   data-comunidad="Castilla y León"
+                   data-bloque="A. Campo gravitatorio"
+                   data-tema="A1. Ley de la Gravitación Universal y superposición vectorial"
+                   style="display: inline-block; padding: 2px 8px; font-size: 0.65em;
+                          line-height: 1.2; border-radius: 6px; background: #e0f2fe;
+                          color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc;
+                          font-weight: 600; white-space: nowrap; vertical-align: middle;">
+                  EBAU: Ley de gravitación (CyL · A1)
+                </a>
+            </div>
         </details>
 
         <details class="step">
@@ -156,6 +178,19 @@
             <div class="note">
                 <strong>Importante:</strong> en el interior de una esfera hueca, la fuerza gravitatoria neta es cero; en el interior de una esfera maciza, la fuerza es proporcional a la distancia al centro.
             </div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html"
+                   data-q='"masa puntual" | "distribución esférica" | "teorema de la corteza" | "esfera maciza" | "esfera hueca" | "densidad"'
+                   data-comunidad="Castilla y León"
+                   data-bloque="A. Campo gravitatorio"
+                   data-tema="A1. Ley de la Gravitación Universal y superposición vectorial"
+                   style="display: inline-block; padding: 2px 8px; font-size: 0.65em;
+                          line-height: 1.2; border-radius: 6px; background: #e0f2fe;
+                          color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc;
+                          font-weight: 600; white-space: nowrap; vertical-align: middle;">
+                  EBAU: Masa puntual y esferas (CyL · A1)
+                </a>
+            </div>
         </details>
 
         <details class="step">
@@ -164,14 +199,29 @@
                 <strong>Expresión vectorial de la fuerza gravitatoria.</strong>
             </summary>
             <p>Para trabajar correctamente con varias masas, es necesario escribir la fuerza gravitatoria en forma vectorial. Si \(m_1\) y \(m_2\) están en posiciones \(\vec r_1\) y \(\vec r_2\), el vector que va de \(m_1\) a \(m_2\) es \(\vec r = \vec r_2 - \vec r_1\), y su módulo \(r = |\vec r|\). La fuerza que \(m_1\) ejerce sobre \(m_2\) es:</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">
                 \[
                 \vec F_{1\to 2}
                 = -\,G\,\frac{m_1\,m_2}{r^{2}}\,\hat u_{12}
                 = -\,G\,\frac{m_1\,m_2}{r^{3}}\,\vec r
                 \]
             </div>
+            </a>
             <p>El signo negativo indica el carácter atractivo: la fuerza sobre \(m_2\) apunta en sentido opuesto a \(\vec r\), es decir, hacia \(m_1\). Por la tercera ley de Newton, \(\vec F_{2\to 1} = -\vec F_{1\to 2}\).</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html"
+                   data-q='"vector fuerza gravitatoria" | "expresión vectorial" | "vector unitario" | "dirección" | "sentido" | "tercera ley de Newton"'
+                   data-comunidad="Castilla y León"
+                   data-bloque="A. Campo gravitatorio"
+                   data-tema="A1. Ley de la Gravitación Universal y superposición vectorial"
+                   style="display: inline-block; padding: 2px 8px; font-size: 0.65em;
+                          line-height: 1.2; border-radius: 6px; background: #e0f2fe;
+                          color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc;
+                          font-weight: 600; white-space: nowrap; vertical-align: middle;">
+                  EBAU: Fuerza gravitatoria vectorial (CyL · A1)
+                </a>
+            </div>
         </details>
 
         <details class="step">
@@ -180,22 +230,41 @@
                 <strong>Campo gravitatorio.</strong>
             </summary>
             <p>El <strong>campo gravitatorio</strong> es una magnitud vectorial que representa la fuerza gravitatoria por unidad de masa. Para una masa puntual \(M\) en el origen:</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">
                 \[
                 \vec g(\vec r) = \frac{\vec F}{m} = -\,G\,\frac{M}{r^{2}}\,\hat u_{r}
                 \]
             </div>
+            </a>
             <p>Módulo:</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">
                 \[
                 g = G\,\frac{M}{r^{2}}
                 \]
             </div>
+            </a>
             <p>El campo gravitatorio en un punto siempre apunta hacia la masa creadora. Su unidad en el S.I. es el \(\text{N}\cdot\text{kg}^{-1}\), equivalente al \(\text{m}\cdot\text{s}^{-2}\) (es una aceleración). En la superficie de un astro de masa \(M\) y radio \(R\), el módulo se llama <strong>gravedad superficial</strong>:</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">
                 \[
                 g_0 = G\,\frac{M}{R^{2}}
                 \]
+            </div>
+            </a>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html"
+                   data-q='"campo gravitatorio" | "intensidad del campo" | "gravedad superficial" | "campo gravitatorio terrestre" | "aceleración de la gravedad"'
+                   data-comunidad="Castilla y León"
+                   data-bloque="A. Campo gravitatorio"
+                   data-tema="A1. Ley de la Gravitación Universal y superposición vectorial"
+                   style="display: inline-block; padding: 2px 8px; font-size: 0.65em;
+                          line-height: 1.2; border-radius: 6px; background: #e0f2fe;
+                          color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc;
+                          font-weight: 600; white-space: nowrap; vertical-align: middle;">
+                  EBAU: Campo gravitatorio (CyL · A1)
+                </a>
             </div>
         </details>
 
@@ -205,17 +274,21 @@
                 <strong>Principio de superposición vectorial.</strong>
             </summary>
             <p>Cuando una masa de prueba \(m\) está sometida a la acción de varias masas puntuales \(M_1, M_2, \dots, M_n\), la fuerza gravitatoria resultante es la <strong>suma vectorial</strong> de las fuerzas individuales:</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">
                 \[
                 \vec F_{\text{total}} = \vec F_1 + \vec F_2 + \dots + \vec F_n
                 \]
             </div>
+            </a>
             <p>Análogamente, el campo gravitatorio total en un punto es la suma vectorial de los campos creados por cada masa:</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">
                 \[
                 \vec g_{\text{total}} = \vec g_1 + \vec g_2 + \dots + \vec g_n
                 \]
             </div>
+            </a>
             <p><strong>Procedimiento de resolución:</strong></p>
             <ol>
                 <li>Dibujar un esquema con las masas y el punto donde se calcula el campo o la fuerza.</li>
@@ -225,6 +298,19 @@
                 <li>Sumar componente a componente.</li>
                 <li>Calcular el módulo final con el teorema de Pitágoras y dar la dirección mediante un ángulo o un vector unitario.</li>
             </ol>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html"
+                   data-q='"superposición vectorial" | "campo gravitatorio resultante" | "dos masas" | "triángulo" | "diagrama de fuerzas" | "composición de campos" | "masas puntuales"'
+                   data-comunidad="Castilla y León"
+                   data-bloque="A. Campo gravitatorio"
+                   data-tema="A1. Ley de la Gravitación Universal y superposición vectorial"
+                   style="display: inline-block; padding: 2px 8px; font-size: 0.65em;
+                          line-height: 1.2; border-radius: 6px; background: #e0f2fe;
+                          color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc;
+                          font-weight: 600; white-space: nowrap; vertical-align: middle;">
+                  EBAU: Superposición vectorial (CyL · A1)
+                </a>
+            </div>
         </details>
 
         <details class="step">
@@ -233,16 +319,33 @@
                 <strong>Potencial gravitatorio.</strong>
             </summary>
             <p>El <strong>potencial gravitatorio</strong> \(V\) en un punto es la energía potencial gravitatoria por unidad de masa. Con el origen de potencial fijado en el infinito (\(V(\infty)=0\)):</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">
                 \[
                 V = -\,G\,\frac{M}{r}
                 \]
             </div>
+            </a>
             <p>El potencial es una magnitud <strong>escalar</strong> (no vectorial) y siempre negativa. Su unidad en el S.I. es el \(\text{J}\cdot\text{kg}^{-1}\). Para varias masas, el potencial total es la suma algebraica (escalar) de los potenciales individuales:</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">
                 \[
                 V_{\text{total}} = \sum_i V_i = -\,G\,\sum_i \frac{M_i}{r_i}
                 \]
+            </div>
+            </a>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html"
+                   data-q='"potencial gravitatorio" | "energía potencial por unidad de masa" | "superficie equipotencial" | "suma de potenciales" | "potencial en un punto"'
+                   data-comunidad="Castilla y León"
+                   data-bloque="A. Campo gravitatorio"
+                   data-tema="A1. Ley de la Gravitación Universal y superposición vectorial"
+                   style="display: inline-block; padding: 2px 8px; font-size: 0.65em;
+                          line-height: 1.2; border-radius: 6px; background: #e0f2fe;
+                          color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc;
+                          font-weight: 600; white-space: nowrap; vertical-align: middle;">
+                  EBAU: Potencial gravitatorio (CyL · A1)
+                </a>
             </div>
         </details>
 
@@ -252,22 +355,41 @@
                 <strong>Energía potencial gravitatoria.</strong>
             </summary>
             <p>La <strong>energía potencial gravitatoria</strong> de una masa \(m\) situada a distancia \(r\) de una masa \(M\) es:</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">
                 \[
                 E_p = -\,G\,\frac{M\,m}{r}
                 \]
             </div>
+            </a>
             <p>Para varias masas, la energía potencial total es:</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">
                 \[
                 E_{p,\text{total}} = m\,V_{\text{total}} = -\,G\,m\,\sum_i \frac{M_i}{r_i}
                 \]
             </div>
+            </a>
             <p>Como la fuerza gravitatoria es conservativa, el trabajo realizado por el campo al desplazar una masa entre dos puntos \(A\) y \(B\) es:</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-12" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-12">
                 \[
                 W_{A\to B} = m\,(V_A - V_B) = -\Delta E_p = E_{p,A} - E_{p,B}
                 \]
+            </div>
+            </a>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html"
+                   data-q='"energía potencial gravitatoria" | "trabajo gravitatorio" | "trabajo del campo" | "fuerza conservativa" | "energía mecánica" | "velocidad de escape"'
+                   data-comunidad="Castilla y León"
+                   data-bloque="A. Campo gravitatorio"
+                   data-tema="A1. Ley de la Gravitación Universal y superposición vectorial"
+                   style="display: inline-block; padding: 2px 8px; font-size: 0.65em;
+                          line-height: 1.2; border-radius: 6px; background: #e0f2fe;
+                          color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc;
+                          font-weight: 600; white-space: nowrap; vertical-align: middle;">
+                  EBAU: Energía potencial y trabajo (CyL · A1)
+                </a>
             </div>
         </details>
 
@@ -277,7 +399,8 @@
                 <strong>Relación entre campo y potencial.</strong>
             </summary>
             <p>El campo gravitatorio es el gradiente cambiado de signo del potencial:</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-13" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-13">
                 \[
                 \vec g = -\,\nabla V
                 = -\left(\frac{\partial V}{\partial x}\,\hat i
@@ -285,7 +408,21 @@
                 + \frac{\partial V}{\partial z}\,\hat k\right)
                 \]
             </div>
+            </a>
             <p>Consecuencia geométrica: las líneas de campo son perpendiculares a las superficies equipotenciales y apuntan en el sentido de \(V\) decreciente.</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html"
+                   data-q='"gradiente del potencial" | "relación campo potencial" | "superficies equipotenciales" | "líneas de campo" | "derivada del potencial"'
+                   data-comunidad="Castilla y León"
+                   data-bloque="A. Campo gravitatorio"
+                   data-tema="A1. Ley de la Gravitación Universal y superposición vectorial"
+                   style="display: inline-block; padding: 2px 8px; font-size: 0.65em;
+                          line-height: 1.2; border-radius: 6px; background: #e0f2fe;
+                          color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc;
+                          font-weight: 600; white-space: nowrap; vertical-align: middle;">
+                  EBAU: Campo y potencial (CyL · A1)
+                </a>
+            </div>
         </details>
 
         <details class="step">
@@ -294,20 +431,37 @@
                 <strong>Punto de campo gravitatorio nulo entre dos masas.</strong>
             </summary>
             <p>Entre dos masas puntuales \(m\) (menor) y \(M\) (mayor) separadas una distancia \(d\), existe un punto donde el campo gravitatorio resultante se anula. En ese punto los campos individuales tienen igual módulo y sentidos opuestos:</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-14" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-14">
                 \[
                 G\,\frac{m}{x^{2}} = G\,\frac{M}{(d-x)^{2}}
                 \quad\Longrightarrow\quad
                 \frac{\sqrt{m}}{x} = \frac{\sqrt{M}}{d-x}
                 \]
             </div>
+            </a>
             <p>Despejando \(x\) (distancia a la masa menor):</p>
-            <div class="formula-box">
+            <a href="TemaA1-Formulario.html#formula-15" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-15">
                 \[
                 x = d\,\frac{\sqrt{m}}{\sqrt{m}+\sqrt{M}}
                 \]
             </div>
+            </a>
             <p>El punto de campo nulo está siempre entre las dos masas y más cerca de la menor. En ese punto el potencial gravitatorio total es negativo, no nulo.</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html"
+                   data-q='"punto de campo nulo" | "campo gravitatorio nulo" | "dos masas" | "punto de equilibrio gravitatorio" | "campo resultante nulo"'
+                   data-comunidad="Castilla y León"
+                   data-bloque="A. Campo gravitatorio"
+                   data-tema="A1. Ley de la Gravitación Universal y superposición vectorial"
+                   style="display: inline-block; padding: 2px 8px; font-size: 0.65em;
+                          line-height: 1.2; border-radius: 6px; background: #e0f2fe;
+                          color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc;
+                          font-weight: 600; white-space: nowrap; vertical-align: middle;">
+                  EBAU: Punto de campo nulo (CyL · A1)
+                </a>
+            </div>
         </details>
 
         <div class="note">
@@ -864,31 +1018,14 @@
 
 
 
+
+
 <!-- ============================================================ -->
 <!-- BLOQUE DE RECURSOS Y NAVEGACIÓN DEL TEMA A1                  -->
 <!-- ============================================================ -->
 <div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
-    <style>
-        .recursos-tema-a1 .recurso-card {
-            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-        }
-        .recursos-tema-a1 .recurso-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 14px 32px rgba(37, 99, 235, 0.28) !important;
-            border-color: #3b82f6 !important;
-        }
-        .recursos-tema-a1 .recurso-card:hover .recurso-icono {
-            transform: scale(1.1) rotate(-6deg);
-        }
-        .recursos-tema-a1 .recurso-icono {
-            transition: transform 0.28s ease;
-        }
-        @media (max-width: 700px) {
-            .recursos-tema-a1 .recurso-grid { grid-template-columns: 1fr !important; }
-        }
-    </style>
 
-    <div class="recursos-tema-a1" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    <div class="recursos-tema" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 border-radius: 20px; padding: 30px 25px 32px 25px;
                 box-shadow: 0 15px 40px rgba(102, 126, 234, 0.35);">
 
@@ -904,7 +1041,7 @@
         </p>
 
         <div class="recurso-grid" style="display: grid;
-                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-columns: repeat(2, 1fr);
                     gap: 18px;">
 
             <!-- ── TARJETA 1: FORMULARIO (página actual) ── -->
@@ -937,8 +1074,14 @@
                 </div>
             </a>
 
-            <!-- ── TARJETA 2: PROBLEMAS EBAU DEL TEMA A1 ── -->
-            <a href="TemaA1-ProblemasEBAU.html" style="text-decoration: none; color: inherit;">
+            <!-- ── TARJETA 2: PROBLEMAS EBAU DEL TEMA A1 (CON FILTROS) ── -->
+            <a class="filtro-pau"
+               href="../EBAU/problemas-inline_v04.html"
+               data-q='"campo gravitatorio resultante" | "vector fuerza gravitatoria" | "dos masas" | "triángulo" | "diagrama de fuerzas" | "ley de gravitación universal" | "fuerza gravitatoria" | "superposición vectorial" | "masas puntuales" | "constante G"'
+               data-comunidad="Castilla y León"
+               data-bloque="A. Campo gravitatorio"
+               data-tema="A1. Ley de la Gravitación Universal y superposición vectorial"
+               style="text-decoration: none; color: inherit;">
                 <div class="recurso-card" style="background: white; border-radius: 16px;
                             padding: 22px 18px; text-align: center; height: 100%;
                             border: 3px solid #e2e8f0;
@@ -960,36 +1103,12 @@
                 </div>
             </a>
 
-            <!-- ── TARJETA 3: FILTRADO EBAU GENERAL ── -->
-            <a href="../EBAU/problemas-inline%20v04.html" style="text-decoration: none; color: inherit;">
-                <div class="recurso-card" style="background: white; border-radius: 16px;
-                            padding: 22px 18px; text-align: center; height: 100%;
-                            border: 3px solid #e2e8f0;
-                            box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
-                    <div class="recurso-icono" style="width: 62px; height: 62px;
-                                margin: 4px auto 14px;
-                                background: linear-gradient(135deg, #f59e0b, #d97706);
-                                border-radius: 50%; display: flex; align-items: center;
-                                justify-content: center; color: white; font-size: 1.7em;">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
-                                margin-bottom: 6px;">
-                        Filtrado EBAU general
-                    </div>
-                    <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
-                        Banco completo de problemas de todas las unidades
-                    </div>
-                </div>
-            </a>
         </div>
     </div>
 </div>
 <!-- ============================================================ -->
 <!-- FIN DEL BLOQUE DE RECURSOS                                   -->
 <!-- ============================================================ -->
-
-
 
     
 
@@ -1013,5 +1132,60 @@
     <!-- ===================FIN DE ES HORA DE ==================== -->
 
 </div> <!-- fin container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===================PARA PONER UN MARCO TEMPORAL EN LA FÓRMULA CUANDO VENGA DEL FORMULARIO ==================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    // Si el id está en un <span> interno (formula-4, -6, -9, -11, -15),
+    // subimos a la caja .formula-box que lo contiene para resaltarla.
+    var highlight = target.classList.contains('formula-box')
+        ? target
+        : (target.closest('.formula-box') || target);
+
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    // Re-lanzar la animación aunque :target ya se hubiera consumido
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () {
+        highlight.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
