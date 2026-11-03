@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema D2. Problemas precursores de la física cuántica — Efecto fotoeléctrico</title>
+
+    <!-- FontAwesome CDN (versión 6), como en el tema de referencia -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES: conservar la ruta relativa del proyecto -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .dato-clave { background:#f8fafc; border:1px solid #dbeafe; border-radius:10px; padding:10px 14px; margin:12px 0; }
+        .dato-clave strong { color:#1e40af; }
+        .tabla-formulas td:first-child { font-weight:700; color:#1e3a8a; width:29%; }
+        .tabla-formulas td:last-child { text-align:center; }
+        .palabras-clave { display:flex; flex-wrap:wrap; gap:7px; margin:12px 0; }
+        .palabras-clave span { display:inline-block; background:#e0e7ff; color:#3730a3; border-radius:20px; padding:4px 10px; font-size:.86em; font-weight:600; }
+        .texto-apartado { color:#64748b; font-size:.88em; }
+        .aviso-d2d3 { border-left:4px solid #8b5cf6; background:#f5f3ff; padding:10px 14px; border-radius:8px; margin:12px 0; }
+        .cabecera-recurso { color:white; text-align:center; }
+        @media (max-width:640px) { .tabla-formulas td:first-child { width:auto; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA D2.- </span>
+                <span class="texto">Problemas precursores de la física cuántica</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- UBICACIÓN CURRICULAR -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque D. Física relativista, cuántica, nuclear y de partículas</strong> de Física de 2.º de Bachillerato. En la relación de bloques y temas aportada, D2 aparece como <strong>«Problemas precursores de la física cuántica»</strong>.</p>
+        <div class="mapa-bloques">
+            <div class="bloque-card">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">A1</span><span class="tema-chip">A2</span><span class="tema-chip">A3</span><span class="tema-chip">A4</span>
+                    <span class="tema-chip">A5</span><span class="tema-chip">A6</span><span class="tema-chip">A7</span><span class="tema-chip">A8</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span><span class="tema-chip">B2</span><span class="tema-chip">B3</span><span class="tema-chip">B4</span>
+                    <span class="tema-chip">B5</span><span class="tema-chip">B6</span><span class="tema-chip">B7</span><span class="tema-chip">B8</span><span class="tema-chip">B9</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">C1</span><span class="tema-chip">C2</span><span class="tema-chip">C3</span><span class="tema-chip">C4</span><span class="tema-chip">C5</span><span class="tema-chip">C6</span>
+                </div>
+            </div>
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">D1</span><span class="tema-chip actual">D2</span><span class="tema-chip">D3</span><span class="tema-chip">D4</span><span class="tema-chip">D5</span><span class="tema-chip">D6</span>
+                </div>
+            </div>
+        </div>
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque D · Tema D2:</strong> <span class="texto-resaltado">Problemas precursores de la física cuántica — efecto fotoeléctrico y cuantos de luz.</span>
+            <p>El material se centra en el efecto fotoeléctrico, la interpretación de la luz como flujo de fotones y el balance energético de Einstein. Se desarrollan las magnitudes necesarias para resolver problemas de frecuencia umbral, trabajo de extracción, energía cinética máxima y potencial de frenado.</p>
+        </div>
+        <div class="dato-clave">
+            <strong>Referencia de importancia aportada:</strong> presencia de D2 = <strong>12,2 %</strong>; media indicada = <strong>10,1 %</strong>; diferencia = <strong>+2,1 puntos porcentuales</strong>.
+        </div>
+        <div class="palabras-clave">
+            <span>efecto fotoeléctrico</span><span>fotón</span><span>trabajo de extracción</span><span>frecuencia umbral</span><span>potencial de frenado</span><span>ecuación de Einstein</span>
+        </div>
+    </details>
+
+    <!-- OBJETIVOS -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Describir el efecto fotoeléctrico y reconocer los hechos experimentales que no explica la física clásica.</li>
+            <li>Interpretar la luz como un conjunto de fotones cuya energía es proporcional a la frecuencia.</li>
+            <li>Definir el trabajo de extracción y relacionarlo con la frecuencia y la longitud de onda umbral.</li>
+            <li>Aplicar la ecuación de Einstein para calcular la energía cinética máxima de los fotoelectrones.</li>
+            <li>Relacionar la energía cinética máxima con el potencial de frenado.</li>
+            <li>Distinguir los efectos de modificar la frecuencia y la intensidad de la radiación incidente.</li>
+            <li>Resolver problemas de EBAU/PAU con datos expresados en unidades del S.I. o en electrón-voltios.</li>
+        </ul>
+    </details>
+
+    <!-- CONTENIDO TEÓRICO -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">1</span><strong>El efecto fotoeléctrico.</strong></summary>
+            <p>El <strong>efecto fotoeléctrico</strong> es la emisión de electrones por una superficie, normalmente metálica, cuando recibe radiación electromagnética. Los electrones emitidos se denominan <strong>fotoelectrones</strong>.</p>
+            <p>Los resultados experimentales fundamentales son:</p>
+            <ul>
+                <li>Para cada material existe una <strong>frecuencia umbral</strong>: por debajo de ella no se emiten electrones, aunque se aumente mucho la intensidad de la luz.</li>
+                <li>La energía cinética máxima de los fotoelectrones depende de la frecuencia de la radiación, no de su intensidad.</li>
+                <li>Si la frecuencia supera la umbral, la emisión se produce prácticamente sin retraso apreciable.</li>
+                <li>Para una frecuencia superior a la umbral, al aumentar la intensidad aumenta el número de fotoelectrones emitidos por unidad de tiempo y, por tanto, la corriente fotoeléctrica.</li>
+            </ul>
+            <div class="note"><strong>Idea clave:</strong> la frecuencia determina la energía de cada fotón; la intensidad, a frecuencia fija, determina cuántos fotones llegan por unidad de tiempo.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Cuantos de luz: el fotón.</strong></summary>
+            <p>Einstein explicó el efecto fotoeléctrico suponiendo que la radiación está formada por cuantos o <strong>fotones</strong>. Cada fotón transporta una energía proporcional a la frecuencia:</p>
+            <div class="formula-box">\[ E_{\text{fotón}}=h\,f=\frac{h\,c}{\lambda} \]</div>
+            <p>En esta expresión, <em>h</em> es la constante de Planck, <em>f</em> la frecuencia, <em>c</em> la velocidad de la luz en el vacío y <em>λ</em> la longitud de onda.</p>
+            <p>En el modelo de Einstein, un electrón absorbe la energía de un fotón. Una parte se emplea en abandonar el metal y el resto aparece como energía cinética del electrón emitido.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Trabajo de extracción.</strong></summary>
+            <p>El <strong>trabajo de extracción</strong>, que representaremos por \(W_0\) o \(\Phi\), es la energía mínima necesaria para que un electrón escape de la superficie del material. Depende del material, no de la intensidad de la radiación.</p>
+            <p>Cuando el fotón tiene justo la energía mínima necesaria, el electrón sale sin energía cinética:</p>
+            <div class="formula-box">\[ W_0=h\,f_0=\frac{h\,c}{\lambda_0} \]</div>
+            <p>Por tanto:</p>
+            <div class="formula-box">\[ f_0=\frac{W_0}{h}\qquad\qquad \lambda_0=\frac{h\,c}{W_0}=\frac{c}{f_0} \]</div>
+            <div class="note"><strong>Interpretación de los umbrales:</strong> hay emisión cuando \(f\geq f_0\), equivalente a \(\lambda\leq\lambda_0\). Si \(f&lt;f_0\) o \(\lambda&gt;\lambda_0\), no hay efecto fotoeléctrico.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Ecuación de Einstein del efecto fotoeléctrico.</strong></summary>
+            <p>El balance energético para los fotoelectrones más energéticos es:</p>
+            <div class="formula-box">\[ \boxed{h\,f=W_0+E_{c,\max}} \]</div>
+            <p>De aquí se obtiene:</p>
+            <div class="formula-box">\[ E_{c,\max}=h\,f-W_0=\frac{h\,c}{\lambda}-W_0 \]</div>
+            <p>La ecuación solo proporciona una energía cinética positiva si la energía del fotón supera el trabajo de extracción. Si el resultado es negativo, no debe interpretarse como una energía cinética negativa: significa que no se produce emisión.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">5</span><strong>Potencial de frenado.</strong></summary>
+            <p>El <strong>potencial de frenado</strong> es el módulo de la diferencia de potencial que se aplica para detener incluso a los fotoelectrones de mayor energía cinética. El trabajo eléctrico realizado sobre el electrón compensa su energía cinética máxima:</p>
+            <div class="formula-box">\[ e\,V_f=E_{c,\max}\qquad\Longrightarrow\qquad V_f=\frac{E_{c,\max}}{e} \]</div>
+            <p>Si la energía cinética se expresa en eV, el valor numérico del potencial de frenado en voltios coincide con el valor numérico de esa energía en eV. El colector se encuentra a un potencial inferior al emisor; en los ejercicios se suele pedir el <strong>módulo</strong> del potencial de frenado.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">6</span><strong>Frecuencia frente a intensidad: no confundir.</strong></summary>
+            <table>
+                <tr><th>Magnitud que se modifica</th><th>Qué cambia</th><th>Qué no cambia (a igualdad del resto)</th></tr>
+                <tr><td>Frecuencia \(f\)</td><td>Energía de cada fotón y \(E_{c,\max}\); puede aparecer o desaparecer la emisión al cruzar el umbral.</td><td>La intensidad no determina la energía de cada fotón.</td></tr>
+                <tr><td>Intensidad</td><td>Número de fotones incidentes por segundo y corriente fotoeléctrica, si \(f\geq f_0\).</td><td>\(E_{c,\max}\) y \(V_f\) no cambian si la frecuencia se mantiene fija.</td></tr>
+            </table>
+            <div class="note"><strong>Pregunta conceptual típica:</strong> aumentar la intensidad de una luz cuya frecuencia está por debajo de la umbral no consigue arrancar electrones.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">7</span><strong>Constantes y conversiones útiles.</strong></summary>
+            <table class="tabla-formulas">
+                <tr><th>Magnitud</th><th>Valor recomendado en estos ejercicios</th></tr>
+                <tr><td>Constante de Planck</td><td>\(h=6{,}63\cdot10^{-34}\,\text{J}\,\text{s}\)</td></tr>
+                <tr><td>Velocidad de la luz</td><td>\(c=3{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}\)</td></tr>
+                <tr><td>Carga elemental</td><td>\(e=1{,}60\cdot10^{-19}\,\text{C}\)</td></tr>
+                <tr><td>Masa del electrón</td><td>\(m_e=9{,}11\cdot10^{-31}\,\text{kg}\)</td></tr>
+                <tr><td>Conversión de energía</td><td>\(1\,\text{eV}=1{,}60\cdot10^{-19}\,\text{J}\)</td></tr>
+                <tr><td>Producto útil</td><td>\(h\,c\approx1240\,\text{eV}\,\text{nm}\)</td></tr>
+            </table>
+            <p>Recuerda: \(1\,\text{nm}=10^{-9}\,\text{m}\), \(1\,\text{μm}=10^{-6}\,\text{m}\) y \(1\,\text{GHz}=10^{9}\,\text{Hz}\).</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">8</span><strong>Representación gráfica de Einstein.</strong></summary>
+            <p>Al representar \(E_{c,\max}\) frente a la frecuencia \(f\), se obtiene una recta:</p>
+            <div class="formula-box">\[ E_{c,\max}=h\,f-W_0 \]</div>
+            <p>Su pendiente es la constante de Planck \(h\), el corte con el eje horizontal es la frecuencia umbral \(f_0\), y la ordenada en el origen es \(-W_0\). Esta relación lineal es otra forma de identificar experimentalmente la cuantización de la luz.</p>
+        </details>
+    </details>
+
+    <!-- MÉTODO DE RESOLUCIÓN -->
+    <details class="section objetivo">
+        <summary><h2>🧭 Método general para resolver problemas</h2></summary>
+        <ol>
+            <li><strong>Identificar los datos:</strong> anotar \(W_0\), \(f\), \(\lambda\), \(\lambda_0\), \(V_f\) o \(E_{c,\max}\), según corresponda.</li>
+            <li><strong>Unificar unidades:</strong> pasar longitudes de onda a metros si se trabaja en el S.I.; convertir eV a J cuando sea necesario para obtener velocidades.</li>
+            <li><strong>Comprobar si hay emisión:</strong> comparar \(f\) con \(f_0\), o \(\lambda\) con \(\lambda_0\).</li>
+            <li><strong>Aplicar el balance de Einstein:</strong> \(hf=W_0+E_{c,\max}\), usando \(hf=hc/\lambda\) cuando se conoce la longitud de onda.</li>
+            <li><strong>Relacionar con el frenado:</strong> si se pide el potencial, aplicar \(eV_f=E_{c,\max}\).</li>
+            <li><strong>Si se pide la velocidad:</strong> utilizar \(E_{c,\max}=\frac12m_ev_{\max}^2\), de donde \(v_{\max}=\sqrt{2E_{c,\max}/m_e}\).</li>
+            <li><strong>Comprobar el resultado:</strong> la energía cinética no puede ser negativa; si no se supera el umbral, no hay fotoelectrones.</li>
+        </ol>
+        <div class="note"><strong>Consejo EBAU:</strong> escribe primero la ecuación física que relaciona los datos y la incógnita. Después sustituye valores. Evita despejar directamente con números sin dejar visible el balance energético.</div>
+    </details>
+
+    <!-- PROBLEMAS EBAU RESUELTOS -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">⚛️ Problemas resueltos de EBAU/PAU — Castilla y León (Tema D2)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas oficiales</strong> extraídos de <code>problemas.json</code>. Los diez corresponden a <strong>Castilla y León</strong>, entre 2020 y 2026. Se indica la convocatoria y el número de problema tal como aparecen en el banco. Los ejercicios con etiqueta D2+D3 se señalan como conexión con el tema siguiente.
+            </p>
+            <!-- EJERCICIO 1 · 2026 Ordinaria · PROBLEMA 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Energía y potencial de frenado en el efecto fotoeléctrico</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Ordinaria · Problema 10 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial</strong></p>
+                    <p>Calcule la energía cinética y el potencial de frenado de los fotoelectrones extraídos de un metal, cuya longitud de onda umbral es \(3{,}6\cdot10^{-7}\,\text{m}\), si se hace incidir sobre él una onda electromagnética de frecuencia \(9{,}5\cdot10^{14}\,\text{Hz}\). (1 punto)</p>
+                    
+                </div>
+                <div class="note"><strong>Conexión curricular:</strong> el banco clasifica este ejercicio en D2 y D3. Aquí se desarrolla la parte fotoeléctrica de D2; el cálculo de la longitud de onda de de Broglie sirve de enlace con D3.</div>
+                <div class="resolucion-ej">
+                    <p><strong>Resolución desarrollada</strong></p>
+                    <details class="step">
+                    <summary><span class="step-num">1</span><strong>Balance energético de Einstein</strong></summary>
+                    <p>El trabajo de extracción es \(W_0=\frac{hc}{\lambda_0}\):</p>
+<div class="formula-box">\[W_0=\frac{(6{,}63\cdot10^{-34})(3{,}00\cdot10^{8})}{3{,}6\cdot10^{-7}}=5{,}525\cdot10^{-19}\,\text{J}.\]</div>
+<p>Cada fotón aporta \(hf\) y el exceso es la energía cinética máxima:</p>
+<div class="formula-box">\[E_{c,\text{máx}}=hf-W_0=(6{,}63\cdot10^{-34})(9{,}5\cdot10^{14})-5{,}525\cdot10^{-19}=7{,}735\cdot10^{-20}\,\text{J}.\]</div>
+<p>El módulo del potencial de frenado satisface \(eV_f=E_{c,\text{máx}}\):</p>
+<div class="formula-box">\[V_f=\frac{7{,}735\cdot10^{-20}}{1{,}60\cdot10^{-19}}=0{,}483\,\text{V}.\]</div>
+<p>Resultado: \(E_{c,\text{máx}}\approx7{,}7\cdot10^{-20}\,\text{J}\) (\(0{,}48\,\text{eV}\)); \(V_f\approx0{,}48\,\text{V}\). El colector se coloca a un potencial \(0{,}48\,\text{V}\) inferior al emisor.</p>
+                </details>
+                    <div class="note"><strong>Resultado:</strong> <p>\(E_{c,\text{máx}}\approx7{,}7\cdot10^{-20}\,\text{J}\) (\(0{,}48\,\text{eV}\)); \(V_f\approx0{,}48\,\text{V}\).</p></div>
+                </div>
+            </details>
+<!-- EJERCICIO 2 · 2026 Extraordinaria · PROBLEMA 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Efecto fotoeléctrico del cobre con luz visible y ultravioleta</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Problema 10 · 2 puntos (1 + 1)</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial</strong></p>
+                    <p>Una plancha de cobre, cuyo trabajo de extracción es 4,7 eV, se ilumina con luz visible y con luz ultravioleta de 200 nm de longitud de onda.</p>
+                    <div class="paso"><strong>a)</strong> <span class="texto-apartado">1 punto</span> <p>Teniendo en cuenta que el espectro visible comprende un rango de frecuencias entre \(4\cdot10^{5}\,\text{GHz}\) y \(7{,}9\cdot10^{5}\,\text{GHz}\), ¿se producirá efecto fotoeléctrico en alguna situación? ¿Y con la luz ultravioleta? En caso afirmativo, calcule la diferencia de potencial que debería aplicarse para detener los fotoelectrones emitidos.</p></div>
+<div class="paso"><strong>b)</strong> <span class="texto-apartado">1 punto</span> <p>Determine la longitud de onda asociada a los fotoelectrones emitidos.</p></div>
+
+                </div>
+                <div class="note"><strong>Conexión curricular:</strong> el banco clasifica este ejercicio en D2 y D3. Aquí se desarrolla la parte fotoeléctrica de D2; el cálculo de la longitud de onda de de Broglie sirve de enlace con D3.</div>
+                <div class="resolucion-ej">
+                    <p><strong>Resolución desarrollada</strong></p>
+                    <details class="step">
+                    <summary><span class="step-num">1</span><strong>Frecuencia umbral y comprobación de la luz visible</strong></summary>
+                    <p>El trabajo de extracción es \(W_0=4{,}7(1{,}60\cdot10^{-19})=7{,}52\cdot10^{-19}\,\text{J}\). La frecuencia umbral es:</p>
+<div class="formula-box">\[f_0=\frac{W_0}{h}=\frac{7{,}52\cdot10^{-19}}{6{,}63\cdot10^{-34}}=1{,}13\cdot10^{15}\,\text{Hz}.\]</div>
+<p>Como \(1\,\text{GHz}=10^{9}\,\text{Hz}\), el visible indicado va de \(4{,}0\cdot10^{14}\) a \(7{,}9\cdot10^{14}\,\text{Hz}\). Incluso la mayor frecuencia es inferior a \(f_0\), por lo que no hay emisión con ninguna de esas frecuencias visibles.</p>
+                </details><details class="step">
+                    <summary><span class="step-num">2</span><strong>Luz ultravioleta y energía de frenado</strong></summary>
+                    <p>Para \(\lambda_{\text{UV}}=200\,\text{nm}=2{,}00\cdot10^{-7}\,\text{m}\):</p>
+<div class="formula-box">\[f_{\text{UV}}=\frac{c}{\lambda_{\text{UV}}}=1{,}50\cdot10^{15}\,\text{Hz}&gt;f_0,\]</div>
+<p>por lo que sí se produce efecto fotoeléctrico. Su energía cinética máxima es:</p>
+<div class="formula-box">\[E_{c,\max}=\frac{hc}{\lambda_{\text{UV}}}-W_0=9{,}945\cdot10^{-19}-7{,}52\cdot10^{-19}=2{,}425\cdot10^{-19}\,\text{J}.\]</div>
+<div class="formula-box">\[V_f=\frac{E_{c,\max}}{e}=1{,}52\,\text{V}.\]</div>
+<p>El colector debe estar a un potencial aproximadamente 1,5 V inferior al de la plancha emisora.</p>
+                </details><details class="step">
+                    <summary><span class="step-num">3</span><strong>Cantidad de movimiento y onda de De Broglie</strong></summary>
+                    <p>Para los fotoelectrones de energía cinética máxima producidos por la luz ultravioleta, \(p=\sqrt{2m_eE_{c,\max}}\) en régimen no relativista. Entonces:</p>
+<div class="formula-box">\[\lambda_e=\frac{h}{p}=\frac{h}{\sqrt{2m_eE_{c,\max}}}=\frac{6{,}63\cdot10^{-34}}{\sqrt{2(9{,}11\cdot10^{-31})(2{,}425\cdot10^{-19})}}=9{,}97\cdot10^{-10}\,\text{m}.\]</div>
+<p>Los electrones emitidos con menor energía tienen mayor longitud de onda. El valor calculado corresponde a la energía máxima que fija el potencial de frenado.</p>
+                </details>
+                    <div class="note"><strong>Resultado:</strong> <p>Visible: no hay emisión. Ultravioleta de 200 nm: sí; potencial de frenado de módulo \(V_f\approx1{,}5\,\text{V}\).<br>
+\(\lambda_e\approx1{,}0\cdot10^{-9}\,\text{m}\) (1,0 nm), para los fotoelectrones más energéticos.</p></div>
+                </div>
+            </details>
+<!-- EJERCICIO 3 · 2025 Ordinaria · PROBLEMA 2 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Efecto fotoeléctrico: papel del color (frecuencia) y de la intensidad</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Ordinaria · Problema 2 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial</strong></p>
+                    <p>Iluminamos un metal con el propósito de arrancarle electrones por efecto fotoeléctrico. Explique las diferencias que observaremos: a) Al iluminarlo con luz roja respecto a hacerlo con luz azul. b) Al iluminarlo con un haz de luz intenso respecto a iluminarlo con otro más débil.</p>
+                    <div class="paso"><strong>a)</strong> <span class="texto-apartado">No especificada</span> <p>Luz roja frente a luz azul.</p></div>
+<div class="paso"><strong>b)</strong> <span class="texto-apartado">No especificada</span> <p>Haz intenso frente a haz débil.</p></div>
+
+                </div>
+                
+                <div class="resolucion-ej">
+                    <p><strong>Resolución desarrollada</strong></p>
+                    <details class="step">
+                    <summary><span class="step-num">1</span><strong>Apartado a): Frecuencia (color) y energía del fotón</strong></summary>
+                    <p>La ecuación de Einstein del efecto fotoeléctrico es:</p>
+<div class="formula-box">\[h\nu=\Phi+E_{c,\max},\]</div>
+<p>donde \(\Phi\) es el trabajo de extracción del metal y \(h\nu\) es la energía de cada fotón. Solo se emiten electrones si \(h\nu\ge\Phi\), es decir, si la frecuencia supera la frecuencia umbral \(\nu_0=\frac{\Phi}{h}\).</p>
+<p>La luz azul tiene fotones más energéticos que la luz roja. Para la mayoría de los metales, \(h\nu_{\text{azul}}&gt;\Phi\), así que se emiten electrones con energía cinética \(E_{c,\max}=h\nu-\Phi\). La luz roja tiene fotones menos energéticos; si \(h\nu_{\text{rojo}}&lt;\Phi\), no se emiten electrones. En metales con bajo \(\Phi\), como cesio o sodio, los electrones emitidos con luz roja tienen menor \(E_{c,\max}\) que con luz azul.</p>
+<p>Resultado: el color, es decir, la frecuencia, determina si hay emisión y la energía cinética máxima de los electrones emitidos. La luz azul produce electrones más energéticos y, en muchos metales, es la única que arranca electrones.</p>
+                </details><details class="step">
+                    <summary><span class="step-num">2</span><strong>Apartado b): Intensidad y número de fotones</strong></summary>
+                    <p>La intensidad de la luz monocromática es proporcional al número de fotones por segundo que llegan al metal, no a la energía individual de cada fotón. Por tanto, manteniendo fijo el color, es decir, la frecuencia:</p>
+<p>Un haz más intenso entrega más fotones por segundo y, si la frecuencia es suficiente (\(\nu\ge\nu_0\)), arranca más electrones por segundo, es decir, produce mayor corriente fotoeléctrica.</p>
+<p>Un haz más débil entrega menos fotones por segundo y produce menos electrones por segundo, es decir, menor corriente.</p>
+<p>Sin embargo, la energía cinética máxima de cada electrón emitido no cambia con la intensidad: depende solo de la frecuencia, \(E_{c,\max}=h\nu-\Phi\). Aumentar la intensidad de una luz por debajo del umbral tampoco arranca electrones por mucho que se intensifique.</p>
+<p>Resultado: la intensidad solo afecta al número de electrones emitidos, es decir, a la corriente fotoeléctrica, no a su energía cinética individual.</p>
+                </details>
+                    <div class="note"><strong>Resultado:</strong> <p>a) La frecuencia del color determina si hay emisión y la \(E_{c,\max}\) de los electrones; la luz azul es más energética que la roja.<br>
+b) La intensidad determina el número de electrones emitidos por segundo, no su energía cinética máxima.</p></div>
+                </div>
+            </details>
+<!-- EJERCICIO 4 · 2024 Extraordinaria · PROBLEMA 11 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Longitud de onda mínima de de Broglie de fotoelectrones del sodio</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 11 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial</strong></p>
+                    <p>Determine la mínima longitud de onda de de Broglie de los fotoelectrones emitidos cuando luz de 450 nm incide sobre un cátodo de sodio, cuyo trabajo de extracción es 2,28 eV. Datos: \(h=6{,}63\cdot10^{-34}\,\text{J}\,\text{s}\); \(c_0=3{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}\); \(m_e=9{,}11\cdot10^{-31}\,\text{kg}\); \(1\,\text{eV}=1{,}60\cdot10^{-19}\,\text{J}\).</p>
+                    
+                </div>
+                <div class="note"><strong>Conexión curricular:</strong> el banco clasifica este ejercicio en D2 y D3. Aquí se desarrolla la parte fotoeléctrica de D2; el cálculo de la longitud de onda de de Broglie sirve de enlace con D3.</div>
+                <div class="resolucion-ej">
+                    <p><strong>Resolución desarrollada</strong></p>
+                    <details class="step">
+                    <summary><span class="step-num">1</span><strong>Energía del fotón incidente</strong></summary>
+                    <div class="formula-box">\[E_{\text{fotón}}=\frac{h\,c_0}{\lambda}=\frac{6{,}63\cdot10^{-34}\cdot3{,}00\cdot10^{8}}{450\cdot10^{-9}}=4{,}42\cdot10^{-19}\,\text{J}.\]</div>
+                </details><details class="step">
+                    <summary><span class="step-num">2</span><strong>Energía cinética máxima del fotoelectrón (Einstein)</strong></summary>
+                    <p>El trabajo de extracción es \(W_{\text{ext}}=2{,}28\,\text{eV}=3{,}65\cdot10^{-19}\,\text{J}\). Por la ecuación del efecto fotoeléctrico:</p>
+<div class="formula-box">\[K_{\max}=E_{\text{fotón}}-W_{\text{ext}}=4{,}42\cdot10^{-19}-3{,}65\cdot10^{-19}=7{,}72\cdot10^{-20}\,\text{J}.\]</div>
+                </details><details class="step">
+                    <summary><span class="step-num">3</span><strong>Momento lineal máximo del fotoelectrón</strong></summary>
+                    <div class="formula-box">\[p_{\max}=\sqrt{2\,m_e\,K_{\max}}=\sqrt{2\cdot9{,}11\cdot10^{-31}\cdot7{,}72\cdot10^{-20}}=3{,}75\cdot10^{-25}\,\text{kg}\,\text{m}\,\text{s}^{-1}.\]</div>
+                </details><details class="step">
+                    <summary><span class="step-num">4</span><strong>Longitud de onda mínima de de Broglie</strong></summary>
+                    <p>La longitud de onda de de Broglie es \(\lambda=h/p\), mínima cuando \(p\) es máximo:</p>
+<div class="formula-box">\[\lambda_{\min}=\frac{h}{p_{\max}}=\frac{6{,}63\cdot10^{-34}}{3{,}75\cdot10^{-25}}=1{,}77\cdot10^{-9}\,\text{m}.\]</div>
+                </details>
+                    <div class="note"><strong>Resultado:</strong> <p>\(\lambda_{\min}=1{,}77\cdot10^{-9}\,\text{m}=1{,}77\,\text{nm}\).</p></div>
+                </div>
+            </details>
+<!-- EJERCICIO 5 · 2023 Extraordinaria · PROBLEMA 11 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Energía cinética en el efecto fotoeléctrico para dos longitudes de onda</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 11 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial</strong></p>
+                    <p>Cuando se ilumina un metal con una radiación de longitud de onda \(\lambda_1=193\,\text{nm}\), la energía cinética máxima de los fotoelectrones emitidos es \(4{,}14\,\text{eV}\). ¿Cuál sería esta energía si la longitud de onda de la radiación usada fuera \(\lambda_2=254\,\text{nm}\)?</p>
+                    
+                </div>
+                <div class="note"><strong>Conexión curricular:</strong> el banco clasifica este ejercicio en D2 y D3. Aquí se desarrolla la parte fotoeléctrica de D2; el cálculo de la longitud de onda de de Broglie sirve de enlace con D3.</div>
+                <div class="resolucion-ej">
+                    <p><strong>Resolución desarrollada</strong></p>
+                    <details class="step">
+                    <summary><span class="step-num">1</span><strong>Trabajo de extracción del metal</strong></summary>
+                    <p>Aplicando la ecuación de Einstein del efecto fotoeléctrico:</p>
+<div class="formula-box">\[K_{\text{max}}=\frac{hc}{\lambda}-W.\]</div>
+<p>Con \(hc=1240\,\text{eV}\,\text{nm}\) y \(\lambda_1=193\,\text{nm}\):</p>
+<div class="formula-box">\[E_1=\frac{1240}{193}=6{,}42\,\text{eV}.\]</div>
+<p>Por tanto:</p>
+<div class="formula-box">\[W=E_1-K_{\text{max},1}=6{,}42-4{,}14=2{,}28\,\text{eV}.\]</div>
+                </details><details class="step">
+                    <summary><span class="step-num">2</span><strong>Energía del fotón y energía cinética máxima con λ2</strong></summary>
+                    <p>Para \(\lambda_2=254\,\text{nm}\):</p>
+<div class="formula-box">\[E_2=\frac{1240}{254}=4{,}88\,\text{eV}.\]</div>
+<p>La nueva energía cinética máxima es:</p>
+<div class="formula-box">\[K_{\text{max},2}=E_2-W=4{,}88-2{,}28=2{,}60\,\text{eV}.\]</div>
+                </details>
+                    <div class="note"><strong>Resultado:</strong> <p>\(K_{\text{max},2}=2{,}60\,\text{eV}\).</p></div>
+                </div>
+            </details>
+<!-- EJERCICIO 6 · 2023 Ordinaria · PROBLEMA 11 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Trabajo de extracción y energía cinética en el efecto fotoeléctrico con \(\lambda_{\text{umbral}}\) dada</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Ordinaria · Problema 11 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial</strong></p>
+                    <p>Al iluminar una lámina metálica con luz de longitud de onda superior a \(1{,}1\cdot 10^{-6}\) m deja de producirse el efecto fotoeléctrico. Calcule el trabajo de extracción y la energía cinética máxima de los fotoelectrones emitidos cuando se ilumina dicha lámina con luz de longitud de onda \(2{,}7\cdot 10^{-7}\) m.</p>
+                    
+                </div>
+                <div class="note"><strong>Conexión curricular:</strong> el banco clasifica este ejercicio en D2 y D3. Aquí se desarrolla la parte fotoeléctrica de D2; el cálculo de la longitud de onda de de Broglie sirve de enlace con D3.</div>
+                <div class="resolucion-ej">
+                    <p><strong>Resolución desarrollada</strong></p>
+                    <details class="step">
+                    <summary><span class="step-num">1</span><strong>Trabajo de extracción</strong></summary>
+                    <p>La longitud de onda umbral \(\lambda_0=1{,}1\cdot10^{-6}\,\text{m}\) corresponde a fotones cuya energía iguala exactamente al trabajo de extracción:</p>
+<div class="formula-box">\[W=\frac{hc}{\lambda_0}=\frac{(6{,}63\cdot10^{-34})(3{,}00\cdot10^{8})}{1{,}1\cdot10^{-6}}\approx1{,}81\cdot10^{-19}\,\text{J}\approx1{,}13\,\text{eV}.\]</div>
+                </details><details class="step">
+                    <summary><span class="step-num">2</span><strong>Energía del fotón incidente</strong></summary>
+                    <p>Para \(\lambda=2{,}7\cdot10^{-7}\,\text{m}\),</p>
+<div class="formula-box">\[E=\frac{hc}{\lambda}=\frac{(6{,}63\cdot10^{-34})(3{,}00\cdot10^{8})}{2{,}7\cdot10^{-7}}\approx7{,}37\cdot10^{-19}\,\text{J}\approx4{,}60\,\text{eV}.\]</div>
+                </details><details class="step">
+                    <summary><span class="step-num">3</span><strong>Energía cinética máxima</strong></summary>
+                    <p>La energía cinética máxima es</p>
+<div class="formula-box">\[K_{\text{max}}=E-W\approx7{,}37\cdot10^{-19}-1{,}81\cdot10^{-19}=5{,}56\cdot10^{-19}\,\text{J}\approx3{,}47\,\text{eV}.\]</div>
+                </details>
+                    <div class="note"><strong>Resultado:</strong> <p>\(W\approx1{,}81\cdot10^{-19}\,\text{J}\approx1{,}13\,\text{eV}\); \(K_{\text{max}}\approx5{,}56\cdot10^{-19}\,\text{J}\approx3{,}47\,\text{eV}\).</p></div>
+                </div>
+            </details>
+<!-- EJERCICIO 7 · 2022 Extraordinaria · PROBLEMA 11 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Frecuencia umbral a partir del potencial de frenado</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Problema 11 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial</strong></p>
+                    <p>Cuando una superficie de un metal es iluminada con luz de \(\lambda=253{,}7\,\text{nm}\) el valor del potencial de frenado es \(0{,}24\,\text{V}\). Halle la frecuencia umbral del metal.</p>
+                    
+                </div>
+                
+                <div class="resolucion-ej">
+                    <p><strong>Resolución desarrollada</strong></p>
+                    <details class="step">
+                    <summary><span class="step-num">1</span><strong>Balance energético de Einstein</strong></summary>
+                    <p>Ley fotoeléctrica: \(E_{\text{fotón}}=\varphi+eV_{\text{frenado}}\). La frecuencia umbral verifica \(h f_0=\varphi\), de modo que</p>
+<div class="formula-box">\[f_0=\dfrac{E_{\text{fotón}}-eV_{\text{frenado}}}{h}.\]</div>
+                </details><details class="step">
+                    <summary><span class="step-num">2</span><strong>Sustitución numérica</strong></summary>
+                    <p>Energía del fotón incidente:</p>
+<div class="formula-box">\[E_{\text{fotón}}=\dfrac{hc}{\lambda}=\dfrac{1240\,\text{eV}\,\text{nm}}{253{,}7\,\text{nm}}=4{,}887\,\text{eV}.\]</div>
+<p>Trabajo de extracción:</p>
+<div class="formula-box">\[\varphi=4{,}887-0{,}24=4{,}647\,\text{eV}.\]</div>
+<p>Frecuencia umbral:</p>
+<div class="formula-box">\[f_0=\dfrac{4{,}647\cdot1{,}60\cdot10^{-19}}{6{,}63\cdot10^{-34}}=1{,}12\cdot10^{15}\,\text{Hz}.\]</div>
+                </details>
+                    <div class="note"><strong>Resultado:</strong> <p>\(f_0=1{,}12\cdot10^{15}\,\text{Hz}\).</p></div>
+                </div>
+            </details>
+<!-- EJERCICIO 8 · 2021 Ordinaria · PROBLEMA 11 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">A.11 — Velocidad máxima de los electrones por efecto fotoeléctrico</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Ordinaria · Problema 11 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial</strong></p>
+                    <p>Sobre un metal cuyo trabajo de extracción es \(2\,\text{eV}\) incide una radiación de longitud de onda \(500\,\text{nm}\). Calcule la velocidad máxima de los electrones emitidos.</p>
+                    
+                </div>
+                
+                <div class="resolucion-ej">
+                    <p><strong>Resolución desarrollada</strong></p>
+                    <details class="step">
+                    <summary><span class="step-num">1</span><strong>Energía del fotón y energía cinética máxima</strong></summary>
+                    <p>Energía del fotón incidente:</p>
+<div class="formula-box">\[E_f=\frac{hc}{\lambda}=\frac{1240\,\text{eV}\,\text{nm}}{500\,\text{nm}}=2{,}48\,\text{eV}.\]</div>
+<p>Energía cinética máxima:</p>
+<div class="formula-box">\[K_{\text{max}}=E_f-W=2{,}48-2=0{,}48\,\text{eV}=7{,}68\cdot10^{-20}\,\text{J}.\]</div>
+                </details><details class="step">
+                    <summary><span class="step-num">2</span><strong>Velocidad máxima</strong></summary>
+                    <div class="formula-box">\[v_{\text{max}}=\sqrt{\frac{2K_{\text{max}}}{m_e}}=\sqrt{\frac{2\cdot7{,}68\cdot10^{-20}}{9{,}11\cdot10^{-31}}}\approx4{,}1\cdot10^{5}\,\text{m}\,\text{s}^{-1}.\]</div>
+                </details>
+                    <div class="note"><strong>Resultado:</strong> <p>\(v_{\text{max}}\approx4{,}1\cdot10^{5}\,\text{m}\,\text{s}^{-1}\).</p></div>
+                </div>
+            </details>
+<!-- EJERCICIO 9 · 2020 Extraordinaria · PROBLEMA 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">A.10 — Longitud de onda para arrancar electrones con \(E_c\) dada</span>
+                    <span class="meta-ej">Castilla y León · 2020 · Extraordinaria · Problema 10 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial</strong></p>
+                    <p>A.10) El trabajo de extracción de un electrón en cierto metal es 2,29 eV. ¿Cuál será la longitud de onda que debe tener un haz de luz para que, al iluminar con él una superficie de ese metal, la energía cinética máxima de los electrones extraídos sea 0,39 eV?</p>
+                    
+                </div>
+                
+                <div class="resolucion-ej">
+                    <p><strong>Resolución desarrollada</strong></p>
+                    <details class="step">
+                    <summary><span class="step-num">1</span><strong>Ecuación de Einstein</strong></summary>
+                    <p>La ecuación del efecto fotoeléctrico es:</p>
+<div class="formula-box">\[E_{\text{fotón}}=W_{\text{ext}}+E_{c,\text{max}}.\]</div>
+<p>En este enunciado, \(E_{c,\text{max}}=0{,}39\,\text{eV}\) ya está dada directamente, no como potencial de frenado. Por tanto:</p>
+<div class="formula-box">\[E_{\text{fotón}}=2{,}29\,\text{eV}+0{,}39\,\text{eV}=2{,}68\,\text{eV}.\]</div>
+<p>En julios:</p>
+<div class="formula-box">\[E_{\text{fotón}}=2{,}68\cdot1{,}60\cdot10^{-19}=4{,}29\cdot10^{-19}\,\text{J}.\]</div>
+                </details><details class="step">
+                    <summary><span class="step-num">2</span><strong>Longitud de onda</strong></summary>
+                    <p>La energía del fotón es \(E=hc/\lambda\), por lo que:</p>
+<div class="formula-box">\[\lambda=\frac{hc}{E}.\]</div>
+<p>Usando \(hc\approx1240\,\text{eV}\,\text{nm}\):</p>
+<div class="formula-box">\[\lambda=\frac{1240\,\text{eV}\,\text{nm}}{2{,}68\,\text{eV}}\approx463\,\text{nm}.\]</div>
+<p>Equivalente a:</p>
+<div class="formula-box">\[\lambda\approx4{,}63\cdot10^{-7}\,\text{m}.\]</div>
+                </details>
+                    <div class="note"><strong>Resultado:</strong> <p>\(\lambda\approx4{,}63\cdot10^{-7}\,\text{m}=463\,\text{nm}\)</p></div>
+                </div>
+            </details>
+<!-- EJERCICIO 10 · 2020 Ordinaria · PROBLEMA 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">A.10 — Longitud de onda en el efecto fotoeléctrico</span>
+                    <span class="meta-ej">Castilla y León · 2020 · Ordinaria · Problema 10 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial</strong></p>
+                    <p>A.10) Un metal, cuyo trabajo de extracción es 2,4 eV, se irradia con luz monocromática. Para cortar el flujo de electrones producidos por efecto fotoeléctrico se necesita un potencial de frenado de 0,7 V. Calcule la longitud de onda de la luz con que se irradia.</p>
+                    
+                </div>
+                
+                <div class="resolucion-ej">
+                    <p><strong>Resolución desarrollada</strong></p>
+                    <details class="step">
+                    <summary><span class="step-num">1</span><strong>Ecuación de Einstein del efecto fotoeléctrico</strong></summary>
+                    <p>La energía del fotón se reparte entre el trabajo de extracción y la energía cinética máxima del fotoelectrón:</p>
+<div class="formula-box">\[E_f=W_{\text{ext}}+eV_{\text{frenado}}.\]</div>
+<p>Por tanto:</p>
+<div class="formula-box">\[E_f=2{,}4\,\text{eV}+0{,}7\,\text{eV}=3{,}1\,\text{eV}.\]</div>
+                </details><details class="step">
+                    <summary><span class="step-num">2</span><strong>Energía del fotón en julios</strong></summary>
+                    <div class="formula-box">\[E_f=3{,}1(1{,}60\cdot10^{-19})=4{,}96\cdot10^{-19}\,\text{J}.\]</div>
+                </details><details class="step">
+                    <summary><span class="step-num">3</span><strong>Longitud de onda</strong></summary>
+                    <div class="formula-box">\[\lambda=\frac{hc}{E_f}=\frac{(6{,}63\cdot10^{-34})(3{,}00\cdot10^{8})}{4{,}96\cdot10^{-19}}\approx4{,}01\cdot10^{-7}\,\text{m}.\]</div>
+                </details>
+                    <div class="note"><strong>Resultado:</strong> <p>\(\lambda\approx4{,}0\cdot10^{-7}\,\text{m}=400\,\text{nm}\).</p></div>
+                </div>
+            </details>
+            <div class="pie-clave">
+                <i class="fas fa-lightbulb"></i>
+                <span><strong>Patrón que debes recordar:</strong> primero comprueba el umbral; después aplica \(hf=W_0+E_{c,\max}\); finalmente, si se pide, utiliza \(eV_f=E_{c,\max}\). La frecuencia determina la energía de los fotoelectrones y la intensidad determina cuántos se emiten por segundo. Homogeneiza siempre las unidades.</span>
+            </div>
+        </div>
+    </details>
+
+    <!-- RESUMEN FINAL -->
+    <details class="section resultado">
+        <summary><h2>✅ Resumen de fórmulas esenciales</h2></summary>
+        <table class="tabla-formulas">
+            <tr><th>Concepto</th><th>Expresión</th></tr>
+            <tr><td>Energía del fotón</td><td>\(E_f=hf=hc/\lambda\)</td></tr>
+            <tr><td>Ecuación de Einstein</td><td>\(hf=W_0+E_{c,\max}\)</td></tr>
+            <tr><td>Trabajo de extracción</td><td>\(W_0=hf_0=hc/\lambda_0\)</td></tr>
+            <tr><td>Frecuencia umbral</td><td>\(f_0=W_0/h\)</td></tr>
+            <tr><td>Longitud de onda umbral</td><td>\(\lambda_0=hc/W_0\)</td></tr>
+            <tr><td>Energía cinética máxima</td><td>\(E_{c,\max}=hf-W_0\)</td></tr>
+            <tr><td>Potencial de frenado</td><td>\(eV_f=E_{c,\max}\)</td></tr>
+            <tr><td>Velocidad máxima</td><td>\(v_{\max}=\sqrt{2E_{c,\max}/m_e}\)</td></tr>
+        </table>
+    </details>
+
+    <!-- PIE Y NAVEGACIÓN -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <h2 style="color:#1e3a8a;">Fin del Tema D2</h2>
+            <p>Domina el significado físico de cada magnitud y practica los diez modelos de problema. Comprueba siempre primero si la radiación supera la frecuencia umbral.</p>
+            <a href="../index.html" target="_blank" class="boton-volver">Volver al inicio</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

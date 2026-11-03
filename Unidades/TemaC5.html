@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema C5. Naturaleza de la luz y óptica física básica</title>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES (misma ruta relativa que TemaA1.html) -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            },
+            options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA C5.- </span>
+                <span class="texto">Naturaleza de la luz y óptica física básica</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- UBICACIÓN CURRICULAR -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque C. Vibraciones y ondas</strong> del currículo de Física de 2.º de Bachillerato de Castilla y León. En el documento de bloques y temas facilitado aparece como <strong>C5. Naturaleza de la luz y óptica física básica</strong> (Decreto 40/2022, BOCYL-D-30092022-4).</p>
+
+        <div class="mapa-bloques">
+            <div class="bloque-card">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">A1</span><span class="tema-chip">A2</span><span class="tema-chip">A3</span><span class="tema-chip">A4</span>
+                    <span class="tema-chip">A5</span><span class="tema-chip">A6</span><span class="tema-chip">A7</span><span class="tema-chip">A8</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span><span class="tema-chip">B2</span><span class="tema-chip">B3</span><span class="tema-chip">B4</span>
+                    <span class="tema-chip">B5</span><span class="tema-chip">B6</span><span class="tema-chip">B7</span><span class="tema-chip">B8</span><span class="tema-chip">B9</span>
+                </div>
+            </div>
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">C1</span><span class="tema-chip">C2</span><span class="tema-chip">C3</span>
+                    <span class="tema-chip">C4</span><span class="tema-chip actual">C5</span><span class="tema-chip">C6</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">D1</span><span class="tema-chip">D2</span><span class="tema-chip">D3</span>
+                    <span class="tema-chip">D4</span><span class="tema-chip">D5</span><span class="tema-chip">D6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque C · Tema C5:</strong> <span class="texto-resaltado">Naturaleza de la luz y óptica física básica.</span>
+            <br><br>
+            <strong>Presencia en el banco de problemas:</strong> C5 = 6,9 % · media = 10,1 % · diferencia = −3,2 puntos porcentuales.
+            <br><br>
+            <em>Palabras clave:</em> naturaleza de la luz · índice de refracción · velocidad de la luz en un medio · longitud de onda en el medio · dispersión.
+        </div>
+        <div class="note"><strong>Alcance de esta página:</strong> se desarrolla el contenido necesario para interpretar la propagación de la luz en distintos medios, calcular sus magnitudes características y resolver cuestiones básicas de refracción y dispersión. La reflexión total se incorpora como aplicación relacionada, porque aparece en varios problemas del banco.</div>
+    </details>
+
+    <!-- OBJETIVOS -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Describir la luz como una onda electromagnética transversal y reconocer las magnitudes que caracterizan su propagación.</li>
+            <li>Relacionar el índice de refracción de un medio con la velocidad de propagación de la luz en él.</li>
+            <li>Calcular la frecuencia y la longitud de onda en el vacío, en el aire y en otros medios materiales.</li>
+            <li>Explicar por qué la frecuencia permanece constante al cambiar de medio, mientras que la velocidad y la longitud de onda cambian.</li>
+            <li>Aplicar la ley de Snell para determinar ángulos de refracción o índices de refracción, midiendo siempre los ángulos respecto a la normal.</li>
+            <li>Interpretar la dispersión cromática a partir de la dependencia del índice de refracción con la longitud de onda.</li>
+            <li>Distinguir la refracción que puede experimentar una luz monocromática de la separación cromática de la luz blanca.</li>
+            <li>Resolver problemas de reflexión total y ángulo límite cuando la situación planteada lo requiera.</li>
+            <li>Resolver y justificar cuestiones numéricas y conceptuales habituales de la PAU/EBAU de Castilla y León.</li>
+        </ul>
+    </details>
+
+    <!-- CONTENIDO TEÓRICO -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">1</span><strong>Naturaleza de la luz: onda electromagnética.</strong></summary>
+            <p>La luz es una <strong>onda electromagnética transversal</strong>: está formada por un campo eléctrico y un campo magnético que oscilan perpendicularmente entre sí y también respecto a la dirección de propagación. No necesita un medio material para propagarse; en el vacío viaja a la velocidad:</p>
+            <div class="formula-box">\[c=2{,}998\cdot10^{8}\ \text{m}\,\text{s}^{-1}\approx3{,}00\cdot10^{8}\ \text{m}\,\text{s}^{-1}\]</div>
+            <p>En el vacío se cumple la relación ondulatoria:</p>
+            <div class="formula-box">\[c=\lambda_0 f\]</div>
+            <p>donde \(\lambda_0\) es la longitud de onda en el vacío (m) y \(f\) es la frecuencia (Hz). La frecuencia está relacionada con la fuente emisora.</p>
+            <p>La luz presenta <strong>dualidad onda-corpúsculo</strong>: el modelo ondulatorio permite explicar los fenómenos de propagación y óptica, mientras que el modelo corpuscular (fotones) resulta necesario para describir determinadas interacciones con la materia, como el efecto fotoeléctrico, que se conecta con los temas del bloque D.</p>
+            <div class="note"><strong>Idea clave:</strong> en este tema utilizaremos principalmente el modelo ondulatorio para estudiar la propagación en medios, la refracción y la dispersión.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Índice de refracción y velocidad de la luz en un medio.</strong></summary>
+            <p>Al entrar en un medio transparente, la luz se propaga, en general, a una velocidad menor que en el vacío. El <strong>índice de refracción absoluto</strong> del medio se define como el cociente entre la velocidad de la luz en el vacío y su velocidad en ese medio:</p>
+            <div class="formula-box">\[n=\frac{c}{v}\qquad\Longleftrightarrow\qquad v=\frac{c}{n}\]</div>
+            <p>El índice de refracción es <strong>adimensional</strong>. En los medios transparentes habituales, \(n\geq1\); cuanto mayor sea \(n\), menor será la velocidad de propagación.</p>
+            <p>En un medio, la relación entre velocidad, longitud de onda y frecuencia sigue siendo:</p>
+            <div class="formula-box">\[v=\lambda f\]</div>
+            <p>Por tanto, conociendo el índice y la frecuencia se puede calcular la longitud de onda:</p>
+            <div class="formula-box">\[\lambda=\frac{v}{f}=\frac{c}{nf}=\frac{\lambda_0}{n}\]</div>
+            <div class="note"><strong>Atención:</strong> la expresión \(\lambda=\lambda_0/n\) se aplica cuando \(\lambda_0\) es la longitud de onda en el vacío. En aire suele tomarse \(n_{\text{aire}}\approx1\), de modo que \(\lambda_{\text{aire}}\approx\lambda_0\).</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Qué cambia y qué permanece constante al cambiar de medio.</strong></summary>
+            <p>Cuando una onda luminosa atraviesa la superficie de separación entre dos medios, la <strong>frecuencia no cambia</strong>: la fija la fuente y debe mantenerse la continuidad de la oscilación en la frontera. Como cambia la velocidad, también cambia la longitud de onda.</p>
+            <div class="formula-box">\[f_1=f_2\qquad\text{y}\qquad T_1=T_2\]</div>
+            <div class="formula-box">\[v_1=\lambda_1 f\qquad v_2=\lambda_2 f\]</div>
+            <p>Usando \(n=c/v\), para dos medios:</p>
+            <div class="formula-box">\[\frac{\lambda_1}{\lambda_2}=\frac{v_1}{v_2}=\frac{n_2}{n_1}\qquad\Longrightarrow\qquad n_1\lambda_1=n_2\lambda_2\]</div>
+            <table>
+                <thead><tr><th>Magnitud</th><th>Al cambiar de medio</th><th>Razón</th></tr></thead>
+                <tbody>
+                    <tr><td>Frecuencia \(f\)</td><td><strong>Permanece constante</strong></td><td>La determina la fuente.</td></tr>
+                    <tr><td>Periodo \(T\)</td><td><strong>Permanece constante</strong></td><td>\(T=1/f\).</td></tr>
+                    <tr><td>Velocidad \(v\)</td><td>Cambia</td><td>Depende del índice del medio: \(v=c/n\).</td></tr>
+                    <tr><td>Longitud de onda \(\lambda\)</td><td>Cambia</td><td>\(\lambda=v/f\); cambia con la velocidad si \(f\) permanece constante.</td></tr>
+                </tbody>
+            </table>
+            <div class="note"><strong>Comprobación rápida:</strong> al pasar del aire al vidrio, normalmente aumenta \(n\), por lo que disminuyen \(v\) y \(\lambda\), pero no cambia \(f\).</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Refracción de la luz y ley de Snell.</strong></summary>
+            <p>La <strong>refracción</strong> es el cambio de velocidad que experimenta la luz al pasar de un medio a otro. Si la incidencia no es perpendicular a la superficie, también cambia la dirección de propagación.</p>
+            <p>La ley de Snell relaciona los índices de refracción y los ángulos de incidencia y refracción:</p>
+            <div class="formula-box">\[n_1\,\text{sen}\,i=n_2\,\text{sen}\,r\]</div>
+            <p>Los ángulos \(i\) y \(r\) se miden <strong>desde la normal</strong> a la superficie, no desde la propia superficie.</p>
+            <ul>
+                <li>Si \(n_2&gt;n_1\), la luz entra en un medio donde viaja más despacio y el rayo se acerca a la normal: \(r&lt;i\).</li>
+                <li>Si \(n_2&lt;n_1\), la luz entra en un medio donde viaja más deprisa y el rayo se aleja de la normal: \(r&gt;i\), siempre que exista rayo refractado.</li>
+                <li>Si la incidencia es normal, no cambia la dirección, aunque sí pueden cambiar la velocidad y la longitud de onda.</li>
+            </ul>
+            <div class="note"><strong>Conversión habitual:</strong> si el enunciado da el ángulo con la superficie, hay que restarlo de \(90^{\circ}\) para obtener el ángulo con la normal. Por ejemplo, \(60^{\circ}\) con la superficie equivale a \(30^{\circ}\) con la normal.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">5</span><strong>Dispersión cromática.</strong></summary>
+            <p>La <strong>dispersión</strong> es la dependencia del índice de refracción con la frecuencia o la longitud de onda de la luz:</p>
+            <div class="formula-box">\[n=n(\lambda)\]</div>
+            <p>En la dispersión normal de muchos materiales transparentes, el índice es mayor para longitudes de onda más cortas. Así, el violeta suele tener un índice mayor que el rojo:</p>
+            <div class="formula-box">\[n_{\text{violeta}}&gt;n_{\text{rojo}}\]</div>
+            <p>Al incidir luz blanca sobre un prisma o una superficie refractora, cada componente cromática se refracta con un ángulo diferente y el haz se separa en colores. El violeta suele desviarse más que el rojo al entrar desde el aire en el material.</p>
+            <p>Para calcular la separación de dos colores en un recipiente, se aplica Snell por separado a cada índice y después se utiliza la geometría de los rayos. En una profundidad vertical \(h\), el desplazamiento horizontal de un rayo que forma un ángulo \(r\) con la normal es:</p>
+            <div class="formula-box">\[x=h\,\tan r\qquad\qquad \Delta x=|x_R-x_V|\]</div>
+            <div class="note"><strong>Luz monocromática:</strong> también puede refractarse y cambiar de velocidad y longitud de onda. Sin embargo, al tener una sola frecuencia, no se descompone en varios colores por dispersión cromática.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">6</span><strong>Ángulo límite y reflexión total (aplicación relacionada).</strong></summary>
+            <p>La reflexión total solo puede producirse cuando la luz intenta pasar de un medio de mayor índice a otro de menor índice (\(n_1&gt;n_2\), equivalente a \(v_2&gt;v_1\)). El <strong>ángulo límite</strong> o crítico es el ángulo de incidencia para el que el rayo refractado sale con \(90^{\circ}\) respecto a la normal.</p>
+            <div class="formula-box">\[n_1\,\text{sen}\,\theta_c=n_2\qquad\Longrightarrow\qquad\text{sen}\,\theta_c=\frac{n_2}{n_1}\]</div>
+            <p>Si el ángulo de incidencia es mayor que el ángulo crítico, no existe rayo refractado y se produce reflexión total:</p>
+            <div class="formula-box">\[i&gt;\theta_c\quad\Rightarrow\quad\text{reflexión total}\]</div>
+            <p>Como \(n=c/v\), también puede escribirse:</p>
+            <div class="formula-box">\[\text{sen}\,\theta_c=\frac{v_1}{v_2}\]</div>
+            <div class="note"><strong>Condición imprescindible:</strong> no hay reflexión total al pasar de un medio de menor índice a otro de mayor índice.</div>
+        </details>
+
+        <div class="note"><strong>Errores frecuentes:</strong> confundir velocidad con frecuencia; afirmar que la frecuencia cambia al entrar en un material; usar \(\lambda=c/f\) dentro del vidrio en vez de \(\lambda=v/f\); medir los ángulos desde la superficie; y afirmar que una luz monocromática se separa en colores al refractarse.</div>
+    </details>
+
+    <!-- ANÁLISIS DE FÓRMULAS -->
+    <details class="section resultado">
+        <summary><h2>🧮 Formulario y significado de las expresiones</h2></summary>
+        <p>Estas son las relaciones que conviene identificar y seleccionar según los datos del problema:</p>
+        <table>
+            <thead><tr><th>Expresión</th><th>Significado</th><th>Variables y unidades</th><th>Uso habitual</th></tr></thead>
+            <tbody>
+                <tr><td>\(c=\lambda_0 f\)</td><td>Relación de onda en el vacío.</td><td>\(c\) en m·s⁻¹; \(\lambda_0\) en m; \(f\) en Hz.</td><td>Calcular frecuencia o longitud de onda en el vacío/aire.</td></tr>
+                <tr><td>\(n=c/v\)</td><td>Definición del índice absoluto.</td><td>\(n\) adimensional; \(c,v\) en m·s⁻¹.</td><td>Calcular índice o velocidad.</td></tr>
+                <tr><td>\(v=c/n\)</td><td>Velocidad de la luz en el medio.</td><td>\(v\) en m·s⁻¹.</td><td>Obtener la velocidad a partir del índice.</td></tr>
+                <tr><td>\(v=\lambda f\)</td><td>Relación entre velocidad y magnitudes de onda.</td><td>\(\lambda\) en m; \(f\) en Hz.</td><td>Calcular longitud de onda en un medio.</td></tr>
+                <tr><td>\(\lambda=\lambda_0/n\)</td><td>Longitud de onda en un medio de índice \(n\).</td><td>\(\lambda,\lambda_0\) en m.</td><td>Cuando se conoce la longitud de onda en el vacío.</td></tr>
+                <tr><td>\(n_1\lambda_1=n_2\lambda_2\)</td><td>Relación entre longitudes de onda en dos medios.</td><td>Longitudes de onda en m; índices adimensionales.</td><td>La frecuencia permanece constante.</td></tr>
+                <tr><td>\(n_1\,\text{sen}\,i=n_2\,\text{sen}\,r\)</td><td>Ley de Snell.</td><td>Ángulos medidos desde la normal.</td><td>Refracción e índice desconocido.</td></tr>
+                <tr><td>\(\text{sen}\,\theta_c=n_2/n_1\)</td><td>Ángulo límite.</td><td>Requiere \(n_1&gt;n_2\).</td><td>Reflexión total.</td></tr>
+                <tr><td>\(x=h\tan r\)</td><td>Desplazamiento horizontal en una capa de profundidad \(h\).</td><td>\(x,h\) en m; \(r\) respecto a la normal.</td><td>Separación de rayos dispersados.</td></tr>
+            </tbody>
+        </table>
+    </details>
+
+    <!-- PROBLEMAS TIPO: PROCEDIMIENTO -->
+    <details class="section objetivo">
+        <summary><h2>🧭 Estrategia para resolver problemas tipo</h2></summary>
+        <ol>
+            <li><strong>Identifica los medios</strong> y anota sus índices \(n_1,n_2\). Si el dato es la velocidad, calcula \(n=c/v\).</li>
+            <li><strong>Convierte los datos al S.I.</strong> (nm a m, cm a m) antes de sustituir.</li>
+            <li><strong>Dibuja la normal</strong> y aclara si los ángulos se miden desde ella o desde la superficie.</li>
+            <li><strong>Conserva la frecuencia:</strong> calcula primero \(f=c/\lambda_0\) si se conoce la longitud de onda en aire/vacío; después usa \(v=c/n\) y \(\lambda=v/f\).</li>
+            <li><strong>En refracción, aplica Snell</strong> con los índices del medio de entrada y de salida.</li>
+            <li><strong>En dispersión, resuelve cada color por separado</strong> con su índice, y calcula después la separación geométrica.</li>
+            <li><strong>Comprueba el resultado:</strong> al entrar en un medio de mayor índice deben disminuir la velocidad y la longitud de onda; la frecuencia debe ser la misma.</li>
+        </ol>
+        <div class="note"><strong>Decisión rápida:</strong> si preguntan por \(v\), usa \(v=c/n\); si preguntan por \(\lambda\), usa \(\lambda=v/f\); si preguntan por el cambio de dirección, usa Snell; si comparan colores, usa un índice distinto para cada color.</div>
+    </details>
+
+    <!-- PROBLEMAS EBAU RESUELTOS -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🔭 Problemas resueltos de PAU/EBAU — Tema C5</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas del banco adjunto.</strong> Se incluyen los <strong>9 ejercicios de Castilla y León</strong> que el banco clasifica expresamente en C5, y se completa la selección con un ejercicio de Cantabria (2026) muy adecuado para practicar la frecuencia, el índice y la velocidad a partir de longitudes de onda. Se indica comunidad, año, convocatoria y número de problema.
+            </p>
+            <table>
+                <thead><tr><th>N.º</th><th>Comunidad</th><th>Año</th><th>Convocatoria</th><th>Problema</th><th>Contenido principal</th></tr></thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Castilla y León</td>
+                    <td>2026</td>
+                    <td>Extraordinaria</td>
+                    <td>2</td>
+                    <td>Refracción, dispersión y comportamiento de la luz monocromática</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Castilla y León</td>
+                    <td>2025</td>
+                    <td>Ordinaria</td>
+                    <td>8</td>
+                    <td>Índice de refracción a partir del ángulo límite</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Castilla y León</td>
+                    <td>2024</td>
+                    <td>Extraordinaria</td>
+                    <td>8</td>
+                    <td>Refracción agua–aire: longitudes de onda y ángulo entre rayos reflejado y refractado</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Castilla y León</td>
+                    <td>2024</td>
+                    <td>Extraordinaria</td>
+                    <td>16</td>
+                    <td>¿Puede haber reflexión total al pasar de un medio lento a otro más rápido?</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Castilla y León</td>
+                    <td>2023</td>
+                    <td>Extraordinaria</td>
+                    <td>8</td>
+                    <td>Dispersión cromática de un haz de luz blanca en un líquido</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Castilla y León</td>
+                    <td>2022</td>
+                    <td>Ordinaria</td>
+                    <td>8</td>
+                    <td>Índice de refracción cuando reflejado y refractado son perpendiculares</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Castilla y León</td>
+                    <td>2022</td>
+                    <td>Ordinaria</td>
+                    <td>16</td>
+                    <td>Comparación del ángulo límite material→aire vs material→agua</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Castilla y León</td>
+                    <td>2021</td>
+                    <td>Extraordinaria</td>
+                    <td>8</td>
+                    <td>Velocidad de la luz en el vidrio con reflejado y refractado a $110^{\circ}$</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Castilla y León</td>
+                    <td>2021</td>
+                    <td>Ordinaria</td>
+                    <td>9</td>
+                    <td>A.9 — Refracción: $\lambda$ en el material y ángulo entre rayos</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Cantabria</td>
+                    <td>2026</td>
+                    <td>Extraordinaria</td>
+                    <td>6</td>
+                    <td>Frecuencia, índice y velocidad de la luz al entrar en vidrio</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- PROBLEMA 1 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Refracción, dispersión y comportamiento de la luz monocromática</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Problema 2</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Cuando la luz interacciona con la materia pueden ocurrir situaciones tan sorprendentes como los espejismos o el arco iris.</p>
+                    <p><strong>Puntuación:</strong> 1 punto (0,5 + 0,5)</p>
+                    <div class="paso"><strong>a)</strong> <p>Indique la diferencia entre los fenómenos de refracción y de dispersión y relaciónelos con las situaciones descritas.</p> <span class="meta-ej">0,5 puntos</span></div>
+                    <div class="paso"><strong>b)</strong> <p>Explique razonadamente si la luz monocromática puede sufrir ambos fenómenos.</p> <span class="meta-ej">0,5 puntos</span></div>
+                </div>
+                <div class="resolucion-ej">
+                    <h4>Resolución</h4>
+                    <div class="paso"><strong>Distinción de los fenómenos y ejemplos</strong></div>
+                    <p>La refracción es el cambio de velocidad y, salvo incidencia normal, de dirección al propagarse la luz entre regiones de distinto índice de refracción. Se rige por \(n_1\,\text{sen}\,\theta_1=n_2\,\text{sen}\,\theta_2\). En los espejismos, el índice del aire varía con la temperatura y la altura; los rayos se curvan y llegan al observador como si procedieran de otro lugar.</p>
+<p>La dispersión cromática es la separación de los colores porque el índice depende de la frecuencia o longitud de onda: \(n=n(\lambda)\). En el arco iris, las gotas refractan de manera distinta cada color, con reflexión interna y una nueva refracción a la salida; por ello los colores emergen con distintos ángulos.</p>
+                    <div class="paso"><strong>Una sola frecuencia</strong></div>
+                    <p>La luz monocromática puede sufrir refracción: cambia de velocidad al cambiar de medio y puede cambiar de dirección; su frecuencia se conserva y cambia su longitud de onda, \(\lambda=\frac{v}{f}\). No se separa en diferentes colores por dispersión cromática, porque contiene una sola frecuencia. Que el medio tenga un índice dependiente de la frecuencia no convierte una luz monocromática en una mezcla de colores.</p>
+                    <div class="pie-clave"><span><strong>Resultado:</strong> Espejismo: refracción en aire de índice variable. Arco iris: dispersión cromática por refracción y reflexión interna en las gotas.<br>Puede refractarse, pero no descomponerse en colores por dispersión cromática.</span></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 2 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Índice de refracción a partir del ángulo límite</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Ordinaria · Problema 8</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>El rayo de luz de la figura se propaga por el interior de cierto medio e incide sobre la superficie que lo separa del aire. Las dimensiones mostradas en el diagrama corresponden justamente al ángulo límite. Determine el índice de refracción del medio. Dimensiones de la figura: la trayectoria del rayo dentro del medio tiene una componente vertical de \(15{,}0\,\text{cm}\), paralela a la normal a la superficie, y una componente horizontal de \(13{,}4\,\text{cm}\), paralela a la superficie. El medio tiene índice \(n_2\) y el aire por encima tiene \(n_1=1\).</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h4>Resolución</h4>
+                    <div class="paso"><strong>Ángulo límite a partir de la geometría</strong></div>
+                    <p>El ángulo del rayo respecto a la normal vertical cumple:</p>
+<div class="formula-box">\[\tan\theta_L=\frac{13{,}4}{15{,}0}\approx0{,}893\quad\Rightarrow\quad\theta_L\approx41{,}8^{\circ}.\]</div>
+<p>Equivalentemente, por geometría, con la hipotenusa del triángulo rectángulo formado:</p>
+<div class="formula-box">\[\text{sen}\,\theta_L=\frac{13{,}4}{\sqrt{15{,}0^{2}+13{,}4^{2}}}\approx0{,}666.\]</div>
+                    <div class="paso"><strong>Condición de ángulo límite y cálculo de \(n_2\)</strong></div>
+                    <p>El ángulo límite cumple:</p>
+<div class="formula-box">\[\text{sen}\,\theta_L=\frac{n_1}{n_2}=\frac{1}{n_2}.\]</div>
+<p>Por tanto:</p>
+<div class="formula-box">\[n_2=\frac{1}{\text{sen}\,\theta_L}\approx\frac{1}{0{,}666}\approx1{,}50.\]</div>
+                    <div class="pie-clave"><span><strong>Resultado:</strong> \(n_2\approx1{,}50\).</span></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 3 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Refracción agua–aire: longitudes de onda y ángulo entre rayos reflejado y refractado</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 8</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un rayo de luz de frecuencia \(5{,}2\cdot10^{14}\,\text{Hz}\) incide desde el agua (\(n_{\text{agua}}=1{,}33\)) sobre la superficie de separación agua-aire de un lago, formando un ángulo de \(60^{\circ}\) respecto a la superficie del agua. Determine la longitud de onda del rayo en cada uno de los medios y el ángulo que forman entre sí el rayo reflejado y el refractado. Dato: \(c_0=3{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}\).</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h4>Resolución</h4>
+                    <div class="paso"><strong>Ángulo de incidencia respecto a la normal</strong></div>
+                    <p>El enunciado indica que el rayo forma \(60^{\circ}\) con la superficie, así que el ángulo respecto a la normal es:</p>
+<div class="formula-box">\[i=90^{\circ}-60^{\circ}=30^{\circ}.\]</div>
+                    <div class="paso"><strong>Longitud de onda en cada medio</strong></div>
+                    <p>La frecuencia no cambia al pasar de un medio a otro. En el aire:</p>
+<div class="formula-box">\[\lambda_{\text{aire}}=\frac{c_0}{f}=\frac{3{,}00\cdot10^{8}}{5{,}2\cdot10^{14}}=5{,}77\cdot10^{-7}\,\text{m}=577\,\text{nm}.\]</div>
+<p>En el agua, \(\lambda_{\text{agua}}=\lambda_{\text{aire}}/n_{\text{agua}}\), así que:</p>
+<div class="formula-box">\[\lambda_{\text{agua}}=\frac{5{,}77\cdot10^{-7}}{1{,}33}=4{,}34\cdot10^{-7}\,\text{m}=434\,\text{nm}.\]</div>
+                    <div class="paso"><strong>Ángulo de refracción (ley de Snell)</strong></div>
+                    <p>Aplicando la ley de Snell:</p>
+<div class="formula-box">\[n_{\text{agua}}\,\text{sen}\,i=n_{\text{aire}}\,\text{sen}\,r.\]</div>
+<div class="formula-box">\[1{,}33\,\text{sen}\,30^{\circ}=\text{sen}\,r\quad\Rightarrow\quad \text{sen}\,r=0{,}665\quad\Rightarrow\quad r=41{,}7^{\circ}.\]</div>
+<p>Por tanto, el rayo refractado forma \(41{,}7^{\circ}\) respecto a la normal en el aire. Como no hay reflexión total, existen ambos rayos.</p>
+                    <div class="paso"><strong>Ángulo entre rayo reflejado y rayo refractado</strong></div>
+                    <p>El rayo reflejado vuelve al agua formando \(30^{\circ}\) con la normal, en el lado opuesto al rayo incidente. El rayo refractado entra en el aire formando \(41{,}7^{\circ}\) con la normal, en el mismo lado que el reflejado respecto al plano de incidencia. Como ambos están separados por la superficie y comparten la prolongación de la normal, el ángulo que forman entre ellos es:</p>
+<div class="formula-box">\[\alpha=180^{\circ}-30^{\circ}-41{,}7^{\circ}=108{,}3^{\circ}.\]</div>
+                    <div class="pie-clave"><span><strong>Resultado:</strong> \(\lambda_{\text{aire}}=577\,\text{nm}\); \(\lambda_{\text{agua}}=434\,\text{nm}\); el ángulo entre el rayo reflejado y el refractado es \(108{,}3^{\circ}\).</span></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 4 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">¿Puede haber reflexión total al pasar de un medio lento a otro más rápido?</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 16</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un haz de luz pasa de un medio en el que su velocidad de propagación es \(v_1\) a otro en el que su velocidad es \(v_2\), siendo \(v_2&gt;v_1\). Razone si puede tener lugar el fenómeno de reflexión total.</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h4>Resolución</h4>
+                    <div class="paso"><strong>Relación entre velocidad e índice de refracción</strong></div>
+                    <p>El índice de refracción de un medio es \(n=c_0/v\). Si \(v_2&gt;v_1\), entonces \(n_2&lt;n_1\); es decir, la luz pasa de un medio más refringente a uno menos refringente.</p>
+                    <div class="paso"><strong>Condición de reflexión total</strong></div>
+                    <p>Aplicando la ley de Snell:</p>
+<div class="formula-box">\[n_1\,\text{sen}\,i=n_2\,\text{sen}\,r\quad\Rightarrow\quad \text{sen}\,r=\frac{n_1}{n_2}\text{sen}\,i.\]</div>
+<p>Como \(n_1&gt;n_2\), el cociente \(n_1/n_2&gt;1\). Para ángulos de incidencia suficientemente grandes, \(\text{sen}\,r\) sería mayor que 1 y la ecuación no tendría solución real: no existe rayo refractado y toda la luz se refleja.</p>
+                    <div class="paso"><strong>Conclusión</strong></div>
+                    <p>Sí, puede tener lugar reflexión total cuando \(v_2&gt;v_1\), siempre que el ángulo de incidencia supere el ángulo crítico. Este es el caso, por ejemplo, de la luz que va del agua al aire o del vidrio al aire.</p>
+                    <div class="pie-clave"><span><strong>Resultado:</strong> Sí; existe reflexión total para \(i&gt;i_c\), con \(\text{sen}\,i_c=\frac{n_2}{n_1}=\frac{v_1}{v_2}\).</span></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 5 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Dispersión cromática de un haz de luz blanca en un líquido</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 8</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>El índice de refracción de un cierto líquido para la luz de color rojo es \(1{,}32\) mientras que para el color violeta es \(1{,}35\). Sobre un recipiente de \(50\,\text{cm}\) de altura lleno de este líquido se hace incidir un rayo de luz blanca formando un ángulo de \(60^{\circ}\) con la superficie del líquido. Determine la separación entre los rayos rojo y violeta cuando alcancen el fondo del recipiente.</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h4>Resolución</h4>
+                    <div class="paso"><strong>Ángulo de incidencia respecto a la normal</strong></div>
+                    <p>El rayo forma \(60^{\circ}\) con la superficie horizontal del líquido, así que con la normal vertical forma:</p>
+<div class="formula-box">\[i=90^{\circ}-60^{\circ}=30^{\circ}.\]</div>
+                    <div class="paso"><strong>Ángulos refractados para cada color</strong></div>
+                    <p>Aplicando la ley de Snell, \(n_{\text{aire}}\text{sen}\,i=n_{\text{líquido}}\text{sen}\,r\), con \(n_{\text{aire}}=1\):</p>
+<p>Para el rojo:</p>
+<div class="formula-box">\[\text{sen}\,r_R=\frac{\text{sen}30^{\circ}}{1{,}32}=0{,}3788\Rightarrow r_R=22{,}3^{\circ}.\]</div>
+<p>Para el violeta:</p>
+<div class="formula-box">\[\text{sen}\,r_V=\frac{\text{sen}30^{\circ}}{1{,}35}=0{,}3704\Rightarrow r_V=21{,}7^{\circ}.\]</div>
+                    <div class="paso"><strong>Separación entre rayos en el fondo</strong></div>
+                    <p>Cada rayo recorre verticalmente \(h=0{,}50\,\text{m}\). El desplazamiento horizontal es \(x=h\tan r\):</p>
+<div class="formula-box">\[x_R=0{,}50\tan22{,}3^{\circ}=0{,}205\,\text{m};\]</div>
+<div class="formula-box">\[x_V=0{,}50\tan21{,}7^{\circ}=0{,}199\,\text{m}.\]</div>
+<p>La separación en el fondo es:</p>
+<div class="formula-box">\[\Delta x=x_R-x_V=0{,}205-0{,}199=0{,}006\,\text{m}\approx5{,}2\,\text{mm}.\]</div>
+                    <div class="pie-clave"><span><strong>Resultado:</strong> \(\Delta x\approx5{,}2\,\text{mm}\).</span></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 6 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Índice de refracción cuando reflejado y refractado son perpendiculares</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Ordinaria · Problema 8</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un rayo incide desde el aire sobre un medio con índice de refracción \(n\). Si el ángulo de incidencia es \(60^{\circ}\) y el ángulo que forman el rayo reflejado y el transmitido es \(90^{\circ}\), ¿cuál es el valor de \(n\)?</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h4>Resolución</h4>
+                    <div class="paso"><strong>Geometría de los rayos respecto a la normal</strong></div>
+                    <p>El rayo reflejado forma un ángulo de \(60^{\circ}\) con la normal en el lado del aire. El rayo refractado forma un ángulo \(r\) con la normal en el lado del medio. Reflejado y refractado están en lados opuestos de la superficie y a ambos lados de la normal. Si el ángulo entre ellos es \(90^{\circ}\), se cumple:</p>
+<div class="formula-box">\[60^{\circ}+r=90^{\circ}\quad\Rightarrow\quad r=30^{\circ}.\]</div>
+                    <div class="paso"><strong>Aplicación de la ley de Snell</strong></div>
+                    <p>Aplicando la ley de Snell desde el aire (\(n_{\text{aire}}\approx1\)) al medio:</p>
+<div class="formula-box">\[1\cdot\text{sen}\,60^{\circ}=n\,\text{sen}\,30^{\circ}.\]</div>
+<p>Por tanto:</p>
+<div class="formula-box">\[n=\frac{\text{sen}\,60^{\circ}}{\text{sen}\,30^{\circ}}=\frac{\frac{\sqrt{3}}{2}}{\frac{1}{2}}=\sqrt{3}\approx1{,}73.\]</div>
+                    <div class="pie-clave"><span><strong>Resultado:</strong> \(n=\sqrt{3}\approx1{,}73\).</span></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 7 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Comparación del ángulo límite material→aire vs material→agua</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Ordinaria · Problema 16</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Razone si el siguiente enunciado es verdadero o falso: «El ángulo límite de un material para que se produzca reflexión total es el mismo cuando se incide desde el material hacia el aire que cuando se incide desde el material hacia el agua».</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h4>Resolución</h4>
+                    <div class="paso"><strong>Definición de ángulo límite</strong></div>
+                    <p>El ángulo límite o crítico para reflexión total al pasar de un medio de índice \(n_1\) a otro de índice \(n_2&lt;n_1\) verifica:</p>
+<div class="formula-box">\[\text{sen}\,\theta_c=\frac{n_2}{n_1}.\]</div>
+                    <div class="paso"><strong>Comparación material→aire y material→agua</strong></div>
+                    <p>Sea \(n\) el índice del material. Hacia el aire, \(n_{\text{aire}}\approx1\), por lo que:</p>
+<div class="formula-box">\[\text{sen}\,\theta_{c,\text{aire}}=\frac{1}{n}.\]</div>
+<p>Hacia el agua, \(n_{\text{agua}}\approx1{,}33\), por lo que:</p>
+<div class="formula-box">\[\text{sen}\,\theta_{c,\text{agua}}=\frac{1{,}33}{n}.\]</div>
+<p>Como \(n_{\text{agua}}&gt;n_{\text{aire}}\), se tiene \(\text{sen}\,\theta_{c,\text{agua}}&gt;\text{sen}\,\theta_{c,\text{aire}}\), y por tanto \(\theta_{c,\text{agua}}&gt;\theta_{c,\text{aire}}\). La afirmación es falsa.</p>
+                    <div class="pie-clave"><span><strong>Resultado:</strong> FALSA. El ángulo límite es mayor cuando se incide hacia el agua que hacia el aire, porque \(n_{\text{agua}}&gt;n_{\text{aire}}\).</span></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 8 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Velocidad de la luz en el vidrio con reflejado y refractado a $110^{\circ}$</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Extraordinaria · Problema 8</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un haz de luz incide desde el aire sobre un bloque de vidrio formando un ángulo de \(43^{\circ}\) con la normal a la superficie de separación de ambos medios. Parte del haz se refleja y parte se refracta, formando los haces reflejado y refractado un ángulo de \(110^{\circ}\). Determine la velocidad de la luz en el vidrio.</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h4>Resolución</h4>
+                    <div class="paso"><strong>Geometría angular</strong></div>
+                    <p>El ángulo reflejado es \(43^{\circ}\). Si el ángulo entre el rayo reflejado y el refractado es \(110^{\circ}\), el ángulo de refracción \(\theta_t\) verifica:</p>
+<div class="formula-box">\[110^{\circ}=180^{\circ}-43^{\circ}-\theta_t\quad\Rightarrow\quad\theta_t=27^{\circ}.\]</div>
+                    <div class="paso"><strong>Ley de Snell y velocidad</strong></div>
+                    <div class="formula-box">\[n_{\text{aire}}\sin43^{\circ}=n_{\text{vidrio}}\sin27^{\circ}\quad\Rightarrow\quad n_{\text{vidrio}}=\frac{\sin43^{\circ}}{\sin27^{\circ}}\approx1{,}50.\]</div>
+<div class="formula-box">\[v=\frac{c}{n}=\frac{3{,}00\cdot10^{8}}{1{,}50}\approx2{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}.\]</div>
+                    <div class="pie-clave"><span><strong>Resultado:</strong> \(v\approx2{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}\).</span></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 9 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">A.9 — Refracción: $\lambda$ en el material y ángulo entre rayos</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Ordinaria · Problema 9</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Un haz de luz, de frecuencia \(3{,}5\cdot10^{14}\,\text{Hz}\), incide desde el aire sobre un material de índice de refracción \(1{,}35\). Si el haz incidente forma un ángulo de \(60^{\circ}\) con la superficie de separación entre ambos medios, determine la longitud de onda de la luz en el material y el ángulo que forman los rayos reflejado y refractado.</p>
+                    <p><strong>Puntuación:</strong> 1 punto</p>
+                    <div class="paso"><strong>a)</strong> <p>Longitud de onda en el material.</p> <span class="meta-ej">No especificada</span></div>
+                    <div class="paso"><strong>b)</strong> <p>Ángulo entre los rayos reflejado y refractado.</p> <span class="meta-ej">No especificada</span></div>
+                </div>
+                <div class="resolucion-ej">
+                    <h4>Resolución</h4>
+                    <div class="paso"><strong>Longitud de onda en el material</strong></div>
+                    <p>La frecuencia no cambia al refractarse. En el aire:</p>
+<div class="formula-box">\[\lambda_0=\frac{c}{f}=\frac{3{,}00\cdot10^{8}}{3{,}5\cdot10^{14}}\approx8{,}57\cdot10^{-7}\,\text{m}.\]</div>
+<p>En el material:</p>
+<div class="formula-box">\[\lambda=\frac{\lambda_0}{n}=\frac{8{,}57\cdot10^{-7}}{1{,}35}\approx6{,}35\cdot10^{-7}\,\text{m}\approx635\,\text{nm}.\]</div>
+                    <div class="paso"><strong>Ángulo entre rayos reflejado y refractado</strong></div>
+                    <p>El ángulo respecto a la normal es \(i=90^{\circ}-60^{\circ}=30^{\circ}\). Ley de Snell:</p>
+<div class="formula-box">\[1\cdot\text{sen}\,30^{\circ}=1{,}35\,\text{sen}\,r\Rightarrow r\approx21{,}7^{\circ}.\]</div>
+<p>El ángulo entre el rayo reflejado y el refractado es:</p>
+<div class="formula-box">\[180^{\circ}-(i+r)\approx180^{\circ}-51{,}7^{\circ}=128{,}3^{\circ}.\]</div>
+                    <div class="pie-clave"><span><strong>Resultado:</strong> \(\lambda\approx6{,}35\cdot10^{-7}\,\text{m}\approx635\,\text{nm}\); ángulo entre rayos \(\approx128{,}3^{\circ}\).</span></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">Frecuencia, índice y velocidad de la luz al entrar en vidrio</span>
+                    <span class="meta-ej">Cantabria · 2026 · Extraordinaria · Problema 6</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p>Al propagarse desde el aire a un vidrio, un haz de luz monocromática cambia su longitud de onda de \(651\,\text{nm}\) a \(420\,\text{nm}\). Calcular:</p>
+                    <p><strong>Puntuación:</strong> 2,5 puntos (1 + 0,75 + 0,75)</p>
+                    <div class="paso"><strong>a)</strong> <p>La frecuencia del haz de luz.</p> <span class="meta-ej">1 punto</span></div>
+                    <div class="paso"><strong>b)</strong> <p>El índice de refracción del vidrio.</p> <span class="meta-ej">0,75 puntos</span></div>
+                    <div class="paso"><strong>c)</strong> <p>La velocidad de propagación del haz de luz en el vidrio. Dato: Índice de refracción del aire: \(n_{\text{aire}}=1\).</p> <span class="meta-ej">0,75 puntos</span></div>
+                </div>
+                <div class="resolucion-ej">
+                    <h4>Resolución</h4>
+                    <div class="paso"><strong>Frecuencia conservada en el cambio de medio</strong></div>
+                    <p>La frecuencia la fija la fuente y no cambia al atravesar la interfaz. Puesto que \(n_{\text{aire}}=1\), la velocidad en el aire es \(c\):</p>
+<div class="formula-box">\[f=\frac{c}{\lambda_{\text{aire}}}=\frac{3\cdot10^{8}}{651\cdot10^{-9}}=4{,}60829\cdot10^{14}\,\text{Hz}.\]</div>
+                    <div class="paso"><strong>Índice a partir de la longitud de onda</strong></div>
+                    <p>Se utilizan \(v=f\lambda\), la conservación de \(f\) y \(n=c/v\):</p>
+<div class="formula-box">\[n_{\text{aire}}\lambda_{\text{aire}}=n_{\text{vidrio}}\lambda_{\text{vidrio}}\quad\Rightarrow\quad n_{\text{vidrio}}=n_{\text{aire}}\frac{\lambda_{\text{aire}}}{\lambda_{\text{vidrio}}}=\frac{651}{420}=1{,}55.\]</div>
+                    <div class="paso"><strong>Velocidad de propagación en el vidrio</strong></div>
+                    <div class="formula-box">\[v_{\text{vidrio}}=\frac{c}{n_{\text{vidrio}}}=\frac{3\cdot10^{8}}{1{,}55}=1{,}93548\cdot10^{8}\,\text{m}\,\text{s}^{-1}.\]</div>
+                    <div class="pie-clave"><span><strong>Resultado:</strong> \(f\approx4{,}61\cdot10^{14}\,\text{Hz}\) en ambos medios<br>\(n_{\text{vidrio}}=1{,}55\) (adimensional)<br>\(v_{\text{vidrio}}\approx1{,}94\cdot10^{8}\,\text{m}\,\text{s}^{-1}\)</span></div>
+                </div>
+            </details>
+
+            <div class="pie-clave">
+                <i class="fas fa-lightbulb"></i>
+                <span><strong>Patrón común:</strong> en los ejercicios de medios materiales, la frecuencia se conserva; el índice determina la velocidad; la velocidad junto con la frecuencia determina la longitud de onda. En los ejercicios de refracción, los ángulos se miden desde la normal y se aplica Snell. En los de dispersión, cada color tiene su propio índice y debe estudiarse por separado.</span>
+            </div>
+        </div>
+    </details>
+
+    <!-- RECURSO GENERAL -->
+    <div style="max-width:1100px; margin:30px auto; padding:0 15px 20px 15px;">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius:20px; padding:25px; text-align:center; box-shadow:0 15px 40px rgba(102,126,234,0.25);">
+            <h2 style="margin:0 0 8px 0; color:white;"><i class="fas fa-compass"></i> Recursos de Física · 2.º Bachillerato</h2>
+            <p style="color:rgba(255,255,255,0.9); margin:0 0 18px 0;">Consulta el banco general de problemas de acceso a la universidad.</p>
+            <a href="../EBAU/problemas-inline_v04.html" style="display:inline-block; background:white; color:#1e3a8a; text-decoration:none; padding:12px 20px; border-radius:12px; font-weight:700;">
+                <i class="fas fa-database"></i> Abrir banco EBAU general
+            </a>
+        </div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p>Comprueba siempre qué magnitudes cambian al pasar de un medio a otro y justifica cada paso con la relación física correspondiente.<br>
+                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
+            </p>
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">Volver al inicio</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

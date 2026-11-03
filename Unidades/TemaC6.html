@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema C6. Formación de imágenes y sistemas ópticos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/unidades.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .figura-rayos { margin: 18px 0; padding: 12px; background: #fff; border: 1px solid #dbe3ef; border-radius: 12px; }
+        .figura-rayos svg { display: block; width: 100%; height: auto; max-height: 340px; }
+        .figura-rayos figcaption { color: #475569; font-size: .9em; margin: 8px 4px 2px; line-height: 1.5; }
+        .meta-fuente { color: #64748b; font-size: .82rem; margin-top: 8px; }
+        .tabla-optica td:first-child { font-weight: 700; color: #1e3a8a; }
+        .rejilla-resumen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 18px 0; }
+        .rejilla-resumen > div { background: #f8fafc; border: 1px solid #dbeafe; border-radius: 10px; padding: 12px; }
+        .rejilla-resumen strong { display: block; font-size: 1.1em; margin-bottom: 4px; }
+        .signos { border-left: 4px solid #3b82f6; background: #eff6ff; padding: 12px 16px; border-radius: 8px; margin: 14px 0; }
+        .rayos-leyenda { display: flex; flex-wrap: wrap; gap: 14px; font-size: .88em; color: #475569; margin-top: 8px; }
+        .punto-azul, .punto-naranja, .punto-verde { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; }
+        .punto-azul { background: #2563eb; } .punto-naranja { background: #ea580c; } .punto-verde { background: #16a34a; }
+        @media (max-width: 700px) { .rejilla-resumen { grid-template-columns: 1fr; } .figura-rayos { padding: 5px; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA C6.- </span>
+                <span class="texto">Formación de imágenes y sistemas ópticos</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- UBICACIÓN CURRICULAR -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema se integra en el <strong>Bloque C. Vibraciones y ondas</strong> del currículo de Física de 2.º de Bachillerato. En la relación de bloques y temas aportada para el Decreto 40/2022 (BOCYL-D-30092022-4), aparece como <strong>C6. Formación de imágenes y sistemas ópticos</strong>.</p>
+        <div class="mapa-bloques">
+            <div class="bloque-card"><div class="bloque-titulo">A. Campo gravitatorio</div><div class="tema-lista"><span class="tema-chip">A1</span><span class="tema-chip">A2</span><span class="tema-chip">A3</span><span class="tema-chip">A4</span><span class="tema-chip">A5</span><span class="tema-chip">A6</span><span class="tema-chip">A7</span><span class="tema-chip">A8</span></div></div>
+            <div class="bloque-card"><div class="bloque-titulo">B. Campo electromagnético</div><div class="tema-lista"><span class="tema-chip">B1</span><span class="tema-chip">B2</span><span class="tema-chip">B3</span><span class="tema-chip">B4</span><span class="tema-chip">B5</span><span class="tema-chip">B6</span><span class="tema-chip">B7</span><span class="tema-chip">B8</span><span class="tema-chip">B9</span></div></div>
+            <div class="bloque-card actual"><div class="bloque-titulo">C. Vibraciones y ondas</div><div class="tema-lista"><span class="tema-chip">C1</span><span class="tema-chip">C2</span><span class="tema-chip">C3</span><span class="tema-chip">C4</span><span class="tema-chip">C5</span><span class="tema-chip actual">C6</span></div></div>
+            <div class="bloque-card"><div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div><div class="tema-lista"><span class="tema-chip">D1</span><span class="tema-chip">D2</span><span class="tema-chip">D3</span><span class="tema-chip">D4</span><span class="tema-chip">D5</span><span class="tema-chip">D6</span></div></div>
+        </div>
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque C · Tema C6:</strong> <span class="texto-resaltado">Formación de imágenes y sistemas ópticos.</span><br>
+            <em>En este tema estudiaremos:</em> lentes delgadas convergentes y divergentes, espejos planos y esféricos cóncavos y convexos, ecuaciones de formación de imágenes, aumento lateral, potencia de una lente, trazado de rayos y aplicaciones como la lupa y el proyector.
+        </div>
+        <div class="rejilla-resumen">
+            <div><strong>C-C6 · 15,6 %</strong><span>Formación de imágenes: lentes, espejos y propiedades de las imágenes.</span></div>
+            <div><strong>P-C6 · 15,6 %</strong><span>Posición y tamaño de imagen, diagramas de rayos, focal, lupa y proyector.</span></div>
+            <div><strong>+5,5 pp</strong><span>Porcentaje indicado frente a la media de referencia del 10,1 %.</span></div>
+        </div>
+    </details>
+
+    <!-- OBJETIVOS -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Comprender el modelo de lente delgada y las aproximaciones de la óptica geométrica paraxial.</li>
+            <li>Distinguir lentes convergentes y divergentes, y espejos cóncavos y convexos, atendiendo al signo de su distancia focal.</li>
+            <li>Aplicar la ecuación de las lentes delgadas y la de los espejos esféricos para calcular la posición de la imagen.</li>
+            <li>Calcular el aumento lateral y deducir el tamaño, la orientación y la naturaleza real o virtual de la imagen.</li>
+            <li>Construir diagramas de rayos principales y justificar gráficamente la formación de imágenes.</li>
+            <li>Relacionar la distancia focal con la potencia de una lente y expresar esta última en dioptrías.</li>
+            <li>Explicar el funcionamiento de una lupa y de un proyector mediante la posición del objeto respecto al foco.</li>
+            <li>Resolver problemas de EBAU/PAU sobre lentes y espejos, incluyendo situaciones con imagen real en pantalla, imagen virtual y dos posiciones de una lente.</li>
+        </ul>
+    </details>
+
+    <!-- TEORÍA -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">1</span><strong>Óptica geométrica y formación de imágenes.</strong></summary>
+            <p>La óptica geométrica describe la propagación de la luz mediante <strong>rayos</strong>. En el modelo utilizado en este tema, los rayos se propagan en línea recta en medios homogéneos y la formación de imágenes se estudia con sistemas centrados: lentes delgadas y espejos esféricos.</p>
+            <p>La aproximación paraxial considera rayos próximos al eje óptico y con pequeñas inclinaciones. En estas condiciones se pueden utilizar las ecuaciones de Gauss para relacionar la posición del objeto, la posición de la imagen y la distancia focal.</p>
+            <p><strong>Imagen real:</strong> se forma por la intersección efectiva de los rayos (o de sus rayos reflejados). Puede recogerse sobre una pantalla. En los casos usuales de un objeto real, aparece invertida.</p>
+            <p><strong>Imagen virtual:</strong> se forma por la intersección de las prolongaciones de los rayos. No puede recogerse directamente sobre una pantalla. En los ejemplos habituales de este tema suele ser derecha.</p>
+            <div class="note"><strong>Importante:</strong> que una imagen sea mayor o menor no determina por sí solo que sea real o virtual. Hay que estudiar el signo de la posición imagen y el aumento lateral.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Lentes delgadas: convergentes y divergentes.</strong></summary>
+            <p>Una <strong>lente delgada</strong> es un sistema óptico refractor cuyo espesor se considera despreciable frente a los radios de curvatura. En una lente convergente, un haz de rayos paralelos al eje emerge convergiendo en el foco imagen. En una lente divergente, emerge divergiendo como si procediera del foco situado en el lado del objeto.</p>
+            <div class="rejilla-resumen">
+                <div><strong>Lente convergente</strong><p>Más gruesa en el centro que en los bordes en los ejemplos habituales. Tiene \(f&gt;0\) y potencia positiva.</p></div>
+                <div><strong>Lente divergente</strong><p>Más delgada en el centro que en los bordes en los ejemplos habituales. Tiene \(f&lt;0\) y potencia negativa.</p></div>
+                <div><strong>Focos</strong><p>Se identifican dos focos principales, situados sobre el eje óptico y a igual distancia del centro óptico en el modelo de lente delgada en aire.</p></div>
+            </div>
+            <p>La <strong>distancia focal</strong> \(f\) es la distancia entre el centro óptico y el foco. Su signo permite distinguir el comportamiento convergente o divergente con el convenio adoptado en este documento.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Ecuación de la lente delgada.</strong></summary>
+            <p>Para una lente delgada, la posición del objeto \(u\), la posición de la imagen \(v\) y la distancia focal \(f\) se relacionan mediante:</p>
+            <div class="formula-box">\[\boxed{\frac{1}{f}=\frac{1}{u}+\frac{1}{v}}\]</div>
+            <p>En esta página se usa el siguiente convenio <strong>real-positivo</strong>: \(u&gt;0\) para un objeto real; \(v&gt;0\) para una imagen real y \(v&lt;0\) para una imagen virtual; \(f&gt;0\) para una lente convergente y \(f&lt;0\) para una lente divergente.</p>
+            <div class="signos"><strong>Lectura del signo de \(v\) en una lente:</strong><br>\(v&gt;0\): imagen real, al otro lado de la lente respecto al objeto.<br>\(v&lt;0\): imagen virtual, en el mismo lado de la lente que el objeto.</div>
+            <p>La ecuación puede despejarse para hallar cualquiera de las tres magnitudes. Por ejemplo:</p>
+            <div class="formula-box">\[v=\frac{fu}{u-f}\qquad\qquad f=\frac{uv}{u+v}\]</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Espejos planos y esféricos: cóncavos y convexos.</strong></summary>
+            <p>Un espejo plano produce una imagen virtual, derecha y del mismo tamaño que el objeto. La imagen se encuentra a la misma distancia detrás del espejo que el objeto delante de él.</p>
+            <p>Los <strong>espejos esféricos</strong> se clasifican en:</p>
+            <ul>
+                <li><strong>Cóncavos:</strong> la superficie reflectante es la parte interior de la esfera. Son convergentes para rayos paralelos y tienen \(f&gt;0\).</li>
+                <li><strong>Convexos:</strong> la superficie reflectante es la parte exterior de la esfera. Son divergentes para rayos paralelos y tienen \(f&lt;0\).</li>
+            </ul>
+            <p>En un espejo esférico paraxial, el foco está a mitad de camino entre el vértice \(V\) y el centro de curvatura \(C\):</p>
+            <div class="formula-box">\[\boxed{f=\frac{R}{2}}\]</div>
+            <p>La ecuación de los espejos esféricos tiene la misma forma algebraica:</p>
+            <div class="formula-box">\[\boxed{\frac{1}{f}=\frac{1}{u}+\frac{1}{v}}\]</div>
+            <p>Con el convenio real-positivo usado aquí, \(u&gt;0\) para un objeto real; \(v&gt;0\) si la imagen es real (delante del espejo) y \(v&lt;0\) si es virtual (detrás del espejo). Un espejo cóncavo tiene \(f&gt;0\) y uno convexo \(f&lt;0\).</p>
+            <div class="note"><strong>Ojo:</strong> en los espejos la imagen real queda en el mismo lado del espejo que el objeto; en las lentes, la imagen real queda al otro lado de la lente. No confundas la posición física con el signo algebraico, que se ha definido según la naturaleza real o virtual.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">5</span><strong>Aumento lateral: tamaño y orientación.</strong></summary>
+            <p>El aumento lateral compara la altura de la imagen con la altura del objeto:</p>
+            <div class="formula-box">\[\boxed{m=\frac{y'}{y}=-\frac{v}{u}}\]</div>
+            <ul>
+                <li>\(m&gt;0\): imagen derecha respecto al objeto.</li>
+                <li>\(m&lt;0\): imagen invertida.</li>
+                <li>\(|m|&gt;1\): imagen mayor.</li>
+                <li>\(|m|&lt;1\): imagen menor.</li>
+                <li>\(|m|=1\): imagen del mismo tamaño.</li>
+            </ul>
+            <p>El tamaño de la imagen se calcula con \(y'=m\,y\). El signo de \(y'\) indica la orientación respecto al eje óptico; su módulo expresa la altura.</p>
+            <div class="note"><strong>Error frecuente:</strong> utilizar el módulo del aumento demasiado pronto. Conviene conservar el signo hasta el final para distinguir una imagen derecha de una invertida.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">6</span><strong>Potencia de una lente.</strong></summary>
+            <p>La <strong>potencia</strong> de una lente delgada es la inversa de su distancia focal expresada en metros:</p>
+            <div class="formula-box">\[\boxed{P=\frac{1}{f}}\]</div>
+            <p>Su unidad es la <strong>dioptría</strong> (D), equivalente a \(\text{m}^{-1}\). Una lente convergente tiene potencia positiva; una lente divergente, potencia negativa.</p>
+            <div class="formula-box">\[f=+0{,}25\,\text{m}\Rightarrow P=+4\,\text{D}\qquad f=-0{,}50\,\text{m}\Rightarrow P=-2\,\text{D}\]</div>
+            <p>Para calcular la potencia hay que expresar siempre \(f\) en metros. No se debe introducir la focal en centímetros directamente en \(P=1/f\) si se quiere obtener dioptrías.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">7</span><strong>Trazado de rayos en lentes.</strong></summary>
+            <p>Para construir una imagen basta con trazar dos rayos principales desde la punta del objeto. El punto donde se cortan los rayos refractados (imagen real) o sus prolongaciones (imagen virtual) determina la punta de la imagen.</p>
+            <p><strong>Lente convergente:</strong></p>
+            <ol>
+                <li>Un rayo paralelo al eje emerge pasando por el foco imagen \(F'\).</li>
+                <li>Un rayo que atraviesa el centro óptico no cambia apreciablemente de dirección.</li>
+                <li>Un rayo que llega dirigido hacia el foco objeto emerge paralelo al eje.</li>
+            </ol>
+            <p><strong>Lente divergente:</strong></p>
+            <ol>
+                <li>Un rayo paralelo al eje emerge divergiendo como si procediera del foco situado en el lado del objeto.</li>
+                <li>Un rayo que atraviesa el centro óptico continúa sin desviarse.</li>
+                <li>Un rayo dirigido hacia el foco del lado opuesto emerge paralelo al eje.</li>
+            </ol>
+            
+<figure class="figura-rayos" id="fig-lente-convergente">
+<svg viewBox="0 0 760 250" role="img" aria-label="Trazado de rayos de una lente convergente con objeto más allá de dos veces la distancia focal e imagen real invertida y reducida">
+ <defs><marker id="arrBlue1" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/></marker><marker id="arrOrange1" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ea580c"/></marker></defs>
+ <line x1="35" y1="135" x2="725" y2="135" stroke="#64748b" stroke-width="1.7"/><text x="705" y="125" font-size="12" fill="#475569">eje óptico</text>
+ <path d="M380 28 Q340 135 380 242 Q420 135 380 28" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><line x1="380" y1="28" x2="380" y2="242" stroke="#2563eb" stroke-width="1"/>
+ <line x1="120" y1="135" x2="120" y2="75" stroke="#0f172a" stroke-width="3"/><path d="M114 83 L120 71 L126 83" fill="none" stroke="#0f172a" stroke-width="2"/><text x="85" y="64" font-size="14" fill="#0f172a">Objeto</text>
+ <line x1="543" y1="135" x2="543" y2="173" stroke="#16a34a" stroke-width="3"/><path d="M537 165 L543 177 L549 165" fill="none" stroke="#16a34a" stroke-width="2"/><text x="520" y="201" font-size="14" fill="#166534">Imagen</text>
+ <g fill="#475569" font-size="12"><circle cx="280" cy="135" r="3"/><text x="270" y="154">F</text><circle cx="480" cy="135" r="3"/><text x="473" y="154">F'</text><circle cx="180" cy="135" r="3"/><text x="167" y="154">2F</text><circle cx="580" cy="135" r="3"/><text x="570" y="154">2F'</text></g>
+ <polyline points="120,75 380,75 543,173" fill="none" stroke="#2563eb" stroke-width="2.4" marker-end="url(#arrBlue1)"/>
+ <polyline points="120,75 380,135 543,173" fill="none" stroke="#ea580c" stroke-width="2.4" marker-end="url(#arrOrange1)"/>
+ <text x="388" y="48" font-size="12" fill="#2563eb">rayo paralelo, pasa por F'</text>
+ <text x="45" y="230" font-size="12" fill="#475569">Imagen real, invertida y reducida (objeto más allá de 2F).</text>
+</svg><figcaption>Lente convergente: un objeto situado más allá de \(2F\) produce una imagen real, invertida y menor entre \(F'\) y \(2F'\).</figcaption>
+</figure>
+<figure class="figura-rayos" id="fig-lupa">
+<svg viewBox="0 0 760 250" role="img" aria-label="Trazado de rayos de una lupa con el objeto entre la lente y el foco, imagen virtual derecha y aumentada">
+ <defs><marker id="arrBlue2" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/></marker><marker id="arrOrange2" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ea580c"/></marker></defs>
+ <line x1="35" y1="145" x2="725" y2="145" stroke="#64748b" stroke-width="1.7"/>
+ <path d="M500 28 Q460 145 500 242 Q540 145 500 28" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+ <line x1="420" y1="145" x2="420" y2="105" stroke="#0f172a" stroke-width="3"/><path d="M414 113 L420 101 L426 113" fill="none" stroke="#0f172a" stroke-width="2"/><text x="395" y="92" font-size="13" fill="#0f172a">Objeto</text>
+ <line x1="260" y1="145" x2="260" y2="25" stroke="#16a34a" stroke-width="3"/><path d="M254 33 L260 21 L266 33" fill="none" stroke="#16a34a" stroke-width="2"/><text x="205" y="16" font-size="13" fill="#166534">Imagen virtual</text>
+ <circle cx="380" cy="145" r="3" fill="#475569"/><text x="370" y="163" font-size="12" fill="#475569">F</text><circle cx="620" cy="145" r="3" fill="#475569"/><text x="612" y="163" font-size="12" fill="#475569">F'</text>
+ <polyline points="420,105 500,105 620,145 700,172" fill="none" stroke="#2563eb" stroke-width="2.3" marker-end="url(#arrBlue2)"/>
+ <line x1="260" y1="25" x2="500" y2="105" stroke="#2563eb" stroke-width="1.7" stroke-dasharray="6 5"/>
+ <polyline points="420,105 500,145 700,245" fill="none" stroke="#ea580c" stroke-width="2.3" marker-end="url(#arrOrange2)"/>
+ <line x1="260" y1="25" x2="500" y2="145" stroke="#ea580c" stroke-width="1.7" stroke-dasharray="6 5"/>
+ <text x="45" y="225" font-size="12" fill="#475569">Los rayos emergentes divergen; las prolongaciones hacia atrás se cortan en la imagen.</text>
+</svg><figcaption>Lupa: el objeto está entre la lente y su foco (\(u&lt;f\)); la imagen es virtual, derecha y aumentada.</figcaption>
+</figure>
+<figure class="figura-rayos" id="fig-lente-divergente">
+<svg viewBox="0 0 760 245" role="img" aria-label="Trazado de rayos de una lente divergente: imagen virtual, derecha y reducida">
+ <defs><marker id="arrBlue3" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/></marker><marker id="arrOrange3" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ea580c"/></marker></defs>
+ <line x1="35" y1="135" x2="725" y2="135" stroke="#64748b" stroke-width="1.7"/>
+ <path d="M500 25 Q535 135 500 245 Q465 135 500 25" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+ <line x1="160" y1="135" x2="160" y2="65" stroke="#0f172a" stroke-width="3"/><path d="M154 73 L160 61 L166 73" fill="none" stroke="#0f172a" stroke-width="2"/><text x="130" y="52" font-size="13" fill="#0f172a">Objeto</text>
+ <line x1="405" y1="135" x2="405" y2="115" stroke="#16a34a" stroke-width="3"/><path d="M399 123 L405 111 L411 123" fill="none" stroke="#16a34a" stroke-width="2"/><text x="370" y="96" font-size="13" fill="#166534">Imagen</text>
+ <circle cx="380" cy="135" r="3" fill="#475569"/><text x="370" y="153" font-size="12" fill="#475569">F</text><circle cx="620" cy="135" r="3" fill="#475569"/><text x="612" y="153" font-size="12" fill="#475569">F'</text>
+ <polyline points="160,65 500,65 710,5" fill="none" stroke="#2563eb" stroke-width="2.3" marker-end="url(#arrBlue3)"/>
+ <line x1="405" y1="115" x2="500" y2="65" stroke="#2563eb" stroke-width="1.7" stroke-dasharray="6 5"/>
+ <polyline points="160,65 500,135 710,178" fill="none" stroke="#ea580c" stroke-width="2.3" marker-end="url(#arrOrange3)"/>
+ <line x1="405" y1="115" x2="500" y2="135" stroke="#ea580c" stroke-width="1.7" stroke-dasharray="6 5"/>
+ <text x="45" y="222" font-size="12" fill="#475569">Imagen virtual, derecha y menor: las prolongaciones se cortan antes de la lente.</text>
+</svg><figcaption>Lente divergente con objeto real: la imagen es siempre virtual, derecha y reducida.</figcaption>
+</figure>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">8</span><strong>Trazado de rayos en espejos esféricos.</strong></summary>
+            <p><strong>Espejo cóncavo:</strong> un rayo paralelo al eje se refleja pasando por el foco; un rayo que pasa por el foco se refleja paralelo al eje; un rayo dirigido hacia el centro de curvatura se refleja sobre sí mismo.</p>
+            <p><strong>Espejo convexo:</strong> un rayo paralelo al eje se refleja divergiendo como si procediera del foco virtual situado detrás del espejo; un rayo dirigido hacia ese foco se refleja paralelo; un rayo dirigido hacia el centro de curvatura virtual se refleja sobre sí mismo.</p>
+            
+<figure class="figura-rayos" id="fig-espejo-concavo">
+<svg viewBox="0 0 760 260" role="img" aria-label="Espejo cóncavo con objeto entre el espejo y el foco: imagen virtual derecha y aumentada detrás del espejo">
+ <defs><marker id="arrBlue4" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/></marker><marker id="arrOrange4" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ea580c"/></marker></defs>
+ <line x1="35" y1="145" x2="720" y2="145" stroke="#64748b" stroke-width="1.7"/>
+ <path d="M540 22 Q585 145 540 245" fill="none" stroke="#2563eb" stroke-width="5"/><line x1="565" y1="22" x2="565" y2="245" stroke="#94a3b8" stroke-width="2" stroke-dasharray="3 5"/>
+ <line x1="495" y1="145" x2="495" y2="95" stroke="#0f172a" stroke-width="3"/><path d="M489 103 L495 91 L501 103" fill="none" stroke="#0f172a" stroke-width="2"/><text x="465" y="80" font-size="13" fill="#0f172a">Objeto</text>
+ <line x1="675" y1="145" x2="675" y2="57" stroke="#16a34a" stroke-width="3"/><path d="M669 65 L675 53 L681 65" fill="none" stroke="#16a34a" stroke-width="2"/><text x="635" y="42" font-size="13" fill="#166534">Imagen virtual</text>
+ <circle cx="410" cy="145" r="3" fill="#475569"/><text x="400" y="164" font-size="12" fill="#475569">F</text><circle cx="260" cy="145" r="3" fill="#475569"/><text x="250" y="164" font-size="12" fill="#475569">C</text>
+ <polyline points="495,95 557,95 410,145" fill="none" stroke="#2563eb" stroke-width="2.3" marker-end="url(#arrBlue4)"/>
+ <line x1="557" y1="95" x2="675" y2="57" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="6 5"/>
+ <polyline points="495,95 560,145 385,195" fill="none" stroke="#ea580c" stroke-width="2.3" marker-end="url(#arrOrange4)"/>
+ <line x1="560" y1="145" x2="675" y2="57" stroke="#ea580c" stroke-width="1.8" stroke-dasharray="6 5"/>
+ <text x="35" y="230" font-size="12" fill="#475569">Objeto entre V y F: los rayos reflejados divergen y sus prolongaciones se cortan detrás del espejo.</text>
+</svg><figcaption>Espejo cóncavo usado como espejo de aumento: con el objeto dentro de la distancia focal, la imagen es virtual, derecha y aumentada.</figcaption>
+</figure>
+<figure class="figura-rayos" id="fig-espejo-convexo">
+<svg viewBox="0 0 760 245" role="img" aria-label="Espejo convexo: imagen virtual derecha y reducida detrás del espejo">
+ <defs><marker id="arrBlue5" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/></marker><marker id="arrOrange5" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ea580c"/></marker></defs>
+ <line x1="35" y1="135" x2="725" y2="135" stroke="#64748b" stroke-width="1.7"/>
+ <path d="M540 22 Q500 135 540 245" fill="none" stroke="#2563eb" stroke-width="5"/><line x1="515" y1="22" x2="515" y2="245" stroke="#94a3b8" stroke-width="2" stroke-dasharray="3 5"/>
+ <line x1="150" y1="135" x2="150" y2="95" stroke="#0f172a" stroke-width="3"/><path d="M144 103 L150 91 L156 103" fill="none" stroke="#0f172a" stroke-width="2"/><text x="120" y="82" font-size="13" fill="#0f172a">Objeto</text>
+ <line x1="616" y1="135" x2="616" y2="125" stroke="#16a34a" stroke-width="3"/><path d="M610 133 L616 121 L622 133" fill="none" stroke="#16a34a" stroke-width="2"/><text x="580" y="111" font-size="13" fill="#166534">Imagen</text>
+ <circle cx="650" cy="135" r="3" fill="#475569"/><text x="642" y="153" font-size="12" fill="#475569">F</text>
+ <polyline points="150,95 520,95 350,34" fill="none" stroke="#2563eb" stroke-width="2.3" marker-end="url(#arrBlue5)"/>
+ <line x1="520" y1="95" x2="616" y2="125" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="6 5"/>
+ <polyline points="150,95 520,135 350,171" fill="none" stroke="#ea580c" stroke-width="2.3" marker-end="url(#arrOrange5)"/>
+ <line x1="520" y1="135" x2="616" y2="125" stroke="#ea580c" stroke-width="1.8" stroke-dasharray="6 5"/>
+ <text x="35" y="222" font-size="12" fill="#475569">Los rayos reflejados divergen; sus prolongaciones se cortan detrás del espejo.</text>
+</svg><figcaption>Espejo convexo: para cualquier objeto real, la imagen es virtual, derecha y reducida.</figcaption>
+</figure>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">9</span><strong>Resumen de imágenes en lentes y espejos.</strong></summary>
+            <p>La siguiente tabla resume los resultados para un objeto real. Se considera el comportamiento paraxial y los casos habituales de lentes delgadas y espejos esféricos.</p>
+            <table class="tabla-optica">
+                <thead><tr><th>Sistema</th><th>Posición del objeto</th><th>Naturaleza y orientación</th><th>Tamaño</th></tr></thead>
+                <tbody>
+                    <tr><td>Lente convergente</td><td>\(u&gt;2f\)</td><td>Real e invertida</td><td>Menor</td></tr>
+                    <tr><td>Lente convergente</td><td>\(u=2f\)</td><td>Real e invertida</td><td>Igual</td></tr>
+                    <tr><td>Lente convergente</td><td>\(f&lt;u&lt;2f\)</td><td>Real e invertida</td><td>Mayor</td></tr>
+                    <tr><td>Lente convergente</td><td>\(u=f\)</td><td>Imagen en el infinito</td><td>No se forma imagen a distancia finita</td></tr>
+                    <tr><td>Lente convergente (lupa)</td><td>\(0&lt;u&lt;f\)</td><td>Virtual y derecha</td><td>Mayor</td></tr>
+                    <tr><td>Lente divergente</td><td>Objeto real</td><td>Virtual y derecha</td><td>Menor</td></tr>
+                    <tr><td>Espejo cóncavo</td><td>\(u&gt;2f\)</td><td>Real e invertida</td><td>Menor</td></tr>
+                    <tr><td>Espejo cóncavo</td><td>\(u=2f\)</td><td>Real e invertida</td><td>Igual</td></tr>
+                    <tr><td>Espejo cóncavo</td><td>\(f&lt;u&lt;2f\)</td><td>Real e invertida</td><td>Mayor</td></tr>
+                    <tr><td>Espejo cóncavo</td><td>\(0&lt;u&lt;f\)</td><td>Virtual y derecha</td><td>Mayor</td></tr>
+                    <tr><td>Espejo convexo</td><td>Objeto real</td><td>Virtual y derecha</td><td>Menor</td></tr>
+                    <tr><td>Espejo plano</td><td>Cualquier posición</td><td>Virtual y derecha</td><td>Igual</td></tr>
+                </tbody>
+            </table>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">10</span><strong>La lupa y el proyector.</strong></summary>
+            <p><strong>Lupa:</strong> es una lente convergente cuyo objeto se coloca entre la lente y el foco (\(u&lt;f\)). La imagen es virtual, derecha y aumentada. No se puede recoger en una pantalla.</p>
+            <p><strong>Proyector:</strong> utiliza una lente convergente para formar una imagen real sobre una pantalla. El objeto debe estar fuera del foco. Si se desea una imagen aumentada, se coloca entre \(F\) y \(2F\); para una imagen reducida, más allá de \(2F\).</p>
+            <div class="note"><strong>Idea clave:</strong> «lupa» describe una forma de utilizar una lente convergente, no un tipo diferente de lente. La misma lente puede dar una imagen virtual aumentada o una imagen real proyectable según la posición del objeto.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">11</span><strong>Dos posiciones de una lente: método de Bessel.</strong></summary>
+            <p>Si un objeto y una pantalla están fijos y separados una distancia \(D\), una lente convergente puede producir una imagen nítida en dos posiciones distintas, siempre que \(D&gt;4f\). En una posición la imagen es aumentada y en la otra reducida; las distancias objeto-lente e imagen-lente se intercambian.</p>
+            <p>Si \(d\) es la separación entre las dos posiciones de la lente, la distancia focal puede calcularse mediante:</p>
+            <div class="formula-box">\[\boxed{f=\frac{D^2-d^2}{4D}}\]</div>
+            <p>Este procedimiento es útil cuando se conocen la separación objeto-pantalla y la distancia entre las dos posiciones de enfoque.</p>
+        </details>
+
+        <div class="note"><strong>Errores frecuentes en EBAU:</strong> confundir el signo de la imagen con su orientación; olvidar que una imagen virtual no se proyecta; calcular la potencia usando centímetros en lugar de metros; mezclar el convenio de signos de lentes y espejos; interpretar \(m&gt;0\) como imagen invertida; y no dibujar el eje, los focos y al menos dos rayos principales.</div>
+    </details>
+
+    <!-- FORMULARIO RESUMIDO -->
+    <details class="section resultado">
+        <summary><h2>🧮 Formulario y análisis de expresiones</h2></summary>
+        <table>
+            <thead><tr><th>Expresión</th><th>Significado</th><th>Unidades y aplicación</th></tr></thead>
+            <tbody>
+                <tr><td>\(\dfrac{1}{f}=\dfrac{1}{u}+\dfrac{1}{v}\)</td><td>Ecuación de lentes delgadas y espejos esféricos.</td><td>\(u,v,f\) en m o cm, pero todos en la misma unidad.</td></tr>
+                <tr><td>\(m=\dfrac{y'}{y}=-\dfrac{v}{u}\)</td><td>Aumento lateral, tamaño y orientación.</td><td>Magnitud adimensional; \(m&lt;0\) invertida, \(m&gt;0\) derecha.</td></tr>
+                <tr><td>\(P=\dfrac{1}{f}\)</td><td>Potencia de una lente delgada.</td><td>\(f\) en m; \(P\) en dioptrías (D).</td></tr>
+                <tr><td>\(f=\dfrac{R}{2}\)</td><td>Relación entre focal y radio de curvatura de un espejo esférico paraxial.</td><td>\(R\) y \(f\) en la misma unidad.</td></tr>
+                <tr><td>\(f=\dfrac{D^2-d^2}{4D}\)</td><td>Método de Bessel para una lente convergente.</td><td>\(D\): objeto-pantalla; \(d\): separación entre posiciones de la lente.</td></tr>
+            </tbody>
+        </table>
+        <div class="signos"><strong>Convenio de signos de esta unidad:</strong> objeto real \(u&gt;0\); imagen real \(v&gt;0\); imagen virtual \(v&lt;0\); lentes convergentes y espejos cóncavos \(f&gt;0\); lentes divergentes y espejos convexos \(f&lt;0\).</div>
+    </details>
+
+    <!-- PROBLEMAS RESUELTOS -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🔭 Problemas resueltos de EBAU/PAU: Tema C6</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsa para desplegar</span>
+        </summary>
+        <div class="contenido-desplegable">
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas del banco aportado.</strong> Ocho corresponden a Castilla y León y dos a Aragón. Se incorporan los dos ejercicios aragoneses para incluir espejos cóncavos y convexos, ya que los registros C6 seleccionados de Castilla y León se concentran en lentes. En cada tarjeta se identifica comunidad, año, convocatoria y número de problema.
+            </p>
+            <div class="note"><strong>Lectura de las soluciones:</strong> se aplica de forma uniforme el convenio real-positivo descrito en el apartado teórico. En lentes y espejos se utilizan \(1/f=1/u+1/v\) y \(m=-v/u\); el signo de \(v\) distingue imagen real y virtual.</div>
+            <details class="tarjeta-ejercicio">
+ <summary class="cabecera-ej"><span class="num-ej">Ejercicio 1</span><span class="titulo-ej">Imagen aumentada en una pantalla mediante una lente delgada</span><span class="meta-ej">Castilla y León · 2026 · Ordinaria · Problema 9</span></summary>
+ <div class="enunciado-ej"><p>Un objeto luminoso de \(12\,\text{mm}\) de altura se encuentra situado a \(2\,\text{m}\) de distancia de una pantalla. Se coloca entre ambos una lente delgada, de manera que sobre la pantalla se forma una imagen tres veces mayor que el objeto.<br><strong>a)</strong> Determine la posición de la lente respecto al objeto y a la pantalla. (1 punto)<br><strong>b)</strong> Calcule la distancia focal de la lente y realice un trazado de rayos mostrando el objeto, la lente y la imagen. (1 punto)</p><div class="meta-fuente">Puntuación indicada en el banco: 2 puntos (1 + 1).</div></div>
+ <div class="resolucion-ej"><div class="paso"><strong>a) Posición de la lente.</strong> La imagen aparece en una pantalla, por lo que es real e invertida. Tomamos el aumento lateral con signo: \(m=-3\). Si \(u\) es la distancia objeto-lente y \(v\) la distancia lente-pantalla, entonces \(u+v=2\,\text{m}\) y \(m=-v/u=-3\), de donde \(v=3u\).</div>
+<div class="formula-box">\[u+3u=2\quad\Rightarrow\quad u=0{,}50\,\text{m},\qquad v=1{,}50\,\text{m}\]</div>
+<div class="paso"><strong>b) Distancia focal y tamaño de la imagen.</strong> Aplicamos la ecuación de la lente delgada:</div>
+<div class="formula-box">\[\frac{1}{f}=\frac{1}{u}+\frac{1}{v}=\frac{1}{0{,}50}+\frac{1}{1{,}50}=\frac{8}{3}\,\text{m}^{-1}\quad\Rightarrow\quad f=0{,}375\,\text{m}\]</div>
+<div class="formula-box">\[y'=m\,y=(-3)(12\,\text{mm})=-36\,\text{mm}\]</div>
+<div class="paso"><strong>Interpretación y trazado.</strong> La focal es positiva: se trata de una lente convergente. Desde la punta del objeto se dibuja un rayo paralelo al eje, que después de la lente pasa por \(F'\), y otro que atraviesa el centro óptico sin desviarse. Ambos se cortan en la pantalla, por debajo del eje.</div>
+<div class="paso"><strong>Resultado:</strong> lente a \(0{,}50\,\text{m}\) del objeto y \(1{,}50\,\text{m}\) de la pantalla; \(f=0{,}375\,\text{m}\); imagen real e invertida de \(36\,\text{mm}\) de altura. La potencia es \(P=1/f\approx+2{,}67\,\text{D}\).</div></div>
+</details>
+<details class="tarjeta-ejercicio">
+ <summary class="cabecera-ej"><span class="num-ej">Ejercicio 2</span><span class="titulo-ej">Imagen de un insecto con lupa y proyección sobre una pantalla</span><span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Problema 8</span></summary>
+ <div class="enunciado-ej"><p>Un entomólogo utiliza una lupa de \(15\,\text{cm}\) de distancia focal para observar un insecto de \(4\,\text{cm}\) de altura.<br><strong>a)</strong> Si coloca la lupa a \(9\,\text{cm}\) del insecto, ¿dónde se encuentra la imagen? Trace un diagrama de la marcha de rayos en esta situación. Razone si la imagen es real o virtual, si es derecha o invertida, y si es mayor o menor que el insecto. (1 punto)<br><strong>b)</strong> Sin cambiar la situación del insecto, ahora necesita proyectarlo en una pantalla para mostrarlo a su grupo de estudiantes. ¿Qué focal debería tener la nueva lente (colocada donde anteriormente estaba la lupa) para que la altura de la imagen sea de \(20\,\text{cm}\)? (1 punto)</p><div class="meta-fuente">Puntuación indicada en el banco: 2 puntos (1 + 1).</div></div>
+ <div class="resolucion-ej"><div class="paso"><strong>a) Imagen con la lupa.</strong> Datos: \(f=15\,\text{cm}\), \(u=9\,\text{cm}\) y \(y=4\,\text{cm}\). Como el objeto está dentro de la distancia focal, esperamos una imagen virtual.</div>
+<div class="formula-box">\[\frac{1}{v}=\frac{1}{f}-\frac{1}{u}=\frac{1}{15}-\frac{1}{9}=-\frac{2}{45}\quad\Rightarrow\quad v=-22{,}5\,\text{cm}\]</div>
+<div class="formula-box">\[m=-\frac{v}{u}=+2{,}5,\qquad y'=m\,y=2{,}5\cdot4=10\,\text{cm}\]</div>
+<div class="paso">La imagen se forma a \(22{,}5\,\text{cm}\) de la lupa, en el mismo lado que el insecto. Es virtual, derecha y 2,5 veces mayor. En el trazado, los rayos emergentes divergen y son sus prolongaciones hacia atrás las que se cortan en la imagen.</div>
+<div class="paso"><strong>b) Nueva lente para proyectar.</strong> La nueva imagen debe ser real e invertida. El aumento será \(m=-20/4=-5\). Se mantiene \(u=9\,\text{cm}\), por lo que:</div>
+<div class="formula-box">\[m=-\frac{v}{u}=-5\quad\Rightarrow\quad v=45\,\text{cm}\]</div>
+<div class="formula-box">\[\frac{1}{f_{\text{nueva}}}=\frac{1}{9}+\frac{1}{45}=\frac{2}{15}\quad\Rightarrow\quad f_{\text{nueva}}=7{,}5\,\text{cm}\]</div>
+<div class="paso"><strong>Resultado:</strong> en modo lupa, imagen virtual a \(22{,}5\,\text{cm}\), derecha y de \(10\,\text{cm}\). Para proyectar una imagen de \(20\,\text{cm}\) se necesita una lente convergente de \(7{,}5\,\text{cm}\) de focal y una pantalla a \(45\,\text{cm}\).</div></div>
+</details>
+<details class="tarjeta-ejercicio">
+ <summary class="cabecera-ej"><span class="num-ej">Ejercicio 3</span><span class="titulo-ej">¿Puede una lupa proyectar una imagen reducida sobre una pantalla?</span><span class="meta-ej">Castilla y León · 2025 · Extraordinaria · Problema 2</span></summary>
+ <div class="enunciado-ej"><p>Se desea proyectar un objeto sobre una pantalla y que su imagen sea más pequeña que dicho objeto. ¿Podría utilizarse una lupa para conseguirlo? Justifique la respuesta mediante el correspondiente diagrama de rayos. (1 punto)</p><div class="meta-fuente">Puntuación indicada en el banco: 1 punto.</div></div>
+ <div class="resolucion-ej"><div class="paso"><strong>Qué significa utilizar una lente como lupa.</strong> Una lupa es una lente convergente usada con el objeto entre la lente y su foco: \(u<f\). En esas condiciones, la imagen es virtual, derecha y aumentada. Los rayos refractados salen divergentes y solo se cortan al prolongarlos hacia atrás. Una imagen virtual no puede recogerse en una pantalla.</div>
+<div class="paso"><strong>¿Puede obtenerse una imagen real reducida con esa lente?</strong> Sí, pero no mientras se utilice en modo lupa. Para una lente convergente, si el objeto se coloca a una distancia mayor que el doble de la focal, \(u>2f\), la imagen es real, invertida y reducida. Puede proyectarse sobre una pantalla.</div>
+<figure class="figura-rayos"><a href="#fig-lente-convergente"><span>Ver esquema de imagen real con lente convergente</span></a><figcaption>Comparar la configuración de proyección (\(u>2f\)) con la configuración de lupa (\(u<f\)).</figcaption></figure>
+<div class="paso"><strong>Resultado:</strong> una lupa en su configuración habitual no puede proyectar una imagen reducida. La misma lente convergente sí puede producirla si se coloca el objeto a más de \(2f\), pero entonces deja de funcionar como lupa.</div></div>
+</details>
+<details class="tarjeta-ejercicio">
+ <summary class="cabecera-ej"><span class="num-ej">Ejercicio 4</span><span class="titulo-ej">Dos posiciones de una lente convergente para formar una imagen real en la pantalla</span><span class="meta-ej">Castilla y León · 2024 · Ordinaria · Problema 9</span></summary>
+ <div class="enunciado-ej"><p>Un objeto de \(3\,\text{cm}\) de tamaño se sitúa a \(64\,\text{cm}\) de una pantalla. Entre el objeto y la pantalla se coloca una lente convergente de focal \(12\,\text{cm}\). ¿En qué posiciones hay que situar la lente para que se forme una imagen nítida del objeto en la pantalla? ¿Cuál sería el tamaño de la imagen en cada caso? (1 punto)</p><div class="meta-fuente">Puntuación indicada en el banco: 1 punto.</div></div>
+ <div class="resolucion-ej"><div class="paso"><strong>Planteamiento.</strong> La distancia objeto-pantalla es \(D=64\,\text{cm}\) y la focal \(f=12\,\text{cm}\). Para que la imagen sea nítida en la pantalla, si \(u\) es la distancia del objeto a la lente y \(v\) la distancia de la lente a la pantalla:</div>
+<div class="formula-box">\[u+v=64,\qquad \frac{1}{12}=\frac{1}{u}+\frac{1}{v}\]</div>
+<div class="paso"><strong>Posiciones de la lente.</strong> Sustituimos \(v=64-u\):</div>
+<div class="formula-box">\[\frac{1}{12}=\frac{1}{u}+\frac{1}{64-u}\quad\Rightarrow\quad u(64-u)=768\]</div>
+<div class="formula-box">\[u^2-64u+768=0\quad\Rightarrow\quad u=\frac{64\pm32}{2}=16\,\text{cm}\ \text{o}\ 48\,\text{cm}\]</div>
+<div class="paso"><strong>Tamaños de imagen.</strong> El objeto mide \(y=3\,\text{cm}\) y \(m=-v/u\).</div>
+<div class="formula-box">\[\begin{aligned}u=48\,\text{cm},\ v=16\,\text{cm}:&\quad m=-\frac{1}{3},\quad y'=-1\,\text{cm}\\u=16\,\text{cm},\ v=48\,\text{cm}:&\quad m=-3,\quad y'=-9\,\text{cm}\end{aligned}\]</div>
+<div class="paso"><strong>Resultado:</strong> la lente puede situarse a \(48\,\text{cm}\) del objeto (imagen invertida de \(1\,\text{cm}\)) o a \(16\,\text{cm}\) del objeto (imagen invertida de \(9\,\text{cm}\)). En ambos casos la imagen es real.</div></div>
+</details>
+<details class="tarjeta-ejercicio">
+ <summary class="cabecera-ej"><span class="num-ej">Ejercicio 5</span><span class="titulo-ej">Lente convergente con objeto entre el foco y la lente: imagen virtual</span><span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 9</span></summary>
+ <div class="enunciado-ej"><p>Se dispone de una lente convergente de distancia focal \(120\,\text{mm}\). Un objeto de \(4\,\text{mm}\) de altura se coloca a \(40\,\text{mm}\) de dicha lente. Determine la distancia que existe entre el objeto y la imagen y calcule la altura de la imagen. (1 punto)</p><div class="meta-fuente">Puntuación indicada en el banco: 1 punto.</div></div>
+ <div class="resolucion-ej"><div class="paso"><strong>Posición de la imagen.</strong> Datos: \(f=120\,\text{mm}\), \(u=40\,\text{mm}\) y altura del objeto \(y=4\,\text{mm}\). Aplicamos la ecuación de la lente:</div>
+<div class="formula-box">\[\frac{1}{120}=\frac{1}{40}+\frac{1}{v}\quad\Rightarrow\quad \frac{1}{v}=\frac{1}{120}-\frac{1}{40}=-\frac{1}{60}\]</div>
+<div class="formula-box">\[v=-60\,\text{mm}\]</div>
+<div class="paso">El signo negativo indica que la imagen es virtual y se encuentra en el mismo lado de la lente que el objeto. Está a \(60\,\text{mm}\) de la lente, mientras que el objeto está a \(40\,\text{mm}\): la distancia entre ambos es \(20\,\text{mm}\).</div>
+<div class="paso"><strong>Aumento y altura.</strong></div>
+<div class="formula-box">\[m=-\frac{v}{u}=-\frac{-60}{40}=+1{,}5,\qquad y'=m\,y=1{,}5\cdot4=6\,\text{mm}\]</div>
+<div class="paso"><strong>Resultado:</strong> distancia objeto-imagen \(20\,\text{mm}\); altura de imagen \(6\,\text{mm}\). Es virtual, derecha y mayor que el objeto.</div></div>
+</details>
+<details class="tarjeta-ejercicio">
+ <summary class="cabecera-ej"><span class="num-ej">Ejercicio 6</span><span class="titulo-ej">Imágenes formadas por una lente divergente: ¿reales, derechas y mayores?</span><span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 16</span></summary>
+ <div class="enunciado-ej"><p>Razone si la siguiente afirmación es cierta o no: «Una lente divergente forma siempre imágenes reales, derechas y mayores que el objeto». Justifique la respuesta mediante un diagrama de marcha de rayos. (1 punto)</p><div class="meta-fuente">Puntuación indicada en el banco: 1 punto.</div></div>
+ <div class="resolucion-ej"><div class="paso"><strong>La afirmación es falsa.</strong> Para una lente divergente, la distancia focal es negativa: \(f<0\). Si el objeto es real, \(u>0\).</div>
+<div class="formula-box">\[\frac{1}{v}=\frac{1}{f}-\frac{1}{u}<0\quad\Rightarrow\quad v<0\]</div>
+<div class="paso">La imagen es virtual, porque \(v<0\). Además, el aumento lateral es:</div>
+<div class="formula-box">\[m=-\frac{v}{u}>0\]</div>
+<div class="paso">El aumento es positivo, por lo que la imagen es derecha. Para una lente divergente y un objeto real se cumple \(|v|<u\), de modo que \(|m|<1\): la imagen es menor que el objeto.</div>
+<div class="paso"><strong>Trazado de rayos.</strong> Un rayo paralelo al eje emerge divergiendo como si procediera del foco situado en el lado del objeto. Otro rayo que atraviesa el centro óptico no cambia de dirección. Las prolongaciones hacia atrás de los rayos emergentes se cortan en la imagen virtual.</div>
+<div class="paso"><strong>Resultado:</strong> una lente divergente, para un objeto real, forma una imagen siempre virtual, derecha y menor. De la afirmación propuesta solo es correcta la palabra «derechas».</div></div>
+</details>
+<details class="tarjeta-ejercicio">
+ <summary class="cabecera-ej"><span class="num-ej">Ejercicio 7</span><span class="titulo-ej">Posición del objeto en una lupa de aumento 10×</span><span class="meta-ej">Castilla y León · 2022 · Ordinaria · Problema 9</span></summary>
+ <div class="enunciado-ej"><p>Un coleccionista de minerales utiliza una lupa, de distancia focal \(5\,\text{cm}\), para examinarlos con detalle. Calcule la distancia a la que hay que situar los minerales respecto de la lupa si quiere observarlos con un tamaño diez veces mayor. Represente el correspondiente diagrama de rayos. ¿Cuáles son las características de la imagen obtenida? (1 punto)</p><div class="meta-fuente">Puntuación indicada en el banco: 1 punto.</div></div>
+ <div class="resolucion-ej"><div class="paso"><strong>Aumento de la lupa.</strong> La imagen que proporciona una lupa es virtual, derecha y diez veces mayor, por tanto \(m=+10\). Para la lente convergente, \(f=5\,\text{cm}\).</div>
+<div class="formula-box">\[m=-\frac{v}{u}=10\quad\Rightarrow\quad v=-10u\]</div>
+<div class="paso"><strong>Distancia del objeto.</strong> Sustituimos en la ecuación de la lente:</div>
+<div class="formula-box">\[\frac{1}{5}=\frac{1}{u}+\frac{1}{-10u}=\frac{9}{10u}\quad\Rightarrow\quad u=4{,}5\,\text{cm}\]</div>
+<div class="formula-box">\[v=-10u=-45\,\text{cm}\]</div>
+<div class="paso">El mineral debe colocarse a \(4{,}5\,\text{cm}\) de la lupa, entre la lente y el foco. La imagen virtual queda a \(45\,\text{cm}\) de la lente, en el mismo lado que el objeto, y es derecha y diez veces mayor.</div>
+<div class="paso"><strong>Trazado.</strong> Desde la punta del objeto: (1) rayo paralelo al eje, que emerge pasando por \(F'\); (2) rayo por el centro óptico, que no se desvía; (3) rayo dirigido hacia el foco objeto, que emerge paralelo. Las prolongaciones de los rayos emergentes se cortan en la imagen virtual.</div>
+<div class="paso"><strong>Resultado:</strong> \(u=4{,}5\,\text{cm}\); \(v=-45\,\text{cm}\); \(m=+10\). Imagen virtual, derecha y aumentada.</div></div>
+</details>
+<details class="tarjeta-ejercicio">
+ <summary class="cabecera-ej"><span class="num-ej">Ejercicio 8</span><span class="titulo-ej">A.9: Distancia pantalla y tamaño de imagen en un proyector</span><span class="meta-ej">Castilla y León · 2020 · Extraordinaria · Problema 9</span></summary>
+ <div class="enunciado-ej"><p>Un proyector de diapositivas tiene una lente convergente de focal \(f=10\,\text{cm}\). Se coloca una diapositiva de \(3\,\text{cm}\) de altura a \(10{,}2\,\text{cm}\) de la lente.<br><strong>a)</strong> Calcule la distancia entre la lente y la pantalla. (0,5 puntos)<br><strong>b)</strong> Calcule la altura de la imagen. (0,5 puntos)</p><div class="meta-fuente">Puntuación indicada en el banco: 1 punto.</div></div>
+ <div class="resolucion-ej"><div class="paso"><strong>Distancia lente-pantalla.</strong> La lente es convergente, \(f=10\,\text{cm}\), y el objeto está a \(u=10{,}2\,\text{cm}\). Aplicamos:</div>
+<div class="formula-box">\[\frac{1}{v}=\frac{1}{f}-\frac{1}{u}=\frac{1}{10}-\frac{1}{10{,}2}=0{,}0019608\,\text{cm}^{-1}\]</div>
+<div class="formula-box">\[v\approx510\,\text{cm}=5{,}10\,\text{m}\]</div>
+<div class="paso"><strong>Altura de la imagen.</strong> El aumento lateral es:</div>
+<div class="formula-box">\[m=-\frac{v}{u}=-\frac{510}{10{,}2}=-50\]</div>
+<div class="formula-box">\[y'=m\,y=-50\cdot3\,\text{cm}=-150\,\text{cm}=-1{,}5\,\text{m}\]</div>
+<div class="paso">El signo negativo indica que la imagen está invertida. Su tamaño es 50 veces el de la diapositiva.</div>
+<div class="paso"><strong>Resultado:</strong> pantalla a \(5{,}10\,\text{m}\) de la lente e imagen real, invertida, de \(1{,}5\,\text{m}\) de altura.</div></div>
+</details>
+<details class="tarjeta-ejercicio">
+ <summary class="cabecera-ej"><span class="num-ej">Ejercicio 9</span><span class="titulo-ej">Espejos cóncavo y convexo de focal 80 mm: aumento del objeto a 15 cm</span><span class="meta-ej">Aragón · 2024 · Extraordinaria · Problema 7</span></summary>
+ <div class="enunciado-ej"><p>Se dispone de un espejo cóncavo de focal \(80\,\text{mm}\) extraído de un pequeño telescopio.<br><strong>a)</strong> Muestre mediante un trazado de rayos dónde se formará la imagen de un objeto situado a \(15\,\text{cm}\) del vértice del espejo y de qué tipo será: ¿real o virtual?, ¿derecha o invertida? (0,5 puntos)<br><strong>b)</strong> ¿Qué aumento proporcionará el espejo con el objeto a la citada distancia? (1 punto)<br><strong>c)</strong> Si sustituimos el espejo cóncavo por uno convexo con la misma focal, ¿cuál sería el resultado del apartado b)? (1 punto)</p><div class="meta-fuente">Puntuación indicada en el banco: 0,5 + 1 + 1 pts.</div></div>
+ <div class="resolucion-ej"><div class="paso"><strong>a) Espejo cóncavo.</strong> Datos: \(u=15\,\text{cm}\) y \(f=+8\,\text{cm}\). El objeto está entre \(F\) y \(C=2f\), por lo que la imagen debe ser real, invertida y aumentada.</div>
+<div class="formula-box">\[\frac{1}{v}=\frac{1}{f}-\frac{1}{u}=\frac{1}{8}-\frac{1}{15}=\frac{7}{120}\quad\Rightarrow\quad v=17{,}14\,\text{cm}\]</div>
+<div class="formula-box">\[m=-\frac{v}{u}=-\frac{17{,}14}{15}\approx-1{,}14\]</div>
+<div class="paso">La imagen se forma delante del espejo, es real, invertida y aproximadamente 1,14 veces mayor.</div>
+<div class="paso"><strong>b) Espejo convexo.</strong> Conservamos \(u=15\,\text{cm}\), pero ahora \(f=-8\,\text{cm}\):</div>
+<div class="formula-box">\[\frac{1}{v}=\frac{1}{-8}-\frac{1}{15}=-\frac{23}{120}\quad\Rightarrow\quad v=-5{,}22\,\text{cm}\]</div>
+<div class="formula-box">\[m=-\frac{v}{u}=-\frac{-5{,}22}{15}=+0{,}348\]</div>
+<div class="paso">La imagen queda detrás del espejo: es virtual, derecha y menor, con aproximadamente el 35 % del tamaño del objeto.</div>
+<div class="paso"><strong>Resultado:</strong> cóncavo: \(v=17{,}14\,\text{cm}\) y \(m=-1{,}14\); convexo: \(v=-5{,}22\,\text{cm}\) y \(m=+0{,}35\).</div></div>
+</details>
+<details class="tarjeta-ejercicio">
+ <summary class="cabecera-ej"><span class="num-ej">Ejercicio 10</span><span class="titulo-ej">Espejo cóncavo de maquillaje: trazado de rayos y tamaño de imagen</span><span class="meta-ej">Aragón · 2023 · Extraordinaria · Problema 7</span></summary>
+ <div class="enunciado-ej"><p>Un espejo de maquillaje cóncavo produce una imagen derecha aumentada del sujeto.<br><strong>a)</strong> Haz un trazado de rayos en el que se demuestre su funcionamiento. ¿De qué tipo es la imagen, real o virtual? (1,25 puntos)<br><strong>b)</strong> Si al colocar la cara a \(20\,\text{cm}\) del espejo (\(0{,}2\,\text{m}\)) se observa una imagen con el doble de tamaño (aumento \(m=2\)), ¿qué tamaño tendrá la imagen de un objeto de \(3\,\text{cm}\) al colocarlo a \(30\,\text{cm}\) del espejo (\(0{,}3\,\text{m}\))? ¿A qué distancia se formará dicha imagen? (1,25 puntos)</p><div class="meta-fuente">Puntuación indicada en el banco: 2,5 puntos.</div></div>
+ <div class="resolucion-ej"><div class="paso"><strong>a) Primera situación: cálculo de la focal.</strong> El espejo cóncavo da una imagen derecha que duplica el tamaño del objeto. Por tanto, \(m=+2\) y, usando \(m=-v/u\):</div>
+<div class="formula-box">\[2=-\frac{v}{20}\quad\Rightarrow\quad v=-40\,\text{cm}\]</div>
+<div class="paso">La imagen es virtual y está detrás del espejo. Aplicamos la ecuación de los espejos esféricos:</div>
+<div class="formula-box">\[\frac{1}{f}=\frac{1}{u}+\frac{1}{v}=\frac{1}{20}-\frac{1}{40}=\frac{1}{40}\quad\Rightarrow\quad f=40\,\text{cm}\]</div>
+<div class="paso"><strong>b) Segunda situación: objeto a 30 cm.</strong> Con \(u=30\,\text{cm}\) y \(f=40\,\text{cm}\):</div>
+<div class="formula-box">\[\frac{1}{v}=\frac{1}{40}-\frac{1}{30}=-\frac{1}{120}\quad\Rightarrow\quad v=-120\,\text{cm}\]</div>
+<div class="paso">Como el objeto sigue estando entre el espejo y el foco (\(30<40\)), la imagen continúa siendo virtual y derecha. El aumento y el tamaño son:</div>
+<div class="formula-box">\[m=-\frac{-120}{30}=+4,\qquad y'=m\,y=4\cdot3=12\,\text{cm}\]</div>
+<div class="paso"><strong>Resultado:</strong> focal \(f=40\,\text{cm}\). Para el objeto de \(3\,\text{cm}\) situado a \(30\,\text{cm}\), la imagen se forma \(120\,\text{cm}\) detrás del espejo y mide \(12\,\text{cm}\); es virtual, derecha y aumentada.</div></div>
+</details>
+            <div class="pie-clave"><i class="fas fa-lightbulb"></i><span><strong>Clave para resolver problemas C6:</strong> identifica primero el sistema óptico y su focal; fija el convenio de signos; aplica la ecuación para hallar \(v\) o \(f\); calcula el aumento \(m=-v/u\); deduce naturaleza, orientación y tamaño; y termina con un trazado de al menos dos rayos principales cuando se solicite.</span></div>
+        </div>
+    </details>
+
+    <div class="bloque-cta">
+        <p><strong>IES Valle del Alberche · Física · 2.º de Bachillerato</strong><br>Tema C6. Formación de imágenes y sistemas ópticos. Preparación EBAU/PAU.</p>
+    </div>
+</div>
+</body>
+</html>

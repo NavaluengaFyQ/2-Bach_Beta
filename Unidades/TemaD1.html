@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema D1. Relatividad especial y consecuencias</title>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']],
+          displayMath: [['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA D1.- </span>
+                <span class="texto">Relatividad especial y consecuencias</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- MAPA DE BLOQUES Y TEMAS (DESPLEGABLE)                         -->
+    <!-- ============================================================ -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque D. Física relativista, cuántica, nuclear y de partículas</strong> de Física de 2.º de Bachillerato.</p>
+
+        <div class="mapa-bloques">
+            <div class="bloque-card">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">A1</span><span class="tema-chip">A2</span><span class="tema-chip">A3</span><span class="tema-chip">A4</span>
+                    <span class="tema-chip">A5</span><span class="tema-chip">A6</span><span class="tema-chip">A7</span><span class="tema-chip">A8</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">B1</span><span class="tema-chip">B2</span><span class="tema-chip">B3</span><span class="tema-chip">B4</span><span class="tema-chip">B5</span>
+                    <span class="tema-chip">B6</span><span class="tema-chip">B7</span><span class="tema-chip">B8</span><span class="tema-chip">B9</span>
+                </div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip">C1</span><span class="tema-chip">C2</span><span class="tema-chip">C3</span>
+                    <span class="tema-chip">C4</span><span class="tema-chip">C5</span><span class="tema-chip">C6</span>
+                </div>
+            </div>
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip actual">D1</span><span class="tema-chip">D2</span><span class="tema-chip">D3</span>
+                    <span class="tema-chip">D4</span><span class="tema-chip">D5</span><span class="tema-chip">D6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque D · Tema D1:</strong>
+            <span class="texto-resaltado">Principios fundamentales de la relatividad especial y sus consecuencias.</span>
+            <br>
+            El currículo de Castilla y León concreta para este bloque la contracción de la longitud, la dilatación del tiempo y la energía y masa relativistas.
+            <br>
+            <em>Identificadores de esta unidad:</em> <strong>C-D1</strong> (conceptos) y <strong>P-D1</strong> (resolución de problemas).
+        </div>
+        <div class="note">
+            <strong>Referencia curricular:</strong> Decreto 40/2022, de 29 de septiembre, anexo III, materia Física, contenidos del bloque D (BOCyL de 30/09/2022, p. 49851).
+            <a href="https://bocyl.jcyl.es/boletines/2022/09/30/pdf/BOCYL-D-30092022-4.pdf" target="_blank" rel="noopener">Consultar el decreto en el BOCyL</a>.
+        </div>
+        <p style="font-size:0.92em; color:#64748b;">
+            Indicador de planificación facilitado para D1: <strong>3,5 %</strong> · media <strong>10,1 %</strong> · diferencia <strong>−6,6 puntos porcentuales</strong>. Es un dato de la planificación aportada, no una ponderación oficial del currículo.
+        </p>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- OBJETIVOS (DESPLEGABLE)                                       -->
+    <!-- ============================================================ -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Enunciar los dos postulados de la relatividad especial y reconocer cuándo deja de ser adecuada la aproximación clásica.</li>
+            <li>Calcular e interpretar el <strong>factor de Lorentz</strong> a partir de la velocidad relativa.</li>
+            <li>Distinguir <strong>tiempo propio</strong> y tiempo medido por un observador, aplicando la dilatación temporal.</li>
+            <li>Distinguir <strong>longitud propia</strong> y longitud contraída, aplicando la contracción en la dirección del movimiento.</li>
+            <li>Relacionar masa en reposo, masa relativista (cuando se use esa convención), energía en reposo, energía total y energía cinética relativistas.</li>
+            <li>Despejar la velocidad a partir de cocientes de tiempos, longitudes, masas o energías.</li>
+            <li>Resolver problemas de viajes relativistas y de partículas a velocidades próximas a la de la luz, justificando el sistema de referencia empleado y expresando los resultados con unidades.</li>
+        </ul>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- CONTENIDO TEÓRICO (DESPLEGABLE)                               -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">1</span><strong>Principios de la relatividad especial.</strong></summary>
+            <p>La relatividad especial describe las medidas realizadas por observadores situados en <strong>sistemas de referencia inerciales</strong> (sin aceleración). Sus dos postulados son:</p>
+            <ol>
+                <li><strong>Principio de relatividad:</strong> las leyes de la física tienen la misma forma en todos los sistemas de referencia inerciales. No existe un sistema inercial privilegiado.</li>
+                <li><strong>Constancia de la velocidad de la luz:</strong> todo observador inercial mide el mismo valor para la velocidad de la luz en el vacío, independientemente del movimiento de la fuente o del observador.</li>
+            </ol>
+            <div class="formula-box">\[c=3{,}00\cdot10^{8}\ \text{m}\,\text{s}^{-1}\]</div>
+            <p>Las medidas de tiempo y longitud dependen del estado de movimiento relativo entre observadores. Las transformaciones de Galileo dejan de ser válidas cuando las velocidades son comparables con \(c\); se emplean las transformaciones de Lorentz.</p>
+            <div class="note"><strong>Idea clave:</strong> no se trata de que cada observador «vea mal» un reloj o una regla. Cada uno mide correctamente en su propio sistema; las diferencias están previstas por las leyes de la relatividad.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Factor de Lorentz.</strong></summary>
+            <p>Para dos sistemas inerciales cuyo movimiento relativo tiene módulo \(v\), se define:</p>
+            <div class="formula-box" id="formula-gamma">\[\boxed{\gamma=\frac{1}{\sqrt{1-\dfrac{v^{2}}{c^{2}}}}}\]</div>
+            <p>También se utiliza \(\beta=v/c\), de modo que \(\gamma=1/\sqrt{1-\beta^2}\).</p>
+            <ul>
+                <li>Si \(v\ll c\), entonces \(\gamma\approx1\): los efectos relativistas son pequeños.</li>
+                <li>Si \(v\) se aproxima a \(c\), \(\gamma\) aumenta mucho.</li>
+                <li>Para un cuerpo con masa en reposo no nula, \(v&lt;c\); no puede alcanzar ni superar la velocidad de la luz.</li>
+            </ul>
+            <p>Despeje útil para problemas:</p>
+            <div class="formula-box">\[\boxed{v=c\sqrt{1-\frac{1}{\gamma^{2}}}}\]</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Dilatación del tiempo. Tiempo propio.</strong></summary>
+            <p>El <strong>tiempo propio</strong> \(\Delta\tau\) (también escrito \(\Delta t_0\)) es el intervalo entre dos sucesos medido en el sistema donde ambos ocurren en el mismo lugar. Por ejemplo, para una señal emitida y recibida a bordo de una misma nave, el reloj de la nave mide el tiempo propio.</p>
+            <p>Un observador respecto al cual el reloj se mueve mide un intervalo mayor:</p>
+            <div class="formula-box" id="formula-tiempo">\[\boxed{\Delta t=\gamma\,\Delta\tau}\qquad\boxed{\Delta\tau=\frac{\Delta t}{\gamma}}\]</div>
+            <p>Por tanto, el reloj en movimiento acumula menos tiempo entre los mismos sucesos que el reloj del sistema en el que esos sucesos ocurren en lugares distintos.</p>
+            <div class="note"><strong>Cómo identificarlo:</strong> pregunta dónde ocurren los dos sucesos. Si suceden en el mismo punto de un sistema (por ejemplo, ambos dentro de la nave), ese sistema mide el tiempo propio.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Contracción de longitudes. Longitud propia.</strong></summary>
+            <p>La <strong>longitud propia</strong> \(L_0\) es la longitud medida en el sistema de referencia donde el objeto está en reposo. Un observador que ve el objeto moverse mide una longitud menor <strong>en la dirección del movimiento</strong>:</p>
+            <div class="formula-box" id="formula-longitud">\[\boxed{L=\frac{L_0}{\gamma}=L_0\sqrt{1-\frac{v^{2}}{c^{2}}}}\]</div>
+            <p>La contracción no afecta a las dimensiones perpendiculares al movimiento. Si se conocen ambas longitudes, se puede despejar:</p>
+            <div class="formula-box">\[\boxed{\gamma=\frac{L_0}{L}}\qquad\boxed{v=c\sqrt{1-\left(\frac{L}{L_0}\right)^2}}\]</div>
+            <div class="note"><strong>Atención:</strong> la longitud propia es la mayor de las dos. Antes de sustituir, identifica qué observador está en reposo respecto al objeto.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">5</span><strong>Masa en reposo y masa relativista.</strong></summary>
+            <p>La <strong>masa en reposo</strong> \(m_0\) es una propiedad invariante del cuerpo: no depende del observador. En parte de los enunciados EBAU y en la terminología tradicional se utiliza la expresión <strong>masa relativista</strong>:</p>
+            <div class="formula-box">\[\boxed{m_{\text{rel}}=\gamma m_0}\]</div>
+            <p>Con esa convención, la masa relativista es la masa en reposo multiplicada por el factor de Lorentz. Si el enunciado proporciona \(m_{\text{rel}}\), la masa en reposo se obtiene mediante:</p>
+            <div class="formula-box">\[\boxed{m_0=\frac{m_{\text{rel}}}{\gamma}}\]</div>
+            <div class="note"><strong>Precisión conceptual:</strong> en el tratamiento actual más habitual se mantiene la masa invariante \(m_0\) y se expresa el efecto de la velocidad mediante la energía y el momento relativistas. En estos apuntes se conserva la fórmula de masa relativista porque aparece explícitamente en varios enunciados del banco de problemas. Sigue la convención que indique el examen y deja clara la definición usada.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">6</span><strong>Energía en reposo, energía total y energía cinética.</strong></summary>
+            <p>La equivalencia entre masa y energía establece que un cuerpo en reposo posee energía:</p>
+            <div class="formula-box" id="formula-e0">\[\boxed{E_0=m_0c^2}\]</div>
+            <p>La energía total de una partícula que se mueve con velocidad \(v\) es:</p>
+            <div class="formula-box" id="formula-energia">\[\boxed{E=\gamma m_0c^2=\gamma E_0}\]</div>
+            <p>La energía cinética relativista es la diferencia entre la energía total y la energía en reposo:</p>
+            <div class="formula-box">\[\boxed{E_c=E-E_0=(\gamma-1)m_0c^2=(\gamma-1)E_0}\]</div>
+            <p>Si el problema proporciona la masa relativista, también puede escribirse \(E=m_{\text{rel}}c^2\) y \(E_c=(m_{\text{rel}}-m_0)c^2\), dentro de esa misma convención.</p>
+            <p>Relación adicional de momento lineal relativista, útil cuando el enunciado la requiere:</p>
+            <div class="formula-box">\[p=\gamma m_0v\]</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">7</span><strong>Resumen comparativo de magnitudes propias y medidas.</strong></summary>
+            <table>
+                <thead><tr><th>Magnitud</th><th>Definición propia</th><th>Relación con la medida del observador relativo</th></tr></thead>
+                <tbody>
+                    <tr><td>Tiempo</td><td>\(\Delta\tau\): sucesos en el mismo lugar del sistema propio.</td><td>\(\Delta t=\gamma\Delta\tau\) (mayor).</td></tr>
+                    <tr><td>Longitud</td><td>\(L_0\): objeto en reposo.</td><td>\(L=L_0/\gamma\) (menor en la dirección del movimiento).</td></tr>
+                    <tr><td>Masa</td><td>\(m_0\): masa invariante o en reposo.</td><td>Convención tradicional: \(m_{\text{rel}}=\gamma m_0\).</td></tr>
+                    <tr><td>Energía</td><td>\(E_0=m_0c^2\).</td><td>\(E=\gamma E_0\); \(E_c=(\gamma-1)E_0\).</td></tr>
+                </tbody>
+            </table>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">8</span><strong>Viajes relativistas.</strong></summary>
+            <p>En problemas de una nave que viaja a velocidad constante hacia una estrella, habitualmente se toma la distancia Tierra–estrella como medida en el sistema terrestre. Si esa distancia es \(d\), desde la Tierra:</p>
+            <div class="formula-box">\[t_{\text{Tierra}}=\frac{d}{v}\]</div>
+            <p>El intervalo propio de la nave es:</p>
+            <div class="formula-box">\[\tau_{\text{nave}}=\frac{t_{\text{Tierra}}}{\gamma}\]</div>
+            <p>Si el enunciado proporciona el tiempo en Tierra y la velocidad, la distancia es \(d=vt_{\text{Tierra}}\). En un viaje de ida y vuelta, hay que distinguir los tramos y los cambios de sistema de referencia; no se debe aplicar sin más el modelo de un único tramo inercial.</p>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- PROCEDIMIENTOS TIPO                                           -->
+    <!-- ============================================================ -->
+    <details class="section resultado">
+        <summary><h2>🧭 Procedimientos tipo para la EBAU</h2></summary>
+        <details class="step">
+            <summary><span class="step-num">1</span><strong>Si se conoce la velocidad.</strong></summary>
+            <ol>
+                <li>Calcula \(\beta=v/c\).</li>
+                <li>Calcula \(\gamma=1/\sqrt{1-\beta^2}\).</li>
+                <li>Aplica la relación correspondiente: tiempo, longitud, masa o energía.</li>
+                <li>Comprueba que el resultado cumple el sentido físico: tiempo dilatado mayor, longitud contraída menor y \(v&lt;c\).</li>
+            </ol>
+        </details>
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Si se conocen dos tiempos.</strong></summary>
+            <p>Primero identifica cuál es propio. Después calcula:</p>
+            <div class="formula-box">\[\gamma=\frac{\Delta t}{\Delta\tau}\qquad v=c\sqrt{1-\left(\frac{\Delta\tau}{\Delta t}\right)^2}\]</div>
+            <p>No inviertas el cociente: el tiempo medido fuera del sistema propio es el mayor.</p>
+        </details>
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Si se conocen dos longitudes.</strong></summary>
+            <p>Identifica la longitud propia (la medida en reposo) y la contraída:</p>
+            <div class="formula-box">\[\gamma=\frac{L_0}{L}\qquad v=c\sqrt{1-\left(\frac{L}{L_0}\right)^2}\]</div>
+            <p>El objeto debe tener \(L\leq L_0\). Si resulta \(L&gt;L_0\) para un observador que lo ve moverse, revisa qué dato es propio.</p>
+        </details>
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Si se pregunta por masa o energía.</strong></summary>
+            <ol>
+                <li>Calcula \(\gamma\) a partir de \(v\), o despeja \(\gamma\) de la energía o de la masa relativista dadas.</li>
+                <li>Usa \(E_0=m_0c^2\), \(E=\gamma E_0\) y \(E_c=(\gamma-1)E_0\).</li>
+                <li>Si el enunciado utiliza masa relativista, aplica \(m_{\text{rel}}=\gamma m_0\) y especifica que se está usando esa convención.</li>
+                <li>Para pasar de julios a electronvoltios: divide entre \(1{,}602\cdot10^{-19}\,\text{J/eV}\).</li>
+            </ol>
+        </details>
+        <div class="note"><strong>Errores frecuentes:</strong> intercambiar tiempo propio y dilatado; usar como longitud propia la medida por quien observa el objeto en movimiento; olvidar que la contracción solo afecta a la dirección del movimiento; confundir energía total con energía cinética; introducir velocidades en km/s sin convertirlas; y aceptar una solución con \(v\geq c\).</div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- PROBLEMAS RESUELTOS EBAU                                      -->
+    <!-- ============================================================ -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🚀 Problemas resueltos de EBAU — Tema D1</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas</strong> del fichero <code>problemas.json</code> adjunto. Se han elegido ejercicios que cubren tiempo propio, dilatación temporal, longitud propia, contracción, factor de Lorentz, masa y energía relativistas.
+            </p>
+            <div class="note">
+                <strong>Sobre la procedencia:</strong> tras filtrar los registros del fichero por el tema D1, no aparece ningún ejercicio etiquetado como <strong>Castilla y León</strong>. Por eso no se atribuye ninguno a esa comunidad y se completa la selección con La Rioja, Canarias, Comunidad Valenciana, Madrid y Navarra. La comunidad, año, convocatoria y número indicados en cada tarjeta reproducen los metadatos del JSON facilitado.
+            </div>
+            <table>
+                <thead><tr><th>#</th><th>Comunidad</th><th>Año</th><th>Convocatoria</th><th>N.º</th><th>Contenido principal</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>La Rioja</td><td>2024</td><td>Extraordinaria</td><td>11</td><td>Tiempo propio, dilatación temporal y distancia recorrida</td></tr>
+<tr><td>2</td><td>La Rioja</td><td>2022</td><td>Extraordinaria</td><td>12</td><td>Relación entre tiempo propio y tiempo dilatado: cálculo de la velocidad</td></tr>
+<tr><td>3</td><td>La Rioja</td><td>2022</td><td>Ordinaria</td><td>11</td><td>Longitud propia, contracción y masa relativista</td></tr>
+<tr><td>4</td><td>La Rioja</td><td>2021</td><td>Extraordinaria</td><td>12</td><td>Dilatación temporal y contracción de longitudes</td></tr>
+<tr><td>5</td><td>La Rioja</td><td>2021</td><td>Ordinaria</td><td>12</td><td>Cálculo de la velocidad a partir de dos longitudes</td></tr>
+<tr><td>6</td><td>Canarias</td><td>2022</td><td>Ordinaria</td><td>6</td><td>Comparación de relojes: viaje espacial y tiempo propio</td></tr>
+<tr><td>7</td><td>Canarias</td><td>2024</td><td>Ordinaria</td><td>14</td><td>Cálculo de la velocidad a partir de una contracción dada</td></tr>
+<tr><td>8</td><td>Comunidad Valenciana</td><td>2025</td><td>Ordinaria</td><td>11</td><td>Identificación del tiempo propio y duración de un viaje</td></tr>
+<tr><td>9</td><td>Madrid</td><td>2022</td><td>Extraordinaria</td><td>5</td><td>Masa en reposo y energía cinética de un protón relativista</td></tr>
+<tr><td>10</td><td>Navarra</td><td>2025</td><td>Extraordinaria</td><td>10</td><td>Masa y energía relativistas; invariancia de la velocidad de la luz</td></tr>
+                </tbody>
+            </table>
+            
+            <!-- EJERCICIO 1: La Rioja 2024 Extraordinaria · Problema 11 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Nave espacial hacia estrella X</span>
+                    <span class="meta-ej">La Rioja · 2024 · Extraordinaria · Problema 11</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enfoque:</strong> Tiempo propio, dilatación temporal y distancia recorrida</p>
+                    <p>Una nave espacial parte desde la Tierra hacia la estrella X con una velocidad \(v=0{,}8c\). Respecto a los relojes de la Tierra, la nave tarda \(10\,\text{años}\) en llegar a la estrella X. a) Calcular en años-luz la distancia respecto a la Tierra a la que se encuentra la estrella X. b) Calcular cuántos años se atrasarán los relojes de la nave respecto a los relojes de la Tierra cuando la nave llega a la estrella X.</p>
+                </div>
+                <div class="note"><strong>Nota de revisión del enunciado:</strong> en el registro del banco aparece «años-luz» para expresar el desfase entre relojes. La diferencia entre tiempos debe expresarse en años; la resolución del propio registro obtiene 4 años.</div>
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Distancia en el sistema Tierra</strong></div>
+<p>En el sistema de referencia de la Tierra, la nave viaja a \(v=0{,}8c\) durante \(t=10\,\text{años}\). La distancia recorrida es:</p>
+<div class="formula-box">\[d=v\,t=0{,}8c\cdot10\,\text{años}=8\,\text{años-luz}.\]</div><div class="paso"><strong>Tiempo propio y atraso</strong></div>
+<p>El factor de Lorentz es:</p>
+<div class="formula-box">\[\gamma=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}=\frac{1}{\sqrt{1-0{,}8^{2}}}=\frac{1}{0{,}6}\approx1{,}667.\]</div>
+<p>El tiempo propio medido por la nave es:</p>
+<div class="formula-box">\[\tau=\frac{t}{\gamma}=\frac{10}{1{,}667}=6\,\text{años}.\]</div>
+<p>El atraso de los relojes de la nave respecto a los de la Tierra es:</p>
+<div class="formula-box">\[t-\tau=10-6=4\,\text{años}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(d=8\,\text{años-luz}\)<br>\(\tau=6\,\text{años}\); atraso \(=4\,\text{años}\)</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 2: La Rioja 2022 Extraordinaria · Problema 12 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Relatividad: viaje a Sirio a la décima parte de la nave</span>
+                    <span class="meta-ej">La Rioja · 2022 · Extraordinaria · Problema 12</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enfoque:</strong> Relación entre tiempo propio y tiempo dilatado: cálculo de la velocidad</p>
+                    <p>Una nave espacial que se dirige a Sirio (estrella que se encuentra a una cierta distancia de la Tierra) debe viajar para que la duración del viaje, medida por los tripulantes de la nave, se reduzca a una décima parte. Calcular la velocidad a la que ha de viajar la nave (es decir, la décima parte de la duración en Tierra). Velocidad de la luz en el vacío: \(c=3\cdot10^{8}\,\text{m}\,\text{s}^{-1}\).</p>
+                </div>
+                
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Dilatación del tiempo</strong></div>
+<p>El tiempo medido por los tripulantes es el tiempo propio \(\Delta t_0\); el medido en Tierra es \(\Delta t\):</p>
+<div class="formula-box">\[\Delta t=\gamma\,\Delta t_0,\qquad \gamma=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}.\]</div><div class="paso"><strong>Imponer condición: tiempo propio = (1/10) del tiempo en Tierra</strong></div>
+<p>Si la duración medida por los tripulantes es la décima parte de la duración en Tierra:</p>
+<div class="formula-box">\[\Delta t_0=\frac{\Delta t}{10}\quad\Rightarrow\quad \gamma=10.\]</div>
+<div class="formula-box">\[\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}=10\quad\Rightarrow\quad 1-\frac{v^{2}}{c^{2}}=\frac{1}{100}.\]</div>
+<div class="formula-box">\[v=c\sqrt{1-\frac{1}{100}}=c\sqrt{\frac{99}{100}}\approx0{,}995\,c\approx2{,}98\cdot10^{8}\,\text{m}\,\text{s}^{-1}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(v\approx0{,}995\,c\approx2{,}98\cdot10^{8}\,\text{m}\,\text{s}^{-1}\)</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 3: La Rioja 2022 Ordinaria · Problema 11 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Nave alienígena - contracción y masa</span>
+                    <span class="meta-ej">La Rioja · 2022 · Ordinaria · Problema 11</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enfoque:</strong> Longitud propia, contracción y masa relativista</p>
+                    <p>Desde el Complejo de Comunicaciones del Espacio Profundo en Robledo de Chavela (Madrid) se detecta una nave espacial alienígena que se acerca a la Tierra a una velocidad de \(0{,}8c\), siendo \(c\) la velocidad de la luz en el vacío. Los científicos del complejo determinan que la longitud de la nave es de \(20\,\text{m}\) y que su masa es de \(25\,000\,\text{kg}\). Calcular la longitud y la masa de la nave medidas por los alienígenas que la tripulan.</p>
+                </div>
+                
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Factor de Lorentz</strong></div>
+<p>La velocidad relativa es \(v=0{,}8c\). El factor de Lorentz es:</p>
+<div class="formula-box">\[\gamma=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}=\frac{1}{\sqrt{1-0{,}8^{2}}}=\frac{1}{0{,}6}=1{,}667.\]</div><div class="paso"><strong>Longitud propia</strong></div>
+<p>La longitud medida desde la Tierra es la longitud contraída:</p>
+<div class="formula-box">\[L=\frac{L_0}{\gamma}.\]</div>
+<p>Por tanto, la longitud propia medida por los alienígenas es:</p>
+<div class="formula-box">\[L_0=\gamma L=1{,}667\cdot20=33{,}3\,\text{m}.\]</div><div class="paso"><strong>Masa propia</strong></div>
+<p>La masa medida desde la Tierra es la masa relativista:</p>
+<div class="formula-box">\[m=\gamma m_0.\]</div>
+<p>La masa propia medida por los alienígenas es:</p>
+<div class="formula-box">\[m_0=\frac{m}{\gamma}=\frac{25\,000}{1{,}667}=1{,}50\cdot10^{4}\,\text{kg}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(L_0=33{,}3\,\text{m}\); \(m_0=1{,}50\cdot10^{4}\,\text{kg}\).</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 4: La Rioja 2021 Extraordinaria · Problema 12 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Astronautas que duermen una siesta a velocidad relativista</span>
+                    <span class="meta-ej">La Rioja · 2021 · Extraordinaria · Problema 12</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enfoque:</strong> Dilatación temporal y contracción de longitudes</p>
+                    <p>Los astronautas de una nave que se aleja de la Tierra a una velocidad \(v=0{,}6c\) interrumpen las comunicaciones con la Tierra porque se van a dormir una siesta de una hora. a) Calcular la duración de la siesta medida desde la Tierra. b) En el manual de instrucciones de la nave figura que su longitud es de \(5\,\text{m}\). Determinar cuál sería la longitud de la nave medida desde la Tierra. Dato: \(c=3\cdot10^{8}\,\text{m}\,\text{s}^{-1}\).</p>
+                </div>
+                
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Factor de Lorentz y dilatación temporal</strong></div>
+<p>El factor de Lorentz es:</p>
+<div class="formula-box">\[\gamma=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}=\frac{1}{\sqrt{1-0{,}6^{2}}}=1{,}25.\]</div>
+<p>El tiempo propio medido en la nave es \(\Delta t_0=1\,\text{h}\). El tiempo medido desde la Tierra es:</p>
+<div class="formula-box">\[\Delta t=\gamma\,\Delta t_0=1{,}25\cdot1\,\text{h}=1{,}25\,\text{h}.\]</div><div class="paso"><strong>Contracción de longitudes</strong></div>
+<p>La longitud propia de la nave es \(L_0=5\,\text{m}\). La longitud medida desde la Tierra es:</p>
+<div class="formula-box">\[L=\frac{L_0}{\gamma}=\frac{5}{1{,}25}=4\,\text{m}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(\Delta t=1{,}25\,\text{h}\); \(L=4\,\text{m}\).</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 5: La Rioja 2021 Ordinaria · Problema 12 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Nave espacial cerca de Próxima Centauri</span>
+                    <span class="meta-ej">La Rioja · 2021 · Ordinaria · Problema 12</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enfoque:</strong> Cálculo de la velocidad a partir de dos longitudes</p>
+                    <p>Por métodos ópticos, se determina que la longitud de una nave espacial que pasa por las proximidades de la Tierra es de \(100\,\text{m}\). En contacto radioelectrónico, los astronautas que viajan en la nave comunican que la longitud de la nave es de \(110\,\text{m}\). Considerando Tierra y nave como sistemas de referencia inerciales, determinar la velocidad, en módulo, con que se mueve la nave respecto de la Tierra. Velocidad de la luz en el vacío: \(c=3\cdot10^{8}\,\text{m}\,\text{s}^{-1}\).</p>
+                </div>
+                
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Contracción de longitudes</strong></div>
+<p>La longitud propia, medida en el sistema de la nave, es \(L_0=110\,\text{m}\). La longitud medida desde la Tierra es \(L=100\,\text{m}\). La relación relativista es:</p>
+<div class="formula-box">\[L=L_0\sqrt{1-\frac{v^{2}}{c^{2}}}.\]</div>
+<p>Los objetos en movimiento se ven contraídos en la dirección del movimiento. Despejando:</p>
+<div class="formula-box">\[\frac{L}{L_0}=\sqrt{1-\frac{v^{2}}{c^{2}}}.\]</div>
+<p>Elevando al cuadrado:</p>
+<div class="formula-box">\[1-\frac{v^{2}}{c^{2}}=\left(\frac{100}{110}\right)^{2}.\]</div>
+<p>Por tanto:</p>
+<div class="formula-box">\[\frac{v^{2}}{c^{2}}=1-\left(\frac{10}{11}\right)^{2}=1-\frac{100}{121}=\frac{21}{121}.\]</div>
+<p>Finalmente:</p>
+<div class="formula-box">\[v=c\sqrt{\frac{21}{121}}\approx0{,}4166c\approx1{,}25\cdot10^{8}\,\text{m}\,\text{s}^{-1}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(v\approx1{,}25\cdot10^{8}\,\text{m}\,\text{s}^{-1}\).</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 6: Canarias 2022 Ordinaria · Problema 6 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Dilatación relativista del tiempo en un viaje espacial</span>
+                    <span class="meta-ej">Canarias · 2022 · Ordinaria · Problema 6</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enfoque:</strong> Comparación de relojes: viaje espacial y tiempo propio</p>
+                    <p>Dos amigos tienen 30 años de edad cuando uno de ellos decide realizar un viaje espacial en una nave. De regreso a la Tierra, el reloj del que se embarcó en la nave indica que tiene 36 años mientras que el reloj del que se quedó en la Tierra indica que tiene 48 años. ¿A qué velocidad viajó la nave? Datos: \(c=3\cdot10^{8}\,\text{m}\,\text{s}^{-1}\).</p>
+                </div>
+                
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Tiempos propio y dilatado</strong></div>
+<p>Tiempo propio del viajero: \(\Delta t_0=36-30=6\) años. Tiempo del observador terrestre: \(\Delta t=48-30=18\) años.</p>
+<p>Dilatación temporal:</p>
+<div class="formula-box">\[\Delta t=\gamma\,\Delta t_0\quad\Rightarrow\quad\gamma=\frac{\Delta t}{\Delta t_0}=\frac{18}{6}=3.\]</div>
+<p>Por tanto, \(\frac{1}{\gamma}=\frac{1}{3}\) y:</p>
+<div class="formula-box">\[\sqrt{1-\frac{v^{2}}{c^{2}}}=\frac{1}{3}\quad\Rightarrow\quad1-\frac{v^{2}}{c^{2}}=\frac{1}{9}\quad\Rightarrow\quad\frac{v^{2}}{c^{2}}=\frac{8}{9}.\]</div>
+<div class="formula-box">\[v=\frac{2\sqrt{2}}{3}c\approx0{,}943c\approx2{,}828\cdot10^{8}\,\text{m}\,\text{s}^{-1}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(v\approx2{,}83\cdot10^{8}\,\text{m}\,\text{s}^{-1}\approx0{,}943c\)</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 7: Canarias 2024 Ordinaria · Problema 14 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Contracción de longitudes: velocidad para L = L₀/3</span>
+                    <span class="meta-ej">Canarias · 2024 · Ordinaria · Problema 14</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enfoque:</strong> Cálculo de la velocidad a partir de una contracción dada</p>
+                    <p>Un individuo en reposo respecto de una varilla mide la longitud de ésta y obtiene \(L_0\). ¿A qué velocidad se debe mover el individuo respecto de la varilla para que la longitud medida de la varilla sea un tercio de la medida en reposo?</p>
+<p>Dato: \(c = 3\cdot10^{8}\ \mathrm{m/s}\).</p>
+                </div>
+                
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Contracción de longitudes (Lorentz–FitzGerald)</strong></div>
+<p>Contracción relativista de longitudes: \(L=L_0\sqrt{1-\frac{v^2}{c^2}}\). Si \(L=\frac{L_0}{3}\), entonces \(\sqrt{1-\frac{v^2}{c^2}}=\frac{1}{3}\), de donde \(1-\frac{v^2}{c^2}=\frac{1}{9}\) y \(\frac{v^2}{c^2}=\frac{8}{9}\).</p>
+<p>\(v=c\sqrt{\frac{8}{9}}=c\frac{2\sqrt{2}}{3}\approx0{,}9428\,c=0{,}9428\cdot3\cdot10^{8}\approx2{,}83\cdot10^{8}\ \text{m/s}\).</p><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(v=c\sqrt{\frac{8}{9}}\approx0{,}943\,c\approx2{,}83\cdot10^{8}\,\text{m/s}\).</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 8: Comunidad Valenciana 2025 Ordinaria · Problema 11 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Dilatacion temporal: viaje a la estrella de Barnard</span>
+                    <span class="meta-ej">Comunidad Valenciana · 2025 · Ordinaria · Problema 11</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enfoque:</strong> Identificación del tiempo propio y duración de un viaje</p>
+                    <p>Una nave viaja con \(v=2{,}1\cdot10^{8}\,\text{m}\,\text{s}^{-1}\) a la estrella de Barnard (\(d=5{,}98\) años luz). ¿En cuál de los dos sistemas se mide el tiempo propio? Duración del viaje en cada sistema.<br>Dato: \(c=3\cdot10^{8}\,\text{m}\,\text{s}^{-1}\).</p>
+                </div>
+                
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Tiempo propio</strong></div>
+<p>El tiempo propio es el medido en el sistema de referencia donde los dos eventos (salida y llegada) ocurren en el mismo lugar. En la nave, el astronauta permanece en el mismo sitio durante todo el viaje: la salida y la llegada ocurren ambas en la nave. Por tanto, el tiempo propio se mide en la nave. Desde la Tierra, la partida y la llegada ocurren en lugares distintos (la Tierra y la estrella de Barnard), por lo que el tiempo medido en la Tierra es el tiempo dilatado (mayor).</p><div class="paso"><strong>Duración del viaje medida desde la Tierra</strong></div>
+<p>Desde la Tierra, la distancia es \(d=5{,}98\) años luz y la velocidad es \(v=2{,}1\cdot10^{8}\,\text{m}\,\text{s}^{-1}=0{,}7c\). El tiempo medido en la Tierra es:</p>
+<div class="formula-box">\[t_{\text{Tierra}}=\frac{d}{v}=\frac{5{,}98\,\text{años luz}}{0{,}7c}=8{,}54\,\text{años}.\]</div><div class="paso"><strong>Factor de Lorentz</strong></div>
+<p>El factor de Lorentz es:</p>
+<div class="formula-box">\[\gamma=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}=\frac{1}{\sqrt{1-0{,}7^{2}}}=1{,}40.\]</div><div class="paso"><strong>Tiempo propio en la nave</strong></div>
+<p>El tiempo propio medido en la nave es:</p>
+<div class="formula-box">\[t_{\text{nave}}=\frac{t_{\text{Tierra}}}{\gamma}=\frac{8{,}54}{1{,}40}=6{,}10\,\text{años}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>Tiempo propio: en la nave.<br>\(t_{\text{Tierra}}=8{,}54\,\text{años}\); \(t_{\text{nave}}=6{,}10\,\text{años}\).</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 9: Madrid 2022 Extraordinaria · Problema 5 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">Protón relativista al 90% de c: reposo, energía cinética</span>
+                    <span class="meta-ej">Madrid · 2022 · Extraordinaria · Problema 5</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enfoque:</strong> Masa en reposo y energía cinética de un protón relativista</p>
+                    <p>En el acelerador de partículas del CERN se tiene un protón con una velocidad del 90% de la luz, siendo su masa relativista de \(3{,}83\cdot10^{-27}\,\text{kg}\). Determine:<br>a) La masa en reposo del protón.<br>b) La energía cinética que posee el protón, expresada en eV.<br>Datos: Velocidad de la luz en el vacío, \(c=3\cdot10^{8}\,\text{m}\,\text{s}^{-1}\); Valor absoluto de la carga del electrón, \(e=1{,}6\cdot10^{-19}\,\text{C}\).</p>
+                </div>
+                
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Factor de Lorentz</strong></div>
+<div class="formula-box">\[\gamma=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}=\frac{1}{\sqrt{1-0{,}9^{2}}}=\frac{1}{\sqrt{0{,}19}}\approx2{,}294.\]</div><div class="paso"><strong>Masa en reposo</strong></div>
+<div class="formula-box">\[m_0=\frac{m}{\gamma}=\frac{3{,}83\cdot10^{-27}}{2{,}294}\approx1{,}67\cdot10^{-27}\,\text{kg}.\]</div>
+<p>Coincide con la masa tabulada del protón.</p><div class="paso"><strong>Energía cinética</strong></div>
+<div class="formula-box">\[E_c=(m-m_0)c^{2}=\left(3{,}83\cdot10^{-27}-1{,}67\cdot10^{-27}\right)\left(3\cdot10^{8}\right)^{2}\approx1{,}94\cdot10^{-10}\,\text{J}.\]</div>
+<p>Conversión a electronvoltios:</p>
+<div class="formula-box">\[E_c=\frac{1{,}94\cdot10^{-10}}{1{,}6\cdot10^{-19}}\approx1{,}22\cdot10^{9}\,\text{eV}\approx1{,}22\,\text{GeV}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(m_0\approx1{,}67\cdot10^{-27}\,\text{kg}\); \(E_c\approx1{,}94\cdot10^{-10}\,\text{J}\approx1{,}22\cdot10^{9}\,\text{eV}\).</p>
+                </div>
+            </details>
+
+            <!-- EJERCICIO 10: Navarra 2025 Extraordinaria · Problema 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">Nave espacial relativista</span>
+                    <span class="meta-ej">Navarra · 2025 · Extraordinaria · Problema 10</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enfoque:</strong> Masa y energía relativistas; invariancia de la velocidad de la luz</p>
+                    <p>(BLOQUE 4: Pregunta 4.B) Imaginemos que en un futuro próximo el ser humano construye una nave de exploración espacial capaz de viajar a velocidades próximas a la de la luz. Si la masa de la nave fuese de 5000 kg y se consigue llevarla hasta una velocidad de \(0{,}9c\).</p>
+<p>a) (0,75 puntos) ¿Cuál sería la masa relativista?</p>
+<p>b) (0,5 puntos) ¿Cuál sería la energía relativista?</p>
+<p>c) (0,75 puntos) ¿Qué energía habría que comunicar a la nave para que alcance esa velocidad?</p>
+<p>d) (0,5 puntos) Si desde la Tierra se emite un haz de luz láser hacia la nave, ¿con qué velocidad medirán los ocupantes de la nave dicha luz?</p>
+<p>Dato: \(c=3\cdot10^{8}\,\text{m}\,\text{s}^{-1}\).</p>
+                </div>
+                
+                <div class="resolucion-ej">
+                    <div class="paso"><strong>Factor de Lorentz</strong></div>
+<p>Para \(v=0{,}9c\):</p>
+<div class="formula-box">\[\gamma=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}=\frac{1}{\sqrt{1-0{,}81}}=\frac{1}{\sqrt{0{,}19}}=2{,}294.\]</div><div class="paso"><strong>Masa relativista</strong></div>
+<p>La masa relativista es:</p>
+<div class="formula-box">\[m=\gamma m_0=2{,}294\cdot5000=1{,}15\cdot10^{4}\,\text{kg}.\]</div><div class="paso"><strong>Energía total relativista</strong></div>
+<p>La energía relativista total es:</p>
+<div class="formula-box">\[E=\gamma m_0 c^{2}=2{,}294\cdot5000\cdot(3\cdot10^{8})^{2}=1{,}03\cdot10^{21}\,\text{J}.\]</div><div class="paso"><strong>Energía cinética relativista</strong></div>
+<p>La energía que hay que comunicar es la energía cinética relativista:</p>
+<div class="formula-box">\[E_c=E-m_0c^{2}=(\gamma-1)m_0c^{2}=(2{,}294-1)\cdot5000\cdot(3\cdot10^{8})^{2}=5{,}82\cdot10^{20}\,\text{J}.\]</div><div class="paso"><strong>Velocidad de la luz medida por la nave</strong></div>
+<p>Por el segundo postulado de la relatividad especial, la velocidad de la luz en el vacío es la misma en todos los sistemas inerciales, independientemente del movimiento de la fuente o del observador. Por tanto, los ocupantes de la nave miden:</p>
+<div class="formula-box">\[c=3{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(m=1{,}15\cdot10^{4}\,\text{kg}\); \(E=1{,}03\cdot10^{21}\,\text{J}\); \(E_c=5{,}82\cdot10^{20}\,\text{J}\); \(v_{\text{luz}}=3{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}\).</p>
+                </div>
+            </details>
+            <div class="pie-clave">
+                <i class="fas fa-lightbulb"></i>
+                <span><strong>Patrón común de resolución:</strong> (1) identifica el sistema de referencia; (2) determina qué magnitud es propia; (3) calcula \(\gamma\); (4) aplica la relación relativista adecuada; (5) despeja la incógnita con cuidado; (6) expresa el resultado en el S.I. y verifica que sea coherente con \(v&lt;c\), \(\Delta t\geq\Delta\tau\) y \(L\leq L_0\).</span>
+            </div>
+        </div>
+    </details>
+
+    <!-- FUENTE CURRICULAR -->
+    <div style="margin:25px 30px 30px; padding:14px 18px; background:#f8fafc; border-radius:12px; border:1px solid #e2e8f0; font-size:0.9em; color:#475569;">
+        <strong>Fuentes:</strong> Decreto 40/2022, de 29 de septiembre, anexo III, materia Física, bloque D, p. 49851; y fichero <code>problemas.json</code> facilitado para la selección de ejercicios. La organización y presentación siguen el modelo de <code>TemaA1.html</code> y los estilos de <code>unidades.css</code>.
+    </div>
+</div>
+</body>
+</html>

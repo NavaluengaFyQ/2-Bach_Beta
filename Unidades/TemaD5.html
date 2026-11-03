@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema D5. Núcleos atómicos, radiactividad y reacciones nucleares</title>
+
+    <!-- Iconos y CSS común del proyecto -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax: notación LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']]},
+        svg: {fontCache: 'global'}
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Ajustes locales pequeños: se conserva el diseño de unidades.css -->
+    <style>
+      .indicadores-d5 {display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0;}
+      .indicador-d5 {background:#eef2ff;border:1px solid #c7d2fe;border-radius:10px;padding:12px;text-align:center;}
+      .indicador-d5 strong {display:block;font-size:1.35em;color:#1e40af;}
+      .tabla-rad td:first-child {font-weight:700;white-space:nowrap;}
+      .tabla-rad .alpha {color:#9a3412;}
+      .tabla-rad .beta {color:#1d4ed8;}
+      .tabla-rad .gamma {color:#6b21a8;}
+      .paso-resolucion {padding:10px 0;border-bottom:1px solid #e2e8f0;}
+      .paso-resolucion:last-child {border-bottom:none;}
+      .paso-resolucion h4 {color:#1e40af;margin:4px 0 8px;font-size:1.03em;}
+      .resultado-problema {margin-top:14px;padding:12px 16px;background:#ecfdf5;border-left:5px solid #10b981;border-radius:9px;}
+      .resultado-problema > strong {display:block;color:#065f46;margin-bottom:6px;}
+      .curriculo-d5 {background:#f8fafc;border:1px solid #cbd5e1;border-radius:10px;padding:14px 16px;margin:14px 0;}
+      .tag-d5 {display:inline-block;border-radius:20px;padding:4px 10px;background:#dbeafe;color:#1e40af;font-weight:700;font-size:.88em;margin:2px;}
+      .fuente {font-size:.9em;color:#475569;}
+      .section summary h2 {line-height:1.35;}
+      @media (max-width:700px) {.indicadores-d5{grid-template-columns:1fr;}.meta-ej{margin-left:0!important;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA D5.- </span>
+                <span class="texto">Núcleos atómicos, radiactividad y reacciones nucleares</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- UBICACIÓN CURRICULAR -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque D. Física relativista, cuántica, nuclear y de partículas</strong> de Física de 2.º de Bachillerato. En la organización de temas utilizada en este material corresponde a <strong>D5. Núcleos atómicos, radiactividad y reacciones nucleares</strong>.</p>
+        <div class="mapa-bloques">
+            <div class="bloque-card"><div class="bloque-titulo">A. Campo gravitatorio</div><div class="tema-lista"><span class="tema-chip">A1</span><span class="tema-chip">A2</span><span class="tema-chip">A3</span><span class="tema-chip">A4</span><span class="tema-chip">A5</span><span class="tema-chip">A6</span><span class="tema-chip">A7</span><span class="tema-chip">A8</span></div></div>
+            <div class="bloque-card"><div class="bloque-titulo">B. Campo electromagnético</div><div class="tema-lista"><span class="tema-chip">B1</span><span class="tema-chip">B2</span><span class="tema-chip">B3</span><span class="tema-chip">B4</span><span class="tema-chip">B5</span><span class="tema-chip">B6</span><span class="tema-chip">B7</span><span class="tema-chip">B8</span><span class="tema-chip">B9</span></div></div>
+            <div class="bloque-card"><div class="bloque-titulo">C. Vibraciones y ondas</div><div class="tema-lista"><span class="tema-chip">C1</span><span class="tema-chip">C2</span><span class="tema-chip">C3</span><span class="tema-chip">C4</span><span class="tema-chip">C5</span><span class="tema-chip">C6</span></div></div>
+            <div class="bloque-card actual"><div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div><div class="tema-lista"><span class="tema-chip">D1</span><span class="tema-chip">D2</span><span class="tema-chip">D3</span><span class="tema-chip">D4</span><span class="tema-chip actual">D5</span><span class="tema-chip">D6</span></div></div>
+        </div>
+        <div class="formula-box" style="font-size:.98em;text-align:left;">
+            <strong>Bloque D · Tema D5:</strong> <span class="texto-resaltado">Núcleos atómicos, radiactividad y reacciones nucleares.</span>
+            <p>Se estudian la composición y estabilidad de los núcleos, la radiactividad natural, las transformaciones nucleares y el balance energético de las reacciones de fisión y fusión. Se conectan estos contenidos con las aplicaciones en ingeniería, tecnología y salud.</p>
+        </div>
+        <div class="curriculo-d5">
+            <strong>Conexión con el Decreto 40/2022 (BOCyL).</strong>
+            <p>El currículo de Física incluye en el bloque D los núcleos atómicos y la estabilidad de los isótopos; la radiactividad natural y otros procesos nucleares; las reacciones de fusión y fisión; y las leyes de Soddy-Fajans, la actividad de una muestra y la ley de desintegración radiactiva.</p>
+            <p class="fuente">Norma publicada el 30 de septiembre de 2022. <a href="https://bocyl.jcyl.es/boletines/2022/09/30/pdf/BOCYL-D-30092022-4.pdf" target="_blank" rel="noopener">Consultar el Decreto 40/2022 en el BOCyL</a>.</p>
+        </div>
+        <div class="note"><strong>Nota de organización:</strong> en el archivo de bloques y temas, D6 es «Leyes de desintegración radiactiva y actividad». Como varios problemas EBAU integran radiactividad y ley de desintegración en el mismo ejercicio, aquí se incluyen las relaciones de semidesintegración y actividad necesarias para resolverlos, señalando su conexión con D6.</div>
+    </details>
+
+    <!-- INDICADORES EBAU -->
+    <details class="section enunciado" open>
+        <summary><h2>📊 Peso del tema y palabras clave</h2></summary>
+        <div class="indicadores-d5">
+            <div class="indicador-d5"><strong>10,4 %</strong><span>Peso observado del tema</span></div>
+            <div class="indicador-d5"><strong>10,1 %</strong><span>Media de referencia</span></div>
+            <div class="indicador-d5"><strong>+0,3 pp</strong><span>Diferencia respecto a la media</span></div>
+        </div>
+        <p><strong>C-D5 — Núcleo, radiactividad, fisión y fusión:</strong> «núcleo atómico», «radiactividad», «fisión nuclear», «fusión nuclear», «defecto de masa» y «energía de enlace».</p>
+        <p><strong>P-D5 — Problemas de reacciones nucleares y radiactividad:</strong> «reacción nuclear», «fisión del uranio», «fusión», «partícula alfa», «partícula beta» y «energía de enlace».</p>
+    </details>
+
+    <!-- OBJETIVOS -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Describir la composición del núcleo mediante protones, neutrones, número atómico y número másico, y representar correctamente los isótopos.</li>
+            <li>Explicar la estabilidad nuclear relacionándola con la interacción nuclear fuerte, la repulsión eléctrica entre protones y la energía de enlace por nucleón.</li>
+            <li>Calcular el defecto de masa y la energía de enlace total y por nucleón a partir de las masas suministradas.</li>
+            <li>Identificar y equilibrar reacciones nucleares aplicando la conservación del número másico y del número atómico.</li>
+            <li>Distinguir las emisiones alfa, beta menos, beta más y gamma, y predecir cómo cambian A y Z.</li>
+            <li>Reconocer y comparar los procesos de fisión y fusión nuclear.</li>
+            <li>Calcular la energía liberada o absorbida en una reacción mediante el defecto de masa y la equivalencia masa-energía.</li>
+            <li>Aplicar la ley de desintegración radiactiva y las relaciones entre constante de desintegración, periodo de semidesintegración y actividad cuando el problema lo requiera.</li>
+            <li>Resolver problemas y cuestiones de razonamiento característicos de la EBAU de Castilla y León.</li>
+        </ul>
+    </details>
+
+    <!-- CONTENIDO TEÓRICO -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step" open>
+            <summary><span class="step-num">1</span><strong>El núcleo atómico: composición, notación e isótopos.</strong></summary>
+            <p>El núcleo ocupa una región muy pequeña del átomo y concentra prácticamente toda su masa. Está formado por <strong>protones</strong>, con carga positiva, y <strong>neutrones</strong>, sin carga eléctrica. Ambas partículas reciben el nombre de <strong>nucleones</strong>.</p>
+            <div class="formula-box">\[{}^{A}_{Z}X\qquad A=Z+N\]</div>
+            <p><strong>Z</strong> es el número atómico (número de protones); <strong>A</strong> es el número másico (protones más neutrones); <strong>N=A-Z</strong> es el número de neutrones. Los <strong>isótopos</strong> son núcleos del mismo elemento (igual Z) con distinto número de neutrones y, por tanto, distinto A.</p>
+            <p>Ejemplo: \({}^{235}_{92}\mathrm{U}\) tiene 92 protones y \(235-92=143\) neutrones.</p>
+            <div class="note"><strong>Idea clave:</strong> en una reacción nuclear se transforman núcleos; no es una reacción química entre las capas electrónicas del átomo.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Estabilidad nuclear, defecto de masa y energía de enlace.</strong></summary>
+            <p>La estabilidad del núcleo se debe principalmente a la <strong>interacción nuclear fuerte</strong>, atractiva y de corto alcance, que mantiene unidos los nucleones. Entre protones existe además repulsión eléctrica. La estabilidad resulta del equilibrio entre estas contribuciones y depende de la composición del núcleo.</p>
+            <p>La masa de un núcleo ligado es menor que la suma de las masas de sus nucleones separados. La diferencia se denomina <strong>defecto de masa</strong>:</p>
+            <div class="formula-box">\[\Delta m=Z\,m_p+N\,m_n-m_{\text{núcleo}}\]</div>
+            <p>La energía equivalente al defecto de masa es la <strong>energía de enlace nuclear</strong>: la energía que habría que aportar para separar completamente el núcleo en sus nucleones.</p>
+            <div class="formula-box">\[E_b=\Delta m\,c^2\]</div>
+            <p>Si el defecto de masa se expresa en unidades de masa atómica, es habitual utilizar:</p>
+            <div class="formula-box">\[1\,\mathrm{u}\,c^2\approx931{,}5\,\mathrm{MeV}\]</div>
+            <p>La <strong>energía de enlace por nucleón</strong> permite comparar la estabilidad media de núcleos distintos:</p>
+            <div class="formula-box">\[\frac{E_b}{A}=\frac{\Delta m\,c^2}{A}\]</div>
+            <p>En general, una energía de enlace por nucleón mayor corresponde a una unión media más fuerte. La curva de energía de enlace por nucleón alcanza valores máximos en la zona de núcleos de masa intermedia (cercana al hierro y al níquel). Esto ayuda a explicar que determinados núcleos pesados puedan liberar energía al dividirse y que núcleos ligeros puedan liberarla al fusionarse.</p>
+            <div class="note"><strong>Cuidado con las masas:</strong> utiliza de forma coherente las masas nucleares o las masas atómicas y las constantes que proporciona el enunciado. No mezcles sin justificación la masa de un átomo neutro con la de un protón desnudo. En los ejercicios EBAU, sigue la convención y los datos indicados.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Reacciones nucleares y leyes de conservación.</strong></summary>
+            <p>Una reacción nuclear transforma uno o varios núcleos en otros. En la notación \({}^{A}_{Z}X\), deben conservarse el número total de nucleones y la carga eléctrica total (número atómico total):</p>
+            <div class="formula-box">\[\sum A_{\text{inicial}}=\sum A_{\text{final}}\qquad\sum Z_{\text{inicial}}=\sum Z_{\text{final}}\]</div>
+            <p>Estas igualdades permiten determinar partículas emitidas o núcleos desconocidos. En las desintegraciones beta, la notación completa incluye el neutrino o antineutrino correspondiente.</p>
+            <p>El balance energético se obtiene comparando la masa total inicial y final. Definimos el valor energético de la reacción (Q):</p>
+            <div class="formula-box">\[Q=(m_{\text{inicial}}-m_{\text{final}})c^2\]</div>
+            <p>Si \(Q&gt;0\), la reacción libera energía; si \(Q&lt;0\), necesita un aporte energético. El defecto de masa debe calcularse con todas las partículas de reactivos y productos, incluidos los neutrones.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Radiactividad natural: emisiones alfa, beta y gamma.</strong></summary>
+            <p>La <strong>radiactividad</strong> es la transformación espontánea de núcleos inestables, que emiten partículas o radiación para alcanzar configuraciones más estables. Las leyes de Soddy-Fajans describen los cambios de A y Z.</p>
+            <table class="tabla-rad">
+                <thead><tr><th>Emisión</th><th>Naturaleza</th><th>Transformación nuclear</th><th>Cambios en el núcleo</th></tr></thead>
+                <tbody>
+                    <tr><td class="alpha">Alfa (α)</td><td>Núcleo de helio \({}^{4}_{2}\mathrm{He}\), con 2 protones y 2 neutrones; carga \(+2e\).</td><td>\[{}^{A}_{Z}X\rightarrow{}^{A-4}_{Z-2}Y+{}^{4}_{2}\mathrm{He}\]</td><td>\(A\) disminuye 4; \(Z\) disminuye 2.</td></tr>
+                    <tr><td class="beta">Beta menos (β⁻)</td><td>Electrón y antineutrino electrónico. Un neutrón se transforma en protón.</td><td>\[{}^{A}_{Z}X\rightarrow{}^{A}_{Z+1}Y+e^-+\bar{\nu}_e\]</td><td>\(A\) no cambia; \(Z\) aumenta 1.</td></tr>
+                    <tr><td class="beta">Beta más (β⁺)</td><td>Positrón y neutrino electrónico. Un protón se transforma en neutrón.</td><td>\[{}^{A}_{Z}X\rightarrow{}^{A}_{Z-1}Y+e^++\nu_e\]</td><td>\(A\) no cambia; \(Z\) disminuye 1.</td></tr>
+                    <tr><td class="gamma">Gamma (γ)</td><td>Fotón de alta energía emitido por un núcleo excitado.</td><td>\[{}^{A}_{Z}X^*\rightarrow{}^{A}_{Z}X+\gamma\]</td><td>No cambian ni \(A\) ni \(Z\); el núcleo pierde energía.</td></tr>
+                </tbody>
+            </table>
+            <p><strong>Comparación cualitativa:</strong> α tiene gran capacidad ionizante y poca penetración; β presenta valores intermedios; γ tiene gran penetración y no posee carga eléctrica. Las partículas α y β se desvían en campos eléctricos y magnéticos; γ no se desvía.</p>
+            <div class="note"><strong>Truco de examen:</strong> para identificar una emisión, compara primero A y después Z. Si A baja 4 y Z baja 2, es α; si A permanece y Z sube o baja una unidad, es β⁻ o β⁺; si ambos permanecen constantes y el núcleo se desexcita, es γ.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">5</span><strong>Fisión nuclear y fusión nuclear.</strong></summary>
+            <p><strong>Fisión:</strong> un núcleo pesado se divide en dos núcleos de masa intermedia, normalmente acompañado de varios neutrones. Un ejemplo típico es la fisión inducida del uranio-235:</p>
+            <div class="formula-box">\[{}^{235}_{92}\mathrm{U}+{}^{1}_{0}n\rightarrow{}^{141}_{56}\mathrm{Ba}+{}^{92}_{36}\mathrm{Kr}+3\,{}^{1}_{0}n+Q\]</div>
+            <p><strong>Fusión:</strong> dos núcleos ligeros se unen para formar otro más pesado. Un ejemplo es la reacción deuterio-tritio:</p>
+            <div class="formula-box">\[{}^{2}_{1}\mathrm{H}+{}^{3}_{1}\mathrm{H}\rightarrow{}^{4}_{2}\mathrm{He}+{}^{1}_{0}n+17{,}6\,\mathrm{MeV}\]</div>
+            <p>En ambos procesos puede liberarse energía cuando los productos quedan más ligados (mayor energía de enlace total), de acuerdo con \(E=\Delta m c^2\). Para clasificarlos, fíjate en la transformación: <strong>un núcleo pesado se divide</strong> en fisión; <strong>dos núcleos ligeros se unen</strong> en fusión.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">6</span><strong>Ley de desintegración radiactiva, semivida y actividad.</strong></summary>
+            <p>El número de núcleos radiactivos sin desintegrar disminuye exponencialmente. Esta parte se relaciona directamente con D6, pero aparece junto a cuestiones de D5 en varios enunciados EBAU.</p>
+            <div class="formula-box">\[N(t)=N_0e^{-\lambda t}\]</div>
+            <p>La constante \(\lambda\) caracteriza la probabilidad de desintegración por unidad de tiempo. El periodo de semidesintegración \(T_{1/2}\) es el tiempo necesario para que quede la mitad de los núcleos iniciales:</p>
+            <div class="formula-box">\[T_{1/2}=\frac{\ln 2}{\lambda}\qquad\lambda=\frac{\ln2}{T_{1/2}}\]</div>
+            <p>La <strong>actividad</strong> es el número de desintegraciones por unidad de tiempo:</p>
+            <div class="formula-box">\[\mathcal{A}(t)=\lambda N(t)=\mathcal{A}_0e^{-\lambda t}\]</div>
+            <p>Su unidad en el SI es el becquerel: \(1\,\mathrm{Bq}=1\,\mathrm{s}^{-1}\). Si se conoce una masa de isótopo puro, el número de núcleos se obtiene mediante \(N=(m/M)N_A\), usando unidades coherentes.</p>
+            <div class="note"><strong>Conversión esencial:</strong> si el periodo viene dado en días o años y se pide actividad en Bq, convierte primero el tiempo a segundos para expresar \(\lambda\) en \(\mathrm{s}^{-1}\).</div>
+        </details>
+    </details>
+
+    <!-- FORMULARIO -->
+    <details class="section resultado">
+        <summary><h2>🧮 Formulario y magnitudes fundamentales</h2></summary>
+        <table>
+            <thead><tr><th>Expresión</th><th>Significado</th><th>Uso y unidades</th></tr></thead>
+            <tbody>
+                <tr><td>\(A=Z+N\)</td><td>Número másico.</td><td>\(A,Z,N\) son números enteros sin unidades.</td></tr>
+                <tr><td>\(\Delta m=Zm_p+Nm_n-m_{\text{núcleo}}\)</td><td>Defecto de masa.</td><td>Masas expresadas en la misma unidad (u o kg).</td></tr>
+                <tr><td>\(E_b=\Delta m c^2\)</td><td>Energía de enlace.</td><td>Si \(\Delta m\) está en u: \(E_b=\Delta m\cdot931{,}5\,\mathrm{MeV}\).</td></tr>
+                <tr><td>\(E_b/A\)</td><td>Energía de enlace por nucleón.</td><td>MeV/nucleón.</td></tr>
+                <tr><td>\(Q=(m_i-m_f)c^2\)</td><td>Energía de una reacción nuclear.</td><td>Incluye todas las masas de reactivos y productos.</td></tr>
+                <tr><td>\(N=N_0e^{-\lambda t}\)</td><td>Ley de desintegración.</td><td>\(t\) y \(\lambda^{-1}\) deben tener unidades compatibles.</td></tr>
+                <tr><td>\(T_{1/2}=\ln2/\lambda\)</td><td>Periodo de semidesintegración.</td><td>\(\lambda\) en s⁻¹ si T se expresa en s.</td></tr>
+                <tr><td>\(\mathcal{A}=\lambda N\)</td><td>Actividad.</td><td>SI: Bq = s⁻¹.</td></tr>
+                <tr><td>\(N=(m/M)N_A\)</td><td>Número de núcleos a partir de la masa.</td><td>\(m\) y \(M\) en unidades compatibles; \(N_A\) en mol⁻¹.</td></tr>
+            </tbody>
+        </table>
+        <div class="note"><strong>Constantes habituales:</strong> \(c=3{,}00\cdot10^8\,\mathrm{m\,s^{-1}}\); \(1\,\mathrm{u}\,c^2\approx931{,}5\,\mathrm{MeV}\); \(N_A=6{,}022\cdot10^{23}\,\mathrm{mol^{-1}}\). En el examen prevalecen los datos facilitados en cada enunciado.</div>
+    </details>
+
+    <!-- PROCEDIMIENTOS DE RESOLUCIÓN -->
+    <details class="section procedimiento">
+        <summary><h2>🧭 Procedimientos para los problemas tipo</h2></summary>
+        <details class="step" open>
+            <summary><span class="step-num">A</span><strong>Completar o equilibrar una reacción nuclear.</strong></summary>
+            <ol>
+                <li>Escribe por separado la suma de números másicos A de reactivos y productos.</li>
+                <li>Iguala los números atómicos Z a ambos lados.</li>
+                <li>Determina los valores que faltan y reconoce la partícula emitida: \({}^{4}_{2}\mathrm{He}\), \({}^{0}_{-1}e\), \({}^{0}_{+1}e\), neutrino/antineutrino o fotón γ.</li>
+                <li>Comprueba al final las dos conservaciones.</li>
+            </ol>
+        </details>
+        <details class="step">
+            <summary><span class="step-num">B</span><strong>Defecto de masa y energía liberada.</strong></summary>
+            <ol>
+                <li>Calcula la masa total inicial sumando todas las partículas de los reactivos, con sus coeficientes.</li>
+                <li>Calcula la masa total final del mismo modo.</li>
+                <li>Obtén \(\Delta m=m_i-m_f\) y convierte la unidad si es necesario.</li>
+                <li>Aplica \(Q=\Delta m c^2\). Si se usa u, puedes emplear \(931{,}5\,\mathrm{MeV/u}\).</li>
+                <li>Si se pide combustible o número de reacciones, convierte primero la energía total a J y después calcula el número de núcleos mediante la energía por reacción.</li>
+            </ol>
+        </details>
+        <details class="step">
+            <summary><span class="step-num">C</span><strong>Energía de enlace por nucleón.</strong></summary>
+            <ol>
+                <li>Identifica \(A\), \(Z\) y calcula \(N=A-Z\).</li>
+                <li>Calcula la suma de masas de los nucleones separados: \(Zm_p+Nm_n\).</li>
+                <li>Resta la masa del núcleo para obtener \(\Delta m\).</li>
+                <li>Calcula \(E_b=\Delta m c^2\) y divide entre A.</li>
+                <li>Expresa el resultado en MeV/nucleón e interpreta la estabilidad con cautela.</li>
+            </ol>
+        </details>
+        <details class="step">
+            <summary><span class="step-num">D</span><strong>Problemas de radiactividad.</strong></summary>
+            <ol>
+                <li>Identifica qué magnitud disminuye: número de núcleos, masa del isótopo radiactivo o actividad. Para el mismo radionúclido, las tres son proporcionales.</li>
+                <li>Calcula \(\lambda=\ln2/T_{1/2}\), cuidando las unidades.</li>
+                <li>Usa \(N=N_0e^{-\lambda t}\) o \(\mathcal{A}=\mathcal{A}_0e^{-\lambda t}\), según los datos.</li>
+                <li>Para actividad inicial, calcula antes \(N=(m/M)N_A\) y después \(\mathcal{A}_0=\lambda N\).</li>
+                <li>Comprueba si el resultado es razonable: tras un periodo de semidesintegración debe quedar el 50 % de la magnitud inicial.</li>
+            </ol>
+        </details>
+        <div class="note"><strong>Errores frecuentes:</strong> no conservar A y Z simultáneamente; olvidar los neutrones emitidos al sumar masas; dividir por A antes de calcular la energía total de enlace; confundir energía total con energía por nucleón; usar días/años directamente con Bq; y confundir fisión con fusión.</div>
+    </details>
+
+    <!-- PROBLEMAS EBAU -->
+    <details open>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">☢️ Problemas resueltos de EBAU — Castilla y León (Tema D5)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Pulsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+            <p style="background:#eef2ff;padding:12px 18px;border-radius:12px;border-left:5px solid #3b82f6;color:#1e3a8a;">
+                <strong>Selección de 10 problemas del archivo problemas.json.</strong> Los diez son de <strong>Castilla y León</strong>. Se indica la convocatoria y el número de problema del examen, además del año. Se conserva el enunciado del banco y se organiza su resolución para el repaso. Algunos ejercicios combinan D5 con D6 (desintegración y actividad).
+            </p>
+            
+            <!-- PROBLEMA 1: 2026 Ordinaria Nº 11 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Datación de una roca mediante potasio y argón</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Ordinaria · Problema 11 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial recogido en el banco de problemas:</strong></p>
+                    <p>Para datar rocas o cenizas volcánicas de gran antigüedad se suele utilizar una técnica basada en la desintegración del \(^{40}_{19}\text{K}\) en \(^{40}_{18}\text{Ar}\), cuyo periodo de semidesintegración es 1248 millones de años. Determine la edad de una muestra de roca en la que se hallaron 73 mg de \(^{40}_{18}\text{Ar}\) y 12 mg de \(^{40}_{19}\text{K}\). Suponga que en el momento de su formación la roca no contenía nada de Ar. (1 punto)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h3>Resolución paso a paso</h3>
+                    <div class="paso-resolucion"><h4>Núcleos iniciales y ley de desintegración</h4><p>En el modelo indicado, cada núcleo de \(^{40}_{19}\text{K}\) desintegrado origina un núcleo de \(^{40}_{18}\text{Ar}\) y la roca conserva ambos. Las masas molares nominales son iguales (\(40\,\text{g}\,\text{mol}^{-1}\)), por lo que \(\frac{N_{\text{Ar}}}{N_{\text{K}}}=\frac{73}{12}\). Sin Ar inicial:</p>
+<div class="formula-box">\[N_0=N_{\text{K}}+N_{\text{Ar}},\qquad \frac{N_0}{N_{\text{K}}}=\frac{12+73}{12}=\frac{85}{12}.\]</div>
+<p>Aplicamos \(N_{\text{K}}=N_0e^{-\lambda t}\), con \(\lambda=\frac{\ln2}{T_{1/2}}\):</p>
+<div class="formula-box">\[t=\frac{1}{\lambda}\ln\left(\frac{N_0}{N_{\text{K}}}\right)=\frac{T_{1/2}}{\ln2}\ln\left(\frac{85}{12}\right)=3{,}52\cdot10^{9}\,\text{años}.\]</div>
+<p>Resultado: \(t\approx3{,}52\cdot10^{9}\) años (3525 millones de años).</p></div>
+                    <div class="resultado-problema"><strong>Resultado final</strong><p>\(t\approx3{,}52\cdot10^{9}\) años (3525 millones de años).</p></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 2: 2025 Extraordinaria Nº 11 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Fisión del \(^{235}\)U: energía liberada y masa para 25 000 kWh</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Extraordinaria · Problema 11 · 2 puntos (1 + 1)</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial recogido en el banco de problemas:</strong></p>
+                    <p>Considere la siguiente reacción de fisión: \(^{235}_{92}\text{U}+^{1}_{0}\text{n}\rightarrow^{89}_{36}\text{Kr}+^{144}_{56}\text{Ba}+3\,^{1}_{0}\text{n}\).<br>a) Calcule la energía liberada en el proceso. Exprese el resultado en MeV.<br>b) Durante un partido de fútbol se estima que el consumo de energía es próximo a \(25\,000\,\text{kW}\cdot\text{h}\). Calcule la cantidad de U expresada en gramos que sería necesaria para suministrar esta energía.<br>Datos: \(m_U=235{,}043931\,\text{u}\); \(m_{Kr}=88{,}917835\,\text{u}\); \(m_{Ba}=143{,}922955\,\text{u}\); \(m_n=1{,}008665\,\text{u}\); \(1\,\text{u}=1{,}66\cdot10^{-27}\,\text{kg}\); \(c_0=3{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}\); \(1\,\text{eV}=1{,}60\cdot10^{-19}\,\text{J}\); \(N_A=6{,}022\cdot10^{23}\,\text{mol}^{-1}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h3>Resolución paso a paso</h3>
+                    <div class="paso-resolucion"><h4>Defecto de masa</h4><p>Masa total inicial:</p>
+<div class="formula-box">\[m_{\text{inicial}}=m_U+m_n=235{,}043931+1{,}008665=236{,}052596\,\text{u}.\]</div>
+<p>Masa total final:</p>
+<div class="formula-box">\[m_{\text{final}}=m_{Kr}+m_{Ba}+3m_n=88{,}917835+143{,}922955+3\cdot1{,}008665=235{,}866785\,\text{u}.\]</div>
+<p>Defecto de masa:</p>
+<div class="formula-box">\[\Delta m=m_{\text{inicial}}-m_{\text{final}}=0{,}185811\,\text{u}.\]</div></div><div class="paso-resolucion"><h4>Conversión a kg y energía liberada</h4><div class="formula-box">\[\Delta m=0{,}185811\cdot1{,}66\cdot10^{-27}=3{,}084\cdot10^{-28}\,\text{kg}.\]</div>
+<div class="formula-box">\[E=\Delta m\,c_0^{2}=3{,}084\cdot10^{-28}\cdot(3{,}00\cdot10^{8})^{2}=2{,}77\cdot10^{-11}\,\text{J}.\]</div></div><div class="paso-resolucion"><h4>Conversión a MeV</h4><div class="formula-box">\[E=\frac{2{,}77\cdot10^{-11}}{1{,}60\cdot10^{-19}}\,\text{eV}\cdot10^{-6}=173\,\text{MeV}.\]</div></div><div class="paso-resolucion"><h4>Energía total y número de fisiones</h4><p>La energía del partido es:</p>
+<div class="formula-box">\[E_{\text{total}}=25\,000\,\text{kW}\cdot\text{h}=25\,000\cdot3{,}6\cdot10^{6}=9{,}0\cdot10^{10}\,\text{J}.\]</div>
+<p>El número de fisiones necesarias es:</p>
+<div class="formula-box">\[N=\frac{9{,}0\cdot10^{10}}{2{,}77\cdot10^{-11}}=3{,}25\cdot10^{21}.\]</div></div><div class="paso-resolucion"><h4>Masa de uranio</h4><p>Cada fisión consume un núcleo de \(^{235}\text{U}\). La masa correspondiente es:</p>
+<div class="formula-box">\[m=\frac{N}{N_A}M_U=\frac{3{,}25\cdot10^{21}}{6{,}022\cdot10^{23}}\cdot235{,}043931=1{,}27\,\text{g}.\]</div></div>
+                    <div class="resultado-problema"><strong>Resultado final</strong><p>a) \(E=173\,\text{MeV}\) por fisión.<br>b) \(m=1{,}27\,\text{g}\) de \(^{235}\text{U}\).</p></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 3: 2024 Ordinaria Nº 10 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Defecto de masa y energía de enlace por nucleón del bario-136</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Ordinaria · Problema 10 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial recogido en el banco de problemas:</strong></p>
+                    <p>Determine el defecto de masa y la energía de enlace por nucleón (expresada en MeV) para el isótopo del bario \(^{136}_{56}Ba\) sabiendo que su masa atómica es \(135{,}904576\,\text{u}\). Datos: \(m_{\text{neutrón}}=1{,}008665\,\text{u}\); \(m_{\text{protón}}=1{,}007276\,\text{u}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h3>Resolución paso a paso</h3>
+                    <div class="paso-resolucion"><h4>Cálculo del defecto de masa</h4><p>El núcleo de \(^{136}_{56}Ba\) tiene \(Z=56\) protones y \(N=136-56=80\) neutrones. La masa de los nucleones libres sería:</p>
+<div class="formula-box">\[m_{\text{nucleones}}=56\cdot1{,}007276+80\cdot1{,}008665=137{,}100656\,\text{u}.\]</div>
+<p>El defecto de masa es la diferencia entre esta suma y la masa real del núcleo:</p>
+<div class="formula-box">\[\Delta m=137{,}100656-135{,}904576=1{,}196080\,\text{u}.\]</div></div><div class="paso-resolucion"><h4>Energía de enlace total (Einstein)</h4><p>Usando \(E=\Delta m\,c^{2}\) y \(1\,\text{u}=931{,}5\,\text{MeV}\,c^{-2}\):</p>
+<div class="formula-box">\[E=1{,}196080\cdot931{,}5=1{,}114\cdot10^{3}\,\text{MeV}.\]</div>
+<p>Equivalentemente, con \(\Delta m=1{,}196080\cdot1{,}66\cdot10^{-27}=1{,}985\cdot10^{-27}\,\text{kg}\) y \(c=3{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}\), \(E=1{,}79\cdot10^{-10}\,\text{J}=1{,}114\cdot10^{3}\,\text{MeV}\).</p></div><div class="paso-resolucion"><h4>Energía de enlace por nucleón</h4><div class="formula-box">\[\frac{E}{A}=\frac{1{,}114\cdot10^{3}}{136}=8{,}19\,\text{MeV/nucleón}.\]</div></div>
+                    <div class="resultado-problema"><strong>Resultado final</strong><p>\(\Delta m\approx1{,}196\,\text{u}\); \(E\approx1{,}11\cdot10^{3}\,\text{MeV}\); \(E/A\approx8{,}19\,\text{MeV/nucleón}\).</p></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 4: 2024 Ordinaria Nº 17 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Fisión y fusión nuclear: identificación en reacciones concretas</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Ordinaria · Problema 17 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial recogido en el banco de problemas:</strong></p>
+                    <p>Defina fisión y fusión nuclear e identifique razonadamente cuál de estos dos procesos tiene lugar en cada una de las siguientes reacciones: a) \(^{235}_{92}U+^{1}_{0}n\rightarrow{}^{92}_{36}Kr+^{141}_{56}Ba+3\,^{1}_{0}n+170\,\text{MeV}\); b) \(^{2}_{1}H+^{2}_{1}H\rightarrow{}^{3}_{2}He+^{1}_{0}n+3{,}2\,\text{MeV}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h3>Resolución paso a paso</h3>
+                    <div class="paso-resolucion"><h4>Definición de fisión nuclear</h4><p>La fisión nuclear es la reacción en la que un núcleo pesado e inestable (típicamente \(^{235}U\)) se divide en dos núcleos más ligeros, acompañados de varios neutrones y de una gran cantidad de energía. Suele desencadenarse por la captura de un neutrón térmico y se aprovecha en reactores nucleares y armas atómicas.</p></div><div class="paso-resolucion"><h4>Definición de fusión nuclear</h4><p>La fusión nuclear es la reacción en la que dos núcleos ligeros (típicamente isótopos del hidrógeno) se combinan para formar un núcleo más pesado, liberando energía. Requiere altísimas temperaturas (decenas de millones de kelvin) para vencer la repulsión coulombiana entre los protones, y es la fuente de energía de las estrellas (incluido el Sol).</p></div><div class="paso-resolucion"><h4>Identificación a) y b)</h4><p>Reacción a) \(^{235}_{92}U+^{1}_{0}n\rightarrow{}^{92}_{36}Kr+^{141}_{56}Ba+3\,^{1}_{0}n+170\,\text{MeV}\). Un núcleo pesado de uranio-235 captura un neutrón y se divide en kriptón-92 y bario-141, dos núcleos de masa intermedia, más 3 neutrones y \(170\,\text{MeV}\). Es por tanto una reacción de fisión.</p>
+<p>Reacción b) \(^{2}_{1}H+^{2}_{1}H\rightarrow{}^{3}_{2}He+^{1}_{0}n+3{,}2\,\text{MeV}\). Dos núcleos ligeros de deuterio se combinan en un núcleo de helio-3, liberando un neutrón y \(3{,}2\,\text{MeV}\). Es una reacción de fusión.</p></div>
+                    <div class="resultado-problema"><strong>Resultado final</strong><p>a) fisión (uranio-235 + neutrón \(\rightarrow\) Kr-92 + Ba-141 + 3n). b) fusión (D + D \(\rightarrow\) He-3 + n).</p></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 5: 2023 Extraordinaria Nº 17 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Desintegración del I-131: parámetros y características de las radiaciones β⁻ y γ</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 17 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial recogido en el banco de problemas:</strong></p>
+                    <p>Determine los parámetros \(x\) e \(y\) en la siguiente reacción de desintegración del isótopo radiactivo I-131 e indique las características de la radiación \(\beta^{-}\) y \(\gamma\).</p>
+<div class="formula-box">\[^{131}_{53}I\rightarrow{}^{y}_{x}Xe+\beta^{-}+\gamma\]</div>
+                </div>
+                <div class="resolucion-ej">
+                    <h3>Resolución paso a paso</h3>
+                    <div class="paso-resolucion"><h4>Conservación del número atómico y másico</h4><p>En una desintegración \(\beta^{-}\), un neutrón se convierte en un protón y se emite un electrón y un antineutrino. Por tanto, el número atómico \(Z\) aumenta en 1 y el número másico \(A\) se conserva. Aplicado al I-131:</p>
+<div class="formula-box">\[x=53+1=54;\]</div>
+<div class="formula-box">\[y=131.\]</div>
+<p>El xenón tiene \(Z=54\), así que \({}^{131}_{54}Xe\) es un isótopo coherente de xenón.</p></div><div class="paso-resolucion"><h4>Características de la radiación β⁻</h4><p>La radiación \(\beta^{-}\) consiste en electrones emitidos desde el núcleo. Sus propiedades principales son: carga eléctrica \(-1\); masa muy pequeña, del orden de \(9{,}11\cdot10^{-31}\,\text{kg}\); velocidades altas, próximas a la de la luz; poder de penetración medio, se detiene con unos pocos milímetros de aluminio; poder ionizante moderado, mayor que el de la radiación \(\gamma\) pero menor que el de la \(\alpha\); y se desvía por campos eléctricos y magnéticos.</p></div><div class="paso-resolucion"><h4>Características de la radiación γ</h4><p>La radiación \(\gamma\) es radiación electromagnética de alta frecuencia. Sus propiedades principales son: carga eléctrica nula; masa en reposo nula, pues está formada por fotones; viaja a la velocidad de la luz; poder de penetración muy alto, solo se atenúa con espesores significativos de plomo o hormigón; poder ionizante bajo e indirecto, mediante electrones Compton o fotoeléctricos; y no se desvía por campos eléctricos ni magnéticos.</p></div>
+                    <div class="resultado-problema"><strong>Resultado final</strong><p>\(x=54\), \(y=131\), es decir, \({}^{131}_{54}Xe\). \(\beta^{-}\): electrón, carga \(-1\), ionizante medio y penetración media. \(\gamma\): fotón electromagnético, sin carga ni masa, ionizante bajo pero muy penetrante.</p></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 6: 2022 Ordinaria Nº 17 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Radiaciones α, β, γ y campos magnéticos</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Ordinaria · Problema 17 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial recogido en el banco de problemas:</strong></p>
+                    <p>Discuta cuáles de las radiaciones nucleares α, β o γ se ven afectadas por los campos magnéticos.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h3>Resolución paso a paso</h3>
+                    <div class="paso-resolucion"><h4>Naturaleza de cada radiación</h4><p>α: núcleos de helio \(^{4}_{2}\text{He}\), partículas cargadas positivamente (\(q=+2e\)) y masivas.</p>
+<p>β: electrones (\(\beta^-\)) o positrones (\(\beta^+\)), partículas cargadas (\(q=\mp e\)) y de baja masa.</p>
+<p>γ: radiación electromagnética, fotones de alta energía, partículas sin carga.</p></div><div class="paso-resolucion"><h4>Efecto del campo magnético</h4><p>La fuerza de Lorentz sobre una partícula cargada es \(\vec{F}=q\,\vec{v}\times\vec{B}\). Por tanto, las partículas cargadas se desvían en un campo magnético. Los rayos α se desvían en una dirección y los rayos β en sentido opuesto si son electrones, o en el mismo sentido si son positrones. Además, el radio de curvatura de los β es mucho menor por tener masa menor. Los rayos γ no se desvían porque no tienen carga eléctrica.</p></div>
+                    <div class="resultado-problema"><strong>Resultado final</strong><p>α y β se ven afectadas por el campo magnético y sufren la fuerza de Lorentz. γ no se ve afectada porque es radiación electromagnética sin carga eléctrica. α y β se desvían en sentidos opuestos si sus cargas son de signo contrario; β tiene un radio de curvatura mucho menor por su masa pequeña.</p></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 7: 2021 Ordinaria Nº 17 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">B.6 — Serie de desintegración del uranio-238</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Ordinaria · Problema 17 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial recogido en el banco de problemas:</strong></p>
+                    <p>Complete razonadamente la siguiente serie radiactiva o cadena de desintegración (cada proceso es la secuencia consecutiva del anterior):</p>
+<p>a) \(^{238}_{92}\text{U}\rightarrow{}^{234}_{90}\text{Th}+?\)</p>
+<p>b) \(^{234}_{90}\text{Th}\rightarrow{}^{234}_{91}\text{Pa}+?\)</p>
+<p>c) \(^{234}_{91}\text{Pa}\rightarrow{}^{???}_{???}\text{U}+\beta^{-}\)</p>
+<p>d) \(^{???}_{???}\text{U}\rightarrow{}^{???}_{???}\text{Th}+\alpha\)</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h3>Resolución paso a paso</h3>
+                    <div class="paso-resolucion"><h4>Conservación de A y Z en la cadena</h4><p>a) Conservación de \(A\) y \(Z\): \(238=234+4\), \(92=90+2\). Se emite una partícula \(\alpha\): \(^{4}_{2}\text{He}\).</p>
+<p>b) \(A\) no cambia y \(Z\) aumenta en 1: \(90\rightarrow91\). Se emite \(\beta^{-}\): \(^{0}_{-1}\text{e}\).</p>
+<p>c) \(^{234}_{91}\text{Pa}\rightarrow{}^{234}_{92}\text{U}+\beta^{-}\).</p>
+<p>d) El \(^{234}\text{U}\) emite una \(\alpha\): \(^{234}_{92}\text{U}\rightarrow{}^{230}_{90}\text{Th}+\alpha\).</p></div>
+                    <div class="resultado-problema"><strong>Resultado final</strong><p>a) \(\alpha\); b) \(\beta^{-}\); c) \(^{234}_{92}\text{U}+\beta^{-}\); d) \(^{234}_{92}\text{U}\rightarrow{}^{230}_{90}\text{Th}+\alpha\).</p></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 8: 2021 Extraordinaria Nº 11 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Actividad inicial de \(1\,\mu\text{g}\) de \(^{131}I\)</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Extraordinaria · Problema 11 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial recogido en el banco de problemas:</strong></p>
+                    <p>El yodo radiactivo, \(^{131}I\), tiene un período de semidesintegración de \(8{,}02\,\text{días}\). Calcule la actividad inicial de \(1\,\mu\text{g}\) de dicho isótopo. Exprese el resultado en unidades del SI. Nota: constante de Avogadro \(N_A=6{,}022\cdot10^{23}\,\text{mol}^{-1}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h3>Resolución paso a paso</h3>
+                    <div class="paso-resolucion"><h4>Número de núcleos en \(1\,\mu\text{g}\) de \(^{131}I\)</h4><div class="formula-box">\[N=\frac{m}{M}N_A=\frac{1{,}00\cdot10^{-6}}{131}\cdot6{,}022\cdot10^{23}\approx4{,}60\cdot10^{15}.\]</div></div><div class="paso-resolucion"><h4>Constante de desintegración</h4><div class="formula-box">\[T_{1/2}=8{,}02\,\text{días}=8{,}02\cdot86400\,\text{s}\approx6{,}93\cdot10^{5}\,\text{s}.\]</div>
+<div class="formula-box">\[\lambda=\frac{\ln2}{T_{1/2}}\approx1{,}00\cdot10^{-6}\,\text{s}^{-1}.\]</div></div><div class="paso-resolucion"><h4>Actividad inicial</h4><div class="formula-box">\[A_0=\lambda N\approx1{,}00\cdot10^{-6}\cdot4{,}60\cdot10^{15}\approx4{,}60\cdot10^{9}\,\text{Bq}.\]</div></div>
+                    <div class="resultado-problema"><strong>Resultado final</strong><p>\(A_0\approx4{,}60\cdot10^{9}\,\text{Bq}\).</p></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 9: 2020 Extraordinaria Nº 17 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">B.6 — Tipos principales de radiación radiactiva</span>
+                    <span class="meta-ej">Castilla y León · 2020 · Extraordinaria · Problema 17 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial recogido en el banco de problemas:</strong></p>
+                    <p>B.6) Enumere los principales tipos de radiación que se pueden producir en una desintegración radiactiva; exponga la ecuación del proceso de desintegración e indique la partícula asociada y sus características para cada uno de ellos.</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h3>Resolución paso a paso</h3>
+                    <div class="paso-resolucion"><h4>Radiación \(\alpha\)</h4><p>La partícula \(\alpha\) es un núcleo de helio-4, \(^{4}_{2}\text{He}\): 2 protones y 2 neutrones, carga \(+2e\). Ecuación típica:</p>
+<div class="formula-box">\[^{A}_{Z}X\rightarrow^{A-4}_{Z-2}Y+^{4}_{2}\text{He}.\]</div>
+<p>Características: carga \(+2e\); masa \(\approx6{,}64\cdot10^{-27}\,\text{kg}\); espectro de energía discreto, con valores típicos de 4 a 9 MeV; poder de penetración muy bajo (pocos centímetros de aire o una hoja de papel la frena); muy peligrosa si se inhala o ingiere. En el núcleo padre, \(A\) disminuye en 4 y \(Z\) disminuye en 2.</p></div><div class="paso-resolucion"><h4>Radiación \(\beta^{-}\)</h4><p>En la desintegración \(\beta^{-}\), un neutrón se convierte en un protón emitiendo un electrón y un antineutrino electrónico:</p>
+<div class="formula-box">\[^{A}_{Z}X\rightarrow^{A}_{Z+1}Y+e^{-}+\bar{\nu}_e.\]</div>
+<p>Características: partícula emitida, electrón (\(e^{-}\)); espectro de energía continuo por reparto con el antineutrino; poder de penetración medio (varios milímetros de aluminio o pocos metros de aire); en el núcleo, \(A\) constante y \(Z\) aumenta en 1.</p></div><div class="paso-resolucion"><h4>Radiación \(\beta^{+}\)</h4><p>En la desintegración \(\beta^{+}\), un protón se convierte en un neutrón emitiendo un positrón y un neutrino electrónico:</p>
+<div class="formula-box">\[^{A}_{Z}X\rightarrow^{A}_{Z-1}Y+e^{+}+\nu_e.\]</div>
+<p>Características: partícula emitida, positrón (\(e^{+}\), antipartícula del electrón); espectro continuo; aplicación en tomografía PET; en el núcleo, \(A\) constante y \(Z\) disminuye en 1.</p></div><div class="paso-resolucion"><h4>Radiación \(\gamma\)</h4><p>El núcleo, a menudo en estado excitado tras una desintegración, decae a su estado fundamental emitiendo un fotón de muy alta energía:</p>
+<div class="formula-box">\[^{A}_{Z}X^{*}\rightarrow^{A}_{Z}X+\gamma.\]</div>
+<p>Características: partícula, fotón (carga 0, masa en reposo 0); espectro discreto, con valores típicos de 100 keV a 10 MeV; poder de penetración muy alto (se necesitan centímetros de plomo o metros de hormigón para atenuarla significativamente); aplicaciones en radioterapia, esterilización y medicina nuclear. No cambian \(A\) ni \(Z\).</p></div>
+                    <div class="resultado-problema"><strong>Resultado final</strong><p>Radiaciones principales: \(\alpha\) (núcleo de \(^{4}_{2}\text{He}\)), \(\beta^{-}\) (electrón y antineutrino), \(\beta^{+}\) (positrón y neutrino) y \(\gamma\) (fotón).</p></div>
+                </div>
+            </details>
+
+            <!-- PROBLEMA 10: 2020 Ordinaria Nº 11 -->
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">A.11 — Energía de fisión del U-235</span>
+                    <span class="meta-ej">Castilla y León · 2020 · Ordinaria · Problema 11 · 1 punto</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p><strong>Enunciado oficial recogido en el banco de problemas:</strong></p>
+                    <p>A.11) Una reacción nuclear conocida por su aprovechamiento energético es:</p>
+<div class="formula-box">\[^{235}_{92}\text{U}+^{1}_{0}\text{n}\rightarrow^{141}_{56}\text{Ba}+^{92}_{36}\text{Kr}+3\,^{1}_{0}\text{n}+\text{energía}.\]</div>
+<p>Indique razonadamente si es una reacción de fusión o de fisión y determine la energía desprendida en la reacción por cada átomo de uranio. Exprese el resultado en eV.</p>
+<p>Nota: \(m(^{235}_{92}\text{U})=235{,}0439\,\text{u}\); \(m(^{141}_{56}\text{Ba})=140{,}9162\,\text{u}\); \(m(^{92}_{36}\text{Kr})=91{,}9262\,\text{u}\); \(m(^{1}_{0}\text{n})=1{,}0087\,\text{u}\).</p>
+                </div>
+                <div class="resolucion-ej">
+                    <h3>Resolución paso a paso</h3>
+                    <div class="paso-resolucion"><h4>Identificación del tipo de reacción</h4><p>Un núcleo pesado de uranio-235 se rompe, al absorber un neutrón, en dos núcleos de masas intermedias, \(^{141}\text{Ba}\) y \(^{92}\text{Kr}\), más tres neutrones, liberando energía. Es una reacción de fisión nuclear. Si fuese fusión, dos núcleos ligeros se unirían para formar uno más pesado.</p></div><div class="paso-resolucion"><h4>Defecto de masa</h4><p>Masa de los reactivos:</p>
+<div class="formula-box">\[m_{\text{reactivos}}=235{,}0439+1{,}0087=236{,}0526\,\text{u}.\]</div>
+<p>Masa de los productos:</p>
+<div class="formula-box">\[m_{\text{productos}}=140{,}9162+91{,}9262+3(1{,}0087)=235{,}8685\,\text{u}.\]</div>
+<p>El defecto de masa es:</p>
+<div class="formula-box">\[\Delta m=236{,}0526-235{,}8685=0{,}1841\,\text{u}.\]</div></div><div class="paso-resolucion"><h4>Energía desprendida</h4><p>Mediante la equivalencia masa-energía de Einstein:</p>
+<div class="formula-box">\[E=\Delta m\,c^{2}=0{,}1841\,\text{u}\cdot931{,}5\,\text{MeV}/\text{u}\approx171{,}5\,\text{MeV}.\]</div>
+<p>En eV:</p>
+<div class="formula-box">\[E\approx171{,}5\cdot10^{6}\,\text{eV}=1{,}715\cdot10^{8}\,\text{eV}.\]</div></div>
+                    <div class="resultado-problema"><strong>Resultado final</strong><p>Fisión nuclear. \(E\approx171{,}5\,\text{MeV}\approx1{,}715\cdot10^{8}\,\text{eV}\) por átomo de uranio.</p></div>
+                </div>
+            </details>
+            <div class="pie-clave">
+                <i class="fas fa-lightbulb"></i>
+                <span><strong>Clave de preparación:</strong> practica en este orden: (1) identificar el fenómeno y la partícula; (2) equilibrar A y Z; (3) calcular defectos de masa y energías; (4) interpretar la energía de enlace por nucleón; (5) aplicar la ley exponencial y la actividad; (6) escribir siempre unidades y una conclusión física. En los problemas de cálculo, deja visible la sustitución numérica y no redondees hasta el último paso.</span>
+            </div>
+        </div>
+    </details>
+
+    <!-- RECURSOS -->
+    <div style="max-width:1100px;margin:30px auto;padding:0 15px 30px 15px;">
+        <div style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:20px;padding:26px 22px;box-shadow:0 15px 40px rgba(102,126,234,.3);">
+            <h2 style="margin:0 0 8px;color:white;text-align:center;">Recursos del Tema D5</h2>
+            <p style="text-align:center;color:rgba(255,255,255,.92);margin:0 0 20px;">Currículo y preparación de la EBAU</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;">
+                <a href="https://bocyl.jcyl.es/boletines/2022/09/30/pdf/BOCYL-D-30092022-4.pdf" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
+                    <div style="background:white;border-radius:14px;padding:20px;text-align:center;height:100%;">
+                        <div style="font-size:1.7em;color:#2563eb;margin-bottom:8px;"><i class="fas fa-scale-balanced"></i></div>
+                        <strong style="color:#1e3a8a;">Decreto 40/2022</strong>
+                        <div style="font-size:.86em;color:#64748b;margin-top:6px;">Currículo oficial de Bachillerato en Castilla y León</div>
+                    </div>
+                </a>
+                <a href="../EBAU/problemas-inline_v04.html" style="text-decoration:none;color:inherit;">
+                    <div style="background:white;border-radius:14px;padding:20px;text-align:center;height:100%;">
+                        <div style="font-size:1.7em;color:#059669;margin-bottom:8px;"><i class="fas fa-database"></i></div>
+                        <strong style="color:#1e3a8a;">Banco general EBAU</strong>
+                        <div style="font-size:.86em;color:#64748b;margin-top:6px;">Acceso al conjunto de problemas de Física</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CIERRE -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p>Comprende el núcleo, domina las conservaciones y practica el cálculo de energía y radiactividad.<br><em>La clave está en justificar cada transformación y mantener coherentes las unidades.</em></p>
+            <div style="text-align:center;"><a href="../index.html" target="_blank" class="boton-volver">Volver al inicio</a></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

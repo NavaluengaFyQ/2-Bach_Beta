@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tema D4. Modelo estándar y física de partículas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Hoja de estilos común del proyecto IES Valle del Alberche -->
+  <link rel="stylesheet" href="../css/unidades.css">
+  <script>window.MathJax = { tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] } };</script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .ficha-codigo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+    .ficha-codigo>div{background:#fff;border:1px solid #cbd5e0;border-radius:10px;padding:12px 15px}
+    .ficha-codigo strong{display:block;color:#1e3a8a;margin-bottom:6px}
+    .pendiente{display:inline-block;background:#fff7ed;color:#9a3412;border:1px solid #fed7aa;padding:2px 7px;border-radius:6px;font-size:.9em;margin:2px}
+    .tabla-particulas{font-size:.94em}
+    .tabla-particulas td:first-child{font-weight:700;white-space:nowrap}
+    .tag-problema{display:inline-block;border-radius:20px;background:#dbeafe;color:#1e40af;padding:3px 10px;font-size:.82em}
+    .tag-aviso{display:inline-block;border-radius:20px;background:#fef3c7;color:#92400e;padding:3px 10px;font-size:.82em}
+    .clave{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:8px;padding:12px 15px;margin:14px 0}
+    .nota-curriculo{font-size:.92em;color:#475569}
+    .diagrama-particulas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:15px 0}
+    .diagrama-particulas .familia{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:12px}
+    .familia h4{color:#1e3a8a;margin:0 0 8px 0}
+    .familia p{margin:6px 0}
+    .recurso-enlaces{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .recurso-enlaces a{display:inline-block;text-decoration:none;background:#eef2ff;color:#1e40af;border:1px solid #c7d2fe;border-radius:8px;padding:8px 12px;font-weight:600}
+    @media(max-width:640px){.ficha-codigo,.diagrama-particulas{grid-template-columns:1fr}.tabla-particulas{font-size:.84em}}
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="header-left">
+      <h1>IES Valle del Alberche</h1>
+      <div class="header-sub">
+        <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+        <span class="codigo">#TEMA D4.- </span>
+        <span class="texto">Modelo estándar y física de partículas</span>
+      </div>
+    </div>
+    <div class="header-right"><img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro"></div>
+  </div>
+
+  <details class="section enunciado" open>
+    <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+    <p>Este tema pertenece al <strong>Bloque D. Física relativista, cuántica, nuclear y de partículas</strong> del currículo de Física de 2.º de Bachillerato. La organización de bloques y temas sigue el mapa aportado del Decreto 40/2022 (BOCyL-D-30092022-4).</p>
+    <div class="mapa-bloques">
+      <div class="bloque-card"><div class="bloque-titulo">A. Campo gravitatorio</div><div class="tema-lista"><span class="tema-chip">A1</span><span class="tema-chip">A2</span><span class="tema-chip">A3</span><span class="tema-chip">A4</span><span class="tema-chip">A5</span><span class="tema-chip">A6</span><span class="tema-chip">A7</span><span class="tema-chip">A8</span></div></div>
+      <div class="bloque-card"><div class="bloque-titulo">B. Campo electromagnético</div><div class="tema-lista"><span class="tema-chip">B1</span><span class="tema-chip">B2</span><span class="tema-chip">B3</span><span class="tema-chip">B4</span><span class="tema-chip">B5</span><span class="tema-chip">B6</span><span class="tema-chip">B7</span><span class="tema-chip">B8</span><span class="tema-chip">B9</span></div></div>
+      <div class="bloque-card"><div class="bloque-titulo">C. Vibraciones y ondas</div><div class="tema-lista"><span class="tema-chip">C1</span><span class="tema-chip">C2</span><span class="tema-chip">C3</span><span class="tema-chip">C4</span><span class="tema-chip">C5</span><span class="tema-chip">C6</span></div></div>
+      <div class="bloque-card actual"><div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div><div class="tema-lista"><span class="tema-chip">D1</span><span class="tema-chip">D2</span><span class="tema-chip">D3</span><span class="tema-chip actual">D4</span><span class="tema-chip">D5</span><span class="tema-chip">D6</span></div></div>
+    </div>
+    <div class="formula-box" style="font-size:.98em;text-align:left">
+      <strong>Bloque D · Tema D4:</strong> <span class="texto-resaltado">Modelo estándar y física de partículas.</span>
+      <p><em>En este tema estudiaremos:</em> las interacciones fundamentales y sus bosones mediadores; las partículas elementales (quarks, leptones y bosones); la estructura en quarks de protones, neutrones y mesones; y la aplicación de las leyes de conservación de carga eléctrica, número bariónico y extrañeza a procesos sencillos.</p>
+    </div>
+    <div class="ficha-codigo">
+      <div><strong>C-D4 · Conceptos</strong>Temas: D4.<br>Palabras clave: Modelo estándar, interacciones fundamentales, bosón mediador, gluón, fotón, bosones W y Z, bosón de Higgs, quarks, leptones.<br><span class="pendiente">% = [pendiente]</span> <span class="pendiente">media = [pendiente]</span> <span class="pendiente">Δ = [pendiente]</span></div>
+      <div><strong>P-D4 · Aplicación y problemas tipo</strong>Temas: D4. Aplica: C-D4.<br>Palabras clave: barión, mesón, protón uud, neutrón udd, pión, número bariónico, extrañeza, carga eléctrica, conservación, interacción fuerte.<br><span class="pendiente">% = [pendiente]</span> <span class="pendiente">media = [pendiente]</span> <span class="pendiente">Δ = [pendiente]</span></div>
+    </div>
+    <p class="nota-curriculo">Los indicadores estadísticos se mantienen como «pendiente» porque no se han proporcionado valores en los archivos de referencia.</p>
+  </details>
+
+  <details class="section objetivo">
+    <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+    <ul>
+      <li>Identificar las cuatro interacciones fundamentales, sus propiedades generales y las partículas mediadoras asociadas.</li>
+      <li>Explicar qué describe el Modelo Estándar y reconocer que incorpora las interacciones electromagnética, fuerte y débil, pero no la gravitatoria.</li>
+      <li>Distinguir partículas de materia (fermiones: quarks y leptones) y bosones, diferenciando bosones mediadores y bosón de Higgs.</li>
+      <li>Reconocer las seis clases de quarks y leptones y sus cargas eléctricas.</li>
+      <li>Explicar la composición en quarks de protones, neutrones y mesones sencillos.</li>
+      <li>Clasificar hadrones como bariones o mesones y calcular su carga y número bariónico a partir de sus constituyentes.</li>
+      <li>Aplicar la conservación de la carga eléctrica y del número bariónico; utilizar la extrañeza para distinguir procesos fuertes/electromagnéticos de procesos débiles.</li>
+      <li>Resolver cuestiones conceptuales y problemas de razonamiento del nivel de 2.º de Bachillerato y de la EBAU.</li>
+    </ul>
+  </details>
+
+  <details class="section procedimiento">
+    <summary><h2>📚 Contenido teórico</h2></summary>
+
+    <details class="step" open><summary><span class="step-num">1</span><strong>El Modelo Estándar: qué describe y qué queda fuera.</strong></summary>
+      <p>El <strong>Modelo Estándar de la física de partículas</strong> es el marco teórico que organiza las partículas elementales conocidas y describe cómo interactúan mediante tres interacciones fundamentales: la electromagnética, la nuclear fuerte y la nuclear débil. La <strong>gravedad no está incluida</strong> en el Modelo Estándar.</p>
+      <p>El modelo agrupa las partículas de materia en <strong>quarks</strong> y <strong>leptones</strong>, y describe sus interacciones mediante bosones. El bosón de Higgs completa el sector de partículas del modelo y está relacionado con el mecanismo por el que ciertas partículas adquieren masa.</p>
+      <div class="clave"><strong>Idea EBAU:</strong> si preguntan cuántas interacciones fundamentales incluye el Modelo Estándar, la respuesta es <strong>tres de las cuatro</strong>: electromagnética, fuerte y débil. La interacción gravitatoria queda fuera.</div>
+    </details>
+
+    <details class="step"><summary><span class="step-num">2</span><strong>Las cuatro interacciones fundamentales y sus bosones mediadores.</strong></summary>
+      <p>Una interacción fundamental se caracteriza por las partículas sobre las que actúa, su intensidad relativa, su alcance y la partícula (o partículas) mediadora(s) asociada(s).</p>
+      <table class="tabla-particulas"><thead><tr><th>Interacción</th><th>Sobre qué actúa / papel</th><th>Alcance aproximado</th><th>Mediador</th><th>¿Modelo Estándar?</th></tr></thead><tbody>
+        <tr><td>Gravitatoria</td><td>Entre partículas con masa/energía; dominante a gran escala.</td><td>Ilimitado</td><td>Gravitón (hipotético, no detectado)</td><td><strong>No</strong></td></tr>
+        <tr><td>Electromagnética</td><td>Entre partículas con carga eléctrica; puede atraer o repeler.</td><td>Ilimitado</td><td>Fotón \(\gamma\)</td><td>Sí</td></tr>
+        <tr><td>Nuclear fuerte</td><td>Actúa sobre quarks; mantiene los quarks confinados dentro de los hadrones. Su efecto residual contribuye a ligar los nucleones en el núcleo.</td><td>Muy corto, escala subnuclear/nuclear (aprox. \(10^{-15}\,\text{m}\))</td><td>Gluones \(g\)</td><td>Sí</td></tr>
+        <tr><td>Nuclear débil</td><td>Interviene en transformaciones de partículas, como la desintegración beta.</td><td>Muy corto (aprox. \(10^{-18}\,\text{m}\))</td><td>\(W^+\), \(W^-\), \(Z^0\)</td><td>Sí</td></tr>
+      </tbody></table>
+      <p>En los procesos de intercambio, los bosones transmiten energía y momento entre las partículas que interactúan. A nivel de este curso es importante asociar cada mediador a su interacción.</p>
+      <div class="note"><strong>Precisión importante:</strong> el gravitón es una partícula hipotética; no se ha observado experimentalmente. No debe presentarse como un mediador confirmado del Modelo Estándar.</div>
+    </details>
+
+    <details class="step"><summary><span class="step-num">3</span><strong>Fermiones y bosones. Partículas de materia y mediadores.</strong></summary>
+      <p>La clasificación por espín permite distinguir dos grandes familias:</p>
+      <ul>
+        <li><strong>Fermiones:</strong> tienen espín semientero. En el Modelo Estándar, los quarks y los leptones son fermiones y constituyen la materia.</li>
+        <li><strong>Bosones:</strong> tienen espín entero. Los bosones gauge (fotón, gluones y \(W/Z\)) median las interacciones electromagnética, fuerte y débil. El bosón de Higgs tiene espín 0.</li>
+      </ul>
+      <div class="diagrama-particulas">
+        <div class="familia"><h4>Fermiones · materia</h4><p><strong>Quarks:</strong> \(u,d,c,s,t,b\).</p><p><strong>Leptones:</strong> \(e,\mu,\tau,\nu_e,\nu_\mu,\nu_\tau\).</p><p>Espín \(1/2\).</p></div>
+        <div class="familia"><h4>Bosones · interacciones y campo de Higgs</h4><p><strong>Gauge:</strong> fotón, 8 gluones, \(W^+\), \(W^-\), \(Z^0\).</p><p><strong>Higgs:</strong> bosón escalar.</p><p>Espín entero.</p></div>
+      </div>
+      <table><thead><tr><th>Partícula</th><th>Espín</th><th>Clasificación útil para EBAU</th></tr></thead><tbody>
+        <tr><td>Electrón</td><td>\(1/2\)</td><td>Fermión; leptón; constituyente de la materia.</td></tr>
+        <tr><td>Quark up</td><td>\(1/2\)</td><td>Fermión; quark; constituyente de hadrones.</td></tr>
+        <tr><td>Fotón</td><td>1</td><td>Bosón mediador electromagnético.</td></tr>
+        <tr><td>Gluón</td><td>1</td><td>Bosón mediador de la interacción fuerte.</td></tr>
+        <tr><td>\(W^\pm\), \(Z^0\)</td><td>1</td><td>Bosones mediadores de la interacción débil.</td></tr>
+        <tr><td>Higgs</td><td>0</td><td>Bo­són escalar asociado al campo de Higgs.</td></tr>
+      </tbody></table>
+      <div class="note"><strong>No confundir:</strong> el Higgs es un bosón, pero no es el mediador gauge de la interacción electromagnética, fuerte o débil. Su papel es distinto: el campo de Higgs participa en el mecanismo que da masa a las partículas elementales.</div>
+    </details>
+
+    <details class="step"><summary><span class="step-num">4</span><strong>Quarks: sabores y carga eléctrica.</strong></summary>
+      <p>Hay seis tipos o <strong>sabores</strong> de quark, agrupados en tres generaciones. Los quarks no se observan aislados en condiciones ordinarias: aparecen confinados formando hadrones.</p>
+      <table><thead><tr><th>Quarks</th><th>Carga eléctrica</th><th>Antiquarks</th><th>Carga eléctrica</th></tr></thead><tbody>
+        <tr><td>up \(u\), charm \(c\), top \(t\)</td><td>\(+\frac23e\)</td><td>\(\bar u,\bar c,\bar t\)</td><td>\(-\frac23e\)</td></tr>
+        <tr><td>down \(d\), strange \(s\), bottom \(b\)</td><td>\(-\frac13e\)</td><td>\(\bar d,\bar s,\bar b\)</td><td>\(+\frac13e\)</td></tr>
+      </tbody></table>
+      <p>La carga de un hadrón se obtiene sumando algebraicamente las cargas de sus quarks y antiquarks. Por ejemplo, para el protón \(uud\):</p>
+      <div class="formula-box">\[Q_p=+\frac23e+\frac23e-\frac13e=+e\]</div>
+    </details>
+
+    <details class="step"><summary><span class="step-num">5</span><strong>Leptones.</strong></summary>
+      <p>Los leptones son fermiones elementales que <strong>no participan en la interacción fuerte</strong>. Hay tres leptones cargados y tres neutrinos:</p>
+      <table><thead><tr><th>Generación</th><th>Leptón cargado</th><th>Neutrino</th></tr></thead><tbody>
+        <tr><td>Primera</td><td>Electrón \(e^-\), carga \(-e\)</td><td>Neutrino electrónico \(\nu_e\), carga 0</td></tr>
+        <tr><td>Segunda</td><td>Muón \(\mu^-\), carga \(-e\)</td><td>Neutrino muónico \(\nu_\mu\), carga 0</td></tr>
+        <tr><td>Tercera</td><td>Tau \(\tau^-\), carga \(-e\)</td><td>Neutrino tauónico \(\nu_\tau\), carga 0</td></tr>
+      </tbody></table>
+      <p>Los leptones cargados sienten la interacción electromagnética y la débil; los neutrinos, al ser eléctricamente neutros, interactúan mediante la débil (y la gravedad, despreciable a esta escala). Cada leptón tiene su antipartícula correspondiente.</p>
+    </details>
+
+    <details class="step"><summary><span class="step-num">6</span><strong>Hadrónes: bariones y mesones.</strong></summary>
+      <p>Los <strong>hadrónes</strong> son partículas compuestas por quarks y están sometidas a la interacción fuerte. A este nivel se distinguen dos familias principales:</p>
+      <ul>
+        <li><strong>Bariones:</strong> formados por tres quarks \((qqq)\). Ejemplos: protón, neutrón y otros bariones.</li>
+        <li><strong>Mesones:</strong> formados por un quark y un antiquark \((q\bar q)\). Ejemplos: piones \((\pi)\) y kaones \((K)\).</li>
+      </ul>
+      <table><thead><tr><th>Partícula</th><th>Composición</th><th>Carga total</th><th>Familia</th></tr></thead><tbody>
+        <tr><td>Protón \(p\)</td><td>\(uud\)</td><td>\(+e\)</td><td>Barión</td></tr>
+        <tr><td>Neutrón \(n\)</td><td>\(udd\)</td><td>0</td><td>Barión</td></tr>
+        <tr><td>Pión positivo \(\pi^+\)</td><td>\(u\bar d\)</td><td>\(+e\)</td><td>Mesón</td></tr>
+        <tr><td>Pión negativo \(\pi^-\)</td><td>\(d\bar u\)</td><td>\(-e\)</td><td>Mesón</td></tr>
+        <tr><td>Pión neutro \(\pi^0\)</td><td>Combinación neutra de \(u\bar u\) y \(d\bar d\)</td><td>0</td><td>Mesón</td></tr>
+      </tbody></table>
+      <div class="formula-box">\[p=uud:\quad Q=\frac23+\frac23-\frac13=+1\]\[n=udd:\quad Q=\frac23-\frac13-\frac13=0\]</div>
+      <div class="note"><strong>Atención:</strong> protón y neutrón no son partículas elementales; son hadrones compuestos. En cambio, los quarks que los forman sí son partículas elementales del Modelo Estándar.</div>
+    </details>
+
+    <details class="step"><summary><span class="step-num">7</span><strong>Número bariónico y extrañeza.</strong></summary>
+      <p>Los números cuánticos permiten describir propiedades de las partículas y comprobar si un proceso puede ocurrir mediante una interacción determinada.</p>
+      <p><strong>Número bariónico \(B\):</strong> se asigna \(+1/3\) a cada quark y \(-1/3\) a cada antiquark. Por tanto:</p>
+      <div class="formula-box">\[B(qqq)=+1,\qquad B(\bar q\bar q\bar q)=-1,\qquad B(q\bar q)=0\]</div>
+      <p>Los bariones tienen \(B=+1\), los antibariones \(B=-1\) y los mesones \(B=0\).</p>
+      <p><strong>Extrañeza \(S\):</strong> para los casos que se trabajan en este nivel, cada quark strange \(s\) aporta \(-1\), y cada antiquark strange \(\bar s\) aporta \(+1\). Los quarks \(u,d,c,b,t\) no aportan extrañeza en esta convención simplificada de ejercicios.</p>
+      <table><thead><tr><th>Constituyente</th><th>Contribución a \(B\)</th><th>Contribución a \(S\)</th></tr></thead><tbody>
+        <tr><td>Quark ordinario \(q\)</td><td>\(+1/3\)</td><td>0 (salvo \(s\))</td></tr>
+        <tr><td>Quark strange \(s\)</td><td>\(+1/3\)</td><td>\(-1\)</td></tr>
+        <tr><td>Antiquark \(\bar q\)</td><td>\(-1/3\)</td><td>0 (salvo \(\bar s\))</td></tr>
+        <tr><td>Antiquark strange \(\bar s\)</td><td>\(-1/3\)</td><td>\(+1\)</td></tr>
+      </tbody></table>
+      <p>La interacción fuerte y la electromagnética conservan la extrañeza. La interacción débil puede cambiarla (por ejemplo, en la desintegración de un barión extraño).</p>
+    </details>
+
+    <details class="step"><summary><span class="step-num">8</span><strong>Leyes de conservación y criterio para identificar una interacción.</strong></summary>
+      <p>En una reacción o desintegración se calculan las magnitudes totales antes y después del proceso. Para los ejercicios de este tema se comprueban, como mínimo:</p>
+      <ol>
+        <li><strong>Carga eléctrica:</strong> la suma de cargas debe ser la misma a ambos lados.</li>
+        <li><strong>Número bariónico:</strong> se conserva en los procesos ordinarios considerados en este nivel.</li>
+        <li><strong>Extrañeza:</strong> se conserva en interacciones fuertes y electromagnéticas; puede cambiar en una interacción débil.</li>
+        <li><strong>Energía y cantidad de movimiento:</strong> se conservan en el sistema completo, teniendo en cuenta todas las partículas y la energía liberada o absorbida.</li>
+      </ol>
+      <table><thead><tr><th>Interacción</th><th>Carga</th><th>Número bariónico</th><th>Extrañeza</th></tr></thead><tbody>
+        <tr><td>Fuerte</td><td>Se conserva</td><td>Se conserva</td><td>Se conserva</td></tr>
+        <tr><td>Electromagnética</td><td>Se conserva</td><td>Se conserva</td><td>Se conserva</td></tr>
+        <tr><td>Débil</td><td>Se conserva</td><td>Se conserva</td><td>Puede cambiar</td></tr>
+      </tbody></table>
+      <div class="clave"><strong>Regla práctica EBAU:</strong> si una reacción cambia la extrañeza, no puede ser fuerte ni electromagnética; si las otras conservaciones se cumplen, puede corresponder a la interacción débil.</div>
+    </details>
+
+    <details class="step"><summary><span class="step-num">9</span><strong>La desintegración beta como ejemplo de interacción débil.</strong></summary>
+      <p>En una desintegración beta menos, un quark down de un neutrón cambia a quark up mediante la interacción débil. A escala de nucleones se resume como:</p>
+      <div class="formula-box">\[n\longrightarrow p+e^-+\bar\nu_e\]</div>
+      <p>El bosón \(W^-\) interviene como partícula mediadora virtual en la transformación. Comprobación de las magnitudes:</p>
+      <table><thead><tr><th>Magnitud</th><th>Inicial</th><th>Final</th></tr></thead><tbody>
+        <tr><td>Carga</td><td>0</td><td>\(+1-1+0=0\)</td></tr>
+        <tr><td>Número bariónico</td><td>1</td><td>\(1+0+0=1\)</td></tr>
+        <tr><td>Número leptónico total</td><td>0</td><td>\(+1-1=0\)</td></tr>
+      </tbody></table>
+      <p>En el núcleo, \(A\) permanece constante y \(Z\) aumenta en una unidad. El electrón emitido no es un electrón orbital preexistente: se produce en la desintegración.</p>
+    </details>
+  </details>
+
+  <details class="section procedimiento">
+    <summary><h2>🧮 Resolución de problemas tipo</h2></summary>
+    <p>Estos ejemplos son <strong>modelos didácticos elaborados para practicar D4</strong>; no se atribuyen a una convocatoria oficial concreta. Los ejercicios oficiales seleccionados del banco se identifican en la sección siguiente.</p>
+
+    <details class="step" open><summary><span class="step-num">1</span><strong>Identificar el mediador y decidir si la interacción está en el Modelo Estándar.</strong></summary>
+      <p><strong>Enunciado tipo:</strong> Asocia fotón, gluón, \(W^\pm/Z^0\) y gravitón a la interacción correspondiente. ¿Cuáles están incluidas en el Modelo Estándar?</p>
+      <p><strong>Resolución:</strong> fotón → electromagnética; gluón → fuerte; \(W^\pm\) y \(Z^0\) → débil; gravitón → gravedad (hipotético). El Modelo Estándar incluye las tres primeras y no describe la gravedad.</p>
+    </details>
+
+    <details class="step"><summary><span class="step-num">2</span><strong>Calcular la carga y clasificar un hadrón a partir de sus quarks.</strong></summary>
+      <p><strong>Enunciado tipo:</strong> Determina la carga eléctrica y la familia del protón \(uud\), del neutrón \(udd\) y del pión \(u\bar d\).</p>
+      <p><strong>Resolución:</strong></p>
+      <div class="formula-box">\[Q_p=\frac23+\frac23-\frac13=+1\quad\Rightarrow\quad p\text{ es un barión de carga }+e\]</div>
+      <div class="formula-box">\[Q_n=\frac23-\frac13-\frac13=0\quad\Rightarrow\quad n\text{ es un barión neutro}\]</div>
+      <div class="formula-box">\[Q_{u\bar d}=\frac23+\frac13=+1\quad\Rightarrow\quad \pi^+\text{ es un mesón de carga }+e\]</div>
+      <p>El protón y el neutrón contienen tres quarks; el pión contiene un quark y un antiquark.</p>
+    </details>
+
+    <details class="step"><summary><span class="step-num">3</span><strong>Calcular número bariónico y extrañeza.</strong></summary>
+      <p><strong>Enunciado tipo:</strong> Calcula \(B\) y \(S\) de un protón \(uud\), un kaón positivo \(u\bar s\) y un pión negativo \(d\bar u\).</p>
+      <p><strong>Resolución:</strong> el protón tiene tres quarks, por lo que \(B=3(1/3)=1\), y no contiene \(s\), luego \(S=0\). El kaón \(u\bar s\) tiene \(B=1/3-1/3=0\) y \(S=+1\). El pión \(d\bar u\) tiene \(B=0\) y \(S=0\).</p>
+      <table><thead><tr><th>Partícula</th><th>Constitución</th><th>\(B\)</th><th>\(S\)</th></tr></thead><tbody><tr><td>Protón</td><td>\(uud\)</td><td>+1</td><td>0</td></tr><tr><td>\(K^+\)</td><td>\(u\bar s\)</td><td>0</td><td>+1</td></tr><tr><td>\(\pi^-\)</td><td>\(d\bar u\)</td><td>0</td><td>0</td></tr></tbody></table>
+    </details>
+
+    <details class="step"><summary><span class="step-num">4</span><strong>Comprobar si una desintegración puede ser fuerte o debe ser débil.</strong></summary>
+      <p><strong>Enunciado tipo:</strong> Analiza \(\Lambda^0\to p+\pi^-\), sabiendo que \(\Lambda^0\) tiene composición \(uds\).</p>
+      <p><strong>Carga:</strong> \(0=(+1)+(-1)\), se conserva.</p>
+      <p><strong>Número bariónico:</strong> \(1=1+0\), se conserva.</p>
+      <p><strong>Extrañeza:</strong> la partícula inicial contiene un quark \(s\), luego \(S=-1\); los productos no contienen quarks extraños, luego \(S=0\). La extrañeza cambia en una unidad. Por tanto, el proceso <strong>no puede ser fuerte ni electromagnético</strong>; es una desintegración débil.</p>
+    </details>
+
+    <details class="step"><summary><span class="step-num">5</span><strong>Escribir una desintegración beta y comprobar las conservaciones.</strong></summary>
+      <p><strong>Enunciado tipo:</strong> Escribe la desintegración beta menos de un neutrón e identifica la interacción responsable.</p>
+      <div class="formula-box">\[n\to p+e^-+\bar\nu_e\]</div>
+      <p>La carga total es \(0=(+1)+(-1)+0\); el número bariónico es \(1=1\); el número leptónico total es \(0=(+1)+(-1)\). La transformación se produce mediante la interacción débil, mediada por el bosón \(W^-\).</p>
+    </details>
+
+    <div class="pie-clave"><i class="fas fa-lightbulb"></i><span><strong>Esquema de resolución:</strong> (1) escribe la composición de cada partícula; (2) suma cargas; (3) calcula \(B\) contando quarks y antiquarks; (4) calcula \(S\) contando quarks \(s\) y antiquarks \(\bar s\); (5) compara estado inicial y final; (6) si cambia la extrañeza, descarta las interacciones fuerte y electromagnética y considera la débil.</span></div>
+  </details>
+
+  <details class="section resultado">
+    <summary><h2>🔭 Diez problemas EBAU seleccionados del banco adjunto</h2></summary>
+    <p>La selección prioriza Castilla y León siempre que hay ejercicios aprovechables. <strong>Importante:</strong> el banco adjunto solo contiene dos registros clasificados explícitamente como D4 (uno de ellos compartido con D5). Por eso, los otros ocho se incluyen como <em>complementarios</em>: trabajan propiedades de partículas, carga, desintegración débil, conservación en reacciones o contexto de nucleones, pero no son problemas D4 estrictos.</p>
+    <div class="clave"><strong>Distribución:</strong> 2 ejercicios D4 explícitos (Extremadura 2025 y Región de Murcia 2026) + 7 complementarios de Castilla y León + 1 de Asturias sobre un protón relativista. No he etiquetado como D4 los enunciados que el banco clasifica en B1, D1 o D5.</div>
+    
+      <details class="tarjeta-ejercicio">
+        <summary class="cabecera-ej">
+          <span class="num-ej">EBAU 01</span>
+          <span class="titulo-ej">Fuerzas fundamentales de la Naturaleza y Modelo Estandar</span>
+          <span class="meta-ej">Extremadura · 2025 · Ordinaria · Problema 7</span>
+          <span class="meta-ej">2,5 puntos (1,25 + 1,25)</span>
+        </summary>
+        <div class="enunciado-ej">
+          <p><strong><span class="tag-problema">D4 directo</span></strong></p>
+          <p><strong>Clasificación del banco:</strong> D4. Modelo estándar y física de partículas</p>
+          <p><strong>Enunciado:</strong></p>
+          <p>Responda a las siguientes preguntas:</p><ul><li><strong>a)</strong> Cuales son las 4 fuerzas fundamentales de la Naturaleza? <em>(1,25 puntos)</em></li><li><strong>b)</strong> Razona si el Modelo Estandar de la Fisica de Particulas engloba dichas interacciones. <em>(1,25 puntos)</em></li></ul>
+        </div>
+        <div class="resolucion-ej">
+          <p><strong>Relación con D4:</strong> Es el problema más alineado con C-D4: pide enumerar las cuatro interacciones y delimitar qué describe el Modelo Estándar.</p>
+          <p><strong>Resolución / idea clave:</strong></p>
+          
+        <p>La respuesta debe distinguir las cuatro interacciones:</p>
+        <ul>
+          <li><strong>Gravitatoria:</strong> actúa entre masas; alcance infinito; mediador hipotético: gravitón. No está incorporada al Modelo Estándar.</li>
+          <li><strong>Electromagnética:</strong> actúa sobre cargas; alcance infinito; mediador: fotón \(\gamma\).</li>
+          <li><strong>Fuerte:</strong> actúa sobre quarks; mediadores: gluones; mantiene confinados los quarks dentro de los hadrones.</li>
+          <li><strong>Débil:</strong> interviene, entre otros procesos, en la desintegración beta; mediadores: \(W^+\), \(W^-\) y \(Z^0\).</li>
+        </ul>
+        <p>El Modelo Estándar describe las partículas elementales y las interacciones electromagnética, fuerte y débil. <strong>No incluye la gravitatoria.</strong></p>
+        <div class="formula-box">\[\text{Modelo Estándar}=\text{electromagnética} + \text{fuerte} + \text{débil}\]</div>
+        <p><strong>Respuesta:</strong> tres de las cuatro interacciones fundamentales; la gravedad queda fuera del Modelo Estándar.</p>
+    
+        </div>
+      </details>
+    
+
+      <details class="tarjeta-ejercicio">
+        <summary class="cabecera-ej">
+          <span class="num-ej">EBAU 02</span>
+          <span class="titulo-ej">Energía de enlace del helio y clasificación de partículas elementales</span>
+          <span class="meta-ej">Región de Murcia · 2026 · Extraordinaria · Problema 7</span>
+          <span class="meta-ej">2 puntos (1 + 1)</span>
+        </summary>
+        <div class="enunciado-ej">
+          <p><strong><span class="tag-problema">D4 directo + D5</span></strong></p>
+          <p><strong>Clasificación del banco:</strong> D4. Modelo estándar y física de partículas; D5. Núcleos atómicos, radiactividad y reacciones nucleares</p>
+          <p><strong>Enunciado:</strong></p>
+          <p>a) [1p] El núcleo de helio-4 (${}^{4}\text{He}$) está formado por 2 protones y 2 neutrones. Calcule su energía de enlace por nucleón (en MeV). Datos: masa del protón $=1.0073\,\text{u}$, masa del neutrón $=1.0087\,\text{u}$, masa del ${}^{4}\text{He}=4.0015\,\text{u}$, $1\,\text{u}=931.5\,\text{MeV}/c^{2}$. b) [1p] Para cada una de las siguientes partículas elementales indique si es un fermión o un bosón y si son constituyentes de la materia o mediadores de interacciones: electrón, fotón, $W$, quark up ($u$).</p><ul><li><strong>a)</strong> El núcleo de helio-4 (${}^{4}\text{He}$) está formado por 2 protones y 2 neutrones. Calcule su energía de enlace por nucleón (en MeV). Datos: masa del protón $=1.0073\,\text{u}$, masa del neutrón $=1.0087\,\text{u}$, masa del ${}^{4}\text{He}=4.0015\,\text{u}$, $1\,\text{u}=931.5\,\text{MeV}/c^{2}$. <em>(1 punto)</em></li><li><strong>b)</strong> Para cada una de las siguientes partículas elementales indique si es un fermión o un bosón y si son constituyentes de la materia o mediadores de interacciones: electrón, fotón, $W$, quark up ($u$). <em>(1 punto)</em></li></ul>
+        </div>
+        <div class="resolucion-ej">
+          <p><strong>Relación con D4:</strong> La segunda parte pregunta exactamente por fermión/bosón y por constituyente de materia/mediador; la primera es D5 (energía de enlace).</p>
+          <p><strong>Resolución / idea clave:</strong></p>
+          
+        <p><strong>Apartado a (D5, complementario):</strong></p>
+        <div class="formula-box">\[\Delta m=2m_p+2m_n-m_{\,{}^{4}\!He}=0{,}0305\,\text{u}\]</div>
+        <div class="formula-box">\[E_{\text{enlace}}=0{,}0305\cdot931{,}5=28{,}41\,\text{MeV}\]</div>
+        <div class="formula-box">\[\frac{E_{\text{enlace}}}{A}=\frac{28{,}41}{4}=7{,}10\,\text{MeV/nucleón}\]</div>
+        <p><strong>Apartado b (D4):</strong></p>
+        <table><thead><tr><th>Partícula</th><th>Tipo</th><th>Función</th></tr></thead><tbody>
+          <tr><td>Electrón \(e^-\)</td><td>Fermión, espín \(1/2\)</td><td>Materia; leptón</td></tr>
+          <tr><td>Fotón \(\gamma\)</td><td>Bosón, espín 1</td><td>Mediador electromagnético</td></tr>
+          <tr><td>\(W^\pm\)</td><td>Bosón, espín 1</td><td>Mediador débil</td></tr>
+          <tr><td>Quark up \(u\)</td><td>Fermión, espín \(1/2\)</td><td>Materia; quark</td></tr>
+        </tbody></table>
+        <p><strong>Clave:</strong> quarks y leptones son fermiones constituyentes de la materia; fotón, gluón y bosones \(W/Z\) son bosones mediadores. El Higgs también es un bosón, pero no es el mediador de una de las cuatro interacciones en el mismo sentido que los bosones gauge: está asociado al campo de Higgs y al mecanismo de generación de masa.</p>
+    
+        </div>
+      </details>
+    
+
+      <details class="tarjeta-ejercicio">
+        <summary class="cabecera-ej">
+          <span class="num-ej">EBAU 03</span>
+          <span class="titulo-ej">B.3 — Trayectorias de electrón, protón y neutrón en campo magnético</span>
+          <span class="meta-ej">Castilla y León · 2021 · Ordinaria · Problema 14</span>
+          <span class="meta-ej">1 punto</span>
+        </summary>
+        <div class="enunciado-ej">
+          <p><strong><span class="tag-problema">Complementario · partículas cargadas</span></strong></p>
+          <p><strong>Clasificación del banco:</strong> B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz</p>
+          <p><strong>Enunciado:</strong></p>
+          <p>Un electrón, un protón y un neutrón se desplazan con igual velocidad y entran perpendicularmente en un campo magnético uniforme y constante. Compare razonadamente las trayectorias descritas por cada una de las partículas.</p>
+        </div>
+        <div class="resolucion-ej">
+          <p><strong>Relación con D4:</strong> Compara electrón, protón y neutrón; sirve para relacionar carga eléctrica, identidad de las partículas y desviación en un campo.</p>
+          <p><strong>Resolución / idea clave:</strong></p>
+          
+        <p>La fuerza magnética es \(\vec F_B=q\,\vec v\times\vec B\).</p>
+        <ul>
+          <li>Neutrón: \(q=0\), luego no sufre fuerza magnética y sigue una recta.</li>
+          <li>Electrón y protón: tienen cargas de igual módulo y signo opuesto; describen circunferencias en sentidos contrarios.</li>
+        </ul>
+        <div class="formula-box">\[r=\frac{mv}{|q|B},\qquad T=\frac{2\pi m}{|q|B}\]</div>
+        <p>Con la misma rapidez, \(r_p/r_e=T_p/T_e=m_p/m_e\approx1836\). El radio y el periodo del protón son mucho mayores.</p>
+    
+        </div>
+      </details>
+    
+
+      <details class="tarjeta-ejercicio">
+        <summary class="cabecera-ej">
+          <span class="num-ej">EBAU 04</span>
+          <span class="titulo-ej">Fuerza de Lorentz sobre un protón en un campo de 3 T</span>
+          <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Problema 4</span>
+          <span class="meta-ej">1 punto</span>
+        </summary>
+        <div class="enunciado-ej">
+          <p><strong><span class="tag-problema">Complementario · protón</span></strong></p>
+          <p><strong>Clasificación del banco:</strong> B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz</p>
+          <p><strong>Enunciado:</strong></p>
+          <p>Un protón penetra perpendicularmente a un campo magnético uniforme de $3\,\text{T}$. Si el protón se mueve con una energía cinética de $4\,\text{MeV}$, ¿qué fuerza ejerce el campo sobre el protón?</p>
+        </div>
+        <div class="resolucion-ej">
+          <p><strong>Relación con D4:</strong> Aplica el carácter de partícula cargada del protón y la fuerza magnética; refuerza el uso de la carga elemental.</p>
+          <p><strong>Resolución / idea clave:</strong></p>
+          
+        <p>Se transforma primero la energía cinética: \(4\,\text{MeV}=6{,}4\cdot10^{-13}\,\text{J}\).</p>
+        <div class="formula-box">\[K=\frac12m_pv^2\quad\Rightarrow\quad v=\sqrt{\frac{2K}{m_p}}\approx2{,}77\cdot10^7\,\text{m}\,\text{s}^{-1}\]</div>
+        <p>Como \(\vec v\perp\vec B\), el módulo de la fuerza es:</p>
+        <div class="formula-box">\[F=|q|vB=(1{,}60\cdot10^{-19})(2{,}77\cdot10^7)(3)\]</div>
+        <p><strong>Resultado:</strong> \(F\approx1{,}33\cdot10^{-11}\,\text{N}\).</p>
+    
+        </div>
+      </details>
+    
+
+      <details class="tarjeta-ejercicio">
+        <summary class="cabecera-ej">
+          <span class="num-ej">EBAU 05</span>
+          <span class="titulo-ej">B.3 — Trayectorias de electrón, protón y neutrón en un campo magnético</span>
+          <span class="meta-ej">Castilla y León · 2020 · Extraordinaria · Problema 14</span>
+          <span class="meta-ej">1 punto</span>
+        </summary>
+        <div class="enunciado-ej">
+          <p><strong><span class="tag-problema">Complementario · partículas cargadas</span></strong></p>
+          <p><strong>Clasificación del banco:</strong> B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz</p>
+          <p><strong>Enunciado:</strong></p>
+          <p>B.3) Un electrón, un protón y un neutrón, que se mueven en direcciones paralelas, con velocidades uniformes y la misma energía cinética, entran en una región en la que existe un campo magnético uniforme y perpendicular a sus velocidades. Razone si son ciertos o falsos los siguientes enunciados: a) “Los tres conservan su energía cinética pero sólo el neutrón mantiene el mismo vector velocidad”. b) “El electrón y el protón describen ambos trayectorias circulares, siendo el radio de giro menor para este último”.</p><ul><li><strong>a)</strong> Razone si es cierto o falso: “Los tres conservan su energía cinética pero sólo el neutrón mantiene el mismo vector velocidad”. <em>(0,5 puntos)</em></li><li><strong>b)</strong> Razone si es cierto o falso: “El electrón y el protón describen ambos trayectorias circulares, siendo el radio de giro menor para este último”. <em>(0,5 puntos)</em></li></ul>
+        </div>
+        <div class="resolucion-ej">
+          <p><strong>Relación con D4:</strong> Contrasta trayectorias para igual energía cinética; enlaza masa, carga y respuesta de partículas distintas ante el campo electromagnético.</p>
+          <p><strong>Resolución / idea clave:</strong></p>
+          
+        <p>La fuerza magnética es perpendicular a la velocidad y, por ello, no realiza trabajo: las tres partículas conservan su energía cinética.</p>
+        <p>El neutrón no tiene carga y mantiene constante el vector velocidad. Protón y electrón se curvan en sentidos opuestos.</p>
+        <div class="formula-box">\[r=\frac{mv}{|q|B},\quad K=\frac12mv^2\quad\Rightarrow\quad r=\frac{\sqrt{2mK}}{|q|B}\]</div>
+        <p>Con igual \(K\), igual \(|q|\) y el mismo campo, \(r\propto\sqrt m\). Así, \(r_p/r_e\approx\sqrt{1836}\approx42{,}8\): el radio del protón es mayor. La afirmación contraria es falsa.</p>
+    
+        </div>
+      </details>
+    
+
+      <details class="tarjeta-ejercicio">
+        <summary class="cabecera-ej">
+          <span class="num-ej">EBAU 06</span>
+          <span class="titulo-ej">Desintegración del I-131: parámetros y características de las radiaciones β⁻ y γ</span>
+          <span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 17</span>
+          <span class="meta-ej">1 punto</span>
+        </summary>
+        <div class="enunciado-ej">
+          <p><strong><span class="tag-problema">Complementario · interacción débil</span></strong></p>
+          <p><strong>Clasificación del banco:</strong> D5. Núcleos atómicos, radiactividad y reacciones nucleares</p>
+          <p><strong>Enunciado:</strong></p>
+          <p>Determine los parámetros $x$ e $y$ en la siguiente reacción de desintegración del isótopo radiactivo I-131 e indique las características de la radiación $\beta^{-}$ y $\gamma$.<br><br>$$^{131}_{53}I\rightarrow{}^{y}_{x}Xe+\beta^{-}+\gamma$$</p>
+        </div>
+        <div class="resolucion-ej">
+          <p><strong>Relación con D4:</strong> La desintegración beta conecta el bosón W con cambios de tipo de quark y permite practicar conservación de carga y número másico.</p>
+          <p><strong>Resolución / idea clave:</strong></p>
+          
+        <p>En una desintegración \(\beta^-\), a escala nuclear, un neutrón se transforma en protón y se emiten un electrón y un antineutrino:</p>
+        <div class="formula-box">\[n\longrightarrow p+e^-+\bar\nu_e\]</div>
+        <p>Por tanto, el número másico permanece constante y el número atómico aumenta en una unidad:</p>
+        <div class="formula-box">\[A:131=131,\qquad Z:53=54+(-1)\]</div>
+        <p>Luego \(x=54\), \(y=131\), y el núcleo hijo es \({}^{131}_{54}\mathrm{Xe}\). La radiación \(\gamma\) es un fotón: no tiene carga ni masa en reposo y no se desvía en campos eléctricos o magnéticos. La interacción débil es la responsable de la desintegración \(\beta^-\).</p>
+    
+        </div>
+      </details>
+    
+
+      <details class="tarjeta-ejercicio">
+        <summary class="cabecera-ej">
+          <span class="num-ej">EBAU 07</span>
+          <span class="titulo-ej">B.6 — Desintegración β⁻ del carbono-14</span>
+          <span class="meta-ej">Castilla y León · 2020 · Ordinaria · Problema 17</span>
+          <span class="meta-ej">1 punto</span>
+        </summary>
+        <div class="enunciado-ej">
+          <p><strong><span class="tag-problema">Complementario · interacción débil y conservación</span></strong></p>
+          <p><strong>Clasificación del banco:</strong> D5. Núcleos atómicos, radiactividad y reacciones nucleares</p>
+          <p><strong>Enunciado:</strong></p>
+          <p>B.6) El carbono-14 ($^{14}_{6}\text{C}$) es un emisor $\beta^{-}$. Escriba la ecuación de desintegración correspondiente a dicho elemento y describa brevemente el tipo de radiactividad asociado.</p><ul><li><strong>a)</strong> Escriba la ecuación de desintegración correspondiente al carbono-14. <em>(0,5 puntos)</em></li><li><strong>b)</strong> Describa brevemente el tipo de radiactividad asociado. <em>(0,5 puntos)</em></li></ul>
+        </div>
+        <div class="resolucion-ej">
+          <p><strong>Relación con D4:</strong> Ejemplo clásico de ecuación beta menos: permite comprobar carga eléctrica, número bariónico y número leptónico.</p>
+          <p><strong>Resolución / idea clave:</strong></p>
+          
+        <p>La ecuación completa es:</p>
+        <div class="formula-box">\[{}^{14}_{6}\mathrm C\longrightarrow{}^{14}_{7}\mathrm N+e^-+\bar\nu_e\]</div>
+        <p>En el núcleo, la transformación elemental es \(d\to u+W^-\), seguida de \(W^-\to e^-+\bar\nu_e\). De forma conjunta, un neutrón pasa a protón.</p>
+        <p>Comprobación: carga \(0=+1-1\); número bariónico \(1=1+0\); número leptónico total \(0=+1-1\). El número másico nuclear permanece en 14 y \(Z\) pasa de 6 a 7. Es un proceso de interacción débil.</p>
+    
+        </div>
+      </details>
+    
+
+      <details class="tarjeta-ejercicio">
+        <summary class="cabecera-ej">
+          <span class="num-ej">EBAU 08</span>
+          <span class="titulo-ej">Fisión y fusión nuclear: identificación en reacciones concretas</span>
+          <span class="meta-ej">Castilla y León · 2024 · Ordinaria · Problema 17</span>
+          <span class="meta-ej">1 punto</span>
+        </summary>
+        <div class="enunciado-ej">
+          <p><strong><span class="tag-problema">Complementario · conservación en reacciones</span></strong></p>
+          <p><strong>Clasificación del banco:</strong> D5. Núcleos atómicos, radiactividad y reacciones nucleares</p>
+          <p><strong>Enunciado:</strong></p>
+          <p>Defina fisión y fusión nuclear e identifique razonadamente cuál de estos dos procesos tiene lugar en cada una de las siguientes reacciones: a) $^{235}_{92}U+^{1}_{0}n\rightarrow{}^{92}_{36}Kr+^{141}_{56}Ba+3\,^{1}_{0}n+170\,\text{MeV}$; b) $^{2}_{1}H+^{2}_{1}H\rightarrow{}^{3}_{2}He+^{1}_{0}n+3{,}2\,\text{MeV}$.</p><ul><li><strong>a)</strong> $^{235}_{92}U+^{1}_{0}n\rightarrow{}^{92}_{36}Kr+^{141}_{56}Ba+3\,^{1}_{0}n+170\,\text{MeV}$ <em>(1 punto)</em></li><li><strong>b)</strong> $^{2}_{1}H+^{2}_{1}H\rightarrow{}^{3}_{2}He+^{1}_{0}n+3{,}2\,\text{MeV}$ <em>(1 punto)</em></li></ul>
+        </div>
+        <div class="resolucion-ej">
+          <p><strong>Relación con D4:</strong> Ayuda a revisar el balance de número másico y carga nuclear en procesos de fisión y fusión; es D5, no D4 estricto.</p>
+          <p><strong>Resolución / idea clave:</strong></p>
+          
+        <p><strong>a) Fisión:</strong> un núcleo pesado de uranio captura un neutrón y se divide en núcleos más ligeros:</p>
+        <div class="formula-box">\[{}^{235}_{92}U+{}^{1}_{0}n\to{}^{92}_{36}Kr+{}^{141}_{56}Ba+3\,{}^{1}_{0}n+170\,\text{MeV}\]</div>
+        <p>Balance: \(A\): \(235+1=92+141+3\); \(Z\): \(92=36+56\).</p>
+        <p><strong>b) Fusión:</strong> dos núcleos ligeros de deuterio se combinan:</p>
+        <div class="formula-box">\[{}^{2}_{1}H+{}^{2}_{1}H\to{}^{3}_{2}He+{}^{1}_{0}n+3{,}2\,\text{MeV}\]</div>
+        <p>Balance: \(A\): \(2+2=3+1\); \(Z\): \(1+1=2+0\). Ambas reacciones conservan número másico y carga eléctrica nuclear.</p>
+    
+        </div>
+      </details>
+    
+
+      <details class="tarjeta-ejercicio">
+        <summary class="cabecera-ej">
+          <span class="num-ej">EBAU 09</span>
+          <span class="titulo-ej">Radiaciones α, β, γ y campos magnéticos</span>
+          <span class="meta-ej">Castilla y León · 2022 · Ordinaria · Problema 17</span>
+          <span class="meta-ej">1 punto</span>
+        </summary>
+        <div class="enunciado-ej">
+          <p><strong><span class="tag-problema">Complementario · partículas y carga</span></strong></p>
+          <p><strong>Clasificación del banco:</strong> D5. Núcleos atómicos, radiactividad y reacciones nucleares</p>
+          <p><strong>Enunciado:</strong></p>
+          <p>Discuta cuáles de las radiaciones nucleares α, β o γ se ven afectadas por los campos magnéticos.</p>
+        </div>
+        <div class="resolucion-ej">
+          <p><strong>Relación con D4:</strong> Compara las radiaciones alfa, beta y gamma; refuerza la identificación de partículas cargadas, positrones/electrones y fotones.</p>
+          <p><strong>Resolución / idea clave:</strong></p>
+          
+        <p>La radiación α está formada por núcleos de helio \({}^{4}_{2}\mathrm{He}\), con carga \(+2e\); la radiación \(eta^-\) son electrones, de carga \(-e\), y la \(eta^+\) son positrones, de carga \(+e\). Todas las partículas cargadas sufren fuerza de Lorentz:</p>
+        <div class="formula-box">\[\vec F=q\,\vec v\times\vec B\]</div>
+        <p>Por eso las partículas \(lpha\) y \(eta\) se desvían. Si \(eta\) corresponde a electrones, la desviación tiene sentido opuesto a la de \(lpha\); si son positrones, el mismo sentido. Las partículas \(eta\), mucho más ligeras, describen una curva de radio menor.</p>
+        <p>La radiación \(\gamma\) está formada por fotones, no tiene carga y no se desvía en el campo magnético.</p>
+    
+        </div>
+      </details>
+    
+
+      <details class="tarjeta-ejercicio">
+        <summary class="cabecera-ej">
+          <span class="num-ej">EBAU 10</span>
+          <span class="titulo-ej">Relatividad especial: energía del protón</span>
+          <span class="meta-ej">Asturias · 2025 · Ordinaria · Problema 8</span>
+          <span class="meta-ej">2 puntos (0,5 + 1 + 0,5)</span>
+        </summary>
+        <div class="enunciado-ej">
+          <p><strong><span class="tag-problema">Complementario · protón relativista</span></strong></p>
+          <p><strong>Clasificación del banco:</strong> D1. Relatividad especial y consecuencias</p>
+          <p><strong>Enunciado:</strong></p>
+          <p>Si la energía total relativista de un protón es el triple de su energía en estado de reposo, determina:</p><ul><li><strong>a)</strong> ¿Cuál es el valor de la energía de reposo del protón? <em>(0,5 puntos)</em></li><li><strong>b)</strong> ¿Qué velocidad lleva el protón? <em>(1 punto)</em></li><li><strong>c)</strong> ¿Qué energía cinética tiene el protón? <em>(0,5 puntos)</em></li></ul>
+        </div>
+        <div class="resolucion-ej">
+          <p><strong>Relación con D4:</strong> Ejercicio de D1 sobre una partícula concreta; refuerza la energía de reposo y la energía de partículas en aceleradores.</p>
+          <p><strong>Resolución / idea clave:</strong></p>
+          
+        <p>La energía en reposo del protón es:</p>
+        <div class="formula-box">\[E_0=m_pc^2\approx1{,}50\cdot10^{-10}\,\text{J}\]</div>
+        <p>Si \(E=3E_0\), entonces \(\gamma=3\):</p>
+        <div class="formula-box">\[\gamma=\frac1{\sqrt{1-v^2/c^2}}=3\quad\Rightarrow\quad v=c\sqrt{\frac89}\approx0{,}943c\]</div>
+        <p>Por último, \(E_c=E-E_0=2E_0\approx3{,}01\cdot10^{-10}\,\text{J}\).</p>
+    
+        </div>
+      </details>
+    
+    <div class="pie-clave"><i class="fas fa-lightbulb"></i><span><strong>Vacío detectado en el banco:</strong> no aparecen problemas EBAU explícitos de composición \(uud/udd\), piones, número bariónico y extrañeza en interacciones fuertes. Por eso se han añadido los problemas tipo resueltos anteriores; no se inventa una convocatoria oficial para esos contenidos.</span></div>
+  </details>
+
+  <details class="section enunciado">
+    <summary><h2>✅ Síntesis y errores frecuentes en la EBAU</h2></summary>
+    <ul>
+      <li>No afirmar que el Modelo Estándar incluye la gravedad: incluye electromagnetismo, interacción fuerte y débil.</li>
+      <li>No confundir un bosón mediador con cualquier bosón: el Higgs es un bosón escalar con un papel distinto.</li>
+      <li>No clasificar al protón o al neutrón como partículas elementales: son bariones formados por tres quarks.</li>
+      <li>No confundir barión con mesón: \(qqq\) frente a \(q\bar q\).</li>
+      <li>No sumar el módulo de las cargas: se suman algebraicamente con su signo.</li>
+      <li>No olvidar que cada antiquark aporta \(-1/3\) al número bariónico y que \(\bar s\) tiene extrañeza \(+1\).</li>
+      <li>No concluir que cualquier cambio de extrañeza viola la conservación: puede darse en procesos débiles.</li>
+      <li>En una desintegración \(\beta^-\), el número másico permanece constante y el número atómico aumenta una unidad.</li>
+    </ul>
+    <div class="formula-box">\[\boxed{p=uud,\;Q=+e,\;B=1}\qquad\boxed{n=udd,\;Q=0,\;B=1}\]</div>
+  </details>
+
+  <div style="max-width:1100px;margin:25px auto;padding:0 15px 25px">
+    <div class="recurso-tema" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:20px;padding:25px;color:white;text-align:center">
+      <h2 style="margin:0 0 8px;color:white"><i class="fas fa-compass"></i> Recursos y referencias</h2>
+      <p style="color:rgba(255,255,255,.92)">La estructura curricular y los metadatos EBAU proceden de los archivos adjuntos. Para ampliar la explicación científica:</p>
+      <div class="recurso-enlaces" style="justify-content:center">
+        <a href="https://home.web.cern.ch/science/physics/standard-model/" target="_blank" rel="noopener">CERN · Modelo Estándar</a>
+        <a href="https://www.energy.gov/science/doe-explainsthe-standard-model-particle-physics" target="_blank" rel="noopener">US Department of Energy · Standard Model</a>
+      </div>
+      <p style="font-size:.85em;color:rgba(255,255,255,.85);margin-top:16px">Material adaptado al nivel de Física de 2.º de Bachillerato y preparación EBAU.</p>
+    </div>
+  </div>
+
+  <div class="bloque-cta"><div class="tarjeta-cta">
+    <p>Domina las partículas elementales, sus interacciones y las leyes de conservación.<br><em>Comprueba en cada ejercicio qué magnitudes se conservan antes de identificar la interacción.</em></p>
+    <div style="text-align:center"><a href="../index.html" target="_blank" class="boton-volver">Volver al inicio</a></div>
+  </div></div>
+</div>
+</body>
+</html>
