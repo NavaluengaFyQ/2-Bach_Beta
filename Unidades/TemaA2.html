@@ -143,6 +143,11 @@
                     \[
                     \text{Ptolomeo (geocentrismo)} \;\to\; \text{Copérnico (heliocentrismo)} \;\to\; \text{Kepler (3 leyes)} \;\to\; \text{Newton (gravitación)}
                     \]
+                    <span id="formula-1b">
+                        \[ e = \frac{c}{a} \]
+                        \[ c^{2} = a^{2} - b^{2} \]
+                        \[ 0 \le e < 1 \]
+                    </span>
                 </div>
             </a>
             <div style="text-align:right; margin-top:10px;">
@@ -940,22 +945,27 @@ document.addEventListener('DOMContentLoaded', function () {
     var target = document.querySelector(hash);
     if (!target) return;
 
+    // Si el id está en un <span> interno, subimos a la caja .formula-box que lo contiene
+    var highlight = target.classList.contains('formula-box')
+        ? target
+        : (target.closest('.formula-box') || target);
+
     // Abrir todos los <details> ancestros para que la fórmula sea visible
-    var el = target.parentElement;
+    var el = highlight.parentElement;
     while (el) {
         if (el.tagName === 'DETAILS') el.open = true;
         el = el.parentElement;
     }
 
     // Desplazar al centro de la pantalla
-    target.scrollIntoView({ behavior: 'auto', block: 'center' });
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
 
     // Re-lanzar la animación por si ya se había consumido
-    target.classList.remove('formula-resaltada');
-    void target.offsetWidth;               // fuerza reflow → reinicia la animación
-    target.classList.add('formula-resaltada');
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;               // fuerza reflow → reinicia la animación
+    highlight.classList.add('formula-resaltada');
     setTimeout(function () {
-        target.classList.remove('formula-resaltada');
+        highlight.classList.remove('formula-resaltada');
     }, 2600);
 });
 </script>

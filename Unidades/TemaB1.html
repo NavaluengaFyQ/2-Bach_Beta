@@ -5,25 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz</title>
 
-
-    <!-- Para crear las consultas puntuales en la base de datos) -->
     <script src="js/utils.js" defer></script>
-
-    <!-- FontAwesome CDN (versión 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
     <link rel="stylesheet" href="../css/unidades.css">
-
-    <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-
-    
 </head>
 <body> 
 <div class="container">
-    <!-- CABECERA -->
     <div class="header">
         <div class="header-left">
             <h1>IES Valle del Alberche</h1>
@@ -38,15 +26,11 @@
         </div>
     </div>
 
-    <!-- ============================================================ -->
-    <!-- MAPA DE BLOQUES Y TEMAS (DESPLEGABLE)                         -->
-    <!-- =========================================================== -->
     <details class="section enunciado" open>
         <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
         <p>Este tema pertenece al <strong>Bloque B. Campo electromagnético</strong> del currículo de Física de 2º de Bachillerato (Decreto 40/2022, BOCYL-D-30092022-4).</p>
 
         <div class="mapa-bloques">
-            <!-- BLOQUE A -->
             <div class="bloque-card">
                 <div class="bloque-titulo">A. Campo gravitatorio</div>
                 <div class="tema-lista">
@@ -60,7 +44,6 @@
                     <span class="tema-chip">A8</span>
                 </div>
             </div>
-            <!-- BLOQUE B (ACTUAL) -->
             <div class="bloque-card actual">
                 <div class="bloque-titulo">B. Campo electromagnético</div>
                 <div class="tema-lista">
@@ -75,7 +58,6 @@
                     <span class="tema-chip">B9</span>
                 </div>
             </div>
-            <!-- BLOQUE C -->
             <div class="bloque-card">
                 <div class="bloque-titulo">C. Vibraciones y ondas</div>
                 <div class="tema-lista">
@@ -87,7 +69,6 @@
                     <span class="tema-chip">C6</span>
                 </div>
             </div>
-            <!-- BLOQUE D -->
             <div class="bloque-card">
                 <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
                 <div class="tema-lista">
@@ -108,9 +89,6 @@
         </div>
     </details>
 
-    <!-- ============================================================ -->
-    <!-- OBJETIVOS (DESPLEGABLE)                                       -->
-    <!-- ============================================================ -->
     <details class="section objetivo">
         <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
         <ul>
@@ -125,9 +103,6 @@
         </ul>
     </details>
 
-    <!-- ============================================================ -->
-    <!-- CONTENIDO TEÓRICO (DESPLEGABLE)                               -->
-    <!-- ============================================================ -->
     <details class="section procedimiento">
         <summary><h2>📚 Contenido teórico</h2></summary>
 
@@ -137,17 +112,21 @@
                 <strong>Ley de Coulomb: fuerza entre cargas puntuales.</strong>
             </summary>
             <p>La <strong>ley de Coulomb</strong> establece que dos cargas puntuales \(q_1\) y \(q_2\) separadas una distancia \(r\) se atraen o se repelen con una fuerza cuyo módulo es directamente proporcional al producto de las cargas e inversamente proporcional al cuadrado de la distancia que las separa:</p>
-            <div class="formula-box">
+            <a href="TemaB1-Formulario.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
                 \[
                 F=K\,\frac{|q_1q_2|}{r^{2}}
                 \]
             </div>
+            </a>
             <p>donde \(K=9\cdot10^{9}\,\text{N}\cdot\text{m}^{2}\cdot\text{C}^{-2}\) es la <strong>constante de Coulomb</strong> en el vacío. En forma vectorial, la fuerza que \(q_1\) ejerce sobre \(q_2\) es:</p>
-            <div class="formula-box">
+            <a href="TemaB1-Formulario.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">
                 \[
                 \vec F_{1\to2}=K\,\frac{q_1q_2}{r^{2}}\,\hat u_{12}
                 \]
             </div>
+            </a>
             <p>siendo \(\hat u_{12}\) el vector unitario dirigido de \(q_1\) hacia \(q_2\). El signo del producto \(q_1q_2\) determina el carácter atractivo (producto negativo) o repulsivo (producto positivo) de la fuerza.</p>
             <p><strong>Propiedades esenciales:</strong></p>
             <ul>
@@ -165,24 +144,38 @@
                 <strong>Campo eléctrico y principio de superposición.</strong>
             </summary>
             <p>El <strong>campo eléctrico</strong> en un punto del espacio es la fuerza eléctrica por unidad de carga positiva colocada en dicho punto:</p>
+            <a href="TemaB1-Formulario.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">
                 \[
                 \vec E=\frac{\vec F}{q_0}
                 \]
             </div>
+            </a>
             <p>Para una carga puntual \(Q\) situada en el origen:</p>
-            <div class="formula-box">
+            <a href="TemaB1-Formulario.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">
                 \[
                 \vec E=K\,\frac{Q}{r^{2}}\,\hat u_r
                 \]
             </div>
+            </a>
             <p>El campo apunta alejándose de la carga si \(Q>0\) y hacia la carga si \(Q<0\). Su unidad en el S.I. es \(\text{N}\cdot\text{C}^{-1}\), equivalente a \(\text{V}\cdot\text{m}^{-1}\).</p>
             <p>Cuando hay varias cargas, el campo total en un punto es la <strong>suma vectorial</strong> de los campos individuales (principio de superposición):</p>
+            <a href="TemaB1-Formulario.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">
                 \[
                 \vec E_{\text{total}}=\sum_i \vec E_i=\sum_i K\,\frac{Q_i}{r_i^{2}}\,\hat u_{ri}
                 \]
             </div>
+            </a>
+            <p>Asociado al campo eléctrico existe el <strong>potencial eléctrico</strong> \(V\), que es la energía potencial electrostática por unidad de carga positiva. Para una carga puntual \(Q\), con origen de potencial en el infinito:</p>
+            <a href="TemaB1-Formulario.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">
+                \[
+                V=K\,\frac{Q}{r}
+                \]
+            </div>
+            </a>
             <p>Las líneas de campo eléctrico son tangentes al vector \(\vec E\) en cada punto. Salen de las cargas positivas y terminan en las negativas; su densidad indica la intensidad del campo.</p>
         </details>
 
@@ -192,17 +185,21 @@
                 <strong>Fuerza de Lorentz: fuerza magnética sobre cargas en movimiento.</strong>
             </summary>
             <p>Una carga \(q\) que se mueve con velocidad \(\vec v\) en una región donde existe un campo magnético \(\vec B\) experimenta una fuerza magnética dada por la <strong>ley de Lorentz</strong> (parte magnética):</p>
+            <a href="TemaB1-Formulario.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">
                 \[
                 \vec F_m=q\,(\vec v\times\vec B)
                 \]
             </div>
+            </a>
             <p>Su módulo es:</p>
-            <div class="formula-box">
+            <a href="TemaB1-Formulario.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">
                 \[
                 F_m=|q|\,v\,B\,\text{sen}\,\theta
                 \]
             </div>
+            </a>
             <p>donde \(\theta\) es el ángulo entre \(\vec v\) y \(\vec B\).</p>
             <p><strong>Propiedades esenciales:</strong></p>
             <ul>
@@ -213,11 +210,13 @@
                 <li>El sentido de \(\vec F_m\) se invierte al cambiar el signo de \(q\).</li>
             </ul>
             <p>Cuando coexisten un campo eléctrico y un campo magnético, la fuerza total es la <strong>fuerza de Lorentz completa</strong>:</p>
-            <div class="formula-box">
+            <a href="TemaB1-Formulario.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">
                 \[
                 \vec F=q\,(\vec E+\vec v\times\vec B)
                 \]
             </div>
+            </a>
         </details>
 
         <details class="step">
@@ -226,17 +225,27 @@
                 <strong>Movimiento de cargas en un campo eléctrico uniforme.</strong>
             </summary>
             <p>En un campo eléctrico uniforme \(\vec E\), la fuerza eléctrica sobre una carga \(q\) es constante: \(\vec F=q\vec E\). Por tanto, la carga experimenta una aceleración constante:</p>
-            <div class="formula-box">
+            <a href="TemaB1-Formulario.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">
                 \[
                 \vec a=\frac{q\vec E}{m}
                 \]
             </div>
+            </a>
             <p>El movimiento es análogo al de un proyectil en el campo gravitatorio terrestre. Si la carga entra con velocidad inicial \(\vec v_0\):</p>
             <ul>
                 <li><strong>Aceleración:</strong> constante y paralela (o antiparalela) a \(\vec E\).</li>
                 <li><strong>Trayectoria:</strong> rectilínea si \(\vec v_0\parallel\vec E\), parabólica si \(\vec v_0\) tiene componente perpendicular a \(\vec E\).</li>
                 <li><strong>Energía:</strong> el trabajo eléctrico \(W=q\,\Delta V\) se convierte en variación de energía cinética: \(\frac{1}{2}mv^2-\frac{1}{2}mv_0^2=q(V_i-V_f)\).</li>
             </ul>
+            <p>En términos energéticos, el trabajo realizado por el campo eléctrico entre dos puntos con potenciales \(V_A\) y \(V_B\) vale:</p>
+            <a href="TemaB1-Formulario.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">
+                \[
+                W_{A\to B}=q\,(V_A-V_B)=-\Delta U=\Delta K
+                \]
+            </div>
+            </a>
             <p>Este es el principio del tubo de rayos catódicos, de los aceleradores lineales y de la impresión láser.</p>
         </details>
 
@@ -252,18 +261,30 @@
                 \]
             </div>
             <p>Por tanto, la carga describe una <strong>trayectoria circular</strong> de radio:</p>
-            <div class="formula-box">
+            <a href="TemaB1-Formulario.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">
                 \[
                 R=\frac{m\,v}{|q|\,B}
                 \]
             </div>
+            </a>
             <p>y su periodo (tiempo en dar una vuelta completa) es:</p>
+            <a href="TemaB1-Formulario.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">
                 \[
                 T=\frac{2\pi R}{v}=\frac{2\pi m}{|q|\,B}
                 \]
             </div>
+            </a>
             <p>La <strong>frecuencia ciclotrón</strong> \(f=1/T\) no depende de la velocidad, lo que permite aplicaciones como el ciclotrón y el espectrómetro de masas.</p>
+            <p>De la expresión del radio se obtiene la relación carga/masa de la partícula, que es la magnitud que mide un espectrómetro de masas:</p>
+            <a href="TemaB1-Formulario.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">
+                \[
+                \frac{|q|}{m}=\frac{v}{B\,r}
+                \]
+            </div>
+            </a>
             <p>El sentido de giro depende del signo de la carga: positiva y negativa giran en sentidos opuestos. El centro de la circunferencia se determina por la dirección de \(\vec F_m=q(\vec v\times\vec B)\) en el instante inicial.</p>
             <p>Si la velocidad tiene una componente paralela a \(\vec B\), el movimiento resultante es una <strong>hélice</strong> cuyo eje es paralelo al campo.</p>
         </details>
@@ -274,17 +295,21 @@
                 <strong>Selector de velocidades.</strong>
             </summary>
             <p>Un <strong>selector de velocidades</strong> es una región donde coexisten un campo eléctrico \(\vec E\) y un campo magnético \(\vec B\), perpendiculares entre sí y perpendiculares a la velocidad de la carga. Para que una partícula cargada atraviese la región sin desviarse, la fuerza eléctrica debe compensar exactamente a la fuerza magnética:</p>
+            <a href="TemaB1-Formulario.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">
                 \[
                 q\vec E+q(\vec v\times\vec B)=0
                 \]
             </div>
+            </a>
             <p>Si \(\vec E\), \(\vec B\) y \(\vec v\) son mutuamente perpendiculares, los módulos deben cumplir:</p>
-            <div class="formula-box">
+            <a href="TemaB1-Formulario.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">
                 \[
                 |q|\,E=|q|\,v\,B\quad\Rightarrow\quad v=\frac{E}{B}
                 \]
             </div>
+            </a>
             <p>Solo las partículas con esa velocidad pasan sin desviarse. Este es el principio del <strong>filtro de Wien</strong>, del espectrómetro de masas y de los experimentos de Thomson para determinar la relación \(q/m\) del electrón.</p>
         </details>
 
@@ -308,9 +333,6 @@
         </div>
     </details>
 
-    <!-- ============================================================ -->
-    <!-- ANÁLISIS DE FÓRMULAS (DESPLEGABLE)                            -->
-    <!-- ============================================================ -->
     <details class="section resultado">
         <summary><h2>🧮 Análisis de las fórmulas del tema B1</h2></summary>
         <p>Recogemos en una tabla las expresiones clave del tema, con su significado físico, las variables implicadas y las condiciones de aplicación:</p>
@@ -399,9 +421,6 @@
         </div>
     </details>
 
-    <!-- ============================================================ -->
-    <!-- PROBLEMAS RESUELTOS (EBAU Castilla y León y otras)           -->
-    <!-- ============================================================ -->
     <details>
         <summary>
             <i class="fas fa-chevron-circle-down"></i>
@@ -414,7 +433,6 @@
                 <strong>Selección de 10 problemas</strong> de las pruebas de acceso a la universidad, priorizando <strong>Castilla y León</strong> y completando con otras comunidades. Todos ellos están relacionados con el tema B1 (ley de Coulomb, fuerza de Lorentz, movimiento de cargas en campos eléctricos y magnéticos, trayectorias circulares y selector de velocidades). Se indica la comunidad, el año, la convocatoria (ordinaria/extraordinaria) y el número de problema.
             </p>
 
-            <!-- PROBLEMA 1 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 1</span>
@@ -444,7 +462,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 2 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 2</span>
@@ -483,7 +500,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 3 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 3</span>
@@ -505,7 +521,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 4 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 4</span>
@@ -535,7 +550,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 5 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 5</span>
@@ -567,7 +581,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 6 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 6</span>
@@ -594,7 +607,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 7 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 7</span>
@@ -625,7 +637,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 8 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 8</span>
@@ -648,7 +659,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 9 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 9</span>
@@ -702,7 +712,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 10 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 10</span>
@@ -749,34 +758,14 @@
                 </div>
             </details>
 
-            <!-- PIE DIDÁCTICO -->
             <div class="pie-clave">
                 <i class="fas fa-lightbulb"></i>
                 <span><strong>Observaciones clave:</strong> en todos estos problemas, el patrón de resolución es: (1) identificar los datos y las incógnitas; (2) dibujar un esquema con las cargas, las velocidades y los campos; (3) calcular los módulos de las fuerzas o de los campos con las expresiones \(F=K|q_1q_2|/r^{2}\) y \(F_m=|q|vB\,\text{sen}\,\theta\); (4) determinar direcciones y sentidos con la regla de la mano derecha y el signo de la carga; (5) descomponer en componentes y sumar vectorialmente; (6) para trayectorias circulares, aplicar \(R=mv/(|q|B)\) y \(T=2\pi m/(|q|B)\); (7) para el selector de velocidades, imponer \(v=E/B\); (8) comprobar el orden de magnitud del resultado. Recuerda siempre homogeneizar las unidades al S.I. y no confundir campo (vectorial) con potencial (escalar), ni la fuerza eléctrica con la magnética.</span>
             </div>
 
-        </div> <!-- fin contenido-desplegable -->
+        </div>
     </details>
 
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-    <!-- ============================================ -->
-    <!-- BLOQUE "ES HORA DE"                          -->
-    <!-- ============================================ -->
     <div class="bloque-cta">
         <div class="tarjeta-cta">
             <p>
@@ -791,8 +780,32 @@
             </div>
         </div>
     </div>
-    <!-- ===================FIN DE ES HORA DE ==================== -->
 
-</div> <!-- fin container -->
+</div>
+
+<!-- =================== RESALTADO AL LLEGAR POR HASH ==================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    var highlight = target.classList.contains('formula-box')
+        ? target
+        : (target.closest('.formula-box') || target);
+
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () {
+        highlight.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
 </body>
 </html>

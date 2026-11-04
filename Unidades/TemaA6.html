@@ -136,29 +136,35 @@
             <summary><span class="step-num">1</span><strong>Trabajo realizado por la fuerza gravitatoria.</strong></summary>
             <p>La fuerza gravitatoria es conservativa, por lo que el trabajo que realiza al desplazar una masa entre dos puntos depende únicamente de las posiciones inicial y final, no del camino seguido.</p>
             <p>Para una masa \(m\) que se desplaza en el campo creado por una masa \(M\) desde una distancia \(r_A\) hasta \(r_B\):</p>
-            <div class="formula-box">
-                \[
-                W_{A\to B}^{\text{grav}} = \int_{r_A}^{r_B} \vec F_g \cdot d\vec r = GMm\left(\frac{1}{r_B}-\frac{1}{r_A}\right) = -\Delta E_p
-                \]
-            </div>
-            <p>El trabajo del campo gravitatorio es positivo cuando la masa se acerca a la masa creadora (\(r_B<r_A\)): la gravedad realiza trabajo a favor del movimiento. Es negativo cuando la masa se aleja.</p>
+            <a href="TemaA6-Formulario.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-1">
+                    \[
+                    W_{A\to B}^{\text{grav}} = \int_{r_A}^{r_B} \vec F_g \cdot d\vec r = GMm\left(\frac{1}{r_B}-\frac{1}{r_A}\right) = -\Delta E_p
+                    \]
+                </div>
+            </a>
+            <p>El trabajo del campo gravitatorio es positivo cuando la masa se acerca a la masa creadora (\(r_B&lt;r_A\)): la gravedad realiza trabajo a favor del movimiento. Es negativo cuando la masa se aleja.</p>
             <p>El trabajo realizado por un agente externo para mover la masa sin cambiar su energía cinética es el opuesto del trabajo del campo:</p>
-            <div class="formula-box">
-                \[
-                W_{\text{ext}} = -W_{\text{campo}} = \Delta E_p
-                \]
-            </div>
+            <a href="TemaA6-Formulario.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-2">
+                    \[
+                    W_{\text{ext}} = -W_{\text{campo}} = \Delta E_p
+                    \]
+                </div>
+            </a>
         </details>
 
         <!-- Step 2: Energía potencial gravitatoria -->
         <details class="step">
             <summary><span class="step-num">2</span><strong>Energía potencial gravitatoria.</strong></summary>
             <p>La energía potencial gravitatoria de una masa \(m\) situada a una distancia \(r\) de una masa \(M\) es:</p>
-            <div class="formula-box">
-                \[
-                E_p = -\frac{GMm}{r}
-                \]
-            </div>
+            <a href="TemaA6-Formulario.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-3">
+                    \[
+                    E_p = -\frac{GMm}{r}
+                    \]
+                </div>
+            </a>
             <p>Con el origen de energía potencial en el infinito: \(E_p(\infty)=0\).</p>
             <p><strong>Propiedades:</strong></p>
             <ul>
@@ -170,23 +176,105 @@
             <div class="note">
                 <strong>Importante:</strong> en las proximidades de la superficie terrestre, si \(h\ll R_T\), se puede aproximar \(E_p \approx mgh\) tomando como origen la superficie. Esta expresión es un caso particular de la energía potencial gravitatoria general.
             </div>
+            <a href="TemaA6-Formulario.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-11">
+                    \[
+                    E_p(h) \approx m\,g\,h \qquad (\text{si } h\ll R_T)
+                    \]
+                </div>
+            </a>
+            <details>
+                <summary><strong>Demostración detallada: de la expresión general a \(E_p\approx mgh\).</strong></summary>
+                <p><strong>1. Expresamos la energía potencial en dos alturas.</strong> Si el objeto pasa de una altura inicial \(h_1\) a una altura final \(h_2\), medidas desde la superficie terrestre, sus distancias al centro de la Tierra son \(R_T+h_1\) y \(R_T+h_2\).</p>
+                <p>La variación de energía potencial es la diferencia entre la energía final y la inicial:</p>
+                <div class="formula-box">
+                    \[
+                    \Delta E_p=E_{p,2}-E_{p,1}
+                    \]
+                    \[
+                    \Delta E_p=-\frac{GM_Tm}{R_T+h_2}+\frac{GM_Tm}{R_T+h_1}
+                    \]
+                </div>
+                <p><strong>2. Sacamos factor común y agrupamos las fracciones.</strong></p>
+                <div class="formula-box">
+                    \[
+                    \Delta E_p=GM_Tm\left(\frac{1}{R_T+h_1}-\frac{1}{R_T+h_2}\right)
+                    \]
+                    \[
+                    \Delta E_p=GM_Tm\,\frac{(R_T+h_2)-(R_T+h_1)}{(R_T+h_1)(R_T+h_2)}
+                    \]
+                </div>
+                <p>En el numerador se cancelan los dos términos \(R_T\):</p>
+                <div class="formula-box">
+                    \[
+                    \Delta E_p=GM_Tm\,\frac{h_2-h_1}{(R_T+h_1)(R_T+h_2)}
+                    \]
+                </div>
+                <p><strong>3. Aplicamos la aproximación de alturas pequeñas.</strong> Si las alturas son mucho menores que el radio terrestre, \(h_1\ll R_T\) y \(h_2\ll R_T\), sumar cualquiera de esas alturas a \(R_T\) apenas modifica su valor. Por tanto:</p>
+                <div class="formula-box">
+                    \[
+                    R_T+h_1\approx R_T, \qquad R_T+h_2\approx R_T
+                    \]
+                    \[
+                    (R_T+h_1)(R_T+h_2)\approx R_T\cdot R_T=R_T^2
+                    \]
+                </div>
+                <p>Sustituimos esta aproximación en el denominador:</p>
+                <div class="formula-box">
+                    \[
+                    \Delta E_p\approx GM_Tm\,\frac{h_2-h_1}{R_T^2}
+                    \]
+                    \[
+                    \Delta E_p\approx m\,\frac{GM_T}{R_T^2}(h_2-h_1)
+                    \]
+                </div>
+                <p><strong>4. Reconocemos la expresión de la gravedad terrestre.</strong> En la superficie de la Tierra:</p>
+                <div class="formula-box">
+                    \[
+                    g_0=\frac{GM_T}{R_T^2}
+                    \]
+                </div>
+                <p>Así, la variación de energía potencial queda:</p>
+                <div class="formula-box">
+                    \[
+                    \Delta E_p\approx mg_0(h_2-h_1)
+                    \]
+                </div>
+                <p><strong>5. Elegimos la superficie como nivel de referencia.</strong> Tomamos \(h_1=0\) y llamamos \(h\) a la altura final (\(h_2=h\)). La variación de energía potencial respecto a la superficie es entonces:</p>
+                <div class="formula-box">
+                    \[
+                    \Delta E_p\approx mg_0(h-0)=mg_0h
+                    \]
+                    \[
+                    \boxed{E_p(h)\approx m g_0 h}
+                    \]
+                </div>
+                <div class="note">
+                    <strong>Idea clave:</strong> la aproximación consiste en considerar que \(R_T+h\approx R_T\) cuando \(h\ll R_T\). Por eso la gravedad apenas cambia en alturas pequeñas y podemos tratarla como constante. En esta última expresión, la energía potencial se mide tomando la superficie terrestre como origen.
+                </div>
+            </details>
+
         </details>
 
         <!-- Step 3: Energía mecánica de un satélite en órbita circular -->
         <details class="step">
             <summary><span class="step-num">3</span><strong>Energía mecánica de un satélite en órbita circular.</strong></summary>
             <p>Para un satélite de masa \(m\) en órbita circular de radio \(r\) alrededor de un planeta de masa \(M\), la fuerza gravitatoria proporciona la fuerza centrípeta:</p>
-            <div class="formula-box">
-                \[
-                \frac{GMm}{r^2} = \frac{mv^2}{r} \quad\Rightarrow\quad v^2 = \frac{GM}{r}
-                \]
-            </div>
+            <a href="TemaA6-Formulario.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-5">
+                    \[
+                    \frac{GMm}{r^2} = \frac{mv^2}{r} \quad\Rightarrow\quad v^2 = \frac{GM}{r}
+                    \]
+                </div>
+            </a>
             <p>La energía cinética es:</p>
-            <div class="formula-box">
-                \[
-                E_c = \frac{1}{2}mv^2 = \frac{GMm}{2r}
-                \]
-            </div>
+            <a href="TemaA6-Formulario.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-6">
+                    \[
+                    E_c = \frac{1}{2}mv^2 = \frac{GMm}{2r}
+                    \]
+                </div>
+            </a>
             <p>La energía potencial es:</p>
             <div class="formula-box">
                 \[
@@ -194,11 +282,13 @@
                 \]
             </div>
             <p>La energía mecánica total es:</p>
-            <div class="formula-box">
-                \[
-                E_m = E_c + E_p = -\frac{GMm}{2r}
-                \]
-            </div>
+            <a href="TemaA6-Formulario.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-7">
+                    \[
+                    E_m = E_c + E_p = -\frac{GMm}{2r}
+                    \]
+                </div>
+            </a>
             <p>Relaciones notables:</p>
             <ul>
                 <li>\(E_c = -E_p/2\) (teorema del virial).</li>
@@ -211,17 +301,16 @@
         <details class="step">
             <summary><span class="step-num">4</span><strong>Conservación de la energía mecánica en el campo gravitatorio.</strong></summary>
             <p>Como la fuerza gravitatoria es conservativa, si no actúan fuerzas no conservativas (rozamiento, propulsión, etc.), la energía mecánica se conserva:</p>
-            <div class="formula-box">
-                \[
-                E_m = E_c + E_p = \text{constante}
-                \]
-            </div>
-            <p>Entre dos puntos \(A\) y \(B\):</p>
-            <div class="formula-box">
-                \[
-                \frac{1}{2}mv_A^2 - \frac{GMm}{r_A} = \frac{1}{2}mv_B^2 - \frac{GMm}{r_B}
-                \]
-            </div>
+            <a href="TemaA6-Formulario.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-4">
+                    \[
+                    E_m = E_c + E_p = \text{constante}
+                    \]
+                    \[
+                    \frac{1}{2}mv_A^2 - \frac{GMm}{r_A} = \frac{1}{2}mv_B^2 - \frac{GMm}{r_B}
+                    \]
+                </div>
+            </a>
             <p>Esta relación permite resolver problemas de lanzamiento vertical, satélites en órbitas elípticas y transferencias entre órbitas.</p>
         </details>
 
@@ -229,35 +318,34 @@
         <details class="step">
             <summary><span class="step-num">5</span><strong>Velocidad de escape y pozo gravitatorio.</strong></summary>
             <p>La <strong>velocidad de escape</strong> es la velocidad mínima necesaria para que un cuerpo lanzado desde la superficie de un astro escape de su campo gravitatorio, alcanzando el infinito con velocidad nula. Imponiendo \(E_m=0\):</p>
-            <div class="formula-box">
-                \[
-                \frac{1}{2}mv_e^2 - \frac{GMm}{R} = 0 \quad\Rightarrow\quad v_e = \sqrt{\frac{2GM}{R}}
-                \]
-            </div>
-            <p>También se puede expresar en función de la gravedad superficial \(g_0 = GM/R^2\):</p>
-            <div class="formula-box">
-                \[
-                v_e = \sqrt{2g_0R}
-                \]
-            </div>
+            <a href="TemaA6-Formulario.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-9">
+                    \[
+                    \frac{1}{2}mv_e^2 - \frac{GMm}{R} = 0 \quad\Rightarrow\quad v_e = \sqrt{\frac{2GM}{R}}
+                    \]
+                    \[
+                    v_e = \sqrt{2g_0R}
+                    \]
+                </div>
+            </a>
+            <p>También se puede expresar en función de la gravedad superficial \(g_0 = GM/R^2\).</p>
             <p>El <strong>pozo gravitatorio</strong> es la representación de la energía potencial gravitatoria en función de la distancia: una "depresión" que se hace más profunda cuanto más cerca se está de la masa. Para escapar, un cuerpo debe recibir energía suficiente para salir de ese pozo, es decir, para que su energía mecánica total sea al menos cero.</p>
         </details>
 
         <!-- Step 6: Trabajo para poner un satélite en órbita -->
         <details class="step">
             <summary><span class="step-num">6</span><strong>Trabajo para poner un satélite en órbita.</strong></summary>
-            <p>Para colocar un satélite de masa \(m\) en órbita circular de radio \(r\) desde la superficie de un planeta de radio \(R\), suponiendo que parte del reposo en la superficie, el trabajo externo necesario es la variación de energía mecánica:</p>
-            <div class="formula-box">
-                \[
-                W_{\text{ext}} = E_{m,\text{órbita}} - E_{m,\text{superficie}}
-                \]
-            </div>
-            <p>Con \(E_{m,\text{órbita}} = -GMm/(2r)\) y \(E_{m,\text{superficie}} = -GMm/R\):</p>
-            <div class="formula-box">
-                \[
-                W_{\text{ext}} = GMm\left(\frac{1}{R} - \frac{1}{2r}\right)
-                \]
-            </div>
+            <p>Para colocar un satélite de masa \(m\) en órbita circular de radio \(r\) desde la superficie de un planeta de radio \(R\), suponiendo que parte del reposo en la superficie, el trabajo externo necesario es la variación de energía mecánica. Con \(E_{m,\text{órbita}} = -GMm/(2r)\) y \(E_{m,\text{superficie}} = -GMm/R\):</p>
+            <a href="TemaA6-Formulario.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-10">
+                    \[
+                    W_{\text{ext}} = E_{m,\text{órbita}} - E_{m,\text{superficie}}
+                    \]
+                    \[
+                    W_{\text{ext}} = GMm\left(\frac{1}{R} - \frac{1}{2r}\right)
+                    \]
+                </div>
+            </a>
             <p>Este trabajo es siempre positivo: hay que aportar energía al satélite para subirlo y dotarlo de velocidad orbital.</p>
             <div class="note">
                 <strong>Observación:</strong> si se tiene en cuenta la rotación terrestre, el trabajo se reduce ligeramente porque el satélite ya posee una velocidad inicial debida a la rotación. En la mayoría de los problemas de EBAU se desprecia este efecto salvo que se indique lo contrario.
@@ -267,18 +355,17 @@
         <!-- Step 7: Relación entre energía cinética y potencial en órbita circular -->
         <details class="step">
             <summary><span class="step-num">7</span><strong>Relación entre \(E_c\) y \(E_p\) en una órbita circular.</strong></summary>
-            <p>Para una órbita circular, combinando \(v^2 = GM/r\) con las expresiones de \(E_c\) y \(E_p\):</p>
-            <div class="formula-box">
-                \[
-                E_c = \frac{GMm}{2r} = -\frac{1}{2}E_p
-                \]
-            </div>
-            <p>Por tanto, la energía cinética es la mitad del valor absoluto de la energía potencial, y la energía mecánica es:</p>
-            <div class="formula-box">
-                \[
-                E_m = E_c + E_p = \frac{E_p}{2} = -E_c
-                \]
-            </div>
+            <p>Para una órbita circular, combinando \(v^2 = GM/r\) con las expresiones de \(E_c\) y \(E_p\), la energía cinética es la mitad del valor absoluto de la energía potencial, y la energía mecánica es \(E_m = E_p/2 = -E_c\):</p>
+            <a href="TemaA6-Formulario.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-8">
+                    \[
+                    E_c = \frac{GMm}{2r} = -\frac{1}{2}E_p
+                    \]
+                    \[
+                    E_m = E_c + E_p = \frac{E_p}{2} = -E_c
+                    \]
+                </div>
+            </a>
             <p>Este resultado es una consecuencia del teorema del virial aplicado al potencial gravitatorio \(U\propto 1/r\).</p>
         </details>
 
@@ -286,11 +373,13 @@
         <details class="step">
             <summary><span class="step-num">8</span><strong>Energía mecánica en órbitas elípticas (ampliación).</strong></summary>
             <p>Para una órbita elíptica de semieje mayor \(a\), la energía mecánica total es:</p>
-            <div class="formula-box">
-                \[
-                E_m = -\frac{GMm}{2a}
-                \]
-            </div>
+            <a href="TemaA6-Formulario.html#formula-12" style="text-decoration:none; color:inherit; display:block;">
+                <div class="formula-box" id="formula-12">
+                    \[
+                    E_m = -\frac{GMm}{2a}
+                    \]
+                </div>
+            </a>
             <p>Esta expresión generaliza la de la órbita circular (donde \(a=r\)). La energía mecánica sigue siendo negativa para órbitas ligadas.</p>
             <p>En los puntos de máxima y mínima distancia (apogeo y perigeo), la velocidad se puede relacionar con la distancia mediante la conservación del momento angular y de la energía.</p>
         </details>
@@ -816,9 +905,7 @@
                 </div>
             </details>
 
-            <!-- PIE DIDÁCTICO -->
-
- <!-- PIE DIDÁCTICO: SÍNTESIS DEL TEMA A6 -->
+            <!-- PIE DIDÁCTICO: SÍNTESIS DEL TEMA A6 -->
             <div class="pie-clave">
                 <i class="fas fa-lightbulb"></i>
                 <span>
@@ -873,11 +960,46 @@
             </div>
         </div>
     </div>
-    <!-- ===================FIN DE ES HORA DE ==================== -->            
-
-
     <!-- ===================FIN DE ES HORA DE ==================== -->
 
 </div> <!-- fin container -->
+
+
+
+
+<!-- ===================PARA PONER UN MARCO TEMPORAL EN LA FÓRMULA CUANDO VENGA DEL FORMULARIO ==================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    // Si el id está en un <span> interno, subimos a la caja .formula-box que lo contiene
+    var highlight = target.classList.contains('formula-box')
+        ? target
+        : (target.closest('.formula-box') || target);
+
+    // Abrir todos los <details> ancestros para que la fórmula sea visible
+    var el = highlight.parentElement;
+    while (el) {
+        if (el.tagName === 'DETAILS') el.open = true;
+        el = el.parentElement;
+    }
+
+    // Desplazar al centro de la pantalla
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    // Re-lanzar la animación por si ya se había consumido
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;               // fuerza reflow → reinicia la animación
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () {
+        highlight.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
 </body>
 </html>

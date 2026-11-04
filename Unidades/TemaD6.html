@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema D6. Leyes de desintegración radiactiva y actividad</title>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        .dato-clave { display:inline-block; background:#e0f2fe; color:#075985; border-radius:7px; padding:3px 8px; margin:3px 4px 3px 0; font-size:.9em; font-weight:600; }
+        .grid-conceptos { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:16px 0; }
+        .concepto-mini { background:#fff; border:1px solid #dbeafe; border-radius:12px; padding:13px; }
+        .concepto-mini strong { display:block; margin-bottom:5px; }
+        .nota-fuente { background:#f8fafc; border-left:4px solid #94a3b8; padding:10px 14px; border-radius:8px; color:#475569; font-size:.92em; }
+        .apartados-ej { margin:10px 0 0; }
+        .apartado-puntos { color:#64748b; font-size:.88em; }
+        .origen-ej { color:#64748b; font-size:.85em; font-weight:700; margin:0 0 8px; }
+        .paso-resolucion { margin:0 0 15px; padding-bottom:7px; border-bottom:1px solid #e2e8f0; }
+        .paso-resolucion:last-child { border-bottom:0; }
+        .paso-resolucion h4 { margin:8px 0; color:#1e3a8a; }
+        .resultado-ej { margin-top:14px; padding:12px 14px; background:#ecfdf5; border-left:4px solid #10b981; border-radius:9px; }
+        .resultado-ej .formula-box { background:#fff; }
+        .tabla-unidades td:first-child { font-weight:700; color:#1e3a8a; }
+        .subtitulo-curriculo { color:#475569; font-size:.95em; }
+        .formula-box .MathJax { max-width:100%; }
+        @media (max-width:800px) { .grid-conceptos { grid-template-columns:1fr 1fr; } }
+        @media (max-width:520px) { .grid-conceptos { grid-template-columns:1fr; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA D6.- </span>
+                <span class="texto">Leyes de desintegración radiactiva y actividad</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- MAPA DE BLOQUES Y TEMAS -->
+    <details class="section enunciado" open>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
+        <p>Este tema pertenece al <strong>Bloque D. Física relativista, cuántica, nuclear y de partículas</strong> del currículo de Física de 2.º de Bachillerato (Decreto 40/2022, BOCYL-D-30092022-4).</p>
+        <div class="mapa-bloques">
+            <div class="bloque-card">
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
+                <div class="tema-lista"><span class="tema-chip">A1</span><span class="tema-chip">A2</span><span class="tema-chip">A3</span><span class="tema-chip">A4</span><span class="tema-chip">A5</span><span class="tema-chip">A6</span><span class="tema-chip">A7</span><span class="tema-chip">A8</span></div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista"><span class="tema-chip">B1</span><span class="tema-chip">B2</span><span class="tema-chip">B3</span><span class="tema-chip">B4</span><span class="tema-chip">B5</span><span class="tema-chip">B6</span><span class="tema-chip">B7</span><span class="tema-chip">B8</span><span class="tema-chip">B9</span></div>
+            </div>
+            <div class="bloque-card">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista"><span class="tema-chip">C1</span><span class="tema-chip">C2</span><span class="tema-chip">C3</span><span class="tema-chip">C4</span><span class="tema-chip">C5</span><span class="tema-chip">C6</span></div>
+            </div>
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
+                <div class="tema-lista"><span class="tema-chip">D1</span><span class="tema-chip">D2</span><span class="tema-chip">D3</span><span class="tema-chip">D4</span><span class="tema-chip">D5</span><span class="tema-chip actual">D6</span></div>
+            </div>
+        </div>
+        <div class="formula-box" style="font-size:0.98em;">
+            <strong>Bloque D · Tema D6:</strong> <span class="texto-resaltado">Leyes de desintegración radiactiva y actividad.</span><br>
+            <em>En este tema estudiaremos:</em> la ley exponencial de desintegración, la constante radiactiva, el periodo de semidesintegración, la vida media, la actividad y su unidad (becquerel), el cálculo del número de núcleos y de la masa restante, y las aplicaciones a la datación radiactiva.
+        </div>
+        <p class="subtitulo-curriculo"><strong>Relación con D5:</strong> algunos enunciados EBAU combinan D6 con la identificación de la transformación nuclear (D5). En esta unidad se prioriza la evolución temporal de la población de núcleos y de la actividad; la naturaleza de las emisiones se estudia en el tema D5.</p>
+        <div class="note"><strong>Enfoque de preparación EBAU:</strong> <strong>C-D6</strong> — ley de desintegración, semivida y actividad; <strong>P-D6</strong> — problemas de decaimiento radiactivo y datación (aplican C-D6). La relevancia indicada para D6 es del <strong>12,2 %</strong>, frente a una media del <strong>10,1 %</strong> (diferencia: <strong>+2,1 puntos porcentuales</strong>).</div>
+        <p><span class="dato-clave">ley de desintegración</span><span class="dato-clave">periodo de semidesintegración</span><span class="dato-clave">constante radiactiva</span><span class="dato-clave">actividad</span><span class="dato-clave">becquerel</span><span class="dato-clave">vida media</span><span class="dato-clave">datación</span><span class="dato-clave">número de núcleos</span><span class="dato-clave">masa restante</span></p>
+    </details>
+
+    <!-- OBJETIVOS -->
+    <details class="section objetivo">
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
+        <ul>
+            <li>Interpretar la desintegración radiactiva como un proceso aleatorio a escala nuclear, descrito estadísticamente mediante una ley exponencial.</li>
+            <li>Definir la constante de desintegración \(\lambda\) y relacionarla con la probabilidad de desintegración por unidad de tiempo.</li>
+            <li>Aplicar la ley \(N(t)=N_0e^{-\lambda t}\) al número de núcleos, la masa del isótopo padre y la actividad.</li>
+            <li>Calcular el periodo de semidesintegración y la vida media, distinguiendo claramente ambas magnitudes.</li>
+            <li>Definir la actividad radiactiva y expresar correctamente los resultados en becquerel (Bq).</li>
+            <li>Determinar el número de núcleos a partir de una masa, una masa molar y el número de Avogadro, y obtener la masa a partir de la actividad.</li>
+            <li>Resolver problemas en los que se conoce una fracción restante, un porcentaje desintegrado o una actividad final y se pide el tiempo transcurrido.</li>
+            <li>Aplicar la ley de desintegración a la datación radiactiva, identificando las hipótesis sobre la cantidad inicial de isótopo hijo.</li>
+            <li>Leer gráficas de decaimiento y reconocer la semivida a partir de la reducción de \(N\) o de \(A\) a la mitad.</li>
+            <li>Resolver problemas numéricos y de razonamiento característicos de la EBAU de Castilla y León.</li>
+        </ul>
+    </details>
+
+    <!-- CONTENIDO TEÓRICO -->
+    <details class="section procedimiento">
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">1</span><strong>La desintegración radiactiva: modelo estadístico.</strong></summary>
+            <p>Un núcleo radiactivo puede transformarse espontáneamente en otro núcleo, emitiendo partículas o radiación. No es posible predecir el instante en que se desintegrará un núcleo individual, pero sí describir con precisión el comportamiento estadístico de una muestra con muchísimos núcleos.</p>
+            <p>La probabilidad de desintegración por unidad de tiempo se caracteriza mediante la <strong>constante de desintegración</strong> \(\lambda\). Para un intervalo de tiempo muy pequeño \(dt\), la fracción esperada de núcleos que se desintegra es proporcional a \(\lambda dt\).</p>
+            <p>Si \(N(t)\) es el número de núcleos padre que permanecen sin desintegrar:</p>
+            <div class="formula-box">\[dN=-\lambda N\,dt\qquad\Longrightarrow\qquad \frac{dN}{dt}=-\lambda N\]</div>
+            <p>El signo negativo indica que el número de núcleos radiactivos disminuye con el tiempo. La constante \(\lambda\) es positiva y su unidad en el S.I. es \(\text{s}^{-1}\).</p>
+            <div class="note"><strong>Interpretación:</strong> una constante \(\lambda\) grande corresponde a una desintegración más rápida y, por tanto, a una semivida menor. No significa que todos los núcleos se desintegren a la vez.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Ley de desintegración radiactiva.</strong></summary>
+            <p>Separando variables e integrando desde \(N_0\) en \(t=0\) hasta \(N\) en el instante \(t\), se obtiene la ley exponencial:</p>
+            <div class="formula-box">\[\boxed{N(t)=N_0e^{-\lambda t}}\]</div>
+            <p>Donde:</p>
+            <ul>
+                <li>\(N_0\): número inicial de núcleos radiactivos.</li>
+                <li>\(N(t)\): número de núcleos que todavía no se han desintegrado en el instante \(t\).</li>
+                <li>\(\lambda\): constante de desintegración, en unidades inversas de tiempo.</li>
+                <li>\(t\): tiempo transcurrido, expresado en la misma unidad temporal que se haya utilizado para \(\lambda\).</li>
+            </ul>
+            <p>La fracción de núcleos que permanece es:</p>
+            <div class="formula-box">\[\frac{N(t)}{N_0}=e^{-\lambda t}\]</div>
+            <p>El número que se ha desintegrado es \(N_0-N(t)\). Por tanto, la fracción desintegrada es \(1-e^{-\lambda t}\).</p>
+            <p>La misma ley puede escribirse usando el periodo de semidesintegración:</p>
+            <div class="formula-box">\[\boxed{N(t)=N_0\left(\frac12\right)^{t/T_{1/2}}}\]</div>
+            <p>Esta segunda forma es especialmente cómoda cuando el tiempo se expresa como múltiplo de la semivida.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Periodo de semidesintegración o semivida.</strong></summary>
+            <p>El <strong>periodo de semidesintegración</strong> \(T_{1/2}\) es el tiempo necesario para que el número de núcleos radiactivos sin desintegrar se reduzca a la mitad de su valor inicial:</p>
+            <div class="formula-box">\[N(T_{1/2})=\frac{N_0}{2}\]</div>
+            <p>Sustituyendo en la ley de desintegración:</p>
+            <div class="formula-box">\[\frac12=e^{-\lambda T_{1/2}}\qquad\Longrightarrow\qquad\boxed{T_{1/2}=\frac{\ln2}{\lambda}}\]</div>
+            <p>Por tanto, también:</p>
+            <div class="formula-box">\[\boxed{\lambda=\frac{\ln2}{T_{1/2}}=\frac{0{,}693}{T_{1/2}}}\]</div>
+            <p>Tras \(n\) semividas:</p>
+            <div class="formula-box">\[\frac{N}{N_0}=\left(\frac12\right)^n\]</div>
+            <table>
+                <thead><tr><th>Tiempo transcurrido</th><th>Fracción restante</th><th>Porcentaje restante</th></tr></thead>
+                <tbody>
+                    <tr><td>\(0\)</td><td>\(1\)</td><td>100 %</td></tr>
+                    <tr><td>\(T_{1/2}\)</td><td>\(1/2\)</td><td>50 %</td></tr>
+                    <tr><td>\(2T_{1/2}\)</td><td>\(1/4\)</td><td>25 %</td></tr>
+                    <tr><td>\(3T_{1/2}\)</td><td>\(1/8\)</td><td>12,5 %</td></tr>
+                    <tr><td>\(4T_{1/2}\)</td><td>\(1/16\)</td><td>6,25 %</td></tr>
+                </tbody>
+            </table>
+            <div class="note"><strong>Importante:</strong> cada semivida reduce a la mitad lo que queda, no la cantidad inicial. En cada intervalo posterior se desintegra la mitad de los núcleos que permanecían al comienzo de ese intervalo.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Vida media o tiempo de vida medio.</strong></summary>
+            <p>La <strong>vida media</strong> \(\tau\) es el tiempo medio de permanencia de un núcleo radiactivo antes de desintegrarse. Se relaciona con la constante radiactiva mediante:</p>
+            <div class="formula-box">\[\boxed{\tau=\frac{1}{\lambda}}\]</div>
+            <p>Combinándola con la expresión de la semivida:</p>
+            <div class="formula-box">\[\boxed{T_{1/2}=\tau\ln2\qquad\text{y}\qquad \tau=\frac{T_{1/2}}{\ln2}}\]</div>
+            <p>La vida media es mayor que el periodo de semidesintegración: \(\tau\approx1{,}443\,T_{1/2}\). Ambas magnitudes tienen unidades de tiempo, pero <strong>no son lo mismo</strong>.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">5</span><strong>Actividad radiactiva y becquerel.</strong></summary>
+            <p>La <strong>actividad</strong> \(A\) mide el número de desintegraciones que se producen por unidad de tiempo. Se define como el valor absoluto de la rapidez con la que disminuye el número de núcleos padre:</p>
+            <div class="formula-box">\[A=-\frac{dN}{dt}=\lambda N\]</div>
+            <p>Como \(N(t)=N_0e^{-\lambda t}\), la actividad también disminuye exponencialmente:</p>
+            <div class="formula-box">\[\boxed{A(t)=A_0e^{-\lambda t}}\qquad\boxed{A_0=\lambda N_0}\]</div>
+            <p>La actividad y el número de núcleos restantes presentan la misma fracción respecto a sus valores iniciales:</p>
+            <div class="formula-box">\[\frac{A(t)}{A_0}=\frac{N(t)}{N_0}=e^{-\lambda t}\]</div>
+            <p>La unidad del S.I. es el <strong>becquerel</strong> (Bq):</p>
+            <div class="formula-box">\[1\,\text{Bq}=1\,\text{desintegración}\cdot\text{s}^{-1}=1\,\text{s}^{-1}\]</div>
+            <p>También se utilizan múltiplos como el kBq (\(10^3\) Bq) y el MBq (\(10^6\) Bq).</p>
+            <div class="note"><strong>No confundir:</strong> la actividad no es el número total de núcleos. Una muestra puede contener muchos núcleos y tener una actividad relativamente pequeña si su constante \(\lambda\) es reducida.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">6</span><strong>Número de núcleos y masa de una muestra.</strong></summary>
+            <p>Si se conoce la masa \(m\) de una muestra pura de un isótopo y su masa molar \(M\), el número de núcleos es:</p>
+            <div class="formula-box">\[\boxed{N=\frac{m}{M}N_A}\]</div>
+            <p>Hay que expresar \(m\) y \(M\) en unidades compatibles (por ejemplo, ambos en gramos o ambos en kilogramos). El número de Avogadro es \(N_A=6{,}022\cdot10^{23}\,\text{mol}^{-1}\).</p>
+            <p>Combinando el número de núcleos con la actividad:</p>
+            <div class="formula-box">\[A=\lambda\frac{m}{M}N_A\]</div>
+            <p>Y, despejando:</p>
+            <div class="formula-box">\[\boxed{N=\frac{A}{\lambda}}\qquad\boxed{m=\frac{A\,M}{\lambda N_A}}\]</div>
+            <p>La masa del isótopo padre que queda sin desintegrar es proporcional al número de núcleos restantes:</p>
+            <div class="formula-box">\[\boxed{m(t)=m_0e^{-\lambda t}=m_0\left(\frac12\right)^{t/T_{1/2}}}\]</div>
+            <p>La masa del isótopo padre que se ha transformado es \(m_0-m(t)\), dentro de la aproximación habitual de los problemas de EBAU. No debe interpretarse como una desaparición de masa del conjunto cerrado: los productos de desintegración también forman parte del sistema.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">7</span><strong>Datación radiactiva.</strong></summary>
+            <p>La datación radiactiva permite estimar el tiempo transcurrido desde que un sistema dejó de intercambiar determinados isótopos con el entorno. Se compara la cantidad actual de isótopo padre (o su actividad) con la cantidad inicial conocida o inferida.</p>
+            <p>Si se conoce la fracción de núcleos padre que permanece:</p>
+            <div class="formula-box">\[\boxed{t=\frac{1}{\lambda}\ln\left(\frac{N_0}{N}\right)}=\frac{T_{1/2}}{\ln2}\ln\left(\frac{N_0}{N}\right)}\]</div>
+            <p>Como la actividad es proporcional al número de núcleos del mismo isótopo:</p>
+            <div class="formula-box">\[\boxed{t=\frac{1}{\lambda}\ln\left(\frac{A_0}{A}\right)}\]</div>
+            <p><strong>Datación padre-hijo:</strong> si inicialmente no había isótopo hijo, cada desintegración produce un núcleo hijo y el sistema permanece cerrado, entonces:</p>
+            <div class="formula-box">\[N_0=N_{\text{padre}}+N_{\text{hijo}}\]</div>
+            <p>Por tanto:</p>
+            <div class="formula-box">\[\boxed{t=\frac{1}{\lambda}\ln\left(\frac{N_{\text{padre}}+N_{\text{hijo}}}{N_{\text{padre}}}\right)}\]</div>
+            <p>En problemas como la datación potasio-argón, puede utilizarse la relación entre masas para obtener la relación entre números de núcleos cuando las masas molares se conocen o pueden aproximarse. En la datación por carbono-14 se compara la actividad actual de la muestra con la actividad característica del material vivo de referencia.</p>
+            <div class="note"><strong>Hipótesis que hay que comprobar:</strong> cantidad inicial del isótopo hijo, ausencia de pérdidas o incorporaciones posteriores, sistema cerrado y conservación de la relación entre la cantidad medida y el número de núcleos.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">8</span><strong>Lectura de gráficas de desintegración.</strong></summary>
+            <p>La gráfica de \(N(t)\) o de \(A(t)\) frente al tiempo es una curva exponencial decreciente. Para hallar gráficamente la semivida, se localiza el instante en que la magnitud alcanza la mitad de su valor inicial.</p>
+            <ul>
+                <li>En una gráfica \(N-t\): buscar cuándo \(N=N_0/2\).</li>
+                <li>En una gráfica \(A-t\): buscar cuándo \(A=A_0/2\).</li>
+                <li>Si se conoce un punto de la curva, calcular \(\lambda\) a partir de la fracción \(N/N_0\) o \(A/A_0\).</li>
+                <li>Para obtener la actividad, utilizar \(A=\lambda N\), cuidando la conversión de años, días u horas a segundos si el resultado se pide en Bq.</li>
+            </ul>
+        </details>
+
+        <div class="note">
+            <strong>Errores frecuentes en EBAU:</strong> confundir masa inicial con masa restante; interpretar “se ha desintegrado un 20 %” como “queda un 20 %”; confundir vida media y semivida; olvidar que \(A=\lambda N\); utilizar años con \(\lambda\) en \(\text{s}^{-1}\); expresar una actividad en \(\text{año}^{-1}\) y etiquetarla directamente como Bq; y suponer que la cantidad inicial del isótopo hijo es cero sin que el enunciado lo indique.
+        </div>
+    </details>
+
+    <!-- RESUMEN OPERATIVO -->
+    <details class="section resultado">
+        <summary><h2>🧮 Formulario operativo y unidades</h2></summary>
+        <table class="tabla-unidades">
+            <thead><tr><th>Magnitud / cálculo</th><th>Expresión</th><th>Unidad S.I.</th></tr></thead>
+            <tbody>
+                <tr><td>Ley de desintegración</td><td>\(N=N_0e^{-\lambda t}\)</td><td>—</td></tr>
+                <tr><td>Constante radiactiva</td><td>\(\lambda=\ln2/T_{1/2}\)</td><td>\(\text{s}^{-1}\)</td></tr>
+                <tr><td>Semivida</td><td>\(T_{1/2}=\ln2/\lambda\)</td><td>\(\text{s}\)</td></tr>
+                <tr><td>Vida media</td><td>\(\tau=1/\lambda\)</td><td>\(\text{s}\)</td></tr>
+                <tr><td>Actividad</td><td>\(A=\lambda N\)</td><td>\(\text{Bq}=\text{s}^{-1}\)</td></tr>
+                <tr><td>Núcleos a partir de la masa</td><td>\(N=(m/M)N_A\)</td><td>—</td></tr>
+                <tr><td>Núcleos a partir de actividad</td><td>\(N=A/\lambda\)</td><td>—</td></tr>
+                <tr><td>Masa restante</td><td>\(m=m_0e^{-\lambda t}\)</td><td>\(\text{kg}\) o \(\text{g}\)</td></tr>
+                <tr><td>Tiempo a partir de una fracción restante \(f\)</td><td>\(t=-\ln f/\lambda\)</td><td>La misma usada en \(\lambda^{-1}\)</td></tr>
+                <tr><td>Datación con actividad</td><td>\(t=\ln(A_0/A)/\lambda\)</td><td>La misma usada en \(\lambda^{-1}\)</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Conversiones temporales:</strong> \(1\,\text{día}=86400\,\text{s}\); \(1\,\text{h}=3600\,\text{s}\); para años, utiliza el factor que indique el enunciado o, si no se especifica, deja claro el convenio adoptado (habitualmente \(365\) días por año).</p>
+        <div class="note"><strong>Regla de oro:</strong> antes de sustituir en una exponencial, comprueba que el producto \(\lambda t\) es adimensional. Si \(\lambda\) está en \(\text{s}^{-1}\), el tiempo debe estar en segundos.</div>
+    </details>
+
+    <!-- PROBLEMAS TIPO RESUELTOS -->
+    <details class="section procedimiento">
+        <summary><h2>🧩 Problemas tipo: procedimiento de resolución</h2></summary>
+        <p>Estos modelos resumen los razonamientos que más se repiten en los ejercicios de D6. Los datos de estos ejemplos son ilustrativos; los problemas oficiales seleccionados aparecen en el bloque siguiente.</p>
+
+        <details class="step">
+            <summary><span class="step-num">1</span><strong>Obtener \(\lambda\) y \(T_{1/2}\) a partir de una disminución porcentual.</strong></summary>
+            <p><strong>Ejemplo:</strong> la actividad de una muestra disminuye un 20 % en 30 días. Determinar la constante radiactiva y la semivida.</p>
+            <p>Una disminución del 20 % significa que queda el 80 %: \(A/A_0=0{,}80\).</p>
+            <div class="formula-box">\[0{,}80=e^{-\lambda\cdot30}\qquad\Rightarrow\qquad \lambda=-\frac{\ln0{,}80}{30}=7{,}44\cdot10^{-3}\,\text{día}^{-1}\]</div>
+            <p>La semivida se obtiene con \(T_{1/2}=\ln2/\lambda\):</p>
+            <div class="formula-box">\[T_{1/2}=\frac{0{,}693}{7{,}44\cdot10^{-3}}\approx93{,}2\,\text{días}\]</div>
+            <p><strong>Resultado:</strong> \(\lambda\approx7{,}44\cdot10^{-3}\,\text{día}^{-1}\) y \(T_{1/2}\approx93{,}2\,\text{días}\).</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">2</span><strong>Calcular la actividad a partir de la masa de una muestra.</strong></summary>
+            <p><strong>Ejemplo:</strong> una muestra contiene 2 mg de un isótopo de masa molar \(100\,\text{g mol}^{-1}\) y semivida de 6 h. Calcular su actividad inicial.</p>
+            <p>Primero se convierte la semivida a segundos y se calcula \(\lambda\):</p>
+            <div class="formula-box">\[T_{1/2}=6\cdot3600=21600\,\text{s}\qquad\lambda=\frac{0{,}693}{21600}=3{,}21\cdot10^{-5}\,\text{s}^{-1}\]</div>
+            <p>El número inicial de núcleos es:</p>
+            <div class="formula-box">\[N_0=\frac{0{,}002\,\text{g}}{100\,\text{g mol}^{-1}}\cdot6{,}022\cdot10^{23}=1{,}20\cdot10^{19}\]</div>
+            <p>Finalmente, \(A_0=\lambda N_0\):</p>
+            <div class="formula-box">\[A_0=3{,}21\cdot10^{-5}\cdot1{,}20\cdot10^{19}\approx3{,}86\cdot10^{14}\,\text{Bq}\]</div>
+            <p><strong>Resultado:</strong> \(A_0\approx3{,}86\cdot10^{14}\,\text{Bq}\).</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">3</span><strong>Calcular la masa restante o transformada.</strong></summary>
+            <p><strong>Ejemplo:</strong> una muestra de 5 g tiene una semivida de 4 días. ¿Qué masa del isótopo padre permanece tras 10 días?</p>
+            <p>Calculamos el número de semividas transcurridas: \(n=10/4=2{,}5\).</p>
+            <div class="formula-box">\[m=5\left(\frac12\right)^{2{,}5}\approx0{,}884\,\text{g}\]</div>
+            <p>La masa del isótopo padre que se ha transformado es:</p>
+            <div class="formula-box">\[m_{\text{transformada}}=m_0-m=5-0{,}884=4{,}116\,\text{g}\]</div>
+            <p><strong>Resultado:</strong> permanecen aproximadamente \(0{,}884\,\text{g}\) del isótopo padre; se han transformado aproximadamente \(4{,}116\,\text{g}\).</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">4</span><strong>Resolver un problema de datación padre-hijo.</strong></summary>
+            <p><strong>Ejemplo:</strong> una roca se formó sin isótopo hijo. En la actualidad hay tres núcleos hijo por cada núcleo padre. Determinar su edad en función de la semivida del isótopo padre.</p>
+            <p>Si \(N_h=3N_p\), el número inicial de núcleos padre era \(N_0=N_p+N_h=4N_p\). Así:</p>
+            <div class="formula-box">\[\frac{N_0}{N_p}=4\qquad\Rightarrow\qquad t=\frac{1}{\lambda}\ln4\]</div>
+            <p>Como \(1/\lambda=T_{1/2}/\ln2\):</p>
+            <div class="formula-box">\[t=\frac{T_{1/2}}{\ln2}\ln4=2T_{1/2}\]</div>
+            <p><strong>Resultado:</strong> han transcurrido dos semividas. Este método exige que no hubiera isótopo hijo al formarse la roca y que el sistema no haya perdido ni incorporado isótopos después.</p>
+        </details>
+
+        <div class="pie-clave"><i class="fas fa-lightbulb"></i><span><strong>Esquema general de resolución:</strong> (1) identificar qué magnitud decae y qué fracción queda; (2) convertir tiempos y masas a unidades compatibles; (3) calcular \(\lambda\) desde la semivida o desde un dato de decaimiento; (4) aplicar la ley exponencial; (5) usar \(A=\lambda N\) o \(N=(m/M)N_A\) cuando proceda; (6) expresar el resultado con unidades y comprobar si es razonable.</span></div>
+    </details>
+
+    <!-- PROBLEMAS EBAU SELECCIONADOS -->
+    <details>
+        <summary>
+            <i class="fas fa-chevron-circle-down"></i>
+            <span class="titulo-principal">🧪 Problemas resueltos de EBAU — Castilla y León (Tema D6)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Púlsame</span>
+        </summary>
+        <div class="contenido-desplegable">
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas oficiales</strong> del banco de exámenes adjunto, todos de <strong>Castilla y León</strong>. Se indica en cada tarjeta la comunidad, el año, la convocatoria (ordinaria/extraordinaria) y el número de problema. Los enunciados y las resoluciones se han tomado del archivo de problemas facilitado y se muestran íntegros para practicar los distintos procedimientos de D6.
+            </p>
+            <div class="nota-fuente"><strong>Nota de clasificación:</strong> se han priorizado preguntas cuyo campo «Tema» del banco incluye D6. Algunos enunciados también incorporan contenidos de D5, pero se seleccionan aquí por su aplicación de la ley de desintegración y la actividad.</div>
+                        <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Datación de una roca mediante potasio y argón</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Ordinaria · Problema 11</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p class="origen-ej">Castilla y León · 2026 · Ordinaria · Problema 11 · 1 punto</p>
+                    <p>Para datar rocas o cenizas volcánicas de gran antigüedad se suele utilizar una técnica basada en la desintegración del \(^{40}_{19}\text{K}\) en \(^{40}_{18}\text{Ar}\), cuyo periodo de semidesintegración es 1248 millones de años. Determine la edad de una muestra de roca en la que se hallaron 73 mg de \(^{40}_{18}\text{Ar}\) y 12 mg de \(^{40}_{19}\text{K}\). Suponga que en el momento de su formación la roca no contenía nada de Ar. (1 punto)</p>
+                    
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso-resolucion"><h4>Núcleos iniciales y ley de desintegración</h4><p>En el modelo indicado, cada núcleo de \(^{40}_{19}\text{K}\) desintegrado origina un núcleo de \(^{40}_{18}\text{Ar}\) y la roca conserva ambos. Las masas molares nominales son iguales (\(40\,\text{g}\,\text{mol}^{-1}\)), por lo que \(\frac{N_{\text{Ar}}}{N_{\text{K}}}=\frac{73}{12}\). Sin Ar inicial:</p>
+<div class="formula-box">\[
+N_0=N_{\text{K}}+N_{\text{Ar}},\qquad \frac{N_0}{N_{\text{K}}}=\frac{12+73}{12}=\frac{85}{12}.
+\]</div>
+<p>Aplicamos \(N_{\text{K}}=N_0e^{-\lambda t}\), con \(\lambda=\frac{\ln2}{T_{1/2}}\):</p>
+<div class="formula-box">\[
+t=\frac{1}{\lambda}\ln\left(\frac{N_0}{N_{\text{K}}}\right)=\frac{T_{1/2}}{\ln2}\ln\left(\frac{85}{12}\right)=3{,}52\cdot10^{9}\,\text{años}.
+\]</div>
+<p>Resultado: \(t\approx3{,}52\cdot10^{9}\) años (3525 millones de años).</p></div><div class="resultado-ej"><strong>Resultado del banco:</strong> <p>\(t\approx3{,}52\cdot10^{9}\) años (3525 millones de años).</p></div>
+                </div>
+            </details>
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Semidesintegración y masa transformada de un radiofármaco</span>
+                    <span class="meta-ej">Castilla y León · 2026 · Extraordinaria · Problema 9</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p class="origen-ej">Castilla y León · 2026 · Extraordinaria · Problema 9 · 2 puntos (1 + 1)</p>
+                    <p>En un hospital se está probando un nuevo radiofármaco para realizar tratamientos terapéuticos. En el laboratorio de Medicina Nuclear se prepara una muestra de 20 g de este material radiactivo y se comprueba que al cabo de 10 horas la actividad de la muestra ha disminuido un 10 % respecto al valor inicial. Calcule:</p>
+                    <ul class="apartados-ej"><li><strong>a)</strong> El periodo de semidesintegración de la sustancia radiactiva. <span class="apartado-puntos">1 punto</span></li><li><strong>b)</strong> La masa de la sustancia radiactiva que se ha desintegrado al cabo de dos días. <span class="apartado-puntos">1 punto</span></li></ul>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso-resolucion"><h4>Actividad y constante de desintegración</h4><p>La actividad es \(A=\lambda N\) y decae como \(A(t)=A_0e^{-\lambda t}\). Una disminución del 10 % deja el 90 % inicial:</p>
+<div class="formula-box">\[
+0{,}90=e^{-\lambda(10\,\text{h})}\;\Rightarrow\;\lambda=-\frac{\ln 0{,}90}{10}=0{,}010536\,\text{h}^{-1}.
+\]</div>
+<div class="formula-box">\[
+T_{1/2}=\frac{\ln 2}{\lambda}=65{,}8\,\text{h}.
+\]</div></div><div class="paso-resolucion"><h4>Masa remanente y masa transformada</h4><p>La masa del isótopo radiactivo remanente es proporcional al número de núcleos no desintegrados. Para dos días, \(t=48\,\text{h}\):</p>
+<div class="formula-box">\[
+m(t)=m_0e^{-\lambda t}=20e^{-0{,}010536\cdot48}=12{,}06\,\text{g}.
+\]</div>
+<div class="formula-box">\[
+m_{\text{des}}=m_0-m(t)=20-12{,}06=7{,}94\,\text{g}.
+\]</div>
+<p>Esta es la masa de sustancia radiactiva que se ha transformado en productos de desintegración, no una pérdida de 7,94 g de la masa total del recipiente.</p></div><div class="resultado-ej"><strong>Resultado del banco:</strong> <p>\(T_{1/2}\approx65{,}8\,\text{h}\) (2,74 días).<br>\(m_{\text{des}}\approx7{,}94\,\text{g}\); quedan aproximadamente 12,06 g del isótopo original.</p></div>
+                </div>
+            </details>
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Actividad y vida residual de una muestra de \(^{90}\text{Sr}\)</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Ordinaria · Problema 10</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p class="origen-ej">Castilla y León · 2025 · Ordinaria · Problema 10 · 2 puntos (1 + 1)</p>
+                    <p>El \(^{90}_{38}\text{Sr}\) es un núcleo radiactivo cuyo periodo de semidesintegración es de 28 años. Calcule, expresando los resultados en unidades del SI: a) La actividad de una muestra de 1 mg de esta sustancia. b) El tiempo necesario para que la anterior muestra se reduzca a 0,15 mg. Datos: \(N_A=6{,}022\cdot10^{23}\,\text{mol}^{-1}\).</p>
+                    <ul class="apartados-ej"><li><strong>a)</strong> Actividad de una muestra de 1 mg. <span class="apartado-puntos">1 punto</span></li><li><strong>b)</strong> Tiempo necesario para que la muestra se reduzca a 0,15 mg. <span class="apartado-puntos">1 punto</span></li></ul>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso-resolucion"><h4>Constante de desintegración</h4><div class="formula-box">\[
+\lambda=\frac{\ln 2}{T_{1/2}}=\frac{0{,}693}{28\cdot365\cdot24\cdot3600}\approx7{,}85\cdot10^{-10}\,\text{s}^{-1}.
+\]</div></div><div class="paso-resolucion"><h4>Número de núcleos en 1 mg de Sr</h4><p>Masa molar \(M\approx90\,\text{g}\,\text{mol}^{-1}=0{,}090\,\text{kg}\,\text{mol}^{-1}\). Con \(m=1\,\text{mg}=1\cdot10^{-6}\,\text{kg}\):</p>
+<div class="formula-box">\[
+N=\frac{m}{M}N_A=\frac{1\cdot10^{-6}}{0{,}090}\cdot6{,}022\cdot10^{23}\approx6{,}69\cdot10^{18}\,\text{núcleos}.
+\]</div></div><div class="paso-resolucion"><h4>Actividad</h4><div class="formula-box">\[
+A=\lambda N=7{,}85\cdot10^{-10}\cdot6{,}69\cdot10^{18}\approx5{,}25\cdot10^{9}\,\text{Bq}.
+\]</div></div><div class="paso-resolucion"><h4>Ley de desintegración</h4><p>La masa decae con la misma constante que el número de núcleos:</p>
+<div class="formula-box">\[
+m=m_0\,e^{-\lambda t}.
+\]</div></div><div class="paso-resolucion"><h4>Cálculo numérico</h4><div class="formula-box">\[
+t=\frac{1}{\lambda}\ln\left(\frac{m_0}{m}\right)=\frac{1}{7{,}85\cdot10^{-10}}\ln\left(\frac{1}{0{,}15}\right)\approx2{,}42\cdot10^{9}\,\text{s}\approx76{,}6\,\text{años}.
+\]</div></div><div class="resultado-ej"><strong>Resultado del banco:</strong> <p>a) \(A\approx5{,}25\cdot10^{9}\,\text{Bq}\).<br>b) \(t\approx2{,}42\cdot10^{9}\,\text{s}\approx76{,}6\,\text{años}\).</p></div>
+                </div>
+            </details>
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Tecnecio-99 metaestable: masa inyectada y tiempo hasta una actividad dada</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Extraordinaria · Problema 10</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p class="origen-ej">Castilla y León · 2025 · Extraordinaria · Problema 10 · 2 puntos (1 + 1)</p>
+                    <p>Un paciente se somete a una prueba diagnóstica en la que se le inyecta un fármaco que contiene tecnecio-99 metaestable (\(^{99}\text{Tc-m}\)), cuyo periodo de semidesintegración es de 6 h. Este se fija en el órgano de interés y se detecta la emisión radiactiva que produce. La actividad inicial de la sustancia inyectada debe ser \(5\cdot10^{8}\,\text{Bq}\). Calcule:<br>a) La masa de isótopo radiactivo que hay que inyectarle.<br>b) El tiempo que ha de transcurrir para que la actividad del isótopo sea de \(10^{4}\,\text{Bq}\). Dato: \(N_A=6{,}022\cdot10^{23}\,\text{mol}^{-1}\).</p>
+                    <ul class="apartados-ej"><li><strong>a)</strong> Masa de isótopo a inyectar. <span class="apartado-puntos">1 punto</span></li><li><strong>b)</strong> Tiempo hasta \(A=10^{4}\,\text{Bq}\). <span class="apartado-puntos">1 punto</span></li></ul>
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso-resolucion"><h4>Constante de desintegración</h4><p>El periodo de semidesintegración es \(T_{1/2}=6\,\text{h}=21600\,\text{s}\). La constante de desintegración es:</p>
+<div class="formula-box">\[
+\lambda=\frac{\ln2}{T_{1/2}}=\frac{0{,}693}{21600}=3{,}21\cdot10^{-5}\,\text{s}^{-1}.
+\]</div></div><div class="paso-resolucion"><h4>Número de núcleos y masa correspondiente</h4><p>Para la actividad inicial:</p>
+<div class="formula-box">\[
+N_0=\frac{A_0}{\lambda}=\frac{5\cdot10^{8}}{3{,}21\cdot10^{-5}}=1{,}56\cdot10^{13}\ \text{núcleos}.
+\]</div>
+<p>Con masa molar \(M\approx99\,\text{g}\,\text{mol}^{-1}\):</p>
+<div class="formula-box">\[
+m=\frac{N_0M}{N_A}=\frac{1{,}56\cdot10^{13}\cdot99}{6{,}022\cdot10^{23}}=2{,}56\cdot10^{-9}\,\text{g}=2{,}56\cdot10^{-12}\,\text{kg}.
+\]</div></div><div class="paso-resolucion"><h4>Ley exponencial de desintegración</h4><p>La actividad varía según:</p>
+<div class="formula-box">\[
+A=A_0e^{-\lambda t}.
+\]</div>
+<p>Para \(A=10^{4}\,\text{Bq}\):</p>
+<div class="formula-box">\[
+\frac{A}{A_0}=\frac{10^{4}}{5\cdot10^{8}}=2\cdot10^{-5}.
+\]</div>
+<p>Por tanto:</p>
+<div class="formula-box">\[
+t=-\frac{\ln(2\cdot10^{-5})}{\lambda}.
+\]</div></div><div class="paso-resolucion"><h4>Cálculo numérico</h4><div class="formula-box">\[
+t=-\frac{\ln(2\cdot10^{-5})}{3{,}21\cdot10^{-5}}=3{,}37\cdot10^{5}\,\text{s}=93{,}7\,\text{h}\approx3{,}9\,\text{días}.
+\]</div></div><div class="resultado-ej"><strong>Resultado del banco:</strong> <p>a) \(m=2{,}56\cdot10^{-9}\,\text{g}=2{,}56\cdot10^{-12}\,\text{kg}\).<br>b) \(t=93{,}7\,\text{h}\approx3{,}9\,\text{días}\).</p></div>
+                </div>
+            </details>
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Masa de \(^{131}\)I correspondiente a una actividad dada</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 10</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p class="origen-ej">Castilla y León · 2024 · Extraordinaria · Problema 10 · 1 punto</p>
+                    <p>La leche de las vacas próximas a una central nuclear se analiza para detectar su posible contenido en \(^{131}\)I (periodo de semidesintegración 8,02 días). Según el reglamento, la actividad correspondiente a 1 L de leche debe ser inferior a \(3{,}7\cdot10^{-2}\,\text{Bq}\). ¿Qué masa de \(^{131}\)I tiene esa actividad? Datos: \(N_A=6{,}022\cdot10^{23}\,\text{mol}^{-1}\); \(1\,\text{u}=1{,}66\cdot10^{-27}\,\text{kg}\).</p>
+                    
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso-resolucion"><h4>Constante de desintegración</h4><p>El periodo expresado en segundos es:</p>
+<div class="formula-box">\[
+T=8{,}02\,\text{días}\cdot86\,400\,\text{s}\,\text{día}^{-1}=6{,}93\cdot10^{5}\,\text{s}.
+\]</div>
+<p>La constante de desintegración es:</p>
+<div class="formula-box">\[
+\lambda=\frac{\ln 2}{T}=\frac{0{,}693}{6{,}93\cdot10^{5}}=1{,}00\cdot10^{-6}\,\text{s}^{-1}.
+\]</div></div><div class="paso-resolucion"><h4>Número de átomos a partir de la actividad</h4><p>Con \(A=3{,}7\cdot10^{-2}\,\text{Bq}\):</p>
+<div class="formula-box">\[
+N=\frac{A}{\lambda}=\frac{3{,}7\cdot10^{-2}}{1{,}00\cdot10^{-6}}=3{,}70\cdot10^{4}\ \text{átomos}.
+\]</div></div><div class="paso-resolucion"><h4>Masa correspondiente</h4><p>La masa molar del \(^{131}\)I es aproximadamente \(131\,\text{g}\,\text{mol}^{-1}=0{,}131\,\text{kg}\,\text{mol}^{-1}\). Entonces:</p>
+<div class="formula-box">\[
+m=N\cdot\frac{M}{N_A}=3{,}70\cdot10^{4}\cdot\frac{0{,}131}{6{,}022\cdot10^{23}}=8{,}05\cdot10^{-21}\,\text{kg}.
+\]</div></div><div class="resultado-ej"><strong>Resultado del banco:</strong> <p>\(m=8{,}05\cdot10^{-21}\,\text{kg}\).</p></div>
+                </div>
+            </details>
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Tiempo necesario para que la actividad de una muestra alcance un valor dado</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Extraordinaria · Problema 10</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p class="origen-ej">Castilla y León · 2023 · Extraordinaria · Problema 10 · 1 punto</p>
+                    <p>Se dispone de una muestra de \(10^{20}\) núcleos de un material radiactivo cuyo periodo de semidesintegración es \(29\) años. ¿Cuánto tiempo debe transcurrir para que su actividad sea \(600\,\text{Bq}\)?</p>
+                    
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso-resolucion"><h4>Constante de desintegración</h4><p>La constante de desintegración es:</p>
+<div class="formula-box">\[
+\lambda=\frac{\ln2}{T_{1/2}}=\frac{0{,}693}{29\cdot365\cdot24\cdot3600}=7{,}58\cdot10^{-10}\,\text{s}^{-1}.
+\]</div></div><div class="paso-resolucion"><h4>Número de núcleos para una actividad de 600 Bq</h4><p>Por definición, \(A=\lambda N\), así que:</p>
+<div class="formula-box">\[
+N=\frac{A}{\lambda}=\frac{600}{7{,}58\cdot10^{-10}}=7{,}92\cdot10^{11}\ \text{núcleos}.
+\]</div></div><div class="paso-resolucion"><h4>Tiempo transcurrido</h4><p>La ley de desintegración da \(N=N_0e^{-\lambda t}\), de donde:</p>
+<div class="formula-box">\[
+t=\frac{1}{\lambda}\ln\left(\frac{N_0}{N}\right).
+\]</div>
+<p>Numéricamente:</p>
+<div class="formula-box">\[
+t=\frac{1}{7{,}58\cdot10^{-10}}\ln\left(\frac{10^{20}}{7{,}92\cdot10^{11}}\right)=2{,}46\cdot10^{10}\,\text{s}.
+\]</div>
+<p>Expresado en años:</p>
+<div class="formula-box">\[
+t\approx780\ \text{años}.
+\]</div></div><div class="resultado-ej"><strong>Resultado del banco:</strong> <p>\(t\approx2{,}46\cdot10^{10}\,\text{s}\approx780\ \text{años}\).</p></div>
+                </div>
+            </details>
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Periodo de semidesintegración y actividad a partir de una gráfica de decaimiento</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Ordinaria · Problema 10</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p class="origen-ej">Castilla y León · 2023 · Ordinaria · Problema 10 · 1 punto</p>
+                    <p>El número de núcleos de un isótopo radiactivo varía con el tiempo según se muestra en la gráfica adjunta. Calcule el periodo de semidesintegración del isótopo y la actividad después de 12 años. Lectura de la gráfica: \(N_0 = 1000\) núcleos en \(t=0\); la curva exponencial decae alcanzando \(N \approx 500\) en \(t \approx 10\) años (cruce con el semi-valor inicial).</p>
+                    
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso-resolucion"><h4>Determinación de \(T_{1/2}\)</h4><p>El periodo de semidesintegración es el tiempo en que \(N=N_0/2\). Según la gráfica, \(N_0=1000\) núcleos y la curva alcanza \(N\approx500\) núcleos para \(t\approx10\) años; por tanto,</p>
+<div class="formula-box">\[
+T_{1/2}\approx10\,\text{años}.
+\]</div></div><div class="paso-resolucion"><h4>Constante de desintegración</h4><p>La constante de desintegración es</p>
+<div class="formula-box">\[
+\lambda=\frac{\ln2}{T_{1/2}}=\frac{\ln2}{10}\approx0{,}0693\,\text{año}^{-1}.
+\]</div></div><div class="paso-resolucion"><h4>Número de núcleos a \(t=12\) años</h4><p>Aplicando la ley de decaimiento,</p>
+<div class="formula-box">\[
+N(t)=N_0 e^{-\lambda t}=1000\,e^{-0{,}0693\cdot12}\approx436\,\text{núcleos}.
+\]</div></div><div class="paso-resolucion"><h4>Actividad a \(t=12\) años</h4><p>La actividad es</p>
+<div class="formula-box">\[
+A=\lambda N\approx0{,}0693\cdot436\approx30{,}2\,\text{año}^{-1}\approx9{,}57\cdot10^{-7}\,\text{Bq}.
+\]</div></div><div class="resultado-ej"><strong>Resultado del banco:</strong> <p>\(T_{1/2}\approx10\,\text{años}\); \(\lambda\approx0{,}0693\,\text{año}^{-1}\); \(N(12)\approx436\) núcleos; \(A(12)=\lambda N\approx30{,}2\,\text{año}^{-1}\approx9{,}57\cdot10^{-7}\,\text{Bq}\).</p></div>
+                </div>
+            </details>
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Masa de U-234 sin desintegrar tras 50 000 años</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Ordinaria · Problema 11</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p class="origen-ej">Castilla y León · 2022 · Ordinaria · Problema 11 · 1 punto</p>
+                    <p>El isótopo uranio \(^{234}_{92}U\) tiene un periodo de semidesintegración (semivida) de \(2{,}5\cdot10^{5}\) años. Si se parte de una muestra de \(10\,\text{g}\) de dicha sustancia, determine la masa que quedará sin desintegrar después de \(5\cdot10^{4}\) años.</p>
+                    
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso-resolucion"><h4>Ley de desintegración</h4><p>La ley de desintegración radiactiva puede escribirse como:</p>
+<div class="formula-box">\[
+m=m_0\left(\frac{1}{2}\right)^{\frac{t}{T_{1/2}}}.
+\]</div>
+<p>Con \(m_0=10\,\text{g}\), \(T_{1/2}=2{,}5\cdot10^{5}\,\text{años}\) y \(t=5\cdot10^{4}\,\text{años}\):</p>
+<div class="formula-box">\[
+\frac{t}{T_{1/2}}=\frac{5\cdot10^{4}}{2{,}5\cdot10^{5}}=0{,}2.
+\]</div></div><div class="paso-resolucion"><h4>Cálculo numérico</h4><p>Sustituyendo:</p>
+<div class="formula-box">\[
+m=10\left(\frac{1}{2}\right)^{0{,}2}\approx10\cdot0{,}8706\approx8{,}71\,\text{g}.
+\]</div></div><div class="resultado-ej"><strong>Resultado del banco:</strong> <p>\(m\approx8{,}71\,\text{g}\).</p></div>
+                </div>
+            </details>
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">Actividad inicial de \(1\,\mu\text{g}\) de \(^{131}I\)</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Extraordinaria · Problema 11</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p class="origen-ej">Castilla y León · 2021 · Extraordinaria · Problema 11 · 1 punto</p>
+                    <p>El yodo radiactivo, \(^{131}I\), tiene un período de semidesintegración de \(8{,}02\,\text{días}\). Calcule la actividad inicial de \(1\,\mu\text{g}\) de dicho isótopo. Exprese el resultado en unidades del SI. Nota: constante de Avogadro \(N_A=6{,}022\cdot10^{23}\,\text{mol}^{-1}\).</p>
+                    
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso-resolucion"><h4>Número de núcleos en \(1\,\mu\text{g}\) de \(^{131}I\)</h4><div class="formula-box">\[
+N=\frac{m}{M}N_A=\frac{1{,}00\cdot10^{-6}}{131}\cdot6{,}022\cdot10^{23}\approx4{,}60\cdot10^{15}.
+\]</div></div><div class="paso-resolucion"><h4>Constante de desintegración</h4><div class="formula-box">\[
+T_{1/2}=8{,}02\,\text{días}=8{,}02\cdot86400\,\text{s}\approx6{,}93\cdot10^{5}\,\text{s}.
+\]</div>
+<div class="formula-box">\[
+\lambda=\frac{\ln2}{T_{1/2}}\approx1{,}00\cdot10^{-6}\,\text{s}^{-1}.
+\]</div></div><div class="paso-resolucion"><h4>Actividad inicial</h4><div class="formula-box">\[
+A_0=\lambda N\approx1{,}00\cdot10^{-6}\cdot4{,}60\cdot10^{15}\approx4{,}60\cdot10^{9}\,\text{Bq}.
+\]</div></div><div class="resultado-ej"><strong>Resultado del banco:</strong> <p>\(A_0\approx4{,}60\cdot10^{9}\,\text{Bq}\).</p></div>
+                </div>
+            </details>
+            <details class="tarjeta-ejercicio">
+                <summary class="cabecera-ej">
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">A.10 — Tiempo para desintegrar el 25% del Co-60</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Ordinaria · Problema 10</span>
+                </summary>
+                <div class="enunciado-ej">
+                    <p class="origen-ej">Castilla y León · 2021 · Ordinaria · Problema 10 · 1 punto</p>
+                    <p>Un dispositivo usado en radioterapia contiene \(0{,}20\,\text{g}\) de \(^{60}\text{Co}\), emisor gamma de semivida (período de semidesintegración) \(5{,}27\) años. ¿Cuánto tiempo debe pasar para que se desintegre el 25% del cobalto inicial?</p>
+                    
+                </div>
+                <div class="resolucion-ej">
+                    <div class="paso-resolucion"><h4>Ley de desintegración y constante</h4><p>«Que se desintegre el 25%» significa que queda el 75%: \(N/N_0=0{,}75\).</p>
+<p>Constante de desintegración:</p>
+<div class="formula-box">\[
+\lambda=\frac{\ln 2}{T_{1/2}}=\frac{0{,}693}{5{,}27}\approx0{,}1315\,\text{año}^{-1}.
+\]</div>
+<p>Ley exponencial:</p>
+<div class="formula-box">\[
+\frac{N}{N_0}=e^{-\lambda t}\Rightarrow t=-\frac{\ln 0{,}75}{\lambda}\approx\frac{0{,}2877}{0{,}1315}\approx2{,}19\,\text{años}.
+\]</div></div><div class="resultado-ej"><strong>Resultado del banco:</strong> <p>\(t\approx2{,}19\,\text{años}\).</p></div>
+                </div>
+            </details>
+            <div class="pie-clave"><i class="fas fa-lightbulb"></i><span><strong>Observaciones clave:</strong> las preguntas de Castilla y León combinan con frecuencia varios pasos: hallar \(\lambda\), relacionar actividad y número de núcleos, convertir una masa en átomos, obtener el tiempo a partir de una fracción restante o interpretar una gráfica. Conviene escribir primero la ley general y aclarar siempre qué porcentaje permanece, en lugar de qué porcentaje se ha desintegrado.</span></div>
+        </div>
+    </details>
+
+    <!-- CTA -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p><br>Domina la ley exponencial de desintegración, la actividad y las aplicaciones a la datación radiactiva.<br>
+                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
+            </p>
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">Volver al inicio</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

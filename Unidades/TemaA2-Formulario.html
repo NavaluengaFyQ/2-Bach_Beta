@@ -48,7 +48,9 @@
             </div>
             <a href="TemaA2.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
                 <div class="formula-box">
-                    \[ e = \frac{c}{a} \qquad c^{2} = a^{2} - b^{2} \qquad 0 \le e < 1 \]
+                    \[ e = \frac{c}{a} \]
+                    \[ c^{2} = a^{2} - b^{2} \]
+                    \[ 0 \le e < 1 \]
                 </div>
             </a>
             <p class="note">
@@ -94,7 +96,8 @@
             </div>
             <a href="TemaA2.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
                 <div class="formula-box">
-                    \[ r_{\text{perihelio}} = a\,(1-e) \qquad\qquad r_{\text{afelio}} = a\,(1+e) \]
+                    \[ r_{\text{perihelio}} = a\,(1-e) \]
+                    \[ r_{\text{afelio}} = a\,(1+e) \]
                 </div>
             </a>
             <p class="note">
@@ -141,7 +144,9 @@
             </div>
             <a href="TemaA2.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
                 <div class="formula-box">
-                    \[ \frac{dA}{dt} = \frac{L}{2m} = \text{cte} \qquad\Longrightarrow\qquad r_p\,v_p = r_a\,v_a \]
+                    \[ \frac{dA}{dt} = \frac{L}{2m} = \text{cte} \]
+                    \[ \Longrightarrow\quad r_p\,v_p = r_a\,v_a \]
+                    <span id="formula-12"></span>
                 </div>
             </a>
             <p class="note">
@@ -187,7 +192,9 @@
             </div>
             <a href="TemaA2.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
                 <div class="formula-box">
-                    \[ T^{2} = k\,a^{3} \qquad\Longleftrightarrow\qquad \frac{T^{2}}{a^{3}} = \text{cte} \]
+                    \[ T^{2} = k\,a^{3} \]
+                    \[ \Longleftrightarrow\quad \frac{T^{2}}{a^{3}} = \text{cte} \]
+                    <span id="formula-9"></span>
                 </div>
             </a>
             <p class="note">
@@ -233,6 +240,7 @@
             <a href="TemaA2.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
                 <div class="formula-box">
                     \[ k = \frac{4\pi^{2}}{G\,M} \]
+                    <span id="formula-8"></span>
                 </div>
             </a>
             <p class="note">
@@ -277,7 +285,9 @@
             </div>
             <a href="TemaA2.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
                 <div class="formula-box">
-                    \[ \frac{G\,M\,m}{r^{2}} = \frac{m\,v^{2}}{r} \;\Longrightarrow\; v^{2} = \frac{G\,M}{r} \;\Longrightarrow\; T^{2} = \frac{4\pi^{2}}{G\,M}\,r^{3} \]
+                    \[ \frac{G\,M\,m}{r^{2}} = \frac{m\,v^{2}}{r} \]
+                    \[ \Longrightarrow\quad v^{2} = \frac{G\,M}{r} \]
+                    \[ \Longrightarrow\quad T^{2} = \frac{4\pi^{2}}{G\,M}\,r^{3} \]
                 </div>
             </a>
             <p class="note">
@@ -458,16 +468,19 @@
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                Las velocidades del planeta (o satélite) en los dos ápsides de una órbita elíptica de semieje \(a\) y excentricidad \(e\). Se aplica en problemas de cometas, asteroides o misiones interplanetarias, combinando la 2.ª ley con la conservación de la energía mecánica.
+                Las velocidades del planeta (o satélite) en los dos ápsides de una órbita elíptica de semieje \(a\) y excentricidad \(e\). Se aplica en problemas de cometas, asteroides o misiones interplanetarias. La <strong>primera ecuación</strong> es la conservación de la energía mecánica entre perihelio y afelio; combinándola con la conservación del momento angular (2.ª ley) se obtienen \(v_p\) y \(v_a\).
             </div>
-            <a href="TemaA2.html#formula-14" style="text-decoration:none; color:inherit; display:block;">
+            <a href="TemaA2.html#formula-13" style="text-decoration:none; color:inherit; display:block;">
                 <div class="formula-box">
-                    \[ v_p = \sqrt{\frac{G\,M}{a}\,\frac{1+e}{1-e}} \qquad v_a = \sqrt{\frac{G\,M}{a}\,\frac{1-e}{1+e}} \]
+                    \[ \frac{1}{2}m\,v_p^{2} - \frac{G\,M\,m}{r_p} = \frac{1}{2}m\,v_a^{2} - \frac{G\,M\,m}{r_a} \]
+                    \[ v_p = \sqrt{\frac{G\,M}{a}\,\frac{1+e}{1-e}} \]
+                    \[ v_a = \sqrt{\frac{G\,M}{a}\,\frac{1-e}{1+e}} \]
+                    <span id="formula-13"></span>
                 </div>
             </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No: se obtienen combinando la conservación del momento angular (2.ª ley) y la conservación de la energía mecánica. Estrategia EBAU: si conoces \(v_p\) y las distancias de los ápsides, aplica directamente \(r_pv_p=r_av_a\). Si conoces \(a\) y \(e\), usa las fórmulas anteriores. Comprueba siempre que \(v_p>v_a\) (mayor velocidad cuanto más cerca del foco).</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No: se obtienen combinando la conservación del momento angular (2.ª ley, \(r_pv_p=r_av_a\)) y la conservación de la energía mecánica (primera ecuación). Estrategia EBAU: si conoces \(v_p\) y las distancias de los ápsides, aplica directamente \(r_pv_p=r_av_a\). Si conoces \(a\) y \(e\), usa las fórmulas anteriores. Comprueba siempre que \(v_p>v_a\) (mayor velocidad cuanto más cerca del foco).</span>
             </p>
             <table class="mag-table">
                 <thead>
@@ -478,13 +491,15 @@
                     <tr><td data-label="Símbolo">\(v_a\)</td><td data-label="Significado">Velocidad en el afelio (mínima)</td><td data-label="Unidades">m·s⁻¹</td></tr>
                     <tr><td data-label="Símbolo">\(a\)</td><td data-label="Significado">Semieje mayor de la elipse</td><td data-label="Unidades">m</td></tr>
                     <tr><td data-label="Símbolo">\(e\)</td><td data-label="Significado">Excentricidad de la órbita</td><td data-label="Unidades">adimensional</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa del astro central</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa del cuerpo que orbita</td><td data-label="Unidades">kg</td></tr>
                 </tbody>
             </table>
             <p class="ejemplo"><strong>Ejemplo:</strong> un cometa con \(a=1{,}0\cdot10^{12}\,\text{m}\) y \(e=0{,}9\) alrededor del Sol: \(v_p=\sqrt{GM_\odot/a\cdot(1+e)/(1-e)}\approx6{,}1\cdot10^{4}\,\text{m}\,\text{s}^{-1}\) y \(v_a=\sqrt{GM_\odot/a\cdot(1-e)/(1+e)}\approx3{,}2\cdot10^{3}\,\text{m}\,\text{s}^{-1}\). Relación de velocidades \(\approx19:1\), coherente con la relación inversa de distancias \(r_a/r_p=(1+e)/(1-e)=19\).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>Son consecuencias de la 2.ª ley (momento angular) y de la conservación de la energía.</li>
+                    <li>Son consecuencias de la 2.ª ley (momento angular) y de la <strong>conservación de la energía</strong>.</li>
                     <li>En los ápsides, \(\vec v\perp\vec r\), por lo que \(L=m\,r\,v\).</li>
                     <li>Se cumple \(r_pv_p=r_av_a\), útil como comprobación.</li>
                     <li>Para \(e=0\) (circunferencia), \(v_p=v_a=\sqrt{GM/a}\).</li>
@@ -555,7 +570,9 @@
             </div>
             <a href="TemaA2.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
                 <div class="formula-box">
-                    \[ \frac{T_1^{2}}{a_1^{3}} = \frac{T_2^{2}}{a_2^{3}} \qquad\Longrightarrow\qquad T_2 = T_1\left(\frac{a_2}{a_1}\right)^{3/2} \]
+                    \[ \frac{T_1^{2}}{a_1^{3}} = \frac{T_2^{2}}{a_2^{3}} \]
+                    \[ \Longrightarrow\quad T_2 = T_1\left(\frac{a_2}{a_1}\right)^{3/2} \]
+                    <span id="formula-16"></span>
                 </div>
             </a>
             <p class="note">
@@ -658,7 +675,7 @@
                     </p>
                     <p class="epi-ej">
                         <strong>Ejemplos A2</strong>
-                        \(r_pv_p=r_a v_a\) (conservación \(L\)) &nbsp;·&nbsp; \(T_1^{2}/a_1^{3}=T_2^{2}/a_2^{3}\) (mismo sistema)
+                        \(r_pv_p=r_a v_a\) (conservación \(L\)) &nbsp;·&nbsp; \(T_1^{2}/a_1^{3}=T_2^{2}/a_2^{3}\) (mismo sistema) &nbsp;·&nbsp; \(\tfrac{1}{2}mv_p^2-GMm/r_p=\tfrac{1}{2}mv_a^2-GMm/r_a\) (conservación \(E_m\))
                     </p>
                 </div>
 
@@ -778,9 +795,10 @@
                 <tr><td data-label="#">7</td><td data-label="Fórmula">\[ M=\dfrac{4\pi^{2}\,a^{3}}{G\,T^{2}} \]</td><td data-label="Nombre">Determinación de la masa central a partir de una órbita</td><td data-label="Ficha">7</td></tr>
                 <tr><td data-label="#">8</td><td data-label="Fórmula">\[ v=\sqrt{\dfrac{G\,M}{r}} \]</td><td data-label="Nombre">Velocidad orbital en órbita circular</td><td data-label="Ficha">8</td></tr>
                 <tr><td data-label="#">9</td><td data-label="Fórmula">\[ T=2\pi\sqrt{\dfrac{r^{3}}{G\,M}} \]</td><td data-label="Nombre">Periodo orbital en órbita circular</td><td data-label="Ficha">9</td></tr>
-                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ v_p=\sqrt{\dfrac{GM}{a}\dfrac{1+e}{1-e}};\quad v_a=\sqrt{\dfrac{GM}{a}\dfrac{1-e}{1+e}} \]</td><td data-label="Nombre">Velocidades en los ápsides (perihelio y afelio)</td><td data-label="Ficha">10</td></tr>
-                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ E_m=-\dfrac{G\,M\,m}{2a} \]</td><td data-label="Nombre">Energía mecánica de una órbita elíptica (o circular)</td><td data-label="Ficha">11</td></tr>
-                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ \dfrac{T_1^{2}}{a_1^{3}}=\dfrac{T_2^{2}}{a_2^{3}} \]</td><td data-label="Nombre">Comparación de órbitas del mismo sistema</td><td data-label="Ficha">12</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ \tfrac{1}{2}mv_p^2-\dfrac{GMm}{r_p}=\tfrac{1}{2}mv_a^2-\dfrac{GMm}{r_a} \]</td><td data-label="Nombre">Conservación de la energía entre perihelio y afelio</td><td data-label="Ficha">10</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ v_p=\sqrt{\dfrac{GM}{a}\dfrac{1+e}{1-e}};\quad v_a=\sqrt{\dfrac{GM}{a}\dfrac{1-e}{1+e}} \]</td><td data-label="Nombre">Velocidades en los ápsides (perihelio y afelio)</td><td data-label="Ficha">10</td></tr>
+                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ E_m=-\dfrac{G\,M\,m}{2a} \]</td><td data-label="Nombre">Energía mecánica de una órbita elíptica (o circular)</td><td data-label="Ficha">11</td></tr>
+                <tr><td data-label="#">13</td><td data-label="Fórmula">\[ \dfrac{T_1^{2}}{a_1^{3}}=\dfrac{T_2^{2}}{a_2^{3}} \]</td><td data-label="Nombre">Comparación de órbitas del mismo sistema</td><td data-label="Ficha">12</td></tr>
             </tbody>
         </table>
 
@@ -791,7 +809,7 @@
 
     <!-- ============================ RECORDATORIO + BOTÓN ============================ -->
     <div class="note" style="margin: 0 28px 8px 28px;">
-        <strong>Recordatorio:</strong> las tres leyes de Kepler son <strong>empíricas</strong> (se obtienen de los datos), pero Newton demostró que todas se deducen de la ley de gravitación universal. La 1.ª describe la <em>geometría</em> (elipses), la 2.ª la <em>cinemática</em> (áreas iguales ⇔ momento angular constante), y la 3.ª la <em>relación periodo-semieje</em> (\(T^{2}\propto a^{3}\), con \(k=4\pi^{2}/GM\)). En problemas de EBAU: (1) identifica el astro central y el cuerpo que orbita; (2) homogeneiza unidades al S.I.; (3) usa la 3.ª ley en forma comparativa \(T_1^{2}/a_1^{3}=T_2^{2}/a_2^{3}\) siempre que puedas; (4) para elipses, recuerda \(r_p=a(1-e)\), \(r_a=a(1+e)\) y \(r_pv_p=r_av_a\); (5) comprueba el orden de magnitud. Con esto resuelves cualquier problema del tema A2.
+        <strong>Recordatorio:</strong> las tres leyes de Kepler son <strong>empíricas</strong> (se obtienen de los datos), pero Newton demostró que todas se deducen de la ley de gravitación universal. La 1.ª describe la <em>geometría</em> (elipses), la 2.ª la <em>cinemática</em> (áreas iguales ⇔ momento angular constante), y la 3.ª la <em>relación periodo-semieje</em> (\(T^{2}\propto a^{3}\), con \(k=4\pi^{2}/GM\)). En problemas de EBAU: (1) identifica el astro central y el cuerpo que orbita; (2) homogeneiza unidades al S.I.; (3) usa la 3.ª ley en forma comparativa \(T_1^{2}/a_1^{3}=T_2^{2}/a_2^{3}\) siempre que puedas; (4) para elipses, recuerda \(r_p=a(1-e)\), \(r_a=a(1+e)\), \(r_pv_p=r_av_a\) y la conservación de la energía entre ápsides; (5) comprueba el orden de magnitud. Con esto resuelves cualquier problema del tema A2.
     </div>
 
     <div class="footer-cta">
@@ -799,6 +817,10 @@
     </div>
 
 </div>
+
+
+
+
 
 
 
@@ -828,6 +850,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 2600);
 });
 </script>
+
+
+
+
+
+
+
+
 
 
 

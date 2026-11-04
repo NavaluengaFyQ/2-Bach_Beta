@@ -5,35 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema B2. Campo eléctrico de distribuciones discretas y continuas; flujo</title>
 
-
-
-    <!-- Para crear las consultas puntuales en la base de datos) -->
     <script src="js/utils.js" defer></script>
-
-    <!-- FontAwesome CDN (versión 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
     <link rel="stylesheet" href="../css/unidades.css">
-
-    <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-
-    
-    <script>
-        window.MathJax = {
-            tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
-            options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-
-    
 </head>
 <body>
 <div class="container">
-    <!-- CABECERA -->
     <div class="header">
         <div class="header-left">
             <h1>IES Valle del Alberche</h1>
@@ -48,7 +26,6 @@
         </div>
     </div>
 
-    <!-- UBICACIÓN EN EL CURRÍCULO -->
     <details class="section enunciado" open>
         <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
         <p>Este tema pertenece al <strong>Bloque B. Campo electromagnético</strong> de Física de 2.º de Bachillerato. En la organización de bloques y temas facilitada para el Decreto 40/2022 (BOCYL-D-30092022-4), aparece identificado como:</p>
@@ -79,7 +56,6 @@
         <div class="nota-curricular"><strong>En este tema:</strong> se estudia cómo calcular y representar el campo eléctrico creado por una o varias cargas, cómo extender el razonamiento a distribuciones continuas y cómo interpretar el flujo eléctrico y el teorema de Gauss.</div>
     </details>
 
-    <!-- FRECUENCIA / IMPORTANCIA EBAU -->
     <details class="section enunciado">
         <summary><h2>📊 Presencia en los problemas EBAU</h2></summary>
         <p>Según los indicadores proporcionados para C-B2 y P-B2, ambos presentan la misma frecuencia estimada:</p>
@@ -90,7 +66,6 @@
         <p>Las palabras clave que orientan el estudio son <strong>campo eléctrico</strong>, <strong>distribución discreta</strong>, <strong>principio de superposición</strong>, <strong>vector campo eléctrico</strong> y <strong>flujo eléctrico</strong>. Para los problemas tipo se añaden configuraciones de dos o tres cargas, cuadrados, triángulos y diagramas vectoriales.</p>
     </details>
 
-    <!-- OBJETIVOS -->
     <details class="section objetivo">
         <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
         <ul>
@@ -106,14 +81,15 @@
         </ul>
     </details>
 
-    <!-- CONTENIDO TEÓRICO -->
     <details class="section procedimiento">
         <summary><h2>📚 Contenido teórico</h2></summary>
 
         <details class="step" open>
             <summary><span class="step-num">1</span><strong>Campo eléctrico: definición y carácter vectorial.</strong></summary>
             <p>Una carga eléctrica modifica las propiedades del espacio que la rodea: crea un <strong>campo eléctrico</strong>. Para caracterizarlo en un punto se coloca una carga de prueba positiva, suficientemente pequeña para no alterar la distribución creadora. El campo es la fuerza eléctrica por unidad de carga de prueba:</p>
-            <div class="formula-box">\[\boxed{\vec E=\frac{\vec F}{q_0}}\]</div>
+            <a href="TemaB2-Formulario.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">\[\boxed{\vec E=\frac{\vec F}{q_0}}\]</div>
+            </a>
             <p>El campo eléctrico es una magnitud <strong>vectorial</strong>. Su unidad en el Sistema Internacional es el \(\text{N}\,\text{C}^{-1}\), equivalente a \(\text{V}\,\text{m}^{-1}\). El sentido de \(\vec E\) se define como el que tendría la fuerza sobre una carga de prueba positiva.</p>
             <div class="note"><strong>Importante:</strong> el campo lo crean las cargas fuente; no depende del valor de la carga de prueba utilizada para medirlo. Una carga de prueba negativa experimentaría una fuerza de sentido contrario al campo.</div>
         </details>
@@ -121,30 +97,44 @@
         <details class="step">
             <summary><span class="step-num">2</span><strong>Campo eléctrico creado por una carga puntual.</strong></summary>
             <p>Una carga puntual \(q\), situada a una distancia \(r\) del punto de observación, crea un campo cuyo módulo es:</p>
-            <div class="formula-box">\[\boxed{E=K_0\,\frac{|q|}{r^2}}\]</div>
+            <a href="TemaB2-Formulario.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">\[\boxed{E=K_0\,\frac{|q|}{r^2}}\]</div>
+            </a>
             <p>donde \(K_0=\dfrac{1}{4\pi\varepsilon_0}\approx9{,}00\cdot10^9\,\text{N}\,\text{m}^2\,\text{C}^{-2}\) es la constante de Coulomb en el vacío.</p>
             <p><strong>Dirección y sentido:</strong></p>
             <ul>
-                <li>Si \(q&gt;0\), el campo apunta radialmente <strong>hacia fuera</strong> de la carga.</li>
-                <li>Si \(q&lt;0\), el campo apunta radialmente <strong>hacia la carga</strong>.</li>
+                <li>Si \(q>0\), el campo apunta radialmente <strong>hacia fuera</strong> de la carga.</li>
+                <li>Si \(q<0\), el campo apunta radialmente <strong>hacia la carga</strong>.</li>
             </ul>
             <p>Si la carga está en el origen y \(\vec r\) es el vector de posición del punto donde se calcula el campo:</p>
-            <div class="formula-box">\[\boxed{\vec E(\vec r)=K_0\,\frac{q}{r^3}\,\vec r}\]</div>
+            <a href="TemaB2-Formulario.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">\[\boxed{\vec E(\vec r)=K_0\,\frac{q}{r^3}\,\vec r}\]</div>
+            </a>
             <p>Para una carga situada en \(\vec r_i\) y un punto de observación \(P\), se utiliza el vector que va desde la carga hasta el punto: \(\vec r_P-\vec r_i\).</p>
+            <a href="TemaB2-Formulario.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">\[\boxed{\vec E_i(P)=K_0q_i\,\frac{\vec r_P-\vec r_i}{|\vec r_P-\vec r_i|^3}}\]</div>
+            </a>
         </details>
 
         <details class="step">
             <summary><span class="step-num">3</span><strong>Principio de superposición de campos eléctricos.</strong></summary>
             <p>Cuando varias cargas crean campo en un mismo punto, el campo total es la <strong>suma vectorial</strong> de los campos que produciría cada carga por separado:</p>
-            <div class="formula-box">\[\boxed{\vec E_{\mathrm{R}}=\vec E_1+\vec E_2+\cdots+\vec E_n=\sum_i\vec E_i}\]</div>
+            <a href="TemaB2-Formulario.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">\[\boxed{\vec E_{\mathrm{R}}=\vec E_1+\vec E_2+\cdots+\vec E_n=\sum_i\vec E_i}\]</div>
+            </a>
             <p>Para una distribución discreta de cargas puntuales:</p>
+            <a href="TemaB2-Formulario.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">\[\boxed{\vec E(P)=K_0\sum_i q_i\,\frac{\vec r_P-\vec r_i}{|\vec r_P-\vec r_i|^3}}\]</div>
+            </a>
             <p>La suma no se realiza, en general, sumando módulos. Es necesario tener en cuenta la dirección y el sentido de cada contribución.</p>
             <p><strong>En el plano XY:</strong> se calculan las componentes de cada campo y se suman por separado:</p>
-            <div class="formula-box">\[E_x=\sum_i E_{ix}\qquad E_y=\sum_i E_{iy}\]</div>
+            <a href="TemaB2-Formulario.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">\[E_x=\sum_i E_{ix}\qquad E_y=\sum_i E_{iy}\]</div>
+            </a>
             <p>Una vez obtenidas las componentes:</p>
+            <a href="TemaB2-Formulario.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">\[E_{\mathrm R}=\sqrt{E_x^2+E_y^2}\qquad \tan\alpha=\frac{E_y}{E_x}\]</div>
+            </a>
             <div class="note"><strong>Atención al ángulo:</strong> el cociente anterior proporciona el ángulo de referencia. El cuadrante correcto se determina a partir de los signos de \(E_x\) y \(E_y\).</div>
         </details>
 
@@ -204,12 +194,14 @@
         <details class="step">
             <summary><span class="step-num">5</span><strong>Distribuciones discretas y distribuciones continuas.</strong></summary>
             <p>En una <strong>distribución discreta</strong> hay un número finito de cargas puntuales y el campo se obtiene mediante una suma. En una <strong>distribución continua</strong>, la carga se considera repartida a lo largo de una línea, una superficie o un volumen. La suma se sustituye por una integral de las contribuciones diferenciales:</p>
-            <div class="formula-box">\[\mathrm d\vec E=K_0\,\frac{\mathrm dq}{r^2}\,\hat u_r\qquad\Longrightarrow\qquad\vec E=K_0\int\frac{\hat u_r}{r^2}\,\mathrm dq\]</div>
+            <a href="TemaB2-Formulario.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">\[\mathrm d\vec E=K_0\,\frac{\mathrm dq}{r^2}\,\hat u_r\qquad\Longrightarrow\qquad\vec E=K_0\int\frac{\hat u_r}{r^2}\,\mathrm dq\]</div>
+            </a>
             <p>Para describir cómo se distribuye la carga se utilizan densidades:</p>
-            <div class="dos-columnas">
-                <div class="mini-card"><h4>Densidad lineal</h4><p>\(\displaystyle\lambda=\frac{\mathrm dq}{\mathrm dl}\)</p><p>Unidad: \(\text{C}\,\text{m}^{-1}\).</p><p>Elemento de carga: \(\mathrm dq=\lambda\,\mathrm dl\).</p></div>
-                <div class="mini-card"><h4>Densidad superficial</h4><p>\(\displaystyle\sigma=\frac{\mathrm dq}{\mathrm dS}\)</p><p>Unidad: \(\text{C}\,\text{m}^{-2}\).</p><p>Elemento de carga: \(\mathrm dq=\sigma\,\mathrm dS\).</p></div>
-                <div class="mini-card"><h4>Densidad volumétrica</h4><p>\(\displaystyle\rho=\frac{\mathrm dq}{\mathrm dV}\)</p><p>Unidad: \(\text{C}\,\text{m}^{-3}\).</p><p>Elemento de carga: \(\mathrm dq=\rho\,\mathrm dV\).</p></div>
+            <div class="dos-columnas" id="formula-6">
+                <div class="mini-card"><h4>Densidad lineal</h4><p><a href="TemaB2-Formulario.html#formula-6" style="text-decoration:none; color:inherit;">\(\displaystyle\lambda=\frac{\mathrm dq}{\mathrm dl}\)</a></p><p>Unidad: \(\text{C}\,\text{m}^{-1}\).</p><p>Elemento de carga: \(\mathrm dq=\lambda\,\mathrm dl\).</p></div>
+                <div class="mini-card"><h4>Densidad superficial</h4><p><a href="TemaB2-Formulario.html#formula-6" style="text-decoration:none; color:inherit;">\(\displaystyle\sigma=\frac{\mathrm dq}{\mathrm dS}\)</a></p><p>Unidad: \(\text{C}\,\text{m}^{-2}\).</p><p>Elemento de carga: \(\mathrm dq=\sigma\,\mathrm dS\).</p></div>
+                <div class="mini-card"><h4>Densidad volumétrica</h4><p><a href="TemaB2-Formulario.html#formula-6" style="text-decoration:none; color:inherit;">\(\displaystyle\rho=\frac{\mathrm dq}{\mathrm dV}\)</a></p><p>Unidad: \(\text{C}\,\text{m}^{-3}\).</p><p>Elemento de carga: \(\mathrm dq=\rho\,\mathrm dV\).</p></div>
                 <div class="mini-card"><h4>Idea clave</h4><p>El campo total es la suma/integral vectorial de las aportaciones de todos los elementos de carga, respetando su geometría y signo.</p></div>
             </div>
             <div class="note"><strong>En la resolución:</strong> primero se identifica la simetría. Si no existe una simetría que permita simplificar, el cálculo del campo de una distribución continua puede exigir una integral que excede los ejercicios de superposición discreta más habituales.</div>
@@ -218,7 +210,9 @@
         <details class="step">
             <summary><span class="step-num">6</span><strong>Flujo eléctrico.</strong></summary>
             <p>El <strong>flujo eléctrico</strong> mide cuánto campo eléctrico atraviesa una superficie. Para un campo uniforme que atraviesa una superficie plana de área \(S\):</p>
-            <div class="formula-box">\[\boxed{\Phi_E=\vec E\cdot\vec S=E\,S\cos\theta}\]</div>
+            <a href="TemaB2-Formulario.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">\[\boxed{\Phi_E=\vec E\cdot\vec S=E\,S\cos\theta}\]</div>
+            </a>
             <p>El vector superficie \(\vec S\) es perpendicular a la superficie. Por tanto, \(\theta\) es el ángulo entre el campo eléctrico y la <strong>normal</strong> a la superficie, no el ángulo entre el campo y el plano de la superficie.</p>
             <ul>
                 <li>\(\theta=0^\circ\): el campo es perpendicular a la superficie y el flujo es máximo y positivo.</li>
@@ -227,13 +221,17 @@
             </ul>
             <p>La unidad del flujo eléctrico en el S.I. es \(\text{N}\,\text{m}^2\,\text{C}^{-1}\) (equivalente a \(\text{V}\,\text{m}\)).</p>
             <p>Para una superficie cerrada se suman las contribuciones de todos sus elementos:</p>
+            <a href="TemaB2-Formulario.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">\[\Phi_E=\oint_S\vec E\cdot\mathrm d\vec S\]</div>
+            </a>
         </details>
 
         <details class="step">
             <summary><span class="step-num">7</span><strong>Teorema de Gauss.</strong></summary>
             <p>El teorema de Gauss establece que el flujo eléctrico neto a través de cualquier superficie cerrada es igual a la carga neta encerrada dividida por la permitividad eléctrica del vacío:</p>
-            <div class="formula-box">\[\boxed{\oint_S\vec E\cdot\mathrm d\vec S=\frac{Q_{\mathrm{enc}}}{\varepsilon_0}}\]</div>
+            <a href="TemaB2-Formulario.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">\[\boxed{\oint_S\vec E\cdot\mathrm d\vec S=\frac{Q_{\mathrm{enc}}}{\varepsilon_0}}\]</div>
+            </a>
             <p>La carga encerrada es la suma algebraica de las cargas contenidas en el interior de la superficie. Las cargas exteriores pueden crear campo en la superficie, pero su contribución al flujo neto total a través de la superficie cerrada es cero.</p>
             <div class="note"><strong>Muy importante:</strong> el teorema de Gauss es válido para cualquier superficie cerrada. Sin embargo, solo permite calcular el campo de forma sencilla cuando existe suficiente simetría para conocer la dirección del campo y asegurar que su módulo es constante en la superficie gaussiana elegida.</div>
         </details>
@@ -241,30 +239,47 @@
         <details class="step">
             <summary><span class="step-num">8</span><strong>Aplicación de Gauss a distribuciones con simetría.</strong></summary>
             <p>La elección de la superficie gaussiana debe adaptarse a la simetría de la distribución de carga. Los tres modelos ideales más habituales son:</p>
-            <div class="mini-card"><h4>Simetría esférica</h4><p>Para una carga puntual o una distribución esférica, se elige una esfera concéntrica. Fuera de una distribución esférica de carga total \(Q\):</p><div class="formula-box">\[E\,4\pi r^2=\frac{Q}{\varepsilon_0}\quad\Longrightarrow\quad E=K_0\frac{|Q|}{r^2}\]</div><p>El campo exterior coincide con el de una carga puntual \(Q\) situada en el centro.</p></div>
-            <div class="mini-card"><h4>Simetría cilíndrica: hilo rectilíneo muy largo</h4><p>Para una densidad lineal uniforme \(\lambda\), se elige un cilindro coaxial:</p><div class="formula-box">\[E\,(2\pi rL)=\frac{\lambda L}{\varepsilon_0}\quad\Longrightarrow\quad E=\frac{|\lambda|}{2\pi\varepsilon_0r}\]</div></div>
-            <div class="mini-card"><h4>Simetría plana: plano infinito uniformemente cargado</h4><p>Para una densidad superficial uniforme \(\sigma\), se utiliza una superficie gaussiana tipo pastilla:</p><div class="formula-box">\[2ES=\frac{|\sigma|S}{\varepsilon_0}\quad\Longrightarrow\quad E=\frac{|\sigma|}{2\varepsilon_0}\]</div></div>
+            <a href="TemaB2-Formulario.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">
+                <div class="mini-card"><h4>Simetría esférica</h4><p>Para una carga puntual o una distribución esférica, se elige una esfera concéntrica. Fuera de una distribución esférica de carga total \(Q\):</p>\[E\,4\pi r^2=\frac{Q}{\varepsilon_0}\quad\Longrightarrow\quad E=K_0\frac{|Q|}{r^2}\]<p>El campo exterior coincide con el de una carga puntual \(Q\) situada en el centro.</p></div>
+            </div>
+            </a>
+            <a href="TemaB2-Formulario.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box">
+                <div class="mini-card"><h4>Simetría cilíndrica: hilo rectilíneo muy largo</h4><p>Para una densidad lineal uniforme \(\lambda\), se elige un cilindro coaxial:</p>\[E\,(2\pi rL)=\frac{\lambda L}{\varepsilon_0}\quad\Longrightarrow\quad E=\frac{|\lambda|}{2\pi\varepsilon_0r}\]</div>
+            </div>
+            </a>
+            <a href="TemaB2-Formulario.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box">
+                <div class="mini-card"><h4>Simetría plana: plano infinito uniformemente cargado</h4><p>Para una densidad superficial uniforme \(\sigma\), se utiliza una superficie gaussiana tipo pastilla:</p>\[2ES=\frac{|\sigma|S}{\varepsilon_0}\quad\Longrightarrow\quad E=\frac{|\sigma|}{2\varepsilon_0}\]</div>
+            </div>
+            </a>
             <p>Estas expresiones corresponden a modelos ideales con simetría suficiente. Antes de aplicarlas hay que comprobar que la distribución descrita en el enunciado cumple las hipótesis del modelo.</p>
         </details>
 
         <details class="step">
             <summary><span class="step-num">9</span><strong>Puntos donde el campo resultante es nulo.</strong></summary>
             <p>El campo resultante se anula cuando la suma vectorial de todas las contribuciones es el vector cero. En el caso particular de dos cargas del mismo signo sobre una misma recta, el punto de campo nulo se encuentra entre ellas, donde los campos tienen sentidos opuestos y módulos iguales.</p>
+            <a href="TemaB2-Formulario.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">\[K_0\frac{|q_1|}{x^2}=K_0\frac{|q_2|}{(d-x)^2}\]</div>
+            </a>
             <p>Al tomar raíces y despejar:</p>
-            <div class="formula-box">\[\boxed{x=d\,\frac{\sqrt{|q_1|}}{\sqrt{|q_1|}+\sqrt{|q_2|}}}\]</div>
+            <a href="TemaB2-Formulario.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">\[\boxed{x=d\,\frac{\sqrt{|q_1|}}{\sqrt{|q_1|}+\sqrt{|q_2|}}}\]</div>
+            </a>
             <p>La expresión anterior se refiere a dos cargas del mismo signo y a un punto situado entre ellas. Para signos opuestos o para puntos fuera del segmento, hay que analizar por separado la dirección de los campos; no se debe aplicar esta fórmula sin justificar la geometría.</p>
         </details>
 
         <details class="step">
             <summary><span class="step-num">10</span><strong>Relación entre campo eléctrico y fuerza.</strong></summary>
             <p>Una vez conocido el campo en un punto, la fuerza eléctrica sobre una carga \(q\) situada allí se obtiene mediante:</p>
-            <div class="formula-box">\[\boxed{\vec F=q\,\vec E}\]</div>
-            <p>Si \(q&gt;0\), fuerza y campo tienen el mismo sentido; si \(q&lt;0\), tienen sentidos contrarios. Esta relación permite conectar los problemas de fuerza de Coulomb con el cálculo del campo resultante, sin confundir ambas magnitudes.</p>
+            <a href="TemaB2-Formulario.html#formula-12" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-12">\[\boxed{\vec F=q\,\vec E}\]</div>
+            </a>
+            <p>Si \(q>0\), fuerza y campo tienen el mismo sentido; si \(q<0\), tienen sentidos contrarios. Esta relación permite conectar los problemas de fuerza de Coulomb con el cálculo del campo resultante, sin confundir ambas magnitudes.</p>
         </details>
     </details>
 
-    <!-- PLANTILLA DE RESOLUCIÓN -->
     <details class="section objetivo">
         <summary><h2>🧭 Método general para resolver problemas tipo</h2></summary>
         <ol>
@@ -279,7 +294,6 @@
         <div class="note"><strong>Regla práctica:</strong> primero el dibujo, después las componentes y, por último, el módulo. No se suman directamente los módulos de campos que no tienen la misma dirección y sentido.</div>
     </details>
 
-    <!-- ANÁLISIS DE FÓRMULAS -->
     <details class="section resultado">
         <summary><h2>🧮 Análisis de las fórmulas del tema B2</h2></summary>
         <p>Tabla de referencia con el significado, las unidades y las condiciones de aplicación de las expresiones fundamentales:</p>
@@ -304,7 +318,6 @@
         <div class="note"><strong>Constante y permitividad:</strong> \(K_0=1/(4\pi\varepsilon_0)\approx8{,}99\cdot10^9\,\text{N}\,\text{m}^2\,\text{C}^{-2}\); \(\varepsilon_0\approx8{,}85\cdot10^{-12}\,\text{C}^2\,\text{N}^{-1}\,\text{m}^{-2}\).</div>
     </details>
 
-    <!-- PROBLEMAS EBAU -->
     <details>
         <summary>
             <i class="fas fa-chevron-circle-down"></i>
@@ -410,7 +423,7 @@
                     <div class="etiquetas-ej"><span class="tag-b2">B2</span><span class="tag-puntos">1 punto</span></div>
                     <p>Dos cargas eléctricas de \(1\,\mu\text{C}\) se sitúan, respectivamente, en los puntos \(A(0,2)\,\text{m}\) y \(B(0,-2)\,\text{m}\). ¿Qué carga eléctrica debe colocarse en el punto \(C(-2,0)\,\text{m}\) para que el campo eléctrico en el punto \(D(2,0)\,\text{m}\) sea nulo? Dato: \(K_0=9{,}00\cdot10^{9}\,\text{N}\,\text{m}^{2}\,\text{C}^{-2}\).</p>
                 </div>
-                <p class="nota-alcance"><strong>Alcance:</strong> la fuerza de Coulomb se interpreta mediante el campo resultante usando \(ec F=qec E\); la suma vectorial es la destreza central de B2.</p>
+                <p class="nota-alcance"><strong>Alcance:</strong> la fuerza de Coulomb se interpreta mediante el campo resultante usando \(\vec F=q\vec E\); la suma vectorial es la destreza central de B2.</p>
                 <div class="resolucion-ej">
                     <h3>Resolución</h3>
                     <h4>Campo creado por las cargas en A y B en el punto D</h4><p>Los vectores desde las cargas a \(D\) son \(\vec r_A=(2,-2)\,\text{m}\) y \(\vec r_B=(2,2)\,\text{m}\), ambos con módulo \(\sqrt{8}\,\text{m}\). Como ambas cargas son positivas, cada una crea un campo radial saliente desde su posición; por simetría las componentes verticales se cancelan y solo subsiste la componente \(x\), dirigida en el sentido \(+x\). El módulo de cada campo es:</p>
@@ -432,7 +445,7 @@
                     <div class="etiquetas-ej"><span class="tag-b2">B2</span><span class="tag-puntos">1 punto</span></div>
                     <p>Sobre un arco de circunferencia se depositan tres cargas puntuales, según se muestra en la figura. Teniendo en cuenta que \(a=5\,\text{cm}\) y \(q=4\,\text{nC}\), determine la fuerza que experimenta la carga situada en el punto P. Configuración (figura): tres cargas sobre la circunferencia de radio \(a\) centrada en \(O\): \(-q\) en \((-a,0)\), \(+q\) en \((0,a)\) y \(+q\) en el punto \(P\,(a,0)\).</p>
                 </div>
-                <p class="nota-alcance"><strong>Alcance:</strong> la fuerza de Coulomb se interpreta mediante el campo resultante usando \(ec F=qec E\); la suma vectorial es la destreza central de B2.</p>
+                <p class="nota-alcance"><strong>Alcance:</strong> la fuerza de Coulomb se interpreta mediante el campo resultante usando \(\vec F=q\vec E\); la suma vectorial es la destreza central de B2.</p>
                 <div class="resolucion-ej">
                     <h3>Resolución</h3>
                     <h4>Fuerza sobre \(+q\) en \(P\) debida a la carga en \((-a,0)\)</h4><p>La distancia entre ambas cargas es \(2a=0{,}10\,\text{m}\) y la fuerza es atractiva, dirigida hacia la carga negativa situada a la izquierda:</p>
@@ -574,9 +587,9 @@
                 <div class="resolucion-ej">
                     <h3>Resolución</h3>
                     <h4>Enunciado del teorema de Gauss</h4><p>El flujo eléctrico a través de una superficie cerrada es igual a la carga encerrada dividida por la permitividad del vacío:</p>
-<div class="formula-box">\[\oint_S \vec E\cdot d\vec S=\frac{Q_{\text{enc}}}{\varepsilon_0}.\]</div><h4>Aplicación a una esfera cargada</h4><p>Para \(r&gt;R\), se elige una superficie gaussiana esférica de radio \(r\), concéntrica con la distribución. Por simetría el campo es radial y su componente radial es constante en esa superficie, que encierra la carga total \(Q\).</p>
+<div class="formula-box">\[\oint_S \vec E\cdot d\vec S=\frac{Q_{\text{enc}}}{\varepsilon_0}.\]</div><h4>Aplicación a una esfera cargada</h4><p>Para \(r>R\), se elige una superficie gaussiana esférica de radio \(r\), concéntrica con la distribución. Por simetría el campo es radial y su componente radial es constante en esa superficie, que encierra la carga total \(Q\).</p>
 <div class="formula-box">\[E_r\,4\pi r^{2}=\frac{Q}{\varepsilon_0}\quad\Rightarrow\quad E(r)=\frac{Q}{4\pi\varepsilon_0 r^{2}}\,\hat r.\]</div>
-<p>Esta expresión coincide con el campo de una carga puntual \(Q\) en el centro. Si \(Q&gt;0\) apunta hacia fuera y si \(Q&lt;0\) hacia dentro.</p>
+<p>Esta expresión coincide con el campo de una carga puntual \(Q\) en el centro. Si \(Q>0\) apunta hacia fuera y si \(Q<0\) hacia dentro.</p>
                     <div class="note"><strong>Resultado del banco:</strong><p>Para r&gt;R: \(\vec E(r)=\dfrac{Q}{4\pi\varepsilon_0r^2}\,\hat r\); coincide con el campo de una carga puntual Q situada en el centro.</p></div>
                 </div>
             </details>
@@ -584,36 +597,9 @@
         </div>
     </details>
 
-
-
-
-
-
-<!-- ============================================================ -->
-<!-- BLOQUE DE RECURSOS Y NAVEGACIÓN DEL TEMA B2                  -->
-<!-- ============================================================ -->
 <div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
-    <style>
-        .recursos-temaecurso-card {
-            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-        }
-        .recursos-temaecurso-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 14px 32px rgba(37, 99, 235, 0.28) !important;
-            border-color: #3b82f6 !important;
-        }
-        .recursos-temaecurso-card:hover .recurso-icono {
-            transform: scale(1.1) rotate(-6deg);
-        }
-        .recursos-temaecurso-icono {
-            transition: transform 0.28s ease;
-        }
-        @media (max-width: 700px) {
-            .recursos-temaecurso-grid { grid-template-columns: 1fr !important; }
-        }
-    </style>
 
-    <div class="recursos-tematyle="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    <div class="recursos-tema" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 border-radius: 20px; padding: 30px 25px 32px 25px;
                 box-shadow: 0 15px 40px rgba(102, 126, 234, 0.35);">
 
@@ -632,7 +618,6 @@
                     grid-template-columns: repeat(3, 1fr);
                     gap: 18px;">
 
-            <!-- ── TARJETA 1: FORMULARIO (página actual) ── -->
             <a href="TemaB2-Formulario.html" style="text-decoration: none; color: inherit;">
                 <div class="recurso-card" style="background: white; border-radius: 16px;
                             padding: 22px 18px; text-align: center; height: 100%;
@@ -662,7 +647,6 @@
                 </div>
             </a>
 
-            <!-- ── TARJETA 2: PROBLEMAS EBAU DEL TEMA B2 ── -->
             <a href="TemaB2-ProblemasEBAU.html" style="text-decoration: none; color: inherit;">
                 <div class="recurso-card" style="background: white; border-radius: 16px;
                             padding: 22px 18px; text-align: center; height: 100%;
@@ -685,7 +669,6 @@
                 </div>
             </a>
 
-            <!-- ── TARJETA 3: FILTRADO EBAU GENERAL ── -->
             <a href="../EBAU/problemas-inline_v04.html" style="text-decoration: none; color: inherit;">
                 <div class="recurso-card" style="background: white; border-radius: 16px;
                             padding: 22px 18px; text-align: center; height: 100%;
@@ -710,26 +693,7 @@
         </div>
     </div>
 </div>
-<!-- ============================================================ -->
-<!-- FIN DEL BLOQUE DE RECURSOS                                   -->
-<!-- ============================================================ -->
 
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- CIERRE -->
     <div class="bloque-cta">
         <div class="tarjeta-cta">
             <p><strong>Domina el campo eléctrico desde el vector individual hasta la superposición de varias cargas.</strong><br>Recuerda: identifica el sentido, descompón los vectores y suma por componentes. Para el flujo, elige bien la normal y la superficie gaussiana.</p>
@@ -739,5 +703,30 @@
         </div>
     </div>
 </div>
+
+<!-- =================== RESALTADO AL LLEGAR POR HASH ==================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    var highlight = target.classList.contains('formula-box')
+        ? target
+        : (target.closest('.formula-box') || target);
+
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () {
+        highlight.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
 </body>
 </html>

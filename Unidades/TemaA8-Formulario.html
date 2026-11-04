@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>#TEMA A8 (Formulario).- Cosmología y astrofísica como aplicación</title>
 
-    <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    <!-- CSS PROPIO DE FORMULARIOS -->
     <link rel="stylesheet" href="../css/formulario.css">
 </head>
 <body>
 <div class="container">
 
-    <!-- ============================ CABECERA ============================ -->
     <div class="header">
         <div class="header-left">
             <h1>IES Valle del Alberche</h1>
@@ -29,10 +26,9 @@
         </div>
     </div>
 
-    <!-- ============================ GRID ============================ -->
     <div class="grid">
 
-        <!-- FICHA 1 · TERCERA LEY DE KEPLER (ÓRBITA CIRCULAR) -->
+        <!-- FICHA 1 -->
         <article class="card c-1">
             <div class="cabecera">
                 <span class="num">1</span>
@@ -47,9 +43,11 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 La relación entre el periodo orbital de un cuerpo que gira en torno a una masa central \(M\) y el radio de su órbita. Se aplica siempre que se conozca el radio orbital y la masa central (o viceversa). Es la herramienta central del tema A8: permite «pesar» estrellas, planetas y satélites a partir de datos orbitales, y es la base de las demás fórmulas del tema.
             </div>
-            <div class="formula-box">
+            <a href="TemaA8.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
                 \[ T^{2} = \frac{4\pi^{2}}{G\,M}\,r^{3} \]
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>¡Sí, imprescindible! Es la fórmula más usada del tema A8. Se deduce de la ley de gravitación de Newton (fórmula 2) pero conviene tenerla memorizada con su estructura \(T^{2}\propto r^{3}/M\). Recuerda que \(r\) es el radio de la órbita medido <strong>desde el centro</strong> del cuerpo central, no desde su superficie, y que \(T\) debe ir en segundos si \(r\) va en metros.</span>
@@ -77,7 +75,7 @@
             </div>
         </article>
 
-        <!-- FICHA 2 · MASA DEL CUERPO CENTRAL -->
+        <!-- FICHA 2 -->
         <article class="card c-3">
             <div class="cabecera">
                 <span class="num">2</span>
@@ -91,9 +89,11 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 La masa del cuerpo central a partir de los datos orbitales del cuerpo que gira a su alrededor. Es la fórmula que permite «pesar» estrellas a partir del movimiento de sus exoplanetas, planetas a partir de sus satélites o galaxias a partir de la cinemática de sus estrellas. Es una de las aplicaciones más potentes de la gravitación en astrofísica.
             </div>
-            <div class="formula-box">
+            <a href="TemaA8.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">
                 \[ M = \frac{4\pi^{2}\,r^{3}}{G\,T^{2}} \]
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es la fórmula 1 despejando \(M\). Lo importante es recordar que <strong>toda la información sobre la masa central está en \(r\) y \(T\)</strong>, y que necesitamos las dos magnitudes orbitales. Estrategia EBAU: cuando el problema diga «un cuerpo orbita a...» y dé \(r\) y \(T\), esta es la fórmula que hay que aplicar.</span>
@@ -121,7 +121,7 @@
             </div>
         </article>
 
-        <!-- FICHA 3 · TERCERA LEY DE KEPLER GENERAL (M+m) -->
+        <!-- FICHA 3 -->
         <article class="card c-1">
             <div class="cabecera">
                 <span class="num">3</span>
@@ -135,9 +135,11 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 La versión precisa de la tercera ley de Kepler cuando la masa del orbitador \(m\) no es despreciable frente a la del cuerpo central \(M\). Se aplica en sistemas binarios de estrellas de masa comparable, en el sistema Tierra-Luna, en exoplanetas muy masivos o en enanas marrones. En esos casos, la fórmula 1 comete un error sistemático.
             </div>
-            <div class="formula-box">
+            <a href="TemaA8.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">
                 \[ T^{2} = \frac{4\pi^{2}}{G\,(M+m)}\,a^{3} \]
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla aparte: es la fórmula 1 sustituyendo \(M\) por \(M+m\) y \(r\) por el semieje mayor \(a\). Recuerda que <strong>solo es necesaria cuando \(m\) no es despreciable</strong>: en el sistema solar \(M_{\odot}\gg m_{\text{planeta}}\) y basta con la fórmula 1. Menciónala en la EBAU cuando el problema diga «dos estrellas de masas comparables» o «binaria». </span>
@@ -165,7 +167,7 @@
             </div>
         </article>
 
-        <!-- FICHA 4 · VELOCIDAD ORBITAL -->
+        <!-- FICHA 4 -->
         <article class="card c-3">
             <div class="cabecera">
                 <span class="num">4</span>
@@ -179,9 +181,11 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 La velocidad con la que un cuerpo recorre una órbita circular de radio \(r\) en torno a una masa \(M\). Se aplica en el cálculo de velocidades de satélites, planetas, exoplanetas y estrellas en galaxias. Es el punto de partida para la energía cinética orbital y para entender la dinámica de sistemas ligados.
             </div>
-            <div class="formula-box">
+            <a href="TemaA8.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">
                 \[ v = \sqrt{\frac{G\,M}{r}} \]
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>Se deduce igualando la fuerza gravitatoria a la fuerza centrípeta: \(GMm/r^{2}=mv^{2}/r\). Memoriza solo la idea: <strong>\(v\) disminuye con \(\sqrt{r}\)</strong>, es decir, los cuerpos más alejados orbitan más despacio. Esa dependencia es clave para entender la rotación de galaxias y la materia oscura.</span>
@@ -209,7 +213,7 @@
             </div>
         </article>
 
-        <!-- FICHA 5 · GRAVEDAD SUPERFICIAL -->
+        <!-- FICHA 5 -->
         <article class="card c-3">
             <div class="cabecera">
                 <span class="num">5</span>
@@ -223,9 +227,11 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 El campo gravitatorio (o la aceleración de la gravedad) en la superficie de un cuerpo esférico de masa \(M\) y radio \(R\). Se aplica para comparar la gravedad de planetas, satélites y planetas enanos, para calcular pesos en otros mundos y como paso previo a la velocidad de escape.
             </div>
-            <div class="formula-box">
+            <a href="TemaA8.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">
                 \[ g_0 = \frac{G\,M}{R^{2}} \]
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla aparte: es la fórmula del campo gravitatorio particularizada en \(r=R\). Si sabes \(g=GM/r^{2}\), la gravedad superficial se obtiene sustituyendo \(r\) por el radio del astro. Útil para comparar planetas: \(g_0\) crece con \(M\) y decrece con \(R^{2}\).</span>
@@ -253,7 +259,7 @@
             </div>
         </article>
 
-        <!-- FICHA 6 · VELOCIDAD DE ESCAPE -->
+        <!-- FICHA 6 -->
         <article class="card c-3">
             <div class="cabecera">
                 <span class="num">6</span>
@@ -267,9 +273,12 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 La velocidad mínima que hay que comunicar a un cuerpo en la superficie de un astro para que escape de su campo gravitatorio y llegue al infinito con velocidad cero. Se aplica en el estudio de atmósferas planetarias, en el diseño de misiones espaciales y en la caracterización de planetas enanos y satélites.
             </div>
-            <div class="formula-box">
-                \[ v_e = \sqrt{\frac{2\,G\,M}{R}} = \sqrt{2\,g_0\,R} \]
+            <a href="TemaA8.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">
+                \[ v_e = \sqrt{\frac{2\,G\,M}{R}} \]
+                \[ v_e = \sqrt{2\,g_0\,R} \]
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>Se deduce por conservación de la energía mecánica: igualando \(E_m=-GMm/(2r)\) (o \(E_m=-GMm/R\) en superficie) a cero se obtiene \(v_e\). Memoriza solo el factor \(\sqrt{2}\) y la estructura: <strong>misma raíz que la velocidad orbital pero con un 2 dentro</strong>. Estrategia EBAU: \(v_e=\sqrt{2}\,v_{\text{orbital}}\) en la superficie (¡útil para comprobar!).</span>
@@ -297,7 +306,7 @@
             </div>
         </article>
 
-        <!-- FICHA 7 · DENSIDAD MEDIA -->
+        <!-- FICHA 7 -->
         <article class="card c-4">
             <div class="cabecera">
                 <span class="num">7</span>
@@ -311,9 +320,11 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 La densidad media de un cuerpo esférico a partir de su masa y su radio. Se aplica para caracterizar la composición de planetas, satélites y planetas enanos, para calcular masas a partir de densidades conocidas (o viceversa) y para estimar el tipo de materiales (rocoso, helado, metálico).
             </div>
-            <div class="formula-box">
+            <a href="TemaA8.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">
                 \[ \rho = \frac{M}{\frac{4}{3}\pi R^{3}} \]
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>Es simplemente \(M/V\) con el volumen de una esfera \(V=\tfrac{4}{3}\pi R^{3}\). Si te olvidas, reconstruye: la densidad es masa partido por volumen. Muy útil en la EBAU cuando dan densidad y radio y piden masa: \(M=\rho V\). Recuerda pasar \(\text{g/cm}^{3}\) a \(\text{kg/m}^{3}\) (\(1\,\text{g/cm}^{3}=1000\,\text{kg/m}^{3}\)).</span>
@@ -341,7 +352,7 @@
             </div>
         </article>
 
-        <!-- FICHA 8 · ENERGÍA MECÁNICA ORBITAL -->
+        <!-- FICHA 8 -->
         <article class="card c-2">
             <div class="cabecera">
                 <span class="num">8</span>
@@ -356,9 +367,13 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 Las energías cinética, potencial y mecánica de un cuerpo de masa \(m\) en órbita circular de radio \(r\) alrededor de una masa \(M\). Se aplican para calcular la energía necesaria para cambiar de órbita, para escapar de un campo gravitatorio o para caracterizar sistemas ligados (energía negativa) frente a no ligados (energía positiva o nula).
             </div>
-            <div class="formula-box">
-                \[ E_c = \frac{G\,M\,m}{2r} \qquad E_p = -\frac{G\,M\,m}{r} \qquad E_m = E_c + E_p = -\frac{G\,M\,m}{2r} \]
+            <a href="TemaA8.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">
+                \[ E_c = \frac{G\,M\,m}{2r} \]
+                \[ E_p = -\frac{G\,M\,m}{r} \]
+                \[ E_m = E_c + E_p = -\frac{G\,M\,m}{2r} \]
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>Se deducen de \(E_c=\tfrac{1}{2}mv^{2}\) con \(v=\sqrt{GM/r}\), y de \(E_p=-GMm/r\). Lo importante es recordar el <strong>resultado \(E_m=-GMm/(2r)\)</strong> (negativo para órbitas ligadas) y que \(E_m=-E_c\). De ahí, la energía de escape desde una órbita es \(\Delta E=GMm/(2r)=-E_m\).</span>
@@ -388,7 +403,7 @@
             </div>
         </article>
 
-        <!-- FICHA 9 · SEMIEJE MAYOR DE UNA ELIPSE -->
+        <!-- FICHA 9 -->
         <article class="card c-4">
             <div class="cabecera">
                 <span class="num">9</span>
@@ -403,9 +418,11 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 El semieje mayor \(a\) de una órbita elíptica a partir de las distancias al perihelio y al afelio. Se aplica para usar la tercera ley de Kepler con órbitas elípticas (planetas, cometas, exoplanetas excéntricos) y para calcular energías orbitales mediante \(E_m=-GMm/(2a)\).
             </div>
-            <div class="formula-box">
+            <a href="TemaA8.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">
                 \[ a = \frac{r_{\text{perihelio}} + r_{\text{afelio}}}{2} \]
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: en una elipse el semieje mayor es la media de las distancias extremas al foco ocupado por la masa central. Es una definición geométrica. Recuerda: <strong>en el perihelio la velocidad es máxima, en el afelio mínima</strong> (ley de las áreas de Kepler). Y las distancias se miden <strong>desde el centro del cuerpo central</strong> (el foco), no desde el otro foco.</span>
@@ -432,7 +449,7 @@
             </div>
         </article>
 
-        <!-- FICHA 10 · PUNTO DE LAGRANGE L1 -->
+        <!-- FICHA 10 -->
         <article class="card c-4">
             <div class="cabecera">
                 <span class="num">10</span>
@@ -447,9 +464,12 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 La posición del punto sobre la línea que une dos masas \(M\) (mayor) y \(m\) (menor) donde el campo gravitatorio total se anula. Se aplica para situar satélites en el punto L1 (como SOHO en el sistema Tierra-Sol) y para estudiar estabilidad orbital en sistemas de dos cuerpos.
             </div>
-            <div class="formula-box">
-                \[ \frac{G\,M}{x^{2}} = \frac{G\,m}{(D-x)^{2}} \quad\Longrightarrow\quad x = D\,\frac{\sqrt{M}}{\sqrt{M}+\sqrt{m}} \]
+            <a href="TemaA8.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">
+                \[ \frac{G\,M}{x^{2}} = \frac{G\,m}{(D-x)^{2}} \]
+                \[ x = D\,\frac{\sqrt{M}}{\sqrt{M}+\sqrt{m}} \]
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es igualar los módulos de los dos campos (que en ese punto tienen sentidos opuestos) y resolver la ecuación. Estrategia EBAU: plantear \(GM/x^{2}=Gm/(D-x)^{2}\), sacar raíz cuadrada en ambos lados y despejar \(x\). El punto está <strong>más cerca de la masa menor</strong>. Ojo: el <strong>potencial NO se anula</strong> en L1 (sigue siendo negativo).</span>
@@ -478,7 +498,7 @@
             </div>
         </article>
 
-        <!-- FICHA 11 · LEY DE HUBBLE -->
+        <!-- FICHA 11 -->
         <article class="card c-5">
             <div class="cabecera">
                 <span class="num">11</span>
@@ -492,9 +512,11 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 La relación entre la velocidad de recesión de una galaxia y su distancia a nosotros, que evidencia la expansión del universo. Se aplica en cosmología observacional y permite estimar la edad del universo a partir del inverso de la constante de Hubble.
             </div>
-            <div class="formula-box">
+            <a href="TemaA8.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">
                 \[ v = H_0\,d \]
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es una <strong>ley empírica fundamental</strong> de la cosmología moderna, no se deduce de la gravitación newtoniana. Memoriza la expresión \(v=H_0d\) y el valor \(H_0\approx70\,\text{km}\cdot\text{s}^{-1}\cdot\text{Mpc}^{-1}\). Es la evidencia observacional del <em>Big Bang</em>: cuanto más lejos está una galaxia, más rápido se aleja.</span>
@@ -522,9 +544,7 @@
             </div>
         </article>
 
-        <!-- ============================================================
-             LEYENDA EPISTÉMICA
-             ============================================================ -->
+        <!-- LEYENDA EPISTÉMICA -->
         <article class="card span-all leyenda-epi">
 
             <div class="leyenda-epi-header">
@@ -632,7 +652,6 @@
 
             </div>
 
-            <!-- Tabla resumen -->
             <table class="leyenda-epi-tabla">
                 <thead>
                     <tr>
@@ -682,7 +701,6 @@
                 </tbody>
             </table>
 
-            <!-- Regla de oro -->
             <div class="leyenda-epi-aviso">
                 <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
                 pregúntate <strong>«¿de dónde sale esto?»</strong>.
@@ -692,7 +710,6 @@
                 Si es una regla que se cumple siempre → <strong>principio</strong> (aplicar).
             </div>
 
-            <!-- Mini-referencia de colores de las tarjetas -->
             <div class="leyenda-epi-colores">
                 <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Leyes de Kepler (fundamento)</span>
                 <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Energía orbital</span>
@@ -705,7 +722,6 @@
 
     </div>
 
-    <!-- ============================ GLOSARIO ============================ -->
     <details class="glosario">
         <summary>📖 Glosario de fórmulas del tema A8</summary>
 
@@ -742,7 +758,6 @@
         </div>
     </details>
 
-    <!-- ============================ RECORDATORIO + BOTÓN ============================ -->
     <div class="note" style="margin: 0 28px 8px 28px;">
         <strong>Recordatorio:</strong> en el tema A8, la <strong>tercera ley de Kepler</strong> \(T^{2}=4\pi^{2}r^{3}/(GM)\) es la fórmula madre: de ella se deduce la masa del cuerpo central, la velocidad orbital, la gravedad superficial y la energía mecánica orbital. Las magnitudes clave son el <strong>periodo \(T\)</strong> y el <strong>radio orbital \(r\)</strong> (o el semieje mayor \(a\) en elipses): con ambas se «pesa» cualquier astro. A escala cosmológica, la <strong>ley de Hubble</strong> \(v=H_0d\) extiende la gravitación al universo entero. Recuerda siempre medir \(r\) <strong>desde el centro</strong> del cuerpo central y homogeneizar las unidades al S.I. antes de sustituir. En órbitas elípticas, sustituye \(r\) por \(a=(r_p+r_a)/2\).
     </div>
@@ -752,5 +767,26 @@
     </div>
 
 </div>
+
+<!-- =================== RESALTADO AL LLEGAR POR HASH ==================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var card = document.querySelector(hash);
+    if (!card) return;
+
+    card.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    card.classList.remove('formula-resaltada');
+    void card.offsetWidth;
+    card.classList.add('formula-resaltada');
+    setTimeout(function () {
+        card.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
 </body>
 </html>

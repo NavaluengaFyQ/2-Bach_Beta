@@ -5,25 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema A8. Cosmología y astrofísica como aplicación</title>
 
-
-    <!-- Para crear las consultas puntuales en la base de datos) -->
     <script src="js/utils.js" defer></script>
 
-    <!-- FontAwesome CDN (versión 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
     <link rel="stylesheet" href="../css/unidades.css">
 
-    <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-
-    
 </head>
 <body>
 <div class="container">
-    <!-- CABECERA -->
     <div class="header">
         <div class="header-left">
             <h1>IES Valle del Alberche</h1>
@@ -38,15 +28,11 @@
         </div>
     </div>
 
-    <!-- ============================================================ -->
-    <!-- MAPA DE BLOQUES Y TEMAS (DESPLEGABLE)                         -->
-    <!-- ============================================================ -->
     <details class="section enunciado" open>
         <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
         <p>Este tema pertenece al <strong>Bloque A. Campo gravitatorio</strong> del currículo de Física de 2º de Bachillerato (Decreto 40/2022, BOCYL-D-30092022-4).</p>
 
         <div class="mapa-bloques">
-            <!-- BLOQUE A (ACTUAL) -->
             <div class="bloque-card actual">
                 <div class="bloque-titulo">A. Campo gravitatorio</div>
                 <div class="tema-lista">
@@ -60,7 +46,6 @@
                     <span class="tema-chip actual">A8</span>
                 </div>
             </div>
-            <!-- BLOQUE B -->
             <div class="bloque-card">
                 <div class="bloque-titulo">B. Campo electromagnético</div>
                 <div class="tema-lista">
@@ -75,7 +60,6 @@
                     <span class="tema-chip">B9</span>
                 </div>
             </div>
-            <!-- BLOQUE C -->
             <div class="bloque-card">
                 <div class="bloque-titulo">C. Vibraciones y ondas</div>
                 <div class="tema-lista">
@@ -87,7 +71,6 @@
                     <span class="tema-chip">C6</span>
                 </div>
             </div>
-            <!-- BLOQUE D -->
             <div class="bloque-card">
                 <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
                 <div class="tema-lista">
@@ -108,9 +91,6 @@
         </div>
     </details>
 
-    <!-- ============================================================ -->
-    <!-- OBJETIVOS (DESPLEGABLE)                                       -->
-    <!-- ============================================================ -->
     <details class="section objetivo">
         <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
         <ul>
@@ -125,9 +105,6 @@
         </ul>
     </details>
 
-    <!-- ============================================================ -->
-    <!-- CONTENIDO TEÓRICO (DESPLEGABLE)                               -->
-    <!-- ============================================================ -->
     <details class="section procedimiento">
         <summary><h2>📚 Contenido teórico</h2></summary>
 
@@ -149,28 +126,41 @@
                 <strong>Tercera ley de Kepler y determinación de masas estelares.</strong>
             </summary>
             <p>Para un cuerpo de masa \(m\) en órbita circular de radio \(r\) en torno a una masa central \(M\) (con \(M\gg m\)), la fuerza gravitatoria actúa como fuerza centrípeta:</p>
-            <div class="formula-box">
+            <a href="TemaA8-Formulario.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">
                 \[
                 \frac{G\,M\,m}{r^{2}}=\frac{m\,v^{2}}{r}
                 \quad\Longrightarrow\quad
                 v^{2}=\frac{G\,M}{r}.
                 \]
             </div>
+            </a>
             <p>Con \(v=\frac{2\pi r}{T}\), elevando al cuadrado:</p>
-            <div class="formula-box">
+            <a href="TemaA8-Formulario.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
                 \[
                 T^{2}=\frac{4\pi^{2}}{G\,M}\,r^{3}
                 \quad\Longleftrightarrow\quad
                 M=\frac{4\pi^{2}r^{3}}{G\,T^{2}}.
                 \]
             </div>
+            </a>
             <p>Esta es la <strong>tercera ley de Kepler</strong> en su forma newtoniana. Es la herramienta fundamental para determinar masas estelares y planetarias. Si el cuerpo central no es muchísimo más masivo que el orbitador, debe usarse la masa total \(M+m\):</p>
-            <div class="formula-box">
+            <a href="TemaA8-Formulario.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">
                 \[
                 T^{2}=\frac{4\pi^{2}}{G\,(M+m)}\,a^{3}.
                 \]
             </div>
-            <p>Para órbitas elípticas, \(r\) se sustituye por el semieje mayor \(a\).</p>
+            </a>
+            <p>Para órbitas elípticas, \(r\) se sustituye por el semieje mayor \(a\):</p>
+            <a href="TemaA8-Formulario.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">
+                \[
+                a=\frac{r_{\text{perihelio}}+r_{\text{afelio}}}{2}
+                \]
+            </div>
+            </a>
         </details>
 
         <details class="step">
@@ -179,6 +169,7 @@
                 <strong>Determinación de la masa del Sol.</strong>
             </summary>
             <p>La Tierra orbita al Sol con un periodo \(T\approx365{,}25\) días y una distancia media \(r\approx1{,}496\cdot10^{11}\,\text{m}\) (\(1\) unidad astronómica, UA). Aplicando la tercera ley de Kepler con la masa del Sol como masa central:</p>
+            <a href="TemaA8-Formulario.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">
                 \[
                 M_{\odot}=\frac{4\pi^{2}r^{3}}{G\,T^{2}}
@@ -187,14 +178,17 @@
                 \approx 1{,}99\cdot10^{30}\,\text{kg}.
                 \]
             </div>
+            </a>
             <p>Este resultado es una de las medidas astrofísicas más importantes: la masa del Sol es unas \(3{,}3\cdot10^{5}\) veces la masa de la Tierra.</p>
             <p><strong>Generalización:</strong> para cualquier planeta del sistema solar, con distancia media \(r\) y periodo \(T\), se cumple:</p>
+            <a href="TemaA8-Formulario.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">
                 \[
                 \frac{T^{2}}{r^{3}}=\frac{4\pi^{2}}{G\,M_{\odot}}=\text{constante}
                 \quad\text{(para todos los planetas)}.
                 \]
             </div>
+            </a>
         </details>
 
         <details class="step">
@@ -204,11 +198,13 @@
             </summary>
             <p>Un <strong>exoplaneta</strong> es un planeta que orbita una estrella distinta del Sol. Los primeros se detectaron en los años 90 (51 Pegasi b en 1995). Actualmente se conocen miles, la mayoría detectados por los métodos de <em>velocidad radial</em> (el planeta tira gravitatoriamente de la estrella) y de <em>tránsito</em> (el planeta pasa por delante de la estrella y atenúa su brillo periódicamente).</p>
             <p>Si un exoplaneta de masa \(m\) orbita una estrella de masa \(M\gg m\) con periodo \(T\) y radio orbital \(r\), la masa estelar se calcula mediante:</p>
-            <div class="formula-box">
+            <a href="TemaA8-Formulario.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">
                 \[
                 M=\frac{4\pi^{2}r^{3}}{G\,T^{2}}.
                 \]
             </div>
+            </a>
             <p>Si la masa del exoplaneta no es despreciable frente a la de la estrella (por ejemplo, un planeta muy masivo o una enana marrón), se obtiene \(M+m\) y debe conocerse \(m\) por otro método para separar ambas contribuciones.</p>
             <p><strong>Datos típicos de exoplanetas:</strong> radios orbitales de \(10^{9}\)–\(10^{11}\,\text{m}\), periodos de días a años, masas de \(10^{-4}\) a \(10^{-2}\,M_{\odot}\) para gigantes gaseosos, y de \(10^{-5}\,M_{\odot}\) para planetas rocosos.</p>
         </details>
@@ -219,14 +215,25 @@
                 <strong>Satélites del sistema solar y planetas enanos.</strong>
             </summary>
             <p>Los satélites naturales (Luna, Ío, Europa, Calisto, Titán, Encélado, Tritón, etc.) y los planetas enanos (Plutón, Eris, Ceres, Makemake, Haumea) nos permiten aplicar las mismas herramientas gravitatorias en contextos muy variados. Los datos orbitales de los satélites permiten medir la masa de su planeta central; los datos de densidad y radio permiten estimar la gravedad superficial y la velocidad de escape.</p>
-            <div class="formula-box">
+            <a href="TemaA8-Formulario.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">
                 \[
                 g_0=\frac{G\,M}{R^{2}},
                 \qquad
                 v_{\text{escape}}=\sqrt{\frac{2G\,M}{R}}=\sqrt{2\,g_0\,R}.
                 \]
+                <span id="formula-6"></span>
             </div>
-            <p>La densidad media de un cuerpo esférico es \(\rho=\frac{M}{\frac{4}{3}\pi R^{3}}\). Conocer \(\rho\) y \(R\) permite obtener la masa, y viceversa.</p>
+            </a>
+            <p>La densidad media de un cuerpo esférico es:</p>
+            <a href="TemaA8-Formulario.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">
+                \[
+                \rho=\frac{M}{\frac{4}{3}\pi R^{3}}
+                \]
+            </div>
+            </a>
+            <p>Conocer \(\rho\) y \(R\) permite obtener la masa, y viceversa.</p>
             <p><strong>Ejemplos notables:</strong> Calisto (satélite de Júpiter), Encélado (satélite de Saturno), Eris (planeta enano del cinturón de Kuiper), Ío (satélite de Júpiter con intensa actividad volcánica).</p>
         </details>
 
@@ -236,7 +243,8 @@
                 <strong>Energía mecánica de un cuerpo en órbita.</strong>
             </summary>
             <p>Para un cuerpo de masa \(m\) en órbita circular de radio \(r\) alrededor de una masa central \(M\), las energías valen:</p>
-            <div class="formula-box">
+            <a href="TemaA8-Formulario.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">
                 \[
                 E_c=\frac{G\,M\,m}{2r},
                 \qquad
@@ -245,13 +253,16 @@
                 E_m=E_c+E_p=-\frac{G\,M\,m}{2r}.
                 \]
             </div>
+            </a>
             <p>La energía mecánica negativa caracteriza un <strong>estado ligado</strong>. Para escapar al infinito desde esa órbita se necesita aportar una energía \(\Delta E=\frac{G\,M\,m}{2r}\).</p>
             <p>Si se conoce la energía mecánica orbital, se puede despejar el radio:</p>
+            <a href="TemaA8-Formulario.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">
                 \[
                 r=-\frac{G\,M\,m}{2E_m}.
                 \]
             </div>
+            </a>
         </details>
 
         <details class="step">
@@ -261,13 +272,15 @@
             </summary>
             <p>En un sistema de dos cuerpos de masas \(M\) (mayor) y \(m\) (menor) separados una distancia \(D\), existe un punto sobre la línea que los une en el que los campos gravitatorios de ambos se cancelan. Este punto se llama <strong>punto de Lagrange L1</strong> y se sitúa siempre entre ambas masas, más cerca de la menor.</p>
             <p>Si \(x\) es la distancia desde el centro de la masa mayor hasta el punto de campo nulo:</p>
-            <div class="formula-box">
+            <a href="TemaA8-Formulario.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">
                 \[
                 \frac{G\,M}{x^{2}}=\frac{G\,m}{(D-x)^{2}}
                 \quad\Longrightarrow\quad
                 x=D\,\frac{\sqrt{M}}{\sqrt{M}+\sqrt{m}}.
                 \]
             </div>
+            </a>
             <p>En ese punto, el potencial gravitatorio total es la suma algebraica de ambos potenciales, negativa, no nula.</p>
             <p><strong>Aplicación real:</strong> el punto L1 del sistema Tierra-Sol es donde se sitúa el satélite SOHO para observar el Sol de forma continua sin que la Tierra interfiera.</p>
         </details>
@@ -278,11 +291,13 @@
                 <strong>Introducción a la cosmología: ley de Hubble y expansión del universo.</strong>
             </summary>
             <p>La <strong>cosmología</strong> moderna se basa en la relatividad general de Einstein y en las observaciones de Hubble (1929). La <strong>ley de Hubble-Lemaître</strong> establece que las galaxias se alejan unas de otras con una velocidad proporcional a su distancia:</p>
-            <div class="formula-box">
+            <a href="TemaA8-Formulario.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">
                 \[
                 v=H_0\,d,
                 \]
             </div>
+            </a>
             <p>donde \(H_0\approx70\,\text{km}\,\text{s}^{-1}\,\text{Mpc}^{-1}\) es la <strong>constante de Hubble</strong> actual. Esta ley es la evidencia observacional de la expansión del universo y del modelo del <em>Big Bang</em>.</p>
             <p>El inverso de la constante de Hubble, \(t_H=1/H_0\approx1{,}4\cdot10^{10}\) años, da una estimación de la edad del universo, del mismo orden que la edad deducida del fondo cósmico de microondas y de las estrellas más antiguas.</p>
             <p>La cosmología moderna incluye además los conceptos de <strong>materia oscura</strong> (materia que no emite luz pero que produce efectos gravitatorios, ~27 % del contenido energético del universo) y <strong>energía oscura</strong> (responsable de la expansión acelerada, ~68 % del total). La materia bariónica ordinaria supone solo ~5 %.</p>
@@ -328,9 +343,6 @@
         </details>
     </details>
 
-    <!-- ============================================================ -->
-    <!-- ANÁLISIS DE FÓRMULAS (DESPLEGABLE)                            -->
-    <!-- ============================================================ -->
     <details class="section resultado">
         <summary><h2>🧮 Análisis de las fórmulas del tema A8</h2></summary>
         <p>Recogemos las expresiones clave del tema aplicadas a contextos astrofísicos y cosmológicos, con su significado y condiciones de aplicación:</p>
@@ -419,9 +431,6 @@
         </div>
     </details>
 
-    <!-- ============================================================ -->
-    <!-- PROBLEMAS RESUELTOS (EBAU Castilla y León y otras)           -->
-    <!-- ============================================================ -->
     <details>
         <summary>
             <i class="fas fa-chevron-circle-down"></i>
@@ -434,7 +443,6 @@
                 <strong>Selección de 10 problemas</strong> de las pruebas de acceso a la universidad, priorizando <strong>Castilla y León</strong> y completando con otras comunidades. Todos ellos están relacionados con el tema A8 (aplicaciones astrofísicas de la gravitación). Se indica la comunidad, el año, la convocatoria (ordinaria/extraordinaria) y el número de problema.
             </p>
 
-            <!-- PROBLEMA 1 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 1</span>
@@ -465,7 +473,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 2 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 2</span>
@@ -497,7 +504,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 3 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 3</span>
@@ -559,7 +565,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 4 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 4</span>
@@ -601,7 +606,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 5 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 5</span>
@@ -636,7 +640,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 6 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 6</span>
@@ -684,7 +687,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 7 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 7</span>
@@ -746,7 +748,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 8 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 8</span>
@@ -793,7 +794,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 9 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 9</span>
@@ -834,7 +834,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 10 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 10</span>
@@ -909,20 +908,15 @@
                 </div>
             </details>
 
-            <!-- PIE DIDÁCTICO -->
             <div class="pie-clave">
                 <i class="fas fa-lightbulb"></i>
                 <span><strong>Observaciones clave:</strong> en todos estos problemas astrofísicos, el patrón de resolución es: (1) identificar el cuerpo central y el orbitador; (2) convertir todas las magnitudes al S.I. (años a segundos, km a m, días a s); (3) aplicar la tercera ley de Kepler para masas, periodos o radios orbitales; (4) aplicar las expresiones de energía mecánica u orbital para velocidades y energías; (5) comprobar el orden de magnitud: masas estelares ~\(10^{29}\)–\(10^{31}\,\text{kg}\), masas planetarias ~\(10^{22}\)–\(10^{28}\,\text{kg}\), velocidades orbitales ~\(10^{3}\)–\(10^{4}\,\text{m/s}\). Recuerda que en órbitas elípticas \(r\) se sustituye por el semieje mayor \(a\). No confundas nunca el radio orbital con el radio del astro.</span>
             </div>
 
-        </div> <!-- fin contenido-desplegable -->
+        </div>
     </details>
 
-    <!-- ============================================================ -->
-    <!-- BLOQUE DE RECURSOS Y NAVEGACIÓN DEL TEMA A8                  -->
-    <!-- ============================================================ -->
     <div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
-        
 
         <div class="recursos-tema" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                     border-radius: 20px; padding: 30px 25px 32px 25px;
@@ -943,7 +937,6 @@
                         grid-template-columns: repeat(3, 1fr);
                         gap: 18px;">
 
-                <!-- ── TARJETA 1: FORMULARIO (página actual) ── -->
                 <a href="TemaA8-Formulario.html" style="text-decoration: none; color: inherit;">
                     <div class="recurso-card" style="background: white; border-radius: 16px;
                                 padding: 22px 18px; text-align: center; height: 100%;
@@ -973,7 +966,6 @@
                     </div>
                 </a>
 
-                <!-- ── TARJETA 2: PROBLEMAS EBAU DEL TEMA A8 ── -->
                 <a href="TemaA8-ProblemasEBAU.html" style="text-decoration: none; color: inherit;">
                     <div class="recurso-card" style="background: white; border-radius: 16px;
                                 padding: 22px 18px; text-align: center; height: 100%;
@@ -996,7 +988,6 @@
                     </div>
                 </a>
 
-                <!-- ── TARJETA 3: FILTRADO EBAU GENERAL ── -->
                 <a href="../EBAU/problemas-inline_v04.html" style="text-decoration: none; color: inherit;">
                     <div class="recurso-card" style="background: white; border-radius: 16px;
                                 padding: 22px 18px; text-align: center; height: 100%;
@@ -1021,13 +1012,7 @@
             </div>
         </div>
     </div>
-    <!-- ============================================================ -->
-    <!-- FIN DEL BLOQUE DE RECURSOS                                   -->
-    <!-- ============================================================ -->
 
-    <!-- ============================================ -->
-    <!-- BLOQUE "ES HORA DE"                          -->
-    <!-- ============================================ -->
     <div class="bloque-cta">
         <div class="tarjeta-cta">
             <p>
@@ -1042,8 +1027,32 @@
             </div>
         </div>
     </div>
-    <!-- ===================FIN DE ES HORA DE ==================== -->
 
-</div> <!-- fin container -->
+</div>
+
+<!-- =================== RESALTADO AL LLEGAR POR HASH ==================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    var highlight = target.classList.contains('formula-box')
+        ? target
+        : (target.closest('.formula-box') || target);
+
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () {
+        highlight.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
 </body>
 </html>
