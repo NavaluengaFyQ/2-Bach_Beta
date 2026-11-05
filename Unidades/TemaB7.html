@@ -53,6 +53,12 @@
         @media(max-width:760px){.b7-grid,.b7-diagrams{grid-template-columns:1fr}.b7-kpis{grid-template-columns:1fr 1fr}.b7-flow{grid-template-columns:1fr 1fr}.puntuacion{float:none;display:block;margin-top:5px}}
         @media(max-width:430px){.b7-kpis{grid-template-columns:1fr}}
         @media print{body{background:white;padding:0}.container{box-shadow:none;margin:0}.section,details{break-inside:avoid}.header{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+        /* Animación de resaltado al llegar por hash */
+        .formula-resaltada{animation:highlightFormula 2.4s ease-out}
+        @keyframes highlightFormula{
+          0%,30%{box-shadow:0 0 0 4px rgba(251,191,36,.7)}
+          100%{box-shadow:0 0 0 4px rgba(251,191,36,0)}
+        }
     </style>
 </head>
 <body>
@@ -112,10 +118,14 @@
         <details class="step" open>
             <summary><span class="step-num">1</span><strong>Fuerza magnética sobre un conductor: ley de Laplace.</strong></summary>
             <p>Un conductor por el que circula una corriente eléctrica, situado en un campo magnético, experimenta una fuerza magnética. En un tramo recto de longitud \(L\), dentro de un <strong>campo uniforme</strong>, se expresa mediante:</p>
-            <div class="formula-box">\[\boxed{\vec F=I\,\vec L\times\vec B}\]</div>
+            <a href="TemaB7-Formulario.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">\[\boxed{\vec F=I\,\vec L\times\vec B}\]</div>
+            </a>
             <p>\(\vec L\) es un vector de módulo \(L\), dirigido en el sentido de la <strong>corriente convencional</strong>; \(I\) es la intensidad y \(\vec B\) el campo magnético.</p>
             <p>El módulo resulta:</p>
-            <div class="formula-box">\[\boxed{F=I\,L\,B\,\sin\theta}\]</div>
+            <a href="TemaB7-Formulario.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">\[\boxed{F=I\,L\,B\,\sin\theta}\]</div>
+            </a>
             <p>\(\theta\) es el ángulo entre \(\vec L\) y \(\vec B\). La fuerza es perpendicular a ambos vectores y su sentido se obtiene con el producto vectorial o la regla de la mano derecha.</p>
             <div class="b7-grid">
                 <div class="b7-card"><h3>Fuerza nula</h3><p>Si el conductor es paralelo o antiparalelo al campo, \(\theta=0^\circ\) o \(180^\circ\), y \(F=0\).</p></div>
@@ -126,16 +136,23 @@
 
         <details class="step">
             <summary><span class="step-num">2</span><strong>Sentido de la fuerza y relación con la fuerza de Lorentz.</strong></summary>
-            <p>Los portadores de carga que se desplazan por el conductor experimentan la fuerza de Lorentz \(\vec f=q\,\vec v\times\vec B\). La suma de las fuerzas sobre los portadores se transmite al conductor y conduce a la ley de Laplace.</p>
+            <p>Los portadores de carga que se desplazan por el conductor experimentan la fuerza de Lorentz. La suma de las fuerzas sobre los portadores se transmite al conductor y conduce a la ley de Laplace:</p>
+            <a href="TemaB7-Formulario.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">\[\vec f=q\,\vec v\times\vec B \quad\Longrightarrow\quad \vec F=I\,\vec L\times\vec B\]</div>
+            </a>
             <p>Para aplicar \(\vec F=I\vec L\times\vec B\), se utiliza siempre el sentido de la <strong>corriente convencional</strong>. No se debe invertir automáticamente el vector \(\vec L\) por recordar que en un metal los portadores habituales son electrones.</p>
-            <div class="formula-box">\[\hat i\times\hat j=\hat k,\qquad \hat j\times\hat k=\hat i,\qquad \hat k\times\hat i=\hat j\]</div>
+            <a href="TemaB7-Formulario.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">\[\hat i\times\hat j=\hat k,\qquad \hat j\times\hat k=\hat i,\qquad \hat k\times\hat i=\hat j\]</div>
+            </a>
             <p>Al invertir el orden de los vectores cambia el signo: por ejemplo, \(\hat j\times\hat i=-\hat k\).</p>
         </details>
 
         <details class="step">
             <summary><span class="step-num">3</span><strong>Campo magnético creado por un hilo rectilíneo muy largo (conexión B6).</strong></summary>
             <p>Un hilo rectilíneo indefinido recorrido por una corriente \(I\) crea un campo magnético cuyas líneas son circunferencias centradas en el hilo, situadas en planos perpendiculares a él. A una distancia \(r\), el módulo es:</p>
-            <div class="formula-box">\[\boxed{B=\frac{\mu_0 I}{2\pi r}}\]</div>
+            <a href="TemaB7-Formulario.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">\[\boxed{B=\frac{\mu_0 I}{2\pi r}}\]</div>
+            </a>
             <p>El sentido se obtiene con la <strong>regla de la mano derecha</strong>: el pulgar apunta en el sentido de la corriente convencional y los dedos curvados indican el sentido de \(\vec B\).</p>
             <p>En los problemas de dos hilos, la distancia \(r\) desde el hilo creador hasta el otro conductor es la separación entre ellos, \(d\).</p>
             <div class="note">En los enunciados de EBAU del banco se utiliza habitualmente \(\mu_0=4\pi\cdot10^{-7}\ \text{T·m·A}^{-1}\).</div>
@@ -144,7 +161,9 @@
         <details class="step">
             <summary><span class="step-num">4</span><strong>Interacción entre dos hilos paralelos.</strong></summary>
             <p>El hilo 1 crea en la posición del hilo 2 un campo \(B_1=\mu_0I_1/(2\pi d)\). El hilo 2, recorrido por una corriente \(I_2\), sufre una fuerza \(F_2=I_2LB_1\), porque el campo es perpendicular al hilo.</p>
-            <div class="formula-box">\[\boxed{\frac{F}{L}=\frac{\mu_0I_1I_2}{2\pi d}}\]</div>
+            <a href="TemaB7-Formulario.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">\[\boxed{\frac{F}{L}=\frac{\mu_0I_1I_2}{2\pi d}}\]</div>
+            </a>
             <p>La expresión da el <strong>módulo</strong> de la fuerza por unidad de longitud entre dos conductores rectilíneos, paralelos y muy largos, despreciando efectos de borde.</p>
             <div class="b7-diagrams">
                 <figure class="b7-diagram">
@@ -170,25 +189,43 @@
                     <figcaption><strong>Sentidos opuestos:</strong> los hilos se repelen.</figcaption>
                 </figure>
             </div>
+            <a href="TemaB7-Formulario.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">
+                \[ \text{Mismo sentido}\ \Rightarrow\ \text{ATRACCIÓN} \]
+                \[ \text{Sentidos opuestos}\ \Rightarrow\ \text{REPULSIÓN} \]
+            </div>
+            </a>
             <div class="note"><strong>Regla que conviene memorizar:</strong> mismo sentido → atracción; sentidos opuestos → repulsión. Si se invierten las dos corrientes a la vez, la relación entre ellas no cambia y la interacción conserva su carácter.</div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">5</span><strong>Fuerza por unidad de longitud en un campo uniforme.</strong></summary>
             <p>Si el conductor está en un campo externo uniforme y forma un ángulo \(\theta\) con él, al dividir la ley de Laplace por la longitud se obtiene:</p>
-            <div class="formula-box">\[\boxed{\frac{F}{L}=IB\,\sin\theta}\]</div>
+            <a href="TemaB7-Formulario.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">\[\boxed{\frac{F}{L}=IB\,\sin\theta}\]</div>
+            </a>
             <p>Esta expresión es especialmente útil cuando el problema da el campo externo \(B_0\) y pide estudiar orientaciones del conductor. No debe confundirse con la fórmula entre dos hilos, que ya incorpora el campo creado por uno de ellos.</p>
         </details>
 
         <details class="step">
             <summary><span class="step-num">6</span><strong>Varios conductores: superposición de fuerzas.</strong></summary>
             <p>Sobre un conductor pueden actuar fuerzas debidas a varios hilos. Se calcula cada contribución por separado y se suman como vectores:</p>
-            <div class="formula-box">\[\vec F_\text{total}=\vec F_1+\vec F_2+\cdots+\vec F_n\]</div>
+            <a href="TemaB7-Formulario.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">\[\vec F_\text{total}=\vec F_1+\vec F_2+\cdots+\vec F_n\]</div>
+            </a>
             <p>En configuraciones simétricas, algunas componentes pueden cancelarse; las restantes se suman. Si los hilos no están alineados, se deben dibujar los vectores unitarios o descomponer cada fuerza en componentes cartesianas.</p>
         </details>
 
         <details class="step">
             <summary><span class="step-num">7</span><strong>Campo magnético nulo y fuerza nula no significan lo mismo.</strong></summary>
+            <p>Para localizar el punto donde el campo total se anula, los campos individuales creados por cada hilo se suman vectorialmente y se busca dónde se compensan:</p>
+            <a href="TemaB7-Formulario.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">\[\vec B_\text{total}=\vec B_1+\vec B_2+\cdots+\vec B_n\]</div>
+            </a>
+            <p>Para dos hilos paralelos, la condición de anulación se reduce a igualar los módulos de los campos:</p>
+            <a href="TemaB7-Formulario.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">\[\frac{I_1}{r_1}=\frac{I_2}{r_2}\]</div>
+            </a>
             <p>Un punto donde \(\vec B_\text{total}=0\) es una posición en la que los campos de los hilos se cancelan. En cambio, una fuerza nula sobre un conductor puede deberse a que el campo total sea nulo, a que la corriente sea nula o a que el conductor sea paralelo al campo resultante.</p>
             <p>Para buscar un punto de campo nulo entre dos hilos, primero hay que comprobar que los campos tengan sentidos opuestos en esa región; después se igualan sus módulos. En el caso de corrientes paralelas del mismo sentido, el punto nulo puede encontrarse entre los hilos. Con corrientes opuestas, los campos entre ellos se suman y el punto nulo, si existe, está en el exterior.</p>
         </details>
@@ -477,7 +514,6 @@
 
 
 
-
 <!-- ============================================================ -->
 <!-- BLOQUE DE RECURSOS Y NAVEGACIÓN DEL TEMA B7                  -->
 <!-- ============================================================ -->
@@ -593,7 +629,6 @@
 
 
 
-
     
     <div class="bloque-cta">
         <div class="tarjeta-cta">
@@ -602,5 +637,23 @@
         </div>
     </div>
 </div>
+
+<!-- ============================ JS · RESALTADO DE LA FÓRMULA DESTINO ============================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+    var target = document.querySelector(hash);
+    if (!target) return;
+    var highlight = target.classList.contains('formula-box') || target.classList.contains('card')
+        ? target
+        : (target.closest('.formula-box') || target.closest('tr') || target);
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () { highlight.classList.remove('formula-resaltada'); }, 2600);
+});
+</script>
 </body>
 </html>

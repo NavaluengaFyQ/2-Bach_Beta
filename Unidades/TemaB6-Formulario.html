@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA B6 (Formulario).- Campo magnético generado por corrientes</title>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- CSS PROPIO DE FORMULARIOS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+
+    <!-- Animación de resaltado al llegar por hash -->
+    <style>
+    .formula-resaltada{animation:highlightFormula 2.4s ease-out}
+    @keyframes highlightFormula{
+      0%,30%{box-shadow:0 0 0 4px rgba(251,191,36,.7)}
+      100%{box-shadow:0 0 0 4px rgba(251,191,36,0)}
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================ CABECERA ============================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA B6 (Formulario).- </span>
+                <span class="texto">Campo magnético generado por corrientes: hilo, espira, solenoide y toroide</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================ GRID ============================ -->
+    <div class="grid">
+
+        <!-- FICHA 1 · LEY DE BIOT–SAVART -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Ley de Biot–Savart</h2>
+                <span class="badge-centro">Ley fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La contribución infinitesimal al campo magnético producida por un elemento de corriente \(I\,d\vec l\) en un punto del espacio situado a distancia \(r\). Se aplica para entender el origen del campo magnético y para deducir las expresiones conocidas de hilo recto, espira, solenoide y toroide; en EBAU rara vez se integra, pero sirve para justificar direcciones y simetrías.
+            </div>
+            <a href="TemaB6.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
+                \[ d\vec B = \frac{\mu_0}{4\pi}\,\frac{I\,d\vec l\times\hat u_r}{r^{2}} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>Más que memorizarla, comprende su estructura: es un <strong>producto vectorial</strong> entre el elemento de corriente \(I\,d\vec l\) y el vector unitario \(\hat u_r\) que apunta del elemento al punto, dividido por \(r^{2}\). El campo \(d\vec B\) es perpendicular a ambos. En la mayoría de problemas de EBAU no se integra: se usan directamente las fórmulas deducidas para hilo, espira, solenoide y toroide.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(d\vec B\)</td><td data-label="Significado">Campo infinitesimal creado por el elemento</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(\mu_0\)</td><td data-label="Significado">Permeabilidad magnética del vacío</td><td data-label="Unidades">\(4\pi\cdot10^{-7}\ \text{T·m/A}\)</td></tr>
+                    <tr><td data-label="Símbolo">\(I\)</td><td data-label="Significado">Intensidad de corriente</td><td data-label="Unidades">A</td></tr>
+                    <tr><td data-label="Símbolo">\(d\vec l\)</td><td data-label="Significado">Elemento de corriente (vector tangente al hilo)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\hat u_r\)</td><td data-label="Significado">Vector unitario desde el elemento al punto</td><td data-label="Unidades">adimensional</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia del elemento al punto</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un elemento de corriente en el origen con \(I\,d\vec l=2\cdot10^{-3}\hat i\,\text{A·m}\). En el punto \((0,3,0)\) m, \(\hat u_r=\hat j\) y \(r=3\) m. Entonces \(d\vec B=\frac{\mu_0}{4\pi}\cdot\frac{2\cdot10^{-3}\hat i\times\hat j}{9}=\frac{\mu_0}{4\pi}\cdot\frac{2\cdot10^{-3}}{9}\hat k\approx2{,}2\cdot10^{-11}\hat k\ \text{T}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El campo es <strong>perpendicular</strong> a \(I\,d\vec l\) y a \(\hat u_r\).</li>
+                    <li>La dirección se obtiene con la <strong>regla de la mano derecha</strong> aplicada al producto vectorial.</li>
+                    <li>Para una distribución completa se <strong>integra</strong>: \(\vec B=\int d\vec B\).</li>
+                    <li>En EBAU se usan las versiones integradas (hilo, espira, solenoide, toroide).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 · CAMPO DE UN HILO RECTILÍNEO -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Campo magnético de un hilo rectilíneo</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Cálculo directo</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo del campo magnético que crea un hilo conductor rectilíneo indefinido, recorrido por una corriente \(I\), a una distancia perpendicular \(r\). Se aplica en la experiencia de Oersted, en problemas de dos o más hilos paralelos y en el cálculo de fuerzas entre conductores (B7).
+            </div>
+            <a href="TemaB6.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">
+                \[ B = \frac{\mu_0\,I}{2\pi\,r} \qquad\text{con}\qquad \mu_0 = 4\pi\cdot10^{-7}\ \frac{\text{T·m}}{\text{A}} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(B=\mu_0 I/(2\pi r)\) con \(\mu_0=4\pi\cdot10^{-7}\). Es la fórmula de campo más usada en EBAU. Las líneas de campo son <strong>circunferencias concéntricas</strong> alrededor del hilo, y su sentido se obtiene con la regla de la mano derecha: pulgar en el sentido de la corriente, dedos curvados en el sentido de \(\vec B\). Cuidado con \(r\): es la distancia <strong>más corta</strong> al hilo (perpendicular), no la distancia a lo largo del conductor.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(B\)</td><td data-label="Significado">Módulo del campo en el punto</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(\mu_0\)</td><td data-label="Significado">Permeabilidad magnética del vacío</td><td data-label="Unidades">\(4\pi\cdot10^{-7}\ \text{T·m/A}\)</td></tr>
+                    <tr><td data-label="Símbolo">\(I\)</td><td data-label="Significado">Intensidad de corriente</td><td data-label="Unidades">A</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia perpendicular al hilo</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un hilo con \(I=20\ \text{A}\) crea a \(r=0{,}10\ \text{m}\) un campo \(B=\dfrac{4\pi\cdot10^{-7}\cdot20}{2\pi\cdot0{,}10}=4\cdot10^{-5}\ \text{T}\), comparable al campo terrestre.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El campo decae con \(1/r\) (no con \(1/r^{2}\) como el eléctrico).</li>
+                    <li>Las líneas son <strong>cerradas</strong>: circunferencias alrededor del hilo.</li>
+                    <li>Invertir el sentido de la corriente invierte el sentido de las líneas.</li>
+                    <li>Convención: \(\odot\) = sale del papel; \(\otimes\) = entra en el papel.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 · CAMPO EN EL CENTRO DE UNA ESPIRA CIRCULAR -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Campo en el centro de una espira circular</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Cálculo directo</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo del campo magnético en el centro de una espira circular de radio \(R\) recorrida por una corriente \(I\), o en el centro de una bobina plana de \(N\) vueltas muy próximas. Se aplica en problemas de espiras y bobinas, y en configuraciones mixtas hilo–espira (muy típicas de EBAU).
+            </div>
+            <a href="TemaB6.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">
+                \[ B_{\text{centro}} = \frac{\mu_0\,I}{2R} \]
+                \[ B_{\text{centro}} = \frac{\mu_0\,N\,I}{2R} \]
+                <span id="formula-4"></span>
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(B=\mu_0 I/(2R)\) y su versión para \(N\) vueltas, \(B=\mu_0 N I/(2R)\). Es una de las expresiones más utilizadas de B6. El campo en el centro es <strong>perpendicular al plano de la espira</strong>. La regla de la mano derecha: curvando los dedos en el sentido de la corriente, el pulgar extendido da el sentido del campo en el centro y en el eje. No confundir con la fórmula del hilo: aquí el denominador es \(2R\), no \(2\pi r\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(B_{\text{centro}}\)</td><td data-label="Significado">Campo magnético en el centro de la espira</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(\mu_0\)</td><td data-label="Significado">Permeabilidad magnética del vacío</td><td data-label="Unidades">\(4\pi\cdot10^{-7}\ \text{T·m/A}\)</td></tr>
+                    <tr><td data-label="Símbolo">\(I\)</td><td data-label="Significado">Intensidad de corriente</td><td data-label="Unidades">A</td></tr>
+                    <tr><td data-label="Símbolo">\(R\)</td><td data-label="Significado">Radio de la espira</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(N\)</td><td data-label="Significado">Número de vueltas (bobina plana)</td><td data-label="Unidades">adimensional</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una espira de \(R=2\ \text{cm}\) con \(I=2\ \text{A}\). \(B=\dfrac{4\pi\cdot10^{-7}\cdot2}{2\cdot0{,}02}=6{,}28\cdot10^{-5}\ \text{T}\). Si tuviera \(N=10\) vueltas, \(B=6{,}28\cdot10^{-4}\ \text{T}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El campo en el centro es perpendicular al plano de la espira.</li>
+                    <li>Cada vuelta añade su contribución: multiplicar por \(N\) si las espiras están muy próximas.</li>
+                    <li>Sentido del campo: regla de la mano derecha curvando los dedos por la corriente.</li>
+                    <li>No confundir con \(B=\mu_0 I/(2\pi r)\) (hilo): en la espira el denominador es el radio \(R\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 · CAMPO EN EL EJE DE UNA ESPIRA -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Campo en el eje de una espira circular</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Cálculo sobre el eje</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo del campo magnético en un punto del eje de una espira circular o de una bobina plana de \(N\) vueltas, a una distancia \(x\) del centro. Se aplica cuando el punto donde hay que evaluar el campo no está en el centro sino sobre el eje de simetría.
+            </div>
+            <a href="TemaB6.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">
+                \[ B_{\text{eje}} = \frac{\mu_0\,N\,I\,R^{2}}{2\,(R^{2}+x^{2})^{3/2}} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es la versión general de la fórmula del centro. Comprueba que si \(x=0\), entonces \(B=\mu_0NI/(2R)\) (ficha 3). Para \(x\gg R\), \(B\approx\mu_0NIR^{2}/(2x^{3})\): el campo decae con \(1/x^{3}\), como un dipolo magnético. En EBAU rara vez se aplica directamente, pero es útil para justificar comportamientos cualitativos y para entender el solenoide.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(B_{\text{eje}}\)</td><td data-label="Significado">Campo en un punto del eje</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(R\)</td><td data-label="Significado">Radio de la espira</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(x\)</td><td data-label="Significado">Distancia del centro al punto del eje</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(N\)</td><td data-label="Significado">Número de vueltas</td><td data-label="Unidades">adimensional</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(R=0{,}02\ \text{m}\), \(I=2\ \text{A}\), \(N=1\), punto a \(x=0{,}02\ \text{m}\) del centro. \(B=\dfrac{\mu_0\cdot2\cdot0{,}0004}{2\cdot(0{,}0004+0{,}0004)^{3/2}}\approx2{,}22\cdot10^{-5}\ \text{T}\), unas tres veces menor que en el centro.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Si \(x=0\), se recupera \(B=\mu_0NI/(2R)\).</li>
+                    <li>Para \(x\gg R\), el campo cae con \(1/x^{3}\).</li>
+                    <li>El campo siempre es perpendicular al plano de la espira (sobre el eje).</li>
+                    <li>Con esta fórmula se deduce el campo del solenoide sumando muchas espiras.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 · CAMPO EN EL INTERIOR DE UN SOLENOIDE -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Campo en el interior de un solenoide</h2>
+                <span class="badge-centro">Caso típico</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip automatizar">🔄 Automatizar · Caso típico</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo del campo magnético <strong>uniforme</strong> en el interior de un solenoide largo e ideal, con \(N\) espiras repartidas en una longitud \(L\) y recorrido por una corriente \(I\). Se aplica en problemas de electroimanes, bobinas y transformadores, y en cuestiones conceptuales sobre la uniformidad del campo en el interior.
+            </div>
+            <a href="TemaB6.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">
+                \[ B_{\text{interior}} = \mu_0\,n\,I = \mu_0\,\frac{N}{L}\,I \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔄 AUTOMATIZAR</span>Sí: memoriza \(B=\mu_0 n I\) con \(n=N/L\). Es una fórmula muy típica de EBAU y aparece siempre que se menciona un solenoide. Comprende que en el <strong>interior ideal</strong> el campo es <strong>uniforme</strong> (módulo, dirección y sentido constantes), y en el <strong>exterior</strong> es prácticamente nulo. El sentido se obtiene con la mano derecha: dedos en el sentido de la corriente por las espiras, pulgar en el sentido de \(\vec B\) dentro del solenoide.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(B_{\text{interior}}\)</td><td data-label="Significado">Campo dentro del solenoide</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(\mu_0\)</td><td data-label="Significado">Permeabilidad magnética del vacío</td><td data-label="Unidades">\(4\pi\cdot10^{-7}\ \text{T·m/A}\)</td></tr>
+                    <tr><td data-label="Símbolo">\(n\)</td><td data-label="Significado">Espiras por unidad de longitud (\(N/L\))</td><td data-label="Unidades">m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(N\)</td><td data-label="Significado">Número total de espiras</td><td data-label="Unidades">adimensional</td></tr>
+                    <tr><td data-label="Símbolo">\(L\)</td><td data-label="Significado">Longitud del solenoide</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(I\)</td><td data-label="Significado">Intensidad de corriente</td><td data-label="Unidades">A</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un solenoide de \(L=0{,}30\ \text{m}\) con \(N=600\) espiras e \(I=2\ \text{A}\). \(n=600/0{,}30=2000\ \text{m}^{-1}\). \(B=\mu_0\cdot2000\cdot2=5{,}03\cdot10^{-3}\ \text{T}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>En el interior ideal, el campo es <strong>uniforme</strong>: mismo \(\vec B\) en todos los puntos.</li>
+                    <li>En el exterior, el campo es prácticamente nulo (solenoide largo ideal).</li>
+                    <li>La validez requiere \(L\gg D\) (longitud mucho mayor que el diámetro).</li>
+                    <li>NO confundir con el toroide: en el solenoide \(B\) no depende de \(r\); en el toroide sí.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 · CAMPO EN EL INTERIOR DE UN TOROIDE -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Campo en el interior de un toroide</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Cálculo con \(1/r\)</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo del campo magnético en el interior de un toroide ideal (solenoide curvado en anillo) con \(N\) espiras, a una distancia \(r\) del centro del anillo. Se aplica en problemas de dispositivos con simetría toroidal (tokamaks, transformadores, etc.) y en cuestiones que exigen distinguir solenoide de toroide.
+            </div>
+            <a href="TemaB6.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">
+                \[ B(r) = \frac{\mu_0\,N\,I}{2\pi\,r} \qquad (R_{\text{int}}<r<R_{\text{ext}}) \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Más que memorizarla, reconoce su estructura: es como la fórmula del hilo recto, pero cambiando \(I\) por \(N\cdot I\). El campo dentro del toroide <strong>no es uniforme</strong>: depende de \(1/r\), por lo que es más intenso en la parte interior del anillo que en la exterior. Se deduce aplicando la ley de Ampère a una circunferencia de radio \(r\) dentro del anillo: \(\oint\vec B\cdot d\vec l=B\cdot2\pi r=\mu_0 NI\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(B(r)\)</td><td data-label="Significado">Campo en el interior del toroide a distancia \(r\) del centro</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(\mu_0\)</td><td data-label="Significado">Permeabilidad magnética del vacío</td><td data-label="Unidades">\(4\pi\cdot10^{-7}\ \text{T·m/A}\)</td></tr>
+                    <tr><td data-label="Símbolo">\(N\)</td><td data-label="Significado">Número total de espiras</td><td data-label="Unidades">adimensional</td></tr>
+                    <tr><td data-label="Símbolo">\(I\)</td><td data-label="Significado">Intensidad de corriente</td><td data-label="Unidades">A</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia al eje del anillo toroidal</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(N=500\) espiras, \(I=3\ \text{A}\), punto a \(r=0{,}10\ \text{m}\). \(B=\dfrac{4\pi\cdot10^{-7}\cdot500\cdot3}{2\pi\cdot0{,}10}=3\cdot10^{-3}\ \text{T}\). A \(r=0{,}20\ \text{m}\) dentro del mismo anillo, el campo se reduce a \(1{,}5\cdot10^{-3}\ \text{T}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El campo es <strong>tangencial</strong> a circunferencias centradas en el eje del anillo.</li>
+                    <li>Depende de \(1/r\): <strong>no es uniforme</strong> en todo el espesor.</li>
+                    <li>En el modelo ideal, fuera del toroide \(B\approx0\).</li>
+                    <li>Se deduce de Ampère, no de Biot–Savart directo.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 · LEY DE AMPÈRE -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Ley de Ampère</h2>
+                <span class="badge-centro">Deducción</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Ley integral</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La circulación del campo magnético a lo largo de una curva cerrada \(\Gamma\), que es proporcional a la corriente neta que atraviesa una superficie apoyada en esa curva. Se aplica para deducir los campos de configuraciones simétricas (hilo, solenoide, toroide) y para justificar el carácter <strong>no conservativo</strong> del campo magnético.
+            </div>
+            <a href="TemaB6.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">
+                \[ \oint_\Gamma \vec B\cdot d\vec l = \mu_0\,I_{\text{enc}} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>Más que memorizarla, comprende su significado: la circulación de \(\vec B\) a lo largo de una curva cerrada <strong>no es nula</strong> si la curva encierra corriente. Esto contrasta con el campo electrostático (\(\oint\vec E\cdot d\vec l=0\)): \(\vec B\) <strong>no es conservativo</strong>. Se aplica bien cuando hay simetría (hilo, solenoide, toroide), porque permite sacar \(B\) de la integral. Si no hay simetría, no es útil para calcular campos; solo da información sobre la circulación.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\oint_\Gamma\vec B\cdot d\vec l\)</td><td data-label="Significado">Circulación de \(\vec B\) a lo largo de \(\Gamma\)</td><td data-label="Unidades">T·m</td></tr>
+                    <tr><td data-label="Símbolo">\(\mu_0\)</td><td data-label="Significado">Permeabilidad magnética del vacío</td><td data-label="Unidades">\(4\pi\cdot10^{-7}\ \text{T·m/A}\)</td></tr>
+                    <tr><td data-label="Símbolo">\(I_{\text{enc}}\)</td><td data-label="Significado">Corriente neta encerrada por \(\Gamma\)</td><td data-label="Unidades">A</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para un hilo recto con \(I=5\ \text{A}\) y una circunferencia de radio \(r=0{,}1\ \text{m}\) centrada en el hilo: \(\oint\vec B\cdot d\vec l=B\cdot2\pi r=\mu_0 I=6{,}28\cdot10^{-6}\ \text{T·m}\). Es distinta de cero: el campo no es conservativo.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Muy útil con <strong>simetría</strong> (circunferencias, rectángulos, etc.).</li>
+                    <li>Si \(\Gamma\) no encierra corriente, la circulación es \(0\).</li>
+                    <li>Es la base de la deducción de \(B\) del solenoide y del toroide.</li>
+                    <li>NO confundir con la ley de Gauss magnética (ficha 5 de B5): una habla de circulación, otra de flujo.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 · PRINCIPIO DE SUPERPOSICIÓN -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Principio de superposición de campos magnéticos</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Principio</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El campo magnético total en un punto debido a varias corrientes, sumando vectorialmente los campos individuales. Se aplica en cualquier problema con dos o más fuentes (dos hilos, hilo + espira, tres hilos en triángulo, etc.). Es el principio que permite combinar las fórmulas de las fichas 2 a 6.
+            </div>
+            <a href="TemaB6.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">
+                \[ \vec B_{\text{total}} = \vec B_1+\vec B_2+\cdots+\vec B_n \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No hay fórmula que memorizar: es un <strong>principio</strong>. Lo esencial es sumar <strong>vectores</strong>, no módulos. Pasos: (1) dibujar cada \(\vec B_i\) con su dirección y sentido; (2) calcular los módulos; (3) descomponer en componentes; (4) sumar. Si los campos son paralelos, se suman o restan módulos; si son perpendiculares, se usa Pitágoras. Error típico: sumar módulos sin atender a la dirección.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Situación</th><th>Cómo se suman</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Situación">Misma dirección y sentido</td><td data-label="Cómo se suman">Se suman módulos.</td></tr>
+                    <tr><td data-label="Situación">Misma dirección y sentidos opuestos</td><td data-label="Cómo se suman">Se restan módulos (resultado con el signo del mayor).</td></tr>
+                    <tr><td data-label="Situación">Perpendiculares</td><td data-label="Cómo se suman">\(B_T=\sqrt{B_1^2+B_2^2}\).</td></tr>
+                    <tr><td data-label="Situación">Oblicuos</td><td data-label="Cómo se suman">Descomponer en \((x,y,z)\) y sumar por componentes.</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos hilos paralelos con corrientes en el mismo sentido, separados \(d=10\ \text{cm}\). En el punto medio (\(r=5\ \text{cm}\)), los campos son opuestos y de igual módulo (si \(I_1=I_2\)): se anulan. Si las corrientes son opuestas, en el punto medio los campos tienen el mismo sentido y se suman.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>SIEMPRE vectorial: dibujar antes de calcular.</li>
+                    <li>Si hay simetría, algunas componentes pueden anularse.</li>
+                    <li>El módulo final se obtiene con Pitágoras si hay dos componentes perpendiculares.</li>
+                    <li>Error típico: sumar los módulos sin tener en cuenta la dirección.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 · PUNTO DE CAMPO NULO ENTRE DOS HILOS -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Punto de campo magnético nulo entre dos hilos</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Análisis físico</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La posición del punto (o de la recta) donde el campo magnético total debido a dos hilos paralelos es nulo. Se aplica en problemas clásicos de EBAU donde se pide localizar ese punto, decidir en qué región está (entre o fuera de los hilos) y plantear la igualdad de módulos.
+            </div>
+            <a href="TemaB6.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">
+                \[ \frac{I_1}{r_1} = \frac{I_2}{r_2} \qquad\text{(igualdad de módulos)} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No hay una fórmula que memorizar: hay un <strong>procedimiento</strong>. Primero decidir la <strong>región</strong> donde puede anularse (según el sentido de las corrientes); después plantear la igualdad de módulos \(\mu_0I_1/(2\pi r_1)=\mu_0I_2/(2\pi r_2)\) y resolver. La regla clave: <strong>corrientes en el mismo sentido</strong> ⟹ el punto está <strong>entre</strong> los hilos; <strong>corrientes en sentidos opuestos</strong> ⟹ el punto está <strong>fuera</strong>, del lado del hilo de menor intensidad.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Sentido de corrientes</th><th>Región del punto nulo</th><th>Condición de módulos</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Sentido">Mismo sentido</td><td data-label="Región">Entre los dos hilos</td><td data-label="Condición">\(\dfrac{I_1}{r_1}=\dfrac{I_2}{r_2}\)</td></tr>
+                    <tr><td data-label="Sentido">Sentidos opuestos</td><td data-label="Región">Fuera, del lado del hilo de menor \(I\)</td><td data-label="Condición">\(\dfrac{I_1}{r_1}=\dfrac{I_2}{r_2}\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos hilos separados \(d=12\ \text{cm}\) con \(I_1=3\ \text{A}\) e \(I_2=9\ \text{A}\) en sentidos opuestos. El campo nulo está fuera, del lado del hilo de \(3\ \text{A}\). Si \(a\) es la distancia desde ese hilo hacia el exterior: \(3/a=9/(a+0{,}12)\), de donde \(a=6\ \text{cm}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Entre los hilos, los campos pueden sumarse o restarse según el sentido de las corrientes.</li>
+                    <li>Si \(I_1=I_2\) y corrientes opuestas, el punto nulo está en el plano medio exterior... ¡no existe! (los campos ya se suman en el exterior).</li>
+                    <li>Si \(I_1=I_2\) y mismo sentido, el punto nulo está justo en el punto medio.</li>
+                    <li>No confundir con el punto de campo eléctrico nulo (allí el potencial no era nulo; aquí no tiene sentido hablar de potencial magnético).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 10 · FUERZA POR UNIDAD DE LONGITUD ENTRE HILOS (B7) -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Fuerza por unidad de longitud entre dos hilos (B7)</h2>
+                <span class="badge-centro">Conexión B7</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Conexión con B7</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La fuerza magnética por unidad de longitud entre dos conductores rectilíneos paralelos, separados una distancia \(d\), recorridos por corrientes \(I_1\) e \(I_2\). Se aplica en problemas mixtos B6/B7 en los que primero hay que calcular el campo (B6) y después la fuerza que ese campo ejerce sobre otro conductor (B7).
+            </div>
+            <a href="TemaB6.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">
+                \[ \frac{F}{L} = \frac{\mu_0\,I_1\,I_2}{2\pi\,d} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER + ⚖️ APLICAR</span>Es una fórmula mixta: sale de combinar \(B=\mu_0I_1/(2\pi d)\) (B6) con \(F=I_2LB\) (B7). Lo más importante es <strong>recordar el sentido</strong> de la fuerza: <strong>corrientes en el mismo sentido se atraen</strong>; <strong>corrientes en sentidos opuestos se repelen</strong>. En EBAU aparece en problemas que piden "fuerza por unidad de longitud" o en configuraciones con varios hilos.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(F/L\)</td><td data-label="Significado">Fuerza por unidad de longitud</td><td data-label="Unidades">N·m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\mu_0\)</td><td data-label="Significado">Permeabilidad magnética del vacío</td><td data-label="Unidades">\(4\pi\cdot10^{-7}\ \text{T·m/A}\)</td></tr>
+                    <tr><td data-label="Símbolo">\(I_1,I_2\)</td><td data-label="Significado">Intensidades en cada hilo</td><td data-label="Unidades">A</td></tr>
+                    <tr><td data-label="Símbolo">\(d\)</td><td data-label="Significado">Separación entre los hilos</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos hilos con \(I_1=3\ \text{A}\) e \(I_2=9\ \text{A}\), separados \(d=0{,}12\ \text{m}\). \(F/L=\dfrac{4\pi\cdot10^{-7}\cdot3\cdot9}{2\pi\cdot0{,}12}=4{,}5\cdot10^{-5}\ \text{N/m}\). Si las corrientes son opuestas, la fuerza es repulsiva.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li><strong>Mismo sentido</strong> de corrientes ⟹ atracción.</li>
+                    <li><strong>Sentidos opuestos</strong> ⟹ repulsión.</li>
+                    <li>Esta fórmula pertenece conceptualmente a B7 (fuerza sobre conductores).</li>
+                    <li>En problemas mixtos: primero B6 (calcular \(B\)), después B7 (calcular \(F\)).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             LEYENDA EPISTÉMICA
+             ============================================================ -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones del tema B6 se estudian igual. Cada fórmula pertenece a una
+                <strong>categoría epistémica</strong> —ley fundamental, concepto, consecuencia matemática,
+                aplicación o caso típico automatizable— y cada categoría se domina con un
+                <strong>verbo distinto</strong>. Identificar el tipo <em>antes</em> de estudiar ahorra
+                tiempo y evita memorizar lo que se puede deducir.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental / concepto</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es el <em>punto de partida físico</em> del tema: describe cómo funciona la naturaleza
+                        o establece un principio general. No se memoriza: se comprende y se aplica como filtro
+                        conceptual.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B6</strong>
+                        \(d\vec B=\frac{\mu_0}{4\pi}\frac{I\,d\vec l\times\hat u_r}{r^{2}}\) &nbsp;·&nbsp;
+                        \(\vec B_{\text{total}}=\sum\vec B_i\) &nbsp;·&nbsp;
+                        \(I_1/r_1=I_2/r_2\) (campo nulo) &nbsp;·&nbsp;
+                        \(F/L=\mu_0I_1I_2/(2\pi d)\)
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> integrando, despejando o sustituyendo otra fórmula. No se
+                        memoriza: se reconstruye en 2–3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplo B6</strong>
+                        \(\oint_\Gamma\vec B\cdot d\vec l=\mu_0I_{\text{enc}}\)
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Aplicación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Se usa para <em>resolver</em> un problema concreto: elegir la fórmula adecuada,
+                        sustituir con los signos correctos y comprobar el resultado. Es el tipo más frecuente
+                        en EBAU.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B6</strong>
+                        \(B=\mu_0I/(2\pi r)\) &nbsp;·&nbsp; \(B=\mu_0NI/(2R)\) &nbsp;·&nbsp;
+                        \(B_{\text{eje}}=\mu_0NIR^{2}/[2(R^{2}+x^{2})^{3/2}]\) &nbsp;·&nbsp;
+                        \(B(r)=\mu_0NI/(2\pi r)\) (toroide)
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Caso típico automatizable</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es un <em>caso particular</em> que aparece mucho y conviene aplicar de forma refleja
+                        sin deducirlo cada vez.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplo B6</strong>
+                        \(B_{\text{interior}}=\mu_0 n I\) (solenoide largo ideal)
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tabla resumen -->
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley / concepto</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Punto de partida físico</td>
+                        <td data-label="¿Cómo se domina?">Explicar con tus palabras</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla sin fórmulas?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Aplicación</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Fórmula para resolver</td>
+                        <td data-label="¿Cómo se domina?">Resolver problemas con signos</td>
+                        <td data-label="Autoevaluación">¿La elijo bien y compruebo el signo?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Automatizar</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Caso típico específico</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿La reconozco y la aplico al instante?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Regla de oro -->
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si sale de otra fórmula integrando, despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
+                Si es una idea física que hay que entender → <strong>ley / concepto</strong> (comprender).
+                Si la usas para resolver un problema → <strong>aplicación</strong> (aplicar).
+                Si es un caso particular muy repetido → <strong>caso típico</strong> (automatizar).
+            </div>
+
+            <!-- Mini-referencia de colores -->
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Comprender (Biot-Savart, superposición, punto nulo)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Deducir (ley de Ampère)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Aplicar (hilo, espira, eje, toroide)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Automatizar (solenoide)</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================ GLOSARIO ============================ -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema B6</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ d\vec B=\dfrac{\mu_0}{4\pi}\dfrac{I\,d\vec l\times\hat u_r}{r^{2}} \]</td><td data-label="Nombre">Ley de Biot–Savart</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ B=\dfrac{\mu_0 I}{2\pi r} \]</td><td data-label="Nombre">Campo de un hilo rectilíneo</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ B=\dfrac{\mu_0 I}{2R} \]</td><td data-label="Nombre">Campo en el centro de una espira</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ B=\dfrac{\mu_0 N I}{2R} \]</td><td data-label="Nombre">Campo en el centro de una bobina plana</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ B_{\text{eje}}=\dfrac{\mu_0 N I R^{2}}{2(R^{2}+x^{2})^{3/2}} \]</td><td data-label="Nombre">Campo en el eje de una espira</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ B=\mu_0 n I=\mu_0\dfrac{N}{L}I \]</td><td data-label="Nombre">Campo en el interior de un solenoide</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ B(r)=\dfrac{\mu_0 N I}{2\pi r} \]</td><td data-label="Nombre">Campo en el interior de un toroide</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \oint_\Gamma\vec B\cdot d\vec l=\mu_0 I_{\text{enc}} \]</td><td data-label="Nombre">Ley de Ampère</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ \vec B_{\text{total}}=\sum\vec B_i \]</td><td data-label="Nombre">Superposición de campos magnéticos</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ \dfrac{I_1}{r_1}=\dfrac{I_2}{r_2} \]</td><td data-label="Nombre">Punto de campo nulo entre dos hilos</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ \dfrac{F}{L}=\dfrac{\mu_0 I_1 I_2}{2\pi d} \]</td><td data-label="Nombre">Fuerza entre dos hilos paralelos (B7)</td><td data-label="Ficha">10</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> (i) confundir dirección y sentido del campo: el campo de un hilo <strong>no apunta hacia el hilo</strong>, es tangente a circunferencias; (ii) usar mal la mano derecha (pulgar = corriente convencional, no movimiento de electrones); (iii) sumar módulos sin atender a los vectores; (iv) situar mal el punto de campo nulo: con corrientes opuestas <strong>no</strong> hay anulación entre los hilos; (v) olvidar multiplicar por \(N\) en bobinas de varias vueltas; (vi) confundir solenoide (campo uniforme) con toroide (campo \(\propto 1/r\)); (vii) mezclar B6 (campo) con B7 (fuerza); (viii) confundir \(2R\) (espira) con \(2\pi r\) (hilo).
+        </div>
+    </details>
+
+    <!-- ============================ RECORDATORIO ============================ -->
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en el tema B6 la idea central es que <strong>una corriente eléctrica crea un campo magnético</strong>. Las tres fórmulas que más se usan en EBAU son \(B=\mu_0I/(2\pi r)\) (hilo), \(B=\mu_0NI/(2R)\) (centro de espira) y \(B=\mu_0nI\) (solenoide). Todas salen de Biot–Savart o de Ampère. Recuerda: <strong>el campo de un hilo NO apunta hacia el hilo</strong> (es tangente a las circunferencias), y en problemas con varias fuentes hay que <strong>sumar vectores, no módulos</strong>. Los puntos de campo nulo dependen del sentido relativo de las corrientes: mismo sentido ⟹ entre los hilos; sentidos opuestos ⟹ fuera, del lado del hilo de menor intensidad. Si distingues estos casos y aplicas bien la regla de la mano derecha, resuelves cualquier problema de B6.
+    </div>
+
+    <!-- ============================ BOTÓN VOLVER ============================ -->
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+
+<!-- ============================ JS · RESALTADO DE LA FÓRMULA DESTINO ============================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    // Si el id cae sobre un <span> interior, subimos a la .formula-box que lo contiene.
+    var highlight = target.classList.contains('formula-box') || target.classList.contains('card')
+        ? target
+        : (target.closest('.formula-box') || target.closest('.card') || target);
+
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    // Reinicia la animación aunque :target ya se hubiera consumido
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () {
+        highlight.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
+</body>
+</html>

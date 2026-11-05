@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA C3 (Formulario).- Energía, potencia e intensidad de una onda</title>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../css/formulario.css">
+
+    <style>
+        /* Estilo base para que el enlace que envuelve la fórmula no parezca un enlace azul subrayado.
+           El comportamiento al pulsar (scroll + margen) ya lo aporta formulario.css:
+           .formula-box { scroll-margin-top: 100px; } */
+        a.formula-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA C3 (Formulario).- </span>
+                <span class="texto">Energía, potencia e intensidad de una onda</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <div class="grid">
+
+        <!-- FICHA 1 -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Potencia media de una onda</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La rapidez con la que una onda transfiere energía: energía transmitida por unidad de tiempo. Se aplica en todos los problemas de sonido y ondas en que aparecen datos de energía y tiempo, o en que se quiere relacionar la intensidad con la potencia de la fuente. Es el punto de partida del tema: de ella se deduce la intensidad.
+            </div>
+            <a href="TemaC3.html#formula-1" class="formula-link">
+                <div class="formula-box" id="formula-1">
+                    \[ P_{\text{media}} = \frac{\Delta E}{\Delta t} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la definición de potencia media y aparece continuamente en los problemas de la EBAU de sonido. Memoriza \(P=\Delta E/\Delta t\) y su unidad \(\text{W}=\text{J}\cdot\text{s}^{-1}\). Cuidado: no confundir energía (J) con potencia (W); el error típico es introducir directamente la energía donde se pide la potencia o al revés.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(P_{\text{media}}\)</td><td>Potencia media transferida</td><td>W = J·s⁻¹</td></tr>
+                    <tr><td>\(\Delta E\)</td><td>Energía transferida en el intervalo</td><td>J</td></tr>
+                    <tr><td>\(\Delta t\)</td><td>Intervalo de tiempo</td><td>s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un foco sonoro emite \(1{,}5\cdot10^{-2}\,\text{J}\) en un minuto. Su potencia media es \(P=1{,}5\cdot10^{-2}/60=2{,}5\cdot10^{-4}\,\text{W}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es la magnitud que caracteriza la "rapidez" con que la fuente emite energía.</li>
+                    <li>Para una fuente puntual isótropa, la potencia es constante a cualquier distancia; lo que varía es la intensidad (ficha 4).</li>
+                    <li>Las ondas armónicas transportan energía proporcional al cuadrado de la amplitud.</li>
+                    <li>En el S.I., \(1\,\text{W}=1\,\text{J}\,\text{s}^{-1}\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Intensidad de una onda</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La potencia que atraviesa la unidad de superficie perpendicular a la dirección de propagación. Se aplica en todos los problemas de ondas esféricas, en los que hay que relacionar la potencia de la fuente con la intensidad que llega a un receptor, y en los problemas de sonido (dB).
+            </div>
+            <a href="TemaC3.html#formula-2" class="formula-link">
+                <div class="formula-box" id="formula-2">
+                    \[ I = \frac{P}{S} = \frac{\Delta E}{S\,\Delta t} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la definición de intensidad y aparece en todos los problemas de sonido de la EBAU. Memoriza \(I=P/S\) y su unidad \(\text{W}\cdot\text{m}^{-2}\). La superficie \(S\) es perpendicular a la dirección de propagación. En ondas esféricas, \(S=4\pi r^2\) (ficha 4).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(I\)</td><td>Intensidad de la onda</td><td>W·m⁻²</td></tr>
+                    <tr><td>\(P\)</td><td>Potencia que atraviesa la superficie</td><td>W</td></tr>
+                    <tr><td>\(S\)</td><td>Superficie perpendicular a la propagación</td><td>m²</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si una superficie de \(2\,\text{m}^2\) es atravesada por una potencia de \(4\,\text{W}\), la intensidad es \(I=4/2=2\,\text{W}\cdot\text{m}^{-2}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Su unidad es el \(\text{W}\cdot\text{m}^{-2}\), que se lee "vatio por metro cuadrado".</li>
+                    <li>La superficie debe ser <strong>perpendicular</strong> a la dirección de propagación.</li>
+                    <li>En ondas armónicas, \(I\) es proporcional al cuadrado de la amplitud.</li>
+                    <li>No confundir potencia \(P\) (W) con intensidad \(I\) (W·m⁻²).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Energía que atraviesa una superficie</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía total que atraviesa una superficie \(S\) durante un intervalo de tiempo \(\Delta t\), conocida la intensidad o la potencia. Se aplica para relacionar la energía emitida por una fuente con la energía recibida por un receptor, y para pasar entre energía, potencia e intensidad en los problemas con datos mixtos.
+            </div>
+            <a href="TemaC3.html#formula-3" class="formula-link">
+                <div class="formula-box" id="formula-3">
+                    \[ \Delta E = P\,\Delta t \]
+                    \[ \Delta E = I\,S\,\Delta t \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es simplemente \(P=\Delta E/\Delta t\) despejado, o \(I=P/S\) con la potencia sustituida. Idea clave: la energía crece con la potencia (o intensidad), con la superficie y con el tiempo. Cuidado con las unidades temporales: los minutos de los enunciados hay que pasarlos a segundos.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(\Delta E\)</td><td>Energía que atraviesa la superficie</td><td>J</td></tr>
+                    <tr><td>\(P\)</td><td>Potencia</td><td>W</td></tr>
+                    <tr><td>\(I\)</td><td>Intensidad</td><td>W·m⁻²</td></tr>
+                    <tr><td>\(S\)</td><td>Superficie atravesada</td><td>m²</td></tr>
+                    <tr><td>\(\Delta t\)</td><td>Intervalo de tiempo</td><td>s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una superficie de \(4\,\text{m}^2\) atravesada por una onda de \(I=2\,\text{W}\cdot\text{m}^{-2}\) durante \(30\,\text{s}\) recibe \(\Delta E=2\cdot4\cdot30=240\,\text{J}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Si conoces \(P\), usa \(\Delta E=P\Delta t\); si conoces \(I\), usa \(\Delta E=IS\Delta t\).</li>
+                    <li>Para una fuente isótropa, la potencia atraviesa cualquier esfera centrada en la fuente.</li>
+                    <li>La energía es una magnitud escalar; se mide en julios (J).</li>
+                    <li>No confundir energía (J) con potencia (W): la primera es "cuánto", la segunda es "a qué ritmo".</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Onda esférica: intensidad a una distancia r</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La intensidad que llega a un punto situado a distancia \(r\) de una fuente puntual isótropa que emite potencia \(P\). Se aplica en todos los problemas de sonido y de ondas esféricas: dado \(P\) obtener \(I\) a una distancia, o dado \(I\) a una distancia obtener \(P\). Es la fórmula clave del tema.
+            </div>
+            <a href="TemaC3.html#formula-4" class="formula-link">
+                <div class="formula-box" id="formula-4">
+                    \[ I = \frac{P}{4\pi r^{2}} \qquad\Longleftrightarrow\qquad P = 4\pi r^{2}I \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la expresión que relaciona potencia e intensidad en ondas esféricas y aparece continuamente en la EBAU. Memoriza el área de la esfera \(S=4\pi r^2\), no \(4\pi r\) ni \(\pi r^2\). Error frecuente: confundir \(4\pi r^2\) con el área de un círculo o usar \(2\pi r\).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(I\)</td><td>Intensidad a distancia \(r\) de la fuente</td><td>W·m⁻²</td></tr>
+                    <tr><td>\(P\)</td><td>Potencia emitida por la fuente</td><td>W</td></tr>
+                    <tr><td>\(r\)</td><td>Distancia a la fuente puntual</td><td>m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un altavoz de \(50\,\text{W}\) a \(3\,\text{m}\) genera \(I=50/(4\pi\cdot9)\approx0{,}442\,\text{W}\cdot\text{m}^{-2}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es válida para fuentes <strong>puntuales isótropas</strong> en medio homogéneo y sin absorción.</li>
+                    <li>Si la emisión no es isótropa (altavoz directivo), la intensidad depende del ángulo.</li>
+                    <li>La potencia \(P\) es una propiedad de la fuente; la intensidad \(I\) depende del punto.</li>
+                    <li>La potencia se conserva: lo que se "pierde" en intensidad se "gana" en superficie.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Ley del inverso del cuadrado de la distancia</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación entre las intensidades a dos distancias distintas de la misma fuente puntual isótropa. Se aplica para comparar intensidades sin conocer la potencia: si se conoce \(I\) a una distancia y la razón entre distancias, se obtiene la nueva \(I\) directamente.
+            </div>
+            <a href="TemaC3.html#formula-5" class="formula-link">
+                <div class="formula-box" id="formula-5">
+                    \[ I \propto \frac{1}{r^{2}} \qquad\Longleftrightarrow\qquad I_1\,r_1^{2} = I_2\,r_2^{2} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se deduce de \(I=P/(4\pi r^2)\) teniendo en cuenta que \(P\) es la misma para ambas distancias. Idea clave: <strong>la intensidad cae con el cuadrado de la distancia</strong>. Si duplicas la distancia, la intensidad se hace 1/4; si la triplicas, 1/9; si la cuadruplicas, 1/16.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(I_1,\,I_2\)</td><td>Intensidades a las distancias \(r_1\) y \(r_2\)</td><td>W·m⁻²</td></tr>
+                    <tr><td>\(r_1,\,r_2\)</td><td>Distancias a la fuente</td><td>m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si \(I_1=0{,}44\,\text{W}\cdot\text{m}^{-2}\) a \(3\,\text{m}\), ¿qué intensidad hay a \(6\,\text{m}\)? \(I_2=I_1\cdot(r_1/r_2)^2=0{,}44\cdot(3/6)^2=0{,}11\,\text{W}\cdot\text{m}^{-2}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Solo es válida para la <strong>misma fuente puntual isótropa</strong> en medio homogéneo.</li>
+                    <li>Si la fuente no es puntual o hay absorción, no se cumple exactamente.</li>
+                    <li>Al <strong>alejarse</strong>, \(I\) disminuye; al <strong>acercarse</strong>, aumenta.</li>
+                    <li>Esta ley es el origen de las atenuaciones típicas en dB (ficha 9).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Nivel de intensidad sonora (dB)</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El nivel de intensidad sonora \(\beta\) en decibelios (dB), que expresa la intensidad física \(I\) en una escala logarítmica relativa a la intensidad umbral de audición \(I_0\). Se aplica en todos los problemas de sonido en los que se da o se pide el nivel en dB.
+            </div>
+            <a href="TemaC3.html#formula-6" class="formula-link">
+                <div class="formula-box" id="formula-6">
+                    \[ \beta = 10\,\log_{10}\!\left(\frac{I}{I_0}\right)\quad[\text{dB}] \]
+                    \[ I_0 = 1{,}0\cdot10^{-12}\ \text{W}\cdot\text{m}^{-2} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la definición de nivel sonoro y la usa la EBAU constantemente. Memoriza \(\beta=10\log_{10}(I/I_0)\) con el factor <strong>10</strong> (no 20, no \(\ln\)), y el valor \(I_0=10^{-12}\,\text{W}\cdot\text{m}^{-2}\). Con \(I=I_0\), \(\beta=0\,\text{dB}\); con \(I=10\,I_0\), \(\beta=10\,\text{dB}\); con \(I=100\,I_0\), \(\beta=20\,\text{dB}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(\beta\)</td><td>Nivel de intensidad sonora</td><td>dB</td></tr>
+                    <tr><td>\(I\)</td><td>Intensidad física del sonido</td><td>W·m⁻²</td></tr>
+                    <tr><td>\(I_0\)</td><td>Intensidad umbral de audición</td><td>\(10^{-12}\,\text{W}\cdot\text{m}^{-2}\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(I=10^{-4}\,\text{W}\cdot\text{m}^{-2}\): \(\beta=10\log_{10}(10^{-4}/10^{-12})=10\log_{10}(10^8)=80\,\text{dB}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El nivel es una magnitud adimensional que se expresa en decibelios (dB).</li>
+                    <li>Es una escala logarítmica: cada \(+10\,\text{dB}\) es \(\times 10\) en intensidad.</li>
+                    <li>Un nivel de \(0\,\text{dB}\) corresponde al umbral de audición \(I=I_0\).</li>
+                    <li>Se usa \(10\log\) (no \(20\log\)) porque se compara <strong>intensidad</strong>, no amplitud.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Intensidad a partir del nivel en dB</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La intensidad física \(I\) a partir del nivel de intensidad sonora \(\beta\) expresado en decibelios. Se aplica en los problemas de sonido en que se da el nivel en dB y se pide la potencia de la fuente, la energía recibida o la distancia.
+            </div>
+            <a href="TemaC3.html#formula-7" class="formula-link">
+                <div class="formula-box" id="formula-7">
+                    \[ I = I_0\,10^{\beta/10} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se despeja de la definición de \(\beta\) elevando 10 a ambos lados. Idea clave: <strong>cada vez que divides \(\beta\) entre 10 y elevas 10 al resultado, recuperas la potencia de 10 correspondiente</strong>. Ejemplos: \(\beta=80\,\text{dB}\to I=10^{-4}\,\text{W}\cdot\text{m}^{-2}\); \(\beta=60\,\text{dB}\to I=10^{-6}\,\text{W}\cdot\text{m}^{-2}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(I\)</td><td>Intensidad física buscada</td><td>W·m⁻²</td></tr>
+                    <tr><td>\(I_0\)</td><td>Intensidad umbral de audición</td><td>\(10^{-12}\,\text{W}\cdot\text{m}^{-2}\)</td></tr>
+                    <tr><td>\(\beta\)</td><td>Nivel de intensidad sonora</td><td>dB</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(\beta=70\,\text{dB}\): \(I=10^{-12}\cdot10^{7}=10^{-5}\,\text{W}\cdot\text{m}^{-2}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es la operación inversa de la ficha 6; conviene tenerlas juntas.</li>
+                    <li>Aumentar \(10\,\text{dB}\) equivale a multiplicar la intensidad por 10.</li>
+                    <li>Aumentar \(20\,\text{dB}\) equivale a multiplicar la intensidad por 100.</li>
+                    <li>En la EBAU es paso obligado si, conocido \(\beta\), se pide \(P\) o \(r\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Diferencia de nivel sonoro entre dos intensidades</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · En problemas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La diferencia de nivel \(\Delta\beta\) (en dB) entre dos sonidos de intensidades \(I_1\) e \(I_2\). Se aplica cuando se conoce la razón entre intensidades y se pide cuántos dB "más fuerte" es uno que otro, o al revés (dada \(\Delta\beta\), obtener el cociente \(I_2/I_1\)).
+            </div>
+            <a href="TemaC3.html#formula-8" class="formula-link">
+                <div class="formula-box" id="formula-8">
+                    \[ \beta_2 - \beta_1 = 10\,\log_{10}\!\left(\frac{I_2}{I_1}\right) \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se obtiene restando \(\beta_2-\beta_1\), y la \(I_0\) se cancela (aparece dividiendo en los dos logaritmos). Idea clave: <strong>la diferencia de niveles depende solo del cociente de intensidades</strong>. \(+10\,\text{dB}\) = intensidad \(\times10\); \(+20\,\text{dB}\) = \(\times100\); \(-12\,\text{dB}\) = \(\times(1/16)\).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(\beta_1,\,\beta_2\)</td><td>Niveles de los dos sonidos</td><td>dB</td></tr>
+                    <tr><td>\(I_1,\,I_2\)</td><td>Intensidades correspondientes</td><td>W·m⁻²</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si \(I_2=5{,}01\,I_1\), \(\Delta\beta=10\log_{10}(5{,}01)\approx7\,\text{dB}\). Al revés: una diferencia de 7 dB significa \(I_2/I_1=10^{0{,}7}\approx5{,}01\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Los dB <strong>no se suman</strong>: se combinan por cocientes de intensidades.</li>
+                    <li>Para restar niveles, se divide la intensidad mayor entre la menor.</li>
+                    <li>Una diferencia de 3 dB equivale aproximadamente a duplicar la intensidad.</li>
+                    <li>Una diferencia de 10 dB equivale a multiplicar por 10 la intensidad.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Diferencia de nivel entre dos distancias</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La variación de nivel sonoro al pasar de una distancia \(r_1\) a otra \(r_2\) de la misma fuente puntual isótropa. Se aplica en problemas de conciertos, atenuación con la distancia, y cuando el enunciado da la razón entre distancias en lugar de las intensidades.
+            </div>
+            <a href="TemaC3.html#formula-9" class="formula-link">
+                <div class="formula-box" id="formula-9">
+                    \[ \beta_2 - \beta_1 = -\,20\,\log_{10}\!\left(\frac{r_2}{r_1}\right) \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se deduce combinando la diferencia de niveles (ficha 8) con la ley \(1/r^2\) (ficha 5). Idea clave: <strong>la ley \(1/r^2\) da un factor 2 en el exponente del logaritmo, por eso aparece \(20\log\)</strong>. Si te lías, reconstruye: \(I_2/I_1=(r_1/r_2)^2\), y \(10\log(x^2)=20\log x\).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(\beta_1,\,\beta_2\)</td><td>Niveles a las distancias \(r_1\) y \(r_2\)</td><td>dB</td></tr>
+                    <tr><td>\(r_1,\,r_2\)</td><td>Distancias a la misma fuente</td><td>m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si \(r_2=4r_1\), \(\beta_2-\beta_1=-20\log_{10}4\approx-12\,\text{dB}\) (el más lejano oye 12 dB menos). Si \(r_2=2r_1\), \(\beta_2-\beta_1=-20\log_{10}2\approx-6\,\text{dB}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Duplicar la distancia resta \(\approx6\,\text{dB}\) (no 3 ni 10).</li>
+                    <li>Cuadruplicar la distancia resta \(\approx12\,\text{dB}\).</li>
+                    <li>Multiplicar por 10 la distancia resta \(20\,\text{dB}\).</li>
+                    <li>Solo aplicable a fuente puntual isótropa y sin absorción.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 10 -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Atenuaciones típicas en dB</h2>
+                <span class="badge-centro">Comprender</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Órdenes de magnitud</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No es una fórmula nueva, sino una tabla de equivalencias entre cambios de nivel en dB y cambios en el cociente de intensidades o de distancias. Se aplica para hacer estimaciones rápidas y para comprobar la coherencia de los resultados en la EBAU.
+            </div>
+            <a href="TemaC3.html#formula-10" class="formula-link">
+                <div class="formula-box" id="formula-10">
+                    \[ \begin{array}{c|c|c} \Delta\beta & I_2/I_1 & r_2/r_1 \\ \hline +3\,\text{dB} & \approx 2 & \approx 1/\!\sqrt{2} \\ +10\,\text{dB} & 10 & \approx 0{,}316 \\ +20\,\text{dB} & 100 & 0{,}1 \\ -6\,\text{dB} & \approx 1/4 & \approx 2 \\ -12\,\text{dB} & 1/16 & 4 \\ -20\,\text{dB} & 1/100 & 10 \end{array} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">📖 FAMILIARIZARSE</span>No hace falta memorizarla: se reconstruye aplicando las fichas 8 y 9. Pero conviene tener automatizadas las más usadas: \(+3\,\text{dB}\approx\times2\) en intensidad, \(+10\,\text{dB}=\times10\), \(-6\,\text{dB}\approx\) duplicar distancia. Son las que aparecen en la EBAU para hacer estimaciones.</span>
+            </p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un sonido de \(80\,\text{dB}\) se percibe a la mitad de distancia. En esa nueva posición, la intensidad se multiplica por 4 (\(\approx+6\,\text{dB}\)) y el nivel pasa a ser \(\approx86\,\text{dB}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(+3\,\text{dB}\) ≈ duplicar intensidad; \(-3\,\text{dB}\) ≈ reducir a la mitad.</li>
+                    <li>\(+10\,\text{dB}\) = \(\times10\) en intensidad (regla mnemotécnica: un "bel" = 10 dB = factor 10).</li>
+                    <li>\(-6\,\text{dB}\) ≈ duplicar la distancia a la fuente.</li>
+                    <li>Son aproximaciones; el cálculo exacto requiere las fórmulas 8 y 9.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 11 -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">11</span>
+                <h2>Suma de intensidades de fuentes incoherentes</h2>
+                <span class="badge-centro">Principio</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Principio universal</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La intensidad total en un punto donde contribuyen varias fuentes independientes e incoherentes. Se aplica en los problemas con varios altavoces, motores o cualquier conjunto de fuentes sonoras que emiten simultáneamente. No se suman los dB, se suman las intensidades.
+            </div>
+            <a href="TemaC3.html#formula-11" class="formula-link">
+                <div class="formula-box" id="formula-11">
+                    \[ I_{\text{total}} = I_1 + I_2 + \cdots + I_N \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es un <strong>principio</strong>, no una fórmula cerrada. Regla clave: <em>las intensidades se suman, los decibelios NO</em>. Si tienes dos fuentes de 80 dB cada una, la intensidad se duplica y el nivel resultante es \(\approx83\,\text{dB}\), no 160 dB. Error típico de la EBAU: sumar dB como si fueran longitudes.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Magnitud</th><th>Tipo de suma</th><th>Expresión</th></tr></thead>
+                <tbody>
+                    <tr><td>Intensidad \(I\)</td><td>Escalar (algebraica)</td><td>\(I_{\text{total}}=\sum I_i\)</td></tr>
+                    <tr><td>Potencia \(P\)</td><td>Escalar (algebraica)</td><td>\(P_{\text{total}}=\sum P_i\)</td></tr>
+                    <tr><td>Nivel \(\beta\)</td><td>Logarítmica</td><td>\(\beta_{\text{total}}=10\log\!\left(\sum 10^{\beta_i/10}\right)\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos altavoces idénticos producen \(I_1=I_2=10^{-4}\,\text{W}\cdot\text{m}^{-2}\) en un punto. Entonces \(I_{\text{total}}=2\cdot10^{-4}\,\text{W}\cdot\text{m}^{-2}\), y el nivel es \(\beta=10\log(2\cdot10^8)\approx83\,\text{dB}\) (los 80 dB de uno solo suben solo 3 dB, no a 160).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es un principio de la superposición de energías de fuentes incoherentes.</li>
+                    <li>No aplicable a fuentes coherentes (interferencia).</li>
+                    <li>Duplicar fuentes idénticas sube el nivel en \(\approx3\,\text{dB}\).</li>
+                    <li>Multiplicar por 10 las fuentes idénticas sube el nivel en \(10\,\text{dB}\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 12 -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">12</span>
+                <h2>N fuentes iguales incoherentes</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El nivel de intensidad sonora total cuando \(N\) fuentes idénticas e incoherentes contribuyen en el mismo punto (misma distancia, misma potencia). Se aplica en problemas de "¿cuántos motores hacen falta para subir de \(X\) a \(Y\) dB?" y similares.
+            </div>
+            <a href="TemaC3.html#formula-12" class="formula-link">
+                <div class="formula-box" id="formula-12">
+                    \[ \beta_N = \beta_1 + 10\,\log_{10}N \]
+                    \[ N = 10^{(\beta_N-\beta_1)/10} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se deduce de sumar \(N\) intensidades iguales y aplicar logaritmo. Idea clave: <strong>cada vez que multiplicas el número de fuentes por 10, el nivel sube 10 dB; cada vez que lo multiplicas por 2, sube \(\approx3\,\text{dB}\)</strong>. Ejemplo típico de la EBAU: pasar de 80 dB a 100 dB con fuentes iguales exige \(N=10^{2}=100\) fuentes.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(\beta_N\)</td><td>Nivel total de las \(N\) fuentes</td><td>dB</td></tr>
+                    <tr><td>\(\beta_1\)</td><td>Nivel de una sola fuente</td><td>dB</td></tr>
+                    <tr><td>\(N\)</td><td>Número de fuentes idénticas</td><td>—</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un motor da 80 dB. Para llegar a 100 dB hacen falta \(N=10^{(100-80)/10}=10^2=100\) motores idénticos.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Válido solo si las fuentes son idénticas, incoherentes y a la misma distancia.</li>
+                    <li>\(N=2\to+3\,\text{dB}\); \(N=10\to+10\,\text{dB}\); \(N=100\to+20\,\text{dB}\).</li>
+                    <li>No se aplica a fuentes coherentes (interferencia).</li>
+                    <li>Es la fórmula típica de los ejercicios de "cuántos motores hacen falta".</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- LEYENDA EPISTÉMICA -->
+        <article class="card span-all leyenda-epi">
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+            <p class="leyenda-epi-intro">
+                No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
+                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
+                consecuencia matemática, principio de conservación o conversión de unidades— y cada
+                categoría se domina con un <strong>verbo distinto</strong>. Identificar el tipo
+                <em>antes</em> de estudiar ahorra tiempo y evita memorizar lo que se puede deducir.
+            </p>
+            <div class="leyenda-epi-grid">
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física. No se demuestra, se establece. Se domina cuando puedes enunciarla sin pensar.</p>
+                    <p class="epi-ej"><strong>Ejemplos C3</strong> \(I=P/S\) · \(\beta=10\log_{10}(I/I_0)\) · \(I_0=10^{-12}\,\text{W}\cdot\text{m}^{-2}\)</p>
+                </div>
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">Es el <em>punto de partida</em> del tema: describe cómo se reparte la energía al propagarse. No se deriva de otra cosa; se entiende el porqué y las condiciones en las que aplica.</p>
+                    <p class="epi-ej"><strong>Ejemplos C3</strong> \(P=\Delta E/\Delta t\) · \(I=P/(4\pi r^2)\)</p>
+                </div>
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">Se <em>obtiene</em> despejando, logaritmizando o sustituyendo una ley fundamental o una definición. No se memoriza: se reconstruye en 2–3 líneas si se olvida.</p>
+                    <p class="epi-ej"><strong>Ejemplos C3</strong> \(\Delta E=P\Delta t\) · \(I_1r_1^2=I_2r_2^2\) · \(I=I_0\,10^{\beta/10}\) · \(\Delta\beta=10\log(I_2/I_1)\) · \(\Delta\beta=-20\log(r_2/r_1)\) · \(\beta_N=\beta_1+10\log N\)</p>
+                </div>
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Principio / superposición</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">Es una <em>regla universal</em> que restringe los procesos posibles. No se demuestra ni se deduce: se aplica como filtro a cada problema concreto.</p>
+                    <p class="epi-ej"><strong>Ejemplos C3</strong> \(I_{\text{total}}=\sum I_i\) (fuentes incoherentes)</p>
+                </div>
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Conversión / operación</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes equivalentes. Debe salir sin pensar, como un reflejo.</p>
+                    <p class="epi-ej"><strong>Ejemplos C3</strong> min↔s · W↔J/s · dB↔W·m⁻² · W·m⁻²↔W·m⁻² (verificar homogeneidad)</p>
+                </div>
+            </div>
+            <table class="leyenda-epi-tabla">
+                <thead><tr><th>Categoría</th><th>Verbo</th><th>¿Qué es?</th><th>¿Cómo se domina?</th><th>Autoevaluación</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td><td><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td><td>Vocabulario del tema</td><td>Repetición espaciada</td><td>¿Puedo enunciarla de memoria?</td></tr>
+                    <tr><td><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td><td><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td><td>Punto de partida físico</td><td>Explicar el porqué y sus condiciones</td><td>¿Sabría explicarla con mis palabras?</td></tr>
+                    <tr><td><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td><td><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td><td>Resultado matemático derivado</td><td>Reconstruirla en 2–3 pasos</td><td>¿Sabría deducirla si la olvido?</td></tr>
+                    <tr><td><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td><td><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td><td>Regla universal</td><td>Plantearla en cada problema</td><td>¿La aplico como filtro al problema?</td></tr>
+                    <tr><td><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td><td><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td><td>Herramienta mecánica</td><td>Práctica hasta el reflejo</td><td>¿Me sale sin pensar?</td></tr>
+                </tbody>
+            </table>
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>, pregúntate <strong>«¿de dónde sale esto?»</strong>. Si sale de otra fórmula despejando, logaritmizando o sustituyendo → <strong>consecuencia</strong> (deducir). Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender). Si solo asigna un nombre → <strong>definición</strong> (memorizar). Si es una regla que se cumple siempre → <strong>principio</strong> (aplicar).
+            </div>
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Potencia e intensidad esférica (fundamentos)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Energía, dB y distancia (derivadas)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Intensidad y definición de dB</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Aplicaciones (diferencias de nivel y distancias)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Suma de fuentes</span>
+            </div>
+        </article>
+
+    </div>
+
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema C3</summary>
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+        <table class="mag-table">
+            <thead><tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>\[ P_{\text{media}} = \frac{\Delta E}{\Delta t} \]</td><td>Potencia media de una onda</td><td>1</td></tr>
+                <tr><td>2</td><td>\[ I = \frac{P}{S} \]</td><td>Intensidad de una onda</td><td>2</td></tr>
+                <tr><td>3</td><td>\[ \Delta E = P\,\Delta t = I\,S\,\Delta t \]</td><td>Energía que atraviesa una superficie</td><td>3</td></tr>
+                <tr><td>4</td><td>\[ I = \frac{P}{4\pi r^{2}} \]</td><td>Intensidad de una onda esférica</td><td>4</td></tr>
+                <tr><td>5</td><td>\[ I_1\,r_1^{2} = I_2\,r_2^{2} \]</td><td>Ley del inverso del cuadrado</td><td>5</td></tr>
+                <tr><td>6</td><td>\[ \beta = 10\log_{10}\!\left(\frac{I}{I_0}\right) \]</td><td>Nivel de intensidad sonora (dB)</td><td>6</td></tr>
+                <tr><td>7</td><td>\[ I = I_0\,10^{\beta/10} \]</td><td>Intensidad a partir del nivel en dB</td><td>7</td></tr>
+                <tr><td>8</td><td>\[ \beta_2 - \beta_1 = 10\log_{10}\!\left(\frac{I_2}{I_1}\right) \]</td><td>Diferencia de nivel entre dos intensidades</td><td>8</td></tr>
+                <tr><td>9</td><td>\[ \beta_2 - \beta_1 = -\,20\log_{10}\!\left(\frac{r_2}{r_1}\right) \]</td><td>Diferencia de nivel entre dos distancias</td><td>9</td></tr>
+                <tr><td>10</td><td>\[ \Delta\beta\ \text{y}\ I_2/I_1,\ r_2/r_1 \]</td><td>Atenuaciones típicas en dB</td><td>10</td></tr>
+                <tr><td>11</td><td>\[ I_{\text{total}} = \sum_i I_i \]</td><td>Suma de intensidades (fuentes incoherentes)</td><td>11</td></tr>
+                <tr><td>12</td><td>\[ \beta_N = \beta_1 + 10\log_{10}N \]</td><td>N fuentes iguales incoherentes</td><td>12</td></tr>
+            </tbody>
+        </table>
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> usar \(4\pi r\) en lugar de \(4\pi r^{2}\) para el área de la esfera; olvidar pasar los minutos a segundos; confundir \(\text{W}\) (potencia) con \(\text{W}\cdot\text{m}^{-2}\) (intensidad); introducir el nivel en dB sin despejar antes la intensidad cuando se pide \(P\) o \(r\); sumar niveles sonoros en vez de intensidades; usar \(20\log\) en la definición de nivel de intensidad (es \(10\log\)); confundir \(I_0=10^{-12}\,\text{W}\cdot\text{m}^{-2}\) con otras referencias; y aplicar la ley \(1/r^{2}\) sin que se cumplan las hipótesis de fuente puntual isótropa y sin absorción.
+        </div>
+    </details>
+
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en este tema, la <strong>potencia</strong> \(P=\Delta E/\Delta t\) (W) es la energía emitida por la fuente por unidad de tiempo; la <strong>intensidad</strong> \(I=P/S\) (W·m⁻²) reparte esa potencia sobre la superficie que atraviesa la onda; en ondas esféricas \(S=4\pi r^{2}\), de donde surge la ley \(I_1r_1^2=I_2r_2^2\). Para describir la sensación sonora se usa el <strong>nivel de intensidad</strong> \(\beta=10\log_{10}(I/I_0)\) en dB, con \(I_0=10^{-12}\,\text{W}\cdot\text{m}^{-2}\). Recuerda: <em>las intensidades se suman, los decibelios no</em>; y al cambiar de distancia, cada duplicación resta \(\approx6\,\text{dB}\). Verifica siempre las hipótesis (fuente puntual, isótropa, sin absorción) antes de aplicar las fórmulas.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+</body>
+</html>

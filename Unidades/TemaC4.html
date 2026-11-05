@@ -72,6 +72,29 @@
         .tabla-formulas td:first-child { font-weight: 700; color: #1e3a8a; width: 30%; }
         .tabla-formulas td:nth-child(2) { text-align: center; }
         .pie-clave { border-radius: 14px; }
+
+        /* --- Enlaces bidireccionales: la fórmula es el vínculo --- */
+        .formula-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 8px;
+            padding: 2px 6px;
+            margin: 2px 0;
+            transition: background .15s ease;
+            overflow-x: auto;
+        }
+        .formula-link:hover { background: rgba(99,102,241,0.10); }
+        .formula-link:focus-visible { outline: 2px dashed #6366f1; outline-offset: 2px; }
+        .formula-box { overflow-x: auto; }
+        .formula-link-inline {
+            text-decoration: none;
+            color: inherit;
+            border-bottom: 1px dashed rgba(99,102,241,0.45);
+            transition: background .15s;
+        }
+        .formula-link-inline:hover { background: rgba(99,102,241,0.12); }
+
         @media (max-width: 700px) {
             .two-columns { grid-template-columns: 1fr; }
             .dato-relevancia { align-items: flex-start; }
@@ -193,11 +216,11 @@
             <div class="note"><strong>Idea clave:</strong> Huygens es un modelo geométrico para construir el frente de onda siguiente. No debe confundirse el frente de onda (superficie de igual fase) con el rayo (dirección de propagación).</div>
         </details>
 
-        <details class="step">
+        <details class="step" id="sec-reflexion">
             <summary><span class="step-num">2</span><strong>Reflexión de las ondas.</strong></summary>
             <p>La <strong>reflexión</strong> ocurre cuando una onda llega a una superficie de separación y permanece en el medio de procedencia, cambiando su dirección de propagación. En una superficie plana se cumple:</p>
-            <div class="formula-box">
-                \[\boxed{\theta_i=\theta_r}\]
+            <div class="formula-box" id="tc4-reflexion">
+                <a href="TemaC4-Formulario.html#formula-3" class="formula-link">\[\boxed{\theta_i=\theta_r}\]</a>
                 <span class="small">Ángulo de incidencia = ángulo de reflexión.</span>
             </div>
             <p>La normal es la recta perpendicular a la superficie en el punto de incidencia. Tanto el ángulo de incidencia \(\theta_i\) como el de reflexión \(\theta_r\) se miden entre el rayo correspondiente y la normal.</p>
@@ -235,14 +258,18 @@
             <p><strong>Lectura del esquema:</strong> los ángulos \(i\) y \(r\) de reflexión son iguales. El ángulo de refracción se mide también desde la normal, pero en el segundo medio.</p>
         </details>
 
-        <details class="step">
+        <details class="step" id="sec-refraccion">
             <summary><span class="step-num">3</span><strong>Refracción y ley de Snell.</strong></summary>
             <p>La <strong>refracción</strong> es el cambio de dirección y de velocidad de una onda al pasar de un medio a otro en el que se propaga con distinta velocidad. Si la incidencia no es normal, generalmente también cambia la dirección del rayo.</p>
             <p>El índice de refracción absoluto de un medio para la luz se define como:</p>
-            <div class="formula-box">\[\boxed{n=\frac{c_0}{v}}\]</div>
+            <div class="formula-box" id="tc4-n">
+                <a href="TemaC4-Formulario.html#formula-1" class="formula-link">\[\boxed{n=\frac{c_0}{v}}\]</a>
+            </div>
             <p>donde \(c_0\) es la velocidad de la luz en el vacío y \(v\) su velocidad en el medio. En medios habituales, \(n\geq 1\).</p>
             <p>La ley de Snell relaciona los ángulos de incidencia y refracción:</p>
-            <div class="formula-box">\[\boxed{n_1\,\operatorname{sen}\theta_1=n_2\,\operatorname{sen}\theta_2}\]</div>
+            <div class="formula-box" id="tc4-snell">
+                <a href="TemaC4-Formulario.html#formula-2" class="formula-link">\[\boxed{n_1\,\operatorname{sen}\theta_1=n_2\,\operatorname{sen}\theta_2}\]</a>
+            </div>
             <ul>
                 <li>Si \(n_2&gt;n_1\), el rayo se acerca a la normal (\(\theta_2&lt;\theta_1\)).</li>
                 <li>Si \(n_2&lt;n_1\), el rayo se aleja de la normal (\(\theta_2&gt;\theta_1\)), siempre que exista rayo refractado.</li>
@@ -251,10 +278,13 @@
             <div class="note"><strong>Atención:</strong> si el enunciado proporciona el ángulo con la superficie, hay que convertirlo a ángulo con la normal: \(\theta=90^\circ-\alpha\).</div>
         </details>
 
-        <details class="step">
+        <details class="step" id="sec-cambio-medio">
             <summary><span class="step-num">4</span><strong>Qué cambia al pasar de un medio a otro.</strong></summary>
-            <p>La frecuencia la determina la fuente y se mantiene constante en la refracción. Como \(v=\lambda f\), al cambiar la velocidad cambia la longitud de onda.</p>
-            <div class="formula-box">\[\boxed{f_1=f_2\qquad T_1=T_2}\qquad\boxed{\frac{\lambda_2}{\lambda_1}=\frac{v_2}{v_1}=\frac{n_1}{n_2}}\]</div>
+            <p>La frecuencia la determina la fuente y se mantiene constante en la refracción. Como <a href="TemaC4-Formulario.html#formula-5" class="formula-link-inline">\(v=\lambda f\)</a>, al cambiar la velocidad cambia la longitud de onda.</p>
+            <div class="formula-box" id="tc4-cambio-medio">
+                <a href="TemaC4-Formulario.html#formula-4" class="formula-link">\[\boxed{f_1=f_2\qquad T_1=T_2}\]</a>
+                <a href="TemaC4-Formulario.html#formula-4" class="formula-link">\[\boxed{\frac{\lambda_2}{\lambda_1}=\frac{v_2}{v_1}=\frac{n_1}{n_2}}\]</a>
+            </div>
             <table class="tabla-formulas">
                 <thead><tr><th>Magnitud</th><th>¿Cambia?</th><th>Relación</th></tr></thead>
                 <tbody>
@@ -268,11 +298,13 @@
             <div class="note"><strong>Dispersión cromática:</strong> aparece cuando el índice depende de la longitud de onda, \(n=n(\lambda)\). Los distintos colores se refractan de forma diferente. La luz monocromática puede refractarse, pero no separarse en varios colores porque solo contiene una frecuencia.</div>
         </details>
 
-        <details class="step">
+        <details class="step" id="sec-angulo-limite">
             <summary><span class="step-num">5</span><strong>Ángulo límite y reflexión total interna.</strong></summary>
             <p>Cuando la luz pasa de un medio de índice mayor \(n_1\) a otro de índice menor \(n_2\), el rayo refractado se aleja de la normal. Al aumentar el ángulo de incidencia llega un momento en el que el rayo refractado sale paralelo a la superficie, es decir, \(\theta_2=90^\circ\). El ángulo de incidencia correspondiente se denomina <strong>ángulo límite</strong> o <strong>ángulo crítico</strong>.</p>
-            <div class="formula-box">\[\boxed{\operatorname{sen}\theta_c=\frac{n_2}{n_1}\quad (n_1&gt;n_2)}\]</div>
-            <p>Por tanto, solo hay ángulo límite si la luz intenta pasar de un medio de mayor índice a otro de menor índice. Como \(n=c_0/v\), también se cumple \(\operatorname{sen}\theta_c=v_1/v_2\).</p>
+            <div class="formula-box" id="tc4-angulo-limite">
+                <a href="TemaC4-Formulario.html#formula-6" class="formula-link">\[\boxed{\operatorname{sen}\theta_c=\frac{n_2}{n_1}\quad (n_1&gt;n_2)}\]</a>
+            </div>
+            <p>Por tanto, solo hay ángulo límite si la luz intenta pasar de un medio de mayor índice a otro de menor índice. Como <a href="TemaC4-Formulario.html#formula-1" class="formula-link-inline">\(n=c_0/v\)</a>, también se cumple <a href="TemaC4-Formulario.html#formula-6" class="formula-link-inline">\(\operatorname{sen}\theta_c=v_1/v_2\)</a>.</p>
             <div class="two-columns">
                 <div class="mini-card">
                     <h4>En el ángulo límite</h4>
@@ -310,10 +342,12 @@
             <p><strong>Aplicación: fibra óptica.</strong> La luz queda guiada por el núcleo si incide sobre la interfaz núcleo-revestimiento con un ángulo superior al crítico. Las reflexiones totales sucesivas permiten transmitir señales a largas distancias con pérdidas reducidas.</p>
         </details>
 
-        <details class="step">
+        <details class="step" id="sec-difraccion">
             <summary><span class="step-num">6</span><strong>Difracción.</strong></summary>
             <p>La <strong>difracción</strong> es la desviación y expansión de una onda al atravesar una abertura o bordear un obstáculo. Es un comportamiento característico de las ondas y se aprecia especialmente cuando el tamaño \(a\) de la abertura es comparable con la longitud de onda \(\lambda\), o menor que ella.</p>
-            <div class="formula-box">\[\boxed{\text{Difracción apreciable cuando } a\sim\lambda\text{ o }a&lt;\lambda}\]</div>
+            <div class="formula-box" id="tc4-difraccion">
+                <a href="TemaC4-Formulario.html#formula-7" class="formula-link">\[\boxed{\text{Difracción apreciable cuando } a\sim\lambda\text{ o }a&lt;\lambda}\]</a>
+            </div>
             <ul>
                 <li>Si \(a\gg\lambda\), la onda se propaga casi rectilíneamente y la difracción es poco apreciable.</li>
                 <li>Si \(a\) es del orden de \(\lambda\), la onda se abre de forma notable tras la abertura.</li>
@@ -322,30 +356,42 @@
             <div class="note"><strong>No confundir:</strong> difracción no significa que la onda cambie de medio. Se produce por la presencia de una abertura u obstáculo; la refracción sí implica el paso entre medios con distinta velocidad de propagación.</div>
         </details>
 
-        <details class="step">
+        <details class="step" id="sec-interferencias">
             <summary><span class="step-num">7</span><strong>Interferencias.</strong></summary>
             <p>La <strong>interferencia</strong> es el resultado de la superposición de dos o más ondas que coinciden en una región. Para observar un patrón estable se necesitan fuentes coherentes: misma frecuencia y diferencia de fase constante. En el caso habitual de dos fuentes inicialmente en fase, la diferencia de caminos determina si la interferencia es constructiva o destructiva.</p>
             <div class="two-columns">
                 <div class="mini-card">
                     <h4>Interferencia constructiva · máximo</h4>
                     <p>Las ondas llegan en fase y sus amplitudes se refuerzan.</p>
-                    <div class="formula-box">\[\boxed{\Delta r=m\lambda}\]</div>
+                    <div class="formula-box" id="tc4-constructiva">
+                        <a href="TemaC4-Formulario.html#formula-8" class="formula-link">\[\boxed{\Delta r=m\lambda}\]</a>
+                    </div>
                 </div>
                 <div class="mini-card">
                     <h4>Interferencia destructiva · mínimo</h4>
                     <p>Las ondas llegan en oposición de fase y sus amplitudes se cancelan si tienen igual amplitud.</p>
-                    <div class="formula-box">\[\boxed{\Delta r=\left(m+\frac12\right)\lambda}\]</div>
+                    <div class="formula-box" id="tc4-destructiva">
+                        <a href="TemaC4-Formulario.html#formula-9" class="formula-link">\[\boxed{\Delta r=\left(m+\frac12\right)\lambda}\]</a>
+                    </div>
                 </div>
             </div>
             <p>En estas expresiones \(m=0,1,2,\ldots\) es un entero y \(\Delta r=|r_2-r_1|\) es la diferencia de caminos. Como \(\lambda=v/f\), también se puede despejar la frecuencia cuando se conoce la diferencia de caminos.</p>
-            <div class="formula-box">\[\boxed{f_{\text{máx}}=m\,\frac{v}{\Delta r}}\qquad\boxed{f_{\text{mín}}=\left(m+\frac12\right)\frac{v}{\Delta r}}\]</div>
+            <div class="formula-box" id="tc4-frecuencias">
+                <a href="TemaC4-Formulario.html#formula-10" class="formula-link">\[\boxed{f_{\text{máx}}=m\,\frac{v}{\Delta r}}\]</a>
+                <a href="TemaC4-Formulario.html#formula-10" class="formula-link">\[\boxed{f_{\text{mín}}=\left(m+\frac12\right)\frac{v}{\Delta r}}\]</a>
+            </div>
             <div class="note"><strong>Matiz importante:</strong> dos focos incoherentes no producen un patrón de interferencia estable. En ese caso, para calcular la intensidad total se suman las intensidades medias de cada fuente.</div>
         </details>
 
-        <details class="step">
+        <details class="step" id="sec-laminas">
             <summary><span class="step-num">8</span><strong>Láminas plano-paralelas, prismas y aplicaciones.</strong></summary>
             <p><strong>Lámina plano-paralela.</strong> En una lámina de caras paralelas, las normales de entrada y salida son paralelas. Si el medio exterior es el mismo a ambos lados, el rayo emergente sale paralelo al incidente, aunque desplazado lateralmente. Dentro de la lámina el recorrido es oblicuo.</p>
-            <div class="formula-box">\[L=\frac{e}{\cos r}\qquad t=\frac{L}{v}=\frac{nL}{c_0}\]</div>
+            <div class="formula-box" id="tc4-lamina">
+                <a href="TemaC4-Formulario.html#formula-11" class="formula-link">\[L=\frac{e}{\cos r}\]</a>
+            </div>
+            <div class="formula-box" id="tc4-tiempo">
+                <a href="TemaC4-Formulario.html#formula-12" class="formula-link">\[t=\frac{L}{v}=\frac{nL}{c_0}\]</a>
+            </div>
             <p>El desplazamiento lateral se obtiene mediante la geometría del recorrido y el espesor de la lámina.</p>
             <p><strong>Prisma.</strong> Sus caras no son paralelas; por ello, la desviación total resulta de las dos refracciones y depende del ángulo del prisma y del índice de refracción. Para resolver un problema se dibujan las normales en ambas caras y se aplica Snell en cada interfaz, junto con la geometría del prisma.</p>
             <p><strong>Fibra óptica.</strong> Se basa en la reflexión total interna dentro del núcleo, cuyo índice de refracción es mayor que el del revestimiento.</p>
@@ -361,17 +407,17 @@
         <table class="tabla-formulas">
             <thead><tr><th>Concepto</th><th>Expresión</th><th>Uso habitual</th></tr></thead>
             <tbody>
-                <tr><td>Índice de refracción</td><td>\(n=c_0/v\)</td><td>Obtener la velocidad en un medio.</td></tr>
-                <tr><td>Ley de Snell</td><td>\(n_1\,\sin i=n_2\,\sin r\)</td><td>Calcular ángulos o índices.</td></tr>
-                <tr><td>Reflexión</td><td>\(i=r\)</td><td>Dirección del rayo reflejado.</td></tr>
-                <tr><td>Ángulo límite</td><td>\(\sin\theta_c=n_2/n_1\), \(n_1&gt;n_2\)</td><td>Umbral de reflexión total.</td></tr>
-                <tr><td>Onda al cambiar de medio</td><td>\(v=\lambda f\), \(f_1=f_2\)</td><td>Relacionar velocidades y longitudes de onda.</td></tr>
-                <tr><td>Longitud de onda de la luz</td><td>\(\lambda=v/f=c_0/(nf)\)</td><td>Calcular \(\lambda\) en un material.</td></tr>
-                <tr><td>Difracción</td><td>\(a\sim\lambda\)</td><td>Valorar si será apreciable.</td></tr>
-                <tr><td>Interferencia constructiva</td><td>\(\Delta r=m\lambda\)</td><td>Máximos de intensidad.</td></tr>
-                <tr><td>Interferencia destructiva</td><td>\(\Delta r=(m+1/2)\lambda\)</td><td>Mínimos de intensidad.</td></tr>
-                <tr><td>Recorrido en lámina</td><td>\(L=e/\cos r\)</td><td>Longitud de trayecto dentro de la lámina.</td></tr>
-                <tr><td>Tiempo de recorrido</td><td>\(t=L/v=nL/c_0\)</td><td>Tiempo de tránsito por un material.</td></tr>
+                <tr><td>Índice de refracción</td><td><a href="TemaC4-Formulario.html#formula-1" class="formula-link-inline">\(n=c_0/v\)</a></td><td>Obtener la velocidad en un medio.</td></tr>
+                <tr><td>Ley de Snell</td><td><a href="TemaC4-Formulario.html#formula-2" class="formula-link-inline">\(n_1\,\sin i=n_2\,\sin r\)</a></td><td>Calcular ángulos o índices.</td></tr>
+                <tr><td>Reflexión</td><td><a href="TemaC4-Formulario.html#formula-3" class="formula-link-inline">\(i=r\)</a></td><td>Dirección del rayo reflejado.</td></tr>
+                <tr><td>Ángulo límite</td><td><a href="TemaC4-Formulario.html#formula-6" class="formula-link-inline">\(\sin\theta_c=n_2/n_1\)</a>, <a href="TemaC4-Formulario.html#formula-6" class="formula-link-inline">\(n_1&gt;n_2\)</a></td><td>Umbral de reflexión total.</td></tr>
+                <tr><td>Onda al cambiar de medio</td><td><a href="TemaC4-Formulario.html#formula-5" class="formula-link-inline">\(v=\lambda f\)</a>, <a href="TemaC4-Formulario.html#formula-4" class="formula-link-inline">\(f_1=f_2\)</a></td><td>Relacionar velocidades y longitudes de onda.</td></tr>
+                <tr><td>Longitud de onda de la luz</td><td><a href="TemaC4-Formulario.html#formula-5" class="formula-link-inline">\(\lambda=v/f=c_0/(nf)\)</a></td><td>Calcular \(\lambda\) en un material.</td></tr>
+                <tr><td>Difracción</td><td><a href="TemaC4-Formulario.html#formula-7" class="formula-link-inline">\(a\sim\lambda\)</a></td><td>Valorar si será apreciable.</td></tr>
+                <tr><td>Interferencia constructiva</td><td><a href="TemaC4-Formulario.html#formula-8" class="formula-link-inline">\(\Delta r=m\lambda\)</a></td><td>Máximos de intensidad.</td></tr>
+                <tr><td>Interferencia destructiva</td><td><a href="TemaC4-Formulario.html#formula-9" class="formula-link-inline">\(\Delta r=(m+1/2)\lambda\)</a></td><td>Mínimos de intensidad.</td></tr>
+                <tr><td>Recorrido en lámina</td><td><a href="TemaC4-Formulario.html#formula-11" class="formula-link-inline">\(L=e/\cos r\)</a></td><td>Longitud de trayecto dentro de la lámina.</td></tr>
+                <tr><td>Tiempo de recorrido</td><td><a href="TemaC4-Formulario.html#formula-12" class="formula-link-inline">\(t=L/v=nL/c_0\)</a></td><td>Tiempo de tránsito por un material.</td></tr>
             </tbody>
         </table>
         <div class="note"><strong>Convenciones:</strong> \(i\), \(r\) y \(\theta_c\) se miden respecto a la normal; \(e\) es el espesor medido perpendicularmente a las caras; \(a\) es el tamaño característico de la abertura; \(m\) es un entero.</div>
@@ -860,5 +906,24 @@
     </div>
 
 </div><!-- fin container -->
+
+<script>
+/* Abre los <details> padres al llegar por ancla (necesario para que
+   los enlaces desde TemaC4-Formulario.html#formula-N funcionen). */
+document.addEventListener('DOMContentLoaded', function () {
+    if (!window.location.hash) return;
+    var target;
+    try { target = document.querySelector(window.location.hash); } catch (e) { return; }
+    if (!target) return;
+    var el = target;
+    while (el) {
+        if (el.tagName === 'DETAILS') el.open = true;
+        el = el.parentElement;
+    }
+    setTimeout(function () {
+        target.scrollIntoView({ behavior: 'auto', block: 'center' });
+    }, 60);
+});
+</script>
 </body>
 </html>

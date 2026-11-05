@@ -20,7 +20,7 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-    
+
 
     <!-- MathJax -->
     <script>
@@ -33,6 +33,15 @@
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Animación de resaltado al llegar por hash -->
+    <style>
+    .formula-resaltada{animation:highlightFormula 2.4s ease-out}
+    @keyframes highlightFormula{
+      0%,30%{box-shadow:0 0 0 4px rgba(251,191,36,.7)}
+      100%{box-shadow:0 0 0 4px rgba(251,191,36,0)}
+    }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -127,9 +136,11 @@
         <details class="step">
             <summary><span class="step-num">2</span><strong>Ley de Biot–Savart.</strong></summary>
             <p>La ley de Biot–Savart expresa la contribución infinitesimal al campo magnético producida por un elemento de corriente. Para un elemento \(I\,d\vec l\), el campo en un punto situado a distancia \(r\) es:</p>
-            <div class="formula-box">
+            <a href="TemaB6-Formulario.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
                 \[d\vec B=\frac{\mu_0}{4\pi}\,\frac{I\,d\vec l\times\hat u_r}{r^2}\]
             </div>
+            </a>
             <p>La dirección de \(d\vec B\) es perpendicular al elemento de corriente y al vector que une el elemento con el punto de observación; el sentido viene dado por el producto vectorial. Para una distribución completa se suman (integran) las contribuciones de todos sus elementos.</p>
             <p>En 2.º de Bachillerato interesa especialmente reconocer la ley y utilizar los resultados conocidos para geometrías sencillas. Para un hilo rectilíneo indefinido, la expresión resultante coincide con la que se obtiene mediante la ley de Ampère.</p>
         </details>
@@ -137,9 +148,11 @@
         <details class="step">
             <summary><span class="step-num">3</span><strong>Campo magnético de un hilo recto e indefinido.</strong></summary>
             <p>Un hilo rectilíneo muy largo recorrido por una corriente \(I\) crea circunferencias de campo magnético alrededor del hilo. A una distancia perpendicular \(r\), el módulo es:</p>
-            <div class="formula-box">
+            <a href="TemaB6-Formulario.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">
                 \[\boxed{B=\frac{\mu_0 I}{2\pi r}}\]
             </div>
+            </a>
             <p>Donde \(\mu_0=4\pi\cdot10^{-7}\,\text{T}\,\text{m}\,\text{A}^{-1}\) es la permeabilidad magnética del vacío. El campo:</p>
             <ul>
                 <li>Es directamente proporcional a la intensidad \(I\).</li>
@@ -152,26 +165,34 @@
         <details class="step">
             <summary><span class="step-num">4</span><strong>Campo magnético en el centro de una espira circular.</strong></summary>
             <p>Una espira circular de radio \(R\), recorrida por una corriente \(I\), crea en su centro un campo perpendicular al plano de la espira. Su módulo es:</p>
-            <div class="formula-box">
+            <a href="TemaB6-Formulario.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">
                 \[\boxed{B_{\text{centro}}=\frac{\mu_0 I}{2R}}\]
             </div>
+            </a>
             <p>Si hay \(N\) vueltas circulares iguales y muy próximas, los campos se suman:</p>
-            <div class="formula-box">
+            <a href="TemaB6-Formulario.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">
                 \[\boxed{B_{\text{centro}}=\frac{\mu_0 N I}{2R}}\]
             </div>
+            </a>
             <p>La regla de la mano derecha se aplica curvando los dedos en el sentido de la corriente: el pulgar extendido señala el campo en el centro y el eje de la espira.</p>
             <p>En puntos del eje de una espira, a una distancia \(x\) del centro, puede utilizarse:</p>
-            <div class="formula-box">
+            <a href="TemaB6-Formulario.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">
                 \[B_{\text{eje}}=\frac{\mu_0 N I R^2}{2(R^2+x^2)^{3/2}}\]</div>
+            </a>
             <p>En el centro, \(x=0\), se recupera la expresión anterior.</p>
         </details>
 
         <details class="step">
             <summary><span class="step-num">5</span><strong>Campo magnético en el interior de un solenoide.</strong></summary>
             <p>Un solenoide es una bobina cilíndrica formada por muchas espiras próximas. En el modelo de <strong>solenoide largo e ideal</strong>, el campo interior es aproximadamente uniforme y paralelo al eje; en el exterior es muy pequeño frente al interior.</p>
-            <div class="formula-box">
+            <a href="TemaB6-Formulario.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">
                 \[\boxed{B_{\text{interior}}=\mu_0 n I=\mu_0\frac{N}{L}I}\]
             </div>
+            </a>
             <p>\(N\) es el número de espiras, \(L\) la longitud del solenoide y \(n=N/L\) el número de espiras por unidad de longitud. El sentido del campo interior se obtiene con la regla de la mano derecha: los dedos siguen la corriente por las espiras y el pulgar apunta en el sentido de \(\vec B\) dentro del solenoide.</p>
             <div class="note">La aproximación de campo uniforme y exterior despreciable es válida para un solenoide suficientemente largo respecto a su diámetro y lejos de sus extremos.</div>
         </details>
@@ -179,18 +200,22 @@
         <details class="step">
             <summary><span class="step-num">6</span><strong>Campo magnético en el interior de un toroide.</strong></summary>
             <p>Un toroide es un solenoide curvado hasta formar un anillo. Para un toroide ideal de \(N\) espiras, recorrido por una corriente \(I\), el campo es tangente a circunferencias concéntricas con el eje del toroide. A una distancia \(r\) del centro:</p>
-            <div class="formula-box">
+            <a href="TemaB6-Formulario.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">
                 \[\boxed{B(r)=\frac{\mu_0 N I}{2\pi r}}\qquad (R_{\text{int}}&lt;r&lt;R_{\text{ext}})\]
             </div>
+            </a>
             <p>En el modelo ideal, el campo queda confinado al interior del anillo y es despreciable fuera de él. A diferencia del solenoide largo, el campo dentro del toroide <strong>no es uniforme en todo el espesor</strong>: disminuye al aumentar \(r\), porque depende de \(1/r\).</p>
         </details>
 
         <details class="step">
             <summary><span class="step-num">7</span><strong>Ley de Ampère.</strong></summary>
             <p>La circulación del campo magnético a lo largo de una curva cerrada es igual a \(\mu_0\) por la corriente total encerrada por dicha curva:</p>
-            <div class="formula-box">
+            <a href="TemaB6-Formulario.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">
                 \[\boxed{\oint\vec B\cdot d\vec l=\mu_0 I_{\text{enc}}}\]
             </div>
+            </a>
             <p>La ley es especialmente útil cuando la distribución de corriente presenta simetría suficiente para que el módulo de \(\vec B\) sea constante en una trayectoria amperiana o para que el producto escalar se simplifique.</p>
             <ul>
                 <li><strong>Hilo recto indefinido:</strong> trayectoria circular de radio \(r\), de modo que \(B(2\pi r)=\mu_0I\).</li>
@@ -203,9 +228,11 @@
         <details class="step">
             <summary><span class="step-num">8</span><strong>Principio de superposición de campos magnéticos.</strong></summary>
             <p>Si varias corrientes crean campos en un mismo punto, el campo total es la suma vectorial de todos ellos:</p>
-            <div class="formula-box">
+            <a href="TemaB6-Formulario.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">
                 \[\boxed{\vec B_{\text{total}}=\vec B_1+\vec B_2+\cdots+\vec B_n}\]
             </div>
+            </a>
             <p>Si los campos son paralelos y tienen el mismo sentido, sus módulos se suman; si son paralelos y de sentidos opuestos, se restan. Si forman un ángulo, hay que descomponerlos en componentes cartesianas.</p>
             <p><strong>Procedimiento recomendado:</strong></p>
             <ol>
@@ -219,7 +246,12 @@
 
         <details class="step">
             <summary><span class="step-num">9</span><strong>Puntos donde el campo de dos hilos se anula.</strong></summary>
-            <p>Para dos hilos paralelos separados una distancia \(d\), la condición de campo nulo es que los dos campos tengan igual módulo y sentidos opuestos.</p>
+            <p>Para dos hilos paralelos separados una distancia \(d\), la condición de campo nulo es que los dos campos tengan igual módulo y sentidos opuestos:</p>
+            <a href="TemaB6-Formulario.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">
+                \[\frac{I_1}{r_1}=\frac{I_2}{r_2}\]
+            </div>
+            </a>
             <table>
                 <tr><th>Sentido de las corrientes</th><th>Región donde puede anularse</th><th>Condición de módulos</th></tr>
                 <tr><td>Mismo sentido</td><td>Entre los dos hilos</td><td>\(\dfrac{I_1}{r_1}=\dfrac{I_2}{r_2}\)</td></tr>
@@ -231,9 +263,11 @@
         <details class="step">
             <summary><span class="step-num">10</span><strong>Conexión con B7: fuerza entre dos hilos paralelos.</strong></summary>
             <p>Algunos problemas del banco combinan el cálculo del campo (B6) con la fuerza magnética sobre un conductor (B7). Si dos hilos paralelos separados una distancia \(d\) llevan corrientes \(I_1\) e \(I_2\), la fuerza por unidad de longitud es:</p>
-            <div class="formula-box">
+            <a href="TemaB6-Formulario.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">
                 \[\boxed{\frac{F}{L}=\frac{\mu_0 I_1I_2}{2\pi d}}\]
             </div>
+            </a>
             <p>Dos corrientes en el mismo sentido se atraen; dos corrientes en sentidos opuestos se repelen. Esta relación se incluye aquí para resolver los ejercicios mixtos seleccionados, pero su estudio conceptual corresponde al tema B7.</p>
         </details>
     </details>
@@ -527,6 +561,7 @@
 
 
 
+
 <!-- ============================================================ -->
 <!-- BLOQUE DE RECURSOS Y NAVEGACIÓN DEL TEMA A1                  -->
 <!-- ============================================================ -->
@@ -648,7 +683,6 @@
 
 
 
-
     <!-- CIERRE -->
     <div class="bloque-cta">
         <div class="tarjeta-cta">
@@ -663,5 +697,24 @@
     </div>
 
 </div>
+
+<!-- ============================ JS · RESALTADO DE LA FÓRMULA DESTINO ============================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+    var target = document.querySelector(hash);
+    if (!target) return;
+    var highlight = target.classList.contains('formula-box') || target.classList.contains('card')
+        ? target
+        : (target.closest('.formula-box') || target.closest('tr') || target);
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () { highlight.classList.remove('formula-resaltada'); }, 2600);
+});
+</script>
+
 </body>
 </html>

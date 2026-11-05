@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tema B5. Magnetismo, experiencia de Oersted y carácter no conservativo del campo magnético</title>
 
-
     <!-- Para crear las consultas puntuales en la base de datos) -->
     <script src="js/utils.js" defer></script>
 
@@ -32,6 +31,12 @@
 .mini{font-size:.91rem;color:#475569}
 .clave-final{margin-top:1.5rem;padding:1rem 1.4rem;border-radius:14px;background:#eef2ff;border-left:6px solid #6366f1}
 @media(max-width:640px){.tabla-comparativa{font-size:.84rem}.tabla-comparativa td,.tabla-comparativa th{padding:6px}}
+/* Animación de resaltado al llegar por hash */
+.formula-resaltada{animation:highlightFormula 2.4s ease-out}
+@keyframes highlightFormula{
+  0%,30%{box-shadow:0 0 0 4px rgba(251,191,36,.7)}
+  100%{box-shadow:0 0 0 4px rgba(251,191,36,0)}
+}
 </style>
 </head>
 <body>
@@ -106,16 +111,22 @@
 </ul>
 <div class="formula-box"><strong>Regla de la mano derecha:</strong><br>pulgar en el sentido de la corriente convencional; los dedos curvados indican el sentido de las líneas de campo magnético.</div>
 <p>Para un hilo rectilíneo muy largo, el módulo del campo es:</p>
-<div class="formula-box">\[ B=\frac{\mu_0 I}{2\pi r} \]</div>
+<a href="TemaB5-Formulario.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+<div class="formula-box" id="formula-5">\[ B=\frac{\mu_0 I}{2\pi r} \]</div>
+</a>
 <p class="mini">Esta expresión se desarrolla como cálculo en B6. En B5 interesa comprender el resultado experimental de Oersted y la relación cualitativa corriente–campo magnético.</p>
 </details>
 
 <details class="step">
 <summary><span class="step-num">3</span><strong>El vector campo magnético y la fuerza magnética.</strong></summary>
 <p>El campo magnético se representa mediante el vector <strong>\(\vec B\)</strong>. Una carga \(q\) que se mueve con velocidad \(\vec v\) en una región donde existe un campo magnético puede experimentar la fuerza magnética de Lorentz:</p>
-<div class="formula-box">\[ \vec F_m=q\,\vec v\times\vec B \]</div>
+<a href="TemaB5-Formulario.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+<div class="formula-box" id="formula-1">\[ \vec F_m=q\,\vec v\times\vec B \]</div>
+</a>
 <p>Su módulo es:</p>
-<div class="formula-box">\[ F_m=|q|\,v\,B\,\operatorname{sen}\theta \]</div>
+<a href="TemaB5-Formulario.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+<div class="formula-box" id="formula-2">\[ F_m=|q|\,v\,B\,\operatorname{sen}\theta \]</div>
+</a>
 <p>\(\theta\) es el ángulo entre \(\vec v\) y \(\vec B\). La fuerza es perpendicular tanto a la velocidad como al campo.</p>
 <ul>
 <li>Si \(\vec v\parallel\vec B\) o es antiparalela, \(F_m=0\).</li>
@@ -137,7 +148,9 @@
 <summary><span class="step-num">5</span><strong>No existen monopolos magnéticos en el modelo clásico.</strong></summary>
 <p>Un <strong>monopolo magnético</strong> sería una entidad que actuara como fuente aislada de campo magnético, equivalente a una carga eléctrica aislada como fuente del campo eléctrico. En el electromagnetismo clásico no se observan monopolos magnéticos.</p>
 <p>El flujo magnético neto a través de cualquier superficie cerrada es nulo:</p>
-<div class="formula-box">\[ \oint_{S}\vec B\cdot d\vec S=0 \]</div>
+<a href="TemaB5-Formulario.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+<div class="formula-box" id="formula-6">\[ \oint_{S}\vec B\cdot d\vec S=0 \]</div>
+</a>
 <p>En forma diferencial, la ley de Gauss para el magnetismo se expresa como:</p>
 <div class="formula-box">\[ \boxed{\nabla\cdot\vec B=0} \]</div>
 <p>El campo magnético es <strong>solenoidal</strong>: sus líneas no nacen ni terminan en puntos aislados, sino que se cierran sobre sí mismas.</p>
@@ -147,7 +160,9 @@
 <details class="step">
 <summary><span class="step-num">6</span><strong>Carácter no conservativo y circulación del campo magnético.</strong></summary>
 <p>Para un campo vectorial, una condición característica de los campos conservativos es que su circulación a lo largo de cualquier trayectoria cerrada sea nula. En el caso del campo magnético estático, la ley de Ampère establece:</p>
-<div class="formula-box">\[ \boxed{\oint_{\Gamma}\vec B\cdot d\vec l=\mu_0 I_{\text{enc}}} \]</div>
+<a href="TemaB5-Formulario.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+<div class="formula-box" id="formula-7">\[ \boxed{\oint_{\Gamma}\vec B\cdot d\vec l=\mu_0 I_{\text{enc}}} \]</div>
+</a>
 <p>\(I_{\text{enc}}\) es la corriente neta que atraviesa una superficie apoyada en la curva cerrada \(\Gamma\). Si la curva rodea un conductor con corriente, la circulación no es nula. Por eso, en general, el campo magnético creado por corrientes <strong>no es conservativo</strong> y no puede describirse mediante un potencial escalar único como el potencial electrostático.</p>
 <p>En situaciones variables en el tiempo, la formulación completa es la ley de Ampère-Maxwell, que incorpora también la corriente de desplazamiento.</p>
 <div class="nota-editorial"><strong>Matiz esencial para la EBAU:</strong> el carácter no conservativo se refiere a la circulación del campo vectorial \(\vec B\). No significa que la fuerza magnética realice trabajo sobre una carga: la fuerza de Lorentz magnética es perpendicular a la velocidad y su trabajo es nulo. Son dos afirmaciones distintas.</div>
@@ -158,7 +173,9 @@
 <p>La fuerza magnética sobre una carga puntual es perpendicular a su velocidad. Como el desplazamiento instantáneo tiene la dirección de la velocidad:</p>
 <div class="formula-box">\[ dW=\vec F_m\cdot d\vec r=\vec F_m\cdot\vec v\,dt=0 \]</div>
 <p>Por tanto:</p>
-<div class="formula-box">\[ \boxed{W_m=0} \]</div>
+<a href="TemaB5-Formulario.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+<div class="formula-box" id="formula-4">\[ \boxed{W_m=0} \]</div>
+</a>
 <ul>
 <li>La fuerza magnética puede cambiar la dirección de la velocidad.</li>
 <li>No cambia el módulo de la velocidad ni la energía cinética si actúa únicamente la fuerza magnética.</li>
@@ -186,11 +203,15 @@
 <details class="step">
 <summary><span class="step-num">9</span><strong>Superposición y representación de campos.</strong></summary>
 <p>Cuando varias fuentes producen campo magnético en un mismo punto, el campo resultante es la suma vectorial de las contribuciones:</p>
-<div class="formula-box">\[ \vec B_{\text{total}}=\vec B_1+\vec B_2+\cdots+\vec B_n \]</div>
+<a href="TemaB5-Formulario.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+<div class="formula-box" id="formula-10">\[ \vec B_{\text{total}}=\vec B_1+\vec B_2+\cdots+\vec B_n \]</div>
+</a>
 <p>En la experiencia de Oersted, la brújula responde al campo resultante del campo terrestre y el campo creado por el conductor:</p>
 <div class="formula-box">\[ \vec B_{\text{resultante}}=\vec B_{\text{Tierra}}+\vec B_{\text{hilo}} \]</div>
 <p>Si los dos campos son perpendiculares, la dirección del campo resultante se obtiene mediante la suma vectorial. Para la desviación de una brújula:</p>
-<div class="formula-box">\[ \tan\alpha=\frac{B_{\text{hilo}}}{B_{\text{Tierra}}} \]</div>
+<a href="TemaB5-Formulario.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+<div class="formula-box" id="formula-11">\[ \tan\alpha=\frac{B_{\text{hilo}}}{B_{\text{Tierra}}} \]</div>
+</a>
 </details>
 <div class="note"><strong>Errores frecuentes:</strong> dibujar las líneas magnéticas como líneas abiertas; afirmar que un imán tiene un único polo; confundir \(\nabla\cdot\vec B=0\) con \(\oint\vec B\cdot d\vec l=0\); aplicar la regla de la mano derecha sin invertir el sentido para cargas negativas; afirmar que la ausencia de desviación demuestra que \(B=0\); y deducir que la fuerza magnética realiza trabajo porque el campo magnético sea no conservativo.</div>
 </details>
@@ -243,7 +264,9 @@
 <div class="paso"><strong>1. Sentido de la fuerza.</strong> Con \(\vec v\) hacia la derecha y \(\vec B\) saliente del plano, \(\vec v\times\vec B\) apunta hacia abajo. Una carga positiva se desvía hacia abajo y una negativa hacia arriba.</div>
 <div class="paso"><strong>2. Signos.</strong> La trayectoria de \(a\) indica \(q_a&gt;0\). La de \(c\) indica \(q_c&lt;0\). La partícula \(b\) será negativa si se curva hacia arriba; si no se desvía, podría ser neutra.</div>
 <div class="paso"><strong>3. Radio de curvatura:</strong></div>
-<div class="formula-box">\[ r=\frac{mv}{|q|B}\quad\Longrightarrow\quad\frac{|q|}{m}=\frac{v}{rB} \]</div>
+<a href="TemaB5-Formulario.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+<div class="formula-box" id="formula-8">\[ r=\frac{mv}{|q|B}\quad\Longrightarrow\quad\frac{|q|}{m}=\frac{v}{rB} \]</div>
+</a>
 <div class="paso">Como \(v\) y \(B\) son iguales para las tres partículas, la de menor radio tiene mayor \(|q|/m\). Es la partícula \(c\).</div>
 <div class="paso"><strong>Resultado:</strong> \(a\) positiva; \(c\) negativa; \(b\) negativa o neutra según se curve o no. La mayor relación \(|q|/m\) corresponde a \(c\).</div>
 </div>
@@ -300,7 +323,7 @@
 <!-- EJERCICIO 6 -->
 <details class="tarjeta-ejercicio">
 <summary class="cabecera-ej"><span class="num-ej">Ejercicio 6</span><span class="titulo-ej">Fuerza electrostática frente a fuerza de Lorentz; campo de un hilo</span><span class="meta-ej">Aragón · 2023 · Ordinaria · Problema 4</span></summary>
-<div class="enunciado-ej"><p>Cuestión con tres apartados: (a) comparar la fuerza electrostática y la magnética; (b) determinar el sentido y el módulo del campo en un punto situado a la derecha de un hilo vertical con corriente hacia arriba, para \(I=3\,\text{A}\) y \(d=1\,\text{m}\); (c) indicar la fuerza magnética sobre una carga positiva que se mueve hacia arriba, paralela a la corriente. Dato: \(\mu_0=1{,}257\cdot10^{-6}\,\text{T m/A}\). (2,5 puntos)</p></div>
+<div class="enunciado-ej"><p>Cuestión con tres apartados: (a) comparar la fuerza electrostática y la magnética; (b) determinar el sentido y el módulo del campo en un punto situado a la derecha de un hilo vertical con corriente hacia arriba, para \(I=3\,\text{A}\) y \(d=1\,\text{m}\); (c) indicar la fuerza magnética sobre una carga positiva que se mueve hacia arriba, paralela a la corriente. Dato: \(\mu_0=1{,}257\cdot10^{-6}\,\text{T m/A}\). (2,5 puntos).</p></div>
 <div class="resolucion-ej">
 <div class="paso"><strong>a) Comparación.</strong> La fuerza eléctrica \(\vec F_e=q\vec E\) puede actuar sobre una carga en reposo o en movimiento. La fuerza magnética \(\vec F_m=q\vec v\times\vec B\) requiere que la carga se mueva. La fuerza eléctrica tiene la dirección de \(\vec E\) (con posible inversión por el signo de \(q\)); la magnética es perpendicular a \(\vec v\) y a \(\vec B\). La fuerza magnética no realiza trabajo.</div>
 <div class="paso"><strong>b) Sentido del campo.</strong> Por la regla de la mano derecha, en el punto situado a la derecha del hilo el campo entra en el papel (sentido \(-\hat k\)). El módulo es:</div>
@@ -338,7 +361,9 @@
 <div class="paso"><strong>a) Periodo.</strong> La fuerza magnética actúa como fuerza centrípeta:</div>
 <div class="formula-box">\[ |q|vB=\frac{mv^2}{R}\quad\Rightarrow\quad R=\frac{mv}{|q|B} \]</div>
 <div class="paso">El periodo de una vuelta es:</div>
-<div class="formula-box">\[ T=\frac{2\pi R}{v}=\boxed{\frac{2\pi m}{|q|B}} \]</div>
+<a href="TemaB5-Formulario.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+<div class="formula-box" id="formula-9">\[ T=\frac{2\pi R}{v}=\boxed{\frac{2\pi m}{|q|B}} \]</div>
+</a>
 <div class="paso">No puede obtenerse un valor numérico del periodo porque el enunciado registrado no aporta la masa \(m\).</div>
 <div class="paso"><strong>b) Posición relativa.</strong> Con la carga entrando hacia la derecha y \(\vec B\) hacia dentro del papel, \(\vec v\times\vec B\) apunta inicialmente hacia arriba. Como \(q&gt;0\), la fuerza también apunta hacia arriba; el centro de la circunferencia queda por encima del punto de entrada. Tras media vuelta, el punto \(Q\) queda por encima de \(P\).</div>
 </div>
@@ -350,11 +375,17 @@
 <summary class="cabecera-ej"><span class="num-ej">Ejercicio 9</span><span class="titulo-ej">Selector de velocidades: compensación de fuerzas</span><span class="meta-ej">Navarra · 2025 · Extraordinaria · Problema 5</span></summary>
 <div class="enunciado-ej"><p>Un electrón entra en una región con campos \(\vec E\) y \(\vec B\) perpendiculares entre sí. Su velocidad, de módulo \(10^4\,\text{m/s}\), es perpendicular a \(\vec B\) y no cambia. Explica la orientación de los campos y de las fuerzas, calcula \(E\) si \(B=10^{-4}\,\text{T}\) y determina el trabajo de la fuerza magnética.</p></div>
 <div class="resolucion-ej">
-<div class="paso"><strong>a) Equilibrio de fuerzas.</strong> Si la velocidad no varía, la fuerza resultante es cero:</div>
+<div class="paso"><strong>a) Equilibrio de fuerzas.</strong> La fuerza de Lorentz general es:</div>
+<a href="TemaB5-Formulario.html#formula-13" style="text-decoration:none; color:inherit; display:block;">
+<div class="formula-box" id="formula-13">\[ \vec F=q(\vec E+\vec v\times\vec B) \]</div>
+</a>
+<div class="paso">Si la velocidad no varía, la fuerza resultante es cero:</div>
 <div class="formula-box">\[ q\vec E+q\vec v\times\vec B=0\quad\Rightarrow\quad\vec E=-\vec v\times\vec B \]</div>
 <div class="paso">Por tanto, \(\vec E\) es perpendicular a \(\vec v\) y a \(\vec B\). La fuerza eléctrica y la magnética tienen sentidos opuestos.</div>
 <div class="paso"><strong>b) Módulo del campo eléctrico.</strong> Como \(\vec v\perp\vec B\), los módulos de las fuerzas se igualan cuando \(E=vB\):</div>
-<div class="formula-box">\[ E=vB=10^4\cdot10^{-4}=\boxed{1\,\text{V/m}} \]</div>
+<a href="TemaB5-Formulario.html#formula-12" style="text-decoration:none; color:inherit; display:block;">
+<div class="formula-box" id="formula-12">\[ E=vB=10^4\cdot10^{-4}=\boxed{1\,\text{V/m}} \]</div>
+</a>
 <div class="paso"><strong>c) Trabajo magnético.</strong> La fuerza magnética es perpendicular a la velocidad en todo instante:</div>
 <div class="formula-box">\[ W_m=\int\vec F_m\cdot d\vec r=0\quad\Rightarrow\quad\boxed{W_m=0\,\text{J}} \]</div>
 </div>
@@ -384,8 +415,6 @@
 </details>
 
 
-
-
 <!-- REPASO FINAL -->
 <details class="section resultado">
 <summary><h2>✅ Resumen de fórmulas y conceptos clave</h2></summary>
@@ -399,41 +428,15 @@
 <tr><td>Flujo magnético cerrado</td><td>\(\oint_S\vec B\cdot d\vec S=0\)</td><td>El flujo neto por toda superficie cerrada es nulo.</td></tr>
 <tr><td>Ampère (magnetostática)</td><td>\(\oint_\Gamma\vec B\cdot d\vec l=\mu_0I_{\rm enc}\)</td><td>La circulación puede ser no nula si se encierra corriente.</td></tr>
 <tr><td>Trabajo magnético</td><td>\(W_m=0\)</td><td>La fuerza magnética es perpendicular a la velocidad.</td></tr>
-<tr><td>Unidad de \(B\)</td><td>\(1\,\text{T}=1\,\text{N/(A m)}\)</td><td>Tesla.</td></tr>
+<tr><td>Unidad de \(B\)</td><td><a href="TemaB5-Formulario.html#formula-3" id="formula-3" style="text-decoration:none; color:inherit">\(1\,\text{T}=1\,\text{N/(A m)}\)</a></td><td>Tesla.</td></tr>
 </tbody>
 </table>
 <div class="clave-final"><strong>La distinción que no debes olvidar:</strong><br>\(\nabla\cdot\vec B=0\) significa que no existen fuentes o sumideros magnéticos (líneas cerradas). En cambio, \(\oint\vec B\cdot d\vec l=\mu_0I_{\rm enc}\) describe la circulación y puede ser distinta de cero. Ninguna de estas expresiones contradice que la fuerza magnética sobre una carga no realice trabajo.</div>
 </details>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ============================================================ -->
-<!-- BLOQUE DE RECURSOS Y NAVEGACIÓN DEL TEMA A1                  -->
+<!-- BLOQUE DE RECURSOS Y NAVEGACIÓN DEL TEMA B5                  -->
 <!-- ============================================================ -->
 <div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
     <style>
@@ -558,35 +561,25 @@
 <!-- ============================================================ -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="bloque-cta"><div class="tarjeta-cta"><p><strong>Preparación EBAU · Física 2.º de Bachillerato</strong></p><p>Repasa las cuestiones conceptuales y justifica siempre el sentido de los vectores con la regla de la mano derecha y un esquema.</p></div></div>
 </div>
+
+<!-- ============================ JS · RESALTADO DE LA FÓRMULA DESTINO ============================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+    var target = document.querySelector(hash);
+    if (!target) return;
+    var highlight = target.classList.contains('formula-box') || target.classList.contains('card')
+        ? target
+        : (target.closest('.formula-box') || target.closest('tr') || target);
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () { highlight.classList.remove('formula-resaltada'); }, 2600);
+});
+</script>
 </body>
 </html>

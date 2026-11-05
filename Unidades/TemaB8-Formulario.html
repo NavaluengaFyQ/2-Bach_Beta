@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA B8 (Formulario).- Líneas de campo eléctrico y magnético</title>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- CSS PROPIO DE FORMULARIOS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================ CABECERA ============================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA B8 (Formulario).- </span>
+                <span class="texto">Líneas de campo eléctrico y magnético en distribuciones sencillas</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================ GRID ============================ -->
+    <div class="grid">
+
+        <!-- FICHA 1 · DEFINICIÓN DE LÍNEA DE CAMPO -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>¿Qué es una línea de campo?</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La <strong>relación geométrica</strong> entre una línea de campo y el vector campo en cada punto. Se aplica como punto de partida de todo el tema: cualquier dibujo de líneas de campo (eléctricas o magnéticas) debe cumplir que la tangente a la línea coincida con la dirección del vector campo. Es la propiedad que permite leer e interpretar esquemas de líneas sin necesidad de calcular valores numéricos.
+            </div>
+            <a href="TemaB8.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
+                \[ \text{Tangente a la línea de campo en }P \parallel \vec E(P) \text{ ó } \vec B(P) \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí, es la <strong>definición misma</strong> de línea de campo. Memoriza las tres propiedades básicas: (1) la tangente da la <strong>dirección</strong> del vector; (2) la flecha da el <strong>sentido</strong>; (3) la <strong>densidad</strong> de líneas da la <strong>intensidad relativa</strong>. Y dos consecuencias: las líneas nunca se cortan (un campo no puede tener dos direcciones en el mismo punto) y no son trayectorias de partículas ni hilos materiales.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Aspecto</th><th>Qué indica</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Aspecto">Dirección</td><td data-label="Qué indica">Tangente a la línea en cada punto.</td></tr>
+                    <tr><td data-label="Aspecto">Sentido</td><td data-label="Qué indica">La flecha de la línea.</td></tr>
+                    <tr><td data-label="Aspecto">Intensidad relativa</td><td data-label="Qué indica">La densidad de líneas (más juntas = más intenso).</td></tr>
+                    <tr><td data-label="Aspecto">Continuidad</td><td data-label="Qué indica">Las líneas NO se cortan entre sí.</td></tr>
+                    <tr><td data-label="Aspecto">Naturaleza</td><td data-label="Qué indica">Son una herramienta gráfica, no trayectorias.</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> en un campo uniforme, las líneas son rectas paralelas y equidistantes: la tangente en cualquier punto es la propia recta, y la separación constante indica que el módulo es el mismo en todos los puntos.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El número de líneas dibujado depende del convenio; lo que importa es la <strong>densidad relativa</strong>.</li>
+                    <li>Si dos líneas se cruzasen, el campo tendría dos direcciones en el mismo punto: imposible.</li>
+                    <li>Las líneas NO son trayectorias de partículas cargadas.</li>
+                    <li>Esta propiedad se aplica igual a \(\vec E\) y a \(\vec B\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 · LÍNEAS DEL CAMPO ELÉCTRICO DE UNA CARGA PUNTUAL -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Líneas del campo eléctrico de una carga puntual</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Patrón gráfico</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El <strong>patrón de líneas de campo</strong> que crea una carga puntual \(q\) en el espacio que la rodea, y su relación con el módulo del campo a cada distancia. Se aplica en todos los problemas de representación gráfica de campos: es el "ladrillo básico" del que se construyen los esquemas de dipolos, distribuciones y configuraciones con varias cargas.
+            </div>
+            <a href="TemaB8.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">
+                \[ E = k\,\frac{|q|}{r^{2}} \qquad\text{(radial)} \]
+                \[ q>0:\ \text{las líneas SALEN} \qquad q<0:\ \text{las líneas ENTRAN} \]
+                <span id="formula-3"></span>
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza el patrón gráfico. <strong>Carga positiva → líneas radiales salientes; carga negativa → líneas radiales entrantes</strong>. El módulo decae con \(1/r^{2}\), por lo que las líneas están más juntas cerca de la carga y más separadas al alejarse. El sentido del campo se define como el de la fuerza sobre una carga de prueba <strong>positiva</strong>: por eso "salen" de la positiva y "entran" en la negativa.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E\)</td><td data-label="Significado">Módulo del campo a distancia \(r\)</td><td data-label="Unidades">N·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(k\)</td><td data-label="Significado">Constante de Coulomb</td><td data-label="Unidades">\(9\cdot10^{9}\ \text{N·m}^{2}\text{·C}^{-2}\)</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga creadora (su signo fija el sentido)</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia al centro de la carga</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(q=+2{,}0\ \mu\text{C}\) aislada. Las líneas son radiales salientes, con densidad decreciente al alejarse. A \(r=0{,}30\ \text{m}\), \(E=9\cdot10^{9}\cdot2\cdot10^{-6}/0{,}30^{2}=2{,}0\cdot10^{5}\ \text{N/C}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El patrón es <strong>radial</strong> (líneas rectas desde/hacia la carga).</li>
+                    <li>El sentido depende del signo de \(q\) (positiva/negativa).</li>
+                    <li>Las líneas se separan con la distancia porque \(E\propto1/r^{2}\).</li>
+                    <li>Las superficies equipotenciales son <strong>esferas concéntricas</strong> (circunferencias en el plano).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 · SUPERPOSICIÓN VECTORIAL DE CAMPOS ELÉCTRICOS -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Superposición de campos eléctricos</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Suma vectorial</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El <strong>campo eléctrico total</strong> en un punto debido a varias cargas puntuales, sumando vectorialmente los campos individuales. Se aplica en cualquier configuración con más de una carga (dipolos, triángulos, cuadrados, etc.): es la base para construir el esquema de líneas de campo de distribuciones sencillas y para localizar puntos donde el campo es nulo o máximo.
+            </div>
+            <a href="TemaB8.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">
+                \[ \vec E_{\text{total}} = \vec E_1+\vec E_2+\cdots+\vec E_n \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es un <strong>principio</strong>, no una fórmula que memorizar: se aplica siempre. Lo esencial es sumar <strong>vectores</strong>, no módulos. Pasos: (1) calcular cada \(\vec E_i\) con su dirección y sentido; (2) descomponer en componentes; (3) sumar por componentes. En el dipolo (+ y − de igual módulo), las líneas salen de la positiva y entran en la negativa, curvándose según el campo resultante. En cuestiones gráficas basta con indicar la dirección del campo resultante en cada punto.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Situación</th><th>Cómo se suman</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Situación">Misma dirección y sentido</td><td data-label="Cómo se suman">Se suman módulos.</td></tr>
+                    <tr><td data-label="Situación">Misma dirección y sentidos opuestos</td><td data-label="Cómo se suman">Se restan módulos.</td></tr>
+                    <tr><td data-label="Situación">Perpendiculares</td><td data-label="Cómo se suman">\(E_T=\sqrt{E_1^2+E_2^2}\).</td></tr>
+                    <tr><td data-label="Situación">Oblicuas / arbitrarias</td><td data-label="Cómo se suman">Descomponer en \((x,y,z)\) y sumar por componentes.</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo (dipolo):</strong> \(+q\) en \((-a,0)\) y \(-q\) en \((+a,0)\). En el eje \(x\), en el tramo entre las cargas, los dos campos apuntan en el mismo sentido (hacia la negativa) y se suman. En un punto del eje \(y\), sus componentes horizontales se cancelan por simetría y las verticales también se cancelan: el campo neto sobre el plano mediador es horizontal.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Las líneas del campo resultante NO son la mera superposición de los dibujos individuales.</li>
+                    <li>En un dipolo simétrico, el esquema es simétrico respecto al eje y al plano mediador.</li>
+                    <li>Algunas componentes pueden anularse por simetría.</li>
+                    <li>El campo total puede ser nulo en algún punto (pero no necesariamente).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 · CAMPO ELÉCTRICO UNIFORME -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Campo eléctrico uniforme</h2>
+                <span class="badge-centro">Caso típico</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip automatizar">🔄 Automatizar · Caso típico</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El <strong>patrón gráfico</strong> del campo eléctrico uniforme (líneas rectas, paralelas y equidistantes) y su relación con la diferencia de potencial entre dos placas paralelas. Se aplica en todos los problemas de condensadores planos, movimiento de cargas entre placas y en cualquier cuestión que pregunte cómo se representan gráficamente las líneas de un campo uniforme.
+            </div>
+            <a href="TemaB8.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">
+                \[ E = \frac{|\Delta V|}{d} \qquad\text{(campo uniforme, }\vec E\parallel\Delta\vec r\text{)} \]
+                \[ \text{Líneas: rectas, paralelas, equidistantes} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔄 AUTOMATIZAR</span>Sí: memoriza los <strong>tres rasgos gráficos</strong> del campo uniforme: (1) líneas rectas, (2) paralelas, (3) equidistantes. La separación constante refleja que el módulo \(E\) es el mismo en todos los puntos. El sentido va siempre de la placa positiva a la negativa. La fórmula \(E=|\Delta V|/d\) relaciona el módulo con la diferencia de potencial y la separación entre placas; es la misma que en B4, así que en B8 basta con reconocer el patrón gráfico.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Rasgo gráfico</th><th>Qué significa</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Rasgo">Rectas</td><td data-label="Significado">Dirección del campo constante en todos los puntos.</td></tr>
+                    <tr><td data-label="Rasgo">Paralelas</td><td data-label="Significado">Misma dirección y sentido en toda la región.</td></tr>
+                    <tr><td data-label="Rasgo">Equidistantes</td><td data-label="Significado">Módulo constante (misma densidad de líneas).</td></tr>
+                    <tr><td data-label="Rasgo">Sentido</td><td data-label="Significado">De la placa positiva a la negativa.</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos placas separadas \(d=3{,}0\ \text{cm}\) con \(\Delta V=600\ \text{V}\). El campo es \(E=600/0{,}030=2{,}0\cdot10^{4}\ \text{V/m}\) (o N/C), y se dibuja con 4-6 líneas rectas paralelas y equidistantes, orientadas de la placa positiva a la negativa.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Las <strong>superficies equipotenciales</strong> son planos paralelos a las placas.</li>
+                    <li>Las líneas del campo son <strong>perpendiculares</strong> a las equipotenciales.</li>
+                    <li>Es un modelo ideal: en los bordes el campo se deforma.</li>
+                    <li>No confundir "uniforme" con "radial": el radial es el de una carga puntual.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 · LÍNEAS DEL CAMPO MAGNÉTICO DE UN HILO RECTO -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Líneas del campo magnético de un hilo recto</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Patrón gráfico</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El <strong>patrón de líneas de campo magnético</strong> que crea un hilo rectilíneo indefinido recorrido por una corriente \(I\), y su relación con el módulo del campo a cada distancia. Se aplica en todos los problemas de representación gráfica de campos magnéticos (hilo recto, dos o más hilos paralelos) y en la interpretación del experimento de Oersted.
+            </div>
+            <a href="TemaB8.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">
+                \[ B = \frac{\mu_0\,I}{2\pi\,r} \qquad\text{(circunferencias concéntricas)} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Sí: memoriza el <strong>patrón gráfico</strong>: alrededor de un hilo recto, las líneas son <strong>circunferencias concéntricas</strong> en planos perpendiculares al hilo. La densidad de líneas (separación entre circunferencias) crece al acercarse al hilo, porque \(B\propto1/r\). El sentido se obtiene con la regla de la mano derecha (pulgar = corriente, dedos curvados = \(\vec B\)). A diferencia del campo eléctrico, estas líneas son <strong>cerradas</strong>.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(B\)</td><td data-label="Significado">Módulo del campo a distancia \(r\)</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(\mu_0\)</td><td data-label="Significado">Permeabilidad magnética del vacío</td><td data-label="Unidades">\(4\pi\cdot10^{-7}\ \text{T·m/A}\)</td></tr>
+                    <tr><td data-label="Símbolo">\(I\)</td><td data-label="Significado">Intensidad de corriente del hilo</td><td data-label="Unidades">A</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia perpendicular al hilo</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un hilo vertical con \(I=5\ \text{A}\). Las líneas magnéticas son circunferencias horizontales centradas en el hilo. A \(r=4\ \text{cm}\): \(B=4\pi\cdot10^{-7}\cdot5/(2\pi\cdot0{,}04)=2{,}5\cdot10^{-5}\ \text{T}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Las líneas son <strong>circunferencias concéntricas</strong> en planos perpendiculares al hilo.</li>
+                    <li>Son <strong>cerradas</strong>: no nacen ni terminan en ningún punto.</li>
+                    <li>Densidad mayor cerca del hilo (\(B\propto1/r\)).</li>
+                    <li>Se dibujan con \(\odot\) (corriente saliente) y \(\otimes\) (corriente entrante) sobre el hilo.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 · REGLA DE LA MANO DERECHA PARA EL CAMPO MAGNÉTICO -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Regla de la mano derecha para el campo magnético</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El <strong>sentido</strong> de las líneas del campo magnético creado por una corriente (hilo recto, espira, solenoide), aplicando la regla de la mano derecha. Se aplica en todas las cuestiones gráficas que piden dibujar el sentido de \(\vec B\) alrededor de un conductor, o interpretar un esquema dado.
+            </div>
+            <a href="TemaB8.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">
+                \[ \text{Pulgar} = \text{corriente convencional} \;\Longrightarrow\; \text{Dedos curvados} = \vec B \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No hay que memorizar ninguna fórmula: es una <strong>regla práctica</strong>. Aprende a aplicarla en dos situaciones típicas: (1) <strong>hilo recto</strong>: pulgar en el sentido de la corriente, dedos curvados dan el sentido de \(\vec B\) alrededor del hilo; (2) <strong>espira o solenoide</strong>: dedos curvados en el sentido de la corriente, pulgar = sentido del campo en el interior. Ojo con el sentido de la corriente: es el <strong>convencional</strong> (positivo → negativo), no el de los electrones.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Situación</th><th>Pulgar</th><th>Dedos curvados</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Situación">Hilo recto</td><td data-label="Pulgar">Sentido de \(I\)</td><td data-label="Dedos curvados">Sentido de \(\vec B\)</td></tr>
+                    <tr><td data-label="Situación">Espira / solenoide</td><td data-label="Pulgar">Sentido de \(\vec B\) interior</td><td data-label="Dedos curvados">Sentido de \(I\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> hilo vertical con corriente hacia arriba (\(\uparrow\)). Con el pulgar hacia arriba, los dedos curvados indican que, visto desde arriba, el campo gira en sentido <strong>antihorario</strong> alrededor del hilo. Si la corriente fuese hacia abajo, el campo giraría en sentido horario.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Usar siempre la <strong>corriente convencional</strong>, no el movimiento de electrones.</li>
+                    <li>Al invertir la corriente, se invierte el sentido de \(\vec B\).</li>
+                    <li>Convención: \(\odot\) = corriente saliente (vista de frente); \(\otimes\) = corriente entrante.</li>
+                    <li>\(\odot\) ⟹ \(\vec B\) antihorario; \(\otimes\) ⟹ \(\vec B\) horario.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 · SUPERPOSICIÓN DE CAMPOS MAGNÉTICOS -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Superposición de campos magnéticos</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Suma vectorial</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El <strong>campo magnético total</strong> en un punto debido a varias corrientes, sumando vectorialmente los campos individuales. Se aplica en configuraciones con dos o más hilos (paralelos, en triángulo, etc.) y en la representación gráfica del campo resultante en problemas de varias fuentes.
+            </div>
+            <a href="TemaB8.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">
+                \[ \vec B_{\text{total}} = \vec B_1+\vec B_2+\cdots+\vec B_n \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Igual que en el campo eléctrico: es un <strong>principio</strong>, no una fórmula que memorizar. Lo esencial es sumar <strong>vectores</strong>. En problemas de hilos paralelos, cada campo es perpendicular al plano de los hilos; en el punto medio, si las corrientes van en el mismo sentido, los campos se <strong>oponen</strong>; si van en sentidos opuestos, los campos se <strong>suman</strong>. Es la situación inversa a la del campo eléctrico de dos cargas (allí es al revés).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Situación</th><th>Cómo se suman los \(\vec B_i\)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Situación">Misma dirección y sentido</td><td data-label="Cómo se suman">Se suman módulos.</td></tr>
+                    <tr><td data-label="Situación">Misma dirección y sentidos opuestos</td><td data-label="Cómo se suman">Se restan módulos.</td></tr>
+                    <tr><td data-label="Situación">Perpendiculares</td><td data-label="Cómo se suman">\(B_T=\sqrt{B_1^2+B_2^2}\).</td></tr>
+                    <tr><td data-label="Situación">Oblicuas / en triángulo</td><td data-label="Cómo se suman">Descomponer en \((x,y,z)\) y sumar por componentes.</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo (dos hilos paralelos):</strong> en el punto medio de dos hilos separados \(d=10\ \text{cm}\) con el mismo sentido de corriente, los campos se <strong>oponen</strong>: \(B_T=|B_1-B_2|\). Si las corrientes son opuestas, los campos se <strong>suman</strong>: \(B_T=B_1+B_2\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El sentido de cada \(\vec B_i\) lo da la regla de la mano derecha.</li>
+                    <li>En hilos paralelos, los campos son <strong>perpendiculares al plano</strong> de los hilos.</li>
+                    <li>El módulo final puede ser cero en algún punto (campo nulo).</li>
+                    <li>Usar SIEMPRE componentes si los campos no son colineales.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 · LÍNEAS CERRADAS Y NO MONOPOLOS -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Líneas cerradas del campo magnético</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué expresa?</span>
+                Que las líneas del campo magnético forman siempre <strong>curvas cerradas</strong>: no nacen ni terminan en ningún punto, porque no existen monopolos magnéticos en el electromagnetismo clásico. Se aplica en cuestiones conceptuales de EBAU que piden comparar las líneas de \(\vec E\) y \(\vec B\), o justificar el patrón gráfico de un imán o de un hilo con corriente.
+            </div>
+            <a href="TemaB8.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">
+                \[ \oint_S \vec B\cdot d\vec S = 0 \qquad\Longleftrightarrow\qquad \nabla\cdot\vec B=0 \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No es una fórmula que se aplique a cálculos numéricos de B8: es una <strong>propiedad conceptual</strong>. Memoriza la consecuencia gráfica: <strong>las líneas del campo magnético son siempre cerradas</strong>. En un imán salen del polo norte por fuera, entran por el sur, y por dentro van del sur al norte, cerrando el circuito. En un hilo recto, son circunferencias cerradas alrededor. Esta propiedad implica \(\nabla\cdot\vec B=0\): no hay monopolos magnéticos. NO confundir con \(\oint\vec B\cdot d\vec l=\mu_0 I_{\text{enc}}\) (Ampère), que es otra propiedad distinta.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Propiedad</th><th>Campo eléctrico \(\vec E\)</th><th>Campo magnético \(\vec B\)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Propiedad">Líneas</td><td data-label="Campo eléctrico">Abiertas (salen de +, entran en −)</td><td data-label="Campo magnético">Cerradas</td></tr>
+                    <tr><td data-label="Propiedad">Monopolos</td><td data-label="Campo eléctrico">Sí (cargas + y −)</td><td data-label="Campo magnético">No en el modelo clásico</td></tr>
+                    <tr><td data-label="Propiedad">Divergencia</td><td data-label="Campo eléctrico">\(\nabla\cdot\vec E=\rho/\varepsilon_0\)</td><td data-label="Campo magnético">\(\nabla\cdot\vec B=0\)</td></tr>
+                    <tr><td data-label="Propiedad">Flujo cerrado</td><td data-label="Campo eléctrico">\(\oint\vec E\cdot d\vec S=Q_{\text{enc}}/\varepsilon_0\)</td><td data-label="Campo magnético">\(\oint\vec B\cdot d\vec S=0\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si se parte un imán de barra por la mitad, no se obtiene un polo norte aislado y un polo sur aislado, sino dos imanes más pequeños, cada uno con sus dos polos. Esto refleja la inexistencia de monopolos magnéticos y el carácter cerrado de las líneas de \(\vec B\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Las líneas de \(\vec B\) son <strong>cerradas</strong>: no nacen ni terminan.</li>
+                    <li>No existen monopolos magnéticos en el electromagnetismo clásico.</li>
+                    <li>En un imán: exterior N → S; interior S → N; circuito cerrado.</li>
+                    <li>No confundir \(\nabla\cdot\vec B=0\) (no monopolos) con \(\oint\vec B\cdot d\vec l=\mu_0 I_{\text{enc}}\) (Ampère, circulación).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 · LÍNEAS DE CAMPO Y EQUIPOTENCIALES -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Líneas de campo y superficies equipotenciales</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La <strong>relación geométrica</strong> entre las líneas de campo eléctrico y las superficies equipotenciales: son perpendiculares en cada punto, y el campo apunta hacia donde el potencial disminuye. Se aplica en todos los problemas de representación gráfica que incluyen curvas de nivel de potencial, y en la interpretación cualitativa del movimiento de cargas.
+            </div>
+            <a href="TemaB8.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">
+                \[ \vec E = -\nabla V \qquad\text{(perpendicular a las equipotenciales)} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No hay que memorizar la fórmula del gradiente para B8: basta con recordar la <strong>relación geométrica</strong>. Las líneas de campo eléctrico son <strong>perpendiculares</strong> a las superficies equipotenciales, y el campo apunta <strong>hacia donde V disminuye</strong>. Consecuencia: moverse sobre una equipotencial no requiere trabajo del campo (\(\Delta V=0\)). En una carga puntual, las equipotenciales son esferas concéntricas; en un campo uniforme, son planos paralelos a las placas.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Configuración</th><th>Líneas de \(\vec E\)</th><th>Equipotenciales</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Configuración">Carga puntual</td><td data-label="Líneas">Radiales</td><td data-label="Equipotenciales">Esferas concéntricas</td></tr>
+                    <tr><td data-label="Configuración">Campo uniforme</td><td data-label="Líneas">Rectas paralelas</td><td data-label="Equipotenciales">Planos paralelos a las placas</td></tr>
+                    <tr><td data-label="Configuración">Dipolo</td><td data-label="Líneas">Curvas de + a −</td><td data-label="Equipotenciales">Superficies curvas perpendiculares</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> en una carga puntual, las equipotenciales son circunferencias concéntricas (en el plano). Las líneas del campo (radiales) cortan perpendicularmente a todas ellas. Al desplazar una carga sobre una de esas circunferencias, el trabajo del campo es nulo porque no hay variación de potencial.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Las líneas de \(\vec E\) son <strong>perpendiculares</strong> a las equipotenciales.</li>
+                    <li>El campo apunta hacia donde el potencial <strong>disminuye</strong>.</li>
+                    <li>Desplazarse sobre una equipotencial ⟹ trabajo del campo nulo.</li>
+                    <li>Las equipotenciales nunca se cortan entre sí (ni con las líneas de campo).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 10 · DENSIDAD DE LÍNEAS Y CAMPO NULO -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Densidad de líneas y puntos de campo nulo</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Lectura gráfica</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación entre la <strong>densidad de líneas</strong> de un esquema gráfico y la intensidad relativa del campo, y cómo reconocer en un dibujo los puntos donde el campo es nulo (o máximo). Se aplica en cuestiones de interpretación de esquemas (comparar zonas de mayor o menor densidad, identificar puntos nulos) y en el cálculo de la posición del punto de campo nulo entre dos hilos paralelos.
+            </div>
+            <a href="TemaB8.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">
+                \[ \text{Densidad de líneas} \propto |\vec E| \ \text{ó}\ |\vec B| \qquad\text{(cualitativo)} \]
+                \[ \frac{I_1}{r_1}=\frac{I_2}{r_2} \qquad\text{(punto de campo nulo, hilos)} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Hay dos ideas distintas que conviene no mezclar: (1) la <strong>densidad de líneas</strong> es una lectura gráfica cualitativa (a más densidad, mayor módulo del campo), no una magnitud física independiente; (2) el <strong>punto de campo nulo</strong> entre dos hilos es una posición concreta donde se igualan los módulos de los campos y se oponen los sentidos: se localiza planteando \(I_1/r_1=I_2/r_2\). Y recuerda: el número de líneas dibujado depende del convenio; lo que importa es la <strong>comparación relativa de densidades dentro del mismo esquema</strong>.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Situación</th><th>Densidad de líneas</th><th>Módulo del campo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Situación">Carga puntual (cerca)</td><td data-label="Densidad de líneas">Alta</td><td data-label="Módulo del campo">Grande (\(E\propto1/r^{2}\))</td></tr>
+                    <tr><td data-label="Situación">Carga puntual (lejos)</td><td data-label="Densidad de líneas">Baja</td><td data-label="Módulo del campo">Pequeño</td></tr>
+                    <tr><td data-label="Situación">Campo uniforme</td><td data-label="Densidad de líneas">Constante</td><td data-label="Módulo del campo">Constante</td></tr>
+                    <tr><td data-label="Situación">Hilo recto (cerca)</td><td data-label="Densidad de líneas">Alta</td><td data-label="Módulo del campo">Grande (\(B\propto1/r\))</td></tr>
+                    <tr><td data-label="Situación">Punto entre dos hilos (nulo)</td><td data-label="Densidad de líneas">Cero en ese punto</td><td data-label="Módulo del campo">Cero</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos hilos paralelos separados \(12\ \text{cm}\) con \(I_1=3\ \text{A}\) e \(I_2=9\ \text{A}\) en sentidos opuestos. El campo nulo está fuera, junto al hilo de menor corriente. Si \(a\) es la distancia desde el hilo de \(3\ \text{A}\): \(3/a=9/(a+0{,}12)\), de donde \(a=6\ \text{cm}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La densidad de líneas es una lectura <strong>relativa</strong> dentro del mismo esquema.</li>
+                    <li>No comparar el número total de líneas entre dibujos con distinto convenio.</li>
+                    <li>En el punto de campo nulo, la densidad de líneas es cero (no pasan líneas por allí).</li>
+                    <li>Con corrientes opuestas, el campo nulo está <strong>fuera</strong> de los hilos; con mismo sentido, <strong>entre</strong> ellos.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             LEYENDA EPISTÉMICA
+             ============================================================ -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones del tema B8 se estudian igual. Cada fórmula pertenece a una
+                <strong>categoría epistémica</strong> —definición, concepto, aplicación o caso típico
+                automatizable— y cada categoría se domina con un <strong>verbo distinto</strong>. Identificar
+                el tipo <em>antes</em> de estudiar ahorra tiempo y evita memorizar lo que se puede comprender
+                o automatizar.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una propiedad de las líneas
+                        de campo o fija su relación con el vector campo. No se demuestra, se establece. Se
+                        domina cuando puedes enunciarla sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplo B8</strong>
+                        Tangente a la línea de campo = dirección de \(\vec E\) o \(\vec B\).
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Concepto / comprensión</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es la <em>idea física</em> del tema: una propiedad o relación que hay que entender
+                        más que memorizar. Se domina cuando puedes explicarla con tus propias palabras y
+                        usarla como filtro conceptual.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B8</strong>
+                        regla de la mano derecha &nbsp;·&nbsp; líneas cerradas de \(\vec B\) &nbsp;·&nbsp;
+                        \(\vec E\perp\) equipotenciales
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Aplicación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Se usa para <em>resolver</em> un problema concreto o construir el esquema de líneas
+                        de una configuración: elegir el patrón, fijar sentidos, sumar vectores, comparar
+                        densidades.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B8</strong>
+                        \(E=k|q|/r^{2}\) &nbsp;·&nbsp; \(\vec E_{\text{total}}=\sum\vec E_i\) &nbsp;·&nbsp;
+                        \(B=\mu_0I/(2\pi r)\) &nbsp;·&nbsp; \(\vec B_{\text{total}}=\sum\vec B_i\) &nbsp;·&nbsp;
+                        \(I_1/r_1=I_2/r_2\)
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Caso típico automatizable</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es un <em>caso particular</em> muy reconocible que conviene aplicar de forma refleja:
+                        el patrón gráfico ya se reconoce sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplo B8</strong>
+                        Campo uniforme: líneas rectas, paralelas y equidistantes.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tabla resumen -->
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Concepto</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Idea física central</td>
+                        <td data-label="¿Cómo se domina?">Explicar con tus palabras</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla sin fórmulas?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Aplicación</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Patrón y cálculo</td>
+                        <td data-label="¿Cómo se domina?">Dibujar y resolver con signos</td>
+                        <td data-label="Autoevaluación">¿Elijo bien el patrón y compruebo el sentido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Automatizar</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Caso típico específico</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿La reconozco y la aplico al instante?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Regla de oro -->
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si es una idea física que hay que entender → <strong>concepto</strong> (comprender).
+                Si solo asigna un nombre o fija una relación básica → <strong>definición</strong> (memorizar).
+                Si la usas para dibujar o resolver → <strong>aplicación</strong> (aplicar).
+                Si es un caso particular muy repetido → <strong>caso típico</strong> (automatizar).
+            </div>
+
+            <!-- Mini-referencia de colores -->
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Comprender (mano derecha, líneas cerradas, equipotenciales)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Definición (qué es una línea de campo)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Automatizar (campo uniforme)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Aplicar (carga puntual, superposición, hilo, densidad, campo nulo)</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================ GLOSARIO ============================ -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas y reglas del tema B8</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones y reglas del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una propiedad concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula / regla</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \text{Tangente} \parallel \vec E\ \text{(o }\vec B\text{)} \]</td><td data-label="Nombre">Definición de línea de campo</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ E=k\,\dfrac{|q|}{r^{2}} \]</td><td data-label="Nombre">Módulo del campo eléctrico de una carga puntual</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ q>0:\text{ salen};\ q<0:\text{ entran} \]</td><td data-label="Nombre">Sentido de las líneas eléctricas</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ \vec E_{\text{total}}=\sum\vec E_i \]</td><td data-label="Nombre">Superposición de campos eléctricos</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ E=\dfrac{|\Delta V|}{d} \]</td><td data-label="Nombre">Campo uniforme entre placas</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ B=\dfrac{\mu_0 I}{2\pi r} \]</td><td data-label="Nombre">Campo magnético de un hilo recto</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ \text{Pulgar}=I \Rightarrow \text{Dedos}=\vec B \]</td><td data-label="Nombre">Regla de la mano derecha</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \vec B_{\text{total}}=\sum\vec B_i \]</td><td data-label="Nombre">Superposición de campos magnéticos</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ \oint_S\vec B\cdot d\vec S=0 \Longleftrightarrow \nabla\cdot\vec B=0 \]</td><td data-label="Nombre">Líneas cerradas / no monopolos</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ \vec E=-\nabla V \]</td><td data-label="Nombre">Líneas \(\perp\) equipotenciales</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ \dfrac{I_1}{r_1}=\dfrac{I_2}{r_2} \]</td><td data-label="Nombre">Punto de campo nulo entre dos hilos</td><td data-label="Ficha">10</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> (i) dibujar las líneas eléctricas entrando en una carga positiva; (ii) confundir corriente convencional con movimiento de electrones; (iii) invertir el sentido de la regla de la mano derecha; (iv) hacer que las líneas se corten en un esquema; (v) representar un campo uniforme con líneas convergentes (¡deben ser paralelas!); (vi) confundir líneas de campo con equipotenciales; (vii) dibujar las líneas magnéticas como líneas abiertas (¡son cerradas!); (viii) sumar módulos de campos sin atender a la dirección; (ix) usar el sentido de los electrones en lugar del de la corriente convencional; (x) confundir \(\nabla\cdot\vec B=0\) (no monopolos) con \(\oint\vec B\cdot d\vec l=\mu_0I_{\text{enc}}\) (Ampère, circulación).
+        </div>
+    </details>
+
+    <!-- ============================ RECORDATORIO ============================ -->
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en el tema B8 la idea central es que <strong>una línea de campo es una curva cuya tangente coincide con el vector campo</strong>. Su forma, su sentido y su densidad codifican toda la información gráfica de un campo. Reglas clave: (1) las líneas eléctricas <strong>salen de las cargas positivas y entran en las negativas</strong>; (2) las líneas magnéticas son <strong>siempre cerradas</strong> (no hay monopolos); (3) el campo eléctrico es <strong>perpendicular</strong> a las equipotenciales y apunta hacia potenciales decrecientes; (4) el sentido del campo magnético se obtiene con la <strong>regla de la mano derecha</strong> aplicada a la corriente convencional; (5) la <strong>densidad de líneas</strong> indica la intensidad relativa del campo; (6) en campos uniformes, las líneas son <strong>rectas, paralelas y equidistantes</strong>. Si dominas estas seis reglas y aplicas bien la superposición vectorial cuando haya varias fuentes, puedes resolver cualquier cuestión de B8 —y la mayoría de las cuestiones conceptuales de EBAU del bloque B.
+    </div>
+
+    <!-- ============================ BOTÓN VOLVER ============================ -->
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+
+<!-- ============================ JS · RESALTADO DE LA FÓRMULA DESTINO ============================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    // Si el id cae sobre un <span> interior, subimos a la .formula-box que lo contiene.
+    var highlight = target.classList.contains('formula-box') || target.classList.contains('card')
+        ? target
+        : (target.closest('.formula-box') || target.closest('.card') || target);
+
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    // Reinicia la animación aunque :target ya se hubiera consumido
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () {
+        highlight.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
+</body>
+</html>

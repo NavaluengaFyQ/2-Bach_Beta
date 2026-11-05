@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA C2 (Formulario).- Movimiento ondulatorio: magnitudes, tipos y ecuación de onda</title>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../css/formulario.css">
+
+    <style>
+        /* Estilo base para que el enlace que envuelve la fórmula no parezca un enlace azul subrayado.
+           El comportamiento al pulsar (scroll + margen) ya lo aporta formulario.css:
+           .formula-box { scroll-margin-top: 100px; } */
+        a.formula-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA C2 (Formulario).- </span>
+                <span class="texto">Movimiento ondulatorio: magnitudes, tipos y ecuación de onda</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <div class="grid">
+
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Ecuación de onda armónica (hacia +X)</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La elongación \(y\) de cualquier punto \(x\) del medio en cualquier instante \(t\), cuando una onda armónica transversal se propaga por el eje \(X\) en sentido positivo. Es la ecuación central del tema: en ella aparecen todas las magnitudes características (amplitud, frecuencia angular, número de onda y fase inicial). Cualquier problema de ondas parte de esta expresión o de una equivalente.
+            </div>
+            <a href="TemaC2.html#formula-1" class="formula-link">
+                <div class="formula-box" id="formula-1">
+                    \[ y(x,t) = A\,\sin(\omega t - kx + \varphi_0) \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la ecuación madre del tema. Memoriza la estructura \(y=A\sin(\omega t - kx + \varphi_0)\), con el signo menos entre los términos temporal y espacial indicando propagación hacia \(+X\). Si usas coseno, basta con reajustar \(\varphi_0\). Es imprescindible identificarla en la EBAU para extraer \(A\), \(\omega\), \(k\) y \(\varphi_0\) comparando término a término.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(y(x,t)\)</td><td>Elongación del punto \(x\) en el instante \(t\)</td><td>m</td></tr>
+                    <tr><td>\(A\)</td><td>Amplitud de la onda</td><td>m</td></tr>
+                    <tr><td>\(\omega\)</td><td>Frecuencia angular</td><td>rad/s</td></tr>
+                    <tr><td>\(k\)</td><td>Número de onda</td><td>rad/m</td></tr>
+                    <tr><td>\(\varphi_0\)</td><td>Fase inicial</td><td>rad</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(y(x,t)=0{,}1\sin(0{,}8\pi t - 0{,}8\pi x + \pi/2)\) describe una onda con \(A=0{,}1\,\text{m}\), \(\omega=0{,}8\pi\,\text{rad/s}\), \(k=0{,}8\pi\,\text{rad/m}\) y \(\varphi_0=\pi/2\) que avanza hacia \(+X\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El signo del término espacial \(kx\) fija el sentido de propagación (aquí \(-kx\) → \(+X\)).</li>
+                    <li>También se puede escribir como \(A\sin(kx-\omega t+\varphi_0')\) reajustando la fase.</li>
+                    <li>El argumento completo \((\omega t - kx + \varphi_0)\) se llama <strong>fase</strong> de la onda.</li>
+                    <li>La función seno se elige por convenio; el coseno es válido si se modifica \(\varphi_0\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Ecuación de onda armónica (hacia -X)</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La elongación \(y\) de cualquier punto \(x\) del medio en cualquier instante \(t\), cuando la onda armónica transversal se propaga en el sentido negativo del eje \(X\). Se aplica cuando el problema indica que la onda viaja hacia la izquierda o cuando se quiere escribir la ecuación de una onda reflejada.
+            </div>
+            <a href="TemaC2.html#formula-2" class="formula-link">
+                <div class="formula-box" id="formula-2">
+                    \[ y(x,t) = A\,\sin(\omega t + kx + \varphi_0) \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la misma ecuación que la ficha 1, pero con <strong>signo más</strong> entre los términos temporal y espacial. La estructura \(y=A\sin(\omega t + kx + \varphi_0)\) representa una onda que viaja hacia \(-X\). Memoriza ambas variantes y el criterio: <em>el signo relativo entre \(\omega t\) y \(kx\) indica el sentido de propagación</em>.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(y(x,t)\)</td><td>Elongación del punto \(x\) en el instante \(t\)</td><td>m</td></tr>
+                    <tr><td>\(A\)</td><td>Amplitud</td><td>m</td></tr>
+                    <tr><td>\(\omega\)</td><td>Frecuencia angular</td><td>rad/s</td></tr>
+                    <tr><td>\(k\)</td><td>Número de onda</td><td>rad/m</td></tr>
+                    <tr><td>\(\varphi_0\)</td><td>Fase inicial</td><td>rad</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(y=0{,}05\sin(4\pi t + 2\pi x)\) representa una onda con \(A=0{,}05\,\text{m}\), \(\omega=4\pi\,\text{rad/s}\) y \(k=2\pi\,\text{rad/m}\), propagándose hacia \(-X\) (\(\varphi_0=0\)).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El signo positivo delante de \(kx\) indica propagación hacia \(-X\).</li>
+                    <li>La forma general es \(\varphi=\omega t\mp kx+\varphi_0\): \(-\), hacia \(+X\); \(+\), hacia \(-X\).</li>
+                    <li>No basta con mirar el signo de \(kx\) aislado: hay que comparar con el de \(\omega t\).</li>
+                    <li>Si la ecuación empieza por \(\sin(kx\pm\omega t)\), hay que reordenar los términos antes de decidir.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Amplitud y elongación</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La elongación \(y\) es la separación instantánea de un punto del medio respecto a su posición de equilibrio. La amplitud \(A\) es el valor máximo de esa elongación. Se aplica para describir el estado de vibración de cualquier punto y para acotar los valores posibles de \(y\).
+            </div>
+            <a href="TemaC2.html#formula-3" class="formula-link">
+                <div class="formula-box" id="formula-3">
+                    \[ -A \leq y(x,t) \leq A \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">📘 MEMORIZAR</span>Memoriza las definiciones y el rango \([-A,+A]\); es inmediato y sirve de comprobación en cualquier problema. Ambas se miden en metros. La amplitud es una propiedad de la onda (independiente del punto y del instante); la elongación es una variable que depende de \(x\) y de \(t\).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(y\)</td><td>Elongación instantánea del punto</td><td>m</td></tr>
+                    <tr><td>\(A\)</td><td>Amplitud (elongación máxima)</td><td>m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si \(A=5\,\text{cm}\), la elongación de cualquier punto del medio nunca supera \(5\,\text{cm}\) ni es menor que \(-5\,\text{cm}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La amplitud no depende de \(x\) ni de \(t\): es una constante de la onda.</li>
+                    <li>La elongación es <strong>función</strong> de \(x\) y \(t\): varía punto a punto e instante a instante.</li>
+                    <li>Los máximos de \(y\) están en \(+A\); los mínimos, en \(-A\).</li>
+                    <li>Los puntos de elongación nula son los <strong>nodos</strong>; los de elongación máxima, los <strong>vientres</strong>.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Longitud de onda</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La distancia mínima entre dos puntos consecutivos que se encuentran en el mismo estado de vibración (misma fase). Se aplica para describir la periodicidad espacial de la onda y aparece en todas las fórmulas de velocidad, número de onda y diferencias de fase espacial.
+            </div>
+            <a href="TemaC2.html#formula-4" class="formula-link">
+                <div class="formula-box" id="formula-4">
+                    \[ \lambda = \text{distancia entre dos puntos consecutivos en fase} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">📘 MEMORIZAR</span>Sí: es una <strong>definición</strong>. La longitud de onda es la periodicidad espacial de la onda. Se mide en metros. Es la distancia entre dos crestas consecutivas, entre dos valles consecutivos o entre dos nodos consecutivos del mismo tipo. Aparece continuamente en problemas de la EBAU.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody><tr><td>\(\lambda\)</td><td>Longitud de onda</td><td>m</td></tr></tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> en una cuerda, si dos crestas consecutivas están separadas \(2{,}5\,\text{m}\), entonces \(\lambda=2{,}5\,\text{m}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Dos crestas consecutivas o dos valles consecutivos están separados \(\lambda\).</li>
+                    <li>Una cresta y el valle siguiente están separados \(\lambda/2\).</li>
+                    <li>La longitud de onda cambia al pasar a otro medio, si cambia la velocidad de propagación.</li>
+                    <li>Su relación con el número de onda es \(k=2\pi/\lambda\) (ficha 7).</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Periodo y frecuencia</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El periodo \(T\) es el tiempo que tarda un punto del medio en completar una oscilación completa. La frecuencia \(f\) es el número de oscilaciones por unidad de tiempo. Se aplican para caracterizar la periodicidad temporal de la onda y aparecen en todas las expresiones de frecuencia angular, diferencias de fase temporal y velocidad de propagación.
+            </div>
+            <a href="TemaC2.html#formula-5" class="formula-link">
+                <div class="formula-box" id="formula-5">
+                    \[ f = \frac{1}{T} \]
+                    \[ T = \frac{1}{f} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">📘 MEMORIZAR</span>Sí: es una definición y su inversa. Unidades: \(T\) en segundos (s), \(f\) en hercios (Hz) \(= \text{s}^{-1}\). Se aplica en todos los problemas de ondas: es la relación entre tiempo y frecuencia que aparece en las fórmulas de \(\omega\) y en las diferencias de fase temporales.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(T\)</td><td>Periodo: tiempo de una oscilación completa</td><td>s</td></tr>
+                    <tr><td>\(f\)</td><td>Frecuencia: oscilaciones por segundo</td><td>Hz = s⁻¹</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si un punto de la cuerda completa 4 oscilaciones en 2 s, \(f=2\,\text{Hz}\) y \(T=0{,}5\,\text{s}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El periodo y la frecuencia son <strong>inversos</strong>: a mayor \(f\), menor \(T\).</li>
+                    <li>La frecuencia de una onda al cambiar de medio permanece constante (la impone la fuente).</li>
+                    <li>El periodo tampoco cambia al pasar a otro medio.</li>
+                    <li>En cambio, \(\lambda\) y \(v\) sí cambian con el medio.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Frecuencia angular</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La frecuencia angular o pulsación \(\omega\), que representa la rapidez con la que cambia la fase de oscilación con el tiempo. Se aplica en la ecuación de onda y en la diferencia de fase entre dos instantes. Es la magnitud que aparece multiplicando al tiempo \(t\) dentro del argumento de la función trigonométrica.
+            </div>
+            <a href="TemaC2.html#formula-6" class="formula-link">
+                <div class="formula-box" id="formula-6">
+                    \[ \boxed{\omega = 2\pi f = \frac{2\pi}{T}} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: aparece continuamente en la ecuación de onda, en la velocidad transversal y en las diferencias de fase temporales. Memoriza \(\omega=2\pi f=2\pi/T\) y su unidad \(\text{rad/s}\). Un error típico en la EBAU es confundir \(\omega\) con \(f\): no son lo mismo (difieren en el factor \(2\pi\)).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(\omega\)</td><td>Frecuencia angular o pulsación</td><td>rad/s</td></tr>
+                    <tr><td>\(f\)</td><td>Frecuencia</td><td>Hz</td></tr>
+                    <tr><td>\(T\)</td><td>Periodo</td><td>s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(f=50\,\text{Hz}\), \(\omega=2\pi\cdot50 = 100\pi\,\text{rad/s}\approx314\,\text{rad/s}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Su unidad es el radian por segundo (rad/s).</li>
+                    <li>En la ecuación \(y=A\sin(\omega t - kx)\), \(\omega\) multiplica al tiempo.</li>
+                    <li>En la diferencia de fase temporal, \(|\Delta\varphi_t| = \omega|\Delta t|\).</li>
+                    <li>En una onda, \(\omega\) es una propiedad de la fuente y del medio.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Número de onda</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El número de onda \(k\), que representa la rapidez con la que cambia la fase al variar la posición. Se aplica en la ecuación de onda y en la diferencia de fase entre dos puntos. Es la magnitud que aparece multiplicando a la posición \(x\) dentro del argumento de la función trigonométrica.
+            </div>
+            <a href="TemaC2.html#formula-7" class="formula-link">
+                <div class="formula-box" id="formula-7">
+                    \[ \boxed{k = \frac{2\pi}{\lambda}} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la "frecuencia angular espacial" y aparece continuamente en la ecuación de onda y en las diferencias de fase espaciales. Memoriza \(k=2\pi/\lambda\) y su unidad \(\text{rad/m}\). No confundir \(k\) con \(\lambda\): son inversamente proporcionales (con el factor \(2\pi\) por medio).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(k\)</td><td>Número de onda</td><td>rad/m</td></tr>
+                    <tr><td>\(\lambda\)</td><td>Longitud de onda</td><td>m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(\lambda=2\,\text{m}\), \(k=2\pi/2 = \pi\,\text{rad/m}\approx3{,}14\,\text{rad/m}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Su unidad es el radian por metro (rad/m).</li>
+                    <li>En la ecuación \(y=A\sin(\omega t - kx)\), \(k\) multiplica a la posición.</li>
+                    <li>En la diferencia de fase espacial, \(|\Delta\varphi_x| = k|\Delta x|\).</li>
+                    <li>Se puede despejar \(\lambda=2\pi/k\) si se conoce \(k\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Velocidad de propagación</h2>
+                <span class="badge-centro">Relación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · En problemas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La velocidad con la que avanza la perturbación por el medio. Se aplica en todos los problemas en que se relacionan longitud de onda, periodo o frecuencia. Es una propiedad del medio (para ondas mecánicas) y NO coincide con la velocidad de vibración de las partículas (\(v_y\)).
+            </div>
+            <a href="TemaC2.html#formula-8" class="formula-link">
+                <div class="formula-box" id="formula-8">
+                    \[ \boxed{v = \frac{\lambda}{T} = \lambda f = \frac{\omega}{k}} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es una de las fórmulas más usadas. Memoriza la cadena \(v=\lambda/T=\lambda f=\omega/k\). Cuidado: \(v\) es la velocidad de <strong>propagación</strong> de la onda, no la velocidad transversal de vibración de las partículas (\(v_y=\partial y/\partial t\)). Son dos magnitudes completamente diferentes.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(v\)</td><td>Velocidad de propagación</td><td>m/s</td></tr>
+                    <tr><td>\(\lambda\)</td><td>Longitud de onda</td><td>m</td></tr>
+                    <tr><td>\(f\)</td><td>Frecuencia</td><td>Hz</td></tr>
+                    <tr><td>\(T\)</td><td>Periodo</td><td>s</td></tr>
+                    <tr><td>\(\omega\)</td><td>Frecuencia angular</td><td>rad/s</td></tr>
+                    <tr><td>\(k\)</td><td>Número de onda</td><td>rad/m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una onda con \(\lambda=2{,}5\,\text{m}\) y \(T=0{,}5\,\text{s}\) se propaga a \(v=2{,}5/0{,}5=5\,\text{m/s}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>En ondas mecánicas, \(v\) depende del medio (densidad, tensión, elasticidad…).</li>
+                    <li>Al cambiar de medio, \(f\) se mantiene y \(v\) y \(\lambda\) cambian.</li>
+                    <li>La fórmula \(v=\omega/k\) es útil cuando la ecuación de onda está en la forma estándar.</li>
+                    <li>No confundir \(v\) (propagación) con \(v_y\) (vibración transversal).</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Fase y fase inicial</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La fase \(\varphi(x,t)\) indica el estado de vibración de un punto en un instante; la fase inicial \(\varphi_0\) es el estado de vibración del origen en el instante inicial. Se aplican para determinar la diferencia de fase entre puntos o instantes y para fijar la ecuación de onda a partir de condiciones iniciales.
+            </div>
+            <a href="TemaC2.html#formula-9" class="formula-link">
+                <div class="formula-box" id="formula-9">
+                    \[ \varphi(x,t) = \omega t \mp kx + \varphi_0 \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">📖 FAMILIARIZARSE</span>No es una fórmula que se memorice, sino un <strong>concepto</strong> que se comprende. La fase es el argumento completo de la función trigonométrica. La fase inicial \(\varphi_0\) se determina con las condiciones iniciales (elongación y velocidad en \(x=0\), \(t=0\)). Error típico: confundir \(\varphi_0\) (constante) con \(\varphi(x,t)\) (variable).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(\varphi(x,t)\)</td><td>Fase de la onda en el punto \(x\) e instante \(t\)</td><td>rad</td></tr>
+                    <tr><td>\(\varphi_0\)</td><td>Fase inicial (constante)</td><td>rad</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si \(y(x,t)=A\sin(4\pi t - 2\pi x + \pi/6)\), la fase inicial es \(\varphi_0=\pi/6\) y la fase en \((x,t)=(1\,\text{m},\,0{,}5\,\text{s})\) vale \(2\pi-2\pi+\pi/6=\pi/6\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La fase se mide en radianes (rad).</li>
+                    <li>La fase inicial se obtiene de las condiciones iniciales de elongación y velocidad.</li>
+                    <li>Dos puntos están en fase si su diferencia de fase es un múltiplo entero de \(2\pi\).</li>
+                    <li>Dos puntos están en oposición de fase si su diferencia de fase es un múltiplo impar de \(\pi\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Diferencia de fase entre dos puntos (espacial)</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · En problemas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La diferencia de fase entre dos puntos separados una distancia \(\Delta x\) en un mismo instante. Se aplica en los problemas de desfase espacial de la EBAU y para localizar puntos en fase o en oposición de fase.
+            </div>
+            <a href="TemaC2.html#formula-10" class="formula-link">
+                <div class="formula-box" id="formula-10">
+                    \[ \boxed{|\Delta\varphi_x| = k\,|\Delta x| = \frac{2\pi}{\lambda}\,|\Delta x|} \]
+                    \[ |\Delta x| = \frac{\lambda\,|\Delta\varphi_x|}{2\pi} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se deduce de la fase \(\varphi=\omega t-kx+\varphi_0\), restando las fases de dos puntos \(x_1\) y \(x_2\). Memoriza solo la idea: <strong>la diferencia de fase espacial es \(k\Delta x\)</strong>, NO \(\omega\Delta x\) (confusión típica). Si te dan \(\Delta\varphi\) y piden \(\Delta x\), despeja.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(|\Delta\varphi_x|\)</td><td>Diferencia de fase entre dos puntos</td><td>rad</td></tr>
+                    <tr><td>\(k\)</td><td>Número de onda</td><td>rad/m</td></tr>
+                    <tr><td>\(|\Delta x|\)</td><td>Distancia entre los dos puntos</td><td>m</td></tr>
+                    <tr><td>\(\lambda\)</td><td>Longitud de onda</td><td>m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si \(k=\pi\,\text{rad/m}\) y dos puntos están a \(0{,}5\,\text{m}\), \(|\Delta\varphi_x|=\pi\cdot0{,}5=\pi/2\,\text{rad}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La fórmula correcta usa \(k\), no \(\omega\): no confundir desfase espacial con temporal.</li>
+                    <li>Para \(\Delta x=\lambda/2\): \(|\Delta\varphi_x|=\pi\) (oposición de fase).</li>
+                    <li>Para \(\Delta x=\lambda\): \(|\Delta\varphi_x|=2\pi\) (en fase).</li>
+                    <li>Es habitual dar la diferencia de fase entre \(0\) y \(2\pi\); se puede "reducir" módulo \(2\pi\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">11</span>
+                <h2>Diferencia de fase entre dos instantes (temporal)</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · En problemas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La diferencia de fase que experimenta un mismo punto del medio entre dos instantes separados \(\Delta t\). Se aplica en problemas de evolución temporal de un punto y para calcular cuánto ha avanzado la vibración entre dos tiempos dados.
+            </div>
+            <a href="TemaC2.html#formula-11" class="formula-link">
+                <div class="formula-box" id="formula-11">
+                    \[ \boxed{|\Delta\varphi_t| = \omega\,|\Delta t| = \frac{2\pi}{T}\,|\Delta t|} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se obtiene restando las fases del mismo punto \(x\) en dos instantes \(t_1\) y \(t_2\). Idea clave: <strong>la diferencia de fase temporal es \(\omega\Delta t\)</strong>, NO \(k\Delta t\). Cuidado con confundir \(\omega\) y \(k\) en los desfases.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(|\Delta\varphi_t|\)</td><td>Diferencia de fase entre dos instantes</td><td>rad</td></tr>
+                    <tr><td>\(\omega\)</td><td>Frecuencia angular</td><td>rad/s</td></tr>
+                    <tr><td>\(|\Delta t|\)</td><td>Intervalo de tiempo entre los dos instantes</td><td>s</td></tr>
+                    <tr><td>\(T\)</td><td>Periodo</td><td>s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si \(\omega=0{,}8\pi\,\text{rad/s}\) y \(\Delta t=0{,}1\,\text{s}\), \(|\Delta\varphi_t|=0{,}8\pi\cdot0{,}1=0{,}08\pi\,\text{rad}\approx0{,}25\,\text{rad}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Para \(\Delta t=T/4\): \(|\Delta\varphi_t|=\pi/2\).</li>
+                    <li>Para \(\Delta t=T/2\): \(|\Delta\varphi_t|=\pi\) (el punto pasa al estado opuesto).</li>
+                    <li>Para \(\Delta t=T\): \(|\Delta\varphi_t|=2\pi\) (mismo estado de vibración).</li>
+                    <li>Se puede escribir directamente \(|\Delta\varphi_t|=\dfrac{2\pi}{T}|\Delta t|\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">12</span>
+                <h2>Puntos en fase</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · En problemas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La distancia entre dos puntos que se encuentran en fase, es decir, que vibran al unísono (mismo estado de vibración en todo instante). Se aplica para localizar puntos equivalentes de una onda y para identificar la periodicidad espacial.
+            </div>
+            <a href="TemaC2.html#formula-12" class="formula-link">
+                <div class="formula-box" id="formula-12">
+                    \[ \Delta\varphi = 2n\pi \]
+                    \[ \Delta x = n\lambda \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es una consecuencia inmediata de la definición: dos puntos están en fase cuando su diferencia de fase es un múltiplo entero de \(2\pi\), y eso ocurre cuando están separados un número entero de longitudes de onda. La distancia mínima (distinta de cero) es \(\lambda\).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(\Delta\varphi\)</td><td>Diferencia de fase entre dos puntos en fase</td><td>rad</td></tr>
+                    <tr><td>\(n\)</td><td>Entero (\(n=0,1,2,\dots\); \(n=0\) coincide con el mismo punto)</td><td>—</td></tr>
+                    <tr><td>\(\Delta x\)</td><td>Distancia entre los puntos</td><td>m</td></tr>
+                    <tr><td>\(\lambda\)</td><td>Longitud de onda</td><td>m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si \(\lambda=2{,}5\,\text{m}\), los puntos en fase más próximos (distintos) están separados \(\Delta x=2{,}5\,\text{m}\). También lo están a \(5\,\text{m}\), \(7{,}5\,\text{m}\)…</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La distancia mínima (no nula) entre puntos en fase es \(\lambda\).</li>
+                    <li>Las crestas consecutivas están en fase.</li>
+                    <li>Los valles consecutivos también están en fase.</li>
+                    <li>Una cresta y el valle siguiente están en oposición de fase (no en fase).</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">13</span>
+                <h2>Puntos en oposición de fase</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · En problemas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La distancia entre dos puntos que se encuentran en oposición de fase, es decir, que vibran con estados opuestos (cuando uno está en un máximo, el otro está en un mínimo). Se aplica para localizar puntos con elongaciones opuestas y es un resultado típico de la EBAU.
+            </div>
+            <a href="TemaC2.html#formula-13" class="formula-link">
+                <div class="formula-box" id="formula-13">
+                    \[ \Delta\varphi = (2n+1)\pi \]
+                    \[ \Delta x = (2n+1)\frac{\lambda}{2} \]
+                    \[ \Delta x_{\min} = \frac{\lambda}{2} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es una consecuencia inmediata de la definición: dos puntos están en oposición de fase cuando su diferencia de fase es un múltiplo impar de \(\pi\), y eso ocurre cuando están separados un número impar de semilongitudes de onda. La distancia mínima es \(\lambda/2\). Cuidado: no confundir "oposición de fase" (diferencia \(\pi\)) con "en fase" (diferencia \(2\pi\)).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(\Delta\varphi\)</td><td>Diferencia de fase entre dos puntos en oposición</td><td>rad</td></tr>
+                    <tr><td>\(n\)</td><td>Entero (\(n=0,1,2,\dots\))</td><td>—</td></tr>
+                    <tr><td>\(\Delta x\)</td><td>Distancia entre los puntos</td><td>m</td></tr>
+                    <tr><td>\(\lambda\)</td><td>Longitud de onda</td><td>m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si \(\lambda=2\,\text{m}\), la distancia mínima entre dos puntos en oposición de fase es \(\lambda/2=1\,\text{m}\). La siguiente distancia posible sería \(3\lambda/2=3\,\text{m}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La distancia mínima entre puntos en oposición de fase es \(\lambda/2\).</li>
+                    <li>Una cresta y el valle inmediatamente siguiente están en oposición de fase.</li>
+                    <li>Dos nodos consecutivos están en fase (no en oposición).</li>
+                    <li>Cuando uno tiene elongación \(+A\), el otro tiene \(-A\) (y viceversa).</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">14</span>
+                <h2>Velocidad transversal de vibración</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La velocidad con la que vibra un punto del medio (no la velocidad de propagación de la onda). Se obtiene derivando la elongación \(y(x,t)\) respecto al tiempo manteniendo \(x\) fija. Se aplica en los problemas de la EBAU que piden la velocidad de un punto en un instante concreto, o para usar condiciones iniciales de velocidad al determinar \(\varphi_0\).
+            </div>
+            <a href="TemaC2.html#formula-14" class="formula-link">
+                <div class="formula-box" id="formula-14">
+                    \[ v_y = \frac{\partial y}{\partial t} = A\omega\cos(\omega t - kx + \varphi_0) \]
+                    \[ v_{y,\max} = A\omega \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se deduce derivando \(y=A\sin(\omega t - kx+\varphi_0)\) respecto al tiempo. La regla de la cadena introduce un factor \(\omega\) y convierte el seno en coseno. Sí memoriza el valor máximo: \(v_{y,\max}=A\omega\). Cuidado: \(v_y\) puede ser positiva, negativa o nula, dependiendo del punto y del instante.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(v_y\)</td><td>Velocidad transversal de vibración</td><td>m/s</td></tr>
+                    <tr><td>\(A\)</td><td>Amplitud</td><td>m</td></tr>
+                    <tr><td>\(\omega\)</td><td>Frecuencia angular</td><td>rad/s</td></tr>
+                    <tr><td>\(v_{y,\max}\)</td><td>Velocidad transversal máxima</td><td>m/s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(y(x,t)=0{,}06\sin(4\pi t-\pi x/6)\), \(A=0{,}06\,\text{m}\), \(\omega=4\pi\,\text{rad/s}\). Entonces \(v_y=0{,}24\pi\cos(4\pi t-\pi x/6)\). El máximo vale \(0{,}24\pi\,\text{m/s}\approx0{,}75\,\text{m/s}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La velocidad transversal se obtiene derivando \(y\) respecto a \(t\) (con \(x\) constante).</li>
+                    <li>Es máxima (en módulo) cuando la elongación es nula (punto de equilibrio).</li>
+                    <li>Es nula cuando la elongación es máxima o mínima (crestas y valles).</li>
+                    <li>No confundir \(v_y\) con \(v\) (velocidad de propagación de la onda).</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">15</span>
+                <h2>Aceleración transversal de vibración</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La aceleración con la que vibra un punto del medio. Se obtiene derivando dos veces la elongación \(y(x,t)\) respecto al tiempo. Se aplica en problemas de dinámica de ondas y para verificar que cada punto del medio realiza un MAS.
+            </div>
+            <a href="TemaC2.html#formula-15" class="formula-link">
+                <div class="formula-box" id="formula-15">
+                    \[ a_y = \frac{\partial^2 y}{\partial t^2} = -A\omega^2\sin(\omega t - kx + \varphi_0) \]
+                    \[ a_{y,\max} = A\omega^2 \]
+                    \[ a_y = -\omega^2\,y \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se deduce derivando dos veces \(y=A\sin(\omega t - kx+\varphi_0)\). La regla de la cadena introduce \(\omega^2\) y cambia el signo. Sí memoriza el máximo \(a_{y,\max}=A\omega^2\) y la relación clave \(a_y=-\omega^2 y\): es la firma del MAS.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(a_y\)</td><td>Aceleración transversal de vibración</td><td>m/s²</td></tr>
+                    <tr><td>\(A\)</td><td>Amplitud</td><td>m</td></tr>
+                    <tr><td>\(\omega\)</td><td>Frecuencia angular</td><td>rad/s</td></tr>
+                    <tr><td>\(a_{y,\max}\)</td><td>Aceleración transversal máxima</td><td>m/s²</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(A=0{,}06\,\text{m}\) y \(\omega=4\pi\,\text{rad/s}\): \(a_{y,\max}=0{,}06\cdot(4\pi)^2\approx9{,}47\,\text{m/s}^2\). Y en cualquier instante, \(a_y=-\omega^2 y=-(4\pi)^2 y\) (con \(y\) en m y \(a_y\) en m/s²).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La aceleración transversal se obtiene derivando dos veces \(y\) respecto a \(t\).</li>
+                    <li>Es máxima (en módulo) en las crestas y valles (donde la velocidad es nula).</li>
+                    <li>Es nula en los nodos (donde la velocidad es máxima).</li>
+                    <li>La relación \(a_y=-\omega^2 y\) es la firma del MAS: cada punto vibra armónicamente.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">16</span>
+                <h2>Ondas sonoras: aplicación</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · En problemas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La longitud de onda o la frecuencia de una onda sonora a partir de la velocidad del sonido en el medio. Se aplica en problemas típicos de la EBAU que combinan ondas con sonido.
+            </div>
+            <a href="TemaC2.html#formula-16" class="formula-link">
+                <div class="formula-box" id="formula-16">
+                    \[ \lambda = \frac{v_{\text{sonido}}}{f} \]
+                    \[ v_{\text{sonido}} \approx 340\,\text{m/s en aire} \]
+                </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es una aplicación directa de \(v=\lambda f\). No hace falta memorizarla: basta con usar la fórmula general de la velocidad de propagación. Sí conviene recordar el valor orientativo \(v_{\text{sonido}}\approx340\,\text{m/s}\) en aire a temperatura ambiente.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td>\(\lambda\)</td><td>Longitud de onda sonora</td><td>m</td></tr>
+                    <tr><td>\(v_{\text{sonido}}\)</td><td>Velocidad del sonido en el medio</td><td>m/s</td></tr>
+                    <tr><td>\(f\)</td><td>Frecuencia del sonido</td><td>Hz</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un sonido de \(f=440\,\text{Hz}\) (nota La) en aire: \(\lambda=340/440\approx0{,}773\,\text{m}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El sonido es una onda mecánica <strong>longitudinal</strong> en el aire.</li>
+                    <li>Al pasar a otro medio, \(f\) se mantiene y \(v\) y \(\lambda\) cambian.</li>
+                    <li>El tono depende de la frecuencia: agudos (alta \(f\)), graves (baja \(f\)).</li>
+                    <li>En la EBAU se suele dar \(v_{\text{sonido}}\) como dato si no es \(340\,\text{m/s}\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card span-all leyenda-epi">
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+            <p class="leyenda-epi-intro">
+                No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
+                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
+                consecuencia matemática, principio de conservación o conversión de unidades— y cada
+                categoría se domina con un <strong>verbo distinto</strong>. Identificar el tipo
+                <em>antes</em> de estudiar ahorra tiempo y evita memorizar lo que se puede deducir.
+            </p>
+            <div class="leyenda-epi-grid">
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física. No se demuestra, se establece. Se domina cuando puedes enunciarla sin pensar.</p>
+                    <p class="epi-ej"><strong>Ejemplos C2</strong> \(\lambda\) = distancia entre puntos en fase · \(T\) = tiempo de una oscilación · \(A\) = elongación máxima · \(f=1/T\)</p>
+                </div>
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">Es el <em>punto de partida</em> del tema: describe cómo se propaga la onda. No se deriva de otra cosa; se entiende el porqué y las condiciones en las que aplica.</p>
+                    <p class="epi-ej"><strong>Ejemplos C2</strong> \(y=A\sin(\omega t-kx+\varphi_0)\) (hacia \(+X\)) · \(y=A\sin(\omega t+kx+\varphi_0)\) (hacia \(-X\))</p>
+                </div>
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">Se <em>obtiene</em> derivando, despejando o sustituyendo una ley fundamental o una definición. No se memoriza: se reconstruye en 2–3 líneas si se olvida.</p>
+                    <p class="epi-ej"><strong>Ejemplos C2</strong> \(\omega=2\pi f\) · \(k=2\pi/\lambda\) · \(v=\omega/k\) · \(|\Delta\varphi_x|=k\Delta x\) · \(|\Delta\varphi_t|=\omega\Delta t\) · \(v_y=\partial y/\partial t\) · \(a_y=-\omega^2 y\)</p>
+                </div>
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Principio / aplicación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">Es una <em>regla universal</em> que se aplica como filtro a cada problema concreto. No se demuestra: se usa.</p>
+                    <p class="epi-ej"><strong>Ejemplos C2</strong> \(\Delta x=n\lambda\) (puntos en fase) · \(\Delta x=(2n+1)\lambda/2\) (oposición)</p>
+                </div>
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Conversión / operación</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes equivalentes. Debe salir sin pensar, como un reflejo.</p>
+                    <p class="epi-ej"><strong>Ejemplos C2</strong> cm↔m · mm↔m · \(60^\circ\)↔\(\pi/3\,\text{rad}\) · Hz↔s⁻¹ · rad/s↔Hz</p>
+                </div>
+            </div>
+            <table class="leyenda-epi-tabla">
+                <thead><tr><th>Categoría</th><th>Verbo</th><th>¿Qué es?</th><th>¿Cómo se domina?</th><th>Autoevaluación</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td><td><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td><td>Vocabulario del tema</td><td>Repetición espaciada</td><td>¿Puedo enunciarla de memoria?</td></tr>
+                    <tr><td><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td><td><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td><td>Punto de partida físico</td><td>Explicar el porqué y sus condiciones</td><td>¿Sabría explicarla con mis palabras?</td></tr>
+                    <tr><td><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td><td><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td><td>Resultado matemático derivado</td><td>Reconstruirla en 2–3 pasos</td><td>¿Sabría deducirla si la olvido?</td></tr>
+                    <tr><td><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td><td><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td><td>Regla universal</td><td>Plantearla en cada problema</td><td>¿La aplico como filtro al problema?</td></tr>
+                    <tr><td><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td><td><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td><td>Herramienta mecánica</td><td>Práctica hasta el reflejo</td><td>¿Me sale sin pensar?</td></tr>
+                </tbody>
+            </table>
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>, pregúntate <strong>«¿de dónde sale esto?»</strong>. Si sale de otra fórmula integrando, despejando o sustituyendo → <strong>consecuencia</strong> (deducir). Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender). Si solo asigna un nombre → <strong>definición</strong> (memorizar). Si es una regla que se cumple siempre → <strong>principio</strong> (aplicar).
+            </div>
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Fundamento y ecuación de onda</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Velocidad, aceleración y fase</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Magnitudes básicas</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Aplicaciones y desfases</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Principios</span>
+            </div>
+        </article>
+
+    </div>
+
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema C2</summary>
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+        <table class="mag-table">
+            <thead><tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>\[ y = A\sin(\omega t - kx + \varphi_0) \]</td><td>Ecuación de onda armónica (hacia +X)</td><td>1</td></tr>
+                <tr><td>2</td><td>\[ y = A\sin(\omega t + kx + \varphi_0) \]</td><td>Ecuación de onda armónica (hacia -X)</td><td>2</td></tr>
+                <tr><td>3</td><td>\[ -A \leq y(x,t) \leq A \]</td><td>Amplitud y elongación</td><td>3</td></tr>
+                <tr><td>4</td><td>\[ \lambda = \text{distancia entre puntos en fase} \]</td><td>Longitud de onda</td><td>4</td></tr>
+                <tr><td>5</td><td>\[ f = \frac{1}{T} \]</td><td>Periodo y frecuencia</td><td>5</td></tr>
+                <tr><td>6</td><td>\[ \omega = 2\pi f = \frac{2\pi}{T} \]</td><td>Frecuencia angular</td><td>6</td></tr>
+                <tr><td>7</td><td>\[ k = \frac{2\pi}{\lambda} \]</td><td>Número de onda</td><td>7</td></tr>
+                <tr><td>8</td><td>\[ v = \frac{\lambda}{T} = \lambda f = \frac{\omega}{k} \]</td><td>Velocidad de propagación</td><td>8</td></tr>
+                <tr><td>9</td><td>\[ \varphi(x,t) = \omega t \mp kx + \varphi_0 \]</td><td>Fase y fase inicial</td><td>9</td></tr>
+                <tr><td>10</td><td>\[ |\Delta\varphi_x| = k|\Delta x| \]</td><td>Diferencia de fase espacial</td><td>10</td></tr>
+                <tr><td>11</td><td>\[ |\Delta\varphi_t| = \omega|\Delta t| \]</td><td>Diferencia de fase temporal</td><td>11</td></tr>
+                <tr><td>12</td><td>\[ \Delta x = n\lambda \]</td><td>Puntos en fase</td><td>12</td></tr>
+                <tr><td>13</td><td>\[ \Delta x = (2n+1)\frac{\lambda}{2} \]</td><td>Puntos en oposición de fase</td><td>13</td></tr>
+                <tr><td>14</td><td>\[ v_y = A\omega\cos(\omega t - kx + \varphi_0) \]</td><td>Velocidad transversal</td><td>14</td></tr>
+                <tr><td>15</td><td>\[ a_y = -A\omega^2\sin(\omega t - kx + \varphi_0) \]</td><td>Aceleración transversal</td><td>15</td></tr>
+                <tr><td>16</td><td>\[ \lambda = \frac{v_{\text{sonido}}}{f} \]</td><td>Ondas sonoras</td><td>16</td></tr>
+            </tbody>
+        </table>
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> confundir \(f\) con \(\omega\); confundir \(\lambda\) con \(k\); confundir \(v\) (velocidad de propagación) con \(v_y\) (velocidad de vibración de las partículas); usar \(\omega\Delta x\) o \(k\Delta t\) en los desfases; olvidar convertir cm o mm a m antes de operar; perder el signo negativo de la aceleración al derivar dos veces; y confundir "en fase" (diferencia \(2\pi\)) con "oposición de fase" (diferencia \(\pi\)).
+        </div>
+    </details>
+
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en movimiento ondulatorio, la <strong>ecuación de onda</strong> \(y=A\sin(\omega t-kx+\varphi_0)\) es la madre de todas las fórmulas del tema: comparándola término a término se obtienen \(A\), \(\omega\), \(k\) y \(\varphi_0\); de \(\omega\) y \(k\) se deduce \(f\), \(T\), \(\lambda\) y \(v\); derivando respecto a \(t\) se obtiene \(v_y\) y \(a_y\). Recuerda siempre homogeneizar las unidades al S.I. antes de operar, distinguir \(v\) (propagación) de \(v_y\) (vibración) y comprobar el signo de \(kx\) para decidir el sentido de propagación.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+</body>
+</html>

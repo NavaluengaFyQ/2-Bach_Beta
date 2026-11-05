@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA D2 (Formulario).- Problemas precursores de la física cuántica — Efecto fotoeléctrico</title>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- CSS PROPIO DE FORMULARIOS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================ CABECERA ============================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA D2 (Formulario).- </span>
+                <span class="texto">Problemas precursores de la física cuántica — Efecto fotoeléctrico</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================ GRID ============================ -->
+    <div class="grid">
+
+        <!-- ============================================================
+             FICHA 1 · ENERGÍA DEL FOTÓN
+             ============================================================ -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Energía del fotón</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía que transporta un solo fotón de radiación electromagnética, proporcional a su frecuencia (o inversamente proporcional a su longitud de onda). Se aplica en <em>todos</em> los problemas de efecto fotoeléctrico y de física cuántica: es el primer paso para comparar la energía disponible con el trabajo de extracción o con los saltos de energía atómicos.
+            </div>
+            <div class="formula-box" id="formula-1">
+                \[ \boxed{E_{\text{fotón}} = h\,f = \frac{h\,c}{\lambda}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la fórmula cuántica fundamental y aparece en todos los problemas. Memoriza \(E=hf=hc/\lambda\). La constante de Planck \(h=6{,}63\cdot10^{-34}\,\text{J}\cdot\text{s}\) y el producto \(hc\approx1240\,\text{eV}\cdot\text{nm}\). Comprobación física: a mayor frecuencia (más azul), mayor energía; a mayor longitud de onda (más rojo), menor energía.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E_{\text{fotón}}\)</td><td data-label="Significado">Energía de un fotón</td><td data-label="Unidades">J (o eV)</td></tr>
+                    <tr><td data-label="Símbolo">\(h\)</td><td data-label="Significado">Constante de Planck</td><td data-label="Unidades">\(6{,}63\cdot10^{-34}\) J·s</td></tr>
+                    <tr><td data-label="Símbolo">\(f\)</td><td data-label="Significado">Frecuencia de la radiación</td><td data-label="Unidades">Hz</td></tr>
+                    <tr><td data-label="Símbolo">\(c\)</td><td data-label="Significado">Velocidad de la luz en el vacío</td><td data-label="Unidades">\(3{,}00\cdot10^8\) m/s</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Longitud de onda</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un fotón de \(\lambda=450\,\text{nm}\): \(E=1240/450\approx2{,}76\,\text{eV}\approx4{,}42\cdot10^{-19}\,\text{J}\). Un fotón UV de \(200\,\text{nm}\) tiene \(E=1240/200=6{,}20\,\text{eV}\), mucho más energético.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La energía de un fotón depende solo de su frecuencia, no de la intensidad del haz.</li>
+                    <li>El producto \(hc=1240\,\text{eV}\cdot\text{nm}\) permite calcular energías en eV trabajando \(\lambda\) en nm.</li>
+                    <li>Rango visible: \(400\,\text{nm}\) (violeta) a \(700\,\text{nm}\) (rojo) → \(1{,}77\) a \(3{,}10\,\text{eV}\).</li>
+                    <li>UV y rayos X tienen fotones mucho más energéticos; IR y microondas, menos.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 2 · CONSTANTES Y CONVERSIONES
+             ============================================================ -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Constantes y conversiones útiles</h2>
+                <span class="badge-centro">Conversión</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip automatizar">🔄 Automatizar · Operación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No es una fórmula nueva, sino el conjunto de constantes y conversiones imprescindibles en los problemas de efecto fotoeléctrico. Se aplican en <em>todos</em> los ejercicios: la mayoría de errores en la EBAU vienen de no convertir eV↔J, nm↔m o GHz↔Hz antes de operar.
+            </div>
+            <div class="formula-box" id="formula-2">
+                \[ h = 6{,}63\cdot10^{-34}\ \text{J}\cdot\text{s} \]
+                \[ c = 3{,}00\cdot10^{8}\ \text{m/s} \]
+                \[ e = 1{,}60\cdot10^{-19}\ \text{C} \]
+                \[ m_e = 9{,}11\cdot10^{-31}\ \text{kg} \]
+                \[ 1\,\text{eV}=1{,}60\cdot10^{-19}\,\text{J} \]
+                \[ h\,c\approx1240\,\text{eV}\cdot\text{nm} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔄 AUTOMATIZAR</span>Sí: hay que automatizarlas. Las más usadas son \(h\), \(c\), \(e\) y la conversión \(1\,\text{eV}=1{,}60\cdot10^{-19}\,\text{J}\). El producto \(hc\approx1240\,\text{eV}\cdot\text{nm}\) ahorra muchísimo tiempo cuando \(\lambda\) se da en nm y se pide energía en eV. Error típico: mezclar J y eV en la misma ecuación, o usar \(\lambda\) en nm sin convertir cuando se trabaja en el S.I.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Magnitud</th><th>Valor</th><th>Uso típico</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Magnitud">\(h\)</td><td data-label="Valor">\(6{,}63\cdot10^{-34}\,\text{J}\cdot\text{s}\)</td><td data-label="Uso">Cálculo de \(E=hf\)</td></tr>
+                    <tr><td data-label="Magnitud">\(c\)</td><td data-label="Valor">\(3{,}00\cdot10^8\,\text{m/s}\)</td><td data-label="Uso">Cálculo de \(E=hc/\lambda\)</td></tr>
+                    <tr><td data-label="Magnitud">\(e\)</td><td data-label="Valor">\(1{,}60\cdot10^{-19}\,\text{C}\)</td><td data-label="Uso">Potencial de frenado</td></tr>
+                    <tr><td data-label="Magnitud">\(m_e\)</td><td data-label="Valor">\(9{,}11\cdot10^{-31}\,\text{kg}\)</td><td data-label="Uso">Velocidad y onda de De Broglie</td></tr>
+                    <tr><td data-label="Magnitud">\(1\,\text{eV}\)</td><td data-label="Valor">\(1{,}60\cdot10^{-19}\,\text{J}\)</td><td data-label="Uso">Conversión de energías</td></tr>
+                    <tr><td data-label="Magnitud">\(hc\)</td><td data-label="Valor">\(1240\,\text{eV}\cdot\text{nm}\)</td><td data-label="Uso">Cálculo rápido con \(\lambda\) en nm</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(f=9{,}5\cdot10^{14}\,\text{Hz}\) → \(E=6{,}63\cdot10^{-34}\cdot9{,}5\cdot10^{14}\approx6{,}30\cdot10^{-19}\,\text{J}\approx3{,}94\,\text{eV}\). O bien: \(\lambda=c/f=316\,\text{nm}\) → \(E=1240/316\approx3{,}93\,\text{eV}\) (coherente).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(1\,\text{nm}=10^{-9}\,\text{m}\); \(1\,\mu\text{m}=10^{-6}\,\text{m}\); \(1\,\text{GHz}=10^9\,\text{Hz}\).</li>
+                    <li>\(1\,\text{MeV}=10^6\,\text{eV}\); \(1\,\text{keV}=10^3\,\text{eV}\).</li>
+                    <li>El eV es una unidad de energía (no de potencial), aunque \(V_f\) se mida en voltios.</li>
+                    <li>En los enunciados EBAU, estas constantes suelen aparecer como datos.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 3 · TRABAJO DE EXTRACCIÓN
+             ============================================================ -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Trabajo de extracción</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía mínima necesaria para extraer un electrón del metal (a veces llamado función trabajo, \(\Phi\)). Se aplica en todos los problemas de efecto fotoeléctrico: es la magnitud de referencia para decidir si hay emisión y para calcular la energía cinética máxima de los fotoelectrones. Depende del material, no de la radiación.
+            </div>
+            <div class="formula-box" id="formula-3">
+                \[ \boxed{W_0 = h\,f_0 = \frac{h\,c}{\lambda_0}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>Es una <strong>propiedad del material</strong>: cada metal tiene su \(W_0\). Se expresa en J o eV (valores típicos: 2-5 eV para metales comunes). Memoriza la relación \(W_0=hf_0=hc/\lambda_0\) y el significado físico. Comprueba: si te dan \(\lambda_0\), \(W_0=hc/\lambda_0\); si te dan \(W_0\) en eV, \(f_0=W_0/h\) (con \(W_0\) en J).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(W_0\)</td><td data-label="Significado">Trabajo de extracción del material</td><td data-label="Unidades">J (o eV)</td></tr>
+                    <tr><td data-label="Símbolo">\(f_0\)</td><td data-label="Significado">Frecuencia umbral</td><td data-label="Unidades">Hz</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda_0\)</td><td data-label="Significado">Longitud de onda umbral</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un metal con \(\lambda_0=3{,}6\cdot10^{-7}\,\text{m}\) tiene \(W_0=1240/360\approx3{,}44\,\text{eV}\approx5{,}5\cdot10^{-19}\,\text{J}\). Otro con \(W_0=2{,}28\,\text{eV}\) (sodio): \(f_0=2{,}28\cdot1{,}6\cdot10^{-19}/6{,}63\cdot10^{-34}\approx5{,}50\cdot10^{14}\,\text{Hz}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es una propiedad <strong>del metal</strong>, no de la luz incidente.</li>
+                    <li>Depende de la superficie (más fino en alcalinos como el sodio o el cesio).</li>
+                    <li>Valores típicos: sodio \(2{,}28\,\text{eV}\), cobre \(4{,}70\,\text{eV}\), zinc \(4{,}30\,\text{eV}\), cesio \(2{,}14\,\text{eV}\).</li>
+                    <li>Es igual a la energía del fotón umbral: si \(hf=W_0\), el electrón sale con energía cinética nula.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 4 · FRECUENCIA Y LONGITUD DE ONDA UMBRAL
+             ============================================================ -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Frecuencia y longitud de onda umbral</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="epitope-tag" style="display:none;"></span>
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La frecuencia mínima (y su longitud de onda asociada) que debe tener la radiación incidente para arrancar electrones del metal. Se aplica en problemas de "¿se produce efecto fotoeléctrico?" y en la interpretación de la gráfica de Einstein. Es la frontera entre emisión y no emisión.
+            </div>
+            <div class="formula-box" id="formula-4">
+                \[ \boxed{f_0 = \frac{W_0}{h}} \qquad\qquad \boxed{\lambda_0 = \frac{h\,c}{W_0} = \frac{c}{f_0}} \]
+                \[ \text{Hay emisión si } f\geq f_0 \Leftrightarrow \lambda\leq\lambda_0 \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se obtiene de \(W_0=hf_0\) despejando. Idea clave: <strong>la emisión depende del umbral</strong>. Si \(f<f_0\) (o \(\lambda>\lambda_0\)), no hay emisión aunque aumentes la intensidad. Comprueba: cuanto mayor es \(W_0\) (metal más "duro"), mayor es \(f_0\) y menor \(\lambda_0\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(f_0\)</td><td data-label="Significado">Frecuencia umbral</td><td data-label="Unidades">Hz</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda_0\)</td><td data-label="Significado">Longitud de onda umbral</td><td data-label="Unidades">m (o nm)</td></tr>
+                    <tr><td data-label="Símbolo">\(W_0\)</td><td data-label="Significado">Trabajo de extracción</td><td data-label="Unidades">J (o eV)</td></tr>
+                    <tr><td data-label="Símbolo">\(h,\,c\)</td><td data-label="Significado">Constantes de Planck y de la luz</td><td data-label="Unidades">J·s y m/s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> cobre con \(W_0=4{,}7\,\text{eV}\): \(f_0=4{,}7\cdot1{,}6\cdot10^{-19}/6{,}63\cdot10^{-34}\approx1{,}13\cdot10^{15}\,\text{Hz}\). El espectro visible llega a \(7{,}9\cdot10^{14}\,\text{Hz}\) → <strong>no hay fotoeléctrico con luz visible</strong>, solo con UV.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El umbral es una propiedad del material, no de la luz.</li>
+                    <li>Para el cobre, la luz visible es insuficiente (por eso no emite electrones con luz de una linterna).</li>
+                    <li>Para metales alcalinos (Na, Cs), luz roja o naranja puede superar el umbral.</li>
+                    <li>Si \(f=f_0\), el electrón sale con \(E_c=0\) (justo arrancado).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 5 · ECUACIÓN DE EINSTEIN
+             ============================================================ -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Ecuación de Einstein del efecto fotoeléctrico</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="epi-chips">
+                    <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+                </span>
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El balance energético entre el fotón incidente, el trabajo de extracción y la energía cinética máxima del fotoelectrón emitido. Se aplica en la práctica totalidad de los problemas EBAU de este tema: es la ecuación central que combina todos los conceptos anteriores.
+            </div>
+            <div class="formula-box" id="formula-5">
+                \[ \boxed{h\,f = W_0 + E_{c,\max}} \]
+                \[ \frac{h\,c}{\lambda} = W_0 + E_{c,\max} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es LA ecuación del tema y aparece en casi todos los problemas. Memoriza \(hf=W_0+E_{c,\max}\) y su interpretación: <strong>la energía del fotón se reparte entre escapar del metal (W₀) y salir con energía cinética (E<sub>c,max</sub>)</strong>. Comprobación física: si \(hf<W_0\), la ecuación daría \(E_c<0\), lo que significa que NO hay emisión. Nunca interpretes un valor negativo como "energía cinética negativa".</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(hf\)</td><td data-label="Significado">Energía del fotón incidente</td><td data-label="Unidades">J (o eV)</td></tr>
+                    <tr><td data-label="Símbolo">\(W_0\)</td><td data-label="Significado">Trabajo de extracción</td><td data-label="Unidades">J (o eV)</td></tr>
+                    <tr><td data-label="Símbolo">\(E_{c,\max}\)</td><td data-label="Significado">Energía cinética máxima del fotoelectrón</td><td data-label="Unidades">J (o eV)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un metal con \(W_0=2\,\text{eV}\) iluminado con luz de \(500\,\text{nm}\) (2,48 eV) → \(E_{c,\max}=2{,}48-2=0{,}48\,\text{eV}\approx7{,}68\cdot10^{-20}\,\text{J}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es el <strong>balance energético</strong> de Einstein (1905).</li>
+                    <li>Conserva coherencia de unidades: si \(W_0\) está en eV, trabaja también en eV.</li>
+                    <li>La energía cinética máxima corresponde a los electrones <strong>superficiales</strong>, que no pierden energía en el interior del metal.</li>
+                    <li>Si \(E_{c,\max}=0\), el electrón sale justo con la energía del umbral.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 6 · ENERGÍA CINÉTICA MÁXIMA
+             ============================================================ -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Energía cinética máxima de los fotoelectrones</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía cinética máxima con la que salen los fotoelectrones, es decir, el exceso de energía del fotón sobre el trabajo de extracción. Se aplica en los problemas que piden directamente la energía cinética, la velocidad máxima de salida o el potencial de frenado.
+            </div>
+            <div class="formula-box" id="formula-6">
+                \[ \boxed{E_{c,\max} = h\,f - W_0 = \frac{h\,c}{\lambda} - W_0} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es la ecuación de Einstein despejada. Idea clave: <strong>\(E_{c,\max}\) es siempre \(\geq0\) para que haya emisión</strong>. Si obtienes un valor negativo, no hay efecto fotoeléctrico. Aumentar la intensidad no cambia \(E_{c,\max}\) (ficha 9); aumentar la frecuencia sí la aumenta.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E_{c,\max}\)</td><td data-label="Significado">Energía cinética máxima del fotoelectrón</td><td data-label="Unidades">J (o eV)</td></tr>
+                    <tr><td data-label="Símbolo">\(hf\)</td><td data-label="Significado">Energía del fotón incidente</td><td data-label="Unidades">J (o eV)</td></tr>
+                    <tr><td data-label="Símbolo">\(W_0\)</td><td data-label="Significado">Trabajo de extracción</td><td data-label="Unidades">J (o eV)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(\lambda_1=193\,\text{nm}\) y \(W_0=2{,}28\,\text{eV}\): \(E_{c,\max}=1240/193-2{,}28\approx4{,}14\,\text{eV}\). Para \(\lambda_2=254\,\text{nm}\): \(1240/254-2{,}28\approx2{,}60\,\text{eV}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es la energía cinética de los electrones <strong>más rápidos</strong>.</li>
+                    <li>Los electrones internos salen con menos energía (pierden parte por colisiones).</li>
+                    <li>Relacionada con la velocidad máxima: \(E_{c,\max}=\frac12m_ev_{\max}^2\) (ficha 8).</li>
+                    <li>Relacionada con el potencial de frenado: \(E_{c,\max}=eV_f\) (ficha 7).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 7 · POTENCIAL DE FRENADO
+             ============================================================ -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Potencial de frenado</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="intro">
+                <span class="epi-chips">
+                    <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+                </span>
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo de la diferencia de potencial que detiene a los fotoelectrones más energéticos. Se aplica en los problemas experimentales de efecto fotoeléctrico (tubo de fotones con cátodo y ánodo) y en los que piden "qué tensión hay que aplicar para cortar la corriente".
+            </div>
+            <div class="formula-box" id="formula-7">
+                \[ \boxed{e\,V_f = E_{c,\max}} \qquad\Longleftrightarrow\qquad V_f = \frac{E_{c,\max}}{e} \]
+                \[ \text{Si } E_{c,\max} \text{ en eV, entonces } V_f \text{ (en V) tiene el mismo valor numérico} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es la igualdad entre el trabajo eléctrico del potencial retardador y la energía cinética máxima. Idea clave: <strong>si la energía cinética está en eV, el potencial de frenado en voltios coincide numéricamente</strong>. Por ejemplo, si \(E_{c,\max}=0{,}48\,\text{eV}\), entonces \(V_f=0{,}48\,\text{V}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(V_f\)</td><td data-label="Significado">Módulo del potencial de frenado</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(E_{c,\max}\)</td><td data-label="Significado">Energía cinética máxima del fotoelectrón</td><td data-label="Unidades">J (o eV)</td></tr>
+                    <tr><td data-label="Símbolo">\(e\)</td><td data-label="Significado">Carga elemental</td><td data-label="Unidades">\(1{,}60\cdot10^{-19}\) C</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> cobre (\(W_0=4{,}7\,\text{eV}\)) con UV de \(200\,\text{nm}\) (6,20 eV): \(E_{c,\max}=1{,}50\,\text{eV}\) → \(V_f=1{,}50\,\text{V}\). El colector se pone a 1,5 V menos que el emisor.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El potencial de frenado es <strong>independiente de la intensidad</strong> de la luz.</li>
+                    <li>Depende linealmente de la frecuencia: \(V_f=(h/e)f-W_0/e\).</li>
+                    <li>La representación \(V_f\) vs. \(f\) es una recta con pendiente \(h/e\).</li>
+                    <li>En los experimentos se suele medir el potencial de frenado para deducir \(h\) o \(W_0\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 8 · VELOCIDAD MÁXIMA DE LOS FOTOELECTRONES
+             ============================================================ -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Velocidad máxima de los fotoelectrones</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La velocidad máxima con la que salen los fotoelectrones del metal, a partir de su energía cinética máxima. Se aplica en problemas que piden explícitamente la velocidad, y también en los ejercicios de conexión con la onda de De Broglie (tema D3).
+            </div>
+            <div class="formula-box" id="formula-8">
+                \[ \boxed{E_{c,\max} = \tfrac{1}{2}\,m_e\,v_{\max}^{2}} \]
+                \[ v_{\max} = \sqrt{\frac{2\,E_{c,\max}}{m_e}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es la energía cinética clásica \(\frac12mv^2\) despejada. Aplicable porque \(v_{\max}\) suele ser mucho menor que \(c\) (típicamente \(10^5\)-\(10^6\,\text{m/s}\)). Idea clave: <strong>\(E_{c,\max}\) debe estar en julios</strong> para que \(v_{\max}\) salga en m/s. Comprueba: si \(E_{c,\max}\) es muy grande (rayos X), podría hacer falta la fórmula relativista (poco habitual en EBAU).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(v_{\max}\)</td><td data-label="Significado">Velocidad máxima del fotoelectrón</td><td data-label="Unidades">m/s</td></tr>
+                    <tr><td data-label="Símbolo">\(E_{c,\max}\)</td><td data-label="Significado">Energía cinética máxima</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(m_e\)</td><td data-label="Significado">Masa del electrón</td><td data-label="Unidades">\(9{,}11\cdot10^{-31}\) kg</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(E_{c,\max}=7{,}68\cdot10^{-20}\,\text{J}\): \(v_{\max}=\sqrt{2\cdot7{,}68\cdot10^{-20}/9{,}11\cdot10^{-31}}\approx4{,}11\cdot10^{5}\,\text{m/s}\). Muy lejos de \(c\) → régimen no relativista.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Ojo: \(E_{c,\max}\) debe estar en <strong>julios</strong>, no en eV.</li>
+                    <li>Para UV típico, \(v_{\max}\sim10^5\)-\(10^6\,\text{m/s}\), mucho menor que \(c\).</li>
+                    <li>En conexión con D3: \(p=m_ev_{\max}\), \(\lambda_e=h/p\).</li>
+                    <li>La velocidad máxima corresponde a los electrones más externos (superficiales).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 9 · FRECUENCIA vs INTENSIDAD
+             ============================================================ -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Frecuencia frente a intensidad</h2>
+                <span class="badge-centro">Comprender</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No es una fórmula nueva, sino la distinción conceptual clave del efecto fotoeléctrico: <strong>la frecuencia determina la energía de cada fotón</strong> (y por tanto la energía cinética de los electrones); <strong>la intensidad determina cuántos fotones llegan por segundo</strong> (y por tanto el número de electrones emitidos, la corriente fotoeléctrica). Se aplica en preguntas conceptuales y de razonamiento de la EBAU.
+            </div>
+            <div class="formula-box" id="formula-9">
+                \[ \begin{array}{c|c|c} & \text{Frecuencia } f & \text{Intensidad } I \\ \hline \text{Energía por fotón} & \text{Cambia } (E=hf) & \text{No cambia} \\ \text{Energía cinética máx.} & \text{Cambia } (E_c=hf-W_0) & \text{No cambia} \\ \text{Potencial de frenado} & \text{Cambia } (eV_f=E_c) & \text{No cambia} \\ \text{N.º de electrones/s} & \text{No cambia} & \text{Cambia} \\ \text{Corriente fotoeléctrica} & \text{No cambia} & \text{Cambia} \end{array} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No es una fórmula, sino una <strong>distinción física</strong> que hay que entender. Frase clave: <strong>«la frecuencia manda sobre la energía; la intensidad manda sobre el número»</strong>. Error típico de la EBAU: pensar que aumentando la intensidad se consigue arrancar electrones de un metal aunque la frecuencia esté por debajo del umbral (falso). Lo que sí explica la física clásica (ondas) es el aumento de energía con la intensidad, pero el efecto fotoeléctrico la refuta.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Cambio</th><th>¿Afecta a E_c,max?</th><th>¿Afecta al número de e⁻?</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Cambio">Aumentar \(f\) (más azul)</td><td data-label="¿Afecta a E_c,max?">Sí, aumenta</td><td data-label="¿Afecta al número de e⁻?">No (con la misma intensidad)</td></tr>
+                    <tr><td data-label="Cambio">Aumentar \(I\) (más brillo)</td><td data-label="¿Afecta a E_c,max?">No</td><td data-label="¿Afecta al número de e⁻?">Sí, aumenta</td></tr>
+                    <tr><td data-label="Cambio">Bajar \(f\) por debajo de \(f_0\)</td><td data-label="¿Afecta a E_c,max?">No hay emisión</td><td data-label="¿Afecta al número de e⁻?">Ninguno</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> cobre (\(W_0=4{,}7\,\text{eV}\)) iluminado con luz roja (1,8 eV) → sin emisión, aunque la intensidad sea enorme. Con UV de \(200\,\text{nm}\) (6,20 eV) → sí hay emisión; aumentar la intensidad solo multiplica el número de electrones, no su energía.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Esta distinción es la que refutó el modelo ondulatorio clásico de la luz.</li>
+                    <li>Justifica el concepto de <strong>fotón</strong> (cuanto de luz).</li>
+                    <li>Preguntas EBAU típicas: "¿por qué la luz roja no arranca electrones del zinc?", "¿qué cambia si duplico la intensidad?".</li>
+                    <li>En el efecto fotoeléctrico, cada electrón absorbe <strong>un solo fotón</strong>.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 10 · REPRESENTACIÓN GRÁFICA DE EINSTEIN
+             ============================================================ -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Representación gráfica de Einstein</h2>
+                <span class="badge-centro">Aplicar</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Gráfica</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La interpretación de la recta \(E_{c,\max}\) frente a \(f\) (o \(V_f\) frente a \(f\)). Se aplica en preguntas EBAU que muestran una gráfica experimental y piden identificar la pendiente (\(h\)), la frecuencia umbral (corte con el eje) o el trabajo de extracción (ordenada negativa). Es la confirmación experimental de la cuantización.
+            </div>
+            <div class="formula-box" id="formula-10">
+                \[ E_{c,\max} = h\,f - W_0 \]
+                \[ \begin{array}{c|c} \text{Elemento de la gráfica} & \text{Significado} \\ \hline \text{Pendiente} & h \\ \text{Corte con el eje }f & f_0 \\ \text{Corte con el eje }E_c & -W_0 \end{array} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es una <strong>aplicación</strong> de la ecuación de Einstein, no una fórmula nueva. Idea clave: <strong>la pendiente de la recta \(E_c\) vs. \(f\) es \(h\)</strong>, independientemente del metal; el corte con el eje horizontal es \(f_0\); la ordenada en el origen es \(-W_0\). Comprobación: si dos metales se representan en la misma gráfica, tienen la misma pendiente (misma \(h\)) pero distinto corte (distinta \(f_0\)).</span>
+            </p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos metales distintos graficados en el mismo \(E_c\)-\(f\): las rectas son <strong>paralelas</strong> (misma \(h\)) y cortan al eje \(f\) en sus respectivas \(f_0\). El metal con mayor \(W_0\) tiene su recta desplazada hacia la derecha.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La pendiente de \(V_f\) vs. \(f\) es \(h/e\).</li>
+                    <li>La linealidad confirma que \(E=hf\) y no la predicción ondulatoria.</li>
+                    <li>La ordenada en el origen (negativa) es \(-W_0\).</li>
+                    <li>Este experimento (Millikan, 1916) confirmó la hipótesis de Einstein (1905).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 11 · CONDICIÓN DE EMISIÓN FOTOELÉCTRICA
+             ============================================================ -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">11</span>
+                <h2>Condición de emisión fotoeléctrica</h2>
+                <span class="badge-centro">Aplicar</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Comprobación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La comprobación previa a cualquier cálculo: ¿hay emisión de electrones o no? Se aplica como <strong>filtro</strong> antes de calcular \(E_{c,\max}\) o \(V_f\): si no se cumple, la respuesta correcta es "no hay efecto fotoeléctrico". Aparece con frecuencia en problemas tipo test o de razonamiento.
+            </div>
+            <div class="formula-box" id="formula-11">
+                \[ \text{Hay emisión } \Leftrightarrow f \geq f_0 \Leftrightarrow \lambda \leq \lambda_0 \Leftrightarrow h\,f \geq W_0 \]
+                \[ \text{No hay emisión } \Leftrightarrow f < f_0 \Leftrightarrow \lambda > \lambda_0 \Leftrightarrow h\,f < W_0 \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>No es una fórmula, sino un <strong>criterio de comprobación</strong>. Memoriza el sentido: <strong>frecuencia alta (o λ corta) → emisión; frecuencia baja (o λ larga) → no emisión</strong>. Truco mnemotécnico: la luz violeta/UV (alta frecuencia) arranca electrones; la luz roja/IR (baja frecuencia) generalmente no. Esta comprobación debe ser SIEMPRE el primer paso del problema.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Comparación</th><th>Resultado</th><th>Física</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Comparación">\(\lambda < \lambda_0\)</td><td data-label="Resultado">Emisión</td><td data-label="Física">El fotón supera el trabajo de extracción</td></tr>
+                    <tr><td data-label="Comparación">\(\lambda = \lambda_0\)</td><td data-label="Resultado">Emisión límite</td><td data-label="Física">\(E_{c,\max}=0\)</td></tr>
+                    <tr><td data-label="Comparación">\(\lambda > \lambda_0\)</td><td data-label="Resultado">Sin emisión</td><td data-label="Física">Fotón insuficiente</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> cobre con \(\lambda_0=264\,\text{nm}\). Luz visible (400-700 nm) tiene \(\lambda>\lambda_0\) → <strong>no hay fotoeléctrico</strong> con luz visible. UV de \(200\,\text{nm}\) (\(\lambda<\lambda_0\)) → sí hay emisión.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es el criterio experimental clave (Lenard, Millikan).</li>
+                    <li>La intensidad no afecta a esta condición.</li>
+                    <li>Explica por qué el zinc no emite con luz visible pero sí con UV.</li>
+                    <li>En la EBAU, si la pregunta es "¿se producirá efecto fotoeléctrico?", esta es la respuesta.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 12 · CONEXIÓN CON DE BROGLIE (D3)
+             ============================================================ -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">12</span>
+                <h2>Conexión con la onda de De Broglie (D3)</h2>
+                <span class="badge-centro">Aplicar</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Enlace con D3</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La longitud de onda asociada a los fotoelectrones emitidos, aplicando la hipótesis de De Broglie. Se aplica en los problemas EBAU etiquetados como D2+D3, que combinan el efecto fotoeléctrico con el comportamiento ondulatorio de las partículas. Es el puente natural hacia el tema siguiente.
+            </div>
+            <div class="formula-box" id="formula-12">
+                \[ \lambda_e = \frac{h}{p} = \frac{h}{\sqrt{2\,m_e\,E_{c,\max}}} \]
+                \[ \text{Menor } \lambda_e \Leftrightarrow \text{mayor } E_{c,\max} \Leftrightarrow \text{mayor } f \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es una <strong>aplicación</strong> de la hipótesis de De Broglie (D3) combinada con la energía cinética del efecto fotoeléctrico. Idea clave: <strong>a mayor energía cinética del electrón, menor su longitud de onda asociada</strong>. Por eso la <em>mínima</em> \(\lambda_e\) corresponde a los fotoelectrones más energéticos (los de \(E_{c,\max}\)). No confundir con la \(\lambda\) del fotón incidente.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\lambda_e\)</td><td data-label="Significado">Longitud de onda asociada al electrón</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(p\)</td><td data-label="Significado">Momento lineal del electrón</td><td data-label="Unidades">kg·m/s</td></tr>
+                    <tr><td data-label="Símbolo">\(m_e\)</td><td data-label="Significado">Masa del electrón</td><td data-label="Unidades">\(9{,}11\cdot10^{-31}\) kg</td></tr>
+                    <tr><td data-label="Símbolo">\(E_{c,\max}\)</td><td data-label="Significado">Energía cinética máxima del fotoelectrón</td><td data-label="Unidades">J</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> sodio (\(W_0=2{,}28\,\text{eV}\)) con luz de \(450\,\text{nm}\): \(E_{c,\max}=0{,}48\,\text{eV}=7{,}72\cdot10^{-20}\,\text{J}\). \(\lambda_e=h/\sqrt{2m_eE_c}\approx1{,}77\cdot10^{-9}\,\text{m}=1{,}77\,\text{nm}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es el puente entre D2 (efecto fotoeléctrico) y D3 (dualidad onda-corpúsculo).</li>
+                    <li>La \(\lambda_e\) es típicamente \(\sim1\,\text{nm}\), mucho mayor que la del fotón incidente (\(\sim100\)-\(500\,\text{nm}\)).</li>
+                    <li>En régimen relativista (rayos X muy energéticos) hay que usar \(p=\gamma m_ev\).</li>
+                    <li>Comprueba las unidades: \(E_{c,\max}\) en J y \(m_e\) en kg dan \(p\) en kg·m/s y \(\lambda_e\) en m.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             LEYENDA EPISTÉMICA
+             ============================================================ -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
+                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
+                consecuencia matemática, principio o conversión— y cada categoría se domina con un
+                <strong>verbo distinto</strong>. Identificar el tipo <em>antes</em> de estudiar ahorra
+                tiempo y evita memorizar lo que se puede deducir.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud o
+                        constante. No se demuestra, se establece. Se domina cuando puedes enunciarla
+                        sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D2</strong>
+                        Constante de Planck \(h\) · conversión \(1\,\text{eV}=1{,}60\cdot10^{-19}\,\text{J}\) · \(m_e\)
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es el <em>punto de partida</em> del tema: describe cómo funciona la naturaleza
+                        a escala cuántica. No se deriva de otra cosa; se entiende el porqué y las
+                        condiciones en las que aplica.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D2</strong>
+                        Energía del fotón \(E=hf\) · ecuación de Einstein \(hf=W_0+E_{c,\max}\) · trabajo de extracción \(W_0=hf_0\) · frecuencia vs. intensidad
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> despejando o sustituyendo la ley fundamental o una
+                        definición. No se memoriza: se reconstruye en 2–3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D2</strong>
+                        \(f_0=W_0/h\) · \(\lambda_0=hc/W_0\) · \(E_{c,\max}=hf-W_0\) · \(eV_f=E_{c,\max}\) · \(v_{\max}=\sqrt{2E_{c,\max}/m_e}\)
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Aplicar / comprobar</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Es una <em>regla o criterio</em> que se aplica como filtro a cada problema concreto.
+                        No se demuestra: se usa para verificar la coherencia del resultado.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D2</strong>
+                        Condición de emisión \(f\geq f_0\) · interpretación gráfica de Einstein · conexión con De Broglie
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Conversión / operación</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes
+                        equivalentes. Debe salir sin pensar, como un reflejo.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D2</strong>
+                        nm↔m · eV↔J · GHz↔Hz · uso de \(hc=1240\,\text{eV}\cdot\text{nm}\)
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tabla resumen -->
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Punto de partida físico</td>
+                        <td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Regla universal / criterio</td>
+                        <td data-label="¿Cómo se domina?">Plantearla en cada problema</td>
+                        <td data-label="Autoevaluación">¿La aplico como filtro al problema?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Herramienta mecánica</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿Me sale sin pensar?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Regla de oro -->
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
+                pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si sale de otra fórmula despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
+                Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender).
+                Si solo asigna un nombre o constante → <strong>definición</strong> (memorizar).
+                Si es una regla o criterio de comprobación → <strong>principio</strong> (aplicar).
+            </div>
+
+            <!-- Mini-referencia de colores de las tarjetas -->
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Leyes fundamentales (E=hf, W₀, Einstein)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Derivadas (f₀, E_c,max, V_f, v_max)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Definiciones y constantes</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Aplicaciones (f vs. I, gráfica, emisión, De Broglie)</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================ GLOSARIO ============================ -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema D2</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ E_{\text{fotón}} = h\,f = \dfrac{hc}{\lambda} \]</td><td data-label="Nombre">Energía del fotón</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ h, c, e, m_e, 1\,\text{eV}=1{,}60\cdot10^{-19}\,\text{J}, hc\approx1240\,\text{eV}\cdot\text{nm} \]</td><td data-label="Nombre">Constantes y conversiones</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ W_0 = h\,f_0 = \dfrac{hc}{\lambda_0} \]</td><td data-label="Nombre">Trabajo de extracción</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ f_0 = \dfrac{W_0}{h};\ \lambda_0 = \dfrac{hc}{W_0} \]</td><td data-label="Nombre">Frecuencia y longitud de onda umbral</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ h\,f = W_0 + E_{c,\max} \]</td><td data-label="Nombre">Ecuación de Einstein</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ E_{c,\max} = hf - W_0 \]</td><td data-label="Nombre">Energía cinética máxima</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ e\,V_f = E_{c,\max} \]</td><td data-label="Nombre">Potencial de frenado</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ v_{\max} = \sqrt{2E_{c,\max}/m_e} \]</td><td data-label="Nombre">Velocidad máxima del fotoelectrón</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ \text{tabla: } f \text{ vs. } I \]</td><td data-label="Nombre">Frecuencia frente a intensidad</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ E_{c,\max}\text{ vs. } f:\ \text{pendiente}=h \]</td><td data-label="Nombre">Representación gráfica de Einstein</td><td data-label="Ficha">10</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ f\geq f_0 \Leftrightarrow \lambda\leq\lambda_0 \]</td><td data-label="Nombre">Condición de emisión fotoeléctrica</td><td data-label="Ficha">11</td></tr>
+                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ \lambda_e = \dfrac{h}{\sqrt{2m_eE_{c,\max}}} \]</td><td data-label="Nombre">Conexión con la onda de De Broglie (D3)</td><td data-label="Ficha">12</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> olvidar comprobar la condición de emisión antes de calcular; mezclar eV con J en la misma ecuación; usar \(\lambda\) en nm sin convertir cuando se trabaja en el S.I.; confundir \(E_{c,\max}\) con la energía del fotón incidente; pensar que aumentar la intensidad modifica la energía cinética de los electrones; olvidar el signo del potencial de frenado (en los ejercicios se suele pedir el módulo); y confundir la \(\lambda\) del fotón incidente con la \(\lambda_e\) de De Broglie del electrón.
+        </div>
+    </details>
+
+    <!-- ============================ RECORDATORIO + BOTÓN ============================ -->
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en el efecto fotoeléctrico, la <strong>ecuación de Einstein</strong> \(hf=W_0+E_{c,\max}\) es la fórmula central: de ella se deducen \(E_{c,\max}=hf-W_0\), \(eV_f=E_{c,\max}\) y \(v_{\max}=\sqrt{2E_{c,\max}/m_e}\). Recuerda siempre: <strong>comprueba primero que \(f\geq f_0\)</strong> (o \(\lambda\leq\lambda_0\)); si no, no hay emisión. La <strong>frecuencia</strong> determina la <em>energía</em> de cada fotón (y la energía cinética del electrón); la <strong>intensidad</strong> determina el <em>número</em> de fotones y de electrones (corriente fotoeléctrica). Homogeneiza las unidades (eV↔J, nm↔m) antes de operar, y aprovecha \(hc\approx1240\,\text{eV}\cdot\text{nm}\) para cálculos rápidos con \(\lambda\) en nm.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+
+<!-- ============================ RESALTADO DE FÓRMULA DESDE LA UNIDAD ============================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var card = document.querySelector(hash);
+    if (!card) return;
+
+    card.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    card.classList.remove('formula-resaltada');
+    void card.offsetWidth;
+    card.classList.add('formula-resaltada');
+    setTimeout(function () {
+        card.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
+</body>
+</html>

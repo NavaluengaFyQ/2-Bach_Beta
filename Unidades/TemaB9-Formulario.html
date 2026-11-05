@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA B9 (Formulario).- Inducción electromagnética: flujo, Faraday-Henry y Lenz</title>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- CSS PROPIO DE FORMULARIOS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+
+    <style>
+        /* Resaltado al llegar por ancla desde TemaB9.html */
+        @keyframes resaltarFormulaB9 {
+            0%   { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+            18%  { box-shadow: 0 0 0 6px rgba(59,130,246,.4); background: #dbeafe; }
+            78%  { box-shadow: 0 0 0 6px rgba(59,130,246,.4); background: #dbeafe; }
+            100% { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+        }
+        .formula-resaltada {
+            animation: resaltarFormulaB9 2.4s ease;
+            border-radius: 8px;
+        }
+        [id^="formula-"] { scroll-margin-top: 90px; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================ CABECERA ============================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA B9 (Formulario).- </span>
+                <span class="texto">Inducción electromagnética: flujo, Faraday-Henry y Lenz</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================ GRID ============================ -->
+    <div class="grid">
+
+        <!-- FICHA 1 · FLUJO MAGNÉTICO -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Flujo magnético</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La cantidad de campo magnético que atraviesa una superficie plana en un campo uniforme. Se aplica en todos los problemas de inducción: es la magnitud cuya <strong>variación temporal</strong> genera la fem inducida (ley de Faraday). También se calcula directamente cuando el problema pide "flujo a través de la espira" sin más.
+            </div>
+            <a href="TemaB9.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
+                \[ \Phi_B = \vec B\cdot\vec S = B\,S\cos\theta \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(\Phi_B=BS\cos\theta\). Es la fórmula básica de la que sale todo el tema. Cuidado con el ángulo \(\theta\): es el ángulo entre \(\vec B\) y la <strong>normal</strong> a la superficie, <strong>no</strong> el ángulo con el plano de la espira. Si el enunciado te da el ángulo con el plano, el ángulo con la normal es su complementario. La unidad es el weber (Wb): \(1\ \text{Wb}=1\ \text{T·m}^{2}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\Phi_B\)</td><td data-label="Significado">Flujo magnético por una espira</td><td data-label="Unidades">Wb</td></tr>
+                    <tr><td data-label="Símbolo">\(B\)</td><td data-label="Significado">Módulo del campo magnético</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(S\)</td><td data-label="Significado">Área de la superficie</td><td data-label="Unidades">m²</td></tr>
+                    <tr><td data-label="Símbolo">\(\theta\)</td><td data-label="Significado">Ángulo entre \(\vec B\) y la normal \(\hat n\)</td><td data-label="Unidades">rad o °</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(B=0{,}40\ \text{T}\), \(S=20\ \text{cm}^{2}=2\cdot10^{-3}\ \text{m}^{2}\), \(\theta=30^\circ\). \(\Phi_B=0{,}40\cdot2\cdot10^{-3}\cdot\cos30^\circ=6{,}93\cdot10^{-4}\ \text{Wb}\). Si \(\theta=90^\circ\), \(\Phi_B=0\) (el campo no atraviesa la superficie).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(\theta\) es el ángulo con la <strong>normal</strong>, no con el plano.</li>
+                    <li>\(\theta=0^\circ\): flujo máximo; \(\theta=90^\circ\): flujo nulo; \(\theta=180^\circ\): flujo máximo negativo.</li>
+                    <li>El flujo puede ser positivo o negativo según el convenio de la normal.</li>
+                    <li>No confundir \(\Phi\) (flujo por espira) con \(\Psi\) (flujo concatenado, ficha 2).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 · FLUJO CONCATENADO -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Flujo concatenado en una bobina</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El flujo total que atraviesa una bobina de \(N\) espiras iguales, cada una sometida al mismo campo y orientación. Se aplica en todos los problemas con bobinas (no con espiras sueltas): es la magnitud que hay que derivar para calcular la fem inducida en la bobina.
+            </div>
+            <a href="TemaB9.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">
+                \[ \Psi = N\,\Phi_B = N\,B\,S\cos\theta \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(\Psi=N\Phi_B\). Es la <strong>primera fuente de error</strong> de los problemas de inducción: muchos alumnos olvidan multiplicar por \(N\) y el resultado sale \(N\) veces más pequeño. Distingue: \(\Phi_B\) = flujo por una espira; \(\Psi=N\Phi_B\) = flujo concatenado de la bobina completa. En la ley de Faraday se usa \(\Psi\), no \(\Phi_B\), cuando hay varias espiras.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Magnitud</th><th>Expresión</th><th>Cuándo se usa</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Magnitud">Flujo por espira</td><td data-label="Expresión">\(\Phi_B=BS\cos\theta\)</td><td data-label="Cuándo">Una sola espira, o cuando se pide "el flujo por espira".</td></tr>
+                    <tr><td data-label="Magnitud">Flujo concatenado</td><td data-label="Expresión">\(\Psi=NBS\cos\theta\)</td><td data-label="Cuándo">Bobina de \(N\) espiras, o para calcular la fem inducida.</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(N=50\) espiras de \(S=2\cdot10^{-3}\ \text{m}^{2}\), \(B=0{,}40\ \text{T}\), \(\theta=30^\circ\). Flujo por espira: \(\Phi_B=6{,}93\cdot10^{-4}\ \text{Wb}\). Flujo concatenado: \(\Psi=50\cdot6{,}93\cdot10^{-4}=3{,}46\cdot10^{-2}\ \text{Wb}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La unidad del flujo concatenado también es el weber (Wb).</li>
+                    <li>Solo se multiplica por \(N\) si todas las espiras son iguales y están sometidas al mismo \(\vec B\) y \(\theta\).</li>
+                    <li>En las gráficas \(\Psi(t)\) y en las derivadas, trabajar siempre con \(\Psi\), no con \(\Phi_B\).</li>
+                    <li>No confundir \(\Psi\) (flujo) con \(\varepsilon\) (fem): uno es Wb, el otro es V.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 · LEY DE FARADAY-HENRY -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Ley de Faraday-Henry</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La <strong>fuerza electromotriz (fem) inducida</strong> en un circuito cuando varía el flujo magnético que lo atraviesa. Se aplica en todos los problemas de inducción: es la fórmula central del tema. Puede usarse en forma instantánea (derivando) o en forma media (cociente de incrementos).
+            </div>
+            <a href="TemaB9.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">
+                \[ \varepsilon = -\frac{d\Psi}{dt} = -N\,\frac{d\Phi_B}{dt} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(\varepsilon=-d\Psi/dt\) <strong>con el signo negativo</strong>. El signo no es un capricho: es la ley de Lenz (ficha 5). Su significado físico: la fem inducida se opone a la variación de flujo que la produce. Recuerda que lo que importa NO es el valor del flujo, sino su <strong>rapidez de cambio</strong>: si el flujo es enorme pero constante, \(\varepsilon=0\); si el flujo es pequeño pero cambia muy rápido, \(\varepsilon\) puede ser grande.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\varepsilon\)</td><td data-label="Significado">Fem inducida</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(\Psi\)</td><td data-label="Significado">Flujo concatenado (o \(N\Phi_B\))</td><td data-label="Unidades">Wb</td></tr>
+                    <tr><td data-label="Símbolo">\(N\)</td><td data-label="Significado">Número de espiras</td><td data-label="Unidades">adimensional</td></tr>
+                    <tr><td data-label="Símbolo">\(\Phi_B\)</td><td data-label="Significado">Flujo por espira</td><td data-label="Unidades">Wb</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> bobina de \(N=80\) espiras, \(S=1{,}5\cdot10^{-2}\ \text{m}^{2}\), perpendicular a \(B(t)=0{,}10+0{,}04t^{2}\). \(\Psi(t)=80\cdot1{,}5\cdot10^{-2}(0{,}10+0{,}04t^{2})=0{,}12+0{,}048t^{2}\ \text{Wb}\). Derivando: \(\varepsilon(t)=-0{,}096t\ \text{V}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Si el flujo es <strong>constante</strong>, \(\varepsilon=0\) (aunque \(B\) sea enorme).</li>
+                    <li>La fem depende de la <strong>tasa de variación</strong>, no del valor del flujo.</li>
+                    <li>El signo negativo se interpreta con la ley de Lenz (ficha 5).</li>
+                    <li>En forma media: \(\varepsilon_{\text{media}}=-\Delta\Psi/\Delta t\) (ficha 4).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 · FEM MEDIA -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Fem media inducida</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Variación finita</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El valor medio de la fem inducida en un intervalo finito de tiempo, cuando el flujo varía de \(\Psi_i\) a \(\Psi_f\) entre \(t_i\) y \(t_f\). Se aplica cuando la variación del campo o del área es <strong>lineal</strong> (fem constante) o cuando solo se pide un valor medio y no es necesario derivar.
+            </div>
+            <a href="TemaB9.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">
+                \[ \varepsilon_{\text{media}} = -\frac{\Delta\Psi}{\Delta t} = -N\,\frac{\Delta\Phi_B}{\Delta t} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es la ley de Faraday en forma de incrementos: se obtiene sustituyendo \(d\Psi/dt\) por \(\Delta\Psi/\Delta t\). Memoriza la idea: si la variación del flujo es <strong>lineal en el tiempo</strong>, la fem es <strong>constante</strong> e igual a la media. Si el problema da "en \(0{,}2\ \text{s}\)" o "durante \(0{,}3\ \text{s}\)", casi siempre se usa esta versión. Recuerda calcular correctamente \(\Delta\Psi\): si el campo <strong>se invierte</strong>, el \(\Delta\Psi\) es el doble del valor inicial, no cero.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\varepsilon_{\text{media}}\)</td><td data-label="Significado">Fem media en el intervalo</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta\Psi=\Psi_f-\Psi_i\)</td><td data-label="Significado">Variación de flujo concatenado</td><td data-label="Unidades">Wb</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta t=t_f-t_i\)</td><td data-label="Significado">Intervalo de tiempo</td><td data-label="Unidades">s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> bobina de \(N=150\) espiras y \(r=4\ \text{cm}\) en un campo perpendicular que baja de \(0{,}60\ \text{T}\) a \(0\) en \(0{,}20\ \text{s}\). \(S=\pi r^{2}=5{,}03\cdot10^{-3}\ \text{m}^{2}\). \(|\varepsilon|=150\cdot5{,}03\cdot10^{-3}\cdot0{,}60/0{,}20=2{,}26\ \text{V}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es una fórmula cómoda cuando la variación es <strong>lineal</strong>.</li>
+                    <li>Si el campo <strong>se invierte</strong>: \(\Delta\Phi=-2\Phi_i\) (no cero).</li>
+                    <li>El signo negativo se interpreta con Lenz.</li>
+                    <li>Si solo se pide el módulo: \(|\varepsilon_{\text{media}}|=N|\Delta\Phi|/\Delta t\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 · LEY DE LENZ -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Ley de Lenz: sentido de la corriente inducida</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué expresa?</span>
+                El sentido de la corriente inducida: la corriente aparece de forma que su propio campo magnético se <strong>opone a la variación del flujo</strong> que la produjo. Se aplica en todas las cuestiones conceptuales de EBAU sobre "sentido de la corriente inducida" y en la interpretación del signo negativo de Faraday.
+            </div>
+            <a href="TemaB9.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">
+                \[ \vec B_{\text{inducido}}\ \text{se opone a la VARIACIÓN del flujo magnético que la produce} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No es una fórmula: es una <strong>ley cualitativa</strong>. Memoriza con precisión la frase clave: la corriente inducida se opone a la <strong>VARIACIÓN</strong> del flujo, NO al flujo en sí. Esto significa: si el flujo externo <strong>aumenta</strong>, la corriente inducida crea un campo que lo <strong>contrarresta</strong>; si el flujo externo <strong>disminuye</strong>, la corriente inducida crea un campo en el mismo sentido para <strong>mantenerlo</strong>. Es el error más frecuente en EBAU decir "se opone al campo externo".</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Situación</th><th>Campo inducido</th><th>Corriente (vista de frente)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Situación">Flujo entrante AUMENTA</td><td data-label="Campo inducido">Saliente (\(\odot\))</td><td data-label="Corriente">Antihoraria</td></tr>
+                    <tr><td data-label="Situación">Flujo entrante DISMINUYE</td><td data-label="Campo inducido">Entrante (\(\otimes\))</td><td data-label="Corriente">Horaria</td></tr>
+                    <tr><td data-label="Situación">Flujo saliente AUMENTA</td><td data-label="Campo inducido">Entrante (\(\otimes\))</td><td data-label="Corriente">Horaria</td></tr>
+                    <tr><td data-label="Situación">Flujo saliente DISMINUYE</td><td data-label="Campo inducido">Saliente (\(\odot\))</td><td data-label="Corriente">Antihoraria</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una espira está en un campo entrante al papel que <strong>aumenta</strong>. La corriente inducida debe generar un campo <strong>saliente</strong> para contrarrestar el aumento. Con la mano derecha (pulgar saliente), los dedos giran en sentido <strong>antihorario</strong>. Ese es el sentido de la corriente inducida.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Se opone a la <strong>variación</strong> del flujo, no al flujo.</li>
+                    <li>Regla mnemotécnica: "la Naturaleza es vaga, no le gusta que le cambien el flujo".</li>
+                    <li>Convención: \(\odot\) = saliente (antihorario), \(\otimes\) = entrante (horario).</li>
+                    <li>Consecuencia energética: hay que hacer trabajo para inducir la corriente (principio del generador).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 · CORRIENTE INDUCIDA -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Corriente inducida (ley de Ohm)</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Ley de Ohm</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo de la corriente inducida cuando la espira forma un circuito cerrado de resistencia total \(R\). Se aplica en problemas en los que, además de la fem, se pide la intensidad inducida o la potencia disipada.
+            </div>
+            <a href="TemaB9.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">
+                \[ I = \frac{\varepsilon}{R} \qquad\text{(en valor absoluto: } I = \frac{|\varepsilon|}{R}\text{)} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es la ley de Ohm aplicada a la fem inducida. Memoriza \(I=\varepsilon/R\) y recuerda que <strong>el sentido de la corriente lo fija Lenz</strong> (ficha 5), no la ley de Ohm (que solo da el módulo). \(R\) es la <strong>resistencia total</strong> del circuito (suma de todas las resistencias, incluyendo la de la propia espira). En cuestiones cualitativas que solo piden sentido, no hace falta calcular \(I\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(I\)</td><td data-label="Significado">Intensidad inducida</td><td data-label="Unidades">A</td></tr>
+                    <tr><td data-label="Símbolo">\(\varepsilon\)</td><td data-label="Significado">Fem inducida</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(R\)</td><td data-label="Significado">Resistencia total del circuito</td><td data-label="Unidades">Ω</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una espira de \(R=0{,}50\ \Omega\) se somete a una fem inducida de \(0{,}12\ \text{V}\). La corriente inducida es \(I=0{,}12/0{,}50=0{,}24\ \text{A}\). El sentido lo decide Lenz según el cambio de flujo.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El módulo de la corriente se calcula con \(I=|\varepsilon|/R\).</li>
+                    <li>El <strong>sentido</strong> lo fija la ley de Lenz (ficha 5).</li>
+                    <li>\(R\) es la resistencia total (espira + circuito externo).</li>
+                    <li>Potencia disipada: \(P=I^{2}R=\varepsilon^{2}/R\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 · BOBINA GIRATORIA: FLUJO -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Bobina giratoria: flujo concatenado</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Función temporal</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El flujo magnético concatenado que atraviesa una bobina de \(N\) espiras que gira con velocidad angular constante \(\omega\) en un campo magnético uniforme \(B\), suponiendo que en \(t=0\) la normal coincide con el campo. Se aplica en los problemas de generadores y alternadores, muy típicos de EBAU.
+            </div>
+            <a href="TemaB9.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">
+                \[ \Psi(t) = N\,B\,S\cos(\omega t) \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Sí: memoriza \(\Psi(t)=NBS\cos(\omega t)\). Es la base del alternador. La deducción es simple: como la bobina gira, el ángulo \(\theta\) entre la normal y \(\vec B\) cambia con el tiempo: \(\theta=\omega t\) (si a \(t=0\) los vectores son paralelos). Al sustituir en \(\Psi=NBS\cos\theta\) sale la expresión. Cuidado con la condición inicial: si a \(t=0\) la bobina está <strong>perpendicular</strong> al campo, la función sería un seno, no un coseno.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\Psi(t)\)</td><td data-label="Significado">Flujo concatenado en función del tiempo</td><td data-label="Unidades">Wb</td></tr>
+                    <tr><td data-label="Símbolo">\(N\)</td><td data-label="Significado">Número de espiras</td><td data-label="Unidades">adimensional</td></tr>
+                    <tr><td data-label="Símbolo">\(B\)</td><td data-label="Significado">Campo magnético</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(S\)</td><td data-label="Significado">Área de cada espira</td><td data-label="Unidades">m²</td></tr>
+                    <tr><td data-label="Símbolo">\(\omega\)</td><td data-label="Significado">Velocidad angular</td><td data-label="Unidades">rad·s⁻¹</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> bobina de \(N=100\) espiras, \(S=0{,}015\ \text{m}^{2}\), \(B=0{,}8\ \text{T}\), \(\omega=209{,}4\ \text{rad·s}^{-1}\). \(\Psi(t)=100\cdot0{,}8\cdot0{,}015\cdot\cos(209{,}4t)=1{,}2\cos(209{,}4t)\ \text{Wb}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El flujo oscila entre \(+NBS\) y \(-NBS\).</li>
+                    <li>Si a \(t=0\) la normal es <strong>paralela</strong> a \(\vec B\): coseno.</li>
+                    <li>Si a \(t=0\) la normal es <strong>perpendicular</strong> a \(\vec B\): seno.</li>
+                    <li>Aquí SÍ hay que multiplicar por \(N\): es una bobina.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 · BOBINA GIRATORIA: FEM -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Bobina giratoria: fem inducida</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Derivada</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La fem inducida en función del tiempo en una bobina giratoria, obtenida derivando el flujo concatenado \(\Psi(t)=NBS\cos(\omega t)\). Se aplica en los problemas de alternadores que piden "la expresión de la fem" o "el valor de la fem en un instante dado".
+            </div>
+            <a href="TemaB9.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">
+                \[ \varepsilon(t) = N\,B\,S\,\omega\,\operatorname{sen}(\omega t) \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se obtiene derivando \(\Psi(t)=NBS\cos(\omega t)\). Al derivar el coseno sale un seno negativo; al multiplicar por el \(-\omega\) de la cadena y el signo negativo de Faraday, el resultado es un seno <strong>positivo</strong>. Truco: si el flujo es un coseno, la fem es un seno (desfasados 90°). Comprueba que cuando \(\Psi\) es máximo, \(\varepsilon=0\) (ficha 6 del tema: fem nula con flujo máximo).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\varepsilon(t)\)</td><td data-label="Significado">Fem inducida instantánea</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(NBS\omega\)</td><td data-label="Significado">Fem máxima (amplitud)</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(\omega\)</td><td data-label="Significado">Velocidad angular</td><td data-label="Unidades">rad·s⁻¹</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> continuando el ejemplo anterior, \(\varepsilon(t)=1{,}2\cdot209{,}4\cdot\text{sen}(209{,}4t)=251\cdot\text{sen}(209{,}4t)\ \text{V}\). La fem máxima es \(251\ \text{V}\). En los instantes en que el flujo es máximo (\(\cos=1\)), la fem es cero.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La fem está desfasada 90° respecto al flujo: cuando uno es máximo, el otro es cero.</li>
+                    <li>La fem cambia de signo periódicamente → corriente alterna (si el circuito está cerrado).</li>
+                    <li>La fem máxima es \(NBS\omega\) (ficha 9).</li>
+                    <li>Si en \(t=0\) la normal es perpendicular a \(\vec B\): \(\varepsilon\) iría con coseno.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 · FEM MÁXIMA Y VELOCIDAD ANGULAR -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Fem máxima y velocidad angular</h2>
+                <span class="badge-centro">Caso típico</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip automatizar">🔄 Automatizar · Caso típico</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El valor máximo de la fem inducida en una bobina giratoria y la relación entre velocidad angular, frecuencia, periodo y revoluciones por minuto. Se aplica en todos los problemas de alternadores que piden "la fem máxima" o que dan la velocidad de giro en rpm.
+            </div>
+            <a href="TemaB9.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">
+                \[ \varepsilon_{\max} = N\,B\,S\,\omega \]
+                \[ \omega = 2\pi f = \frac{2\pi}{T} \]
+            </div>
+            </a>
+            <a href="TemaB9.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">
+                \[ \omega = \text{rpm}\cdot\frac{2\pi}{60}\ \text{rad·s}^{-1} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔄 AUTOMATIZAR</span>Sí: memoriza \(\varepsilon_{\max}=NBS\omega\) y las conversiones de \(\omega\). Es un caso típico que aparece en todos los problemas de generadores. La conversión de rpm a rad/s es imprescindible: \(2000\ \text{rpm}=2000\cdot2\pi/60\approx209{,}4\ \text{rad/s}\). El error típico es olvidar convertir rpm a rad/s y meter 2000 directamente en la fórmula: el resultado saldría 60 veces mayor. Verifica siempre las unidades de \(\omega\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Magnitud</th><th>Expresión</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Magnitud">Fem máxima</td><td data-label="Expresión">\(\varepsilon_{\max}=NBS\omega\)</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Magnitud">Velocidad angular</td><td data-label="Expresión">\(\omega=2\pi f\)</td><td data-label="Unidades">rad·s⁻¹</td></tr>
+                    <tr><td data-label="Magnitud">Periodo</td><td data-label="Expresión">\(T=2\pi/\omega\)</td><td data-label="Unidades">s</td></tr>
+                    <tr><td data-label="Magnitud">Frecuencia</td><td data-label="Expresión">\(f=1/T\)</td><td data-label="Unidades">Hz</td></tr>
+                    <tr><td data-label="Magnitud">rpm → rad/s</td><td data-label="Expresión">\(\omega=\text{rpm}\cdot2\pi/60\)</td><td data-label="Unidades">rad·s⁻¹</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(N=100\), \(S=0{,}015\ \text{m}^{2}\), \(B=0{,}8\ \text{T}\), \(2000\ \text{rpm}\). \(\omega=2000\cdot2\pi/60=209{,}4\ \text{rad/s}\). \(\varepsilon_{\max}=100\cdot0{,}8\cdot0{,}015\cdot209{,}4=251\ \text{V}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La conversión <strong>rpm → rad/s</strong> es imprescindible.</li>
+                    <li>La fem máxima no depende del instante, sino de la geometría y de \(\omega\).</li>
+                    <li>El periodo \(T=2\pi/\omega\) es el tiempo de una vuelta completa.</li>
+                    <li>Si el resultado sale "raro", comprueba que \(\omega\) esté en rad/s (no en rpm).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             LEYENDA EPISTÉMICA
+             ============================================================ -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones del tema B9 se estudian igual. Cada fórmula pertenece a una
+                <strong>categoría epistémica</strong> —definición, concepto, consecuencia matemática,
+                aplicación o caso típico automatizable— y cada categoría se domina con un
+                <strong>verbo distinto</strong>. Identificar el tipo <em>antes</em> de estudiar ahorra
+                tiempo y evita memorizar lo que se puede deducir o comprender.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física o
+                        establece una relación básica. No se demuestra, se establece. Se domina cuando puedes
+                        enunciarla sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B9</strong>
+                        \(\Phi_B=BS\cos\theta\) &nbsp;·&nbsp; \(\Psi=N\Phi_B\)
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Concepto / comprensión</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es la <em>idea física</em> del tema: una propiedad o relación que hay que entender
+                        más que memorizar. Se domina cuando puedes explicarla con tus propias palabras y
+                        usarla como filtro conceptual.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplo B9</strong>
+                        Ley de Lenz: la corriente se opone a la <strong>variación</strong> del flujo.
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> derivando o sustituyendo otra fórmula. No se memoriza: se
+                        reconstruye en 2–3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplo B9</strong>
+                        \(\varepsilon(t)=NBS\omega\,\text{sen}(\omega t)\) (derivando \(\Psi(t)\)).
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Aplicación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Se usa para <em>resolver</em> un problema concreto: elegir la fórmula adecuada,
+                        sustituir con los signos correctos y comprobar el resultado.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B9</strong>
+                        \(\varepsilon=-d\Psi/dt\) &nbsp;·&nbsp; \(\varepsilon_{\text{media}}=-\Delta\Psi/\Delta t\) &nbsp;·&nbsp;
+                        \(I=\varepsilon/R\) &nbsp;·&nbsp; \(\Psi(t)=NBS\cos(\omega t)\)
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Caso típico automatizable</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es un <em>caso particular</em> que aparece mucho y conviene aplicar de forma refleja
+                        sin deducirlo cada vez.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplo B9</strong>
+                        \(\varepsilon_{\max}=NBS\omega\) &nbsp;·&nbsp; \(\omega=\text{rpm}\cdot2\pi/60\)
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tabla resumen -->
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Concepto</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Idea física central</td>
+                        <td data-label="¿Cómo se domina?">Explicar con tus palabras</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla sin fórmulas?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Aplicación</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Fórmula para resolver</td>
+                        <td data-label="¿Cómo se domina?">Resolver problemas con signos</td>
+                        <td data-label="Autoevaluación">¿La elijo bien y compruebo el signo?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Automatizar</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Caso típico específico</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿La reconozco y la aplico al instante?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Regla de oro -->
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si es una idea física que hay que entender → <strong>concepto</strong> (comprender).
+                Si solo asigna un nombre o fija una relación básica → <strong>definición</strong> (memorizar).
+                Si sale derivando otra fórmula → <strong>consecuencia</strong> (deducir).
+                Si la usas para resolver un problema → <strong>aplicación</strong> (aplicar).
+                Si es un caso particular muy repetido → <strong>caso típico</strong> (automatizar).
+            </div>
+
+            <!-- Mini-referencia de colores -->
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Comprender (Ley de Lenz)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Definición (flujo y flujo concatenado)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Automatizar (fem máxima y rpm → rad/s)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Aplicar (Faraday, fem media, corriente, bobina giratoria)</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================ GLOSARIO ============================ -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema B9</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \Phi_B=B\,S\cos\theta \]</td><td data-label="Nombre">Flujo magnético por una espira</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ \Psi=N\,\Phi_B=NBS\cos\theta \]</td><td data-label="Nombre">Flujo concatenado de una bobina</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ \varepsilon=-\dfrac{d\Psi}{dt}=-N\dfrac{d\Phi_B}{dt} \]</td><td data-label="Nombre">Ley de Faraday-Henry</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ \varepsilon_{\text{media}}=-\dfrac{\Delta\Psi}{\Delta t} \]</td><td data-label="Nombre">Fem media inducida</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ \vec B_{\text{inducido}} \text{ se opone a la variación del flujo} \]</td><td data-label="Nombre">Ley de Lenz</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ I=\dfrac{\varepsilon}{R} \]</td><td data-label="Nombre">Corriente inducida</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ \Psi(t)=NBS\cos(\omega t) \]</td><td data-label="Nombre">Flujo concatenado de bobina giratoria</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \varepsilon(t)=NBS\omega\,\text{sen}(\omega t) \]</td><td data-label="Nombre">Fem instantánea en bobina giratoria</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ \varepsilon_{\max}=NBS\omega \]</td><td data-label="Nombre">Fem máxima en bobina giratoria</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ \omega=2\pi f=\dfrac{2\pi}{T}=\text{rpm}\cdot\dfrac{2\pi}{60} \]</td><td data-label="Nombre">Velocidad angular (relaciones y unidades)</td><td data-label="Ficha">9</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> (i) usar el ángulo con el plano de la espira en vez del ángulo con la <strong>normal</strong>; (ii) olvidar multiplicar por \(N\) en una bobina; (iii) confundir el flujo con su variación temporal (¡la fem depende de la derivada, no del valor!); (iv) perder el signo negativo de Faraday (o invertirlo mal); (v) afirmar que la corriente inducida se opone <strong>siempre al campo externo</strong> (se opone a la variación del flujo); (vi) calcular fem cuando el flujo es grande pero <strong>constante</strong> (¡sale cero!); (vii) no convertir rpm a rad/s en los problemas de alternador; (viii) mezclar el flujo por espira con el flujo concatenado; (ix) en inversión de campo, calcular \(\Delta\Psi=0\) en vez de \(\Delta\Psi=-2\Psi_i\).
+        </div>
+    </details>
+
+    <!-- ============================ RECORDATORIO ============================ -->
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en el tema B9 la idea central es que <strong>una variación temporal del flujo magnético induce una fuerza electromotriz</strong> (ley de Faraday-Henry: \(\varepsilon=-d\Psi/dt\)). Lo que importa <strong>NO</strong> es el valor del flujo, sino su <strong>rapidez de cambio</strong>. El signo negativo es la ley de Lenz: la corriente inducida se opone a la <strong>variación</strong> del flujo (no al flujo en sí). En problemas con bobinas, usar siempre \(\Psi=N\Phi_B\) (multiplicar por \(N\)); en problemas con una sola espira, \(\Phi_B=BS\cos\theta\). En los alternadores, recordar que \(\Psi(t)=NBS\cos(\omega t)\) y \(\varepsilon(t)=NBS\omega\,\text{sen}(\omega t)\), con \(\varepsilon_{\max}=NBS\omega\); convertir siempre las rpm a rad/s antes de sustituir. Si dominas estas cuatro ideas (Faraday, Lenz, flujo concatenado y alternador), resuelves cualquier problema de B9.
+    </div>
+
+    <!-- ============================ BOTÓN VOLVER ============================ -->
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+
+<!-- ============================ JS · RESALTADO DE LA FÓRMULA DESTINO ============================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    // Si el id cae sobre un <span> interior, subimos a la .formula-box que lo contiene.
+    var highlight = target.classList.contains('formula-box') || target.classList.contains('card')
+        ? target
+        : (target.closest('.formula-box') || target.closest('.card') || target);
+
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    // Reinicia la animación aunque :target ya se hubiera consumido
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () {
+        highlight.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
+</body>
+</html>

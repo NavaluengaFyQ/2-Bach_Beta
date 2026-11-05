@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA D6 (Formulario).- Leyes de desintegración radiactiva y actividad</title>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- CSS PROPIO DE FORMULARIOS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================ CABECERA ============================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA D6 (Formulario).- </span>
+                <span class="texto">Leyes de desintegración radiactiva y actividad</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================ GRID ============================ -->
+    <div class="grid">
+
+        <!-- FICHA 1 · MODELO ESTADÍSTICO Y ECUACIÓN DIFERENCIAL -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Modelo estadístico y ecuación diferencial</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La rapidez con la que disminuye el número de núcleos radiactivos en función de la constante de desintegración \(\lambda\). Se aplica como punto de partida del tema: al integrar esta ecuación diferencial se obtiene la ley exponencial. Explica por qué la desintegración radiactiva es un proceso aleatorio a escala nuclear pero perfectamente predecible a escala macroscópica.
+            </div>
+            <a href="TemaD6.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
+                \[ \frac{dN}{dt} = -\,\lambda\,N \]
+                \[ dN = -\,\lambda\,N\,dt \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>Más que memorizarla, hay que <strong>entenderla</strong>: dice que la velocidad de desintegración es proporcional al número de núcleos que quedan. El signo menos indica que \(N\) disminuye. Es la misma forma que la descarga de un condensador o la atenuación de la luz. La constante \(\lambda>0\) es la probabilidad de desintegración por unidad de tiempo y su unidad en el S.I. es \(\text{s}^{-1}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(N\)</td><td data-label="Significado">Número de núcleos sin desintegrar en el instante \(t\)</td><td data-label="Unidades">núcleos</td></tr>
+                    <tr><td data-label="Símbolo">\(t\)</td><td data-label="Significado">Tiempo transcurrido</td><td data-label="Unidades">s</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Constante de desintegración radiactiva</td><td data-label="Unidades">s⁻¹</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si \(\lambda=10^{-3}\,\mathrm{s^{-1}}\) y \(N=10^{10}\) núcleos, entonces \(dN/dt=-10^{-3}\cdot10^{10}=-10^{7}\,\mathrm{núcleos\cdot s^{-1}}\): se desintegran 10 millones de núcleos por segundo en ese instante.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La desintegración es <strong>aleatoria</strong> a escala de un núcleo individual.</li>
+                    <li>\(\lambda\) grande \(\Rightarrow\) desintegración rápida \(\Rightarrow\) semivida corta.</li>
+                    <li>No significa que todos los núcleos se desintegren a la vez: es un proceso estadístico.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 · LEY DE DESINTEGRACIÓN RADIACTIVA -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Ley de desintegración radiactiva</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El número de núcleos radiactivos que quedan sin desintegrar en cualquier instante \(t\). Se aplica en todos los problemas de radiactividad: datación, cálculo de masas restantes, actividad, medicina nuclear. Es la ley madre de todo el tema D6.
+            </div>
+            <a href="TemaD6.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">
+                \[ N(t) = N_0\,e^{-\lambda t} \]
+                \[ \frac{N(t)}{N_0} = e^{-\lambda t} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>¡Sí, imprescindible! Es la ley exponencial del decaimiento radiactivo, deducida integrando la ecuación diferencial de la ficha 1. Memoriza la exponencial negativa con \(\lambda\). La misma forma funcional se aplica al número de núcleos, a la masa del isótopo padre y a la actividad. Errores típicos: mezclar unidades de \(t\) y \(\lambda\), o usar logaritmos decimales en vez de neperianos al despejar \(t\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(N_0\)</td><td data-label="Significado">Número inicial de núcleos radiactivos</td><td data-label="Unidades">núcleos</td></tr>
+                    <tr><td data-label="Símbolo">\(N(t)\)</td><td data-label="Significado">Núcleos sin desintegrar en el instante \(t\)</td><td data-label="Unidades">núcleos</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Constante de desintegración</td><td data-label="Unidades">s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(t\)</td><td data-label="Significado">Tiempo transcurrido (misma unidad que \(\lambda^{-1}\))</td><td data-label="Unidades">s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> con \(N_0=10^{20}\) núcleos y \(\lambda=7{,}58\cdot10^{-10}\,\mathrm{s^{-1}}\) (U-234 con \(T_{1/2}=29\) años), tras \(t=5\cdot10^{4}\) años \(=1{,}58\cdot10^{12}\,\mathrm{s}\), queda \(N=10^{20}e^{-0{,}0693\cdot5\cdot10^{4}/2{,}5\cdot10^{5}}\approx8{,}71\cdot10^{19}\) núcleos.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La fracción desintegrada es \(1-e^{-\lambda t}\).</li>
+                    <li>La misma ley se aplica a la masa del isótopo padre: \(m(t)=m_0e^{-\lambda t}\).</li>
+                    <li>Al despejar \(t\): \(t=-\ln(N/N_0)/\lambda\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 · LEY CON SEMIVIDAS -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Ley de desintegración expresada en semividas</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La fracción de núcleos restantes cuando el tiempo se expresa como múltiplo (o fracción) del periodo de semidesintegración. Se aplica para hacer cálculos mentales rápidos y para comprobar resultados: tras una semivida queda la mitad, tras dos la cuarta parte, tras tres la octava parte…
+            </div>
+            <a href="TemaD6.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">
+                \[ N(t) = N_0\left(\frac{1}{2}\right)^{t/T_{1/2}} \]
+                \[ \frac{N}{N_0} = \left(\frac{1}{2}\right)^{n},\qquad n = \frac{t}{T_{1/2}} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: sale de sustituir \(\lambda=\ln2/T_{1/2}\) en la ley exponencial. Pero es tan útil para estimaciones rápidas que conviene manejarla con soltura. Clave: cada semivida reduce a la mitad <strong>lo que queda</strong>, no la cantidad inicial. Tras \(n\) semividas, la fracción restante es \((1/2)^n\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Tiempo</th><th>Fracción restante</th><th>Porcentaje</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Tiempo">\(0\)</td><td data-label="Fracción">\(1\)</td><td data-label="Porcentaje">100 %</td></tr>
+                    <tr><td data-label="Tiempo">\(T_{1/2}\)</td><td data-label="Fracción">\(1/2\)</td><td data-label="Porcentaje">50 %</td></tr>
+                    <tr><td data-label="Tiempo">\(2\,T_{1/2}\)</td><td data-label="Fracción">\(1/4\)</td><td data-label="Porcentaje">25 %</td></tr>
+                    <tr><td data-label="Tiempo">\(3\,T_{1/2}\)</td><td data-label="Fracción">\(1/8\)</td><td data-label="Porcentaje">12,5 %</td></tr>
+                    <tr><td data-label="Tiempo">\(4\,T_{1/2}\)</td><td data-label="Fracción">\(1/16\)</td><td data-label="Porcentaje">6,25 %</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una muestra de \(10\,\mathrm{g}\) con \(T_{1/2}=2{,}5\cdot10^{5}\) años. Tras \(t=5\cdot10^{4}\) años, \(n=0{,}2\) semividas y queda \(m=10\,(1/2)^{0{,}2}\approx8{,}71\,\mathrm{g}\) del isótopo padre.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Si \(n\) no es entero, la fracción queda entre dos potencias consecutivas de \(1/2\).</li>
+                    <li>Es la forma más intuitiva de la ley: cada semivida, la mitad.</li>
+                    <li>Si te dan el porcentaje restante \(f\), \(n=\log_{1/2}(f)=\ln f/\ln(1/2)\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 · PERIODO DE SEMIDESINTEGRACIÓN -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Periodo de semidesintegración (semivida)</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El tiempo necesario para que el número de núcleos radiactivos se reduzca a la mitad, o la constante \(\lambda\) a partir de la semivida. Se aplica en todos los problemas de datación y de cinética radiactiva: es el dato que suele aparecer en los enunciados.
+            </div>
+            <a href="TemaD6.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">
+                \[ T_{1/2} = \frac{\ln 2}{\lambda} \]
+                \[ \lambda = \frac{\ln 2}{T_{1/2}} \approx \frac{0{,}693}{T_{1/2}} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta: sale de imponer \(N=N_0/2\) en la ley exponencial. Lo que sí conviene recordar es la idea: \(T_{1/2}\) y \(\lambda\) son inversamente proporcionales. \(\lambda\) grande \(\Rightarrow\) decaimiento rápido \(\Rightarrow\) \(T_{1/2}\) corto. Y el factor \(\ln2\approx0{,}693\) aparece siempre.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(T_{1/2}\)</td><td data-label="Significado">Periodo de semidesintegración</td><td data-label="Unidades">s (o días, años)</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Constante de desintegración</td><td data-label="Unidades">s⁻¹ (inversa de \(T_{1/2}\))</td></tr>
+                    <tr><td data-label="Símbolo">\(\ln 2\)</td><td data-label="Significado">Logaritmo neperiano de 2</td><td data-label="Unidades">0,693 (adimensional)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> el \({}^{131}\mathrm{I}\) tiene \(T_{1/2}=8{,}02\,\text{días}=6{,}93\cdot10^{5}\,\mathrm{s}\), luego \(\lambda=0{,}693/(6{,}93\cdot10^{5})\approx1{,}00\cdot10^{-6}\,\mathrm{s^{-1}}\). En cambio, el \({}^{40}\mathrm{K}\) tiene \(T_{1/2}=1{,}248\cdot10^{9}\) años, con \(\lambda\approx1{,}76\cdot10^{-17}\,\mathrm{s^{-1}}\), diez órdenes de magnitud menor.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(T_{1/2}\) y \(\lambda\) son propiedades <strong>del isótopo</strong>: no dependen de la temperatura, presión o estado químico.</li>
+                    <li>Si en el enunciado dan el periodo en días o años y piden actividad en Bq, conviene convertir \(T_{1/2}\) a segundos.</li>
+                    <li>La semivida no es lo mismo que la vida media (ficha 5).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 · VIDA MEDIA -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Vida media (tiempo de vida medio)</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El tiempo medio de permanencia de un núcleo radiactivo antes de desintegrarse. Se aplica para comparar isótopos y para distinguirla claramente del periodo de semidesintegración. Aparece en algunos enunciados EBAU y conviene no confundirlas: la vida media es mayor que la semivida.
+            </div>
+            <a href="TemaD6.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">
+                \[ \tau = \frac{1}{\lambda} \]
+                \[ T_{1/2} = \tau\,\ln 2 \qquad\Longleftrightarrow\qquad \tau = \frac{T_{1/2}}{\ln 2} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta: \(\tau=1/\lambda\) es la definición de vida media y \(T_{1/2}=\tau\ln2\) se obtiene combinando con la ficha 4. Lo importante es <strong>no confundir</strong>: la semivida es el tiempo para que quede la mitad de los núcleos; la vida media es el tiempo medio de vida de un núcleo individual. \(\tau\approx1{,}443\,T_{1/2}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\tau\)</td><td data-label="Significado">Vida media de un núcleo radiactivo</td><td data-label="Unidades">s</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Constante de desintegración</td><td data-label="Unidades">s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(T_{1/2}\)</td><td data-label="Significado">Periodo de semidesintegración</td><td data-label="Unidades">s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para el \({}^{131}\mathrm{I}\) con \(T_{1/2}=8{,}02\,\text{días}\): \(\tau=8{,}02/0{,}693\approx11{,}57\,\text{días}\). Es decir, un núcleo de \({}^{131}\mathrm{I}\) vive en promedio unos 11,6 días antes de desintegrarse.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(\tau\) es siempre mayor que \(T_{1/2}\) (por el factor \(1/\ln2\approx1{,}443\)).</li>
+                    <li>Ambas magnitudes tienen unidades de tiempo, pero <strong>describen cosas distintas</strong>.</li>
+                    <li>En la EBAU de Castilla y León se pregunta más por la semivida; la vida media aparece de forma puntual.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 · ACTIVIDAD RADIACTIVA -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Actividad radiactiva y becquerel</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El número de desintegraciones que se producen por unidad de tiempo en una muestra radiactiva. Se aplica en problemas de medicina nuclear, datación, contaminación radiactiva y protección radiológica. Su unidad S.I. es el becquerel (Bq), equivalente a una desintegración por segundo.
+            </div>
+            <a href="TemaD6.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">
+                \[ \mathcal{A} = -\frac{dN}{dt} = \lambda\,N \]
+                \[ \mathcal{A}(t) = \mathcal{A}_0\,e^{-\lambda t} \]
+                \[ \mathcal{A}_0 = \lambda\,N_0 \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: \(\mathcal{A}=\lambda N\) y \(\mathcal{A}(t)=\mathcal{A}_0e^{-\lambda t}\) son fórmulas clave. La actividad decae con la misma exponencial y la misma constante \(\lambda\) que el número de núcleos; de hecho \(A/A_0=N/N_0\). Memoriza también la unidad: \(1\,\mathrm{Bq}=1\,\mathrm{s^{-1}}\). Error típico: confundir actividad (desintegraciones/s) con número total de núcleos.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\mathcal{A}\)</td><td data-label="Significado">Actividad radiactiva</td><td data-label="Unidades">Bq = s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\mathcal{A}_0\)</td><td data-label="Significado">Actividad inicial (\(t=0\))</td><td data-label="Unidades">Bq</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Constante de desintegración</td><td data-label="Unidades">s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(N\)</td><td data-label="Significado">Número de núcleos sin desintegrar</td><td data-label="Unidades">núcleos</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(1\,\mu\mathrm{g}\) de \({}^{131}\mathrm{I}\) contiene \(N=(10^{-6}/131)\cdot6{,}022\cdot10^{23}\approx4{,}60\cdot10^{15}\) núcleos. Con \(\lambda\approx1{,}00\cdot10^{-6}\,\mathrm{s^{-1}}\): \(\mathcal{A}_0=1{,}00\cdot10^{-6}\cdot4{,}60\cdot10^{15}\approx4{,}60\cdot10^{9}\,\mathrm{Bq}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>1 Bq es una unidad muy pequeña; se usan múltiplos como kBq, MBq o GBq.</li>
+                    <li>Tras una semivida, la actividad se reduce a la mitad.</li>
+                    <li>Si el dato de tiempo es en días o años, conviértelo a segundos para expresar \(A\) en Bq.</li>
+                    <li>La actividad también se escribe a veces como \(A\), pero aquí usamos \(\mathcal{A}\) para no confundirla con el número másico.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 · NÚMERO DE NÚCLEOS Y MASA -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Número de núcleos y masa de la muestra</h2>
+                <span class="badge-centro">Conversión</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip automatizar">🔄 Automatizar · Conversión</span>
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El número de núcleos a partir de una masa de isótopo puro (y viceversa: la masa correspondiente a un número de núcleos o a una actividad). Se aplica siempre que haya que conectar la ley exponencial con datos macroscópicos como la masa en gramos. Combina estequiometría con la ley de desintegración.
+            </div>
+            <a href="TemaD6.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">
+                \[ N = \frac{m}{M}\,N_A \]
+                \[ \mathcal{A} = \lambda\,\frac{m}{M}\,N_A \]
+                \[ N = \frac{\mathcal{A}}{\lambda}\qquad m = \frac{\mathcal{A}\,M}{\lambda\,N_A} \]
+                \[ m(t) = m_0\,e^{-\lambda t} = m_0\left(\frac{1}{2}\right)^{t/T_{1/2}} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔄 AUTOMATIZAR</span>No hace falta memorizarla: \(N=(m/M)N_A\) es pura estequiometría (nº de moles × nº de Avogadro). Y \(m=m_0e^{-\lambda t}\) se obtiene multiplicando por \(M/N_A\) la ley exponencial. Lo importante es automatizar la conversión de masas a núcleos, con \(m\) y \(M\) en unidades coherentes (ambos en g o ambos en kg) y \(N_A=6{,}022\cdot10^{23}\,\mathrm{mol^{-1}}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa de isótopo puro</td><td data-label="Unidades">g (o kg)</td></tr>
+                    <tr><td data-label="Símbolo">\(M\)</td><td data-label="Significado">Masa molar del isótopo</td><td data-label="Unidades">g·mol⁻¹ (o kg·mol⁻¹)</td></tr>
+                    <tr><td data-label="Símbolo">\(N_A\)</td><td data-label="Significado">Número de Avogadro</td><td data-label="Unidades">6,022·10²³ mol⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\mathcal{A}\)</td><td data-label="Significado">Actividad de la muestra</td><td data-label="Unidades">Bq</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(20\,\mathrm{g}\) de un isótopo con \(M=100\,\mathrm{g\cdot mol^{-1}}\) contienen \(N=(20/100)\cdot6{,}022\cdot10^{23}=1{,}204\cdot10^{23}\) núcleos. Si \(T_{1/2}=6\,\mathrm{h}\), \(\lambda=3{,}21\cdot10^{-5}\,\mathrm{s^{-1}}\) y \(\mathcal{A}_0=3{,}87\cdot10^{18}\,\mathrm{Bq}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La masa que decae es la del <strong>isótopo padre</strong>; no confundir con la masa total de la muestra (que incluye productos).</li>
+                    <li>Si la muestra no es pura, hay que ponderar por la fracción de isótopo.</li>
+                    <li>Para pasar de actividad a masa: \(m=\mathcal{A}M/(\lambda N_A)\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 · DATACIÓN PADRE-HIJO -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Datación radiactiva padre-hijo</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Datación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La edad de una muestra a partir de las cantidades actuales de isótopo padre (radiactivo) e isótopo hijo (estable) que se han generado por desintegración. Se aplica en datación K-Ar, Rb-Sr, U-Pb y en cualquier problema donde se sepa que no había isótopo hijo al formarse el sistema.
+            </div>
+            <a href="TemaD6.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">
+                \[ N_0 = N_{\text{padre}} + N_{\text{hijo}} \]
+                \[ t = \frac{1}{\lambda}\,\ln\left(\frac{N_{\text{padre}} + N_{\text{hijo}}}{N_{\text{padre}}}\right) \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>No hace falta memorizarla: se deduce de suponer que todo el hijo actual proviene del padre que se ha desintegrado, \(N_0=N_p+N_h\), y aplicar la ley exponencial. La clave está en comprobar las <strong>hipótesis</strong>: (1) no había hijo al formarse; (2) el sistema es cerrado (no hubo pérdidas ni aportes posteriores). Si se cumplen, la fórmula es directa.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(N_{\text{padre}}\)</td><td data-label="Significado">Núcleos padre actuales (sin desintegrar)</td><td data-label="Unidades">núcleos (o masa)</td></tr>
+                    <tr><td data-label="Símbolo">\(N_{\text{hijo}}\)</td><td data-label="Significado">Núcleos hijo actuales (producidos por desintegración)</td><td data-label="Unidades">núcleos (o masa)</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Constante de desintegración del padre</td><td data-label="Unidades">s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(t\)</td><td data-label="Significado">Edad de la muestra</td><td data-label="Unidades">s (o años)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una roca con \({}^{40}\mathrm{K}\) (\(T_{1/2}=1{,}248\cdot10^{9}\) años) contiene 12 mg de K y 73 mg de Ar. Como \(M_{\mathrm{K}}\approx M_{\mathrm{Ar}}\approx40\,\mathrm{g\cdot mol^{-1}}\), \(N_h/N_p=73/12\). Entonces \(N_0/N_p=(12+73)/12=85/12\) y \(t=(T_{1/2}/\ln 2)\cdot\ln(85/12)\approx3{,}52\cdot10^{9}\) años.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Si las masas molares de padre e hijo no son iguales, hay que convertir masas a número de núcleos antes de aplicar la relación.</li>
+                    <li>Si hay hijo inicial, hay que corregir: \(t=\ln[(N_h-N_{h,0}+N_p)/N_p]/\lambda\).</li>
+                    <li>Para datación con C-14 se compara la actividad actual con la del ser vivo de referencia.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 · DATACIÓN CON ACTIVIDAD -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Datación con actividad: tiempo a partir de A</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Datación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El tiempo transcurrido a partir de una actividad actual (o de una fracción restante del número de núcleos o de la masa). Se aplica en datación con C-14, en problemas de contaminación radiactiva y en cualquier ejercicio donde se dé \(A\) o \(N\) y se pida \(t\). Es la inversión directa de la ley de desintegración.
+            </div>
+            <a href="TemaD6.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">
+                \[ t = \frac{1}{\lambda}\,\ln\left(\frac{\mathcal{A}_0}{\mathcal{A}}\right) \]
+                \[ t = \frac{1}{\lambda}\,\ln\left(\frac{N_0}{N}\right) \]
+                \[ t = \frac{T_{1/2}}{\ln 2}\,\ln\left(\frac{N_0}{N}\right) \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>No hace falta: es despejar \(t\) de la ley exponencial. Como la actividad y el número de núcleos decaen con la misma exponencial, \(\mathcal{A}/\mathcal{A}_0=N/N_0\) y las tres expresiones son equivalentes. Cuidado con la <strong>fracción que queda</strong> frente a la que se ha desintegrado: si el enunciado dice «se ha desintegrado el 20 %», queda el 80 %, no el 20 %.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\mathcal{A}_0\)</td><td data-label="Significado">Actividad inicial (o de referencia)</td><td data-label="Unidades">Bq</td></tr>
+                    <tr><td data-label="Símbolo">\(\mathcal{A}\)</td><td data-label="Significado">Actividad actual</td><td data-label="Unidades">Bq</td></tr>
+                    <tr><td data-label="Símbolo">\(N_0/N\)</td><td data-label="Significado">Cociente entre núcleos iniciales y actuales</td><td data-label="Unidades">adimensional</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Constante de desintegración</td><td data-label="Unidades">s⁻¹</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> muestra de \({}^{60}\mathrm{Co}\) (\(T_{1/2}=5{,}27\) años). ¿Cuándo se ha desintegrado el 25 %? Queda el 75 %: \(t=(T_{1/2}/\ln2)\cdot\ln(1/0{,}75)\approx(5{,}27/0{,}693)\cdot0{,}2877\approx2{,}19\) años.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>«Se ha desintegrado el X %» \(\Rightarrow\) «queda el \((100-X)\)%».</li>
+                    <li>Si el tiempo se pide en la misma unidad que \(T_{1/2}\), no hace falta convertir a segundos (salvo que se pida actividad en Bq).</li>
+                    <li>Para datación con C-14, \(\mathcal{A}_0\) es la actividad del carbono atmosférico actual (o del material vivo de referencia).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 10 · LECTURA DE GRÁFICAS DE DECAIMIENTO -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Lectura de gráficas de decaimiento</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Interpretación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La semivida o la constante \(\lambda\) a partir de una gráfica \(N\)–\(t\) o \(A\)–\(t\). Se aplica en problemas EBAU donde se da una curva exponencial decreciente y se pide identificar \(T_{1/2}\), \(N_0\) o la actividad en un instante concreto. La clave es reconocer visualmente la reducción a la mitad.
+            </div>
+            <a href="TemaD6.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">
+                \[ N(t) = N_0\,e^{-\lambda t} \]
+                \[ N(T_{1/2}) = \frac{N_0}{2} \]
+                \[ \mathcal{A} = \lambda\,N \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>No es una fórmula nueva: es aplicar las anteriores a una gráfica. Procedimiento: (1) localizar \(N_0\) en \(t=0\); (2) buscar el instante en que la curva alcanza \(N_0/2\): ese es \(T_{1/2}\); (3) calcular \(\lambda=\ln2/T_{1/2}\); (4) usar la ley para instantes concretos; (5) si piden actividad, aplicar \(\mathcal{A}=\lambda N\) (convirtiendo el tiempo a segundos si se pide en Bq).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Dato de la gráfica</th><th>Cómo se interpreta</th><th>Qué se obtiene</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Dato">Valor en \(t=0\)</td><td data-label="Interpretación">Es \(N_0\) (o \(\mathcal{A}_0\))</td><td data-label="Qué se obtiene">Punto de partida</td></tr>
+                    <tr><td data-label="Dato">Instante con \(N=N_0/2\)</td><td data-label="Interpretación">Es \(T_{1/2}\)</td><td data-label="Qué se obtiene">Semivida</td></tr>
+                    <tr><td data-label="Dato">Punto \((t,N)\) cualquiera</td><td data-label="Interpretación">Verifica la ley exponencial</td><td data-label="Qué se obtiene">\(\lambda=-\ln(N/N_0)/t\)</td></tr>
+                    <tr><td data-label="Dato">Curva \(A\)–\(t\)</td><td data-label="Interpretación">Sigue la misma ley que \(N\)</td><td data-label="Qué se obtiene">\(\mathcal{A}_0\) y \(T_{1/2}\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> gráfica con \(N_0=1000\) núcleos que alcanza \(N\approx500\) en \(t\approx10\) años. Entonces \(T_{1/2}\approx10\) años y \(\lambda=\ln2/10\approx0{,}0693\,\mathrm{año^{-1}}\). A \(t=12\) años: \(N=1000\,e^{-0{,}0693\cdot12}\approx436\) núcleos y \(\mathcal{A}=\lambda N\approx30{,}2\,\mathrm{año^{-1}}\approx9{,}57\cdot10^{-7}\,\mathrm{Bq}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Si la gráfica es semilogarítmica (\(\ln N\) frente a \(t\)), se obtiene una recta de pendiente \(-\lambda\).</li>
+                    <li>La actividad \(A\) decae con la misma curva exponencial que \(N\).</li>
+                    <li>Para expresar \(\mathcal{A}\) en Bq a partir de una gráfica en años, hay que convertir \(\lambda\) a s⁻¹.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             LEYENDA EPISTÉMICA
+             ============================================================ -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
+                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
+                consecuencia matemática, principio de conservación o conversión de unidades— y cada
+                categoría se domina con un <strong>verbo distinto</strong>. Identificar el tipo
+                <em>antes</em> de estudiar ahorra tiempo y evita memorizar lo que se puede deducir.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física.
+                        No se demuestra, se establece. Se domina cuando puedes enunciarla sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D6</strong>
+                        \(N(t)=N_0e^{-\lambda t}\) &nbsp;·&nbsp; \(\mathcal{A}=\lambda N\) &nbsp;·&nbsp; \(\mathcal{A}_0=\lambda N_0\)
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es el <em>punto de partida</em> del tema: describe cómo funciona la naturaleza.
+                        No se deriva de otra cosa; se entiende el porqué y las condiciones en las que aplica.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D6</strong>
+                        \(\dfrac{dN}{dt}=-\lambda N\) &nbsp;·&nbsp; modelo estadístico de la desintegración
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> integrando, despejando o sustituyendo una ley fundamental o una
+                        definición. No se memoriza: se reconstruye en 2–3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D6</strong>
+                        \(T_{1/2}=\ln2/\lambda\) &nbsp;·&nbsp; \(\tau=1/\lambda\) &nbsp;·&nbsp; \(N=N_0(1/2)^{t/T_{1/2}}\) &nbsp;·&nbsp; \(m=m_0e^{-\lambda t}\)
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Principio / aplicación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Es una <em>regla</em> que se aplica a cada problema concreto: datación, interpretación
+                        de gráficas, cálculos de tiempo a partir de actividad. No se memoriza: se reconoce el patrón.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D6</strong>
+                        \(t=\ln(N_0/N)/\lambda\) &nbsp;·&nbsp; \(t=\ln(\mathcal{A}_0/\mathcal{A})/\lambda\) &nbsp;·&nbsp; datación padre-hijo
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Conversión / operación</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes
+                        equivalentes. Debe salir sin pensar, como un reflejo.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D6</strong>
+                        \(N=(m/M)N_A\) &nbsp;·&nbsp; días ↔ s &nbsp;·&nbsp; años ↔ s &nbsp;·&nbsp; Bq ↔ MBq
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tabla resumen -->
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Punto de partida físico</td>
+                        <td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio / aplicación</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Regla o patrón de resolución</td>
+                        <td data-label="¿Cómo se domina?">Reconocerlo en cada problema</td>
+                        <td data-label="Autoevaluación">¿Lo aplico como filtro al problema?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Herramienta mecánica</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿Me sale sin pensar?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Regla de oro -->
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
+                pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si sale de otra fórmula integrando, despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
+                Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender).
+                Si solo asigna un nombre → <strong>definición</strong> (memorizar).
+                Si es una regla que se aplica a cada problema → <strong>aplicación</strong> (aplicar).
+            </div>
+
+            <!-- Mini-referencia de colores de las tarjetas -->
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Fundamento (modelo y ley exponencial)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Semivida y vida media</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Actividad y conversiones</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Aplicaciones (datación)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Gráficas e interpretación</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================ GLOSARIO ============================ -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema D6</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \frac{dN}{dt} = -\lambda N \]</td><td data-label="Nombre">Ecuación diferencial de la desintegración</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ N(t) = N_0\,e^{-\lambda t} \]</td><td data-label="Nombre">Ley de desintegración radiactiva</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ N(t) = N_0\left(\tfrac{1}{2}\right)^{t/T_{1/2}} \]</td><td data-label="Nombre">Ley de desintegración en función de la semivida</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ T_{1/2} = \frac{\ln 2}{\lambda} \]</td><td data-label="Nombre">Periodo de semidesintegración</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ \tau = \frac{1}{\lambda} \]</td><td data-label="Nombre">Vida media</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ \mathcal{A} = \lambda N \]</td><td data-label="Nombre">Actividad radiactiva</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ \mathcal{A}(t) = \mathcal{A}_0\,e^{-\lambda t} \]</td><td data-label="Nombre">Ley de decaimiento de la actividad</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ N = \frac{m}{M}N_A \]</td><td data-label="Nombre">Número de núcleos a partir de la masa</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ m(t) = m_0\,e^{-\lambda t} \]</td><td data-label="Nombre">Masa restante del isótopo padre</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ t = \frac{1}{\lambda}\ln\!\left(\frac{N_{\text{padre}}+N_{\text{hijo}}}{N_{\text{padre}}}\right) \]</td><td data-label="Nombre">Datación radiactiva padre-hijo</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ t = \frac{1}{\lambda}\ln\!\left(\frac{\mathcal{A}_0}{\mathcal{A}}\right) \]</td><td data-label="Nombre">Tiempo a partir de la actividad</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ t = \frac{1}{\lambda}\ln\!\left(\frac{N_0}{N}\right) \]</td><td data-label="Nombre">Tiempo a partir de la fracción restante</td><td data-label="Ficha">9</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> confundir masa inicial con masa restante; interpretar «se ha desintegrado un 20 %» como «queda un 20 %» (¡queda el 80 %!); confundir vida media (\(\tau=1/\lambda\)) con semivida (\(T_{1/2}=\ln2/\lambda\)); olvidar que \(\mathcal{A}=\lambda N\); usar \(t\) en años con \(\lambda\) en s⁻¹; expresar una actividad en \(\text{año}^{-1}\) y etiquetarla como Bq; y suponer que la cantidad inicial de isótopo hijo es cero sin que el enunciado lo indique.
+        </div>
+    </details>
+
+    <!-- ============================ RECORDATORIO + BOTÓN ============================ -->
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en radiactividad, la <strong>ley exponencial</strong> \(N=N_0e^{-\lambda t}\) es la madre de todas las fórmulas del tema: integrando la ecuación diferencial se obtiene; de ella salen la semivida \(T_{1/2}=\ln2/\lambda\), la vida media \(\tau=1/\lambda\), la actividad \(\mathcal{A}=\lambda N=\mathcal{A}_0e^{-\lambda t}\) y las expresiones para datación. Antes de sustituir en la exponencial, comprueba siempre que el producto \(\lambda t\) es adimensional (mismas unidades de tiempo en \(\lambda\) y en \(t\)). Distingue con claridad «fracción que queda» de «fracción que se ha desintegrado». Y recuerda: la actividad se mide en becquerels (\(1\,\mathrm{Bq}=1\,\mathrm{s^{-1}}\)). Si dominas la exponencial y estas tres ideas, resuelves cualquier problema EBAU del tema.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- ============================ PARA RESALTAR LA FÓRMULA DEL FORMULARIO CUANDO VENGA DEL HTML ============================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var card = document.querySelector(hash);
+    if (!card) return;
+
+    card.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    // Reinicia la animación aunque el :target ya se hubiera consumido
+    card.classList.remove('formula-resaltada');
+    void card.offsetWidth;
+    card.classList.add('formula-resaltada');
+    setTimeout(function () {
+        card.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

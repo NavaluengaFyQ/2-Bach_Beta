@@ -5,25 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema B4. Potencial eléctrico, equipotenciales y campo uniforme</title>
 
-
-    <!-- Para crear las consultas puntuales en la base de datos) -->
     <script src="js/utils.js" defer></script>
-
-    <!-- FontAwesome CDN (versión 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
     <link rel="stylesheet" href="../css/unidades.css">
-
-    <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-
-    
+    <style>
+        .formula-box {
+            overflow-wrap: break-word;
+            word-break: break-word;
+            max-width: 100%;
+        }
+        .formula-box mjx-container[jax="CHTML"][display="true"],
+        .formula-box mjx-container[jax="SVG"][display="true"] {
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+            padding-bottom: 2px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-    <!-- CABECERA -->
     <div class="header">
         <div class="header-left">
             <h1>IES Valle del Alberche</h1>
@@ -38,9 +41,6 @@
         </div>
     </div>
 
-    <!-- ============================================================ -->
-    <!-- MAPA DE BLOQUES Y TEMAS (DESPLEGABLE)                         -->
-    <!-- ============================================================ -->
     <details class="section enunciado" open>
         <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
         <p>Este tema pertenece al <strong>Bloque B. Campo electromagnético</strong> del currículo de Física de 2.º de Bachillerato (Decreto 40/2022, BOCYL-D-30092022-4). Se corresponde con el tema <strong>B4. Potencial eléctrico, equipotenciales y campo uniforme</strong>.</p>
@@ -107,9 +107,6 @@
         </div>
     </details>
 
-    <!-- ============================================================ -->
-    <!-- OBJETIVOS                                                     -->
-    <!-- ============================================================ -->
     <details class="section objetivo">
         <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
         <ul>
@@ -125,28 +122,23 @@
         </ul>
     </details>
 
-    <!-- ============================================================ -->
-    <!-- CONTENIDO TEÓRICO                                            -->
-    <!-- ============================================================ -->
     <details class="section procedimiento">
         <summary><h2>📚 Contenido teórico</h2></summary>
 
         <details class="step">
             <summary><span class="step-num">1</span><strong>Potencial eléctrico y energía potencial eléctrica.</strong></summary>
             <p>Una carga eléctrica situada en una región donde existe un campo eléctrico puede tener <strong>energía potencial eléctrica</strong>. El <strong>potencial eléctrico</strong> en un punto es la energía potencial eléctrica por unidad de carga:</p>
-            <div class="formula-box">
-                \[
-                V=\frac{E_p}{q}
-                \qquad\Longleftrightarrow\qquad
-                E_p=qV
-                \]
+            <a href="TemaB4-Formulario.html#formula-1" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
+                \[ V=\frac{E_p}{q} \]
+                \[ E_p=qV \]
+                <span id="formula-2"></span>
             </div>
+            </a>
             <p>El potencial es una magnitud <strong>escalar</strong>: en cada punto tiene un valor, pero no una dirección ni un sentido. No depende de la carga de prueba utilizada para medirlo. La energía potencial sí depende de la carga que situemos en ese punto.</p>
             <p>En el Sistema Internacional, el potencial se mide en voltios:</p>
             <div class="formula-box">
-                \[
-                1\,\text{V}=1\,\frac{\text{J}}{\text{C}}
-                \]
+                \[ 1\,\text{V}=1\,\frac{\text{J}}{\text{C}} \]
             </div>
             <p>El origen del potencial es convencional. Para cargas puntuales aisladas se toma habitualmente el potencial nulo en el infinito, \(V(\infty)=0\).</p>
             <div class="note"><strong>Distinción importante:</strong> el potencial eléctrico \(V\) es una propiedad del campo en un punto; la energía potencial \(E_p=qV\) corresponde a una carga concreta situada en ese punto.</div>
@@ -155,18 +147,15 @@
         <details class="step">
             <summary><span class="step-num">2</span><strong>Potencial creado por una carga puntual.</strong></summary>
             <p>Una carga puntual \(Q\), situada en el vacío, crea a una distancia \(r\) un potencial eléctrico:</p>
-            <div class="formula-box">
-                \[
-                V(r)=k\,\frac{Q}{r}
-                \qquad\text{con}\qquad
-                k=\frac{1}{4\pi\varepsilon_0}\approx9{,}0\cdot10^9\,
-                \frac{\text{N}\,\text{m}^2}{\text{C}^2}
-                \]
+            <a href="TemaB4-Formulario.html#formula-3" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">
+                \[ V(r)=k\,\frac{Q}{r} \qquad\text{con}\qquad k=\frac{1}{4\pi\varepsilon_0}\approx9{,}0\cdot10^9\, \frac{\text{N}\,\text{m}^2}{\text{C}^2} \]
             </div>
+            </a>
             <p>El signo del potencial depende del signo de la carga creadora:</p>
             <ul>
-                <li>Si \(Q&gt;0\), el potencial es positivo.</li>
-                <li>Si \(Q&lt;0\), el potencial es negativo.</li>
+                <li>Si \(Q>0\), el potencial es positivo.</li>
+                <li>Si \(Q<0\), el potencial es negativo.</li>
                 <li>Si \(Q=0\), el potencial creado por esa carga es nulo.</li>
             </ul>
             <p>El potencial disminuye en módulo al aumentar la distancia. Para una misma distancia, dos cargas de igual módulo y signo opuesto crean potenciales opuestos.</p>
@@ -176,20 +165,15 @@
         <details class="step">
             <summary><span class="step-num">3</span><strong>Principio de superposición del potencial.</strong></summary>
             <p>Cuando varias cargas puntuales \(Q_1,Q_2,\ldots,Q_n\) crean un campo eléctrico, el potencial total en un punto es la <strong>suma algebraica</strong> de los potenciales individuales:</p>
-            <div class="formula-box">
-                \[
-                V(P)=V_1+V_2+\cdots+V_n
-                =k\sum_{i=1}^{n}\frac{Q_i}{r_i}
-                \]
+            <a href="TemaB4-Formulario.html#formula-4" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">
+                \[ V(P)=V_1+V_2+\cdots+V_n =k\sum_{i=1}^{n}\frac{Q_i}{r_i} \]
             </div>
+            </a>
             <p>Las distancias \(r_i\) se miden desde cada carga hasta el punto \(P\). Hay que conservar el signo de cada carga al sustituir.</p>
             <p>El campo eléctrico también cumple el principio de superposición, pero su suma es <strong>vectorial</strong>:</p>
             <div class="formula-box">
-                \[
-                \vec E(P)=\sum_i\vec E_i(P)
-                \qquad\text{mientras que}\qquad
-                V(P)=\sum_i V_i(P)
-                \]
+                \[ \vec E(P)=\sum_i\vec E_i(P) \qquad\text{mientras que}\qquad V(P)=\sum_i V_i(P) \]
             </div>
             <div class="note"><strong>Estrategia:</strong> para el potencial, suma directamente los valores con su signo. Para el campo, dibuja los vectores, calcula componentes y suma componente a componente. No se debe sumar el módulo de los campos salvo que tengan la misma dirección y sentido.</div>
         </details>
@@ -197,36 +181,33 @@
         <details class="step">
             <summary><span class="step-num">4</span><strong>Diferencia de potencial, trabajo y energía.</strong></summary>
             <p>La diferencia de potencial entre dos puntos \(A\) y \(B\) es:</p>
-            <div class="formula-box">
-                \[
-                \Delta V=V_B-V_A
-                \]
+            <a href="TemaB4-Formulario.html#formula-5" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">
+                \[ \Delta V=V_B-V_A \]
             </div>
+            </a>
             <p>Al trasladar una carga \(q\) de \(A\) a \(B\), la variación de energía potencial eléctrica es:</p>
-            <div class="formula-box">
-                \[
-                \Delta E_p=E_{p,B}-E_{p,A}=q\,(V_B-V_A)=q\,\Delta V
-                \]
+            <a href="TemaB4-Formulario.html#formula-5" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5b">
+                \[ \Delta E_p=E_{p,B}-E_{p,A}=q\,(V_B-V_A)=q\,\Delta V \]
             </div>
+            </a>
             <p>El trabajo realizado por el <strong>campo eléctrico</strong> es el opuesto a la variación de energía potencial:</p>
-            <div class="formula-box">
-                \[
-                W_{\text{campo},\,A\to B}=-\Delta E_p
-                =q\,(V_A-V_B)
-                \]
+            <a href="TemaB4-Formulario.html#formula-6" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">
+                \[ W_{\text{campo},\,A\to B}=-\Delta E_p =q\,(V_A-V_B) \]
             </div>
+            </a>
             <p>Si un agente externo desplaza la carga lentamente, de modo que no cambia su energía cinética, el trabajo externo es:</p>
-            <div class="formula-box">
-                \[
-                W_{\text{ext},\,A\to B}=\Delta E_p
-                =q\,(V_B-V_A)
-                =-W_{\text{campo}}
-                \]
+            <a href="TemaB4-Formulario.html#formula-7" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">
+                \[ W_{\text{ext},\,A\to B}=\Delta E_p =q\,(V_B-V_A) =-W_{\text{campo}} \]
             </div>
+            </a>
             <p><strong>Interpretación de signos:</strong></p>
             <ul>
-                <li>Si \(W_{\text{campo}}&gt;0\), el campo favorece el desplazamiento y la energía potencial disminuye.</li>
-                <li>Si \(W_{\text{campo}}&lt;0\), el campo se opone al desplazamiento y un agente externo debe aportar energía.</li>
+                <li>Si \(W_{\text{campo}}>0\), el campo favorece el desplazamiento y la energía potencial disminuye.</li>
+                <li>Si \(W_{\text{campo}}<0\), el campo se opone al desplazamiento y un agente externo debe aportar energía.</li>
                 <li>Para una carga positiva, una disminución de energía potencial implica una disminución del potencial.</li>
                 <li>Para una carga negativa, una disminución de energía potencial implica un aumento del potencial.</li>
             </ul>
@@ -273,27 +254,23 @@
         <details class="step">
             <summary><span class="step-num">6</span><strong>Relación entre campo eléctrico y potencial: el gradiente.</strong></summary>
             <p>El campo eléctrico está relacionado con la variación espacial del potencial mediante el <strong>gradiente cambiado de signo</strong>:</p>
-            <div class="formula-box">
-                \[
-                \boxed{\vec E=-\nabla V}
-                \]
-                \[
-                \vec E=-\left(\frac{\partial V}{\partial x}\,\hat i
-                +\frac{\partial V}{\partial y}\,\hat j
-                +\frac{\partial V}{\partial z}\,\hat k\right)
-                \]
+            <a href="TemaB4-Formulario.html#formula-8" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">
+                \[ \boxed{\vec E=-\nabla V} \]
+                \[ \vec E=-\left(\frac{\partial V}{\partial x}\,\hat i +\frac{\partial V}{\partial y}\,\hat j +\frac{\partial V}{\partial z}\,\hat k\right) \]
             </div>
+            </a>
             <p>El gradiente indica cómo varía una magnitud en el espacio y en qué dirección aumenta más rápidamente. El signo negativo indica que el campo eléctrico señala hacia donde el potencial disminuye más deprisa.</p>
             <p>En una dimensión, si el campo solo tiene componente en el eje \(x\):</p>
-            <div class="formula-box">
-                \[
-                E_x=-\frac{dV}{dx}
-                \]
+            <a href="TemaB4-Formulario.html#formula-9" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">
+                \[ E_x=-\frac{dV}{dx} \]
             </div>
+            </a>
             <p>Por tanto, si se representa el potencial frente a la posición, la componente del campo es la pendiente de la gráfica cambiada de signo:</p>
             <ul>
-                <li>Si \(V\) disminuye al aumentar \(x\), entonces \(E_x&gt;0\).</li>
-                <li>Si \(V\) aumenta al aumentar \(x\), entonces \(E_x&lt;0\).</li>
+                <li>Si \(V\) disminuye al aumentar \(x\), entonces \(E_x>0\).</li>
+                <li>Si \(V\) aumenta al aumentar \(x\), entonces \(E_x<0\).</li>
                 <li>Si el potencial no cambia en una dirección, la componente del campo en esa dirección es nula.</li>
             </ul>
             <div class="note"><strong>Consecuencia geométrica:</strong> como el campo es el gradiente negativo del potencial, las líneas de campo son perpendiculares a las superficies equipotenciales.</div>
@@ -326,21 +303,19 @@
                 <figcaption style="font-size:0.88em; color:#64748b;">Entre las placas, el campo es aproximadamente uniforme; las equipotenciales son paralelas a las placas.</figcaption>
             </figure>
             <p>En un desplazamiento \(\Delta\vec r\) dentro de un campo uniforme:</p>
-            <div class="formula-box">
-                \[
-                V_B-V_A=-\vec E\cdot(\vec r_B-\vec r_A)
-                =-E\,d\cos\theta
-                \]
+            <a href="TemaB4-Formulario.html#formula-10" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">
+                \[ V_B-V_A=-\vec E\cdot(\vec r_B-\vec r_A) =-E\,d\cos\theta \]
             </div>
+            </a>
             <p>Si el desplazamiento es paralelo al campo, el potencial disminuye en el sentido del campo. Si es perpendicular, la diferencia de potencial es cero.</p>
             <p>Entre placas separadas una distancia \(d\), cuando el campo es perpendicular a ellas:</p>
-            <div class="formula-box">
-                \[
-                E=\frac{|\Delta V|}{d}
-                \qquad\Longleftrightarrow\qquad
-                |\Delta V|=E\,d
-                \]
+            <a href="TemaB4-Formulario.html#formula-11" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">
+                \[ E=\frac{|\Delta V|}{d} \]
+                \[ |\Delta V|=E\,d \]
             </div>
+            </a>
             <p>La expresión permite calcular el campo si se conoce la diferencia de potencial entre las placas y su separación.</p>
         </details>
 
@@ -348,19 +323,18 @@
             <summary><span class="step-num">8</span><strong>Condensador plano.</strong></summary>
             <p>Un condensador plano ideal está formado por dos placas conductoras paralelas, con cargas de igual módulo y signo opuesto. Al conectarlo a una fuente, entre sus placas aparece una diferencia de potencial y, despreciando los efectos de borde, un campo aproximadamente uniforme.</p>
             <p>La capacidad eléctrica relaciona la carga almacenada en una placa con la diferencia de potencial entre ellas:</p>
-            <div class="formula-box">
-                \[
-                C=\frac{|Q|}{|\Delta V|}
-                \qquad\Longleftrightarrow\qquad
-                |Q|=C\,|\Delta V|
-                \]
+            <a href="TemaB4-Formulario.html#formula-12" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-12">
+                \[ C=\frac{|Q|}{|\Delta V|} \]
+                \[ |Q|=C\,|\Delta V| \]
             </div>
+            </a>
             <p>Para un condensador plano ideal, con un medio de permitividad \(\varepsilon\) entre las placas:</p>
-            <div class="formula-box">
-                \[
-                C=\varepsilon\,\frac{S}{d}
-                \]
+            <a href="TemaB4-Formulario.html#formula-13" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-13">
+                \[ C=\varepsilon\,\frac{S}{d} \]
             </div>
+            </a>
             <p>En el vacío, \(\varepsilon=\varepsilon_0\). Si se introduce un dieléctrico, debe utilizarse la permitividad del medio. Estas expresiones se aplican al modelo ideal de placas paralelas, lejos de los bordes.</p>
             <div class="note"><strong>No confundir:</strong> la capacidad \(C\) depende de la geometría y del medio entre las placas; la carga \(Q\) y la diferencia de potencial \(\Delta V\) dependen también de cómo se conecte o cargue el condensador.</div>
         </details>
@@ -380,9 +354,6 @@
         </div>
     </details>
 
-    <!-- ============================================================ -->
-    <!-- PROCEDIMIENTOS TIPO                                          -->
-    <!-- ============================================================ -->
     <details class="section enunciado">
         <summary><h2>🧭 Procedimientos de resolución de problemas tipo (P-B4)</h2></summary>
 
@@ -395,7 +366,9 @@
                 <li>Aplicar \(V(P)=k\sum_i Q_i/r_i\), respetando el signo de cada carga.</li>
                 <li>Sumar algebraicamente las contribuciones y expresar el resultado en voltios.</li>
             </ol>
-            <div class="formula-box">\[V(P)=k\left(\frac{Q_1}{r_1}+\frac{Q_2}{r_2}+\cdots\right)\]</div>
+            <a href="TemaB4-Formulario.html#formula-4" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box">\[ V(P)=k\left(\frac{Q_1}{r_1}+\frac{Q_2}{r_2}+\cdots\right) \]</div>
+            </a>
         </details>
 
         <details class="step">
@@ -419,13 +392,11 @@
                 <li>Sumar las componentes para obtener el campo resultante y calcular su módulo y dirección.</li>
                 <li>Comprobar si la simetría permite cancelar algunas componentes.</li>
             </ol>
+            <a href="TemaB4-Formulario.html#formula-4" title="Ver esta fórmula desarrollada en el Formulario B4" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">
-                \[
-                V(P)=k\sum_i\frac{Q_i}{r_i}
-                \qquad ; \qquad
-                \vec E(P)=\sum_i k\frac{Q_i}{r_i^2}\,\hat u_i
-                \]
+                \[ V(P)=k\sum_i\frac{Q_i}{r_i} \qquad ; \qquad \vec E(P)=\sum_i k\frac{Q_i}{r_i^2}\,\hat u_i \]
             </div>
+            </a>
         </details>
 
         <details class="step">
@@ -451,9 +422,6 @@
         </details>
     </details>
 
-    <!-- ============================================================ -->
-    <!-- ANÁLISIS DE FÓRMULAS                                         -->
-    <!-- ============================================================ -->
     <details class="section resultado">
         <summary><h2>🧮 Análisis de las fórmulas del tema B4</h2></summary>
         <p>Recogemos las expresiones fundamentales, su significado físico y las condiciones de aplicación:</p>
@@ -552,9 +520,6 @@
         </div>
     </details>
 
-    <!-- ============================================================ -->
-    <!-- PROBLEMAS RESUELTOS EBAU: SELECCIÓN CASTILLA Y LEÓN          -->
-    <!-- ============================================================ -->
     <details>
         <summary>
             <i class="fas fa-chevron-circle-down"></i>
@@ -566,7 +531,6 @@
                 <strong>Selección de 10 problemas oficiales</strong> del banco de pruebas PAU/EBAU, todos de <strong>Castilla y León</strong>. Se han escogido para cubrir potencial de distribuciones discretas, campo y potencial simultáneos, trabajo eléctrico, placas paralelas, equipotenciales y razonamiento sobre el gradiente. En cada ejercicio se indica comunidad, año, convocatoria y número de problema.
             </p>
 
-            <!-- PROBLEMA 1 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 1</span>
@@ -589,7 +553,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 2 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 2</span>
@@ -614,7 +577,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 3 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 3</span>
@@ -626,14 +588,13 @@
                 </div>
                 <div class="resolucion-ej">
                     <div class="paso"><strong>1. Variación de energía potencial.</strong> Al liberarse desde el reposo, la carga adquiere energía cinética. El campo realiza trabajo positivo y la energía potencial disminuye:</div>
-                    <div class="formula-box">\[W_{\text{campo}}=-\Delta E_p=E_{p,A}-E_{p,B}&gt;0\quad\Rightarrow\quad E_{p,B}&lt;E_{p,A}\]</div>
-                    <div class="paso"><strong>2. Relación con el potencial.</strong> Como \(E_p=qV\) y la carga es negativa, al dividir la desigualdad por \(q&lt;0\) se invierte el sentido:</div>
-                    <div class="formula-box">\[qV_B&lt;qV_A\quad\Rightarrow\quad V_B&gt;V_A\]</div>
-                    <div class="paso"><strong>Resultado:</strong> el potencial es menor en A: \(V_A&lt;V_B\). Las cargas negativas se desplazan espontáneamente hacia potenciales mayores cuando solo actúa el campo eléctrico.</div>
+                    <div class="formula-box">\[W_{\text{campo}}=-\Delta E_p=E_{p,A}-E_{p,B}>0\quad\Rightarrow\quad E_{p,B}<E_{p,A}\]</div>
+                    <div class="paso"><strong>2. Relación con el potencial.</strong> Como \(E_p=qV\) y la carga es negativa, al dividir la desigualdad por \(q<0\) se invierte el sentido:</div>
+                    <div class="formula-box">\[qV_B<qV_A\quad\Rightarrow\quad V_B>V_A\]</div>
+                    <div class="paso"><strong>Resultado:</strong> el potencial es menor en A: \(V_A<V_B\). Las cargas negativas se desplazan espontáneamente hacia potenciales mayores cuando solo actúa el campo eléctrico.</div>
                 </div>
             </details>
 
-            <!-- PROBLEMA 4 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 4</span>
@@ -646,12 +607,11 @@
                 <div class="resolucion-ej">
                     <div class="paso"><strong>1. Sentido del campo.</strong> Entre los planos, el campo uniforme va desde el plano positivo hacia el negativo. Como el positivo está abajo y el negativo arriba, el campo apunta verticalmente hacia arriba.</div>
                     <div class="paso"><strong>2. Equilibrio de fuerzas.</strong> El peso apunta hacia abajo. Para compensarlo, la fuerza eléctrica debe apuntar hacia arriba. Puesto que \(\vec F_e=q\vec E\), la carga debe ser positiva:</div>
-                    <div class="formula-box">\[qE-mg=0\qquad\Rightarrow\qquad q=\frac{mg}{E}&gt;0\]</div>
+                    <div class="formula-box">\[qE-mg=0\qquad\Rightarrow\qquad q=\frac{mg}{E}>0\]</div>
                     <div class="paso"><strong>Resultado:</strong> la partícula debe tener carga positiva. Si fuese negativa, la fuerza eléctrica apuntaría hacia abajo y se sumaría al peso.</div>
                 </div>
             </details>
 
-            <!-- PROBLEMA 5 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 5</span>
@@ -674,7 +634,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 6 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 6</span>
@@ -692,11 +651,10 @@
                     <div class="paso"><strong>3. Trabajo.</strong> El trabajo del campo al trasladar \(q=2\,\mu\text{C}\) es:</div>
                     <div class="formula-box">\[W_{\text{campo}}=q(V_C-V_D)\approx+5{,}61\cdot10^{-2}\,\text{J}\]</div>
                     <div class="paso">El trabajo externo correspondiente es \(W_{\text{ext}}=-5{,}61\cdot10^{-2}\,\text{J}\).</div>
-                    <div class="paso"><strong>Resultado:</strong> el desplazamiento se realiza a favor del campo eléctrico, ya que \(W_{\text{campo}}&gt;0\).</div>
+                    <div class="paso"><strong>Resultado:</strong> el desplazamiento se realiza a favor del campo eléctrico, ya que \(W_{\text{campo}}>0\).</div>
                 </div>
             </details>
 
-            <!-- PROBLEMA 7 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 7</span>
@@ -718,7 +676,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 8 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 8</span>
@@ -739,7 +696,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 9 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 9</span>
@@ -757,7 +713,6 @@
                 </div>
             </details>
 
-            <!-- PROBLEMA 10 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
                     <span class="num-ej">Ejercicio 10</span>
@@ -784,16 +739,7 @@
         </div>
     </details>
 
-
-
-
-
-
-<!-- ============================================================ -->
-<!-- BLOQUE DE RECURSOS Y NAVEGACIÓN DEL TEMA B4                  -->
-<!-- ============================================================ -->
 <div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
-
 
     <div class="recursos-tema" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 border-radius: 20px; padding: 30px 25px 32px 25px;
@@ -814,7 +760,6 @@
                     grid-template-columns: repeat(3, 1fr);
                     gap: 18px;">
 
-            <!-- ── TARJETA 1: FORMULARIO (página actual) ── -->
             <a href="TemaB4-Formulario.html" style="text-decoration: none; color: inherit;">
                 <div class="recurso-card" style="background: white; border-radius: 16px;
                             padding: 22px 18px; text-align: center; height: 100%;
@@ -844,7 +789,6 @@
                 </div>
             </a>
 
-            <!-- ── TARJETA 2: PROBLEMAS EBAU DEL TEMA B4 ── -->
             <a href="TemaB4-ProblemasEBAU.html" style="text-decoration: none; color: inherit;">
                 <div class="recurso-card" style="background: white; border-radius: 16px;
                             padding: 22px 18px; text-align: center; height: 100%;
@@ -867,7 +811,6 @@
                 </div>
             </a>
 
-            <!-- ── TARJETA 3: FILTRADO EBAU GENERAL ── -->
             <a href="../EBAU/problemas-inline_v04.html" style="text-decoration: none; color: inherit;">
                 <div class="recurso-card" style="background: white; border-radius: 16px;
                             padding: 22px 18px; text-align: center; height: 100%;
@@ -892,26 +835,7 @@
         </div>
     </div>
 </div>
-<!-- ============================================================ -->
-<!-- FIN DEL BLOQUE DE RECURSOS                                   -->
-<!-- ============================================================ -->
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- ============================================================ -->
-    <!-- BLOQUE FINAL                                                  -->
-    <!-- ============================================================ -->
     <div class="bloque-cta">
         <div class="tarjeta-cta">
             <p>

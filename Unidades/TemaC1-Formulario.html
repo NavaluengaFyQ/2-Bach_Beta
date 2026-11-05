@@ -10,11 +10,26 @@
 
     <!-- CSS PROPIO DE FORMULARIOS -->
     <link rel="stylesheet" href="../css/formulario.css">
+
+    <style>
+        /* Resaltado al llegar por ancla desde TemaC1.html */
+        @keyframes resaltarFormulaC1 {
+            0%   { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+            18%  { box-shadow: 0 0 0 6px rgba(59,130,246,.4); background: #dbeafe; }
+            78%  { box-shadow: 0 0 0 6px rgba(59,130,246,.4); background: #dbeafe; }
+            100% { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+        }
+        .formula-resaltada {
+            animation: resaltarFormulaC1 2.4s ease;
+            border-radius: 8px;
+        }
+        [id^="formula-"] { scroll-margin-top: 90px; }
+    </style>
 </head>
 <body>
 <div class="container">
 
-    <!-- ============================ CABECERA ============================ -->
+    <!-- CABECERA -->
     <div class="header">
         <div class="header-left">
             <h1>IES Valle del Alberche</h1>
@@ -29,469 +44,500 @@
         </div>
     </div>
 
-    <!-- ============================ GRID ============================ -->
     <div class="grid">
 
-        <!-- FICHA 1 · CONDICIÓN DEL MAS -->
-        <article class="card c-1">
+        <!-- FICHA 1 -->
+        <article class="card c-3">
             <div class="cabecera">
                 <span class="num">1</span>
-                <h2>Condición del movimiento armónico simple</h2>
-                <span class="badge-centro">Fundamental</span>
+                <h2>Definición del MAS: fuerza y aceleración</h2>
+                <span class="badge-centro">Definición</span>
             </div>
             <div class="epi-chips">
-                <span class="epi-chip comprender">🧭 Comprender · Modelo físico</span>
-                <span class="epi-chip deducir">🧮 Deducir · Aceleración</span>
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
             </div>
             <div class="intro">
-                <span class="etiqueta">¿Qué se caracteriza?</span>
-                La condición que debe cumplir un movimiento oscilatorio para ser armónico simple: la fuerza recuperadora y la aceleración son proporcionales a la elongación y tienen sentido contrario. La elongación se mide desde la posición de equilibrio.
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación entre la fuerza recuperadora (o la aceleración) y la elongación en un movimiento armónico simple. Se aplica como <strong>punto de partida de todo el tema</strong>: cualquier sistema que cumpla \(F\propto -x\) es un MAS. Es la propiedad que permite identificar si un movimiento es armónico simple (muelle, péndulo para pequeñas oscilaciones, etc.) antes de calcular nada.
             </div>
-            <div class="formula-box">
-                \[ F=-kx \]
-                \[ ma=-kx \qquad\Longrightarrow\qquad a=-\frac{k}{m}x=-\omega^2x \]
+            <a href="TemaC1.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
+                \[ F = -k\,x \]
+                \[ a = -\frac{k}{m}\,x = -\omega^{2}\,x \]
+                <span id="formula-2"></span>
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>Debes reconocer el significado físico del signo negativo: la fuerza y la aceleración apuntan hacia la posición de equilibrio. La relación general del MAS es \(a=-\omega^2x\); en un sistema masa-muelle, \(\omega^2=k/m\).</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(F=-kx\) (ley de Hooke) y \(a=-\omega^{2}x\). Ambas expresan la misma idea: la fuerza y la aceleración son <strong>proporcionales a la elongación y de sentido contrario</strong>. Es la firma del MAS. El signo negativo es esencial: si quitas el muelle de su posición de equilibrio, siempre "tira hacia el centro". \(\omega^{2}=k/m\) es la conexión entre las dos fórmulas, y de ahí sale el periodo del muelle (ficha 6).</span>
             </p>
             <table class="mag-table">
-                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(F\)</td><td data-label="Significado">Fuerza recuperadora</td><td data-label="Unidades">N</td></tr>
                     <tr><td data-label="Símbolo">\(k\)</td><td data-label="Significado">Constante elástica del muelle</td><td data-label="Unidades">N·m⁻¹</td></tr>
-                    <tr><td data-label="Símbolo">\(x\)</td><td data-label="Significado">Elongación respecto al equilibrio</td><td data-label="Unidades">m</td></tr>
-                    <tr><td data-label="Símbolo">\(a\)</td><td data-label="Significado">Aceleración de la oscilación</td><td data-label="Unidades">m·s⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(x\)</td><td data-label="Significado">Elongación (desde el equilibrio)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(a\)</td><td data-label="Significado">Aceleración</td><td data-label="Unidades">m·s⁻²</td></tr>
                     <tr><td data-label="Símbolo">\(\omega\)</td><td data-label="Significado">Frecuencia angular</td><td data-label="Unidades">rad·s⁻¹</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo de interpretación:</strong> si \(x&gt;0\), entonces \(F&lt;0\) y \(a&lt;0\); si \(x&lt;0\), ambas magnitudes tienen sentido positivo. En el equilibrio, \(x=0\) y la fuerza recuperadora es nula.</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un muelle con \(k=12\ \text{N/m}\) estirado \(4\ \text{cm}\) ejerce \(F=-12\cdot0{,}04=-0{,}48\ \text{N}\) (hacia el equilibrio). Si la masa es \(3\ \text{kg}\): \(a=-kx/m=-0{,}48/3=-0{,}16\ \text{m/s}^{2}\), coherente con \(a=-\omega^{2}x=-(k/m)x\).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>El MAS es <strong>oscilatorio y periódico</strong>.</li>
-                    <li>La aceleración es proporcional a la elongación y de signo contrario.</li>
-                    <li>La elongación se mide desde el <strong>equilibrio</strong>, no necesariamente desde la longitud natural del muelle.</li>
-                    <li>En ausencia de fuerzas disipativas, la energía mecánica permanece constante.</li>
+                    <li>La fuerza recuperadora apunta siempre <strong>hacia el equilibrio</strong>.</li>
+                    <li>La aceleración es <strong>proporcional</strong> a \(-x\): es la firma matemática del MAS.</li>
+                    <li>Se mide \(x\) desde la <strong>posición de equilibrio</strong> (no desde la longitud natural del muelle).</li>
+                    <li>En los extremos (\(x=\pm A\)) la fuerza y la aceleración son máximas; en el equilibrio son nulas.</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 2 · ECUACIÓN DE POSICIÓN -->
-        <article class="card c-1">
+        <!-- FICHA 2 -->
+        <article class="card c-3">
             <div class="cabecera">
                 <span class="num">2</span>
-                <h2>Ecuación de posición. Amplitud y fase</h2>
-                <span class="badge-centro">Cinemática</span>
+                <h2>Ecuación de posición del MAS</h2>
+                <span class="badge-centro">Fundamental</span>
             </div>
             <div class="epi-chips">
-                <span class="epi-chip definicion">📘 Memorizar · Magnitudes</span>
-                <span class="epi-chip deducir">🧮 Deducir · Condiciones iniciales</span>
+                <span class="epi-chip definicion">📘 Memorizar · Expresión clave</span>
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                La elongación del oscilador en cualquier instante. La ecuación sinusoidal queda determinada por la amplitud, la frecuencia angular y la fase inicial.
+                La elongación del oscilador en función del tiempo, a partir de la amplitud \(A\), la frecuencia angular \(\omega\) y la fase inicial \(\varphi_0\). Se aplica en <strong>cualquier problema de MAS</strong>: de ella se obtienen, derivando, la velocidad (ficha 4) y la aceleración (ficha 5). Es la primera ecuación que hay que escribir en los problemas de cinemática del oscilador.
             </div>
-            <div class="formula-box">
-                \[ \boxed{x(t)=A\cos(\omega t+\varphi_0)} \]
-                \[ x(t)=A\operatorname{sen}(\omega t+\varphi_0) \]
+            <a href="TemaC1.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">
+                \[ x(t) = A\cos(\omega t + \varphi_0) \qquad\text{(también válida con seno)} \]
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Conviene reconocer la forma sinusoidal y el significado de cada parámetro. Se puede utilizar seno o coseno, ajustando convenientemente la fase inicial. No cambian la física del movimiento, sino la referencia de fase elegida.</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(x(t)=A\cos(\omega t+\varphi_0)\). Es la ecuación madre del MAS. La <strong>amplitud</strong> \(A\) marca la máxima separación del equilibrio. La <strong>frecuencia angular</strong> \(\omega\) marca la rapidez de las oscilaciones. La <strong>fase inicial</strong> \(\varphi_0\) fija en qué punto del ciclo está el oscilador en \(t=0\). Con seno también vale cambiando la fase: \(x=A\text{sen}(\omega t+\varphi_0)\).</span>
             </p>
             <table class="mag-table">
-                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
                 <tbody>
-                    <tr><td data-label="Símbolo">\(x(t)\)</td><td data-label="Significado">Elongación respecto al equilibrio</td><td data-label="Unidades">m</td></tr>
-                    <tr><td data-label="Símbolo">\(A\)</td><td data-label="Significado">Amplitud: máxima elongación en módulo</td><td data-label="Unidades">m</td></tr>
-                    <tr><td data-label="Símbolo">\(\omega\)</td><td data-label="Significado">Frecuencia angular o pulsación</td><td data-label="Unidades">rad·s⁻¹</td></tr>
-                    <tr><td data-label="Símbolo">\(t\)</td><td data-label="Significado">Tiempo</td><td data-label="Unidades">s</td></tr>
+                    <tr><td data-label="Símbolo">\(x(t)\)</td><td data-label="Significado">Elongación en el instante \(t\)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(A\)</td><td data-label="Significado">Amplitud (elongación máxima)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\omega\)</td><td data-label="Significado">Frecuencia angular</td><td data-label="Unidades">rad·s⁻¹</td></tr>
                     <tr><td data-label="Símbolo">\(\varphi_0\)</td><td data-label="Significado">Fase inicial</td><td data-label="Unidades">rad</td></tr>
+                    <tr><td data-label="Símbolo">\(t\)</td><td data-label="Significado">Tiempo</td><td data-label="Unidades">s</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> en \(x(t)=A\cos(\omega t+\varphi_0)\), la amplitud fija los extremos \(x=\pm A\), mientras que \(\varphi_0\) determina la posición y el sentido del movimiento en \(t=0\).</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(A=5\ \text{mm}\), \(\omega=14\pi\ \text{rad/s}\), \(\varphi_0=-\pi/2\). La ecuación es \(x(t)=5\text{sen}(14\pi t)\ \text{mm}\) (equivalente a \(5\cos(14\pi t-\pi/2)\)). En \(t=0\), \(x=0\): parte del equilibrio.</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>La amplitud es la máxima distancia a la posición de equilibrio.</li>
-                    <li>La fase indica el estado de la oscilación.</li>
-                    <li>Dos osciladores pueden compartir amplitud y periodo y diferir en su fase inicial.</li>
+                    <li>La función es <strong>sinusoidal</strong>: alterna entre \(+A\) y \(-A\).</li>
+                    <li>El argumento \((\omega t+\varphi_0)\) se llama <strong>fase</strong>.</li>
+                    <li>\(\varphi_0=0\) ⟹ \(x(0)=A\) (empieza en el extremo positivo).</li>
+                    <li>\(\varphi_0=-\pi/2\) (con coseno) ⟹ \(x(0)=0\) (empieza en el equilibrio).</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 3 · PERIODO Y FRECUENCIA -->
-        <article class="card c-3">
+        <!-- FICHA 3 -->
+        <article class="card c-5">
             <div class="cabecera">
                 <span class="num">3</span>
                 <h2>Periodo, frecuencia y frecuencia angular</h2>
-                <span class="badge-centro">Magnitudes</span>
+                <span class="badge-centro">Aplicación</span>
             </div>
             <div class="epi-chips">
-                <span class="epi-chip definicion">📘 Memorizar · Definiciones</span>
-                <span class="epi-chip automatizar">🔄 Automatizar · Conversiones</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · Relaciones</span>
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                El tiempo de una oscilación completa, el número de oscilaciones por segundo y la rapidez de variación de la fase. Estas magnitudes conectan la descripción temporal del movimiento con su ecuación.
+                Las relaciones entre las tres magnitudes temporales del MAS: el periodo \(T\) (tiempo de una oscilación), la frecuencia \(f\) (oscilaciones por segundo) y la frecuencia angular \(\omega\) (rapidez de cambio de la fase). Se aplican en <strong>todos los problemas</strong>: cuando el enunciado da "4 oscilaciones en 20 s" o "2000 rpm", hay que convertir a \(T\), \(f\) o \(\omega\) antes de usar cualquier otra fórmula.
             </div>
-            <div class="formula-box">
-                \[ \boxed{f=\frac{1}{T}} \]
-                \[ \boxed{\omega=2\pi f=\frac{2\pi}{T}} \]
+            <a href="TemaC1.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">
+                \[ f = \frac{1}{T} \]
+                \[ \omega = 2\pi f = \frac{2\pi}{T} \]
+                <span id="formula-5"></span>
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🔄 AUTOMATIZAR</span>Debes pasar con soltura entre periodo, frecuencia y frecuencia angular. Si conoces \(T\), calcula primero \(f=1/T\) o utiliza directamente \(\omega=2\pi/T\).</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(f=1/T\) y \(\omega=2\pi/T\). Son las relaciones más usadas del tema, y el error más frecuente en EBAU es <strong>confundir \(f\) con \(\omega\)</strong>: \(f\) va en hercios (Hz = oscilaciones/s) y \(\omega\) en rad/s. La diferencia clave es el factor \(2\pi\). En los problemas de "n oscilaciones en t segundos" hay que calcular primero el periodo \(T=t/n\) y de ahí sacar \(\omega=2\pi/T\).</span>
             </p>
             <table class="mag-table">
-                <thead><tr><th>Magnitud</th><th>Símbolo</th><th>Unidad S.I.</th></tr></thead>
+                <thead>
+                    <tr><th>Magnitud</th><th>Símbolo</th><th>Fórmula</th><th>Unidades</th></tr>
+                </thead>
                 <tbody>
-                    <tr><td data-label="Magnitud">Periodo</td><td data-label="Símbolo">\(T\)</td><td data-label="Unidad S.I.">s</td></tr>
-                    <tr><td data-label="Magnitud">Frecuencia</td><td data-label="Símbolo">\(f\)</td><td data-label="Unidad S.I.">Hz = s⁻¹</td></tr>
-                    <tr><td data-label="Magnitud">Frecuencia angular</td><td data-label="Símbolo">\(\omega\)</td><td data-label="Unidad S.I.">rad·s⁻¹</td></tr>
+                    <tr><td data-label="Magnitud">Periodo</td><td data-label="Símbolo">\(T\)</td><td data-label="Fórmula">Tiempo de una oscilación completa</td><td data-label="Unidades">s</td></tr>
+                    <tr><td data-label="Magnitud">Frecuencia</td><td data-label="Símbolo">\(f\)</td><td data-label="Fórmula">\(f=1/T\)</td><td data-label="Unidades">Hz</td></tr>
+                    <tr><td data-label="Magnitud">Frecuencia angular</td><td data-label="Símbolo">\(\omega\)</td><td data-label="Fórmula">\(\omega=2\pi f=2\pi/T\)</td><td data-label="Unidades">rad·s⁻¹</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> si el periodo se duplica, \(T'=2T\), la frecuencia pasa a \(f'=f/2\) y la frecuencia angular a \(\omega'=\omega/2\).</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> 4 oscilaciones en 20 s. \(T=20/4=5\ \text{s}\). \(f=1/5=0{,}2\ \text{Hz}\). \(\omega=2\pi/5\approx1{,}257\ \text{rad/s}\).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>El periodo es el tiempo necesario para completar una oscilación.</li>
-                    <li>La frecuencia es el número de oscilaciones completas por unidad de tiempo.</li>
-                    <li>No confundas \(f\), en Hz, con \(\omega\), en rad/s.</li>
-                    <li>Comprueba que el periodo está expresado en segundos antes de aplicar las relaciones.</li>
+                    <li>\(f\) en Hz; \(\omega\) en rad/s. No confundir.</li>
+                    <li>\(\omega\) es \(2\pi\) veces más grande que \(f\).</li>
+                    <li>Si dan rpm: \(\omega=\text{rpm}\cdot2\pi/60\).</li>
+                    <li>Si dan "n oscilaciones en t": \(T=t/n\), de ahí \(\omega\).</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 4 · VELOCIDAD -->
-        <article class="card c-3">
+        <!-- FICHA 4 -->
+        <article class="card c-5">
             <div class="cabecera">
                 <span class="num">4</span>
-                <h2>Velocidad en el movimiento armónico simple</h2>
-                <span class="badge-centro">Cinemática</span>
+                <h2>Velocidad en el MAS</h2>
+                <span class="badge-centro">Aplicación</span>
             </div>
             <div class="epi-chips">
-                <span class="epi-chip deducir">🧮 Deducir · Derivación</span>
-                <span class="epi-chip aplicar">⚖️ Aplicar · Cálculo</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · Derivada</span>
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                La velocidad instantánea, su valor máximo o el módulo de la velocidad cuando se conoce la posición. La expresión temporal se obtiene derivando la ecuación de posición.
+                La velocidad del oscilador en un instante cualquiera (derivando la posición), su valor máximo (cuando pasa por el equilibrio) y su módulo en una posición concreta (sin necesidad de conocer el tiempo). Se aplica en problemas que piden "velocidad máxima", "velocidad en \(x=2\ \text{cm}\)" o "en qué instantes se alcanza".
             </div>
-            <div class="formula-box">
-                \[ v(t)=\frac{dx}{dt} \]
-                \[ \boxed{v(t)=-A\omega\operatorname{sen}(\omega t+\varphi_0)} \]
-                \[ \boxed{v_{\text{máx}}=A\omega} \]
-                \[ \boxed{|v|=\omega\sqrt{A^2-x^2}} \]
+            <a href="TemaC1.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">
+                \[ v(t) = \frac{dx}{dt} = -A\,\omega\,\operatorname{sen}(\omega t+\varphi_0) \]
+                \[ v_{\text{máx}} = A\,\omega \]
+                \[ |v| = \omega\sqrt{A^{2}-x^{2}} \]
+                <span id="formula-7"></span>
+                <span id="formula-8"></span>
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>La velocidad instantánea se obtiene derivando \(x(t)\). Memoriza el resultado máximo \(v_{\text{máx}}=A\omega\) y utiliza la expresión en función de \(x\) cuando el problema proporciona una posición y no un instante.</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza las tres expresiones. La primera se obtiene derivando \(x(t)\); la segunda (\(v_{\text{máx}}=A\omega\)) es el valor en el equilibrio, donde el seno vale \(\pm1\); la tercera (\(|v|=\omega\sqrt{A^{2}-x^{2}}\)) es la más útil cuando dan una posición concreta. <strong>La velocidad es máxima en el equilibrio y nula en los extremos.</strong> Si el problema pide velocidad en un punto, usa la tercera sin dudar; si pide el instante, resuelve la primera igualando al valor.</span>
             </p>
             <table class="mag-table">
-                <thead><tr><th>Posición</th><th>Velocidad</th><th>Interpretación</th></tr></thead>
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
                 <tbody>
-                    <tr><td data-label="Posición">\(x=A\)</td><td data-label="Velocidad">\(v=0\)</td><td data-label="Interpretación">Extremo positivo</td></tr>
-                    <tr><td data-label="Posición">\(x=0\)</td><td data-label="Velocidad">\(|v|=v_{\text{máx}}\)</td><td data-label="Interpretación">Equilibrio</td></tr>
-                    <tr><td data-label="Posición">\(x=-A\)</td><td data-label="Velocidad">\(v=0\)</td><td data-label="Interpretación">Extremo negativo</td></tr>
+                    <tr><td data-label="Símbolo">\(v(t)\)</td><td data-label="Significado">Velocidad en el instante \(t\)</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(v_{\text{máx}}\)</td><td data-label="Significado">Velocidad máxima (en el equilibrio)</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(|v|\)</td><td data-label="Significado">Módulo de la velocidad en posición \(x\)</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(A\)</td><td data-label="Significado">Amplitud</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\omega\)</td><td data-label="Significado">Frecuencia angular</td><td data-label="Unidades">rad·s⁻¹</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> si se conoce \(A\), \(\omega\) y una elongación \(x\), el módulo de la velocidad se calcula directamente con \(|v|=\omega\sqrt{A^2-x^2}\), sin despejar el tiempo.</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(A=4\ \text{cm}\), \(\omega=2\ \text{rad/s}\). \(v_{\text{máx}}=4\cdot2=8\ \text{cm/s}\). En \(x=2\ \text{cm}\): \(|v|=2\sqrt{4^{2}-2^{2}}=2\sqrt{12}\approx6{,}93\ \text{cm/s}\).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>La rapidez es máxima al pasar por el equilibrio.</li>
-                    <li>En los extremos de la trayectoria la velocidad es cero.</li>
-                    <li>La expresión con raíz proporciona el <strong>módulo</strong>; no determina por sí sola el sentido de la velocidad.</li>
+                    <li><strong>Equilibrio</strong> (\(x=0\)): \(|v|\) máxima \(=A\omega\).</li>
+                    <li><strong>Extremos</strong> (\(x=\pm A\)): \(v=0\).</li>
+                    <li>La velocidad cambia de signo cada medio periodo.</li>
+                    <li>La fórmula \(|v|=\omega\sqrt{A^{2}-x^{2}}\) evita calcular el instante.</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 5 · ACELERACIÓN -->
-        <article class="card c-3">
+        <!-- FICHA 5 -->
+        <article class="card c-5">
             <div class="cabecera">
                 <span class="num">5</span>
-                <h2>Aceleración en el movimiento armónico simple</h2>
-                <span class="badge-centro">Cinemática</span>
+                <h2>Aceleración en el MAS</h2>
+                <span class="badge-centro">Aplicación</span>
             </div>
             <div class="epi-chips">
-                <span class="epi-chip deducir">🧮 Deducir · Segunda derivada</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · Derivada y relación</span>
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                La aceleración instantánea y su valor máximo. Se obtiene derivando la velocidad o derivando dos veces la ecuación de posición.
+                La aceleración del oscilador en función del tiempo (derivando la velocidad), o directamente en función de la posición mediante \(a=-\omega^{2}x\). Se aplica en problemas que piden "aceleración máxima", "aceleración en un punto" o en cuestiones conceptuales sobre el sentido de la aceleración respecto a la elongación.
             </div>
-            <div class="formula-box">
-                \[ a(t)=\frac{dv}{dt} \]
-                \[ a(t)=-A\omega^2\cos(\omega t+\varphi_0) \]
-                \[ \boxed{a=-\omega^2x} \qquad
-                   \boxed{a_{\text{máx}}=\omega^2A} \]
+            <a href="TemaC1.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">
+                \[ a(t) = \frac{dv}{dt} = -A\,\omega^{2}\cos(\omega t+\varphi_0) \]
+                \[ a = -\omega^{2}\,x \]
+                \[ a_{\text{máx}} = \omega^{2}A \]
+                <span id="formula-10"></span>
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>La expresión temporal es la segunda derivada de la posición. La forma \(a=-\omega^2x\) es especialmente útil para razonar el sentido de la aceleración y calcularla a partir de la elongación.</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(a=-\omega^{2}x\) y \(a_{\text{máx}}=\omega^{2}A\). La primera es la más usada: da la aceleración con solo conocer la posición, sin necesidad del tiempo. El signo negativo indica que la aceleración <strong>siempre apunta hacia el equilibrio</strong>. La segunda da el valor máximo, que se alcanza en los <strong>extremos</strong> de la trayectoria (donde la velocidad es cero). Es lo contrario de lo que ocurre con la velocidad.</span>
             </p>
             <table class="mag-table">
-                <thead><tr><th>Posición</th><th>Aceleración</th><th>Valor</th></tr></thead>
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
                 <tbody>
-                    <tr><td data-label="Posición">\(x=A\)</td><td data-label="Aceleración">\(a=-\omega^2A\)</td><td data-label="Valor">Módulo máximo</td></tr>
-                    <tr><td data-label="Posición">\(x=0\)</td><td data-label="Aceleración">\(a=0\)</td><td data-label="Valor">Nula</td></tr>
-                    <tr><td data-label="Posición">\(x=-A\)</td><td data-label="Aceleración">\(a=+\omega^2A\)</td><td data-label="Valor">Módulo máximo</td></tr>
+                    <tr><td data-label="Símbolo">\(a(t)\)</td><td data-label="Significado">Aceleración en el instante \(t\)</td><td data-label="Unidades">m·s⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(a\)</td><td data-label="Significado">Aceleración en posición \(x\)</td><td data-label="Unidades">m·s⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(a_{\text{máx}}\)</td><td data-label="Significado">Aceleración máxima (en los extremos)</td><td data-label="Unidades">m·s⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(\omega\)</td><td data-label="Significado">Frecuencia angular</td><td data-label="Unidades">rad·s⁻¹</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> en el extremo positivo \(x=A\), la aceleración es negativa; en el extremo negativo \(x=-A\), es positiva. En ambos extremos su módulo es \(\omega^2A\).</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(A=4\ \text{cm}\), \(\omega=2\ \text{rad/s}\). \(a_{\text{máx}}=4\cdot4=16\ \text{cm/s}^{2}\) (en \(x=\pm4\ \text{cm}\)). En \(x=2\ \text{cm}\): \(a=-4\cdot2=-8\ \text{cm/s}^{2}\) (hacia el equilibrio).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>La aceleración siempre apunta hacia la posición de equilibrio.</li>
-                    <li>Su módulo es máximo en los extremos y nulo en el equilibrio.</li>
-                    <li>El signo de \(a\) es contrario al signo de \(x\).</li>
+                    <li><strong>Extremos</strong>: \(a\) máxima, \(v=0\).</li>
+                    <li><strong>Equilibrio</strong>: \(a=0\), \(v\) máxima.</li>
+                    <li>La aceleración siempre apunta <strong>hacia el equilibrio</strong> (\(a\) y \(x\) tienen signos opuestos).</li>
+                    <li>En el MAS, \(a\) y \(x\) están desfasados \(180^\circ\).</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 6 · SISTEMA MASA-MUELLE -->
+        <!-- FICHA 6 -->
         <article class="card c-4">
             <div class="cabecera">
                 <span class="num">6</span>
-                <h2>Oscilador armónico: sistema masa-muelle</h2>
-                <span class="badge-centro">Aplicación</span>
+                <h2>Sistema masa-muelle</h2>
+                <span class="badge-centro">Caso típico</span>
             </div>
             <div class="epi-chips">
-                <span class="epi-chip deducir">🧮 Deducir · Periodo propio</span>
-                <span class="epi-chip aplicar">⚖️ Aplicar · Equilibrio</span>
+                <span class="epi-chip automatizar">🔄 Automatizar · Caso típico</span>
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                La frecuencia angular, el periodo, la constante elástica o la masa de un oscilador ideal. Se parte de la ley de Hooke y de la segunda ley de Newton.
+                La frecuencia angular y el periodo de una masa \(m\) unida a un muelle de constante elástica \(k\), o bien despejar \(k\) o \(m\) a partir del periodo. Se aplica en todos los problemas de osciladores mecánicos con muelle: es la fórmula más rentable de C1 en EBAU (aparece en la mayoría de los ejercicios).
             </div>
-            <div class="formula-box">
-                \[ \boxed{\omega=\sqrt{\frac{k}{m}}} \]
-                \[ \boxed{T=2\pi\sqrt{\frac{m}{k}}} \]
-                \[ k=m\omega^2=\frac{4\pi^2m}{T^2} \qquad
-                   m=\frac{kT^2}{4\pi^2} \]
+            <a href="TemaC1.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">
+                \[ \omega = \sqrt{\frac{k}{m}} \]
+                \[ T = 2\pi\sqrt{\frac{m}{k}} \]
+                \[ k = m\,\omega^{2} = \frac{4\pi^{2}m}{T^{2}} \]
+                \[ m = \frac{k\,T^{2}}{4\pi^{2}} \]
+                <span id="formula-12"></span>
+                <span id="formula-13"></span>
+                <span id="formula-14"></span>
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>La fórmula del periodo se obtiene al comparar \(a=-(k/m)x\) con \(a=-\omega^2x\), y después utilizar \(\omega=2\pi/T\). Es importante comprender de qué magnitudes depende el periodo.</span>
+                <span class="respuesta"><span class="estrategia">🔄 AUTOMATIZAR</span>Sí: memoriza las cuatro expresiones. Todas salen de igualar \(a=-\omega^{2}x\) con la segunda ley de Newton \(a=-kx/m\). La clave: <strong>el periodo aumenta si aumenta la masa y disminuye si aumenta \(k\)</strong>. Y <strong>no depende de la amplitud</strong> (importante: el periodo de un muelle ideal no cambia si se estira más). Las expresiones para \(k\) y \(m\) son las que hay que usar cuando dan el periodo y piden "la masa" o "la constante".</span>
             </p>
             <table class="mag-table">
-                <thead><tr><th>Magnitud</th><th>Símbolo</th><th>Unidad S.I.</th></tr></thead>
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
                 <tbody>
-                    <tr><td data-label="Magnitud">Masa oscilante</td><td data-label="Símbolo">\(m\)</td><td data-label="Unidad S.I.">kg</td></tr>
-                    <tr><td data-label="Magnitud">Constante elástica</td><td data-label="Símbolo">\(k\)</td><td data-label="Unidad S.I.">N·m⁻¹</td></tr>
-                    <tr><td data-label="Magnitud">Frecuencia angular</td><td data-label="Símbolo">\(\omega\)</td><td data-label="Unidad S.I.">rad·s⁻¹</td></tr>
-                    <tr><td data-label="Magnitud">Periodo</td><td data-label="Símbolo">\(T\)</td><td data-label="Unidad S.I.">s</td></tr>
+                    <tr><td data-label="Símbolo">\(\omega\)</td><td data-label="Significado">Frecuencia angular</td><td data-label="Unidades">rad·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(k\)</td><td data-label="Significado">Constante elástica del muelle</td><td data-label="Unidades">N·m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa oscilante</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(T\)</td><td data-label="Significado">Periodo</td><td data-label="Unidades">s</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo de dependencia:</strong> con el mismo muelle, si la masa se multiplica por cuatro, el periodo se multiplica por dos. Si aumenta \(k\), el periodo disminuye.</p>
-            <div class="formula-box">
-                <strong>Muelle vertical · Equilibrio estático</strong>
-                \[ k\,\Delta l_0=mg \qquad\Longrightarrow\qquad
-                   \Delta l_0=\frac{mg}{k} \]
-                \[ F_{\text{resultante}}=-kx \quad
-                   \text{(con }x\text{ medido desde el equilibrio)} \]
-            </div>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(m=2\ \text{kg}\), \(k=50\ \text{N/m}\). \(\omega=\sqrt{50/2}=5\ \text{rad/s}\). \(T=2\pi/5=1{,}257\ \text{s}\). Si el periodo fuese \(5\ \text{s}\): \(k=4\pi^{2}\cdot2/25\approx3{,}16\ \text{N/m}\).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>El periodo aumenta con la masa y disminuye al aumentar la constante elástica.</li>
-                    <li>En el modelo ideal, el periodo no depende de la amplitud.</li>
-                    <li>El periodo tampoco depende de la gravedad si la elongación se mide desde la nueva posición de equilibrio.</li>
-                    <li>En un muelle vertical, el peso determina el alargamiento de equilibrio, pero no se añade como fuerza oscilatoria extra al medir desde ese equilibrio.</li>
+                    <li>El periodo NO depende de la amplitud en el muelle ideal.</li>
+                    <li>Mayor masa ⟹ mayor periodo; mayor \(k\) ⟹ menor periodo.</li>
+                    <li>En un muelle vertical, \(\Delta l_{0}=mg/k\) (ficha 7), pero el periodo es el mismo.</li>
+                    <li>Si piden "la masa" o "la constante" a partir del periodo, usar las expresiones despejadas.</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 7 · PÉNDULO SIMPLE -->
-        <article class="card c-4">
-            <div class="cabecera">
-                <span class="num">7</span>
-                <h2>Péndulo simple y pequeñas oscilaciones</h2>
-                <span class="badge-centro">Aplicación</span>
-            </div>
-            <div class="epi-chips">
-                <span class="epi-chip comprender">🧭 Comprender · Aproximación</span>
-                <span class="epi-chip deducir">🧮 Deducir · Periodo</span>
-            </div>
-            <div class="intro">
-                <span class="etiqueta">¿Qué se calcula?</span>
-                El periodo y la frecuencia angular de un péndulo simple ideal cuando las oscilaciones son pequeñas. En ese régimen, el movimiento angular se aproxima a un MAS.
-            </div>
-            <div class="formula-box">
-                \[ \operatorname{sen}\theta\approx\theta \quad
-                   (\theta\text{ en radianes, ángulo pequeño}) \]
-                \[ \frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0 \]
-                \[ \boxed{\omega=\sqrt{\frac{g}{L}}} \qquad
-                   \boxed{T=2\pi\sqrt{\frac{L}{g}}} \]
-            </div>
-            <p class="note">
-                <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>La condición esencial es que las oscilaciones sean pequeñas, para poder utilizar \(\operatorname{sen}\theta\approx\theta\). El periodo depende de la longitud y de la gravedad, pero no de la masa de la bola.</span>
-            </p>
-            <table class="mag-table">
-                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
-                <tbody>
-                    <tr><td data-label="Símbolo">\(L\)</td><td data-label="Significado">Longitud del péndulo</td><td data-label="Unidades">m</td></tr>
-                    <tr><td data-label="Símbolo">\(g\)</td><td data-label="Significado">Aceleración de la gravedad</td><td data-label="Unidades">m·s⁻²</td></tr>
-                    <tr><td data-label="Símbolo">\(\theta\)</td><td data-label="Significado">Desplazamiento angular</td><td data-label="Unidades">rad</td></tr>
-                    <tr><td data-label="Símbolo">\(T\)</td><td data-label="Significado">Periodo de oscilación</td><td data-label="Unidades">s</td></tr>
-                </tbody>
-            </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> al duplicar la longitud, \(L'=2L\), el nuevo periodo es \(T'=\sqrt{2}\,T\). Para duplicar el periodo habría que cuadruplicar la longitud.</p>
-            <div class="obs">
-                <span class="titulo-obs">Observaciones de interés</span>
-                <ul>
-                    <li>El periodo aumenta con la longitud y disminuye cuando aumenta \(g\).</li>
-                    <li>No depende de la masa de la bola.</li>
-                    <li>Para pequeñas oscilaciones, no depende de la amplitud.</li>
-                    <li>La expresión del periodo procede de la aproximación de ángulo pequeño.</li>
-                </ul>
-            </div>
-        </article>
-
-        <!-- FICHA 8 · ENERGÍA MECÁNICA -->
+        <!-- FICHA 7 -->
         <article class="card c-5">
             <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Muelle vertical: alargamiento de equilibrio</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Caso vertical</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El alargamiento inicial que sufre un muelle vertical al colgarle una masa, cuando el peso se compensa con la fuerza elástica en la nueva posición de equilibrio. Se aplica en problemas de muelles verticales (osciladores colgantes, puenting, masas colgadas) y para justificar por qué el periodo sigue siendo el mismo que en horizontal.
+            </div>
+            <a href="TemaC1.html#formula-15" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-15">
+                \[ k\,\Delta l_{0} = m\,g \]
+                \[ \Delta l_{0} = \frac{m\,g}{k} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es la ley de Hooke aplicada a la posición de equilibrio vertical: en ella, el peso y la fuerza elástica se compensan. No hay que memorizarla aparte: se deduce de \(F=0\). La idea clave: <strong>el periodo de oscilación sigue siendo \(T=2\pi\sqrt{m/k}\)</strong>, porque la gravedad solo cambia la posición de equilibrio pero no la fuerza recuperadora neta. Es un error muy frecuente en EBAU meter el peso como fuerza adicional en la ecuación del MAS: no hay que hacerlo si se mide desde la posición de equilibrio.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\Delta l_{0}\)</td><td data-label="Significado">Alargamiento en el equilibrio</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa colgada</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(g\)</td><td data-label="Significado">Aceleración de la gravedad</td><td data-label="Unidades">m·s⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(k\)</td><td data-label="Significado">Constante elástica del muelle</td><td data-label="Unidades">N·m⁻¹</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(m=2\ \text{kg}\), \(k=50\ \text{N/m}\), \(g=9{,}8\ \text{m/s}^{2}\). \(\Delta l_{0}=2\cdot9{,}8/50=0{,}392\ \text{m}\) (unos \(39\ \text{cm}\)). Al oscilar alrededor de esa posición, el periodo es \(T=2\pi\sqrt{2/50}=1{,}257\ \text{s}\), igual que en horizontal.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El alargamiento depende de \(g\): en la Luna sería menor.</li>
+                    <li>El periodo NO depende de \(g\) en un muelle vertical.</li>
+                    <li>Medir \(x\) desde la posición de equilibrio nueva, no desde la longitud natural.</li>
+                    <li>NO añadir el peso a la ecuación del MAS si se mide desde el equilibrio.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 -->
+        <article class="card c-4">
+            <div class="cabecera">
                 <span class="num">8</span>
-                <h2>Energía cinética, potencial y mecánica del MAS</h2>
-                <span class="badge-centro">Conservación</span>
+                <h2>Péndulo simple</h2>
+                <span class="badge-centro">Caso típico</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip automatizar">🔄 Automatizar · Caso típico</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El periodo de un péndulo simple (masa puntual suspendida de un hilo inextensible) para pequeñas oscilaciones, o la longitud del péndulo a partir del periodo (o de \(g\) a partir del periodo y la longitud). Se aplica en problemas de péndulos y en la determinación experimental de \(g\).
+            </div>
+            <a href="TemaC1.html#formula-16" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-16">
+                \[ T = 2\pi\sqrt{\frac{L}{g}} \]
+                \[ \omega = \sqrt{\frac{g}{L}} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔄 AUTOMATIZAR</span>Sí: memoriza \(T=2\pi\sqrt{L/g}\) como contrapartida de la fórmula del muelle. Compara: en el muelle aparece \(m/k\); en el péndulo, \(L/g\). En el muelle el periodo depende de la masa; en el péndulo, <strong>NO depende de la masa</strong>. Esa es la gran pregunta trampa de EBAU. El periodo del péndulo solo depende de la longitud y de \(g\). Si duplicas \(L\), el periodo se multiplica por \(\sqrt{2}\), no por \(2\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(T\)</td><td data-label="Significado">Periodo de oscilación</td><td data-label="Unidades">s</td></tr>
+                    <tr><td data-label="Símbolo">\(L\)</td><td data-label="Significado">Longitud del péndulo</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(g\)</td><td data-label="Significado">Aceleración de la gravedad</td><td data-label="Unidades">m·s⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(\omega\)</td><td data-label="Significado">Frecuencia angular</td><td data-label="Unidades">rad·s⁻¹</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> péndulo de \(L=20\ \text{cm}\) en la Tierra (\(g=9{,}8\)): \(T=2\pi\sqrt{0{,}20/9{,}8}\approx0{,}90\ \text{s}\). Si en el Everest medimos \(T=0{,}897\ \text{s}\), podemos despejar \(L=gT^{2}/(4\pi^{2})=9{,}77\cdot0{,}897^{2}/(4\pi^{2})\approx0{,}199\ \text{m}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El periodo <strong>NO depende de la masa</strong>.</li>
+                    <li>Válida solo para <strong>pequeñas oscilaciones</strong> (\(\theta\lesssim15^\circ\)).</li>
+                    <li>Duplicar \(L\) multiplica \(T\) por \(\sqrt{2}\approx1{,}41\).</li>
+                    <li>Sirve para medir \(g\): \(g=4\pi^{2}L/T^{2}\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Energía del MAS</h2>
+                <span class="badge-centro">Aplicación</span>
             </div>
             <div class="epi-chips">
                 <span class="epi-chip aplicar">⚖️ Aplicar · Conservación</span>
-                <span class="epi-chip deducir">🧮 Deducir · Energías</span>
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                Las energías cinética, potencial elástica y mecánica total de un oscilador armónico ideal. En ausencia de rozamiento, la energía mecánica se conserva y se transforma entre sus formas cinética y potencial.
+                Las energías cinética, potencial elástica y mecánica del oscilador en cualquier instante o posición. Se aplica en problemas que piden "energía mecánica total", "energía cinética en una posición dada", "velocidad a partir de la energía" o en cuestiones gráficas sobre la variación de las energías con la posición.
             </div>
-            <div class="formula-box">
-                \[ \boxed{E_m=E_c+E_p=\text{constante}} \]
-                \[ \boxed{E_p=\frac{1}{2}kx^2} \qquad
-                   E_c=\frac{1}{2}mv^2 \]
-                \[ \boxed{E_m=\frac{1}{2}kA^2
-                   =\frac{1}{2}m\omega^2A^2} \]
-                \[ \boxed{E_c=\frac{1}{2}k(A^2-x^2)} \]
+            <a href="TemaC1.html#formula-17" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-17">
+                \[ E_p = \tfrac{1}{2}k\,x^{2} \]
+                \[ E_c = \tfrac{1}{2}m\,v^{2} \]
+                \[ E_m = E_c + E_p = \tfrac{1}{2}k\,A^{2} = \tfrac{1}{2}m\,\omega^{2}A^{2} \]
+                \[ E_c = \tfrac{1}{2}k\,(A^{2}-x^{2}) \]
+                \[ |v| = \omega\sqrt{A^{2}-x^{2}} \]
+                <span id="formula-18"></span>
+                <span id="formula-19"></span>
+                <span id="formula-20"></span>
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>La conservación de la energía mecánica es el principio que se aplica en todo el recorrido. Recuerda que el origen de energía potencial elástica se ha tomado en la posición de equilibrio. Puedes obtener \(E_c\) como diferencia entre la energía mecánica total y la potencial.</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(E_m=\frac{1}{2}kA^{2}\) y \(E_c=\frac{1}{2}k(A^{2}-x^{2})\). La primera es la energía total, constante; la segunda permite calcular la cinética en una posición dada sin pasar por la velocidad. Las demás son variantes equivalentes. Idea clave: en el equilibrio toda la energía es cinética; en los extremos toda es potencial. Y \(|v|=\omega\sqrt{A^{2}-x^{2}}\) se deduce de la conservación de la energía: es una forma alternativa de la fórmula de la ficha 4.</span>
             </p>
             <table class="mag-table">
-                <thead><tr><th>Situación</th><th>Energía cinética</th><th>Energía potencial</th></tr></thead>
+                <thead>
+                    <tr><th>Magnitud</th><th>Expresión</th><th>Dónde es máxima</th></tr>
+                </thead>
                 <tbody>
-                    <tr><td data-label="Situación">Extremos \(x=\pm A\)</td><td data-label="Energía cinética">\(E_c=0\)</td><td data-label="Energía potencial">\(E_p=E_m\)</td></tr>
-                    <tr><td data-label="Situación">Equilibrio \(x=0\)</td><td data-label="Energía cinética">\(E_c=E_m\)</td><td data-label="Energía potencial">\(E_p=0\)</td></tr>
+                    <tr><td data-label="Magnitud">\(E_p\)</td><td data-label="Expresión">\(\tfrac{1}{2}kx^{2}\)</td><td data-label="Dónde">En los extremos (\(x=\pm A\))</td></tr>
+                    <tr><td data-label="Magnitud">\(E_c\)</td><td data-label="Expresión">\(\tfrac{1}{2}k(A^{2}-x^{2})\)</td><td data-label="Dónde">En el equilibrio (\(x=0\))</td></tr>
+                    <tr><td data-label="Magnitud">\(E_m\)</td><td data-label="Expresión">\(\tfrac{1}{2}kA^{2}\)</td><td data-label="Dónde">Constante (no depende de \(x\))</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> en los extremos toda la energía mecánica es potencial; al pasar por el equilibrio, toda es cinética. En cualquier posición intermedia, la suma \(E_c+E_p\) conserva el mismo valor.</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(k=50\ \text{N/m}\), \(A=0{,}25\ \text{m}\). \(E_m=\frac{1}{2}\cdot50\cdot0{,}25^{2}=1{,}56\ \text{J}\). En \(x=0{,}15\ \text{m}\): \(E_p=\frac{1}{2}\cdot50\cdot0{,}15^{2}=0{,}56\ \text{J}\); \(E_c=1{,}56-0{,}56=1{,}00\ \text{J}\).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>La energía mecánica total depende de la constante elástica y del cuadrado de la amplitud.</li>
-                    <li>La energía potencial depende de \(x^2\), no del signo de la elongación.</li>
-                    <li>La expresión \(E_c=\frac12k(A^2-x^2)\) permite trabajar sin conocer el instante.</li>
-                    <li>La conservación se considera para un oscilador ideal sin rozamiento.</li>
+                    <li>En un MAS ideal sin rozamiento, \(E_m\) es <strong>constante</strong>.</li>
+                    <li>En el equilibrio: \(E_p=0\), \(E_c=E_m\).</li>
+                    <li>En los extremos: \(E_c=0\), \(E_p=E_m\).</li>
+                    <li>La fórmula de \(E_c\) en función de \(x\) sale de combinar \(E_m\) y \(E_p\).</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 9 · GRÁFICAS DE ENERGÍA -->
+        <!-- FICHA 10 -->
         <article class="card c-2">
             <div class="cabecera">
-                <span class="num">9</span>
-                <h2>Representación gráfica de las energías</h2>
-                <span class="badge-centro">Interpretación</span>
-            </div>
-            <div class="epi-chips">
-                <span class="epi-chip deducir">🧮 Deducir · Dependencia con x</span>
-                <span class="epi-chip aplicar">⚖️ Aplicar · Lectura gráfica</span>
-            </div>
-            <div class="intro">
-                <span class="etiqueta">¿Qué se interpreta?</span>
-                La forma de las gráficas de energía frente a la posición y los puntos en los que las energías cinética y potencial toman valores iguales.
-            </div>
-            <div class="formula-box">
-                \[ E_p(x)=\frac12kx^2 \quad\text{(parábola convexa)} \]
-                \[ E_c(x)=\frac12k(A^2-x^2) \quad\text{(parábola cóncava)} \]
-                \[ E_m(x)=\frac12kA^2 \quad\text{(recta horizontal)} \]
-            </div>
-            <p class="note">
-                <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>Las formas gráficas se reconocen a partir de las expresiones: \(E_p\) crece con \(x^2\), \(E_c\) decrece con \(x^2\) y \(E_m\) permanece constante. Comprueba siempre que \(E_c+E_p=E_m\).</span>
-            </p>
-            <div class="formula-box">
-                <strong>Cuando las energías cinética y potencial son iguales:</strong>
-                \[ E_c=E_p=\frac{E_m}{2} \]
-                \[ \frac12kx^2=\frac14kA^2 \]
-                \[ \boxed{|x|=\frac{A}{\sqrt2}} \]
-            </div>
-            <table class="mag-table">
-                <thead><tr><th>Posición</th><th>Relación entre energías</th></tr></thead>
-                <tbody>
-                    <tr><td data-label="Posición">\(x=\pm A\)</td><td data-label="Relación entre energías">\(E_c=0\), \(E_p=E_m\)</td></tr>
-                    <tr><td data-label="Posición">\(x=0\)</td><td data-label="Relación entre energías">\(E_c=E_m\), \(E_p=0\)</td></tr>
-                    <tr><td data-label="Posición">\(|x|=A/\sqrt2\)</td><td data-label="Relación entre energías">\(E_c=E_p=E_m/2\)</td></tr>
-                </tbody>
-            </table>
-            <p class="ejemplo"><strong>Ejemplo de lectura:</strong> al comparar dos osciladores con la misma constante elástica, la altura de la recta de energía mecánica depende de \(A^2\). Reducir la amplitud a la mitad reduce la energía mecánica a la cuarta parte.</p>
-            <div class="obs">
-                <span class="titulo-obs">Observaciones de interés</span>
-                <ul>
-                    <li>Las energías cinética y potencial se transforman una en otra.</li>
-                    <li>Cuando una aumenta, la otra disminuye en la misma cantidad.</li>
-                    <li>La energía mecánica es una recta horizontal en la gráfica frente a la posición.</li>
-                </ul>
-            </div>
-        </article>
-
-        <!-- FICHA 10 · FASE INICIAL -->
-        <article class="card c-4">
-            <div class="cabecera">
                 <span class="num">10</span>
-                <h2>Determinación de la fase inicial</h2>
-                <span class="badge-centro">Condiciones iniciales</span>
+                <h2>Punto \(E_c=E_p\) y fase inicial</h2>
+                <span class="badge-centro">Deducción</span>
             </div>
             <div class="epi-chips">
-                <span class="epi-chip deducir">🧮 Deducir · Despeje trigonométrico</span>
-                <span class="epi-chip aplicar">⚖️ Aplicar · Signos</span>
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                La fase inicial y la ecuación del movimiento cuando se conocen la posición y la velocidad iniciales. Es necesario utilizar ambas condiciones para identificar el cuadrante correcto de la fase.
+                Por un lado, la posición en la que la energía cinética iguala a la potencial (caso típico de EBAU). Por otro, la fase inicial \(\varphi_0\) a partir de las condiciones iniciales \(x_0\) y \(v_0\), para escribir correctamente la ecuación \(x(t)=A\cos(\omega t+\varphi_0)\). Se aplica en problemas de interpretación energética y en los que piden "la ecuación del movimiento" sabiendo dónde está y hacia dónde va el oscilador en \(t=0\).
             </div>
-            <div class="formula-box">
-                \[ x_0=A\cos\varphi_0 \qquad
-                   v_0=-A\omega\operatorname{sen}\varphi_0 \]
-                \[ \boxed{\cos\varphi_0=\frac{x_0}{A}} \qquad
-                   \boxed{\operatorname{sen}\varphi_0=-\frac{v_0}{A\omega}} \]
+            <a href="TemaC1.html#formula-21" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-21">
+                \[ E_c = E_p \;\Longrightarrow\; |x| = \frac{A}{\sqrt{2}} \approx 0{,}707\,A \]
+                \[ \cos\varphi_0 = \frac{x_0}{A} \]
+                \[ \operatorname{sen}\varphi_0 = -\frac{v_0}{A\,\omega} \]
+                <span id="formula-22"></span>
             </div>
+            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Utiliza simultáneamente la posición y la velocidad iniciales. La posición determina el coseno de la fase y la velocidad determina el seno con signo contrario. Los dos signos permiten seleccionar el cuadrante correcto.</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR + 🧭 COMPRENDER</span>No hace falta memorizar la posición \(|x|=A/\sqrt{2}\): se deduce de \(\frac{1}{2}kx^{2}=\frac{1}{4}kA^{2}\) (la mitad de la energía total). Pero conviene tenerla presente porque aparece en EBAU. En cuanto a la fase inicial, las dos expresiones \(\cos\varphi_0=x_0/A\) y \(\text{sen}\varphi_0=-v_0/(A\omega)\) sí conviene memorizarlas. <strong>Truco:</strong> usar siempre la posición y el signo de la velocidad inicial para decidir el cuadrante correcto. Solo con la posición inicial puedes tener dos fases posibles (una con \(v>0\) y otra con \(v<0\)).</span>
             </p>
             <table class="mag-table">
-                <thead><tr><th>Dato inicial</th><th>Relación</th><th>Información</th></tr></thead>
+                <thead>
+                    <tr><th>Situación inicial</th><th>Fase inicial \(\varphi_0\)</th></tr>
+                </thead>
                 <tbody>
-                    <tr><td data-label="Dato inicial">Posición</td><td data-label="Relación">\(\cos\varphi_0=x_0/A\)</td><td data-label="Información">Signo del coseno</td></tr>
-                    <tr><td data-label="Dato inicial">Velocidad</td><td data-label="Relación">\(\operatorname{sen}\varphi_0=-v_0/(A\omega)\)</td><td data-label="Información">Signo del seno</td></tr>
+                    <tr><td data-label="Situación">\(x_0=+A\), \(v_0=0\)</td><td data-label="Fase">\(\varphi_0=0\)</td></tr>
+                    <tr><td data-label="Situación">\(x_0=0\), \(v_0<0\)</td><td data-label="Fase">\(\varphi_0=+\pi/2\)</td></tr>
+                    <tr><td data-label="Situación">\(x_0=-A\), \(v_0=0\)</td><td data-label="Fase">\(\varphi_0=\pi\)</td></tr>
+                    <tr><td data-label="Situación">\(x_0=0\), \(v_0>0\)</td><td data-label="Fase">\(\varphi_0=-\pi/2\)</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo de razonamiento:</strong> una misma elongación inicial puede corresponder a dos fases distintas. El sentido de la velocidad inicial permite distinguir entre los dos estados de movimiento.</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(A=0{,}04\ \text{m}\), \(x_0=0{,}02\ \text{m}\). \(\cos\varphi_0=0{,}5\), luego \(\varphi_0=\pi/3\) o \(5\pi/3\) (equivalentes a \(\pi/6\) y \(5\pi/6\) si se usa seno). Si en \(t=0\) la velocidad es negativa, se elige la fase que dé \(\text{sen}\varphi_0<0\).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>Conocer solo la posición inicial no siempre determina una fase única.</li>
-                    <li>No basta con utilizar una función inversa del coseno sin revisar el signo de la velocidad.</li>
-                    <li>Comprueba que los valores de seno y coseno son compatibles con la misma fase.</li>
+                    <li>Cuando \(E_c=E_p\), cada una vale la mitad de \(E_m\).</li>
+                    <li>\(|x|=A/\sqrt{2}\) es independiente de \(k\), \(m\) y \(\omega\).</li>
+                    <li>La fase inicial depende de la posición <strong>y del sentido de la velocidad</strong> en \(t=0\).</li>
+                    <li>Sin el dato de la velocidad inicial, hay dos fases posibles: no es única.</li>
                 </ul>
             </div>
         </article>
 
-        <!-- ============================================================
-             LEYENDA EPISTÉMICA
-             ============================================================ -->
+        <!-- LEYENDA EPISTÉMICA -->
         <article class="card span-all leyenda-epi">
             <div class="leyenda-epi-header">
                 <span class="num">★</span>
@@ -499,43 +545,47 @@
                 <span class="badge-centro">Leyenda</span>
             </div>
             <p class="leyenda-epi-intro">
-                Cada expresión del tema se estudia de una manera distinta: algunas describen magnitudes, otras expresan el modelo físico del MAS, otras se deducen matemáticamente y otras representan principios que deben aplicarse en los problemas. Identificar la categoría ayuda a distinguir lo que hay que memorizar de lo que conviene reconstruir.
+                No todas las expresiones del tema C1 se estudian igual. Cada fórmula pertenece a una
+                <strong>categoría epistémica</strong> —definición, concepto, consecuencia matemática,
+                aplicación o caso típico automatizable— y cada categoría se domina con un
+                <strong>verbo distinto</strong>. Identificar el tipo <em>antes</em> de estudiar ahorra
+                tiempo y evita memorizar lo que se puede deducir.
             </p>
             <div class="leyenda-epi-grid">
                 <div class="epi-item definicion">
                     <div class="epi-icono">📘</div>
                     <h3 class="epi-nombre">Definición</h3>
                     <span class="epi-verbo">Memorizar</span>
-                    <p class="epi-desc">Asigna significado a las magnitudes del tema: amplitud, elongación, periodo, frecuencia, frecuencia angular y fase inicial. Se domina cuando puedes definirlas y utilizar correctamente sus unidades.</p>
-                    <p class="epi-ej"><strong>Ejemplos C1</strong> \(A\): amplitud · \(T\): periodo · \(f\): frecuencia · \(\varphi_0\): fase inicial</p>
+                    <p class="epi-desc">Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud o establece la relación básica del MAS. No se demuestra, se establece. Se domina cuando puedes enunciarla sin pensar.</p>
+                    <p class="epi-ej"><strong>Ejemplos C1</strong> \(F=-kx\) &nbsp;·&nbsp; \(a=-\omega^{2}x\) &nbsp;·&nbsp; \(x(t)=A\cos(\omega t+\varphi_0)\)</p>
                 </div>
                 <div class="epi-item comprender">
                     <div class="epi-icono">🧭</div>
-                    <h3 class="epi-nombre">Modelo físico</h3>
+                    <h3 class="epi-nombre">Concepto / comprensión</h3>
                     <span class="epi-verbo">Comprender</span>
-                    <p class="epi-desc">Describe la condición física que da lugar al MAS. Hay que comprender por qué la fuerza y la aceleración apuntan hacia el equilibrio y en qué condiciones se utiliza el modelo.</p>
-                    <p class="epi-ej"><strong>Ejemplos C1</strong> \(F=-kx\) · \(a=-\omega^2x\) · aproximación \(\operatorname{sen}\theta\approx\theta\)</p>
+                    <p class="epi-desc">Es la <em>idea física</em> del tema: una propiedad o relación que hay que entender más que memorizar. Se domina cuando puedes explicarla con tus propias palabras.</p>
+                    <p class="epi-ej"><strong>Ejemplo C1</strong> La aceleración siempre apunta al equilibrio; la fase inicial depende del sentido de \(v_0\).</p>
                 </div>
                 <div class="epi-item deducir">
                     <div class="epi-icono">🧮</div>
                     <h3 class="epi-nombre">Consecuencia matemática</h3>
                     <span class="epi-verbo">Deducir</span>
-                    <p class="epi-desc">Se obtiene derivando, despejando o comparando ecuaciones. No hace falta memorizar cada variante si se conoce el punto de partida y se sabe reconstruir los pasos.</p>
-                    <p class="epi-ej"><strong>Ejemplos C1</strong> \(v=dx/dt\) · \(a=dv/dt\) · \(T=2\pi\sqrt{m/k}\) · \(T=2\pi\sqrt{L/g}\)</p>
+                    <p class="epi-desc">Se <em>obtiene</em> derivando, despejando o combinando otras fórmulas. No se memoriza: se reconstruye en 2–3 líneas si se olvida.</p>
+                    <p class="epi-ej"><strong>Ejemplos C1</strong> \(|x|=A/\sqrt{2}\) (cuando \(E_c=E_p\)) &nbsp;·&nbsp; \(\text{sen}\varphi_0=-v_0/(A\omega)\)</p>
                 </div>
                 <div class="epi-item aplicar">
                     <div class="epi-icono">⚖️</div>
-                    <h3 class="epi-nombre">Principio / aplicación</h3>
+                    <h3 class="epi-nombre">Aplicación</h3>
                     <span class="epi-verbo">Aplicar</span>
-                    <p class="epi-desc">Son relaciones que se utilizan para resolver una situación concreta: conservación de la energía mecánica, condiciones iniciales y comparación de estados del oscilador.</p>
-                    <p class="epi-ej"><strong>Ejemplos C1</strong> \(E_m=E_c+E_p\) · \(x_0=A\cos\varphi_0\) · \(v_0=-A\omega\operatorname{sen}\varphi_0\)</p>
+                    <p class="epi-desc">Se usa para <em>resolver</em> un problema concreto: elegir la fórmula adecuada, sustituir con las unidades correctas y comprobar el resultado.</p>
+                    <p class="epi-ej"><strong>Ejemplos C1</strong> \(f=1/T\) &nbsp;·&nbsp; \(\omega=2\pi/T\) &nbsp;·&nbsp; \(v_{\text{máx}}=A\omega\) &nbsp;·&nbsp; \(|v|=\omega\sqrt{A^{2}-x^{2}}\) &nbsp;·&nbsp; \(a=-\omega^{2}x\) &nbsp;·&nbsp; \(E_m=\frac{1}{2}kA^{2}\) &nbsp;·&nbsp; \(\Delta l_{0}=mg/k\)</p>
                 </div>
                 <div class="epi-item automatizar">
                     <div class="epi-icono">🔄</div>
-                    <h3 class="epi-nombre">Conversión / operación</h3>
+                    <h3 class="epi-nombre">Caso típico automatizable</h3>
                     <span class="epi-verbo">Automatizar</span>
-                    <p class="epi-desc">Son pasos operativos que deben realizarse con soltura: pasar entre periodo, frecuencia y frecuencia angular, y mantener las unidades del Sistema Internacional.</p>
-                    <p class="epi-ej"><strong>Ejemplos C1</strong> \(f=1/T\) · \(\omega=2\pi f\) · segundos, hercios y radianes por segundo</p>
+                    <p class="epi-desc">Es un <em>caso particular</em> que aparece mucho y conviene aplicar de forma refleja sin deducirlo cada vez.</p>
+                    <p class="epi-ej"><strong>Ejemplos C1</strong> \(T=2\pi\sqrt{m/k}\) (muelle) &nbsp;·&nbsp; \(T=2\pi\sqrt{L/g}\) (péndulo)</p>
                 </div>
             </div>
 
@@ -547,112 +597,103 @@
                     <tr>
                         <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
                         <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
-                        <td data-label="¿Qué es?">Vocabulario y magnitudes</td>
-                        <td data-label="¿Cómo se domina?">Definición y unidades</td>
-                        <td data-label="Autoevaluación">¿Puedo explicar cada símbolo?</td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
                     </tr>
                     <tr>
-                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Modelo físico</strong></td>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Concepto</strong></td>
                         <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
-                        <td data-label="¿Qué es?">Condición del movimiento</td>
-                        <td data-label="¿Cómo se domina?">Explicar el sentido recuperador</td>
-                        <td data-label="Autoevaluación">¿Sé por qué aparece el signo negativo?</td>
+                        <td data-label="¿Qué es?">Idea física central</td>
+                        <td data-label="¿Cómo se domina?">Explicar con tus palabras</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla sin fórmulas?</td>
                     </tr>
                     <tr>
                         <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
                         <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
                         <td data-label="¿Qué es?">Resultado matemático derivado</td>
-                        <td data-label="¿Cómo se domina?">Derivar, despejar o comparar</td>
-                        <td data-label="Autoevaluación">¿Sabría reconstruirla?</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
                     </tr>
                     <tr>
-                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio / aplicación</strong></td>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Aplicación</strong></td>
                         <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
-                        <td data-label="¿Qué es?">Regla o condición de resolución</td>
-                        <td data-label="¿Cómo se domina?">Plantearla en cada problema</td>
-                        <td data-label="Autoevaluación">¿La aplico en el estado adecuado?</td>
+                        <td data-label="¿Qué es?">Fórmula para resolver</td>
+                        <td data-label="¿Cómo se domina?">Resolver problemas con unidades</td>
+                        <td data-label="Autoevaluación">¿La elijo bien y compruebo el resultado?</td>
                     </tr>
                     <tr>
-                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Automatizar</strong></td>
                         <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
-                        <td data-label="¿Qué es?">Operación entre magnitudes</td>
-                        <td data-label="¿Cómo se domina?">Práctica y control de unidades</td>
-                        <td data-label="Autoevaluación">¿Me sale sin confundir Hz y rad/s?</td>
+                        <td data-label="¿Qué es?">Caso típico específico</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿La reconozco y la aplico al instante?</td>
                     </tr>
                 </tbody>
             </table>
 
             <div class="leyenda-epi-aviso">
-                <strong>💡 Regla de oro:</strong> si una expresión se obtiene derivando o despejando otra, aprende a <strong>deducirla</strong>; si describe el modelo físico del movimiento, debes <strong>comprenderla</strong>; si define una magnitud, debes <strong>memorizar su significado</strong>; y si es una regla de conservación o una condición del problema, debes <strong>aplicarla</strong> correctamente.
+                <strong>💡 Regla de oro:</strong> pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si es una idea física que hay que entender → <strong>concepto</strong> (comprender).
+                Si solo asigna un nombre o fija una relación básica → <strong>definición</strong> (memorizar).
+                Si sale derivando o combinando otras → <strong>consecuencia</strong> (deducir).
+                Si la usas para resolver un problema → <strong>aplicación</strong> (aplicar).
+                Si es un caso particular muy repetido → <strong>caso típico</strong> (automatizar).
             </div>
 
             <div class="leyenda-epi-colores">
-                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Modelo del MAS y ecuación de posición</span>
-                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Energía y representación energética</span>
-                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Cinemática y magnitudes temporales</span>
-                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Sistemas oscilantes y fase inicial</span>
-                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Conservación de la energía</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Deducir (punto \(E_c=E_p\), fase inicial)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Definición (MAS, ecuación de posición)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Automatizar (muelle y péndulo)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Aplicar (periodo, velocidad, aceleración, energía, muelle vertical)</span>
             </div>
         </article>
 
     </div>
 
-    <!-- ============================ GLOSARIO ============================ -->
+    <!-- GLOSARIO -->
     <details class="glosario">
         <summary>📖 Glosario de fórmulas del tema C1</summary>
         <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
-            Recopilación de las principales expresiones del movimiento armónico simple, los sistemas masa-muelle y péndulo, y la energía del oscilador. El número de ficha indica dónde se desarrolla cada relación.
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla.
         </p>
         <table class="mag-table">
-            <thead><tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr></thead>
+            <thead>
+                <tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr>
+            </thead>
             <tbody>
-                <tr><td data-label="#">1</td><td data-label="Fórmula">\(F=-kx\)</td><td data-label="Nombre">Fuerza recuperadora del muelle</td><td data-label="Ficha">1</td></tr>
-                <tr><td data-label="#">2</td><td data-label="Fórmula">\(ma=-kx\)</td><td data-label="Nombre">Segunda ley de Newton en el oscilador masa-muelle</td><td data-label="Ficha">1</td></tr>
-                <tr><td data-label="#">3</td><td data-label="Fórmula">\(a=-\omega^2x\)</td><td data-label="Nombre">Aceleración característica del MAS</td><td data-label="Ficha">1 y 5</td></tr>
-                <tr><td data-label="#">4</td><td data-label="Fórmula">\(x(t)=A\cos(\omega t+\varphi_0)\)</td><td data-label="Nombre">Ecuación de posición (coseno)</td><td data-label="Ficha">2</td></tr>
-                <tr><td data-label="#">5</td><td data-label="Fórmula">\(x(t)=A\operatorname{sen}(\omega t+\varphi_0)\)</td><td data-label="Nombre">Ecuación de posición (seno)</td><td data-label="Ficha">2</td></tr>
-                <tr><td data-label="#">6</td><td data-label="Fórmula">\(f=1/T\)</td><td data-label="Nombre">Relación entre frecuencia y periodo</td><td data-label="Ficha">3</td></tr>
-                <tr><td data-label="#">7</td><td data-label="Fórmula">\(\omega=2\pi f=2\pi/T\)</td><td data-label="Nombre">Frecuencia angular</td><td data-label="Ficha">3</td></tr>
-                <tr><td data-label="#">8</td><td data-label="Fórmula">\(v=dx/dt\)</td><td data-label="Nombre">Definición cinemática de velocidad</td><td data-label="Ficha">4</td></tr>
-                <tr><td data-label="#">9</td><td data-label="Fórmula">\(v(t)=-A\omega\operatorname{sen}(\omega t+\varphi_0)\)</td><td data-label="Nombre">Velocidad instantánea</td><td data-label="Ficha">4</td></tr>
-                <tr><td data-label="#">10</td><td data-label="Fórmula">\(v_{\text{máx}}=A\omega\)</td><td data-label="Nombre">Velocidad máxima</td><td data-label="Ficha">4</td></tr>
-                <tr><td data-label="#">11</td><td data-label="Fórmula">\(|v|=\omega\sqrt{A^2-x^2}\)</td><td data-label="Nombre">Módulo de la velocidad en función de la posición</td><td data-label="Ficha">4</td></tr>
-                <tr><td data-label="#">12</td><td data-label="Fórmula">\(a=dv/dt\)</td><td data-label="Nombre">Definición cinemática de aceleración</td><td data-label="Ficha">5</td></tr>
-                <tr><td data-label="#">13</td><td data-label="Fórmula">\(a(t)=-A\omega^2\cos(\omega t+\varphi_0)\)</td><td data-label="Nombre">Aceleración instantánea</td><td data-label="Ficha">5</td></tr>
-                <tr><td data-label="#">14</td><td data-label="Fórmula">\(a_{\text{máx}}=\omega^2A\)</td><td data-label="Nombre">Aceleración máxima</td><td data-label="Ficha">5</td></tr>
-                <tr><td data-label="#">15</td><td data-label="Fórmula">\(\omega=\sqrt{k/m}\)</td><td data-label="Nombre">Frecuencia angular del sistema masa-muelle</td><td data-label="Ficha">6</td></tr>
-                <tr><td data-label="#">16</td><td data-label="Fórmula">\(T=2\pi\sqrt{m/k}\)</td><td data-label="Nombre">Periodo del sistema masa-muelle</td><td data-label="Ficha">6</td></tr>
-                <tr><td data-label="#">17</td><td data-label="Fórmula">\(k=m\omega^2=4\pi^2m/T^2\)</td><td data-label="Nombre">Constante elástica a partir del periodo</td><td data-label="Ficha">6</td></tr>
-                <tr><td data-label="#">18</td><td data-label="Fórmula">\(m=kT^2/(4\pi^2)\)</td><td data-label="Nombre">Masa oscilante a partir del periodo</td><td data-label="Ficha">6</td></tr>
-                <tr><td data-label="#">19</td><td data-label="Fórmula">\(k\Delta l_0=mg\)</td><td data-label="Nombre">Equilibrio estático del muelle vertical</td><td data-label="Ficha">6</td></tr>
-                <tr><td data-label="#">20</td><td data-label="Fórmula">\(\Delta l_0=mg/k\)</td><td data-label="Nombre">Alargamiento estático del muelle vertical</td><td data-label="Ficha">6</td></tr>
-                <tr><td data-label="#">21</td><td data-label="Fórmula">\(\operatorname{sen}\theta\approx\theta\)</td><td data-label="Nombre">Aproximación de ángulo pequeño</td><td data-label="Ficha">7</td></tr>
-                <tr><td data-label="#">22</td><td data-label="Fórmula">\(d^2\theta/dt^2+(g/L)\theta=0\)</td><td data-label="Nombre">Ecuación angular del péndulo para pequeñas oscilaciones</td><td data-label="Ficha">7</td></tr>
-                <tr><td data-label="#">23</td><td data-label="Fórmula">\(\omega=\sqrt{g/L}\)</td><td data-label="Nombre">Frecuencia angular del péndulo simple</td><td data-label="Ficha">7</td></tr>
-                <tr><td data-label="#">24</td><td data-label="Fórmula">\(T=2\pi\sqrt{L/g}\)</td><td data-label="Nombre">Periodo del péndulo simple</td><td data-label="Ficha">7</td></tr>
-                <tr><td data-label="#">25</td><td data-label="Fórmula">\(T'=\sqrt{2}\,T\)</td><td data-label="Nombre">Cambio de periodo al duplicar la longitud</td><td data-label="Ficha">7</td></tr>
-                <tr><td data-label="#">26</td><td data-label="Fórmula">\(E_m=E_c+E_p\)</td><td data-label="Nombre">Energía mecánica del oscilador</td><td data-label="Ficha">8</td></tr>
-                <tr><td data-label="#">27</td><td data-label="Fórmula">\(E_p=\frac12kx^2\)</td><td data-label="Nombre">Energía potencial elástica</td><td data-label="Ficha">8 y 9</td></tr>
-                <tr><td data-label="#">28</td><td data-label="Fórmula">\(E_c=\frac12mv^2\)</td><td data-label="Nombre">Energía cinética</td><td data-label="Ficha">8</td></tr>
-                <tr><td data-label="#">29</td><td data-label="Fórmula">\(E_m=\frac12kA^2=\frac12m\omega^2A^2\)</td><td data-label="Nombre">Energía mecánica total</td><td data-label="Ficha">8 y 9</td></tr>
-                <tr><td data-label="#">30</td><td data-label="Fórmula">\(E_c=\frac12k(A^2-x^2)\)</td><td data-label="Nombre">Energía cinética en función de la posición</td><td data-label="Ficha">8 y 9</td></tr>
-                <tr><td data-label="#">31</td><td data-label="Fórmula">\(|x|=A/\sqrt2\)</td><td data-label="Nombre">Posición donde las energías son iguales</td><td data-label="Ficha">9</td></tr>
-                <tr><td data-label="#">32</td><td data-label="Fórmula">\(x_0=A\cos\varphi_0\)</td><td data-label="Nombre">Condición inicial de posición</td><td data-label="Ficha">10</td></tr>
-                <tr><td data-label="#">33</td><td data-label="Fórmula">\(v_0=-A\omega\operatorname{sen}\varphi_0\)</td><td data-label="Nombre">Condición inicial de velocidad</td><td data-label="Ficha">10</td></tr>
-                <tr><td data-label="#">34</td><td data-label="Fórmula">\(\cos\varphi_0=x_0/A\)</td><td data-label="Nombre">Coseno de la fase inicial</td><td data-label="Ficha">10</td></tr>
-                <tr><td data-label="#">35</td><td data-label="Fórmula">\(\operatorname{sen}\varphi_0=-v_0/(A\omega)\)</td><td data-label="Nombre">Seno de la fase inicial</td><td data-label="Ficha">10</td></tr>
+                <tr><td>1</td><td>\[ F=-k\,x \]</td><td>Fuerza recuperadora (ley de Hooke)</td><td>1</td></tr>
+                <tr><td>2</td><td>\[ a=-\omega^{2}x \]</td><td>Aceleración en función de la posición</td><td>1</td></tr>
+                <tr><td>3</td><td>\[ x(t)=A\cos(\omega t+\varphi_0) \]</td><td>Ecuación de posición del MAS</td><td>2</td></tr>
+                <tr><td>4</td><td>\[ f=1/T \]</td><td>Frecuencia</td><td>3</td></tr>
+                <tr><td>5</td><td>\[ \omega=2\pi f=2\pi/T \]</td><td>Frecuencia angular</td><td>3</td></tr>
+                <tr><td>6</td><td>\[ v(t)=-A\omega\operatorname{sen}(\omega t+\varphi_0) \]</td><td>Velocidad en el MAS</td><td>4</td></tr>
+                <tr><td>7</td><td>\[ v_{\text{máx}}=A\omega \]</td><td>Velocidad máxima</td><td>4</td></tr>
+                <tr><td>8</td><td>\[ |v|=\omega\sqrt{A^{2}-x^{2}} \]</td><td>Velocidad en función de la posición</td><td>4</td></tr>
+                <tr><td>9</td><td>\[ a(t)=-A\omega^{2}\cos(\omega t+\varphi_0) \]</td><td>Aceleración en el MAS</td><td>5</td></tr>
+                <tr><td>10</td><td>\[ a_{\text{máx}}=\omega^{2}A \]</td><td>Aceleración máxima</td><td>5</td></tr>
+                <tr><td>11</td><td>\[ \omega=\sqrt{k/m} \]</td><td>Frecuencia angular del muelle</td><td>6</td></tr>
+                <tr><td>12</td><td>\[ T=2\pi\sqrt{m/k} \]</td><td>Periodo del muelle</td><td>6</td></tr>
+                <tr><td>13</td><td>\[ k=m\omega^{2}=4\pi^{2}m/T^{2} \]</td><td>Constante elástica a partir de \(\omega\) o \(T\)</td><td>6</td></tr>
+                <tr><td>14</td><td>\[ m=kT^{2}/(4\pi^{2}) \]</td><td>Masa a partir del periodo</td><td>6</td></tr>
+                <tr><td>15</td><td>\[ \Delta l_{0}=mg/k \]</td><td>Alargamiento en muelle vertical</td><td>7</td></tr>
+                <tr><td>16</td><td>\[ T=2\pi\sqrt{L/g} \]</td><td>Periodo del péndulo simple</td><td>8</td></tr>
+                <tr><td>17</td><td>\[ E_p=\tfrac{1}{2}k\,x^{2} \]</td><td>Energía potencial elástica</td><td>9</td></tr>
+                <tr><td>18</td><td>\[ E_c=\tfrac{1}{2}m\,v^{2} \]</td><td>Energía cinética</td><td>9</td></tr>
+                <tr><td>19</td><td>\[ E_m=\tfrac{1}{2}k\,A^{2}=\tfrac{1}{2}m\omega^{2}A^{2} \]</td><td>Energía mecánica del MAS</td><td>9</td></tr>
+                <tr><td>20</td><td>\[ E_c=\tfrac{1}{2}k(A^{2}-x^{2}) \]</td><td>Energía cinética en función de la posición</td><td>9</td></tr>
+                <tr><td>21</td><td>\[ |x|=A/\sqrt{2} \]</td><td>Posición donde \(E_c=E_p\)</td><td>10</td></tr>
+                <tr><td>22</td><td>\[ \cos\varphi_0=x_0/A,\ \operatorname{sen}\varphi_0=-v_0/(A\omega) \]</td><td>Fase inicial a partir de las condiciones iniciales</td><td>10</td></tr>
             </tbody>
         </table>
-
         <div class="note" style="margin: 16px 0 10px 0;">
-            <strong>⚠️ Errores frecuentes:</strong>
-            medir la elongación desde la longitud natural del muelle en lugar de hacerlo desde la posición de equilibrio; confundir frecuencia \(f\) con frecuencia angular \(\omega\); olvidar que la fórmula del péndulo exige pequeñas oscilaciones; introducir el peso como fuerza oscilatoria adicional en un muelle vertical cuando \(x\) se mide desde el nuevo equilibrio; y determinar la fase inicial utilizando solo la posición sin considerar el signo de la velocidad.
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> (i) usar \(x\) medida desde la longitud natural del muelle en vez de desde el <strong>equilibrio</strong>; (ii) confundir \(f\) (Hz) con \(\omega\) (rad/s) —falta el factor \(2\pi\); (iii) olvidar convertir a SI (cm → m, g → kg, rpm → rad/s); (iv) afirmar que la velocidad es máxima en los extremos (es al revés: es cero; máxima en el equilibrio); (v) afirmar que la aceleración es máxima en el equilibrio (es al revés: es cero; máxima en los extremos); (vi) pensar que el periodo del muelle depende de la amplitud (no, en muelle ideal); (vii) pensar que el periodo del péndulo depende de la masa (no, solo de \(L\) y \(g\)); (viii) duplicar el periodo al duplicar la longitud del péndulo (¡se multiplica por \(\sqrt{2}\)!); (ix) meter el peso como fuerza adicional en un muelle vertical (no hay que hacerlo si se mide desde el equilibrio); (x) usar \(E_m=\frac{1}{2}mv^{2}\) sin darse cuenta de que \(v\) varía con la posición (la \(E_m\) es constante e igual a \(\frac{1}{2}kA^{2}\)); (xi) en la fase inicial, dar una única solución sin considerar el signo de \(v_0\).
         </div>
     </details>
 
-    <!-- ============================ RECORDATORIO + BOTÓN ============================ -->
+    <!-- RECORDATORIO -->
     <div class="note" style="margin: 0 28px 8px 28px;">
-        <strong>Recordatorio:</strong> la relación que identifica al MAS es \(a=-\omega^2x\). La ecuación \(x(t)=A\cos(\omega t+\varphi_0)\) permite obtener velocidad y aceleración por derivación. Para un muelle, \(T=2\pi\sqrt{m/k}\); para un péndulo simple en pequeñas oscilaciones, \(T=2\pi\sqrt{L/g}\). En un oscilador ideal sin rozamiento, aplica siempre \(E_m=E_c+E_p=\text{constante}\). Recuerda medir la elongación desde el equilibrio y utilizar posición y velocidad iniciales para fijar la fase.
+        <strong>Recordatorio:</strong> en el tema C1 la idea central es que el MAS nace de una <strong>fuerza recuperadora proporcional a la elongación y de sentido contrario</strong> (\(F=-kx\), \(a=-\omega^{2}x\)). A partir de ahí: (1) la ecuación de posición es sinusoidal, \(x(t)=A\cos(\omega t+\varphi_0)\); (2) derivando se obtienen velocidad y aceleración; (3) la <strong>velocidad es máxima en el equilibrio y nula en los extremos</strong>; (4) la <strong>aceleración es nula en el equilibrio y máxima en los extremos</strong>; (5) la energía mecánica \(E_m=\frac{1}{2}kA^{2}\) se conserva, transformándose continuamente entre cinética y potencial. Los dos casos típicos son el muelle (\(T=2\pi\sqrt{m/k}\)) y el péndulo (\(T=2\pi\sqrt{L/g}\)). <strong>Recuerda las dos trampas más frecuentes</strong>: el muelle vertical oscila con el mismo periodo que en horizontal (la gravedad solo desplaza el equilibrio); y duplicar la longitud del péndulo NO duplica el periodo (lo multiplica por \(\sqrt{2}\)). Si dominas estas ideas y aplicas correctamente las conversiones de unidades, resuelves cualquier problema de C1.
     </div>
 
     <div class="footer-cta">
@@ -660,5 +701,29 @@
     </div>
 
 </div>
+
+<!-- JS · RESALTADO DE LA FÓRMULA DESTINO -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    var highlight = target.classList.contains('formula-box') || target.classList.contains('card')
+        ? target
+        : (target.closest('.formula-box') || target.closest('.card') || target);
+
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () {
+        highlight.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
 </body>
 </html>

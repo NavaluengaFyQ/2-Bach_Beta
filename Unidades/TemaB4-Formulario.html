@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA B4 (Formulario).- Potencial eléctrico, equipotenciales y campo uniforme</title>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="../css/formulario.css">
+
+    <style>
+        .formula-box {
+            overflow-wrap: break-word;
+            word-break: break-word;
+            max-width: 100%;
+        }
+        .formula-box mjx-container[jax="CHTML"][display="true"],
+        .formula-box mjx-container[jax="SVG"][display="true"] {
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+            padding-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA B4 (Formulario).- </span>
+                <span class="texto">Potencial eléctrico, equipotenciales y campo uniforme</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <div class="grid">
+
+        <!-- FICHA 1 -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Potencial eléctrico (definición)</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El potencial eléctrico en un punto como la energía potencial eléctrica por unidad de carga. Se aplica para describir escalarmente el campo eléctrico sin necesidad de especificar la carga de prueba: es una propiedad del punto, no de la carga que coloquemos en él. Es la magnitud fundamental del tema y la puerta de entrada al trabajo eléctrico y a las superficies equipotenciales.
+            </div>
+            <a href="TemaB4.html#formula-1" title="Ver esta fórmula en el tema B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
+                \[ V = \frac{E_p}{q} \]
+                \[ E_p = q\,V \]
+                <span id="formula-2"></span>
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(V=E_p/q\) y su inversa \(E_p=qV\). Son la definición misma de potencial y energía potencial. Comprende que \(V\) es una <strong>propiedad del campo en un punto</strong> (no depende de la carga que situemos allí), mientras que \(E_p=qV\) sí depende de la carga concreta. Se mide en voltios: \(1\ \text{V}=1\ \text{J/C}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(V\)</td><td data-label="Significado">Potencial eléctrico en el punto</td><td data-label="Unidades">V = J·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(E_p\)</td><td data-label="Significado">Energía potencial eléctrica</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga situada en el punto (con signo)</td><td data-label="Unidades">C</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si en un punto el potencial es \(V=600\,\text{V}\), una carga \(q=+2\,\mu\text{C}\) tendrá allí \(E_p=qV=+1{,}2\cdot10^{-3}\,\text{J}\); si fuese \(q=-2\,\mu\text{C}\), tendría \(E_p=-1{,}2\cdot10^{-3}\,\text{J}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(V\) es <strong>escalar</strong>: no tiene dirección ni sentido.</li>
+                    <li>Su valor absoluto depende del origen de potencial elegido (habitualmente \(V(\infty)=0\)).</li>
+                    <li>NO confundir \(V\) (potencial, propiedad del campo) con \(E_p\) (energía, depende de la carga).</li>
+                    <li>Un potencial nulo en un punto <strong>no implica</strong> campo nulo en ese punto.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Potencial creado por una carga puntual</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Expresión clave</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El potencial eléctrico que una carga puntual \(Q\) crea a una distancia \(r\) de ella, tomando \(V(\infty)=0\) como referencia. Se aplica cuando se conoce la carga creadora y la distancia al punto: es la pieza básica para calcular potenciales de sistemas de cargas por superposición.
+            </div>
+            <a href="TemaB4.html#formula-3" title="Ver esta fórmula en el tema B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">
+                \[ V(r) = k\,\frac{Q}{r} \qquad\text{con}\qquad k\approx9{,}0\cdot10^{9}\ \frac{\text{N·m}^{2}}{\text{C}^{2}} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(V=kQ/r\) con el <strong>signo de la carga</strong>. Es la fórmula clave del tema, la que permite después sumar potenciales y calcular energías y trabajos. Cuidado con dos cosas: la \(r\) se mide <strong>desde el centro</strong> de la carga, y el signo del potencial es el de \(Q\) (positivo para \(Q>0\), negativo para \(Q<0\)). No confundir con la fórmula del campo, que va con \(r^{2}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(V\)</td><td data-label="Significado">Potencial en el punto</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(k\)</td><td data-label="Significado">Constante de Coulomb</td><td data-label="Unidades">\(9\cdot10^{9}\ \text{N·m}^{2}\text{·C}^{-2}\)</td></tr>
+                    <tr><td data-label="Símbolo">\(Q\)</td><td data-label="Significado">Carga creadora (con signo)</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia desde el centro de \(Q\) al punto</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una carga \(Q=+10\,\text{nC}\) crea a \(3\,\text{m}\) un potencial \(V=9\cdot10^9\cdot10\cdot10^{-9}/3=+30\,\text{V}\). Si fuese \(Q=-10\,\text{nC}\), \(V=-30\,\text{V}\). Al duplicar la distancia, el potencial se reduce a la mitad.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El potencial es <strong>positivo</strong> si la carga es positiva y <strong>negativo</strong> si es negativa.</li>
+                    <li>Decae con \(1/r\), no con \(1/r^{2}\) como el campo.</li>
+                    <li>Las <strong>superficies equipotenciales</strong> son esferas centradas en la carga.</li>
+                    <li>El potencial nunca se anula en un punto finito: solo tiende a \(0\) al alejarse al infinito.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Principio de superposición del potencial</h2>
+                <span class="badge-centro">Principio</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Suma escalar</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El potencial eléctrico total en un punto debido a varias cargas puntuales, sumando algebraicamente los potenciales individuales. Se aplica en cualquier problema con dos o más cargas: es el procedimiento estándar de EBAU. Fundamental comprender que el potencial se suma como <strong>escalar</strong> (con su signo), mientras que el campo se suma vectorialmente.
+            </div>
+            <a href="TemaB4.html#formula-4" title="Ver esta fórmula en el tema B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">
+                \[ V(P) = V_1+V_2+\cdots+V_n = k\sum_{i=1}^{n}\frac{Q_i}{r_i} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es un principio, no una fórmula que haya que memorizar: se aplica siempre. Lo esencial es no olvidar que se suman <strong>números con signo</strong>, no módulos. Es la principal ventaja del potencial frente al campo: no hay que descomponer en componentes. Error típico: sumar los módulos de los potenciales como si fueran todos positivos. Conserva siempre el signo de cada carga \(Q_i\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Magnitud</th><th>Tipo de suma</th><th>Expresión</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Magnitud">Potencial \(V\)</td><td data-label="Tipo de suma">Escalar (algebraica)</td><td data-label="Expresión">\(V=\sum V_i\)</td></tr>
+                    <tr><td data-label="Magnitud">Campo \(\vec E\)</td><td data-label="Tipo de suma">Vectorial</td><td data-label="Expresión">\(\vec E=\sum\vec E_i\)</td></tr>
+                    <tr><td data-label="Magnitud">Energía \(E_p\)</td><td data-label="Tipo de suma">Escalar (algebraica)</td><td data-label="Expresión">\(E_p=qV_{\text{total}}\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos cargas \(Q_1=+10\,\text{nC}\) y \(Q_2=-10\,\text{nC}\) a \(3\,\text{m}\) de un punto \(P\). \(V_1=+30\,\text{V}\), \(V_2=-30\,\text{V}\), luego \(V_P=+30-30=0\,\text{V}\). Sin embargo, el campo en \(P\) <strong>no es nulo</strong>: los dos campos tienen la misma dirección y sentido.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El potencial se suma <strong>escalarmente</strong>: cada \(V_i\) con su signo.</li>
+                    <li>Es la gran ventaja del potencial frente al campo: no hay componentes.</li>
+                    <li>Puede dar \(V=0\) en puntos donde \(\vec E\neq0\) (ejemplo clásico de EBAU).</li>
+                    <li>Para calcular después \(\vec E\), hay que sumar vectores: no basta con saber que \(V=0\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Diferencia de potencial y variación de \(E_p\)</h2>
+                <span class="badge-centro">Relación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Relación clave</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La variación de energía potencial eléctrica de una carga \(q\) al trasladarse desde un punto \(A\) (potencial \(V_A\)) hasta un punto \(B\) (potencial \(V_B\)). Se aplica siempre que se conozcan los potenciales y se quiera trabajar con energías: es el puente entre el potencial (magnitud del campo) y la energía potencial (magnitud de la carga).
+            </div>
+            <a href="TemaB4.html#formula-5" title="Ver esta fórmula en el tema B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">
+                \[ \Delta V = V_B - V_A \]
+                \[ \Delta E_p = E_{p,B} - E_{p,A} = q\,(V_B-V_A) = q\,\Delta V \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Sí: memoriza \(\Delta E_p=q\Delta V=q(V_B-V_A)\). Es la fórmula más usada en EBAU para pasar de potencial a energía. El signo de \(q\) es decisivo: si \(q>0\), \(\Delta E_p\) y \(\Delta V\) tienen el mismo signo; si \(q<0\), signos opuestos. Esto explica por qué las cargas negativas "suben" su \(E_p\) al ir hacia potenciales menores, y las positivas al revés.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\Delta V=V_B-V_A\)</td><td data-label="Significado">Diferencia de potencial entre A y B</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta E_p\)</td><td data-label="Significado">Variación de energía potencial</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga que se traslada (con signo)</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(V_A,V_B\)</td><td data-label="Significado">Potencial en A y en B</td><td data-label="Unidades">V</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(q=+2\,\text{nC}\) pasa de \(V_A=100\,\text{V}\) a \(V_B=40\,\text{V}\). \(\Delta V=-60\,\text{V}\), \(\Delta E_p=2\cdot10^{-9}\cdot(-60)=-1{,}2\cdot10^{-7}\,\text{J}\) (baja). Si \(q=-2\,\text{nC}\), \(\Delta E_p=+1{,}2\cdot10^{-7}\,\text{J}\) (sube).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(\Delta V\) NO determina por sí solo el signo de \(\Delta E_p\): hay que multiplicar por \(q\).</li>
+                    <li>\(\Delta V>0\) y \(q>0\) ⟹ \(\Delta E_p>0\) (la carga gana \(E_p\)).</li>
+                    <li>\(\Delta V>0\) y \(q<0\) ⟹ \(\Delta E_p<0\) (la carga pierde \(E_p\)).</li>
+                    <li>Si los dos puntos están en la misma equipotencial (\(\Delta V=0\)), \(\Delta E_p=0\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Trabajo del campo y trabajo externo</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Signo físico</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · Cálculo directo</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El trabajo realizado por el campo eléctrico (\(W_{\text{campo}}\)) o por un agente externo (\(W_{\text{ext}}\)) al trasladar una carga \(q\) entre dos puntos \(A\) y \(B\). Se aplica en todos los problemas de trabajo eléctrico de EBAU: es la traducción energética del movimiento de cargas. Fundamental comprender que ambos trabajos son <strong>opuestos</strong> en un traslado cuasiestático.
+            </div>
+            <a href="TemaB4.html#formula-6" title="Ver esta fórmula en el tema B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">
+                \[ W_{\text{campo},\,A\to B} = -\Delta E_p = q\,(V_A - V_B) \]
+                \[ W_{\text{ext},\,A\to B} = \Delta E_p = q\,(V_B - V_A) = -W_{\text{campo}} \]
+                <span id="formula-7"></span>
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER + 🔑 MEMORIZAR</span>Memoriza las dos expresiones y, sobre todo, <strong>distingue cuál te piden</strong>. Para el campo: \(q(V_A-V_B)\); para el externo: \(q(V_B-V_A)\). Son opuestos. Truco: si el campo favorece el movimiento, \(W_{\text{campo}}>0\) y el externo sería negativo (retira energía). Cuando el enunciado dice "el trabajo necesario para trasladar", casi siempre es el externo; cuando dice "el trabajo realizado por el campo", es el del campo.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(W_{\text{campo}}\)</td><td data-label="Significado">Trabajo del campo eléctrico</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(W_{\text{ext}}\)</td><td data-label="Significado">Trabajo externo (cuasiestático)</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga que se desplaza (con signo)</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(V_A,V_B\)</td><td data-label="Significado">Potencial en A y en B</td><td data-label="Unidades">V</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> trasladar \(q=+2\,\mu\text{C}\) de \(V_A=100\,\text{V}\) a \(V_B=40\,\text{V}\). \(W_{\text{campo}}=2\cdot10^{-6}(100-40)=+1{,}2\cdot10^{-4}\,\text{J}\) (el campo favorece); \(W_{\text{ext}}=-1{,}2\cdot10^{-4}\,\text{J}\) (el agente externo retira energía).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li><strong>\(W_{\text{campo}}>0\)</strong>: el campo favorece el desplazamiento; \(E_p\) disminuye.</li>
+                    <li><strong>\(W_{\text{campo}}<0\)</strong>: el campo se opone; \(E_p\) aumenta.</li>
+                    <li>\(W_{\text{ext}}=-W_{\text{campo}}\) solo en desplazamiento <strong>cuasiestático</strong>.</li>
+                    <li>En general: \(W_{\text{ext}}+W_{\text{campo}}=\Delta E_c\).</li>
+                    <li>NO intercambiar \(V_A\) y \(V_B\) entre las dos fórmulas: es el error más típico de la EBAU.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Relación campo-potencial: el gradiente</h2>
+                <span class="badge-centro">Deducción</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación local entre el campo eléctrico y el potencial: el campo es el gradiente del potencial cambiado de signo. Se aplica para entender la geometría del campo (perpendicularidad a las equipotenciales y sentido hacia potenciales decrecientes) y para obtener el campo a partir de una expresión o gráfica de potencial.
+            </div>
+            <a href="TemaB4.html#formula-8" title="Ver esta fórmula en el tema B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">
+                \[ \vec E = -\nabla V = -\left(\frac{\partial V}{\partial x}\,\hat i + \frac{\partial V}{\partial y}\,\hat j + \frac{\partial V}{\partial z}\,\hat k\right) \]
+                \[ E_x = -\frac{dV}{dx} \quad\text{(en una dimensión)} \]
+                <span id="formula-9"></span>
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es una consecuencia directa de la definición de potencial y del carácter conservativo del campo. Lo importante es comprender las dos consecuencias físicas: (1) el campo apunta <strong>hacia donde el potencial disminuye</strong>; (2) las <strong>líneas de campo son perpendiculares</strong> a las superficies equipotenciales. En una dimensión, \(E_x=-dV/dx\): la componente del campo es la pendiente cambiada de signo.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec E\)</td><td data-label="Significado">Campo eléctrico</td><td data-label="Unidades">N·C⁻¹ = V·m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(V\)</td><td data-label="Significado">Potencial eléctrico</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(\nabla\)</td><td data-label="Significado">Operador gradiente</td><td data-label="Unidades">m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(E_x\)</td><td data-label="Significado">Componente \(x\) del campo (caso 1D)</td><td data-label="Unidades">V·m⁻¹</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para una carga puntual \(Q\) en el origen, \(V=kQ/r\). En coordenadas esféricas, \(E_r=-\partial V/\partial r=kQ/r^{2}\), que coincide con la expresión conocida del campo. Y para \(V(x)=100-20x\), \(E_x=-dV/dx=+20\,\text{V/m}\): el campo apunta en el sentido en que \(V\) decrece.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El campo apunta en el sentido de \(V\) <strong>decreciente</strong>.</li>
+                    <li>Líneas de campo <strong>perpendiculares</strong> a las equipotenciales.</li>
+                    <li>Si \(V\) es constante en una región, \(\vec E=0\) allí (equilibrio electrostático).</li>
+                    <li>Conocer \(V\) en un solo punto NO determina \(\vec E\): hace falta saber cómo varía \(V\) alrededor.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Campo uniforme: diferencia de potencial</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Producto escalar</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La diferencia de potencial entre dos puntos dentro de un campo eléctrico uniforme (por ejemplo, entre placas paralelas), en función del vector desplazamiento \(\Delta\vec r\). Se aplica en problemas de placas paralelas, movimiento de cargas en campos uniformes y condensadores planos.
+            </div>
+            <a href="TemaB4.html#formula-10" title="Ver esta fórmula en el tema B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">
+                \[ V_B - V_A = -\vec E\cdot(\vec r_B-\vec r_A) = -E\,d\cos\theta \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es una consecuencia directa de \(V_B-V_A=-\int_A^B\vec E\cdot d\vec r\) particularizada a campo uniforme. Memoriza la idea: en un campo uniforme, lo que importa es la <strong>componente del desplazamiento paralela al campo</strong>. Si el desplazamiento es perpendicular al campo, \(\Delta V=0\) (equipotencial). Si es paralelo, \(\Delta V=\pm Ed\) según sentido. El signo negativo en la fórmula indica que el potencial disminuye en el sentido del campo.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(V_B-V_A\)</td><td data-label="Significado">Diferencia de potencial entre A y B</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec E\)</td><td data-label="Significado">Campo uniforme</td><td data-label="Unidades">N·C⁻¹ = V·m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta\vec r\)</td><td data-label="Significado">Vector desplazamiento de A a B</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\theta\)</td><td data-label="Significado">Ángulo entre \(\vec E\) y \(\Delta\vec r\)</td><td data-label="Unidades">—</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(\vec E=200\,\hat i\,\text{V/m}\), desplazamiento de \(A(0,0)\) a \(B(3,0)\,\text{m}\). \(V_B-V_A=-200\cdot3=-600\,\text{V}\) (el potencial baja \(600\,\text{V}\) al avanzar en el sentido del campo). Si \(B=(0,3)\), entonces \(V_B-V_A=0\): \(A\) y \(B\) están en la misma equipotencial.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>En un campo uniforme, las <strong>equipotenciales son planos paralelos</strong> perpendiculares a \(\vec E\).</li>
+                    <li>Desplazamiento perpendicular a \(\vec E\) ⟹ \(\Delta V=0\) (sin trabajo del campo).</li>
+                    <li>Desplazamiento en el sentido del campo ⟹ \(\Delta V<0\) (potencial baja).</li>
+                    <li>NO es válida si el campo no es uniforme: para eso hace falta integrar \(\vec E\cdot d\vec r\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Campo uniforme entre placas paralelas</h2>
+                <span class="badge-centro">Caso típico</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip automatizar">🔄 Automatizar · Caso típico</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo del campo eléctrico uniforme entre dos placas planas y paralelas con cargas opuestas, a partir de la diferencia de potencial entre ellas y su separación. Se aplica en problemas de condensadores planos y en el movimiento de cargas entre placas (osciloscopios, desviación de haces, equilibrio de gotas cargadas, etc.).
+            </div>
+            <a href="TemaB4.html#formula-11" title="Ver esta fórmula en el tema B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">
+                \[ E = \frac{|\Delta V|}{d} \]
+                \[ |\Delta V| = E\,d \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔄 AUTOMATIZAR</span>Sí: memoriza \(E=|\Delta V|/d\) y reconócela como la relación clave del condensador plano. Es un caso particular de \(\Delta V=-E\,d\cos\theta\) cuando el desplazamiento es perpendicular a las placas. Se aplica cuando \(d\ll\) dimensiones de las placas (efectos de borde despreciables). Cuidado con las unidades: si \(\Delta V\) está en voltios y \(d\) en metros, \(E\) sale en \(\text{V/m}\) (= \(\text{N/C}\)).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E\)</td><td data-label="Significado">Módulo del campo uniforme</td><td data-label="Unidades">V·m⁻¹ = N·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(|\Delta V|\)</td><td data-label="Significado">Diferencia de potencial entre placas</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(d\)</td><td data-label="Significado">Separación entre placas</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos placas separadas \(d=2\,\text{cm}\) con \(\Delta V=100\,\text{V}\). Entonces \(E=100/0{,}02=5000\,\text{V/m}\) (o N/C). El campo va de la placa positiva a la negativa.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Válida solo si el desplazamiento es <strong>perpendicular a las placas</strong>.</li>
+                    <li>Los efectos de borde deben ser despreciables (\(d\ll\) dimensiones de las placas).</li>
+                    <li>El campo va de la placa <strong>positiva a la negativa</strong>.</li>
+                    <li>Si se duplica \(d\) con la misma \(\Delta V\), el campo se reduce a la mitad.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Capacidad de un condensador plano</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · Geometría</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La capacidad eléctrica de un condensador (relación entre la carga de una placa y la diferencia de potencial entre ellas) y, en el caso de un condensador plano ideal, su valor a partir de la geometría (superficie de las placas y separación) y del medio entre ellas. Se aplica en problemas de condensadores planos y en el estudio de dieléctricos.
+            </div>
+            <a href="TemaB4.html#formula-12" title="Ver esta fórmula en el tema B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-12">
+                \[ C = \frac{|Q|}{|\Delta V|} \]
+                \[ |Q| = C\,|\Delta V| \]
+            </div>
+            </a>
+            <a href="TemaB4.html#formula-13" title="Ver esta fórmula en el tema B4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-13">
+                \[ C = \varepsilon\,\frac{S}{d} \qquad\text{(condensador plano ideal)} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR + ⚖️ APLICAR</span>Memoriza la definición \(C=|Q|/|\Delta V|\) y la expresión geométrica \(C=\varepsilon S/d\). Comprende que la capacidad es una <strong>propiedad geométrica y del medio</strong> (no depende de la carga ni del voltaje, aunque numéricamente se calcule a partir de ellos). Se mide en faradios (F): \(1\ \text{F}=1\ \text{C/V}\). Si se introduce un dieléctrico (\(\varepsilon_r>1\)), la capacidad aumenta por el factor \(\varepsilon_r\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(C\)</td><td data-label="Significado">Capacidad del condensador</td><td data-label="Unidades">F (faradio)</td></tr>
+                    <tr><td data-label="Símbolo">\(|Q|\)</td><td data-label="Significado">Carga almacenada en una placa</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(|\Delta V|\)</td><td data-label="Significado">Diferencia de potencial entre placas</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(\varepsilon\)</td><td data-label="Significado">Permitividad del medio entre placas</td><td data-label="Unidades">F·m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(S\)</td><td data-label="Significado">Superficie de una placa</td><td data-label="Unidades">m²</td></tr>
+                    <tr><td data-label="Símbolo">\(d\)</td><td data-label="Significado">Separación entre placas</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un condensador plano con placas de \(S=0{,}01\,\text{m}^{2}\), separación \(d=1\,\text{mm}\) y aire entre ellas (\(\varepsilon\approx\varepsilon_0=8{,}85\cdot10^{-12}\,\text{F/m}\)): \(C=\varepsilon_0 S/d\approx8{,}85\cdot10^{-11}\,\text{F}=88{,}5\,\text{pF}\). Si se le aplica \(\Delta V=100\,\text{V}\), almacena \(Q=CV\approx8{,}85\cdot10^{-9}\,\text{C}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La capacidad es <strong>propiedad geométrica y del medio</strong>, no de la carga ni del voltaje.</li>
+                    <li>Aumentar \(S\) ⟹ aumenta \(C\). Aumentar \(d\) ⟹ disminuye \(C\).</li>
+                    <li>Un dieléctrico con \(\varepsilon_r>1\) multiplica \(C\) por \(\varepsilon_r\).</li>
+                    <li>No confundir carga de una placa (\(|Q|\)) con carga total del condensador (cero): las dos placas tienen cargas opuestas.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- LEYENDA EPISTÉMICA -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones del tema B4 se estudian igual. Cada fórmula pertenece a una
+                <strong>categoría epistémica</strong> —definición, concepto, consecuencia matemática,
+                aplicación o caso típico automatizable— y cada categoría se domina con un
+                <strong>verbo distinto</strong>. Identificar el tipo <em>antes</em> de estudiar ahorra
+                tiempo y evita memorizar lo que se puede deducir.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física o
+                        establece una relación básica. No se demuestra, se establece. Se domina cuando puedes
+                        enunciarla sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B4</strong>
+                        \(V=E_p/q\) &nbsp;·&nbsp; \(V=kQ/r\) &nbsp;·&nbsp; \(C=|Q|/|\Delta V|\)
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Concepto / comprensión</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es la <em>idea física</em> del tema: una propiedad o relación que hay que entender
+                        más que memorizar. Se domina cuando puedes explicarla con tus propias palabras y
+                        usarla como filtro conceptual.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B4</strong>
+                        \(W_{\text{campo}}=q(V_A-V_B)\) frente a \(W_{\text{ext}}=q(V_B-V_A)\)
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> integrando, despejando o sustituyendo otra fórmula. No se
+                        memoriza: se reconstruye en 2–3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B4</strong>
+                        \(\vec E=-\nabla V\) &nbsp;·&nbsp; \(E_x=-dV/dx\)
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Aplicación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Se usa para <em>resolver</em> un problema concreto: elegir la fórmula adecuada,
+                        sustituir con los signos correctos y comprobar el resultado. Es el tipo más frecuente
+                        en EBAU.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B4</strong>
+                        \(V=k\sum Q_i/r_i\) &nbsp;·&nbsp; \(\Delta E_p=q\Delta V\) &nbsp;·&nbsp;
+                        \(\Delta V=-\vec E\cdot\Delta\vec r\) &nbsp;·&nbsp; \(C=\varepsilon S/d\)
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Caso típico automatizable</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es un <em>caso particular</em> que aparece mucho y conviene aplicar de forma refleja
+                        sin deducirlo cada vez.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplo B4</strong>
+                        \(E=|\Delta V|/d\) (campo entre placas paralelas)
+                    </p>
+                </div>
+
+            </div>
+
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Concepto</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Idea física central</td>
+                        <td data-label="¿Cómo se domina?">Explicar con tus palabras</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla sin fórmulas?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Aplicación</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Fórmula para resolver</td>
+                        <td data-label="¿Cómo se domina?">Resolver problemas con signos</td>
+                        <td data-label="Autoevaluación">¿La elijo bien y compruebo el signo?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Automatizar</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Caso típico específico</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿La reconozco y la aplico al instante?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
+                pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si sale de otra fórmula integrando, despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
+                Si es una idea física que hay que entender → <strong>concepto</strong> (comprender).
+                Si solo asigna un nombre o establece una relación básica → <strong>definición</strong> (memorizar).
+                Si la usas para resolver un problema → <strong>aplicación</strong> (aplicar).
+                Si es un caso particular muy repetido → <strong>caso típico</strong> (automatizar).
+            </div>
+
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Concepto (trabajo del campo y trabajo externo)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Deducir (gradiente: campo a partir del potencial)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Definición (potencial eléctrico, energía potencial)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Automatizar (campo entre placas)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Aplicación (superposición, diferencia de potencial, condensador)</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema B4</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ V=\dfrac{E_p}{q} \]</td><td data-label="Nombre">Definición de potencial eléctrico</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ E_p=q\,V \]</td><td data-label="Nombre">Energía potencial y potencial</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ V=k\,\dfrac{Q}{r} \]</td><td data-label="Nombre">Potencial de una carga puntual</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ V(P)=k\sum_{i}\dfrac{Q_i}{r_i} \]</td><td data-label="Nombre">Superposición del potencial</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ \Delta E_p=q\,(V_B-V_A)=q\,\Delta V \]</td><td data-label="Nombre">Variación de energía potencial</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ W_{\text{campo}}=q\,(V_A-V_B) \]</td><td data-label="Nombre">Trabajo del campo eléctrico</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ W_{\text{ext}}=q\,(V_B-V_A) \]</td><td data-label="Nombre">Trabajo externo cuasiestático</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \vec E=-\nabla V \]</td><td data-label="Nombre">Relación campo-potencial (gradiente)</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ E_x=-\dfrac{dV}{dx} \]</td><td data-label="Nombre">Componente del campo a partir del potencial</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ \Delta V=-\vec E\cdot\Delta\vec r \]</td><td data-label="Nombre">Diferencia de potencial en campo uniforme</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ E=\dfrac{|\Delta V|}{d} \]</td><td data-label="Nombre">Campo entre placas paralelas</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ C=\dfrac{|Q|}{|\Delta V|} \]</td><td data-label="Nombre">Definición de capacidad</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">13</td><td data-label="Fórmula">\[ C=\varepsilon\,\dfrac{S}{d} \]</td><td data-label="Nombre">Capacidad de un condensador plano</td><td data-label="Ficha">9</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> (i) sumar potenciales como si fueran vectores (¡son escalares!); (ii) olvidar el signo de las cargas al calcular \(V\); (iii) confundir potencial \(V\) con energía potencial \(E_p\); (iv) intercambiar los signos de \(W_{\text{campo}}\) y \(W_{\text{ext}}\) (¡son opuestos!); (v) afirmar que un potencial nulo implica campo nulo (falso: \(\vec E=-\nabla V\)); (vi) dibujar las equipotenciales paralelas al campo en lugar de perpendiculares; (vii) usar \(E=|\Delta V|/d\) cuando el desplazamiento no es paralelo al campo o el campo no es uniforme; y (viii) medir \(r\) desde la superficie en lugar del centro de la carga.
+        </div>
+    </details>
+
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en el tema B4 la idea central es que el <strong>potencial eléctrico es escalar</strong>: se suma algebraicamente, no vectorialmente. A partir del potencial \(V\) se calcula la energía potencial \(E_p=qV\) y, de ahí, el trabajo del campo \(W_{\text{campo}}=-\Delta E_p\). El campo eléctrico es el gradiente negativo del potencial (\(\vec E=-\nabla V\)); por eso apunta hacia donde \(V\) decrece y es perpendicular a las equipotenciales. En un campo uniforme entre placas, la diferencia de potencial solo depende de la componente del desplazamiento paralela al campo (\(E=|\Delta V|/d\)). Memoriza las definiciones (\(V=E_p/q\), \(V=kQ/r\), \(C=|Q|/|\Delta V|\)), comprende la relación trabajo-energía, deduce el gradiente cuando lo necesites y automatiza el campo entre placas. Y, sobre todo, distingue siempre quién realiza el trabajo: el campo o un agente externo.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    var highlight = target.classList.contains('formula-box') || target.classList.contains('card')
+        ? target
+        : (target.closest('.formula-box') || target.closest('.card') || target);
+
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () {
+        highlight.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
+</body>
+</html>

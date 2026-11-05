@@ -32,6 +32,34 @@
         .tabla-resumen td, .tabla-resumen th { vertical-align:middle; }
         .formula-box p { margin:0; }
         @media (max-width:700px) { .tabla-resumen { font-size:.9em; } }
+
+        /* Fórmula como vínculo al formulario (mismo patrón que TemaA1.html / TemaB8.html) */
+        .formula-vinculo {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .formula-vinculo .formula-box,
+        .formula-vinculo > ul {
+            transition: box-shadow .2s ease, transform .2s ease;
+        }
+        .formula-vinculo:hover .formula-box,
+        .formula-vinculo:hover > ul {
+            box-shadow: 0 0 0 3px rgba(59,130,246,.25);
+        }
+
+        /* Resaltado al llegar desde el formulario */
+        @keyframes resaltarFormulaB9 {
+            0%   { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+            18%  { box-shadow: 0 0 0 6px rgba(59,130,246,.4); background: #dbeafe; }
+            78%  { box-shadow: 0 0 0 6px rgba(59,130,246,.4); background: #dbeafe; }
+            100% { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+        }
+        .formula-resaltada {
+            animation: resaltarFormulaB9 2.4s ease;
+            border-radius: 8px;
+        }
+        [id^="formula-"] { scroll-margin-top: 90px; }
     </style>
 </head>
 <body>
@@ -119,7 +147,9 @@
         <details class="step" open>
             <summary><span class="step-num">1</span><strong>Flujo magnético.</strong></summary>
             <p>El <strong>flujo magnético</strong> mide la cantidad de campo magnético que atraviesa una superficie. Para un campo uniforme y una superficie plana:</p>
-            <div class="formula-box">\[\Phi_B=\vec B\cdot\vec S=B\,S\cos\theta\]</div>
+            <a href="TemaB9-Formulario.html#formula-1" class="formula-vinculo" title="Ver ficha 1 del formulario">
+                <div class="formula-box" id="formula-1">\[\Phi_B=\vec B\cdot\vec S=B\,S\cos\theta\]</div>
+            </a>
             <p>En esta expresión, \(\vec S=S\,\hat n\) es el vector superficie, perpendicular al plano de la espira, y \(\theta\) es el ángulo entre \(\vec B\) y la <strong>normal</strong> a la superficie (no el ángulo con el plano).</p>
             <ul>
                 <li>\(\Phi_B\): flujo magnético, en weber (Wb).</li>
@@ -133,7 +163,9 @@
         <details class="step">
             <summary><span class="step-num">2</span><strong>Flujo en espiras y bobinas. Flujo concatenado.</strong></summary>
             <p>Una bobina está formada por \(N\) espiras. Si todas tienen la misma área y están sometidas al mismo campo y orientación, el flujo concatenado total es:</p>
-            <div class="formula-box">\[\Psi=N\,\Phi_B=NBS\cos\theta\]</div>
+            <a href="TemaB9-Formulario.html#formula-2" class="formula-vinculo" title="Ver ficha 2 del formulario">
+                <div class="formula-box" id="formula-2">\[\Psi=N\,\Phi_B=NBS\cos\theta\]</div>
+            </a>
             <p>Conviene distinguir la notación:</p>
             <ul>
                 <li>\(\Phi_B\): flujo magnético que atraviesa <strong>una espira</strong>.</li>
@@ -145,9 +177,13 @@
         <details class="step">
             <summary><span class="step-num">3</span><strong>Inducción electromagnética y ley de Faraday-Henry.</strong></summary>
             <p>Cuando cambia con el tiempo el flujo magnético concatenado por un circuito, aparece una <strong>fuerza electromotriz inducida</strong> (fem). La ley de Faraday-Henry establece:</p>
-            <div class="formula-box">\[\varepsilon=-\frac{d\Psi}{dt}=-N\frac{d\Phi_B}{dt}\]</div>
+            <a href="TemaB9-Formulario.html#formula-3" class="formula-vinculo" title="Ver ficha 3 del formulario">
+                <div class="formula-box" id="formula-3">\[\varepsilon=-\frac{d\Psi}{dt}=-N\frac{d\Phi_B}{dt}\]</div>
+            </a>
             <p>Para una variación media durante un intervalo de tiempo:</p>
-            <div class="formula-box">\[\varepsilon_{\text{media}}=-\frac{\Delta\Psi}{\Delta t}=-N\frac{\Delta\Phi_B}{\Delta t}\]</div>
+            <a href="TemaB9-Formulario.html#formula-4" class="formula-vinculo" title="Ver ficha 4 del formulario">
+                <div class="formula-box" id="formula-4">\[\varepsilon_{\text{media}}=-\frac{\Delta\Psi}{\Delta t}=-N\frac{\Delta\Phi_B}{\Delta t}\]</div>
+            </a>
             <p>El módulo de la fem depende de la rapidez con que cambia el flujo. No depende del valor del flujo por sí solo.</p>
             <ul>
                 <li>Si el flujo permanece constante, \(\varepsilon=0\).</li>
@@ -160,6 +196,9 @@
         <details class="step">
             <summary><span class="step-num">4</span><strong>Ley de Lenz: sentido de la corriente inducida.</strong></summary>
             <p>El signo negativo de Faraday expresa la <strong>ley de Lenz</strong>: la corriente inducida aparece en el sentido que crea un campo magnético que se opone a la <em>variación del flujo</em> que la produce.</p>
+            <a href="TemaB9-Formulario.html#formula-5" class="formula-vinculo" title="Ver ficha 5 del formulario">
+                <div class="formula-box" id="formula-5">\[\vec B_{\text{inducido}}\ \text{se opone a la VARIACIÓN del flujo magnético que la produce}\]</div>
+            </a>
             <div class="clave-lenz"><strong>La corriente inducida no se opone necesariamente al campo externo:</strong> se opone a que el flujo aumente o disminuya. Si el flujo entrante disminuye, intenta mantenerlo entrante; si aumenta, crea un campo saliente para contrarrestar el aumento.</div>
             <p>Para una espira vista de frente:</p>
             <table>
@@ -186,19 +225,29 @@
         <details class="step">
             <summary><span class="step-num">6</span><strong>Espira giratoria. Alternador o generador de corriente alterna.</strong></summary>
             <p>Una bobina de \(N\) espiras y área \(S\) gira con velocidad angular constante \(\omega\) en un campo uniforme \(B\). Si en \(t=0\) la normal a la bobina es paralela al campo, \(\theta=\omega t\):</p>
-            <div class="formula-box">\[\Psi(t)=NBS\cos(\omega t)\]</div>
+            <a href="TemaB9-Formulario.html#formula-7" class="formula-vinculo" title="Ver ficha 7 del formulario">
+                <div class="formula-box" id="formula-7">\[\Psi(t)=NBS\cos(\omega t)\]</div>
+            </a>
             <p>Derivando:</p>
-            <div class="formula-box">\[\varepsilon(t)=NBS\omega\,\operatorname{sen}(\omega t)\]</div>
+            <a href="TemaB9-Formulario.html#formula-8" class="formula-vinculo" title="Ver ficha 8 del formulario">
+                <div class="formula-box" id="formula-8">\[\varepsilon(t)=NBS\omega\,\operatorname{sen}(\omega t)\]</div>
+            </a>
             <p>La fem máxima, el periodo y la frecuencia son:</p>
-            <div class="formula-box">\[\varepsilon_{\max}=NBS\omega\qquad T=\frac{2\pi}{\omega}\qquad f=\frac{1}{T}=\frac{\omega}{2\pi}\]</div>
+            <a href="TemaB9-Formulario.html#formula-9" class="formula-vinculo" title="Ver ficha 9 del formulario">
+                <div class="formula-box" id="formula-9">\[\varepsilon_{\max}=NBS\omega\qquad T=\frac{2\pi}{\omega}\qquad f=\frac{1}{T}=\frac{\omega}{2\pi}\]</div>
+            </a>
             <p>La fem cambia de signo periódicamente, por lo que se genera corriente alterna si el circuito está cerrado. Si se pide la velocidad angular a partir de revoluciones por minuto:</p>
-            <div class="formula-box">\[\omega=\text{rpm}\cdot\frac{2\pi}{60}\quad (\text{rad}\,\text{s}^{-1})\]</div>
+            <a href="TemaB9-Formulario.html#formula-10" class="formula-vinculo" title="Ver ficha 9 del formulario (velocidad angular)">
+                <div class="formula-box" id="formula-10">\[\omega=\text{rpm}\cdot\frac{2\pi}{60}\quad (\text{rad}\,\text{s}^{-1})\]</div>
+            </a>
         </details>
 
         <details class="step">
             <summary><span class="step-num">7</span><strong>Corriente inducida y fem.</strong></summary>
             <p>La fem inducida representa la energía transferida por unidad de carga. Si el circuito está cerrado y su resistencia total es \(R\), se puede obtener la corriente inducida mediante la ley de Ohm:</p>
-            <div class="formula-box">\[I=\frac{\varepsilon}{R}\]</div>
+            <a href="TemaB9-Formulario.html#formula-6" class="formula-vinculo" title="Ver ficha 6 del formulario">
+                <div class="formula-box" id="formula-6">\[I=\frac{\varepsilon}{R}\]</div>
+            </a>
             <p>El signo o sentido de \(I\) debe interpretarse con el convenio elegido para el circuito. En las cuestiones cualitativas, la ley de Lenz determina primero el sentido; después, si se conoce \(R\), se calcula el módulo de la corriente.</p>
         </details>
 
@@ -729,5 +778,37 @@
         </div>
     </div>
 </div>
+
+<!-- ============================================================ -->
+<!-- JS · APERTURA DE <details> + RESALTADO AL LLEGAR POR ANCLA   -->
+<!-- ============================================================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    // Abrir todos los <details> ancestros para que el contenido sea visible
+    var el = target;
+    while (el) {
+        if (el.tagName === 'DETAILS') el.open = true;
+        el = el.parentElement;
+    }
+
+    var highlight = target.classList.contains('formula-box')
+        ? target
+        : (target.closest('.formula-box') || target);
+
+    setTimeout(function () {
+        highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+        highlight.classList.remove('formula-resaltada');
+        void highlight.offsetWidth;
+        highlight.classList.add('formula-resaltada');
+        setTimeout(function () { highlight.classList.remove('formula-resaltada'); }, 2600);
+    }, 60);
+});
+</script>
+
 </body>
 </html>

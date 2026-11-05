@@ -19,8 +19,8 @@
     <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-
     
+
 
     <style>
         .b8-diagramas {
@@ -66,6 +66,35 @@
         .b8-ejemplo { border-left:4px solid #48bb78; padding:10px 14px; background:#f7fff9; border-radius:0 8px 8px 0; margin:12px 0; }
         .b8-alerta { border-left:4px solid #ed8936; padding:10px 14px; background:#fffaf0; border-radius:0 8px 8px 0; margin:12px 0; }
         .b8-enlace { overflow-wrap:anywhere; }
+
+        /* Resaltado al llegar desde el formulario */
+        @keyframes resaltarFormulaB8 {
+            0%   { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+            18%  { box-shadow: 0 0 0 6px rgba(59,130,246,.4); background: #dbeafe; }
+            78%  { box-shadow: 0 0 0 6px rgba(59,130,246,.4); background: #dbeafe; }
+            100% { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+        }
+        .formula-resaltada {
+            animation: resaltarFormulaB8 2.4s ease;
+            border-radius: 8px;
+        }
+        [id^="formula-"] { scroll-margin-top: 90px; }
+
+        /* Fórmula como vínculo al formulario (mismo patrón que TemaA1.html) */
+        .formula-vinculo {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .formula-vinculo .formula-box,
+        .formula-vinculo > ul {
+            transition: box-shadow .2s ease, transform .2s ease;
+        }
+        .formula-vinculo:hover .formula-box,
+        .formula-vinculo:hover > ul {
+            box-shadow: 0 0 0 3px rgba(59,130,246,.25);
+        }
+
         @media (max-width:700px) {
             .b8-diagramas { grid-template-columns:1fr; }
         }
@@ -162,7 +191,9 @@
         <details class="step">
             <summary><span class="step-num">1</span><strong>Qué representa una línea de campo.</strong></summary>
             <p>Una <strong>línea de campo</strong> es una curva dibujada de manera que, en cada punto, su recta tangente tiene la dirección del vector campo \(\vec E\) o \(\vec B\). La flecha indica el sentido del campo en ese punto.</p>
-            <div class="formula-box">La tangente a la línea de campo en un punto tiene la dirección del vector campo en ese punto.</div>
+            <a href="TemaB8-Formulario.html#formula-1" class="formula-vinculo" title="Ver ficha 1 del formulario">
+                <div class="formula-box" id="formula-1">La tangente a la línea de campo en un punto tiene la dirección del vector campo en ese punto.</div>
+            </a>
             <ul>
                 <li><strong>Dirección:</strong> la indica la tangente a la línea.</li>
                 <li><strong>Sentido:</strong> lo marca la flecha.</li>
@@ -175,12 +206,14 @@
         <details class="step">
             <summary><span class="step-num">2</span><strong>Líneas del campo eléctrico de cargas puntuales.</strong></summary>
             <p>El sentido del campo eléctrico se define como el sentido de la fuerza que actuaría sobre una carga de prueba positiva. Por ello:</p>
-            <ul>
-                <li>Una carga <strong>positiva</strong> crea líneas radiales que salen de ella.</li>
-                <li>Una carga <strong>negativa</strong> crea líneas radiales que entran hacia ella.</li>
-                <li>En una distribución con cargas de ambos signos, las líneas salen de las positivas y terminan en las negativas. Si hay carga neta, algunas líneas pueden prolongarse hasta el infinito o venir desde él.</li>
-                <li>La densidad de líneas debe ser mayor cerca de una carga puntual, porque el módulo del campo disminuye con el cuadrado de la distancia.</li>
-            </ul>
+            <a href="TemaB8-Formulario.html#formula-3" class="formula-vinculo" title="Ver ficha 2 del formulario (sentido de las líneas)">
+                <ul id="formula-3">
+                    <li>Una carga <strong>positiva</strong> crea líneas radiales que salen de ella.</li>
+                    <li>Una carga <strong>negativa</strong> crea líneas radiales que entran hacia ella.</li>
+                    <li>En una distribución con cargas de ambos signos, las líneas salen de las positivas y terminan en las negativas. Si hay carga neta, algunas líneas pueden prolongarse hasta el infinito o venir desde él.</li>
+                    <li>La densidad de líneas debe ser mayor cerca de una carga puntual, porque el módulo del campo disminuye con el cuadrado de la distancia.</li>
+                </ul>
+            </a>
             <div class="b8-diagramas">
                 <figure class="b8-diagrama">
                     <h4>Carga puntual positiva</h4>
@@ -213,14 +246,18 @@
                     <figcaption>Las flechas apuntan hacia la carga negativa.</figcaption>
                 </figure>
             </div>
-            <div class="formula-box">Para una carga puntual, el módulo del campo es \(E=k\,\dfrac{|q|}{r^2}\). La dirección es radial y el sentido depende del signo de \(q\).</div>
+            <a href="TemaB8-Formulario.html#formula-2" class="formula-vinculo" title="Ver ficha 2 del formulario">
+                <div class="formula-box" id="formula-2">Para una carga puntual, el módulo del campo es \(E=k\,\dfrac{|q|}{r^2}\). La dirección es radial y el sentido depende del signo de \(q\).</div>
+            </a>
         </details>
 
         <details class="step">
             <summary><span class="step-num">3</span><strong>Distribuciones sencillas: dipolo y varias cargas.</strong></summary>
             <p>En un <strong>dipolo eléctrico</strong> hay dos cargas de igual módulo y signo opuesto. Las líneas parten de la carga positiva y terminan en la negativa. El dibujo debe ser simétrico respecto al eje que une las cargas y respecto al plano mediador, si los módulos son iguales.</p>
             <p>Cuando hay varias cargas, el campo en cada punto se obtiene por <strong>superposición vectorial</strong>:</p>
-            <div class="formula-box">\[\vec E_{\text{total}}=\vec E_1+\vec E_2+\cdots+\vec E_n\]</div>
+            <a href="TemaB8-Formulario.html#formula-4" class="formula-vinculo" title="Ver ficha 3 del formulario">
+                <div class="formula-box" id="formula-4">\[\vec E_{\text{total}}=\vec E_1+\vec E_2+\cdots+\vec E_n\]</div>
+            </a>
             <p>Para construir cualitativamente las líneas, se dibuja en cada zona la dirección del campo resultante, no la suma de los dibujos individuales superpuestos. Las líneas no se cruzan y su densidad relativa debe ser coherente con el módulo del campo.</p>
             <figure class="b8-diagrama">
                 <h4>Dipolo eléctrico: líneas de + a −</h4>
@@ -244,6 +281,9 @@
         <details class="step">
             <summary><span class="step-num">4</span><strong>Campo eléctrico uniforme.</strong></summary>
             <p>En una región donde el campo eléctrico es uniforme, el vector \(\vec E\) tiene el mismo módulo, dirección y sentido en todos los puntos. Se representa mediante <strong>líneas rectas, paralelas, equidistantes y con flechas iguales</strong>.</p>
+            <a href="TemaB8-Formulario.html#formula-5" class="formula-vinculo" title="Ver ficha 4 del formulario">
+                <div class="formula-box" id="formula-5">\[E=\frac{|\Delta V|}{d}\qquad\text{(campo uniforme entre placas)} \]</div>
+            </a>
             <p>Entre dos placas planas paralelas con cargas opuestas, despreciando los efectos de borde, el campo interior se dirige desde la placa positiva hacia la negativa.</p>
             <figure class="b8-diagrama">
                 <h4>Campo uniforme entre placas</h4>
@@ -264,8 +304,13 @@
             <summary><span class="step-num">5</span><strong>Líneas del campo magnético.</strong></summary>
             <p>El campo magnético se representa también mediante líneas tangentes a \(\vec B\). A diferencia de las líneas electrostáticas, las líneas magnéticas <strong>forman siempre curvas cerradas</strong>: no empiezan ni terminan en una carga magnética aislada.</p>
             <p>Alrededor de un <strong>hilo recto, largo</strong> por el que circula una corriente, las líneas del campo magnético son circunferencias concéntricas en planos perpendiculares al hilo. El módulo depende de la distancia:</p>
-            <div class="formula-box">\[B=\frac{\mu_0 I}{2\pi r}\]</div>
+            <a href="TemaB8-Formulario.html#formula-6" class="formula-vinculo" title="Ver ficha 5 del formulario">
+                <div class="formula-box" id="formula-6">\[B=\frac{\mu_0 I}{2\pi r}\]</div>
+            </a>
             <p>El sentido se determina con la <strong>regla de la mano derecha</strong>: el pulgar de la mano derecha apunta en el sentido de la corriente convencional y los dedos curvados indican el sentido de las líneas de \(\vec B\). Si se invierte la corriente, se invierte el sentido del campo.</p>
+            <a href="TemaB8-Formulario.html#formula-7" class="formula-vinculo" title="Ver ficha 6 del formulario">
+                <div class="formula-box" id="formula-7">\[\text{Pulgar}=I\ \text{(corriente convencional)}\quad\Longrightarrow\quad\text{Dedos curvados}=\vec B\]</div>
+            </a>
             <div class="b8-diagramas">
                 <figure class="b8-diagrama">
                     <h4>Corriente saliente del papel (⊙)</h4>
@@ -295,6 +340,12 @@
                 </figure>
             </div>
             <div class="note"><strong>Ojo con los signos:</strong> la corriente convencional tiene sentido opuesto al movimiento de los electrones. La regla de la mano derecha se aplica a la corriente convencional, no al movimiento electrónico.</div>
+            <a href="TemaB8-Formulario.html#formula-8" class="formula-vinculo" title="Ver ficha 7 del formulario">
+                <div class="formula-box" id="formula-8">\[\vec B_{\text{total}}=\sum_i\vec B_i\qquad\text{(varias corrientes)}\]</div>
+            </a>
+            <a href="TemaB8-Formulario.html#formula-9" class="formula-vinculo" title="Ver ficha 8 del formulario">
+                <div class="formula-box" id="formula-9">\[\oint_S\vec B\cdot d\vec S=0\quad\Longleftrightarrow\quad\nabla\cdot\vec B=0\qquad\text{(no hay monopolos magnéticos)} \]</div>
+            </a>
         </details>
 
         <details class="step">
@@ -324,12 +375,18 @@
                 <li>En un campo uniforme, la separación entre líneas es constante.</li>
             </ul>
             <div class="note">No se debe comparar el número total de líneas de dos dibujos distintos si no se ha fijado el mismo convenio gráfico. La lectura segura es comparar densidades dentro de un mismo esquema.</div>
+            <a href="TemaB8-Formulario.html#formula-11" class="formula-vinculo" title="Ver ficha 10 del formulario">
+                <div class="formula-box" id="formula-11">\[\frac{I_1}{r_1}=\frac{I_2}{r_2}\qquad\text{(punto de campo nulo entre dos hilos)} \]</div>
+            </a>
+            <p>El punto de campo nulo está entre los hilos si las corrientes tienen el mismo sentido, y fuera de ellos (del lado del hilo de menor corriente) si tienen sentidos opuestos.</p>
         </details>
 
         <details class="step">
             <summary><span class="step-num">8</span><strong>Líneas de campo y superficies equipotenciales.</strong></summary>
             <p>En electrostática, las líneas de campo son perpendiculares a las superficies equipotenciales. El campo apunta hacia el sentido en el que el potencial disminuye:</p>
-            <div class="formula-box">\[\vec E=-\nabla V\]</div>
+            <a href="TemaB8-Formulario.html#formula-10" class="formula-vinculo" title="Ver ficha 9 del formulario">
+                <div class="formula-box" id="formula-10">\[\vec E=-\nabla V\]</div>
+            </a>
             <p>Para una carga puntual, las superficies equipotenciales son esferas concéntricas; en un dibujo plano se representan como circunferencias. El trabajo del campo al desplazar una carga entre dos puntos de la misma equipotencial es cero, porque la diferencia de potencial es nula.</p>
         </details>
 
@@ -796,6 +853,7 @@
 
 
 
+
     
     
     <!-- CIERRE -->
@@ -810,5 +868,39 @@
     </div>
 
 </div>
+
+<!-- ============================================================ -->
+<!-- JS · APERTURA DE <details> + RESALTADO AL LLEGAR POR ANCLA   -->
+<!-- ============================================================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    // Abrir todos los <details> ancestros para que el contenido sea visible
+    var el = target;
+    while (el) {
+        if (el.tagName === 'DETAILS') el.open = true;
+        el = el.parentElement;
+    }
+
+    // Si el id está en el propio .formula-box, lo resaltamos;
+    // si está en un <ul> u otro elemento, lo resaltamos directamente.
+    var highlight = target.classList.contains('formula-box')
+        ? target
+        : (target.closest('.formula-box') || target);
+
+    setTimeout(function () {
+        highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+        highlight.classList.remove('formula-resaltada');
+        void highlight.offsetWidth;
+        highlight.classList.add('formula-resaltada');
+        setTimeout(function () { highlight.classList.remove('formula-resaltada'); }, 2600);
+    }, 60);
+});
+</script>
+
 </body>
 </html>

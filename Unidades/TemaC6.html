@@ -20,6 +20,28 @@
         .rayos-leyenda { display: flex; flex-wrap: wrap; gap: 14px; font-size: .88em; color: #475569; margin-top: 8px; }
         .punto-azul, .punto-naranja, .punto-verde { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; }
         .punto-azul { background: #2563eb; } .punto-naranja { background: #ea580c; } .punto-verde { background: #16a34a; }
+
+        /* --- Enlaces bidireccionales: la fórmula es el vínculo --- */
+        .formula-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 8px;
+            padding: 2px 6px;
+            transition: background .15s ease;
+            overflow-x: auto;
+        }
+        .formula-link:hover { background: rgba(99,102,241,0.10); }
+        .formula-link:focus-visible { outline: 2px dashed #6366f1; outline-offset: 2px; }
+        .formula-box { overflow-x: auto; }
+        .formula-link-inline {
+            text-decoration: none;
+            color: inherit;
+            border-bottom: 1px dashed rgba(99,102,241,0.45);
+            transition: background .15s;
+        }
+        .formula-link-inline:hover { background: rgba(99,102,241,0.12); }
+
         @media (max-width: 700px) { .rejilla-resumen { grid-template-columns: 1fr; } .figura-rayos { padding: 5px; } }
     </style>
 </head>
@@ -79,19 +101,19 @@
     <details class="section procedimiento">
         <summary><h2>📚 Contenido teórico</h2></summary>
 
-        <details class="step">
+        <details class="step" id="tc6-real-virtual-step">
             <summary><span class="step-num">1</span><strong>Óptica geométrica y formación de imágenes.</strong></summary>
             <p>La óptica geométrica describe la propagación de la luz mediante <strong>rayos</strong>. En el modelo utilizado en este tema, los rayos se propagan en línea recta en medios homogéneos y la formación de imágenes se estudia con sistemas centrados: lentes delgadas y espejos esféricos.</p>
             <p>La aproximación paraxial considera rayos próximos al eje óptico y con pequeñas inclinaciones. En estas condiciones se pueden utilizar las ecuaciones de Gauss para relacionar la posición del objeto, la posición de la imagen y la distancia focal.</p>
-            <p><strong>Imagen real:</strong> se forma por la intersección efectiva de los rayos (o de sus rayos reflejados). Puede recogerse sobre una pantalla. En los casos usuales de un objeto real, aparece invertida.</p>
+            <p id="tc6-real-virtual"><strong>Imagen real:</strong> se forma por la intersección efectiva de los rayos (o de sus rayos reflejados). Puede recogerse sobre una pantalla. En los casos usuales de un objeto real, aparece invertida.</p>
             <p><strong>Imagen virtual:</strong> se forma por la intersección de las prolongaciones de los rayos. No puede recogerse directamente sobre una pantalla. En los ejemplos habituales de este tema suele ser derecha.</p>
             <div class="note"><strong>Importante:</strong> que una imagen sea mayor o menor no determina por sí solo que sea real o virtual. Hay que estudiar el signo de la posición imagen y el aumento lateral.</div>
         </details>
 
-        <details class="step">
+        <details class="step" id="tc6-tipos-step">
             <summary><span class="step-num">2</span><strong>Lentes delgadas: convergentes y divergentes.</strong></summary>
             <p>Una <strong>lente delgada</strong> es un sistema óptico refractor cuyo espesor se considera despreciable frente a los radios de curvatura. En una lente convergente, un haz de rayos paralelos al eje emerge convergiendo en el foco imagen. En una lente divergente, emerge divergiendo como si procediera del foco situado en el lado del objeto.</p>
-            <div class="rejilla-resumen">
+            <div class="rejilla-resumen" id="tc6-tipos">
                 <div><strong>Lente convergente</strong><p>Más gruesa en el centro que en los bordes en los ejemplos habituales. Tiene \(f&gt;0\) y potencia positiva.</p></div>
                 <div><strong>Lente divergente</strong><p>Más delgada en el centro que en los bordes en los ejemplos habituales. Tiene \(f&lt;0\) y potencia negativa.</p></div>
                 <div><strong>Focos</strong><p>Se identifican dos focos principales, situados sobre el eje óptico y a igual distancia del centro óptico en el modelo de lente delgada en aire.</p></div>
@@ -99,17 +121,21 @@
             <p>La <strong>distancia focal</strong> \(f\) es la distancia entre el centro óptico y el foco. Su signo permite distinguir el comportamiento convergente o divergente con el convenio adoptado en este documento.</p>
         </details>
 
-        <details class="step">
+        <details class="step" id="tc6-lente-step">
             <summary><span class="step-num">3</span><strong>Ecuación de la lente delgada.</strong></summary>
             <p>Para una lente delgada, la posición del objeto \(u\), la posición de la imagen \(v\) y la distancia focal \(f\) se relacionan mediante:</p>
-            <div class="formula-box">\[\boxed{\frac{1}{f}=\frac{1}{u}+\frac{1}{v}}\]</div>
+            <div class="formula-box" id="tc6-lente">
+                <a href="TemaC6-Formulario.html#formula-1" class="formula-link">\[\boxed{\frac{1}{f}=\frac{1}{u}+\frac{1}{v}}\]</a>
+            </div>
             <p>En esta página se usa el siguiente convenio <strong>real-positivo</strong>: \(u&gt;0\) para un objeto real; \(v&gt;0\) para una imagen real y \(v&lt;0\) para una imagen virtual; \(f&gt;0\) para una lente convergente y \(f&lt;0\) para una lente divergente.</p>
             <div class="signos"><strong>Lectura del signo de \(v\) en una lente:</strong><br>\(v&gt;0\): imagen real, al otro lado de la lente respecto al objeto.<br>\(v&lt;0\): imagen virtual, en el mismo lado de la lente que el objeto.</div>
             <p>La ecuación puede despejarse para hallar cualquiera de las tres magnitudes. Por ejemplo:</p>
-            <div class="formula-box">\[v=\frac{fu}{u-f}\qquad\qquad f=\frac{uv}{u+v}\]</div>
+            <div class="formula-box">
+                <a href="TemaC6-Formulario.html#formula-1" class="formula-link">\[v=\frac{fu}{u-f}\qquad\qquad f=\frac{uv}{u+v}\]</a>
+            </div>
         </details>
 
-        <details class="step">
+        <details class="step" id="tc6-espejo-step">
             <summary><span class="step-num">4</span><strong>Espejos planos y esféricos: cóncavos y convexos.</strong></summary>
             <p>Un espejo plano produce una imagen virtual, derecha y del mismo tamaño que el objeto. La imagen se encuentra a la misma distancia detrás del espejo que el objeto delante de él.</p>
             <p>Los <strong>espejos esféricos</strong> se clasifican en:</p>
@@ -118,17 +144,23 @@
                 <li><strong>Convexos:</strong> la superficie reflectante es la parte exterior de la esfera. Son divergentes para rayos paralelos y tienen \(f&lt;0\).</li>
             </ul>
             <p>En un espejo esférico paraxial, el foco está a mitad de camino entre el vértice \(V\) y el centro de curvatura \(C\):</p>
-            <div class="formula-box">\[\boxed{f=\frac{R}{2}}\]</div>
+            <div class="formula-box" id="tc6-focal-espejo">
+                <a href="TemaC6-Formulario.html#formula-4" class="formula-link">\[\boxed{f=\frac{R}{2}}\]</a>
+            </div>
             <p>La ecuación de los espejos esféricos tiene la misma forma algebraica:</p>
-            <div class="formula-box">\[\boxed{\frac{1}{f}=\frac{1}{u}+\frac{1}{v}}\]</div>
+            <div class="formula-box" id="tc6-espejo">
+                <a href="TemaC6-Formulario.html#formula-2" class="formula-link">\[\boxed{\frac{1}{f}=\frac{1}{u}+\frac{1}{v}}\]</a>
+            </div>
             <p>Con el convenio real-positivo usado aquí, \(u&gt;0\) para un objeto real; \(v&gt;0\) si la imagen es real (delante del espejo) y \(v&lt;0\) si es virtual (detrás del espejo). Un espejo cóncavo tiene \(f&gt;0\) y uno convexo \(f&lt;0\).</p>
             <div class="note"><strong>Ojo:</strong> en los espejos la imagen real queda en el mismo lado del espejo que el objeto; en las lentes, la imagen real queda al otro lado de la lente. No confundas la posición física con el signo algebraico, que se ha definido según la naturaleza real o virtual.</div>
         </details>
 
-        <details class="step">
+        <details class="step" id="tc6-aumento-step">
             <summary><span class="step-num">5</span><strong>Aumento lateral: tamaño y orientación.</strong></summary>
             <p>El aumento lateral compara la altura de la imagen con la altura del objeto:</p>
-            <div class="formula-box">\[\boxed{m=\frac{y'}{y}=-\frac{v}{u}}\]</div>
+            <div class="formula-box" id="tc6-aumento">
+                <a href="TemaC6-Formulario.html#formula-3" class="formula-link">\[\boxed{m=\frac{y'}{y}=-\frac{v}{u}}\]</a>
+            </div>
             <ul>
                 <li>\(m&gt;0\): imagen derecha respecto al objeto.</li>
                 <li>\(m&lt;0\): imagen invertida.</li>
@@ -136,20 +168,22 @@
                 <li>\(|m|&lt;1\): imagen menor.</li>
                 <li>\(|m|=1\): imagen del mismo tamaño.</li>
             </ul>
-            <p>El tamaño de la imagen se calcula con \(y'=m\,y\). El signo de \(y'\) indica la orientación respecto al eje óptico; su módulo expresa la altura.</p>
+            <p>El tamaño de la imagen se calcula con <a href="TemaC6-Formulario.html#formula-3" class="formula-link-inline">\(y'=m\,y\)</a>. El signo de \(y'\) indica la orientación respecto al eje óptico; su módulo expresa la altura.</p>
             <div class="note"><strong>Error frecuente:</strong> utilizar el módulo del aumento demasiado pronto. Conviene conservar el signo hasta el final para distinguir una imagen derecha de una invertida.</div>
         </details>
 
-        <details class="step">
+        <details class="step" id="tc6-potencia-step">
             <summary><span class="step-num">6</span><strong>Potencia de una lente.</strong></summary>
             <p>La <strong>potencia</strong> de una lente delgada es la inversa de su distancia focal expresada en metros:</p>
-            <div class="formula-box">\[\boxed{P=\frac{1}{f}}\]</div>
+            <div class="formula-box" id="tc6-potencia">
+                <a href="TemaC6-Formulario.html#formula-6" class="formula-link">\[\boxed{P=\frac{1}{f}}\]</a>
+            </div>
             <p>Su unidad es la <strong>dioptría</strong> (D), equivalente a \(\text{m}^{-1}\). Una lente convergente tiene potencia positiva; una lente divergente, potencia negativa.</p>
             <div class="formula-box">\[f=+0{,}25\,\text{m}\Rightarrow P=+4\,\text{D}\qquad f=-0{,}50\,\text{m}\Rightarrow P=-2\,\text{D}\]</div>
             <p>Para calcular la potencia hay que expresar siempre \(f\) en metros. No se debe introducir la focal en centímetros directamente en \(P=1/f\) si se quiere obtener dioptrías.</p>
         </details>
 
-        <details class="step">
+        <details class="step" id="tc6-trazado">
             <summary><span class="step-num">7</span><strong>Trazado de rayos en lentes.</strong></summary>
             <p>Para construir una imagen basta con trazar dos rayos principales desde la punta del objeto. El punto donde se cortan los rayos refractados (imagen real) o sus prolongaciones (imagen virtual) determina la punta de la imagen.</p>
             <p><strong>Lente convergente:</strong></p>
@@ -164,7 +198,7 @@
                 <li>Un rayo que atraviesa el centro óptico continúa sin desviarse.</li>
                 <li>Un rayo dirigido hacia el foco del lado opuesto emerge paralelo al eje.</li>
             </ol>
-            
+
 <figure class="figura-rayos" id="fig-lente-convergente">
 <svg viewBox="0 0 760 250" role="img" aria-label="Trazado de rayos de una lente convergente con objeto más allá de dos veces la distancia focal e imagen real invertida y reducida">
  <defs><marker id="arrBlue1" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/></marker><marker id="arrOrange1" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ea580c"/></marker></defs>
@@ -211,11 +245,11 @@
 </figure>
         </details>
 
-        <details class="step">
+        <details class="step" id="tc6-trazado-espejos">
             <summary><span class="step-num">8</span><strong>Trazado de rayos en espejos esféricos.</strong></summary>
             <p><strong>Espejo cóncavo:</strong> un rayo paralelo al eje se refleja pasando por el foco; un rayo que pasa por el foco se refleja paralelo al eje; un rayo dirigido hacia el centro de curvatura se refleja sobre sí mismo.</p>
             <p><strong>Espejo convexo:</strong> un rayo paralelo al eje se refleja divergiendo como si procediera del foco virtual situado detrás del espejo; un rayo dirigido hacia ese foco se refleja paralelo; un rayo dirigido hacia el centro de curvatura virtual se refleja sobre sí mismo.</p>
-            
+
 <figure class="figura-rayos" id="fig-espejo-concavo">
 <svg viewBox="0 0 760 260" role="img" aria-label="Espejo cóncavo con objeto entre el espejo y el foco: imagen virtual derecha y aumentada detrás del espejo">
  <defs><marker id="arrBlue4" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/></marker><marker id="arrOrange4" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ea580c"/></marker></defs>
@@ -248,7 +282,7 @@
 </figure>
         </details>
 
-        <details class="step">
+        <details class="step" id="tc6-resumen">
             <summary><span class="step-num">9</span><strong>Resumen de imágenes en lentes y espejos.</strong></summary>
             <p>La siguiente tabla resume los resultados para un objeto real. Se considera el comportamiento paraxial y los casos habituales de lentes delgadas y espejos esféricos.</p>
             <table class="tabla-optica">
@@ -270,18 +304,20 @@
             </table>
         </details>
 
-        <details class="step">
+        <details class="step" id="tc6-lupa-proyector">
             <summary><span class="step-num">10</span><strong>La lupa y el proyector.</strong></summary>
             <p><strong>Lupa:</strong> es una lente convergente cuyo objeto se coloca entre la lente y el foco (\(u&lt;f\)). La imagen es virtual, derecha y aumentada. No se puede recoger en una pantalla.</p>
             <p><strong>Proyector:</strong> utiliza una lente convergente para formar una imagen real sobre una pantalla. El objeto debe estar fuera del foco. Si se desea una imagen aumentada, se coloca entre \(F\) y \(2F\); para una imagen reducida, más allá de \(2F\).</p>
             <div class="note"><strong>Idea clave:</strong> «lupa» describe una forma de utilizar una lente convergente, no un tipo diferente de lente. La misma lente puede dar una imagen virtual aumentada o una imagen real proyectable según la posición del objeto.</div>
         </details>
 
-        <details class="step">
+        <details class="step" id="tc6-bessel-step">
             <summary><span class="step-num">11</span><strong>Dos posiciones de una lente: método de Bessel.</strong></summary>
             <p>Si un objeto y una pantalla están fijos y separados una distancia \(D\), una lente convergente puede producir una imagen nítida en dos posiciones distintas, siempre que \(D&gt;4f\). En una posición la imagen es aumentada y en la otra reducida; las distancias objeto-lente e imagen-lente se intercambian.</p>
             <p>Si \(d\) es la separación entre las dos posiciones de la lente, la distancia focal puede calcularse mediante:</p>
-            <div class="formula-box">\[\boxed{f=\frac{D^2-d^2}{4D}}\]</div>
+            <div class="formula-box" id="tc6-bessel">
+                <a href="TemaC6-Formulario.html#formula-5" class="formula-link">\[\boxed{f=\frac{D^2-d^2}{4D}}\]</a>
+            </div>
             <p>Este procedimiento es útil cuando se conocen la separación objeto-pantalla y la distancia entre las dos posiciones de enfoque.</p>
         </details>
 
@@ -294,14 +330,14 @@
         <table>
             <thead><tr><th>Expresión</th><th>Significado</th><th>Unidades y aplicación</th></tr></thead>
             <tbody>
-                <tr><td>\(\dfrac{1}{f}=\dfrac{1}{u}+\dfrac{1}{v}\)</td><td>Ecuación de lentes delgadas y espejos esféricos.</td><td>\(u,v,f\) en m o cm, pero todos en la misma unidad.</td></tr>
-                <tr><td>\(m=\dfrac{y'}{y}=-\dfrac{v}{u}\)</td><td>Aumento lateral, tamaño y orientación.</td><td>Magnitud adimensional; \(m&lt;0\) invertida, \(m&gt;0\) derecha.</td></tr>
-                <tr><td>\(P=\dfrac{1}{f}\)</td><td>Potencia de una lente delgada.</td><td>\(f\) en m; \(P\) en dioptrías (D).</td></tr>
-                <tr><td>\(f=\dfrac{R}{2}\)</td><td>Relación entre focal y radio de curvatura de un espejo esférico paraxial.</td><td>\(R\) y \(f\) en la misma unidad.</td></tr>
-                <tr><td>\(f=\dfrac{D^2-d^2}{4D}\)</td><td>Método de Bessel para una lente convergente.</td><td>\(D\): objeto-pantalla; \(d\): separación entre posiciones de la lente.</td></tr>
+                <tr><td><a href="TemaC6-Formulario.html#formula-1" class="formula-link-inline">\(\dfrac{1}{f}=\dfrac{1}{u}+\dfrac{1}{v}\)</a></td><td>Ecuación de lentes delgadas y espejos esféricos.</td><td>\(u,v,f\) en m o cm, pero todos en la misma unidad.</td></tr>
+                <tr><td><a href="TemaC6-Formulario.html#formula-3" class="formula-link-inline">\(m=\dfrac{y'}{y}=-\dfrac{v}{u}\)</a></td><td>Aumento lateral, tamaño y orientación.</td><td>Magnitud adimensional; \(m&lt;0\) invertida, \(m&gt;0\) derecha.</td></tr>
+                <tr><td><a href="TemaC6-Formulario.html#formula-6" class="formula-link-inline">\(P=\dfrac{1}{f}\)</a></td><td>Potencia de una lente delgada.</td><td>\(f\) en m; \(P\) en dioptrías (D).</td></tr>
+                <tr><td><a href="TemaC6-Formulario.html#formula-4" class="formula-link-inline">\(f=\dfrac{R}{2}\)</a></td><td>Relación entre focal y radio de curvatura de un espejo esférico paraxial.</td><td>\(R\) y \(f\) en la misma unidad.</td></tr>
+                <tr><td><a href="TemaC6-Formulario.html#formula-5" class="formula-link-inline">\(f=\dfrac{D^2-d^2}{4D}\)</a></td><td>Método de Bessel para una lente convergente.</td><td>\(D\): objeto-pantalla; \(d\): separación entre posiciones de la lente.</td></tr>
             </tbody>
         </table>
-        <div class="signos"><strong>Convenio de signos de esta unidad:</strong> objeto real \(u&gt;0\); imagen real \(v&gt;0\); imagen virtual \(v&lt;0\); lentes convergentes y espejos cóncavos \(f&gt;0\); lentes divergentes y espejos convexos \(f&lt;0\).</div>
+        <div class="signos" id="tc6-signos"><strong>Convenio de signos de esta unidad:</strong> objeto real \(u&gt;0\); imagen real \(v&gt;0\); imagen virtual \(v&lt;0\); lentes convergentes y espejos cóncavos \(f&gt;0\); lentes divergentes y espejos convexos \(f&lt;0\).</div>
     </details>
 
     <!-- PROBLEMAS RESUELTOS -->
@@ -313,7 +349,7 @@
         </summary>
         <div class="contenido-desplegable">
             <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
-                <strong>Selección de 10 problemas del banco aportado.</strong> Ocho corresponden a Castilla y León y dos a Aragón. Se incorporan los dos ejercicios aragoneses para incluir espejos cóncavos y convexos, ya que los registros C6 seleccionados de Castilla y León se concentran en lentes. En cada tarjeta se identifica comunidad, año, convocatoria y número de problema.
+                <strong>Selección de 10 problemas del banco aportado.</strong> Ocho corresponden a Castilla y León y dos a Aragón. En cada tarjeta se identifica comunidad, año, convocatoria y número de problema.
             </p>
             <div class="note"><strong>Lectura de las soluciones:</strong> se aplica de forma uniforme el convenio real-positivo descrito en el apartado teórico. En lentes y espejos se utilizan \(1/f=1/u+1/v\) y \(m=-v/u\); el signo de \(v\) distingue imagen real y virtual.</div>
             <details class="tarjeta-ejercicio">
@@ -439,5 +475,24 @@
         <p><strong>IES Valle del Alberche · Física · 2.º de Bachillerato</strong><br>Tema C6. Formación de imágenes y sistemas ópticos. Preparación EBAU/PAU.</p>
     </div>
 </div>
+
+<script>
+/* Abre los <details> padres al llegar por ancla (necesario para que
+   los enlaces desde TemaC6-Formulario.html#formula-N funcionen). */
+document.addEventListener('DOMContentLoaded', function () {
+    if (!window.location.hash) return;
+    var target;
+    try { target = document.querySelector(window.location.hash); } catch (e) { return; }
+    if (!target) return;
+    var el = target;
+    while (el) {
+        if (el.tagName === 'DETAILS') el.open = true;
+        el = el.parentElement;
+    }
+    setTimeout(function () {
+        target.scrollIntoView({ behavior: 'auto', block: 'center' });
+    }, 60);
+});
+</script>
 </body>
 </html>

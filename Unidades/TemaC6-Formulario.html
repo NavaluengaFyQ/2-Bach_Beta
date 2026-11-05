@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA C6 (Formulario).- Formación de imágenes y sistemas ópticos</title>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../css/formulario.css">
+
+    <style>
+        .formula-box { overflow-x: auto; max-width: 100%; }
+        .formula-box a.formula-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 8px;
+            padding: 3px 6px;
+            margin: 2px 0;
+            transition: background .15s ease;
+        }
+        .formula-box a.formula-link:hover { background: rgba(99,102,241,0.10); }
+        .formula-box a.formula-link:focus-visible { outline: 2px dashed #6366f1; outline-offset: 2px; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA C6 (Formulario).- </span>
+                <span class="texto">Formación de imágenes y sistemas ópticos</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <div class="grid">
+
+        <!-- FICHA 1 -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Ecuación de la lente delgada</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación entre la posición del objeto \(u\), la posición de la imagen \(v\) y la distancia focal \(f\) en una lente delgada. Se aplica en todos los problemas de formación de imágenes con lentes: calcular la imagen dado el objeto, obtener la focal conocidas \(u\) y \(v\), o resolver ejercicios con dos posiciones (Bessel). Es la ecuación madre del tema.
+            </div>
+            <div class="formula-box" id="formula-1">
+                <a href="TemaC6.html#tc6-lente" class="formula-link">\[ \frac{1}{f} = \frac{1}{u} + \frac{1}{v} \]</a>
+                <a href="TemaC6.html#tc6-lente" class="formula-link">\[ v = \frac{f\,u}{u-f} \]</a>
+                <a href="TemaC6.html#tc6-lente" class="formula-link">\[ f = \frac{u\,v}{u+v} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la ecuación fundamental de las lentes delgadas y aparece continuamente. Memoriza \(1/f=1/u+1/v\) y las formas despejadas. Las tres magnitudes (\(u,v,f\)) deben ir en la misma unidad, y se aplica el convenio real-positivo de la ficha 7. Comprobación: si \(u\to\infty\), entonces \(v\to f\) (objeto en el infinito, imagen en el foco).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(f\)</td><td data-label="Significado">Distancia focal de la lente</td><td data-label="Unidades">m (o cm)</td></tr>
+                    <tr><td data-label="Símbolo">\(u\)</td><td data-label="Significado">Distancia objeto-lente (\(u>0\) para objeto real)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Distancia lente-imagen (\(v>0\) si real; \(v<0\) si virtual)</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una lente con \(f=12\,\text{cm}\) y un objeto a \(u=16\,\text{cm}\): \(1/v=1/12-1/16=1/48\to v=48\,\text{cm}\) (imagen real).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es la misma forma algebraica que la de los espejos esféricos (ficha 2).</li>
+                    <li>Si \(v>0\), la imagen está al otro lado de la lente y es real (proyectable).</li>
+                    <li>Si \(v<0\), la imagen está del mismo lado que el objeto y es virtual.</li>
+                    <li>Un resultado \(1/v=0\) implica \(v\to\infty\): la imagen se forma en el infinito.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Ecuación del espejo esférico</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación entre la posición del objeto \(u\), la posición de la imagen \(v\) y la distancia focal \(f\) en un espejo esférico. Se aplica en problemas de espejos cóncavos (espejos de aumento, telescopios) y convexos (espejos de seguridad, retrovisores). Comparte la forma algebraica con las lentes, pero la posición física de la imagen real es distinta.
+            </div>
+            <div class="formula-box" id="formula-2">
+                <a href="TemaC6.html#tc6-espejo" class="formula-link">\[ \frac{1}{f} = \frac{1}{u} + \frac{1}{v} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: la ecuación es la misma que la de las lentes, así que solo hay que recordar un esquema. <strong>Cuidado con la posición física</strong>: en los espejos la imagen real queda delante del espejo (mismo lado que el objeto); en las lentes, al otro lado. El convenio de signos (ficha 7) resuelve la ambigüedad porque etiqueta por naturaleza (real/virtual) y no por posición física.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(f\)</td><td data-label="Significado">Distancia focal del espejo</td><td data-label="Unidades">m (o cm)</td></tr>
+                    <tr><td data-label="Símbolo">\(u\)</td><td data-label="Significado">Distancia objeto-espejo (\(u>0\) para objeto real)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Distancia espejo-imagen (\(v>0\) si real, \(v<0\) si virtual)</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> espejo cóncavo con \(f=8\,\text{cm}\), objeto a \(u=15\,\text{cm}\): \(1/v=1/8-1/15=7/120\to v\approx17{,}1\,\text{cm}\) (imagen real delante del espejo).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Espejo cóncavo: \(f>0\). Espejo convexo: \(f<0\).</li>
+                    <li>Espejo plano: \(f\to\infty\); se cumple \(v=-u\) e imagen virtual del mismo tamaño.</li>
+                    <li>La misma ecuación se aplica a espejos y lentes, pero cambia la interpretación física de \(v>0\).</li>
+                    <li>Para espejos convexos, \(v\) sale siempre negativo (imagen virtual) para objeto real.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Aumento lateral</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación entre el tamaño de la imagen y el del objeto, y también su orientación (derecha o invertida). Se aplica en todos los problemas en que se pide tamaño, orientación o naturaleza de la imagen, tanto en lentes como en espejos.
+            </div>
+            <div class="formula-box" id="formula-3">
+                <a href="TemaC6.html#tc6-aumento" class="formula-link">\[ m = \frac{y'}{y} = -\frac{v}{u} \]</a>
+                <a href="TemaC6.html#tc6-aumento" class="formula-link">\[ y' = m\,y \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se obtiene de la semejanza de triángulos en el trazado de rayos (ficha 10). Idea clave: <strong>\(m=-v/u\)</strong>. El signo negativo es esencial: si \(v>0\) (imagen real), entonces \(m<0\) (imagen invertida). Si \(v<0\) (imagen virtual), entonces \(m>0\) (imagen derecha). El módulo indica el tamaño.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Aumento lateral (adimensional)</td><td data-label="Unidades">—</td></tr>
+                    <tr><td data-label="Símbolo">\(y\)</td><td data-label="Significado">Altura del objeto</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(y'\)</td><td data-label="Significado">Altura de la imagen</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(u,\,v\)</td><td data-label="Significado">Posiciones objeto e imagen</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> con \(u=48\,\text{cm}\) y \(v=16\,\text{cm}\): \(m=-16/48=-1/3\). Imagen invertida y un tercio del tamaño del objeto. Si el objeto mide \(3\,\text{cm}\), la imagen mide \(1\,\text{cm}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(m>0\): imagen derecha (virtual, en el convenio real-positivo).</li>
+                    <li>\(m<0\): imagen invertida (real, en el convenio real-positivo).</li>
+                    <li>\(|m|>1\): imagen mayor; \(|m|<1\): imagen menor; \(|m|=1\): mismo tamaño.</li>
+                    <li>Conviene conservar el signo hasta el final para no perder información sobre la orientación.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Focal y radio de curvatura en un espejo esférico</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación entre la distancia focal \(f\) y el radio de curvatura \(R\) de un espejo esférico paraxial. Se aplica cuando el enunciado proporciona el radio del espejo (o del casquete) y hay que obtener la focal para aplicar la ecuación de los espejos.
+            </div>
+            <div class="formula-box" id="formula-4">
+                <a href="TemaC6.html#tc6-focal-espejo" class="formula-link">\[ f = \frac{R}{2} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se obtiene de la geometría paraxial (el foco está a mitad de camino entre el vértice y el centro de curvatura). Idea clave: <strong>\(f\) es la mitad de \(R\)</strong>. En un espejo cóncavo, \(R>0\) y \(f>0\); en un convexo, \(R<0\) y \(f<0\). Se mide en la misma unidad que el radio.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(f\)</td><td data-label="Significado">Distancia focal del espejo</td><td data-label="Unidades">m (o cm)</td></tr>
+                    <tr><td data-label="Símbolo">\(R\)</td><td data-label="Significado">Radio de curvatura del espejo</td><td data-label="Unidades">m (o cm)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un espejo cóncavo con \(R=16\,\text{cm}\) tiene \(f=8\,\text{cm}\). Un espejo convexo con \(R=-16\,\text{cm}\) tiene \(f=-8\,\text{cm}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El centro de curvatura \(C\) está a distancia \(R\) del vértice, sobre el eje óptico.</li>
+                    <li>El foco \(F\) está entre el vértice \(V\) y el centro \(C\).</li>
+                    <li>El signo del radio se corresponde con el signo de la focal: \(R>0\Rightarrow f>0\) (cóncavo); \(R<0\Rightarrow f<0\) (convexo).</li>
+                    <li>Esta relación solo es válida en la aproximación paraxial.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Método de Bessel (dos posiciones de la lente)</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La distancia focal de una lente convergente a partir de la separación entre las dos posiciones en que se obtiene imagen nítida sobre una pantalla con objeto y pantalla fijos. Se aplica en problemas experimentales de EBAU y cuando se da la distancia objeto-pantalla \(D\) y la separación entre las dos posiciones de enfoque \(d\).
+            </div>
+            <div class="formula-box" id="formula-5">
+                <a href="TemaC6.html#tc6-bessel" class="formula-link">\[ f = \frac{D^{2} - d^{2}}{4D} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se obtiene planteando \(u+v=D\) y \(v-u=\pm d\), junto con la ecuación de la lente. Idea clave: <strong>solo funciona si \(D>4f\)</strong> (dos posiciones reales). Si \(D=4f\), \(d=0\) y la focal es \(f=D/4\). Si \(D<4f\), no hay imagen nítida.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(f\)</td><td data-label="Significado">Distancia focal de la lente convergente</td><td data-label="Unidades">m (o cm)</td></tr>
+                    <tr><td data-label="Símbolo">\(D\)</td><td data-label="Significado">Distancia objeto-pantalla (fija)</td><td data-label="Unidades">m (o cm)</td></tr>
+                    <tr><td data-label="Símbolo">\(d\)</td><td data-label="Significado">Separación entre las dos posiciones de la lente</td><td data-label="Unidades">m (o cm)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(D=64\,\text{cm}\) y \(d=32\,\text{cm}\) (posiciones a 16 y 48 cm del objeto): \(f=(64^2-32^2)/(4\cdot64)=(4096-1024)/256=12\,\text{cm}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Requiere \(D>4f\) para que existan dos posiciones reales de la lente.</li>
+                    <li>En una posición la imagen es mayor; en la otra, menor.</li>
+                    <li>Las distancias objeto-lente e imagen-lente se intercambian entre las dos posiciones.</li>
+                    <li>Es un método experimental clásico para medir focales con precisión.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Potencia de una lente</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La potencia de una lente, definida como la inversa de su distancia focal expresada en metros. Se aplica en problemas de óptica oftálmica y en los que se da la potencia y se pide la focal (o al revés). La unidad es la dioptría (D).
+            </div>
+            <div class="formula-box" id="formula-6">
+                <a href="TemaC6.html#tc6-potencia" class="formula-link">\[ P = \frac{1}{f} \qquad [f \text{ en metros}] \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es una definición y aparece en problemas con datos de gafas y lupas. Memoriza \(P=1/f\) con la focal en metros para que la potencia salga en dioptrías (D = m⁻¹). Error típico: introducir la focal en centímetros y olvidar el factor 100.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(P\)</td><td data-label="Significado">Potencia de la lente</td><td data-label="Unidades">dioptrías (D) = m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(f\)</td><td data-label="Significado">Distancia focal, en metros</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una lente convergente con \(f=+0{,}25\,\text{m}\) tiene \(P=+4\,\text{D}\). Una divergente con \(f=-0{,}50\,\text{m}\) tiene \(P=-2\,\text{D}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Potencias positivas: lentes convergentes; negativas: divergentes.</li>
+                    <li>Es la magnitud que se usa en gafas y en óptica oftálmica: "+2 dioptrías" implica convergencia.</li>
+                    <li>Para pasar de dioptrías a focal: \(f=1/P\) (con \(f\) en metros).</li>
+                    <li>Nunca metas la focal en centímetros en \(P=1/f\): da un resultado 100 veces mayor.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Convenio de signos (real-positivo)</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No es una fórmula nueva, sino la regla que asigna el signo a \(u\), \(v\) y \(f\) en las ecuaciones de lentes y espejos. Se aplica en <em>todos</em> los problemas de óptica geométrica: sin un convenio claro, la mitad de los resultados quedan sin sentido físico.
+            </div>
+            <div class="formula-box" id="formula-7">
+                <a href="TemaC6.html#tc6-signos" class="formula-link">\[ u > 0 \text{ (objeto real)} \]</a>
+                <a href="TemaC6.html#tc6-signos" class="formula-link">\[ v > 0 \text{ (imagen real)},\qquad v < 0 \text{ (imagen virtual)} \]</a>
+                <a href="TemaC6.html#tc6-signos" class="formula-link">\[ f > 0 \text{ (convergente/cóncavo)},\qquad f < 0 \text{ (divergente/convexo)} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí, aunque no sea una fórmula: es un convenio imprescindible. <strong>Recuerda la idea base: real = positivo, virtual = negativo</strong>. Y en las focales: convergentes/cóncavos positivos; divergentes/convexos negativos. <em>Aviso:</em> existen otros convenios (cartesiano, signos opuestos); comprueba siempre cuál usa el enunciado.</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Magnitud</th><th>Signo</th><th>Interpretación</th></tr></thead>
+                <tbody>
+                    <tr><td data-label="Magnitud">\(u\)</td><td data-label="Signo">\(>0\)</td><td data-label="Interpretación">Objeto real</td></tr>
+                    <tr><td data-label="Magnitud">\(v\)</td><td data-label="Signo">\(>0\)</td><td data-label="Interpretación">Imagen real (proyectable)</td></tr>
+                    <tr><td data-label="Magnitud">\(v\)</td><td data-label="Signo">\(<0\)</td><td data-label="Interpretación">Imagen virtual</td></tr>
+                    <tr><td data-label="Magnitud">\(f\)</td><td data-label="Signo">\(>0\)</td><td data-label="Interpretación">Lente convergente / espejo cóncavo</td></tr>
+                    <tr><td data-label="Magnitud">\(f\)</td><td data-label="Signo">\(<0\)</td><td data-label="Interpretación">Lente divergente / espejo convexo</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una lupa con \(f=+15\,\text{cm}\) y objeto a \(u=+9\,\text{cm}\) da \(v=-22{,}5\,\text{cm}\) y \(m=+2{,}5\): imagen virtual (signo negativo en \(v\)), derecha (signo positivo en \(m\)) y aumentada (módulo mayor que 1).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>En <strong>espejos</strong> la imagen real está delante del espejo (mismo lado que el objeto).</li>
+                    <li>En <strong>lentes</strong> la imagen real está al otro lado de la lente.</li>
+                    <li>El convenio de signos evita tener que memorizar dos tablas de casos distintos.</li>
+                    <li>Si tienes dudas, dibuja un esquema y usa la lógica (real = proyectable).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Tipos de sistemas ópticos: convergente / divergente</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Clasificación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No es una fórmula, sino la clasificación básica de las lentes y espejos según su comportamiento frente a rayos paralelos. Se aplica en todos los problemas para decidir el signo de \(f\) y anticipar el tipo de imagen: convergente (rayos se juntan) o divergente (rayos se separan).
+            </div>
+            <div class="formula-box" id="formula-8">
+                <a href="TemaC6.html#tc6-tipos" class="formula-link">\[ \begin{array}{c|c|c} \text{Sistema} & \text{Comportamiento} & \text{Signo de } f \\ \hline \text{Lente convergente} & \text{Converge} & f > 0 \\ \text{Lente divergente} & \text{Diverge} & f < 0 \\ \text{Espejo cóncavo} & \text{Converge} & f > 0 \\ \text{Espejo convexo} & \text{Diverge} & f < 0 \end{array} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">📘 MEMORIZAR</span>Sí, es un vocabulario básico imprescindible. Truco mnemotécnico: <strong>lente convergente y espejo cóncavo</strong> &rarr; "convergen y concentran", \(f>0\). <strong>Lente divergente y espejo convexo</strong> &rarr; "divergen y separan", \(f<0\).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Sistema</th><th>Foco imagen</th><th>Efecto sobre rayos paralelos</th></tr></thead>
+                <tbody>
+                    <tr><td data-label="Sistema">Lente convergente</td><td data-label="Foco imagen">Real, detrás de la lente</td><td data-label="Efecto">Convergen en \(F'\)</td></tr>
+                    <tr><td data-label="Sistema">Lente divergente</td><td data-label="Foco imagen">Virtual, delante de la lente</td><td data-label="Efecto">Divergen como si vinieran de \(F'\)</td></tr>
+                    <tr><td data-label="Sistema">Espejo cóncavo</td><td data-label="Foco imagen">Real, delante del espejo</td><td data-label="Efecto">Convergen en \(F\)</td></tr>
+                    <tr><td data-label="Sistema">Espejo convexo</td><td data-label="Foco imagen">Virtual, detrás del espejo</td><td data-label="Efecto">Divergen como si vinieran de \(F\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una lente biconvexa de vidrio en aire es convergente (\(f>0\)). Una lente bicóncava es divergente (\(f<0\)). Un espejo de aumento es cóncavo (\(f>0\)). Un espejo retrovisor lateral de coche es convexo (\(f<0\)).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El comportamiento convergente/divergente se refiere a rayos paralelos al eje.</li>
+                    <li>En óptica oftálmica, las lentes convergentes se llaman "positivas" y las divergentes "negativas".</li>
+                    <li>Un espejo plano no es ni convergente ni divergente: \(f\to\infty\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Imagen real vs. imagen virtual</h2>
+                <span class="badge-centro">Comprender</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No es una fórmula, sino la distinción conceptual entre imágenes reales (proyectables en pantalla, formadas por rayos que se cortan efectivamente) e imágenes virtuales (no proyectables, formadas por prolongaciones de rayos). Se aplica al interpretar el signo de \(v\) y al decidir si una imagen se puede recoger en una pantalla.
+            </div>
+            <div class="formula-box" id="formula-9">
+                <a href="TemaC6.html#tc6-real-virtual" class="formula-link">\[ \begin{array}{l|l|l} & \text{Imagen real} & \text{Imagen virtual} \\ \hline \text{Signo de } v & v > 0 & v < 0 \\ \text{Formación} & \text{Intersección real} & \text{Prolongación} \\ \text{Pantalla} & \text{Proyectable} & \text{No proyectable} \\ \text{Orientación típica} & \text{Invertida} & \text{Derecha} \\ \text{Aumento} & m < 0 & m > 0 \end{array} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No es una fórmula, sino un <strong>criterio físico</strong> que se aplica al interpretar el resultado. Idea clave: <strong>real = proyectable en pantalla</strong>. Si \(v>0\) (en el convenio real-positivo), la imagen es real. Si \(v<0\), es virtual. En los casos habituales, imagen real &rarr; invertida; imagen virtual &rarr; derecha. Error típico: confundir "mayor/menor" con "real/virtual" (son conceptos independientes).</span>
+            </p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> en un proyector, la imagen sobre la pantalla es real, invertida y mayor. En una lupa, la imagen que percibe el ojo es virtual, derecha y mayor. Ambas las produce una lente convergente: la diferencia está en la posición del objeto.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Las imágenes reales pueden recogerse en una pantalla o en un sensor.</li>
+                    <li>Las imágenes virtuales solo se ven "a través" del sistema óptico.</li>
+                    <li>Un espejo plano produce siempre imagen virtual, derecha y del mismo tamaño.</li>
+                    <li>Un objeto real + lente divergente &rarr; siempre imagen virtual, derecha y menor.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 10 -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Reglas del trazado de rayos</h2>
+                <span class="badge-centro">Principio</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Reglas geométricas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No es una fórmula, sino el conjunto de reglas para construir gráficamente las imágenes. Se aplica en todos los problemas en que se pide "trazado de rayos", "diagrama" o "justificar gráficamente". Con solo dos rayos bien elegidos se determina el punto imagen.
+            </div>
+            <div class="formula-box" id="formula-10">
+                <a href="TemaC6.html#tc6-trazado" class="formula-link">\[ \begin{array}{c|c|c} \text{Rayo} & \text{Lente} & \text{Espejo} \\ \hline \text{Paralelo al eje} & \text{Sale por } F' & \text{Refleja por } F \\ \text{Por el foco} & \text{Sale paralelo} & \text{Refleja paralelo} \\ \text{Por el centro / C} & \text{Sin desviarse} & \text{Sobre sí mismo} \end{array} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Son reglas geométricas que se aplican a cada problema. Basta con memorizar los tres rayos principales: <strong>paralelo &rarr; foco</strong>, <strong>foco &rarr; paralelo</strong>, <strong>centro &rarr; sin desviarse</strong>. Con dos de ellos se resuelve. Cuidado: en espejos y lentes el "foco" y el "centro" son conceptos diferentes; dibuja siempre el eje y los puntos clave antes de trazar.</span>
+            </p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> en una lente convergente con objeto más allá de \(2F\), el rayo paralelo al eje sale por \(F'\) y el rayo por el centro no se desvía. Ambos se cortan al otro lado de la lente, por debajo del eje: imagen real, invertida y reducida.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Con dos rayos bien elegidos basta; con tres se verifica.</li>
+                    <li>Si los rayos emergentes divergen, prolongarlos hacia atrás para encontrar la imagen virtual.</li>
+                    <li>Dibuja siempre: eje óptico, focos, centros y objeto antes de empezar los rayos.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 11 -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">11</span>
+                <h2>Lupa y proyector: usos de una lente convergente</h2>
+                <span class="badge-centro">Comprender</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Aplicación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No es una fórmula nueva, sino dos configuraciones concretas de una lente convergente según dónde se coloque el objeto. Se aplica en problemas que preguntan "¿se puede usar una lupa para proyectar?" o "¿qué configuración da imagen aumentada/derecha/proyectable?".
+            </div>
+            <div class="formula-box" id="formula-11">
+                <a href="TemaC6.html#tc6-lupa-proyector" class="formula-link">\[ \begin{array}{c|c|c} \text{Uso} & \text{Posición del objeto} & \text{Imagen} \\ \hline \text{Lupa} & u < f & \text{Virtual, derecha, mayor} \\ \text{Proyector aumentado} & f < u < 2f & \text{Real, invertida, mayor} \\ \text{Proyector reducido} & u > 2f & \text{Real, invertida, menor} \end{array} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No son fórmulas, sino <strong>posiciones del objeto</strong> en una lente convergente. Idea clave: <strong>lupa si el objeto está DENTRO del foco (\(u<f\)); proyector si está FUERA (\(u>f\))</strong>. Una misma lente puede funcionar de una u otra forma según dónde coloques el objeto. Error típico: intentar proyectar la imagen de una lupa (es virtual, no proyectable).</span>
+            </p>
+            <table class="mag-table">
+                <thead><tr><th>Configuración</th><th>Posición del objeto</th><th>Resultado</th></tr></thead>
+                <tbody>
+                    <tr><td data-label="Configuración">Lupa</td><td data-label="Posición">\(0<u<f\)</td><td data-label="Resultado">Imagen virtual, derecha, mayor</td></tr>
+                    <tr><td data-label="Configuración">Proyector con aumento</td><td data-label="Posición">\(f<u<2f\)</td><td data-label="Resultado">Imagen real, invertida, mayor</td></tr>
+                    <tr><td data-label="Configuración">Proyector reducido</td><td data-label="Posición">\(u>2f\)</td><td data-label="Resultado">Imagen real, invertida, menor</td></tr>
+                    <tr><td data-label="Configuración">Objeto en \(u=f\)</td><td data-label="Posición">\(u=f\)</td><td data-label="Resultado">Imagen en el infinito</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una lupa de \(f=15\,\text{cm}\) con objeto a \(9\,\text{cm}\) da \(v=-22{,}5\,\text{cm}\), \(m=+2{,}5\): imagen virtual, derecha, aumentada. La misma lente con objeto a \(30\,\text{cm}\) (entre \(f\) y \(2f\)) da imagen real, proyectable.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>"Lupa" no es un tipo de lente distinto: es una lente convergente usada con \(u<f\).</li>
+                    <li>Para proyectar imagen aumentada, el objeto va entre \(f\) y \(2f\).</li>
+                    <li>Para proyectar imagen reducida (como una cámara fotográfica), el objeto va más allá de \(2f\).</li>
+                    <li>El tamaño de la imagen en pantalla crece al acercar la diapositiva al foco.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 12 -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">12</span>
+                <h2>Resumen de imágenes en lentes y espejos</h2>
+                <span class="badge-centro">Aplicar</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · En problemas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No es una fórmula nueva, sino una tabla-resumen que relaciona la posición del objeto con las características de la imagen en cada sistema óptico. Se aplica como comprobación rápida en el examen: una vez calculados \(v\) y \(m\), confirma que la naturaleza, orientación y tamaño coinciden con los esperados para esa posición del objeto.
+            </div>
+            <div class="formula-box" id="formula-12">
+                <a href="TemaC6.html#tc6-resumen" class="formula-link">\[ \begin{array}{c|c|c|c} \text{Sistema} & \text{Objeto} & \text{Imagen} & \text{Tamaño} \\ \hline \text{Lente conv.} & u>2f & \text{Real, invertida} & \text{Menor} \\ \text{Lente conv.} & u=2f & \text{Real, invertida} & \text{Igual} \\ \text{Lente conv.} & f<u<2f & \text{Real, invertida} & \text{Mayor} \\ \text{Lente conv.} & u<f & \text{Virtual, derecha} & \text{Mayor} \\ \text{Lente div.} & \text{cualquiera} & \text{Virtual, derecha} & \text{Menor} \\ \text{Espejo cónc.} & u>2f & \text{Real, invertida} & \text{Menor} \\ \text{Espejo cónc.} & f<u<2f & \text{Real, invertida} & \text{Mayor} \\ \text{Espejo cónc.} & u<f & \text{Virtual, derecha} & \text{Mayor} \\ \text{Espejo convexo} & \text{cualquiera} & \text{Virtual, derecha} & \text{Menor} \\ \text{Espejo plano} & \text{cualquiera} & \text{Virtual, derecha} & \text{Igual} \end{array} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>No es necesario memorizarla: se deduce aplicando \(1/f=1/u+1/v\) y \(m=-v/u\) a cada caso. Úsala como <strong>comprobación</strong> después de cada cálculo: si obtienes una imagen virtual en un proyector o una imagen real con una lente divergente, hay un error. Los casos más importantes son: lente convergente con \(u>2f\) (real reducida, cámara), con \(f<u<2f\) (real aumentada, proyector) y con \(u<f\) (virtual aumentada, lupa).</span>
+            </p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> con \(f=10\,\text{cm}\) y \(u=25\,\text{cm}\) (\(u>2f\)), la ecuación da \(v\approx+16{,}7\,\text{cm}\) y \(m\approx-0{,}67\): imagen real, invertida, menor. La tabla lo confirma.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>En lentes y espejos convergentes, la "frontera" del comportamiento es \(u=2f\) (imagen del mismo tamaño).</li>
+                    <li>En lentes y espejos divergentes, la imagen es siempre virtual, derecha y menor para objeto real.</li>
+                    <li>En el espejo plano, la imagen siempre es virtual, derecha y del mismo tamaño.</li>
+                    <li>Usa esta tabla como chuleta de comprobación, no como sustituto del cálculo.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- LEYENDA EPISTÉMICA -->
+        <article class="card span-all leyenda-epi">
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+            <p class="leyenda-epi-intro">
+                No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
+                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
+                consecuencia matemática, principio o regla— y cada categoría se domina con un
+                <strong>verbo distinto</strong>. Identificar el tipo <em>antes</em> de estudiar ahorra
+                tiempo y evita memorizar lo que se puede deducir.
+            </p>
+            <div class="leyenda-epi-grid">
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud o una clasificación. No se demuestra, se establece.</p>
+                    <p class="epi-ej"><strong>Ejemplos C6</strong> \(P=1/f\) · convenio de signos · tipos de sistemas ópticos</p>
+                </div>
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">Es el <em>punto de partida</em> del tema: describe cómo se relacionan las posiciones del objeto, la imagen y la focal. No se deriva de otra cosa.</p>
+                    <p class="epi-ej"><strong>Ejemplos C6</strong> \(1/f=1/u+1/v\) (lentes y espejos)</p>
+                </div>
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">Se <em>obtiene</em> por semejanza de triángulos, sustitución o despeje a partir de la ecuación fundamental. No se memoriza: se reconstruye en 2–3 líneas si se olvida.</p>
+                    <p class="epi-ej"><strong>Ejemplos C6</strong> \(m=-v/u\) · \(f=R/2\) · \(f=(D^2-d^2)/(4D)\)</p>
+                </div>
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Aplicar / comprobar</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">Es una <em>regla o tabla</em> que se aplica como filtro a cada problema concreto. No se demuestra: se usa para verificar la coherencia del resultado.</p>
+                    <p class="epi-ej"><strong>Ejemplos C6</strong> tabla resumen · reglas de trazado · lupa vs proyector</p>
+                </div>
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Conversión / operación</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes equivalentes. Debe salir sin pensar.</p>
+                    <p class="epi-ej"><strong>Ejemplos C6</strong> cm↔m (para \(P=1/f\)) · dioptrías↔focal</p>
+                </div>
+            </div>
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr><th>Categoría</th><th>Verbo</th><th>¿Qué es?</th><th>¿Cómo se domina?</th><th>Autoevaluación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td><td data-label="¿Qué es?">Vocabulario del tema</td><td data-label="¿Cómo se domina?">Repetición espaciada</td><td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td><td data-label="¿Qué es?">Punto de partida físico</td><td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td><td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td><td data-label="¿Qué es?">Resultado matemático derivado</td><td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td><td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td><td data-label="¿Qué es?">Regla universal / geométrica</td><td data-label="¿Cómo se domina?">Plantearla en cada problema</td><td data-label="Autoevaluación">¿La aplico como filtro al problema?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td><td data-label="¿Qué es?">Herramienta mecánica</td><td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td><td data-label="Autoevaluación">¿Me sale sin pensar?</td></tr>
+                </tbody>
+            </table>
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>, pregúntate <strong>«¿de dónde sale esto?»</strong>. Si sale de otra fórmula despejando o sustituyendo → <strong>consecuencia</strong> (deducir). Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender). Si solo asigna un nombre → <strong>definición</strong> (memorizar). Si es una regla geométrica o de comprobación → <strong>principio</strong> (aplicar).
+            </div>
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Leyes fundamentales (lente y espejo)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Derivadas (aumento, focal/R, Bessel)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Definiciones (potencia, convenio de signos, tipos)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Aplicaciones (real/virtual, lupa, tabla resumen)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Reglas de trazado de rayos</span>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- GLOSARIO -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema C6</summary>
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla.
+        </p>
+        <table class="mag-table">
+            <thead>
+                <tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \dfrac{1}{f} = \dfrac{1}{u} + \dfrac{1}{v} \]</td><td data-label="Nombre">Ecuación de la lente delgada</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ \dfrac{1}{f} = \dfrac{1}{u} + \dfrac{1}{v} \]</td><td data-label="Nombre">Ecuación del espejo esférico</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ m = \dfrac{y'}{y} = -\dfrac{v}{u} \]</td><td data-label="Nombre">Aumento lateral</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ f = \dfrac{R}{2} \]</td><td data-label="Nombre">Focal y radio de curvatura en espejos</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ f = \dfrac{D^{2}-d^{2}}{4D} \]</td><td data-label="Nombre">Método de Bessel</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ P = \dfrac{1}{f} \]</td><td data-label="Nombre">Potencia de una lente</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ u>0;\ v>0 \text{ real};\ v<0 \text{ virtual};\ f>0 \text{ conv/cónc};\ f<0 \text{ div/conv} \]</td><td data-label="Nombre">Convenio de signos (real-positivo)</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \text{conv/cónc} \Rightarrow f>0;\ \text{div/conv} \Rightarrow f<0 \]</td><td data-label="Nombre">Clasificación de sistemas ópticos</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ v>0 \Leftrightarrow \text{real};\ v<0 \Leftrightarrow \text{virtual} \]</td><td data-label="Nombre">Imagen real vs imagen virtual</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ \text{paralelo→foco},\ \text{foco→paralelo},\ \text{centro→sin desviar} \]</td><td data-label="Nombre">Reglas del trazado de rayos</td><td data-label="Ficha">10</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ \text{lupa: }u<f;\ \text{proyector: }u>f \]</td><td data-label="Nombre">Lupa y proyector</td><td data-label="Ficha">11</td></tr>
+                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ \text{tabla resumen de imágenes} \]</td><td data-label="Nombre">Resumen de imágenes en lentes y espejos</td><td data-label="Ficha">12</td></tr>
+            </tbody>
+        </table>
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> confundir el signo de la imagen con su orientación; olvidar que una imagen virtual no se proyecta; calcular la potencia usando centímetros en lugar de metros; mezclar el convenio de signos de lentes y espejos; interpretar \(m>0\) como imagen invertida; y creer que una lente divergente puede formar imágenes reales de un objeto real.
+        </div>
+    </details>
+
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en formación de imágenes, la <strong>ecuación fundamental</strong> \(1/f=1/u+1/v\) es la misma para lentes delgadas y espejos esféricos; junto con el <strong>aumento lateral</strong> \(m=-v/u\) y el <strong>convenio real-positivo</strong>, permite resolver cualquier problema. Recuerda: <strong>imagen real ⇒ \(v>0\) ⇒ proyectable ⇒ normalmente invertida</strong>; <strong>imagen virtual ⇒ \(v<0\) ⇒ no proyectable ⇒ normalmente derecha</strong>. Aplica \(P=1/f\) solo con \(f\) en metros para obtener dioptrías.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+    var card = document.querySelector(hash);
+    if (!card) return;
+    card.scrollIntoView({ behavior: 'auto', block: 'center' });
+    card.classList.remove('formula-resaltada');
+    void card.offsetWidth;
+    card.classList.add('formula-resaltada');
+    setTimeout(function () { card.classList.remove('formula-resaltada'); }, 2600);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA B5 (Formulario).- Magnetismo, experiencia de Oersted y carácter no conservativo del campo magnético</title>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- CSS PROPIO DE FORMULARIOS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================ CABECERA ============================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA B5 (Formulario).- </span>
+                <span class="texto">Magnetismo, experiencia de Oersted y carácter no conservativo del campo magnético</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================ GRID ============================ -->
+    <div class="grid">
+
+        <!-- FICHA 1 · FUERZA DE LORENTZ MAGNÉTICA (VECTORIAL) -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Fuerza magnética de Lorentz (vectorial)</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El vector fuerza magnética que actúa sobre una carga \(q\) que se mueve con velocidad \(\vec v\) dentro de un campo magnético \(\vec B\). Se aplica en todos los problemas en los que una partícula cargada se mueve en una región con campo magnético: desviación de electrones, espectrómetros de masas, trayectorias circulares, selectores de velocidades y fuerzas sobre corrientes.
+            </div>
+            <a href="TemaB5.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
+                \[ \vec F_m = q\,\vec v\times\vec B \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(\vec F_m=q\vec v\times\vec B\) y comprende que es un <strong>producto vectorial</strong>. La fuerza es perpendicular a \(\vec v\) y a \(\vec B\) a la vez, por lo que la regla de la mano derecha es imprescindible. Para una carga <strong>positiva</strong>, el sentido es el de \(\vec v\times\vec B\); para una <strong>negativa</strong>, se invierte. Es la fórmula central del tema: de ella salen el trabajo nulo, el movimiento circular y el selector de velocidades.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec F_m\)</td><td data-label="Significado">Fuerza magnética sobre la carga</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga eléctrica (con signo)</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec v\)</td><td data-label="Significado">Velocidad de la carga</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec B\)</td><td data-label="Significado">Campo magnético en el punto</td><td data-label="Unidades">T (tesla)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un electrón con \(\vec v=5\cdot10^6\hat j\,\text{m/s}\) entra en un campo \(\vec B=7{,}8\cdot10^{-3}\hat i\,\text{T}\). Con \(q=-1{,}6\cdot10^{-19}\,\text{C}\), aplicando \(\vec v\times\vec B=-vB\hat k\), la fuerza resulta \(\vec F_m=+6{,}86\cdot10^{-15}\hat k\,\text{N}\) (apunta hacia \(+\hat k\)). Si fuese un protón, apuntaría hacia \(-\hat k\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es perpendicular a \(\vec v\) y a \(\vec B\): el movimiento es plano, perpendicular a ambos.</li>
+                    <li>Regla de la mano derecha: dedos en el sentido de \(\vec v\), se cierran hacia \(\vec B\), y el pulgar da el sentido de \(\vec F_m\) para \(q>0\).</li>
+                    <li>Si \(\vec v\parallel\vec B\) (o antiparalela), la fuerza es <strong>nula</strong>.</li>
+                    <li>Si \(\vec v\perp\vec B\), el módulo de la fuerza es máximo.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 · MÓDULO DE LA FUERZA MAGNÉTICA Y UNIDAD DE B -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Módulo de la fuerza magnética y unidad de \(B\)</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Módulo y unidades</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo de la fuerza magnética (sin atender a su dirección) y la unidad del campo magnético. Se aplica cuando solo interesa la intensidad de la fuerza o cuando se va a descomponer en componentes. La unidad de \(B\) aparece continuamente en la EBAU y conviene tenerla automatizada.
+            </div>
+            <a href="TemaB5.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">
+                \[ F_m = |q|\,v\,B\,\operatorname{sen}\theta \]
+                \[ 1\ \text{T} = 1\ \frac{\text{N}}{\text{A}\cdot\text{m}} = 1\ \frac{\text{N}\cdot\text{s}}{\text{C}\cdot\text{m}} \]
+                <span id="formula-3"></span>
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(F_m=|q|vB\sin\theta\) y la equivalencia \(1\ \text{T}=1\ \text{N/(A·m)}\). El módulo es un escalar, siempre positivo (por eso el valor absoluto en \(q\)). El seno del ángulo \(\theta\) entre \(\vec v\) y \(\vec B\) modula la fuerza: máximo cuando son perpendiculares (\(\sin\theta=1\)), nulo cuando son paralelos o antiparalelos (\(\sin\theta=0\)). La unidad de \(B\) es equivalente a \(\text{V·s/m}^{2}\), pero en EBAU basta con \(\text{N/(A·m)}\) o simplemente tesla.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(F_m\)</td><td data-label="Significado">Módulo de la fuerza magnética</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(|q|\)</td><td data-label="Significado">Valor absoluto de la carga</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Módulo de la velocidad</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(B\)</td><td data-label="Significado">Módulo del campo magnético</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(\theta\)</td><td data-label="Significado">Ángulo entre \(\vec v\) y \(\vec B\)</td><td data-label="Unidades">— (rad o °)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una carga \(q=+1\cdot10^{-7}\,\text{C}\) con \(v=5\cdot10^4\,\text{m/s}\) entra perpendicular a un campo \(B=0{,}08\,\text{T}\). Entonces \(F_m=10^{-7}\cdot5\cdot10^{4}\cdot0{,}08=4\cdot10^{-4}\,\text{N}\). Si \(\theta=30^\circ\), \(F_m=4\cdot10^{-4}\cdot0{,}5=2\cdot10^{-4}\,\text{N}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(F_m>0\) siempre como módulo: es \(|q|\), no \(q\).</li>
+                    <li>\(\theta=90^\circ\) ⟹ fuerza máxima; \(\theta=0^\circ\) o \(180^\circ\) ⟹ fuerza nula.</li>
+                    <li>La unidad de \(B\) puede escribirse como tesla (T), \(\text{N/(A·m)}\) o \(\text{V·s/m}^{2}\).</li>
+                    <li>Si \(B\) se da en gauss: \(1\ \text{T}=10^4\ \text{G}\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 · TRABAJO DE LA FUERZA MAGNÉTICA -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Trabajo de la fuerza magnética (nulo)</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El trabajo que realiza la fuerza magnética sobre una carga en movimiento. Se aplica en cuestiones conceptuales de EBAU y para justificar que la fuerza magnética solo cambia la <strong>dirección</strong> de la velocidad, no su módulo ni la energía cinética (si actúa sola).
+            </div>
+            <a href="TemaB5.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">
+                \[ W_m = \int_A^B \vec F_m\cdot d\vec r = 0 \qquad\text{(en todo instante)} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No hay que memorizar ninguna fórmula: basta con comprender que \(\vec F_m\perp\vec v\), y como \(d\vec r=\vec v\,dt\), el producto escalar es nulo. Es una <strong>propiedad física</strong>, no un resultado de cálculo. La fuerza magnética cambia la <strong>dirección</strong> de la velocidad pero no su módulo: si solo actúa ella, la energía cinética se conserva. Esto <strong>no</strong> contradice que el campo magnético sea no conservativo: son dos afirmaciones distintas.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Propiedad</th><th>Consecuencia física</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Propiedad">\(\vec F_m\perp\vec v\)</td><td data-label="Consecuencia">La fuerza no tiene componente en la dirección del movimiento.</td></tr>
+                    <tr><td data-label="Propiedad">\(W_m=0\)</td><td data-label="Consecuencia">La energía cinética no cambia si solo actúa \(\vec F_m\).</td></tr>
+                    <tr><td data-label="Propiedad">Movimiento resultante</td><td data-label="Consecuencia">Circular uniforme (si \(\vec v\perp\vec B\)) o helicoidal (si hay componente paralela).</td></tr>
+                    <tr><td data-label="Propiedad">Relación con conservatividad</td><td data-label="Consecuencia">Que \(W_m=0\) no implica que \(\vec B\) sea conservativo.</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un electrón en un campo magnético uniforme describe una circunferencia con velocidad de módulo constante. La fuerza magnética está siempre dirigida hacia el centro de la circunferencia (centrípeta), es perpendicular a la velocidad y, por tanto, no cambia la rapidez del electrón.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li><strong>NO confundir</strong>: que \(W_m=0\) no significa que el campo \(\vec B\) sea conservativo.</li>
+                    <li>La conservatividad se refiere a la circulación de \(\vec B\), no al trabajo de la fuerza magnética.</li>
+                    <li>Si además del campo magnético hay un campo eléctrico, el trabajo total puede ser distinto de cero.</li>
+                    <li>La fuerza magnética no es una fuerza central: no va dirigida hacia un punto fijo.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 · CAMPO MAGNÉTICO DE UN HILO RECTILÍNEO -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Campo magnético de un hilo rectilíneo</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Cálculo directo</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo del campo magnético que crea un hilo conductor rectilíneo muy largo, por el que circula una corriente \(I\), a una distancia \(r\) del hilo. Se aplica en la experiencia de Oersted, en el cálculo de fuerzas entre conductores paralelos y en problemas de campos creados por corrientes.
+            </div>
+            <a href="TemaB5.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">
+                \[ B = \frac{\mu_0\,I}{2\pi\,r} \qquad\text{con}\qquad \mu_0 = 4\pi\cdot10^{-7}\ \frac{\text{T·m}}{\text{A}} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(B=\mu_0 I/(2\pi r)\) con \(\mu_0=4\pi\cdot10^{-7}\ \text{T·m/A}\). Es la expresión básica de la magnetostática y aparece continuamente en EBAU. Las líneas de campo alrededor del hilo son <strong>circunferencias concéntricas</strong> en planos perpendiculares al conductor, y su sentido se obtiene con la regla de la mano derecha: pulgar en el sentido de la corriente, dedos curvados en el sentido de \(\vec B\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(B\)</td><td data-label="Significado">Módulo del campo en el punto</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(\mu_0\)</td><td data-label="Significado">Permeabilidad magnética del vacío</td><td data-label="Unidades">\(4\pi\cdot10^{-7}\ \text{T·m/A}\)</td></tr>
+                    <tr><td data-label="Símbolo">\(I\)</td><td data-label="Significado">Intensidad de corriente</td><td data-label="Unidades">A</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia perpendicular al hilo</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un hilo con \(I=20\,\text{A}\), a \(r=0{,}10\,\text{m}\): \(B=\dfrac{4\pi\cdot10^{-7}\cdot20}{2\pi\cdot0{,}10}=4\cdot10^{-5}\,\text{T}\). Es un valor comparable al campo magnético terrestre (\(\sim3\cdot10^{-5}\,\text{T}\)).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Las líneas de campo alrededor del hilo son <strong>circunferencias concéntricas</strong>.</li>
+                    <li>El campo decae con \(1/r\), no con \(1/r^{2}\).</li>
+                    <li>Invertir la corriente invierte el sentido de las líneas.</li>
+                    <li>Al superponerlo al campo terrestre, la brújula se orienta según la suma vectorial (Oersted).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 · LEY DE GAUSS PARA EL MAGNETISMO -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Ley de Gauss para el magnetismo</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué expresa?</span>
+                Que el flujo magnético neto a través de cualquier superficie cerrada es nulo. Se aplica para justificar que <strong>no existen monopolos magnéticos</strong> en el electromagnetismo clásico: las líneas de \(\vec B\) no nacen ni terminan en puntos aislados, sino que se cierran sobre sí mismas. Es la contrapartida magnética de la ley de Gauss eléctrica.
+            </div>
+            <a href="TemaB5.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">
+                \[ \oint_S \vec B\cdot d\vec S = 0 \]
+                \[ \nabla\cdot\vec B = 0 \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No es una fórmula que se aplique a problemas numéricos: es una <strong>ley conceptual</strong>. Memoriza su interpretación: <strong>no hay monopolos magnéticos</strong>. Las líneas de \(\vec B\) son siempre cerradas. Aprende también la comparación con el campo eléctrico: \(\nabla\cdot\vec E=\rho/\varepsilon_0\) (sí hay fuentes, las cargas), pero \(\nabla\cdot\vec B=0\) (no hay fuentes magnéticas análogas). No confundir esta ley con la de Ampère: describen propiedades diferentes.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Propiedad</th><th>Campo eléctrico \(\vec E\)</th><th>Campo magnético \(\vec B\)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Propiedad">Fuentes</td><td data-label="Campo eléctrico">Cargas eléctricas</td><td data-label="Campo magnético">Corrientes e imanes</td></tr>
+                    <tr><td data-label="Propiedad">Divergencia</td><td data-label="Campo eléctrico">\(\nabla\cdot\vec E=\rho/\varepsilon_0\)</td><td data-label="Campo magnético">\(\nabla\cdot\vec B=0\)</td></tr>
+                    <tr><td data-label="Propiedad">Líneas</td><td data-label="Campo eléctrico">Abiertas (carga + a carga −)</td><td data-label="Campo magnético">Cerradas</td></tr>
+                    <tr><td data-label="Propiedad">Monopolos</td><td data-label="Campo eléctrico">Sí (cargas + y −)</td><td data-label="Campo magnético">No en el modelo clásico</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si se parte un imán de barra por la mitad, no se obtiene un polo norte aislado y un polo sur aislado, sino dos imanes más pequeños, cada uno con sus dos polos. Esto es coherente con \(\nabla\cdot\vec B=0\): no existen fuentes aisladas de campo magnético.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Las líneas de \(\vec B\) son <strong>siempre cerradas</strong>: no nacen ni terminan.</li>
+                    <li>El flujo neto por una superficie cerrada es siempre nulo.</li>
+                    <li>No existen monopolos magnéticos en el electromagnetismo clásico.</li>
+                    <li>No confundir \(\nabla\cdot\vec B=0\) con \(\oint\vec B\cdot d\vec l=0\): la primera habla de flujo, la segunda de circulación.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 · LEY DE AMPÈRE -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Ley de Ampère: circulación del campo magnético</h2>
+                <span class="badge-centro">Deducción</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La circulación del campo magnético a lo largo de una curva cerrada, que es proporcional a la corriente neta que atraviesa una superficie apoyada en esa curva. Se aplica para justificar que el campo magnético <strong>no es conservativo</strong> (a diferencia del electrostático) y para calcular campos en configuraciones con alta simetría (hilos, solenoides, toroides).
+            </div>
+            <a href="TemaB5.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">
+                \[ \oint_\Gamma \vec B\cdot d\vec l = \mu_0\,I_{\text{enc}} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>Memoriza la expresión y, sobre todo, compréndela: la circulación de \(\vec B\) a lo largo de una curva cerrada no es nula si la curva encierra corriente. Compara con el campo electrostático, donde \(\oint\vec E\cdot d\vec l=0\) (conservativo). Aquí \(\oint\vec B\cdot d\vec l=\mu_0 I_{\text{enc}}\): si \(I_{\text{enc}}\neq0\), la circulación no es cero y el campo <strong>no es conservativo</strong>. La ley de Ampère permite calcular \(B\) en configuraciones con mucha simetría, pero no es una fórmula general para cualquier problema.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\oint_\Gamma\vec B\cdot d\vec l\)</td><td data-label="Significado">Circulación de \(\vec B\) a lo largo de la curva cerrada \(\Gamma\)</td><td data-label="Unidades">T·m</td></tr>
+                    <tr><td data-label="Símbolo">\(\mu_0\)</td><td data-label="Significado">Permeabilidad magnética del vacío</td><td data-label="Unidades">\(4\pi\cdot10^{-7}\ \text{T·m/A}\)</td></tr>
+                    <tr><td data-label="Símbolo">\(I_{\text{enc}}\)</td><td data-label="Significado">Corriente neta encerrada por \(\Gamma\)</td><td data-label="Unidades">A</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un hilo rectilíneo con \(I=5\,\text{A}\) y una circunferencia de radio \(r=0{,}1\,\text{m}\) centrada en el hilo. La circulación vale \(\oint\vec B\cdot d\vec l=B\cdot2\pi r=\mu_0 I=4\pi\cdot10^{-7}\cdot5\approx6{,}3\cdot10^{-6}\ \text{T·m}\), que es distinta de cero: el campo no es conservativo.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Si \(\Gamma\) <strong>no encierra</strong> corriente, la circulación es cero (aunque \(B\neq0\) en los puntos).</li>
+                    <li>El signo de \(I_{\text{enc}}\) depende del sentido de recorrido de \(\Gamma\) (regla de la mano derecha).</li>
+                    <li>En electrostática, \(\oint\vec E\cdot d\vec l=0\): el campo eléctrico SÍ es conservativo.</li>
+                    <li>No confundir circulación con trabajo: el trabajo de \(\vec F_m\) es cero, pero la circulación de \(\vec B\) puede ser distinta de cero.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 · RADIO Y PERIODO DEL MOVIMIENTO CIRCULAR -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Radio y periodo en campo magnético uniforme</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Movimiento circular</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El radio de la trayectoria circular que describe una partícula cargada al entrar perpendicularmente a un campo magnético uniforme, y el tiempo que tarda en dar una vuelta completa. Se aplica en espectrómetros de masas, ciclotrones, tubos de rayos catódicos y en el análisis de trayectorias de partículas cargadas en campos magnéticos.
+            </div>
+            <a href="TemaB5.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">
+                \[ r = \frac{m\,v}{|q|\,B} \qquad\text{(con }\vec v\perp\vec B\text{)} \]
+                \[ T = \frac{2\pi\,m}{|q|\,B} \]
+                <span id="formula-9"></span>
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Se <strong>deducen</strong> igualando la fuerza magnética a la fuerza centrípeta (\(|q|vB=mv^{2}/r\)), pero conviene memorizarlas por su uso frecuente. El radio crece con la masa y la velocidad, y decrece con la carga y el campo. El periodo es <strong>independiente de la velocidad</strong>: todas las partículas con la misma relación \(m/|q|\) tardan lo mismo en dar una vuelta (ciclotrón). En EBAU se pregunta mucho por la relación \(|q|/m\) a partir de radios comparados.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Radio de la trayectoria circular</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(T\)</td><td data-label="Significado">Periodo de una vuelta completa</td><td data-label="Unidades">s</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa de la partícula</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Velocidad de la partícula</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(|q|\)</td><td data-label="Significado">Valor absoluto de la carga</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(B\)</td><td data-label="Significado">Módulo del campo magnético</td><td data-label="Unidades">T</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un electrón (\(m=9{,}1\cdot10^{-31}\,\text{kg}\), \(|q|=1{,}6\cdot10^{-19}\,\text{C}\)) con \(v=5{,}5\cdot10^{6}\,\text{m/s}\) en \(B=7{,}8\cdot10^{-3}\,\text{T}\). Radio: \(r\approx4{,}0\cdot10^{-3}\,\text{m}=4\ \text{mm}\). Periodo: \(T\approx4{,}6\cdot10^{-9}\,\text{s}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Solo válidas si \(\vec v\perp\vec B\). Si hay componente paralela, la trayectoria es <strong>helicoidal</strong>.</li>
+                    <li>El periodo no depende de \(v\): es una propiedad del sistema (ciclotrón).</li>
+                    <li>A menor radio, mayor relación \(|q|/m\) (útil para identificar partículas).</li>
+                    <li>Si \(q<0\), el sentido de giro es el opuesto al de una carga positiva.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 · SUPERPOSICIÓN DE CAMPOS MAGNÉTICOS -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Superposición de campos magnéticos</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Suma vectorial</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El campo magnético total en un punto debido a varias fuentes (varios hilos, un imán y un hilo, el campo terrestre y el de un conductor, etc.). Se aplica siempre que convivan dos o más campos en la misma región: es el principio que subyace a la experiencia de Oersted y a cualquier problema con varias fuentes magnéticas.
+            </div>
+            <a href="TemaB5.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">
+                \[ \vec B_{\text{total}} = \vec B_1 + \vec B_2 + \cdots + \vec B_n \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es el mismo principio de superposición que en el campo eléctrico y gravitatorio: los campos se suman <strong>vectorialmente</strong>, componente a componente. No hay fórmula que memorizar: hay que <strong>dibujar cada \(\vec B_i\)</strong> (dirección y sentido con la regla de la mano derecha), descomponer en ejes y sumar. Después, módulo con Pitágoras y dirección con el ángulo. Si los campos son perpendiculares (como en Oersted), el módulo se obtiene directamente con \(\sqrt{B_1^2+B_2^2}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Paso</th><th>Qué hacer</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Paso">1</td><td data-label="Qué hacer">Dibujar las fuentes y el punto donde se calcula \(\vec B\).</td></tr>
+                    <tr><td data-label="Paso">2</td><td data-label="Qué hacer">Calcular el módulo de cada \(\vec B_i\) con su fórmula (hilo, espira, etc.).</td></tr>
+                    <tr><td data-label="Paso">3</td><td data-label="Qué hacer">Determinar dirección y sentido con la regla de la mano derecha.</td></tr>
+                    <tr><td data-label="Paso">4</td><td data-label="Qué hacer">Descomponer cada vector en componentes \((B_{ix},B_{iy},B_{iz})\).</td></tr>
+                    <tr><td data-label="Paso">5</td><td data-label="Qué hacer">Sumar componente a componente y calcular módulo y dirección.</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> en un punto hay un campo terrestre \(B_T=3\cdot10^{-5}\,\text{T}\) hacia el norte y el campo de un hilo \(B_h=4\cdot10^{-5}\,\text{T}\) hacia el este. El campo total tiene módulo \(B=\sqrt{B_T^2+B_h^2}=5\cdot10^{-5}\,\text{T}\) y forma un ángulo \(\alpha\) con el norte tal que \(\tan\alpha=4/3\approx53^\circ\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es una suma <strong>vectorial</strong>, no escalar.</li>
+                    <li>Si los campos son perpendiculares, se aplica directamente Pitágoras.</li>
+                    <li>Si son paralelos, se suman o restan módulos según el sentido.</li>
+                    <li>Dibujar siempre un esquema: el error más común es sumar módulos sin atender a la dirección.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 · EXPERIENCIA DE OERSTED: DESVIACIÓN DE LA BRÚJULA -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Experiencia de Oersted: desviación de la brújula</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Caso histórico</span>
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El ángulo que se desvía una brújula situada cerca de un hilo con corriente, como consecuencia de la superposición del campo magnético terrestre y el campo creado por el hilo. Se aplica en problemas que reproducen la experiencia de Oersted y en el cálculo del campo terrestre a partir de la desviación observada.
+            </div>
+            <a href="TemaB5.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">
+                \[ \vec B_R = \vec B_{\text{Tierra}} + \vec B_{\text{hilo}} \]
+                \[ \tan\alpha = \frac{B_{\text{hilo}}}{B_{\text{Tierra}}} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR + 🧭 COMPRENDER</span>Comprende el experimento: sin corriente, la brújula apunta al campo terrestre; con corriente, se desvía porque el hilo crea un campo perpendicular. La fórmula \(\tan\alpha=B_{\text{hilo}}/B_{\text{Tierra}}\) solo vale si los dos campos son <strong>perpendiculares</strong> (situación habitual en Oersted). Calcula \(B_{\text{hilo}}\) con \(\mu_0 I/(2\pi r)\) y despeja \(B_{\text{Tierra}}\) o \(\alpha\) según lo que pidan. Recuerda: la desviación demuestra que la corriente genera un campo magnético.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec B_R\)</td><td data-label="Significado">Campo magnético resultante</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(B_{\text{Tierra}}\)</td><td data-label="Significado">Componente horizontal del campo terrestre</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(B_{\text{hilo}}\)</td><td data-label="Significado">Campo creado por el hilo</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(\alpha\)</td><td data-label="Significado">Ángulo de desviación de la brújula</td><td data-label="Unidades">° o rad</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un hilo con \(I=20\,\text{A}\), a \(r=0{,}10\,\text{m}\), crea \(B_h=4\cdot10^{-5}\,\text{T}\). Si la brújula se desvía \(45^\circ\), entonces \(\tan45^\circ=1\) y \(B_T=B_h=4\cdot10^{-5}\,\text{T}\). Si se desviara \(30^\circ\), \(B_T=B_h/\tan30^\circ\approx6{,}9\cdot10^{-5}\,\text{T}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Sin corriente, la brújula marca el campo terrestre; con corriente, marca el resultante.</li>
+                    <li>Al invertir la corriente, se invierte el sentido de la desviación.</li>
+                    <li>La fórmula \(\tan\alpha=B_h/B_T\) solo vale si los campos son perpendiculares.</li>
+                    <li>El experimento de Oersted es la prueba histórica de que <strong>una corriente genera un campo magnético</strong>.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 10 · SELECTOR DE VELOCIDADES Y FUERZA DE LORENTZ GENERAL -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Fuerza de Lorentz general y selector de velocidades</h2>
+                <span class="badge-centro">Caso típico</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip automatizar">🔄 Automatizar · Caso típico</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La fuerza total de Lorentz (suma de la fuerza eléctrica y magnética) sobre una carga en una región donde coexisten ambos campos, y la condición para que una partícula atraviese esa región sin desviarse (selector de velocidades). Se aplica en espectrómetros de masas, filtros de velocidad y problemas en los que se compensan las dos fuerzas.
+            </div>
+            <a href="TemaB5.html#formula-12" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-12">
+                \[ E = v\,B \qquad\text{(selector de velocidades, }\vec v\perp\vec B\text{)} \]
+                \[ \vec F = q\,(\vec E + \vec v\times\vec B) \]
+                <span id="formula-13"></span>
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔄 AUTOMATIZAR</span>Memoriza la fuerza general de Lorentz \(\vec F=q(\vec E+\vec v\times\vec B)\) y reconoce el caso particular del selector de velocidades: cuando una partícula atraviesa sin desviarse, la fuerza neta es cero, de modo que \(|q|E=|q|vB\) y por tanto \(E=vB\). Es un caso muy típico de EBAU: aparece en ejercicios con campos cruzados. La idea clave: solo las partículas con \(v=E/B\) pasan sin desviarse; las más rápidas o más lentas se desvían hacia un lado u otro según su carga.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec F\)</td><td data-label="Significado">Fuerza total de Lorentz</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec E\)</td><td data-label="Significado">Campo eléctrico</td><td data-label="Unidades">N·C⁻¹ = V·m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec B\)</td><td data-label="Significado">Campo magnético</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec v\)</td><td data-label="Significado">Velocidad de la carga</td><td data-label="Unidades">m·s⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(E\)</td><td data-label="Significado">Módulo del campo eléctrico que compensa</td><td data-label="Unidades">V·m⁻¹</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un electrón entra con \(v=10^4\,\text{m/s}\) en una región con \(B=10^{-4}\,\text{T}\) perpendicular a \(\vec v\). Para que no se desvíe, se necesita \(E=vB=1\,\text{V/m}\), con la orientación adecuada para que la fuerza eléctrica compense la magnética. Si \(v\) fuese \(2\cdot10^4\,\text{m/s}\), el campo \(E=1\,\text{V/m}\) ya no compensaría y el electrón se desviaría.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El selector de velocidades solo funciona con \(\vec E\perp\vec B\) y \(\vec v\perp\) ambos.</li>
+                    <li>Para una carga negativa, los sentidos de \(\vec F_e\) y \(\vec F_m\) se invierten, pero la condición \(E=vB\) sigue siendo la misma.</li>
+                    <li>La fórmula general de Lorentz es la suma vectorial de las fuerzas eléctrica y magnética.</li>
+                    <li>El trabajo de la fuerza magnética sigue siendo nulo por separado, pero la fuerza eléctrica sí puede hacer trabajo.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             LEYENDA EPISTÉMICA
+             ============================================================ -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones del tema B5 se estudian igual. Cada fórmula pertenece a una
+                <strong>categoría epistémica</strong> —definición, concepto, consecuencia matemática,
+                aplicación o caso típico automatizable— y cada categoría se domina con un
+                <strong>verbo distinto</strong>. Identificar el tipo <em>antes</em> de estudiar ahorra
+                tiempo y evita memorizar lo que se puede deducir.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física o
+                        establece una relación básica. No se demuestra, se establece. Se domina cuando puedes
+                        enunciarla sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B5</strong>
+                        \(\vec F_m=q\vec v\times\vec B\) &nbsp;·&nbsp; \(F_m=|q|vB\sin\theta\)
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Concepto / comprensión</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es la <em>idea física</em> del tema: una propiedad o relación que hay que entender
+                        más que memorizar. Se domina cuando puedes explicarla con tus propias palabras y
+                        usarla como filtro conceptual.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B5</strong>
+                        \(W_m=0\) &nbsp;·&nbsp; \(\nabla\cdot\vec B=0\) (no monopolos)
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> integrando, despejando o sustituyendo otra fórmula. No se
+                        memoriza: se reconstruye en 2–3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplo B5</strong>
+                        \(\oint_\Gamma\vec B\cdot d\vec l=\mu_0I_{\text{enc}}\)
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Aplicación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Se usa para <em>resolver</em> un problema concreto: elegir la fórmula adecuada,
+                        sustituir con los signos correctos y comprobar el resultado. Es el tipo más frecuente
+                        en EBAU.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B5</strong>
+                        \(B=\mu_0I/(2\pi r)\) &nbsp;·&nbsp; \(r=mv/(|q|B)\) &nbsp;·&nbsp; \(T=2\pi m/(|q|B)\) &nbsp;·&nbsp;
+                        \(\vec B_{\text{total}}=\sum\vec B_i\) &nbsp;·&nbsp; \(\tan\alpha=B_h/B_T\)
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Caso típico automatizable</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es un <em>caso particular</em> que aparece mucho y conviene aplicar de forma refleja
+                        sin deducirlo cada vez.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B5</strong>
+                        \(E=vB\) (selector de velocidades) &nbsp;·&nbsp; \(\vec F=q(\vec E+\vec v\times\vec B)\) (Lorentz general)
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tabla resumen -->
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Concepto</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Idea física central</td>
+                        <td data-label="¿Cómo se domina?">Explicar con tus palabras</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla sin fórmulas?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Aplicación</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Fórmula para resolver</td>
+                        <td data-label="¿Cómo se domina?">Resolver problemas con signos</td>
+                        <td data-label="Autoevaluación">¿La elijo bien y compruebo el signo?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Automatizar</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Caso típico específico</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿La reconozco y la aplico al instante?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Regla de oro -->
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
+                pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si sale de otra fórmula integrando, despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
+                Si es una idea física que hay que entender → <strong>concepto</strong> (comprender).
+                Si solo asigna un nombre o establece una relación básica → <strong>definición</strong> (memorizar).
+                Si la usas para resolver un problema → <strong>aplicación</strong> (aplicar).
+                Si es un caso particular muy repetido → <strong>caso típico</strong> (automatizar).
+            </div>
+
+            <!-- Mini-referencia de colores -->
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Concepto (trabajo nulo, no monopolos)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Deducir (ley de Ampère)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Definición (fuerza de Lorentz, módulo)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Automatizar (selector de velocidades)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Aplicación (hilo, radio, superposición, Oersted)</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================ GLOSARIO ============================ -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema B5</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \vec F_m=q\,\vec v\times\vec B \]</td><td data-label="Nombre">Fuerza magnética de Lorentz (vectorial)</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ F_m=|q|\,v\,B\,\operatorname{sen}\theta \]</td><td data-label="Nombre">Módulo de la fuerza magnética</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ 1\ \text{T}=1\ \dfrac{\text{N}}{\text{A·m}} \]</td><td data-label="Nombre">Unidad del campo magnético (tesla)</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ W_m=0 \]</td><td data-label="Nombre">Trabajo nulo de la fuerza magnética</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ B=\dfrac{\mu_0 I}{2\pi r} \]</td><td data-label="Nombre">Campo magnético de un hilo rectilíneo</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ \oint_S\vec B\cdot d\vec S=0 \Longleftrightarrow \nabla\cdot\vec B=0 \]</td><td data-label="Nombre">Ley de Gauss para el magnetismo</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ \oint_\Gamma\vec B\cdot d\vec l=\mu_0 I_{\text{enc}} \]</td><td data-label="Nombre">Ley de Ampère</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ r=\dfrac{mv}{|q|B} \]</td><td data-label="Nombre">Radio de la trayectoria circular</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ T=\dfrac{2\pi m}{|q|B} \]</td><td data-label="Nombre">Periodo del movimiento circular</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ \vec B_{\text{total}}=\sum\vec B_i \]</td><td data-label="Nombre">Superposición de campos magnéticos</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ \tan\alpha=\dfrac{B_{\text{hilo}}}{B_{\text{Tierra}}} \]</td><td data-label="Nombre">Desviación de la brújula (Oersted)</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ E=vB \]</td><td data-label="Nombre">Selector de velocidades</td><td data-label="Ficha">10</td></tr>
+                <tr><td data-label="#">13</td><td data-label="Fórmula">\[ \vec F=q(\vec E+\vec v\times\vec B) \]</td><td data-label="Nombre">Fuerza de Lorentz general</td><td data-label="Ficha">10</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> (i) dibujar las líneas de campo magnético como líneas abiertas; (ii) afirmar que un imán puede tener un solo polo; (iii) confundir \(\nabla\cdot\vec B=0\) (no monopolos) con \(\oint\vec B\cdot d\vec l=0\) (circulación nula, que NO se cumple); (iv) aplicar la regla de la mano derecha sin invertir el sentido para cargas negativas; (v) afirmar que la ausencia de desviación de una carga demuestra que \(B=0\); (vi) deducir que la fuerza magnética realiza trabajo porque el campo sea no conservativo; (vii) olvidar que \(r\) en \(B=\mu_0 I/(2\pi r)\) es la distancia <strong>perpendicular</strong> al hilo; y (viii) confundir el periodo \(T=2\pi m/(|q|B)\) con el radio \(r=mv/(|q|B)\).
+        </div>
+    </details>
+
+    <!-- ============================ RECORDATORIO ============================ -->
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en el tema B5 la distinción clave es entre <strong>circulación del campo magnético</strong> y <strong>trabajo de la fuerza magnética</strong>. La ley de Ampère \(\oint\vec B\cdot d\vec l=\mu_0 I_{\text{enc}}\) nos dice que \(\vec B\) <strong>no es conservativo</strong> (su circulación puede no ser nula). La fuerza magnética de Lorentz \(\vec F_m=q\vec v\times\vec B\) es perpendicular a la velocidad, por lo que <strong>no realiza trabajo</strong> (\(W_m=0\)). Estas dos afirmaciones son compatibles: describen cosas distintas. Y la ley de Gauss \(\nabla\cdot\vec B=0\) nos dice que no existen monopolos magnéticos: las líneas de \(\vec B\) son siempre cerradas. Si dominas estas tres ideas (Lorentz, Ampère, Gauss magnética) y aplicas bien la regla de la mano derecha, resuelves cualquier problema de B5.
+    </div>
+
+    <!-- ============================ BOTÓN VOLVER ============================ -->
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+
+<!-- ============================ JS · RESALTADO DE LA FÓRMULA DESTINO ============================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    // Si el id cae sobre un <span> interior, subimos a la .formula-box que lo contiene.
+    var highlight = target.classList.contains('formula-box') || target.classList.contains('card')
+        ? target
+        : (target.closest('.formula-box') || target.closest('.card') || target);
+
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    // Reinicia la animación aunque :target ya se hubiera consumido
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () {
+        highlight.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
+</body>
+</html>

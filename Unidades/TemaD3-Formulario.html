@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA D3 (Formulario).- Dualidad onda-corpúsculo, cuantización e incertidumbre</title>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- CSS PROPIO DE FORMULARIOS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================ CABECERA ============================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA D3 (Formulario).- </span>
+                <span class="texto">Dualidad onda-corpúsculo, cuantización e incertidumbre</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================ GRID ============================ -->
+    <div class="grid">
+
+        <!-- ============================================================
+             FICHA 1 · DUALIDAD ONDA-CORPÚSCULO
+             ============================================================ -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Dualidad onda-corpúsculo</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No es una fórmula cuantitativa, sino el concepto central que unifica el comportamiento ondulatorio y corpuscular de la luz y de la materia. Se aplica en preguntas conceptuales de la EBAU y como punto de partida para interpretar la difracción de electrones o el efecto fotoeléctrico (D2).
+            </div>
+            <div class="formula-box" id="formula-1">
+                \[ \begin{array}{c|c|c} & \text{Comportamiento ondulatorio} & \text{Comportamiento corpuscular} \\ \hline \text{Luz} & \text{Interferencia, difracción} & \text{Fotones: } E=h\nu,\ p=h/\lambda \\ \text{Materia} & \lambda = h/p \text{ (De Broglie)} & \text{Impactos, masa, momento} \end{array} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No es una fórmula: es un <strong>concepto</strong> que hay que saber enunciar y ejemplificar. Idea clave: <strong>la luz y la materia presentan a la vez comportamiento ondulatorio y corpuscular, y el que se observe depende del experimento</strong>. Ejemplos: efecto fotoeléctrico y efecto Compton (luz como partícula); difracción de electrones de Davisson–Germer (materia como onda). No se debe decir que "el electrón es literalmente una onda clásica": tiene propiedades cuánticas que se manifiestan de forma distinta según el experimento.</span>
+            </p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> la luz se difracta por una rendija (onda) y arranca electrones de un metal si \(hf\ge W_0\) (corpúsculo). El electrón impacta en una pantalla como partícula localizada y, al atravesar una red cristalina, produce patrones de difracción (onda).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La dualidad no significa "a veces onda, a veces partícula" en sentido clásico, sino una descripción cuántica unificada.</li>
+                    <li>Los experimentos de referencia: fotoeléctrico, Compton, Davisson–Germer.</li>
+                    <li>Einstein (1905) introduce el fotón; De Broglie (1924) extiende la idea a la materia.</li>
+                    <li>La dualidad desaparece en el límite macroscópico (los objetos grandes tienen λ inapreciable).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 2 · CUANTIZACIÓN DE LA ENERGÍA
+             ============================================================ -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Cuantización de la energía</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía intercambiada en una transición entre niveles atómicos, en forma de absorción o emisión de un fotón. Se aplica en problemas de espectros atómicos (tema D4) y como base del modelo cuántico de Bohr. Aparece también como conexión conceptual con el efecto fotoeléctrico.
+            </div>
+            <div class="formula-box" id="formula-2">
+                \[ |\Delta E| = h\,\nu = \frac{h\,c}{\lambda} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: la relación entre la energía del fotón absorbido/emitido y la diferencia de niveles energéticos es fundamental. Memoriza \(|\Delta E|=h\nu=hc/\lambda\). Idea clave: <strong>los niveles de energía de un sistema ligado son discretos</strong>; las transiciones entre ellos emiten o absorben fotones de energía exactamente igual a la diferencia. Si un fotón no coincide con la diferencia, no se absorbe.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\Delta E\)</td><td data-label="Significado">Diferencia de energía entre dos niveles</td><td data-label="Unidades">J (o eV)</td></tr>
+                    <tr><td data-label="Símbolo">\(h\)</td><td data-label="Significado">Constante de Planck</td><td data-label="Unidades">\(6{,}63\cdot10^{-34}\) J·s</td></tr>
+                    <tr><td data-label="Símbolo">\(\nu\)</td><td data-label="Significado">Frecuencia del fotón emitido/absorbido</td><td data-label="Unidades">Hz</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Longitud de onda del fotón</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una transición con \(\Delta E=1{,}89\,\text{eV}\) emite un fotón de \(\lambda=hc/\Delta E=1240/1{,}89\approx656\,\text{nm}\) (rojo del hidrógeno).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Cada átomo tiene su propio conjunto de niveles y, por tanto, su espectro de líneas.</li>
+                    <li>La energía se conserva en la absorción/emisión.</li>
+                    <li>Esto explica los espectros discontinuos (no continuos).</li>
+                    <li>Base del modelo atómico de Bohr (D4).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 3 · HIPÓTESIS DE DE BROGLIE
+             ============================================================ -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Hipótesis de De Broglie</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="epi-chips">
+                    <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+                </span>
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La longitud de onda asociada a cualquier partícula material en movimiento. Se aplica en todos los problemas de dualidad de la materia: electrones en un acelerador, difracción de electrones, microscopía electrónica y comparación con la longitud de onda de fotones.
+            </div>
+            <div class="formula-box" id="formula-3">
+                \[ \boxed{\lambda = \frac{h}{p}} \]
+                \[ \text{Partícula no relativista: } p = m\,v \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la fórmula fundamental de la dualidad de la materia y aparece en todos los problemas D3. Memoriza \(\lambda=h/p\), con \(p\) el momento lineal de la partícula. Comprobación: <strong>a mayor masa o a mayor velocidad, menor longitud de onda asociada</strong>. En el régimen relativista, \(p=\gamma m_0v\) (ficha 4).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Longitud de onda asociada a la partícula</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(h\)</td><td data-label="Significado">Constante de Planck</td><td data-label="Unidades">\(6{,}63\cdot10^{-34}\) J·s</td></tr>
+                    <tr><td data-label="Símbolo">\(p\)</td><td data-label="Significado">Momento lineal de la partícula</td><td data-label="Unidades">kg·m/s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un electrón a \(v=2{,}65\cdot10^{6}\,\text{m/s}\): \(p=9{,}11\cdot10^{-31}\cdot2{,}65\cdot10^6=2{,}41\cdot10^{-24}\,\text{kg·m/s}\), \(\lambda=h/p=2{,}75\cdot10^{-10}\,\text{m}\approx0{,}275\,\text{nm}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Para objetos macroscópicos \(\lambda\) es del orden de \(10^{-34}\,\text{m}\) (inapreciable).</li>
+                    <li>Para electrones acelerados, \(\lambda\sim10^{-10}\,\text{m}\) (comparable al espaciado atómico).</li>
+                    <li>Confirmada experimentalmente por Davisson y Germer (1927).</li>
+                    <li>Base de la microscopía electrónica.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 4 · DE BROGLIE A PARTIR DE LA ENERGÍA CINÉTICA
+             ============================================================ -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>De Broglie a partir de la energía cinética</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La longitud de onda de De Broglie directamente desde la energía cinética de la partícula, sin pasar explícitamente por la velocidad. Se aplica en problemas donde se da la energía cinética (en J o eV) y se pide \(\lambda\), o cuando se combina con el efecto fotoeléctrico.
+            </div>
+            <div class="formula-box" id="formula-4">
+                \[ \boxed{\lambda = \frac{h}{\sqrt{2\,m\,E_c}}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se deduce de \(\lambda=h/p\) y \(E_c=p^2/(2m)\). Idea clave: <strong>a mayor energía cinética, menor longitud de onda asociada</strong>. Aplicable solo en régimen no relativista (\(E_c\ll m_0c^2\); para el electrón, \(E_c\ll511\,\text{keV}\)). Error típico: confundir \(E_c\) (energía cinética) con \(E\) (energía total o energía del fotón).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Longitud de onda de De Broglie</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(h\)</td><td data-label="Significado">Constante de Planck</td><td data-label="Unidades">J·s</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Masa de la partícula</td><td data-label="Unidades">kg</td></tr>
+                    <tr><td data-label="Símbolo">\(E_c\)</td><td data-label="Significado">Energía cinética</td><td data-label="Unidades">J</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un electrón con \(E_c=300\,\text{eV}=4{,}80\cdot10^{-17}\,\text{J}\): \(\lambda=6{,}63\cdot10^{-34}/\sqrt{2\cdot9{,}11\cdot10^{-31}\cdot4{,}80\cdot10^{-17}}\approx7{,}09\cdot10^{-11}\,\text{m}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Hay que usar \(E_c\) en julios, no en eV (a menos que se cambie \(h\) a eV·s).</li>
+                    <li>Para el electrón, \(E_c\ll511\,\text{keV}\) justifica el tratamiento no relativista.</li>
+                    <li>En conexión con D2: \(E_c=hf-W_0\) del efecto fotoeléctrico.</li>
+                    <li>También puede escribirse \(\lambda=h/\sqrt{2mE_c}\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 5 · ELECTRÓN ACELERADO POR UNA DIFERENCIA DE POTENCIAL
+             ============================================================ -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Electrón acelerado por una diferencia de potencial</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La longitud de onda de De Broglie de un electrón acelerado desde el reposo por una diferencia de potencial \(\Delta V\). Se aplica en problemas típicos de la EBAU sobre aceleradores de partículas, difracción de electrones y microscopía electrónica.
+            </div>
+            <div class="formula-box" id="formula-5">
+                \[ E_c = e\,|\Delta V| \]
+                \[ \boxed{\lambda = \frac{h}{\sqrt{2\,m_e\,e\,|\Delta V|}}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se deduce de \(E_c=e\Delta V\) y de la fórmula anterior. Idea clave: <strong>a mayor voltaje acelerador, mayor energía cinética y menor λ</strong>. Aplicable solo si el electrón parte del reposo y el régimen es no relativista. Error típico: usar la carga \(e\) del electrón sin el valor absoluto (en realidad se usa el módulo de la diferencia de potencial).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Longitud de onda asociada al electrón</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(m_e\)</td><td data-label="Significado">Masa del electrón</td><td data-label="Unidades">\(9{,}11\cdot10^{-31}\) kg</td></tr>
+                    <tr><td data-label="Símbolo">\(e\)</td><td data-label="Significado">Carga elemental</td><td data-label="Unidades">\(1{,}60\cdot10^{-19}\) C</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta V\)</td><td data-label="Significado">Diferencia de potencial aceleradora</td><td data-label="Unidades">V</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> electrón acelerado con \(\Delta V=1800\,\text{V}\): \(E_c=1800\,\text{eV}=2{,}88\cdot10^{-16}\,\text{J}\), \(p=\sqrt{2m_eE_c}=2{,}29\cdot10^{-23}\,\text{kg·m/s}\), \(\lambda\approx2{,}89\cdot10^{-11}\,\text{m}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Si el electrón parte del reposo, \(E_c=e\Delta V\) (con \(\Delta V\) en módulo).</li>
+                    <li>Para \(\Delta V\) de \(100\) a \(10000\,\text{V}\), \(\lambda\sim10^{-10}\,\text{m}\) (escala atómica).</li>
+                    <li>Base del microscopio electrónico y de la difracción LEED.</li>
+                    <li>Comprobación: si \(\Delta V&gt;511\,\text{kV}\), hay que usar relativista.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 6 · PRINCIPIO DE INCERTIDUMBRE POSICIÓN-MOMENTO
+             ============================================================ -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Principio de incertidumbre posición–momento</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No se calcula una magnitud, sino que se establece un límite fundamental a la precisión con la que se pueden conocer simultáneamente la posición y el momento de una partícula. Se aplica en problemas EBAU típicos: dada una incertidumbre en la velocidad, calcular la incertidumbre mínima en la posición, o viceversa.
+            </div>
+            <div class="formula-box" id="formula-6">
+                \[ \boxed{\Delta x\,\Delta p_x \geq \frac{\hbar}{2} = \frac{h}{4\pi}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es un principio fundamental y aparece en la EBAU. Memoriza \(\Delta x\Delta p_x\geq\hbar/2=h/(4\pi)\). Importante: usa <strong>\(\hbar/2\)</strong> (no \(\hbar\), no \(h\)). La incertidumbre se refiere al mismo eje (x con p_x). Error típico: confundir esta relación con la de energía–tiempo. Ojo: algunos textos usan \(\Delta x\Delta p\geq\hbar\) (con un factor 2 de diferencia); en la EBAU suele usarse \(\hbar/2\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\Delta x\)</td><td data-label="Significado">Incertidumbre en la posición</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta p_x\)</td><td data-label="Significado">Incertidumbre en el momento lineal</td><td data-label="Unidades">kg·m/s</td></tr>
+                    <tr><td data-label="Símbolo">\(\hbar\)</td><td data-label="Significado">Constante reducida de Planck (\(h/2\pi\))</td><td data-label="Unidades">\(1{,}055\cdot10^{-34}\) J·s</td></tr>
+                    <tr><td data-label="Símbolo">\(h\)</td><td data-label="Significado">Constante de Planck</td><td data-label="Unidades">\(6{,}63\cdot10^{-34}\) J·s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si \(\Delta p=2{,}414\cdot10^{-26}\,\text{kg·m/s}\), entonces \(\Delta x_{\min}=h/(4\pi\Delta p)=6{,}63\cdot10^{-34}/(4\pi\cdot2{,}414\cdot10^{-26})\approx2{,}19\cdot10^{-9}\,\text{m}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>No es una limitación tecnológica, sino una propiedad fundamental de la naturaleza.</li>
+                    <li>Solo aplica a magnitudes del mismo eje (x con p_x).</li>
+                    <li>Se usa el signo \(\geq\): la igualdad es el mínimo.</li>
+                    <li>Base de la interpretación probabilística de la mecánica cuántica.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 7 · INCERTIDUMBRE MÍNIMA DE POSICIÓN
+             ============================================================ -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Incertidumbre mínima de la posición</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="epitope-tag" style="display:none;"></span>
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La incertidumbre mínima en la posición de una partícula cuando se conoce su incertidumbre en el momento (o en la velocidad). Se aplica en problemas EBAU que dan una incertidumbre relativa de la velocidad (por ejemplo, 1 %) y piden el límite de precisión espacial, o al revés.
+            </div>
+            <div class="formula-box" id="formula-7">
+                \[ \boxed{\Delta x_{\min} = \frac{h}{4\pi\,\Delta p_x}} \]
+                \[ \text{Si } \Delta p_x = m_e\,\Delta v_x: \quad \Delta x_{\min} = \frac{h}{4\pi\,m_e\,\Delta v_x} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es la fórmula de Heisenberg despejada. Idea clave: <strong>a mayor incertidumbre en la velocidad, menor límite a la incertidumbre de la posición</strong> (puedo localizar mejor la partícula). Si el enunciado da un porcentaje, primero conviértelo a absoluto: \(\Delta v=(\%)\cdot v/100\). Recuerda que \(\Delta x_{\min}\) es una <em>incertidumbre</em>, no la posición exacta.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\Delta x_{\min}\)</td><td data-label="Significado">Incertidumbre mínima en la posición</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta p_x\)</td><td data-label="Significado">Incertidumbre en el momento lineal</td><td data-label="Unidades">kg·m/s</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta v_x\)</td><td data-label="Significado">Incertidumbre en la velocidad</td><td data-label="Unidades">m/s</td></tr>
+                    <tr><td data-label="Símbolo">\(m_e\)</td><td data-label="Significado">Masa del electrón</td><td data-label="Unidades">\(9{,}11\cdot10^{-31}\) kg</td></tr>
+                    <tr><td data-label="Símbolo">\(h\)</td><td data-label="Significado">Constante de Planck</td><td data-label="Unidades">J·s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un electrón a \(v=2{,}65\cdot10^{6}\,\text{m/s}\) con \(\Delta v=1\%=2{,}65\cdot10^4\,\text{m/s}\). \(\Delta p=m_e\Delta v=2{,}414\cdot10^{-26}\,\text{kg·m/s}\). \(\Delta x_{\min}=6{,}63\cdot10^{-34}/(4\pi\cdot2{,}414\cdot10^{-26})\approx2{,}19\cdot10^{-9}\,\text{m}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El resultado es una <strong>incertidumbre mínima</strong>: \(\Delta x\geq\Delta x_{\min}\).</li>
+                    <li>Es habitual dar el porcentaje de \(\Delta v\) (1 %, 2 %, 5 %...).</li>
+                    <li>Cuando la incertidumbre es grande, se habla de "límite de precisión" o "resolución".</li>
+                    <li>Comprobar sentido físico: \(\Delta x_{\min}\) del orden del tamaño atómico (\(10^{-10}\,\text{m}\)).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 8 · PRINCIPIO DE INCERTIDUMBRE ENERGÍA-TIEMPO
+             ============================================================ -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Principio de incertidumbre energía–tiempo</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Relación cuántica</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación de incertidumbre entre la energía de un estado cuántico y el tiempo característico de su evolución. Se aplica en preguntas cualitativas sobre estados excitados, desintegraciones y ensanchamiento de líneas espectrales, y en ejercicios donde se pide el orden de magnitud del tiempo de vida o de la incertidumbre energética.
+            </div>
+            <div class="formula-box" id="formula-8">
+                \[ \boxed{\Delta E\,\Delta t \geq \frac{\hbar}{2}} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es análoga a la de posición–momento. Idea clave: <strong>estados de vida media corta tienen energía mal definida</strong> (ensanchamiento natural de las líneas espectrales). Error típico: confundir \(\Delta E\) con la energía total del sistema, o \(\Delta t\) con un instante concreto. En la EBAU de Castilla y León se suele preguntar de forma cualitativa, rara vez numérica.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\Delta E\)</td><td data-label="Significado">Incertidumbre en la energía del estado</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta t\)</td><td data-label="Significado">Tiempo característico del proceso</td><td data-label="Unidades">s</td></tr>
+                    <tr><td data-label="Símbolo">\(\hbar\)</td><td data-label="Significado">Constante reducida de Planck</td><td data-label="Unidades">J·s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un estado excitado con vida media \(\tau=10^{-8}\,\text{s}\) tiene una incertidumbre energética mínima \(\Delta E\approx\hbar/(2\tau)\approx5\cdot10^{-27}\,\text{J}\) (muy pequeña comparada con la energía del fotón emitido, pero observable como ensanchamiento de línea).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Se usa para estimar la "anchura natural" de las líneas espectrales.</li>
+                    <li>También aparece en física de partículas: partículas muy inestables tienen masa-energía con gran dispersión.</li>
+                    <li>No confundir con la relación posición–momento.</li>
+                    <li>La EBAU suele pedir su enunciado o su interpretación cualitativa.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 9 · CONSTANTES Y CONVERSIONES
+             ============================================================ -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Constantes y conversiones útiles</h2>
+                <span class="badge-centro">Conversión</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip automatizar">🔄 Automatizar · Operación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No es una fórmula nueva, sino el conjunto de constantes y conversiones imprescindibles en D3. Se aplican en todos los problemas del tema: conversiones eV↔J, nm↔m, uso correcto de \(h\) frente a \(\hbar\), y valores numéricos de \(m_e\), \(e\) y \(c\).
+            </div>
+            <div class="formula-box" id="formula-9">
+                \[ h = 6{,}63\cdot10^{-34}\ \text{J}\cdot\text{s} \]
+                \[ \hbar = \frac{h}{2\pi} = 1{,}055\cdot10^{-34}\ \text{J}\cdot\text{s} \]
+                \[ m_e = 9{,}11\cdot10^{-31}\ \text{kg} \]
+                \[ e = 1{,}60\cdot10^{-19}\ \text{C} \]
+                \[ c = 3{,}00\cdot10^{8}\ \text{m/s} \]
+                \[ 1\,\text{eV} = 1{,}60\cdot10^{-19}\,\text{J} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔄 AUTOMATIZAR</span>Sí: hay que automatizarlas. La más crítica es <strong>distinguir \(h\) de \(\hbar\)</strong>: \(h=6{,}63\cdot10^{-34}\,\text{J·s}\) y \(\hbar=h/2\pi=1{,}055\cdot10^{-34}\,\text{J·s}\). En De Broglie y en la energía del fotón se usa \(h\); en el principio de incertidumbre se usa \(\hbar/2=h/(4\pi)\). Error típico de la EBAU: usar \(\hbar\) donde va \(h\) (o al revés).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Magnitud</th><th>Valor</th><th>Uso</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Magnitud">\(h\)</td><td data-label="Valor">\(6{,}63\cdot10^{-34}\,\text{J·s}\)</td><td data-label="Uso">De Broglie, energía del fotón</td></tr>
+                    <tr><td data-label="Magnitud">\(\hbar\)</td><td data-label="Valor">\(1{,}055\cdot10^{-34}\,\text{J·s}\)</td><td data-label="Uso">Incertidumbre</td></tr>
+                    <tr><td data-label="Magnitud">\(m_e\)</td><td data-label="Valor">\(9{,}11\cdot10^{-31}\,\text{kg}\)</td><td data-label="Uso">Electrón</td></tr>
+                    <tr><td data-label="Magnitud">\(e\)</td><td data-label="Valor">\(1{,}60\cdot10^{-19}\,\text{C}\)</td><td data-label="Uso">\(E_c=e\Delta V\)</td></tr>
+                    <tr><td data-label="Magnitud">\(c\)</td><td data-label="Valor">\(3{,}00\cdot10^{8}\,\text{m/s}\)</td><td data-label="Uso">Fotones</td></tr>
+                    <tr><td data-label="Magnitud">\(1\,\text{eV}\)</td><td data-label="Valor">\(1{,}60\cdot10^{-19}\,\text{J}\)</td><td data-label="Uso">Conversión</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> en \(\lambda=h/p\), \(h=6{,}63\cdot10^{-34}\,\text{J·s}\). En \(\Delta x\Delta p\geq\hbar/2\), \(\hbar/2=(1{,}055\cdot10^{-34})/2\approx5{,}27\cdot10^{-35}\,\text{J·s}\) (o equivalentemente \(h/(4\pi)\)).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(\hbar/2=h/(4\pi)\). No confundir con \(\hbar\) (sin /2).</li>
+                    <li>\(1\,\text{nm}=10^{-9}\,\text{m}\); \(1\,\text{pm}=10^{-12}\,\text{m}\).</li>
+                    <li>En la EBAU suelen aparecer como datos; aún así conviene tenerlos memorizados.</li>
+                    <li>Comprueba coherencia de unidades: si \(E_c\) en J y \(m\) en kg, \(p\) sale en kg·m/s.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 10 · DIFRACCIÓN DE ELECTRONES
+             ============================================================ -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Difracción de electrones</h2>
+                <span class="badge-centro">Aplicar</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Justificación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No es una fórmula, sino la aplicación de la hipótesis de De Broglie a la interpretación de patrones de difracción de electrones. Se aplica en preguntas cualitativas EBAU: explicar por qué los electrones difractan, cuándo el efecto es apreciable y cómo se ajusta la longitud de onda variando el potencial acelerador.
+            </div>
+            <div class="formula-box" id="formula-10">
+                \[ \lambda_e = \frac{h}{p} \sim d_{\text{interatómica}} \]
+                \[ \text{Difracción apreciable cuando } \lambda_e \sim d \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>No es una fórmula nueva: es la aplicación de De Broglie a la difracción. Idea clave: <strong>un electrón difracta si su \(\lambda\) asociada es comparable al obstáculo o al espaciado atómico</strong>. Para cristales con \(d\sim10^{-10}\,\text{m}\), se necesitan electrones acelerados a potenciales de \(\sim10\) a \(1000\,\text{V}\). Confirma el carácter ondulatorio de la materia (Davisson–Germer, 1927).</span>
+            </p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> electrones acelerados con \(\Delta V=1800\,\text{V}\) tienen \(\lambda\approx2{,}89\cdot10^{-11}\,\text{m}\), próximos al espaciado interatómico de muchos cristales (\(\sim10^{-10}\,\text{m}\)); por eso difractan en una red cristalina.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Davisson y Germer lo confirmaron experimentalmente en 1927.</li>
+                    <li>Base del microscopio electrónico: permite ver átomos, imposible con luz visible.</li>
+                    <li>Técnicas: difracción de electrones (LEED, TEM, SEM).</li>
+                    <li>Comprueba: si \(\lambda_e\) es mucho menor que \(d\), la difracción es inapreciable.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 11 · COMPARACIÓN FOTÓN vs ELECTRÓN CON MISMA λ
+             ============================================================ -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">11</span>
+                <h2>Comparación fotón vs electrón con la misma λ</h2>
+                <span class="badge-centro">Aplicar</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Comparación</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La comparación entre la energía de un fotón y la energía cinética de un electrón que tienen la misma longitud de onda asociada. Se aplica en la pregunta EBAU típica "encuentre la relación entre ambas energías si λ es la misma", y en ejercicios que combinan D2 (fotón) con D3 (electrón).
+            </div>
+            <div class="formula-box" id="formula-11">
+                \[ E_{\text{fotón}} = \frac{h\,c}{\lambda} \qquad K_{e} = \frac{h^{2}}{2\,m_e\,\lambda^{2}} \]
+                \[ \frac{K_e}{E_{\text{fotón}}} = \frac{h}{2\,m_e\,c\,\lambda} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se obtiene calculando cada energía por separado con la misma λ. Idea clave: <strong>para la misma λ, el electrón tiene mucha menos energía que el fotón</strong> (porque \(K_e/E_{\text{fotón}}=h/(2m_ec\lambda)\ll1\) para λ típicas). Diferencia conceptual: el fotón no tiene masa y su energía es \(hc/\lambda\); el electrón sí tiene masa y su energía cinética depende de \(1/\lambda^2\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Magnitud</th><th>Fotón</th><th>Electrón</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Magnitud">Energía</td><td data-label="Fotón">\(E=hc/\lambda\)</td><td data-label="Electrón">\(K=h^2/(2m_e\lambda^2)\)</td></tr>
+                    <tr><td data-label="Magnitud">Dependencia con λ</td><td data-label="Fotón">\(1/\lambda\)</td><td data-label="Electrón">\(1/\lambda^2\)</td></tr>
+                    <tr><td data-label="Magnitud">Masa</td><td data-label="Fotón">0</td><td data-label="Electrón">\(9{,}11\cdot10^{-31}\) kg</td></tr>
+                    <tr><td data-label="Magnitud">Momento</td><td data-label="Fotón">\(p=h/\lambda\)</td><td data-label="Electrón">\(p=h/\lambda\) (mismo)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para \(\lambda=1\,\text{nm}\): fotón \(E=1240\,\text{eV}\) (rayos X); electrón \(K=(6{,}63\cdot10^{-34})^2/(2\cdot9{,}11\cdot10^{-31}\cdot10^{-18})\approx1{,}50\,\text{eV}\). Ratio \(K/E\approx1{,}2\cdot10^{-3}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Ambos tienen el mismo momento \(p=h/\lambda\), pero energías totalmente distintas.</li>
+                    <li>Región de λ visible: fotones \(\sim2\)-\(3\,\text{eV}\), electrones \(\sim10^{-6}\,\text{eV}\).</li>
+                    <li>En problemas EBAU, comprobar qué energía es mayor para evitar confusión.</li>
+                    <li>La relación \(K/E\) depende de λ: a λ muy pequeña, la diferencia es menos extrema.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             FICHA 12 · CONEXIÓN D2-D3
+             ============================================================ -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">12</span>
+                <h2>Conexión D2–D3: efecto fotoeléctrico y De Broglie</h2>
+                <span class="badge-centro">Aplicar</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Ejercicio compartido</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La longitud de onda de De Broglie de los fotoelectrones emitidos en un efecto fotoeléctrico, o el camino inverso: a partir de la λ_e de un fotoelectrón, deducir la λ del fotón incidente. Se aplica en los ejercicios EBAU etiquetados como D2+D3 (efecto fotoeléctrico como punto de partida para De Broglie).
+            </div>
+            <div class="formula-box" id="formula-12">
+                \[ \text{D2: } E_{\text{fotón}}=\frac{hc}{\lambda};\quad E_{c,\max}=hf-W_0 \]
+                \[ \text{D3: } p_e=\sqrt{2m_eE_{c,\max}};\quad \lambda_e=\frac{h}{p_e} \]
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>No es una fórmula nueva: es la <strong>combinación de D2 con D3</strong>. Idea clave: la energía cinética máxima del fotoelectrón (D2) se convierte en el punto de partida para su momento y longitud de onda de De Broglie (D3). Cuanto mayor es la frecuencia del fotón incidente, mayor es \(E_{c,\max}\), mayor es \(p_e\) y menor es \(\lambda_e\). Error típico: usar la λ del fotón donde va la λ_e del electrón.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Paso</th><th>Fórmula</th><th>Tema</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Paso">1. Energía del fotón</td><td data-label="Fórmula">\(E_{\text{fotón}}=hc/\lambda\)</td><td data-label="Tema">D2</td></tr>
+                    <tr><td data-label="Paso">2. Energía cinética máxima</td><td data-label="Fórmula">\(E_{c,\max}=E_{\text{fotón}}-W_0\)</td><td data-label="Tema">D2</td></tr>
+                    <tr><td data-label="Paso">3. Momento del electrón</td><td data-label="Fórmula">\(p_e=\sqrt{2m_eE_{c,\max}}\)</td><td data-label="Tema">D3</td></tr>
+                    <tr><td data-label="Paso">4. Longitud de onda de De Broglie</td><td data-label="Fórmula">\(\lambda_e=h/p_e\)</td><td data-label="Tema">D3</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> luz de \(450\,\text{nm}\) sobre sodio (\(W_0=2{,}28\,\text{eV}\)). \(E_{\text{fotón}}=2{,}76\,\text{eV}\); \(E_{c,\max}=0{,}48\,\text{eV}=7{,}72\cdot10^{-20}\,\text{J}\); \(p_e=3{,}75\cdot10^{-25}\,\text{kg·m/s}\); \(\lambda_e=1{,}77\cdot10^{-9}\,\text{m}=1{,}77\,\text{nm}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Cadena completa: fotón → electrón con energía → onda asociada al electrón.</li>
+                    <li>En la EBAU aparece como ejercicio D2+D3 (por ejemplo, 2024 Extraordinaria P11).</li>
+                    <li>\(\lambda_e\) es típicamente \(1\)-\(10\,\text{nm}\) (mucho mayor que la λ del fotón incidente).</li>
+                    <li>Recuerda: no se puede usar \(\lambda_e=\lambda_{\text{fotón}}\); son ondas distintas.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             LEYENDA EPISTÉMICA
+             ============================================================ -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
+                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
+                consecuencia matemática, principio o conversión— y cada categoría se domina con un
+                <strong>verbo distinto</strong>. Identificar el tipo <em>antes</em> de estudiar ahorra
+                tiempo y evita memorizar lo que se puede deducir.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud o
+                        constante. No se demuestra, se establece. Se domina cuando puedes enunciarla
+                        sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D3</strong>
+                        Constantes \(h\), \(\hbar\), \(m_e\), \(e\), \(c\) · conversión eV↔J
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es el <em>punto de partida</em> del tema: describe cómo funciona la naturaleza
+                        a escala cuántica. No se deriva de otra cosa; se entiende el porqué y las
+                        condiciones en las que aplica.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D3</strong>
+                        Dualidad onda-corpúsculo · cuantización \(|\Delta E|=h\nu\) · hipótesis de De Broglie \(\lambda=h/p\) · principio de incertidumbre \(\Delta x\Delta p\geq\hbar/2\)
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> despejando o sustituyendo la ley fundamental o una
+                        definición. No se memoriza: se reconstruye en 2–3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D3</strong>
+                        \(\lambda=h/\sqrt{2mE_c}\) · \(\lambda=h/\sqrt{2m_ee\Delta V}\) · \(\Delta x_{\min}=h/(4\pi\Delta p)\) · \(\Delta E\Delta t\geq\hbar/2\) · \(K/E_{\text{fotón}}=h/(2m_ec\lambda)\)
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Aplicar / comprobar</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Es una <em>regla o criterio</em> que se aplica como filtro a cada problema concreto.
+                        No se demuestra: se usa como plantilla.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D3</strong>
+                        Difracción de electrones (λ_e ∼ d) · comparación fotón vs electrón con la misma λ · conexión D2–D3
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Conversión / operación</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes
+                        equivalentes. Debe salir sin pensar, como un reflejo.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos D3</strong>
+                        nm↔m · eV↔J · distinguir \(h\) de \(\hbar\) · \(\hbar/2=h/(4\pi)\)
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tabla resumen -->
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Punto de partida físico</td>
+                        <td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Regla universal / criterio</td>
+                        <td data-label="¿Cómo se domina?">Plantearla en cada problema</td>
+                        <td data-label="Autoevaluación">¿La aplico como filtro al problema?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Herramienta mecánica</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿Me sale sin pensar?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Regla de oro -->
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
+                pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si sale de otra fórmula despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
+                Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender).
+                Si solo asigna un nombre o constante → <strong>definición</strong> (memorizar).
+                Si es una regla o criterio de aplicación → <strong>principio</strong> (aplicar).
+            </div>
+
+            <!-- Mini-referencia de colores de las tarjetas -->
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Leyes fundamentales (dualidad, cuantización, De Broglie, Heisenberg)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Derivadas (De Broglie desde E_c, electrón acelerado, incertidumbres)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Constantes y conversiones</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Aplicaciones (difracción, comparación, D2-D3)</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================ GLOSARIO ============================ -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema D3</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \text{dualidad onda-corpúsculo} \]</td><td data-label="Nombre">Dualidad onda-corpúsculo</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ |\Delta E| = h\nu = hc/\lambda \]</td><td data-label="Nombre">Cuantización de la energía</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ \lambda = h/p \]</td><td data-label="Nombre">Hipótesis de De Broglie</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ \lambda = h/\sqrt{2mE_c} \]</td><td data-label="Nombre">De Broglie desde la energía cinética</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ \lambda = h/\sqrt{2m_ee\Delta V} \]</td><td data-label="Nombre">Electrón acelerado por \(\Delta V\)</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ \Delta x\Delta p_x \geq \hbar/2 = h/(4\pi) \]</td><td data-label="Nombre">Incertidumbre posición–momento</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ \Delta x_{\min} = h/(4\pi\Delta p_x) \]</td><td data-label="Nombre">Incertidumbre mínima de posición</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \Delta E\Delta t \geq \hbar/2 \]</td><td data-label="Nombre">Incertidumbre energía–tiempo</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ h,\, \hbar,\, m_e,\, e,\, c,\, 1\,\text{eV} \]</td><td data-label="Nombre">Constantes y conversiones</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ \lambda_e \sim d_{\text{interatómica}} \]</td><td data-label="Nombre">Difracción de electrones</td><td data-label="Ficha">10</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ K_e/E_{\text{fotón}} = h/(2m_ec\lambda) \]</td><td data-label="Nombre">Comparación fotón vs electrón</td><td data-label="Ficha">11</td></tr>
+                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ \lambda_e = h/\sqrt{2m_e(hc/\lambda_{\text{fotón}}-W_0)} \]</td><td data-label="Nombre">Conexión D2–D3 (fotoeléctrico + De Broglie)</td><td data-label="Ficha">12</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> usar \(h\) y \(\hbar\) indistintamente; olvidar que \(\hbar/2=h/(4\pi)\); calcular \(p=mv\) en régimen relativista; no convertir eV a J cuando se opera en el S.I.; usar la energía del fotón donde corresponde la energía cinética del electrón; no convertir el porcentaje de incertidumbre a valor absoluto; afirmar que los electrones se difractan "porque son ondas clásicas" en lugar de invocar su \(\lambda\) de De Broglie; y confundir la \(\lambda\) del fotón con la \(\lambda_e\) del electrón en un problema D2+D3.
+        </div>
+    </details>
+
+    <!-- ============================ RECORDATORIO + BOTÓN ============================ -->
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en el tema D3, la <strong>hipótesis de De Broglie</strong> \(\lambda=h/p\) es la fórmula central: de ella se deducen \(\lambda=h/\sqrt{2mE_c}\) y \(\lambda=h/\sqrt{2m_ee\Delta V}\). El <strong>principio de incertidumbre</strong> \(\Delta x\Delta p_x\geq\hbar/2\) (con \(\hbar/2=h/(4\pi)\)) impone un límite fundamental a la precisión simultánea; la incertidumbre mínima de posición es \(\Delta x_{\min}=h/(4\pi\Delta p_x)\). Recuerda siempre: <strong>distingue \(h\) de \(\hbar\)</strong>; usa las expresiones no relativistas solo si \(E_c\ll m_0c^2\); pasa las unidades al S.I. antes de operar; y en los ejercicios D2+D3 sigue la cadena: fotón → \(E_{c,\max}\) → \(p_e\) → \(\lambda_e\), sin confundir la λ del fotón con la λ del electrón.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+
+<!-- ============================ RESALTADO DE FÓRMULA DESDE LA UNIDAD ============================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var card = document.querySelector(hash);
+    if (!card) return;
+
+    card.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    card.classList.remove('formula-resaltada');
+    void card.offsetWidth;
+    card.classList.add('formula-resaltada');
+    setTimeout(function () {
+        card.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
+</body>
+</html>

@@ -5,3077 +5,911 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda</title>
 
-
-    <!-- Para crear las consultas puntuales en la base de datos) -->
     <script src="js/utils.js" defer></script>
-
-    <!-- FontAwesome CDN (versión 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
     <link rel="stylesheet" href="../css/unidades.css">
-
-    <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-
-    
-    <!-- MathJax -->
-    <script id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
+    <style>
+        /* Estilo base para que el enlace que envuelve la fórmula no parezca un enlace azul subrayado.
+           El comportamiento al pulsar (scroll + margen) ya lo aporta unidades.css:
+           .formula-box { scroll-margin-top: 90px; } */
+        a.formula-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-    <!-- ============================================================ -->
-    <!-- CABECERA                                                     -->
-    <!-- ============================================================ -->
     <div class="header">
         <div class="header-left">
             <h1>IES Valle del Alberche</h1>
             <div class="header-sub">
-                <img src="../img_comunes/Cápsula.png"
-                     width="40"
-                     height="auto"
-                     alt="Cápsula">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
                 <span class="codigo">#TEMA C2.- </span>
-                <span class="texto">
-                    Movimiento ondulatorio: magnitudes, tipos y ecuación de onda
-                </span>
+                <span class="texto">Movimiento ondulatorio: magnitudes, tipos y ecuación de onda</span>
             </div>
         </div>
         <div class="header-right">
-            <img src="../img_comunes/Valle del Alberche v2-Small.png"
-                 alt="Logo del centro">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
         </div>
     </div>
-    <!-- ============================================================ -->
-    <!-- MAPA DE BLOQUES Y TEMAS                                      -->
-    <!-- ============================================================ -->
+
     <details class="section enunciado" open>
-        <summary>
-            <h2>🗺️ Ubicación en el currículo</h2>
-        </summary>
+        <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
         <p>
-            Este tema pertenece al
-            <strong>Bloque C. Vibraciones y ondas</strong>
-            del currículo de Física de 2.º de Bachillerato,
-            establecido en el Decreto 40/2022
-            (BOCYL-D-30092022-4).
+            Este tema pertenece al <strong>Bloque C. Vibraciones y ondas</strong>
+            del currículo de Física de 2.º de Bachillerato, establecido en el
+            Decreto 40/2022 (BOCYL-D-30092022-4).
         </p>
         <div class="mapa-bloques">
-            <!-- BLOQUE A -->
             <div class="bloque-card">
-                <div class="bloque-titulo">
-                    A. Campo gravitatorio
-                </div>
+                <div class="bloque-titulo">A. Campo gravitatorio</div>
                 <div class="tema-lista">
-                    <span class="tema-chip">A1</span>
-                    <span class="tema-chip">A2</span>
-                    <span class="tema-chip">A3</span>
-                    <span class="tema-chip">A4</span>
-                    <span class="tema-chip">A5</span>
-                    <span class="tema-chip">A6</span>
-                    <span class="tema-chip">A7</span>
-                    <span class="tema-chip">A8</span>
+                    <span class="tema-chip">A1</span><span class="tema-chip">A2</span><span class="tema-chip">A3</span><span class="tema-chip">A4</span><span class="tema-chip">A5</span><span class="tema-chip">A6</span><span class="tema-chip">A7</span><span class="tema-chip">A8</span>
                 </div>
             </div>
-            <!-- BLOQUE B -->
             <div class="bloque-card">
-                <div class="bloque-titulo">
-                    B. Campo electromagnético
-                </div>
+                <div class="bloque-titulo">B. Campo electromagnético</div>
                 <div class="tema-lista">
-                    <span class="tema-chip">B1</span>
-                    <span class="tema-chip">B2</span>
-                    <span class="tema-chip">B3</span>
-                    <span class="tema-chip">B4</span>
-                    <span class="tema-chip">B5</span>
-                    <span class="tema-chip">B6</span>
-                    <span class="tema-chip">B7</span>
-                    <span class="tema-chip">B8</span>
-                    <span class="tema-chip">B9</span>
+                    <span class="tema-chip">B1</span><span class="tema-chip">B2</span><span class="tema-chip">B3</span><span class="tema-chip">B4</span><span class="tema-chip">B5</span><span class="tema-chip">B6</span><span class="tema-chip">B7</span><span class="tema-chip">B8</span><span class="tema-chip">B9</span>
                 </div>
             </div>
-            <!-- BLOQUE C ACTUAL -->
             <div class="bloque-card actual">
-                <div class="bloque-titulo">
-                    C. Vibraciones y ondas
-                </div>
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
                 <div class="tema-lista">
-                    <span class="tema-chip">C1</span>
-                    <span class="tema-chip actual">C2</span>
-                    <span class="tema-chip">C3</span>
-                    <span class="tema-chip">C4</span>
-                    <span class="tema-chip">C5</span>
-                    <span class="tema-chip">C6</span>
+                    <span class="tema-chip">C1</span><span class="tema-chip actual">C2</span><span class="tema-chip">C3</span><span class="tema-chip">C4</span><span class="tema-chip">C5</span><span class="tema-chip">C6</span>
                 </div>
             </div>
-            <!-- BLOQUE D -->
             <div class="bloque-card">
-                <div class="bloque-titulo">
-                    D. Física relativista, cuántica, nuclear y de partículas
-                </div>
+                <div class="bloque-titulo">D. Física relativista, cuántica, nuclear y de partículas</div>
                 <div class="tema-lista">
-                    <span class="tema-chip">D1</span>
-                    <span class="tema-chip">D2</span>
-                    <span class="tema-chip">D3</span>
-                    <span class="tema-chip">D4</span>
-                    <span class="tema-chip">D5</span>
-                    <span class="tema-chip">D6</span>
+                    <span class="tema-chip">D1</span><span class="tema-chip">D2</span><span class="tema-chip">D3</span><span class="tema-chip">D4</span><span class="tema-chip">D5</span><span class="tema-chip">D6</span>
                 </div>
             </div>
         </div>
         <div class="formula-box" style="font-size:0.98em;">
             <strong>Bloque C · Tema C2:</strong>
-            <span class="texto-resaltado">
-                Movimiento ondulatorio: magnitudes, tipos y ecuación de onda.
-            </span>
+            <span class="texto-resaltado">Movimiento ondulatorio: magnitudes, tipos y ecuación de onda.</span>
             <br><br>
-            <em>En este tema estudiaremos:</em>
-            el movimiento ondulatorio como mecanismo de propagación
-            de una perturbación, los tipos de ondas, las magnitudes
-            características de una onda armónica, la ecuación matemática
-            de una onda, la longitud de onda, la frecuencia, la velocidad
-            de propagación, el número de onda, la fase y la diferencia
-            de fase entre dos puntos o dos instantes.
-            También distinguiremos la velocidad de propagación de la onda
-            de la velocidad transversal de vibración de las partículas
-            del medio.
+            <em>En este tema estudiaremos:</em> el movimiento ondulatorio como mecanismo de propagación de una perturbación, los tipos de ondas, las magnitudes características de una onda armónica, la ecuación matemática de una onda, la longitud de onda, la frecuencia, la velocidad de propagación, el número de onda, la fase y la diferencia de fase entre dos puntos o dos instantes. También distinguiremos la velocidad de propagación de la onda de la velocidad transversal de vibración de las partículas del medio.
         </div>
         <div class="note">
             <strong>📈 Importancia en la EBAU:</strong>
             Según los datos estadísticos facilitados para este tema:
             <ul>
-                <li>
-                    C-C2 — Onda armónica: magnitudes y ecuación:
-                    <strong>19,1 %</strong>.
-                </li>
-                <li>
-                    Media de referencia:
-                    <strong>10,1 %</strong>.
-                </li>
-                <li>
-                    Diferencia:
-                    <strong>+9,0 puntos porcentuales</strong>.
-                </li>
-                <li>
-                    P-C2 — Problemas de ecuación de onda, desfase y
-                    velocidad transversal, aplica C-C2:
-                    <strong>19,1 %</strong>.
-                </li>
+                <li>C-C2 — Onda armónica: magnitudes y ecuación: <strong>19,1 %</strong>.</li>
+                <li>Media de referencia: <strong>10,1 %</strong>.</li>
+                <li>Diferencia: <strong>+9,0 puntos porcentuales</strong>.</li>
+                <li>P-C2 — Problemas de ecuación de onda, desfase y velocidad transversal, aplica C-C2: <strong>19,1 %</strong>.</li>
             </ul>
-            Es, por tanto, un contenido prioritario para preparar
-            los ejercicios de ondas de la PAU/EBAU.
+            Es, por tanto, un contenido prioritario para preparar los ejercicios de ondas de la PAU/EBAU.
         </div>
     </details>
-    <!-- ============================================================ -->
-    <!-- OBJETIVOS DE APRENDIZAJE                                     -->
-    <!-- ============================================================ -->
+
     <details class="section objetivo">
-        <summary>
-            <h2>🎯 Objetivos de aprendizaje</h2>
-        </summary>
+        <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
         <ul>
-            <li>
-                Comprender el movimiento ondulatorio como propagación
-                de una perturbación que transporta energía sin producir
-                un transporte neto de materia.
-            </li>
-            <li>
-                Diferenciar ondas mecánicas y electromagnéticas,
-                así como ondas transversales y longitudinales.
-            </li>
-            <li>
-                Identificar y definir las magnitudes características
-                de una onda armónica: amplitud, periodo, frecuencia,
-                frecuencia angular, longitud de onda, número de onda
-                y fase inicial.
-            </li>
-            <li>
-                Escribir e interpretar la ecuación matemática de una
-                onda armónica que se propaga en una dimensión.
-            </li>
-            <li>
-                Determinar el sentido de propagación de una onda
-                a partir del signo de los términos espacial y temporal
-                de su ecuación.
-            </li>
-            <li>
-                Calcular la longitud de onda, el periodo, la frecuencia
-                y la velocidad de propagación, relacionando todas
-                estas magnitudes.
-            </li>
-            <li>
-                Interpretar el número de onda como variación espacial
-                de la fase y relacionarlo con la longitud de onda.
-            </li>
-            <li>
-                Calcular diferencias de fase entre dos puntos
-                de una onda y entre dos instantes de tiempo.
-            </li>
-            <li>
-                Identificar puntos en fase y en oposición de fase.
-                Calcular las distancias que los separan.
-            </li>
-            <li>
-                Diferenciar la velocidad de propagación de la onda
-                de la velocidad de vibración transversal de las partículas.
-            </li>
-            <li>
-                Calcular la elongación, la velocidad transversal
-                y la aceleración de un punto del medio en un instante
-                determinado.
-            </li>
-            <li>
-                Obtener la ecuación de una onda a partir de datos
-                experimentales, condiciones iniciales o gráficas.
-            </li>
-            <li>
-                Resolver problemas numéricos y de razonamiento
-                característicos de la PAU/EBAU de Castilla y León
-                sobre el movimiento ondulatorio.
-            </li>
+            <li>Comprender el movimiento ondulatorio como propagación de una perturbación que transporta energía sin producir un transporte neto de materia.</li>
+            <li>Diferenciar ondas mecánicas y electromagnéticas, así como ondas transversales y longitudinales.</li>
+            <li>Identificar y definir las magnitudes características de una onda armónica: amplitud, periodo, frecuencia, frecuencia angular, longitud de onda, número de onda y fase inicial.</li>
+            <li>Escribir e interpretar la ecuación matemática de una onda armónica que se propaga en una dimensión.</li>
+            <li>Determinar el sentido de propagación de una onda a partir del signo de los términos espacial y temporal de su ecuación.</li>
+            <li>Calcular la longitud de onda, el periodo, la frecuencia y la velocidad de propagación, relacionando todas estas magnitudes.</li>
+            <li>Interpretar el número de onda como variación espacial de la fase y relacionarlo con la longitud de onda.</li>
+            <li>Calcular diferencias de fase entre dos puntos de una onda y entre dos instantes de tiempo.</li>
+            <li>Identificar puntos en fase y en oposición de fase. Calcular las distancias que los separan.</li>
+            <li>Diferenciar la velocidad de propagación de la onda de la velocidad de vibración transversal de las partículas.</li>
+            <li>Calcular la elongación, la velocidad transversal y la aceleración de un punto del medio en un instante determinado.</li>
+            <li>Obtener la ecuación de una onda a partir de datos experimentales, condiciones iniciales o gráficas.</li>
+            <li>Resolver problemas numéricos y de razonamiento característicos de la PAU/EBAU de Castilla y León sobre el movimiento ondulatorio.</li>
         </ul>
     </details>
-    <!-- ============================================================ -->
-    <!-- CONTENIDO TEÓRICO                                            -->
-    <!-- ============================================================ -->
+
     <details class="section procedimiento">
-        <summary>
-            <h2>📚 Contenido teórico</h2>
-        </summary>
-        <!-- ======================================================== -->
-        <!-- 1. CONCEPTO DE ONDA                                      -->
-        <!-- ======================================================== -->
+        <summary><h2>📚 Contenido teórico</h2></summary>
+
         <details class="step">
             <summary>
                 <span class="step-num">1</span>
-                <strong>
-                    Concepto de movimiento ondulatorio.
-                </strong>
+                <strong>Concepto de movimiento ondulatorio.</strong>
             </summary>
-            <p>
-                Una <strong>onda</strong> es una perturbación que se
-                propaga a través de un medio o del espacio y que
-                transporta energía sin que exista un transporte neto
-                de materia.
-            </p>
-            <p>
-                En las ondas mecánicas, las partículas del medio
-                oscilan alrededor de sus posiciones de equilibrio.
-                La perturbación se transmite de unas partículas
-                a otras, pero estas no acompañan a la onda en su
-                desplazamiento global.
-            </p>
-            <p>
-                Por ejemplo, cuando se genera una onda en una cuerda,
-                cada punto de la cuerda sube y baja, mientras que
-                la perturbación avanza a lo largo de ella.
-            </p>
-            <p>
-                <strong>Características esenciales:</strong>
-            </p>
+            <p>Una <strong>onda</strong> es una perturbación que se propaga a través de un medio o del espacio y que transporta energía sin que exista un transporte neto de materia.</p>
+            <p>En las ondas mecánicas, las partículas del medio oscilan alrededor de sus posiciones de equilibrio. La perturbación se transmite de unas partículas a otras, pero estas no acompañan a la onda en su desplazamiento global.</p>
+            <p>Por ejemplo, cuando se genera una onda en una cuerda, cada punto de la cuerda sube y baja, mientras que la perturbación avanza a lo largo de ella.</p>
+            <p><strong>Características esenciales:</strong></p>
             <ul>
-                <li>
-                    Transportan energía de un lugar a otro.
-                </li>
-                <li>
-                    No transportan materia de forma neta.
-                </li>
-                <li>
-                    Pueden propagarse en una, dos o tres dimensiones.
-                </li>
-                <li>
-                    Pueden producir fenómenos como reflexión,
-                    refracción, difracción e interferencias.
-                </li>
-                <li>
-                    Su velocidad de propagación depende del medio
-                    en el que se transmiten, cuando se trata de ondas
-                    mecánicas.
-                </li>
+                <li>Transportan energía de un lugar a otro.</li>
+                <li>No transportan materia de forma neta.</li>
+                <li>Pueden propagarse en una, dos o tres dimensiones.</li>
+                <li>Pueden producir fenómenos como reflexión, refracción, difracción e interferencias.</li>
+                <li>Su velocidad de propagación depende del medio en el que se transmiten, cuando se trata de ondas mecánicas.</li>
             </ul>
             <div class="note">
-                <strong>Importante:</strong>
-                No debemos confundir la velocidad de propagación
-                de la perturbación con la velocidad de vibración
-                de las partículas del medio. Son magnitudes diferentes.
+                <strong>Importante:</strong> No debemos confundir la velocidad de propagación de la perturbación con la velocidad de vibración de las partículas del medio. Son magnitudes diferentes.
             </div>
         </details>
-        <!-- ======================================================== -->
-        <!-- 2. TIPOS DE ONDAS                                        -->
-        <!-- ======================================================== -->
+
         <details class="step">
             <summary>
                 <span class="step-num">2</span>
-                <strong>
-                    Clasificación de las ondas.
-                </strong>
+                <strong>Clasificación de las ondas.</strong>
             </summary>
-            <p>
-                Las ondas se pueden clasificar atendiendo a diferentes
-                criterios.
-            </p>
+            <p>Las ondas se pueden clasificar atendiendo a diferentes criterios.</p>
             <h3>2.1. Según el medio de propagación</h3>
             <table>
-                <thead>
-                    <tr>
-                        <th>Tipo de onda</th>
-                        <th>Características</th>
-                        <th>Ejemplos</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>Tipo de onda</th><th>Características</th><th>Ejemplos</th></tr></thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <strong>Mecánica</strong>
-                        </td>
-                        <td>
-                            Necesita un medio material para propagarse.
-                        </td>
-                        <td>
-                            Sonido, ondas en una cuerda y ondas
-                            sísmicas.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>Electromagnética</strong>
-                        </td>
-                        <td>
-                            No necesita un medio material.
-                            Puede propagarse en el vacío.
-                        </td>
-                        <td>
-                            Luz visible, ondas de radio,
-                            microondas y rayos X.
-                        </td>
-                    </tr>
+                    <tr><td><strong>Mecánica</strong></td><td>Necesita un medio material para propagarse.</td><td>Sonido, ondas en una cuerda y ondas sísmicas.</td></tr>
+                    <tr><td><strong>Electromagnética</strong></td><td>No necesita un medio material. Puede propagarse en el vacío.</td><td>Luz visible, ondas de radio, microondas y rayos X.</td></tr>
                 </tbody>
             </table>
             <h3>2.2. Según la dirección de vibración</h3>
             <table>
-                <thead>
-                    <tr>
-                        <th>Tipo</th>
-                        <th>Descripción</th>
-                        <th>Ejemplo</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>Tipo</th><th>Descripción</th><th>Ejemplo</th></tr></thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <strong>Transversal</strong>
-                        </td>
-                        <td>
-                            Las partículas del medio vibran
-                            perpendicularmente a la dirección
-                            de propagación.
-                        </td>
-                        <td>
-                            Onda en una cuerda tensa.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>Longitudinal</strong>
-                        </td>
-                        <td>
-                            Las partículas del medio vibran
-                            paralelamente a la dirección
-                            de propagación.
-                        </td>
-                        <td>
-                            Sonido propagándose por el aire.
-                        </td>
-                    </tr>
+                    <tr><td><strong>Transversal</strong></td><td>Las partículas del medio vibran perpendicularmente a la dirección de propagación.</td><td>Onda en una cuerda tensa.</td></tr>
+                    <tr><td><strong>Longitudinal</strong></td><td>Las partículas del medio vibran paralelamente a la dirección de propagación.</td><td>Sonido propagándose por el aire.</td></tr>
                 </tbody>
             </table>
-            <p>
-                En una onda transversal se producen crestas y valles.
-                En una onda longitudinal aparecen zonas de compresión
-                y rarefacción.
-            </p>
+            <p>En una onda transversal se producen crestas y valles. En una onda longitudinal aparecen zonas de compresión y rarefacción.</p>
             <div class="note">
-                <strong>Ejemplo importante:</strong>
-                El sonido en el aire es una onda mecánica longitudinal.
-                Necesita un medio material y las partículas del aire
-                vibran en la misma dirección en la que se transmite
-                la perturbación.
+                <strong>Ejemplo importante:</strong> El sonido en el aire es una onda mecánica longitudinal. Necesita un medio material y las partículas del aire vibran en la misma dirección en la que se transmite la perturbación.
             </div>
         </details>
-        <!-- ======================================================== -->
-        <!-- 3. MAGNITUDES CARACTERÍSTICAS                            -->
-        <!-- ======================================================== -->
+
         <details class="step">
             <summary>
                 <span class="step-num">3</span>
-                <strong>
-                    Magnitudes características de una onda armónica.
-                </strong>
+                <strong>Magnitudes características de una onda armónica.</strong>
             </summary>
-            <p>
-                Una onda armónica se caracteriza por una serie
-                de magnitudes que permiten describir completamente
-                su comportamiento espacial y temporal.
-            </p>
+            <p>Una onda armónica se caracteriza por una serie de magnitudes que permiten describir completamente su comportamiento espacial y temporal.</p>
             <h3>3.1. Elongación \(y\)</h3>
-            <p>
-                Es la separación instantánea de un punto del medio
-                respecto a su posición de equilibrio.
-            </p>
-            <p>
-                En una onda transversal, representa el desplazamiento
-                perpendicular a la dirección de propagación.
-            </p>
-            <p>
-                Su unidad en el Sistema Internacional es el metro (m).
-            </p>
+            <p>Es la separación instantánea de un punto del medio respecto a su posición de equilibrio.</p>
+            <p>En una onda transversal, representa el desplazamiento perpendicular a la dirección de propagación.</p>
+            <p>Su unidad en el Sistema Internacional es el metro (m).</p>
             <h3>3.2. Amplitud \(A\)</h3>
-            <p>
-                Es la elongación máxima de los puntos del medio
-                respecto a la posición de equilibrio.
-            </p>
-            <div class="formula-box">
-                \[
-                    -A\leq y(x,t)\leq A
-                \]
-            </div>
-            <p>
-                Su unidad en el S.I. es el metro (m).
-            </p>
+            <p>Es la elongación máxima de los puntos del medio respecto a la posición de equilibrio.</p>
+            <a href="TemaC2-Formulario.html#formula-3" class="formula-link">
+                <div class="formula-box" id="formula-3">
+                    \[ -A\leq y(x,t)\leq A \]
+                </div>
+            </a>
+            <p>Su unidad en el S.I. es el metro (m).</p>
             <h3>3.3. Longitud de onda \(\lambda\)</h3>
-            <p>
-                Es la distancia mínima entre dos puntos consecutivos
-                que se encuentran en el mismo estado de vibración
-                (misma fase).
-            </p>
-            <p>
-                Por ejemplo, es la distancia entre dos crestas
-                consecutivas o entre dos valles consecutivos.
-            </p>
-            <div class="formula-box">
-                \[
-                    \lambda = \text{distancia entre dos puntos
-                    consecutivos en fase}
-                \]
-            </div>
-            <p>
-                Su unidad en el S.I. es el metro (m).
-            </p>
+            <p>Es la distancia mínima entre dos puntos consecutivos que se encuentran en el mismo estado de vibración (misma fase).</p>
+            <p>Por ejemplo, es la distancia entre dos crestas consecutivas o entre dos valles consecutivos.</p>
+            <a href="TemaC2-Formulario.html#formula-4" class="formula-link">
+                <div class="formula-box" id="formula-4">
+                    \[ \lambda = \text{distancia entre dos puntos consecutivos en fase} \]
+                </div>
+            </a>
+            <p>Su unidad en el S.I. es el metro (m).</p>
             <h3>3.4. Periodo \(T\)</h3>
-            <p>
-                Es el tiempo que tarda un punto del medio en completar
-                una oscilación.
-            </p>
-            <p>
-                Su unidad es el segundo (s).
-            </p>
+            <p>Es el tiempo que tarda un punto del medio en completar una oscilación.</p>
+            <p>Su unidad es el segundo (s).</p>
             <h3>3.5. Frecuencia \(f\)</h3>
-            <p>
-                Es el número de oscilaciones completas que realiza
-                un punto del medio por unidad de tiempo.
-            </p>
-            <div class="formula-box">
-                \[
-                    f=\frac{1}{T}
-                \]
-            </div>
-            <p>
-                Su unidad es el hercio (Hz), equivalente a
-                \(\text{s}^{-1}\).
-            </p>
+            <p>Es el número de oscilaciones completas que realiza un punto del medio por unidad de tiempo.</p>
+            <a href="TemaC2-Formulario.html#formula-5" class="formula-link">
+                <div class="formula-box" id="formula-5">
+                    \[ f=\frac{1}{T} \]
+                </div>
+            </a>
+            <p>Su unidad es el hercio (Hz), equivalente a \(\text{s}^{-1}\).</p>
             <h3>3.6. Frecuencia angular \(\omega\)</h3>
-            <p>
-                Representa la rapidez con la que cambia la fase
-                de oscilación con el tiempo.
-            </p>
-            <div class="formula-box">
-                \[
-                    \boxed{\omega=2\pi f=\frac{2\pi}{T}}
-                \]
-            </div>
-            <p>
-                Su unidad es el radian por segundo (rad/s).
-            </p>
+            <p>Representa la rapidez con la que cambia la fase de oscilación con el tiempo.</p>
+            <a href="TemaC2-Formulario.html#formula-6" class="formula-link">
+                <div class="formula-box" id="formula-6">
+                    \[ \boxed{\omega=2\pi f=\frac{2\pi}{T}} \]
+                </div>
+            </a>
+            <p>Su unidad es el radian por segundo (rad/s).</p>
             <h3>3.7. Número de onda \(k\)</h3>
-            <p>
-                El número de onda representa la rapidez con la que
-                cambia la fase al variar la posición.
-            </p>
-            <div class="formula-box">
-                \[
-                    \boxed{k=\frac{2\pi}{\lambda}}
-                \]
-            </div>
-            <p>
-                Su unidad es el radian por metro (rad/m).
-            </p>
+            <p>El número de onda representa la rapidez con la que cambia la fase al variar la posición.</p>
+            <a href="TemaC2-Formulario.html#formula-7" class="formula-link">
+                <div class="formula-box" id="formula-7">
+                    \[ \boxed{k=\frac{2\pi}{\lambda}} \]
+                </div>
+            </a>
+            <p>Su unidad es el radian por metro (rad/m).</p>
             <h3>3.8. Fase inicial \(\varphi_0\)</h3>
-            <p>
-                Es la constante que determina el estado de vibración
-                del punto de referencia en el instante inicial.
-            </p>
-            <p>
-                Permite establecer si, en \(t=0\), el punto se encuentra
-                en una posición de elongación máxima, mínima, nula
-                o intermedia, así como el sentido de su movimiento.
-            </p>
-            <p>
-                Se mide en radianes (rad).
-            </p>
+            <p>Es la constante que determina el estado de vibración del punto de referencia en el instante inicial.</p>
+            <p>Permite establecer si, en \(t=0\), el punto se encuentra en una posición de elongación máxima, mínima, nula o intermedia, así como el sentido de su movimiento.</p>
+            <p>Se mide en radianes (rad).</p>
             <h3>3.9. Resumen de magnitudes y unidades</h3>
             <table>
-                <thead>
-                    <tr>
-                        <th>Magnitud</th>
-                        <th>Símbolo</th>
-                        <th>Unidad S.I.</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>Magnitud</th><th>Símbolo</th><th>Unidad S.I.</th></tr></thead>
                 <tbody>
-                    <tr>
-                        <td>Elongación</td>
-                        <td>\(y\)</td>
-                        <td>m</td>
-                    </tr>
-                    <tr>
-                        <td>Amplitud</td>
-                        <td>\(A\)</td>
-                        <td>m</td>
-                    </tr>
-                    <tr>
-                        <td>Longitud de onda</td>
-                        <td>\(\lambda\)</td>
-                        <td>m</td>
-                    </tr>
-                    <tr>
-                        <td>Periodo</td>
-                        <td>\(T\)</td>
-                        <td>s</td>
-                    </tr>
-                    <tr>
-                        <td>Frecuencia</td>
-                        <td>\(f\)</td>
-                        <td>Hz</td>
-                    </tr>
-                    <tr>
-                        <td>Frecuencia angular</td>
-                        <td>\(\omega\)</td>
-                        <td>rad/s</td>
-                    </tr>
-                    <tr>
-                        <td>Número de onda</td>
-                        <td>\(k\)</td>
-                        <td>rad/m</td>
-                    </tr>
-                    <tr>
-                        <td>Fase</td>
-                        <td>\(\varphi\)</td>
-                        <td>rad</td>
-                    </tr>
-                    <tr>
-                        <td>Velocidad de propagación</td>
-                        <td>\(v\)</td>
-                        <td>m/s</td>
-                    </tr>
-                    <tr>
-                        <td>Velocidad transversal</td>
-                        <td>\(v_y\)</td>
-                        <td>m/s</td>
-                    </tr>
+                    <tr><td>Elongación</td><td>\(y\)</td><td>m</td></tr>
+                    <tr><td>Amplitud</td><td>\(A\)</td><td>m</td></tr>
+                    <tr><td>Longitud de onda</td><td>\(\lambda\)</td><td>m</td></tr>
+                    <tr><td>Periodo</td><td>\(T\)</td><td>s</td></tr>
+                    <tr><td>Frecuencia</td><td>\(f\)</td><td>Hz</td></tr>
+                    <tr><td>Frecuencia angular</td><td>\(\omega\)</td><td>rad/s</td></tr>
+                    <tr><td>Número de onda</td><td>\(k\)</td><td>rad/m</td></tr>
+                    <tr><td>Fase</td><td>\(\varphi\)</td><td>rad</td></tr>
+                    <tr><td>Velocidad de propagación</td><td>\(v\)</td><td>m/s</td></tr>
+                    <tr><td>Velocidad transversal</td><td>\(v_y\)</td><td>m/s</td></tr>
                 </tbody>
             </table>
         </details>
-        <!-- ======================================================== -->
-        <!-- 4. ECUACIÓN DE ONDA                                      -->
-        <!-- ======================================================== -->
+
         <details class="step">
             <summary>
                 <span class="step-num">4</span>
-                <strong>
-                    Ecuación matemática de una onda armónica.
-                </strong>
+                <strong>Ecuación matemática de una onda armónica.</strong>
             </summary>
-            <p>
-                Una onda armónica es aquella en la que cada punto
-                del medio realiza un movimiento armónico simple
-                alrededor de su posición de equilibrio.
-            </p>
-            <p>
-                Para una onda transversal que se propaga en el sentido
-                positivo del eje \(X\), podemos escribir:
-            </p>
-            <div class="formula-box">
-                \[
-                    \boxed{
-                    y(x,t)=A\,\sin(\omega t-kx+\varphi_0)
-                    }
-                \]
-            </div>
-            <p>
-                También puede expresarse utilizando el coseno,
-                modificando convenientemente la fase inicial.
-            </p>
-            <p>
-                Para una onda que se propaga en el sentido negativo
-                del eje \(X\):
-            </p>
-            <div class="formula-box">
-                \[
-                    \boxed{
-                    y(x,t)=A\,\sin(\omega t+kx+\varphi_0)
-                    }
-                \]
-            </div>
+            <p>Una onda armónica es aquella en la que cada punto del medio realiza un movimiento armónico simple alrededor de su posición de equilibrio.</p>
+            <p>Para una onda transversal que se propaga en el sentido positivo del eje \(X\), podemos escribir:</p>
+            <a href="TemaC2-Formulario.html#formula-1" class="formula-link">
+                <div class="formula-box" id="formula-1">
+                    \[ \boxed{y(x,t)=A\,\sin(\omega t-kx+\varphi_0)} \]
+                </div>
+            </a>
+            <p>También puede expresarse utilizando el coseno, modificando convenientemente la fase inicial.</p>
+            <p>Para una onda que se propaga en el sentido negativo del eje \(X\):</p>
+            <a href="TemaC2-Formulario.html#formula-2" class="formula-link">
+                <div class="formula-box" id="formula-2">
+                    \[ \boxed{y(x,t)=A\,\sin(\omega t+kx+\varphi_0)} \]
+                </div>
+            </a>
             <h3>Significado de los términos</h3>
             <table>
-                <thead>
-                    <tr>
-                        <th>Término</th>
-                        <th>Significado</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>Término</th><th>Significado</th></tr></thead>
                 <tbody>
-                    <tr>
-                        <td>\(y(x,t)\)</td>
-                        <td>
-                            Elongación del punto situado en \(x\)
-                            en el instante \(t\).
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>\(A\)</td>
-                        <td>Amplitud de la onda.</td>
-                    </tr>
-                    <tr>
-                        <td>\(\omega t\)</td>
-                        <td>Dependencia temporal de la fase.</td>
-                    </tr>
-                    <tr>
-                        <td>\(kx\)</td>
-                        <td>Dependencia espacial de la fase.</td>
-                    </tr>
-                    <tr>
-                        <td>\(\varphi_0\)</td>
-                        <td>Fase inicial.</td>
-                    </tr>
+                    <tr><td>\(y(x,t)\)</td><td>Elongación del punto situado en \(x\) en el instante \(t\).</td></tr>
+                    <tr><td>\(A\)</td><td>Amplitud de la onda.</td></tr>
+                    <tr><td>\(\omega t\)</td><td>Dependencia temporal de la fase.</td></tr>
+                    <tr><td>\(kx\)</td><td>Dependencia espacial de la fase.</td></tr>
+                    <tr><td>\(\varphi_0\)</td><td>Fase inicial.</td></tr>
                 </tbody>
             </table>
             <h3>Interpretación del sentido de propagación</h3>
-            <p>
-                El sentido de propagación se puede determinar
-                analizando el signo relativo de los términos
-                espacial y temporal.
-            </p>
+            <p>El sentido de propagación se puede determinar analizando el signo relativo de los términos espacial y temporal.</p>
             <div class="formula-box">
                 \[
                     \begin{array}{ll}
-                    \omega t-kx+\varphi_0
-                    & \longrightarrow \text{sentido }+X\\[8pt]
-                    \omega t+kx+\varphi_0
-                    & \longrightarrow \text{sentido }-X
+                    \omega t-kx+\varphi_0 & \longrightarrow \text{sentido }+X\\[8pt]
+                    \omega t+kx+\varphi_0 & \longrightarrow \text{sentido }-X
                     \end{array}
                 \]
             </div>
-            <p>
-                En la forma más general:
-            </p>
+            <p>En la forma más general:</p>
             <div class="formula-box">
-                \[
-                    \varphi(x,t)=\omega t\mp kx+\varphi_0
-                \]
+                \[ \varphi(x,t)=\omega t\mp kx+\varphi_0 \]
             </div>
-            <p>
-                El signo negativo delante de \(kx\) corresponde
-                a propagación hacia \(+X\), mientras que el positivo
-                corresponde a propagación hacia \(-X\).
-            </p>
+            <p>El signo negativo delante de \(kx\) corresponde a propagación hacia \(+X\), mientras que el positivo corresponde a propagación hacia \(-X\).</p>
             <div class="note">
-                <strong>Consejo EBAU:</strong>
-                No basta con identificar los coeficientes de \(x\) y
-                \(t\). Comprueba siempre el signo relativo entre ellos.
-                Las expresiones con seno y coseno pueden representar
-                la misma onda si se modifica adecuadamente la fase.
+                <strong>Consejo EBAU:</strong> No basta con identificar los coeficientes de \(x\) y \(t\). Comprueba siempre el signo relativo entre ellos. Las expresiones con seno y coseno pueden representar la misma onda si se modifica adecuadamente la fase.
             </div>
         </details>
-        <!-- ======================================================== -->
-        <!-- 5. VELOCIDAD DE PROPAGACIÓN                             -->
-        <!-- ======================================================== -->
+
         <details class="step">
             <summary>
                 <span class="step-num">5</span>
-                <strong>
-                    Velocidad de propagación de una onda.
-                </strong>
+                <strong>Velocidad de propagación de una onda.</strong>
             </summary>
-            <p>
-                La velocidad de propagación es la rapidez con la que
-                avanza la perturbación a través del medio.
-            </p>
-            <p>
-                En una onda periódica, durante un periodo \(T\)
-                la perturbación avanza una longitud de onda \(\lambda\).
-                Por tanto:
-            </p>
+            <p>La velocidad de propagación es la rapidez con la que avanza la perturbación a través del medio.</p>
+            <p>En una onda periódica, durante un periodo \(T\) la perturbación avanza una longitud de onda \(\lambda\). Por tanto:</p>
             <div class="formula-box">
-                \[
-                    \boxed{
-                    v=\frac{\lambda}{T}
-                    }
-                \]
+                \[ \boxed{v=\frac{\lambda}{T}} \]
             </div>
-            <p>
-                Como \(f=1/T\), también podemos escribir:
-            </p>
+            <p>Como \(f=1/T\), también podemos escribir:</p>
             <div class="formula-box">
-                \[
-                    \boxed{
-                    v=\lambda f
-                    }
-                \]
+                \[ \boxed{v=\lambda f} \]
             </div>
-            <p>
-                Utilizando las expresiones del número de onda
-                y de la frecuencia angular:
-            </p>
+            <p>Utilizando las expresiones del número de onda y de la frecuencia angular:</p>
             <div class="formula-box">
-                \[
-                    \boxed{
-                    v=\frac{\omega}{k}
-                    }
-                \]
+                \[ \boxed{v=\frac{\omega}{k}} \]
             </div>
-            <p>
-                En consecuencia:
-            </p>
-            <div class="formula-box">
-                \[
-                    \boxed{
-                    v=\frac{\lambda}{T}
-                    =\lambda f
-                    =\frac{\omega}{k}
-                    }
-                \]
-            </div>
-            <p>
-                La velocidad de propagación es una propiedad
-                de la onda en el medio considerado.
-            </p>
+            <p>En consecuencia:</p>
+            <a href="TemaC2-Formulario.html#formula-8" class="formula-link">
+                <div class="formula-box" id="formula-8">
+                    \[ \boxed{v=\frac{\lambda}{T}=\lambda f=\frac{\omega}{k}} \]
+                </div>
+            </a>
+            <p>La velocidad de propagación es una propiedad de la onda en el medio considerado.</p>
             <div class="note">
-                <strong>¡Muy importante!</strong>
-                La velocidad de propagación no es la velocidad
-                de vibración de una partícula. La primera indica
-                cómo avanza la perturbación; la segunda describe
-                el movimiento local de cada punto del medio.
+                <strong>¡Muy importante!</strong> La velocidad de propagación no es la velocidad de vibración de una partícula. La primera indica cómo avanza la perturbación; la segunda describe el movimiento local de cada punto del medio.
             </div>
         </details>
-        <!-- ======================================================== -->
-        <!-- 6. FASE Y DIFERENCIA DE FASE                             -->
-        <!-- ======================================================== -->
+
         <details class="step">
             <summary>
                 <span class="step-num">6</span>
-                <strong>
-                    Fase y diferencia de fase.
-                </strong>
+                <strong>Fase y diferencia de fase.</strong>
             </summary>
-            <p>
-                La fase indica el estado de vibración de un punto
-                de la onda en un instante determinado.
-            </p>
-            <p>
-                Para una onda que se propaga en el sentido positivo
-                del eje \(X\):
-            </p>
-            <div class="formula-box">
-                \[
-                    \varphi(x,t)=\omega t-kx+\varphi_0
-                \]
-            </div>
+            <p>La fase indica el estado de vibración de un punto de la onda en un instante determinado.</p>
+            <p>Para una onda que se propaga en el sentido positivo del eje \(X\):</p>
+            <a href="TemaC2-Formulario.html#formula-9" class="formula-link">
+                <div class="formula-box" id="formula-9">
+                    \[ \varphi(x,t)=\omega t-kx+\varphi_0 \]
+                </div>
+            </a>
             <h3>6.1. Diferencia de fase entre dos puntos</h3>
-            <p>
-                Si dos puntos están separados una distancia
-                \(\Delta x\), en un mismo instante, la diferencia
-                de fase en valor absoluto es:
-            </p>
+            <p>Si dos puntos están separados una distancia \(\Delta x\), en un mismo instante, la diferencia de fase en valor absoluto es:</p>
+            <a href="TemaC2-Formulario.html#formula-10" class="formula-link">
+                <div class="formula-box" id="formula-10">
+                    \[ \boxed{|\Delta\varphi_x|=k\,|\Delta x|} \]
+                </div>
+            </a>
+            <p>Como \(k=2\pi/\lambda\):</p>
             <div class="formula-box">
-                \[
-                    \boxed{
-                    |\Delta\varphi_x|=k\,|\Delta x|
-                    }
-                \]
+                \[ \boxed{|\Delta\varphi_x|=\frac{2\pi}{\lambda}|\Delta x|} \]
             </div>
-            <p>
-                Como \(k=2\pi/\lambda\):
-            </p>
+            <p>Despejando la distancia:</p>
             <div class="formula-box">
-                \[
-                    \boxed{
-                    |\Delta\varphi_x|
-                    =\frac{2\pi}{\lambda}|\Delta x|
-                    }
-                \]
-            </div>
-            <p>
-                Despejando la distancia:
-            </p>
-            <div class="formula-box">
-                \[
-                    \boxed{
-                    |\Delta x|
-                    =\frac{\lambda|\Delta\varphi_x|}{2\pi}
-                    }
-                \]
+                \[ \boxed{|\Delta x|=\frac{\lambda|\Delta\varphi_x|}{2\pi}} \]
             </div>
             <h3>6.2. Diferencia de fase entre dos instantes</h3>
-            <p>
-                Para un mismo punto del medio, entre dos instantes
-                separados un intervalo \(\Delta t\):
-            </p>
+            <p>Para un mismo punto del medio, entre dos instantes separados un intervalo \(\Delta t\):</p>
+            <a href="TemaC2-Formulario.html#formula-11" class="formula-link">
+                <div class="formula-box" id="formula-11">
+                    \[ \boxed{|\Delta\varphi_t|=\omega|\Delta t|} \]
+                </div>
+            </a>
+            <p>También:</p>
             <div class="formula-box">
-                \[
-                    \boxed{
-                    |\Delta\varphi_t|=\omega|\Delta t|
-                    }
-                \]
-            </div>
-            <p>
-                También:
-            </p>
-            <div class="formula-box">
-                \[
-                    \boxed{
-                    |\Delta\varphi_t|
-                    =\frac{2\pi}{T}|\Delta t|
-                    }
-                \]
+                \[ \boxed{|\Delta\varphi_t|=\frac{2\pi}{T}|\Delta t|} \]
             </div>
             <h3>6.3. Puntos en fase</h3>
-            <p>
-                Dos puntos están en fase cuando su diferencia
-                de fase es un múltiplo entero de \(2\pi\):
-            </p>
+            <p>Dos puntos están en fase cuando su diferencia de fase es un múltiplo entero de \(2\pi\):</p>
             <div class="formula-box">
-                \[
-                    \Delta\varphi=2n\pi
-                \]
+                \[ \Delta\varphi=2n\pi \]
             </div>
-            <p>
-                Sus estados de vibración son idénticos.
-            </p>
-            <p>
-                Las distancias correspondientes son:
-            </p>
-            <div class="formula-box">
-                \[
-                    \Delta x=n\lambda
-                \]
-            </div>
+            <p>Sus estados de vibración son idénticos.</p>
+            <p>Las distancias correspondientes son:</p>
+            <a href="TemaC2-Formulario.html#formula-12" class="formula-link">
+                <div class="formula-box" id="formula-12">
+                    \[ \Delta x=n\lambda \]
+                </div>
+            </a>
             <h3>6.4. Puntos en oposición de fase</h3>
-            <p>
-                Dos puntos están en oposición de fase cuando
-                su diferencia de fase es un múltiplo impar de
-                \(\pi\):
-            </p>
+            <p>Dos puntos están en oposición de fase cuando su diferencia de fase es un múltiplo impar de \(\pi\):</p>
             <div class="formula-box">
-                \[
-                    \Delta\varphi=(2n+1)\pi
-                \]
+                \[ \Delta\varphi=(2n+1)\pi \]
             </div>
-            <p>
-                La distancia entre ellos es:
-            </p>
+            <p>La distancia entre ellos es:</p>
+            <a href="TemaC2-Formulario.html#formula-13" class="formula-link">
+                <div class="formula-box" id="formula-13">
+                    \[ \boxed{\Delta x=(2n+1)\frac{\lambda}{2}} \]
+                </div>
+            </a>
+            <p>La distancia mínima entre dos puntos en oposición de fase es:</p>
             <div class="formula-box">
-                \[
-                    \boxed{
-                    \Delta x=(2n+1)\frac{\lambda}{2}
-                    }
-                \]
-            </div>
-            <p>
-                La distancia mínima entre dos puntos en oposición
-                de fase es:
-            </p>
-            <div class="formula-box">
-                \[
-                    \boxed{
-                    \Delta x_{\min}=\frac{\lambda}{2}
-                    }
-                \]
+                \[ \boxed{\Delta x_{\min}=\frac{\lambda}{2}} \]
             </div>
             <h3>6.5. Casos especialmente importantes</h3>
             <table>
-                <thead>
-                    <tr>
-                        <th>Diferencia de fase</th>
-                        <th>Relación espacial</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>Diferencia de fase</th><th>Relación espacial</th></tr></thead>
                 <tbody>
-                    <tr>
-                        <td>\(0\)</td>
-                        <td>Coinciden en el mismo punto.</td>
-                    </tr>
-                    <tr>
-                        <td>\(\pi/2\)</td>
-                        <td>\(\lambda/4\).</td>
-                    </tr>
-                    <tr>
-                        <td>\(\pi\)</td>
-                        <td>\(\lambda/2\).</td>
-                    </tr>
-                    <tr>
-                        <td>\(2\pi\)</td>
-                        <td>\(\lambda\).</td>
-                    </tr>
+                    <tr><td>\(0\)</td><td>Coinciden en el mismo punto.</td></tr>
+                    <tr><td>\(\pi/2\)</td><td>\(\lambda/4\).</td></tr>
+                    <tr><td>\(\pi\)</td><td>\(\lambda/2\).</td></tr>
+                    <tr><td>\(2\pi\)</td><td>\(\lambda\).</td></tr>
                 </tbody>
             </table>
             <div class="note">
-                <strong>Consejo EBAU:</strong>
-                Cuando el enunciado solicite la distancia mínima,
-                utiliza el menor valor positivo de \(\Delta x\).
-                No añadas longitudes de onda completas salvo que
-                el enunciado pida otra separación posible.
+                <strong>Consejo EBAU:</strong> Cuando el enunciado solicite la distancia mínima, utiliza el menor valor positivo de \(\Delta x\). No añadas longitudes de onda completas salvo que el enunciado pida otra separación posible.
             </div>
         </details>
-        <!-- ======================================================== -->
-        <!-- 7. VELOCIDAD TRANSVERSAL Y ACELERACIÓN                   -->
-        <!-- ======================================================== -->
+
         <details class="step">
             <summary>
                 <span class="step-num">7</span>
-                <strong>
-                    Velocidad y aceleración transversal.
-                </strong>
+                <strong>Velocidad y aceleración transversal.</strong>
             </summary>
-            <p>
-                Cada punto del medio realiza un movimiento armónico
-                simple alrededor de su posición de equilibrio.
-            </p>
-            <p>
-                Para una onda que se propaga en el sentido positivo
-                del eje \(X\):
-            </p>
-            \[
-                y(x,t)=A\sin(\omega t-kx+\varphi_0)
-            \]
+            <p>Cada punto del medio realiza un movimiento armónico simple alrededor de su posición de equilibrio.</p>
+            <p>Para una onda que se propaga en el sentido positivo del eje \(X\):</p>
+            \[ y(x,t)=A\sin(\omega t-kx+\varphi_0) \]
             <h3>7.1. Velocidad transversal</h3>
-            <p>
-                La velocidad transversal es la derivada de la
-                elongación respecto al tiempo, manteniendo constante
-                la posición \(x\):
-            </p>
+            <p>La velocidad transversal es la derivada de la elongación respecto al tiempo, manteniendo constante la posición \(x\):</p>
+            <a href="TemaC2-Formulario.html#formula-14" class="formula-link">
+                <div class="formula-box" id="formula-14">
+                    \[ v_y=\frac{\partial y}{\partial t} \]
+                    \[ \boxed{v_y=A\omega\cos(\omega t-kx+\varphi_0)} \]
+                </div>
+            </a>
+            <p>Su valor máximo en módulo es:</p>
             <div class="formula-box">
-                \[
-                    v_y=\frac{\partial y}{\partial t}
-                \]
-                \[
-                    \boxed{
-                    v_y=A\omega\cos(\omega t-kx+\varphi_0)
-                    }
-                \]
-            </div>
-            <p>
-                Su valor máximo en módulo es:
-            </p>
-            <div class="formula-box">
-                \[
-                    \boxed{
-                    v_{y,\max}=A\omega
-                    }
-                \]
+                \[ \boxed{v_{y,\max}=A\omega} \]
             </div>
             <h3>7.2. Aceleración transversal</h3>
-            <p>
-                La aceleración transversal es la segunda derivada
-                de la elongación respecto al tiempo:
-            </p>
+            <p>La aceleración transversal es la segunda derivada de la elongación respecto al tiempo:</p>
+            <a href="TemaC2-Formulario.html#formula-15" class="formula-link">
+                <div class="formula-box" id="formula-15">
+                    \[ a_y=\frac{\partial^2 y}{\partial t^2} \]
+                    \[ \boxed{a_y=-A\omega^2\sin(\omega t-kx+\varphi_0)} \]
+                </div>
+            </a>
+            <p>Su valor máximo en módulo es:</p>
             <div class="formula-box">
-                \[
-                    a_y=\frac{\partial^2 y}{\partial t^2}
-                \]
-                \[
-                    \boxed{
-                    a_y=-A\omega^2
-                    \sin(\omega t-kx+\varphi_0)
-                    }
-                \]
-            </div>
-            <p>
-                Su valor máximo en módulo es:
-            </p>
-            <div class="formula-box">
-                \[
-                    \boxed{
-                    a_{y,\max}=A\omega^2
-                    }
-                \]
+                \[ \boxed{a_{y,\max}=A\omega^2} \]
             </div>
             <h3>7.3. Relaciones útiles</h3>
             <div class="formula-box">
-                \[
-                    \boxed{
-                    v_{y,\max}=A\omega
-                    }
-                \]
-                \[
-                    \boxed{
-                    a_{y,\max}=A\omega^2
-                    }
-                \]
-                \[
-                    \boxed{
-                    a_y=-\omega^2y
-                    }
-                \]
+                \[ \boxed{v_{y,\max}=A\omega} \]
+                \[ \boxed{a_{y,\max}=A\omega^2} \]
+                \[ \boxed{a_y=-\omega^2y} \]
             </div>
-            <p>
-                La última expresión muestra que la aceleración
-                es siempre opuesta a la elongación, como corresponde
-                a un movimiento armónico simple.
-            </p>
+            <p>La última expresión muestra que la aceleración es siempre opuesta a la elongación, como corresponde a un movimiento armónico simple.</p>
             <div class="note">
-                <strong>Atención:</strong>
-                La velocidad transversal puede ser positiva,
-                negativa o nula. Lo mismo sucede con la aceleración.
-                Debemos respetar el signo obtenido al derivar
-                la ecuación de onda.
+                <strong>Atención:</strong> La velocidad transversal puede ser positiva, negativa o nula. Lo mismo sucede con la aceleración. Debemos respetar el signo obtenido al derivar la ecuación de onda.
             </div>
         </details>
-        <!-- ======================================================== -->
-        <!-- 8. SONIDO COMO ONDA                                      -->
-        <!-- ======================================================== -->
+
         <details class="step">
             <summary>
                 <span class="step-num">8</span>
-                <strong>
-                    Ondas sonoras: aplicación del movimiento ondulatorio.
-                </strong>
+                <strong>Ondas sonoras: aplicación del movimiento ondulatorio.</strong>
             </summary>
-            <p>
-                El sonido es una onda mecánica que se propaga
-                mediante variaciones de presión y densidad
-                en un medio material.
-            </p>
-            <p>
-                En el aire, las ondas sonoras son longitudinales:
-                las partículas vibran paralelamente a la dirección
-                de propagación.
-            </p>
-            <p>
-                Las relaciones generales del movimiento ondulatorio
-                siguen siendo válidas:
-            </p>
+            <p>El sonido es una onda mecánica que se propaga mediante variaciones de presión y densidad en un medio material.</p>
+            <p>En el aire, las ondas sonoras son longitudinales: las partículas vibran paralelamente a la dirección de propagación.</p>
+            <p>Las relaciones generales del movimiento ondulatorio siguen siendo válidas:</p>
+            <a href="TemaC2-Formulario.html#formula-16" class="formula-link">
+                <div class="formula-box" id="formula-16">
+                    \[ \boxed{v=\lambda f} \]
+                    \[ \boxed{\lambda=\frac{v}{f}} \]
+                </div>
+            </a>
+            <p>En el aire, a temperatura ambiente, suele utilizarse como aproximación:</p>
             <div class="formula-box">
-                \[
-                    \boxed{
-                    v=\lambda f
-                    }
-                \]
-                \[
-                    \boxed{
-                    \lambda=\frac{v}{f}
-                    }
-                \]
+                \[ v_{\text{sonido}}\approx340\ \text{m/s} \]
             </div>
-            <p>
-                En el aire, a temperatura ambiente, suele utilizarse
-                como aproximación:
-            </p>
-            <div class="formula-box">
-                \[
-                    v_{\text{sonido}}\approx340\ \text{m/s}
-                \]
-            </div>
-            <p>
-                La frecuencia determina el tono del sonido:
-                frecuencias más altas corresponden a sonidos
-                más agudos y frecuencias más bajas a sonidos
-                más graves.
-            </p>
-            <p>
-                Cuando el sonido pasa de un medio a otro,
-                la frecuencia permanece constante porque depende
-                de la fuente, mientras que pueden cambiar
-                su velocidad y su longitud de onda.
-            </p>
+            <p>La frecuencia determina el tono del sonido: frecuencias más altas corresponden a sonidos más agudos y frecuencias más bajas a sonidos más graves.</p>
+            <p>Cuando el sonido pasa de un medio a otro, la frecuencia permanece constante porque depende de la fuente, mientras que pueden cambiar su velocidad y su longitud de onda.</p>
             <div class="note">
-                <strong>Aplicación EBAU:</strong>
-                Para calcular la longitud de onda de una onda sonora,
-                generalmente basta con conocer la velocidad del sonido
-                en el medio y la frecuencia:
-                \[
-                    \lambda=\frac{v_{\text{sonido}}}{f}
-                \]
+                <strong>Aplicación EBAU:</strong> Para calcular la longitud de onda de una onda sonora, generalmente basta con conocer la velocidad del sonido en el medio y la frecuencia:
+                \[ \lambda=\frac{v_{\text{sonido}}}{f} \]
             </div>
         </details>
-        <!-- ======================================================== -->
-        <!-- 9. PROCEDIMIENTO GENERAL                                 -->
-        <!-- ======================================================== -->
+
         <details class="step">
             <summary>
                 <span class="step-num">9</span>
-                <strong>
-                    Procedimiento general para resolver problemas.
-                </strong>
+                <strong>Procedimiento general para resolver problemas.</strong>
             </summary>
-            <p>
-                En los problemas de ondas de la EBAU se repiten
-                una serie de procedimientos.
-            </p>
+            <p>En los problemas de ondas de la EBAU se repiten una serie de procedimientos.</p>
             <ol>
-                <li>
-                    Identificar los datos y las incógnitas.
-                </li>
-                <li>
-                    Convertir todas las magnitudes al Sistema
-                    Internacional.
-                </li>
-                <li>
-                    Comparar la ecuación dada con la forma general
-                    de una onda armónica.
-                </li>
-                <li>
-                    Identificar la amplitud \(A\), la frecuencia
-                    angular \(\omega\), el número de onda \(k\)
-                    y la fase inicial \(\varphi_0\).
-                </li>
-                <li>
-                    Determinar el sentido de propagación
-                    de la onda.
-                </li>
-                <li>
-                    Obtener las magnitudes que faltan:
-                    \(f\), \(T\), \(\lambda\) y \(v\).
-                </li>
-                <li>
-                    Si existen condiciones iniciales, utilizarlas
-                    para determinar la fase inicial.
-                </li>
-                <li>
-                    Si se solicita una diferencia de fase,
-                    aplicar la relación espacial o temporal adecuada.
-                </li>
-                <li>
-                    Si se pide la velocidad transversal
-                    o la aceleración, derivar la ecuación
-                    respecto al tiempo.
-                </li>
-                <li>
-                    Sustituir los valores de posición y tiempo
-                    y calcular el resultado.
-                </li>
-                <li>
-                    Expresar el resultado con unidades
-                    y comprobar que su orden de magnitud
-                    es razonable.
-                </li>
+                <li>Identificar los datos y las incógnitas.</li>
+                <li>Convertir todas las magnitudes al Sistema Internacional.</li>
+                <li>Comparar la ecuación dada con la forma general de una onda armónica.</li>
+                <li>Identificar la amplitud \(A\), la frecuencia angular \(\omega\), el número de onda \(k\) y la fase inicial \(\varphi_0\).</li>
+                <li>Determinar el sentido de propagación de la onda.</li>
+                <li>Obtener las magnitudes que faltan: \(f\), \(T\), \(\lambda\) y \(v\).</li>
+                <li>Si existen condiciones iniciales, utilizarlas para determinar la fase inicial.</li>
+                <li>Si se solicita una diferencia de fase, aplicar la relación espacial o temporal adecuada.</li>
+                <li>Si se pide la velocidad transversal o la aceleración, derivar la ecuación respecto al tiempo.</li>
+                <li>Sustituir los valores de posición y tiempo y calcular el resultado.</li>
+                <li>Expresar el resultado con unidades y comprobar que su orden de magnitud es razonable.</li>
             </ol>
         </details>
-        <!-- ======================================================== -->
-        <!-- 10. ERRORES FRECUENTES                                   -->
-        <!-- ======================================================== -->
+
         <details class="step">
             <summary>
                 <span class="step-num">10</span>
-                <strong>
-                    Errores frecuentes en los problemas de ondas.
-                </strong>
+                <strong>Errores frecuentes en los problemas de ondas.</strong>
             </summary>
             <ul>
-                <li>
-                    Confundir frecuencia \(f\) con frecuencia angular
-                    \(\omega\). Recuerda que \(\omega=2\pi f\).
-                </li>
-                <li>
-                    Confundir longitud de onda \(\lambda\) con número
-                    de onda \(k\). Recuerda que \(k=2\pi/\lambda\).
-                </li>
-                <li>
-                    Olvidar convertir centímetros o milímetros
-                    a metros.
-                </li>
-                <li>
-                    Confundir la velocidad de propagación con
-                    la velocidad transversal de vibración.
-                </li>
-                <li>
-                    Elegir incorrectamente el signo de \(kx\)
-                    y, por tanto, el sentido de propagación.
-                </li>
-                <li>
-                    Confundir la fase inicial con la fase
-                    de un punto en un instante cualquiera.
-                </li>
-                <li>
-                    Utilizar \(\omega\Delta x\) para una diferencia
-                    de fase espacial. La expresión correcta es
-                    \(k\Delta x\).
-                </li>
-                <li>
-                    Utilizar \(k\Delta t\) para una diferencia
-                    de fase temporal. La expresión correcta es
-                    \(\omega\Delta t\).
-                </li>
-                <li>
-                    Confundir oposición de fase con diferencia
-                    de fase de \(2\pi\). La oposición de fase
-                    corresponde a \(\pi\) rad.
-                </li>
-                <li>
-                    Olvidar que la velocidad transversal se obtiene
-                    derivando respecto al tiempo y manteniendo
-                    fija la posición.
-                </li>
-                <li>
-                    Perder el signo negativo de la aceleración
-                    al realizar la segunda derivada.
-                </li>
-                <li>
-                    Confundir la distancia entre dos máximos
-                    consecutivos con la distancia entre un máximo
-                    y el siguiente mínimo: son \(\lambda\)
-                    y \(\lambda/2\), respectivamente.
-                </li>
+                <li>Confundir frecuencia \(f\) con frecuencia angular \(\omega\). Recuerda que \(\omega=2\pi f\).</li>
+                <li>Confundir longitud de onda \(\lambda\) con número de onda \(k\). Recuerda que \(k=2\pi/\lambda\).</li>
+                <li>Olvidar convertir centímetros o milímetros a metros.</li>
+                <li>Confundir la velocidad de propagación con la velocidad transversal de vibración.</li>
+                <li>Elegir incorrectamente el signo de \(kx\) y, por tanto, el sentido de propagación.</li>
+                <li>Confundir la fase inicial con la fase de un punto en un instante cualquiera.</li>
+                <li>Utilizar \(\omega\Delta x\) para una diferencia de fase espacial. La expresión correcta es \(k\Delta x\).</li>
+                <li>Utilizar \(k\Delta t\) para una diferencia de fase temporal. La expresión correcta es \(\omega\Delta t\).</li>
+                <li>Confundir oposición de fase con diferencia de fase de \(2\pi\). La oposición de fase corresponde a \(\pi\) rad.</li>
+                <li>Olvidar que la velocidad transversal se obtiene derivando respecto al tiempo y manteniendo fija la posición.</li>
+                <li>Perder el signo negativo de la aceleración al realizar la segunda derivada.</li>
+                <li>Confundir la distancia entre dos máximos consecutivos con la distancia entre un máximo y el siguiente mínimo: son \(\lambda\) y \(\lambda/2\), respectivamente.</li>
             </ul>
             <div class="note">
-                <strong>Regla de oro:</strong>
-                En los problemas de ecuación de onda,
-                escribe primero la ecuación general y compara
-                término a término. Es la forma más segura
-                de identificar todas las magnitudes.
+                <strong>Regla de oro:</strong> En los problemas de ecuación de onda, escribe primero la ecuación general y compara término a término. Es la forma más segura de identificar todas las magnitudes.
             </div>
         </details>
     </details>
-    <!-- ============================================================ -->
-    <!-- FORMULARIO RESUMEN                                           -->
-    <!-- ============================================================ -->
+
     <details class="section resultado">
-        <summary>
-            <h2>📌 Formulario esencial del Tema C2</h2>
-        </summary>
-        <p>
-            Estas son las expresiones que conviene dominar
-            y saber aplicar en los ejercicios de la EBAU.
-        </p>
+        <summary><h2>📌 Formulario esencial del Tema C2</h2></summary>
+        <p>Estas son las expresiones que conviene dominar y saber aplicar en los ejercicios de la EBAU.</p>
         <h3>Ecuación de onda</h3>
         <div class="formula-box">
-            \[
-                \boxed{
-                y(x,t)=A\sin(\omega t-kx+\varphi_0)
-                }
-                \qquad \text{propagación hacia }+X
-            \]
-            \[
-                \boxed{
-                y(x,t)=A\sin(\omega t+kx+\varphi_0)
-                }
-                \qquad \text{propagación hacia }-X
-            \]
+            \[ \boxed{y(x,t)=A\sin(\omega t-kx+\varphi_0)} \qquad \text{propagación hacia }+X \]
+            \[ \boxed{y(x,t)=A\sin(\omega t+kx+\varphi_0)} \qquad \text{propagación hacia }-X \]
         </div>
         <h3>Magnitudes de la onda</h3>
         <div class="formula-box">
-            \[
-                \boxed{
-                \omega=2\pi f=\frac{2\pi}{T}
-                }
-            \]
-            \[
-                \boxed{
-                k=\frac{2\pi}{\lambda}
-                }
-            \]
-            \[
-                \boxed{
-                f=\frac{1}{T}
-                }
-            \]
+            \[ \boxed{\omega=2\pi f=\frac{2\pi}{T}} \]
+            \[ \boxed{k=\frac{2\pi}{\lambda}} \]
+            \[ \boxed{f=\frac{1}{T}} \]
         </div>
         <h3>Velocidad de propagación</h3>
         <div class="formula-box">
-            \[
-                \boxed{
-                v=\lambda f=\frac{\lambda}{T}=\frac{\omega}{k}
-                }
-            \]
+            \[ \boxed{v=\lambda f=\frac{\lambda}{T}=\frac{\omega}{k}} \]
         </div>
         <h3>Diferencia de fase</h3>
         <div class="formula-box">
-            \[
-                \boxed{
-                |\Delta\varphi_x|=k|\Delta x|
-                }
-            \]
-            \[
-                \boxed{
-                |\Delta\varphi_t|=\omega|\Delta t|
-                }
-            \]
+            \[ \boxed{|\Delta\varphi_x|=k|\Delta x|} \]
+            \[ \boxed{|\Delta\varphi_t|=\omega|\Delta t|} \]
         </div>
         <h3>Puntos en fase y oposición de fase</h3>
         <div class="formula-box">
-            \[
-                \boxed{
-                \Delta x_{\text{fase}}=n\lambda
-                }
-            \]
-            \[
-                \boxed{
-                \Delta x_{\text{oposición}}
-                =(2n+1)\frac{\lambda}{2}
-                }
-            \]
-            \[
-                \boxed{
-                \Delta x_{\min,\text{oposición}}
-                =\frac{\lambda}{2}
-                }
-            \]
+            \[ \boxed{\Delta x_{\text{fase}}=n\lambda} \]
+            \[ \boxed{\Delta x_{\text{oposición}}=(2n+1)\frac{\lambda}{2}} \]
+            \[ \boxed{\Delta x_{\min,\text{oposición}}=\frac{\lambda}{2}} \]
         </div>
         <h3>Velocidad y aceleración transversal</h3>
         <div class="formula-box">
-            \[
-                \boxed{
-                v_y=\frac{\partial y}{\partial t}
-                =A\omega\cos(\omega t-kx+\varphi_0)
-                }
-            \]
-            \[
-                \boxed{
-                v_{y,\max}=A\omega
-                }
-            \]
-            \[
-                \boxed{
-                a_y=\frac{\partial^2y}{\partial t^2}
-                =-A\omega^2\sin(\omega t-kx+\varphi_0)
-                }
-            \]
-            \[
-                \boxed{
-                a_{y,\max}=A\omega^2
-                }
-            \]
+            \[ \boxed{v_y=\frac{\partial y}{\partial t}=A\omega\cos(\omega t-kx+\varphi_0)} \]
+            \[ \boxed{v_{y,\max}=A\omega} \]
+            \[ \boxed{a_y=\frac{\partial^2y}{\partial t^2}=-A\omega^2\sin(\omega t-kx+\varphi_0)} \]
+            \[ \boxed{a_{y,\max}=A\omega^2} \]
         </div>
         <h3>Ondas sonoras</h3>
         <div class="formula-box">
-            \[
-                \boxed{
-                \lambda=\frac{v_{\text{sonido}}}{f}
-                }
-            \]
+            \[ \boxed{\lambda=\frac{v_{\text{sonido}}}{f}} \]
         </div>
     </details>
-    <!-- ============================================================ -->
-    <!-- PROBLEMAS RESUELTOS EBAU                                     -->
-    <!-- ============================================================ -->
+
     <details>
         <summary>
             <i class="fas fa-chevron-circle-down"></i>
-            <span class="titulo-principal">
-                🌊 Problemas resueltos de EBAU — Castilla y León (Tema C2)
-            </span>
-            <span class="badge-pulsa">
-                <i class="fas fa-hand-pointer"></i>
-                Púlsame
-            </span>
+            <span class="titulo-principal">🌊 Problemas resueltos de EBAU — Castilla y León (Tema C2)</span>
+            <span class="badge-pulsa"><i class="fas fa-hand-pointer"></i> Púlsame</span>
         </summary>
         <div class="contenido-desplegable">
-            <p style="background:#eef2ff;
-                      padding:12px 18px;
-                      border-radius:12px;
-                      border-left:5px solid #3b82f6;
-                      color:#1e3a8a;">
-                <strong>Selección de 10 problemas de EBAU.</strong>
-                Se han seleccionado diez ejercicios del banco
-                de problemas facilitado, todos ellos de
-                <strong>Castilla y León</strong>.
-                La selección cubre las convocatorias de 2020 a 2025
-                y prioriza los ejercicios directamente relacionados
-                con la ecuación de onda, sus magnitudes,
-                las diferencias de fase y la velocidad transversal.
-                Se indica la comunidad, el año, la convocatoria
-                y el número original del problema.
+            <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
+                <strong>Selección de 10 problemas de EBAU.</strong> Se han seleccionado diez ejercicios del banco de problemas facilitado, todos ellos de <strong>Castilla y León</strong>. La selección cubre las convocatorias de 2020 a 2025 y prioriza los ejercicios directamente relacionados con la ecuación de onda, sus magnitudes, las diferencias de fase y la velocidad transversal. Se indica la comunidad, el año, la convocatoria y el número original del problema.
             </p>
-            <!-- ==================================================== -->
-            <!-- PROBLEMA 1                                            -->
-            <!-- ==================================================== -->
+
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
-                    <span class="num-ej">
-                        Ejercicio 1
-                    </span>
-                    <span class="titulo-ej">
-                        Onda armónica en una cuerda: longitud,
-                        velocidad y diferencias de fase
-                    </span>
-                    <span class="meta-ej">
-                        Castilla y León · 2025 · Ordinaria · Problema 9
-                    </span>
+                    <span class="num-ej">Ejercicio 1</span>
+                    <span class="titulo-ej">Onda armónica en una cuerda: longitud, velocidad y diferencias de fase</span>
+                    <span class="meta-ej">Castilla y León · 2025 · Ordinaria · Problema 9</span>
                 </summary>
                 <div class="enunciado-ej">
-                    <p>
-                        La ecuación de una onda armónica que se propaga
-                        en una cuerda es:
-                    </p>
-                    \[
-                        y=0{,}1\,\sin\left[
-                        \pi(0{,}8x-0{,}8t)+\frac{\pi}{2}
-                        \right]
-                    \]
-                    <p>
-                        En unidades del S.I.
-                    </p>
-                    <p>
-                        <strong>a)</strong>
-                        Calcule la longitud de onda y la velocidad
-                        de propagación del movimiento ondulatorio.
-                    </p>
-                    <p>
-                        <strong>b)</strong>
-                        Para un instante dado, calcule la diferencia
-                        de fase entre dos puntos que distan 20 cm.
-                        Determine también la diferencia de fase,
-                        para un punto dado, entre dos instantes
-                        separados por un intervalo de 0,1 s.
-                    </p>
-                    <p>
-                        <strong>Puntuación:</strong> 2 puntos (1 + 1).
-                    </p>
+                    <p>La ecuación de una onda armónica que se propaga en una cuerda es:</p>
+                    \[ y=0{,}1\,\sin\left[\pi(0{,}8x-0{,}8t)+\frac{\pi}{2}\right] \]
+                    <p>En unidades del S.I.</p>
+                    <p><strong>a)</strong> Calcule la longitud de onda y la velocidad de propagación del movimiento ondulatorio.</p>
+                    <p><strong>b)</strong> Para un instante dado, calcule la diferencia de fase entre dos puntos que distan 20 cm. Determine también la diferencia de fase, para un punto dado, entre dos instantes separados por un intervalo de 0,1 s.</p>
+                    <p><strong>Puntuación:</strong> 2 puntos (1 + 1).</p>
                 </div>
                 <div class="resolucion-ej">
-                    <div class="paso">
-                        <strong>1. Identificación de los parámetros.</strong>
-                        Desarrollamos el argumento de la función
-                        trigonométrica:
-                        \[
-                            y=0{,}1\,\sin\left(
-                            0{,}8\pi x-0{,}8\pi t+\frac{\pi}{2}
-                            \right)
-                        \]
-                        Comparamos con la forma de onda armónica:
-                        \[
-                            y=A\sin(kx-\omega t+\varphi_0)
-                        \]
-                        Por tanto:
-                    </div>
+                    <div class="paso"><strong>1. Identificación de los parámetros.</strong> Desarrollamos el argumento de la función trigonométrica:
+                    \[y=0{,}1\,\sin\left(0{,}8\pi x-0{,}8\pi t+\frac{\pi}{2}\right)\]
+                    Comparamos con la forma de onda armónica: \(y=A\sin(kx-\omega t+\varphi_0)\). Por tanto:</div>
                     <div class="formula-box">
-                        \[
-                            A=0{,}1\,\text{m}
-                        \]
-                        \[
-                            k=0{,}8\pi\,\text{rad/m}
-                        \]
-                        \[
-                            \omega=0{,}8\pi\,\text{rad/s}
-                        \]
+                        \[ A=0{,}1\,\text{m},\quad k=0{,}8\pi\,\text{rad/m},\quad \omega=0{,}8\pi\,\text{rad/s} \]
                     </div>
-                    <div class="paso">
-                        <strong>2. Longitud de onda.</strong>
-                        Utilizamos la relación entre el número
-                        de onda y la longitud de onda:
-                    </div>
+                    <div class="paso"><strong>2. Longitud de onda.</strong></div>
                     <div class="formula-box">
-                        \[
-                            \lambda=\frac{2\pi}{k}
-                            =\frac{2\pi}{0{,}8\pi}
-                        \]
-                        \[
-                            \boxed{\lambda=2{,}5\,\text{m}}
-                        \]
+                        \[ \lambda=\frac{2\pi}{k}=\frac{2\pi}{0{,}8\pi} \quad\Rightarrow\quad \boxed{\lambda=2{,}5\,\text{m}} \]
                     </div>
-                    <div class="paso">
-                        <strong>3. Velocidad de propagación.</strong>
-                        Aplicamos:
-                    </div>
+                    <div class="paso"><strong>3. Velocidad de propagación.</strong></div>
                     <div class="formula-box">
-                        \[
-                            v=\frac{\omega}{k}
-                            =\frac{0{,}8\pi}{0{,}8\pi}
-                        \]
-                        \[
-                            \boxed{v=1{,}0\,\text{m/s}}
-                        \]
+                        \[ v=\frac{\omega}{k}=\frac{0{,}8\pi}{0{,}8\pi} \quad\Rightarrow\quad \boxed{v=1{,}0\,\text{m/s}} \]
                     </div>
-                    <div class="paso">
-                        <strong>4. Diferencia de fase espacial.</strong>
-                        Dos puntos están separados:
-                        \[
-                            \Delta x=20\,\text{cm}=0{,}20\,\text{m}
-                        \]
-                        Aplicamos:
-                    </div>
+                    <div class="paso"><strong>4. Diferencia de fase espacial.</strong> \(\Delta x=20\,\text{cm}=0{,}20\,\text{m}\):</div>
                     <div class="formula-box">
-                        \[
-                            \Delta\varphi_x=k\Delta x
-                        \]
-                        \[
-                            \Delta\varphi_x
-                            =0{,}8\pi\cdot0{,}20
-                        \]
-                        \[
-                            \boxed{
-                            \Delta\varphi_x=0{,}16\pi
-                            \approx0{,}50\,\text{rad}
-                            }
-                        \]
+                        \[ \Delta\varphi_x=k\Delta x=0{,}8\pi\cdot0{,}20 \quad\Rightarrow\quad \boxed{\Delta\varphi_x=0{,}16\pi\approx0{,}50\,\text{rad}} \]
                     </div>
-                    <div class="paso">
-                        <strong>5. Diferencia de fase temporal.</strong>
-                        El intervalo temporal es:
-                        \[
-                            \Delta t=0{,}1\,\text{s}
-                        \]
-                        Utilizamos:
-                    </div>
+                    <div class="paso"><strong>5. Diferencia de fase temporal.</strong> \(\Delta t=0{,}1\,\text{s}\):</div>
                     <div class="formula-box">
-                        \[
-                            \Delta\varphi_t=\omega\Delta t
-                        \]
-                        \[
-                            \Delta\varphi_t
-                            =0{,}8\pi\cdot0{,}1
-                        \]
-                        \[
-                            \boxed{
-                            \Delta\varphi_t=0{,}08\pi
-                            \approx0{,}25\,\text{rad}
-                            }
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>Resultado final:</strong>
-                        \[
-                            \boxed{
-                            \lambda=2{,}5\,\text{m}
-                            \qquad
-                            v=1{,}0\,\text{m/s}
-                            }
-                        \]
-                        \[
-                            \boxed{
-                            \Delta\varphi_x=0{,}16\pi\,\text{rad}
-                            }
-                        \]
-                        \[
-                            \boxed{
-                            \Delta\varphi_t=0{,}08\pi\,\text{rad}
-                            }
-                        \]
+                        \[ \Delta\varphi_t=\omega\Delta t=0{,}8\pi\cdot0{,}1 \quad\Rightarrow\quad \boxed{\Delta\varphi_t=0{,}08\pi\approx0{,}25\,\text{rad}} \]
                     </div>
                 </div>
             </details>
-            <!-- ==================================================== -->
-            <!-- PROBLEMA 2                                            -->
-            <!-- ==================================================== -->
+
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
-                    <span class="num-ej">
-                        Ejercicio 2
-                    </span>
-                    <span class="titulo-ej">
-                        Ecuación de una onda transversal a partir
-                        de la gráfica de la velocidad transversal
-                    </span>
-                    <span class="meta-ej">
-                        Castilla y León · 2024 · Extraordinaria · Problema 6
-                    </span>
+                    <span class="num-ej">Ejercicio 2</span>
+                    <span class="titulo-ej">Ecuación de una onda transversal a partir de la gráfica de la velocidad transversal</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Extraordinaria · Problema 6</span>
                 </summary>
                 <div class="enunciado-ej">
-                    <p>
-                        Una onda transversal se propaga sobre una cuerda
-                        en el sentido creciente del eje X.
-                    </p>
-                    <p>
-                        Teniendo en cuenta que la distancia mínima
-                        entre dos puntos que vibran en oposición
-                        de fase es 10 cm y que la velocidad de vibración
-                        del punto \(x=0\) varía con el tiempo según
-                        se muestra en la figura, exprese, en unidades
-                        del S.I., la ecuación correspondiente a dicha onda.
-                    </p>
-                    <p>
-                        <strong>Puntuación:</strong> 1 punto.
-                    </p>
+                    <p>Una onda transversal se propaga sobre una cuerda en el sentido creciente del eje X. Teniendo en cuenta que la distancia mínima entre dos puntos que vibran en oposición de fase es 10 cm y que la velocidad de vibración del punto \(x=0\) varía con el tiempo según se muestra en la figura, exprese, en unidades del S.I., la ecuación correspondiente a dicha onda.</p>
+                    <p><strong>Puntuación:</strong> 1 punto.</p>
                     <div class="note">
-                        <strong>Nota sobre la gráfica:</strong>
-                        El enunciado original hace referencia
-                        a una gráfica que no aparece en el texto
-                        del banco de problemas.
-                        La resolución utiliza los valores
-                        extraídos de esa gráfica en la resolución
-                        del problema: \(T=0{,}20\,\text{s}\) y
-                        \(v_{y,\max}=0{,}60\,\text{m/s}\).
+                        <strong>Nota:</strong> de la gráfica se extraen \(T=0{,}20\,\text{s}\) y \(v_{y,\max}=0{,}60\,\text{m/s}\).
                     </div>
                 </div>
                 <div class="resolucion-ej">
-                    <div class="paso">
-                        <strong>1. Longitud de onda.</strong>
-                        La distancia mínima entre dos puntos
-                        en oposición de fase es:
-                        \[
-                            \Delta x_{\min}=\frac{\lambda}{2}
-                        \]
-                        Como la distancia es 10 cm:
-                    </div>
+                    <div class="paso"><strong>1. Longitud de onda.</strong> \(\Delta x_{\min}=\lambda/2=0{,}10\,\text{m}\), por tanto \(\boxed{\lambda=0{,}20\,\text{m}}\).</div>
+                    <div class="paso"><strong>2. Número de onda.</strong></div>
                     <div class="formula-box">
-                        \[
-                            0{,}10=\frac{\lambda}{2}
-                        \]
-                        \[
-                            \boxed{\lambda=0{,}20\,\text{m}}
-                        \]
+                        \[ k=\frac{2\pi}{0{,}20} \quad\Rightarrow\quad \boxed{k=10\pi\,\text{rad/m}} \]
                     </div>
-                    <div class="paso">
-                        <strong>2. Número de onda.</strong>
-                    </div>
+                    <div class="paso"><strong>3. Frecuencia angular.</strong> \(T=0{,}20\,\text{s}\):</div>
                     <div class="formula-box">
-                        \[
-                            k=\frac{2\pi}{\lambda}
-                            =\frac{2\pi}{0{,}20}
-                        \]
-                        \[
-                            \boxed{k=10\pi\,\text{rad/m}}
-                        \]
+                        \[ \omega=\frac{2\pi}{0{,}20} \quad\Rightarrow\quad \boxed{\omega=10\pi\,\text{rad/s}} \]
                     </div>
-                    <div class="paso">
-                        <strong>3. Frecuencia angular.</strong>
-                        De la gráfica se obtiene:
-                        \[
-                            T=0{,}20\,\text{s}
-                        \]
-                        Por tanto:
-                    </div>
+                    <div class="paso"><strong>4. Amplitud.</strong> \(v_{y,\max}=A\omega=0{,}60\,\text{m/s}\), por tanto \(A=0{,}60/(10\pi)\Rightarrow\boxed{A=1{,}91\cdot10^{-2}\,\text{m}}\).</div>
+                    <div class="paso"><strong>5. Velocidad de propagación.</strong> \(v=\lambda/T=0{,}20/0{,}20\Rightarrow\boxed{v=1{,}0\,\text{m/s}}\).</div>
+                    <div class="paso"><strong>6. Fase inicial.</strong> En \(t=0\), \(v_y=0\) y creciente ⇒ \(\varphi_0=-\pi/2\).</div>
+                    <div class="paso"><strong>7. Ecuación de la onda.</strong></div>
                     <div class="formula-box">
-                        \[
-                            \omega=\frac{2\pi}{T}
-                            =\frac{2\pi}{0{,}20}
-                        \]
-                        \[
-                            \boxed{\omega=10\pi\,\text{rad/s}}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>4. Amplitud.</strong>
-                        De la gráfica se obtiene:
-                        \[
-                            v_{y,\max}=0{,}60\,\text{m/s}
-                        \]
-                        Sabemos que:
-                        \[
-                            v_{y,\max}=A\omega
-                        \]
-                        Despejamos:
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            A=\frac{v_{y,\max}}{\omega}
-                            =\frac{0{,}60}{10\pi}
-                        \]
-                        \[
-                            \boxed{A=1{,}91\cdot10^{-2}\,\text{m}}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>5. Velocidad de propagación.</strong>
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            v=\frac{\lambda}{T}
-                            =\frac{0{,}20}{0{,}20}
-                        \]
-                        \[
-                            \boxed{v=1{,}0\,\text{m/s}}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>6. Fase inicial.</strong>
-                        Según la gráfica:
-                        - En \(t=0\), la velocidad transversal es nula.
-                        - Inmediatamente después, la velocidad es positiva.
-                        Por tanto, el punto de la cuerda comienza
-                        en la elongación mínima.
-                        Para \(x=0\):
-                        \[
-                            y(0,t)=A\sin(\omega t+\varphi_0)
-                        \]
-                        La condición de velocidad nula y creciente
-                        hacia valores positivos conduce a:
-                        \[
-                            \boxed{\varphi_0=-\frac{\pi}{2}}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>7. Ecuación de la onda.</strong>
-                        La onda se propaga en el sentido positivo
-                        del eje X:
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            y(x,t)=A\sin\left(
-                            \omega t-kx-\frac{\pi}{2}
-                            \right)
-                        \]
-                        Sustituyendo los valores:
-                        \[
-                            y(x,t)=1{,}91\cdot10^{-2}
-                            \sin\left(
-                            10\pi t-10\pi x-\frac{\pi}{2}
-                            \right)
-                        \]
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            \boxed{
-                            y(x,t)=
-                            -1{,}91\cdot10^{-2}
-                            \cos(10\pi t-10\pi x)
-                            \ \text{m}
-                            }
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>Resultado final:</strong>
-                        \[
-                            \boxed{
-                            y(x,t)=
-                            -1{,}91\cdot10^{-2}
-                            \cos(10\pi t-10\pi x)
-                            \ \text{m}
-                            }
-                        \]
+                        \[ \boxed{y(x,t)=-1{,}91\cdot10^{-2}\cos(10\pi t-10\pi x)\ \text{m}} \]
                     </div>
                 </div>
             </details>
-            <!-- ==================================================== -->
-            <!-- PROBLEMA 3                                            -->
-            <!-- ==================================================== -->
+
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
-                    <span class="num-ej">
-                        Ejercicio 3
-                    </span>
-                    <span class="titulo-ej">
-                        Elongación de una onda armónica
-                        en un punto y un instante dados
-                    </span>
-                    <span class="meta-ej">
-                        Castilla y León · 2024 · Ordinaria · Problema 6
-                    </span>
+                    <span class="num-ej">Ejercicio 3</span>
+                    <span class="titulo-ej">Elongación de una onda armónica en un punto y un instante dados</span>
+                    <span class="meta-ej">Castilla y León · 2024 · Ordinaria · Problema 6</span>
                 </summary>
                 <div class="enunciado-ej">
-                    <p>
-                        Una onda armónica transversal, de amplitud
-                        10 cm, se propaga en el sentido positivo
-                        del eje X.
-                    </p>
-                    <p>
-                        En el instante inicial, la elongación
-                        es máxima y positiva en el origen.
-                        ¿Cuál será la elongación de un punto P
-                        situado a una distancia \(\lambda/6\)
-                        del origen para el instante \(t=T/4\)?
-                    </p>
-                    <p>
-                        <strong>Puntuación:</strong> 1 punto.
-                    </p>
+                    <p>Una onda armónica transversal, de amplitud 10 cm, se propaga en el sentido positivo del eje X. En el instante inicial, la elongación es máxima y positiva en el origen. ¿Cuál será la elongación de un punto P situado a una distancia \(\lambda/6\) del origen para el instante \(t=T/4\)?</p>
+                    <p><strong>Puntuación:</strong> 1 punto.</p>
                 </div>
                 <div class="resolucion-ej">
-                    <div class="paso">
-                        <strong>1. Ecuación de la onda.</strong>
-                        La onda se propaga hacia \(+X\).
-                        En el origen y en el instante inicial,
-                        la elongación es máxima y positiva.
-                        Por tanto, podemos utilizar una función
-                        coseno sin fase inicial:
-                    </div>
+                    <div class="paso"><strong>1. Ecuación de la onda.</strong></div>
                     <div class="formula-box">
-                        \[
-                            \boxed{
-                            y(x,t)=A\cos(\omega t-kx)
-                            }
-                        \]
+                        \[ \boxed{y(x,t)=A\cos(\omega t-kx)} \]
                     </div>
-                    <div class="paso">
-                        <strong>2. Identificación de los datos.</strong>
-                        \[
-                            A=10\,\text{cm}=0{,}10\,\text{m}
-                        \]
-                        \[
-                            x=\frac{\lambda}{6}
-                        \]
-                        \[
-                            t=\frac{T}{4}
-                        \]
-                        \[
-                            \omega=\frac{2\pi}{T}
-                            \qquad
-                            k=\frac{2\pi}{\lambda}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>3. Sustitución en la ecuación.</strong>
-                        Sustituimos las expresiones de la posición
-                        y el tiempo:
-                    </div>
+                    <div class="paso"><strong>2. Sustitución.</strong> \(x=\lambda/6\), \(t=T/4\):</div>
                     <div class="formula-box">
-                        \[
-                            y=0{,}10\cos\left(
-                            \frac{2\pi}{T}\frac{T}{4}
-                            -
-                            \frac{2\pi}{\lambda}\frac{\lambda}{6}
-                            \right)
-                        \]
-                        \[
-                            y=0{,}10\cos\left(
-                            \frac{\pi}{2}-\frac{\pi}{3}
-                            \right)
-                        \]
-                        \[
-                            y=0{,}10\cos\left(\frac{\pi}{6}\right)
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>4. Resultado numérico.</strong>
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            y=0{,}10\cdot\frac{\sqrt{3}}{2}
-                        \]
-                        \[
-                            \boxed{
-                            y=8{,}66\cdot10^{-2}\,\text{m}
-                            }
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>Resultado final:</strong>
-                        \[
-                            \boxed{y=8{,}66\,\text{cm}}
-                        \]
+                        \[ y=0{,}10\cos\left(\frac{2\pi}{T}\frac{T}{4}-\frac{2\pi}{\lambda}\frac{\lambda}{6}\right)=0{,}10\cos\left(\frac{\pi}{2}-\frac{\pi}{3}\right)=0{,}10\cos\left(\frac{\pi}{6}\right) \]
+                        \[ \boxed{y=8{,}66\cdot10^{-2}\,\text{m}=8{,}66\,\text{cm}} \]
                     </div>
                 </div>
             </details>
-            <!-- ==================================================== -->
-            <!-- PROBLEMA 4                                            -->
-            <!-- ==================================================== -->
+
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
-                    <span class="num-ej">
-                        Ejercicio 4
-                    </span>
-                    <span class="titulo-ej">
-                        Ecuación de una onda transversal en una cuerda
-                        con velocidad de vibración máxima conocida
-                    </span>
-                    <span class="meta-ej">
-                        Castilla y León · 2023 · Ordinaria · Problema 6
-                    </span>
+                    <span class="num-ej">Ejercicio 4</span>
+                    <span class="titulo-ej">Ecuación de una onda transversal en una cuerda con velocidad de vibración máxima conocida</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Ordinaria · Problema 6</span>
                 </summary>
                 <div class="enunciado-ej">
-                    <p>
-                        Una onda transversal se propaga a lo largo
-                        de una cuerda tensa. En un cierto instante
-                        se observa que la distancia entre dos máximos
-                        consecutivos es 1 m.
-                    </p>
-                    <p>
-                        Además, se comprueba que un punto de la cuerda
-                        pasa de una elongación máxima a nula
-                        en 0,125 s y que la velocidad de vibración
-                        máxima de un punto de la cuerda es
-                        \(0{,}24\pi\ \text{m/s}\).
-                    </p>
-                    <p>
-                        Si la onda se desplaza en el sentido positivo
-                        del eje X y la fase inicial es nula,
-                        determine la ecuación de la onda.
-                    </p>
-                    <p>
-                        <strong>Puntuación:</strong> 1 punto.
-                    </p>
+                    <p>Una onda transversal se propaga a lo largo de una cuerda tensa. En un cierto instante se observa que la distancia entre dos máximos consecutivos es 1 m. Además, se comprueba que un punto de la cuerda pasa de una elongación máxima a nula en 0,125 s y que la velocidad de vibración máxima de un punto de la cuerda es \(0{,}24\pi\ \text{m/s}\). Si la onda se desplaza en el sentido positivo del eje X y la fase inicial es nula, determine la ecuación de la onda.</p>
+                    <p><strong>Puntuación:</strong> 1 punto.</p>
                 </div>
                 <div class="resolucion-ej">
-                    <div class="paso">
-                        <strong>1. Longitud de onda.</strong>
-                        La distancia entre dos máximos consecutivos
-                        es una longitud de onda:
-                    </div>
+                    <div class="paso"><strong>1. Longitud de onda.</strong> \(\boxed{\lambda=1\,\text{m}}\).</div>
+                    <div class="paso"><strong>2. Periodo y frecuencia.</strong> \(T/4=0{,}125\Rightarrow T=0{,}5\,\text{s}\), \(f=2\,\text{Hz}\).</div>
+                    <div class="paso"><strong>3. Frecuencia angular.</strong> \(\omega=2\pi\cdot2=\boxed{4\pi\,\text{rad/s}}\).</div>
+                    <div class="paso"><strong>4. Número de onda.</strong> \(k=2\pi/1=\boxed{2\pi\,\text{rad/m}}\).</div>
+                    <div class="paso"><strong>5. Amplitud.</strong> \(A=v_{y,\max}/\omega=0{,}24\pi/(4\pi)=\boxed{0{,}06\,\text{m}}\).</div>
+                    <div class="paso"><strong>6. Ecuación de la onda.</strong></div>
                     <div class="formula-box">
-                        \[
-                            \boxed{\lambda=1\,\text{m}}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>2. Periodo y frecuencia.</strong>
-                        El paso de una elongación máxima a una
-                        elongación nula corresponde a un cuarto
-                        de periodo:
-                        \[
-                            \frac{T}{4}=0{,}125
-                        \]
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            T=4\cdot0{,}125
-                            =0{,}5\,\text{s}
-                        \]
-                        \[
-                            f=\frac{1}{T}
-                            =\frac{1}{0{,}5}
-                            =2\,\text{Hz}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>3. Frecuencia angular.</strong>
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            \omega=2\pi f=2\pi\cdot2
-                        \]
-                        \[
-                            \boxed{\omega=4\pi\,\text{rad/s}}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>4. Número de onda.</strong>
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            k=\frac{2\pi}{\lambda}
-                            =\frac{2\pi}{1}
-                        \]
-                        \[
-                            \boxed{k=2\pi\,\text{rad/m}}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>5. Amplitud.</strong>
-                        La velocidad transversal máxima es:
-                        \[
-                            v_{y,\max}=A\omega
-                        \]
-                        Despejamos:
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            A=\frac{v_{y,\max}}{\omega}
-                            =\frac{0{,}24\pi}{4\pi}
-                        \]
-                        \[
-                            \boxed{A=0{,}06\,\text{m}}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>6. Ecuación de la onda.</strong>
-                        Para propagación hacia \(+X\), con fase inicial
-                        nula:
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            y(x,t)=A\sin(\omega t-kx)
-                        \]
-                        \[
-                            \boxed{
-                            y(x,t)=0{,}06\sin(4\pi t-2\pi x)
-                            \ \text{m}
-                            }
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>Resultado final:</strong>
-                        \[
-                            \boxed{
-                            y(x,t)=0{,}06\sin(4\pi t-2\pi x)
-                            \ \text{m}
-                            }
-                        \]
+                        \[ \boxed{y(x,t)=0{,}06\sin(4\pi t-2\pi x)\ \text{m}} \]
                     </div>
                 </div>
             </details>
-            <!-- ==================================================== -->
-            <!-- PROBLEMA 5                                            -->
-            <!-- ==================================================== -->
+
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
-                    <span class="num-ej">
-                        Ejercicio 5
-                    </span>
-                    <span class="titulo-ej">
-                        Cuatro magnitudes características
-                        de la ecuación de una onda transversal
-                    </span>
-                    <span class="meta-ej">
-                        Castilla y León · 2023 · Ordinaria · Problema 15
-                    </span>
+                    <span class="num-ej">Ejercicio 5</span>
+                    <span class="titulo-ej">Cuatro magnitudes características de la ecuación de una onda transversal</span>
+                    <span class="meta-ej">Castilla y León · 2023 · Ordinaria · Problema 15</span>
                 </summary>
                 <div class="enunciado-ej">
-                    <p>
-                        Indique cuatro magnitudes características
-                        de la ecuación de una onda transversal
-                        en una cuerda, defínalas y exprese
-                        sus unidades en el S.I.
-                    </p>
-                    <p>
-                        <strong>Puntuación:</strong> 1 punto.
-                    </p>
+                    <p>Indique cuatro magnitudes características de la ecuación de una onda transversal en una cuerda, defínalas y exprese sus unidades en el S.I.</p>
+                    <p><strong>Puntuación:</strong> 1 punto.</p>
                 </div>
                 <div class="resolucion-ej">
-                    <div class="paso">
-                        <strong>1. Ecuación general.</strong>
-                        Partimos de la ecuación de una onda armónica
-                        transversal que se propaga hacia \(+X\):
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            y(x,t)=A\sin(\omega t-kx+\varphi_0)
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>2. Amplitud \(A\).</strong>
-                        Es la máxima elongación de los puntos
-                        del medio respecto a su posición de equilibrio.
-                        Su unidad en el S.I. es el metro:
-                        \[
-                            \boxed{[A]=\text{m}}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>3. Frecuencia angular \(\omega\).</strong>
-                        Representa la rapidez con la que cambia
-                        la fase de oscilación con el tiempo.
-                        Está relacionada con la frecuencia
-                        y el periodo mediante:
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            \omega=2\pi f=\frac{2\pi}{T}
-                        \]
-                        \[
-                            \boxed{[\omega]=\text{rad/s}}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>4. Número de onda \(k\).</strong>
-                        Representa la variación espacial de la fase.
-                        Está relacionado con la longitud de onda:
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            k=\frac{2\pi}{\lambda}
-                        \]
-                        \[
-                            \boxed{[k]=\text{rad/m}}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>5. Fase inicial \(\varphi_0\).</strong>
-                        Es la constante que establece el estado
-                        de vibración de la onda en el instante inicial.
-                        Se expresa en radianes:
-                        \[
-                            \boxed{[\varphi_0]=\text{rad}}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>6. Relación con la velocidad
-                        de propagación.</strong>
-                        Aunque no es una de las cuatro magnitudes
-                        anteriores, la velocidad se obtiene
-                        a partir de ellas:
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            \boxed{
-                            v=\frac{\omega}{k}
-                            =\lambda f
-                            =\frac{\lambda}{T}
-                            }
-                        \]
-                        \[
-                            [v]=\text{m/s}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>Resultado final:</strong>
-                        Las cuatro magnitudes principales son
-                        la amplitud, la frecuencia angular,
-                        el número de onda y la fase inicial.
-                    </div>
+                    <div class="paso"><strong>Ecuación general:</strong> \(y(x,t)=A\sin(\omega t-kx+\varphi_0)\).</div>
+                    <div class="paso"><strong>Amplitud \(A\):</strong> máxima elongación. Unidad: \(\boxed{[A]=\text{m}}\).</div>
+                    <div class="paso"><strong>Frecuencia angular \(\omega\):</strong> rapidez de cambio de la fase temporal, \(\omega=2\pi f=2\pi/T\). Unidad: \(\boxed{[\omega]=\text{rad/s}}\).</div>
+                    <div class="paso"><strong>Número de onda \(k\):</strong> variación espacial de la fase, \(k=2\pi/\lambda\). Unidad: \(\boxed{[k]=\text{rad/m}}\).</div>
+                    <div class="paso"><strong>Fase inicial \(\varphi_0\):</strong> estado de vibración en el instante inicial. Unidad: \(\boxed{[\varphi_0]=\text{rad}}\).</div>
                 </div>
             </details>
-            <!-- ==================================================== -->
-            <!-- PROBLEMA 6                                            -->
-            <!-- ==================================================== -->
+
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
-                    <span class="num-ej">
-                        Ejercicio 6
-                    </span>
-                    <span class="titulo-ej">
-                        Distancia mínima entre puntos
-                        en oposición de fase
-                    </span>
-                    <span class="meta-ej">
-                        Castilla y León · 2022 · Extraordinaria · Problema 6
-                    </span>
+                    <span class="num-ej">Ejercicio 6</span>
+                    <span class="titulo-ej">Distancia mínima entre puntos en oposición de fase</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Extraordinaria · Problema 6</span>
                 </summary>
                 <div class="enunciado-ej">
-                    <p>
-                        Una onda armónica de frecuencia
-                        \(f=75\,\text{Hz}\) se propaga por un medio
-                        con velocidad \(v=125\,\text{m/s}\).
-                    </p>
-                    <p>
-                        Determine la distancia mínima entre dos puntos
-                        del medio que se encuentran en oposición
-                        de fase.
-                    </p>
-                    <p>
-                        <strong>Puntuación:</strong> 1 punto.
-                    </p>
+                    <p>Una onda armónica de frecuencia \(f=75\,\text{Hz}\) se propaga por un medio con velocidad \(v=125\,\text{m/s}\). Determine la distancia mínima entre dos puntos del medio que se encuentran en oposición de fase.</p>
+                    <p><strong>Puntuación:</strong> 1 punto.</p>
                 </div>
                 <div class="resolucion-ej">
-                    <div class="paso">
-                        <strong>1. Longitud de onda.</strong>
-                        Utilizamos:
-                    </div>
+                    <div class="paso"><strong>1. Longitud de onda.</strong></div>
                     <div class="formula-box">
-                        \[
-                            v=\lambda f
-                        \]
-                        Despejando:
-                        \[
-                            \lambda=\frac{v}{f}
-                            =\frac{125}{75}
-                        \]
-                        \[
-                            \boxed{\lambda=1{,}667\,\text{m}}
-                        \]
+                        \[ \lambda=\frac{v}{f}=\frac{125}{75} \quad\Rightarrow\quad \boxed{\lambda=1{,}667\,\text{m}} \]
                     </div>
-                    <div class="paso">
-                        <strong>2. Condición de oposición de fase.</strong>
-                        Dos puntos se encuentran en oposición de fase
-                        cuando su diferencia de fase es un múltiplo
-                        impar de \(\pi\):
-                        \[
-                            \Delta\varphi=(2n+1)\pi
-                        \]
-                        Por tanto, las distancias posibles son:
-                    </div>
+                    <div class="paso"><strong>2. Distancia mínima.</strong> Con \(n=0\):</div>
                     <div class="formula-box">
-                        \[
-                            \Delta x=(2n+1)\frac{\lambda}{2}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>3. Distancia mínima.</strong>
-                        El menor valor positivo corresponde a \(n=0\):
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            \Delta x_{\min}=\frac{\lambda}{2}
-                        \]
-                        \[
-                            \Delta x_{\min}
-                            =\frac{1{,}667}{2}
-                        \]
-                        \[
-                            \boxed{
-                            \Delta x_{\min}=0{,}833\,\text{m}
-                            }
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>Resultado final:</strong>
-                        \[
-                            \boxed{
-                            \Delta x_{\min}=0{,}833\,\text{m}
-                            }
-                        \]
+                        \[ \Delta x_{\min}=\frac{\lambda}{2} \quad\Rightarrow\quad \boxed{\Delta x_{\min}=0{,}833\,\text{m}} \]
                     </div>
                 </div>
             </details>
-            <!-- ==================================================== -->
-            <!-- PROBLEMA 7                                            -->
-            <!-- ==================================================== -->
+
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
-                    <span class="num-ej">
-                        Ejercicio 7
-                    </span>
-                    <span class="titulo-ej">
-                        Distancia entre puntos con diferencia
-                        de fase de 60 grados
-                    </span>
-                    <span class="meta-ej">
-                        Castilla y León · 2022 · Ordinaria · Problema 6
-                    </span>
+                    <span class="num-ej">Ejercicio 7</span>
+                    <span class="titulo-ej">Distancia entre puntos con diferencia de fase de 60 grados</span>
+                    <span class="meta-ej">Castilla y León · 2022 · Ordinaria · Problema 6</span>
                 </summary>
                 <div class="enunciado-ej">
-                    <p>
-                        Un oscilador vibra a 6 Hz de frecuencia
-                        y genera ondas que se desplazan a una velocidad
-                        de 2,4 m/s.
-                    </p>
-                    <p>
-                        Calcule la distancia mínima entre dos puntos
-                        que vibran con una diferencia de fase de 60°.
-                    </p>
-                    <p>
-                        <strong>Puntuación:</strong> 1 punto.
-                    </p>
+                    <p>Un oscilador vibra a 6 Hz de frecuencia y genera ondas que se desplazan a una velocidad de 2,4 m/s. Calcule la distancia mínima entre dos puntos que vibran con una diferencia de fase de 60°.</p>
+                    <p><strong>Puntuación:</strong> 1 punto.</p>
                 </div>
                 <div class="resolucion-ej">
-                    <div class="paso">
-                        <strong>1. Longitud de onda.</strong>
-                        Aplicamos la ecuación fundamental:
-                    </div>
+                    <div class="paso"><strong>1. Longitud de onda.</strong></div>
                     <div class="formula-box">
-                        \[
-                            \lambda=\frac{v}{f}
-                            =\frac{2{,}4}{6}
-                        \]
-                        \[
-                            \boxed{\lambda=0{,}4\,\text{m}}
-                        \]
+                        \[ \lambda=\frac{v}{f}=\frac{2{,}4}{6} \quad\Rightarrow\quad \boxed{\lambda=0{,}4\,\text{m}} \]
                     </div>
-                    <div class="paso">
-                        <strong>2. Conversión de la diferencia
-                        de fase a radianes.</strong>
-                        \[
-                            60^\circ=\frac{60\pi}{180}
-                            =\frac{\pi}{3}\,\text{rad}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>3. Relación entre fase
-                        y distancia.</strong>
-                        Sabemos que:
-                    </div>
+                    <div class="paso"><strong>2. Conversión de fase.</strong> \(60^\circ=\pi/3\,\text{rad}\).</div>
+                    <div class="paso"><strong>3. Distancia.</strong></div>
                     <div class="formula-box">
-                        \[
-                            \Delta\varphi=k\Delta x
-                        \]
-                        Despejando:
-                        \[
-                            \Delta x=\frac{\Delta\varphi}{k}
-                        \]
-                        Como \(k=2\pi/\lambda\):
-                        \[
-                            \Delta x=
-                            \frac{\lambda\Delta\varphi}{2\pi}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>4. Sustitución numérica.</strong>
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            \Delta x=
-                            \frac{0{,}4\cdot\frac{\pi}{3}}{2\pi}
-                        \]
-                        \[
-                            \Delta x=\frac{0{,}4}{6}
-                        \]
-                        \[
-                            \boxed{
-                            \Delta x=6{,}67\cdot10^{-2}\,\text{m}
-                            }
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>Resultado final:</strong>
-                        \[
-                            \boxed{
-                            \Delta x=6{,}67\,\text{cm}
-                            }
-                        \]
+                        \[ \Delta x=\frac{\lambda\Delta\varphi}{2\pi}=\frac{0{,}4\cdot\pi/3}{2\pi} \quad\Rightarrow\quad \boxed{\Delta x=6{,}67\cdot10^{-2}\,\text{m}=6{,}67\,\text{cm}} \]
                     </div>
                 </div>
             </details>
-            <!-- ==================================================== -->
-            <!-- PROBLEMA 8                                            -->
-            <!-- ==================================================== -->
+
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
-                    <span class="num-ej">
-                        Ejercicio 8
-                    </span>
-                    <span class="titulo-ej">
-                        Ecuación general de una onda armónica
-                        con condición inicial
-                    </span>
-                    <span class="meta-ej">
-                        Castilla y León · 2021 · Extraordinaria · Problema 6
-                    </span>
+                    <span class="num-ej">Ejercicio 8</span>
+                    <span class="titulo-ej">Ecuación general de una onda armónica con condición inicial</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Extraordinaria · Problema 6</span>
                 </summary>
                 <div class="enunciado-ej">
-                    <p>
-                        Una fuente genera ondas armónicas de
-                        0,4 mm de amplitud y 12000 Hz de frecuencia
-                        que se propagan a una velocidad de 340 m/s
-                        en el sentido positivo del eje x.
-                    </p>
-                    <p>
-                        Si en el instante inicial la elongación
-                        en el origen es cero, determine la ecuación
-                        general de la onda.
-                    </p>
-                    <p>
-                        <strong>Puntuación:</strong> 1 punto.
-                    </p>
+                    <p>Una fuente genera ondas armónicas de 0,4 mm de amplitud y 12000 Hz de frecuencia que se propagan a una velocidad de 340 m/s en el sentido positivo del eje x. Si en el instante inicial la elongación en el origen es cero, determine la ecuación general de la onda.</p>
+                    <p><strong>Puntuación:</strong> 1 punto.</p>
                 </div>
                 <div class="resolucion-ej">
-                    <div class="paso">
-                        <strong>1. Conversión de unidades
-                        y parámetros iniciales.</strong>
-                        Convertimos la amplitud:
-                        \[
-                            A=0{,}4\,\text{mm}
-                            =4\cdot10^{-4}\,\text{m}
-                        \]
-                        Los demás datos son:
-                        \[
-                            f=12000\,\text{Hz}
-                        \]
-                        \[
-                            v=340\,\text{m/s}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>2. Frecuencia angular.</strong>
-                    </div>
+                    <div class="paso"><strong>1. Datos.</strong> \(A=4\cdot10^{-4}\,\text{m}\), \(f=12000\,\text{Hz}\), \(v=340\,\text{m/s}\).</div>
+                    <div class="paso"><strong>2. Frecuencia angular.</strong></div>
                     <div class="formula-box">
-                        \[
-                            \omega=2\pi f
-                        \]
-                        \[
-                            \omega=2\pi\cdot12000
-                        \]
-                        \[
-                            \boxed{
-                            \omega=2{,}4\pi\cdot10^4\,\text{rad/s}
-                            }
-                        \]
+                        \[ \omega=2\pi\cdot12000 \quad\Rightarrow\quad \boxed{\omega=2{,}4\pi\cdot10^4\,\text{rad/s}} \]
                     </div>
-                    <div class="paso">
-                        <strong>3. Número de onda.</strong>
-                        Utilizamos la relación:
-                        \[
-                            v=\frac{\omega}{k}
-                        \]
-                        Despejando:
-                    </div>
+                    <div class="paso"><strong>3. Número de onda.</strong></div>
                     <div class="formula-box">
-                        \[
-                            k=\frac{\omega}{v}
-                        \]
-                        \[
-                            k=\frac{2{,}4\pi\cdot10^4}{340}
-                        \]
-                        \[
-                            \boxed{k\approx221{,}8\,\text{rad/m}}
-                        \]
+                        \[ k=\frac{\omega}{v}=\frac{2{,}4\pi\cdot10^4}{340} \quad\Rightarrow\quad \boxed{k\approx221{,}8\,\text{rad/m}} \]
                     </div>
-                    <div class="paso">
-                        <strong>4. Condición inicial.</strong>
-                        La onda se propaga hacia el sentido positivo
-                        del eje X.
-                        Tomando la fase nula elegida en la resolución
-                        del banco, la ecuación de la onda es:
-                    </div>
+                    <div class="paso"><strong>4. Ecuación.</strong> Adoptando fase nula:</div>
                     <div class="formula-box">
-                        \[
-                            y(x,t)=A\sin(\omega t-kx)
-                        \]
-                    </div>
-                    <div class="note">
-                        <strong>Observación física:</strong>
-                        La condición \(y(0,0)=0\), por sí sola,
-                        no determina completamente la fase inicial:
-                        admite fases equivalentes a 0 o a \(\pi\)
-                        en la forma seno. Para este ejercicio
-                        se adopta la elección de fase nula
-                        utilizada en la resolución del banco.
-                    </div>
-                    <div class="paso">
-                        <strong>5. Sustitución.</strong>
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            y(x,t)=
-                            4\cdot10^{-4}
-                            \sin\left(
-                            2{,}4\pi\cdot10^4t-221{,}8x
-                            \right)
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>Resultado final:</strong>
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            \boxed{
-                            y(x,t)=
-                            4\cdot10^{-4}
-                            \sin\left(
-                            2{,}4\pi\cdot10^4t-221{,}8x
-                            \right)\,\text{m}
-                            }
-                        \]
-                        con \(x\) en metros y \(t\) en segundos.
+                        \[ \boxed{y(x,t)=4\cdot10^{-4}\sin\left(2{,}4\pi\cdot10^4 t-221{,}8x\right)\ \text{m}} \]
                     </div>
                 </div>
             </details>
-            <!-- ==================================================== -->
-            <!-- PROBLEMA 9                                            -->
-            <!-- ==================================================== -->
+
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
-                    <span class="num-ej">
-                        Ejercicio 9
-                    </span>
-                    <span class="titulo-ej">
-                        Ecuación de la onda y diferencia
-                        de fase de pi/2
-                    </span>
-                    <span class="meta-ej">
-                        Castilla y León · 2021 · Ordinaria · Problema 7
-                    </span>
+                    <span class="num-ej">Ejercicio 9</span>
+                    <span class="titulo-ej">Ecuación de la onda y diferencia de fase de pi/2</span>
+                    <span class="meta-ej">Castilla y León · 2021 · Ordinaria · Problema 7</span>
                 </summary>
                 <div class="enunciado-ej">
-                    <p>
-                        Una onda armónica transversal se desplaza
-                        en el sentido positivo del eje X, tiene
-                        una amplitud de 8 cm, una longitud de onda
-                        de 4 cm y una frecuencia de 8 Hz.
-                    </p>
-                    <p>
-                        Si para \(x=0\) y \(t=0\) la elongación
-                        vale \(y=4\,\text{cm}\) y su velocidad
-                        es positiva, determine:
-                    </p>
-                    <p>
-                        <strong>a)</strong>
-                        La ecuación de la onda.
-                    </p>
-                    <p>
-                        <strong>b)</strong>
-                        La distancia mínima que separa dos puntos
-                        de la onda cuya diferencia de fase es
-                        \(\pi/2\,\text{rad}\).
-                    </p>
-                    <p>
-                        <strong>Puntuación:</strong> 1 punto.
-                    </p>
+                    <p>Una onda armónica transversal se desplaza en el sentido positivo del eje X, tiene una amplitud de 8 cm, una longitud de onda de 4 cm y una frecuencia de 8 Hz. Si para \(x=0\) y \(t=0\) la elongación vale \(y=4\,\text{cm}\) y su velocidad es positiva, determine:</p>
+                    <p><strong>a)</strong> La ecuación de la onda.</p>
+                    <p><strong>b)</strong> La distancia mínima que separa dos puntos de la onda cuya diferencia de fase es \(\pi/2\,\text{rad}\).</p>
+                    <p><strong>Puntuación:</strong> 1 punto.</p>
                 </div>
                 <div class="resolucion-ej">
-                    <div class="paso">
-                        <strong>1. Conversión de datos.</strong>
-                        \[
-                            A=8\,\text{cm}=0{,}08\,\text{m}
-                        \]
-                        \[
-                            \lambda=4\,\text{cm}=0{,}04\,\text{m}
-                        \]
-                        \[
-                            f=8\,\text{Hz}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>2. Frecuencia angular.</strong>
-                    </div>
+                    <div class="paso"><strong>1. Datos.</strong> \(A=0{,}08\,\text{m}\), \(\lambda=0{,}04\,\text{m}\), \(f=8\,\text{Hz}\).</div>
+                    <div class="paso"><strong>2. Frecuencia angular y número de onda.</strong></div>
                     <div class="formula-box">
-                        \[
-                            \omega=2\pi f=2\pi\cdot8
-                        \]
-                        \[
-                            \boxed{\omega=16\pi\,\text{rad/s}}
-                        \]
+                        \[ \omega=2\pi\cdot8=\boxed{16\pi\,\text{rad/s}},\qquad k=\frac{2\pi}{0{,}04}=\boxed{50\pi\,\text{rad/m}} \]
                     </div>
-                    <div class="paso">
-                        <strong>3. Número de onda.</strong>
-                    </div>
+                    <div class="paso"><strong>3. Fase inicial.</strong> \(0{,}04=0{,}08\sin\varphi_0\Rightarrow\sin\varphi_0=0{,}5\). Como \(v_y(0,0)>0\), \(\boxed{\varphi_0=\pi/6}\).</div>
+                    <div class="paso"><strong>4. Ecuación.</strong></div>
                     <div class="formula-box">
-                        \[
-                            k=\frac{2\pi}{\lambda}
-                            =\frac{2\pi}{0{,}04}
-                        \]
-                        \[
-                            \boxed{k=50\pi\,\text{rad/m}}
-                        \]
+                        \[ \boxed{y(x,t)=0{,}08\sin\left(16\pi t-50\pi x+\frac{\pi}{6}\right)\ \text{m}} \]
                     </div>
-                    <div class="paso">
-                        <strong>4. Ecuación general y fase inicial.</strong>
-                        Para propagación hacia \(+X\):
-                        \[
-                            y(x,t)=A\sin(\omega t-kx+\varphi_0)
-                        \]
-                        En \(x=0\), \(t=0\):
-                        \[
-                            y(0,0)=A\sin\varphi_0
-                        \]
-                        Sustituimos:
-                    </div>
+                    <div class="paso"><strong>5. Distancia para \(\Delta\varphi=\pi/2\).</strong></div>
                     <div class="formula-box">
-                        \[
-                            0{,}04=0{,}08\sin\varphi_0
-                        \]
-                        \[
-                            \sin\varphi_0=0{,}5
-                        \]
-                        \[
-                            \varphi_0=\frac{\pi}{6}
-                            \quad\text{o}\quad
-                            \frac{5\pi}{6}
-                        \]
-                        Como la velocidad transversal inicial
-                        es positiva:
-                        \[
-                            v_y(0,0)=A\omega\cos\varphi_0>0
-                        \]
-                        Por tanto:
-                        \[
-                            \boxed{\varphi_0=\frac{\pi}{6}}
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>5. Ecuación de la onda.</strong>
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            \boxed{
-                            y(x,t)=0{,}08\sin\left(
-                            16\pi t-50\pi x+\frac{\pi}{6}
-                            \right)\,\text{m}
-                            }
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>6. Diferencia de fase de \(\pi/2\).</strong>
-                        Aplicamos:
-                        \[
-                            \Delta\varphi=k\Delta x
-                        \]
-                        Despejamos:
-                        \[
-                            \Delta x=\frac{\Delta\varphi}{k}
-                        \]
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            \Delta x=
-                            \frac{\pi/2}{50\pi}
-                        \]
-                        \[
-                            \boxed{
-                            \Delta x=0{,}01\,\text{m}
-                            }
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>Resultado final:</strong>
-                        \[
-                            \boxed{
-                            y(x,t)=0{,}08\sin\left(
-                            16\pi t-50\pi x+\frac{\pi}{6}
-                            \right)\,\text{m}
-                            }
-                        \]
-                        \[
-                            \boxed{
-                            \Delta x=1\,\text{cm}
-                            }
-                        \]
+                        \[ \Delta x=\frac{\Delta\varphi}{k}=\frac{\pi/2}{50\pi} \quad\Rightarrow\quad \boxed{\Delta x=0{,}01\,\text{m}=1\,\text{cm}} \]
                     </div>
                 </div>
             </details>
-            <!-- ==================================================== -->
-            <!-- PROBLEMA 10                                           -->
-            <!-- ==================================================== -->
+
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
-                    <span class="num-ej">
-                        Ejercicio 10
-                    </span>
-                    <span class="titulo-ej">
-                        Elongación, velocidad y aceleración
-                        en una onda armónica
-                    </span>
-                    <span class="meta-ej">
-                        Castilla y León · 2020 · Ordinaria · Problema 6
-                    </span>
+                    <span class="num-ej">Ejercicio 10</span>
+                    <span class="titulo-ej">Elongación, velocidad y aceleración en una onda armónica</span>
+                    <span class="meta-ej">Castilla y León · 2020 · Ordinaria · Problema 6</span>
                 </summary>
                 <div class="enunciado-ej">
-                    <p>
-                        Una onda armónica se desplaza por una cuerda
-                        y tiene la siguiente expresión en unidades
-                        del S.I.:
-                    </p>
-                    \[
-                        y(x,t)=0{,}06\sin\left(
-                        4\pi t-\frac{\pi}{6}x
-                        \right)
-                    \]
-                    <p>
-                        Para el instante \(t=0{,}25\,\text{s}\),
-                        determine la elongación, la velocidad
-                        y la aceleración de un punto de la cuerda
-                        que se encuentra a 1,5 m del extremo situado
-                        en el origen de coordenadas.
-                    </p>
-                    <p>
-                        <strong>Puntuación:</strong> 1 punto.
-                    </p>
+                    <p>Una onda armónica se desplaza por una cuerda y tiene la siguiente expresión en unidades del S.I.:</p>
+                    \[ y(x,t)=0{,}06\sin\left(4\pi t-\frac{\pi}{6}x\right) \]
+                    <p>Para el instante \(t=0{,}25\,\text{s}\), determine la elongación, la velocidad y la aceleración de un punto de la cuerda que se encuentra a 1,5 m del extremo situado en el origen de coordenadas.</p>
+                    <p><strong>Puntuación:</strong> 1 punto.</p>
                 </div>
                 <div class="resolucion-ej">
-                    <div class="paso">
-                        <strong>1. Datos.</strong>
-                        Comparamos con la ecuación general:
-                        \[
-                            y(x,t)=A\sin(\omega t-kx)
-                        \]
-                        Identificamos:
-                    </div>
+                    <div class="paso"><strong>1. Datos.</strong> \(A=0{,}06\,\text{m}\), \(\omega=4\pi\,\text{rad/s}\), \(k=\pi/6\,\text{rad/m}\), \(x=1{,}5\,\text{m}\), \(t=0{,}25\,\text{s}\).</div>
+                    <div class="paso"><strong>2. Fase.</strong></div>
                     <div class="formula-box">
-                        \[
-                            A=0{,}06\,\text{m}
-                        \]
-                        \[
-                            \omega=4\pi\,\text{rad/s}
-                        \]
-                        \[
-                            k=\frac{\pi}{6}\,\text{rad/m}
-                        \]
-                        \[
-                            x=1{,}5\,\text{m}
-                        \]
-                        \[
-                            t=0{,}25\,\text{s}
-                        \]
+                        \[ \varphi=4\pi\cdot0{,}25-\frac{\pi}{6}\cdot1{,}5=\pi-\frac{\pi}{4}=\frac{3\pi}{4} \]
                     </div>
-                    <div class="paso">
-                        <strong>2. Fase del punto.</strong>
-                        Calculamos primero el argumento
-                        de la función trigonométrica:
-                    </div>
+                    <div class="paso"><strong>3. Elongación.</strong></div>
                     <div class="formula-box">
-                        \[
-                            \varphi=
-                            4\pi\cdot0{,}25
-                            -\frac{\pi}{6}\cdot1{,}5
-                        \]
-                        \[
-                            \varphi=\pi-\frac{\pi}{4}
-                            =\frac{3\pi}{4}
-                        \]
-                        Por tanto:
-                        \[
-                            \sin\left(\frac{3\pi}{4}\right)
-                            =\frac{\sqrt{2}}{2}
-                        \]
-                        \[
-                            \cos\left(\frac{3\pi}{4}\right)
-                            =-\frac{\sqrt{2}}{2}
-                        \]
+                        \[ y=0{,}06\sin\left(\frac{3\pi}{4}\right) \quad\Rightarrow\quad \boxed{y=4{,}24\cdot10^{-2}\,\text{m}} \]
                     </div>
-                    <div class="paso">
-                        <strong>3. Elongación.</strong>
-                        Sustituimos la fase en la ecuación:
-                    </div>
+                    <div class="paso"><strong>4. Velocidad transversal.</strong></div>
                     <div class="formula-box">
-                        \[
-                            y=0{,}06\sin\left(\frac{3\pi}{4}\right)
-                        \]
-                        \[
-                            y=0{,}06\cdot\frac{\sqrt{2}}{2}
-                        \]
-                        \[
-                            \boxed{
-                            y=4{,}24\cdot10^{-2}\,\text{m}
-                            }
-                        \]
+                        \[ v_y=0{,}24\pi\cos\left(\frac{3\pi}{4}\right) \quad\Rightarrow\quad \boxed{v_y=-0{,}533\,\text{m/s}} \]
                     </div>
-                    <div class="paso">
-                        <strong>4. Velocidad transversal.</strong>
-                        Derivamos la ecuación respecto al tiempo:
-                    </div>
+                    <div class="paso"><strong>5. Aceleración transversal.</strong></div>
                     <div class="formula-box">
-                        \[
-                            v_y=\frac{\partial y}{\partial t}
-                        \]
-                        \[
-                            v_y=0{,}06\cdot4\pi
-                            \cos\left(
-                            4\pi t-\frac{\pi}{6}x
-                            \right)
-                        \]
-                        \[
-                            v_y=0{,}24\pi
-                            \cos\left(\frac{3\pi}{4}\right)
-                        \]
-                        \[
-                            v_y=0{,}24\pi
-                            \left(-\frac{\sqrt{2}}{2}\right)
-                        \]
-                        \[
-                            \boxed{
-                            v_y=-0{,}533\,\text{m/s}
-                            }
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>5. Aceleración transversal.</strong>
-                        Derivamos una segunda vez:
-                    </div>
-                    <div class="formula-box">
-                        \[
-                            a_y=\frac{\partial^2y}{\partial t^2}
-                        \]
-                        \[
-                            a_y=-0{,}06(4\pi)^2
-                            \sin\left(
-                            4\pi t-\frac{\pi}{6}x
-                            \right)
-                        \]
-                        \[
-                            a_y=-0{,}06(16\pi^2)
-                            \frac{\sqrt{2}}{2}
-                        \]
-                        \[
-                            \boxed{
-                            a_y=-6{,}70\,\text{m/s}^2
-                            }
-                        \]
-                    </div>
-                    <div class="paso">
-                        <strong>Resultado final:</strong>
-                        \[
-                            \boxed{
-                            y=4{,}24\cdot10^{-2}\,\text{m}
-                            }
-                        \]
-                        \[
-                            \boxed{
-                            v_y=-0{,}533\,\text{m/s}
-                            }
-                        \]
-                        \[
-                            \boxed{
-                            a_y=-6{,}70\,\text{m/s}^2
-                            }
-                        \]
+                        \[ a_y=-0{,}06(4\pi)^2\sin\left(\frac{3\pi}{4}\right) \quad\Rightarrow\quad \boxed{a_y=-6{,}70\,\text{m/s}^2} \]
                     </div>
                 </div>
             </details>
-            <!-- ==================================================== -->
-            <!-- PIE DIDÁCTICO                                         -->
-            <!-- ==================================================== -->
+
             <div class="pie-clave">
                 <i class="fas fa-lightbulb"></i>
                 <span>
-                    <strong>Observaciones clave para la EBAU:</strong>
-                    En los problemas de este tema se repiten
-                    cinco procedimientos fundamentales:
-                    (1) identificar \(A\), \(\omega\), \(k\)
-                    y \(\varphi_0\);
-                    (2) obtener \(T\), \(f\), \(\lambda\)
-                    y \(v\) mediante las relaciones
-                    \(\omega=2\pi f\),
-                    \(k=2\pi/\lambda\) y \(v=\omega/k\);
-                    (3) calcular diferencias de fase mediante
-                    \(\Delta\varphi_x=k\Delta x\) y
-                    \(\Delta\varphi_t=\omega\Delta t\);
-                    (4) derivar la ecuación respecto al tiempo
-                    para obtener velocidad y aceleración transversal;
-                    (5) utilizar las condiciones iniciales
-                    para determinar correctamente la fase.
-                    Recuerda siempre homogeneizar las unidades
-                    al S.I. y distinguir entre la velocidad
-                    de propagación y la velocidad de vibración
-                    de las partículas del medio.
+                    <strong>Observaciones clave para la EBAU:</strong> En los problemas de este tema se repiten cinco procedimientos fundamentales: (1) identificar \(A\), \(\omega\), \(k\) y \(\varphi_0\); (2) obtener \(T\), \(f\), \(\lambda\) y \(v\); (3) calcular diferencias de fase mediante \(\Delta\varphi_x=k\Delta x\) y \(\Delta\varphi_t=\omega\Delta t\); (4) derivar la ecuación respecto al tiempo para obtener velocidad y aceleración transversal; (5) utilizar las condiciones iniciales para determinar correctamente la fase. Recuerda siempre homogeneizar las unidades al S.I. y distinguir entre la velocidad de propagación y la velocidad de vibración de las partículas del medio.
                 </span>
             </div>
         </div>
     </details>
-    <!-- ============================================================ -->
-    <!-- TABLA DE SELECCIÓN DE PROBLEMAS                              -->
-    <!-- ============================================================ -->
+
     <details class="section enunciado">
-        <summary>
-            <h2>📋 Resumen de los 10 problemas seleccionados</h2>
-        </summary>
-        <p>
-            Todos los ejercicios de la selección pertenecen
-            a Castilla y León y están relacionados directamente
-            con el contenido C2.
-        </p>
+        <summary><h2>📋 Resumen de los 10 problemas seleccionados</h2></summary>
+        <p>Todos los ejercicios de la selección pertenecen a Castilla y León y están relacionados directamente con el contenido C2.</p>
         <table>
-            <thead>
-                <tr>
-                    <th>Ejercicio</th>
-                    <th>Comunidad</th>
-                    <th>Año</th>
-                    <th>Convocatoria</th>
-                    <th>N.º problema</th>
-                    <th>Contenido principal</th>
-                </tr>
-            </thead>
+            <thead><tr><th>Ejercicio</th><th>Comunidad</th><th>Año</th><th>Convocatoria</th><th>N.º problema</th><th>Contenido principal</th></tr></thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Castilla y León</td>
-                    <td>2025</td>
-                    <td>Ordinaria</td>
-                    <td>9</td>
-                    <td>
-                        Ecuación, longitud de onda,
-                        velocidad y desfases.
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Castilla y León</td>
-                    <td>2024</td>
-                    <td>Extraordinaria</td>
-                    <td>6</td>
-                    <td>
-                        Ecuación de onda a partir de una gráfica
-                        de velocidad transversal.
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Castilla y León</td>
-                    <td>2024</td>
-                    <td>Ordinaria</td>
-                    <td>6</td>
-                    <td>
-                        Elongación en una posición y un instante.
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Castilla y León</td>
-                    <td>2023</td>
-                    <td>Ordinaria</td>
-                    <td>6</td>
-                    <td>
-                        Construcción de la ecuación de onda
-                        a partir de datos.
-                    </td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Castilla y León</td>
-                    <td>2023</td>
-                    <td>Ordinaria</td>
-                    <td>15</td>
-                    <td>
-                        Magnitudes características y unidades.
-                    </td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Castilla y León</td>
-                    <td>2022</td>
-                    <td>Extraordinaria</td>
-                    <td>6</td>
-                    <td>
-                        Oposición de fase.
-                    </td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Castilla y León</td>
-                    <td>2022</td>
-                    <td>Ordinaria</td>
-                    <td>6</td>
-                    <td>
-                        Diferencia de fase de 60°.
-                    </td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>Castilla y León</td>
-                    <td>2021</td>
-                    <td>Extraordinaria</td>
-                    <td>6</td>
-                    <td>
-                        Ecuación de onda sonora y condiciones iniciales.
-                    </td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>Castilla y León</td>
-                    <td>2021</td>
-                    <td>Ordinaria</td>
-                    <td>7</td>
-                    <td>
-                        Ecuación de onda y desfase de \(\pi/2\).
-                    </td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>Castilla y León</td>
-                    <td>2020</td>
-                    <td>Ordinaria</td>
-                    <td>6</td>
-                    <td>
-                        Elongación, velocidad y aceleración transversal.
-                    </td>
-                </tr>
+                <tr><td>1</td><td>Castilla y León</td><td>2025</td><td>Ordinaria</td><td>9</td><td>Ecuación, longitud de onda, velocidad y desfases.</td></tr>
+                <tr><td>2</td><td>Castilla y León</td><td>2024</td><td>Extraordinaria</td><td>6</td><td>Ecuación de onda a partir de una gráfica de velocidad transversal.</td></tr>
+                <tr><td>3</td><td>Castilla y León</td><td>2024</td><td>Ordinaria</td><td>6</td><td>Elongación en una posición y un instante.</td></tr>
+                <tr><td>4</td><td>Castilla y León</td><td>2023</td><td>Ordinaria</td><td>6</td><td>Construcción de la ecuación de onda a partir de datos.</td></tr>
+                <tr><td>5</td><td>Castilla y León</td><td>2023</td><td>Ordinaria</td><td>15</td><td>Magnitudes características y unidades.</td></tr>
+                <tr><td>6</td><td>Castilla y León</td><td>2022</td><td>Extraordinaria</td><td>6</td><td>Oposición de fase.</td></tr>
+                <tr><td>7</td><td>Castilla y León</td><td>2022</td><td>Ordinaria</td><td>6</td><td>Diferencia de fase de 60°.</td></tr>
+                <tr><td>8</td><td>Castilla y León</td><td>2021</td><td>Extraordinaria</td><td>6</td><td>Ecuación de onda sonora y condiciones iniciales.</td></tr>
+                <tr><td>9</td><td>Castilla y León</td><td>2021</td><td>Ordinaria</td><td>7</td><td>Ecuación de onda y desfase de \(\pi/2\).</td></tr>
+                <tr><td>10</td><td>Castilla y León</td><td>2020</td><td>Ordinaria</td><td>6</td><td>Elongación, velocidad y aceleración transversal.</td></tr>
             </tbody>
         </table>
-        <div class="note">
-            <strong>Prioridad de estudio recomendada:</strong>
-            Los ejercicios 1, 2, 4, 8 y 9 son especialmente
-            interesantes para dominar la construcción de la
-            ecuación de onda y la identificación de sus parámetros.
-            Los ejercicios 6 y 7 permiten practicar las diferencias
-            de fase, mientras que el ejercicio 10 es fundamental
-            para dominar la derivación de la ecuación y calcular
-            velocidades y aceleraciones transversales.
-        </div>
     </details>
-    <!-- ============================================================ -->
-    <!-- BLOQUE DE RECURSOS Y NAVEGACIÓN                              -->
-    <!-- ============================================================ -->
-    <div style="max-width:1100px;
-                margin:30px auto;
-                padding:0 15px 30px 15px;">
-        <div class="recursos-tema"
-             style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-                    border-radius:20px;
-                    padding:30px 25px 32px 25px;
-                    box-shadow:0 15px 40px rgba(102,126,234,0.35);">
-            <h2 style="margin:0 0 8px 0;
-                       color:white;
-                       text-align:center;
-                       font-size:1.5em;
-                       display:flex;
-                       align-items:center;
-                       justify-content:center;
-                       gap:12px;">
-                <i class="fas fa-compass"></i>
-                Recursos del Tema C2
+
+    <div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
+        <div class="recursos-tema" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); border-radius:20px; padding:30px 25px 32px 25px; box-shadow:0 15px 40px rgba(102,126,234,0.35);">
+            <h2 style="margin:0 0 8px 0; color:white; text-align:center; font-size:1.5em; display:flex; align-items:center; justify-content:center; gap:12px;">
+                <i class="fas fa-compass"></i> Recursos del Tema C2
             </h2>
-            <p style="text-align:center;
-                      color:rgba(255,255,255,0.9);
-                      margin:0 0 25px 0;
-                      font-size:0.95em;">
-                Accede directamente al banco general de problemas
-                y consulta el material de trabajo del tema.
+            <p style="text-align:center; color:rgba(255,255,255,0.9); margin:0 0 25px 0; font-size:0.95em;">
+                Accede directamente al banco general de problemas y consulta el material de trabajo del tema.
             </p>
-            <div class="recurso-grid"
-                 style="display:grid;
-                        grid-template-columns:repeat(2,1fr);
-                        gap:18px;">
-                <!-- TARJETA 1: FORMULARIO -->
-                <div class="recurso-card"
-                     style="background:white;
-                            border-radius:16px;
-                            padding:22px 18px;
-                            text-align:center;
-                            height:100%;
-                            border:3px solid #fbbf24;
-                            box-shadow:0 6px 16px rgba(0,0,0,0.15);">
-                    <div class="recurso-icono"
-                         style="width:62px;
-                                height:62px;
-                                margin:4px auto 14px;
-                                background:linear-gradient(135deg,#667eea,#764ba2);
-                                border-radius:50%;
-                                display:flex;
-                                align-items:center;
-                                justify-content:center;
-                                color:white;
-                                font-size:1.7em;">
-                        <i class="fas fa-book"></i>
+            <div class="recurso-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:18px;">
+                <a href="TemaC2-Formulario.html" style="text-decoration:none; color:inherit;">
+                    <div class="recurso-card" style="background:white; border-radius:16px; padding:22px 18px; text-align:center; height:100%; border:3px solid #fbbf24; box-shadow:0 6px 16px rgba(0,0,0,0.15);">
+                        <div class="recurso-icono" style="width:62px; height:62px; margin:4px auto 14px; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.7em;">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div style="font-weight:700; color:#1e3a8a; font-size:1.1em; margin-bottom:6px;">Formulario C2</div>
+                        <div style="font-size:0.85em; color:#64748b; line-height:1.5;">Formulario esencial del tema, con fichas enlazadas a esta página.</div>
                     </div>
-                    <div style="font-weight:700;
-                                color:#1e3a8a;
-                                font-size:1.1em;
-                                margin-bottom:6px;">
-                        Formulario C2
-                    </div>
-                    <div style="font-size:0.85em;
-                                color:#64748b;
-                                line-height:1.5;">
-                        Formulario esencial integrado en esta página,
-                        con las fórmulas y relaciones fundamentales.
-                    </div>
-                </div>
-                <!-- TARJETA 2: BANCO EBAU GENERAL -->
-                <a href="../EBAU/problemas-inline_v04.html"
-                   style="text-decoration:none;color:inherit;">
-                    <div class="recurso-card"
-                         style="background:white;
-                                border-radius:16px;
-                                padding:22px 18px;
-                                text-align:center;
-                                height:100%;
-                                border:3px solid #e2e8f0;
-                                box-shadow:0 6px 16px rgba(0,0,0,0.15);">
-                        <div class="recurso-icono"
-                             style="width:62px;
-                                    height:62px;
-                                    margin:4px auto 14px;
-                                    background:linear-gradient(135deg,#10b981,#059669);
-                                    border-radius:50%;
-                                    display:flex;
-                                    align-items:center;
-                                    justify-content:center;
-                                    color:white;
-                                    font-size:1.7em;">
+                </a>
+                <a href="../EBAU/problemas-inline_v04.html" style="text-decoration:none; color:inherit;">
+                    <div class="recurso-card" style="background:white; border-radius:16px; padding:22px 18px; text-align:center; height:100%; border:3px solid #e2e8f0; box-shadow:0 6px 16px rgba(0,0,0,0.15);">
+                        <div class="recurso-icono" style="width:62px; height:62px; margin:4px auto 14px; background:linear-gradient(135deg,#10b981,#059669); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.7em;">
                             <i class="fas fa-database"></i>
                         </div>
-                        <div style="font-weight:700;
-                                    color:#1e3a8a;
-                                    font-size:1.1em;
-                                    margin-bottom:6px;">
-                            Banco general EBAU
-                        </div>
-                        <div style="font-size:0.85em;
-                                    color:#64748b;
-                                    line-height:1.5;">
-                            Banco completo de problemas de todas
-                            las unidades y comunidades.
-                        </div>
+                        <div style="font-weight:700; color:#1e3a8a; font-size:1.1em; margin-bottom:6px;">Banco general EBAU</div>
+                        <div style="font-size:0.85em; color:#64748b; line-height:1.5;">Banco completo de problemas de todas las unidades y comunidades.</div>
                     </div>
                 </a>
             </div>
         </div>
     </div>
-    <!-- ============================================================ -->
-    <!-- BLOQUE ES HORA DE                                            -->
-    <!-- ============================================================ -->
+
     <div class="bloque-cta">
         <div class="tarjeta-cta">
             <p>
-                Domina las magnitudes características de las ondas,
-                la ecuación de onda, las diferencias de fase
-                y la velocidad transversal.
+                Domina las magnitudes características de las ondas, la ecuación de onda, las diferencias de fase y la velocidad transversal.
                 <br><br>
-                <i>
-                    (Los detalles sobre los contenidos de las pruebas
-                    escritas se publicarán periódicamente en M.Teams).
-                </i>
+                <i>(Los detalles sobre los contenidos de las pruebas escritas se publicarán periódicamente en M.Teams).</i>
             </p>
             <div style="text-align:center;">
-                <a href="../index.html"
-                   target="_blank"
-                   class="boton-volver">
-                    Volver al inicio
-                </a>
+                <a href="../index.html" target="_blank" class="boton-volver">Volver al inicio</a>
             </div>
         </div>
     </div>
-    <!-- FIN DEL BLOQUE ES HORA DE -->
 </div>
-<!-- FIN CONTAINER -->
 </body>
 </html>

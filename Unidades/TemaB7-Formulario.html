@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA B7 (Formulario).- Fuerza de Laplace e interacción entre hilos paralelos</title>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- CSS PROPIO DE FORMULARIOS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+
+    <!-- Animación de resaltado al llegar por hash -->
+    <style>
+    .formula-resaltada{animation:highlightFormula 2.4s ease-out}
+    @keyframes highlightFormula{
+      0%,30%{box-shadow:0 0 0 4px rgba(251,191,36,.7)}
+      100%{box-shadow:0 0 0 4px rgba(251,191,36,0)}
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- ============================ CABECERA ============================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA B7 (Formulario).- </span>
+                <span class="texto">Fuerza de Laplace e interacción entre hilos paralelos</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ============================ GRID ============================ -->
+    <div class="grid">
+
+        <!-- FICHA 1 · LEY DE LAPLACE VECTORIAL -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Ley de Laplace (forma vectorial)</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El vector fuerza magnética que actúa sobre un tramo rectilíneo de conductor de longitud \(L\), recorrido por una corriente \(I\), inmerso en un campo magnético uniforme \(\vec B\). Se aplica en todos los problemas en los que un conductor con corriente está dentro de un campo magnético: varillas, cables, espiras rígidas, motores eléctricos y problemas mixtos B6/B7 con varios hilos.
+            </div>
+            <a href="TemaB7.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
+                \[ \vec F = I\,\vec L\times\vec B \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(\vec F=I\vec L\times\vec B\) y comprende que es un <strong>producto vectorial</strong>. La fuerza es perpendicular al conductor (vector \(I\vec L\)) y al campo \(\vec B\) a la vez. El vector \(\vec L\) apunta en el sentido de la <strong>corriente convencional</strong> (no del movimiento de electrones). Es la fórmula central del tema: de ella salen los módulos, la regla de la mano derecha y la interacción entre hilos. En EBAU casi siempre se combina con \(B=\mu_0I/(2\pi r)\) de B6.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\vec F\)</td><td data-label="Significado">Fuerza magnética sobre el conductor</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(I\)</td><td data-label="Significado">Intensidad de corriente</td><td data-label="Unidades">A</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec L\)</td><td data-label="Significado">Vector longitud del tramo, en el sentido de la corriente</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec B\)</td><td data-label="Significado">Campo magnético externo uniforme</td><td data-label="Unidades">T</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un tramo de \(L=0{,}5\ \text{m}\) con \(I=4\ \text{A}\) en dirección \(+\hat i\) está en un campo \(\vec B=0{,}3\hat j\ \text{T}\). Entonces \(\vec F=I L\,\hat i\times B\,\hat j=I L B\,\hat k=4\cdot0{,}5\cdot0{,}3\,\hat k=+0{,}6\,\hat k\ \text{N}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La fuerza es <strong>perpendicular</strong> al conductor y al campo \(\vec B\).</li>
+                    <li>Si el conductor es <strong>paralelo</strong> al campo, \(\vec F=\vec 0\).</li>
+                    <li>Si es <strong>perpendicular</strong>, el módulo es máximo: \(F=ILB\).</li>
+                    <li>El sentido se obtiene con la regla de la mano derecha aplicada a \(I\vec L\times\vec B\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 · MÓDULO DE LA FUERZA DE LAPLACE -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Módulo de la fuerza de Laplace</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Módulo</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo de la fuerza de Laplace a partir de la intensidad de corriente, la longitud del tramo, el campo magnético y el ángulo entre el conductor y el campo. Se aplica cuando solo interesa la intensidad de la fuerza o cuando se va a descomponer el resultado en componentes. Es la versión escalar de la fórmula vectorial de la ficha 1.
+            </div>
+            <a href="TemaB7.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">
+                \[ F = I\,L\,B\,\sin\theta \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(F=ILB\sin\theta\). Es la versión escalar que más se usa en EBAU. El ángulo \(\theta\) es el que forman el conductor (en el sentido de la corriente) y el campo \(\vec B\). Casos clave: si \(\theta=0^\circ\) o \(180^\circ\), \(F=0\) (conductor paralelo al campo); si \(\theta=90^\circ\), \(F=ILB\) (máximo). No confundir con la fuerza entre hilos, que tiene un \(2\pi d\) en el denominador.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(F\)</td><td data-label="Significado">Módulo de la fuerza de Laplace</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(I\)</td><td data-label="Significado">Intensidad de corriente</td><td data-label="Unidades">A</td></tr>
+                    <tr><td data-label="Símbolo">\(L\)</td><td data-label="Significado">Longitud del tramo dentro del campo</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(B\)</td><td data-label="Significado">Módulo del campo magnético</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(\theta\)</td><td data-label="Significado">Ángulo entre el conductor y \(\vec B\)</td><td data-label="Unidades">rad o °</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un conductor de \(L=0{,}4\ \text{m}\) con \(I=5\ \text{A}\) en un campo \(B=0{,}2\ \text{T}\). Si \(\theta=90^\circ\), \(F=5\cdot0{,}4\cdot0{,}2=0{,}4\ \text{N}\). Si \(\theta=30^\circ\), \(F=0{,}4\cdot\sin30^\circ=0{,}2\ \text{N}\). Si es paralelo al campo, \(F=0\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(F=0\) si conductor y campo son <strong>paralelos</strong> o antiparalelos.</li>
+                    <li>\(F\) es máxima si conductor y campo son <strong>perpendiculares</strong>.</li>
+                    <li>El módulo es siempre positivo (es una magnitud), pero el sentido lo determina el producto vectorial.</li>
+                    <li>No confundir con \(F=|q|vB\sin\theta\) (fuerza de Lorentz sobre carga puntual, B5).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 · REGLA DE LA MANO DERECHA Y PRODUCTO VECTORIAL -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Regla de la mano derecha y producto vectorial</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La <strong>dirección y el sentido</strong> de la fuerza de Laplace (o del campo magnético creado por un hilo) aplicando la regla de la mano derecha al producto vectorial. Se aplica en todos los problemas en los que hay que indicar el sentido de un vector (campo o fuerza) a partir de otros dos: es el paso que más se falla en EBAU.
+            </div>
+            <a href="TemaB7.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">
+                \[ \hat i\times\hat j=\hat k,\qquad \hat j\times\hat k=\hat i,\qquad \hat k\times\hat i=\hat j \]
+                \[ \hat j\times\hat i=-\hat k,\qquad \hat k\times\hat j=-\hat i,\qquad \hat i\times\hat k=-\hat j \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No hay que memorizar las 6 relaciones: con recordar <strong>una sola</strong> y que al invertir el orden cambia el signo, es suficiente. La regla práctica de la mano derecha para la <strong>fuerza de Laplace</strong>: dedos en el sentido de la corriente (\(I\vec L\)), se cierran hacia \(\vec B\), y el pulgar señala el sentido de \(\vec F\). Para el <strong>campo de un hilo</strong>: pulgar en el sentido de la corriente, dedos curvados dan el sentido de \(\vec B\). Son dos aplicaciones distintas de la misma regla.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Producto</th><th>Resultado</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Producto">\(\hat i\times\hat j\)</td><td data-label="Resultado">\(\hat k\)</td></tr>
+                    <tr><td data-label="Producto">\(\hat j\times\hat k\)</td><td data-label="Resultado">\(\hat i\)</td></tr>
+                    <tr><td data-label="Producto">\(\hat k\times\hat i\)</td><td data-label="Resultado">\(\hat j\)</td></tr>
+                    <tr><td data-label="Producto">\(\hat j\times\hat i\)</td><td data-label="Resultado">\(-\hat k\)</td></tr>
+                    <tr><td data-label="Producto">\(\hat k\times\hat j\)</td><td data-label="Resultado">\(-\hat i\)</td></tr>
+                    <tr><td data-label="Producto">\(\hat i\times\hat k\)</td><td data-label="Resultado">\(-\hat j\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un conductor con \(I\) en \(+\hat i\) está en un campo \(\vec B\) en \(+\hat j\). Con \(\hat i\times\hat j=\hat k\), la fuerza resultante apunta en \(+\hat k\). Si el conductor fuera en \(-\hat i\), la fuerza apuntaría en \(-\hat k\) (invertir un vector del producto invierte el resultado).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Con la mano derecha: <strong>pulgar</strong> = \(I\vec L\), <strong>índice</strong> = \(\vec B\), <strong>corazón</strong> = \(\vec F\).</li>
+                    <li>O con la palma abierta: dedos en \(\vec v\) (o \(I\vec L\)), se cierran hacia \(\vec B\), pulgar = \(\vec F\).</li>
+                    <li>Al invertir <strong>un solo</strong> vector, se invierte el resultado; al invertir <strong>los dos</strong>, el resultado se mantiene.</li>
+                    <li>Este último hecho explica por qué invertir ambas corrientes no cambia la atracción/repulsión entre hilos.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 · FUERZA POR UNIDAD DE LONGITUD EN CAMPO UNIFORME -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Fuerza de Laplace por unidad de longitud</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Cálculo directo</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La fuerza de Laplace por metro de conductor (\(F/L\)) cuando el conductor está inmerso en un campo magnético externo uniforme. Se aplica en problemas en los que se da un campo externo \(B\) y se pregunta cuánta fuerza actúa por unidad de longitud del cable, o cuando se compara la fuerza que ejerce un campo externo con la de otro hilo.
+            </div>
+            <a href="TemaB7.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">
+                \[ \frac{F}{L} = I\,B\,\sin\theta \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es la versión "por unidad de longitud" de la fórmula del módulo: se obtiene dividiendo \(F=ILB\sin\theta\) entre \(L\). Memoriza la idea: <strong>el campo \(B\) en esta fórmula es el campo EXTERNO</strong>, no el que crea el propio hilo. Si el campo varía con la distancia, hay que evaluar \(B\) en la posición del conductor. La unidad es \(\text{N/m}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(F/L\)</td><td data-label="Significado">Fuerza por unidad de longitud</td><td data-label="Unidades">N·m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(I\)</td><td data-label="Significado">Intensidad de corriente</td><td data-label="Unidades">A</td></tr>
+                    <tr><td data-label="Símbolo">\(B\)</td><td data-label="Significado">Campo magnético externo (o local)</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(\theta\)</td><td data-label="Significado">Ángulo entre conductor y campo</td><td data-label="Unidades">rad o °</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un hilo con \(I=150\ \text{A}\) está en un campo externo \(B=0{,}2\ \text{T}\), perpendicular a él. \(F/L=150\cdot0{,}2=30\ \text{N/m}\). Si el hilo fuera paralelo al campo, \(F/L=0\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(B\) es el campo <strong>externo</strong> en el lugar del conductor, no el que el propio conductor genera.</li>
+                    <li>Si el campo no es uniforme, hay que usar el valor de \(B\) en la posición del conductor.</li>
+                    <li>Es la base para deducir la fuerza entre hilos paralelos (ficha 6).</li>
+                    <li>No confundir con \(\mu_0I_1I_2/(2\pi d)\), que ya incorpora el campo de otro hilo.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 · CAMPO DE UN HILO RECTILÍNEO (CONEXIÓN B6) -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Campo magnético de un hilo rectilíneo (B6)</h2>
+                <span class="badge-centro">Aplicación · B6</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Fórmula previa</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo del campo magnético que crea un hilo rectilíneo indefinido, recorrido por una corriente \(I\), a una distancia perpendicular \(r\). Se incluye aquí porque es la fórmula previa (B6) imprescindible para resolver problemas B7 de fuerza entre hilos: primero se calcula el campo de un hilo y después se aplica Laplace.
+            </div>
+            <a href="TemaB7.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">
+                \[ B = \frac{\mu_0\,I}{2\pi\,r} \qquad\text{con}\qquad \mu_0 = 4\pi\cdot10^{-7}\ \frac{\text{T·m}}{\text{A}} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es una fórmula de B6 que hay que tener <strong>automatizada</strong> para poder hacer B7: sin campo no hay fuerza. Memoriza \(B=\mu_0 I/(2\pi r)\). En los problemas de dos hilos, la distancia \(r\) es la <strong>separación entre los hilos</strong> \(d\). El sentido del campo se obtiene con la mano derecha: pulgar en el sentido de la corriente, dedos curvados = \(\vec B\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(B\)</td><td data-label="Significado">Módulo del campo creado por el hilo</td><td data-label="Unidades">T</td></tr>
+                    <tr><td data-label="Símbolo">\(\mu_0\)</td><td data-label="Significado">Permeabilidad magnética del vacío</td><td data-label="Unidades">\(4\pi\cdot10^{-7}\ \text{T·m/A}\)</td></tr>
+                    <tr><td data-label="Símbolo">\(I\)</td><td data-label="Significado">Intensidad de corriente del hilo creador</td><td data-label="Unidades">A</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia perpendicular al hilo</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un hilo con \(I_1=3\ \text{A}\) crea a \(d=0{,}12\ \text{m}\) un campo \(B_1=\dfrac{4\pi\cdot10^{-7}\cdot3}{2\pi\cdot0{,}12}=5\cdot10^{-6}\ \text{T}\). Este \(B_1\) es el que después actuará sobre un segundo hilo paralelo.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Las líneas de campo son <strong>circunferencias</strong> alrededor del hilo.</li>
+                    <li>En el otro hilo (paralelo) el campo es perpendicular al conductor: por eso \(\sin\theta=1\).</li>
+                    <li>Invertir la corriente invierte el sentido del campo.</li>
+                    <li>En problemas de dos hilos, usar siempre \(r=d\) (separación entre ellos).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 · FUERZA ENTRE DOS HILOS PARALELOS -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Fuerza entre dos hilos paralelos</h2>
+                <span class="badge-centro">Caso típico</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip automatizar">🔄 Automatizar · Caso típico</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El módulo de la fuerza por unidad de longitud entre dos conductores rectilíneos, paralelos e indefinidos, recorridos por corrientes \(I_1\) e \(I_2\) y separados una distancia \(d\). Se aplica en el problema clásico de EBAU de hilos paralelos y en cualquier configuración con varios conductores rectos. Es la combinación de B6 (campo de un hilo) con B7 (fuerza de Laplace sobre el otro).
+            </div>
+            <a href="TemaB7.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">
+                \[ \frac{F}{L} = \frac{\mu_0\,I_1\,I_2}{2\pi\,d} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔄 AUTOMATIZAR</span>Sí: memoriza \(F/L=\mu_0 I_1I_2/(2\pi d)\). Es la fórmula más usada de B7. La clave está en recordar el sentido: <strong>mismo sentido → atracción; sentidos opuestos → repulsión</strong>. Si se invierten ambas corrientes a la vez, la interacción no cambia (siguen igual que antes). Y no confundir con la fuerza de Laplace general \(F/L=IB\sin\theta\): aquí el campo \(B\) ya está sustituido por \(\mu_0I_1/(2\pi d)\) y el ángulo es \(90^\circ\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(F/L\)</td><td data-label="Significado">Fuerza por unidad de longitud</td><td data-label="Unidades">N·m⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\mu_0\)</td><td data-label="Significado">Permeabilidad magnética del vacío</td><td data-label="Unidades">\(4\pi\cdot10^{-7}\ \text{T·m/A}\)</td></tr>
+                    <tr><td data-label="Símbolo">\(I_1,I_2\)</td><td data-label="Significado">Intensidades en cada hilo</td><td data-label="Unidades">A</td></tr>
+                    <tr><td data-label="Símbolo">\(d\)</td><td data-label="Significado">Separación entre los hilos</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos hilos con \(I_1=3\ \text{A}\) e \(I_2=9\ \text{A}\), separados \(d=0{,}12\ \text{m}\). \(F/L=\dfrac{4\pi\cdot10^{-7}\cdot3\cdot9}{2\pi\cdot0{,}12}=4{,}5\cdot10^{-5}\ \text{N/m}\). Si las corrientes son opuestas, la fuerza es repulsiva; si son del mismo sentido, atractiva.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li><strong>Mismo sentido</strong> ⟹ atracción.</li>
+                    <li><strong>Sentidos opuestos</strong> ⟹ repulsión.</li>
+                    <li>La fórmula da solo el <strong>módulo</strong>: el sentido hay que añadirlo por separado.</li>
+                    <li>No confundir con la fuerza sobre un tramo: si se pide \(F\) (no \(F/L\)), multiplicar por \(L\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 · ATRACCIÓN VS REPULSIÓN -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Atracción y repulsión entre hilos</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El sentido (atracción o repulsión) de la fuerza entre dos conductores paralelos a partir del sentido relativo de sus corrientes. Se aplica en cuestiones conceptuales de EBAU (verdadero/falso) y como paso final de cualquier problema numérico de fuerza entre hilos: primero el módulo, después el sentido con esta regla.
+            </div>
+            <a href="TemaB7.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">
+                \[ \text{Mismo sentido} \Rightarrow \text{ATRACCIÓN} \]
+                \[ \text{Sentidos opuestos} \Rightarrow \text{REPULSIÓN} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No hay que memorizar ninguna fórmula: es una <strong>regla cualitativa</strong>. La razón física: si las corrientes van en el mismo sentido, el campo que una crea en la posición de la otra es perpendicular al conductor y el sentido de la fuerza (por Laplace) apunta hacia el otro hilo. Al invertir ambas corrientes a la vez, la situación es idéntica (doble inversión) y la interacción no cambia. Es un error típico decir que "al invertir ambas, se pasa de repulsión a atracción".</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Corrientes</th><th>Interacción</th><th>Comprobación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Corrientes">Mismo sentido (\(\uparrow\uparrow\))</td><td data-label="Interacción">Atracción</td><td data-label="Comprobación">Cada hilo sufre fuerza hacia el otro.</td></tr>
+                    <tr><td data-label="Corrientes">Sentidos opuestos (\(\uparrow\downarrow\))</td><td data-label="Interacción">Repulsión</td><td data-label="Comprobación">Cada hilo sufre fuerza alejándose del otro.</td></tr>
+                    <tr><td data-label="Corrientes">Ambas invertidas (\(\downarrow\downarrow\))</td><td data-label="Interacción">Atracción (igual que arriba)</td><td data-label="Comprobación">Doble inversión = mismo resultado.</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos hilos con corrientes de 3 A y 9 A en sentidos opuestos, separados 12 cm. La fuerza es repulsiva. Si invertimos ambas corrientes, siguen en sentidos opuestos entre sí: la fuerza sigue siendo repulsiva.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Corrientes <strong>paralelas y del mismo sentido</strong> → atracción.</li>
+                    <li>Corrientes <strong>antiparalelas</strong> → repulsión.</li>
+                    <li>Invertir <strong>ambas</strong> corrientes NO cambia el tipo de interacción.</li>
+                    <li>Invertir <strong>una sola</strong> sí cambia: de atracción a repulsión (y viceversa).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 · SUPERPOSICIÓN DE FUERZAS -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Superposición de fuerzas magnéticas</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="intro">
+                <span class="epi-chips">
+                    <span class="epi-chip aplicar">⚖️ Aplicar · Suma vectorial</span>
+                </span>
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La fuerza magnética total sobre un conductor cuando actúan varias fuentes (varios hilos, un campo externo más el de un hilo, etc.). Se aplica en configuraciones con tres o más conductores (triángulos, configuraciones en L, mallas) y en problemas donde convive un campo externo con el campo de otro hilo.
+            </div>
+            <a href="TemaB7.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">
+                \[ \vec F_{\text{total}} = \vec F_1+\vec F_2+\cdots+\vec F_n \]
+            </div>
+            </a>
+            <a href="TemaB7.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">
+                \[ \vec B_{\text{total}} = \vec B_1+\vec B_2+\cdots+\vec B_n \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es el mismo principio de superposición que en los campos: las fuerzas se suman <strong>vectorialmente</strong>. No hay fórmula que memorizar. Procedimiento: (1) calcular cada \(\vec F_i\) por separado; (2) dibujar su dirección y sentido; (3) descomponer en componentes \((F_x,F_y,F_z)\); (4) sumar por componentes. Si hay simetría, algunas componentes pueden anularse (típico en triángulos). Error frecuente: sumar módulos sin atender a la dirección.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Situación</th><th>Cómo se suman</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Situación">Misma dirección y sentido</td><td data-label="Cómo se suman">Se suman módulos.</td></tr>
+                    <tr><td data-label="Situación">Misma dirección y sentidos opuestos</td><td data-label="Cómo se suman">Se restan módulos (resultado con el signo del mayor).</td></tr>
+                    <tr><td data-label="Situación">Perpendiculares</td><td data-label="Cómo se suman">\(F_T=\sqrt{F_1^2+F_2^2}\).</td></tr>
+                    <tr><td data-label="Situación">Oblicuas / arbitrarias</td><td data-label="Cómo se suman">Descomponer en \((x,y,z)\) y sumar por componentes.</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> tres hilos en triángulo equilátero de lado 30 cm. El hilo superior (3 A) sufre dos fuerzas iguales de módulo \(F_0/L=4\cdot10^{-6}\ \text{N/m}\), cada una formando 30° con la vertical. Por simetría las componentes horizontales se cancelan y las verticales se suman: \(F_T/L=2\cdot F_0/L\cdot\cos30^\circ=\sqrt3\cdot4\cdot10^{-6}\approx6{,}9\cdot10^{-6}\ \text{N/m}\), vertical.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>SIEMPRE vectorial: dibujar antes de calcular.</li>
+                    <li>Aprovechar la simetría para simplificar componentes.</li>
+                    <li>Comprobar el signo de cada contribución (atracción vs repulsión).</li>
+                    <li>Si dos fuerzas son iguales y opuestas, se cancelan.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 · PUNTO DE CAMPO NULO ENTRE HILOS -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Punto de campo magnético nulo entre dos hilos</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Análisis</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La posición donde el campo magnético total debido a dos hilos paralelos es nulo (y, por tanto, la fuerza sobre un tercer hilo paralelo colocado allí también sería nula). Se aplica en problemas EBAU que combinan B6 y B7: primero se localiza el punto de campo nulo, después se interpreta que ahí no habría fuerza magnética sobre otro conductor.
+            </div>
+            <a href="TemaB7.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">
+                \[ \frac{I_1}{r_1} = \frac{I_2}{r_2} \qquad\text{(igualdad de módulos)} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>Es un <strong>procedimiento</strong>, no una fórmula. Pasos: (1) decidir en qué <strong>región</strong> pueden anularse los campos (según el sentido relativo de las corrientes); (2) igualar módulos \(\mu_0I_1/(2\pi r_1)=\mu_0I_2/(2\pi r_2)\); (3) resolver. Regla mnemotécnica: <strong>mismo sentido → punto nulo entre los hilos</strong>; <strong>sentidos opuestos → punto nulo fuera, del lado del hilo de menor I</strong>. Y recordar: campo nulo ⟹ fuerza nula sobre un tercer conductor allí colocado.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Sentido de corrientes</th><th>Región del punto nulo</th><th>Condición</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Sentido">Mismo sentido</td><td data-label="Región">Entre los hilos</td><td data-label="Condición">\(I_1/r_1=I_2/r_2\)</td></tr>
+                    <tr><td data-label="Sentido">Sentidos opuestos</td><td data-label="Región">Fuera, del lado del hilo de menor \(I\)</td><td data-label="Condición">\(I_1/r_1=I_2/r_2\)</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> hilos separados \(d=12\ \text{cm}\) con \(I_1=3\ \text{A}\) e \(I_2=9\ \text{A}\) en sentidos opuestos. El campo nulo está fuera, del lado del hilo de 3 A. Con \(a\) = distancia desde ese hilo hacia el exterior: \(3/a=9/(a+0{,}12)\), de donde \(a=6\ \text{cm}\). Un tercer hilo paralelo colocado en esa recta no sentiría fuerza magnética debida a los dos primeros.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El campo nulo NO implica potencial nulo (no existe "potencial magnético escalar" análogo al eléctrico).</li>
+                    <li>Si \(I_1=I_2\) y corrientes opuestas, el punto nulo no está entre los hilos.</li>
+                    <li>Si \(I_1=I_2\) y mismo sentido, el punto nulo está en el punto medio.</li>
+                    <li>Conexión B6→B7: el campo nulo es el paso previo a la fuerza nula.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 10 · ORIGEN MICROSCÓPICO: FUERZA DE LORENTZ -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Origen microscópico: fuerza de Lorentz</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Conexión con B5</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación entre la fuerza de Lorentz sobre los portadores de carga individuales (\(\vec f=q\vec v\times\vec B\)) y la fuerza de Laplace sobre el conductor completo. Se aplica en cuestiones conceptuales de EBAU que piden justificar el origen de la fuerza magnética sobre un cable: es la razón microscópica de la ley macroscópica de Laplace.
+            </div>
+            <a href="TemaB7.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">
+                \[ \vec f = q\,\vec v\times\vec B \qquad\Longrightarrow\qquad \vec F = I\,\vec L\times\vec B \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No hay que memorizar una nueva fórmula: hay que entender el <strong>vínculo</strong>. Cada portador de carga del conductor (electrones en un metal) se mueve con velocidad de deriva \(v_d\) y sufre una fuerza de Lorentz. La suma de las fuerzas sobre todos los portadores da la fuerza de Laplace. El resultado macroscópico es que un conductor con corriente \(I\) en un campo \(\vec B\) sufre \(\vec F=I\vec L\times\vec B\). ¡El sentido se toma igualmente en el de la corriente convencional!</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Magnitud</th><th>Fórmula</th><th>Escala</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Magnitud">Fuerza sobre un portador</td><td data-label="Fórmula">\(\vec f=q\vec v_d\times\vec B\)</td><td data-label="Escala">Microscópica</td></tr>
+                    <tr><td data-label="Magnitud">Fuerza sobre el conductor</td><td data-label="Fórmula">\(\vec F=I\vec L\times\vec B\)</td><td data-label="Escala">Macroscópica</td></tr>
+                    <tr><td data-label="Magnitud">Relación</td><td data-label="Fórmula">\(\vec F=\sum_i \vec f_i\)</td><td data-label="Escala">Suma sobre portadores</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> en un cable con corriente hacia la derecha en un campo \(\vec B\) hacia dentro del papel, los electrones (que van hacia la izquierda) sufren una fuerza de Lorentz hacia arriba. Como los electrones están atrapados en el conductor, esa fuerza se transmite al cable, y el cable sufre una fuerza de Laplace hacia arriba. El sentido del vector \(I\vec L\) se toma siempre en el de la corriente convencional.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>La fuerza de Lorentz es perpendicular a \(\vec v\) y \(\vec B\).</li>
+                    <li>La fuerza de Laplace es la <strong>suma macroscópica</strong> de las fuerzas de Lorentz.</li>
+                    <li>En un metal, los portadores son electrones (carga negativa), pero el vector \(I\vec L\) va en el sentido de la corriente convencional.</li>
+                    <li>NO se invierte el vector \(\vec L\) por recordar que los portadores son electrones.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================================================
+             LEYENDA EPISTÉMICA
+             ============================================================ -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones del tema B7 se estudian igual. Cada fórmula pertenece a una
+                <strong>categoría epistémica</strong> —definición, concepto, aplicación o caso típico
+                automatizable— y cada categoría se domina con un <strong>verbo distinto</strong>. Identificar
+                el tipo <em>antes</em> de estudiar ahorra tiempo y evita memorizar lo que se puede deducir
+                o comprender.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física o
+                        establece una relación básica. No se demuestra, se establece. Se domina cuando puedes
+                        enunciarla sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B7</strong>
+                        \(\vec F=I\vec L\times\vec B\) &nbsp;·&nbsp; \(F=ILB\sin\theta\)
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Concepto / comprensión</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es la <em>idea física</em> del tema: una propiedad o relación que hay que entender
+                        más que memorizar. Se domina cuando puedes explicarla con tus propias palabras y
+                        usarla como filtro conceptual.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B7</strong>
+                        regla de la mano derecha &nbsp;·&nbsp; atracción/repulsión &nbsp;·&nbsp;
+                        \(I_1/r_1=I_2/r_2\) (campo nulo) &nbsp;·&nbsp; \(\vec f=q\vec v\times\vec B\) (origen microscópico)
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Aplicación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Se usa para <em>resolver</em> un problema concreto: elegir la fórmula adecuada,
+                        sustituir con los signos correctos y comprobar el resultado. Es el tipo más frecuente
+                        en EBAU.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B7</strong>
+                        \(F/L=IB\sin\theta\) &nbsp;·&nbsp; \(B=\mu_0I/(2\pi r)\) &nbsp;·&nbsp;
+                        \(\vec F_{\text{total}}=\sum\vec F_i\)
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Caso típico automatizable</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es un <em>caso particular</em> que aparece mucho y conviene aplicar de forma refleja
+                        sin deducirlo cada vez.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplo B7</strong>
+                        \(F/L=\mu_0I_1I_2/(2\pi d)\) (fuerza entre hilos paralelos)
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tabla resumen -->
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Concepto</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Idea física central</td>
+                        <td data-label="¿Cómo se domina?">Explicar con tus palabras</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla sin fórmulas?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Aplicación</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Fórmula para resolver</td>
+                        <td data-label="¿Cómo se domina?">Resolver problemas con signos</td>
+                        <td data-label="Autoevaluación">¿La elijo bien y compruebo el signo?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Automatizar</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Caso típico específico</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿La reconozco y la aplico al instante?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Regla de oro -->
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si es una idea física que hay que entender → <strong>concepto</strong> (comprender).
+                Si solo asigna un nombre o establece una relación básica → <strong>definición</strong> (memorizar).
+                Si la usas para resolver un problema → <strong>aplicación</strong> (aplicar).
+                Si es un caso particular muy repetido → <strong>caso típico</strong> (automatizar).
+            </div>
+
+            <!-- Mini-referencia de colores -->
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Comprender (mano derecha, atracción/repulsión, campo nulo, origen microscópico)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Definición (ley de Laplace vectorial y módulo)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Automatizar (fuerza entre hilos)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Aplicar (F/L en campo externo, campo de un hilo, superposición)</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================ GLOSARIO ============================ -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema B7</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \vec F=I\,\vec L\times\vec B \]</td><td data-label="Nombre">Ley de Laplace (vectorial)</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ F=I\,L\,B\sin\theta \]</td><td data-label="Nombre">Módulo de la fuerza de Laplace</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ \hat i\times\hat j=\hat k,\ \hat j\times\hat k=\hat i,\ \hat k\times\hat i=\hat j \]</td><td data-label="Nombre">Productos vectoriales de la base canónica</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ \dfrac{F}{L}=I\,B\sin\theta \]</td><td data-label="Nombre">Fuerza de Laplace por unidad de longitud</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ B=\dfrac{\mu_0 I}{2\pi r} \]</td><td data-label="Nombre">Campo magnético de un hilo (B6)</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ \dfrac{F}{L}=\dfrac{\mu_0 I_1I_2}{2\pi d} \]</td><td data-label="Nombre">Fuerza entre dos hilos paralelos</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ \text{Mismo sentido}\Rightarrow\text{atracción};\quad\text{opuestos}\Rightarrow\text{repulsión} \]</td><td data-label="Nombre">Regla cualitativa atracción/repulsión</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \vec F_{\text{total}}=\sum\vec F_i \]</td><td data-label="Nombre">Superposición de fuerzas magnéticas</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ \vec B_{\text{total}}=\sum\vec B_i \]</td><td data-label="Nombre">Superposición de campos (B6)</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ \dfrac{I_1}{r_1}=\dfrac{I_2}{r_2} \]</td><td data-label="Nombre">Punto de campo nulo entre hilos</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ \vec f=q\vec v\times\vec B \Rightarrow \vec F=I\vec L\times\vec B \]</td><td data-label="Nombre">Conexión microscópica-macroscópica</td><td data-label="Ficha">10</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> (i) usar la distancia al punto equivocado (¡siempre la <strong>separación</strong> entre hilos o la <strong>distancia perpendicular</strong> al hilo!); (ii) olvidar el seno del ángulo en \(F=ILB\sin\theta\); (iii) decidir atracción/repulsión por el dibujo sin comprobar los sentidos relativos de las corrientes; (iv) sumar módulos cuando las fuerzas no son colineales (¡hay que sumar vectores!); (v) usar el campo total al calcular la fuerza mutua de dos hilos (debe usarse solo el campo del <strong>otro hilo</strong>); (vi) confundir \(\text{N}\) con \(\text{N/m}\) al dar el resultado; (vii) decir que "al invertir ambas corrientes se pasa de repulsión a atracción" (falso: la interacción no cambia); (viii) invertir el vector \(I\vec L\) por recordar que los portadores son electrones (¡el vector va en el sentido de la corriente convencional!).
+        </div>
+    </details>
+
+    <!-- ============================ RECORDATORIO ============================ -->
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en el tema B7 la fórmula central es la ley de Laplace \(\vec F=I\vec L\times\vec B\), de la que salen todas las demás. En problemas con dos hilos paralelos, primero se calcula el campo que crea uno de ellos en la posición del otro (B6) y después se aplica Laplace (B7), resultando \(F/L=\mu_0 I_1I_2/(2\pi d)\). Recuerda la regla cualitativa: <strong>mismo sentido → atracción; sentidos opuestos → repulsión</strong>. Al invertir ambas corrientes a la vez, la interacción no cambia. Y no confundas \(\vec F\) (vector) con \(F\) (módulo), ni \(\text{N}\) (fuerza total) con \(\text{N/m}\) (fuerza por unidad de longitud). La clave para no fallar los signos: <strong>dibuja siempre primero</strong> las corrientes, el campo y la fuerza, y aplica la regla de la mano derecha antes de sustituir.
+    </div>
+
+    <!-- ============================ BOTÓN VOLVER ============================ -->
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+
+<!-- ============================ JS · RESALTADO DE LA FÓRMULA DESTINO ============================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    // Si el id cae sobre un <span> interior, subimos a la .formula-box que lo contiene.
+    var highlight = target.classList.contains('formula-box') || target.classList.contains('card')
+        ? target
+        : (target.closest('.formula-box') || target.closest('.card') || target);
+
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    // Reinicia la animación aunque :target ya se hubiera consumido
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () {
+        highlight.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
+</body>
+</html>

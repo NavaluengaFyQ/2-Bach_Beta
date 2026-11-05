@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA B3 (Formulario).- Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas</title>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="../css/formulario.css">
+
+    <style>
+        .formula-box { overflow-wrap: break-word; word-break: break-word; max-width: 100%; }
+        .formula-box mjx-container[jax="CHTML"][display="true"],
+        .formula-box mjx-container[jax="SVG"][display="true"] {
+            overflow-x: auto; overflow-y: hidden; max-width: 100%; padding-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA B3 (Formulario).- </span>
+                <span class="texto">Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <div class="grid">
+
+        <!-- FICHA 1 -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Trabajo elemental del campo eléctrico</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El trabajo infinitesimal \(dW\) que realiza la fuerza eléctrica cuando una carga \(q\) se desplaza un vector \(d\vec r\) dentro de un campo eléctrico \(\vec E\). Se aplica para describir cómo se transfiere energía entre el campo y la carga en cada tramo infinitesimal de la trayectoria; integrado a lo largo del camino, da el trabajo total entre dos puntos (ficha 2).
+            </div>
+            <a href="TemaB3.html#formula-1" title="Ver esta fórmula en el tema B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">
+                \[ dW_{\text{campo}} = \vec F_e\cdot d\vec r = q\,\vec E\cdot d\vec r \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(dW=q\,\vec E\cdot d\vec r\). Es el "átomo" de todo el tema, la pieza con la que se construyen el trabajo total, la energía potencial y las diferencias de potencial. Comprende que es un <strong>producto escalar</strong>: el resultado es un número, no un vector, y su signo depende del ángulo entre \(\vec F_e\) y \(d\vec r\) y del signo de \(q\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(dW\)</td><td data-label="Significado">Trabajo elemental del campo</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec F_e\)</td><td data-label="Significado">Fuerza eléctrica sobre la carga (\(q\vec E\))</td><td data-label="Unidades">N</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga que se desplaza (con signo)</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec E\)</td><td data-label="Significado">Campo eléctrico en el punto</td><td data-label="Unidades">N·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(d\vec r\)</td><td data-label="Significado">Desplazamiento infinitesimal</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una carga \(q=+2\,\text{nC}\) se desplaza \(d\vec r=1\,\text{cm}\,\hat i\) en un campo uniforme \(\vec E=5\,\hat i\,\text{N}\cdot\text{C}^{-1}\). Entonces \(dW=q\vec E\cdot d\vec r=2\cdot10^{-9}\cdot5\cdot0{,}01=+1\cdot10^{-10}\,\text{J}\). Si se moviese en sentido contrario, \(dW=-1\cdot10^{-10}\,\text{J}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es un <strong>producto escalar</strong>: el resultado es un escalar (J), no un vector.</li>
+                    <li>El signo depende del <strong>ángulo</strong> entre \(\vec F_e\) y \(d\vec r\) y del <strong>signo de \(q\)</strong>.</li>
+                    <li>Si \(\vec F_e\perp d\vec r\) en todo el tramo, \(dW=0\) (movimiento perpendicular al campo).</li>
+                    <li>Una carga <strong>negativa</strong> siente fuerza opuesta a \(\vec E\): si se mueve en el sentido del campo, \(dW<0\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Trabajo del campo entre dos puntos</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El trabajo total que realiza el campo eléctrico al trasladar una carga \(q\) desde un punto \(A\) hasta otro punto \(B\) a lo largo de una trayectoria. Se aplica para relacionar el trabajo con la variación de energía cinética de la carga o para vincularlo con la diferencia de potencial entre \(A\) y \(B\). En problemas reales, casi siempre se calcula sin integrar, usando los potenciales (ficha 6).
+            </div>
+            <a href="TemaB3.html#formula-2" title="Ver esta fórmula en el tema B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">
+                \[ W_{A\to B}^{\text{campo}} = q\int_A^B \vec E\cdot d\vec r \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se construye integrando el trabajo elemental \(dW=q\vec E\cdot d\vec r\) a lo largo de la trayectoria. Lo esencial es comprender que la integral es la suma continua de los trabajos infinitesimales y que, por ser el campo electrostático <strong>conservativo</strong>, el resultado no depende del camino, solo de las posiciones inicial y final.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(W_{A\to B}^{\text{campo}}\)</td><td data-label="Significado">Trabajo del campo entre \(A\) y \(B\)</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga que se desplaza</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec E\)</td><td data-label="Significado">Campo eléctrico en cada punto</td><td data-label="Unidades">N·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(d\vec r\)</td><td data-label="Significado">Elemento de trayectoria</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> carga \(q=3\,\mu\text{C}\) se traslada de \(A\) a \(B\) con \(V_A=100\,\text{V}\) y \(V_B=40\,\text{V}\). Sin necesidad de integrar: \(W_{\text{campo}}=q(V_A-V_B)=3\cdot10^{-6}\cdot60=+1{,}8\cdot10^{-4}\,\text{J}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Si conocemos el potencial, se usa \(W_{\text{campo}}=q(V_A-V_B)\) sin integrar (ficha 6).</li>
+                    <li>La integral es <strong>independiente de la trayectoria</strong> (ficha 3).</li>
+                    <li>En una trayectoria cerrada, \(W_{\text{campo}}=0\).</li>
+                    <li>En campo uniforme se simplifica a \(W_{\text{campo}}=q\,\vec E\cdot\vec{AB}\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>El campo electrostático es conservativo</h2>
+                <span class="badge-centro">Propiedad</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Propiedad fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué expresa?</span>
+                Que el trabajo del campo electrostático a lo largo de cualquier trayectoria cerrada es nulo. Se aplica para justificar la existencia de una función energía potencial electrostática y para simplificar el cálculo del trabajo: basta con conocer los potenciales en los puntos inicial y final, sin necesidad de integrar.
+            </div>
+            <a href="TemaB3.html#formula-3" title="Ver esta fórmula en el tema B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">
+                \[ \oint \vec E\cdot d\vec r = 0 \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No es una fórmula para memorizar: es una <strong>propiedad fundamental</strong>. Apréndela como idea: el trabajo entre dos puntos no depende del camino y en un ciclo cerrado es cero. Esta propiedad permite introducir \(E_p\) y \(V\), y escribir \(W_{\text{campo}}=-\Delta E_p\). No se cumple en campos eléctricos inducidos por campos magnéticos variables (ley de Faraday).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Concepto</th><th>Significado físico</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Concepto">Conservatividad</td><td data-label="Significado físico">\(W\) no depende de la trayectoria, solo de \(A\) y \(B\).</td></tr>
+                    <tr><td data-label="Concepto">Camino cerrado</td><td data-label="Significado físico">\(\oint\vec E\cdot d\vec r=0\) en toda trayectoria cerrada.</td></tr>
+                    <tr><td data-label="Concepto">Consecuencia</td><td data-label="Significado físico">Existe un potencial escalar \(V\) con \(\vec E=-\nabla V\).</td></tr>
+                    <tr><td data-label="Concepto">Aplicación</td><td data-label="Significado físico">\(W_{\text{campo}}=-\Delta E_p\) (ficha 4) y \(W_{\text{campo}}=q(V_A-V_B)\) (ficha 6).</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una carga puede ir de \(A\) a \(B\) por una recta, por una parábola o por un zigzag: el campo realiza el mismo trabajo en los tres casos. Si regresa a \(A\) por cualquier camino, el trabajo total del ciclo es exactamente \(0\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Se cumple para el campo <strong>electrostático</strong> (cargas en reposo).</li>
+                    <li>NO se cumple para el campo eléctrico inducido por un campo magnético variable.</li>
+                    <li>Permite definir \(E_p\) y \(V\) sin ambigüedad (salvo constante de referencia).</li>
+                    <li>En la práctica: usa siempre \(W=q(V_A-V_B)\) en lugar de integrar.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Trabajo y variación de energía potencial</h2>
+                <span class="badge-centro">Relación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Relación básica</span>
+                <span class="epi-chip comprender">🧭 Comprender · Signo físico</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación entre el trabajo (del campo o de un agente externo) y la variación de energía potencial eléctrica. Se aplica para convertir trabajo en energía potencial y viceversa: conocer cuánta energía gana o pierde el sistema según quién realice el desplazamiento. Fundamental para distinguir \(W_{\text{campo}}\) de \(W_{\text{ext}}\) y entender el signo de cada uno.
+            </div>
+            <a href="TemaB3.html#formula-4" title="Ver esta fórmula en el tema B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">
+                \[ \Delta E_p = E_{p,B} - E_{p,A} = W_{\text{ext}} \]
+                \[ W_{A\to B}^{\text{campo}} = -\Delta E_p = E_{p,A} - E_{p,B} \]
+                <span id="formula-5"></span>
+                \[ W_{\text{ext}} = -W_{A\to B}^{\text{campo}} \quad(\text{cuasiestático}) \]
+                <span id="formula-6"></span>
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí, las tres relaciones son imprescindibles: \(\Delta E_p=W_{\text{ext}}\), \(W_{\text{campo}}=-\Delta E_p\) y \(W_{\text{ext}}=-W_{\text{campo}}\). Lo más importante es entender el <strong>signo</strong>: si el campo favorece el desplazamiento (\(W_{\text{campo}}>0\)), la \(E_p\) disminuye; si se opone, aumenta. Cuando el enunciado pide "el trabajo necesario" o "el trabajo que debe hacer un agente externo", es \(W_{\text{ext}}\); si pide "el trabajo del campo", usa \(W_{\text{campo}}\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\Delta E_p\)</td><td data-label="Significado">Variación de energía potencial</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(W_{\text{ext}}\)</td><td data-label="Significado">Trabajo de un agente externo (cuasiestático)</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(W_{\text{campo}}\)</td><td data-label="Significado">Trabajo del campo eléctrico</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(E_{p,A},E_{p,B}\)</td><td data-label="Significado">Energía potencial en \(A\) y en \(B\)</td><td data-label="Unidades">J</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> alejar una carga negativa de una positiva aumenta \(E_p\) (\(\Delta E_p>0\)): \(W_{\text{ext}}>0\) (hay que aportar energía) y \(W_{\text{campo}}<0\) (el campo se opone). En cambio, acercar dos cargas del mismo signo también tiene \(W_{\text{ext}}>0\) y \(W_{\text{campo}}<0\), porque hay que vencer la repulsión.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li><strong>\(W_{\text{campo}}>0\)</strong>: el campo favorece el movimiento; \(E_p\) disminuye.</li>
+                    <li><strong>\(W_{\text{campo}}<0\)</strong>: el campo se opone; \(E_p\) aumenta.</li>
+                    <li>La igualdad \(W_{\text{ext}}=-W_{\text{campo}}\) solo vale en desplazamiento <strong>cuasiestático</strong>.</li>
+                    <li>En general: \(W_{\text{ext}}+W_{\text{campo}}=\Delta E_c\).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Energía potencial y potencial eléctrico</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía potencial eléctrica de una carga \(q\) situada en un punto de potencial \(V\), así como su variación al pasar de un punto \(A\) a otro \(B\). Se aplica siempre que se conozca el potencial del punto donde está la carga o la diferencia de potencial entre dos posiciones. Es la vía más rápida para calcular energías sin integrar.
+            </div>
+            <a href="TemaB3.html#formula-7" title="Ver esta fórmula en el tema B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">
+                \[ E_p = q\,V \]
+                \[ \Delta E_p = q(V_B - V_A) = q\,\Delta V \]
+                <span id="formula-8"></span>
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: \(E_p=qV\) es la definición de energía potencial en función del potencial, y \(\Delta E_p=q\Delta V\) su versión entre dos puntos. Lo esencial es el <strong>signo de \(q\)</strong>: si \(q>0\), \(E_p\) tiene el mismo signo que \(V\); si \(q<0\), tiene signo opuesto. Por eso una carga negativa puede disminuir su \(E_p\) al moverse hacia potenciales <em>más altos</em>, mientras que una positiva lo hace hacia potenciales <em>más bajos</em>.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E_p\)</td><td data-label="Significado">Energía potencial eléctrica</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga eléctrica (con signo)</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(V\)</td><td data-label="Significado">Potencial eléctrico en el punto</td><td data-label="Unidades">V = J·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta V=V_B-V_A\)</td><td data-label="Significado">Diferencia de potencial entre \(A\) y \(B\)</td><td data-label="Unidades">V</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> una carga \(q=-3\,\mu\text{C}\) se traslada de \(V_A=0\) a \(V_B=+2400\,\text{V}\). \(\Delta E_p=q\Delta V=-3\cdot10^{-6}\cdot2400=-7{,}2\cdot10^{-3}\,\text{J}\): la \(E_p\) disminuye y el campo hace trabajo positivo.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(V\) es una magnitud <strong>escalar</strong>; \(q\) puede ser positiva o negativa.</li>
+                    <li>El signo de \(\Delta E_p\) NO se deduce solo de \(\Delta V\): hay que multiplicar por \(q\).</li>
+                    <li>\(\Delta V>0\) y \(q>0\) ⟹ \(\Delta E_p>0\) (sube).</li>
+                    <li>\(\Delta V>0\) y \(q<0\) ⟹ \(\Delta E_p<0\) (baja).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Trabajo a partir de la diferencia de potencial</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Cálculo directo</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El trabajo realizado por el campo eléctrico (\(W_{\text{campo}}\)) o por un agente externo (\(W_{\text{ext}}\)) al trasladar una carga \(q\) entre dos puntos, conociendo los potenciales \(V_A\) y \(V_B\). Se aplica siempre que el problema proporcione los potenciales o permita calcularlos fácilmente: es la vía más rápida y la que más aparece en EBAU.
+            </div>
+            <a href="TemaB3.html#formula-9" title="Ver esta fórmula en el tema B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">
+                \[ W_{A\to B}^{\text{campo}} = q(V_A - V_B) = -q\,\Delta V \]
+                \[ W_{\text{ext}} = q(V_B - V_A) = q\,\Delta V \]
+                <span id="formula-10"></span>
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Memoriza las dos formas y, sobre todo, distínguelas: \(W_{\text{campo}}=q(V_A-V_B)\) y \(W_{\text{ext}}=q(V_B-V_A)\). Son opuestas porque \(W_{\text{ext}}=-W_{\text{campo}}\). Es la trampa más frecuente de la EBAU. Truco: <strong>para el agente externo se resta final menos inicial</strong> (\(V_B-V_A\)); para el campo, al revés (\(V_A-V_B\)). Piensa también en términos físicos: si el campo hace trabajo positivo, la carga va espontáneamente hacia potenciales menores (si es positiva).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(W_{A\to B}^{\text{campo}}\)</td><td data-label="Significado">Trabajo del campo eléctrico</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(W_{\text{ext}}\)</td><td data-label="Significado">Trabajo externo cuasiestático</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga que se desplaza</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(V_A,V_B\)</td><td data-label="Significado">Potencial eléctrico en \(A\) y en \(B\)</td><td data-label="Unidades">V</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(q=2\,\text{nC}\) pasa de \(V_A=56{,}3\,\text{V}\) a \(V_B=30{,}0\,\text{V}\). \(W_{\text{campo}}=2\cdot10^{-9}\cdot(56{,}3-30{,}0)=+5{,}26\cdot10^{-8}\,\text{J}\); \(W_{\text{ext}}=2\cdot10^{-9}\cdot(30-56{,}3)=-5{,}26\cdot10^{-8}\,\text{J}\). El campo favorece el paso; el agente externo retira energía.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Es la fórmula más usada en EBAU cuando se dan potenciales.</li>
+                    <li><strong>NO</strong> confundir el orden de los potenciales entre campo y externo.</li>
+                    <li>\(W_{\text{campo}}>0\) ⟺ la carga va espontáneamente hacia potenciales "favorables" (menores si \(q>0\), mayores si \(q<0\)).</li>
+                    <li>El signo de \(W_{\text{ext}}\) indica si el sistema gana (\(+\)) o pierde (\(-\)) energía.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Diferencia de potencial a partir del campo</h2>
+                <span class="badge-centro">Deducción</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La diferencia de potencial entre dos puntos como la integral del campo eléctrico a lo largo de una trayectoria entre ellos. Se aplica cuando se conoce la expresión del campo \(\vec E\) en una región y se quiere obtener el potencial, o para entender la geometría del campo (perpendicularidad a las equipotenciales y sentido de las líneas de campo).
+            </div>
+            <a href="TemaB3.html#formula-11" title="Ver esta fórmula en el tema B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">
+                \[ V_B - V_A = -\int_A^B \vec E\cdot d\vec r \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es consecuencia directa de la definición de potencial y del carácter conservativo del campo. Recuerda el <strong>signo negativo</strong>: si \(\vec E\) apunta de \(A\) a \(B\), entonces \(V_A>V_B\), o sea \(V_B-V_A<0\). El campo eléctrico apunta siempre hacia donde el potencial <strong>disminuye</strong>; las líneas de campo son perpendiculares a las superficies equipotenciales.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(V_B-V_A\)</td><td data-label="Significado">Diferencia de potencial entre \(A\) y \(B\)</td><td data-label="Unidades">V</td></tr>
+                    <tr><td data-label="Símbolo">\(\vec E\)</td><td data-label="Significado">Campo eléctrico</td><td data-label="Unidades">N·C⁻¹</td></tr>
+                    <tr><td data-label="Símbolo">\(d\vec r\)</td><td data-label="Significado">Elemento de trayectoria</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> en un campo uniforme \(\vec E=100\,\hat i\,\text{N}\cdot\text{C}^{-1}\), de \(A(0,0)\) a \(B(2,0)\): \(V_B-V_A=-\int_0^{2}100\,dx=-200\,\text{V}\). El potencial disminuye \(200\,\text{V}\) en el sentido del campo.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El campo apunta en el sentido de \(V\) <strong>decreciente</strong>.</li>
+                    <li>Si \(\vec E\perp d\vec r\), el potencial no cambia: superficie equipotencial.</li>
+                    <li>Para carga puntual: \(V=K_0q/r\) (con \(V=0\) en el infinito).</li>
+                    <li>La relación inversa es \(\vec E=-\nabla V\) (gradiente del potencial).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 -->
+        <article class="card c-5">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Energía potencial de dos cargas puntuales</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Cálculo directo</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía potencial electrostática de un sistema formado por dos cargas puntuales separadas una distancia \(r\), o su variación al cambiar la separación entre \(r_i\) y \(r_f\). Se aplica en problemas de trabajo para acercar o alejar cargas, y en la interpretación energética de sistemas ligados (energía negativa) frente a sistemas inestables (energía positiva).
+            </div>
+            <a href="TemaB3.html#formula-12" title="Ver esta fórmula en el tema B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-12">
+                \[ E_p = K_0\,\frac{q_1 q_2}{r} \]
+                \[ \Delta E_p = K_0\,q_1q_2\!\left(\frac{1}{r_f}-\frac{1}{r_i}\right) \]
+                <span id="formula-13"></span>
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: memoriza \(E_p=K_0q_1q_2/r\) con su signo. Es la expresión fundamental de la energía de un sistema de dos cargas con \(E_p=0\) en el infinito. Recuerda: <strong>mismo signo</strong> ⟹ \(E_p>0\) (hay que aportar energía para acercarlas); <strong>signo opuesto</strong> ⟹ \(E_p<0\) (el sistema se estabiliza al acercarlas). La variación \(\Delta E_p\) se obtiene restando el valor inicial del final.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E_p\)</td><td data-label="Significado">Energía potencial del sistema de dos cargas</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(K_0\)</td><td data-label="Significado">Constante de Coulomb (\(9\cdot10^{9}\))</td><td data-label="Unidades">N·m²·C⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(q_1,q_2\)</td><td data-label="Significado">Cargas (con signo)</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia entre cargas</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> dos cargas \(+2\,\mu\text{C}\) y \(-3\,\mu\text{C}\) separadas \(10\,\text{cm}\): \(E_p=9\cdot10^{9}\cdot2\cdot10^{-6}\cdot(-3\cdot10^{-6})/0{,}10=-0{,}54\,\text{J}\) (negativa, porque se atraen).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Mismo signo ⟹ \(E_p>0\) (repulsión, sistema inestable).</li>
+                    <li>Signo opuesto ⟹ \(E_p<0\) (atracción, sistema estable).</li>
+                    <li>Referencia: \(E_p=0\) cuando \(r\to\infty\).</li>
+                    <li>Al alejar cargas de signo opuesto, \(\Delta E_p>0\) (hay que vencer la atracción).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Energía de una configuración de cargas</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · Suma de parejas</span>
+                <span class="epi-chip automatizar">🔄 Automatizar · Caso típico</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La energía potencial electrostática total de un sistema de varias cargas puntuales, sumando la contribución de cada pareja distinta (cada pareja se cuenta una sola vez). Se aplica en problemas de tres o más cargas dispuestas en configuraciones geométricas (triángulo, cuadrado, etc.). El caso del triángulo equilátero con cargas iguales es un clásico de EBAU que conviene automatizar.
+            </div>
+            <a href="TemaB3.html#formula-14" title="Ver esta fórmula en el tema B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-14">
+                \[ E_{p,\text{sistema}} = \sum_{i<j} K_0\,\frac{q_i q_j}{r_{ij}} \]
+                \[ E_{p,\text{sistema}} = K_0\!\left(\frac{q_1q_2}{r_{12}}+\frac{q_1q_3}{r_{13}}+\frac{q_2q_3}{r_{23}}\right) \quad\text{(3 cargas)} \]
+                \[ E_{p,\text{sistema}} = 3K_0\,\frac{q^{2}}{l} \quad\text{(triángulo equilátero)} \]
+                <span id="formula-15"></span>
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR + 🔄 AUTOMATIZAR</span>La suma de parejas hay que <strong>aplicarla</strong>: para \(n\) cargas hay \(\binom{n}{2}=n(n-1)/2\) parejas distintas (3 cargas → 3 parejas; 4 cargas → 6 parejas). No memorices la fórmula general: <strong>dedúcela</strong> contando las parejas. La del triángulo equilátero, en cambio, conviene <strong>automatizarla</strong>: \(E_p=3K_0q^{2}/l\) aparece mucho en EBAU. Recuerda respetar el signo de cada producto \(q_iq_j\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(E_{p,\text{sistema}}\)</td><td data-label="Significado">Energía potencial total del sistema</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(K_0\)</td><td data-label="Significado">Constante de Coulomb</td><td data-label="Unidades">N·m²·C⁻²</td></tr>
+                    <tr><td data-label="Símbolo">\(q_i,q_j\)</td><td data-label="Significado">Cargas de la pareja (con signo)</td><td data-label="Unidades">C</td></tr>
+                    <tr><td data-label="Símbolo">\(r_{ij}\)</td><td data-label="Significado">Distancia entre la pareja \(i,j\)</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> tres cargas de \(-20\,\text{nC}\) en un triángulo equilátero de \(3\,\text{cm}\) de lado: \(E_p=3\cdot9\cdot10^{9}\cdot(20\cdot10^{-9})^{2}/0{,}03=+3{,}6\cdot10^{-4}\,\text{J}\) (positiva: hay que aportar energía para montarla).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Para \(n\) cargas hay \(n(n-1)/2\) parejas distintas.</li>
+                    <li>Cada pareja se cuenta <strong>una sola vez</strong>.</li>
+                    <li>La energía es <strong>escalar</strong>: se suma con signo.</li>
+                    <li>En el triángulo equilátero de cargas iguales, \(E_p=3K_0q^{2}/l\) (positivo si \(q\neq0\)).</li>
+                    <li>Para cargas de signos variados, puede dar positivo o negativo.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 10 -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Trabajo para montar una configuración desde el infinito</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El trabajo que debe realizar un agente externo para ensamblar una configuración de cargas partiendo de cargas inicialmente separadas en el infinito (donde \(E_p=0\)), y el trabajo que realiza el propio campo durante ese proceso. Se aplica para interpretar el signo energético de un sistema de cargas y para comparar la estabilidad de configuraciones distintas.
+            </div>
+            <a href="TemaB3.html#formula-16" title="Ver esta fórmula en el tema B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-16">
+                \[ W_{\text{ext}} = \Delta E_p = E_{p,f} \]
+                \[ W_{\text{campo}} = -E_{p,f} \]
+            </div>
+            </a>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No hace falta memorizarla: es un caso particular de \(W_{\text{ext}}=\Delta E_p\) con \(E_{p,i}=0\). Lo esencial es el <strong>significado del signo</strong>: si \(W_{\text{ext}}>0\), el agente externo aporta energía al sistema (típico de cargas del mismo signo, que se repelen); si \(W_{\text{ext}}<0\), el campo puede hacer el trabajo y el agente externo retira energía (cargas de signo opuesto, que se atraen). En EBAU se pregunta mucho "¿cuánto trabajo hay que hacer para montar esta configuración?".</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(W_{\text{ext}}\)</td><td data-label="Significado">Trabajo del agente externo (cuasiestático)</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(W_{\text{campo}}\)</td><td data-label="Significado">Trabajo del campo eléctrico</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(E_{p,f}\)</td><td data-label="Significado">Energía potencial final del sistema</td><td data-label="Unidades">J</td></tr>
+                    <tr><td data-label="Símbolo">\(E_{p,i}\)</td><td data-label="Significado">Energía potencial inicial (\(0\) en el infinito)</td><td data-label="Unidades">J</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> montar un triángulo de tres cargas negativas de \(20\,\text{nC}\) y \(3\,\text{cm}\) de lado requiere \(W_{\text{ext}}=+3{,}6\cdot10^{-4}\,\text{J}\) (hay que vencer la repulsión). En cambio, montar un sistema de cargas alternadas (dos positivas y una negativa) puede dar \(W_{\text{ext}}<0\): la atracción facilita el proceso y el agente externo retira energía.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Referencia: \(E_{p,\text{inicial}}=0\) (cargas en el infinito).</li>
+                    <li><strong>Mismo signo</strong> ⟹ \(E_{p,f}>0\) ⟹ \(W_{\text{ext}}>0\) (hay que aportar energía).</li>
+                    <li><strong>Signo opuesto</strong> ⟹ \(E_{p,f}<0\) ⟹ \(W_{\text{ext}}<0\) (el campo favorece el ensamblaje).</li>
+                    <li>El trabajo del campo es el opuesto: \(W_{\text{campo}}=-E_{p,f}\).</li>
+                    <li>No confundir \(W_{\text{ext}}\) con \(W_{\text{campo}}\) al dar el resultado.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- LEYENDA EPISTÉMICA -->
+        <article class="card span-all leyenda-epi">
+
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+
+            <p class="leyenda-epi-intro">
+                No todas las expresiones del tema B3 se estudian igual. Cada fórmula pertenece a una
+                <strong>categoría epistémica</strong> —definición, concepto, consecuencia matemática,
+                aplicación o caso típico automatizable— y cada categoría se domina con un
+                <strong>verbo distinto</strong>. Identificar el tipo <em>antes</em> de estudiar ahorra
+                tiempo y evita memorizar lo que se puede deducir.
+            </p>
+
+            <div class="leyenda-epi-grid">
+
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física o
+                        establece una relación básica. No se demuestra, se establece. Se domina cuando puedes
+                        enunciarla sin pensar.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B3</strong>
+                        \(dW=q\,\vec E\cdot d\vec r\) &nbsp;·&nbsp; \(\Delta E_p=W_{\text{ext}}\) &nbsp;·&nbsp; \(E_p=qV\)
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Concepto / comprensión</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es la <em>idea física</em> del tema: una propiedad o relación que hay que entender
+                        más que memorizar. Se domina cuando puedes explicarla con tus propias palabras y
+                        usarla como filtro conceptual.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B3</strong>
+                        \(\oint\vec E\cdot d\vec r=0\) &nbsp;·&nbsp; \(W_{\text{campo}}=-\Delta E_p\) &nbsp;·&nbsp; \(W_{\text{ext}}=E_{p,f}\)
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> integrando, despejando o sustituyendo otra fórmula. No se
+                        memoriza: se reconstruye en 2–3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B3</strong>
+                        \(W_{\text{campo}}=q\int_A^B\vec E\cdot d\vec r\) &nbsp;·&nbsp; \(V_B-V_A=-\int_A^B\vec E\cdot d\vec r\)
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Aplicación</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Se usa para <em>resolver</em> un problema concreto: elegir la fórmula adecuada,
+                        sustituir con los signos correctos y comprobar el resultado. Es el tipo más frecuente
+                        en EBAU.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplos B3</strong>
+                        \(\Delta E_p=q\,\Delta V\) &nbsp;·&nbsp; \(W_{\text{campo}}=q(V_A-V_B)\) &nbsp;·&nbsp;
+                        \(W_{\text{ext}}=q(V_B-V_A)\) &nbsp;·&nbsp; \(E_p=K_0q_1q_2/r\) &nbsp;·&nbsp; \(E_{p,\text{sist.}}=\sum K_0q_iq_j/r_{ij}\)
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Caso típico automatizable</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es un <em>caso particular</em> que aparece mucho y conviene aplicar de forma refleja
+                        sin deducirlo cada vez.
+                    </p>
+                    <p class="epi-ej">
+                        <strong>Ejemplo B3</strong>
+                        \(E_{p,\text{sistema}}=3K_0q^{2}/l\) (tres cargas en triángulo equilátero de lado \(l\)).
+                    </p>
+                </div>
+
+            </div>
+
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Concepto</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Idea física central</td>
+                        <td data-label="¿Cómo se domina?">Explicar con tus palabras</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla sin fórmulas?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Aplicación</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Fórmula para resolver</td>
+                        <td data-label="¿Cómo se domina?">Resolver problemas con signos</td>
+                        <td data-label="Autoevaluación">¿La elijo bien y compruebo el signo?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Automatizar</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Caso típico específico</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿La reconozco y la aplico al instante?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
+                pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si sale de otra fórmula integrando, despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
+                Si es una idea física que hay que entender → <strong>concepto</strong> (comprender).
+                Si solo asigna un nombre o establece una relación básica → <strong>definición</strong> (memorizar).
+                Si la usas para resolver un problema → <strong>aplicación</strong> (aplicar).
+                Si es un caso particular muy repetido → <strong>caso típico</strong> (automatizar).
+            </div>
+
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Concepto (campo conservativo y relaciones)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Deducir (potencial a partir del campo)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Definición (trabajo elemental, energía y potencial)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Automatizar (configuración típica)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Aplicación (trabajo, energía de cargas)</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema B3</summary>
+
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+
+        <table class="mag-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fórmula</th>
+                    <th>Nombre</th>
+                    <th>Ficha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ dW_{\text{campo}}=q\,\vec E\cdot d\vec r \]</td><td data-label="Nombre">Trabajo elemental del campo eléctrico</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ W_{A\to B}^{\text{campo}}=q\int_A^B\vec E\cdot d\vec r \]</td><td data-label="Nombre">Trabajo del campo entre dos puntos</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ \oint\vec E\cdot d\vec r=0 \]</td><td data-label="Nombre">Carácter conservativo del campo electrostático</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ \Delta E_p=W_{\text{ext}} \]</td><td data-label="Nombre">Variación de energía potencial</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ W_{A\to B}^{\text{campo}}=-\Delta E_p \]</td><td data-label="Nombre">Trabajo del campo y energía potencial</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ W_{\text{ext}}=-W_{\text{campo}} \]</td><td data-label="Nombre">Trabajo externo cuasiestático</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ E_p=q\,V \]</td><td data-label="Nombre">Energía potencial y potencial</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \Delta E_p=q\,\Delta V \]</td><td data-label="Nombre">Variación de energía potencial por potencial</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ W_{\text{campo}}=q(V_A-V_B) \]</td><td data-label="Nombre">Trabajo del campo por potencial</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ W_{\text{ext}}=q(V_B-V_A) \]</td><td data-label="Nombre">Trabajo externo por potencial</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ V_B-V_A=-\int_A^B\vec E\cdot d\vec r \]</td><td data-label="Nombre">Diferencia de potencial a partir del campo</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ E_p=K_0\,\dfrac{q_1q_2}{r} \]</td><td data-label="Nombre">Energía potencial de dos cargas puntuales</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">13</td><td data-label="Fórmula">\[ \Delta E_p=K_0\,q_1q_2\!\left(\dfrac{1}{r_f}-\dfrac{1}{r_i}\right) \]</td><td data-label="Nombre">Variación de \(E_p\) al cambiar la distancia</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">14</td><td data-label="Fórmula">\[ E_{p,\text{sistema}}=\sum_{i<j}K_0\,\dfrac{q_iq_j}{r_{ij}} \] &nbsp;+&nbsp; \[ E_{p,\text{sistema}}=K_0\!\left(\dfrac{q_1q_2}{r_{12}}+\dfrac{q_1q_3}{r_{13}}+\dfrac{q_2q_3}{r_{23}}\right)\ \text{(3 cargas)} \]</td><td data-label="Nombre">Energía de una configuración de cargas (incluye la expansión explícita para 3 cargas)</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">15</td><td data-label="Fórmula">\[ E_{p,\text{sistema}}=3K_0\,\dfrac{q^{2}}{l} \]</td><td data-label="Nombre">Triángulo equilátero con cargas iguales</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">16</td><td data-label="Fórmula">\[ W_{\text{ext}}=E_{p,f} \]</td><td data-label="Nombre">Trabajo para montar una configuración</td><td data-label="Ficha">10</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> intercambiar \(W_{\text{campo}}\) y \(W_{\text{ext}}\) (¡son opuestos!); olvidar que \(W_{\text{ext}}=-W_{\text{campo}}\) solo vale en desplazamiento cuasiestático; usar \(q(V_A-V_B)\) cuando se pide el trabajo externo (o al revés); olvidar el signo de una de las cargas en \(K_0q_1q_2/r\); contar dos veces una misma pareja al calcular la energía de una configuración; confundir la energía potencial de una carga (\(E_p=qV\)) con la energía total de una configuración; y no comprobar el signo físico del resultado (¿el campo favorece o se opone al desplazamiento?).
+        </div>
+    </details>
+
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en el tema B3 la idea central es que el <strong>campo electrostático es conservativo</strong>. De ahí sale todo: se puede definir una energía potencial \(E_p\), y el trabajo del campo es siempre \(W_{\text{campo}}=-\Delta E_p\) mientras que el trabajo externo cuasiestático es \(W_{\text{ext}}=+\Delta E_p\). Distingue siempre qué trabajo te piden: son iguales en módulo y opuestos en signo. Y recuerda: la energía potencial de una carga en un punto es \(E_p=qV\), mientras que la de un sistema de cargas es la suma de las energías de todas las parejas distintas. Si dominas estas dos ideas y no te confundes con los signos, resuelves cualquier problema de B3 sin memorizar el resto.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    var highlight = target.classList.contains('formula-box') || target.classList.contains('card')
+        ? target
+        : (target.closest('.formula-box') || target.closest('.card') || target);
+
+    highlight.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+    highlight.classList.remove('formula-resaltada');
+    void highlight.offsetWidth;
+    highlight.classList.add('formula-resaltada');
+    setTimeout(function () {
+        highlight.classList.remove('formula-resaltada');
+    }, 2600);
+});
+</script>
+
+</body>
+</html>

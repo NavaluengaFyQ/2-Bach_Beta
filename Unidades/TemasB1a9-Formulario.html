@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario maestro — Temas B1–B9 (Física 2º Bachillerato)</title>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../css/formulario.css">
+
+    <style>
+        body { scroll-behavior: smooth; }
+        .container { max-width: 1440px; margin: 0 auto; padding: 0 12px 40px; }
+
+        /* NAV STICKY */
+        .nav-temario {
+            position: sticky; top: 0; z-index: 200;
+            background: rgba(255,255,255,.97);
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            border-bottom: 2px solid #e2e8f0;
+            padding: 10px 16px;
+            display: flex; align-items: center; gap: 10px;
+            overflow-x: auto;
+            box-shadow: 0 4px 14px rgba(0,0,0,.08);
+            margin-bottom: 18px;
+        }
+        .nav-temario .nav-label {
+            font-weight: 700; color: #4a5568; font-size: .82rem;
+            text-transform: uppercase; letter-spacing: .05em;
+            margin-right: 4px; white-space: nowrap;
+        }
+        .nav-temario a {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 8px 14px; border-radius: 8px;
+            text-decoration: none; color: #fff;
+            font-weight: 600; font-size: .85rem;
+            white-space: nowrap;
+            transition: transform .15s, filter .15s;
+        }
+        .nav-temario a:hover { transform: translateY(-1px); filter: brightness(1.08); }
+        .nav-temario a .nav-num {
+            display: inline-block; padding: 2px 8px; border-radius: 10px;
+            background: rgba(255,255,255,.22);
+            font-size: .72rem; font-weight: 700; letter-spacing: .03em;
+        }
+        .nav-temario a.nav-B1    { background: linear-gradient(135deg, #4299e1, #2b6cb0); }
+        .nav-temario a.nav-B234  { background: linear-gradient(135deg, #9f7aea, #6b46c1); }
+        .nav-temario a.nav-B567  { background: linear-gradient(135deg, #48bb78, #2f855a); }
+        .nav-temario a.nav-B8    { background: linear-gradient(135deg, #ed8936, #c05621); }
+        .nav-temario a.nav-B9    { background: linear-gradient(135deg, #e53e3e, #9b2c2c); }
+
+        /* TEMÁTICA (details superior) */
+        .tema-bloque {
+            margin: 32px 0; border-radius: 16px; overflow: hidden;
+            box-shadow: 0 10px 32px rgba(0,0,0,.10);
+            background: #fff; border-left: 8px solid;
+        }
+        .tema-bloque.B1   { border-left-color: #4299e1; }
+        .tema-bloque.B234 { border-left-color: #9f7aea; }
+        .tema-bloque.B567 { border-left-color: #48bb78; }
+        .tema-bloque.B8   { border-left-color: #ed8936; }
+        .tema-bloque.B9   { border-left-color: #e53e3e; }
+
+        .tema-bloque > summary {
+            display: flex; align-items: center; gap: 18px;
+            padding: 22px 28px; cursor: pointer; color: #fff;
+            list-style: none; user-select: none;
+            position: relative; overflow: hidden;
+            transition: filter .18s;
+        }
+        .tema-bloque > summary::-webkit-details-marker { display: none; }
+        .tema-bloque > summary::after {
+            content: "▸"; margin-left: auto; font-size: 1.1rem;
+            opacity: .85; transition: transform .25s;
+        }
+        .tema-bloque[open] > summary::after { transform: rotate(90deg); }
+        .tema-bloque > summary:hover { filter: brightness(1.06); }
+        .tema-bloque > summary::before {
+            content: ""; position: absolute; inset: 0;
+            background: repeating-linear-gradient(45deg, transparent, transparent 14px,
+                rgba(255,255,255,.035) 14px, rgba(255,255,255,.035) 28px);
+            pointer-events: none;
+        }
+        .tema-bloque.B1   > summary { background: linear-gradient(135deg, #4299e1 0%, #2b6cb0 100%); }
+        .tema-bloque.B234 > summary { background: linear-gradient(135deg, #9f7aea 0%, #6b46c1 100%); }
+        .tema-bloque.B567 > summary { background: linear-gradient(135deg, #48bb78 0%, #2f855a 100%); }
+        .tema-bloque.B8   > summary { background: linear-gradient(135deg, #ed8936 0%, #c05621 100%); }
+        .tema-bloque.B9   > summary { background: linear-gradient(135deg, #e53e3e 0%, #9b2c2c 100%); }
+
+        .tema-bloque > summary .tema-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            min-width: 68px; height: 34px; padding: 0 14px;
+            background: rgba(255,255,255,.24);
+            border: 1px solid rgba(255,255,255,.4);
+            border-radius: 18px; font-size: .85rem; font-weight: 800;
+            letter-spacing: .06em; flex-shrink: 0;
+        }
+        .tema-bloque > summary .tema-titulo {
+            font-size: 1.35rem; font-weight: 800; line-height: 1.15; flex: 1;
+        }
+        .tema-bloque > summary .tema-meta {
+            font-size: .8rem; font-weight: 600;
+            background: rgba(0,0,0,.22);
+            padding: 6px 12px; border-radius: 12px;
+            white-space: nowrap; flex-shrink: 0;
+        }
+        .tema-bloque .tema-body { padding: 10px 8px 24px; background: #fbfcfe; }
+
+        /* SUBTEMAS */
+        .subtema-bloque {
+            margin: 22px 18px; border-radius: 12px;
+            border: 2px solid; overflow: hidden; background: #fff;
+            box-shadow: 0 3px 12px rgba(0,0,0,.05);
+        }
+        .subtema-bloque.B2 { border-color: #805ad5; }
+        .subtema-bloque.B3 { border-color: #b794f4; }
+        .subtema-bloque.B4 { border-color: #d6bcfa; }
+        .subtema-bloque.B5 { border-color: #38a169; }
+        .subtema-bloque.B6 { border-color: #68d391; }
+        .subtema-bloque.B7 { border-color: #9ae6b4; }
+
+        .subtema-bloque > summary {
+            display: flex; align-items: center; gap: 14px;
+            padding: 14px 22px; color: #fff; font-weight: 700;
+            font-size: 1.05rem; cursor: pointer; list-style: none;
+            user-select: none; transition: filter .18s;
+        }
+        .subtema-bloque > summary::-webkit-details-marker { display: none; }
+        .subtema-bloque > summary::after {
+            content: "▸"; margin-left: auto; opacity: .85;
+            transition: transform .25s;
+        }
+        .subtema-bloque[open] > summary::after { transform: rotate(90deg); }
+        .subtema-bloque > summary:hover { filter: brightness(1.06); }
+        .subtema-bloque.B2 > summary { background: linear-gradient(135deg, #805ad5, #6b46c1); }
+        .subtema-bloque.B3 > summary { background: linear-gradient(135deg, #b794f4, #9f7aea); }
+        .subtema-bloque.B4 > summary { background: linear-gradient(135deg, #d6bcfa, #b794f4); }
+        .subtema-bloque.B5 > summary { background: linear-gradient(135deg, #38a169, #276749); }
+        .subtema-bloque.B6 > summary { background: linear-gradient(135deg, #68d391, #38a169); }
+        .subtema-bloque.B7 > summary { background: linear-gradient(135deg, #9ae6b4, #68d391); }
+
+        .subtema-bloque > summary .sub-codigo {
+            display: inline-flex; align-items: center; justify-content: center;
+            min-width: 42px; height: 26px; padding: 0 10px;
+            background: rgba(255,255,255,.26);
+            border: 1px solid rgba(255,255,255,.4);
+            border-radius: 13px; font-size: .78rem; font-weight: 800;
+            letter-spacing: .05em;
+        }
+        .subtema-bloque .subtema-body { padding: 8px 4px 12px; }
+
+        /* RECORDATORIO */
+        .recordatorio-bloque {
+            margin: 16px 24px 6px; padding: 14px 20px;
+            background: #edf2f7; border-left: 5px solid #4a5568;
+            border-radius: 8px; color: #2d3748;
+            font-size: .94rem; line-height: 1.55;
+        }
+        .recordatorio-bloque strong { color: #1a202c; }
+        .tema-bloque.B1   .recordatorio-bloque { border-left-color: #4299e1; background: #ebf8ff; }
+        .tema-bloque.B234 .recordatorio-bloque { border-left-color: #9f7aea; background: #faf5ff; }
+        .tema-bloque.B567 .recordatorio-bloque { border-left-color: #48bb78; background: #f0fff4; }
+        .tema-bloque.B8   .recordatorio-bloque { border-left-color: #ed8936; background: #fffaf0; }
+        .tema-bloque.B9   .recordatorio-bloque { border-left-color: #e53e3e; background: #fff5f5; }
+
+        .subtema-bloque .glosario,
+        .tema-bloque > .tema-body > .glosario { margin: 14px 24px 8px; }
+
+        /* LEYENDA GLOBAL */
+        .leyenda-global {
+            margin: 40px 0 24px; padding: 0;
+            border-radius: 16px; overflow: hidden;
+            box-shadow: 0 10px 32px rgba(0,0,0,.10);
+            background: #fff; border: 2px solid #cbd5e0;
+        }
+        .leyenda-global .leyenda-header {
+            padding: 22px 32px;
+            background: linear-gradient(135deg, #2d3748, #1a202c);
+            color: #fff;
+        }
+        .leyenda-global .leyenda-header h2 {
+            margin: 0; font-size: 1.35rem;
+            display: flex; align-items: center; gap: 14px;
+        }
+        .leyenda-global .leyenda-header .leyenda-badge {
+            display: inline-flex; padding: 4px 12px; border-radius: 12px;
+            background: rgba(255,255,255,.16);
+            font-size: .8rem; font-weight: 700;
+        }
+        .leyenda-global .leyenda-cuerpo { padding: 18px 24px 24px; }
+
+        /* BOTÓN VOLVER ARRIBA */
+        .btn-arriba {
+            position: fixed; right: 22px; bottom: 22px; z-index: 300;
+            width: 48px; height: 48px; border-radius: 50%;
+            background: linear-gradient(135deg, #4299e1, #2b6cb0);
+            color: #fff; border: none; cursor: pointer;
+            font-size: 1.3rem; display: none;
+            align-items: center; justify-content: center;
+            box-shadow: 0 6px 20px rgba(66,153,225,.45);
+            transition: transform .18s;
+        }
+        .btn-arriba:hover { transform: translateY(-2px); }
+        .btn-arriba.visible { display: inline-flex; }
+
+        /* RESPONSIVE */
+        @media (max-width: 760px) {
+            .tema-bloque > summary { padding: 16px 18px; gap: 12px; flex-wrap: wrap; }
+            .tema-bloque > summary .tema-titulo { font-size: 1.05rem; }
+            .tema-bloque > summary .tema-num { min-width: 52px; height: 28px; padding: 0 10px; font-size: .75rem; }
+            .tema-bloque > summary .tema-meta { font-size: .72rem; padding: 4px 9px; }
+            .tema-bloque .tema-body { padding: 6px 0 14px; }
+            .subtema-bloque { margin: 14px 8px; }
+            .subtema-bloque > summary { padding: 12px 16px; font-size: .95rem; }
+            .recordatorio-bloque { margin: 12px 12px 6px; font-size: .88rem; }
+            .subtema-bloque .glosario,
+            .tema-bloque > .tema-body > .glosario { margin: 10px 12px 6px; }
+            .nav-temario { padding: 8px 10px; gap: 6px; }
+            .nav-temario a { padding: 7px 10px; font-size: .78rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="nav-temario" aria-label="Navegación de temáticas">
+    <span class="nav-label">Temáticas:</span>
+    <a href="#tema-B1"   class="nav-B1"><span class="nav-num">B1</span> Cargas</a>
+    <a href="#tema-B234" class="nav-B234"><span class="nav-num">B2+B3+B4</span> Electrostática</a>
+    <a href="#tema-B567" class="nav-B567"><span class="nav-num">B5+B6+B7</span> Magnetismo</a>
+    <a href="#tema-B8"   class="nav-B8"><span class="nav-num">B8</span> Líneas</a>
+    <a href="#tema-B9"   class="nav-B9"><span class="nav-num">B9</span> Inducción</a>
+</nav>
+
+<div class="container">
+
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#FORMULARIO MAESTRO.- </span>
+                <span class="texto">Física 2º Bachillerato · Temas B1–B9</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <!-- ================================================================
+         B1 · CARGAS LIBRES EN CAMPOS (Coulomb y Lorentz)
+         ================================================================ -->
+    <details class="tema-bloque B1" id="tema-B1">
+        <summary>
+            <span class="tema-num">B1</span>
+            <span class="tema-titulo">Cargas libres en campos: Coulomb y Lorentz</span>
+            <span class="tema-meta">11 fichas</span>
+        </summary>
+
+        <div class="tema-body">
+            <div class="grid">
+
+                <!-- B1 · FICHA 1 (completa, plantilla) -->
+                <article class="card c-1">
+                    <div class="cabecera">
+                        <span class="num">1</span>
+                        <h2>Ley de Coulomb (módulo)</h2>
+                        <span class="badge-centro">Fundamental</span>
+                    </div>
+                    <div class="epi-chips">
+                        <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+                    </div>
+                    <div class="intro">
+                        <span class="etiqueta">¿Qué se calcula?</span>
+                        El módulo de la fuerza electrostática entre dos cargas puntuales en reposo. Se aplica cuando se conocen las dos cargas y la distancia que las separa, y se quiere describir la interacción eléctrica que las une. Es la ley fundacional de la electrostática.
+                    </div>
+                    <div class="formula-box" id="formula-B1-1">
+                        \[ F = K\,\frac{|q_1\,q_2|}{r^{2}} \]
+                        \[ K = \frac{1}{4\pi\varepsilon_0} \approx 9\cdot10^{9}\ \text{N}\cdot\text{m}^{2}\cdot\text{C}^{-2} \]
+                    </div>
+                    <p class="note">
+                        <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                        <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>¡Sí, imprescindible! Memoriza el módulo y el valor de \(K\). Todas las fórmulas de electrostática se deducen de ella.</span>
+                    </p>
+                    <table class="mag-table">
+                        <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                        <tbody>
+                            <tr><td data-label="Símbolo">\(F\)</td><td data-label="Significado">Módulo de la fuerza</td><td data-label="Unidades">N</td></tr>
+                            <tr><td data-label="Símbolo">\(K\)</td><td data-label="Significado">Constante de Coulomb</td><td data-label="Unidades">9·10⁹ N·m²·C⁻²</td></tr>
+                            <tr><td data-label="Símbolo">\(q_1,q_2\)</td><td data-label="Significado">Cargas</td><td data-label="Unidades">C</td></tr>
+                            <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia</td><td data-label="Unidades">m</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="ejemplo"><strong>Ejemplo:</strong> \(q_1=q_2=1\,\mu\text{C}\) a \(1\,\text{m}\) ⟹ \(F=9\cdot10^{-3}\,\text{N}\). Duplicando \(r\): \(F\) se reduce a \(1/4\).</p>
+                    <div class="obs">
+                        <span class="titulo-obs">Observaciones de interés</span>
+                        <ul>
+                            <li>Universal: desde el protón-electrón hasta la cohesión de la materia.</li>
+                            <li>Puede ser atractiva o repulsiva según el signo.</li>
+                            <li>Central y conservativa.</li>
+                            <li>Mucho más intensa que la gravitatoria.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- B1 · FICHA 5 (completa, plantilla) -->
+                <article class="card c-1">
+                    <div class="cabecera">
+                        <span class="num">5</span>
+                        <h2>Fuerza de Lorentz</h2>
+                        <span class="badge-centro">Fundamental</span>
+                    </div>
+                    <div class="epi-chips">
+                        <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+                    </div>
+                    <div class="intro">
+                        <span class="etiqueta">¿Qué se calcula?</span>
+                        La fuerza total que actúa sobre una carga \(q\) que se mueve con velocidad \(\vec v\) en una región con campo eléctrico y magnético.
+                    </div>
+                    <div class="formula-box" id="formula-B1-5">
+                        \[ \vec F = q\left(\vec E + \vec v\times\vec B\right) \]
+                    </div>
+                    <p class="note">
+                        <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                        <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: la parte eléctrica actúa siempre; la magnética solo si la carga se mueve.</span>
+                    </p>
+                    <table class="mag-table">
+                        <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                        <tbody>
+                            <tr><td data-label="Símbolo">\(\vec F\)</td><td data-label="Significado">Fuerza total</td><td data-label="Unidades">N</td></tr>
+                            <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga (con signo)</td><td data-label="Unidades">C</td></tr>
+                            <tr><td data-label="Símbolo">\(\vec E,\vec B\)</td><td data-label="Significado">Campos</td><td data-label="Unidades">N/C, T</td></tr>
+                            <tr><td data-label="Símbolo">\(\vec v\)</td><td data-label="Significado">Velocidad</td><td data-label="Unidades">m/s</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="ejemplo"><strong>Ejemplo:</strong> electrón con \(v=10^6\,\text{m/s}\) en \(B=0{,}8\,\text{T}\) perpendicular ⟹ \(F_m=evB\approx1{,}28\cdot10^{-13}\,\text{N}\).</p>
+                    <div class="obs">
+                        <span class="titulo-obs">Observaciones de interés</span>
+                        <ul>
+                            <li>La parte eléctrica hace trabajo; la magnética no.</li>
+                            <li>Si \(\vec v\parallel\vec B\), la fuerza magnética es nula.</li>
+                            <li>Regla de la mano derecha; se invierte si \(q<0\).</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- ============ RESTO DE FICHAS B1 (pegar aquí desde el archivo fuente) ============ -->
+                <!-- 
+                    PEGAR AQUÍ las fichas 2, 3, 4, 6, 7, 8, 9, 10, 11 del archivo TemaB1-Formulario.html.
+                    IMPORTANTE: renombrar los id de fórmula:
+                      id="formula-1" → id="formula-B1-2"
+                      id="formula-2" → id="formula-B1-2"  (¡ojo! el 1 y el 2 originales se solapan; numerar correlativamente 1..11)
+                    (El archivo fuente usa id="formula-1" a id="formula-11" y algunos spans intermedios.)
+                -->
+
+            </div><!-- /.grid -->
+
+            <details class="glosario">
+                <summary>📖 Glosario de fórmulas del tema B1</summary>
+                <table class="mag-table">
+                    <thead><tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr></thead>
+                    <tbody>
+                        <tr><td data-label="#">1</td><td data-label="Fórmula">\[ F=K|q_1q_2|/r^2 \]</td><td data-label="Nombre">Coulomb (módulo)</td><td data-label="Ficha">1</td></tr>
+                        <tr><td data-label="#">2</td><td data-label="Fórmula">\[ \vec F=Kq_1q_2\vec r/r^3 \]</td><td data-label="Nombre">Coulomb (vectorial)</td><td data-label="Ficha">2</td></tr>
+                        <tr><td data-label="#">3</td><td data-label="Fórmula">\[ \vec E=K Q \hat u_r/r^2 \]</td><td data-label="Nombre">Campo eléctrico</td><td data-label="Ficha">3</td></tr>
+                        <tr><td data-label="#">4</td><td data-label="Fórmula">\[ V=K Q/r \]</td><td data-label="Nombre">Potencial eléctrico</td><td data-label="Ficha">4</td></tr>
+                        <tr><td data-label="#">5</td><td data-label="Fórmula">\[ \vec F=q(\vec E+\vec v\times\vec B) \]</td><td data-label="Nombre">Lorentz</td><td data-label="Ficha">5</td></tr>
+                        <tr><td data-label="#">6</td><td data-label="Fórmula">\[ F_m=|q|vB\sin\theta \]</td><td data-label="Nombre">Fuerza magnética</td><td data-label="Ficha">6</td></tr>
+                        <tr><td data-label="#">7</td><td data-label="Fórmula">\[ E=|\Delta V|/d \]</td><td data-label="Nombre">Campo uniforme</td><td data-label="Ficha">7</td></tr>
+                        <tr><td data-label="#">8</td><td data-label="Fórmula">\[ W=q(V_A-V_B)=-\Delta U \]</td><td data-label="Nombre">Trabajo eléctrico</td><td data-label="Ficha">8</td></tr>
+                        <tr><td data-label="#">9</td><td data-label="Fórmula">\[ v=E/B \]</td><td data-label="Nombre">Selector de velocidades</td><td data-label="Ficha">9</td></tr>
+                        <tr><td data-label="#">10</td><td data-label="Fórmula">\[ r=mv/(|q|B) \]</td><td data-label="Nombre">Radio ciclotrón</td><td data-label="Ficha">10</td></tr>
+                        <tr><td data-label="#">11</td><td data-label="Fórmula">\[ |q|/m=v/(Br) \]</td><td data-label="Nombre">Relación carga/masa</td><td data-label="Ficha">11</td></tr>
+                    </tbody>
+                </table>
+            </details>
+
+            <div class="recordatorio-bloque">
+                <strong>Recordatorio B1:</strong> la <strong>ley de Coulomb</strong> \(F=K|q_1q_2|/r^2\) es la base de la electrostática; la <strong>fuerza de Lorentz</strong> \(\vec F=q(\vec E+\vec v\times\vec B)\) es la base del electromagnetismo. Campos y fuerzas son <strong>vectoriales</strong> (se suman por componentes); potencial y energía son <strong>escalares</strong> (se suman algebraicamente). Mide siempre \(r\) desde el centro de las cargas y aplica la mano derecha invirtiendo si \(q<0\).
+            </div>
+        </div>
+    </details>
+
+    <!-- ================================================================
+         B2+B3+B4 · ELECTROSTÁTICA COMPLETA
+         ================================================================ -->
+    <details class="tema-bloque B234" id="tema-B234">
+        <summary>
+            <span class="tema-num">B2 + B3 + B4</span>
+            <span class="tema-titulo">Electrostática: campo, trabajo y potencial</span>
+            <span class="tema-meta">31 fichas · 3 subtemas</span>
+        </summary>
+
+        <div class="tema-body">
+
+            <!-- ===== SUBTEMA B2 ===== -->
+            <details class="subtema-bloque B2">
+                <summary>
+                    <span class="sub-codigo">B2</span>
+                    Campo eléctrico de distribuciones y flujo
+                </summary>
+                <div class="subtema-body">
+                    <div class="grid">
+
+                        <!-- B2 · FICHA 1 (plantilla) -->
+                        <article class="card c-1">
+                            <div class="cabecera">
+                                <span class="num">1</span>
+                                <h2>Campo eléctrico (definición)</h2>
+                                <span class="badge-centro">Fundamental</span>
+                            </div>
+                            <div class="epi-chips">
+                                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+                            </div>
+                            <div class="intro">
+                                <span class="etiqueta">¿Qué se calcula?</span>
+                                La fuerza por unidad de carga positiva en un punto. Es la magnitud fundamental del tema.
+                            </div>
+                            <div class="formula-box" id="formula-B2-1">
+                                \[ \vec E = \frac{\vec F}{q_0} \]
+                                \[ [E] = \text{N}\cdot\text{C}^{-1} = \text{V}\cdot\text{m}^{-1} \]
+                            </div>
+                            <p class="note">
+                                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>¡Sí! \(q_0\) es una carga de prueba positiva. El campo lo crean las cargas fuente; no depende de \(q_0\).</span>
+                            </p>
+                            <table class="mag-table">
+                                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                                <tbody>
+                                    <tr><td data-label="Símbolo">\(\vec E\)</td><td data-label="Significado">Campo eléctrico</td><td data-label="Unidades">N·C⁻¹ = V·m⁻¹</td></tr>
+                                    <tr><td data-label="Símbolo">\(\vec F\)</td><td data-label="Significado">Fuerza sobre \(q_0\)</td><td data-label="Unidades">N</td></tr>
+                                    <tr><td data-label="Símbolo">\(q_0\)</td><td data-label="Significado">Carga de prueba positiva</td><td data-label="Unidades">C</td></tr>
+                                </tbody>
+                            </table>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> si \(q_0=2\,\mu\text{C}\) sufre \(F=6\cdot10^{-3}\,\text{N}\), \(E=3\cdot10^{3}\,\text{N/C}\) en la misma dirección.</p>
+                            <div class="obs">
+                                <span class="titulo-obs">Observaciones de interés</span>
+                                <ul>
+                                    <li>Magnitud vectorial.</li>
+                                    <li>No depende de \(q_0\).</li>
+                                    <li>\(\text{N/C}=\text{V/m}\).</li>
+                                    <li>\(\vec F=q\vec E\).</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- ============ RESTO DE FICHAS B2 (pegar aquí) ============ -->
+                        <!--
+                            PEGAR AQUÍ fichas 2..12 del TemaB2-Formulario.html.
+                            Renombrar id="formula-N" → id="formula-B2-N" (N=1..12, correlativo según el orden real del archivo fuente).
+                        -->
+
+                    </div><!-- /.grid -->
+                    <details class="glosario">
+                        <summary>📖 Glosario B2</summary>
+                        <table class="mag-table">
+                            <thead><tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr></thead>
+                            <tbody>
+                                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \vec E=\vec F/q_0 \]</td><td data-label="Nombre">Definición de E</td><td data-label="Ficha">1</td></tr>
+                                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ E=K|q|/r^2 \]</td><td data-label="Nombre">Campo puntual</td><td data-label="Ficha">2</td></tr>
+                                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ \vec E=Kq\vec r/r^3 \]</td><td data-label="Nombre">Campo vectorial</td><td data-label="Ficha">3</td></tr>
+                                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ \vec E_R=\sum\vec E_i \]</td><td data-label="Nombre">Superposición</td><td data-label="Ficha">4</td></tr>
+                                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ E_R=\sqrt{E_x^2+E_y^2} \]</td><td data-label="Nombre">Módulo resultante</td><td data-label="Ficha">5</td></tr>
+                                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ \lambda,\sigma,\rho \]</td><td data-label="Nombre">Densidades</td><td data-label="Ficha">6</td></tr>
+                                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ \vec E=K\int\frac{\hat u}{r^2}dq \]</td><td data-label="Nombre">Distribución continua</td><td data-label="Ficha">7</td></tr>
+                                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \Phi_E=\vec E\cdot\vec S \]</td><td data-label="Nombre">Flujo eléctrico</td><td data-label="Ficha">8</td></tr>
+                                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ \oint\vec E\cdot d\vec S=Q/\varepsilon_0 \]</td><td data-label="Nombre">Gauss</td><td data-label="Ficha">9</td></tr>
+                                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ E=K Q/r^2;\ E=|\lambda|/(2\pi\varepsilon_0 r);\ E=|\sigma|/(2\varepsilon_0) \]</td><td data-label="Nombre">Campos con simetría</td><td data-label="Ficha">10</td></tr>
+                                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ x=d\sqrt{|q_1|}/(\sqrt{|q_1|}+\sqrt{|q_2|}) \]</td><td data-label="Nombre">Punto nulo</td><td data-label="Ficha">11</td></tr>
+                                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ \vec F=q\vec E \]</td><td data-label="Nombre">Fuerza eléctrica</td><td data-label="Ficha">12</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+            </details>
+
+            <!-- ===== SUBTEMA B3 ===== -->
+            <details class="subtema-bloque B3">
+                <summary>
+                    <span class="sub-codigo">B3</span>
+                    Trabajo eléctrico y energía de distribuciones
+                </summary>
+                <div class="subtema-body">
+                    <div class="grid">
+
+                        <!-- B3 · FICHA 4 (plantilla) -->
+                        <article class="card c-3">
+                            <div class="cabecera">
+                                <span class="num">4</span>
+                                <h2>Trabajo y variación de energía potencial</h2>
+                                <span class="badge-centro">Relación</span>
+                            </div>
+                            <div class="epi-chips">
+                                <span class="epi-chip definicion">📘 Memorizar · Relación básica</span>
+                                <span class="epi-chip comprender">🧭 Comprender · Signo físico</span>
+                            </div>
+                            <div class="intro">
+                                <span class="etiqueta">¿Qué se calcula?</span>
+                                La relación entre el trabajo y la variación de energía potencial. Fundamental para distinguir \(W_{\text{campo}}\) de \(W_{\text{ext}}\).
+                            </div>
+                            <div class="formula-box" id="formula-B3-4">
+                                \[ \Delta E_p = W_{\text{ext}} \]
+                                \[ W_{\text{campo}}=-\Delta E_p \]
+                                \[ W_{\text{ext}}=-W_{\text{campo}} \ (\text{cuasiestático}) \]
+                            </div>
+                            <p class="note">
+                                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí, las tres. El signo de \(W_{\text{campo}}\) y \(W_{\text{ext}}\) es opuesto.</span>
+                            </p>
+                            <table class="mag-table">
+                                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                                <tbody>
+                                    <tr><td data-label="Símbolo">\(\Delta E_p\)</td><td data-label="Significado">Variación de energía potencial</td><td data-label="Unidades">J</td></tr>
+                                    <tr><td data-label="Símbolo">\(W_{\text{ext}}\)</td><td data-label="Significado">Trabajo externo cuasiestático</td><td data-label="Unidades">J</td></tr>
+                                    <tr><td data-label="Símbolo">\(W_{\text{campo}}\)</td><td data-label="Significado">Trabajo del campo</td><td data-label="Unidades">J</td></tr>
+                                </tbody>
+                            </table>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> acercar dos cargas del mismo signo: \(\Delta E_p>0\) ⟹ \(W_{\text{ext}}>0\), \(W_{\text{campo}}<0\).</p>
+                            <div class="obs">
+                                <span class="titulo-obs">Observaciones de interés</span>
+                                <ul>
+                                    <li>\(W_{\text{campo}}>0\) ⟺ \(E_p\) disminuye.</li>
+                                    <li>\(W_{\text{ext}}+W_{\text{campo}}=\Delta E_c\) en general.</li>
+                                    <li>\(W_{\text{ext}}=-W_{\text{campo}}\) solo si cuasiestático.</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- ============ RESTO DE FICHAS B3 (pegar aquí) ============ -->
+                        <!--
+                            PEGAR AQUÍ fichas 1, 2, 3, 5..10 del TemaB3-Formulario.html.
+                            Renombrar id="formula-N" → id="formula-B3-N".
+                        -->
+
+                    </div><!-- /.grid -->
+                    <details class="glosario">
+                        <summary>📖 Glosario B3</summary>
+                        <table class="mag-table">
+                            <thead><tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr></thead>
+                            <tbody>
+                                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ dW=q\vec E\cdot d\vec r \]</td><td data-label="Nombre">Trabajo elemental</td><td data-label="Ficha">1</td></tr>
+                                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ W=q\int\vec E\cdot d\vec r \]</td><td data-label="Nombre">Trabajo total</td><td data-label="Ficha">2</td></tr>
+                                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ \oint\vec E\cdot d\vec r=0 \]</td><td data-label="Nombre">Campo conservativo</td><td data-label="Ficha">3</td></tr>
+                                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ \Delta E_p=W_{\text{ext}} \]</td><td data-label="Nombre">Trabajo-energía</td><td data-label="Ficha">4</td></tr>
+                                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ W_{\text{campo}}=-\Delta E_p \]</td><td data-label="Nombre">Trabajo del campo</td><td data-label="Ficha">4</td></tr>
+                                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ W_{\text{ext}}=-W_{\text{campo}} \]</td><td data-label="Nombre">Trabajo externo</td><td data-label="Ficha">4</td></tr>
+                                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ E_p=qV \]</td><td data-label="Nombre">Energía potencial</td><td data-label="Ficha">5</td></tr>
+                                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \Delta E_p=q\Delta V \]</td><td data-label="Nombre">Variación</td><td data-label="Ficha">5</td></tr>
+                                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ W_{\text{campo}}=q(V_A-V_B) \]</td><td data-label="Nombre">Trabajo del campo</td><td data-label="Ficha">6</td></tr>
+                                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ W_{\text{ext}}=q(V_B-V_A) \]</td><td data-label="Nombre">Trabajo externo</td><td data-label="Ficha">6</td></tr>
+                                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ V_B-V_A=-\int\vec E\cdot d\vec r \]</td><td data-label="Nombre">Diferencia de potencial</td><td data-label="Ficha">7</td></tr>
+                                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ E_p=Kq_1q_2/r \]</td><td data-label="Nombre">Energía entre dos cargas</td><td data-label="Ficha">8</td></tr>
+                                <tr><td data-label="#">13</td><td data-label="Fórmula">\[ \Delta E_p=Kq_1q_2(1/r_f-1/r_i) \]</td><td data-label="Nombre">Variación al cambiar r</td><td data-label="Ficha">8</td></tr>
+                                <tr><td data-label="#">14</td><td data-label="Fórmula">\[ E_p=\sum K q_iq_j/r_{ij} \]</td><td data-label="Nombre">Energía de configuración</td><td data-label="Ficha">9</td></tr>
+                                <tr><td data-label="#">15</td><td data-label="Fórmula">\[ E_p=3Kq^2/l \]</td><td data-label="Nombre">Triángulo equilátero</td><td data-label="Ficha">9</td></tr>
+                                <tr><td data-label="#">16</td><td data-label="Fórmula">\[ W_{\text{ext}}=E_{p,f} \]</td><td data-label="Nombre">Montaje desde ∞</td><td data-label="Ficha">10</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+            </details>
+
+            <!-- ===== SUBTEMA B4 ===== -->
+            <details class="subtema-bloque B4">
+                <summary>
+                    <span class="sub-codigo">B4</span>
+                    Potencial eléctrico, equipotenciales y campo uniforme
+                </summary>
+                <div class="subtema-body">
+                    <div class="grid">
+
+                        <!-- B4 · FICHA 2 (plantilla) -->
+                        <article class="card c-3">
+                            <div class="cabecera">
+                                <span class="num">2</span>
+                                <h2>Potencial de una carga puntual</h2>
+                                <span class="badge-centro">Fundamental</span>
+                            </div>
+                            <div class="epi-chips">
+                                <span class="epi-chip definicion">📘 Memorizar · Expresión clave</span>
+                            </div>
+                            <div class="intro">
+                                <span class="etiqueta">¿Qué se calcula?</span>
+                                El potencial que una carga puntual crea a distancia \(r\), tomando \(V(\infty)=0\).
+                            </div>
+                            <div class="formula-box" id="formula-B4-2">
+                                \[ V(r) = K\,\frac{Q}{r} \]
+                                \[ K \approx 9{,}0\cdot10^{9}\ \text{N·m}^{2}\text{·C}^{-2} \]
+                            </div>
+                            <p class="note">
+                                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: \(V=KQ/r\) con el signo de \(Q\). Decae con \(1/r\) (no \(1/r^2\)).</span>
+                            </p>
+                            <table class="mag-table">
+                                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                                <tbody>
+                                    <tr><td data-label="Símbolo">\(V\)</td><td data-label="Significado">Potencial</td><td data-label="Unidades">V</td></tr>
+                                    <tr><td data-label="Símbolo">\(Q\)</td><td data-label="Significado">Carga creadora</td><td data-label="Unidades">C</td></tr>
+                                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia</td><td data-label="Unidades">m</td></tr>
+                                </tbody>
+                            </table>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> \(Q=+10\,\text{nC}\) a \(3\,\text{m}\) ⟹ \(V=+30\,\text{V}\).</p>
+                            <div class="obs">
+                                <span class="titulo-obs">Observaciones de interés</span>
+                                <ul>
+                                    <li>\(V>0\) para \(Q>0\); \(V<0\) para \(Q<0\).</li>
+                                    <li>Decae con \(1/r\).</li>
+                                    <li>Equipotenciales = esferas concéntricas.</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- ============ RESTO DE FICHAS B4 (pegar aquí) ============ -->
+                        <!--
+                            PEGAR AQUÍ fichas 1, 3..9 del TemaB4-Formulario.html.
+                            Renombrar id="formula-N" → id="formula-B4-N".
+                        -->
+
+                    </div><!-- /.grid -->
+                    <details class="glosario">
+                        <summary>📖 Glosario B4</summary>
+                        <table class="mag-table">
+                            <thead><tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr></thead>
+                            <tbody>
+                                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ V=E_p/q \]</td><td data-label="Nombre">Definición V</td><td data-label="Ficha">1</td></tr>
+                                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ E_p=qV \]</td><td data-label="Nombre">Energía-potencial</td><td data-label="Ficha">1</td></tr>
+                                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ V=K Q/r \]</td><td data-label="Nombre">Carga puntual</td><td data-label="Ficha">2</td></tr>
+                                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ V=k\sum Q_i/r_i \]</td><td data-label="Nombre">Superposición</td><td data-label="Ficha">3</td></tr>
+                                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ \Delta E_p=q\Delta V \]</td><td data-label="Nombre">Variación \(E_p\)</td><td data-label="Ficha">4</td></tr>
+                                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ W_{\text{campo}}=q(V_A-V_B) \]</td><td data-label="Nombre">Trabajo del campo</td><td data-label="Ficha">5</td></tr>
+                                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ W_{\text{ext}}=q(V_B-V_A) \]</td><td data-label="Nombre">Trabajo externo</td><td data-label="Ficha">5</td></tr>
+                                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \vec E=-\nabla V \]</td><td data-label="Nombre">Gradiente</td><td data-label="Ficha">6</td></tr>
+                                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ E_x=-dV/dx \]</td><td data-label="Nombre">Componente 1D</td><td data-label="Ficha">6</td></tr>
+                                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ \Delta V=-\vec E\cdot\Delta\vec r \]</td><td data-label="Nombre">Campo uniforme</td><td data-label="Ficha">7</td></tr>
+                                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ E=|\Delta V|/d \]</td><td data-label="Nombre">Placas paralelas</td><td data-label="Ficha">8</td></tr>
+                                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ C=|Q|/|\Delta V| \]</td><td data-label="Nombre">Capacidad</td><td data-label="Ficha">9</td></tr>
+                                <tr><td data-label="#">13</td><td data-label="Fórmula">\[ C=\varepsilon S/d \]</td><td data-label="Nombre">Condensador plano</td><td data-label="Ficha">9</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+            </details>
+
+            <div class="recordatorio-bloque">
+                <strong>Recordatorio B2–B4:</strong> la <strong>ley de Coulomb</strong> es la base; el campo eléctrico \(E=K|q|/r^2\) se suma <strong>vectorialmente</strong>; el potencial \(V=KQ/r\) se suma <strong>escalarmente</strong>. El campo apunta hacia \(V\) decreciente (\(\vec E=-\nabla V\)) y es perpendicular a las equipotenciales. En campo uniforme, \(E=|\Delta V|/d\). El trabajo es conservativo: \(W_{\text{campo}}=-\Delta E_p\). Distingue siempre \(W_{\text{campo}}\) (usa \(V_A-V_B\)) de \(W_{\text{ext}}\) (usa \(V_B-V_A\)).
+            </div>
+        </div>
+    </details>
+
+    <!-- ================================================================
+         B5+B6+B7 · MAGNETISMO COMPLETO
+         ================================================================ -->
+    <details class="tema-bloque B567" id="tema-B567">
+        <summary>
+            <span class="tema-num">B5 + B6 + B7</span>
+            <span class="tema-titulo">Magnetismo: Oersted, campo de corrientes y fuerza de Laplace</span>
+            <span class="tema-meta">30 fichas · 3 subtemas</span>
+        </summary>
+
+        <div class="tema-body">
+
+            <!-- ===== SUBTEMA B5 ===== -->
+            <details class="subtema-bloque B5">
+                <summary>
+                    <span class="sub-codigo">B5</span>
+                    Magnetismo, Oersted y carácter no conservativo
+                </summary>
+                <div class="subtema-body">
+                    <div class="grid">
+
+                        <!-- B5 · FICHA 1 (plantilla) -->
+                        <article class="card c-3">
+                            <div class="cabecera">
+                                <span class="num">1</span>
+                                <h2>Fuerza magnética de Lorentz (vectorial)</h2>
+                                <span class="badge-centro">Definición</span>
+                            </div>
+                            <div class="epi-chips">
+                                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+                            </div>
+                            <div class="intro">
+                                <span class="etiqueta">¿Qué se calcula?</span>
+                                El vector fuerza magnética sobre una carga \(q\) con velocidad \(\vec v\) en campo \(\vec B\).
+                            </div>
+                            <div class="formula-box" id="formula-B5-1">
+                                \[ \vec F_m = q\,\vec v\times\vec B \]
+                            </div>
+                            <p class="note">
+                                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es un producto vectorial. Si \(q<0\), se invierte el sentido del resultado.</span>
+                            </p>
+                            <table class="mag-table">
+                                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                                <tbody>
+                                    <tr><td data-label="Símbolo">\(\vec F_m\)</td><td data-label="Significado">Fuerza magnética</td><td data-label="Unidades">N</td></tr>
+                                    <tr><td data-label="Símbolo">\(q\)</td><td data-label="Significado">Carga</td><td data-label="Unidades">C</td></tr>
+                                    <tr><td data-label="Símbolo">\(\vec v\)</td><td data-label="Significado">Velocidad</td><td data-label="Unidades">m/s</td></tr>
+                                    <tr><td data-label="Símbolo">\(\vec B\)</td><td data-label="Significado">Campo magnético</td><td data-label="Unidades">T</td></tr>
+                                </tbody>
+                            </table>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> electrón \(v=5\cdot10^6\,\hat j\) en \(\vec B=7{,}8\cdot10^{-3}\,\hat i\): \(\vec F_m=+6{,}86\cdot10^{-15}\,\hat k\,\text{N}\).</p>
+                            <div class="obs">
+                                <span class="titulo-obs">Observaciones de interés</span>
+                                <ul>
+                                    <li>\(\vec F_m\perp\vec v\) y \(\vec F_m\perp\vec B\).</li>
+                                    <li>Si \(\vec v\parallel\vec B\) ⟹ \(\vec F_m=0\).</li>
+                                    <li>Regla de la mano derecha; se invierte si \(q<0\).</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- ============ RESTO DE FICHAS B5 (pegar aquí) ============ -->
+                        <!--
+                            PEGAR AQUÍ fichas 2..10 del TemaB5-Formulario.html.
+                            Renombrar id="formula-N" → id="formula-B5-N".
+                        -->
+
+                    </div><!-- /.grid -->
+                    <details class="glosario">
+                        <summary>📖 Glosario B5</summary>
+                        <table class="mag-table">
+                            <thead><tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr></thead>
+                            <tbody>
+                                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \vec F_m=q\vec v\times\vec B \]</td><td data-label="Nombre">Lorentz magnética</td><td data-label="Ficha">1</td></tr>
+                                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ F_m=|q|vB\sin\theta \]</td><td data-label="Nombre">Módulo</td><td data-label="Ficha">2</td></tr>
+                                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ 1\,\text{T}=1\,\text{N/(A·m)} \]</td><td data-label="Nombre">Tesla</td><td data-label="Ficha">2</td></tr>
+                                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ W_m=0 \]</td><td data-label="Nombre">Trabajo nulo</td><td data-label="Ficha">3</td></tr>
+                                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ B=\mu_0 I/(2\pi r) \]</td><td data-label="Nombre">Hilo recto</td><td data-label="Ficha">4</td></tr>
+                                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ \oint\vec B\cdot d\vec S=0 \]</td><td data-label="Nombre">Gauss magnética</td><td data-label="Ficha">5</td></tr>
+                                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ \oint\vec B\cdot d\vec l=\mu_0 I \]</td><td data-label="Nombre">Ampère</td><td data-label="Ficha">6</td></tr>
+                                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ r=mv/(|q|B) \]</td><td data-label="Nombre">Radio circular</td><td data-label="Ficha">7</td></tr>
+                                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ T=2\pi m/(|q|B) \]</td><td data-label="Nombre">Periodo circular</td><td data-label="Ficha">7</td></tr>
+                                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ \vec B_{\text{total}}=\sum\vec B_i \]</td><td data-label="Nombre">Superposición</td><td data-label="Ficha">8</td></tr>
+                                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ \tan\alpha=B_h/B_T \]</td><td data-label="Nombre">Oersted</td><td data-label="Ficha">9</td></tr>
+                                <tr><td data-label="#">12</td><td data-label="Fórmula">\[ E=vB \]</td><td data-label="Nombre">Selector</td><td data-label="Ficha">10</td></tr>
+                                <tr><td data-label="#">13</td><td data-label="Fórmula">\[ \vec F=q(\vec E+\vec v\times\vec B) \]</td><td data-label="Nombre">Lorentz general</td><td data-label="Ficha">10</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+            </details>
+
+            <!-- ===== SUBTEMA B6 ===== -->
+            <details class="subtema-bloque B6">
+                <summary>
+                    <span class="sub-codigo">B6</span>
+                    Campo magnético generado por corrientes
+                </summary>
+                <div class="subtema-body">
+                    <div class="grid">
+
+                        <!-- B6 · FICHA 2 (plantilla) -->
+                        <article class="card c-5">
+                            <div class="cabecera">
+                                <span class="num">2</span>
+                                <h2>Campo de un hilo rectilíneo</h2>
+                                <span class="badge-centro">Aplicación</span>
+                            </div>
+                            <div class="epi-chips">
+                                <span class="epi-chip aplicar">⚖️ Aplicar · Cálculo directo</span>
+                            </div>
+                            <div class="intro">
+                                <span class="etiqueta">¿Qué se calcula?</span>
+                                El módulo del campo a distancia \(r\) de un hilo recto con corriente \(I\). Líneas: circunferencias concéntricas.
+                            </div>
+                            <div class="formula-box" id="formula-B6-2">
+                                \[ B = \frac{\mu_0\,I}{2\pi\,r} \]
+                                \[ \mu_0 = 4\pi\cdot10^{-7}\,\text{T·m/A} \]
+                            </div>
+                            <p class="note">
+                                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: la fórmula más usada de B6. \(r\) es distancia perpendicular. Regla de la mano derecha para el sentido.</span>
+                            </p>
+                            <table class="mag-table">
+                                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                                <tbody>
+                                    <tr><td data-label="Símbolo">\(B\)</td><td data-label="Significado">Campo</td><td data-label="Unidades">T</td></tr>
+                                    <tr><td data-label="Símbolo">\(I\)</td><td data-label="Significado">Corriente</td><td data-label="Unidades">A</td></tr>
+                                    <tr><td data-label="Símbolo">\(r\)</td><td data-label="Significado">Distancia perpendicular</td><td data-label="Unidades">m</td></tr>
+                                </tbody>
+                            </table>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> \(I=20\,\text{A}\), \(r=0{,}10\,\text{m}\) ⟹ \(B=4\cdot10^{-5}\,\text{T}\) (comparable al campo terrestre).</p>
+                            <div class="obs">
+                                <span class="titulo-obs">Observaciones de interés</span>
+                                <ul>
+                                    <li>Decae con \(1/r\) (no \(1/r^2\)).</li>
+                                    <li>Líneas cerradas.</li>
+                                    <li>\(\odot\) = sale; \(\otimes\) = entra.</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- ============ RESTO DE FICHAS B6 (pegar aquí) ============ -->
+                        <!--
+                            PEGAR AQUÍ fichas 1, 3..10 del TemaB6-Formulario.html.
+                            Renombrar id="formula-N" → id="formula-B6-N".
+                        -->
+
+                    </div><!-- /.grid -->
+                    <details class="glosario">
+                        <summary>📖 Glosario B6</summary>
+                        <table class="mag-table">
+                            <thead><tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr></thead>
+                            <tbody>
+                                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ d\vec B=\frac{\mu_0}{4\pi}\frac{I\,d\vec l\times\hat u_r}{r^2} \]</td><td data-label="Nombre">Biot-Savart</td><td data-label="Ficha">1</td></tr>
+                                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ B=\mu_0 I/(2\pi r) \]</td><td data-label="Nombre">Hilo recto</td><td data-label="Ficha">2</td></tr>
+                                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ B=\mu_0 I/(2R) \]</td><td data-label="Nombre">Espira</td><td data-label="Ficha">3</td></tr>
+                                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ B=\mu_0 N I/(2R) \]</td><td data-label="Nombre">Bobina plana</td><td data-label="Ficha">3</td></tr>
+                                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ B_{\text{eje}}=\frac{\mu_0NIR^2}{2(R^2+x^2)^{3/2}} \]</td><td data-label="Nombre">Eje espira</td><td data-label="Ficha">4</td></tr>
+                                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ B=\mu_0 nI \]</td><td data-label="Nombre">Solenoide</td><td data-label="Ficha">5</td></tr>
+                                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ B=\mu_0NI/(2\pi r) \]</td><td data-label="Nombre">Toroide</td><td data-label="Ficha">6</td></tr>
+                                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \oint\vec B\cdot d\vec l=\mu_0 I \]</td><td data-label="Nombre">Ampère</td><td data-label="Ficha">7</td></tr>
+                                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ \vec B_{\text{total}}=\sum\vec B_i \]</td><td data-label="Nombre">Superposición</td><td data-label="Ficha">8</td></tr>
+                                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ I_1/r_1=I_2/r_2 \]</td><td data-label="Nombre">Punto nulo</td><td data-label="Ficha">9</td></tr>
+                                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ F/L=\mu_0 I_1I_2/(2\pi d) \]</td><td data-label="Nombre">Hilos paralelos</td><td data-label="Ficha">10</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+            </details>
+
+            <!-- ===== SUBTEMA B7 ===== -->
+            <details class="subtema-bloque B7">
+                <summary>
+                    <span class="sub-codigo">B7</span>
+                    Fuerza de Laplace e interacción entre hilos paralelos
+                </summary>
+                <div class="subtema-body">
+                    <div class="grid">
+
+                        <!-- B7 · FICHA 6 (plantilla) -->
+                        <article class="card c-4">
+                            <div class="cabecera">
+                                <span class="num">6</span>
+                                <h2>Fuerza entre hilos paralelos</h2>
+                                <span class="badge-centro">Caso típico</span>
+                            </div>
+                            <div class="epi-chips">
+                                <span class="epi-chip automatizar">🔄 Automatizar · Caso típico</span>
+                            </div>
+                            <div class="intro">
+                                <span class="etiqueta">¿Qué se calcula?</span>
+                                Módulo de la fuerza por unidad de longitud entre dos hilos paralelos separados \(d\).
+                            </div>
+                            <div class="formula-box" id="formula-B7-6">
+                                \[ \frac{F}{L} = \frac{\mu_0\,I_1\,I_2}{2\pi\,d} \]
+                            </div>
+                            <p class="note">
+                                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                                <span class="respuesta"><span class="estrategia">🔄 AUTOMATIZAR</span>Sí: la fórmula más usada de B7. Mismo sentido → atracción; sentidos opuestos → repulsión.</span>
+                            </p>
+                            <table class="mag-table">
+                                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                                <tbody>
+                                    <tr><td data-label="Símbolo">\(F/L\)</td><td data-label="Significado">Fuerza por unidad de longitud</td><td data-label="Unidades">N/m</td></tr>
+                                    <tr><td data-label="Símbolo">\(\mu_0\)</td><td data-label="Significado">Permeabilidad</td><td data-label="Unidades">4π·10⁻⁷ T·m/A</td></tr>
+                                    <tr><td data-label="Símbolo">\(I_1,I_2\)</td><td data-label="Significado">Corrientes</td><td data-label="Unidades">A</td></tr>
+                                    <tr><td data-label="Símbolo">\(d\)</td><td data-label="Significado">Separación</td><td data-label="Unidades">m</td></tr>
+                                </tbody>
+                            </table>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> \(I_1=3\,\text{A}\), \(I_2=9\,\text{A}\), \(d=12\,\text{cm}\) ⟹ \(F/L=4{,}5\cdot10^{-5}\,\text{N/m}\) (repulsiva si corrientes opuestas).</p>
+                            <div class="obs">
+                                <span class="titulo-obs">Observaciones de interés</span>
+                                <ul>
+                                    <li>Mismo sentido ⟹ atracción.</li>
+                                    <li>Sentidos opuestos ⟹ repulsión.</li>
+                                    <li>Invertir ambas corrientes no cambia el tipo.</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- ============ RESTO DE FICHAS B7 (pegar aquí) ============ -->
+                        <!--
+                            PEGAR AQUÍ fichas 1..5, 7..10 del TemaB7-Formulario.html.
+                            Renombrar id="formula-N" → id="formula-B7-N".
+                        -->
+
+                    </div><!-- /.grid -->
+                    <details class="glosario">
+                        <summary>📖 Glosario B7</summary>
+                        <table class="mag-table">
+                            <thead><tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr></thead>
+                            <tbody>
+                                <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \vec F=I\vec L\times\vec B \]</td><td data-label="Nombre">Laplace vectorial</td><td data-label="Ficha">1</td></tr>
+                                <tr><td data-label="#">2</td><td data-label="Fórmula">\[ F=ILB\sin\theta \]</td><td data-label="Nombre">Laplace módulo</td><td data-label="Ficha">2</td></tr>
+                                <tr><td data-label="#">3</td><td data-label="Fórmula">\[ \hat i\times\hat j=\hat k,\ \dots \]</td><td data-label="Nombre">Productos vectoriales</td><td data-label="Ficha">3</td></tr>
+                                <tr><td data-label="#">4</td><td data-label="Fórmula">\[ F/L=IB\sin\theta \]</td><td data-label="Nombre">Laplace por unidad longitud</td><td data-label="Ficha">4</td></tr>
+                                <tr><td data-label="#">5</td><td data-label="Fórmula">\[ B=\mu_0I/(2\pi r) \]</td><td data-label="Nombre">Campo hilo (B6)</td><td data-label="Ficha">5</td></tr>
+                                <tr><td data-label="#">6</td><td data-label="Fórmula">\[ F/L=\mu_0I_1I_2/(2\pi d) \]</td><td data-label="Nombre">Hilos paralelos</td><td data-label="Ficha">6</td></tr>
+                                <tr><td data-label="#">7</td><td data-label="Fórmula">\[ \text{Igual sentido}\to\text{atracción} \]</td><td data-label="Nombre">Atracción/repulsión</td><td data-label="Ficha">7</td></tr>
+                                <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \vec F_{\text{total}}=\sum\vec F_i \]</td><td data-label="Nombre">Superposición</td><td data-label="Ficha">8</td></tr>
+                                <tr><td data-label="#">9</td><td data-label="Fórmula">\[ \vec B_{\text{total}}=\sum\vec B_i \]</td><td data-label="Nombre">Superposición B</td><td data-label="Ficha">8</td></tr>
+                                <tr><td data-label="#">10</td><td data-label="Fórmula">\[ I_1/r_1=I_2/r_2 \]</td><td data-label="Nombre">Punto nulo</td><td data-label="Ficha">9</td></tr>
+                                <tr><td data-label="#">11</td><td data-label="Fórmula">\[ \vec f=q\vec v\times\vec B\to\vec F=I\vec L\times\vec B \]</td><td data-label="Nombre">Origen microscópico</td><td data-label="Ficha">10</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+            </details>
+
+            <div class="recordatorio-bloque">
+                <strong>Recordatorio B5–B7:</strong> la <strong>fuerza de Lorentz</strong> \(\vec F_m=q\vec v\times\vec B\) es la base del magnetismo. El <strong>campo de un hilo</strong> es \(B=\mu_0I/(2\pi r)\) con líneas circulares (mano derecha). La <strong>ley de Laplace</strong> \(\vec F=I\vec L\times\vec B\) describe la fuerza sobre un conductor. Para dos hilos paralelos: \(F/L=\mu_0I_1I_2/(2\pi d)\), con <strong>mismo sentido = atracción</strong>. Recuerda: \(W_m=0\) y \(\vec B\) no conservativo (\(\oint\vec B\cdot d\vec l=\mu_0I\)) no se contradicen: son cosas distintas.
+            </div>
+        </div>
+    </details>
+
+    <!-- ================================================================
+         B8 · LÍNEAS DE CAMPO (SÍNTESIS)
+         ================================================================ -->
+    <details class="tema-bloque B8" id="tema-B8">
+        <summary>
+            <span class="tema-num">B8</span>
+            <span class="tema-titulo">Líneas de campo eléctrico y magnético (síntesis gráfica)</span>
+            <span class="tema-meta">10 fichas</span>
+        </summary>
+
+        <div class="tema-body">
+            <div class="grid">
+
+                <!-- B8 · FICHA 1 (plantilla) -->
+                <article class="card c-3">
+                    <div class="cabecera">
+                        <span class="num">1</span>
+                        <h2>¿Qué es una línea de campo?</h2>
+                        <span class="badge-centro">Definición</span>
+                    </div>
+                    <div class="epi-chips">
+                        <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+                    </div>
+                    <div class="intro">
+                        <span class="etiqueta">¿Qué se calcula?</span>
+                        La relación entre la línea de campo y el vector campo en cada punto. Punto de partida de todo el tema.
+                    </div>
+                    <div class="formula-box" id="formula-B8-1">
+                        \[ \text{Tangente a la línea de campo} \parallel \vec E\ (\text{o }\vec B) \]
+                    </div>
+                    <p class="note">
+                        <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                        <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí, es la definición: (1) tangente = dirección; (2) flecha = sentido; (3) densidad = intensidad relativa. Las líneas <strong>nunca se cortan</strong>.</span>
+                    </p>
+                    <table class="mag-table">
+                        <thead><tr><th>Aspecto</th><th>Qué indica</th></tr></thead>
+                        <tbody>
+                            <tr><td data-label="Aspecto">Dirección</td><td data-label="Qué indica">Tangente a la línea.</td></tr>
+                            <tr><td data-label="Aspecto">Sentido</td><td data-label="Qué indica">Flecha de la línea.</td></tr>
+                            <tr><td data-label="Aspecto">Intensidad</td><td data-label="Qué indica">Densidad de líneas.</td></tr>
+                            <tr><td data-label="Aspecto">Continuidad</td><td data-label="Qué indica">NO se cortan.</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="ejemplo"><strong>Ejemplo:</strong> en un campo uniforme las líneas son rectas paralelas equidistantes: la tangente coincide con la propia recta.</p>
+                    <div class="obs">
+                        <span class="titulo-obs">Observaciones de interés</span>
+                        <ul>
+                            <li>Si dos líneas se cortasen, el campo tendría dos direcciones en un punto: imposible.</li>
+                            <li>No son trayectorias de partículas.</li>
+                            <li>Se aplica igual a \(\vec E\) y a \(\vec B\).</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- B8 · FICHA 8 (plantilla) -->
+                <article class="card c-1">
+                    <div class="cabecera">
+                        <span class="num">8</span>
+                        <h2>Líneas cerradas del campo magnético</h2>
+                        <span class="badge-centro">Concepto</span>
+                    </div>
+                    <div class="epi-chips">
+                        <span class="epi-chip comprender">🧭 Comprender · Concepto fundamental</span>
+                    </div>
+                    <div class="intro">
+                        <span class="etiqueta">¿Qué expresa?</span>
+                        Que las líneas de \(\vec B\) son siempre cerradas (no hay monopolos).
+                    </div>
+                    <div class="formula-box" id="formula-B8-8">
+                        \[ \oint_S\vec B\cdot d\vec S=0 \Longleftrightarrow \nabla\cdot\vec B=0 \]
+                    </div>
+                    <p class="note">
+                        <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                        <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No es fórmula numérica: es una propiedad conceptual. <strong>Las líneas de \(\vec B\) son cerradas</strong>; no hay monopolos.</span>
+                    </p>
+                    <table class="mag-table">
+                        <thead><tr><th>Propiedad</th><th>\(\vec E\)</th><th>\(\vec B\)</th></tr></thead>
+                        <tbody>
+                            <tr><td data-label="Propiedad">Líneas</td><td data-label="E">Abiertas</td><td data-label="B">Cerradas</td></tr>
+                            <tr><td data-label="Propiedad">Monopolos</td><td data-label="E">Sí</td><td data-label="B">No</td></tr>
+                            <tr><td data-label="Propiedad">Divergencia</td><td data-label="E">\(\rho/\varepsilon_0\)</td><td data-label="B">0</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="ejemplo"><strong>Ejemplo:</strong> al partir un imán, no se obtiene un polo norte aislado, sino dos imanes pequeños.</p>
+                    <div class="obs">
+                        <span class="titulo-obs">Observaciones de interés</span>
+                        <ul>
+                            <li>En imán: exterior N→S, interior S→N; circuito cerrado.</li>
+                            <li>No confundir \(\nabla\cdot\vec B=0\) con Ampère.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- ============ RESTO DE FICHAS B8 (pegar aquí) ============ -->
+                <!--
+                    PEGAR AQUÍ fichas 2..7, 9..10 del TemaB8-Formulario.html.
+                    Renombrar id="formula-N" → id="formula-B8-N".
+                -->
+
+            </div><!-- /.grid -->
+
+            <details class="glosario">
+                <summary>📖 Glosario B8</summary>
+                <table class="mag-table">
+                    <thead><tr><th>#</th><th>Fórmula / regla</th><th>Nombre</th><th>Ficha</th></tr></thead>
+                    <tbody>
+                        <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \text{Tangente} \parallel \vec E\ (\text{o }\vec B) \]</td><td data-label="Nombre">Definición línea de campo</td><td data-label="Ficha">1</td></tr>
+                        <tr><td data-label="#">2</td><td data-label="Fórmula">\[ E=K|q|/r^2 \]</td><td data-label="Nombre">Campo puntual</td><td data-label="Ficha">2</td></tr>
+                        <tr><td data-label="#">3</td><td data-label="Fórmula">\[ q>0:\text{salen};\ q<0:\text{entran} \]</td><td data-label="Nombre">Sentido</td><td data-label="Ficha">2</td></tr>
+                        <tr><td data-label="#">4</td><td data-label="Fórmula">\[ \vec E_{\text{tot}}=\sum\vec E_i \]</td><td data-label="Nombre">Superposición E</td><td data-label="Ficha">3</td></tr>
+                        <tr><td data-label="#">5</td><td data-label="Fórmula">\[ E=|\Delta V|/d \]</td><td data-label="Nombre">Campo uniforme</td><td data-label="Ficha">4</td></tr>
+                        <tr><td data-label="#">6</td><td data-label="Fórmula">\[ B=\mu_0I/(2\pi r) \]</td><td data-label="Nombre">Hilo recto</td><td data-label="Ficha">5</td></tr>
+                        <tr><td data-label="#">7</td><td data-label="Fórmula">\[ \text{Pulgar}=I\Rightarrow\text{Dedos}=\vec B \]</td><td data-label="Nombre">Mano derecha</td><td data-label="Ficha">6</td></tr>
+                        <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \vec B_{\text{tot}}=\sum\vec B_i \]</td><td data-label="Nombre">Superposición B</td><td data-label="Ficha">7</td></tr>
+                        <tr><td data-label="#">9</td><td data-label="Fórmula">\[ \nabla\cdot\vec B=0 \]</td><td data-label="Nombre">Líneas cerradas</td><td data-label="Ficha">8</td></tr>
+                        <tr><td data-label="#">10</td><td data-label="Fórmula">\[ \vec E=-\nabla V \]</td><td data-label="Nombre">Equipotenciales \(\perp\)</td><td data-label="Ficha">9</td></tr>
+                        <tr><td data-label="#">11</td><td data-label="Fórmula">\[ I_1/r_1=I_2/r_2 \]</td><td data-label="Nombre">Punto nulo</td><td data-label="Ficha">10</td></tr>
+                    </tbody>
+                </table>
+            </details>
+
+            <div class="recordatorio-bloque">
+                <strong>Recordatorio B8:</strong> una línea de campo es una curva cuya tangente coincide con el vector campo. <strong>Eléctricas: salen de +, entran en −</strong>. <strong>Magnéticas: cerradas</strong> (no monopolos). El campo eléctrico es \(\perp\) a las equipotenciales y apunta hacia \(V\) decreciente. Sentido del campo magnético por <strong>mano derecha</strong> con corriente convencional. Densidad de líneas = intensidad relativa. En campos uniformes: rectas paralelas equidistantes.
+            </div>
+        </div>
+    </details>
+
+    <!-- ================================================================
+         B9 · INDUCCIÓN ELECTROMAGNÉTICA
+         ================================================================ -->
+    <details class="tema-bloque B9" id="tema-B9">
+        <summary>
+            <span class="tema-num">B9</span>
+            <span class="tema-titulo">Inducción: flujo, Faraday-Henry y Lenz</span>
+            <span class="tema-meta">10 fichas</span>
+        </summary>
+
+        <div class="tema-body">
+            <div class="grid">
+
+                <!-- B9 · FICHA 3 (plantilla) -->
+                <article class="card c-5">
+                    <div class="cabecera">
+                        <span class="num">3</span>
+                        <h2>Ley de Faraday-Henry</h2>
+                        <span class="badge-centro">Aplicación</span>
+                    </div>
+                    <div class="epi-chips">
+                        <span class="epi-chip aplicar">⚖️ Aplicar · Ley fundamental</span>
+                    </div>
+                    <div class="intro">
+                        <span class="etiqueta">¿Qué se calcula?</span>
+                        La fem inducida cuando varía el flujo magnético. Fórmula central del tema.
+                    </div>
+                    <div class="formula-box" id="formula-B9-3">
+                        \[ \varepsilon = -\frac{d\Psi}{dt} = -N\,\frac{d\Phi_B}{dt} \]
+                    </div>
+                    <p class="note">
+                        <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                        <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: <strong>con el signo negativo</strong>. No importa el valor del flujo, sino su <strong>rapidez de cambio</strong>.</span>
+                    </p>
+                    <table class="mag-table">
+                        <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
+                        <tbody>
+                            <tr><td data-label="Símbolo">\(\varepsilon\)</td><td data-label="Significado">Fem inducida</td><td data-label="Unidades">V</td></tr>
+                            <tr><td data-label="Símbolo">\(\Psi\)</td><td data-label="Significado">Flujo concatenado</td><td data-label="Unidades">Wb</td></tr>
+                            <tr><td data-label="Símbolo">\(N\)</td><td data-label="Significado">Número de espiras</td><td data-label="Unidades">—</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="ejemplo"><strong>Ejemplo:</strong> bobina \(N=80\), \(\Psi=0{,}12+0{,}048t^2\) ⟹ \(\varepsilon=-0{,}096t\,\text{V}\).</p>
+                    <div class="obs">
+                        <span class="titulo-obs">Observaciones de interés</span>
+                        <ul>
+                            <li>Flujo constante ⟹ \(\varepsilon=0\).</li>
+                            <li>Signo negativo = Lenz.</li>
+                            <li>Forma media: \(\varepsilon_{\text{media}}=-\Delta\Psi/\Delta t\).</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- ============ RESTO DE FICHAS B9 (pegar aquí) ============ -->
+                <!--
+                    PEGAR AQUÍ fichas 1, 2, 4..9 del TemaB9-Formulario.html.
+                    Renombrar id="formula-N" → id="formula-B9-N".
+                -->
+
+            </div><!-- /.grid -->
+
+            <details class="glosario">
+                <summary>📖 Glosario B9</summary>
+                <table class="mag-table">
+                    <thead><tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr></thead>
+                    <tbody>
+                        <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \Phi_B=BS\cos\theta \]</td><td data-label="Nombre">Flujo por espira</td><td data-label="Ficha">1</td></tr>
+                        <tr><td data-label="#">2</td><td data-label="Fórmula">\[ \Psi=N\Phi_B \]</td><td data-label="Nombre">Flujo concatenado</td><td data-label="Ficha">2</td></tr>
+                        <tr><td data-label="#">3</td><td data-label="Fórmula">\[ \varepsilon=-d\Psi/dt \]</td><td data-label="Nombre">Faraday-Henry</td><td data-label="Ficha">3</td></tr>
+                        <tr><td data-label="#">4</td><td data-label="Fórmula">\[ \varepsilon_{\text{media}}=-\Delta\Psi/\Delta t \]</td><td data-label="Nombre">Fem media</td><td data-label="Ficha">4</td></tr>
+                        <tr><td data-label="#">5</td><td data-label="Fórmula">\[ \vec B_{\text{ind}}\text{ se opone a }\Delta\vec B_{\text{ext}} \]</td><td data-label="Nombre">Lenz</td><td data-label="Ficha">5</td></tr>
+                        <tr><td data-label="#">6</td><td data-label="Fórmula">\[ I=\varepsilon/R \]</td><td data-label="Nombre">Corriente inducida</td><td data-label="Ficha">6</td></tr>
+                        <tr><td data-label="#">7</td><td data-label="Fórmula">\[ \Psi(t)=NBS\cos(\omega t) \]</td><td data-label="Nombre">Bobina giratoria (flujo)</td><td data-label="Ficha">7</td></tr>
+                        <tr><td data-label="#">8</td><td data-label="Fórmula">\[ \varepsilon(t)=NBS\omega\sin(\omega t) \]</td><td data-label="Nombre">Bobina giratoria (fem)</td><td data-label="Ficha">8</td></tr>
+                        <tr><td data-label="#">9</td><td data-label="Fórmula">\[ \varepsilon_{\max}=NBS\omega \]</td><td data-label="Nombre">Fem máxima</td><td data-label="Ficha">9</td></tr>
+                        <tr><td data-label="#">10</td><td data-label="Fórmula">\[ \omega=2\pi f=\text{rpm}\cdot2\pi/60 \]</td><td data-label="Nombre">Velocidad angular</td><td data-label="Ficha">9</td></tr>
+                    </tbody>
+                </table>
+            </details>
+
+            <div class="recordatorio-bloque">
+                <strong>Recordatorio B9:</strong> lo que importa es la <strong>variación del flujo</strong>, no su valor. \(\varepsilon=-d\Psi/dt\) con <strong>signo negativo</strong> (Lenz: la corriente inducida se opone a la variación del flujo, no al flujo en sí). Usa \(\Psi=N\Phi_B\) en bobinas. En alternadores: \(\Psi=NBS\cos(\omega t)\), \(\varepsilon=NBS\omega\sin(\omega t)\), \(\varepsilon_{\max}=NBS\omega\). <strong>Convierte rpm a rad/s</strong> antes de sustituir.
+            </div>
+        </div>
+    </details>
+
+    <!-- ================================================================
+         LEYENDA EPISTÉMICA GLOBAL
+         ================================================================ -->
+    <article class="leyenda-global">
+        <div class="leyenda-header">
+            <h2>
+                <span>★</span>
+                Leyenda epistémica: ¿cómo se domina cada fórmula?
+                <span class="leyenda-badge">Leyenda</span>
+            </h2>
+        </div>
+        <div class="leyenda-cuerpo">
+
+            <p style="margin-top:0; color:#4a5568; font-size:.95rem;">
+                No todas las expresiones del bloque B se estudian igual. Cada fórmula o concepto
+                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
+                consecuencia matemática, principio, conversión o caso típico— y cada categoría se
+                domina con un <strong>verbo distinto</strong>. Identificar el tipo <em>antes</em> de
+                estudiar ahorra tiempo y evita memorizar lo que se puede deducir.
+            </p>
+
+            <div class="leyenda-epi-grid">
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">
+                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud o fija
+                        una relación básica. No se demuestra, se establece.
+                    </p>
+                    <p class="epi-ej"><strong>Ejemplos B1–B9</strong>
+                        \(\vec E=\vec F/q_0\) · \(V=E_p/q\) · \(\vec F_m=q\vec v\times\vec B\) · \(\Phi_B=BS\cos\theta\) · \(\lambda,\sigma,\rho\) (densidades) · \(\vec F=I\vec L\times\vec B\) · tangente a línea de campo · \(F=K|q_1q_2|/r^2\) · \(C=|Q|/|\Delta V|\) · \(P=1/f\)
+                    </p>
+                </div>
+
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental / concepto</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">
+                        Es el <em>punto de partida</em> del tema: describe cómo funciona la naturaleza.
+                        No se deriva de otra cosa; se entiende el porqué y las condiciones.
+                    </p>
+                    <p class="epi-ej"><strong>Ejemplos B1–B9</strong>
+                        Ley de Coulomb · fuerza de Lorentz · campo puntual \(E=K|q|/r^2\) · campo conservativo · ley de Gauss · campo magnético de corrientes · líneas cerradas (\(\nabla\cdot\vec B=0\)) · Ampère · Faraday-Henry · ley de Lenz
+                    </p>
+                </div>
+
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">
+                        Se <em>obtiene</em> integrando, despejando, derivando o sustituyendo. No se
+                        memoriza: se reconstruye en 2-3 líneas si se olvida.
+                    </p>
+                    <p class="epi-ej"><strong>Ejemplos B1–B9</strong>
+                        \(\vec E=Kq\vec r/r^3\) · \(V=KQ/r\) · \(W=q(V_A-V_B)\) · \(V_B-V_A=-\int\vec E\cdot d\vec r\) · \(E=|\Delta V|/d\) · \(C=\varepsilon S/d\) · \(B_{\text{eje}}\) · \(B(r)\) toroide · \(r=mv/(|q|B)\) · \(T=2\pi m/(|q|B)\) · \(\varepsilon(t)=NBS\omega\sin(\omega t)\) · \(x=d\sqrt{|q_1|}/(\sqrt{|q_1|}+\sqrt{|q_2|})\) · \(I_1/r_1=I_2/r_2\) · \(F/L=\mu_0I_1I_2/(2\pi d)\) · \(x=h\tan\theta_r\) (C5) · \(m=-v/u\) (C6)
+                    </p>
+                </div>
+
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Aplicar / principio</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">
+                        Es una <em>regla o criterio</em> que se aplica como filtro a cada problema.
+                        No se demuestra: se usa para resolver o comprobar coherencia.
+                    </p>
+                    <p class="epi-ej"><strong>Ejemplos B1–B9</strong>
+                        \(\vec E_R=\sum\vec E_i\) · \(\vec B_R=\sum\vec B_i\) · \(\Delta E_p=q\Delta V\) · \(W_{\text{campo}}=-\Delta E_p\) · \(W_{\text{ext}}=-W_{\text{campo}}\) · \(\vec F=q\vec E\) · \(v=E/B\) (selector) · \(F_m=0\) si \(\vec v\parallel\vec B\) · Lenz (corriente se opone a \(\Delta\Phi\)) · \(\vec B_{\text{total}}\) y \(\vec E_{\text{total}}\) (ambos vectoriales)
+                    </p>
+                </div>
+
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Automatizar / conversión</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">
+                        Es una <em>herramienta mecánica</em> (cambio de unidades) o un <em>caso típico</em>
+                        muy repetido que conviene aplicar como reflejo.
+                    </p>
+                    <p class="epi-ej"><strong>Conversiones:</strong>
+                        \(\mu\text{C}\leftrightarrow\text{C}\) · \(\text{nC}\leftrightarrow\text{C}\) · \(\text{cm}\leftrightarrow\text{m}\) · \(\text{mm}\leftrightarrow\text{m}\) · \(\text{u}\leftrightarrow\text{kg}\) · \(\text{eV}\leftrightarrow\text{J}\) · \(\text{N/C}\leftrightarrow\text{V/m}\) · \(\text{rpm}\leftrightarrow\text{rad/s}\) · \(\text{Wb}\leftrightarrow\text{T·m}^2\) · \(\text{T}\leftrightarrow\text{N/(A·m)}\)
+                    </p>
+                    <p class="epi-ej"><strong>Casos típicos:</strong>
+                        \(E=|\Delta V|/d\) (placas) · \(B=\mu_0I/(2\pi r)\) (hilo) · \(B=\mu_0NI/(2R)\) (espira) · \(B=\mu_0nI\) (solenoide) · \(F/L=\mu_0I_1I_2/(2\pi d)\) (hilos paralelos) · \(\varepsilon_{\max}=NBS\omega\) (alternador) · \(v=E/B\) (selector)
+                    </p>
+                </div>
+            </div>
+
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Verbo</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo se domina?</th>
+                        <th>Autoevaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
+                        <td data-label="¿Qué es?">Vocabulario del tema</td>
+                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
+                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
+                        <td data-label="¿Qué es?">Punto de partida físico</td>
+                        <td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td>
+                        <td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
+                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
+                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
+                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio / criterio</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
+                        <td data-label="¿Qué es?">Regla universal de resolución</td>
+                        <td data-label="¿Cómo se domina?">Plantearla en cada problema</td>
+                        <td data-label="Autoevaluación">¿La aplico como filtro al problema?</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión / caso típico</strong></td>
+                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
+                        <td data-label="¿Qué es?">Herramienta mecánica o caso muy repetido</td>
+                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
+                        <td data-label="Autoevaluación">¿Me sale sin pensar?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
+                pregúntate <strong>«¿de dónde sale esto?»</strong>.
+                Si sale de otra fórmula derivando, integrando o sustituyendo → <strong>consecuencia</strong> (deducir).
+                Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender).
+                Si solo asigna un nombre → <strong>definición</strong> (memorizar).
+                Si es una regla o criterio que se cumple siempre → <strong>principio</strong> (aplicar).
+                Si es una conversión o un caso muy repetido → <strong>automatizar</strong>.
+            </div>
+
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Leyes fundamentales</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Derivadas</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Definiciones</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Aplicaciones</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Principios y casos</span>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- RECORDATORIO GLOBAL -->
+    <div class="recordatorio-bloque" style="background:#fff; border-left-color:#2d3748; margin:32px 0;">
+        <strong>Recordatorio global (visión de conjunto):</strong>
+        <ul style="margin:10px 0 0 20px; padding:0;">
+            <li><strong>B1 · Cargas:</strong> Coulomb \(F=K|q_1q_2|/r^2\) y Lorentz \(\vec F=q(\vec E+\vec v\times\vec B)\). <strong>Campos y fuerzas vectoriales</strong>; potencial y energía escalares. Mano derecha; si \(q<0\) se invierte.</li>
+            <li><strong>B2–B4 · Electrostática:</strong> \(\vec E\) se suma vectorialmente; \(V\) escalarmente. \(\vec E=-\nabla V\), \(\perp\) a equipotenciales, apunta hacia \(V\) decreciente. \(E=|\Delta V|/d\) en placas. \(W_{\text{campo}}=-\Delta E_p\). No confundir \(W_{\text{campo}}\) con \(W_{\text{ext}}\) (opuestos).</li>
+            <li><strong>B5–B7 · Magnetismo:</strong> \(\vec F_m=q\vec v\times\vec B\); \(W_m=0\); \(\vec B\) no conservativo. Campos: hilo (\(\mu_0I/2\pi r\)), espira (\(\mu_0NI/2R\)), solenoide (\(\mu_0nI\)). Laplace \(\vec F=I\vec L\times\vec B\). <strong>Hilos paralelos: mismo sentido → atracción; opuestos → repulsión.</strong></li>
+            <li><strong>B8 · Líneas:</strong> tangente = dirección; densidad = intensidad. <strong>Eléctricas abiertas (+→−); magnéticas cerradas</strong> (no monopolos).</li>
+            <li><strong>B9 · Inducción:</strong> \(\varepsilon=-d\Psi/dt\) (Lenz: se opone a la variación del flujo). Alternador: \(\Psi=NBS\cos(\omega t)\), \(\varepsilon=NBS\omega\sin(\omega t)\). RPM→rad/s.</li>
+        </ul>
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div><!-- /.container -->
+
+<button class="btn-arriba" id="btnArriba" aria-label="Volver arriba">↑</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    /* ---------- 1) Abrir <details> al navegar ---------- */
+    function abrirDetallesDe(nodo) {
+        if (!nodo) return;
+        if (nodo.tagName === 'DETAILS') nodo.open = true;
+        var padre = nodo.parentElement;
+        while (padre) {
+            if (padre.tagName === 'DETAILS') padre.open = true;
+            padre = padre.parentElement;
+        }
+        nodo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    if (window.location.hash) {
+        var destino = document.querySelector(window.location.hash);
+        abrirDetallesDe(destino);
+    }
+
+    document.querySelectorAll('.nav-temario a').forEach(function (enlace) {
+        enlace.addEventListener('click', function (e) {
+            var id = this.getAttribute('href');
+            if (id && id.startsWith('#')) {
+                var destino = document.querySelector(id);
+                if (destino) {
+                    e.preventDefault();
+                    abrirDetallesDe(destino);
+                    history.replaceState(null, '', id);
+                }
+            }
+        });
+    });
+
+    /* ---------- 2) Resaltado de fórmula desde la URL ---------- */
+    var hash = window.location.hash;
+    if (hash && hash.startsWith('#formula-')) {
+        var card = document.querySelector(hash);
+        if (card) {
+            abrirDetallesDe(card);
+            card.scrollIntoView({ behavior: 'auto', block: 'center' });
+            card.classList.remove('formula-resaltada');
+            void card.offsetWidth;
+            card.classList.add('formula-resaltada');
+            setTimeout(function () { card.classList.remove('formula-resaltada'); }, 2600);
+        }
+    }
+
+    /* ---------- 3) Botón "volver arriba" ---------- */
+    var btnArriba = document.getElementById('btnArriba');
+    window.addEventListener('scroll', function () {
+        btnArriba.classList.toggle('visible', window.scrollY > 400);
+    });
+    btnArriba.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+</script>
+
+</body>
+</html>

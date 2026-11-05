@@ -8,6 +8,22 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <link rel="stylesheet" href="../css/formulario.css">
+
+    <!-- Wrap y scroll horizontal para fórmulas largas -->
+    <style>
+        .formula-box {
+            overflow-wrap: break-word;
+            word-break: break-word;
+            max-width: 100%;
+        }
+        .formula-box mjx-container[jax="CHTML"][display="true"],
+        .formula-box mjx-container[jax="SVG"][display="true"] {
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+            padding-bottom: 2px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -42,7 +58,7 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 La fuerza eléctrica por unidad de carga de prueba positiva que una distribución de carga ejerce en un punto del espacio. Se aplica para describir el campo creado por cualquier configuración sin especificar la carga que se va a colocar después. Es la magnitud fundamental de todo el tema: de ella se deducen la fuerza sobre una carga, la superposición y el flujo.
             </div>
-            <a href="TemaB2.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
+            <a href="TemaB2.html#formula-1" title="Ver esta fórmula en el tema B2" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-1">
                 \[ \vec E = \frac{\vec F}{q_0} \]
                 \[ [E] = \text{N}\cdot\text{C}^{-1} = \text{V}\cdot\text{m}^{-1} \]
@@ -89,7 +105,7 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 El módulo del campo eléctrico creado por una carga puntual \(q\) a una distancia \(r\) de ella. Se aplica siempre que la carga se pueda considerar puntual (o cuando el punto está en el exterior de una distribución esférica de carga). Es el punto de partida del tema: de aquí se deduce la expresión vectorial, el potencial y el teorema de Gauss.
             </div>
-            <a href="TemaB2.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
+            <a href="TemaB2.html#formula-2" title="Ver esta fórmula en el tema B2" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-2">
                 \[ E = K_0\,\frac{|q|}{r^{2}} \]
                 \[ K_0 = \frac{1}{4\pi\varepsilon_0} \approx 9{,}00\cdot10^{9}\,\text{N}\cdot\text{m}^{2}\cdot\text{C}^{-2} \]
@@ -138,7 +154,7 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 El vector campo que una carga puntual \(q\) crea en un punto \(P\), con su dirección y sentido. Se aplica cuando hay varias cargas y hay que sumar contribuciones vectoriales. Es la forma correcta de trabajar antes de aplicar superposición.
             </div>
-            <a href="TemaB2.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
+            <a href="TemaB2.html#formula-3" title="Ver esta fórmula en el tema B2" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-3">
                 \[ \vec E(\vec r) = K_0\,\frac{q}{r^{3}}\,\vec r \]
                 \[ \vec E_i(P) = K_0\,q_i\,\frac{\vec r_P-\vec r_i}{|\vec r_P-\vec r_i|^{3}} \]
@@ -185,7 +201,7 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 El campo eléctrico resultante de varias cargas puntuales en un mismo punto. Se aplica en cualquier problema con dos o más cargas: se calcula cada contribución por separado y se suman vectorialmente. Es el <strong>principio central</strong> de los problemas tipo B2.
             </div>
-            <a href="TemaB2.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
+            <a href="TemaB2.html#formula-4" title="Ver esta fórmula en el tema B2" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-4">
                 \[ \vec E_R = \vec E_1 + \vec E_2 + \dots + \vec E_n = \sum_i \vec E_i \]
                 \[ \vec E(P) = K_0\sum_i q_i\,\frac{\vec r_P-\vec r_i}{|\vec r_P-\vec r_i|^{3}} \]
@@ -232,7 +248,7 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 Las componentes cartesianas del campo total y, a partir de ellas, el módulo y la dirección del campo resultante. Se aplica siempre que haya que sumar campos que no son colineales: en triángulos, cuadrados y configuraciones arbitrarias del plano XY.
             </div>
-            <a href="TemaB2.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
+            <a href="TemaB2.html#formula-5" title="Ver esta fórmula en el tema B2" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-5">
                 \[ E_x = \sum_i E_{ix} \]
                 \[ E_y = \sum_i E_{iy} \]
@@ -281,7 +297,7 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 La cantidad de carga por unidad de longitud, superficie o volumen en una distribución continua. Se aplica para describir cómo se reparte la carga antes de integrar y para expresar \(\mathrm dq\) en función de la geometría.
             </div>
-            <a href="TemaB2.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
+            <a href="TemaB2.html#formula-6" title="Ver esta fórmula en el tema B2" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-6">
                 \[ \lambda = \frac{\mathrm dq}{\mathrm dl} \]
                 \[ \sigma = \frac{\mathrm dq}{\mathrm dS} \]
@@ -328,7 +344,7 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 El campo eléctrico creado por una distribución continua de carga (hilo, superficie o volumen). Se aplica cuando la carga no está concentrada en puntos y hay que sumar la contribución de todos los elementos de carga. La suma se convierte en una integral vectorial.
             </div>
-            <a href="TemaB2.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
+            <a href="TemaB2.html#formula-7" title="Ver esta fórmula en el tema B2" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-7">
                 \[ \mathrm d\vec E = K_0\,\frac{\mathrm dq}{r^{2}}\,\hat u_r \]
                 \[ \vec E = K_0\int\frac{\hat u_r}{r^{2}}\,\mathrm dq \]
@@ -375,7 +391,7 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 La cantidad de campo eléctrico que atraviesa una superficie. Se aplica para cuantificar el campo a través de una superficie plana en un campo uniforme y como paso previo al teorema de Gauss. Es una magnitud escalar, no vectorial.
             </div>
-            <a href="TemaB2.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
+            <a href="TemaB2.html#formula-8" title="Ver esta fórmula en el tema B2" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-8">
                 \[ \Phi_E = \vec E\cdot\vec S = E\,S\cos\theta \]
                 \[ [\Phi_E] = \text{N}\cdot\text{m}^{2}\cdot\text{C}^{-1} = \text{V}\cdot\text{m} \]
@@ -422,8 +438,9 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 El flujo eléctrico neto a través de cualquier superficie cerrada, igual a la carga neta encerrada dividida por \(\varepsilon_0\). Se aplica para calcular campos de distribuciones con simetría (esfera, cilindro, plano) y para relacionar flujo y carga.
             </div>
-            <a href="TemaB2.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
+            <a href="TemaB2.html#formula-9" title="Ver el flujo por superficie cerrada y el teorema de Gauss en el tema B2" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-9">
+                \[ \Phi_E = \oint_S \vec E\cdot\mathrm d\vec S \]
                 \[ \oint_S \vec E\cdot\mathrm d\vec S = \frac{Q_{\text{enc}}}{\varepsilon_0} \]
             </div>
             </a>
@@ -467,7 +484,7 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 El campo eléctrico de distribuciones continuas con simetría esférica, cilíndrica o plana, eligiendo la superficie gaussiana adecuada. Se aplica a esferas cargadas, hilos indefinidos y planos infinitos; es la forma práctica de usar el teorema de Gauss sin integrales complicadas.
             </div>
-            <a href="TemaB2.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
+            <a href="TemaB2.html#formula-10" title="Ver esta fórmula en el tema B2" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-10">
                 \[ E = K_0\,\frac{|Q|}{r^{2}} \]
                 \[ E = \frac{|\lambda|}{2\pi\varepsilon_0 r} \]
@@ -514,7 +531,7 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 La posición del punto entre dos cargas del mismo signo donde el campo eléctrico total se anula. Se aplica en problemas típicos de EBAU con dos cargas positivas separadas una distancia \(d\). El punto está siempre entre ellas y más cerca de la de menor valor absoluto.
             </div>
-            <a href="TemaB2.html#formula-11" style="text-decoration:none; color:inherit; display:block;">
+            <a href="TemaB2.html#formula-11" title="Ver esta fórmula en el tema B2" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-11">
                 \[ K_0\,\frac{|q_1|}{x^{2}} = K_0\,\frac{|q_2|}{(d-x)^{2}} \]
                 \[ x = d\,\frac{\sqrt{|q_1|}}{\sqrt{|q_1|}+\sqrt{|q_2|}} \]
@@ -562,7 +579,7 @@
                 <span class="etiqueta">¿Qué se calcula?</span>
                 La fuerza eléctrica que experimenta una carga \(q\) al colocarla en un punto donde existe un campo \(\vec E\). Se aplica para conectar los problemas de fuerza de Coulomb con los de campo y para determinar el movimiento de cargas en campos eléctricos.
             </div>
-            <a href="TemaB2.html#formula-12" style="text-decoration:none; color:inherit; display:block;">
+            <a href="TemaB2.html#formula-12" title="Ver esta fórmula en el tema B2" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-12">
                 \[ \vec F = q\,\vec E \]
             </div>

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TEMA C4 (Formulario).- Propagación y fenómenos ondulatorios</title>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../css/formulario.css">
+
+    <!-- Enlaces bidireccionales: la fórmula es el vínculo -->
+    <style>
+        .formula-box { overflow-x: auto; max-width: 100%; }
+        .formula-box a.formula-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 8px;
+            padding: 2px 6px;
+            margin: 2px 0;
+            transition: background .15s ease;
+        }
+        .formula-box a.formula-link:hover {
+            background: rgba(99,102,241,0.10);
+        }
+        .formula-box a.formula-link:focus-visible {
+            outline: 2px dashed #6366f1;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto" alt="Cápsula">
+                <span class="codigo">#TEMA C4 (Formulario).- </span>
+                <span class="texto">Propagación y fenómenos ondulatorios</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro" width="1000">
+        </div>
+    </div>
+
+    <div class="grid">
+
+        <!-- FICHA 1 -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">1</span>
+                <h2>Índice de refracción absoluto</h2>
+                <span class="badge-centro">Definición</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El índice de refracción absoluto de un medio para la luz, que es el cociente entre la velocidad de la luz en el vacío y su velocidad en ese medio. Se aplica para caracterizar ópticamente un material y aparece en la ley de Snell, en el ángulo límite y en la relación entre velocidades y longitudes de onda.
+            </div>
+            <div class="formula-box" id="formula-1">
+                <a href="TemaC4.html#tc4-n" class="formula-link">\[ n = \frac{c_0}{v} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la definición de índice de refracción y aparece continuamente. Memoriza \(n=c_0/v\) y su valor para el aire \(n_{\text{aire}}\approx1\); para el agua \(n_{\text{agua}}\approx1{,}33\); y para el vidrio \(n_{\text{vidrio}}\approx1{,}5\). Recuerda que \(n\) es adimensional y que \(n\geq1\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(n\)</td><td data-label="Significado">Índice de refracción absoluto del medio</td><td data-label="Unidades">adimensional</td></tr>
+                    <tr><td data-label="Símbolo">\(c_0\)</td><td data-label="Significado">Velocidad de la luz en el vacío</td><td data-label="Unidades">m/s</td></tr>
+                    <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Velocidad de la luz en el medio</td><td data-label="Unidades">m/s</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para el agua con \(v=2{,}26\cdot10^8\,\text{m/s}\), \(n=3{,}00\cdot10^8/2{,}26\cdot10^8\approx1{,}33\). Para el vidrio con \(n=1{,}5\), \(v=c_0/n=2{,}0\cdot10^8\,\text{m/s}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Como \(v\leq c_0\), entonces \(n\geq1\).</li>
+                    <li>En el vacío \(v=c_0\), por lo que \(n=1\).</li>
+                    <li>El índice depende de la longitud de onda (dispersión cromática).</li>
+                    <li>Un medio con mayor \(n\) se llama <strong>ópticamente más denso</strong>: la luz se propaga más despacio.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 2 -->
+        <article class="card c-1">
+            <div class="cabecera">
+                <span class="num">2</span>
+                <h2>Ley de Snell (refracción)</h2>
+                <span class="badge-centro">Fundamental</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley fundamental</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La relación entre los ángulos de incidencia y refracción cuando la luz pasa de un medio a otro con distinto índice. Se aplica en cualquier problema de refracción: calcular ángulos, índices o velocidades a partir de los datos geométricos de un rayo que cambia de medio. Es la ley central del tema.
+            </div>
+            <div class="formula-box" id="formula-2">
+                <a href="TemaC4.html#tc4-snell" class="formula-link">\[ n_1\,\sin\theta_1 = n_2\,\sin\theta_2 \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la ley fundamental de la refracción. Memoriza \(n_1\sin\theta_1=n_2\sin\theta_2\) con los ángulos medidos <strong>siempre respecto a la normal</strong>. Cuidado: si el enunciado da el ángulo respecto a la superficie, hay que convertirlo con \(\theta=90^\circ-\alpha\). Comprueba el resultado: al entrar en un medio de mayor \(n\), el rayo se acerca a la normal (\(\theta_2<\theta_1\)).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(n_1,\,n_2\)</td><td data-label="Significado">Índices del medio de incidencia y del refractado</td><td data-label="Unidades">adimensional</td></tr>
+                    <tr><td data-label="Símbolo">\(\theta_1\)</td><td data-label="Significado">Ángulo de incidencia (respecto a la normal)</td><td data-label="Unidades">rad o °</td></tr>
+                    <tr><td data-label="Símbolo">\(\theta_2\)</td><td data-label="Significado">Ángulo de refracción (respecto a la normal)</td><td data-label="Unidades">rad o °</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un rayo que incide desde el aire (\(n_1=1\)) con \(\theta_1=30^\circ\) sobre el vidrio (\(n_2=1{,}5\)): \(\sin\theta_2=\sin30^\circ/1{,}5=0{,}333\to\theta_2\approx19{,}5^\circ\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>El rayo incidente, la normal y el rayo refractado están en el mismo plano.</li>
+                    <li>Si \(n_2>n_1\), el rayo se acerca a la normal; si \(n_2<n_1\), se aleja.</li>
+                    <li>Con incidencia normal (\(\theta_1=0^\circ\)), no cambia de dirección.</li>
+                    <li>Es reversible: si se invierte el sentido del rayo, se cumple con los mismos ángulos.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 3 -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">3</span>
+                <h2>Ley de la reflexión</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Ley geométrica</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El ángulo del rayo reflejado cuando una onda incide sobre una superficie de separación. Se aplica en problemas de espejos, superficies planas y también junto a la refracción para determinar ángulos entre rayos reflejados y refractados.
+            </div>
+            <div class="formula-box" id="formula-3">
+                <a href="TemaC4.html#tc4-reflexion" class="formula-link">\[ \theta_i = \theta_r \]</a>
+                <span class="small" style="display:block; margin-top:6px;">Ángulo de incidencia = ángulo de reflexión (medidos respecto a la normal).</span>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí, es una ley sencilla y muy usada. Memoriza: <strong>ángulo de incidencia = ángulo de reflexión</strong>, ambos respecto a la normal. Cuidado con los problemas en los que el enunciado da el ángulo entre el incidente y el reflejado: ese ángulo es \(2\theta_i\). El incidente, la normal y el reflejado están en el mismo plano.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\theta_i\)</td><td data-label="Significado">Ángulo de incidencia (respecto a la normal)</td><td data-label="Unidades">rad o °</td></tr>
+                    <tr><td data-label="Símbolo">\(\theta_r\)</td><td data-label="Significado">Ángulo de reflexión (respecto a la normal)</td><td data-label="Unidades">rad o °</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si un rayo incide formando \(30^\circ\) con la normal, el reflejado también forma \(30^\circ\) con la normal. El ángulo entre incidente y reflejado es \(60^\circ\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Se cumple en reflexión especular (superficies lisas).</li>
+                    <li>En reflexión difusa (superficies rugosas) no hay una dirección preferente.</li>
+                    <li>El rayo reflejado es simétrico al incidente respecto a la normal.</li>
+                    <li>Es independiente del índice de refracción (siempre que no cambie de medio).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 4 -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">4</span>
+                <h2>Qué cambia al pasar de un medio a otro</h2>
+                <span class="badge-centro">Relación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                Al refractarse una onda, qué magnitudes se conservan (frecuencia y periodo) y cuáles cambian (velocidad, longitud de onda y dirección). Se aplica en los problemas que piden longitudes de onda en distintos medios o comparan velocidades.
+            </div>
+            <div class="formula-box" id="formula-4">
+                <a href="TemaC4.html#tc4-cambio-medio" class="formula-link">\[ f_1 = f_2 \]</a>
+                <a href="TemaC4.html#tc4-cambio-medio" class="formula-link">\[ T_1 = T_2 \]</a>
+                <a href="TemaC4.html#tc4-cambio-medio" class="formula-link">\[ \frac{\lambda_2}{\lambda_1} = \frac{v_2}{v_1} = \frac{n_1}{n_2} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se deduce de \(v=\lambda f\), teniendo en cuenta que la <strong>frecuencia la impone la fuente y se mantiene</strong> al cambiar de medio. Idea clave: \(f\) y \(T\) no cambian; \(v\) y \(\lambda\) sí lo hacen, en la misma proporción. Error típico en la EBAU: cambiar \(f\) al refractarse.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Magnitud</th><th>¿Cambia?</th><th>Relación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Magnitud">Frecuencia \(f\)</td><td data-label="¿Cambia?">No</td><td data-label="Relación">\(f_1=f_2\) (la fija la fuente)</td></tr>
+                    <tr><td data-label="Magnitud">Periodo \(T\)</td><td data-label="¿Cambia?">No</td><td data-label="Relación">\(T=1/f\)</td></tr>
+                    <tr><td data-label="Magnitud">Velocidad \(v\)</td><td data-label="¿Cambia?">Sí</td><td data-label="Relación">\(v=c_0/n\)</td></tr>
+                    <tr><td data-label="Magnitud">Longitud de onda \(\lambda\)</td><td data-label="¿Cambia?">Sí</td><td data-label="Relación">\(\lambda=v/f\)</td></tr>
+                    <tr><td data-label="Magnitud">Dirección</td><td data-label="¿Cambia?">En general, sí</td><td data-label="Relación">La determina Snell (no cambia si \(\theta_1=0\))</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> luz de \(f=5{,}2\cdot10^{14}\,\text{Hz}\) pasa del aire al agua (\(n=1{,}33\)). En el aire: \(\lambda=577\,\text{nm}\). En el agua: \(\lambda=577/1{,}33=434\,\text{nm}\). La frecuencia no cambia.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>\(f\) constante es la condición que permite usar la misma ecuación de onda en ambos medios.</li>
+                    <li>La dispersión cromática se debe a que \(n\) depende de \(\lambda\), y cada color tiene su propia \(\lambda\).</li>
+                    <li>Al cambiar de medio, si \(n_2>n_1\), entonces \(v_2<v_1\) y \(\lambda_2<\lambda_1\).</li>
+                    <li>Si el medio no dispersa, todos los colores tienen el mismo \(n\) y no se separan.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 5 (explicitada v = λf) -->
+        <article class="card c-3">
+            <div class="cabecera">
+                <span class="num">5</span>
+                <h2>Velocidad y longitud de onda en un medio</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La velocidad de la luz en un medio y su longitud de onda en ese medio, conocidos el índice y la frecuencia (o la longitud de onda en el vacío). Se aplica en los problemas de refracción en los que se pide \(\lambda\) dentro de un material o el tiempo de tránsito por una lámina.
+            </div>
+            <div class="formula-box" id="formula-5">
+                <a href="TemaC4.html#tc4-cambio-medio" class="formula-link">\[ v = \lambda\,f \]</a>
+                <a href="TemaC4.html#tc4-cambio-medio" class="formula-link">\[ v = \frac{c_0}{n} \]</a>
+                <a href="TemaC4.html#tc4-cambio-medio" class="formula-link">\[ \lambda = \frac{v}{f} = \frac{c_0}{n\,f} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarlas: se obtienen combinando la ecuación de onda \(v=\lambda f\) con \(n=c_0/v\). Idea clave: <strong>en el medio, \(v\) y \(\lambda\) son menores que en el vacío en el factor \(n\)</strong>. Si conoces \(\lambda_0\) (longitud de onda en el vacío), entonces \(\lambda=\lambda_0/n\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Velocidad de la luz en el medio</td><td data-label="Unidades">m/s</td></tr>
+                    <tr><td data-label="Símbolo">\(c_0\)</td><td data-label="Significado">Velocidad de la luz en el vacío</td><td data-label="Unidades">\(3{,}00\cdot10^8\) m/s</td></tr>
+                    <tr><td data-label="Símbolo">\(n\)</td><td data-label="Significado">Índice de refracción del medio</td><td data-label="Unidades">adimensional</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Longitud de onda en el medio</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(f\)</td><td data-label="Significado">Frecuencia (constante)</td><td data-label="Unidades">Hz</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> luz de \(f=5{,}2\cdot10^{14}\,\text{Hz}\) en agua (\(n=1{,}33\)): \(v=2{,}26\cdot10^8\,\text{m/s}\), \(\lambda=2{,}26\cdot10^8/5{,}2\cdot10^{14}=4{,}34\cdot10^{-7}\,\text{m}=434\,\text{nm}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>En el vacío: \(v=c_0\), \(\lambda=\lambda_0=c_0/f\).</li>
+                    <li>En un medio con \(n>1\): \(v<c_0\), \(\lambda<\lambda_0\).</li>
+                    <li>Para el aire, \(n\approx1\) y \(\lambda\approx\lambda_0\) (error despreciable).</li>
+                    <li>Estas relaciones también se aplican al sonido si se conocen \(v\) en el medio.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 6 -->
+        <article class="card c-2">
+            <div class="cabecera">
+                <span class="num">6</span>
+                <h2>Ángulo límite y reflexión total interna</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+                <span class="epi-chip aplicar">⚖️ Aplicar · En problemas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El ángulo de incidencia crítico a partir del cual la luz deja de refractarse y se refleja totalmente, cuando pasa de un medio de mayor índice a otro de menor índice. Se aplica en fibras ópticas, prismas y problemas típicos de EBAU con bloques y láminas.
+            </div>
+            <div class="formula-box" id="formula-6">
+                <a href="TemaC4.html#tc4-angulo-limite" class="formula-link">\[ \boxed{\sin\theta_c = \frac{n_2}{n_1}} \qquad (n_1 > n_2) \]</a>
+                <a href="TemaC4.html#tc4-angulo-limite" class="formula-link">\[ \theta_1 > \theta_c \;\Rightarrow\; \text{reflexión total} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se obtiene de Snell imponiendo \(\theta_2=90^\circ\), es decir, \(n_1\sin\theta_c=n_2\). Condición imprescindible: <strong>\(n_1>n_2\)</strong> (de mayor a menor índice). Si \(n_1<n_2\), no hay ángulo límite. Idea clave: sen \(\theta_c=\) cociente entre el índice menor y el mayor.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\theta_c\)</td><td data-label="Significado">Ángulo crítico o límite</td><td data-label="Unidades">rad o °</td></tr>
+                    <tr><td data-label="Símbolo">\(n_1\)</td><td data-label="Significado">Índice del medio de procedencia (mayor)</td><td data-label="Unidades">adimensional</td></tr>
+                    <tr><td data-label="Símbolo">\(n_2\)</td><td data-label="Significado">Índice del medio de salida (menor)</td><td data-label="Unidades">adimensional</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> vidrio (\(n=1{,}62\)) → agua (\(n=1{,}33\)): \(\sin\theta_c=1{,}33/1{,}62=0{,}821\to\theta_c\approx55{,}2^\circ\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Solo existe si \(n_1>n_2\) (equivale a \(v_1<v_2\)).</li>
+                    <li>En \(\theta_1=\theta_c\), el rayo refractado sale rasante a la superficie (\(\theta_2=90^\circ\)).</li>
+                    <li>En \(\theta_1>\theta_c\), hay reflexión total: el rayo se refleja sin refractarse.</li>
+                    <li>Consecuencia directa: \(\sin\theta_c=v_1/v_2\).</li>
+                    <li>Es la base de las fibras ópticas.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 7 -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">7</span>
+                <h2>Difracción</h2>
+                <span class="badge-centro">Concepto</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip comprender">🧭 Comprender · Concepto</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                No es una fórmula cuantitativa sino un criterio para decidir si la difracción es apreciable. Se aplica en preguntas conceptuales de la EBAU que comparan el tamaño de la abertura con la longitud de onda para justificar si la onda se abre o no tras la abertura.
+            </div>
+            <div class="formula-box" id="formula-7">
+                <a href="TemaC4.html#tc4-difraccion" class="formula-link">\[ \text{Difracción apreciable cuando } a \sim \lambda \text{ o } a < \lambda \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">📖 FAMILIARIZARSE</span>No hay una fórmula cerrada, sino un <strong>criterio</strong>. Recuerda: si \(a\gg\lambda\), la onda apenas se desvía; si \(a\sim\lambda\) o menor, la difracción es notable. Como \(\lambda=v/f\), mayor frecuencia implica menor \(\lambda\) y, normalmente, menor difracción para una abertura fija. Es la clave de las preguntas conceptuales.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(a\)</td><td data-label="Significado">Tamaño característico de la abertura o del obstáculo</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Longitud de onda</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> un sonido de \(440\,\text{Hz}\) en aire (\(\lambda\approx0{,}77\,\text{m}\)) difracta mucho por una puerta de \(1\,\text{m}\); en cambio, la luz visible (\(\lambda\approx500\,\text{nm}\)) apenas difracta por una rendija de \(1\,\text{mm}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>No confundir difracción (abertura/obstáculo) con refracción (cambio de medio).</li>
+                    <li>La difracción se produce sin cambio de medio.</li>
+                    <li>Explica el fenómeno de "oír sin ver" (el sonido rodea obstáculos).</li>
+                    <li>Fenómenos de interferencia y difracción confirman la naturaleza ondulatoria de la luz.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 8 -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">8</span>
+                <h2>Interferencia constructiva (máximo)</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · En problemas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La condición que deben cumplir las diferencias de caminos desde dos focos coherentes para que las ondas lleguen en fase y refuercen su amplitud. Se aplica en problemas de dos altavoces, dos rendijas o dos focos de ondas coherentes.
+            </div>
+            <div class="formula-box" id="formula-8">
+                <a href="TemaC4.html#tc4-constructiva" class="formula-link">\[ \Delta r = m\,\lambda \qquad (m = 0, 1, 2, \dots) \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es una condición que se aplica en cada problema con dos focos coherentes. Memoriza: <strong>constructiva → diferencia de caminos = múltiplo entero de \(\lambda\)</strong>. Recuerda que \(\Delta r=|r_2-r_1|\) es la diferencia de caminos desde cada foco hasta el punto. Solo es válido para fuentes coherentes (misma frecuencia y fase constante).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\Delta r\)</td><td data-label="Significado">Diferencia de caminos \(\|r_2-r_1\|\)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Entero (\(0, 1, 2, \dots\))</td><td data-label="Unidades">—</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Longitud de onda</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si \(\Delta r=3{,}68\,\text{m}\), las longitudes de onda que producen máximo cumplen \(3{,}68=m\lambda\). Con \(m=3\): \(\lambda=1{,}227\,\text{m}\); con \(m=4\): \(\lambda=0{,}920\,\text{m}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>En un máximo, las amplitudes se suman.</li>
+                    <li>Si las fuentes no están inicialmente en fase, hay que añadir su desfase inicial a la condición.</li>
+                    <li>En el centro de la pantalla (equidistante), siempre hay un máximo (si están en fase).</li>
+                    <li>El patrón de interferencia es estable solo si las fuentes son coherentes.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 9 -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">9</span>
+                <h2>Interferencia destructiva (mínimo)</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip aplicar">⚖️ Aplicar · En problemas</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La condición para que dos ondas coherentes lleguen en oposición de fase y se cancelen (si tienen igual amplitud). Se aplica para localizar mínimos de intensidad en problemas de dos focos coherentes.
+            </div>
+            <div class="formula-box" id="formula-9">
+                <a href="TemaC4.html#tc4-destructiva" class="formula-link">\[ \Delta r = \left(m + \tfrac{1}{2}\right)\lambda \qquad (m = 0, 1, 2, \dots) \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es una condición que se aplica en cada problema con dos focos coherentes. Memoriza: <strong>destructiva → diferencia de caminos = múltiplo semientero de \(\lambda\)</strong>. Equivalentemente, \(\Delta r=(2m+1)\lambda/2\). Cuidado: no confundir con la condición de máximo (\(m\lambda\)).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(\Delta r\)</td><td data-label="Significado">Diferencia de caminos \(\|r_2-r_1\|\)</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Entero (\(0, 1, 2, \dots\))</td><td data-label="Unidades">—</td></tr>
+                    <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Longitud de onda</td><td data-label="Unidades">m</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si \(\Delta r=4{,}14\,\text{m}\) y \(\lambda=0{,}920\,\text{m}\), entonces \(\Delta r/\lambda=4{,}5\), que es un múltiplo semientero: hay mínimo. En cambio con \(\lambda=1{,}227\,\text{m}\), \(\Delta r/\lambda=3{,}37\), que no es semientero: no hay mínimo.</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>En un mínimo, las amplitudes se restan (se anulan si son iguales).</li>
+                    <li>El primer mínimo lateral está a \(\lambda/2\) del centro de la pantalla.</li>
+                    <li>Si las amplitudes son distintas, la cancelación es parcial (no nula).</li>
+                    <li>Requiere fuentes coherentes.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 10 (separada en dos líneas) -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">10</span>
+                <h2>Frecuencias de máximos y mínimos</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                Las frecuencias a las que aparecen máximos o mínimos de interferencia en un punto donde se conoce la diferencia de caminos. Se aplica en problemas típicos de EBAU en los que se pide un intervalo de frecuencias (por ejemplo, de 200 a 400 Hz) para las que dos altavoces producen máximo o mínimo en un punto.
+            </div>
+            <div class="formula-box" id="formula-10">
+                <a href="TemaC4.html#tc4-frecuencias" class="formula-link">\[ f_{\text{máx}} = m\,\frac{v}{\Delta r} \]</a>
+                <a href="TemaC4.html#tc4-frecuencias" class="formula-link">\[ f_{\text{mín}} = \left(m + \tfrac{1}{2}\right)\frac{v}{\Delta r} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se obtiene combinando \(\Delta r=m\lambda\) (o semientero) con \(\lambda=v/f\), y despejando \(f\). Idea clave: <strong>a mayor diferencia de caminos, menor frecuencia</strong> para el mismo orden \(m\). Es útil para filtrar qué enteros \(m\) dan frecuencias dentro del intervalo pedido.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(f_{\text{máx}}\)</td><td data-label="Significado">Frecuencia de máximo</td><td data-label="Unidades">Hz</td></tr>
+                    <tr><td data-label="Símbolo">\(f_{\text{mín}}\)</td><td data-label="Significado">Frecuencia de mínimo</td><td data-label="Unidades">Hz</td></tr>
+                    <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Velocidad de la onda en el medio</td><td data-label="Unidades">m/s</td></tr>
+                    <tr><td data-label="Símbolo">\(\Delta r\)</td><td data-label="Significado">Diferencia de caminos</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(m\)</td><td data-label="Significado">Entero (\(0, 1, 2, \dots\))</td><td data-label="Unidades">—</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> si \(\Delta r=3{,}68\,\text{m}\) y \(v=340\,\text{m/s}\), los máximos están en \(f=m\cdot92{,}39\,\text{Hz}\). En el intervalo 200-400 Hz: \(m=3\to277\,\text{Hz}\), \(m=4\to370\,\text{Hz}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Recuerda que \(f\) debe estar dentro del intervalo pedido; filtra los \(m\) válidos.</li>
+                    <li>\(m=0\) da \(f=0\) para máximos (no audible).</li>
+                    <li>Para mínimos, \(m=0\) da \(f=v/(2\Delta r)\).</li>
+                    <li>Válido solo para fuentes coherentes.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 11 -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">11</span>
+                <h2>Recorrido dentro de una lámina plano-paralela</h2>
+                <span class="badge-centro">Aplicación</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                La longitud del trayecto que recorre un rayo dentro de una lámina plano-paralela de espesor \(e\), cuando incide oblicuamente. Se aplica en problemas de láminas (por ejemplo, de vidrio) que piden el tiempo de tránsito o el desplazamiento lateral.
+            </div>
+            <div class="formula-box" id="formula-11">
+                <a href="TemaC4.html#tc4-lamina" class="formula-link">\[ L = \frac{e}{\cos\theta_r} \]</a>
+                <a href="TemaC4.html#tc4-lamina" class="formula-link">\[ \Delta x = 2\,e\,\tan\theta_r \quad \text{(ida y vuelta)} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se deduce de la geometría, formando un triángulo rectángulo entre el espesor \(e\), el trayecto \(L\) y el ángulo \(\theta_r\) dentro de la lámina. Idea clave: <strong>\(e\) es la proyección vertical de \(L\)</strong>, por eso \(e=L\cos\theta_r\). Para el desplazamiento lateral ten en cuenta si el rayo va y vuelve o solo atraviesa.</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(L\)</td><td data-label="Significado">Longitud del trayecto dentro de la lámina</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(e\)</td><td data-label="Significado">Espesor de la lámina</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(\theta_r\)</td><td data-label="Significado">Ángulo del rayo con la normal dentro de la lámina</td><td data-label="Unidades">rad o °</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(e=3\,\text{cm}\), \(\theta_r=25{,}9^\circ\): \(L=0{,}03/\cos25{,}9^\circ\approx0{,}0334\,\text{m}\). Ida y vuelta horizontal: \(\Delta x=2\cdot0{,}03\cdot\tan25{,}9^\circ\approx0{,}029\,\text{m}=2{,}9\,\text{cm}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Solo aplicable si el rayo va oblicuo; con incidencia normal \(L=e\).</li>
+                    <li>El desplazamiento lateral depende de \(\theta_r\), que se obtiene por Snell.</li>
+                    <li>Al salir a un medio igual al de entrada, el rayo emerge paralelo al incidente.</li>
+                    <li>En una lámina de caras paralelas no hay desviación angular, solo desplazamiento.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FICHA 12 -->
+        <article class="card c-4">
+            <div class="cabecera">
+                <span class="num">12</span>
+                <h2>Tiempo de recorrido por un material</h2>
+                <span class="badge-centro">Derivada</span>
+            </div>
+            <div class="epi-chips">
+                <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
+            </div>
+            <div class="intro">
+                <span class="etiqueta">¿Qué se calcula?</span>
+                El tiempo que tarda la luz en atravesar un espesor \(e\) de material con índice \(n\). Se aplica en problemas de láminas, prismas y fibras ópticas en los que se pide el tiempo de tránsito.
+            </div>
+            <div class="formula-box" id="formula-12">
+                <a href="TemaC4.html#tc4-tiempo" class="formula-link">\[ t = \frac{L}{v} = \frac{n\,L}{c_0} \]</a>
+            </div>
+            <p class="note">
+                <span class="pregunta">¿Me aprendo esto de memoria?</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es simplemente \(t=L/v\) con \(v=c_0/n\). Idea clave: <strong>la luz tarda más en recorrer un material que el vacío</strong>, en el factor \(n\) (para la misma longitud). Si la incidencia es normal, \(L=e\) y \(t=ne/c_0\).</span>
+            </p>
+            <table class="mag-table">
+                <thead>
+                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Símbolo">\(t\)</td><td data-label="Significado">Tiempo de tránsito</td><td data-label="Unidades">s</td></tr>
+                    <tr><td data-label="Símbolo">\(L\)</td><td data-label="Significado">Longitud del trayecto dentro del material</td><td data-label="Unidades">m</td></tr>
+                    <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Velocidad de la luz en el medio</td><td data-label="Unidades">m/s</td></tr>
+                    <tr><td data-label="Símbolo">\(n\)</td><td data-label="Significado">Índice de refracción</td><td data-label="Unidades">adimensional</td></tr>
+                </tbody>
+            </table>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(L=0{,}0334\,\text{m}\), \(n=1{,}7\), \(c_0=3\cdot10^8\,\text{m/s}\): \(t=1{,}7\cdot0{,}0334/(3\cdot10^8)\approx1{,}89\cdot10^{-10}\,\text{s}\).</p>
+            <div class="obs">
+                <span class="titulo-obs">Observaciones de interés</span>
+                <ul>
+                    <li>Para incidencia normal, \(L=e\) y \(t=ne/c_0\).</li>
+                    <li>Es el tiempo "óptico" en el que se basa el concepto de camino óptico \(nL\).</li>
+                    <li>El tiempo en el vacío equivalente sería \(t_0=L/c_0\), siempre menor que en el medio.</li>
+                    <li>Útil en fibras ópticas para calcular retardos.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- LEYENDA EPISTÉMICA (sin cambios) -->
+        <article class="card span-all leyenda-epi">
+            <div class="leyenda-epi-header">
+                <span class="num">★</span>
+                <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
+                <span class="badge-centro">Leyenda</span>
+            </div>
+            <p class="leyenda-epi-intro">
+                No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
+                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
+                consecuencia matemática, principio o conversión— y cada categoría se domina con un
+                <strong>verbo distinto</strong>. Identificar el tipo <em>antes</em> de estudiar ahorra
+                tiempo y evita memorizar lo que se puede deducir.
+            </p>
+            <div class="leyenda-epi-grid">
+                <div class="epi-item definicion">
+                    <div class="epi-icono">📘</div>
+                    <h3 class="epi-nombre">Definición</h3>
+                    <span class="epi-verbo">Memorizar</span>
+                    <p class="epi-desc">Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física. No se demuestra, se establece. Se domina cuando puedes enunciarla sin pensar.</p>
+                    <p class="epi-ej"><strong>Ejemplos C4</strong> \(n=c_0/v\) · \(\theta_i=\theta_r\) · difracción \(a\sim\lambda\)</p>
+                </div>
+                <div class="epi-item comprender">
+                    <div class="epi-icono">🧭</div>
+                    <h3 class="epi-nombre">Ley fundamental</h3>
+                    <span class="epi-verbo">Comprender</span>
+                    <p class="epi-desc">Es el <em>punto de partida</em> del tema: describe cómo se propagan las ondas al cambiar de medio. No se deriva de otra cosa; se entiende el porqué y las condiciones en las que aplica.</p>
+                    <p class="epi-ej"><strong>Ejemplos C4</strong> \(n_1\sin\theta_1=n_2\sin\theta_2\) (ley de Snell)</p>
+                </div>
+                <div class="epi-item deducir">
+                    <div class="epi-icono">🧮</div>
+                    <h3 class="epi-nombre">Consecuencia matemática</h3>
+                    <span class="epi-verbo">Deducir</span>
+                    <p class="epi-desc">Se <em>obtiene</em> despejando, imponiendo condiciones o sustituyendo una ley fundamental o una definición. No se memoriza: se reconstruye en 2–3 líneas si se olvida.</p>
+                    <p class="epi-ej"><strong>Ejemplos C4</strong> \(f_1=f_2\) · \(\lambda_2/\lambda_1=n_1/n_2\) · \(\sin\theta_c=n_2/n_1\) · \(t=nL/c_0\)</p>
+                </div>
+                <div class="epi-item aplicar">
+                    <div class="epi-icono">⚖️</div>
+                    <h3 class="epi-nombre">Principio / condición</h3>
+                    <span class="epi-verbo">Aplicar</span>
+                    <p class="epi-desc">Es una <em>regla universal</em> que se aplica como filtro a cada problema concreto. No se demuestra: se usa.</p>
+                    <p class="epi-ej"><strong>Ejemplos C4</strong> \(\Delta r=m\lambda\) (máximo) · \(\Delta r=(m+\tfrac12)\lambda\) (mínimo)</p>
+                </div>
+                <div class="epi-item automatizar">
+                    <div class="epi-icono">🔄</div>
+                    <h3 class="epi-nombre">Conversión / operación</h3>
+                    <span class="epi-verbo">Automatizar</span>
+                    <p class="epi-desc">Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes equivalentes. Debe salir sin pensar, como un reflejo.</p>
+                    <p class="epi-ej"><strong>Ejemplos C4</strong> grados↔radianes · nm↔m · ángulo con la superficie→ángulo con la normal (\(\theta=90^\circ-\alpha\))</p>
+                </div>
+            </div>
+            <table class="leyenda-epi-tabla">
+                <thead>
+                    <tr><th>Categoría</th><th>Verbo</th><th>¿Qué es?</th><th>¿Cómo se domina?</th><th>Autoevaluación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td><td data-label="¿Qué es?">Vocabulario del tema</td><td data-label="¿Cómo se domina?">Repetición espaciada</td><td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td><td data-label="¿Qué es?">Punto de partida físico</td><td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td><td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td><td data-label="¿Qué es?">Resultado matemático derivado</td><td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td><td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td><td data-label="¿Qué es?">Regla universal</td><td data-label="¿Cómo se domina?">Plantearla en cada problema</td><td data-label="Autoevaluación">¿La aplico como filtro al problema?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td><td data-label="¿Qué es?">Herramienta mecánica</td><td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td><td data-label="Autoevaluación">¿Me sale sin pensar?</td></tr>
+                </tbody>
+            </table>
+            <div class="leyenda-epi-aviso">
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>, pregúntate <strong>«¿de dónde sale esto?»</strong>. Si sale de otra fórmula despejando o sustituyendo → <strong>consecuencia</strong> (deducir). Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender). Si solo asigna un nombre → <strong>definición</strong> (memorizar). Si es una regla que se cumple siempre → <strong>principio</strong> (aplicar).
+            </div>
+            <div class="leyenda-epi-colores">
+                <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Ley fundamental (Snell)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Derivadas de Snell (reflexión, cambio de medio, ángulo límite)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Definiciones (índice de refracción, velocidad y λ)</span>
+                <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Aplicaciones (difracción, interferencias, láminas)</span>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- GLOSARIO (con enlaces) -->
+    <details class="glosario">
+        <summary>📖 Glosario de fórmulas del tema C4</summary>
+        <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+        </p>
+        <table class="mag-table">
+            <thead>
+                <tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="#">1</td><td data-label="Fórmula"><a href="TemaC4.html#tc4-n" class="formula-link" style="display:inline;padding:0">\( n = \dfrac{c_0}{v} \)</a></td><td data-label="Nombre">Índice de refracción absoluto</td><td data-label="Ficha">1</td></tr>
+                <tr><td data-label="#">2</td><td data-label="Fórmula"><a href="TemaC4.html#tc4-snell" class="formula-link" style="display:inline;padding:0">\( n_1\sin\theta_1 = n_2\sin\theta_2 \)</a></td><td data-label="Nombre">Ley de Snell (refracción)</td><td data-label="Ficha">2</td></tr>
+                <tr><td data-label="#">3</td><td data-label="Fórmula"><a href="TemaC4.html#tc4-reflexion" class="formula-link" style="display:inline;padding:0">\( \theta_i = \theta_r \)</a></td><td data-label="Nombre">Ley de la reflexión</td><td data-label="Ficha">3</td></tr>
+                <tr><td data-label="#">4</td><td data-label="Fórmula"><a href="TemaC4.html#tc4-cambio-medio" class="formula-link" style="display:inline;padding:0">\( f_1=f_2;\ \dfrac{\lambda_2}{\lambda_1}=\dfrac{v_2}{v_1}=\dfrac{n_1}{n_2} \)</a></td><td data-label="Nombre">Qué cambia al pasar de medio</td><td data-label="Ficha">4</td></tr>
+                <tr><td data-label="#">5</td><td data-label="Fórmula"><a href="TemaC4.html#tc4-cambio-medio" class="formula-link" style="display:inline;padding:0">\( v=\lambda f;\ v = \dfrac{c_0}{n};\ \lambda = \dfrac{c_0}{nf} \)</a></td><td data-label="Nombre">Velocidad y longitud de onda en un medio</td><td data-label="Ficha">5</td></tr>
+                <tr><td data-label="#">6</td><td data-label="Fórmula"><a href="TemaC4.html#tc4-angulo-limite" class="formula-link" style="display:inline;padding:0">\( \sin\theta_c = \dfrac{n_2}{n_1}\ (n_1>n_2) \)</a></td><td data-label="Nombre">Ángulo límite y reflexión total</td><td data-label="Ficha">6</td></tr>
+                <tr><td data-label="#">7</td><td data-label="Fórmula"><a href="TemaC4.html#tc4-difraccion" class="formula-link" style="display:inline;padding:0">\( a \sim \lambda \)</a></td><td data-label="Nombre">Criterio de difracción apreciable</td><td data-label="Ficha">7</td></tr>
+                <tr><td data-label="#">8</td><td data-label="Fórmula"><a href="TemaC4.html#tc4-constructiva" class="formula-link" style="display:inline;padding:0">\( \Delta r = m\lambda \)</a></td><td data-label="Nombre">Interferencia constructiva (máximo)</td><td data-label="Ficha">8</td></tr>
+                <tr><td data-label="#">9</td><td data-label="Fórmula"><a href="TemaC4.html#tc4-destructiva" class="formula-link" style="display:inline;padding:0">\( \Delta r = \left(m+\tfrac{1}{2}\right)\lambda \)</a></td><td data-label="Nombre">Interferencia destructiva (mínimo)</td><td data-label="Ficha">9</td></tr>
+                <tr><td data-label="#">10</td><td data-label="Fórmula"><a href="TemaC4.html#tc4-frecuencias" class="formula-link" style="display:inline;padding:0">\( f_{\text{máx}}=m\dfrac{v}{\Delta r};\ f_{\text{mín}}=\left(m+\tfrac12\right)\dfrac{v}{\Delta r} \)</a></td><td data-label="Nombre">Frecuencias de máximos y mínimos</td><td data-label="Ficha">10</td></tr>
+                <tr><td data-label="#">11</td><td data-label="Fórmula"><a href="TemaC4.html#tc4-lamina" class="formula-link" style="display:inline;padding:0">\( L = \dfrac{e}{\cos\theta_r};\ \Delta x=2e\tan\theta_r \)</a></td><td data-label="Nombre">Recorrido en una lámina plano-paralela</td><td data-label="Ficha">11</td></tr>
+                <tr><td data-label="#">12</td><td data-label="Fórmula"><a href="TemaC4.html#tc4-tiempo" class="formula-link" style="display:inline;padding:0">\( t = \dfrac{nL}{c_0} \)</a></td><td data-label="Nombre">Tiempo de recorrido por un material</td><td data-label="Ficha">12</td></tr>
+            </tbody>
+        </table>
+        <div class="note" style="margin: 16px 0 10px 0;">
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> medir los ángulos desde la superficie en lugar de desde la normal; invertir \(n_1/n_2\) en el ángulo crítico; intentar aplicar la reflexión total cuando la luz pasa a un medio de <em>mayor</em> índice; creer que la frecuencia cambia al refractarse; confundir refracción con dispersión; aplicar las condiciones de interferencia sin comprobar que las fuentes son coherentes; y no convertir los minutos a segundos o los grados a radianes antes de operar.
+        </div>
+    </details>
+
+    <div class="note" style="margin: 0 28px 8px 28px;">
+        <strong>Recordatorio:</strong> en propagación de ondas, la <strong>ley de Snell</strong> \(n_1\sin\theta_1=n_2\sin\theta_2\) es la madre de casi todas las fórmulas del tema: de ella se deducen el ángulo crítico, la relación entre velocidades y longitudes de onda, y las condiciones de reflexión total. Recuerda siempre medir los ángulos <strong>respecto a la normal</strong>, comprobar <strong>\(n_1>n_2\)</strong> antes de calcular un ángulo límite, y tener presente que <strong>la frecuencia no cambia</strong> al pasar de un medio a otro (solo lo hacen \(v\), \(\lambda\) y, en general, la dirección). Para difracción, la clave es comparar \(a\) con \(\lambda\); para interferencias, exigir coherencia.
+    </div>
+
+    <div class="footer-cta">
+        <a href="../index.html">Volver al inicio</a>
+    </div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#formula-')) return;
+    var card = document.querySelector(hash);
+    if (!card) return;
+    card.scrollIntoView({ behavior: 'auto', block: 'center' });
+    card.classList.remove('formula-resaltada');
+    void card.offsetWidth;
+    card.classList.add('formula-resaltada');
+    setTimeout(function () { card.classList.remove('formula-resaltada'); }, 2600);
+});
+</script>
+</body>
+</html>

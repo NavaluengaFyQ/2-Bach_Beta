@@ -5,29 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas</title>
 
-
-
-    <!-- Para crear las consultas puntuales en la base de datos) -->
     <script src="js/utils.js" defer></script>
-
-    <!-- FontAwesome CDN (versión 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
     <link rel="stylesheet" href="../css/unidades.css">
-
-    <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-
-    
     <style>
         .apartados-ej { margin-top: 8px; }
         .apartados-ej p { margin: 7px 0; }
         .puntuacion-total { color: #64748b; font-size: .88em; margin-top: 12px; }
         .puntuacion-apartado { color: #64748b; font-weight: 500; font-size: .9em; }
         .resultado-problema { margin-top: 1.2rem !important; padding-top: .7rem; border-top: 1px dashed #94a3b8; }
-        .formula-box { overflow-x: auto; }
+        .formula-box { overflow-wrap: break-word; word-break: break-word; max-width: 100%; }
+        .formula-box mjx-container[jax="CHTML"][display="true"],
+        .formula-box mjx-container[jax="SVG"][display="true"] {
+            overflow-x: auto; overflow-y: hidden; max-width: 100%; padding-bottom: 2px;
+        }
         .tabla-signos td:first-child { font-weight: 700; white-space: nowrap; }
         @media (max-width: 700px) {
             .header { flex-wrap: wrap; }
@@ -40,7 +33,6 @@
 </head>
 <body>
 <div class="container">
-    <!-- CABECERA -->
     <div class="header">
         <div class="header-left">
             <h1>IES Valle del Alberche</h1>
@@ -55,7 +47,6 @@
         </div>
     </div>
 
-    <!-- MAPA DE BLOQUES Y TEMAS -->
     <details class="section enunciado" open>
         <summary><h2>🗺️ Ubicación en el currículo</h2></summary>
         <p>Este tema pertenece al <strong>Bloque B. Campo electromagnético</strong> del currículo de Física de 2.º de Bachillerato (Decreto 40/2022, BOCYL-D-30092022-4). Se mantiene el orden de bloques y temas de la clasificación curricular aportada.</p>
@@ -75,7 +66,6 @@
         <div class="note"><strong>Referencia curricular utilizada:</strong> el archivo de bloques y temas adjunto identifica B3 dentro del Bloque B. El desarrollo de esta página está concretado al nivel de 2.º de Bachillerato y a los tipos de cuestión presentes en el banco EBAU facilitado.</div>
     </details>
 
-    <!-- OBJETIVOS -->
     <details class="section objetivo">
         <summary><h2>🎯 Objetivos de aprendizaje</h2></summary>
         <ul>
@@ -90,16 +80,19 @@
         </ul>
     </details>
 
-    <!-- CONTENIDO TEÓRICO -->
     <details class="section procedimiento">
         <summary><h2>📚 Contenido teórico</h2></summary>
 
         <details class="step">
             <summary><span class="step-num">1</span><strong>Trabajo realizado por el campo eléctrico.</strong></summary>
             <p>Cuando una carga eléctrica <strong>q</strong> se desplaza en un campo eléctrico, la fuerza eléctrica que actúa sobre ella es \(\vec F_e=q\vec E\). El trabajo elemental realizado por esta fuerza durante un desplazamiento infinitesimal \(d\vec r\) es el producto escalar entre fuerza y desplazamiento:</p>
-            <div class="formula-box">\[dW_{\text{campo}}=\vec F_e\cdot d\vec r=q\,\vec E\cdot d\vec r\]</div>
+            <a href="TemaB3-Formulario.html#formula-1" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-1">\[dW_{\text{campo}}=\vec F_e\cdot d\vec r=q\,\vec E\cdot d\vec r\]</div>
+            </a>
             <p>Entre dos puntos A y B, el trabajo total se obtiene integrando a lo largo de la trayectoria:</p>
-            <div class="formula-box">\[W_{A\to B}^{\text{campo}}=q\int_A^B\vec E\cdot d\vec r\]</div>
+            <a href="TemaB3-Formulario.html#formula-2" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-2">\[W_{A\to B}^{\text{campo}}=q\int_A^B\vec E\cdot d\vec r\]</div>
+            </a>
             <p>El signo depende del sentido de la fuerza eléctrica respecto al desplazamiento:</p>
             <ul>
                 <li>Si la fuerza eléctrica tiene componente en el sentido del desplazamiento, el trabajo del campo es positivo.</li>
@@ -113,7 +106,9 @@
             <summary><span class="step-num">2</span><strong>El campo electrostático es conservativo.</strong></summary>
             <p>En electrostática, el trabajo realizado por el campo eléctrico al trasladar una carga entre dos puntos depende únicamente de las posiciones inicial y final. <strong>No depende del camino</strong> que siga la carga para ir de A a B.</p>
             <p>Por tanto, dos trayectorias distintas que unan los mismos puntos producen el mismo trabajo. Una consecuencia equivalente es que el trabajo del campo a lo largo de cualquier trayectoria cerrada es cero:</p>
-            <div class="formula-box">\[\oint\vec E\cdot d\vec r=0\]</div>
+            <a href="TemaB3-Formulario.html#formula-3" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-3">\[\oint\vec E\cdot d\vec r=0\]</div>
+            </a>
             <p>Esta propiedad permite introducir una energía potencial eléctrica: el trabajo del campo se puede expresar mediante la variación de dicha energía.</p>
             <div class="note"><strong>Alcance:</strong> nos referimos al campo electrostático creado por cargas en reposo. No debe generalizarse esta propiedad al campo eléctrico inducido por un campo magnético variable.</div>
         </details>
@@ -121,59 +116,89 @@
         <details class="step">
             <summary><span class="step-num">3</span><strong>Energía potencial eléctrica de una carga.</strong></summary>
             <p>La <strong>energía potencial eléctrica</strong> representa la energía asociada a la posición de una carga dentro de un campo eléctrico. Su variación entre A y B es igual al trabajo realizado por un agente externo que traslada la carga lentamente, sin variar su energía cinética:</p>
-            <div class="formula-box">\[\Delta E_p=E_{p,B}-E_{p,A}=W_{\text{ext}}\]</div>
+            <a href="TemaB3-Formulario.html#formula-4" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-4">\[\Delta E_p=E_{p,B}-E_{p,A}=W_{\text{ext}}\]</div>
+            </a>
             <p>Como el campo electrostático es conservativo, el trabajo que realiza el propio campo es el opuesto a la variación de energía potencial:</p>
-            <div class="formula-box">\[W_{A\to B}^{\text{campo}}=-\Delta E_p=E_{p,A}-E_{p,B}\]</div>
+            <a href="TemaB3-Formulario.html#formula-5" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-5">\[W_{A\to B}^{\text{campo}}=-\Delta E_p=E_{p,A}-E_{p,B}\]</div>
+            </a>
             <p>Por tanto, en un desplazamiento cuasiestático:</p>
-            <div class="formula-box">\[W_{\text{ext}}=-W_{A\to B}^{\text{campo}}\]</div>
+            <a href="TemaB3-Formulario.html#formula-6" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-6">\[W_{\text{ext}}=-W_{A\to B}^{\text{campo}}\]</div>
+            </a>
             <p>Si no se especifica que el desplazamiento sea lento o cuasiestático, conviene identificar qué trabajo se está preguntando y aplicar el teorema de la energía cinética cuando corresponda.</p>
         </details>
 
         <details class="step">
             <summary><span class="step-num">4</span><strong>Trabajo y diferencia de potencial.</strong></summary>
             <p>El potencial eléctrico \(V\) es la energía potencial eléctrica por unidad de carga. Para una carga de prueba \(q\):</p>
-            <div class="formula-box">\[E_p=qV\]</div>
+            <a href="TemaB3-Formulario.html#formula-7" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-7">\[E_p=qV\]</div>
+            </a>
             <p>La variación de energía potencial al trasladarla desde A hasta B es:</p>
-            <div class="formula-box">\[\Delta E_p=q(V_B-V_A)=q\,\Delta V\]</div>
+            <a href="TemaB3-Formulario.html#formula-8" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-8">\[\Delta E_p=q(V_B-V_A)=q\,\Delta V\]</div>
+            </a>
             <p>Así, el trabajo realizado por el campo y el trabajo externo cuasiestático son, respectivamente:</p>
-            <div class="formula-box">\[W_{A\to B}^{\text{campo}}=q(V_A-V_B)=-q\,\Delta V\]</div>
-            <div class="formula-box">\[W_{\text{ext}}=q(V_B-V_A)=q\,\Delta V\]</div>
+            <a href="TemaB3-Formulario.html#formula-9" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-9">\[W_{A\to B}^{\text{campo}}=q(V_A-V_B)=-q\,\Delta V\]</div>
+            </a>
+            <a href="TemaB3-Formulario.html#formula-10" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-10">\[W_{\text{ext}}=q(V_B-V_A)=q\,\Delta V\]</div>
+            </a>
             <p>La diferencia de potencial también puede relacionarse con el campo a lo largo de una trayectoria:</p>
-            <div class="formula-box">\[V_B-V_A=-\int_A^B\vec E\cdot d\vec r\]</div>
+            <a href="TemaB3-Formulario.html#formula-11" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-11">\[V_B-V_A=-\int_A^B\vec E\cdot d\vec r\]</div>
+            </a>
             <div class="note"><strong>Atención:</strong> no basta con conocer si el potencial aumenta o disminuye para decidir el signo de \(\Delta E_p\). Hay que tener en cuenta también el signo de la carga que se desplaza, porque \(\Delta E_p=q\,\Delta V\).</div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">5</span><strong>Energía potencial de dos cargas puntuales.</strong></summary>
             <p>La energía potencial eléctrica de un sistema formado por dos cargas puntuales \(q_1\) y \(q_2\), separadas una distancia \(r\), tomando como referencia energía potencial nula cuando están infinitamente alejadas, es:</p>
-            <div class="formula-box">\[E_p=K_0\,\frac{q_1q_2}{r}\]</div>
+            <a href="TemaB3-Formulario.html#formula-12" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-12">\[E_p=K_0\,\frac{q_1q_2}{r}\]</div>
+            </a>
             <p>Donde \(K_0=9{,}00\cdot10^9\,\text{N}\cdot\text{m}^2\cdot\text{C}^{-2}\) en el vacío (aproximadamente).</p>
             <p><strong>Interpretación del signo:</strong></p>
             <ul>
-                <li><strong>Cargas del mismo signo:</strong> \(q_1q_2&gt;0\), por lo que \(E_p&gt;0\). Es necesario aportar trabajo para acercarlas desde el infinito.</li>
-                <li><strong>Cargas de signo contrario:</strong> \(q_1q_2&lt;0\), por lo que \(E_p&lt;0\). Al acercarlas desde el infinito, el campo realiza trabajo positivo y la energía potencial disminuye.</li>
+                <li><strong>Cargas del mismo signo:</strong> \(q_1q_2>0\), por lo que \(E_p>0\). Es necesario aportar trabajo para acercarlas desde el infinito.</li>
+                <li><strong>Cargas de signo contrario:</strong> \(q_1q_2<0\), por lo que \(E_p<0\). Al acercarlas desde el infinito, el campo realiza trabajo positivo y la energía potencial disminuye.</li>
             </ul>
             <p>Para una pareja de cargas, si cambia su separación, la variación de energía potencial se calcula restando el valor inicial al final:</p>
-            <div class="formula-box">\[\Delta E_p=K_0q_1q_2\left(\frac{1}{r_f}-\frac{1}{r_i}\right)\]</div>
+            <a href="TemaB3-Formulario.html#formula-13" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-13">\[\Delta E_p=K_0q_1q_2\left(\frac{1}{r_f}-\frac{1}{r_i}\right)\]</div>
+            </a>
         </details>
 
         <details class="step">
             <summary><span class="step-num">6</span><strong>Energía potencial de una configuración de varias cargas.</strong></summary>
             <p>La energía potencial eléctrica de una configuración de varias cargas puntuales es la suma de las energías potenciales de <strong>todas las parejas distintas</strong>. Cada pareja se cuenta una sola vez:</p>
-            <div class="formula-box">\[E_{p,\text{sistema}}=\sum_{i&lt;j}K_0\,\frac{q_iq_j}{r_{ij}}\]</div>
+            <a href="TemaB3-Formulario.html#formula-14" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-14">\[E_{p,\text{sistema}}=\sum_{i<j}K_0\,\frac{q_iq_j}{r_{ij}}\]</div>
+            </a>
             <p>Para tres cargas:</p>
-            <div class="formula-box">\[E_{p,\text{sistema}}=K_0\left(\frac{q_1q_2}{r_{12}}+\frac{q_1q_3}{r_{13}}+\frac{q_2q_3}{r_{23}}\right)\]</div>
+            <a href="TemaB3-Formulario.html#formula-14" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-14b">\[E_{p,\text{sistema}}=K_0\left(\frac{q_1q_2}{r_{12}}+\frac{q_1q_3}{r_{13}}+\frac{q_2q_3}{r_{23}}\right)\]</div>
+            </a>
             <p>Si las tres cargas iguales están en los vértices de un triángulo equilátero de lado \(l\), las tres separaciones son iguales:</p>
-            <div class="formula-box">\[E_{p,\text{sistema}}=3K_0\,\frac{q^2}{l}\]</div>
+            <a href="TemaB3-Formulario.html#formula-15" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-15">\[E_{p,\text{sistema}}=3K_0\,\frac{q^2}{l}\]</div>
+            </a>
             <p>La energía es una magnitud <strong>escalar</strong>: se suman algebraicamente las contribuciones de cada pareja, teniendo en cuenta el signo del producto \(q_iq_j\).</p>
         </details>
 
         <details class="step">
             <summary><span class="step-num">7</span><strong>Trabajo para formar una configuración de cargas.</strong></summary>
             <p>Imaginemos que las cargas están inicialmente muy alejadas entre sí, de modo que la energía potencial inicial del sistema es cero. Si se trasladan lentamente hasta formar una configuración final, el trabajo del agente externo es igual al aumento de energía potencial:</p>
-            <div class="formula-box">\[W_{\text{ext}}=\Delta E_p=E_{p,f}-E_{p,i}=E_{p,f}\]</div>
+            <a href="TemaB3-Formulario.html#formula-16" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
+            <div class="formula-box" id="formula-16">\[W_{\text{ext}}=\Delta E_p=E_{p,f}-E_{p,i}=E_{p,f}\]</div>
+            </a>
             <p>Por tanto, el trabajo necesario para montar la configuración desde el infinito coincide con la energía potencial electrostática final del sistema. El trabajo realizado por el campo durante el montaje es el opuesto:</p>
+            <a href="TemaB3-Formulario.html#formula-16" title="Ver esta fórmula desarrollada en el Formulario B3" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box">\[W_{\text{campo}}=-E_{p,f}\]</div>
+            </a>
             <div class="note"><strong>Idea clave:</strong> para ensamblar cargas del mismo signo hay que vencer la repulsión y el trabajo externo es positivo. Para ensamblar cargas de signo contrario, la atracción puede favorecer el proceso y el trabajo externo puede ser negativo.</div>
         </details>
 
@@ -204,7 +229,6 @@
         </details>
     </details>
 
-    <!-- ANÁLISIS DE FÓRMULAS -->
     <details class="section resultado" id="formulas">
         <summary><h2>🧮 Análisis de las fórmulas del tema B3</h2></summary>
         <p>Se recogen las expresiones fundamentales, su significado físico y las condiciones de aplicación:</p>
@@ -219,14 +243,13 @@
                 <tr><td>\(\Delta E_p=q(V_B-V_A)\)</td><td>Variación de energía potencial de una carga.</td><td>\(q\) en C; potencial en V; energía en J.</td><td>Se conoce la diferencia de potencial entre A y B.</td></tr>
                 <tr><td>\(W_{\text{campo}}=q(V_A-V_B)\)</td><td>Trabajo realizado por el campo eléctrico.</td><td>Trabajo en J; carga en C; potencial en V.</td><td>Desplazamiento entre dos puntos en un campo electrostático.</td></tr>
                 <tr><td>\(E_p=K_0\dfrac{q_1q_2}{r}\)</td><td>Energía potencial de dos cargas puntuales.</td><td>Cargas en C; distancia en m; energía en J.</td><td>Referencia \(E_p=0\) en el infinito.</td></tr>
-                <tr><td>\(E_{p,\text{sistema}}=\displaystyle\sum_{i&lt;j}K_0\dfrac{q_iq_j}{r_{ij}}\)</td><td>Energía potencial de una configuración de cargas.</td><td>Se suman todas las parejas, una sola vez.</td><td>Cargas puntuales; superposición de las energías de pareja.</td></tr>
+                <tr><td>\(E_{p,\text{sistema}}=\displaystyle\sum_{i<j}K_0\dfrac{q_iq_j}{r_{ij}}\)</td><td>Energía potencial de una configuración de cargas.</td><td>Se suman todas las parejas, una sola vez.</td><td>Cargas puntuales; superposición de las energías de pareja.</td></tr>
                 <tr><td>\(W_{\text{ext}}=E_{p,f}\)</td><td>Trabajo para montar una configuración desde el infinito.</td><td>Trabajo en J.</td><td>Configuración inicial con cargas infinitamente separadas y montaje cuasiestático.</td></tr>
             </tbody>
         </table>
         <div class="note"><strong>Errores frecuentes:</strong> intercambiar \(W_{\text{campo}}\) y \(W_{\text{ext}}\); olvidar que tienen signos opuestos en un traslado cuasiestático; usar \(q(V_A-V_B)\) para el trabajo externo en vez del trabajo del campo; olvidar el signo de una de las cargas en \(K_0q_1q_2/r\); contar dos veces una misma pareja; y confundir energía potencial de una carga con energía potencial total de una configuración.</div>
     </details>
 
-    <!-- PROBLEMAS EBAU -->
     <details id="problemas" open>
         <summary>
             <i class="fas fa-chevron-circle-down"></i>
@@ -237,8 +260,7 @@
             <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
                 <strong>Selección de 10 problemas</strong> extraídos del banco EBAU adjunto. Se han elegido los <strong>diez registros de Castilla y León</strong> etiquetados con B3. Se indica la comunidad, el año, la convocatoria y el número de problema. La selección combina ejercicios de cálculo, trabajo de configuración y razonamiento sobre signos.
             </p>
-            
-  <!-- EJERCICIO 1: Castilla y León · 2026 · Extraordinaria · Problema 6 -->
+
   <details class="tarjeta-ejercicio">
     <summary class="cabecera-ej">
       <span class="num-ej">Ejercicio 1</span>
@@ -280,7 +302,6 @@ W_{\text{ext}}=\Delta U=q'(V_A-V_O)=(-3\cdot10^{-6})(2400)=-7{,}20\cdot10^{-3}\,
     </div>
   </details>
 
-  <!-- EJERCICIO 2: Castilla y León · 2025 · Ordinaria · Problema 5 -->
   <details class="tarjeta-ejercicio">
     <summary class="cabecera-ej">
       <span class="num-ej">Ejercicio 2</span>
@@ -322,14 +343,13 @@ F_{\text{neta}}=2F\cos(30^{\circ})=\sqrt{3}\,F\approx6{,}9\cdot10^{-3}\,\text{N}
 <p>La fuerza neta sobre cada carga apunta hacia fuera del triángulo, según la bisectriz del ángulo interno de su vértice.</p>
 <div class="paso"><strong>Esquema y coherencia con el trabajo positivo</strong></div>
 <p>Esquema descriptivo: triángulo equilátero con las tres cargas negativas en los vértices. Sobre cada carga, el vector fuerza neta apunta a lo largo de la mediatriz que va desde el centro del triángulo hacia el vértice, es decir, las tres fuerzas son centrífugas y apuntan radialmente hacia fuera del baricentro.</p>
-<p>Esto es coherente con \(W_{\text{ext}}&gt;0\) del apartado a): si las cargas se soltasen, la fuerza neta sobre cada una las alejaría hacia el infinito, devolviendo la energía aportada en forma de energía cinética. Para mantener la configuración hay que sostener el sistema contra esas fuerzas centrífugas; el agente que las acerca debe hacer trabajo positivo, exactamente \(3{,}6\cdot10^{-4}\,\text{J}\).</p>
+<p>Esto es coherente con \(W_{\text{ext}}>0\) del apartado a): si las cargas se soltasen, la fuerza neta sobre cada una las alejaría hacia el infinito, devolviendo la energía aportada en forma de energía cinética. Para mantener la configuración hay que sostener el sistema contra esas fuerzas centrífugas; el agente que las acerca debe hacer trabajo positivo, exactamente \(3{,}6\cdot10^{-4}\,\text{J}\).</p>
       <div class="paso resultado-problema"><strong>Resultado:</strong></div>
       <p>a) \(W_{\text{ext}}=+3{,}6\cdot10^{-4}\,\text{J}\); es positivo porque hay que vencer la repulsión entre cargas del mismo signo.<br>
 b) \(F_{\text{neta}}\approx6{,}9\cdot10^{-3}\,\text{N}\) sobre cada carga, dirigida hacia fuera del triángulo.</p>
     </div>
   </details>
 
-  <!-- EJERCICIO 3: Castilla y León · 2025 · Extraordinaria · Problema 7 -->
   <details class="tarjeta-ejercicio">
     <summary class="cabecera-ej">
       <span class="num-ej">Ejercicio 3</span>
@@ -389,7 +409,6 @@ b) \(W_{\text{ext}}=+0{,}48\,\text{J}\).</p>
     </div>
   </details>
 
-  <!-- EJERCICIO 4: Castilla y León · 2024 · Extraordinaria · Problema 13 -->
   <details class="tarjeta-ejercicio">
     <summary class="cabecera-ej">
       <span class="num-ej">Ejercicio 4</span>
@@ -407,18 +426,17 @@ b) \(W_{\text{ext}}=+0{,}48\,\text{J}\).</p>
 W_{\text{campo}}=-\Delta U=U_A-U_B>0\quad\Rightarrow\quad U_B<U_A.
 \]</div>
 <div class="paso"><strong>Relación entre energía potencial y potencial para carga negativa</strong></div>
-<p>La energía potencial eléctrica de una carga en un punto de potencial \(V\) es \(U=q\,V\). Para una carga negativa (\(q&lt;0\)), si \(U_B&lt;U_A\) entonces:</p>
+<p>La energía potencial eléctrica de una carga en un punto de potencial \(V\) es \(U=q\,V\). Para una carga negativa (\(q<0\)), si \(U_B<U_A\) entonces:</p>
 <div class="formula-box">\[
 q\,V_B<q\,V_A\quad\Rightarrow\quad V_B>V_A.
 \]</div>
 <div class="paso"><strong>Conclusión</strong></div>
 <p>El potencial eléctrico es menor en el punto \(A\). Equivalentemente, las cargas negativas se mueven espontáneamente desde regiones de menor potencial hacia regiones de mayor potencial, al revés que las cargas positivas.</p>
       <div class="paso resultado-problema"><strong>Resultado:</strong></div>
-      <p>El potencial es menor en \(A\): \(V_A&lt;V_B\).</p>
+      <p>El potencial es menor en \(A\): \(V_A<V_B\).</p>
     </div>
   </details>
 
-  <!-- EJERCICIO 5: Castilla y León · 2023 · Extraordinaria · Problema 3 -->
   <details class="tarjeta-ejercicio">
     <summary class="cabecera-ej">
       <span class="num-ej">Ejercicio 5</span>
@@ -459,7 +477,6 @@ W_{\text{ext}}=q'(V_B-V_A)=2\cdot10^{-9}(30{,}0-56{,}3)=-5{,}26\cdot10^{-8}\,\te
     </div>
   </details>
 
-  <!-- EJERCICIO 6: Castilla y León · 2022 · Extraordinaria · Problema 3 -->
   <details class="tarjeta-ejercicio">
     <summary class="cabecera-ej">
       <span class="num-ej">Ejercicio 6</span>
@@ -485,7 +502,7 @@ V_D=2\cdot9\cdot10^{9}\cdot\dfrac{4\cdot10^{-6}}{\sqrt{13}}=1{,}997\cdot10^{4}\,
 <div class="formula-box">\[
 W_{\text{el}}=q(V_C-V_D)=2\cdot10^{-6}(4{,}80\cdot10^{4}-1{,}997\cdot10^{4})=5{,}61\cdot10^{-2}\,\text{J}.
 \]</div>
-<p>Como \(W_{\text{el}}&gt;0\), el desplazamiento se produce espontáneamente a favor del campo. El trabajo que debe realizar un agente externo es el opuesto:</p>
+<p>Como \(W_{\text{el}}>0\), el desplazamiento se produce espontáneamente a favor del campo. El trabajo que debe realizar un agente externo es el opuesto:</p>
 <div class="formula-box">\[
 W_{\text{ext}}=-5{,}61\cdot10^{-2}\,\text{J}.
 \]</div>
@@ -494,7 +511,6 @@ W_{\text{ext}}=-5{,}61\cdot10^{-2}\,\text{J}.
     </div>
   </details>
 
-  <!-- EJERCICIO 7: Castilla y León · 2021 · Ordinaria · Problema 3 -->
   <details class="tarjeta-ejercicio">
     <summary class="cabecera-ej">
       <span class="num-ej">Ejercicio 7</span>
@@ -532,7 +548,6 @@ W_{\text{ext}}=q_0\,(V_{10}-V_{20})\approx2\cdot10^{-6}\cdot149{,}8\approx3{,}0\
     </div>
   </details>
 
-  <!-- EJERCICIO 8: Castilla y León · 2020 · Extraordinaria · Problema 3 -->
   <details class="tarjeta-ejercicio">
     <summary class="cabecera-ej">
       <span class="num-ej">Ejercicio 8</span>
@@ -575,11 +590,11 @@ W_{\text{ext}}=1\cdot10^{-6}\cdot1{,}89\cdot10^{4}=1{,}89\cdot10^{-2}\,\text{J}.
 \]</div>
 <p>El signo positivo indica que el agente externo debe realizar trabajo contra el campo eléctrico para acercar la carga positiva al punto \(P\), donde el potencial es positivo.</p>
       <div class="paso resultado-problema"><strong>Resultado:</strong></div>
-      <p>\(V_P=1{,}89\cdot10^{4}\,\text{V}\)\n\(W_{\text{ext}}=1{,}89\cdot10^{-2}\,\text{J}\) (trabajo positivo del agente externo)</p>
+      <p>\(V_P=1{,}89\cdot10^{4}\,\text{V}\)<br>
+\(W_{\text{ext}}=1{,}89\cdot10^{-2}\,\text{J}\) (trabajo positivo del agente externo)</p>
     </div>
   </details>
 
-  <!-- EJERCICIO 9: Castilla y León · 2020 · Extraordinaria · Problema 13 -->
   <details class="tarjeta-ejercicio">
     <summary class="cabecera-ej">
       <span class="num-ej">Ejercicio 9</span>
@@ -596,7 +611,7 @@ W_{\text{ext}}=1\cdot10^{-6}\cdot1{,}89\cdot10^{4}=1{,}89\cdot10^{-2}\,\text{J}.
 <div class="formula-box">\[
 E_p=k\frac{q_1 q_2}{r}.
 \]</div>
-<p>Con \(q_1&gt;0\) y \(q_2&lt;0\), el producto \(q_1 q_2\) es negativo y, por tanto, \(E_p&lt;0\) para todo \(r\) finito. Se toma como referencia \(E_p=0\) en \(r\to\infty\).</p>
+<p>Con \(q_1>0\) y \(q_2<0\), el producto \(q_1 q_2\) es negativo y, por tanto, \(E_p<0\) para todo \(r\) finito. Se toma como referencia \(E_p=0\) en \(r\to\infty\).</p>
 <div class="paso"><strong>Análisis cualitativo cuando \(r\) aumenta</strong></div>
 <p>Si \(r\) aumenta porque la carga negativa se aleja, \(E_p\) es una cantidad negativa cuyo módulo disminuye al dividir entre un denominador mayor. Eso significa que \(E_p\) se acerca a \(0\) desde valores negativos, es decir, aumenta y se hace menos negativa. En el límite \(r\to\infty\), \(E_p\to0\).</p>
 <div class="paso"><strong>Razonamiento energético complementario</strong></div>
@@ -606,7 +621,6 @@ E_p=k\frac{q_1 q_2}{r}.
     </div>
   </details>
 
-  <!-- EJERCICIO 10: Castilla y León · 2020 · Ordinaria · Problema 3 -->
   <details class="tarjeta-ejercicio">
     <summary class="cabecera-ej">
       <span class="num-ej">Ejercicio 10</span>
@@ -640,16 +654,7 @@ W_{\text{ext}}=q_3[V(P_4)-V(P_3)]=q_3(0-0)=0.
         </div>
     </details>
 
-
-
-
-<!-- ============================================================ -->
-<!-- BLOQUE DE RECURSOS Y NAVEGACIÓN DEL TEMA B6
-                   -->
-<!-- ============================================================ -->
 <div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
-
-    </style>
 
     <div class="recursos-tema" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 border-radius: 20px; padding: 30px 25px 32px 25px;
@@ -659,7 +664,7 @@ W_{\text{ext}}=q_3[V(P_4)-V(P_3)]=q_3(0-0)=0.
                    font-size: 1.5em; display: flex; align-items: center;
                    justify-content: center; gap: 12px;">
             <i class="fas fa-compass"></i>
-            Recursos del Tema B6
+            Recursos del Tema B3
         </h2>
         <p style="text-align: center; color: rgba(255,255,255,0.9);
                   margin: 0 0 25px 0; font-size: 0.95em;">
@@ -670,8 +675,7 @@ W_{\text{ext}}=q_3[V(P_4)-V(P_3)]=q_3(0-0)=0.
                     grid-template-columns: repeat(3, 1fr);
                     gap: 18px;">
 
-            <!-- ── TARJETA 1: FORMULARIO (página actual) ── -->
-            <a href="TemaB6-Formulario.html" style="text-decoration: none; color: inherit;">
+            <a href="TemaB3-Formulario.html" style="text-decoration: none; color: inherit;">
                 <div class="recurso-card" style="background: white; border-radius: 16px;
                             padding: 22px 18px; text-align: center; height: 100%;
                             border: 3px solid #fbbf24; position: relative;
@@ -700,8 +704,7 @@ W_{\text{ext}}=q_3[V(P_4)-V(P_3)]=q_3(0-0)=0.
                 </div>
             </a>
 
-            <!-- ── TARJETA 2: PROBLEMAS EBAU DEL TEMA B3 ── -->
-            <a href="TemaB6-ProblemasEBAU.html" style="text-decoration: none; color: inherit;">
+            <a href="TemaB3-ProblemasEBAU.html" style="text-decoration: none; color: inherit;">
                 <div class="recurso-card" style="background: white; border-radius: 16px;
                             padding: 22px 18px; text-align: center; height: 100%;
                             border: 3px solid #e2e8f0;
@@ -715,7 +718,7 @@ W_{\text{ext}}=q_3[V(P_4)-V(P_3)]=q_3(0-0)=0.
                     </div>
                     <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
                                 margin-bottom: 6px;">
-                        Problemas EBAU · B6
+                        Problemas EBAU · B3
                     </div>
                     <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
                         Ejercicios filtrados del tema, resueltos y comentados
@@ -723,7 +726,6 @@ W_{\text{ext}}=q_3[V(P_4)-V(P_3)]=q_3(0-0)=0.
                 </div>
             </a>
 
-            <!-- ── TARJETA 3: FILTRADO EBAU GENERAL ── -->
             <a href="../EBAU/problemas-inline_v04.html" style="text-decoration: none; color: inherit;">
                 <div class="recurso-card" style="background: white; border-radius: 16px;
                             padding: 22px 18px; text-align: center; height: 100%;
@@ -748,25 +750,7 @@ W_{\text{ext}}=q_3[V(P_4)-V(P_3)]=q_3(0-0)=0.
         </div>
     </div>
 </div>
-<!-- ============================================================ -->
-<!-- FIN DEL BLOQUE DE RECURSOS                                   -->
-<!-- ============================================================ -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- BLOQUE FINAL -->
     <div class="bloque-cta">
         <div class="tarjeta-cta">
             <p><br>Domina el trabajo eléctrico, el carácter conservativo del campo electrostático y la energía potencial de las configuraciones de cargas.<br>
