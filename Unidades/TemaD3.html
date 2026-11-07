@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema D3. Dualidad onda-corpúsculo, cuantización e incertidumbre</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- CSS común del centro: se conserva la ruta de la plantilla TemaA1.html -->
     <link rel="stylesheet" href="../css/unidades.css">
-    <!-- MathJax para las expresiones matemáticas -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         .dato-clave { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:18px 0; }
@@ -33,12 +31,33 @@
         .comparacion { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
         .comparacion > div { background:#fff; border:1px solid #dbeafe; border-radius:10px; padding:12px; }
         .comparacion h4 { margin:0 0 8px; color:#1e3a8a; }
+
+        /* --- Enlaces bidireccionales: la fórmula es el vínculo --- */
+        .formula-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 8px;
+            padding: 2px 6px;
+            transition: background .15s ease;
+            overflow-x: auto;
+        }
+        .formula-link:hover { background: rgba(99,102,241,0.10); }
+        .formula-link:focus-visible { outline: 2px dashed #6366f1; outline-offset: 2px; }
+        .formula-box { overflow-x: auto; }
+        .formula-link-inline {
+            text-decoration: none;
+            color: inherit;
+            border-bottom: 1px dashed rgba(99,102,241,0.45);
+            transition: background .15s;
+        }
+        .formula-link-inline:hover { background: rgba(99,102,241,0.12); }
+
         @media(max-width:640px){ .dato-clave{grid-template-columns:1fr;} .comparacion{grid-template-columns:1fr;} }
     </style>
 </head>
 <body>
 <div class="container">
-    <!-- CABECERA -->
     <div class="header">
         <div class="header-left">
             <h1>IES Valle del Alberche</h1>
@@ -89,7 +108,7 @@
             <li>Enunciar el principio de incertidumbre de Heisenberg y aplicarlo a la relación posición–momento.</li>
             <li>Interpretar cualitativamente la relación de incertidumbre energía–tiempo incluida en el currículo.</li>
             <li>Justificar la difracción de electrones mediante su longitud de onda asociada y compararla con distancias interatómicas.</li>
-            <li>Seleccionar el modelo clásico o relativista según los datos y las condiciones del problema, sin confundir energía, momento y longitud de onda.</li>
+            <li>Seleccionar el modelo clásico o relativista según los datos y las condiciones del problema.</li>
         </ul>
     </details>
 
@@ -97,77 +116,125 @@
     <details class="section procedimiento">
         <summary><h2>📚 Contenido teórico</h2></summary>
 
-        <details class="step" open>
+        <details class="step" open id="td3-dualidad">
             <summary><span class="step-num">1</span><strong>Dualidad onda-corpúsculo.</strong></summary>
             <p>La física clásica separaba los fenómenos ondulatorios (interferencia y difracción) de los corpusculares (partículas localizadas). La física cuántica muestra que <strong>la luz y la materia pueden manifestar ambos tipos de comportamiento</strong>, y que el resultado observado depende del experimento realizado.</p>
             <div class="comparacion">
-                <div><h4>Luz</h4><p>Presenta comportamiento ondulatorio en fenómenos como la interferencia y la difracción. También intercambia energía y momento en paquetes: los <strong>fotones</strong>.</p><p>\(E_\gamma=h\nu\) y \(p_\gamma=h/\lambda\).</p></div>
-                <div><h4>Materia</h4><p>Electrones y otras partículas tienen masa y se detectan como impactos localizados, pero pueden producir interferencia y difracción. A cada partícula en movimiento se le asocia una onda.</p><p>\(\lambda=h/p\).</p></div>
+                <div><h4>Luz</h4><p>Presenta comportamiento ondulatorio en fenómenos como la interferencia y la difracción. También intercambia energía y momento en paquetes: los <strong>fotones</strong>.</p><p><a href="TemaD3-Formulario.html#formula-1" class="formula-link-inline">\(E_\gamma=h\nu\)</a> y <a href="TemaD3-Formulario.html#formula-1" class="formula-link-inline">\(p_\gamma=h/\lambda\)</a>.</p></div>
+                <div><h4>Materia</h4><p>Electrones y otras partículas tienen masa y se detectan como impactos localizados, pero pueden producir interferencia y difracción. A cada partícula en movimiento se le asocia una onda.</p><p><a href="TemaD3-Formulario.html#formula-3" class="formula-link-inline">\(\lambda=h/p\)</a>.</p></div>
             </div>
             <p><strong>Idea clave:</strong> no significa que una partícula clásica sea literalmente una bolita y una onda clásica a la vez. La descripción cuántica incorpora propiedades que se manifiestan de forma distinta según la medida.</p>
             <div class="note"><strong>Experimentos de referencia:</strong> efecto fotoeléctrico y efecto Compton para el carácter corpuscular de la luz; difracción de electrones (Davisson–Germer) para el carácter ondulatorio de la materia.</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"dualidad onda-corpúsculo" | "fotón" | "interferencia" | "difracción" | "efecto Compton" | "Davisson-Germer" | "naturaleza ondulatoria"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D3. Dualidad onda-corpúsculo, cuantización e incertidumbre" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Dualidad onda-corpúsculo (CyL · D3)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">2</span><strong>Cuantización de la energía.</strong></summary>
             <p>La cuantización significa que determinadas magnitudes de un sistema microscópico ligado no pueden tomar cualquier valor continuo, sino solo ciertos valores permitidos. En los átomos, los electrones ocupan <strong>niveles de energía discretos</strong>.</p>
             <p>Cuando un sistema pasa de un nivel de energía a otro, la energía intercambiada se absorbe o emite en forma de fotón. La energía del fotón coincide con la diferencia entre los niveles:</p>
-            <div class="formula-box">\[\left|\Delta E\right|=h\nu=\frac{hc}{\lambda}\]</div>
+            <div class="formula-box" id="td3-cuantizacion">
+                <a href="TemaD3-Formulario.html#formula-2" class="formula-link">\[\left|\Delta E\right|=h\nu=\frac{hc}{\lambda}\]</a>
+            </div>
             <ul>
                 <li><strong>Absorción:</strong> el sistema recibe un fotón y pasa a un nivel de mayor energía.</li>
                 <li><strong>Emisión:</strong> el sistema pasa a un nivel de menor energía y emite un fotón.</li>
             </ul>
-            <p>La energía de un fotón está cuantizada: \(E=h\nu\). No debe confundirse la energía del fotón incidente con la energía cinética que pueda adquirir un electrón tras una interacción.</p>
-            <div class="note"><strong>Conexión con D2:</strong> el efecto fotoeléctrico es uno de los problemas precursores de la física cuántica. En los ejercicios compartidos D2–D3 se usa la energía del fotón para obtener la energía cinética del fotoelectrón y, después, su longitud de onda de De Broglie.</div>
+            <p>La energía de un fotón está cuantizada: <a href="TemaD3-Formulario.html#formula-2" class="formula-link-inline">\(E=h\nu\)</a>. No debe confundirse la energía del fotón incidente con la energía cinética que pueda adquirir un electrón tras una interacción.</p>
+            <div class="note"><strong>Conexión con D2:</strong> el efecto fotoeléctrico es uno de los problemas precursores de la física cuántica. En los ejercicios compartidos D2–D3 se usa la energía del fotón para obtener la energía cinética del fotoelectrón y, después, su longitud de onda de De Broglie.
+                <div class="formula-box" id="td3-d2d3">
+                    <a href="TemaD3-Formulario.html#formula-12" class="formula-link">\[E_{\text{fotón}}=\frac{hc}{\lambda};\quad E_{c,\max}=hf-W_0;\quad p_e=\sqrt{2m_eE_{c,\max}};\quad \lambda_e=\frac{h}{p_e}\]</a>
+                </div>
+            </div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"cuantización de la energía" | "niveles de energía" | "absorción de fotón" | "emisión de fotón" | "transición entre niveles" | "salto cuántico" | "delta E=hf"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D3. Dualidad onda-corpúsculo, cuantización e incertidumbre" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Cuantización de la energía (CyL · D3)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">3</span><strong>Hipótesis de De Broglie: longitud de onda asociada.</strong></summary>
             <p>En 1924, Louis de Broglie propuso que toda partícula material con momento lineal \(p\) lleva asociada una onda cuya longitud de onda es:</p>
-            <div class="formula-box">\[\boxed{\lambda=\frac{h}{p}}\]</div>
-            <p>Para una partícula no relativista, \(p=mv\), por lo que:</p>
-            <div class="formula-box">\[\lambda=\frac{h}{mv}\]</div>
-            <p>Si se conoce la energía cinética no relativista, \(E_c=p^2/(2m)\), se obtiene:</p>
-            <div class="formula-box">\[\boxed{\lambda=\frac{h}{\sqrt{2mE_c}}}\]</div>
+            <div class="formula-box" id="td3-debroglie">
+                <a href="TemaD3-Formulario.html#formula-3" class="formula-link">\[\boxed{\lambda=\frac{h}{p}}\]</a>
+            </div>
+            <p>Para una partícula no relativista, <a href="TemaD3-Formulario.html#formula-3" class="formula-link-inline">\(p=mv\)</a>, por lo que:</p>
+            <div class="formula-box">
+                <a href="TemaD3-Formulario.html#formula-3" class="formula-link">\[\lambda=\frac{h}{mv}\]</a>
+            </div>
+            <p>Si se conoce la energía cinética no relativista, <a href="TemaD3-Formulario.html#formula-4" class="formula-link-inline">\(E_c=p^2/(2m)\)</a>, se obtiene:</p>
+            <div class="formula-box" id="td3-ec">
+                <a href="TemaD3-Formulario.html#formula-4" class="formula-link">\[\boxed{\lambda=\frac{h}{\sqrt{2mE_c}}}\]</a>
+            </div>
             <p>La longitud de onda disminuye cuando aumenta el momento lineal. Por eso suele ser apreciable para partículas microscópicas y extremadamente pequeña para objetos macroscópicos.</p>
             <div class="note"><strong>Condición de uso:</strong> las expresiones con \(p=mv\) y \(E_c=p^2/(2m)\) son no relativistas. Si el enunciado indica velocidades o energías relativistas, hay que emplear el momento relativista estudiado en D1.</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"hipótesis de De Broglie" | "longitud de onda asociada" | "lambda=h/p" | "onda de materia" | "momento lineal" | "p=mv" | "partícula material"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D3. Dualidad onda-corpúsculo, cuantización e incertidumbre" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Hipótesis de De Broglie (CyL · D3)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">4</span><strong>Electrón acelerado por una diferencia de potencial.</strong></summary>
             <p>Si un electrón parte del reposo y es acelerado mediante una diferencia de potencial de módulo \(\left|\Delta V\right|\), el trabajo del campo eléctrico se transforma en energía cinética:</p>
-            <div class="formula-box">\[E_c=e\left|\Delta V\right|\]</div>
+            <div class="formula-box">
+                <a href="TemaD3-Formulario.html#formula-5" class="formula-link">\[E_c=e\left|\Delta V\right|\]</a>
+            </div>
             <p>En el régimen no relativista, el momento se calcula a partir de \(E_c=p^2/(2m_e)\):</p>
-            <div class="formula-box">\[p=\sqrt{2m_e e\left|\Delta V\right|}\]</div>
+            <div class="formula-box">
+                <a href="TemaD3-Formulario.html#formula-5" class="formula-link">\[p=\sqrt{2m_e e\left|\Delta V\right|}\]</a>
+            </div>
             <p>Combinando esta expresión con De Broglie:</p>
-            <div class="formula-box">\[\boxed{\lambda=\frac{h}{\sqrt{2m_e e\left|\Delta V\right|}}}\]</div>
+            <div class="formula-box" id="td3-acelerado">
+                <a href="TemaD3-Formulario.html#formula-5" class="formula-link">\[\boxed{\lambda=\frac{h}{\sqrt{2m_e e\left|\Delta V\right|}}\]</a>
+            </div>
             <p>Esta fórmula directa solo vale si el electrón parte del reposo y el tratamiento no relativista es adecuado. Si parte con velocidad inicial, primero hay que sumar la energía cinética inicial y el trabajo eléctrico con el signo correcto.</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"electrón acelerado" | "diferencia de potencial" | "energía cinética" | "trabajo eléctrico" | "lambda de electrón" | "acelerador" | "Ec=eV"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D3. Dualidad onda-corpúsculo, cuantización e incertidumbre" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Electrón acelerado (CyL · D3)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">5</span><strong>Principio de incertidumbre de Heisenberg: posición y momento.</strong></summary>
             <p>No es posible preparar un estado cuántico en el que la posición y el momento lineal en una misma dirección tengan simultáneamente incertidumbre nula. La relación de incertidumbre es:</p>
-            <div class="formula-box">\[\boxed{\Delta x\,\Delta p_x\geq\frac{\hbar}{2}=\frac{h}{4\pi}}\]</div>
+            <div class="formula-box" id="td3-heisenberg-xp">
+                <a href="TemaD3-Formulario.html#formula-6" class="formula-link">\[\boxed{\Delta x\,\Delta p_x\geq\frac{\hbar}{2}=\frac{h}{4\pi}}\]</a>
+            </div>
             <p>Si el electrón es no relativista, \(p=mv\). Para incertidumbres pequeñas puede utilizarse \(\Delta p_x=m_e\Delta v_x\). Así, la incertidumbre mínima de posición compatible con una incertidumbre dada del momento es:</p>
-            <div class="formula-box">\[\boxed{\Delta x_{\min}=\frac{h}{4\pi\,\Delta p_x}}\qquad\text{y, si }\Delta p_x=m_e\Delta v_x,\qquad\boxed{\Delta x_{\min}=\frac{h}{4\pi m_e\Delta v_x}}\]</div>
+            <div class="formula-box" id="td3-dx-min">
+                <a href="TemaD3-Formulario.html#formula-7" class="formula-link">\[\boxed{\Delta x_{\min}=\frac{h}{4\pi\,\Delta p_x}}\]</a>
+                <a href="TemaD3-Formulario.html#formula-7" class="formula-link">\[\text{y, si }\Delta p_x=m_e\Delta v_x,\qquad\boxed{\Delta x_{\min}=\frac{h}{4\pi m_e\Delta v_x}}\]</a>
+            </div>
             <p>Si el enunciado da una incertidumbre relativa de la velocidad, por ejemplo del 1 %, se calcula primero \(\Delta v=0{,}01v\), después \(\Delta p=m_e\Delta v\), y finalmente se aplica Heisenberg.</p>
             <div class="note"><strong>Interpretación:</strong> la incertidumbre no es simplemente un defecto del aparato de medida. Es una limitación propia de la descripción cuántica del estado.</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"principio de incertidumbre" | "Heisenberg" | "posición-momento" | "incertidumbre de posición" | "incertidumbre de velocidad" | "h/4pi" | "delta x delta p"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D3. Dualidad onda-corpúsculo, cuantización e incertidumbre" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Incertidumbre posición-momento (CyL · D3)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">6</span><strong>Relación de incertidumbre energía–tiempo.</strong></summary>
             <p>El currículo incluye también el principio de incertidumbre formulado para energía y tiempo. En su forma habitual de nivel introductorio:</p>
-            <div class="formula-box">\[\boxed{\Delta E\,\Delta t\geq\frac{\hbar}{2}}\]</div>
+            <div class="formula-box" id="td3-heisenberg-et">
+                <a href="TemaD3-Formulario.html#formula-8" class="formula-link">\[\boxed{\Delta E\,\Delta t\geq\frac{\hbar}{2}}\]</a>
+            </div>
             <p>De forma cualitativa, cuanto menor es la escala temporal característica de un proceso o de un estado inestable, mayor puede ser la dispersión de energía asociada. Esta relación aparece, por ejemplo, al describir estados excitados con vida media finita y el ensanchamiento de líneas espectrales.</p>
             <div class="note"><strong>En EBAU:</strong> distingue esta relación de la de posición–momento. No sustituyas \(\Delta t\) por una incertidumbre de posición ni uses \(\Delta E\) como si fuera automáticamente la energía total del sistema.</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"incertidumbre energía-tiempo" | "delta E delta t" | "vida media" | "estados excitados" | "ensanchamiento espectral" | "Heisenberg energía"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D3. Dualidad onda-corpúsculo, cuantización e incertidumbre" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Incertidumbre energía-tiempo (CyL · D3)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">7</span><strong>Difracción de electrones y escala atómica.</strong></summary>
             <p>La difracción es característica de las ondas. Los electrones pueden difractarse porque poseen una longitud de onda de De Broglie. El fenómeno se hace observable cuando la longitud de onda es comparable con el tamaño de la abertura o con la separación entre los centros dispersores.</p>
-            <div class="formula-box">\[\lambda_{e}=\frac{h}{p}\sim d_{\text{interatómica}}\]</div>
+            <div class="formula-box" id="td3-difraccion">
+                <a href="TemaD3-Formulario.html#formula-10" class="formula-link">\[\lambda_{e}=\frac{h}{p}\sim d_{\text{interatómica}}\]</a>
+            </div>
             <p>En los sólidos cristalinos, las distancias interatómicas son del orden de \(10^{-10}\,\text{m}\). Los electrones acelerados a diferencias de potencial adecuadas pueden tener longitudes de onda de ese orden y generar patrones de difracción. La longitud de onda se puede ajustar modificando el potencial acelerador.</p>
             <p>La difracción electrónica constituye una prueba del carácter ondulatorio de la materia y permite estudiar la estructura de los materiales.</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"difracción de electrones" | "red cristalina" | "distancia interatómica" | "difracción" | "estructura de la materia" | "Davisson-Germer" | "microscopio electrónico"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D3. Dualidad onda-corpúsculo, cuantización e incertidumbre" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Difracción de electrones (CyL · D3)</a>
+            </div>
         </details>
 
         <div class="note">
@@ -182,28 +249,28 @@
         <table class="tabla-constantes">
             <thead><tr><th>Expresión</th><th>Significado físico</th><th>Condiciones / unidades</th></tr></thead>
             <tbody>
-                <tr><td>\(E_\gamma=h\nu=hc/\lambda\)</td><td>Energía de un fotón.</td><td>\(E\) en J; \(\nu\) en Hz; \(\lambda\) en m.</td></tr>
-                <tr><td>\(p_\gamma=h/\lambda=E_\gamma/c\)</td><td>Momento lineal de un fotón.</td><td>Fotón; \(p\) en kg·m·s\(^{-1}\).</td></tr>
-                <tr><td>\(\lambda=h/p\)</td><td>Longitud de onda de De Broglie.</td><td>Partícula material; \(p\) es su momento lineal.</td></tr>
-                <tr><td>\(p=mv\)</td><td>Momento lineal clásico.</td><td>Régimen no relativista.</td></tr>
-                <tr><td>\(E_c=p^2/(2m)\)</td><td>Energía cinética no relativista.</td><td>Régimen no relativista.</td></tr>
-                <tr><td>\(E_c=e|\Delta V|\)</td><td>Energía cinética adquirida por un electrón desde el reposo.</td><td>Si parte del reposo; en J si \(e\) está en C y \(\Delta V\) en V.</td></tr>
-                <tr><td>\(\lambda=h/\sqrt{2m_e e|\Delta V|}\)</td><td>De Broglie de un electrón acelerado.</td><td>Desde el reposo y aproximación no relativista.</td></tr>
-                <tr><td>\(\Delta x\Delta p_x\geq h/(4\pi)\)</td><td>Incertidumbre posición–momento.</td><td>La posición y el momento deben referirse al mismo eje.</td></tr>
-                <tr><td>\(\Delta E\Delta t\geq\hbar/2\)</td><td>Incertidumbre energía–tiempo.</td><td>Interpretación temporal del principio de incertidumbre.</td></tr>
-                <tr><td>\(|\Delta E|=h\nu\)</td><td>Energía intercambiada en una transición entre niveles.</td><td>Absorción o emisión de un fotón.</td></tr>
+                <tr><td><a href="TemaD3-Formulario.html#formula-1" class="formula-link-inline">\(E_\gamma=h\nu=hc/\lambda\)</a></td><td>Energía de un fotón.</td><td>\(E\) en J; \(\nu\) en Hz; \(\lambda\) en m.</td></tr>
+                <tr><td><a href="TemaD3-Formulario.html#formula-1" class="formula-link-inline">\(p_\gamma=h/\lambda=E_\gamma/c\)</a></td><td>Momento lineal de un fotón.</td><td>Fotón; \(p\) en kg·m·s\(^{-1}\).</td></tr>
+                <tr><td><a href="TemaD3-Formulario.html#formula-3" class="formula-link-inline">\(\lambda=h/p\)</a></td><td>Longitud de onda de De Broglie.</td><td>Partícula material; \(p\) es su momento lineal.</td></tr>
+                <tr><td><a href="TemaD3-Formulario.html#formula-3" class="formula-link-inline">\(p=mv\)</a></td><td>Momento lineal clásico.</td><td>Régimen no relativista.</td></tr>
+                <tr><td><a href="TemaD3-Formulario.html#formula-4" class="formula-link-inline">\(E_c=p^2/(2m)\)</a></td><td>Energía cinética no relativista.</td><td>Régimen no relativista.</td></tr>
+                <tr><td><a href="TemaD3-Formulario.html#formula-5" class="formula-link-inline">\(E_c=e|\Delta V|\)</a></td><td>Energía cinética adquirida por un electrón desde el reposo.</td><td>Si parte del reposo; en J si \(e\) está en C y \(\Delta V\) en V.</td></tr>
+                <tr><td><a href="TemaD3-Formulario.html#formula-5" class="formula-link-inline">\(\lambda=h/\sqrt{2m_e e|\Delta V|}\)</a></td><td>De Broglie de un electrón acelerado.</td><td>Desde el reposo y aproximación no relativista.</td></tr>
+                <tr><td><a href="TemaD3-Formulario.html#formula-6" class="formula-link-inline">\(\Delta x\Delta p_x\geq h/(4\pi)\)</a></td><td>Incertidumbre posición–momento.</td><td>La posición y el momento deben referirse al mismo eje.</td></tr>
+                <tr><td><a href="TemaD3-Formulario.html#formula-8" class="formula-link-inline">\(\Delta E\Delta t\geq\hbar/2\)</a></td><td>Incertidumbre energía–tiempo.</td><td>Interpretación temporal del principio de incertidumbre.</td></tr>
+                <tr><td><a href="TemaD3-Formulario.html#formula-2" class="formula-link-inline">\(|\Delta E|=h\nu\)</a></td><td>Energía intercambiada en una transición entre niveles.</td><td>Absorción o emisión de un fotón.</td></tr>
             </tbody>
         </table>
         <h3>Constantes útiles</h3>
-        <table>
+        <table id="td3-constantes">
             <thead><tr><th>Constante</th><th>Valor aproximado</th><th>Unidad</th></tr></thead>
             <tbody>
-                <tr><td>Constante de Planck, \(h\)</td><td>\(6{,}63\cdot10^{-34}\)</td><td>J·s</td></tr>
-                <tr><td>Constante reducida, \(\hbar=h/(2\pi)\)</td><td>\(1{,}055\cdot10^{-34}\)</td><td>J·s</td></tr>
-                <tr><td>Masa del electrón, \(m_e\)</td><td>\(9{,}11\cdot10^{-31}\)</td><td>kg</td></tr>
-                <tr><td>Carga elemental, \(e\)</td><td>\(1{,}60\cdot10^{-19}\)</td><td>C</td></tr>
-                <tr><td>Velocidad de la luz, \(c\)</td><td>\(3{,}00\cdot10^8\)</td><td>m·s\(^{-1}\)</td></tr>
-                <tr><td>Conversión</td><td>\(1\,\text{eV}=1{,}60\cdot10^{-19}\)</td><td>J</td></tr>
+                <tr><td>Constante de Planck, \(h\)</td><td><a href="TemaD3-Formulario.html#formula-9" class="formula-link-inline">\(6{,}63\cdot10^{-34}\)</a></td><td>J·s</td></tr>
+                <tr><td>Constante reducida, \(\hbar=h/(2\pi)\)</td><td><a href="TemaD3-Formulario.html#formula-9" class="formula-link-inline">\(1{,}055\cdot10^{-34}\)</a></td><td>J·s</td></tr>
+                <tr><td>Masa del electrón, \(m_e\)</td><td><a href="TemaD3-Formulario.html#formula-9" class="formula-link-inline">\(9{,}11\cdot10^{-31}\)</a></td><td>kg</td></tr>
+                <tr><td>Carga elemental, \(e\)</td><td><a href="TemaD3-Formulario.html#formula-9" class="formula-link-inline">\(1{,}60\cdot10^{-19}\)</a></td><td>C</td></tr>
+                <tr><td>Velocidad de la luz, \(c\)</td><td><a href="TemaD3-Formulario.html#formula-9" class="formula-link-inline">\(3{,}00\cdot10^8\)</a></td><td>m·s\(^{-1}\)</td></tr>
+                <tr><td>Conversión</td><td><a href="TemaD3-Formulario.html#formula-9" class="formula-link-inline">\(1\,\text{eV}=1{,}60\cdot10^{-19}\)</a></td><td>J</td></tr>
             </tbody>
         </table>
     </details>
@@ -214,26 +281,29 @@
         <h3>Tipo 1. Longitud de onda de De Broglie a partir de velocidad o energía cinética</h3>
         <ol class="pasos-metodo">
             <li>Identificar la partícula y anotar su masa.</li>
-            <li>Calcular el momento: \(p=mv\), si es no relativista, o \(p=\sqrt{2mE_c}\), si se conoce la energía cinética no relativista.</li>
-            <li>Aplicar \(\lambda=h/p\) y expresar el resultado en metros, nanómetros o picómetros.</li>
+            <li>Calcular el momento: <a href="TemaD3-Formulario.html#formula-3" class="formula-link-inline">\(p=mv\)</a> si es no relativista, o <a href="TemaD3-Formulario.html#formula-4" class="formula-link-inline">\(p=\sqrt{2mE_c}\)</a> si se conoce la energía cinética no relativista.</li>
+            <li>Aplicar <a href="TemaD3-Formulario.html#formula-3" class="formula-link-inline">\(\lambda=h/p\)</a> y expresar el resultado en metros, nanómetros o picómetros.</li>
         </ol>
         <h3>Tipo 2. Electrón acelerado desde el reposo por una diferencia de potencial</h3>
         <ol class="pasos-metodo">
             <li>Convertir los datos al S.I. y usar el módulo de la diferencia de potencial.</li>
-            <li>Calcular \(E_c=e|\Delta V|\).</li>
+            <li>Calcular <a href="TemaD3-Formulario.html#formula-5" class="formula-link-inline">\(E_c=e|\Delta V|\)</a>.</li>
             <li>Obtener \(p=\sqrt{2m_eE_c}\).</li>
             <li>Calcular \(\lambda=h/p\). Comprobar que la energía es suficientemente menor que la energía en reposo del electrón (\(511\,\text{keV}\)) para usar la aproximación no relativista.</li>
         </ol>
         <h3>Tipo 3. Incertidumbre de la posición a partir de la incertidumbre de la velocidad</h3>
         <ol class="pasos-metodo">
             <li>Pasar el porcentaje a incertidumbre absoluta: \(\Delta v=(\text{porcentaje}/100)\,v\).</li>
-            <li>Calcular \(\Delta p=m\Delta v\), si el movimiento es no relativista.</li>
-            <li>Despejar el límite inferior: \(\Delta x_{\min}=h/(4\pi\Delta p)\).</li>
+            <li>Calcular \(\Delta p=m\Delta v\) si el movimiento es no relativista.</li>
+            <li>Despejar el límite inferior: <a href="TemaD3-Formulario.html#formula-7" class="formula-link-inline">\(\Delta x_{\min}=h/(4\pi\Delta p)\)</a>.</li>
             <li>Expresar el resultado como incertidumbre mínima, no como posición exacta.</li>
         </ol>
         <h3>Tipo 4. Justificación de la difracción de electrones</h3>
         <p>Enunciar De Broglie, comparar el orden de magnitud de \(\lambda=h/p\) con el espaciado de la red cristalina y concluir que la onda asociada puede difractarse.</p>
         <h3>Tipo 5. Comparación de un fotón y un electrón con la misma longitud de onda</h3>
+        <div class="formula-box" id="td3-comparacion">
+            <a href="TemaD3-Formulario.html#formula-11" class="formula-link">\[E_\gamma=\frac{hc}{\lambda};\quad K_e=\frac{h^2}{2m_e\lambda^2};\quad \frac{K_e}{E_\gamma}=\frac{h}{2m_ec\lambda}\]</a>
+        </div>
         <p>Para el fotón, usar \(E_\gamma=hc/\lambda\). Para el electrón no relativista, usar \(p=h/\lambda\) y \(E_c=p^2/(2m_e)=h^2/(2m_e\lambda^2)\). No confundir ambas expresiones de energía.</p>
     </details>
 
@@ -248,7 +318,7 @@
             <p style="background:#eef2ff; padding:12px 18px; border-radius:12px; border-left:5px solid #3b82f6; color:#1e3a8a;">
                 <strong>Selección de 10 problemas de Castilla y León.</strong> Se han priorizado enunciados clasificados como D3 en el banco facilitado. Tres ejercicios aparecen etiquetados conjuntamente como D2 + D3 porque utilizan el efecto fotoeléctrico como punto de partida para calcular magnitudes de De Broglie. La identificación conserva comunidad, año, convocatoria y número de problema del banco.
             </p>
-            <div class="note"><strong>Cómo trabajar estos problemas:</strong> intenta resolver primero el enunciado sin desplegar la solución. Después compara el planteamiento, las unidades, la expresión utilizada y el resultado. Las soluciones reproducen y maquetan la resolución incluida en el archivo problemas.json aportado.</div>
+            <div class="note"><strong>Cómo trabajar estos problemas:</strong> intenta resolver primero el enunciado sin desplegar la solución. Después compara el planteamiento, las unidades, la expresión utilizada y el resultado.</div>
             <!-- EJERCICIO 1: 2026 Ordinaria · PROBLEMA 12 -->
             <details class="tarjeta-ejercicio">
                 <summary class="cabecera-ej">
@@ -282,12 +352,11 @@
                 <div class="etiquetas-ej"><span class="etiqueta-tema">Clasificación del banco: D3</span></div>
                 <div class="enunciado-ej">
                     <p>¿Qué se entiende por dualidad onda-corpúsculo? (Bloque 4: Física relativista, cuántica, nuclear y de partículas, opción B, 1 punto).</p>
-                    
                 </div>
                 <div class="resolucion-ej">
                     <div class="resolucion-bloque"><h4>Enunciado de la dualidad</h4><p>La dualidad onda-corpúsculo es uno de los pilares de la mecánica cuántica. Establece que, a escala microscópica, toda entidad física se comporta tanto como onda como como partícula dependiendo del experimento que se realice sobre ella, sin que pueda asignársele de modo absoluto una u otra naturaleza.</p></div><div class="resolucion-bloque"><h4>Caso de la luz</h4><p>La luz, tratada clásicamente como onda electromagnética por Maxwell, también exhibe carácter corpuscular: el efecto fotoeléctrico y el efecto Compton se explican como interacciones de fotones de energía \(E=h\nu\) y momento lineal \(p=\frac{h}{\lambda}\), según Einstein en 1905.</p></div><div class="resolucion-bloque"><h4>Caso de las partículas materiales (hipótesis de de Broglie)</h4><p>Recíprocamente, en 1924 de Broglie postuló que toda partícula material de momento lineal \(p\) lleva asociada una onda de longitud:</p>
 <div class="formula-box">\[\lambda=\frac{h}{p},\]</div>
-<p>confirmada experimentalmente por Davisson y Germer en 1927 con la difracción de electrones por una red cristalina. Esta longitud de onda es habitualmente despreciable a escalas macroscópicas, por ejemplo del orden de \(10^{-34}\,\text{m}\) para una pelota de tenis, pero del orden del tamaño atómico para electrones acelerados a unos pocos voltios.</p></div>
+<p>confirmada experimentalmente por Davisson y Germer en 1927 con la difracción de electrones por una red cristalina.</p></div>
                     <div class="resultado-final"><strong>Resultado recogido en el banco:</strong><p>La dualidad onda-corpúsculo establece que toda entidad física presenta comportamiento ondulatorio y corpuscular según el experimento. La luz muestra carácter de partícula mediante fotones, y las partículas materiales muestran carácter ondulatorio con \(\lambda=\frac{h}{p}\).</p></div>
                 </div>
             </details>
@@ -301,7 +370,6 @@
                 <div class="etiquetas-ej"><span class="etiqueta-tema">Clasificación del banco: D3</span></div>
                 <div class="enunciado-ej">
                     <p>Un electrón que se encuentra inicialmente en reposo es acelerado mediante una diferencia de potencial \(\Delta V=1800\,\text{V}\). Determine la longitud de onda asociada a dicho electrón. Datos: \(h=6{,}63\cdot10^{-34}\,\text{J}\,\text{s}\); \(m_e=9{,}11\cdot10^{-31}\,\text{kg}\); \(e=1{,}60\cdot10^{-19}\,\text{C}\).</p>
-                    
                 </div>
                 <div class="resolucion-ej">
                     <div class="resolucion-bloque"><h4>Energía cinética adquirida</h4><p>El trabajo del campo eléctrico se invierte íntegramente en energía cinética, pues el electrón está inicialmente en reposo:</p>
@@ -319,12 +387,11 @@
                 <div class="etiquetas-ej"><span class="etiqueta-tema">Clasificación del banco: D3</span></div>
                 <div class="enunciado-ej">
                     <p>La difracción es un fenómeno característico de las ondas. Sin embargo, existe una técnica denominada difracción de electrones que se utiliza para estudiar la estructura de la materia. Explique cómo es posible que los electrones sufran difracción.</p>
-                    
                 </div>
                 <div class="resolucion-ej">
                     <div class="resolucion-bloque"><h4>Dualidad onda-corpúsculo</h4><p>Según la hipótesis de de Broglie, toda partícula material en movimiento lleva asociada una onda cuya longitud de onda vale:</p>
 <div class="formula-box">\[\lambda=\frac{h}{p}.\]</div>
-<p>Cuando la longitud de onda asociada es comparable al tamaño del obstáculo, de la rendija o al espaciado interatómico de una red cristalina, se observan fenómenos típicamente ondulatorios como la difracción.</p></div><div class="resolucion-bloque"><h4>Caso de los electrones</h4><p>Para un electrón acelerado por una diferencia de potencial moderada, por ejemplo \(100\,\text{V}\), la longitud de onda asociada es del orden del espaciado atómico de los sólidos cristalinos (\(10^{-10}\,\text{m}\)). Por eso un haz de electrones, al atravesar o reflejarse en una red cristalina, produce un patrón de difracción análogo al de los rayos X.</p></div><div class="resolucion-bloque"><h4>Aplicación a la estructura de la materia</h4><p>Como la longitud de onda asociada al electrón es ajustable mediante la diferencia de potencial acelerador, puede sintonizarse para resolver detalles a escala atómica. Esto fundamenta técnicas como el microscopio electrónico y la difracción de electrones de baja energía (LEED) para estudiar superficies, ya que con luz visible sería imposible resolver estructuras menores que cientos de nanómetros.</p></div>
+<p>Cuando la longitud de onda asociada es comparable al tamaño del obstáculo, de la rendija o al espaciado interatómico de una red cristalina, se observan fenómenos típicamente ondulatorios como la difracción.</p></div><div class="resolucion-bloque"><h4>Caso de los electrones</h4><p>Para un electrón acelerado por una diferencia de potencial moderada, por ejemplo \(100\,\text{V}\), la longitud de onda asociada es del orden del espaciado atómico de los sólidos cristalinos (\(10^{-10}\,\text{m}\)). Por eso un haz de electrones, al atravesar o reflejarse en una red cristalina, produce un patrón de difracción análogo al de los rayos X.</p></div><div class="resolucion-bloque"><h4>Aplicación a la estructura de la materia</h4><p>Como la longitud de onda asociada al electrón es ajustable mediante la diferencia de potencial acelerador, puede sintonizarse para resolver detalles a escala atómica. Esto fundamenta técnicas como el microscopio electrónico y la difracción de electrones de baja energía (LEED) para estudiar superficies.</p></div>
                     <div class="resultado-final"><strong>Resultado recogido en el banco:</strong><p>Los electrones sufren difracción porque tienen naturaleza ondulatoria: \(\lambda=h/p\). Para electrones acelerados, \(\lambda\) puede ser comparable al espaciado atómico y producir patrones de difracción.</p></div>
                 </div>
             </details>
@@ -338,7 +405,6 @@
                 <div class="etiquetas-ej"><span class="etiqueta-tema">Clasificación del banco: D2 + D3</span><span class="etiqueta-cruce">Ejercicio compartido con D2</span></div>
                 <div class="enunciado-ej">
                     <p>Determine la mínima longitud de onda de de Broglie de los fotoelectrones emitidos cuando luz de 450 nm incide sobre un cátodo de sodio, cuyo trabajo de extracción es 2,28 eV. Datos: \(h=6{,}63\cdot10^{-34}\,\text{J}\,\text{s}\); \(c_0=3{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}\); \(m_e=9{,}11\cdot10^{-31}\,\text{kg}\); \(1\,\text{eV}=1{,}60\cdot10^{-19}\,\text{J}\).</p>
-                    
                 </div>
                 <div class="resolucion-ej">
                     <div class="resolucion-bloque"><h4>Energía del fotón incidente</h4><div class="formula-box">\[E_{\text{fotón}}=\frac{h\,c_0}{\lambda}=\frac{6{,}63\cdot10^{-34}\cdot3{,}00\cdot10^{8}}{450\cdot10^{-9}}=4{,}42\cdot10^{-19}\,\text{J}.\]</div></div><div class="resolucion-bloque"><h4>Energía cinética máxima del fotoelectrón (Einstein)</h4><p>El trabajo de extracción es \(W_{\text{ext}}=2{,}28\,\text{eV}=3{,}65\cdot10^{-19}\,\text{J}\). Por la ecuación del efecto fotoeléctrico:</p>
@@ -357,7 +423,6 @@
                 <div class="etiquetas-ej"><span class="etiqueta-tema">Clasificación del banco: D2 + D3</span><span class="etiqueta-cruce">Ejercicio compartido con D2</span></div>
                 <div class="enunciado-ej">
                     <p>La longitud de onda de de Broglie de los electrones emitidos por un cierto metal es \(1{,}5\,\text{nm}\) cuando sobre él incide un cierto haz de luz. Teniendo en cuenta que el trabajo de extracción del metal tiene un valor de \(1{,}3\,\text{eV}\), determine la longitud de onda de la luz incidente. ¿Pertenece al rango de la luz visible?</p>
-                    
                 </div>
                 <div class="resolucion-ej">
                     <div class="resolucion-bloque"><h4>Energía cinética de los fotoelectrones (de Broglie)</h4><p>La longitud de onda de de Broglie es \(\lambda_e=\frac{h}{p}\), de donde \(p=\frac{h}{\lambda_e}\), y la energía cinética no relativista es \(K=\frac{p^{2}}{2m_e}\).</p>
@@ -379,14 +444,13 @@
                 <div class="etiquetas-ej"><span class="etiqueta-tema">Clasificación del banco: D3</span></div>
                 <div class="enunciado-ej">
                     <p>Encuentre la relación entre la energía cinética de un electrón y la energía de un fotón si ambos tienen la misma longitud de onda.</p>
-                    
                 </div>
                 <div class="resolucion-ej">
                     <div class="resolucion-bloque"><h4>Energía del fotón</h4><p>Para un fotón de longitud de onda \(\lambda\),</p>
-<div class="formula-box">\[E_{\text{fotón}}=\frac{hc}{\lambda}.\]</div></div><div class="resolucion-bloque"><h4>Energía cinética del electrón (de Broglie)</h4><p>Para un electrón no relativista con longitud de onda de de Broglie \(\lambda=h/p\), se tiene \(p=h/\lambda\) y</p>
-<div class="formula-box">\[K=\frac{p^{2}}{2m}=\frac{h^{2}}{2m\lambda^{2}}.\]</div></div><div class="resolucion-bloque"><h4>Cociente y producto</h4><p>El cociente entre ambas energías es</p>
-<div class="formula-box">\[\frac{K}{E_{\text{fotón}}}=\frac{h^{2}/(2m\lambda^{2})}{hc/\lambda}=\frac{h}{2mc\lambda}.\]</div>
-<p>Equivalentemente, \(K=\frac{h}{2mc\lambda}E_{\text{fotón}}\). Usando \(\lambda=h/p\), esto da una expresión que solo involucra a \(p\) y constantes universales.</p></div>
+<div class="formula-box">\[E_{\text{fotón}}=\frac{hc}{\lambda}.\]></div></div><div class="resolucion-bloque"><h4>Energía cinética del electrón (de Broglie)</h4><p>Para un electrón no relativista con longitud de onda de de Broglie \(\lambda=h/p\), se tiene \(p=h/\lambda\) y</p>
+<div class="formula-box">\[K=\frac{p^{2}}{2m}=\frac{h^{2}}{2m\lambda^{2}}.\]></div></div><div class="resolucion-bloque"><h4>Cociente y producto</h4><p>El cociente entre ambas energías es</p>
+<div class="formula-box">\[\frac{K}{E_{\text{fotón}}}=\frac{h^{2}/(2m\lambda^{2})}{hc/\lambda}=\frac{h}{2mc\lambda}.\]></div>
+<p>Equivalentemente, \(K=\frac{h}{2mc\lambda}E_{\text{fotón}}\).</p></div>
                     <div class="resultado-final"><strong>Resultado recogido en el banco:</strong><p>\(\frac{K}{E_{\text{fotón}}}=\frac{h}{2mc\lambda}\); \(K=\frac{h^{2}}{2m\lambda^{2}}\), \(E_{\text{fotón}}=\frac{hc}{\lambda}\).</p></div>
                 </div>
             </details>
@@ -400,11 +464,10 @@
                 <div class="etiquetas-ej"><span class="etiqueta-tema">Clasificación del banco: D3</span></div>
                 <div class="enunciado-ej">
                     <p>Calcule la longitud de onda asociada a un electrón que, partiendo del reposo, es acelerado mediante una diferencia de potencial de \(3250\,\text{V}\).</p>
-                    
                 </div>
                 <div class="resolucion-ej">
                     <div class="resolucion-bloque"><h4>Energía cinética y momento</h4><p>El electrón parte del reposo, así que \(K=eV=3250\,\text{eV}=5{,}20\cdot10^{-16}\,\text{J}\). Como \(3250\,\text{eV}\ll511\,\text{keV}\), es no relativista y</p>
-<div class="formula-box">\[p=\sqrt{2m_eK}=\sqrt{2(9{,}11\cdot10^{-31})(5{,}20\cdot10^{-16})}=3{,}08\cdot10^{-23}\,\text{kg}\,\text{m}\,\text{s}^{-1}.\]</div></div><div class="resolucion-bloque"><h4>Longitud de onda de de Broglie</h4><div class="formula-box">\[\lambda=\dfrac{h}{p}=\dfrac{6{,}63\cdot10^{-34}}{3{,}08\cdot10^{-23}}=2{,}15\cdot10^{-11}\,\text{m}.\]</div></div>
+<div class="formula-box">\[p=\sqrt{2m_eK}=\sqrt{2(9{,}11\cdot10^{-31})(5{,}20\cdot10^{-16})}=3{,}08\cdot10^{-23}\,\text{kg}\,\text{m}\,\text{s}^{-1}.\]></div></div><div class="resolucion-bloque"><h4>Longitud de onda de de Broglie</h4><div class="formula-box">\[\lambda=\dfrac{h}{p}=\dfrac{6{,}63\cdot10^{-34}}{3{,}08\cdot10^{-23}}=2{,}15\cdot10^{-11}\,\text{m}.\]></div></div>
                     <div class="resultado-final"><strong>Resultado recogido en el banco:</strong><p>\(\lambda=2{,}15\cdot10^{-11}\,\text{m}=0{,}0215\,\text{nm}\).</p></div>
                 </div>
             </details>
@@ -418,24 +481,17 @@
                 <div class="etiquetas-ej"><span class="etiqueta-tema">Clasificación del banco: D2 + D3</span><span class="etiqueta-cruce">Ejercicio compartido con D2</span></div>
                 <div class="enunciado-ej">
                     <p>Un haz de luz de \(650\,\text{nm}\) de longitud de onda incide sobre un metal cuyo trabajo de extracción es \(1{,}20\,\text{eV}\). Calcule la velocidad máxima de los electrones emitidos por efecto fotoeléctrico y su longitud de onda de de Broglie.</p>
-                    
                 </div>
                 <div class="resolucion-ej">
                     <div class="resolucion-bloque"><h4>Energía del fotón incidente</h4><p>La energía del fotón incidente es:</p>
-<div class="formula-box">\[E_{\gamma}=\frac{hc}{\lambda}.\]</div>
+<div class="formula-box">\[E_{\gamma}=\frac{hc}{\lambda}.\]></div>
 <p>Con \(hc\approx1240\,\text{eV}\,\text{nm}\) y \(\lambda=650\,\text{nm}\):</p>
-<div class="formula-box">\[E_{\gamma}\approx\frac{1240}{650}\approx1{,}91\,\text{eV}.\]</div></div><div class="resolucion-bloque"><h4>Energía cinética máxima del electrón</h4><p>Aplicando la ecuación del efecto fotoeléctrico:</p>
-<div class="formula-box">\[K_{\text{max}}=E_{\gamma}-W_{\text{ext}}.\]</div>
+<div class="formula-box">\[E_{\gamma}\approx\frac{1240}{650}\approx1{,}91\,\text{eV}.\]></div></div><div class="resolucion-bloque"><h4>Energía cinética máxima del electrón</h4><p>Aplicando la ecuación del efecto fotoeléctrico:</p>
+<div class="formula-box">\[K_{\text{max}}=E_{\gamma}-W_{\text{ext}}.\]></div>
 <p>Sustituyendo:</p>
-<div class="formula-box">\[K_{\text{max}}\approx1{,}91-1{,}20=0{,}71\,\text{eV}.\]</div>
+<div class="formula-box">\[K_{\text{max}}\approx1{,}91-1{,}20=0{,}71\,\text{eV}.\]></div>
 <p>En julios:</p>
-<div class="formula-box">\[K_{\text{max}}\approx0{,}71\cdot1{,}60\cdot10^{-19}\approx1{,}13\cdot10^{-19}\,\text{J}.\]</div></div><div class="resolucion-bloque"><h4>Velocidad máxima del electrón</h4><p>La energía cinética máxima es:</p>
-<div class="formula-box">\[K_{\text{max}}=\frac{1}{2}m_e v_{\text{max}}^{2}.\]</div>
-<p>Despejando:</p>
-<div class="formula-box">\[v_{\text{max}}=\sqrt{\frac{2K_{\text{max}}}{m_e}}\approx\sqrt{\frac{2\cdot1{,}13\cdot10^{-19}}{9{,}11\cdot10^{-31}}}\approx5{,}0\cdot10^{5}\,\text{m}\,\text{s}^{-1}.\]</div></div><div class="resolucion-bloque"><h4>Longitud de onda de de Broglie</h4><p>La longitud de onda de de Broglie es:</p>
-<div class="formula-box">\[\lambda_{dB}=\frac{h}{p}=\frac{h}{m_e v_{\text{max}}}.\]</div>
-<p>Sustituyendo:</p>
-<div class="formula-box">\[\lambda_{dB}\approx\frac{6{,}63\cdot10^{-34}}{9{,}11\cdot10^{-31}\cdot5{,}0\cdot10^{5}}\approx1{,}46\cdot10^{-9}\,\text{m}.\]</div></div>
+<div class="formula-box">\[K_{\text{max}}\approx0{,}71\cdot1{,}60\cdot10^{-19}\approx1{,}13\cdot10^{-19}\,\text{J}.\]></div></div><div class="resolucion-bloque"><h4>Velocidad máxima del electrón</h4><div class="formula-box">\[v_{\text{max}}=\sqrt{\frac{2K_{\text{max}}}{m_e}}\approx\sqrt{\frac{2\cdot1{,}13\cdot10^{-19}}{9{,}11\cdot10^{-31}}}\approx5{,}0\cdot10^{5}\,\text{m}\,\text{s}^{-1}.\]></div></div><div class="resolucion-bloque"><h4>Longitud de onda de de Broglie</h4><div class="formula-box">\[\lambda_{dB}=\frac{h}{p}=\frac{h}{m_e v_{\text{max}}}\approx\frac{6{,}63\cdot10^{-34}}{9{,}11\cdot10^{-31}\cdot5{,}0\cdot10^{5}}\approx1{,}46\cdot10^{-9}\,\text{m}.\]></div></div>
                     <div class="resultado-final"><strong>Resultado recogido en el banco:</strong><p>\(v_{\text{max}}\approx5{,}0\cdot10^{5}\,\text{m}\,\text{s}^{-1}\); \(\lambda_{dB}\approx1{,}46\cdot10^{-9}\,\text{m}=1{,}46\,\text{nm}\).</p></div>
                 </div>
             </details>
@@ -449,18 +505,17 @@
                 <div class="etiquetas-ej"><span class="etiqueta-tema">Clasificación del banco: D3</span></div>
                 <div class="enunciado-ej">
                     <p>Calcule la longitud de onda de de Broglie para un electrón cuya energía cinética es \(300\,\text{eV}\).</p>
-                    
                 </div>
                 <div class="resolucion-ej">
-                    <div class="resolucion-bloque"><h4>Energía cinética y momento</h4><div class="formula-box">\[E_c=300\,\text{eV}=300\cdot1{,}60\cdot10^{-19}=4{,}80\cdot10^{-17}\,\text{J}.\]</div>
+                    <div class="resolucion-bloque"><h4>Energía cinética y momento</h4><div class="formula-box">\[E_c=300\,\text{eV}=300\cdot1{,}60\cdot10^{-19}=4{,}80\cdot10^{-17}\,\text{J}.\]></div>
 <p>Como la energía es muy inferior a la energía en reposo del electrón, se usa dinámica no relativista:</p>
-<div class="formula-box">\[p=\sqrt{2m_eE_c}=\sqrt{2\cdot9{,}11\cdot10^{-31}\cdot4{,}80\cdot10^{-17}}\approx9{,}35\cdot10^{-24}\,\text{kg}\,\text{m}\,\text{s}^{-1}.\]</div></div><div class="resolucion-bloque"><h4>Longitud de onda</h4><div class="formula-box">\[\lambda=\frac{h}{p}=\frac{6{,}63\cdot10^{-34}}{9{,}35\cdot10^{-24}}\approx7{,}09\cdot10^{-11}\,\text{m}.\]</div></div>
+<div class="formula-box">\[p=\sqrt{2m_eE_c}=\sqrt{2\cdot9{,}11\cdot10^{-31}\cdot4{,}80\cdot10^{-17}}\approx9{,}35\cdot10^{-24}\,\text{kg}\,\text{m}\,\text{s}^{-1}.\]></div></div><div class="resolucion-bloque"><h4>Longitud de onda</h4><div class="formula-box">\[\lambda=\frac{h}{p}=\frac{6{,}63\cdot10^{-34}}{9{,}35\cdot10^{-24}}\approx7{,}09\cdot10^{-11}\,\text{m}.\]></div></div>
                     <div class="resultado-final"><strong>Resultado recogido en el banco:</strong><p>\(\lambda\approx7{,}09\cdot10^{-11}\,\text{m}\).</p></div>
                 </div>
             </details>
             <div class="pie-clave">
                 <i class="fas fa-lightbulb"></i>
-                <span><strong>Observaciones clave:</strong> en los problemas numéricos, la secuencia más repetida es energía cinética → momento lineal → longitud de onda de De Broglie. En el ejercicio de 2026 se añade el paso incertidumbre relativa de la velocidad → incertidumbre del momento → límite de incertidumbre de posición. En las preguntas cualitativas hay que vincular explícitamente la hipótesis de De Broglie con la difracción, y no limitarse a afirmar que el electrón “se comporta como una onda”.</span>
+                <span><strong>Observaciones clave:</strong> en los problemas numéricos, la secuencia más repetida es energía cinética → momento lineal → longitud de onda de De Broglie. En el ejercicio de 2026 se añade el paso incertidumbre relativa de la velocidad → incertidumbre del momento → límite de incertidumbre de posición. En las preguntas cualitativas hay que vincular explícitamente la hipótesis de De Broglie con la difracción.</span>
             </div>
         </div>
     </details>
@@ -474,5 +529,39 @@
         </div>
     </div>
 </div>
+
+<script>
+/* Abre los <details> padres al llegar por ancla (necesario para que
+   los enlaces desde TemaD3-Formulario.html#formula-N funcionen). */
+document.addEventListener('DOMContentLoaded', function () {
+    if (!window.location.hash) return;
+    var target;
+    try { target = document.querySelector(window.location.hash); } catch (e) { return; }
+    if (!target) return;
+    var el = target;
+    while (el) {
+        if (el.tagName === 'DETAILS') el.open = true;
+        el = el.parentElement;
+    }
+    setTimeout(function () {
+        target.scrollIntoView({ behavior: 'auto', block: 'center' });
+    }, 60);
+});
+
+/* Filtro EBAU: convierte los data-* del enlace en query params
+   para que problemas-inline_v04.html pueda aplicar el filtro. */
+document.addEventListener('click', function (e) {
+    var link = e.target.closest('a.filtro-pau');
+    if (!link) return;
+    e.preventDefault();
+    var params = new URLSearchParams();
+    if (link.dataset.q)         params.set('q',         link.dataset.q);
+    if (link.dataset.comunidad) params.set('comunidad', link.dataset.comunidad);
+    if (link.dataset.bloque)    params.set('bloque',    link.dataset.bloque);
+    if (link.dataset.tema)      params.set('tema',      link.dataset.tema);
+    var base = link.getAttribute('href').split('?')[0];
+    window.location.href = base + '?' + params.toString();
+});
+</script>
 </body>
 </html>

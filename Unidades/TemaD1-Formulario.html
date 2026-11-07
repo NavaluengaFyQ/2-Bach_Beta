@@ -5,16 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>#TEMA D1 (Formulario).- Relatividad especial y consecuencias</title>
 
-    <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-    <!-- CSS PROPIO DE FORMULARIOS -->
     <link rel="stylesheet" href="../css/formulario.css">
+
+    <style>
+        .formula-box { overflow-x: auto; max-width: 100%; }
+        .formula-box a.formula-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 8px;
+            padding: 3px 6px;
+            margin: 2px 0;
+            transition: background .15s ease;
+        }
+        .formula-box a.formula-link:hover { background: rgba(99,102,241,0.10); }
+        .formula-box a.formula-link:focus-visible { outline: 2px dashed #6366f1; outline-offset: 2px; }
+    </style>
 </head>
 <body>
 <div class="container">
 
-    <!-- ============================ CABECERA ============================ -->
     <div class="header">
         <div class="header-left">
             <h1>IES Valle del Alberche</h1>
@@ -29,12 +40,9 @@
         </div>
     </div>
 
-    <!-- ============================ GRID ============================ -->
     <div class="grid">
 
-        <!-- ============================================================
-             FICHA 1 · POSTULADOS DE LA RELATIVIDAD ESPECIAL
-             ============================================================ -->
+        <!-- FICHA 1 -->
         <article class="card c-1">
             <div class="cabecera">
                 <span class="num">1</span>
@@ -49,11 +57,13 @@
                 No es una fórmula cuantitativa, sino el punto de partida conceptual de todo el tema: los dos postulados de Einstein que sostienen la relatividad especial. Se aplican al decidir qué sistema de referencia usar, al comparar medidas entre observadores inerciales y al justificar por qué la velocidad de la luz es la misma para todos.
             </div>
             <div class="formula-box" id="formula-1">
-                <ol style="text-align:left; margin:0; padding-left:20px; font-size:0.95em;">
-                    <li><strong>Principio de relatividad:</strong> las leyes de la Física tienen la misma forma en todos los sistemas de referencia inerciales.</li>
-                    <li><strong>Constancia de \(c\):</strong> todo observador inercial mide el mismo valor de la velocidad de la luz en el vacío, independientemente de su movimiento o del de la fuente.</li>
-                </ol>
-                \[ c = 3{,}00\cdot10^{8}\ \text{m}\cdot\text{s}^{-1} \]
+                <a href="TemaD1.html#td1-postulados" class="formula-link">
+                    <ol style="text-align:left; margin:0; padding-left:20px; font-size:0.95em;">
+                        <li><strong>Principio de relatividad:</strong> las leyes de la Física tienen la misma forma en todos los sistemas de referencia inerciales.</li>
+                        <li><strong>Constancia de \(c\):</strong> todo observador inercial mide el mismo valor de la velocidad de la luz en el vacío, independientemente de su movimiento o del de la fuente.</li>
+                    </ol>
+                </a>
+                <a href="TemaD1.html#td1-postulados" class="formula-link">\[ c = 3{,}00\cdot10^{8}\ \text{m}\cdot\text{s}^{-1} \]</a>
             </div>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
@@ -71,9 +81,7 @@
             </div>
         </article>
 
-        <!-- ============================================================
-             FICHA 2 · FACTOR DE LORENTZ
-             ============================================================ -->
+        <!-- FICHA 2 -->
         <article class="card c-1">
             <div class="cabecera">
                 <span class="num">2</span>
@@ -88,17 +96,16 @@
                 El factor \(\gamma\), que aparece en todas las fórmulas relativistas de tiempo, longitud, masa y energía. Se aplica en <em>todos</em> los problemas: casi siempre es el primer paso tras identificar la velocidad relativa entre sistemas. Junto a \(\beta=v/c\), resume el "grado de relativisticidad" del problema.
             </div>
             <div class="formula-box" id="formula-2">
-                \[ \boxed{\gamma = \frac{1}{\sqrt{1-\dfrac{v^{2}}{c^{2}}}}} \qquad \beta=\frac{v}{c} \]
-                \[ \gamma = \frac{1}{\sqrt{1-\beta^{2}}} \]
+                <a href="TemaD1.html#td1-gamma" class="formula-link">\[ \boxed{\gamma = \frac{1}{\sqrt{1-\dfrac{v^{2}}{c^{2}}}}} \]</a>
+                <a href="TemaD1.html#td1-gamma" class="formula-link">\[ \beta = \frac{v}{c} \]</a>
+                <a href="TemaD1.html#td1-gamma" class="formula-link">\[ \gamma = \frac{1}{\sqrt{1-\beta^{2}}} \]</a>
             </div>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: aparece en absolutamente todas las fórmulas relativistas. Memoriza \(\gamma=1/\sqrt{1-v^2/c^2}\), con la velocidad relativa \(v\) entre los dos sistemas. Comprueba: si \(v=0\), \(\gamma=1\); si \(v\to c\), \(\gamma\to\infty\). Valores frecuentes: \(v=0{,}6c\Rightarrow\gamma=1{,}25\); \(v=0{,}8c\Rightarrow\gamma=1{,}667\); \(v=0{,}9c\Rightarrow\gamma\approx2{,}29\).</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(\gamma\)</td><td data-label="Significado">Factor de Lorentz</td><td data-label="Unidades">adimensional</td></tr>
                     <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Velocidad relativa entre los sistemas</td><td data-label="Unidades">m/s</td></tr>
@@ -118,9 +125,7 @@
             </div>
         </article>
 
-        <!-- ============================================================
-             FICHA 3 · DILATACIÓN DEL TIEMPO
-             ============================================================ -->
+        <!-- FICHA 3 -->
         <article class="card c-2">
             <div class="cabecera">
                 <span class="num">3</span>
@@ -135,16 +140,15 @@
                 El intervalo de tiempo medido por un observador respecto al cual el reloj se mueve, a partir del tiempo propio medido en el sistema del reloj. Se aplica en todos los problemas de viajes espaciales, vidas medias de partículas y comparación de relojes entre observadores inerciales.
             </div>
             <div class="formula-box" id="formula-3">
-                \[ \boxed{\Delta t = \gamma\,\Delta\tau} \qquad\Longleftrightarrow\qquad \Delta\tau = \frac{\Delta t}{\gamma} \]
+                <a href="TemaD1.html#td1-tiempo" class="formula-link">\[ \boxed{\Delta t = \gamma\,\Delta\tau} \]</a>
+                <a href="TemaD1.html#td1-tiempo" class="formula-link">\[ \Delta\tau = \frac{\Delta t}{\gamma} \]</a>
             </div>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es una de las fórmulas clave de la EBAU. Memoriza \(\Delta t=\gamma\Delta\tau\) con el significado: <strong>el tiempo propio</strong> \(\Delta\tau\) (o \(\Delta t_0\)) es el más corto, medido en el sistema donde los dos sucesos ocurren en el mismo lugar; <strong>el tiempo medido desde fuera</strong> \(\Delta t\) es mayor. Comprueba: \(\Delta t/\Delta\tau=\gamma\geq1\). Error típico: intercambiar propio y dilatado.</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(\Delta\tau\)</td><td data-label="Significado">Tiempo propio (en el sistema del reloj)</td><td data-label="Unidades">s</td></tr>
                     <tr><td data-label="Símbolo">\(\Delta t\)</td><td data-label="Significado">Tiempo medido por el observador externo</td><td data-label="Unidades">s</td></tr>
@@ -157,15 +161,13 @@
                 <ul>
                     <li>El tiempo propio es siempre el <strong>menor</strong> de los dos.</li>
                     <li>Se mide en el sistema donde los dos sucesos ocurren en el mismo punto.</li>
-                    <li>Ejemplo típico: reloj biológico del astronauta (sale y vuelve al mismo sitio de la nave).</li>
+                    <li>Ejemplo típico: reloj biológico del astronauta.</li>
                     <li>No confundir con la contracción de longitudes (ficha 4).</li>
                 </ul>
             </div>
         </article>
 
-        <!-- ============================================================
-             FICHA 4 · CONTRACCIÓN DE LONGITUDES
-             ============================================================ -->
+        <!-- FICHA 4 -->
         <article class="card c-2">
             <div class="cabecera">
                 <span class="num">4</span>
@@ -180,16 +182,15 @@
                 La longitud de un objeto medida por un observador que lo ve moverse, a partir de la longitud propia (medida en el sistema del objeto). Se aplica en problemas de naves que pasan junto a la Tierra, en la interpretación de datos de longitudes entre sistemas y en la relación con γ.
             </div>
             <div class="formula-box" id="formula-4">
-                \[ \boxed{L = \frac{L_0}{\gamma} = L_0\sqrt{1-\frac{v^{2}}{c^{2}}}} \]
+                <a href="TemaD1.html#td1-longitud" class="formula-link">\[ \boxed{L = \frac{L_0}{\gamma} = L_0\sqrt{1-\frac{v^{2}}{c^{2}}}} \]</a>
+                <a href="TemaD1.html#td1-longitud" class="formula-link">\[ L_0 = \gamma\,L \]</a>
             </div>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es una de las fórmulas clave del tema. Memoriza \(L=L_0/\gamma\) con el significado: <strong>la longitud propia</strong> \(L_0\) (medida en el sistema del objeto) es la <strong>mayor</strong>; <strong>la longitud medida por quien ve el objeto moverse</strong> \(L\) es menor. Solo se contrae la dimensión paralela al movimiento; las perpendiculares no cambian. Comprueba: \(L/L_0=1/\gamma\leq1\).</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(L_0\)</td><td data-label="Significado">Longitud propia (en reposo del objeto)</td><td data-label="Unidades">m</td></tr>
                     <tr><td data-label="Símbolo">\(L\)</td><td data-label="Significado">Longitud medida por el observador en movimiento relativo</td><td data-label="Unidades">m</td></tr>
@@ -200,7 +201,7 @@
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>Solo se contrae la dimensión paralela al movimiento; las perpendiculares no cambian.</li>
+                    <li>Solo se contrae la dimensión paralela al movimiento.</li>
                     <li>La longitud propia es siempre la <strong>mayor</strong>.</li>
                     <li>El astronauta no "ve" su nave encogida: en su propio sistema mide \(L_0\).</li>
                     <li>No confundir con la dilatación del tiempo (ficha 3).</li>
@@ -208,9 +209,7 @@
             </div>
         </article>
 
-        <!-- ============================================================
-             FICHA 5 · MASA RELATIVISTA
-             ============================================================ -->
+        <!-- FICHA 5 -->
         <article class="card c-2">
             <div class="cabecera">
                 <span class="num">5</span>
@@ -225,16 +224,15 @@
                 La llamada "masa relativista" \(m_{\text{rel}}\) de un cuerpo en movimiento, entendida como \(m_0\) multiplicada por \(\gamma\). Se aplica en los problemas EBAU que usan explícitamente este concepto, sobre todo en partículas aceleradas, y en la interpretación de la energía relativista.
             </div>
             <div class="formula-box" id="formula-5">
-                \[ \boxed{m_{\text{rel}} = \gamma\,m_0} \qquad\Longleftrightarrow\qquad m_0 = \frac{m_{\text{rel}}}{\gamma} \]
+                <a href="TemaD1.html#td1-masa" class="formula-link">\[ \boxed{m_{\text{rel}} = \gamma\,m_0} \]</a>
+                <a href="TemaD1.html#td1-masa" class="formula-link">\[ m_0 = \frac{m_{\text{rel}}}{\gamma} \]</a>
             </div>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No es imprescindible memorizarla: en el tratamiento moderno se mantiene la masa invariante \(m_0\) y se trabaja con \(E=\gamma m_0c^2\). Pero muchos enunciados EBAU usan la "masa relativista". Idea clave: <strong>\(m_{\text{rel}}\geq m_0\)</strong>, crece con \(v\) y tiende a infinito cuando \(v\to c\). Comprueba que \(m_0=m_{\text{rel}}/\gamma\leq m_{\text{rel}}\).</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No es imprescindible memorizarla: en el tratamiento moderno se mantiene la masa invariante \(m_0\) y se trabaja con \(E=\gamma m_0c^2\). Pero muchos enunciados EBAU usan la "masa relativista". Idea clave: <strong>\(m_{\text{rel}}\geq m_0\)</strong>, crece con \(v\) y tiende a infinito cuando \(v\to c\).</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(m_0\)</td><td data-label="Significado">Masa en reposo (invariante)</td><td data-label="Unidades">kg</td></tr>
                     <tr><td data-label="Símbolo">\(m_{\text{rel}}\)</td><td data-label="Significado">Masa relativista a la velocidad \(v\)</td><td data-label="Unidades">kg</td></tr>
@@ -253,9 +251,7 @@
             </div>
         </article>
 
-        <!-- ============================================================
-             FICHA 6 · ENERGÍA EN REPOSO
-             ============================================================ -->
+        <!-- FICHA 6 -->
         <article class="card c-1">
             <div class="cabecera">
                 <span class="num">6</span>
@@ -270,16 +266,14 @@
                 La energía asociada a la masa en reposo de un cuerpo, según la equivalencia masa-energía de Einstein. Se aplica en los problemas de energía relativista: es el punto de partida para calcular la energía total, la cinética y la energía liberada en procesos nucleares o de aniquilación.
             </div>
             <div class="formula-box" id="formula-6">
-                \[ \boxed{E_0 = m_0\,c^{2}} \]
+                <a href="TemaD1.html#td1-e0" class="formula-link">\[ \boxed{E_0 = m_0\,c^{2}} \]</a>
             </div>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la ecuación más famosa de la física y aparece en todas las fórmulas de energía relativista. Memoriza \(E_0=m_0c^2\) y su significado: <strong>toda masa en reposo tiene asociada una energía</strong>. Un kilogramo en reposo equivale a \(9\cdot10^{16}\,\text{J}\). La energía cinética relativista y la energía total se construyen a partir de esta expresión.</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la ecuación más famosa de la física y aparece en todas las fórmulas de energía relativista. Memoriza \(E_0=m_0c^2\) y su significado: <strong>toda masa en reposo tiene asociada una energía</strong>. Un kilogramo en reposo equivale a \(9\cdot10^{16}\,\text{J}\).</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(E_0\)</td><td data-label="Significado">Energía en reposo del cuerpo</td><td data-label="Unidades">J (o eV)</td></tr>
                     <tr><td data-label="Símbolo">\(m_0\)</td><td data-label="Significado">Masa en reposo</td><td data-label="Unidades">kg</td></tr>
@@ -298,9 +292,7 @@
             </div>
         </article>
 
-        <!-- ============================================================
-             FICHA 7 · ENERGÍA TOTAL RELATIVISTA
-             ============================================================ -->
+        <!-- FICHA 7 -->
         <article class="card c-2">
             <div class="cabecera">
                 <span class="num">7</span>
@@ -315,17 +307,15 @@
                 La energía total de una partícula que se mueve a velocidad relativista \(v\), incluyendo su energía en reposo. Se aplica en problemas de partículas aceleradas y en la interpretación de la masa relativista como energía (con la convención \(E=m_{\text{rel}}c^2\)).
             </div>
             <div class="formula-box" id="formula-7">
-                \[ \boxed{E = \gamma\,m_0\,c^{2} = \gamma\,E_0} \]
-                \[ E = m_{\text{rel}}\,c^{2} \]
+                <a href="TemaD1.html#td1-energia" class="formula-link">\[ \boxed{E = \gamma\,m_0\,c^{2} = \gamma\,E_0} \]</a>
+                <a href="TemaD1.html#td1-energia" class="formula-link">\[ E = m_{\text{rel}}\,c^{2} \]</a>
             </div>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es \(E_0\) multiplicado por \(\gamma\). Idea clave: <strong>\(E\geq E_0\)</strong> y crece con \(v\). En el límite \(v\to c\), \(E\to\infty\). Error típico: confundir la energía total con la energía cinética: la total incluye la energía en reposo.</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es \(E_0\) multiplicado por \(\gamma\). Idea clave: <strong>\(E\geq E_0\)</strong> y crece con \(v\). En el límite \(v\to c\), \(E\to\infty\). Error típico: confundir la energía total con la energía cinética.</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(E\)</td><td data-label="Significado">Energía total relativista</td><td data-label="Unidades">J</td></tr>
                     <tr><td data-label="Símbolo">\(E_0\)</td><td data-label="Significado">Energía en reposo</td><td data-label="Unidades">J</td></tr>
@@ -339,15 +329,13 @@
                 <ul>
                     <li>La energía total es la magnitud relativista que suele usarse hoy en lugar de la "masa relativista".</li>
                     <li>La energía cinética es \(E_c=E-E_0\) (ficha 8).</li>
-                    <li>Para \(v\ll c\), \(E\approx E_0+\frac12m_0v^2\) (límite clásico).</li>
+                    <li>Para \(v\ll c\), \(E\approx E_0+\frac12m_0v^2\).</li>
                     <li>El segundo postulado asegura que \(E\) diverge al acercarse a \(c\).</li>
                 </ul>
             </div>
         </article>
 
-        <!-- ============================================================
-             FICHA 8 · ENERGÍA CINÉTICA RELATIVISTA
-             ============================================================ -->
+        <!-- FICHA 8 -->
         <article class="card c-2">
             <div class="cabecera">
                 <span class="num">8</span>
@@ -362,17 +350,15 @@
                 La energía cinética de una partícula relativista, es decir, la energía comunicada al cuerpo para acelerarlo desde el reposo hasta la velocidad \(v\). Se aplica en aceleradores de partículas, en reactores nucleares y en cualquier problema que pida "qué energía hay que comunicar".
             </div>
             <div class="formula-box" id="formula-8">
-                \[ \boxed{E_c = E - E_0 = (\gamma-1)\,m_0\,c^{2} = (\gamma-1)\,E_0} \]
-                \[ E_c = (m_{\text{rel}}-m_0)\,c^{2} \]
+                <a href="TemaD1.html#td1-ec" class="formula-link">\[ \boxed{E_c = E - E_0 = (\gamma-1)\,m_0\,c^{2} = (\gamma-1)\,E_0} \]</a>
+                <a href="TemaD1.html#td1-ec" class="formula-link">\[ E_c = (m_{\text{rel}}-m_0)\,c^{2} \]</a>
             </div>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es \(E-E_0\). Idea clave: <strong>energía cinética = energía total − energía en reposo</strong>. En el límite clásico (\(v\ll c\)) se reduce a \(\frac12m_0v^2\). Error típico: usar directamente \(\frac12mv^2\) con velocidades relativistas (subestima mucho la energía cuando \(v\) se acerca a \(c\)).</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(E_c\)</td><td data-label="Significado">Energía cinética relativista</td><td data-label="Unidades">J (o eV)</td></tr>
                     <tr><td data-label="Símbolo">\(E\)</td><td data-label="Significado">Energía total</td><td data-label="Unidades">J</td></tr>
@@ -392,9 +378,7 @@
             </div>
         </article>
 
-        <!-- ============================================================
-             FICHA 9 · MOMENTO LINEAL RELATIVISTA
-             ============================================================ -->
+        <!-- FICHA 9 -->
         <article class="card c-2">
             <div class="cabecera">
                 <span class="num">9</span>
@@ -405,22 +389,19 @@
                 <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
             </div>
             <div class="intro">
-                <span class="epi-etiqueta" style="display:none;"></span>
                 <span class="etiqueta">¿Qué se calcula?</span>
                 El momento lineal relativista de una partícula en movimiento. Se aplica en colisiones y desintegraciones de partículas (física nuclear y de partículas), y como complemento a la energía relativista cuando el problema lo pide expresamente.
             </div>
             <div class="formula-box" id="formula-9">
-                \[ \boxed{p = \gamma\,m_0\,v = m_{\text{rel}}\,v} \]
-                \[ E^{2} = (pc)^{2} + (m_0c^{2})^{2} \]
+                <a href="TemaD1.html#td1-momento" class="formula-link">\[ \boxed{p = \gamma\,m_0\,v = m_{\text{rel}}\,v} \]</a>
+                <a href="TemaD1.html#td1-momento" class="formula-link">\[ E^{2} = (pc)^{2} + (m_0c^{2})^{2} \]</a>
             </div>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">📖 FAMILIARIZARSE</span>Familiarízate con ella: en la EBAU de Castilla y León raramente se pide el momento relativista de forma aislada, pero aparece en colisiones y en la relación energía-momento. Idea clave: <strong>\(p=\gamma m_0v\)</strong> (no \(m_0v\) como en mecánica clásica). La relación \(E^2=(pc)^2+(m_0c^2)^2\) es la fórmula de dispersión relativista, muy usada en física de partículas.</span>
+                <span class="respuesta"><span class="estrategia">📖 FAMILIARIZARSE</span>Familiarízate con ella: en la EBAU de Castilla y León raramente se pide el momento relativista de forma aislada, pero aparece en colisiones y en la relación energía-momento. Idea clave: <strong>\(p=\gamma m_0v\)</strong> (no \(m_0v\) como en mecánica clásica). La relación \(E^2=(pc)^2+(m_0c^2)^2\) es la fórmula de dispersión relativista.</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(p\)</td><td data-label="Significado">Momento lineal relativista</td><td data-label="Unidades">kg·m/s</td></tr>
                     <tr><td data-label="Símbolo">\(\gamma\)</td><td data-label="Significado">Factor de Lorentz</td><td data-label="Unidades">adimensional</td></tr>
@@ -441,9 +422,7 @@
             </div>
         </article>
 
-        <!-- ============================================================
-             FICHA 10 · DESPEJE DE LA VELOCIDAD A PARTIR DE γ
-             ============================================================ -->
+        <!-- FICHA 10 -->
         <article class="card c-4">
             <div class="cabecera">
                 <span class="num">10</span>
@@ -458,18 +437,16 @@
                 La velocidad relativa \(v\) conocidos \(\gamma\), un cociente de tiempos, o un cociente de longitudes. Se aplica en los problemas EBAU típicos en los que el dato no es \(v\) directamente, sino un cociente ("el tiempo se reduce a la mitad", "la longitud es un tercio", etc.).
             </div>
             <div class="formula-box" id="formula-10">
-                \[ \boxed{v = c\sqrt{1 - \frac{1}{\gamma^{2}}}} \]
-                \[ v = c\sqrt{1 - \left(\frac{\Delta\tau}{\Delta t}\right)^{2}} \]
-                \[ v = c\sqrt{1 - \left(\frac{L}{L_0}\right)^{2}} \]
+                <a href="TemaD1.html#td1-despeje" class="formula-link">\[ \boxed{v = c\sqrt{1 - \frac{1}{\gamma^{2}}}} \]</a>
+                <a href="TemaD1.html#td1-despeje" class="formula-link">\[ v = c\sqrt{1 - \left(\frac{\Delta\tau}{\Delta t}\right)^{2}} \]</a>
+                <a href="TemaD1.html#td1-despeje" class="formula-link">\[ v = c\sqrt{1 - \left(\frac{L}{L_0}\right)^{2}} \]</a>
             </div>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: se despeja de la fórmula de \(\gamma\), de la dilatación o de la contracción. Idea clave: <strong>si conoces el cociente entre las dos magnitudes (tiempo o longitud), ya tienes \(1/\gamma\)</strong>. Comprobación: el cociente debe ser \(\leq1\), y el resultado debe dar \(v<c\).</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Velocidad relativa buscada</td><td data-label="Unidades">m/s</td></tr>
                     <tr><td data-label="Símbolo">\(c\)</td><td data-label="Significado">Velocidad de la luz en el vacío</td><td data-label="Unidades">m/s</td></tr>
@@ -490,9 +467,7 @@
             </div>
         </article>
 
-        <!-- ============================================================
-             FICHA 11 · VIAJES RELATIVISTAS
-             ============================================================ -->
+        <!-- FICHA 11 -->
         <article class="card c-4">
             <div class="cabecera">
                 <span class="num">11</span>
@@ -504,20 +479,19 @@
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                La duración de un viaje relativista, la distancia recorrida o el tiempo propio del tripulante, combinando \(t=d/v\) con la dilatación del tiempo. Se aplica en problemas típicos de EBAU con naves espaciales hacia estrellas, en los que se conocen la velocidad y la distancia (o el tiempo) y se pide el otro.
+                La duración de un viaje relativista, la distancia recorrida o el tiempo propio del tripulante, combinando \(t=d/v\) con la dilatación del tiempo. Se aplica en problemas típicos de EBAU con naves espaciales hacia estrellas.
             </div>
             <div class="formula-box" id="formula-11">
-                \[ t_{\text{Tierra}} = \frac{d}{v} \qquad \tau_{\text{nave}} = \frac{t_{\text{Tierra}}}{\gamma} \]
-                \[ d = v\,t_{\text{Tierra}} \]
+                <a href="TemaD1.html#td1-viajes" class="formula-link">\[ t_{\text{Tierra}} = \frac{d}{v} \]</a>
+                <a href="TemaD1.html#td1-viajes" class="formula-link">\[ \tau_{\text{nave}} = \frac{t_{\text{Tierra}}}{\gamma} \]</a>
+                <a href="TemaD1.html#td1-viajes" class="formula-link">\[ d = v\,t_{\text{Tierra}} \]</a>
             </div>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es una aplicación directa de \(t=d/v\) y de la dilatación del tiempo. <strong>Identifica los sistemas</strong>: la distancia \(d\) está medida en el sistema terrestre; el tiempo \(t\) también; el tiempo propio es el del tripulante. En viajes de ida y vuelta, trata por separado cada tramo inercial; no se puede aplicar sin más el modelo de un único viaje.</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es una aplicación directa de \(t=d/v\) y de la dilatación del tiempo. <strong>Identifica los sistemas</strong>: la distancia \(d\) está medida en el sistema terrestre; el tiempo \(t\) también; el tiempo propio es el del tripulante. En viajes de ida y vuelta, trata por separado cada tramo inercial.</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(d\)</td><td data-label="Significado">Distancia en el sistema terrestre</td><td data-label="Unidades">m (o años-luz)</td></tr>
                     <tr><td data-label="Símbolo">\(v\)</td><td data-label="Significado">Velocidad de la nave</td><td data-label="Unidades">m/s (o c)</td></tr>
@@ -532,14 +506,12 @@
                     <li>El tiempo propio del tripulante es siempre el más corto.</li>
                     <li>La distancia \(d\) medida en Tierra es la de la Tierra a la estrella, no la percibida por el astronauta.</li>
                     <li>Para el astronauta, la distancia se contrae: \(L=d/\gamma\).</li>
-                    <li>En viaje de ida y vuelta, cada tramo tiene su propio tiempo propio; la vuelta invierte la velocidad.</li>
+                    <li>En viaje de ida y vuelta, cada tramo tiene su propio tiempo propio.</li>
                 </ul>
             </div>
         </article>
 
-        <!-- ============================================================
-             FICHA 12 · CONVERSIÓN DE UNIDADES (eV↔J)
-             ============================================================ -->
+        <!-- FICHA 12 -->
         <article class="card c-3">
             <div class="cabecera">
                 <span class="num">12</span>
@@ -554,18 +526,18 @@
                 No es una fórmula nueva, sino la conversión entre julios y electronvoltios (y múltiplos como MeV, GeV), necesaria en todos los problemas de física relativista de partículas y en algunos de energía nuclear. También recoge la constante \(c\) en sus formas habituales.
             </div>
             <div class="formula-box" id="formula-12">
-                \[ 1\,\text{eV} = 1{,}602\cdot10^{-19}\,\text{J} \qquad 1\,\text{MeV}=10^{6}\,\text{eV} \qquad 1\,\text{GeV}=10^{9}\,\text{eV} \]
-                \[ E[\text{eV}] = \frac{E[\text{J}]}{1{,}602\cdot10^{-19}} \]
-                \[ c = 3{,}00\cdot10^{8}\,\text{m}\cdot\text{s}^{-1} \]
+                <a href="TemaD1.html#td1-conversion" class="formula-link">\[ 1\,\text{eV} = 1{,}602\cdot10^{-19}\,\text{J} \]</a>
+                <a href="TemaD1.html#td1-conversion" class="formula-link">\[ 1\,\text{MeV} = 10^{6}\,\text{eV} \]</a>
+                <a href="TemaD1.html#td1-conversion" class="formula-link">\[ 1\,\text{GeV} = 10^{9}\,\text{eV} \]</a>
+                <a href="TemaD1.html#td1-conversion" class="formula-link">\[ E[\text{eV}] = \frac{E[\text{J}]}{1{,}602\cdot10^{-19}} \]</a>
+                <a href="TemaD1.html#td1-conversion" class="formula-link">\[ c = 3{,}00\cdot10^{8}\,\text{m}\cdot\text{s}^{-1} \]</a>
             </div>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
                 <span class="respuesta"><span class="estrategia">🔄 AUTOMATIZAR</span>Sí: es una conversión mecánica que debe salir sin pensar. Memoriza <strong>\(1\,\text{eV}=1{,}602\cdot10^{-19}\,\text{J}\)</strong> y los múltiplos MeV (\(10^6\)) y GeV (\(10^9\)). En física de partículas es habitual dar \(E_0\) en MeV y \(E_c\) en GeV. También memoriza \(c=3{,}00\cdot10^{8}\,\text{m/s}\) y \(c^2\approx9\cdot10^{16}\,\text{m}^2/\text{s}^2\).</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Magnitud</th><th>Valor</th><th>Uso</th></tr>
-                </thead>
+                <thead><tr><th>Magnitud</th><th>Valor</th><th>Uso</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Magnitud">\(c\)</td><td data-label="Valor">\(3{,}00\cdot10^{8}\,\text{m/s}\)</td><td data-label="Uso">Valor exacto en problemas EBAU</td></tr>
                     <tr><td data-label="Magnitud">\(c^2\)</td><td data-label="Valor">\(9\cdot10^{16}\,\text{m}^2/\text{s}^2\)</td><td data-label="Uso">Cálculo directo de \(E_0=m_0c^2\)</td></tr>
@@ -586,17 +558,13 @@
             </div>
         </article>
 
-        <!-- ============================================================
-             LEYENDA EPISTÉMICA
-             ============================================================ -->
+        <!-- LEYENDA EPISTÉMICA -->
         <article class="card span-all leyenda-epi">
-
             <div class="leyenda-epi-header">
                 <span class="num">★</span>
                 <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
                 <span class="badge-centro">Leyenda</span>
             </div>
-
             <p class="leyenda-epi-intro">
                 No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
                 pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
@@ -604,171 +572,77 @@
                 <strong>verbo distinto</strong>. Identificar el tipo <em>antes</em> de estudiar ahorra
                 tiempo y evita memorizar lo que se puede deducir.
             </p>
-
             <div class="leyenda-epi-grid">
-
                 <div class="epi-item definicion">
                     <div class="epi-icono">📘</div>
                     <h3 class="epi-nombre">Definición</h3>
                     <span class="epi-verbo">Memorizar</span>
-                    <p class="epi-desc">
-                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud o
-                        introduce una constante. No se demuestra, se establece. Se domina cuando
-                        puedes enunciarla sin pensar.
-                    </p>
-                    <p class="epi-ej">
-                        <strong>Ejemplos D1</strong>
-                        \(c=3{,}00\cdot10^8\,\text{m/s}\) · tiempo propio · longitud propia · masa en reposo · \(1\,\text{eV}=1{,}602\cdot10^{-19}\,\text{J}\)
-                    </p>
+                    <p class="epi-desc">Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud o introduce una constante.</p>
+                    <p class="epi-ej"><strong>Ejemplos D1</strong> \(c=3{,}00\cdot10^8\,\text{m/s}\) · tiempo propio · longitud propia · masa en reposo · \(1\,\text{eV}=1{,}602\cdot10^{-19}\,\text{J}\)</p>
                 </div>
-
                 <div class="epi-item comprender">
                     <div class="epi-icono">🧭</div>
                     <h3 class="epi-nombre">Ley fundamental</h3>
                     <span class="epi-verbo">Comprender</span>
-                    <p class="epi-desc">
-                        Es el <em>punto de partida</em> del tema: describe cómo funciona la naturaleza
-                        a velocidades relativistas. No se deriva de otra cosa; se entiende el porqué
-                        y las condiciones en las que aplica.
-                    </p>
-                    <p class="epi-ej">
-                        <strong>Ejemplos D1</strong>
-                        Postulados de Einstein · factor de Lorentz \(\gamma\) · \(E_0=m_0c^2\)
-                    </p>
+                    <p class="epi-desc">Es el <em>punto de partida</em> del tema: describe cómo funciona la naturaleza a velocidades relativistas.</p>
+                    <p class="epi-ej"><strong>Ejemplos D1</strong> Postulados de Einstein · factor de Lorentz \(\gamma\) · \(E_0=m_0c^2\)</p>
                 </div>
-
                 <div class="epi-item deducir">
                     <div class="epi-icono">🧮</div>
                     <h3 class="epi-nombre">Consecuencia matemática</h3>
                     <span class="epi-verbo">Deducir</span>
-                    <p class="epi-desc">
-                        Se <em>obtiene</em> despejando o sustituyendo la ley fundamental o una
-                        definición. No se memoriza: se reconstruye en 2–3 líneas si se olvida.
-                    </p>
-                    <p class="epi-ej">
-                        <strong>Ejemplos D1</strong>
-                        Dilatación del tiempo · contracción de longitudes · masa relativista · energía total · energía cinética · momento relativista
-                    </p>
+                    <p class="epi-desc">Se <em>obtiene</em> despejando o sustituyendo la ley fundamental o una definición.</p>
+                    <p class="epi-ej"><strong>Ejemplos D1</strong> Dilatación del tiempo · contracción de longitudes · masa relativista · energía total · energía cinética · momento relativista</p>
                 </div>
-
                 <div class="epi-item aplicar">
                     <div class="epi-icono">⚖️</div>
                     <h3 class="epi-nombre">Aplicar / plantear</h3>
                     <span class="epi-verbo">Aplicar</span>
-                    <p class="epi-desc">
-                        Es una <em>regla de resolución</em> que se aplica a cada problema concreto.
-                        No se demuestra: se usa como plantilla.
-                    </p>
-                    <p class="epi-ej">
-                        <strong>Ejemplos D1</strong>
-                        Despejar \(v\) desde un cociente · identificar tiempo propio y distancia en un viaje · plantear \(t=d/v\)
-                    </p>
+                    <p class="epi-desc">Es una <em>regla de resolución</em> que se aplica a cada problema concreto.</p>
+                    <p class="epi-ej"><strong>Ejemplos D1</strong> Despejar \(v\) desde un cociente · identificar tiempo propio y distancia en un viaje</p>
                 </div>
-
                 <div class="epi-item automatizar">
                     <div class="epi-icono">🔄</div>
                     <h3 class="epi-nombre">Conversión / operación</h3>
                     <span class="epi-verbo">Automatizar</span>
-                    <p class="epi-desc">
-                        Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes
-                        equivalentes. Debe salir sin pensar, como un reflejo.
-                    </p>
-                    <p class="epi-ej">
-                        <strong>Ejemplos D1</strong>
-                        J↔eV · MeV↔GeV · años↔s · km/s↔m/s · \(c^2\approx9\cdot10^{16}\,\text{m}^2/\text{s}^2\)
-                    </p>
+                    <p class="epi-desc">Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes equivalentes.</p>
+                    <p class="epi-ej"><strong>Ejemplos D1</strong> J↔eV · MeV↔GeV · años↔s · km/s↔m/s</p>
                 </div>
-
             </div>
-
-            <!-- Tabla resumen -->
             <table class="leyenda-epi-tabla">
                 <thead>
-                    <tr>
-                        <th>Categoría</th>
-                        <th>Verbo</th>
-                        <th>¿Qué es?</th>
-                        <th>¿Cómo se domina?</th>
-                        <th>Autoevaluación</th>
-                    </tr>
+                    <tr><th>Categoría</th><th>Verbo</th><th>¿Qué es?</th><th>¿Cómo se domina?</th><th>Autoevaluación</th></tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
-                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
-                        <td data-label="¿Qué es?">Vocabulario del tema</td>
-                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
-                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td>
-                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
-                        <td data-label="¿Qué es?">Punto de partida físico</td>
-                        <td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td>
-                        <td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
-                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
-                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
-                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
-                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td>
-                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
-                        <td data-label="¿Qué es?">Regla universal de resolución</td>
-                        <td data-label="¿Cómo se domina?">Plantearla en cada problema</td>
-                        <td data-label="Autoevaluación">¿La aplico como filtro al problema?</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td>
-                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
-                        <td data-label="¿Qué es?">Herramienta mecánica</td>
-                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
-                        <td data-label="Autoevaluación">¿Me sale sin pensar?</td>
-                    </tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td><td data-label="¿Qué es?">Vocabulario del tema</td><td data-label="¿Cómo se domina?">Repetición espaciada</td><td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td><td data-label="¿Qué es?">Punto de partida físico</td><td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td><td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td><td data-label="¿Qué es?">Resultado matemático derivado</td><td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td><td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td><td data-label="¿Qué es?">Regla universal de resolución</td><td data-label="¿Cómo se domina?">Plantearla en cada problema</td><td data-label="Autoevaluación">¿La aplico como filtro al problema?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td><td data-label="¿Qué es?">Herramienta mecánica</td><td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td><td data-label="Autoevaluación">¿Me sale sin pensar?</td></tr>
                 </tbody>
             </table>
-
-            <!-- Regla de oro -->
             <div class="leyenda-epi-aviso">
-                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
-                pregúntate <strong>«¿de dónde sale esto?»</strong>.
-                Si sale de otra fórmula despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
-                Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender).
-                Si solo asigna un nombre o constante → <strong>definición</strong> (memorizar).
-                Si es una regla de resolución → <strong>principio</strong> (aplicar).
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>, pregúntate <strong>«¿de dónde sale esto?»</strong>. Si sale de otra fórmula despejando o sustituyendo → <strong>consecuencia</strong> (deducir). Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender). Si solo asigna un nombre o constante → <strong>definición</strong> (memorizar). Si es una regla de resolución → <strong>principio</strong> (aplicar).
             </div>
-
-            <!-- Mini-referencia de colores de las tarjetas -->
             <div class="leyenda-epi-colores">
                 <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Leyes fundamentales (postulados, γ, E₀)</span>
                 <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Derivadas (tiempo, longitud, masa, energías, momento)</span>
                 <span class="leyenda-epi-color"><span class="chip" style="background:#4299e1"></span>c-3 · Definiciones y conversiones (eV↔J, c)</span>
                 <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Aplicaciones (despeje de v, viajes)</span>
             </div>
-
         </article>
 
     </div>
 
-    <!-- ============================ GLOSARIO ============================ -->
+    <!-- GLOSARIO -->
     <details class="glosario">
         <summary>📖 Glosario de fórmulas del tema D1</summary>
-
         <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
-            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla.
         </p>
-
         <table class="mag-table">
             <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Fórmula</th>
-                    <th>Nombre</th>
-                    <th>Ficha</th>
-                </tr>
+                <tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr>
             </thead>
             <tbody>
                 <tr><td data-label="#">1</td><td data-label="Fórmula">\[ \text{Postulados de Einstein} \]</td><td data-label="Nombre">Principios de la relatividad especial</td><td data-label="Ficha">1</td></tr>
@@ -785,15 +659,13 @@
                 <tr><td data-label="#">12</td><td data-label="Fórmula">\[ 1\,\text{eV} = 1{,}602\cdot10^{-19}\,\text{J} \]</td><td data-label="Nombre">Conversión eV↔J y constantes</td><td data-label="Ficha">12</td></tr>
             </tbody>
         </table>
-
         <div class="note" style="margin: 16px 0 10px 0;">
             <strong>⚠️ Errores frecuentes en la EBAU:</strong> intercambiar tiempo propio y dilatado; usar como longitud propia la medida por quien ve el objeto en movimiento; olvidar que la contracción solo afecta a la dirección del movimiento; confundir energía total con energía cinética; usar \(\frac12mv^2\) en régimen relativista; introducir velocidades en km/s sin convertirlas; aceptar soluciones con \(v\geq c\); e invertir el cociente en los despejes de \(v\).
         </div>
     </details>
 
-    <!-- ============================ RECORDATORIO + BOTÓN ============================ -->
     <div class="note" style="margin: 0 28px 8px 28px;">
-        <strong>Recordatorio:</strong> en relatividad especial, el <strong>factor de Lorentz</strong> \(\gamma=1/\sqrt{1-v^2/c^2}\) aparece en todas las fórmulas relativistas: de él se deducen la dilatación del tiempo \(\Delta t=\gamma\Delta\tau\), la contracción de longitudes \(L=L_0/\gamma\), la masa relativista \(m_{\text{rel}}=\gamma m_0\) y la energía total \(E=\gamma E_0\). Recuerda siempre: <strong>el tiempo propio y la longitud propia son las magnitudes más grandes</strong> de cada par; <strong>la energía total incluye la energía en reposo</strong> \(E_0=m_0c^2\); y <strong>ningún cuerpo con masa puede alcanzar \(v=c\)</strong>. Comprueba que \(\gamma\geq1\), que \(v<c\) y que \(L\leq L_0\); y pasa las unidades al S.I. (o expresa los resultados en eV/MeV/GeV) antes de operar.
+        <strong>Recordatorio:</strong> en relatividad especial, el <strong>factor de Lorentz</strong> \(\gamma=1/\sqrt{1-v^2/c^2}\) aparece en todas las fórmulas relativistas: de él se deducen la dilatación del tiempo \(\Delta t=\gamma\Delta\tau\), la contracción de longitudes \(L=L_0/\gamma\), la masa relativista \(m_{\text{rel}}=\gamma m_0\) y la energía total \(E=\gamma E_0\). Recuerda siempre: <strong>el tiempo propio y la longitud propia son las magnitudes más grandes</strong> de cada par; <strong>la energía total incluye la energía en reposo</strong> \(E_0=m_0c^2\); y <strong>ningún cuerpo con masa puede alcanzar \(v=c\)</strong>.
     </div>
 
     <div class="footer-cta">
@@ -802,23 +674,17 @@
 
 </div>
 
-<!-- ============================ RESALTADO DE FÓRMULA DESDE LA UNIDAD ============================ -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var hash = window.location.hash;
     if (!hash || !hash.startsWith('#formula-')) return;
-
     var card = document.querySelector(hash);
     if (!card) return;
-
     card.scrollIntoView({ behavior: 'auto', block: 'center' });
-
     card.classList.remove('formula-resaltada');
     void card.offsetWidth;
     card.classList.add('formula-resaltada');
-    setTimeout(function () {
-        card.classList.remove('formula-resaltada');
-    }, 2600);
+    setTimeout(function () { card.classList.remove('formula-resaltada'); }, 2600);
 });
 </script>
 

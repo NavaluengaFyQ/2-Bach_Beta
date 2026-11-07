@@ -75,6 +75,30 @@
 <!--     que toleran cargas asíncronas del índice y de MathJax.             -->
 <!-- ════════════════════════════════════════════════════════════════════════ -->
 
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- problemas-inline_v04.html                                              -->
+<!-- Plantilla BASE del buscador de problemas resueltos de PAU · Física     -->
+<!-- (versión SIN filtro prefijado).                                        -->
+<!--                                                                        -->
+<!-- NOVEDAD v05:                                                           -->
+<!--   · Nuevo campo #input-ids → búsqueda por lista de IDs (coma).         -->
+<!--   · El motor (filtro-problemas-inline.js) muestra el ID de cada        -->
+<!--     problema como badge en la esquina superior derecha de la tarjeta.  -->
+<!--   · Soporta ?ids=… en la URL para filtros prefijados.                  -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- problemas-inline_v04.html                                              -->
+<!-- Plantilla BASE del buscador de problemas resueltos de PAU · Física     -->
+<!-- (versión SIN filtro prefijado).                                        -->
+<!--                                                                        -->
+<!-- NOVEDAD v06:                                                           -->
+<!--   · Nuevo campo #input-ids → búsqueda por IDs numéricos (coma/;/esp.). -->
+<!--   · El ID de cada problema (entero puro) se muestra como badge en la   -->
+<!--     esquina superior derecha de la tarjeta. Al pulsarlo, se copia.     -->
+<!--   · Soporta ?ids=… en la URL para filtros prefijados por ID.           -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -98,8 +122,74 @@
 <script id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-<!-- Hoja de estilos -->
 <link rel="stylesheet" href="./css/estilos.css">
+
+<style>
+  #input-ids {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: 'Courier New', 'Cascadia Code', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: #fafbfc;
+    box-sizing: border-box;
+    margin-top: 8px;
+  }
+  #input-ids:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+    background: #fff;
+  }
+  #input-ids::placeholder { color: #94a3b8; }
+
+  details.tarjeta-problema-desplegable > summary {
+    position: relative;
+  }
+  .problema-id-badge {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    z-index: 5;
+    font-family: 'Courier New', 'Cascadia Code', 'Consolas', monospace;
+    font-size: 0.7em;
+    font-weight: normal;
+    letter-spacing: 0;
+    color: #64748b;
+    background: rgba(241, 245, 249, 0.95);
+    padding: 1px 8px;
+    border-radius: 3px;
+    border: 1px solid rgba(203, 213, 225, 0.9);
+    user-select: all;
+    cursor: pointer;
+    transition: color 0.15s, background 0.15s, box-shadow 0.15s;
+    white-space: nowrap;
+    max-width: 55%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .problema-id-badge:hover {
+    color: #1e293b;
+    background: #e2e8f0;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+  }
+
+  .detalle-id {
+    color: #64748b;
+    font-size: 0.85em;
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px dashed #e2e8f0;
+  }
+  .detalle-id code {
+    background: #f1f5f9;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 0.95em;
+    user-select: all;
+  }
+</style>
 </head>
 <body>
 
@@ -145,7 +235,14 @@
       </select>
     </div>
 
-    <!-- Ayuda de sintaxis -->
+    <!-- Buscador por IDs numéricos -->
+    <div class="search-row">
+      <input type="text" id="input-ids"
+             placeholder="🔎 Buscar por ID numérico (varios separados por coma): 334, 5546, 66554"
+             autocomplete="off" spellcheck="false"
+             title="Introduce uno o varios IDs numéricos separados por comas, punto y coma o espacios">
+    </div>
+
     <p class="search-hint">
       Usa comillas (<code>"…"</code> o <code>«…»</code>) para buscar frases exactas
       y combínalas con <code>+</code> (Y) o <code>|</code> (O).
@@ -153,7 +250,6 @@
       Sin operador, el espacio significa <em>OR</em>.
     </p>
 
-    <!-- Botones de filtro (los rellena el JS) -->
     <div class="filtros-grid">
       <div class="filtro-grupo">
         <label>Año</label>
@@ -177,7 +273,6 @@
       </div>
     </div>
 
-    <!-- Modo de vista, orden, problema aleatorio y limpiar -->
     <div class="toolbar">
       <div class="segmented" role="group" aria-label="Modo de visualización">
         <button type="button" class="seg-btn activo" data-modo="completo"
@@ -218,25 +313,18 @@
 
 <a href="#top" class="top-link" title="Volver arriba" aria-label="Volver arriba">↑</a>
 
-<!--
-  Compatibilidad con el JS externo: se mantienen (ocultos) los antiguos checkboxes
-  para que el script de filtrado no falle si accede a ellos por id.
--->
 <input type="checkbox" id="check-and-default" hidden>
 <input type="checkbox" id="check-mostrar-enunciado" hidden>
 
-<!-- Carga del script de filtrado (externo) -->
 <script src="./js/filtro-problemas-inline.js"></script>
 
-<!-- Comportamientos añadidos: limpiar buscador, problema aleatorio y ordenación ampliada -->
+<!-- Comportamientos añadidos: limpiar, aleatorio y ordenación -->
 <script>
 (function () {
   'use strict';
 
-  /* ───────────────────────────────────────────────────────────
-     0. Referencias
-  ─────────────────────────────────────────────────────────── */
   const inputBusqueda      = document.getElementById('input-busqueda');
+  const inputIds           = document.getElementById('input-ids');
   const btnLimpiar         = document.getElementById('btn-limpiar');
   const btnAleatorio       = document.getElementById('btn-aleatorio');
   const selectOrden        = document.getElementById('select-orden');
@@ -245,20 +333,22 @@
 
   if (!resultados) return;
 
-  /* ───────────────────────────────────────────────────────────
-     1. Visibilidad de «Limpiar filtros»
-  ─────────────────────────────────────────────────────────── */
   const hayFiltrosActivos = () => document.querySelectorAll('.btn-filtro.activo').length > 0;
   const hayTexto          = () => !!(inputBusqueda && inputBusqueda.value.trim().length);
+  const hayIds            = () => !!(inputIds && inputIds.value.trim().length);
 
   function actualizarBotonLimpiar() {
     if (!btnLimpiar) return;
-    btnLimpiar.style.display = (hayTexto() || hayFiltrosActivos()) ? 'inline-block' : 'none';
+    btnLimpiar.style.display = (hayTexto() || hayIds() || hayFiltrosActivos()) ? 'inline-block' : 'none';
   }
 
   if (inputBusqueda) {
     inputBusqueda.addEventListener('input',  actualizarBotonLimpiar);
     inputBusqueda.addEventListener('change', actualizarBotonLimpiar);
+  }
+  if (inputIds) {
+    inputIds.addEventListener('input',  actualizarBotonLimpiar);
+    inputIds.addEventListener('change', actualizarBotonLimpiar);
   }
 
   const contenedoresFiltro = [
@@ -275,22 +365,20 @@
 
   requestAnimationFrame(actualizarBotonLimpiar);
 
-  /* ───────────────────────────────────────────────────────────
-     2. «Limpiar filtros»: borrar también el texto de búsqueda
-  ─────────────────────────────────────────────────────────── */
   if (btnLimpiar) {
     btnLimpiar.addEventListener('click', function () {
       if (inputBusqueda && inputBusqueda.value) {
         inputBusqueda.value = '';
         inputBusqueda.dispatchEvent(new Event('input', { bubbles: true }));
       }
+      if (inputIds && inputIds.value) {
+        inputIds.value = '';
+        inputIds.dispatchEvent(new Event('input', { bubbles: true }));
+      }
       setTimeout(actualizarBotonLimpiar, 0);
     });
   }
 
-  /* ───────────────────────────────────────────────────────────
-     3. «Sorpréndeme»: abre un problema al azar de los filtrados
-  ─────────────────────────────────────────────────────────── */
   function esVisible(el) {
     let cur = el;
     while (cur && cur !== document.body) {
@@ -343,9 +431,6 @@
     });
   }
 
-  /* ───────────────────────────────────────────────────────────
-     4. Ordenación ampliada
-  ─────────────────────────────────────────────────────────── */
   const MODOS_CUSTOM = ['bloque', 'anio', 'comunidad', 'alfabetico', 'puntos'];
   let aplicando = false;
   let timer = null;
@@ -464,10 +549,7 @@
 })();
 </script>
 
-<!--
-  Modo de vista («Enunciado + solución» / «Solo enunciado»)
-  + Enlace «Volver al inicio» al final de cada problema.
--->
+<!-- Modo de vista + «Volver al inicio» -->
 <script>
 (function () {
   'use strict';
@@ -477,7 +559,6 @@
 
   let modoVista = 'completo';
 
-  /* ── Segmented control del modo de vista ── */
   const segBtns = document.querySelectorAll('.seg-btn');
   segBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -494,7 +575,6 @@
     });
   }
 
-  /* ── Envuelve .resolucion en un <details> ── */
   function wrapResolucion(resolucion) {
     const details = document.createElement('details');
     details.className = 'resolucion-fold';
@@ -524,7 +604,6 @@
     return details;
   }
 
-  /* ── Añade el enlace «↑ Volver al inicio» al final de la tarjeta ── */
   function addVolverArriba(card) {
     const detalle = card.querySelector('.detalle-problema');
     if (!detalle) return;
@@ -538,7 +617,6 @@
     detalle.appendChild(link);
   }
 
-  /* ── Procesa todas las tarjetas ── */
   function procesarTarjetas() {
     const tarjetas = resultados.querySelectorAll('details.tarjeta-problema-desplegable');
     tarjetas.forEach(card => {
@@ -552,7 +630,6 @@
     });
   }
 
-  /* Batch de mutaciones para no repetir trabajo */
   let pendiente = false;
   const obs = new MutationObserver(() => {
     if (pendiente) return;
@@ -568,55 +645,11 @@
 })();
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ══════════════════════════════════════════════════════════════════════
-     LECTOR DE PARÁMETROS DE URL
-     CON ESTO ME PERMITE HACER ENLACES DIRECTOS A CUALQUIER FILTRO DEL CATÁLOGO
-     ES MUCHO MÁS CÓMODO SIN LA NECESIDAD DE CREAR HTML ADICIONALES PRA CADA FILTRADO
-     SE TRATA DE UNA VERSIÓN MEJORADA DEL SCRIPT DE FILTRADO PREFIJADO QUE USABA ANTES 02/11/2026
-     ──────────────────────────────────────────────────────────────────────
-     Permite enlaces con filtros precargados en el catálogo.
-
-     Parámetros admitidos (todos opcionales):
-       · q             → texto del buscador
-       · comunidad     → comunidad autónoma
-       · bloque        → bloque de contenido
-       · tema          → tema concreto
-       · anio          → año
-       · convocatoria  → convocatoria
-       · ambito        → todo | ambas | enunciado | resolucion
-       · modo          → completo | plegado
-       · orden         → num | tema | bloque | ...
-
-     Ejemplo de uso:
-       catalogo.html?comunidad=Madrid&anio=2023&ambito=enunciado
-
-     Notas:
-       · Si no llega ningún parámetro, el catálogo se muestra limpio.
-       · Los botones de filtro pueden generarse de forma asíncrona;
-         por eso se hace polling (máx. 10 s) hasta encontrarlos.
-       · El botón «Limpiar filtros» se activa solo mediante el
-         MutationObserver ya existente sobre .btn-filtro.activo.
-     ══════════════════════════════════════════════════════════════════════ -->
+<!-- Lector de parámetros de URL -->
 <script>
 (function () {
   'use strict';
 
-  // ── 0) Lectura de parámetros ────────────────────────────────────────
   const params = new URLSearchParams(window.location.search);
 
   const q         = params.get('q');
@@ -625,14 +658,14 @@
   const tema      = params.get('tema');
   const anio      = params.get('anio');
   const conv      = params.get('convocatoria');
-  const ambito    = params.get('ambito');   // todo | ambas | enunciado | resolucion
-  const modo      = params.get('modo');     // completo | plegado
-  const orden     = params.get('orden');    // num | tema | bloque | ...
+  const ambito    = params.get('ambito');
+  const modo      = params.get('modo');
+  const orden     = params.get('orden');
+  const ids       = params.get('ids');
 
-  const hayAlgo = q || comunidad || bloque || tema || anio || conv || ambito || modo || orden;
-  if (!hayAlgo) return;   // nada que hacer: catálogo limpio
+  const hayAlgo = q || comunidad || bloque || tema || anio || conv || ambito || modo || orden || ids;
+  if (!hayAlgo) return;
 
-  // ── a) Rellenar el buscador de texto ────────────────────────────────
   const input = document.getElementById('input-busqueda');
   if (q && input) {
     input.value = q;
@@ -640,12 +673,17 @@
     input.dispatchEvent(new Event('change', { bubbles: true }));
   }
 
-  // ── b) Ámbito, orden y modo de vista ────────────────────────────────
+  const inputIds = document.getElementById('input-ids');
+  if (ids && inputIds) {
+    inputIds.value = ids;
+    inputIds.dispatchEvent(new Event('input',  { bubbles: true }));
+    inputIds.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+
   const setSelect = (id, val) => {
     if (!val) return;
     const sel = document.getElementById(id);
     if (!sel) return;
-    // Comparación tolerante (por si el value no coincide exactamente)
     const opt = Array.from(sel.options).find(o =>
       o.value.toLowerCase() === val.toLowerCase());
     if (opt) {
@@ -661,7 +699,6 @@
     if (btn && !btn.classList.contains('activo')) btn.click();
   }
 
-  // ── c) Pulsar los botones de filtro correspondientes ────────────────
   const objetivos = [
     ['filtros-anio',         anio],
     ['filtros-convocatoria', conv],
@@ -672,25 +709,14 @@
 
   if (!objetivos.length) return;
 
-  /**
-   * Intenta activar el botón de `containerId` cuyo texto (o data-*)
-   * coincida con `valor`. Devuelve:
-   *   'ok'    → encontrado (activo o recién clicado)
-   *   'vacio' → el contenedor aún no tiene botones (seguir esperando)
-   *   'nada'  → hay botones pero ninguno coincide (seguir esperando)
-   */
   function activar(containerId, valor) {
     const cont = document.getElementById(containerId);
     if (!cont) return 'nada';
-
     const btns = cont.querySelectorAll('.btn-filtro, button, .filtro-btn');
     if (!btns.length) return 'vacio';
-
     const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
                        .toLowerCase().trim();
     const v = norm(valor);
-
-    // 1) Coincidencia exacta por data-* o texto
     for (const b of btns) {
       const dataVal = b.dataset.value || b.dataset.valor || b.dataset.v ||
                       b.dataset.filter || b.dataset.id || '';
@@ -701,7 +727,6 @@
         return 'ok';
       }
     }
-    // 2) Coincidencia parcial (por si el label lleva contador, etc.)
     for (const b of btns) {
       const texto = norm(b.textContent || '');
       if (texto && (texto.includes(v) || v.includes(texto))) {
@@ -712,9 +737,8 @@
     return 'nada';
   }
 
-  // ── d) Polling hasta que el motor externo haya creado los botones ───
   let intentos = 0;
-  const MAX = 100;                 // 100 × 100 ms = 10 s como máximo
+  const MAX = 100;
   const tick = () => {
     intentos++;
     let todosOk = true;
@@ -724,35 +748,9 @@
     if (todosOk || intentos >= MAX) clearInterval(timer);
   };
   const timer = setInterval(tick, 100);
-  tick();  // primer intento inmediato
-
-  // (El botón «Limpiar filtros» se mostrará solo gracias al
-  //  MutationObserver que ya tienes sobre .btn-filtro.activo.)
+  tick();
 })();
 </script>
-<!-- ══════════════════════════════════════════════════════════════════════
-     Fin del lector de parámetros de URL
-     ══════════════════════════════════════════════════════════════════════ -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>

@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema D2. Problemas precursores de la física cuántica — Efecto fotoeléctrico</title>
 
-    <!-- FontAwesome CDN (versión 6), como en el tema de referencia -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- CSS COMÚN A TODAS LAS UNIDADES: conservar la ruta relativa del proyecto -->
     <link rel="stylesheet" href="../css/unidades.css">
 
-    <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         .dato-clave { background:#f8fafc; border:1px solid #dbeafe; border-radius:10px; padding:10px 14px; margin:12px 0; }
@@ -23,13 +19,34 @@
         .texto-apartado { color:#64748b; font-size:.88em; }
         .aviso-d2d3 { border-left:4px solid #8b5cf6; background:#f5f3ff; padding:10px 14px; border-radius:8px; margin:12px 0; }
         .cabecera-recurso { color:white; text-align:center; }
+
+        /* --- Enlaces bidireccionales: la fórmula es el vínculo --- */
+        .formula-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 8px;
+            padding: 2px 6px;
+            transition: background .15s ease;
+            overflow-x: auto;
+        }
+        .formula-link:hover { background: rgba(99,102,241,0.10); }
+        .formula-link:focus-visible { outline: 2px dashed #6366f1; outline-offset: 2px; }
+        .formula-box { overflow-x: auto; }
+        .formula-link-inline {
+            text-decoration: none;
+            color: inherit;
+            border-bottom: 1px dashed rgba(99,102,241,0.45);
+            transition: background .15s;
+        }
+        .formula-link-inline:hover { background: rgba(99,102,241,0.12); }
+
         @media (max-width:640px) { .tabla-formulas td:first-child { width:auto; } }
     </style>
 </head>
 <body>
 <div class="container">
 
-    <!-- CABECERA -->
     <div class="header">
         <div class="header-left">
             <h1>IES Valle del Alberche</h1>
@@ -117,55 +134,88 @@
                 <li>Para una frecuencia superior a la umbral, al aumentar la intensidad aumenta el número de fotoelectrones emitidos por unidad de tiempo y, por tanto, la corriente fotoeléctrica.</li>
             </ul>
             <div class="note"><strong>Idea clave:</strong> la frecuencia determina la energía de cada fotón; la intensidad, a frecuencia fija, determina cuántos fotones llegan por unidad de tiempo.</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"efecto fotoeléctrico" | "fotoelectrones" | "frecuencia umbral" | "emisión de electrones" | "intensidad de la luz" | "corriente fotoeléctrica"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D2. Problemas precursores de la física cuántica — Efecto fotoeléctrico" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Efecto fotoeléctrico (CyL · D2)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">2</span><strong>Cuantos de luz: el fotón.</strong></summary>
             <p>Einstein explicó el efecto fotoeléctrico suponiendo que la radiación está formada por cuantos o <strong>fotones</strong>. Cada fotón transporta una energía proporcional a la frecuencia:</p>
-            <div class="formula-box">\[ E_{\text{fotón}}=h\,f=\frac{h\,c}{\lambda} \]</div>
+            <div class="formula-box" id="td2-foton">
+                <a href="TemaD2-Formulario.html#formula-1" class="formula-link">\[ E_{\text{fotón}}=h\,f=\frac{h\,c}{\lambda} \]</a>
+            </div>
             <p>En esta expresión, <em>h</em> es la constante de Planck, <em>f</em> la frecuencia, <em>c</em> la velocidad de la luz en el vacío y <em>λ</em> la longitud de onda.</p>
             <p>En el modelo de Einstein, un electrón absorbe la energía de un fotón. Una parte se emplea en abandonar el metal y el resto aparece como energía cinética del electrón emitido.</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"fotón" | "cuanto de luz" | "energía del fotón" | "constante de Planck" | "frecuencia" | "longitud de onda" | "hf"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D2. Problemas precursores de la física cuántica — Efecto fotoeléctrico" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Fotón y cuantos de luz (CyL · D2)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">3</span><strong>Trabajo de extracción.</strong></summary>
             <p>El <strong>trabajo de extracción</strong>, que representaremos por \(W_0\) o \(\Phi\), es la energía mínima necesaria para que un electrón escape de la superficie del material. Depende del material, no de la intensidad de la radiación.</p>
             <p>Cuando el fotón tiene justo la energía mínima necesaria, el electrón sale sin energía cinética:</p>
-            <div class="formula-box">\[ W_0=h\,f_0=\frac{h\,c}{\lambda_0} \]</div>
+            <div class="formula-box" id="td2-trabajo">
+                <a href="TemaD2-Formulario.html#formula-3" class="formula-link">\[ W_0=h\,f_0=\frac{h\,c}{\lambda_0} \]</a>
+            </div>
             <p>Por tanto:</p>
-            <div class="formula-box">\[ f_0=\frac{W_0}{h}\qquad\qquad \lambda_0=\frac{h\,c}{W_0}=\frac{c}{f_0} \]</div>
+            <div class="formula-box" id="td2-umbral">
+                <a href="TemaD2-Formulario.html#formula-4" class="formula-link">\[ f_0=\frac{W_0}{h} \]</a>
+                <a href="TemaD2-Formulario.html#formula-4" class="formula-link">\[ \lambda_0=\frac{h\,c}{W_0}=\frac{c}{f_0} \]</a>
+            </div>
             <div class="note"><strong>Interpretación de los umbrales:</strong> hay emisión cuando \(f\geq f_0\), equivalente a \(\lambda\leq\lambda_0\). Si \(f&lt;f_0\) o \(\lambda&gt;\lambda_0\), no hay efecto fotoeléctrico.</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"trabajo de extracción" | "frecuencia umbral" | "longitud de onda umbral" | "energía mínima" | "material metálico" | "W0"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D2. Problemas precursores de la física cuántica — Efecto fotoeléctrico" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Trabajo de extracción (CyL · D2)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">4</span><strong>Ecuación de Einstein del efecto fotoeléctrico.</strong></summary>
             <p>El balance energético para los fotoelectrones más energéticos es:</p>
-            <div class="formula-box">\[ \boxed{h\,f=W_0+E_{c,\max}} \]</div>
+            <div class="formula-box" id="td2-einstein">
+                <a href="TemaD2-Formulario.html#formula-5" class="formula-link">\[ \boxed{h\,f=W_0+E_{c,\max}} \]</a>
+            </div>
             <p>De aquí se obtiene:</p>
-            <div class="formula-box">\[ E_{c,\max}=h\,f-W_0=\frac{h\,c}{\lambda}-W_0 \]</div>
-            <p>La ecuación solo proporciona una energía cinética positiva si la energía del fotón supera el trabajo de extracción. Si el resultado es negativo, no debe interpretarse como una energía cinética negativa: significa que no se produce emisión.</p>
+            <div class="formula-box" id="td2-ec">
+                <a href="TemaD2-Formulario.html#formula-6" class="formula-link">\[ E_{c,\max}=h\,f-W_0=\frac{h\,c}{\lambda}-W_0 \]</a>
+            </div>
+            <p id="td2-emision">La ecuación solo proporciona una energía cinética positiva si la energía del fotón supera el trabajo de extracción. Si el resultado es negativo, no debe interpretarse como una energía cinética negativa: significa que <strong>no se produce emisión</strong>. En ese caso, el criterio de comprobación es <a href="TemaD2-Formulario.html#formula-11" class="formula-link-inline">\(f&lt;f_0\)</a> (o <a href="TemaD2-Formulario.html#formula-11" class="formula-link-inline">\(\lambda&gt;\lambda_0\)</a>).</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"ecuación de Einstein" | "balance energético" | "energía cinética máxima" | "fotoelectrones" | "hf=W0+Ec" | "emisión"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D2. Problemas precursores de la física cuántica — Efecto fotoeléctrico" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Ecuación de Einstein (CyL · D2)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">5</span><strong>Potencial de frenado.</strong></summary>
             <p>El <strong>potencial de frenado</strong> es el módulo de la diferencia de potencial que se aplica para detener incluso a los fotoelectrones de mayor energía cinética. El trabajo eléctrico realizado sobre el electrón compensa su energía cinética máxima:</p>
-            <div class="formula-box">\[ e\,V_f=E_{c,\max}\qquad\Longrightarrow\qquad V_f=\frac{E_{c,\max}}{e} \]</div>
+            <div class="formula-box" id="td2-potencial">
+                <a href="TemaD2-Formulario.html#formula-7" class="formula-link">\[ e\,V_f=E_{c,\max}\qquad\Longrightarrow\qquad V_f=\frac{E_{c,\max}}{e} \]</a>
+            </div>
             <p>Si la energía cinética se expresa en eV, el valor numérico del potencial de frenado en voltios coincide con el valor numérico de esa energía en eV. El colector se encuentra a un potencial inferior al emisor; en los ejercicios se suele pedir el <strong>módulo</strong> del potencial de frenado.</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"potencial de frenado" | "detener fotoelectrones" | "diferencia de potencial" | "eVf" | "energía cinética máxima" | "módulo potencial"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D2. Problemas precursores de la física cuántica — Efecto fotoeléctrico" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Potencial de frenado (CyL · D2)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">6</span><strong>Frecuencia frente a intensidad: no confundir.</strong></summary>
-            <table>
+            <table id="td2-freq-int">
                 <tr><th>Magnitud que se modifica</th><th>Qué cambia</th><th>Qué no cambia (a igualdad del resto)</th></tr>
                 <tr><td>Frecuencia \(f\)</td><td>Energía de cada fotón y \(E_{c,\max}\); puede aparecer o desaparecer la emisión al cruzar el umbral.</td><td>La intensidad no determina la energía de cada fotón.</td></tr>
                 <tr><td>Intensidad</td><td>Número de fotones incidentes por segundo y corriente fotoeléctrica, si \(f\geq f_0\).</td><td>\(E_{c,\max}\) y \(V_f\) no cambian si la frecuencia se mantiene fija.</td></tr>
             </table>
+            <p>Esta distinción conceptual se resume en la tarjeta <a href="TemaD2-Formulario.html#formula-9" class="formula-link-inline"><strong>frecuencia frente a intensidad</strong> del formulario</a>.</p>
             <div class="note"><strong>Pregunta conceptual típica:</strong> aumentar la intensidad de una luz cuya frecuencia está por debajo de la umbral no consigue arrancar electrones.</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"frecuencia" | "intensidad" | "corriente fotoeléctrica" | "número de fotones" | "energía del fotón" | "umbral"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D2. Problemas precursores de la física cuántica — Efecto fotoeléctrico" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Frecuencia frente a intensidad (CyL · D2)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">7</span><strong>Constantes y conversiones útiles.</strong></summary>
-            <table class="tabla-formulas">
+            <p>Estas constantes y conversiones se usan en todos los cálculos del tema. Consulta la tarjeta de referencia: <a href="TemaD2-Formulario.html#formula-2" class="formula-link-inline"><strong>constantes y conversiones</strong> del formulario</a>.</p>
+            <table class="tabla-formulas" id="td2-constantes">
                 <tr><th>Magnitud</th><th>Valor recomendado en estos ejercicios</th></tr>
                 <tr><td>Constante de Planck</td><td>\(h=6{,}63\cdot10^{-34}\,\text{J}\,\text{s}\)</td></tr>
                 <tr><td>Velocidad de la luz</td><td>\(c=3{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}\)</td></tr>
@@ -175,13 +225,21 @@
                 <tr><td>Producto útil</td><td>\(h\,c\approx1240\,\text{eV}\,\text{nm}\)</td></tr>
             </table>
             <p>Recuerda: \(1\,\text{nm}=10^{-9}\,\text{m}\), \(1\,\text{μm}=10^{-6}\,\text{m}\) y \(1\,\text{GHz}=10^{9}\,\text{Hz}\).</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"constante de Planck" | "velocidad de la luz" | "carga elemental" | "masa del electrón" | "electronvoltio" | "hc=1240 eV nm" | "conversión de unidades"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D2. Problemas precursores de la física cuántica — Efecto fotoeléctrico" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Constantes y conversiones (CyL · D2)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">8</span><strong>Representación gráfica de Einstein.</strong></summary>
             <p>Al representar \(E_{c,\max}\) frente a la frecuencia \(f\), se obtiene una recta:</p>
-            <div class="formula-box">\[ E_{c,\max}=h\,f-W_0 \]</div>
+            <div class="formula-box" id="td2-grafica">
+                <a href="TemaD2-Formulario.html#formula-10" class="formula-link">\[ E_{c,\max}=h\,f-W_0 \]</a>
+            </div>
             <p>Su pendiente es la constante de Planck \(h\), el corte con el eje horizontal es la frecuencia umbral \(f_0\), y la ordenada en el origen es \(-W_0\). Esta relación lineal es otra forma de identificar experimentalmente la cuantización de la luz.</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"representación gráfica" | "Ec frente a frecuencia" | "pendiente constante de Planck" | "frecuencia umbral" | "ordenada en el origen" | "recta de Einstein"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D2. Problemas precursores de la física cuántica — Efecto fotoeléctrico" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Gráfica de Einstein (CyL · D2)</a>
+            </div>
         </details>
     </details>
 
@@ -192,12 +250,26 @@
             <li><strong>Identificar los datos:</strong> anotar \(W_0\), \(f\), \(\lambda\), \(\lambda_0\), \(V_f\) o \(E_{c,\max}\), según corresponda.</li>
             <li><strong>Unificar unidades:</strong> pasar longitudes de onda a metros si se trabaja en el S.I.; convertir eV a J cuando sea necesario para obtener velocidades.</li>
             <li><strong>Comprobar si hay emisión:</strong> comparar \(f\) con \(f_0\), o \(\lambda\) con \(\lambda_0\).</li>
-            <li><strong>Aplicar el balance de Einstein:</strong> \(hf=W_0+E_{c,\max}\), usando \(hf=hc/\lambda\) cuando se conoce la longitud de onda.</li>
-            <li><strong>Relacionar con el frenado:</strong> si se pide el potencial, aplicar \(eV_f=E_{c,\max}\).</li>
-            <li><strong>Si se pide la velocidad:</strong> utilizar \(E_{c,\max}=\frac12m_ev_{\max}^2\), de donde \(v_{\max}=\sqrt{2E_{c,\max}/m_e}\).</li>
+            <li><strong>Aplicar el balance de Einstein:</strong> <a href="TemaD2-Formulario.html#formula-5" class="formula-link-inline">\(hf=W_0+E_{c,\max}\)</a>, usando \(hf=hc/\lambda\) cuando se conoce la longitud de onda.</li>
+            <li><strong>Relacionar con el frenado:</strong> si se pide el potencial, aplicar <a href="TemaD2-Formulario.html#formula-7" class="formula-link-inline">\(eV_f=E_{c,\max}\)</a>.</li>
+            <li><strong>Si se pide la velocidad:</strong> utiliza la relación entre energía cinética y velocidad:
+                <div class="formula-box" id="td2-velocidad">
+                    <a href="TemaD2-Formulario.html#formula-8" class="formula-link">\[ E_{c,\max}=\frac12\,m_e\,v_{\max}^2 \]</a>
+                    <a href="TemaD2-Formulario.html#formula-8" class="formula-link">\[ v_{\max}=\sqrt{\frac{2\,E_{c,\max}}{m_e}} \]</a>
+                </div>
+                Comprueba que \(v_{\max}\ll c\); en caso contrario, hay que usar la expresión relativista.
+            </li>
             <li><strong>Comprobar el resultado:</strong> la energía cinética no puede ser negativa; si no se supera el umbral, no hay fotoelectrones.</li>
         </ol>
         <div class="note"><strong>Consejo EBAU:</strong> escribe primero la ecuación física que relaciona los datos y la incógnita. Después sustituye valores. Evita despejar directamente con números sin dejar visible el balance energético.</div>
+
+        <div class="aviso-d2d3" id="td2-debroglie">
+            <strong>Conexión con D3 — onda de De Broglie.</strong> En algunos problemas etiquetados como D2+D3 se pide la longitud de onda asociada a los fotoelectrones emitidos. Tras calcular \(E_{c,\max}\) con la ecuación de Einstein, se aplica la hipótesis de De Broglie:
+            <div class="formula-box">
+                <a href="TemaD2-Formulario.html#formula-12" class="formula-link">\[ \lambda_e=\frac{h}{p}=\frac{h}{\sqrt{2\,m_e\,E_{c,\max}}} \]</a>
+            </div>
+            La <em>mínima</em> \(\lambda_e\) corresponde a los fotoelectrones más energéticos (los de \(E_{c,\max}\)). Ver la ficha 12 del formulario.
+        </div>
     </details>
 
     <!-- PROBLEMAS EBAU RESUELTOS -->
@@ -221,7 +293,6 @@
                 <div class="enunciado-ej">
                     <p><strong>Enunciado oficial</strong></p>
                     <p>Calcule la energía cinética y el potencial de frenado de los fotoelectrones extraídos de un metal, cuya longitud de onda umbral es \(3{,}6\cdot10^{-7}\,\text{m}\), si se hace incidir sobre él una onda electromagnética de frecuencia \(9{,}5\cdot10^{14}\,\text{Hz}\). (1 punto)</p>
-                    
                 </div>
                 <div class="note"><strong>Conexión curricular:</strong> el banco clasifica este ejercicio en D2 y D3. Aquí se desarrolla la parte fotoeléctrica de D2; el cálculo de la longitud de onda de de Broglie sirve de enlace con D3.</div>
                 <div class="resolucion-ej">
@@ -293,7 +364,6 @@
 <div class="paso"><strong>b)</strong> <span class="texto-apartado">No especificada</span> <p>Haz intenso frente a haz débil.</p></div>
 
                 </div>
-                
                 <div class="resolucion-ej">
                     <p><strong>Resolución desarrollada</strong></p>
                     <details class="step">
@@ -325,7 +395,6 @@ b) La intensidad determina el número de electrones emitidos por segundo, no su 
                 <div class="enunciado-ej">
                     <p><strong>Enunciado oficial</strong></p>
                     <p>Determine la mínima longitud de onda de de Broglie de los fotoelectrones emitidos cuando luz de 450 nm incide sobre un cátodo de sodio, cuyo trabajo de extracción es 2,28 eV. Datos: \(h=6{,}63\cdot10^{-34}\,\text{J}\,\text{s}\); \(c_0=3{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}\); \(m_e=9{,}11\cdot10^{-31}\,\text{kg}\); \(1\,\text{eV}=1{,}60\cdot10^{-19}\,\text{J}\).</p>
-                    
                 </div>
                 <div class="note"><strong>Conexión curricular:</strong> el banco clasifica este ejercicio en D2 y D3. Aquí se desarrolla la parte fotoeléctrica de D2; el cálculo de la longitud de onda de de Broglie sirve de enlace con D3.</div>
                 <div class="resolucion-ej">
@@ -358,7 +427,6 @@ b) La intensidad determina el número de electrones emitidos por segundo, no su 
                 <div class="enunciado-ej">
                     <p><strong>Enunciado oficial</strong></p>
                     <p>Cuando se ilumina un metal con una radiación de longitud de onda \(\lambda_1=193\,\text{nm}\), la energía cinética máxima de los fotoelectrones emitidos es \(4{,}14\,\text{eV}\). ¿Cuál sería esta energía si la longitud de onda de la radiación usada fuera \(\lambda_2=254\,\text{nm}\)?</p>
-                    
                 </div>
                 <div class="note"><strong>Conexión curricular:</strong> el banco clasifica este ejercicio en D2 y D3. Aquí se desarrolla la parte fotoeléctrica de D2; el cálculo de la longitud de onda de de Broglie sirve de enlace con D3.</div>
                 <div class="resolucion-ej">
@@ -391,7 +459,6 @@ b) La intensidad determina el número de electrones emitidos por segundo, no su 
                 <div class="enunciado-ej">
                     <p><strong>Enunciado oficial</strong></p>
                     <p>Al iluminar una lámina metálica con luz de longitud de onda superior a \(1{,}1\cdot 10^{-6}\) m deja de producirse el efecto fotoeléctrico. Calcule el trabajo de extracción y la energía cinética máxima de los fotoelectrones emitidos cuando se ilumina dicha lámina con luz de longitud de onda \(2{,}7\cdot 10^{-7}\) m.</p>
-                    
                 </div>
                 <div class="note"><strong>Conexión curricular:</strong> el banco clasifica este ejercicio en D2 y D3. Aquí se desarrolla la parte fotoeléctrica de D2; el cálculo de la longitud de onda de de Broglie sirve de enlace con D3.</div>
                 <div class="resolucion-ej">
@@ -422,9 +489,7 @@ b) La intensidad determina el número de electrones emitidos por segundo, no su 
                 <div class="enunciado-ej">
                     <p><strong>Enunciado oficial</strong></p>
                     <p>Cuando una superficie de un metal es iluminada con luz de \(\lambda=253{,}7\,\text{nm}\) el valor del potencial de frenado es \(0{,}24\,\text{V}\). Halle la frecuencia umbral del metal.</p>
-                    
                 </div>
-                
                 <div class="resolucion-ej">
                     <p><strong>Resolución desarrollada</strong></p>
                     <details class="step">
@@ -453,9 +518,7 @@ b) La intensidad determina el número de electrones emitidos por segundo, no su 
                 <div class="enunciado-ej">
                     <p><strong>Enunciado oficial</strong></p>
                     <p>Sobre un metal cuyo trabajo de extracción es \(2\,\text{eV}\) incide una radiación de longitud de onda \(500\,\text{nm}\). Calcule la velocidad máxima de los electrones emitidos.</p>
-                    
                 </div>
-                
                 <div class="resolucion-ej">
                     <p><strong>Resolución desarrollada</strong></p>
                     <details class="step">
@@ -481,9 +544,7 @@ b) La intensidad determina el número de electrones emitidos por segundo, no su 
                 <div class="enunciado-ej">
                     <p><strong>Enunciado oficial</strong></p>
                     <p>A.10) El trabajo de extracción de un electrón en cierto metal es 2,29 eV. ¿Cuál será la longitud de onda que debe tener un haz de luz para que, al iluminar con él una superficie de ese metal, la energía cinética máxima de los electrones extraídos sea 0,39 eV?</p>
-                    
                 </div>
-                
                 <div class="resolucion-ej">
                     <p><strong>Resolución desarrollada</strong></p>
                     <details class="step">
@@ -516,9 +577,7 @@ b) La intensidad determina el número de electrones emitidos por segundo, no su 
                 <div class="enunciado-ej">
                     <p><strong>Enunciado oficial</strong></p>
                     <p>A.10) Un metal, cuyo trabajo de extracción es 2,4 eV, se irradia con luz monocromática. Para cortar el flujo de electrones producidos por efecto fotoeléctrico se necesita un potencial de frenado de 0,7 V. Calcule la longitud de onda de la luz con que se irradia.</p>
-                    
                 </div>
-                
                 <div class="resolucion-ej">
                     <p><strong>Resolución desarrollada</strong></p>
                     <details class="step">
@@ -549,14 +608,14 @@ b) La intensidad determina el número de electrones emitidos por segundo, no su 
         <summary><h2>✅ Resumen de fórmulas esenciales</h2></summary>
         <table class="tabla-formulas">
             <tr><th>Concepto</th><th>Expresión</th></tr>
-            <tr><td>Energía del fotón</td><td>\(E_f=hf=hc/\lambda\)</td></tr>
-            <tr><td>Ecuación de Einstein</td><td>\(hf=W_0+E_{c,\max}\)</td></tr>
-            <tr><td>Trabajo de extracción</td><td>\(W_0=hf_0=hc/\lambda_0\)</td></tr>
-            <tr><td>Frecuencia umbral</td><td>\(f_0=W_0/h\)</td></tr>
-            <tr><td>Longitud de onda umbral</td><td>\(\lambda_0=hc/W_0\)</td></tr>
-            <tr><td>Energía cinética máxima</td><td>\(E_{c,\max}=hf-W_0\)</td></tr>
-            <tr><td>Potencial de frenado</td><td>\(eV_f=E_{c,\max}\)</td></tr>
-            <tr><td>Velocidad máxima</td><td>\(v_{\max}=\sqrt{2E_{c,\max}/m_e}\)</td></tr>
+            <tr><td>Energía del fotón</td><td><a href="TemaD2-Formulario.html#formula-1" class="formula-link-inline">\(E_f=hf=hc/\lambda\)</a></td></tr>
+            <tr><td>Ecuación de Einstein</td><td><a href="TemaD2-Formulario.html#formula-5" class="formula-link-inline">\(hf=W_0+E_{c,\max}\)</a></td></tr>
+            <tr><td>Trabajo de extracción</td><td><a href="TemaD2-Formulario.html#formula-3" class="formula-link-inline">\(W_0=hf_0=hc/\lambda_0\)</a></td></tr>
+            <tr><td>Frecuencia umbral</td><td><a href="TemaD2-Formulario.html#formula-4" class="formula-link-inline">\(f_0=W_0/h\)</a></td></tr>
+            <tr><td>Longitud de onda umbral</td><td><a href="TemaD2-Formulario.html#formula-4" class="formula-link-inline">\(\lambda_0=hc/W_0\)</a></td></tr>
+            <tr><td>Energía cinética máxima</td><td><a href="TemaD2-Formulario.html#formula-6" class="formula-link-inline">\(E_{c,\max}=hf-W_0\)</a></td></tr>
+            <tr><td>Potencial de frenado</td><td><a href="TemaD2-Formulario.html#formula-7" class="formula-link-inline">\(eV_f=E_{c,\max}\)</a></td></tr>
+            <tr><td>Velocidad máxima</td><td><a href="TemaD2-Formulario.html#formula-8" class="formula-link-inline">\(v_{\max}=\sqrt{2E_{c,\max}/m_e}\)</a></td></tr>
         </table>
     </details>
 
@@ -570,5 +629,39 @@ b) La intensidad determina el número de electrones emitidos por segundo, no su 
     </div>
 
 </div>
+
+<script>
+/* Abre los <details> padres al llegar por ancla (necesario para que
+   los enlaces desde TemaD2-Formulario.html#formula-N funcionen). */
+document.addEventListener('DOMContentLoaded', function () {
+    if (!window.location.hash) return;
+    var target;
+    try { target = document.querySelector(window.location.hash); } catch (e) { return; }
+    if (!target) return;
+    var el = target;
+    while (el) {
+        if (el.tagName === 'DETAILS') el.open = true;
+        el = el.parentElement;
+    }
+    setTimeout(function () {
+        target.scrollIntoView({ behavior: 'auto', block: 'center' });
+    }, 60);
+});
+
+/* Filtro EBAU: convierte los data-* del enlace en query params
+   para que problemas-inline_v04.html pueda aplicar el filtro. */
+document.addEventListener('click', function (e) {
+    var link = e.target.closest('a.filtro-pau');
+    if (!link) return;
+    e.preventDefault();
+    var params = new URLSearchParams();
+    if (link.dataset.q)         params.set('q',         link.dataset.q);
+    if (link.dataset.comunidad) params.set('comunidad', link.dataset.comunidad);
+    if (link.dataset.bloque)    params.set('bloque',    link.dataset.bloque);
+    if (link.dataset.tema)      params.set('tema',      link.dataset.tema);
+    var base = link.getAttribute('href').split('?')[0];
+    window.location.href = base + '?' + params.toString();
+});
+</script>
 </body>
 </html>

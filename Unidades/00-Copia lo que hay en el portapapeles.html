@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acumular portapapeles en lista</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+         max-width: 680px; margin: 3rem auto; padding: 0 1rem; line-height: 1.5; }
+  h1 { font-size: 1.4rem; }
+  textarea { width: 100%; padding: .6rem; font: inherit; border: 1px solid #8888;
+             border-radius: 8px; resize: vertical; box-sizing: border-box; }
+  #acumulado { min-height: 120px; }
+  #pegador   { min-height: 60px; }
+  label { display: block; margin-top: 1rem; font-weight: 600; }
+  .botones { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
+  button { padding: .7rem 1.2rem; font-size: 1rem; font-weight: 600; color: #fff;
+           background: #2563eb; border: none; border-radius: 8px; cursor: pointer; }
+  button:hover { background: #1d4ed8; }
+  button:active { transform: translateY(1px); }
+  #btnLimpiar { background: #6b7280; }
+  #btnLimpiar:hover { background: #4b5563; }
+  #msg { min-height: 1.4em; font-size: .95rem; margin: .6rem 0 0; }
+  .ok { color: #16a34a; }
+  .err { color: #dc2626; }
+</style>
+</head>
+<body>
+
+<h1>Acumular el portapapeles en una lista</h1>
+<p>Cada pulsación añade el contenido del portapapeles a la lista, separado por «, ».</p>
+
+<div class="botones">
+  <button id="btnAdd" type="button">Añadir desde el portapapeles</button>
+  <button id="btnCopiar" type="button">Copiar lista</button>
+  <button id="btnLimpiar" type="button">Limpiar</button>
+</div>
+
+<p id="msg" role="status" aria-live="polite"></p>
+
+<label for="acumulado">Lista acumulada:</label>
+<textarea id="acumulado" readonly spellcheck="false"></textarea>
+
+<label for="pegador">Pegado manual (si el botón no puede leer el portapapeles):</label>
+<textarea id="pegador" spellcheck="false"
+  placeholder="Haz clic aquí y pulsa Ctrl+V (o mantén pulsado → Pegar)"></textarea>
+
+<script>
+(function () {
+  "use strict";
+
+  var acumulado = document.getElementById("acumulado");
+  var pegador   = document.getElementById("pegador");
+  var msg       = document.getElementById("msg");
+  var btnAdd    = document.getElementById("btnAdd");
+  var btnCopiar = document.getElementById("btnCopiar");
+  var btnLimpiar= document.getElementById("btnLimpiar");
+
+  var items = [];
+  var timerMsg = null;
+
+  function mostrar(texto, tipo) {
+    msg.textContent = texto;
+    msg.className = tipo || "";
+    if (timerMsg) clearTimeout(timerMsg);
+    timerMsg = setTimeout(function () {
+      msg.textContent = "";
+      msg.className = "";
+    }, 4000);
+  }
+
+  function agregar(texto) {
+    var limpio = (texto || "").trim();
+    if (!limpio) {
+      mostrar("✖ El portapapeles está vacío (o no se pudo leer).", "err");
+      return false;
+    }
+    items.push(limpio);
+    acumulado.value = items.join(", ");
+    acumulado.scrollTop = acumulado.scrollHeight;
+    mostrar("✔ Añadido: " + (limpio.length > 40 ? limpio.slice(0, 40) + "…" : limpio), "ok");
+    return true;
+  }
+
+  /* ---------- Lectura automática (solo contextos seguros) ---------- */
+  function leerClipboard() {
+    return new Promise(function (resolve) {
+      if (!navigator.clipboard || !navigator.clipboard.readText) {
+        resolve({ ok: false, razon: "Este navegador no ofrece la API de lectura del portapapeles." });
+        return;
+      }
+      if (!window.isSecureContext) {
+        resolve({ ok: false, razon: "La lectura automática solo funciona en HTTPS o localhost (no al abrir el archivo desde el disco)." });
+        return;
+      }
+      navigator.clipboard.readText()
+        .then(function (texto) { resolve({ ok: true, texto: texto }); })
+        .catch(function () { resolve({ ok: false, razon: "El navegador ha denegado el acceso al portapapeles." }); });
+    });
+  }
+
+  btnAdd.addEventListener("click", function () {
+    leerClipboard().then(function (r) {
+      if (r.ok) {
+        agregar(r.texto);
+      } else {
+        mostrar("✖ " + r.razon + " Usa el cuadro de «Pegado manual».", "err");
+        pegador.focus();
+      }
+    });
+  });
+
+  /* ---------- Pegado manual (funciona SIEMPRE, también en file:// y Android) ---------- */
+  pegador.addEventListener("paste", function (e) {
+    e.preventDefault();
+    var dt = e.clipboardData || window.clipboardData;
+    var texto = dt ? dt.getData("text") : "";
+    agregar(texto);
+    pegador.value = "";
+  });
+
+  /* ---------- Copiar la lista resultante ---------- */
+  function copiarTexto(texto) {
+    return new Promise(function (resolve) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(texto)
+          .then(function () { resolve(true); })
+          .catch(function () { resolve(copiaClasica(texto)); });
+        return;
+      }
+      resolve(copiaClasica(texto));
+    });
+  }
+
+  function copiaClasica(texto) {
+    var ta = document.createElement("textarea");
+    ta.value = texto;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.top = "0";
+    ta.style.left = "-9999px";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  btnCopiar.addEventListener("click", function () {
+    if (!acumulado.value) {
+      mostrar("✖ La lista está vacía.", "err");
+      return;
+    }
+    copiarTexto(acumulado.value).then(function (ok) {
+      if (ok) mostrar("✔ Lista copiada al portapapeles.", "ok");
+      else mostrar("✖ No se pudo copiar la lista.", "err");
+    });
+  });
+
+  /* ---------- Limpiar ---------- */
+  btnLimpiar.addEventListener("click", function () {
+    items = [];
+    acumulado.value = "";
+    mostrar("Lista vacía.", "ok");
+  });
+})();
+</script>
+
+</body>
+</html>

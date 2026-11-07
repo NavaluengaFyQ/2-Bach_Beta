@@ -21,6 +21,29 @@
       };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Vínculos bidireccionales: la fórmula es el vínculo -->
+    <style>
+        .formula-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 8px;
+            padding: 3px 6px;
+            transition: background .15s ease;
+            overflow-x: auto;
+        }
+        .formula-link:hover { background: rgba(99,102,241,0.10); }
+        .formula-link:focus-visible { outline: 2px dashed #6366f1; outline-offset: 2px; }
+        .formula-box { overflow-x: auto; }
+        .formula-link-inline {
+            text-decoration: none;
+            color: inherit;
+            border-bottom: 1px dashed rgba(99,102,241,0.45);
+            transition: background .15s;
+        }
+        .formula-link-inline:hover { background: rgba(99,102,241,0.12); }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -123,63 +146,106 @@
                 <li><strong>Principio de relatividad:</strong> las leyes de la física tienen la misma forma en todos los sistemas de referencia inerciales. No existe un sistema inercial privilegiado.</li>
                 <li><strong>Constancia de la velocidad de la luz:</strong> todo observador inercial mide el mismo valor para la velocidad de la luz en el vacío, independientemente del movimiento de la fuente o del observador.</li>
             </ol>
-            <div class="formula-box">\[c=3{,}00\cdot10^{8}\ \text{m}\,\text{s}^{-1}\]</div>
+            <div class="formula-box" id="td1-postulados">
+                <a href="TemaD1-Formulario.html#formula-1" class="formula-link">\[c=3{,}00\cdot10^{8}\ \text{m}\,\text{s}^{-1}\]</a>
+            </div>
             <p>Las medidas de tiempo y longitud dependen del estado de movimiento relativo entre observadores. Las transformaciones de Galileo dejan de ser válidas cuando las velocidades son comparables con \(c\); se emplean las transformaciones de Lorentz.</p>
             <div class="note"><strong>Idea clave:</strong> no se trata de que cada observador «vea mal» un reloj o una regla. Cada uno mide correctamente en su propio sistema; las diferencias están previstas por las leyes de la relatividad.</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"postulados relatividad" | "sistemas inerciales" | "velocidad de la luz" | "principio de relatividad" | "transformaciones de Lorentz" | "constancia de c"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D1. Relatividad especial y consecuencias" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Postulados de la relatividad (CyL · D1)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">2</span><strong>Factor de Lorentz.</strong></summary>
             <p>Para dos sistemas inerciales cuyo movimiento relativo tiene módulo \(v\), se define:</p>
-            <div class="formula-box" id="formula-gamma">\[\boxed{\gamma=\frac{1}{\sqrt{1-\dfrac{v^{2}}{c^{2}}}}}\]</div>
-            <p>También se utiliza \(\beta=v/c\), de modo que \(\gamma=1/\sqrt{1-\beta^2}\).</p>
+            <div class="formula-box" id="td1-gamma">
+                <a href="TemaD1-Formulario.html#formula-2" class="formula-link">\[\boxed{\gamma=\frac{1}{\sqrt{1-\dfrac{v^{2}}{c^{2}}}}}\]</a>
+            </div>
+            <p>También se utiliza <a href="TemaD1-Formulario.html#formula-2" class="formula-link-inline">\(\beta=v/c\)</a>, de modo que <a href="TemaD1-Formulario.html#formula-2" class="formula-link-inline">\(\gamma=1/\sqrt{1-\beta^2}\)</a>.</p>
             <ul>
                 <li>Si \(v\ll c\), entonces \(\gamma\approx1\): los efectos relativistas son pequeños.</li>
                 <li>Si \(v\) se aproxima a \(c\), \(\gamma\) aumenta mucho.</li>
                 <li>Para un cuerpo con masa en reposo no nula, \(v&lt;c\); no puede alcanzar ni superar la velocidad de la luz.</li>
             </ul>
             <p>Despeje útil para problemas:</p>
-            <div class="formula-box">\[\boxed{v=c\sqrt{1-\frac{1}{\gamma^{2}}}}\]</div>
+            <div class="formula-box">
+                <a href="TemaD1-Formulario.html#formula-10" class="formula-link">\[\boxed{v=c\sqrt{1-\frac{1}{\gamma^{2}}}}\]</a>
+            </div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"factor de Lorentz" | "gamma" | "beta=v/c" | "velocidad relativa" | "despeje velocidad" | "límite velocidad luz"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D1. Relatividad especial y consecuencias" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Factor de Lorentz (CyL · D1)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">3</span><strong>Dilatación del tiempo. Tiempo propio.</strong></summary>
             <p>El <strong>tiempo propio</strong> \(\Delta\tau\) (también escrito \(\Delta t_0\)) es el intervalo entre dos sucesos medido en el sistema donde ambos ocurren en el mismo lugar. Por ejemplo, para una señal emitida y recibida a bordo de una misma nave, el reloj de la nave mide el tiempo propio.</p>
             <p>Un observador respecto al cual el reloj se mueve mide un intervalo mayor:</p>
-            <div class="formula-box" id="formula-tiempo">\[\boxed{\Delta t=\gamma\,\Delta\tau}\qquad\boxed{\Delta\tau=\frac{\Delta t}{\gamma}}\]</div>
+            <div class="formula-box" id="td1-tiempo">
+                <a href="TemaD1-Formulario.html#formula-3" class="formula-link">\[\boxed{\Delta t=\gamma\,\Delta\tau}\]</a>
+                <a href="TemaD1-Formulario.html#formula-3" class="formula-link">\[\boxed{\Delta\tau=\frac{\Delta t}{\gamma}}\]</a>
+            </div>
             <p>Por tanto, el reloj en movimiento acumula menos tiempo entre los mismos sucesos que el reloj del sistema en el que esos sucesos ocurren en lugares distintos.</p>
             <div class="note"><strong>Cómo identificarlo:</strong> pregunta dónde ocurren los dos sucesos. Si suceden en el mismo punto de un sistema (por ejemplo, ambos dentro de la nave), ese sistema mide el tiempo propio.</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"dilatación del tiempo" | "tiempo propio" | "reloj en movimiento" | "intervalo temporal" | "viaje espacial" | "atraso relojes"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D1. Relatividad especial y consecuencias" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Dilatación del tiempo (CyL · D1)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">4</span><strong>Contracción de longitudes. Longitud propia.</strong></summary>
             <p>La <strong>longitud propia</strong> \(L_0\) es la longitud medida en el sistema de referencia donde el objeto está en reposo. Un observador que ve el objeto moverse mide una longitud menor <strong>en la dirección del movimiento</strong>:</p>
-            <div class="formula-box" id="formula-longitud">\[\boxed{L=\frac{L_0}{\gamma}=L_0\sqrt{1-\frac{v^{2}}{c^{2}}}}\]</div>
+            <div class="formula-box" id="td1-longitud">
+                <a href="TemaD1-Formulario.html#formula-4" class="formula-link">\[\boxed{L=\frac{L_0}{\gamma}=L_0\sqrt{1-\frac{v^{2}}{c^{2}}}}\]</a>
+            </div>
             <p>La contracción no afecta a las dimensiones perpendiculares al movimiento. Si se conocen ambas longitudes, se puede despejar:</p>
-            <div class="formula-box">\[\boxed{\gamma=\frac{L_0}{L}}\qquad\boxed{v=c\sqrt{1-\left(\frac{L}{L_0}\right)^2}}\]</div>
+            <div class="formula-box">
+                <a href="TemaD1-Formulario.html#formula-10" class="formula-link">\[\boxed{\gamma=\frac{L_0}{L}}\qquad\boxed{v=c\sqrt{1-\left(\frac{L}{L_0}\right)^2}}\]</a>
+            </div>
             <div class="note"><strong>Atención:</strong> la longitud propia es la mayor de las dos. Antes de sustituir, identifica qué observador está en reposo respecto al objeto.</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"contracción de longitudes" | "longitud propia" | "contracción Lorentz" | "dirección del movimiento" | "longitud medida" | "despeje velocidad"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D1. Relatividad especial y consecuencias" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Contracción de longitudes (CyL · D1)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">5</span><strong>Masa en reposo y masa relativista.</strong></summary>
             <p>La <strong>masa en reposo</strong> \(m_0\) es una propiedad invariante del cuerpo: no depende del observador. En parte de los enunciados EBAU y en la terminología tradicional se utiliza la expresión <strong>masa relativista</strong>:</p>
-            <div class="formula-box">\[\boxed{m_{\text{rel}}=\gamma m_0}\]</div>
+            <div class="formula-box" id="td1-masa">
+                <a href="TemaD1-Formulario.html#formula-5" class="formula-link">\[\boxed{m_{\text{rel}}=\gamma m_0}\]</a>
+            </div>
             <p>Con esa convención, la masa relativista es la masa en reposo multiplicada por el factor de Lorentz. Si el enunciado proporciona \(m_{\text{rel}}\), la masa en reposo se obtiene mediante:</p>
-            <div class="formula-box">\[\boxed{m_0=\frac{m_{\text{rel}}}{\gamma}}\]</div>
+            <div class="formula-box">
+                <a href="TemaD1-Formulario.html#formula-5" class="formula-link">\[\boxed{m_0=\frac{m_{\text{rel}}}{\gamma}}\]</a>
+            </div>
             <div class="note"><strong>Precisión conceptual:</strong> en el tratamiento actual más habitual se mantiene la masa invariante \(m_0\) y se expresa el efecto de la velocidad mediante la energía y el momento relativistas. En estos apuntes se conserva la fórmula de masa relativista porque aparece explícitamente en varios enunciados del banco de problemas. Sigue la convención que indique el examen y deja clara la definición usada.</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"masa relativista" | "masa en reposo" | "masa invariante" | "factor de Lorentz masa" | "convención masa" | "mrel=gamma m0"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D1. Relatividad especial y consecuencias" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Masa relativista (CyL · D1)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">6</span><strong>Energía en reposo, energía total y energía cinética.</strong></summary>
             <p>La equivalencia entre masa y energía establece que un cuerpo en reposo posee energía:</p>
-            <div class="formula-box" id="formula-e0">\[\boxed{E_0=m_0c^2}\]</div>
+            <div class="formula-box" id="td1-e0">
+                <a href="TemaD1-Formulario.html#formula-6" class="formula-link">\[\boxed{E_0=m_0c^2}\]</a>
+            </div>
             <p>La energía total de una partícula que se mueve con velocidad \(v\) es:</p>
-            <div class="formula-box" id="formula-energia">\[\boxed{E=\gamma m_0c^2=\gamma E_0}\]</div>
+            <div class="formula-box" id="td1-energia">
+                <a href="TemaD1-Formulario.html#formula-7" class="formula-link">\[\boxed{E=\gamma m_0c^2=\gamma E_0}\]</a>
+            </div>
             <p>La energía cinética relativista es la diferencia entre la energía total y la energía en reposo:</p>
-            <div class="formula-box">\[\boxed{E_c=E-E_0=(\gamma-1)m_0c^2=(\gamma-1)E_0}\]</div>
+            <div class="formula-box" id="td1-ec">
+                <a href="TemaD1-Formulario.html#formula-8" class="formula-link">\[\boxed{E_c=E-E_0=(\gamma-1)m_0c^2=(\gamma-1)E_0}\]</a>
+            </div>
             <p>Si el problema proporciona la masa relativista, también puede escribirse \(E=m_{\text{rel}}c^2\) y \(E_c=(m_{\text{rel}}-m_0)c^2\), dentro de esa misma convención.</p>
             <p>Relación adicional de momento lineal relativista, útil cuando el enunciado la requiere:</p>
-            <div class="formula-box">\[p=\gamma m_0v\]</div>
+            <div class="formula-box" id="td1-momento">
+                <a href="TemaD1-Formulario.html#formula-9" class="formula-link">\[p=\gamma m_0v\]</a>
+            </div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"energía en reposo" | "energía total relativista" | "energía cinética relativista" | "equivalencia masa-energía" | "momento lineal relativista" | "electrón-voltio" | "E=mc2"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D1. Relatividad especial y consecuencias" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Energía relativista (CyL · D1)</a>
+            </div>
         </details>
 
         <details class="step">
@@ -193,15 +259,25 @@
                     <tr><td>Energía</td><td>\(E_0=m_0c^2\).</td><td>\(E=\gamma E_0\); \(E_c=(\gamma-1)E_0\).</td></tr>
                 </tbody>
             </table>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"magnitudes propias" | "resumen relativista" | "tiempo propio vs medido" | "longitud propia vs contraída" | "energía total" | "tabla comparativa"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D1. Relatividad especial y consecuencias" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Magnitudes propias y medidas (CyL · D1)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">8</span><strong>Viajes relativistas.</strong></summary>
             <p>En problemas de una nave que viaja a velocidad constante hacia una estrella, habitualmente se toma la distancia Tierra–estrella como medida en el sistema terrestre. Si esa distancia es \(d\), desde la Tierra:</p>
-            <div class="formula-box">\[t_{\text{Tierra}}=\frac{d}{v}\]</div>
+            <div class="formula-box" id="td1-viajes">
+                <a href="TemaD1-Formulario.html#formula-11" class="formula-link">\[t_{\text{Tierra}}=\frac{d}{v}\]</a>
+            </div>
             <p>El intervalo propio de la nave es:</p>
-            <div class="formula-box">\[\tau_{\text{nave}}=\frac{t_{\text{Tierra}}}{\gamma}\]</div>
+            <div class="formula-box">
+                <a href="TemaD1-Formulario.html#formula-11" class="formula-link">\[\tau_{\text{nave}}=\frac{t_{\text{Tierra}}}{\gamma}\]</a>
+            </div>
             <p>Si el enunciado proporciona el tiempo en Tierra y la velocidad, la distancia es \(d=vt_{\text{Tierra}}\). En un viaje de ida y vuelta, hay que distinguir los tramos y los cambios de sistema de referencia; no se debe aplicar sin más el modelo de un único tramo inercial.</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"viaje relativista" | "nave espacial" | "tiempo en Tierra" | "tiempo propio nave" | "distancia estrella" | "años-luz" | "trayecto a velocidad relativista"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D1. Relatividad especial y consecuencias" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Viajes relativistas (CyL · D1)</a>
+            </div>
         </details>
     </details>
 
@@ -213,8 +289,8 @@
         <details class="step">
             <summary><span class="step-num">1</span><strong>Si se conoce la velocidad.</strong></summary>
             <ol>
-                <li>Calcula \(\beta=v/c\).</li>
-                <li>Calcula \(\gamma=1/\sqrt{1-\beta^2}\).</li>
+                <li>Calcula <a href="TemaD1-Formulario.html#formula-2" class="formula-link-inline">\(\beta=v/c\)</a>.</li>
+                <li>Calcula <a href="TemaD1-Formulario.html#formula-2" class="formula-link-inline">\(\gamma=1/\sqrt{1-\beta^2}\)</a>.</li>
                 <li>Aplica la relación correspondiente: tiempo, longitud, masa o energía.</li>
                 <li>Comprueba que el resultado cumple el sentido físico: tiempo dilatado mayor, longitud contraída menor y \(v&lt;c\).</li>
             </ol>
@@ -222,23 +298,28 @@
         <details class="step">
             <summary><span class="step-num">2</span><strong>Si se conocen dos tiempos.</strong></summary>
             <p>Primero identifica cuál es propio. Después calcula:</p>
-            <div class="formula-box">\[\gamma=\frac{\Delta t}{\Delta\tau}\qquad v=c\sqrt{1-\left(\frac{\Delta\tau}{\Delta t}\right)^2}\]</div>
+            <div class="formula-box" id="td1-despeje">
+                <a href="TemaD1-Formulario.html#formula-10" class="formula-link">\[\gamma=\frac{\Delta t}{\Delta\tau}\qquad v=c\sqrt{1-\left(\frac{\Delta\tau}{\Delta t}\right)^2}\]</a>
+            </div>
             <p>No inviertas el cociente: el tiempo medido fuera del sistema propio es el mayor.</p>
         </details>
         <details class="step">
             <summary><span class="step-num">3</span><strong>Si se conocen dos longitudes.</strong></summary>
             <p>Identifica la longitud propia (la medida en reposo) y la contraída:</p>
-            <div class="formula-box">\[\gamma=\frac{L_0}{L}\qquad v=c\sqrt{1-\left(\frac{L}{L_0}\right)^2}\]</div>
+            <div class="formula-box">
+                <a href="TemaD1-Formulario.html#formula-10" class="formula-link">\[\gamma=\frac{L_0}{L}\qquad v=c\sqrt{1-\left(\frac{L}{L_0}\right)^2}\]</a>
+            </div>
             <p>El objeto debe tener \(L\leq L_0\). Si resulta \(L&gt;L_0\) para un observador que lo ve moverse, revisa qué dato es propio.</p>
         </details>
         <details class="step">
             <summary><span class="step-num">4</span><strong>Si se pregunta por masa o energía.</strong></summary>
             <ol>
                 <li>Calcula \(\gamma\) a partir de \(v\), o despeja \(\gamma\) de la energía o de la masa relativista dadas.</li>
-                <li>Usa \(E_0=m_0c^2\), \(E=\gamma E_0\) y \(E_c=(\gamma-1)E_0\).</li>
-                <li>Si el enunciado utiliza masa relativista, aplica \(m_{\text{rel}}=\gamma m_0\) y especifica que se está usando esa convención.</li>
-                <li>Para pasar de julios a electronvoltios: divide entre \(1{,}602\cdot10^{-19}\,\text{J/eV}\).</li>
+                <li>Usa <a href="TemaD1-Formulario.html#formula-6" class="formula-link-inline">\(E_0=m_0c^2\)</a>, <a href="TemaD1-Formulario.html#formula-7" class="formula-link-inline">\(E=\gamma E_0\)</a> y <a href="TemaD1-Formulario.html#formula-8" class="formula-link-inline">\(E_c=(\gamma-1)E_0\)</a>.</li>
+                <li>Si el enunciado utiliza masa relativista, aplica <a href="TemaD1-Formulario.html#formula-5" class="formula-link-inline">\(m_{\text{rel}}=\gamma m_0\)</a> y especifica que se está usando esa convención.</li>
+                <li>Para pasar de julios a electronvoltios: divide entre <a href="TemaD1-Formulario.html#formula-12" class="formula-link-inline">\(1{,}602\cdot10^{-19}\,\text{J/eV}\)</a>.</li>
             </ol>
+            <div id="td1-conversion" style="display:none;"></div>
         </details>
         <div class="note"><strong>Errores frecuentes:</strong> intercambiar tiempo propio y dilatado; usar como longitud propia la medida por quien observa el objeto en movimiento; olvidar que la contracción solo afecta a la dirección del movimiento; confundir energía total con energía cinética; introducir velocidades en km/s sin convertirlas; y aceptar una solución con \(v\geq c\).</div>
     </details>
@@ -294,7 +375,7 @@
 <p>El factor de Lorentz es:</p>
 <div class="formula-box">\[\gamma=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}=\frac{1}{\sqrt{1-0{,}8^{2}}}=\frac{1}{0{,}6}\approx1{,}667.\]</div>
 <p>El tiempo propio medido por la nave es:</p>
-<div class="formula-box">\[\tau=\frac{t}{\gamma}=\frac{10}{1{,}667}=6\,\text{años}.\]</div>
+<div class="formula-box">\[\tau=\frac{t}{\gamma}=\frac{10}{1{,}667}=6\,\text{años}.\].</div>
 <p>El atraso de los relojes de la nave respecto a los de la Tierra es:</p>
 <div class="formula-box">\[t-\tau=10-6=4\,\text{años}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(d=8\,\text{años-luz}\)<br>\(\tau=6\,\text{años}\); atraso \(=4\,\text{años}\)</p>
                 </div>
@@ -367,9 +448,9 @@
 <p>El factor de Lorentz es:</p>
 <div class="formula-box">\[\gamma=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}=\frac{1}{\sqrt{1-0{,}6^{2}}}=1{,}25.\]</div>
 <p>El tiempo propio medido en la nave es \(\Delta t_0=1\,\text{h}\). El tiempo medido desde la Tierra es:</p>
-<div class="formula-box">\[\Delta t=\gamma\,\Delta t_0=1{,}25\cdot1\,\text{h}=1{,}25\,\text{h}.\]</div><div class="paso"><strong>Contracción de longitudes</strong></div>
+<div class="formula-box">\[\Delta t=\gamma\,\Delta t_0=1{,}25\cdot1\,\text{h}=1{,}25\,\text{h}.\].</div><div class="paso"><strong>Contracción de longitudes</strong></div>
 <p>La longitud propia de la nave es \(L_0=5\,\text{m}\). La longitud medida desde la Tierra es:</p>
-<div class="formula-box">\[L=\frac{L_0}{\gamma}=\frac{5}{1{,}25}=4\,\text{m}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(\Delta t=1{,}25\,\text{h}\); \(L=4\,\text{m}\).</p>
+<div class="formula-box">\[L=\frac{L_0}{\gamma}=\frac{5}{1{,}25}=4\,\text{m}.\].</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(\Delta t=1{,}25\,\text{h}\); \(L=4\,\text{m}\).</p>
                 </div>
             </details>
 
@@ -392,11 +473,11 @@
 <p>Los objetos en movimiento se ven contraídos en la dirección del movimiento. Despejando:</p>
 <div class="formula-box">\[\frac{L}{L_0}=\sqrt{1-\frac{v^{2}}{c^{2}}}.\]</div>
 <p>Elevando al cuadrado:</p>
-<div class="formula-box">\[1-\frac{v^{2}}{c^{2}}=\left(\frac{100}{110}\right)^{2}.\]</div>
+<div class="formula-box">\[1-\frac{v^{2}}{c^{2}}=\left(\frac{100}{110}\right)^{2}.\].</div>
 <p>Por tanto:</p>
-<div class="formula-box">\[\frac{v^{2}}{c^{2}}=1-\left(\frac{10}{11}\right)^{2}=1-\frac{100}{121}=\frac{21}{121}.\]</div>
+<div class="formula-box">\[\frac{v^{2}}{c^{2}}=1-\left(\frac{10}{11}\right)^{2}=1-\frac{100}{121}=\frac{21}{121}.\].</div>
 <p>Finalmente:</p>
-<div class="formula-box">\[v=c\sqrt{\frac{21}{121}}\approx0{,}4166c\approx1{,}25\cdot10^{8}\,\text{m}\,\text{s}^{-1}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(v\approx1{,}25\cdot10^{8}\,\text{m}\,\text{s}^{-1}\).</p>
+<div class="formula-box">\[v=c\sqrt{\frac{21}{121}}\approx0{,}4166c\approx1{,}25\cdot10^{8}\,\text{m}\,\text{s}^{-1}.\].</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(v\approx1{,}25\cdot10^{8}\,\text{m}\,\text{s}^{-1}\).</p>
                 </div>
             </details>
 
@@ -418,8 +499,8 @@
 <p>Dilatación temporal:</p>
 <div class="formula-box">\[\Delta t=\gamma\,\Delta t_0\quad\Rightarrow\quad\gamma=\frac{\Delta t}{\Delta t_0}=\frac{18}{6}=3.\]</div>
 <p>Por tanto, \(\frac{1}{\gamma}=\frac{1}{3}\) y:</p>
-<div class="formula-box">\[\sqrt{1-\frac{v^{2}}{c^{2}}}=\frac{1}{3}\quad\Rightarrow\quad1-\frac{v^{2}}{c^{2}}=\frac{1}{9}\quad\Rightarrow\quad\frac{v^{2}}{c^{2}}=\frac{8}{9}.\]</div>
-<div class="formula-box">\[v=\frac{2\sqrt{2}}{3}c\approx0{,}943c\approx2{,}828\cdot10^{8}\,\text{m}\,\text{s}^{-1}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(v\approx2{,}83\cdot10^{8}\,\text{m}\,\text{s}^{-1}\approx0{,}943c\)</p>
+<div class="formula-box">\[\sqrt{1-\frac{v^{2}}{c^{2}}}=\frac{1}{3}\quad\Rightarrow\quad1-\frac{v^{2}}{c^{2}}=\frac{1}{9}\quad\Rightarrow\quad\frac{v^{2}}{c^{2}}=\frac{8}{9}.\].</div>
+<div class="formula-box">\[v=\frac{2\sqrt{2}}{3}c\approx0{,}943c\approx2{,}828\cdot10^{8}\,\text{m}\,\text{s}^{-1}.\].</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(v\approx2{,}83\cdot10^{8}\,\text{m}\,\text{s}^{-1}\approx0{,}943c\)</p>
                 </div>
             </details>
 
@@ -459,11 +540,11 @@
                     <div class="paso"><strong>Tiempo propio</strong></div>
 <p>El tiempo propio es el medido en el sistema de referencia donde los dos eventos (salida y llegada) ocurren en el mismo lugar. En la nave, el astronauta permanece en el mismo sitio durante todo el viaje: la salida y la llegada ocurren ambas en la nave. Por tanto, el tiempo propio se mide en la nave. Desde la Tierra, la partida y la llegada ocurren en lugares distintos (la Tierra y la estrella de Barnard), por lo que el tiempo medido en la Tierra es el tiempo dilatado (mayor).</p><div class="paso"><strong>Duración del viaje medida desde la Tierra</strong></div>
 <p>Desde la Tierra, la distancia es \(d=5{,}98\) años luz y la velocidad es \(v=2{,}1\cdot10^{8}\,\text{m}\,\text{s}^{-1}=0{,}7c\). El tiempo medido en la Tierra es:</p>
-<div class="formula-box">\[t_{\text{Tierra}}=\frac{d}{v}=\frac{5{,}98\,\text{años luz}}{0{,}7c}=8{,}54\,\text{años}.\]</div><div class="paso"><strong>Factor de Lorentz</strong></div>
+<div class="formula-box">\[t_{\text{Tierra}}=\frac{d}{v}=\frac{5{,}98\,\text{años luz}}{0{,}7c}=8{,}54\,\text{años}.\].</div><div class="paso"><strong>Factor de Lorentz</strong></div>
 <p>El factor de Lorentz es:</p>
 <div class="formula-box">\[\gamma=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}=\frac{1}{\sqrt{1-0{,}7^{2}}}=1{,}40.\]</div><div class="paso"><strong>Tiempo propio en la nave</strong></div>
 <p>El tiempo propio medido en la nave es:</p>
-<div class="formula-box">\[t_{\text{nave}}=\frac{t_{\text{Tierra}}}{\gamma}=\frac{8{,}54}{1{,}40}=6{,}10\,\text{años}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>Tiempo propio: en la nave.<br>\(t_{\text{Tierra}}=8{,}54\,\text{años}\); \(t_{\text{nave}}=6{,}10\,\text{años}\).</p>
+<div class="formula-box">\[t_{\text{nave}}=\frac{t_{\text{Tierra}}}{\gamma}=\frac{8{,}54}{1{,}40}=6{,}10\,\text{años}.\].</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>Tiempo propio: en la nave.<br>\(t_{\text{Tierra}}=8{,}54\,\text{años}\); \(t_{\text{nave}}=6{,}10\,\text{años}\).</p>
                 </div>
             </details>
 
@@ -482,11 +563,11 @@
                 <div class="resolucion-ej">
                     <div class="paso"><strong>Factor de Lorentz</strong></div>
 <div class="formula-box">\[\gamma=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}=\frac{1}{\sqrt{1-0{,}9^{2}}}=\frac{1}{\sqrt{0{,}19}}\approx2{,}294.\]</div><div class="paso"><strong>Masa en reposo</strong></div>
-<div class="formula-box">\[m_0=\frac{m}{\gamma}=\frac{3{,}83\cdot10^{-27}}{2{,}294}\approx1{,}67\cdot10^{-27}\,\text{kg}.\]</div>
+<div class="formula-box">\[m_0=\frac{m}{\gamma}=\frac{3{,}83\cdot10^{-27}}{2{,}294}\approx1{,}67\cdot10^{-27}\,\text{kg}.\].</div>
 <p>Coincide con la masa tabulada del protón.</p><div class="paso"><strong>Energía cinética</strong></div>
-<div class="formula-box">\[E_c=(m-m_0)c^{2}=\left(3{,}83\cdot10^{-27}-1{,}67\cdot10^{-27}\right)\left(3\cdot10^{8}\right)^{2}\approx1{,}94\cdot10^{-10}\,\text{J}.\]</div>
+<div class="formula-box">\[E_c=(m-m_0)c^{2}=\left(3{,}83\cdot10^{-27}-1{,}67\cdot10^{-27}\right)\left(3\cdot10^{8}\right)^{2}\approx1{,}94\cdot10^{-10}\,\text{J}.\].</div>
 <p>Conversión a electronvoltios:</p>
-<div class="formula-box">\[E_c=\frac{1{,}94\cdot10^{-10}}{1{,}6\cdot10^{-19}}\approx1{,}22\cdot10^{9}\,\text{eV}\approx1{,}22\,\text{GeV}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(m_0\approx1{,}67\cdot10^{-27}\,\text{kg}\); \(E_c\approx1{,}94\cdot10^{-10}\,\text{J}\approx1{,}22\cdot10^{9}\,\text{eV}\).</p>
+<div class="formula-box">\[E_c=\frac{1{,}94\cdot10^{-10}}{1{,}6\cdot10^{-19}}\approx1{,}22\cdot10^{9}\,\text{eV}\approx1{,}22\,\text{GeV}.\].</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(m_0\approx1{,}67\cdot10^{-27}\,\text{kg}\); \(E_c\approx1{,}94\cdot10^{-10}\,\text{J}\approx1{,}22\cdot10^{9}\,\text{eV}\).</p>
                 </div>
             </details>
 
@@ -512,13 +593,13 @@
 <p>Para \(v=0{,}9c\):</p>
 <div class="formula-box">\[\gamma=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}=\frac{1}{\sqrt{1-0{,}81}}=\frac{1}{\sqrt{0{,}19}}=2{,}294.\]</div><div class="paso"><strong>Masa relativista</strong></div>
 <p>La masa relativista es:</p>
-<div class="formula-box">\[m=\gamma m_0=2{,}294\cdot5000=1{,}15\cdot10^{4}\,\text{kg}.\]</div><div class="paso"><strong>Energía total relativista</strong></div>
+<div class="formula-box">\[m=\gamma m_0=2{,}294\cdot5000=1{,}15\cdot10^{4}\,\text{kg}.\].</div><div class="paso"><strong>Energía total relativista</strong></div>
 <p>La energía relativista total es:</p>
-<div class="formula-box">\[E=\gamma m_0 c^{2}=2{,}294\cdot5000\cdot(3\cdot10^{8})^{2}=1{,}03\cdot10^{21}\,\text{J}.\]</div><div class="paso"><strong>Energía cinética relativista</strong></div>
+<div class="formula-box">\[E=\gamma m_0 c^{2}=2{,}294\cdot5000\cdot(3\cdot10^{8})^{2}=1{,}03\cdot10^{21}\,\text{J}.\].</div><div class="paso"><strong>Energía cinética relativista</strong></div>
 <p>La energía que hay que comunicar es la energía cinética relativista:</p>
-<div class="formula-box">\[E_c=E-m_0c^{2}=(\gamma-1)m_0c^{2}=(2{,}294-1)\cdot5000\cdot(3\cdot10^{8})^{2}=5{,}82\cdot10^{20}\,\text{J}.\]</div><div class="paso"><strong>Velocidad de la luz medida por la nave</strong></div>
+<div class="formula-box">\[E_c=E-m_0c^{2}=(\gamma-1)m_0c^{2}=(2{,}294-1)\cdot5000\cdot(3\cdot10^{8})^{2}=5{,}82\cdot10^{20}\,\text{J}.\].</div><div class="paso"><strong>Velocidad de la luz medida por la nave</strong></div>
 <p>Por el segundo postulado de la relatividad especial, la velocidad de la luz en el vacío es la misma en todos los sistemas inerciales, independientemente del movimiento de la fuente o del observador. Por tanto, los ocupantes de la nave miden:</p>
-<div class="formula-box">\[c=3{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}.\]</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(m=1{,}15\cdot10^{4}\,\text{kg}\); \(E=1{,}03\cdot10^{21}\,\text{J}\); \(E_c=5{,}82\cdot10^{20}\,\text{J}\); \(v_{\text{luz}}=3{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}\).</p>
+<div class="formula-box">\[c=3{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}.\].</div><div class="paso"><strong>Resultado final del registro:</strong></div><p>\(m=1{,}15\cdot10^{4}\,\text{kg}\); \(E=1{,}03\cdot10^{21}\,\text{J}\); \(E_c=5{,}82\cdot10^{20}\,\text{J}\); \(v_{\text{luz}}=3{,}00\cdot10^{8}\,\text{m}\,\text{s}^{-1}\).</p>
                 </div>
             </details>
             <div class="pie-clave">
@@ -533,5 +614,44 @@
         <strong>Fuentes:</strong> Decreto 40/2022, de 29 de septiembre, anexo III, materia Física, bloque D, p. 49851; y fichero <code>problemas.json</code> facilitado para la selección de ejercicios. La organización y presentación siguen el modelo de <code>TemaA1.html</code> y los estilos de <code>unidades.css</code>.
     </div>
 </div>
+
+<script>
+/* Abre los <details> padres al llegar por ancla (necesario para que
+   los enlaces desde TemaD1-Formulario.html#formula-N funcionen). */
+document.addEventListener('DOMContentLoaded', function () {
+    if (!window.location.hash) return;
+    var target;
+    try { target = document.querySelector(window.location.hash); } catch (e) { return; }
+    if (!target) return;
+    var el = target;
+    while (el) {
+        if (el.tagName === 'DETAILS') el.open = true;
+        el = el.parentElement;
+    }
+    setTimeout(function () {
+        target.scrollIntoView({ behavior: 'auto', block: 'center' });
+    }, 60);
+});
+</script>
+
+
+
+<script>
+/* Filtro EBAU: convierte los data-* del enlace en query params
+   para que problemas-inline_v04.html pueda aplicar el filtro. */
+document.addEventListener('click', function (e) {
+    var link = e.target.closest('a.filtro-pau');
+    if (!link) return;
+    e.preventDefault();
+    var params = new URLSearchParams();
+    if (link.dataset.q)         params.set('q',         link.dataset.q);
+    if (link.dataset.comunidad) params.set('comunidad', link.dataset.comunidad);
+    if (link.dataset.bloque)    params.set('bloque',    link.dataset.bloque);
+    if (link.dataset.tema)      params.set('tema',      link.dataset.tema);
+    var base = link.getAttribute('href').split('?')[0];
+    window.location.href = base + '?' + params.toString();
+});
+</script>
+
 </body>
 </html>

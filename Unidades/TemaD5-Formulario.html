@@ -5,16 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>#TEMA D5 (Formulario).- Núcleos atómicos, radiactividad y reacciones nucleares</title>
 
-    <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-    <!-- CSS PROPIO DE FORMULARIOS -->
     <link rel="stylesheet" href="../css/formulario.css">
+
+    <style>
+        .formula-box { overflow-x: auto; max-width: 100%; }
+        .formula-box a.formula-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 8px;
+            padding: 3px 6px;
+            margin: 2px 0;
+            transition: background .15s ease;
+        }
+        .formula-box a.formula-link:hover { background: rgba(99,102,241,0.10); }
+        .formula-box a.formula-link:focus-visible { outline: 2px dashed #6366f1; outline-offset: 2px; }
+        .formula-resaltada { background: rgba(99,102,241,0.15) !important; transition: background 0.3s; }
+    </style>
 </head>
 <body>
 <div class="container">
 
-    <!-- ============================ CABECERA ============================ -->
     <div class="header">
         <div class="header-left">
             <h1>IES Valle del Alberche</h1>
@@ -29,10 +41,9 @@
         </div>
     </div>
 
-    <!-- ============================ GRID ============================ -->
     <div class="grid">
 
-        <!-- FICHA 1 · NOTACIÓN Y COMPOSICIÓN DEL NÚCLEO -->
+        <!-- FICHA 1 -->
         <article class="card c-1">
             <div class="cabecera">
                 <span class="num">1</span>
@@ -44,23 +55,19 @@
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                La composición de un núcleo a partir de su notación \({}^{A}_{Z}X\): cuántos protones, cuántos neutrones y cuántos nucleones en total tiene. Se aplica al inicio de cualquier problema nuclear, tanto para identificar isótopos como para contar partículas antes de calcular defectos de masa o equilibrar reacciones.
+                La composición de un núcleo a partir de su notación \({}^{A}_{Z}X\): cuántos protones, cuántos neutrones y cuántos nucleones en total tiene. Se aplica al inicio de cualquier problema nuclear.
             </div>
-            <a href="TemaD5.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-1">
-                \[ {}^{A}_{Z}X \]
-                \[ A = Z + N \]
-                \[ N = A - Z \]
+                <a href="TemaD5.html#td5-notacion" class="formula-link">\[ {}^{A}_{Z}X \]</a>
+                <a href="TemaD5.html#td5-notacion" class="formula-link">\[ A = Z + N \]</a>
+                <a href="TemaD5.html#td5-notacion" class="formula-link">\[ N = A - Z \]</a>
             </div>
-            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>¡Sí! Es el vocabulario del tema: \(Z\) (número atómico) = protones; \(A\) (número másico) = protones + neutrones; \(N=A-Z\) = neutrones. Sin esta notación no se puede escribir ni equilibrar ninguna reacción nuclear. Memoriza también el significado de <strong>isótopo</strong>: mismo \(Z\), distinto \(A\) (distinto número de neutrones).</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>¡Sí! Es el vocabulario del tema: \(Z\) (número atómico) = protones; \(A\) (número másico) = protones + neutrones; \(N=A-Z\) = neutrones. Memoriza también el significado de <strong>isótopo</strong>: mismo \(Z\), distinto \(A\).</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(X\)</td><td data-label="Significado">Símbolo químico del elemento</td><td data-label="Unidades">—</td></tr>
                     <tr><td data-label="Símbolo">\(Z\)</td><td data-label="Significado">Número atómico (nº de protones)</td><td data-label="Unidades">entero</td></tr>
@@ -68,18 +75,18 @@
                     <tr><td data-label="Símbolo">\(N\)</td><td data-label="Significado">Número de neutrones</td><td data-label="Unidades">entero</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> \({}^{235}_{92}\mathrm{U}\) tiene \(Z=92\) protones y \(N=235-92=143\) neutrones. \({}^{238}_{92}\mathrm{U}\) es un isótopo del anterior: mismos protones (92), pero 146 neutrones.</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \({}^{235}_{92}\mathrm{U}\) tiene \(Z=92\) protones y \(N=235-92=143\) neutrones. \({}^{238}_{92}\mathrm{U}\) es un isótopo del anterior.</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
                     <li>Los <strong>isótopos</strong> comparten \(Z\) pero difieren en \(N\) y, por tanto, en \(A\).</li>
-                    <li>Una reacción nuclear transforma núcleos; no afecta a las capas electrónicas (eso es química).</li>
-                    <li>Los nucleones son protones y neutrones; su masa se mide en unidades de masa atómica (u).</li>
+                    <li>Una reacción nuclear transforma núcleos; no afecta a las capas electrónicas.</li>
+                    <li>Los nucleones son protones y neutrones.</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 2 · DEFECTO DE MASA -->
+        <!-- FICHA 2 -->
         <article class="card c-1">
             <div class="cabecera">
                 <span class="num">2</span>
@@ -91,21 +98,17 @@
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                La diferencia entre la masa de los nucleones separados y la masa del núcleo ligado. Se aplica siempre que se quiera conocer la energía de enlace de un núcleo o el balance energético de una reacción nuclear. Es el punto de partida de todos los cálculos energéticos del tema.
+                La diferencia entre la masa de los nucleones separados y la masa del núcleo ligado. Se aplica siempre que se quiera conocer la energía de enlace de un núcleo o el balance energético de una reacción nuclear.
             </div>
-            <a href="TemaD5.html#formula-2" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-2">
-                \[ \Delta m = Z\,m_p + N\,m_n - m_{\text{núcleo}} \]
+                <a href="TemaD5.html#td5-defecto-masa" class="formula-link">\[ \Delta m = Z\,m_p + N\,m_n - m_{\text{núcleo}} \]</a>
             </div>
-            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí, pero entendiendo su significado: el núcleo ligado <strong>pesa menos</strong> que sus nucleones separados porque parte de esa masa se ha convertido en energía de enlace. Es imprescindible para calcular \(E_b\) y \(Q\). Cuidado con la convención de masas (nuclear o atómica): usa siempre la que indique el enunciado y sé coherente con protones y electrones.</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí, pero entendiendo su significado: el núcleo ligado <strong>pesa menos</strong> que sus nucleones separados. Cuidado con la convención de masas (nuclear o atómica): usa siempre la que indique el enunciado.</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(\Delta m\)</td><td data-label="Significado">Defecto de masa</td><td data-label="Unidades">u (o kg)</td></tr>
                     <tr><td data-label="Símbolo">\(m_p\)</td><td data-label="Significado">Masa del protón</td><td data-label="Unidades">1,007276 u</td></tr>
@@ -113,18 +116,18 @@
                     <tr><td data-label="Símbolo">\(m_{\text{núcleo}}\)</td><td data-label="Significado">Masa real del núcleo ligado</td><td data-label="Unidades">u (o kg)</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> para el \({}^{136}_{56}\mathrm{Ba}\) con \(m=135{,}904576\,\mathrm{u}\): \(m_{\text{nucleones}}=56\cdot1{,}007276+80\cdot1{,}008665=137{,}100656\,\mathrm{u}\); \(\Delta m=137{,}100656-135{,}904576=1{,}196\,\mathrm{u}\).</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para el \({}^{136}_{56}\mathrm{Ba}\) con \(m=135{,}904576\,\mathrm{u}\): \(m_{\text{nucleones}}=137{,}100656\,\mathrm{u}\); \(\Delta m=1{,}196\,\mathrm{u}\).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
                     <li>\(\Delta m>0\) siempre para núcleos ligados estables.</li>
-                    <li>Se calcula a partir de la <strong>masa del núcleo</strong>, no del átomo neutro (salvo que el enunciado lo especifique y se compensen los electrones).</li>
+                    <li>Se calcula a partir de la <strong>masa del núcleo</strong>, no del átomo neutro.</li>
                     <li>Es la manifestación de la equivalencia masa-energía de Einstein en el núcleo.</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 3 · ENERGÍA DE ENLACE Y EQUIVALENCIA MASA-ENERGÍA -->
+        <!-- FICHA 3 -->
         <article class="card c-2">
             <div class="cabecera">
                 <span class="num">3</span>
@@ -137,23 +140,19 @@
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                La energía que mantiene unido al núcleo (energía de enlace) a partir del defecto de masa, usando la equivalencia de Einstein. Se aplica en cualquier problema de estabilidad nuclear, fisión, fusión o cálculo energético de reacciones. La conversión u·c² ↔ MeV es una herramienta que debe salir sin pensar.
+                La energía que mantiene unido al núcleo a partir del defecto de masa, usando la equivalencia de Einstein. Se aplica en cualquier problema de estabilidad nuclear, fisión, fusión o cálculo energético.
             </div>
-            <a href="TemaD5.html#formula-3" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-3">
-                \[ E_b = \Delta m\,c^{2} \]
-                \[ 1\,\mathrm{u}\,c^{2} \approx 931{,}5\,\mathrm{MeV} \]
-                \[ 1\,\mathrm{eV} = 1{,}60\cdot10^{-19}\,\mathrm{J} \]
+                <a href="TemaD5.html#td5-energia-enlace" class="formula-link">\[ E_b = \Delta m\,c^{2} \]</a>
+                <a href="TemaD5.html#td5-energia-enlace" class="formula-link">\[ 1\,\mathrm{u}\,c^{2} \approx 931{,}5\,\mathrm{MeV} \]</a>
+                <a href="TemaD5.html#td5-energia-enlace" class="formula-link">\[ 1\,\mathrm{eV} = 1{,}60\cdot10^{-19}\,\mathrm{J} \]</a>
             </div>
-            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarlo: \(E_b=\Delta m\,c^{2}\) es la famosa ecuación de Einstein aplicada al defecto de masa. Lo que sí conviene automatizar es el factor \(1\,\mathrm{u}\,c^{2}\approx931{,}5\,\mathrm{MeV}\), que aparece en casi todos los problemas EBAU y permite saltar de u a MeV sin pasar por kg y J. Y recuerda: \(1\,\mathrm{MeV}=10^{6}\,\mathrm{eV}\).</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarlo: \(E_b=\Delta m\,c^{2}\) es la ecuación de Einstein aplicada al defecto de masa. Lo que sí conviene automatizar es \(1\,\mathrm{u}\,c^{2}\approx931{,}5\,\mathrm{MeV}\), que permite saltar de u a MeV sin pasar por kg y J.</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(E_b\)</td><td data-label="Significado">Energía de enlace del núcleo</td><td data-label="Unidades">J (o MeV)</td></tr>
                     <tr><td data-label="Símbolo">\(\Delta m\)</td><td data-label="Significado">Defecto de masa</td><td data-label="Unidades">kg (o u)</td></tr>
@@ -161,18 +160,18 @@
                     <tr><td data-label="Símbolo">\(1\,\mathrm{u}\,c^{2}\)</td><td data-label="Significado">Equivalencia energética de 1 u</td><td data-label="Unidades">931,5 MeV</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> para el \({}^{136}_{56}\mathrm{Ba}\) del ejemplo anterior, con \(\Delta m=1{,}196080\,\mathrm{u}\): \(E_b=1{,}196080\cdot931{,}5\approx1{,}11\cdot10^{3}\,\mathrm{MeV}\). En J sería \(E_b=1{,}196080\cdot1{,}66\cdot10^{-27}\cdot(3\cdot10^{8})^{2}\approx1{,}79\cdot10^{-10}\,\mathrm{J}\).</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para el \({}^{136}_{56}\mathrm{Ba}\) con \(\Delta m=1{,}196080\,\mathrm{u}\): \(E_b=1{,}196080\cdot931{,}5\approx1{,}11\cdot10^{3}\,\mathrm{MeV}\).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
                     <li>No confundir <strong>energía de enlace total</strong> con <strong>energía de enlace por nucleón</strong> (ficha 4).</li>
-                    <li>Si \(\Delta m\) está en u, usa directamente \(931{,}5\,\mathrm{MeV/u}\) y evita pasar por kg.</li>
+                    <li>Si \(\Delta m\) está en u, usa directamente \(931{,}5\,\mathrm{MeV/u}\).</li>
                     <li>Es la base del balance energético de fisión y fusión.</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 4 · ENERGÍA DE ENLACE POR NUCLEÓN -->
+        <!-- FICHA 4 -->
         <article class="card c-3">
             <div class="cabecera">
                 <span class="num">4</span>
@@ -184,39 +183,35 @@
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                La energía media de enlace por nucleón, que permite comparar la estabilidad de núcleos distintos con independencia de su tamaño. Se aplica para justificar por qué la fisión de núcleos pesados y la fusión de núcleos ligeros liberan energía: ambas aumentan la energía de enlace por nucleón.
+                La energía media de enlace por nucleón, que permite comparar la estabilidad de núcleos distintos con independencia de su tamaño. Se aplica para justificar por qué la fisión y la fusión liberan energía.
             </div>
-            <a href="TemaD5.html#formula-4" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-4">
-                \[ \frac{E_b}{A} = \frac{\Delta m\,c^{2}}{A} \]
+                <a href="TemaD5.html#td5-eb-por-nucleon" class="formula-link">\[ \frac{E_b}{A} = \frac{\Delta m\,c^{2}}{A} \]</a>
             </div>
-            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta: es la energía de enlace total dividida entre el número de nucleones \(A\). Lo importante es <strong>interpretarla</strong>: valores altos indican unión media más fuerte; el máximo está en núcleos de masa intermedia (Fe, Ni) y vale del orden de \(8{,}8\,\mathrm{MeV/nucleón}\). La curva \(E_b/A\) frente a \(A\) explica la fisión y la fusión.</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta: es la energía de enlace total dividida entre \(A\). Lo importante es <strong>interpretarla</strong>: el máximo está en núcleos de masa intermedia (Fe, Ni) y vale del orden de \(8{,}8\,\mathrm{MeV/nucleón}\).</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(E_b/A\)</td><td data-label="Significado">Energía de enlace por nucleón</td><td data-label="Unidades">MeV/nucleón</td></tr>
                     <tr><td data-label="Símbolo">\(E_b\)</td><td data-label="Significado">Energía de enlace total</td><td data-label="Unidades">MeV (o J)</td></tr>
                     <tr><td data-label="Símbolo">\(A\)</td><td data-label="Significado">Número total de nucleones</td><td data-label="Unidades">entero</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> para el \({}^{136}_{56}\mathrm{Ba}\), \(E_b/A=1{,}114\cdot10^{3}/136\approx8{,}19\,\mathrm{MeV/nucleón}\). Para el \({}^{56}_{26}\mathrm{Fe}\) vale del orden de \(8{,}8\,\mathrm{MeV/nucleón}\) (el máximo). Para el \({}^{2}_{1}\mathrm{H}\) cae a \(\approx1{,}1\,\mathrm{MeV/nucleón}\).</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> para el \({}^{136}_{56}\mathrm{Ba}\), \(E_b/A=1{,}114\cdot10^{3}/136\approx8{,}19\,\mathrm{MeV/nucleón}\).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>Los núcleos de masa intermedia (en torno al Fe) son los más estables.</li>
-                    <li>La <strong>fisión</strong> de un núcleo pesado y la <strong>fusión</strong> de dos ligeros liberan energía porque los productos tienen mayor \(E_b/A\).</li>
+                    <li>Los núcleos de masa intermedia son los más estables.</li>
+                    <li>Fisión de un pesado y fusión de dos ligeros liberan energía porque los productos tienen mayor \(E_b/A\).</li>
                     <li>El máximo de la curva explica dónde termina la nucleosíntesis estelar.</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 5 · CONSERVACIÓN EN REACCIONES NUCLEARES -->
+        <!-- FICHA 5 -->
         <article class="card c-5">
             <div class="cabecera">
                 <span class="num">5</span>
@@ -228,41 +223,36 @@
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                Los números másicos y atómicos desconocidos de una reacción nuclear, o la partícula emitida, imponiendo la conservación de \(A\) y \(Z\). Se aplica en cualquier problema de desintegración radiactiva, fisión o fusión: es la herramienta para equilibrar y reconocer reacciones.
+                Los números másicos y atómicos desconocidos de una reacción nuclear, o la partícula emitida, imponiendo la conservación de \(A\) y \(Z\).
             </div>
-            <a href="TemaD5.html#formula-5" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-5">
-                \[ \sum A_{\text{inicial}} = \sum A_{\text{final}} \]
-                \[ \sum Z_{\text{inicial}} = \sum Z_{\text{final}} \]
+                <a href="TemaD5.html#td5-conservacion" class="formula-link">\[ \sum A_{\text{inicial}} = \sum A_{\text{final}} \]</a>
+                <a href="TemaD5.html#td5-conservacion" class="formula-link">\[ \sum Z_{\text{inicial}} = \sum Z_{\text{final}} \]</a>
             </div>
-            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es un <strong>principio</strong>, no una fórmula: se aplica siempre. Lo esencial es no olvidar que se conservan <strong>dos</strong> cantidades a la vez, \(A\) (nucleones) y \(Z\) (carga). Error típico en la EBAU: equilibrar solo \(A\) y no \(Z\), o al revés. En las β hay que añadir además el antineutrino/neutrino para conservar también la energía y el número leptónico.</span>
+                <span class="respuesta"><span class="estrategia">⚖️ APLICAR</span>Es un <strong>principio</strong>: se aplica siempre. Lo esencial es no olvidar que se conservan <strong>dos</strong> cantidades a la vez, \(A\) y \(Z\). Error típico en la EBAU: equilibrar solo \(A\) y no \(Z\), o al revés.</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Magnitud</th><th>Se conserva</th><th>Expresión</th></tr>
-                </thead>
+                <thead><tr><th>Magnitud</th><th>Se conserva</th><th>Expresión</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Magnitud">Número másico</td><td data-label="Se conserva">Sí</td><td data-label="Expresión">\(\sum A_i=\sum A_f\)</td></tr>
                     <tr><td data-label="Magnitud">Número atómico</td><td data-label="Se conserva">Sí</td><td data-label="Expresión">\(\sum Z_i=\sum Z_f\)</td></tr>
-                    <tr><td data-label="Magnitud">Masa-energía</td><td data-label="Se conserva">Sí (como \(E_b\) o \(Q\))</td><td data-label="Expresión">\(Q=(m_i-m_f)c^{2}\)</td></tr>
-                    <tr><td data-label="Magnitud">Carga eléctrica</td><td data-label="Se conserva">Sí</td><td data-label="Expresión">Incluida en \(Z\)</td></tr>
+                    <tr><td data-label="Magnitud">Masa-energía</td><td data-label="Se conserva">Sí</td><td data-label="Expresión">\(Q=(m_i-m_f)c^{2}\)</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> completar \({}^{131}_{53}\mathrm{I}\rightarrow{}^{y}_{x}\mathrm{Xe}+\beta^{-}+\gamma\). Por \(Z\): \(53=x+(-1)+0\Rightarrow x=54\). Por \(A\): \(131=y+0+0\Rightarrow y=131\). Resultado: \({}^{131}_{54}\mathrm{Xe}\).</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \({}^{131}_{53}\mathrm{I}\rightarrow{}^{y}_{x}\mathrm{Xe}+\beta^{-}+\gamma\). Por \(Z\): \(53=x-1\Rightarrow x=54\). Por \(A\): \(131=y\Rightarrow y=131\).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>Permite <strong>identificar</strong> el tipo de emisión: si \(A\) baja 4 y \(Z\) baja 2 → α; si \(A\) no cambia y \(Z\) sube 1 → β⁻; si \(A\) no cambia y \(Z\) baja 1 → β⁺; si no cambia nada → γ.</li>
-                    <li>El balance energético se calcula aparte, con las masas (ficha 6).</li>
+                    <li>Permite <strong>identificar</strong> el tipo de emisión: α, β⁻, β⁺ o γ.</li>
+                    <li>El balance energético se calcula aparte con las masas (ficha 6).</li>
                     <li>En una fisión, la conservación incluye los neutrones emitidos.</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 6 · ENERGÍA DE UNA REACCIÓN NUCLEAR (Q) -->
+        <!-- FICHA 6 -->
         <article class="card c-2">
             <div class="cabecera">
                 <span class="num">6</span>
@@ -274,40 +264,34 @@
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                La energía liberada (o absorbida) en una reacción nuclear, comparando la masa total de reactivos y productos. Se aplica en fisión, fusión y cualquier transformación nuclear: es el cálculo energético central del tema. Si \(Q>0\) se libera energía; si \(Q<0\) hay que aportarla.
+                La energía liberada (o absorbida) en una reacción nuclear, comparando la masa total de reactivos y productos. Se aplica en fisión, fusión y cualquier transformación nuclear.
             </div>
-            <a href="TemaD5.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-6">
-                \[ Q = (m_{\text{inicial}} - m_{\text{final}})\,c^{2} \]
+                <a href="TemaD5.html#td5-q" class="formula-link">\[ Q = (m_{\text{inicial}} - m_{\text{final}})\,c^{2} \]</a>
             </div>
-            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es la ecuación de Einstein aplicada a la diferencia de masa entre reactivos y productos. Lo esencial es <strong>contar bien todas las partículas</strong>, incluidos los neutrones emitidos en la fisión. Si usas u, \(Q=\Delta m\cdot931{,}5\,\mathrm{MeV}\). Y recuerda el signo: \(Q>0\) libera energía.</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarla: es la ecuación de Einstein aplicada a la diferencia de masa entre reactivos y productos. Lo esencial es <strong>contar bien todas las partículas</strong>, incluidos los neutrones emitidos. Si usas u, \(Q=\Delta m\cdot931{,}5\,\mathrm{MeV}\).</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(Q\)</td><td data-label="Significado">Energía de la reacción (positiva si se libera)</td><td data-label="Unidades">J (o MeV)</td></tr>
                     <tr><td data-label="Símbolo">\(m_{\text{inicial}}\)</td><td data-label="Significado">Masa total de reactivos</td><td data-label="Unidades">u (o kg)</td></tr>
                     <tr><td data-label="Símbolo">\(m_{\text{final}}\)</td><td data-label="Significado">Masa total de productos</td><td data-label="Unidades">u (o kg)</td></tr>
-                    <tr><td data-label="Símbolo">\(c\)</td><td data-label="Significado">Velocidad de la luz en el vacío</td><td data-label="Unidades">3,00·10⁸ m·s⁻¹</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> fisión \({}^{235}_{92}\mathrm{U}+{}^{1}_{0}n\rightarrow{}^{141}_{56}\mathrm{Ba}+{}^{92}_{36}\mathrm{Kr}+3\,{}^{1}_{0}n\). \(m_i=236{,}0526\,\mathrm{u}\), \(m_f=235{,}8685\,\mathrm{u}\), \(\Delta m=0{,}1841\,\mathrm{u}\), \(Q=0{,}1841\cdot931{,}5\approx171{,}5\,\mathrm{MeV}\approx2{,}75\cdot10^{-11}\,\mathrm{J}\) por fisión.</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> fisión \({}^{235}\mathrm{U}+n\to{}^{141}\mathrm{Ba}+{}^{92}\mathrm{Kr}+3n\): \(m_i=236{,}0526\,\mathrm{u}\), \(m_f=235{,}8685\,\mathrm{u}\), \(\Delta m=0{,}1841\,\mathrm{u}\), \(Q=0{,}1841\cdot931{,}5\approx171{,}5\,\mathrm{MeV}\).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>No confundir \(\Delta m\) del defecto de masa (ficha 2) con \(m_i-m_f\) de la reacción: aquí se trabaja con <strong>todas las partículas</strong> de reactivos y productos.</li>
+                    <li>No confundir \(\Delta m\) del defecto de masa con \(m_i-m_f\) de la reacción.</li>
                     <li>Energía por núcleo → multiplicar por el número de reacciones para obtener energía total.</li>
-                    <li>Energía total en J: multiplicar \(Q\) (MeV) por \(1{,}60\cdot10^{-13}\,\mathrm{J/MeV}\) si interesa comparar con consumos macroscópicos.</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 7 · DESINTEGRACIONES RADIACTIVAS α, β, γ -->
+        <!-- FICHA 7 -->
         <article class="card c-4">
             <div class="cabecera">
                 <span class="num">7</span>
@@ -316,48 +300,43 @@
             </div>
             <div class="epi-chips">
                 <span class="epi-chip deducir">🧮 Deducir · Consecuencia</span>
-                <span class="epi-chip definir">📘 Memorizar · Definición</span>
+                <span class="epi-chip definicion">📘 Memorizar · Definición</span>
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                La transformación que experimenta un núcleo inestable al emitir una partícula α, β⁻, β⁺ o γ, y cómo cambian \(A\) y \(Z\). Se aplica en todos los problemas de radiactividad natural, series de desintegración y equilibrio de reacciones nucleares. Cada emisión tiene una firma característica en \(A\) y \(Z\).
+                La transformación que experimenta un núcleo inestable al emitir una partícula α, β⁻, β⁺ o γ, y cómo cambian \(A\) y \(Z\).
             </div>
-            <a href="TemaD5.html#formula-7" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-7">
-                \[ \alpha:\quad {}^{A}_{Z}X \rightarrow {}^{A-4}_{Z-2}Y + {}^{4}_{2}\mathrm{He} \]
-                \[ \beta^{-}:\quad {}^{A}_{Z}X \rightarrow {}^{A}_{Z+1}Y + e^{-} + \bar{\nu}_{e} \]
-                \[ \beta^{+}:\quad {}^{A}_{Z}X \rightarrow {}^{A}_{Z-1}Y + e^{+} + \nu_{e} \]
-                \[ \gamma:\quad {}^{A}_{Z}X^{*} \rightarrow {}^{A}_{Z}X + \gamma \]
+                <a href="TemaD5.html#td5-radiactividad" class="formula-link">\[ \alpha:\quad {}^{A}_{Z}X \rightarrow {}^{A-4}_{Z-2}Y + {}^{4}_{2}\mathrm{He} \]</a>
+                <a href="TemaD5.html#td5-radiactividad" class="formula-link">\[ \beta^{-}:\quad {}^{A}_{Z}X \rightarrow {}^{A}_{Z+1}Y + e^{-} + \bar{\nu}_{e} \]</a>
+                <a href="TemaD5.html#td5-radiactividad" class="formula-link">\[ \beta^{+}:\quad {}^{A}_{Z}X \rightarrow {}^{A}_{Z-1}Y + e^{+} + \nu_{e} \]</a>
+                <a href="TemaD5.html#td5-radiactividad" class="formula-link">\[ \gamma:\quad {}^{A}_{Z}X^{*} \rightarrow {}^{A}_{Z}X + \gamma \]</a>
             </div>
-            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarlas: se deducen aplicando la conservación de \(A\) y \(Z\) (ficha 5). α: emite \({}^{4}_{2}\mathrm{He}\) → \(A\) baja 4 y \(Z\) baja 2. β⁻: un neutrón se convierte en protón + electrón + antineutrino → \(Z\) sube 1, \(A\) constante. β⁺: un protón se convierte en neutrón + positrón + neutrino → \(Z\) baja 1, \(A\) constante. γ: el núcleo se desexcita → nada cambia. Lo único que conviene memorizar es la <strong>naturaleza</strong> de cada partícula.</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizarlas: se deducen aplicando la conservación de \(A\) y \(Z\). α: \(A\) baja 4 y \(Z\) baja 2. β⁻: \(Z\) sube 1, \(A\) constante. β⁺: \(Z\) baja 1, \(A\) constante. γ: nada cambia. Lo único que conviene memorizar es la <strong>naturaleza</strong> de cada partícula.</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Emisión</th><th>Partícula</th><th>Cambio \(A\)</th><th>Cambio \(Z\)</th></tr>
-                </thead>
+                <thead><tr><th>Emisión</th><th>Partícula</th><th>Cambio \(A\)</th><th>Cambio \(Z\)</th></tr></thead>
                 <tbody>
-                    <tr><td data-label="Emisión">α</td><td data-label="Partícula">Núcleo de \({}^{4}_{2}\mathrm{He}\) (2p + 2n)</td><td data-label="Cambio A">−4</td><td data-label="Cambio Z">−2</td></tr>
+                    <tr><td data-label="Emisión">α</td><td data-label="Partícula">Núcleo de \({}^{4}_{2}\mathrm{He}\)</td><td data-label="Cambio A">−4</td><td data-label="Cambio Z">−2</td></tr>
                     <tr><td data-label="Emisión">β⁻</td><td data-label="Partícula">Electrón + antineutrino</td><td data-label="Cambio A">0</td><td data-label="Cambio Z">+1</td></tr>
                     <tr><td data-label="Emisión">β⁺</td><td data-label="Partícula">Positrón + neutrino</td><td data-label="Cambio A">0</td><td data-label="Cambio Z">−1</td></tr>
                     <tr><td data-label="Emisión">γ</td><td data-label="Partícula">Fotón de alta energía</td><td data-label="Cambio A">0</td><td data-label="Cambio Z">0</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> \({}^{238}_{92}\mathrm{U}\rightarrow{}^{234}_{90}\mathrm{Th}+{}^{4}_{2}\mathrm{He}\) (α); \({}^{234}_{90}\mathrm{Th}\rightarrow{}^{234}_{91}\mathrm{Pa}+e^{-}+\bar{\nu}_{e}\) (β⁻); \({}^{234}_{91}\mathrm{Pa}\rightarrow{}^{234}_{92}\mathrm{U}+e^{-}+\bar{\nu}_{e}\) (β⁻).</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \({}^{238}_{92}\mathrm{U}\to{}^{234}_{90}\mathrm{Th}+{}^{4}_{2}\mathrm{He}\) (α); \({}^{234}_{90}\mathrm{Th}\to{}^{234}_{91}\mathrm{Pa}+e^{-}+\bar{\nu}_{e}\) (β⁻).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
                     <li>Penetración: α &lt; β &lt; γ. Poder ionizante: α &gt; β &gt; γ.</li>
-                    <li>En un campo magnético se desvían α y β (sentidos opuestos por su carga); γ no se desvía (sin carga).</li>
-                    <li>Las emisiones β van acompañadas siempre de (anti)neutrino para conservar energía, momento y número leptónico.</li>
-                    <li>Una desintegración γ suele seguir a una α o β que deja el núcleo excitado.</li>
+                    <li>En un campo magnético se desvían α y β; γ no se desvía (sin carga).</li>
+                    <li>Las emisiones β van acompañadas de (anti)neutrino.</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 8 · FISIÓN Y FUSIÓN NUCLEAR -->
+        <!-- FICHA 8 -->
         <article class="card c-4">
             <div class="cabecera">
                 <span class="num">8</span>
@@ -369,41 +348,35 @@
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                La transformación característica de la fisión (núcleo pesado que se rompe) y de la fusión (núcleos ligeros que se unen). Se aplica para identificar el tipo de reacción, plantear el balance energético con \(Q\) y explicar por qué ambas liberan energía en función de la curva \(E_b/A\).
+                La transformación característica de la fisión (núcleo pesado que se rompe) y de la fusión (núcleos ligeros que se unen). Se aplica para identificar el tipo de reacción y plantear el balance energético con \(Q\).
             </div>
-            <a href="TemaD5.html#formula-8" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-8">
-                \[ \text{Fisión:}\quad {}^{235}_{92}\mathrm{U} + {}^{1}_{0}n \rightarrow {}^{141}_{56}\mathrm{Ba} + {}^{92}_{36}\mathrm{Kr} + 3\,{}^{1}_{0}n + Q \]
-                \[ \text{Fusión:}\quad {}^{2}_{1}\mathrm{H} + {}^{3}_{1}\mathrm{H} \rightarrow {}^{4}_{2}\mathrm{He} + {}^{1}_{0}n + 17{,}6\,\mathrm{MeV} \]
+                <a href="TemaD5.html#td5-fision-fusion" class="formula-link">\[ \text{Fisión:}\quad {}^{235}_{92}\mathrm{U} + {}^{1}_{0}n \rightarrow {}^{141}_{56}\mathrm{Ba} + {}^{92}_{36}\mathrm{Kr} + 3\,{}^{1}_{0}n + Q \]</a>
+                <a href="TemaD5.html#td5-fision-fusion" class="formula-link">\[ \text{Fusión:}\quad {}^{2}_{1}\mathrm{H} + {}^{3}_{1}\mathrm{H} \rightarrow {}^{4}_{2}\mathrm{He} + {}^{1}_{0}n + 17{,}6\,\mathrm{MeV} \]</a>
             </div>
-            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No hace falta memorizar las reacciones concretas: hay que <strong>saber reconocerlas</strong>. Fisión: <em>un núcleo pesado se divide</em> en dos de masa intermedia + neutrones. Fusión: <em>dos núcleos ligeros se unen</em> en uno más pesado + (a veces) un neutrón. La clave física: en ambos casos los productos tienen mayor \(E_b/A\) y por eso se libera energía (\(Q>0\)).</span>
+                <span class="respuesta"><span class="estrategia">🧭 COMPRENDER</span>No hace falta memorizar las reacciones concretas: hay que <strong>saber reconocerlas</strong>. Fisión: <em>un núcleo pesado se divide</em> en dos de masa intermedia + neutrones. Fusión: <em>dos núcleos ligeros se unen</em> en uno más pesado + (a veces) un neutrón.</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Aspecto</th><th>Fisión</th><th>Fusión</th></tr>
-                </thead>
+                <thead><tr><th>Aspecto</th><th>Fisión</th><th>Fusión</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Aspecto">Qué ocurre</td><td data-label="Fisión">Núcleo pesado se divide en dos medianos</td><td data-label="Fusión">Dos núcleos ligeros se unen en uno más pesado</td></tr>
                     <tr><td data-label="Aspecto">Ejemplo típico</td><td data-label="Fisión">\({}^{235}\mathrm{U}+n\)</td><td data-label="Fusión">\({}^{2}\mathrm{H}+{}^{3}\mathrm{H}\)</td></tr>
                     <tr><td data-label="Aspecto">Energía típica</td><td data-label="Fisión">\(\sim200\,\mathrm{MeV}\) por evento</td><td data-label="Fusión">\(\sim17{,}6\,\mathrm{MeV}\) por evento</td></tr>
-                    <tr><td data-label="Aspecto">Por qué libera energía</td><td data-label="Fisión">Productos con mayor \(E_b/A\) que el U</td><td data-label="Fusión">Producto con mayor \(E_b/A\) que los ligeros</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> \({}^{2}_{1}\mathrm{H}+{}^{2}_{1}\mathrm{H}\rightarrow{}^{3}_{2}\mathrm{He}+{}^{1}_{0}n+3{,}2\,\mathrm{MeV}\) es fusión (dos ligeros se unen). \({}^{235}_{92}\mathrm{U}+{}^{1}_{0}n\rightarrow{}^{92}_{36}\mathrm{Kr}+{}^{141}_{56}\mathrm{Ba}+3\,{}^{1}_{0}n+170\,\mathrm{MeV}\) es fisión (uno pesado se rompe).</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \({}^{2}_{1}\mathrm{H}+{}^{2}_{1}\mathrm{H}\to{}^{3}_{2}\mathrm{He}+{}^{1}_{0}n+3{,}2\,\mathrm{MeV}\) es fusión. \({}^{235}\mathrm{U}+n\to{}^{92}\mathrm{Kr}+{}^{141}\mathrm{Ba}+3n+170\,\mathrm{MeV}\) es fisión.</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>La fisión se aprovecha en reactores de fisión; la fusión, aún en desarrollo (ITER), es la fuente de energía del Sol.</li>
+                    <li>La fisión se aprovecha en reactores; la fusión, aún en desarrollo (ITER).</li>
                     <li>Comparar \(E_b/A\) del reactivo y de los productos permite saber si \(Q>0\).</li>
-                    <li>No confundir con las desintegraciones radiactivas: estas son espontáneas y de un solo núcleo; la fisión inducida requiere un neutrón.</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 9 · LEY DE DESINTEGRACIÓN RADIACTIVA -->
+        <!-- FICHA 9 -->
         <article class="card c-2">
             <div class="cabecera">
                 <span class="num">9</span>
@@ -415,21 +388,17 @@
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                El número de núcleos radiactivos que quedan sin desintegrar después de un tiempo \(t\), o el tiempo necesario para que quede una fracción determinada. Se aplica en datación radiométrica, medicina nuclear, problemas de actividad y cualquier cuestión sobre decaimiento exponencial (conexión con D6).
+                El número de núcleos radiactivos que quedan sin desintegrar después de un tiempo \(t\), o el tiempo necesario para que quede una fracción determinada. Se aplica en datación radiométrica, medicina nuclear y problemas de actividad.
             </div>
-            <a href="TemaD5.html#formula-9" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-9">
-                \[ N(t) = N_0\,e^{-\lambda t} \]
+                <a href="TemaD5.html#td5-ley" class="formula-link">\[ N(t) = N_0\,e^{-\lambda t} \]</a>
             </div>
-            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la ley fundamental del decaimiento radiactivo. Memoriza la exponencial negativa con la constante \(\lambda\) (probabilidad de desintegración por unidad de tiempo). Es la misma forma funcional que la descarga de un condensador o la atenuación de la luz: si entiendes la exponencial en un contexto, la entiendes en todos. Errores típicos: mezclar unidades de \(t\) y \(\lambda\), o usar logaritmos decimales en vez de neperianos.</span>
+                <span class="respuesta"><span class="estrategia">🔑 MEMORIZAR</span>Sí: es la ley fundamental del decaimiento radiactivo. Memoriza la exponencial negativa con la constante \(\lambda\). Errores típicos: mezclar unidades de \(t\) y \(\lambda\), o usar logaritmos decimales en vez de neperianos.</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(N(t)\)</td><td data-label="Significado">Núcleos sin desintegrar en el instante \(t\)</td><td data-label="Unidades">núcleos</td></tr>
                     <tr><td data-label="Símbolo">\(N_0\)</td><td data-label="Significado">Núcleos iniciales (\(t=0\))</td><td data-label="Unidades">núcleos</td></tr>
@@ -437,19 +406,18 @@
                     <tr><td data-label="Símbolo">\(t\)</td><td data-label="Significado">Tiempo transcurrido</td><td data-label="Unidades">s (compatible con \(\lambda\))</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> con \(T_{1/2}=8{,}02\,\text{días}\) para el \({}^{131}\mathrm{I}\): tras \(8{,}02\,\text{días}\) queda el \(50\%\); tras \(16{,}04\,\text{días}\), el \(25\%\); tras \(24{,}06\,\text{días}\), el \(12{,}5\%\).</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> con \(T_{1/2}=8{,}02\,\text{días}\) para el \({}^{131}\mathrm{I}\): tras \(8{,}02\,\text{días}\) queda el \(50\%\); tras \(16{,}04\,\text{días}\), el \(25\%\).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
                     <li>Tras cada \(T_{1/2}\) queda la mitad: es la forma intuitiva de la ley.</li>
-                    <li>Para tiempos no múltiplos de \(T_{1/2}\): \(N/N_0=(1/2)^{t/T_{1/2}}\), equivalente a la exponencial.</li>
-                    <li>En problemas de datación, si se conoce la cantidad inicial (o se supone) y la actual, se despeja \(t=\ln(N_0/N)/\lambda\).</li>
-                    <li>La ley se cumple para el número de núcleos, la masa del isótopo y la actividad, simultáneamente.</li>
+                    <li>Para tiempos no múltiplos: \(N/N_0=(1/2)^{t/T_{1/2}}\), equivalente a la exponencial.</li>
+                    <li>En datación: \(t=\ln(N_0/N)/\lambda\).</li>
                 </ul>
             </div>
         </article>
 
-        <!-- FICHA 10 · SEMIDESINTEGRACIÓN Y ACTIVIDAD -->
+        <!-- FICHA 10 (ampliada con λ = ln2 / T₁/₂) -->
         <article class="card c-3">
             <div class="cabecera">
                 <span class="num">10</span>
@@ -462,23 +430,20 @@
             </div>
             <div class="intro">
                 <span class="etiqueta">¿Qué se calcula?</span>
-                El periodo de semidesintegración a partir de la constante \(\lambda\), y la actividad (desintegraciones por segundo) de una muestra radiactiva. Se aplica en problemas de datación, cálculo de dosis, medicina nuclear y en cualquier ejercicio EBAU que pida actividad en Bq a partir de la masa de isótopo.
+                El periodo de semidesintegración a partir de \(\lambda\), y la actividad (desintegraciones por segundo) de una muestra radiactiva. Se aplica en problemas de datación, medicina nuclear y cálculos de actividad en Bq.
             </div>
-            <a href="TemaD5.html#formula-10" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-10">
-                \[ T_{1/2} = \frac{\ln 2}{\lambda} \qquad \lambda = \frac{\ln 2}{T_{1/2}} \]
-                \[ \mathcal{A}(t) = \lambda\,N(t) = \mathcal{A}_0\,e^{-\lambda t} \]
-                \[ N = \frac{m}{M}\,N_A \]
+                <a href="TemaD5.html#td5-actividad" class="formula-link">\[ T_{1/2} = \frac{\ln 2}{\lambda} \]</a>
+                <a href="TemaD5.html#td5-actividad" class="formula-link">\[ \lambda = \frac{\ln 2}{T_{1/2}} \]</a>
+                <a href="TemaD5.html#td5-actividad" class="formula-link">\[ \mathcal{A}(t) = \lambda\,N(t) = \mathcal{A}_0\,e^{-\lambda t} \]</a>
+                <a href="TemaD5.html#td5-actividad" class="formula-link">\[ N = \frac{m}{M}\,N_A \]</a>
             </div>
-            </a>
             <p class="note">
                 <span class="pregunta">¿Me aprendo esto de memoria?</span>
-                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizar la relación entre \(T_{1/2}\) y \(\lambda\): sale de imponer \(N=N_0/2\) en la ley de desintegración. Sí conviene recordar la idea: \(T_{1/2}\) y \(\lambda\) son inversamente proporcionales. La actividad \(\mathcal{A}=\lambda N\) es la derivada del número de núcleos; y \(N=(m/M)N_A\) es pura estequiometría. Automatiza las conversiones de días/años a segundos cuando pidan Bq.</span>
+                <span class="respuesta"><span class="estrategia">🧮 DEDUCIR</span>No hace falta memorizar la relación entre \(T_{1/2}\) y \(\lambda\): sale de imponer \(N=N_0/2\) en la ley de desintegración. La actividad \(\mathcal{A}=\lambda N\) es la derivada del número de núcleos. Automatiza las conversiones de días/años a segundos cuando pidan Bq.</span>
             </p>
             <table class="mag-table">
-                <thead>
-                    <tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr>
-                </thead>
+                <thead><tr><th>Símbolo</th><th>Significado</th><th>Unidades</th></tr></thead>
                 <tbody>
                     <tr><td data-label="Símbolo">\(T_{1/2}\)</td><td data-label="Significado">Periodo de semidesintegración</td><td data-label="Unidades">s (o días, años)</td></tr>
                     <tr><td data-label="Símbolo">\(\lambda\)</td><td data-label="Significado">Constante de desintegración</td><td data-label="Unidades">s⁻¹</td></tr>
@@ -486,172 +451,81 @@
                     <tr><td data-label="Símbolo">\(N_A\)</td><td data-label="Significado">Número de Avogadro</td><td data-label="Unidades">6,022·10²³ mol⁻¹</td></tr>
                 </tbody>
             </table>
-            <p class="ejemplo"><strong>Ejemplo:</strong> \(1\,\mu\mathrm{g}\) de \({}^{131}\mathrm{I}\) (\(T_{1/2}=8{,}02\,\text{días}\)): \(N=(10^{-6}/131)\cdot6{,}022\cdot10^{23}\approx4{,}60\cdot10^{15}\) núcleos; \(\lambda=\ln 2/(8{,}02\cdot86400)\approx1{,}00\cdot10^{-6}\,\mathrm{s^{-1}}\); \(\mathcal{A}_0=\lambda N\approx4{,}60\cdot10^{9}\,\mathrm{Bq}\).</p>
+            <p class="ejemplo"><strong>Ejemplo:</strong> \(1\,\mu\mathrm{g}\) de \({}^{131}\mathrm{I}\) (\(T_{1/2}=8{,}02\,\text{días}\)): \(N\approx4{,}60\cdot10^{15}\); \(\lambda\approx1{,}00\cdot10^{-6}\,\mathrm{s^{-1}}\); \(\mathcal{A}_0=\lambda N\approx4{,}60\cdot10^{9}\,\mathrm{Bq}\).</p>
             <div class="obs">
                 <span class="titulo-obs">Observaciones de interés</span>
                 <ul>
-                    <li>1 Bq = 1 desintegración por segundo. El becquerel es una unidad muy pequeña; se usan sus múltiplos (MBq, GBq).</li>
+                    <li>1 Bq = 1 desintegración por segundo.</li>
                     <li>Tras un \(T_{1/2}\), la actividad también se reduce a la mitad.</li>
-                    <li>Para calcular \(\mathcal{A}_0\) a partir de una masa, primero \(N=(m/M)N_A\) y después \(\mathcal{A}_0=\lambda N\).</li>
-                    <li>Errores típicos: no convertir \(T_{1/2}\) a segundos cuando se pide Bq; confundir masa del isótopo con masa del elemento (si hay mezcla de isótopos, hay que ponderar).</li>
+                    <li>Para calcular \(\mathcal{A}_0\): primero \(N=(m/M)N_A\), después \(\mathcal{A}_0=\lambda N\).</li>
                 </ul>
             </div>
         </article>
 
-        <!-- ============================================================
-             LEYENDA EPISTÉMICA
-             ============================================================ -->
+        <!-- LEYENDA EPISTÉMICA (sin cambios) -->
         <article class="card span-all leyenda-epi">
-
             <div class="leyenda-epi-header">
                 <span class="num">★</span>
                 <h2>Leyenda epistémica: ¿cómo se domina cada fórmula?</h2>
                 <span class="badge-centro">Leyenda</span>
             </div>
-
             <p class="leyenda-epi-intro">
                 No todas las expresiones de la asignatura se estudian igual. Cada fórmula o concepto
-                pertenece a una <strong>categoría epistémica</strong> —definición, ley fundamental,
-                consecuencia matemática, principio de conservación o conversión de unidades— y cada
-                categoría se domina con un <strong>verbo distinto</strong>. Identificar el tipo
-                <em>antes</em> de estudiar ahorra tiempo y evita memorizar lo que se puede deducir.
+                pertenece a una <strong>categoría epistémica</strong> y cada categoría se domina con un
+                <strong>verbo distinto</strong>.
             </p>
-
             <div class="leyenda-epi-grid">
-
                 <div class="epi-item definicion">
                     <div class="epi-icono">📘</div>
                     <h3 class="epi-nombre">Definición</h3>
                     <span class="epi-verbo">Memorizar</span>
-                    <p class="epi-desc">
-                        Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física.
-                        No se demuestra, se establece. Se domina cuando puedes enunciarla sin pensar.
-                    </p>
-                    <p class="epi-ej">
-                        <strong>Ejemplos D5</strong>
-                        \({}^{A}_{Z}X\) &nbsp;·&nbsp; \(A=Z+N\) &nbsp;·&nbsp; \(N(t)=N_0e^{-\lambda t}\)
-                    </p>
+                    <p class="epi-desc">Es el <em>vocabulario</em> del tema: asigna un nombre a una magnitud física.</p>
+                    <p class="epi-ej"><strong>Ejemplos D5</strong> \({}^{A}_{Z}X\) · \(A=Z+N\) · \(N(t)=N_0e^{-\lambda t}\)</p>
                 </div>
-
                 <div class="epi-item comprender">
                     <div class="epi-icono">🧭</div>
                     <h3 class="epi-nombre">Ley fundamental</h3>
                     <span class="epi-verbo">Comprender</span>
-                    <p class="epi-desc">
-                        Es el <em>punto de partida</em> del tema: describe cómo funciona la naturaleza.
-                        No se deriva de otra cosa; se entiende el porqué y las condiciones en las que aplica.
-                    </p>
-                    <p class="epi-ej">
-                        <strong>Ejemplos D5</strong>
-                        \(\Delta m=Zm_p+Nm_n-m_{\text{núcleo}}\) &nbsp;·&nbsp; \(\alpha\), \(\beta\), \(\gamma\) &nbsp;·&nbsp; fisión y fusión
-                    </p>
+                    <p class="epi-desc">Es el <em>punto de partida</em> del tema.</p>
+                    <p class="epi-ej"><strong>Ejemplos D5</strong> \(\Delta m=Zm_p+Nm_n-m_{\text{núcleo}}\) · α, β, γ · fisión y fusión</p>
                 </div>
-
                 <div class="epi-item deducir">
                     <div class="epi-icono">🧮</div>
                     <h3 class="epi-nombre">Consecuencia matemática</h3>
                     <span class="epi-verbo">Deducir</span>
-                    <p class="epi-desc">
-                        Se <em>obtiene</em> integrando, despejando o sustituyendo una ley fundamental o una
-                        definición. No se memoriza: se reconstruye en 2–3 líneas si se olvida.
-                    </p>
-                    <p class="epi-ej">
-                        <strong>Ejemplos D5</strong>
-                        \(E_b=\Delta m\,c^{2}\) &nbsp;·&nbsp; \(E_b/A\) &nbsp;·&nbsp; \(Q=(m_i-m_f)c^{2}\) &nbsp;·&nbsp; \(T_{1/2}=\ln 2/\lambda\) &nbsp;·&nbsp; \(\mathcal{A}=\lambda N\)
-                    </p>
+                    <p class="epi-desc">Se <em>obtiene</em> integrando, despejando o sustituyendo una ley fundamental o una definición.</p>
+                    <p class="epi-ej"><strong>Ejemplos D5</strong> \(E_b=\Delta m\,c^{2}\) · \(E_b/A\) · \(Q\) · \(T_{1/2}=\ln 2/\lambda\) · \(\mathcal{A}=\lambda N\)</p>
                 </div>
-
                 <div class="epi-item aplicar">
                     <div class="epi-icono">⚖️</div>
                     <h3 class="epi-nombre">Principio / conservación</h3>
                     <span class="epi-verbo">Aplicar</span>
-                    <p class="epi-desc">
-                        Es una <em>regla universal</em> que restringe los procesos posibles. No se demuestra
-                        ni se deduce: se aplica como filtro a cada problema concreto.
-                    </p>
-                    <p class="epi-ej">
-                        <strong>Ejemplos D5</strong>
-                        \(\sum A_i=\sum A_f\) &nbsp;·&nbsp; \(\sum Z_i=\sum Z_f\) &nbsp;·&nbsp; conservación de masa-energía
-                    </p>
+                    <p class="epi-desc">Es una <em>regla universal</em> que restringe los procesos posibles.</p>
+                    <p class="epi-ej"><strong>Ejemplos D5</strong> \(\sum A_i=\sum A_f\) · \(\sum Z_i=\sum Z_f\) · masa-energía</p>
                 </div>
-
                 <div class="epi-item automatizar">
                     <div class="epi-icono">🔄</div>
                     <h3 class="epi-nombre">Conversión / operación</h3>
                     <span class="epi-verbo">Automatizar</span>
-                    <p class="epi-desc">
-                        Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes
-                        equivalentes. Debe salir sin pensar, como un reflejo.
-                    </p>
-                    <p class="epi-ej">
-                        <strong>Ejemplos D5</strong>
-                        \(1\,\mathrm{u}\,c^{2}\approx931{,}5\,\mathrm{MeV}\) &nbsp;·&nbsp; \(1\,\mathrm{eV}=1{,}60\cdot10^{-19}\,\mathrm{J}\) &nbsp;·&nbsp; días ↔ s &nbsp;·&nbsp; Bq ↔ MBq
-                    </p>
+                    <p class="epi-desc">Es una <em>herramienta</em> mecánica: cambio de unidades o paso entre magnitudes equivalentes.</p>
+                    <p class="epi-ej"><strong>Ejemplos D5</strong> \(1\,\mathrm{u}\,c^{2}\approx931{,}5\,\mathrm{MeV}\) · \(1\,\mathrm{eV}=1{,}60\cdot10^{-19}\,\mathrm{J}\) · días ↔ s · Bq ↔ MBq</p>
                 </div>
-
             </div>
-
-            <!-- Tabla resumen -->
             <table class="leyenda-epi-tabla">
                 <thead>
-                    <tr>
-                        <th>Categoría</th>
-                        <th>Verbo</th>
-                        <th>¿Qué es?</th>
-                        <th>¿Cómo se domina?</th>
-                        <th>Autoevaluación</th>
-                    </tr>
+                    <tr><th>Categoría</th><th>Verbo</th><th>¿Qué es?</th><th>¿Cómo se domina?</th><th>Autoevaluación</th></tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td>
-                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td>
-                        <td data-label="¿Qué es?">Vocabulario del tema</td>
-                        <td data-label="¿Cómo se domina?">Repetición espaciada</td>
-                        <td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td>
-                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td>
-                        <td data-label="¿Qué es?">Punto de partida físico</td>
-                        <td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td>
-                        <td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td>
-                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td>
-                        <td data-label="¿Qué es?">Resultado matemático derivado</td>
-                        <td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td>
-                        <td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td>
-                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td>
-                        <td data-label="¿Qué es?">Regla universal de conservación</td>
-                        <td data-label="¿Cómo se domina?">Plantearla en cada reacción</td>
-                        <td data-label="Autoevaluación">¿La aplico como filtro al problema?</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td>
-                        <td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td>
-                        <td data-label="¿Qué es?">Herramienta mecánica</td>
-                        <td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td>
-                        <td data-label="Autoevaluación">¿Me sale sin pensar?</td>
-                    </tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#4299e1"></span><strong>Definición</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#4299e1">Memorizar</span></td><td data-label="¿Qué es?">Vocabulario del tema</td><td data-label="¿Cómo se domina?">Repetición espaciada</td><td data-label="Autoevaluación">¿Puedo enunciarla de memoria?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#667eea"></span><strong>Ley fundamental</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#667eea">Comprender</span></td><td data-label="¿Qué es?">Punto de partida físico</td><td data-label="¿Cómo se domina?">Explicar el porqué y sus condiciones</td><td data-label="Autoevaluación">¿Sabría explicarla con mis palabras?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#ed8936"></span><strong>Consecuencia</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#ed8936">Deducir</span></td><td data-label="¿Qué es?">Resultado matemático derivado</td><td data-label="¿Cómo se domina?">Reconstruirla en 2–3 pasos</td><td data-label="Autoevaluación">¿Sabría deducirla si la olvido?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#38b2ac"></span><strong>Principio</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#38b2ac">Aplicar</span></td><td data-label="¿Qué es?">Regla universal de conservación</td><td data-label="¿Cómo se domina?">Plantearla en cada reacción</td><td data-label="Autoevaluación">¿La aplico como filtro al problema?</td></tr>
+                    <tr><td data-label="Categoría"><span class="epi-dot" style="background:#48bb78"></span><strong>Conversión</strong></td><td data-label="Verbo"><span class="epi-mini-verbo" style="background:#48bb78">Automatizar</span></td><td data-label="¿Qué es?">Herramienta mecánica</td><td data-label="¿Cómo se domina?">Práctica hasta el reflejo</td><td data-label="Autoevaluación">¿Me sale sin pensar?</td></tr>
                 </tbody>
             </table>
-
-            <!-- Regla de oro -->
             <div class="leyenda-epi-aviso">
-                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>,
-                pregúntate <strong>«¿de dónde sale esto?»</strong>.
-                Si sale de otra fórmula integrando, despejando o sustituyendo → <strong>consecuencia</strong> (deducir).
-                Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender).
-                Si solo asigna un nombre → <strong>definición</strong> (memorizar).
-                Si es una regla que se cumple siempre → <strong>principio</strong> (aplicar).
+                <strong>💡 Regla de oro:</strong> si dudas entre <em>memorizar</em> o <em>deducir</em>, pregúntate <strong>«¿de dónde sale esto?»</strong>. Si sale de otra fórmula integrando, despejando o sustituyendo → <strong>consecuencia</strong> (deducir). Si no sale de nada porque es el punto de partida → <strong>ley fundamental</strong> (comprender). Si solo asigna un nombre → <strong>definición</strong> (memorizar). Si es una regla que se cumple siempre → <strong>principio</strong> (aplicar).
             </div>
-
-            <!-- Mini-referencia de colores de las tarjetas -->
             <div class="leyenda-epi-colores">
                 <span class="leyenda-epi-color"><span class="chip" style="background:#667eea"></span>c-1 · Fundamento (notación y defecto de masa)</span>
                 <span class="leyenda-epi-color"><span class="chip" style="background:#ed8936"></span>c-2 · Energía (Eb, Q, ley de desintegración)</span>
@@ -659,27 +533,19 @@
                 <span class="leyenda-epi-color"><span class="chip" style="background:#48bb78"></span>c-4 · Aplicaciones (radiactividad, fisión y fusión)</span>
                 <span class="leyenda-epi-color"><span class="chip" style="background:#38b2ac"></span>c-5 · Principios (conservación)</span>
             </div>
-
         </article>
 
     </div>
 
-    <!-- ============================ GLOSARIO ============================ -->
+    <!-- GLOSARIO -->
     <details class="glosario">
         <summary>📖 Glosario de fórmulas del tema D5</summary>
-
         <p style="margin: 8px 0 14px 0; color: #4a5568; font-size: 0.95rem;">
-            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla. Útil como chuleta de repaso rápido antes de un examen o para localizar una fórmula concreta.
+            Recopilación de todas las expresiones del tema, con su nombre y la ficha donde se desarrolla.
         </p>
-
         <table class="mag-table">
             <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Fórmula</th>
-                    <th>Nombre</th>
-                    <th>Ficha</th>
-                </tr>
+                <tr><th>#</th><th>Fórmula</th><th>Nombre</th><th>Ficha</th></tr>
             </thead>
             <tbody>
                 <tr><td data-label="#">1</td><td data-label="Fórmula">\[ {}^{A}_{Z}X \]</td><td data-label="Nombre">Notación nuclear</td><td data-label="Ficha">1</td></tr>
@@ -702,15 +568,13 @@
                 <tr><td data-label="#">18</td><td data-label="Fórmula">\[ N=\frac{m}{M}\,N_A \]</td><td data-label="Nombre">Número de núcleos a partir de la masa</td><td data-label="Ficha">10</td></tr>
             </tbody>
         </table>
-
         <div class="note" style="margin: 16px 0 10px 0;">
-            <strong>⚠️ Errores frecuentes en la EBAU:</strong> olvidar la conservación de \(Z\) (solo equilibrar \(A\)); no incluir los neutrones emitidos al sumar masas; mezclar masas nucleares y atómicas; usar \(\Delta m\) del defecto de masa como si fuese \(m_i-m_f\) de la reacción; dividir entre \(A\) antes de calcular \(E_b\) total; confundir fisión (pesado se rompe) con fusión (ligeros se unen); no convertir \(T_{1/2}\) a segundos cuando se pide actividad en Bq; y usar logaritmos decimales en la ley de desintegración (son neperianos).
+            <strong>⚠️ Errores frecuentes en la EBAU:</strong> olvidar la conservación de \(Z\) (solo equilibrar \(A\)); no incluir los neutrones emitidos al sumar masas; mezclar masas nucleares y atómicas; usar \(\Delta m\) del defecto de masa como si fuese \(m_i-m_f\) de la reacción; dividir entre \(A\) antes de calcular \(E_b\) total; confundir fisión (pesado se rompe) con fusión (ligeros se unen); no convertir \(T_{1/2}\) a segundos cuando se pide actividad en Bq; y usar logaritmos decimales en la ley de desintegración.
         </div>
     </details>
 
-    <!-- ============================ RECORDATORIO + BOTÓN ============================ -->
     <div class="note" style="margin: 0 28px 8px 28px;">
-        <strong>Recordatorio:</strong> en física nuclear, el <strong>defecto de masa</strong> \(\Delta m=Zm_p+Nm_n-m_{\text{núcleo}}\) es la madre de todas las fórmulas energéticas del tema: multiplicando por \(c^{2}\) se obtiene \(E_b\); dividiendo por \(A\), la energía de enlace por nucleón; y comparando masas inicial y final, la energía \(Q\) de cualquier reacción. Las desintegraciones α, β y γ se deducen de la conservación de \(A\) y \(Z\) (no hace falta memorizarlas). La ley \(N=N_0e^{-\lambda t}\) es la base de la radiactividad y de la actividad \(\mathcal{A}=\lambda N\). Si dominas estas tres ideas —conservación, equivalencia masa-energía y decaimiento exponencial—, puedes resolver cualquier problema EBAU del tema sin memorizar el resto.
+        <strong>Recordatorio:</strong> en física nuclear, el <strong>defecto de masa</strong> \(\Delta m=Zm_p+Nm_n-m_{\text{núcleo}}\) es la madre de todas las fórmulas energéticas del tema: multiplicando por \(c^{2}\) se obtiene \(E_b\); dividiendo por \(A\), la energía de enlace por nucleón; y comparando masas inicial y final, la energía \(Q\) de cualquier reacción. Las desintegraciones α, β y γ se deducen de la conservación de \(A\) y \(Z\). La ley \(N=N_0e^{-\lambda t}\) es la base de la radiactividad y de la actividad \(\mathcal{A}=\lambda N\).
     </div>
 
     <div class="footer-cta">
@@ -719,56 +583,19 @@
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <!-- ============================ PARA RESALTAR LA FÓRMULA DEL FORMULARIO CUANDO VENGA DEL HTML ============================ -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var hash = window.location.hash;
     if (!hash || !hash.startsWith('#formula-')) return;
-
     var card = document.querySelector(hash);
     if (!card) return;
-
     card.scrollIntoView({ behavior: 'auto', block: 'center' });
-
-    // Reinicia la animación aunque el :target ya se hubiera consumido
     card.classList.remove('formula-resaltada');
     void card.offsetWidth;
     card.classList.add('formula-resaltada');
-    setTimeout(function () {
-        card.classList.remove('formula-resaltada');
-    }, 2600);
+    setTimeout(function () { card.classList.remove('formula-resaltada'); }, 2600);
 });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>

@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema D5. Núcleos atómicos, radiactividad y reacciones nucleares</title>
 
-    <!-- Iconos y CSS común del proyecto -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/unidades.css">
 
-    <!-- MathJax: notación LaTeX -->
     <script>
       window.MathJax = {
         tex: {inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']]},
@@ -18,7 +16,6 @@
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    <!-- Ajustes locales pequeños: se conserva el diseño de unidades.css -->
     <style>
       .indicadores-d5 {display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0;}
       .indicador-d5 {background:#eef2ff;border:1px solid #c7d2fe;border-radius:10px;padding:12px;text-align:center;}
@@ -36,6 +33,20 @@
       .tag-d5 {display:inline-block;border-radius:20px;padding:4px 10px;background:#dbeafe;color:#1e40af;font-weight:700;font-size:.88em;margin:2px;}
       .fuente {font-size:.9em;color:#475569;}
       .section summary h2 {line-height:1.35;}
+
+      /* === VÍNCULOS BIDIRECCIONALES: la fórmula es el enlace === */
+      .formula-box { overflow-x: auto; max-width: 100%; }
+      .formula-box a.formula-link {
+          text-decoration: none;
+          color: inherit;
+          border-radius: 6px;
+          padding: 1px 4px;
+          transition: background .15s ease;
+      }
+      .formula-box a.formula-link:hover { background: rgba(99,102,241,0.10); }
+      .formula-box a.formula-link:focus-visible { outline: 2px dashed #6366f1; outline-offset: 2px; }
+      .formula-resaltada { background: rgba(99,102,241,0.15) !important; transition: background 0.3s; }
+
       @media (max-width:700px) {.indicadores-d5{grid-template-columns:1fr;}.meta-ej{margin-left:0!important;}}
     </style>
 </head>
@@ -113,72 +124,117 @@
         <details class="step" open>
             <summary><span class="step-num">1</span><strong>El núcleo atómico: composición, notación e isótopos.</strong></summary>
             <p>El núcleo ocupa una región muy pequeña del átomo y concentra prácticamente toda su masa. Está formado por <strong>protones</strong>, con carga positiva, y <strong>neutrones</strong>, sin carga eléctrica. Ambas partículas reciben el nombre de <strong>nucleones</strong>.</p>
-            <div class="formula-box">\[{}^{A}_{Z}X\qquad A=Z+N\]</div>
+            <div class="formula-box" id="td5-notacion">
+                <a href="TemaD5-Formulario.html#formula-1" class="formula-link">\[{}^{A}_{Z}X\]</a>
+                <a href="TemaD5-Formulario.html#formula-1" class="formula-link">\[A=Z+N\]</a>
+            </div>
             <p><strong>Z</strong> es el número atómico (número de protones); <strong>A</strong> es el número másico (protones más neutrones); <strong>N=A-Z</strong> es el número de neutrones. Los <strong>isótopos</strong> son núcleos del mismo elemento (igual Z) con distinto número de neutrones y, por tanto, distinto A.</p>
             <p>Ejemplo: \({}^{235}_{92}\mathrm{U}\) tiene 92 protones y \(235-92=143\) neutrones.</p>
             <div class="note"><strong>Idea clave:</strong> en una reacción nuclear se transforman núcleos; no es una reacción química entre las capas electrónicas del átomo.</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"núcleo atómico" | "protones" | "neutrones" | "nucleones" | "número atómico" | "número másico" | "isótopos" | "notación nuclear"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D5. Núcleos atómicos, radiactividad y reacciones nucleares" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Composición del núcleo (CyL · D5)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">2</span><strong>Estabilidad nuclear, defecto de masa y energía de enlace.</strong></summary>
             <p>La estabilidad del núcleo se debe principalmente a la <strong>interacción nuclear fuerte</strong>, atractiva y de corto alcance, que mantiene unidos los nucleones. Entre protones existe además repulsión eléctrica. La estabilidad resulta del equilibrio entre estas contribuciones y depende de la composición del núcleo.</p>
             <p>La masa de un núcleo ligado es menor que la suma de las masas de sus nucleones separados. La diferencia se denomina <strong>defecto de masa</strong>:</p>
-            <div class="formula-box">\[\Delta m=Z\,m_p+N\,m_n-m_{\text{núcleo}}\]</div>
+            <div class="formula-box" id="td5-defecto-masa">
+                <a href="TemaD5-Formulario.html#formula-2" class="formula-link">\[\Delta m=Z\,m_p+N\,m_n-m_{\text{núcleo}}\]</a>
+            </div>
             <p>La energía equivalente al defecto de masa es la <strong>energía de enlace nuclear</strong>: la energía que habría que aportar para separar completamente el núcleo en sus nucleones.</p>
-            <div class="formula-box">\[E_b=\Delta m\,c^2\]</div>
+            <div class="formula-box" id="td5-energia-enlace">
+                <a href="TemaD5-Formulario.html#formula-3" class="formula-link">\[E_b=\Delta m\,c^2\]</a>
+            </div>
             <p>Si el defecto de masa se expresa en unidades de masa atómica, es habitual utilizar:</p>
-            <div class="formula-box">\[1\,\mathrm{u}\,c^2\approx931{,}5\,\mathrm{MeV}\]</div>
+            <div class="formula-box">
+                <a href="TemaD5-Formulario.html#formula-3" class="formula-link">\[1\,\mathrm{u}\,c^2\approx931{,}5\,\mathrm{MeV}\]</a>
+            </div>
             <p>La <strong>energía de enlace por nucleón</strong> permite comparar la estabilidad media de núcleos distintos:</p>
-            <div class="formula-box">\[\frac{E_b}{A}=\frac{\Delta m\,c^2}{A}\]</div>
+            <div class="formula-box" id="td5-eb-por-nucleon">
+                <a href="TemaD5-Formulario.html#formula-4" class="formula-link">\[\frac{E_b}{A}=\frac{\Delta m\,c^2}{A}\]</a>
+            </div>
             <p>En general, una energía de enlace por nucleón mayor corresponde a una unión media más fuerte. La curva de energía de enlace por nucleón alcanza valores máximos en la zona de núcleos de masa intermedia (cercana al hierro y al níquel). Esto ayuda a explicar que determinados núcleos pesados puedan liberar energía al dividirse y que núcleos ligeros puedan liberarla al fusionarse.</p>
             <div class="note"><strong>Cuidado con las masas:</strong> utiliza de forma coherente las masas nucleares o las masas atómicas y las constantes que proporciona el enunciado. No mezcles sin justificación la masa de un átomo neutro con la de un protón desnudo. En los ejercicios EBAU, sigue la convención y los datos indicados.</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"estabilidad nuclear" | "defecto de masa" | "energía de enlace" | "energía de enlace por nucleón" | "interacción nuclear fuerte" | "curva de energía de enlace" | "u c2 = 931,5 MeV"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D5. Núcleos atómicos, radiactividad y reacciones nucleares" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Energía de enlace (CyL · D5)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">3</span><strong>Reacciones nucleares y leyes de conservación.</strong></summary>
             <p>Una reacción nuclear transforma uno o varios núcleos en otros. En la notación \({}^{A}_{Z}X\), deben conservarse el número total de nucleones y la carga eléctrica total (número atómico total):</p>
-            <div class="formula-box">\[\sum A_{\text{inicial}}=\sum A_{\text{final}}\qquad\sum Z_{\text{inicial}}=\sum Z_{\text{final}}\]</div>
+            <div class="formula-box" id="td5-conservacion">
+                <a href="TemaD5-Formulario.html#formula-5" class="formula-link">\[\sum A_{\text{inicial}}=\sum A_{\text{final}}\]</a>
+                <a href="TemaD5-Formulario.html#formula-5" class="formula-link">\[\sum Z_{\text{inicial}}=\sum Z_{\text{final}}\]</a>
+            </div>
             <p>Estas igualdades permiten determinar partículas emitidas o núcleos desconocidos. En las desintegraciones beta, la notación completa incluye el neutrino o antineutrino correspondiente.</p>
             <p>El balance energético se obtiene comparando la masa total inicial y final. Definimos el valor energético de la reacción (Q):</p>
-            <div class="formula-box">\[Q=(m_{\text{inicial}}-m_{\text{final}})c^2\]</div>
+            <div class="formula-box" id="td5-q">
+                <a href="TemaD5-Formulario.html#formula-6" class="formula-link">\[Q=(m_{\text{inicial}}-m_{\text{final}})c^2\]</a>
+            </div>
             <p>Si \(Q&gt;0\), la reacción libera energía; si \(Q&lt;0\), necesita un aporte energético. El defecto de masa debe calcularse con todas las partículas de reactivos y productos, incluidos los neutrones.</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"reacción nuclear" | "conservación número másico" | "conservación número atómico" | "leyes de conservación" | "balance energético" | "valor Q" | "equilibrar reacción nuclear"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D5. Núcleos atómicos, radiactividad y reacciones nucleares" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Reacciones nucleares (CyL · D5)</a>
+            </div>
         </details>
 
-        <details class="step">
+        <details class="step" id="td5-radiactividad">
             <summary><span class="step-num">4</span><strong>Radiactividad natural: emisiones alfa, beta y gamma.</strong></summary>
             <p>La <strong>radiactividad</strong> es la transformación espontánea de núcleos inestables, que emiten partículas o radiación para alcanzar configuraciones más estables. Las leyes de Soddy-Fajans describen los cambios de A y Z.</p>
             <table class="tabla-rad">
                 <thead><tr><th>Emisión</th><th>Naturaleza</th><th>Transformación nuclear</th><th>Cambios en el núcleo</th></tr></thead>
                 <tbody>
-                    <tr><td class="alpha">Alfa (α)</td><td>Núcleo de helio \({}^{4}_{2}\mathrm{He}\), con 2 protones y 2 neutrones; carga \(+2e\).</td><td>\[{}^{A}_{Z}X\rightarrow{}^{A-4}_{Z-2}Y+{}^{4}_{2}\mathrm{He}\]</td><td>\(A\) disminuye 4; \(Z\) disminuye 2.</td></tr>
-                    <tr><td class="beta">Beta menos (β⁻)</td><td>Electrón y antineutrino electrónico. Un neutrón se transforma en protón.</td><td>\[{}^{A}_{Z}X\rightarrow{}^{A}_{Z+1}Y+e^-+\bar{\nu}_e\]</td><td>\(A\) no cambia; \(Z\) aumenta 1.</td></tr>
-                    <tr><td class="beta">Beta más (β⁺)</td><td>Positrón y neutrino electrónico. Un protón se transforma en neutrón.</td><td>\[{}^{A}_{Z}X\rightarrow{}^{A}_{Z-1}Y+e^++\nu_e\]</td><td>\(A\) no cambia; \(Z\) disminuye 1.</td></tr>
-                    <tr><td class="gamma">Gamma (γ)</td><td>Fotón de alta energía emitido por un núcleo excitado.</td><td>\[{}^{A}_{Z}X^*\rightarrow{}^{A}_{Z}X+\gamma\]</td><td>No cambian ni \(A\) ni \(Z\); el núcleo pierde energía.</td></tr>
+                    <tr><td class="alpha">Alfa (α)</td><td>Núcleo de helio \({}^{4}_{2}\mathrm{He}\), con 2 protones y 2 neutrones; carga \(+2e\).</td><td><a href="TemaD5-Formulario.html#formula-7" class="formula-link">\[{}^{A}_{Z}X\rightarrow{}^{A-4}_{Z-2}Y+{}^{4}_{2}\mathrm{He}\]</a></td><td>\(A\) disminuye 4; \(Z\) disminuye 2.</td></tr>
+                    <tr><td class="beta">Beta menos (β⁻)</td><td>Electrón y antineutrino electrónico. Un neutrón se transforma en protón.</td><td><a href="TemaD5-Formulario.html#formula-7" class="formula-link">\[{}^{A}_{Z}X\rightarrow{}^{A}_{Z+1}Y+e^-+\bar{\nu}_e\]</a></td><td>\(A\) no cambia; \(Z\) aumenta 1.</td></tr>
+                    <tr><td class="beta">Beta más (β⁺)</td><td>Positrón y neutrino electrónico. Un protón se transforma en neutrón.</td><td><a href="TemaD5-Formulario.html#formula-7" class="formula-link">\[{}^{A}_{Z}X\rightarrow{}^{A}_{Z-1}Y+e^++\nu_e\]</a></td><td>\(A\) no cambia; \(Z\) disminuye 1.</td></tr>
+                    <tr><td class="gamma">Gamma (γ)</td><td>Fotón de alta energía emitido por un núcleo excitado.</td><td><a href="TemaD5-Formulario.html#formula-7" class="formula-link">\[{}^{A}_{Z}X^*\rightarrow{}^{A}_{Z}X+\gamma\]</a></td><td>No cambian ni \(A\) ni \(Z\); el núcleo pierde energía.</td></tr>
                 </tbody>
             </table>
             <p><strong>Comparación cualitativa:</strong> α tiene gran capacidad ionizante y poca penetración; β presenta valores intermedios; γ tiene gran penetración y no posee carga eléctrica. Las partículas α y β se desvían en campos eléctricos y magnéticos; γ no se desvía.</p>
             <div class="note"><strong>Truco de examen:</strong> para identificar una emisión, compara primero A y después Z. Si A baja 4 y Z baja 2, es α; si A permanece y Z sube o baja una unidad, es β⁻ o β⁺; si ambos permanecen constantes y el núcleo se desexcita, es γ.</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"radiactividad" | "emisión alfa" | "emisión beta" | "emisión gamma" | "leyes de Soddy-Fajans" | "desintegración radiactiva" | "partícula alfa" | "partícula beta"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D5. Núcleos atómicos, radiactividad y reacciones nucleares" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Radiactividad natural (CyL · D5)</a>
+            </div>
         </details>
 
-        <details class="step">
+        <details class="step" id="td5-fision-fusion">
             <summary><span class="step-num">5</span><strong>Fisión nuclear y fusión nuclear.</strong></summary>
             <p><strong>Fisión:</strong> un núcleo pesado se divide en dos núcleos de masa intermedia, normalmente acompañado de varios neutrones. Un ejemplo típico es la fisión inducida del uranio-235:</p>
-            <div class="formula-box">\[{}^{235}_{92}\mathrm{U}+{}^{1}_{0}n\rightarrow{}^{141}_{56}\mathrm{Ba}+{}^{92}_{36}\mathrm{Kr}+3\,{}^{1}_{0}n+Q\]</div>
+            <div class="formula-box">
+                <a href="TemaD5-Formulario.html#formula-8" class="formula-link">\[{}^{235}_{92}\mathrm{U}+{}^{1}_{0}n\rightarrow{}^{141}_{56}\mathrm{Ba}+{}^{92}_{36}\mathrm{Kr}+3\,{}^{1}_{0}n+Q\]</a>
+            </div>
             <p><strong>Fusión:</strong> dos núcleos ligeros se unen para formar otro más pesado. Un ejemplo es la reacción deuterio-tritio:</p>
-            <div class="formula-box">\[{}^{2}_{1}\mathrm{H}+{}^{3}_{1}\mathrm{H}\rightarrow{}^{4}_{2}\mathrm{He}+{}^{1}_{0}n+17{,}6\,\mathrm{MeV}\]</div>
+            <div class="formula-box">
+                <a href="TemaD5-Formulario.html#formula-8" class="formula-link">\[{}^{2}_{1}\mathrm{H}+{}^{3}_{1}\mathrm{H}\rightarrow{}^{4}_{2}\mathrm{He}+{}^{1}_{0}n+17{,}6\,\mathrm{MeV}\]</a>
+            </div>
             <p>En ambos procesos puede liberarse energía cuando los productos quedan más ligados (mayor energía de enlace total), de acuerdo con \(E=\Delta m c^2\). Para clasificarlos, fíjate en la transformación: <strong>un núcleo pesado se divide</strong> en fisión; <strong>dos núcleos ligeros se unen</strong> en fusión.</p>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"fisión nuclear" | "fusión nuclear" | "uranio-235" | "deuterio-tritio" | "energía liberada" | "reactor nuclear" | "cadena de fisión" | "confinamiento magnético"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D5. Núcleos atómicos, radiactividad y reacciones nucleares" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Fisión y fusión nuclear (CyL · D5)</a>
+            </div>
         </details>
 
         <details class="step">
             <summary><span class="step-num">6</span><strong>Ley de desintegración radiactiva, semivida y actividad.</strong></summary>
             <p>El número de núcleos radiactivos sin desintegrar disminuye exponencialmente. Esta parte se relaciona directamente con D6, pero aparece junto a cuestiones de D5 en varios enunciados EBAU.</p>
-            <div class="formula-box">\[N(t)=N_0e^{-\lambda t}\]</div>
+            <div class="formula-box" id="td5-ley">
+                <a href="TemaD5-Formulario.html#formula-9" class="formula-link">\[N(t)=N_0e^{-\lambda t}\]</a>
+            </div>
             <p>La constante \(\lambda\) caracteriza la probabilidad de desintegración por unidad de tiempo. El periodo de semidesintegración \(T_{1/2}\) es el tiempo necesario para que quede la mitad de los núcleos iniciales:</p>
-            <div class="formula-box">\[T_{1/2}=\frac{\ln 2}{\lambda}\qquad\lambda=\frac{\ln2}{T_{1/2}}\]</div>
+            <div class="formula-box" id="td5-actividad">
+                <a href="TemaD5-Formulario.html#formula-10" class="formula-link">\[T_{1/2}=\frac{\ln 2}{\lambda}\]</a>
+                <a href="TemaD5-Formulario.html#formula-10" class="formula-link">\[\lambda=\frac{\ln2}{T_{1/2}}\]</a>
+            </div>
             <p>La <strong>actividad</strong> es el número de desintegraciones por unidad de tiempo:</p>
-            <div class="formula-box">\[\mathcal{A}(t)=\lambda N(t)=\mathcal{A}_0e^{-\lambda t}\]</div>
+            <div class="formula-box">
+                <a href="TemaD5-Formulario.html#formula-10" class="formula-link">\[\mathcal{A}(t)=\lambda N(t)=\mathcal{A}_0e^{-\lambda t}\]</a>
+            </div>
             <p>Su unidad en el SI es el becquerel: \(1\,\mathrm{Bq}=1\,\mathrm{s}^{-1}\). Si se conoce una masa de isótopo puro, el número de núcleos se obtiene mediante \(N=(m/M)N_A\), usando unidades coherentes.</p>
             <div class="note"><strong>Conversión esencial:</strong> si el periodo viene dado en días o años y se pide actividad en Bq, convierte primero el tiempo a segundos para expresar \(\lambda\) en \(\mathrm{s}^{-1}\).</div>
+            <div style="text-align:right; margin-top:10px;">
+                <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"ley de desintegración" | "periodo de semidesintegración" | "semivida" | "actividad" | "becquerel" | "constante de desintegración" | "N=N0 e^-lambda t" | "datación radiactiva"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D5. Núcleos atómicos, radiactividad y reacciones nucleares" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Ley de desintegración y actividad (CyL · D5)</a>
+            </div>
         </details>
     </details>
 
@@ -275,7 +331,7 @@
                     <div class="paso-resolucion"><h4>Núcleos iniciales y ley de desintegración</h4><p>En el modelo indicado, cada núcleo de \(^{40}_{19}\text{K}\) desintegrado origina un núcleo de \(^{40}_{18}\text{Ar}\) y la roca conserva ambos. Las masas molares nominales son iguales (\(40\,\text{g}\,\text{mol}^{-1}\)), por lo que \(\frac{N_{\text{Ar}}}{N_{\text{K}}}=\frac{73}{12}\). Sin Ar inicial:</p>
 <div class="formula-box">\[N_0=N_{\text{K}}+N_{\text{Ar}},\qquad \frac{N_0}{N_{\text{K}}}=\frac{12+73}{12}=\frac{85}{12}.\]</div>
 <p>Aplicamos \(N_{\text{K}}=N_0e^{-\lambda t}\), con \(\lambda=\frac{\ln2}{T_{1/2}}\):</p>
-<div class="formula-box">\[t=\frac{1}{\lambda}\ln\left(\frac{N_0}{N_{\text{K}}}\right)=\frac{T_{1/2}}{\ln2}\ln\left(\frac{85}{12}\right)=3{,}52\cdot10^{9}\,\text{años}.\]</div>
+<div class="formula-box">\[t=\frac{1}{\lambda}\ln\left(\frac{N_0}{N_{\text{K}}}\right)=\frac{T_{1/2}}{\ln2}\ln\left(\frac{85}{12}\right)=3{,}52\cdot10^{9}\,\text{años}.\] </div>
 <p>Resultado: \(t\approx3{,}52\cdot10^{9}\) años (3525 millones de años).</p></div>
                     <div class="resultado-problema"><strong>Resultado final</strong><p>\(t\approx3{,}52\cdot10^{9}\) años (3525 millones de años).</p></div>
                 </div>
@@ -295,9 +351,9 @@
                 <div class="resolucion-ej">
                     <h3>Resolución paso a paso</h3>
                     <div class="paso-resolucion"><h4>Defecto de masa</h4><p>Masa total inicial:</p>
-<div class="formula-box">\[m_{\text{inicial}}=m_U+m_n=235{,}043931+1{,}008665=236{,}052596\,\text{u}.\]</div>
+<div class="formula-box">\[m_{\text{inicial}}=m_U+m_n=235{,}043931+1{,}008665=236{,}052596\,\text{u}.\] </div>
 <p>Masa total final:</p>
-<div class="formula-box">\[m_{\text{final}}=m_{Kr}+m_{Ba}+3m_n=88{,}917835+143{,}922955+3\cdot1{,}008665=235{,}866785\,\text{u}.\]</div>
+<div class="formula-box">\[m_{\text{final}}=m_{Kr}+m_{Ba}+3m_n=88{,}917835+143{,}922955+3\cdot1{,}008665=235{,}866785\,\text{u}.\] </div>
 <p>Defecto de masa:</p>
 <div class="formula-box">\[\Delta m=m_{\text{inicial}}-m_{\text{final}}=0{,}185811\,\text{u}.\]</div></div><div class="paso-resolucion"><h4>Conversión a kg y energía liberada</h4><div class="formula-box">\[\Delta m=0{,}185811\cdot1{,}66\cdot10^{-27}=3{,}084\cdot10^{-28}\,\text{kg}.\]</div>
 <div class="formula-box">\[E=\Delta m\,c_0^{2}=3{,}084\cdot10^{-28}\cdot(3{,}00\cdot10^{8})^{2}=2{,}77\cdot10^{-11}\,\text{J}.\]</div></div><div class="paso-resolucion"><h4>Conversión a MeV</h4><div class="formula-box">\[E=\frac{2{,}77\cdot10^{-11}}{1{,}60\cdot10^{-19}}\,\text{eV}\cdot10^{-6}=173\,\text{MeV}.\]</div></div><div class="paso-resolucion"><h4>Energía total y número de fisiones</h4><p>La energía del partido es:</p>
@@ -323,7 +379,7 @@
                 <div class="resolucion-ej">
                     <h3>Resolución paso a paso</h3>
                     <div class="paso-resolucion"><h4>Cálculo del defecto de masa</h4><p>El núcleo de \(^{136}_{56}Ba\) tiene \(Z=56\) protones y \(N=136-56=80\) neutrones. La masa de los nucleones libres sería:</p>
-<div class="formula-box">\[m_{\text{nucleones}}=56\cdot1{,}007276+80\cdot1{,}008665=137{,}100656\,\text{u}.\]</div>
+<div class="formula-box">\[m_{\text{nucleones}}=56\cdot1{,}007276+80\cdot1{,}008665=137{,}100656\,\text{u}.\] </div>
 <p>El defecto de masa es la diferencia entre esta suma y la masa real del núcleo:</p>
 <div class="formula-box">\[\Delta m=137{,}100656-135{,}904576=1{,}196080\,\text{u}.\]</div></div><div class="paso-resolucion"><h4>Energía de enlace total (Einstein)</h4><p>Usando \(E=\Delta m\,c^{2}\) y \(1\,\text{u}=931{,}5\,\text{MeV}\,c^{-2}\):</p>
 <div class="formula-box">\[E=1{,}196080\cdot931{,}5=1{,}114\cdot10^{3}\,\text{MeV}.\]</div>
@@ -473,7 +529,7 @@
                 <div class="enunciado-ej">
                     <p><strong>Enunciado oficial recogido en el banco de problemas:</strong></p>
                     <p>A.11) Una reacción nuclear conocida por su aprovechamiento energético es:</p>
-<div class="formula-box">\[^{235}_{92}\text{U}+^{1}_{0}\text{n}\rightarrow^{141}_{56}\text{Ba}+^{92}_{36}\text{Kr}+3\,^{1}_{0}\text{n}+\text{energía}.\]</div>
+<div class="formula-box">\[^{235}_{92}\text{U}+^{1}_{0}\text{n}\rightarrow^{141}_{56}\text{Ba}+^{92}_{36}\text{Kr}+3\,^{1}_{0}\text{n}+\text{energía}.\] </div>
 <p>Indique razonadamente si es una reacción de fusión o de fisión y determine la energía desprendida en la reacción por cada átomo de uranio. Exprese el resultado en eV.</p>
 <p>Nota: \(m(^{235}_{92}\text{U})=235{,}0439\,\text{u}\); \(m(^{141}_{56}\text{Ba})=140{,}9162\,\text{u}\); \(m(^{92}_{36}\text{Kr})=91{,}9262\,\text{u}\); \(m(^{1}_{0}\text{n})=1{,}0087\,\text{u}\).</p>
                 </div>
@@ -530,5 +586,42 @@
         </div>
     </div>
 </div>
+
+<!-- Script para abrir <details> padres y resaltar la caja de fórmula al llegar con #td5-… -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#td5-')) return;
+    var target = document.querySelector(hash);
+    if (!target) return;
+    // Abrir todos los <details> padres
+    var parent = target.closest('details');
+    while (parent) {
+        parent.open = true;
+        parent = parent.parentElement ? parent.parentElement.closest('details') : null;
+    }
+    // Scroll y resaltado
+    setTimeout(function () {
+        target.scrollIntoView({ behavior: 'auto', block: 'center' });
+        target.classList.add('formula-resaltada');
+        setTimeout(function () { target.classList.remove('formula-resaltada'); }, 2600);
+    }, 100);
+});
+
+/* Filtro EBAU: convierte los data-* del enlace en query params
+   para que problemas-inline_v04.html pueda aplicar el filtro. */
+document.addEventListener('click', function (e) {
+    var link = e.target.closest('a.filtro-pau');
+    if (!link) return;
+    e.preventDefault();
+    var params = new URLSearchParams();
+    if (link.dataset.q)         params.set('q',         link.dataset.q);
+    if (link.dataset.comunidad) params.set('comunidad', link.dataset.comunidad);
+    if (link.dataset.bloque)    params.set('bloque',    link.dataset.bloque);
+    if (link.dataset.tema)      params.set('tema',      link.dataset.tema);
+    var base = link.getAttribute('href').split('?')[0];
+    window.location.href = base + '?' + params.toString();
+});
+</script>
 </body>
 </html>
