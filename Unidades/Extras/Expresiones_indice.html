@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física EBAU — Banco de expresiones ❌ vs ✅</title>
+
+    <script src="js/utils.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href=".././/css/unidades.css">
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== HERO ===== */
+        .hero{
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #6366f1 100%);
+            border-radius: 24px;
+            padding: 50px 35px 45px 35px;
+            margin: 25px 0 35px 0;
+            color: white;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(30, 58, 138, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before{
+            content: "";
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 220px; height: 220px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+        .hero::after{
+            content: "";
+            position: absolute;
+            bottom: -80px; left: -40px;
+            width: 180px; height: 180px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 50%;
+        }
+        .hero h2{
+            margin: 0 0 15px 0;
+            font-size: 2.1em;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero p{
+            margin: 0 auto;
+            max-width: 780px;
+            font-size: 1.05em;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.92);
+            position: relative;
+            z-index: 1;
+        }
+        .hero .hero-tags{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 22px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero .hero-tag{
+            background: rgba(255,255,255,0.16);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            backdrop-filter: blur(6px);
+        }
+
+        /* ===== GRID DE BLOQUES ===== */
+        .bloques-grid{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 22px;
+            margin: 30px 0 40px 0;
+        }
+        @media(min-width:900px){
+            .bloques-grid{ grid-template-columns: 1fr 1fr; }
+        }
+
+        .bloque-card{
+            border-radius: 20px;
+            padding: 28px 26px 24px 26px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .bloque-card:hover{
+            transform: translateY(-6px);
+            box-shadow: 0 22px 45px rgba(0,0,0,0.25);
+        }
+        .bloque-card::before{
+            content: "";
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 140px; height: 140px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 50%;
+        }
+
+        .bloque-card.bloque-A{ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .bloque-card.bloque-B{ background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        .bloque-card.bloque-C{ background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); }
+        .bloque-card.bloque-D{ background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); }
+
+        .bloque-cabecera{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .bloque-letra{
+            width: 60px; height: 60px;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9em;
+            font-weight: 900;
+            border: 2px solid rgba(255,255,255,0.4);
+            flex-shrink: 0;
+        }
+        .bloque-titulo{
+            margin: 0;
+            font-size: 1.25em;
+            line-height: 1.25;
+            font-weight: 800;
+        }
+        .bloque-subtitulo{
+            font-size: 0.85em;
+            opacity: 0.88;
+            margin-top: 3px;
+            font-weight: 500;
+        }
+
+        .bloque-descripcion{
+            font-size: 0.93em;
+            line-height: 1.5;
+            opacity: 0.95;
+            margin: 10px 0 14px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .bloque-temas{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
+        }
+        .bloque-tema-chip{
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.32);
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.76em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .bloque-footer{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            position: relative;
+            z-index: 1;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .bloque-estadistica{
+            font-size: 0.82em;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .bloque-estadistica i{
+            opacity: 0.85;
+        }
+        .bloque-boton{
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: #1e3a8a;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 0.92em;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+        }
+        .bloque-boton:hover{
+            transform: scale(1.05);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        }
+
+        /* ===== CÓMO USAR ===== */
+        .como-usar{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin: 25px 0 35px 0;
+        }
+        @media(min-width:800px){
+            .como-usar{ grid-template-columns: repeat(3, 1fr); }
+        }
+        .paso-card{
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 22px 20px;
+            text-align: center;
+            transition: border-color 0.2s ease;
+        }
+        .paso-card:hover{
+            border-color: #3b82f6;
+        }
+        .paso-icono{
+            width: 54px; height: 54px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4em;
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+        }
+        .paso-titulo{
+            font-weight: 800;
+            color: #1e3a8a;
+            font-size: 1.02em;
+            margin-bottom: 6px;
+        }
+        .paso-texto{
+            font-size: 0.9em;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        /* ===== REGLA DE ORO DESTACADA ===== */
+        .regla-oro{
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-left: 6px solid #f59e0b;
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin: 30px 0;
+            box-shadow: 0 6px 18px rgba(245, 158, 11, 0.12);
+        }
+        .regla-oro h3{
+            margin: 0 0 12px 0;
+            color: #92400e;
+            font-size: 1.15em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .regla-oro p{
+            margin: 0 0 14px 0;
+            color: #78350f;
+            line-height: 1.55;
+            font-size: 0.95em;
+        }
+        .regla-oro .ejemplo-oro{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        @media(min-width:800px){
+            .regla-oro .ejemplo-oro{ grid-template-columns: 1fr 1fr; }
+        }
+        .regla-oro .oro-mal,
+        .regla-oro .oro-bien{
+            border-radius: 12px;
+            padding: 14px 16px;
+            font-size: 0.92em;
+            line-height: 1.5;
+        }
+        .regla-oro .oro-mal{
+            background: #fef2f2;
+            border-left: 5px solid #ef4444;
+            color: #7f1d1d;
+        }
+        .regla-oro .oro-bien{
+            background: #f0fdf4;
+            border-left: 5px solid #22c55e;
+            color: #14532d;
+        }
+        .regla-oro .oro-mal strong{ color: #b91c1c; }
+        .regla-oro .oro-bien strong{ color: #15803d; }
+
+        /* ===== MÉTRICAS ===== */
+        .metricas{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin: 25px 0 35px 0;
+        }
+        @media(min-width:700px){
+            .metricas{ grid-template-columns: repeat(4, 1fr); }
+        }
+        .metrica{
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 18px 12px;
+            text-align: center;
+        }
+        .metrica-numero{
+            font-size: 1.9em;
+            font-weight: 900;
+            color: #1e3a8a;
+            line-height: 1;
+        }
+        .metrica-etiqueta{
+            font-size: 0.78em;
+            color: #64748b;
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                <span class="codigo">#FÍSICA EBAU.- </span>
+                <span class="texto">Banco de expresiones y justificaciones ❌ vs ✅</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h2><i class="fas fa-pen-nib"></i> Redacta como un corrector espera leer</h2>
+        <p>
+            Cuatro bloques, más de <strong>140 comparativas ❌/✅</strong> y una sola idea:
+            en la EBAU de Física no basta con acertar el número.
+            <strong>Cada fórmula debe ir precedida de la ley o el principio que la justifica.</strong>
+        </p>
+        <div class="hero-tags">
+            <span class="hero-tag"><i class="fas fa-check-circle"></i> Comparativas reales</span>
+            <span class="hero-tag"><i class="fas fa-exclamation-triangle"></i> Errores tipificados</span>
+            <span class="hero-tag"><i class="fas fa-list-check"></i> Tablas resumen</span>
+            <span class="hero-tag"><i class="fas fa-lightbulb"></i> Frases de examen</span>
+        </div>
+    </div>
+
+    <!-- MÉTRICAS -->
+    <div class="metricas">
+        <div class="metrica">
+            <div class="metrica-numero">4</div>
+            <div class="metrica-etiqueta">Bloques</div>
+        </div>
+        <div class="metrica">
+            <div class="metrica-numero">29</div>
+            <div class="metrica-etiqueta">Temas</div>
+        </div>
+        <div class="metrica">
+            <div class="metrica-numero">147</div>
+            <div class="metrica-etiqueta">Comparativas</div>
+        </div>
+        <div class="metrica">
+            <div class="metrica-numero">21</div>
+            <div class="metrica-etiqueta">Errores transversales</div>
+        </div>
+    </div>
+
+    <!-- REGLA DE ORO -->
+    <div class="regla-oro">
+        <h3><i class="fas fa-key"></i> La regla de oro que cambia una nota</h3>
+        <p>El corrector no adivina. Si no ve la ley, no puede puntuar el planteamiento. Compara:</p>
+        <div class="ejemplo-oro">
+            <div class="oro-mal">
+                <strong>❌ Mal</strong><br>
+                <em>«\(v=\sqrt{GM/r}\)»</em><br>
+                Fórmula suelta. El corrector no sabe de dónde sale.
+            </div>
+            <div class="oro-bien">
+                <strong>✅ Bien</strong><br>
+                <em>«Como la fuerza gravitatoria proporciona la aceleración centrípeta, \(GMm/r^2=mv^2/r\), de donde \(v=\sqrt{GM/r}\).»</em><br>
+                Ley + desarrollo + resultado.
+            </div>
+        </div>
+    </div>
+
+    <!-- GRID DE BLOQUES -->
+    <h2 style="text-align:center; color:#1e3a8a; margin: 40px 0 8px 0; font-size: 1.6em;">
+        <i class="fas fa-layer-group"></i> Elige tu bloque
+    </h2>
+    <p style="text-align:center; color:#64748b; margin: 0 0 10px 0;">
+        Cada bloque incluye las comparativas organizadas por temas, los errores transversales y una tabla resumen.
+    </p>
+
+    <div class="bloques-grid">
+
+        <!-- BLOQUE A -->
+        <div class="bloque-card bloque-A">
+            <div class="bloque-cabecera">
+                <div class="bloque-letra">A</div>
+                <div>
+                    <h3 class="bloque-titulo">Campo gravitatorio</h3>
+                    <div class="bloque-subtitulo">Gravitación, Kepler, energía y satélites</div>
+                </div>
+            </div>
+            <p class="bloque-descripcion">
+                Desde la ley de gravitación universal hasta la cosmología, pasando por Kepler,
+                el momento angular, el campo, el potencial y las velocidades características.
+            </p>
+            <div class="bloque-temas">
+                <span class="bloque-tema-chip">A1 · Gravitación</span>
+                <span class="bloque-tema-chip">A2 · Kepler</span>
+                <span class="bloque-tema-chip">A3 · Momento angular</span>
+                <span class="bloque-tema-chip">A4 · Campo</span>
+                <span class="bloque-tema-chip">A5 · Potencial</span>
+                <span class="bloque-tema-chip">A6 · Energía</span>
+                <span class="bloque-tema-chip">A7 · Satélites</span>
+                <span class="bloque-tema-chip">A8 · Cosmología</span>
+            </div>
+            <div class="bloque-footer">
+                <div class="bloque-estadistica">
+                    <i class="fas fa-list-check"></i> 39 comparativas · 6 errores transversales
+                </div>
+                <a href="BloqueA-Campo-Gravitatorio.html" class="bloque-boton">
+                    Abrir Bloque A <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- BLOQUE B -->
+        <div class="bloque-card bloque-B">
+            <div class="bloque-cabecera">
+                <div class="bloque-letra">B</div>
+                <div>
+                    <h3 class="bloque-titulo">Campo electromagnético</h3>
+                    <div class="bloque-subtitulo">Coulomb, Lorentz, inducción y corriente</div>
+                </div>
+            </div>
+            <p class="bloque-descripcion">
+                Desde la ley de Coulomb y la fuerza de Lorentz hasta la ley de Faraday-Lenz,
+                pasando por el campo eléctrico, el potencial, el magnetismo y la inducción.
+            </p>
+            <div class="bloque-temas">
+                <span class="bloque-tema-chip">B1 · Coulomb y Lorentz</span>
+                <span class="bloque-tema-chip">B2 · Campo eléctrico</span>
+                <span class="bloque-tema-chip">B3 · Trabajo eléctrico</span>
+                <span class="bloque-tema-chip">B4 · Potencial</span>
+                <span class="bloque-tema-chip">B5 · Magnetismo</span>
+                <span class="bloque-tema-chip">B6 · Campo magnético</span>
+                <span class="bloque-tema-chip">B7 · Laplace</span>
+                <span class="bloque-tema-chip">B8 · Líneas de campo</span>
+                <span class="bloque-tema-chip">B9 · Inducción</span>
+            </div>
+            <div class="bloque-footer">
+                <div class="bloque-estadistica">
+                    <i class="fas fa-list-check"></i> 37 comparativas · 6 errores transversales
+                </div>
+                <a href="BloqueB-Campo-Electromagnetico.html" class="bloque-boton">
+                    Abrir Bloque B <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- BLOQUE C -->
+        <div class="bloque-card bloque-C">
+            <div class="bloque-cabecera">
+                <div class="bloque-letra">C</div>
+                <div>
+                    <h3 class="bloque-titulo">Vibraciones y ondas</h3>
+                    <div class="bloque-subtitulo">MAS, ondas, sonido, óptica y lentes</div>
+                </div>
+            </div>
+            <p class="bloque-descripcion">
+                Desde el movimiento armónico simple hasta la formación de imágenes,
+                pasando por la ecuación de onda, la intensidad sonora, la refracción y las lentes delgadas.
+            </p>
+            <div class="bloque-temas">
+                <span class="bloque-tema-chip">C1 · MAS</span>
+                <span class="bloque-tema-chip">C2 · Ondas</span>
+                <span class="bloque-tema-chip">C3 · Intensidad</span>
+                <span class="bloque-tema-chip">C4 · Refracción</span>
+                <span class="bloque-tema-chip">C5 · Naturaleza de la luz</span>
+                <span class="bloque-tema-chip">C6 · Lentes e imágenes</span>
+            </div>
+            <div class="bloque-footer">
+                <div class="bloque-estadistica">
+                    <i class="fas fa-list-check"></i> 34 comparativas · 5 errores transversales
+                </div>
+                <a href="BloqueC-Vibraciones-y-Ondas.html" class="bloque-boton">
+                    Abrir Bloque C <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- BLOQUE D -->
+        <div class="bloque-card bloque-D">
+            <div class="bloque-cabecera">
+                <div class="bloque-letra">D</div>
+                <div>
+                    <h3 class="bloque-titulo">Física moderna</h3>
+                    <div class="bloque-subtitulo">Relatividad, cuántica, nuclear y partículas</div>
+                </div>
+            </div>
+            <p class="bloque-descripcion">
+                Desde la relatividad especial y el efecto fotoeléctrico hasta la radiactividad
+                y las reacciones nucleares, pasando por De Broglie, Heisenberg y el modelo estándar.
+            </p>
+            <div class="bloque-temas">
+                <span class="bloque-tema-chip">D1 · Relatividad</span>
+                <span class="bloque-tema-chip">D2 · Precursores cuánticos</span>
+                <span class="bloque-tema-chip">D3 · Dualidad</span>
+                <span class="bloque-tema-chip">D4 · Partículas</span>
+                <span class="bloque-tema-chip">D5 · Núcleos</span>
+                <span class="bloque-tema-chip">D6 · Desintegración</span>
+            </div>
+            <div class="bloque-footer">
+                <div class="bloque-estadistica">
+                    <i class="fas fa-list-check"></i> 37 comparativas · 5 errores transversales
+                </div>
+                <a href="BloqueD-Fisica-Moderna.html" class="bloque-boton">
+                    Abrir Bloque D <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CÓMO USAR -->
+    <h2 style="text-align:center; color:#1e3a8a; margin: 40px 0 20px 0; font-size: 1.6em;">
+        <i class="fas fa-graduation-cap"></i> Cómo sacarle partido
+    </h2>
+
+    <div class="como-usar">
+        <div class="paso-card">
+            <div class="paso-icono"><i class="fas fa-1"></i></div>
+            <div class="paso-titulo">Detecta el error</div>
+            <div class="paso-texto">
+                Lee primero la columna ❌. Muchos errores son tan frecuentes que se repiten cada año en la EBAU.
+            </div>
+        </div>
+        <div class="paso-card">
+            <div class="paso-icono"><i class="fas fa-2"></i></div>
+            <div class="paso-titulo">Copia la frase</div>
+            <div class="paso-texto">
+                La columna ✅ contiene frases que puedes escribir literalmente en el examen antes de cada fórmula.
+            </div>
+        </div>
+        <div class="paso-card">
+            <div class="paso-icono"><i class="fas fa-3"></i></div>
+            <div class="paso-titulo">Repasa la tabla</div>
+            <div class="paso-texto">
+                Cada bloque termina con una tabla resumen y una lista de errores transversales. Es tu checklist final.
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOQUE "ES HORA DE" -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p>
+                <br> No se trata de escribir más, sino de escribir <strong>mejor</strong>: ley, principio, unidades y sentido físico.<br>
+                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
+            </p>
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- fin container -->
+</body>
+</html>

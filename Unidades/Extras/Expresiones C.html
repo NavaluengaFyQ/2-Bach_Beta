@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloque C. Vibraciones y ondas — ❌ Mal vs ✅ Bien</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../css/unidades.css">
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        .comparativa{
+            display:grid;
+            grid-template-columns:1fr;
+            gap:12px;
+            margin:16px 0 10px 0;
+        }
+        @media(min-width:900px){
+            .comparativa{grid-template-columns:1fr 1fr;}
+        }
+        .mal,.bien{
+            border-radius:12px;
+            padding:14px 18px;
+            position:relative;
+        }
+        .mal{
+            background:#fef2f2;
+            border-left:6px solid #ef4444;
+            box-shadow:0 3px 10px rgba(239,68,68,0.12);
+        }
+        .bien{
+            background:#f0fdf4;
+            border-left:6px solid #22c55e;
+            box-shadow:0 3px 10px rgba(34,197,94,0.12);
+        }
+        .mal-titulo{
+            color:#b91c1c;
+            font-weight:800;
+            font-size:0.92em;
+            letter-spacing:0.3px;
+            margin-bottom:8px;
+            text-transform:uppercase;
+        }
+        .bien-titulo{
+            color:#15803d;
+            font-weight:800;
+            font-size:0.92em;
+            letter-spacing:0.3px;
+            margin-bottom:8px;
+            text-transform:uppercase;
+        }
+        .porque{
+            background:#fffbeb;
+            border-left:6px solid #f59e0b;
+            border-radius:12px;
+            padding:12px 18px;
+            margin:8px 0 4px 0;
+            font-size:0.94em;
+            color:#78350f;
+        }
+        .porque strong{color:#92400e;}
+        .mal .formula-box,.bien .formula-box{
+            margin:8px 0;
+            background:rgba(255,255,255,0.75);
+        }
+        .num-pareja{
+            display:inline-block;
+            background:#1e3a8a;
+            color:white;
+            border-radius:50%;
+            width:28px;height:28px;
+            line-height:28px;
+            text-align:center;
+            font-weight:800;
+            font-size:0.85em;
+            margin-right:8px;
+        }
+        .tema-etiqueta{
+            display:inline-block;
+            background:#dbeafe;
+            color:#1e40af;
+            border:1px solid #93c5fd;
+            border-radius:6px;
+            padding:2px 10px;
+            font-size:0.78em;
+            font-weight:700;
+            margin-left:6px;
+            vertical-align:middle;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                <span class="codigo">#BLOQUE C.- </span>
+                <span class="texto">Vibraciones y ondas — Cómo redactar en la EBAU: ❌ vs ✅</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- REGLA DE ORO Y MAPA -->
+    <details class="section enunciado" open>
+        <summary><h2>💡 Regla de oro del bloque C y mapa de temas</h2></summary>
+
+        <p>En las soluciones oficiales del <strong>Bloque C (Vibraciones y ondas)</strong>, cada fórmula va precedida de la ley o el principio que la justifica. Esta página recoge, tema a tema (C1–C6), la comparación entre lo que <span style="color:#b91c1c;font-weight:700;">NO se debe poner</span> y lo que <span style="color:#15803d;font-weight:700;">SÍ se debe poner</span>.</p>
+
+        <div class="mapa-bloques">
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">C. Vibraciones y ondas</div>
+                <div class="tema-lista">
+                    <span class="tema-chip actual">C1</span>
+                    <span class="tema-chip actual">C2</span>
+                    <span class="tema-chip actual">C3</span>
+                    <span class="tema-chip actual">C4</span>
+                    <span class="tema-chip actual">C5</span>
+                    <span class="tema-chip actual">C6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="comparativa">
+            <div class="mal">
+                <div class="mal-titulo">❌ Mal</div>
+                <div class="formula-box">
+                    \[
+                    y(x,t)=A\sin(\omega t-kx)
+                    \]
+                </div>
+                <p style="margin:6px 0 0 0;font-size:0.92em;">Fórmula suelta, sin decir qué es cada término ni en qué sentido se propaga.</p>
+            </div>
+            <div class="bien">
+                <div class="bien-titulo">✅ Bien</div>
+                <div class="formula-box">
+                    \[
+                    y(x,t)=A\sin(\omega t-kx+\varphi_0)
+                    \]
+                </div>
+                <p style="margin:6px 0 0 0;font-size:0.92em;">«La onda se propaga en el sentido positivo del eje \(X\) porque los términos \(\omega t\) y \(kx\) tienen signos opuestos. \(A\) es la amplitud, \(\omega=2\pi f\) la pulsación, \(k=2\pi/\lambda\) el número de onda y \(\varphi_0\) la fase inicial.»</p>
+            </div>
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- C1. MOVIMIENTO ARMÓNICO SIMPLE                               -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🔄 C1. Movimiento armónico simple: cinemática y energía</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">1</span><strong>Ecuación del MAS: forma general y parámetros</strong><span class="tema-etiqueta">C1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        x(t)=A\sin(\omega t)
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Sin decir qué es \(A\), \(\omega\) ni en qué unidades están.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        x(t)=A\cos(\omega t+\varphi_0)
+                        \quad\text{o}\quad
+                        x(t)=A\sin(\omega t+\varphi_0)
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«\(A\) es la amplitud (m), \(\omega=2\pi/T\) la pulsación (rad/s), \(T\) el periodo (s) y \(\varphi_0\) la fase inicial (rad), que se determina con las condiciones iniciales.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La ecuación del MAS no está completa sin identificar cada parámetro y su unidad. La fase inicial depende de dónde esté el oscilador en \(t=0\).</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">2</span><strong>Relación aceleración-elongación</strong><span class="tema-etiqueta">C1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La aceleración es constante en un MAS.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        a=-\omega^2x
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«La aceleración es proporcional y de signo opuesto a la elongación: siempre apunta hacia la posición de equilibrio. Es máxima en los extremos y nula en el equilibrio.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es la condición definitoria del MAS: \(a\propto -x\). Decir que la aceleración es constante es un error conceptual grave.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">3</span><strong>Velocidad y aceleración máximas</strong><span class="tema-etiqueta">C1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        v_{\max}=A\omega,
+                        \qquad
+                        a_{\max}=A\omega
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Misma expresión para ambas.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        v_{\max}=A\omega,
+                        \qquad
+                        a_{\max}=A\omega^2
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«La velocidad es máxima en el equilibrio (\(x=0\)); la aceleración es máxima en los extremos (\(x=\pm A\)).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La aceleración tiene un factor \(\omega\) adicional. Confundir \(A\omega\) con \(A\omega^2\) es un error dimensional que el corrector detecta.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">4</span><strong>Energía mecánica del MAS</strong><span class="tema-etiqueta">C1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        E=\frac{1}{2}mv^2
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Como si la energía mecánica cambiara con la posición.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        E=E_c+E_p
+                        =\frac{1}{2}kA^2
+                        =\text{cte}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«La energía mecánica del MAS es constante e igual a la energía potencial máxima. \(E_c=\frac12k(A^2-x^2)\) y \(E_p=\frac12kx^2\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> En un MAS sin rozamiento, la energía mecánica se conserva. Escribir solo \(E_c\) ignora la energía potencial elástica.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">5</span><strong>Periodo de un muelle y de un péndulo</strong><span class="tema-etiqueta">C1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        T=2\pi\sqrt{\frac{k}{m}},
+                        \qquad
+                        T=2\pi\sqrt{\frac{g}{L}}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Invertidas.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        T_{\text{muelle}}
+                        =2\pi\sqrt{\frac{m}{k}},
+                        \qquad
+                        T_{\text{péndulo}}
+                        =2\pi\sqrt{\frac{L}{g}}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«En el muelle, \(T\) aumenta con la masa y disminuye con la constante elástica. En el péndulo simple (pequeñas oscilaciones), \(T\) depende de la longitud y de \(g\), no de la masa.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Invertir las expresiones es un error muy frecuente. El periodo del muelle depende de \(m/k\); el del péndulo, de \(L/g\).</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">6</span><strong>Determinación de la fase inicial</strong><span class="tema-etiqueta">C1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«\(\varphi_0=0\) siempre.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La fase inicial se obtiene de las condiciones iniciales. Si en \(t=0\) el oscilador está en \(x=A\), entonces \(\varphi_0=0\) (con coseno). Si está en \(x=0\) moviéndose hacia \(+x\), \(\varphi_0=-\pi/2\). Si está en \(x=0\) moviéndose hacia \(-x\), \(\varphi_0=+\pi/2\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La fase inicial depende de dónde y cómo empieza el movimiento. Fijarla arbitrariamente invalida la ecuación.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">7</span><strong>Pulsación, frecuencia y periodo</strong><span class="tema-etiqueta">C1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«\(\omega=2\pi T\)» o «\(f=\omega/(2\pi)\)» mal despejada.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        \omega
+                        =\frac{2\pi}{T}
+                        =2\pi f
+                        \qquad\Longrightarrow\qquad
+                        T=\frac{1}{f}
+                        \]
+                    </div>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es la relación básica entre las tres magnitudes temporales. Un error aquí arrastra todo el problema.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- C2. MOVIMIENTO ONDULATORIO                                   -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🌊 C2. Movimiento ondulatorio: magnitudes, tipos y ecuación de onda</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">8</span><strong>Sentido de propagación según el signo de la fase</strong><span class="tema-etiqueta">C2</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«\(y=A\sin(\omega t+kx)\) se propaga hacia \(+x\).»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Si los términos \(\omega t\) y \(kx\) tienen signos opuestos, la onda viaja hacia \(+x\). Si tienen el mismo signo, viaja hacia \(-x\).»</p>
+                    <div class="formula-box">
+                        \[
+                        y=A\sin(\omega t-kx)\;\Rightarrow\;+x,
+                        \qquad
+                        y=A\sin(\omega t+kx)\;\Rightarrow\;-x
+                        \]
+                    </div>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El signo relativo de \(\omega t\) y \(kx\) determina el sentido. Es un criterio que se pregunta con frecuencia y se falla por no razonarlo.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">9</span><strong>Relación fundamental \(v=\lambda f\)</strong><span class="tema-etiqueta">C2</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        v=\frac{f}{\lambda}
+                        \]
+                    </div>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        v=\lambda f=\frac{\lambda}{T}=\frac{\omega}{k}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«La velocidad de propagación es el producto de la longitud de onda por la frecuencia. También se obtiene como cociente entre la pulsación y el número de onda.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es la relación más usada del tema. Un error aquí invalida todos los cálculos posteriores.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">10</span><strong>Velocidad de propagación vs. velocidad de vibración</strong><span class="tema-etiqueta">C2</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La velocidad de la onda es la velocidad con la que se mueven las partículas.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La velocidad de propagación \(v=\lambda/T\) es la velocidad con la que avanza la perturbación; es constante y depende del medio. La velocidad de vibración \(v_y=\partial y/\partial t\) es la velocidad de cada partícula en su oscilación; es variable y su máximo es \(A\omega\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Son dos conceptos distintos que se confunden con frecuencia. La onda transporta energía sin que las partículas viajen con ella.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">11</span><strong>Diferencia de fase espacial y temporal</strong><span class="tema-etiqueta">C2</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        \Delta\varphi=\frac{\Delta x}{\lambda}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Sin el factor \(2\pi\).</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        \Delta\varphi_x
+                        =k\,\Delta x
+                        =\frac{2\pi}{\lambda}\Delta x,
+                        \qquad
+                        \Delta\varphi_t
+                        =\omega\,\Delta t
+                        =\frac{2\pi}{T}\Delta t
+                        \]
+                    </div>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El desfase se mide en radianes, no en fracciones de longitud de onda. Falta el factor \(2\pi\).</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">12</span><strong>Onda transversal vs. longitudinal</strong><span class="tema-etiqueta">C2</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«El sonido es una onda transversal.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«En una onda longitudinal, las partículas vibran en la misma dirección en que se propaga la onda (el sonido en el aire). En una onda transversal, vibran perpendicularmente a la propagación (ondas en una cuerda, ondas electromagnéticas).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El sonido es longitudinal. Confundirlo con transversal es un error conceptual básico que se penaliza.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">13</span><strong>Número de onda \(k\)</strong><span class="tema-etiqueta">C2</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        k=\frac{\lambda}{2\pi}
+                        \]
+                    </div>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        k=\frac{2\pi}{\lambda}
+                        \quad\text{(rad/m)}
+                        \]
+                    </div>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es el número de radianes por unidad de longitud. Invertirlo es un error dimensional que el corrector detecta.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">14</span><strong>La frecuencia no cambia al cambiar de medio</strong><span class="tema-etiqueta">C2</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Al pasar del aire al agua, la frecuencia de la onda cambia.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La frecuencia la fija la fuente y no cambia al pasar de un medio a otro. Lo que cambia es la velocidad de propagación y, en consecuencia, la longitud de onda: \(\lambda=v/f\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es un error muy frecuente. La frecuencia es invariante al cambiar de medio; solo cambian \(v\) y \(\lambda\).</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- C3. ENERGÍA, POTENCIA E INTENSIDAD                           -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🔊 C3. Energía, potencia e intensidad de una onda</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">15</span><strong>Intensidad de una onda esférica</strong><span class="tema-etiqueta">C3</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        I=P\,4\pi r^2
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Multiplicando en lugar de dividir.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        I=\frac{P}{4\pi r^2}
+                        \quad(\text{W/m}^2)
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«La potencia se reparte sobre la superficie de una esfera de radio \(r\). La intensidad disminuye con el cuadrado de la distancia.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La intensidad es potencia por unidad de área. Multiplicar por el área daría potencia, no intensidad.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">16</span><strong>Nivel de intensidad sonora</strong><span class="tema-etiqueta">C3</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        \beta=10\log\left(\frac{I_0}{I}\right)
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Cociente invertido.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        \beta
+                        =10\log_{10}\left(\frac{I}{I_0}\right)
+                        \quad(\text{dB}),
+                        \qquad
+                        I_0=10^{-12}\,\text{W/m}^2
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«El nivel de intensidad sonora es una escala logarítmica respecto al umbral de audición \(I_0\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El cociente debe ser \(I/I_0\) para que el nivel aumente al aumentar la intensidad. Invertirlo cambia el signo.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">17</span><strong>Diferencia de niveles entre dos puntos</strong><span class="tema-etiqueta">C3</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Al duplicar la distancia, el nivel se reduce a la mitad.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Al duplicar la distancia, la intensidad se reduce a la cuarta parte y el nivel disminuye \(10\log_{10}4\approx6\,\text{dB}\), no a la mitad.»</p>
+                    <div class="formula-box">
+                        \[
+                        \beta_1-\beta_2
+                        =10\log_{10}\left(\frac{I_1}{I_2}\right)
+                        =20\log_{10}\left(\frac{r_2}{r_1}\right)
+                        \]
+                    </div>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La escala es logarítmica. Duplicar la distancia no reduce el nivel a la mitad; lo reduce en unos 6 dB.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">18</span><strong>Fuentes incoherentes: suma de intensidades</strong><span class="tema-etiqueta">C3</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Dos focos sonoros suman sus niveles en decibelios.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Las ondas de fuentes incoherentes suman sus intensidades: \(I_{\text{total}}=I_1+I_2\). Después se calcula el nivel resultante. No se suman los decibelios directamente.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Los decibelios son logaritmos. Sumar dB no equivale a sumar intensidades. Primero se suman intensidades y luego se pasa a dB.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">19</span><strong>Intensidad umbral \(I_0\)</strong><span class="tema-etiqueta">C3</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«\(I_0\) es la intensidad del sonido que estamos midiendo.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«\(I_0=10^{-12}\,\text{W/m}^2\) es la intensidad física umbral: la mínima audible por el oído humano a 1 kHz. Es el cero de la escala de decibelios.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> \(I_0\) es una constante de referencia, no la intensidad del problema. Confundirlas invalida el cálculo del nivel.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- C4. PROPAGACIÓN Y FENÓMENOS ONDULATORIOS                     -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🔀 C4. Propagación y fenómenos ondulatorios: Huygens, reflexión, refracción, difracción e interferencias</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">20</span><strong>Ley de Snell: ángulos respecto a la normal</strong><span class="tema-etiqueta">C4</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        n_1\sin\theta_2=n_2\sin\theta_1
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Con los ángulos intercambiados.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        n_1\sin\theta_1=n_2\sin\theta_2
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«Los ángulos se miden siempre respecto a la normal a la superficie. \(n_1\) es el índice del medio de incidencia y \(n_2\) el del medio de refracción.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Invertir los subíndices es un error que cambia el resultado. Además, los ángulos deben medirse respecto a la normal, no respecto a la superficie.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">21</span><strong>Índice de refracción y velocidad</strong><span class="tema-etiqueta">C4</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        n=v\,c
+                        \]
+                    </div>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        n=\frac{c}{v}
+                        \quad\Longrightarrow\quad
+                        v=\frac{c}{n},
+                        \qquad
+                        \lambda=\frac{\lambda_0}{n}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«El índice de refracción es el cociente entre la velocidad de la luz en el vacío y en el medio. Al pasar a un medio más denso, \(v\) y \(\lambda\) disminuyen, pero \(f\) no cambia.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> \(n\) es adimensional y mayor o igual que 1. Multiplicar por \(c\) daría unidades incorrectas.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">22</span><strong>Reflexión total: condición \(n_1>n_2\)</strong><span class="tema-etiqueta">C4</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La reflexión total puede ocurrir al pasar del aire al agua.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La reflexión total solo ocurre al pasar de un medio más denso ópticamente a uno menos denso (\(n_1>n_2\)) y con un ángulo de incidencia mayor que el ángulo crítico: \(\sin\theta_c=n_2/n_1\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Al pasar de un medio menos denso a uno más denso, el rayo refractado se acerca a la normal y nunca se produce reflexión total. Es un error conceptual frecuente.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">23</span><strong>Difracción: condición de observación</strong><span class="tema-etiqueta">C4</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La difracción solo ocurre con luz.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La difracción es un fenómeno ondulatorio general: ocurre en cualquier tipo de onda cuando \(\lambda\) es comparable o mayor que el tamaño del obstáculo o rendija. Es más acusada cuanto mayor es \(\lambda\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La difracción no es exclusiva de la luz. El sonido, las ondas en el agua y las ondas de materia también difractan.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">24</span><strong>Cambio de medio: \(v\) y \(\lambda\) cambian, \(f\) no</strong><span class="tema-etiqueta">C4</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Al cambiar de medio, cambian la frecuencia y la longitud de onda.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La frecuencia la fija la fuente y no cambia. Al cambiar de medio cambian la velocidad y la longitud de onda: \(v_2=v_1(n_1/n_2)\), \(\lambda_2=\lambda_1(n_1/n_2)\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es un error muy repetido. La frecuencia es invariante; \(v\) y \(\lambda\) son las que se modifican.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- C5. NATURALEZA DE LA LUZ                                     -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento">
+        <summary><h2>💡 C5. Naturaleza de la luz y óptica física básica</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">25</span><strong>Dispersión: el índice depende de la frecuencia</strong><span class="tema-etiqueta">C5</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La dispersión es la separación de la luz porque cada color tiene distinta intensidad.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La dispersión cromática ocurre porque el índice de refracción depende de la frecuencia (o longitud de onda): \(n=n(\lambda)\). Cada color se refracta con un ángulo ligeramente distinto y se separan.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La dispersión no depende de la intensidad, sino de que \(n\) varía con \(\lambda\). Es la base del arcoíris y del prisma.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">26</span><strong>Polarización: solo ondas transversales</strong><span class="tema-etiqueta">C5</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«El sonido se puede polarizar.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Solo las ondas transversales pueden polarizarse, porque la polarización restringe la dirección de vibración a un plano. El sonido es longitudinal y no se polariza; la luz sí.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La polarización es una propiedad de las ondas transversales. El sonido, al ser longitudinal, no puede polarizarse.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">27</span><strong>Luz monocromática y dispersión</strong><span class="tema-etiqueta">C5</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La luz monocromática se descompone en colores al atravesar un prisma.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La luz monocromática tiene una sola frecuencia y no se descompone en colores. Se refracta, pero no se dispersa. La dispersión requiere una mezcla de frecuencias, como la luz blanca.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Sin variedad de frecuencias no hay separación posible. Es un error conceptual que se pregunta con frecuencia.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- C6. FORMACIÓN DE IMÁGENES                                    -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🔍 C6. Formación de imágenes y sistemas ópticos</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">28</span><strong>Ecuación de las lentes delgadas: convenio de signos</strong><span class="tema-etiqueta">C6</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        \frac{1}{f}=\frac{1}{s}+\frac{1}{s'}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Sin indicar el convenio de signos ni el criterio DIN.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        \frac{1}{f'}=\frac{1}{s'}-\frac{1}{s}
+                        \quad\text{(criterio DIN)}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«Con el criterio DIN, \(s<0\) si el objeto está a la izquierda de la lente, \(s'>0\) si la imagen es real a la derecha, \(f'>0\) para lentes convergentes y \(f'<0\) para divergentes.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Hay varios convenios. Sin declarar el que se usa, los signos son ambiguos y el corrector no puede evaluar el resultado.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">29</span><strong>Aumento lateral</strong><span class="tema-etiqueta">C6</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        m=\frac{s}{s'}
+                        \]
+                    </div>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        m=\frac{y'}{y}
+                        =\frac{s'}{s}
+                        \quad\text{(criterio DIN)}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«El signo de \(m\) indica si la imagen es derecha (\(m>0\)) o invertida (\(m<0\)); su valor absoluto, si es mayor o menor que el objeto.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El aumento es \(s'/s\), no \(s/s'\). Invertirlo da el resultado recíproco y cambia la interpretación.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">30</span><strong>Lente convergente vs. divergente</strong><span class="tema-etiqueta">C6</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Una lente divergente puede formar imágenes reales de un objeto real.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Una lente divergente con un objeto real forma siempre una imagen virtual, derecha y menor. Solo una lente convergente puede formar imágenes reales de un objeto real.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es una propiedad esencial de las lentes divergentes. Confundirlo lleva a resultados imposibles.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">31</span><strong>La lupa: objeto dentro del foco</strong><span class="tema-etiqueta">C6</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Para usar una lupa, el objeto se coloca más allá del doble de la focal.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La lupa es una lente convergente con el objeto situado entre la lente y su foco (\(s<f'\)). La imagen es virtual, derecha y aumentada. Si el objeto estuviera más allá del foco, la imagen sería real e invertida, no serviría como lupa.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La función de lupa exige imagen virtual y aumentada, lo que solo ocurre con el objeto dentro del foco.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">32</span><strong>Imagen real vs. virtual</strong><span class="tema-etiqueta">C6</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Una imagen virtual se puede recoger en una pantalla.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Una imagen real se forma donde convergen los rayos y puede recogerse en una pantalla. Una imagen virtual se forma donde divergen las prolongaciones de los rayos y no puede recogerse en pantalla; se ve al mirar a través del sistema óptico.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es la diferencia fundamental entre ambos tipos de imagen. Las virtuales no existen en el espacio real como concentración de luz.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">33</span><strong>Espejo plano: imagen simétrica</strong><span class="tema-etiqueta">C6</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La imagen en un espejo plano es real y del mismo tamaño.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La imagen en un espejo plano es virtual, derecha, del mismo tamaño que el objeto y situada simétricamente al otro lado del espejo, a la misma distancia.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La imagen no se forma por convergencia real de rayos, sino por sus prolongaciones. No es proyectable.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">34</span><strong>Potencia de una lente</strong><span class="tema-etiqueta">C6</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        P=f'
+                        \]
+                    </div>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        P=\frac{1}{f'}
+                        \quad(\text{dioptrías, si }f'\text{ en m})
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«La potencia es la inversa de la distancia focal imagen, medida en metros. \(P>0\) para lentes convergentes y \(P<0\) para divergentes.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La potencia es la inversa de la focal, no la focal. Es un error dimensional que se penaliza.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- TABLA RESUMEN BLOQUE C                                       -->
+    <!-- ============================================================ -->
+    <details class="section resultado" open>
+        <summary><h2>📋 Tabla resumen Bloque C: ❌ error → ✅ corrección</h2></summary>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:38%;">❌ Error frecuente</th>
+                    <th style="width:30%;">Por qué está mal</th>
+                    <th style="width:32%;">✅ Cómo corregirlo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>«La aceleración es constante en un MAS»</td>
+                    <td>En un MAS, \(a=-\omega^2x\)</td>
+                    <td>Escribir \(a=-\omega^2x\) y explicar que apunta al equilibrio</td>
+                </tr>
+                <tr>
+                    <td>Usar \(a_{\max}=A\omega\)</td>
+                    <td>Falta un factor \(\omega\)</td>
+                    <td>\(a_{\max}=A\omega^2\)</td>
+                </tr>
+                <tr>
+                    <td>Invertir \(T=2\pi\sqrt{m/k}\) y \(T=2\pi\sqrt{L/g}\)</td>
+                    <td>Cada sistema tiene su expresión</td>
+                    <td>Muelle: \(m/k\); péndulo: \(L/g\)</td>
+                </tr>
+                <tr>
+                    <td>Confundir velocidad de propagación con velocidad de vibración</td>
+                    <td>Son conceptos distintos</td>
+                    <td>\(v=\lambda/T\) (propagación); \(v_y=\partial y/\partial t\) (vibración)</td>
+                </tr>
+                <tr>
+                    <td>Usar \(v=f/\lambda\)</td>
+                    <td>La relación correcta es \(v=\lambda f\)</td>
+                    <td>\(v=\lambda f=\omega/k\)</td>
+                </tr>
+                <tr>
+                    <td>«El sonido es transversal»</td>
+                    <td>Es longitudinal</td>
+                    <td>«El sonido es longitudinal; la luz, transversal»</td>
+                </tr>
+                <tr>
+                    <td>Usar \(\Delta\varphi=\Delta x/\lambda\)</td>
+                    <td>Falta el factor \(2\pi\)</td>
+                    <td>\(\Delta\varphi=k\Delta x=2\pi\Delta x/\lambda\)</td>
+                </tr>
+                <tr>
+                    <td>Multiplicar \(P\) por \(4\pi r^2\) para la intensidad</td>
+                    <td>La intensidad es \(P/(4\pi r^2)\)</td>
+                    <td>Dividir, no multiplicar</td>
+                </tr>
+                <tr>
+                    <td>Invertir el cociente en \(\beta=10\log(I/I_0)\)</td>
+                    <td>El nivel aumenta con \(I\)</td>
+                    <td>Usar \(I/I_0\), no \(I_0/I\)</td>
+                </tr>
+                <tr>
+                    <td>«Al duplicar la distancia, el nivel se reduce a la mitad»</td>
+                    <td>La escala es logarítmica</td>
+                    <td>Se reduce \(\approx6\,\text{dB}\)</td>
+                </tr>
+                <tr>
+                    <td>Sumar decibelios de fuentes incoherentes</td>
+                    <td>Hay que sumar intensidades</td>
+                    <td>\(I_{\text{total}}=I_1+I_2\); luego calcular \(\beta\)</td>
+                </tr>
+                <tr>
+                    <td>Invertir los subíndices en Snell</td>
+                    <td>\(n_1\sin\theta_1=n_2\sin\theta_2\)</td>
+                    <td>Respetar el orden medio de incidencia / refracción</td>
+                </tr>
+                <tr>
+                    <td>«\(n=vc\)»</td>
+                    <td>\(n=c/v\)</td>
+                    <td>Escribir \(n=c/v\) y \(v=c/n\)</td>
+                </tr>
+                <tr>
+                    <td>«Reflexión total del aire al agua»</td>
+                    <td>Solo ocurre si \(n_1>n_2\)</td>
+                    <td>Exigir \(n_1>n_2\) y \(\theta_i>\theta_c\)</td>
+                </tr>
+                <tr>
+                    <td>«La frecuencia cambia al cambiar de medio»</td>
+                    <td>La frecuencia es invariante</td>
+                    <td>Cambian \(v\) y \(\lambda\); \(f\) no</td>
+                </tr>
+                <tr>
+                    <td>«El sonido se polariza»</td>
+                    <td>Solo las transversales se polarizan</td>
+                    <td>La luz sí; el sonido no</td>
+                </tr>
+                <tr>
+                    <td>«La luz monocromática se dispersa»</td>
+                    <td>No tiene varias frecuencias</td>
+                    <td>Se refracta, pero no se descompone</td>
+                </tr>
+                <tr>
+                    <td>Usar la ecuación de lentes sin declarar el convenio</td>
+                    <td>Los signos son ambiguos</td>
+                    <td>Declarar el criterio DIN y aplicarlo coherentemente</td>
+                </tr>
+                <tr>
+                    <td>«Una lente divergente forma imágenes reales»</td>
+                    <td>Con objeto real, siempre virtual</td>
+                    <td>Virtual, derecha y menor</td>
+                </tr>
+                <tr>
+                    <td>«La lupa se usa con el objeto más allá del foco»</td>
+                    <td>La lupa exige \(s<f'\)</td>
+                    <td>Objeto entre la lente y el foco</td>
+                </tr>
+            </tbody>
+        </table>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- ERRORES TRANSVERSALES BLOQUE C                               -->
+    <!-- ============================================================ -->
+    <details class="section resultado">
+        <summary><h2>⚠️ Errores transversales que penalizan en todo el bloque C</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">A</span><strong>No dibujar el esquema de ondas o rayos</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Resolver sin dibujo de la onda, la lente o los rayos.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Esquema: eje óptico, lente, objeto, focos \(F\) y \(F'\), y los tres rayos principales con sus prolongaciones.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> En óptica, el trazado de rayos es parte de la respuesta. Sin esquema, el corrector no puede evaluar la geometría.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">B</span><strong>No justificar el sentido de propagación</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Escribir la ecuación de onda sin decir hacia dónde viaja.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Como los términos \(\omega t\) y \(kx\) tienen signos opuestos, la onda se propaga en el sentido positivo del eje \(X\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El sentido de propagación es una información esencial que se deduce de la fase y debe explicitarse.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">C</span><strong>No comprobar dimensiones</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Entregar el número sin verificar unidades.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Comprobamos la coherencia dimensional: \([v]=[\lambda f]=\text{m}\cdot\text{s}^{-1}\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Detecta errores de fórmula y demuestra madurez en el manejo de magnitudes.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">D</span><strong>Confundir imagen real con imagen virtual</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La imagen es virtual, por eso se puede proyectar en una pantalla.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La imagen es real: los rayos convergen y puede recogerse en una pantalla. Si fuera virtual, solo se vería al mirar a través del sistema.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La proyección en pantalla exige imagen real. Confundirlas es un error conceptual que afecta a toda la interpretación.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">E</span><strong>No interpretar el signo del aumento lateral</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«\(m=-2\)» y no decir nada más.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«\(m=-2\): la imagen es invertida y el doble de grande que el objeto.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El signo y el valor absoluto del aumento tienen significado físico. El corrector espera esa interpretación.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- RECURSOS                                                     -->
+    <!-- ============================================================ -->
+    <div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
+        <div class="recursos-tema" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    border-radius: 20px; padding: 30px 25px 32px 25px;
+                    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.35);">
+            <h2 style="margin: 0 0 8px 0; color: white; text-align: center;
+                       font-size: 1.5em; display: flex; align-items: center;
+                       justify-content: center; gap: 12px;">
+                <i class="fas fa-compass"></i>
+                Recursos del Bloque C
+            </h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.9);
+                      margin: 0 0 25px 0; font-size: 0.95em;">
+                Accede directamente a los materiales y bancos de problemas
+            </p>
+
+            <div class="recurso-grid" style="display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 18px;">
+
+                <a href="TemaC1.html" style="text-decoration: none; color: inherit;">
+                    <div class="recurso-card" style="background: white; border-radius: 16px;
+                                padding: 22px 18px; text-align: center; height: 100%;
+                                border: 3px solid #e2e8f0;
+                                box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                        <div class="recurso-icono" style="width: 62px; height: 62px;
+                                    margin: 4px auto 14px;
+                                    background: linear-gradient(135deg, #667eea, #764ba2);
+                                    border-radius: 50%; display: flex; align-items: center;
+                                    justify-content: center; color: white; font-size: 1.7em;">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                    margin-bottom: 6px;">
+                            Tema C1 completo
+                        </div>
+                        <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                            Teoría, fórmulas y problemas resueltos
+                        </div>
+                    </div>
+                </a>
+
+                <a class="filtro-pau"
+                   href="../EBAU/problemas-inline_v04.html"
+                   data-q='"movimiento armónico simple" | "MAS" | "ecuación de onda" | "onda armónica" | "intensidad sonora" | "nivel de intensidad" | "refracción" | "reflexión total" | "difracción" | "lente delgada" | "formación de imágenes"'
+                   data-comunidad="Castilla y León"
+                   data-bloque="C. Vibraciones y ondas"
+                   data-tema="C1. Movimiento armónico simple: cinemática y energía"
+                   style="text-decoration: none; color: inherit;">
+                    <div class="recurso-card" style="background: white; border-radius: 16px;
+                                padding: 22px 18px; text-align: center; height: 100%;
+                                border: 3px solid #e2e8f0;
+                                box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                        <div class="recurso-icono" style="width: 62px; height: 62px;
+                                    margin: 4px auto 14px;
+                                    background: linear-gradient(135deg, #10b981, #059669);
+                                    border-radius: 50%; display: flex; align-items: center;
+                                    justify-content: center; color: white; font-size: 1.7em;">
+                            <i class="fas fa-pen-to-square"></i>
+                        </div>
+                        <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                    margin-bottom: 6px;">
+                            Problemas EBAU · Bloque C
+                        </div>
+                        <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                            Ejercicios filtrados del bloque, resueltos y comentados
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOQUE "ES HORA DE" -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p>
+                <br> Domina el Bloque C redactando con rigor: ley, principio, unidades y sentido.<br>
+                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
+            </p>
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- fin container -->
+</body>
+</html>

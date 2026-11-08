@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario completo de estrategias de resolución</title>
+
+    <!-- FontAwesome CDN (versión 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS COMÚN A TODAS LAS UNIDADES -->
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                <span class="codigo">#ESTRATEGIAS.- </span>
+                <span class="texto">Inventario completo de estrategias de resolución de problemas</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- PRESENTACIÓN                                                  -->
+    <!-- ============================================================ -->
+    <details class="section" open>
+        <summary><h2>📋 Presentación del inventario</h2></summary>
+        <div class="note">
+            <strong>Propósito.</strong> Este documento recoge el <strong>inventario completo</strong> de estrategias de resolución detectadas en el banco de problemas de Física de 2º de Bachillerato (PAU/EBAU). No es una mera lista de temas, sino un catálogo de <em>modos de proceder</em> que se repiten y que conviene dominar de forma explícita. Se organiza en tres bloques: (1) estrategias transversales, aplicables a cualquier apartado de la asignatura; (2) estrategias específicas de gravitación, electromagnetismo, ondas/óptica y cuántica/nuclear/relatividad; (3) desarrollo detallado de tres igualdades de cociente que aparecen continuamente en el banco.
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- BLOQUE 1: TRANSVERSALES                                       -->
+    <!-- ============================================================ -->
+    <details class="section" open>
+        <summary><h2>🧭 A. Estrategias transversales</h2></summary>
+        <p>Son las que se usan indistintamente en cualquier bloque. Con ellas se resuelve la mayor parte del trabajo de un problema, sea del tema que sea.</p>
+
+        <details class="step">
+            <summary><span class="step-num">T1</span><strong>Cociente y proporcionalidad para eliminar constantes.</strong></summary>
+            <p><strong>Procedimiento.</strong> Formar el cociente entre dos situaciones del mismo sistema físico para que se cancelen constantes comunes (\(G\), \(K\), \(h\), \(c\), \(P\), \(4\pi\), etc.).</p>
+            <div class="formula-box">
+                \[
+                \frac{\text{situación 2}}{\text{situación 1}}
+                \;=\;
+                \frac{\text{magnitud 2}}{\text{magnitud 1}}
+                \;\;\Longrightarrow\;\;
+                \text{constante eliminada.}
+                \]
+            </div>
+            <p><strong>Ejemplo prototípico (densidad):</strong> si la densidad de un asteroide es la mitad que la de la Tierra,</p>
+            <div class="formula-box">
+                \[
+                \rho_a=\frac{\rho_T}{2}
+                \quad\Longrightarrow\quad
+                \frac{\rho_T}{\rho_a}=2.
+                \]
+            </div>
+            <p>Como \(\rho=M/(\tfrac43\pi R^3)\), se tiene</p>
+            <div class="formula-box">
+                \[
+                \frac{\rho_T}{\rho_a}
+                =
+                \frac{M_T}{M_a}\left(\frac{R_a}{R_T}\right)^3.
+                \]
+            </div>
+            <p><strong>Objetivo.</strong> Relacionar el cociente de densidades con masas y radios, y despejar la magnitud desconocida sin necesidad de conocer todas las constantes. Se usa en periodos orbitales, intensidades, velocidades orbitales, etc.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">T2</span><strong>Conversión de unidades y homogeneidad dimensional.</strong></summary>
+            <p><strong>Procedimiento.</strong> Pasar todo al SI antes de sustituir; comprobar que las unidades del resultado son coherentes.</p>
+            <div class="formula-box">
+                \[
+                25\,000\ \text{km/h}
+                =
+                25\,000\cdot\frac{1000}{3600}\ \text{m/s}.
+                \]
+            </div>
+            <p><strong>Objetivo.</strong> Evitar errores por mezclar km, cm, g, días, etc., y detectar resultados absurdos por unidades incoherentes.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">T3</span><strong>Elección de sistema de referencia y convenio de signos.</strong></summary>
+            <p><strong>Procedimiento.</strong> Fijar origen, eje positivo, criterio DIN en lentes, convenio de espejos, signo de cargas y sentido de corrientes antes de empezar a calcular.</p>
+            <div class="formula-box">
+                \[
+                \text{Lentes: }\frac{1}{s'}-\frac{1}{s}=\frac{1}{f'},
+                \qquad
+                \text{Espejos: }\frac{1}{s'}+\frac{1}{s}=\frac{1}{f'}.
+                \]
+            </div>
+            <p><strong>Objetivo.</strong> Decidir sin ambigüedad el signo de cada magnitud. En PAU, muchos errores se deben a no fijar el convenio al inicio.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">T4</span><strong>Diagrama de fuerzas, campos o rayos.</strong></summary>
+            <p><strong>Procedimiento.</strong> Dibujar antes de calcular. Se aplica a:</p>
+            <ul>
+                <li>fuerzas gravitatorias y eléctricas;</li>
+                <li>campos magnéticos creados por corrientes;</li>
+                <li>trazado de rayos en lentes y espejos;</li>
+                <li>vectores \(\vec v\), \(\vec B\), \(\vec F\) en Lorentz;</li>
+                <li>esquemas de niveles energéticos.</li>
+            </ul>
+            <p><strong>Objetivo.</strong> Fijar visualmente direcciones y sentidos antes de escribir ecuaciones, lo que reduce los errores de signo.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">T5</span><strong>Superposición y simetría.</strong></summary>
+            <p><strong>Procedimiento.</strong> Sumar vectorialmente campos y fuerzas; sumar escalarmente potenciales y energías. Antes de calcular, examinar si la distribución tiene algún plano o eje de simetría que permita cancelar componentes.</p>
+            <div class="formula-box">
+                \[
+                \vec g=\sum_i \vec g_i,
+                \qquad
+                V=\sum_i V_i.
+                \]
+            </div>
+            <p>Si dos cargas o masas simétricas producen componentes opuestas:</p>
+            <div class="formula-box">
+                \[
+                E_{i,x}=-E_{j,x}
+                \quad\Longrightarrow\quad
+                E_x=0.
+                \]
+            </div>
+            <p><strong>Objetivo.</strong> Reducir el número de componentes a calcular y evitar errores de signo. Es una de las técnicas más rentables en PAU.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">T6</span><strong>Conservación de la energía mecánica.</strong></summary>
+            <p><strong>Procedimiento.</strong> Igualar energía inicial y final cuando solo actúan fuerzas conservativas.</p>
+            <div class="formula-box">
+                \[
+                E_{m,i}=E_{m,f},
+                \qquad
+                E_m=K+U.
+                \]
+            </div>
+            <p>Ejemplo gravitatorio:</p>
+            <div class="formula-box">
+                \[
+                \frac12 mv_0^2-\frac{GMm}{R}
+                =
+                -\frac{GMm}{R+h}.
+                \]
+            </div>
+            <p><strong>Objetivo.</strong> Resolver problemas de satélites, escape, MAS, cargas y proyectiles sin integrar la ecuación del movimiento.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">T7</span><strong>Trabajo–energía e interpretación sistemática del signo.</strong></summary>
+            <p><strong>Procedimiento.</strong> Usar</p>
+            <div class="formula-box">
+                \[
+                W_{\text{campo}}=-\Delta U,
+                \qquad
+                W_{\text{ext}}=\Delta U.
+                \]
+            </div>
+            <p>Asignar significado físico a cada signo:</p>
+            <div class="formula-box">
+                \[
+                \begin{aligned}
+                &\text{Trabajo del campo negativo} \;\Rightarrow\; \text{el campo se opone al desplazamiento.}\\
+                &\text{Trabajo del campo positivo} \;\Rightarrow\; \text{el campo favorece el desplazamiento.}\\
+                &\text{Energía potencial negativa} \;\Rightarrow\; \text{estado ligado.}\\
+                &\text{Potencial gravitatorio negativo} \;\Rightarrow\; \text{convenio }V(\infty)=0.
+                \end{aligned}
+                \]
+            </div>
+            <p><strong>Objetivo.</strong> Detectar incoherencias y justificar cualitativamente los resultados, lo que en PAU suele valer puntuación parcial y a veces completa.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">T8</span><strong>Segunda ley de Newton y equilibrio.</strong></summary>
+            <p><strong>Procedimiento.</strong> Escribir \(\sum\vec F=m\vec a\) o \(\sum\vec F=0\).</p>
+            <div class="formula-box">
+                \[
+                \text{Órbita circular: }\frac{GMm}{r^2}=\frac{mv^2}{r},
+                \qquad
+                \text{Equilibrio de placas: }qE=mg.
+                \]
+            </div>
+            <p><strong>Objetivo.</strong> Obtener relaciones dinámicas entre fuerza, masa y aceleración, base de casi todos los problemas de mecánica.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">T9</span><strong>Análisis de casos límite y condiciones de validez.</strong></summary>
+            <p><strong>Procedimiento.</strong> Imponer la condición umbral o límite.</p>
+            <ul>
+                <li>Escape: \(E_m=0\).</li>
+                <li>Reflexión total: ángulo refractado \(90^\circ\).</li>
+                <li>Campo nulo: igualar módulos y oponer sentidos.</li>
+                <li>Imagen en el infinito: objeto en el foco.</li>
+                <li>Fotoeléctrico: \(E_{\text{fotón}}=W_0\).</li>
+                <li>Frenado fotoeléctrico: \(eV_0=E_{c,\max}\).</li>
+            </ul>
+            <p><strong>Objetivo.</strong> Resolver los apartados “de frontera” (velocidad mínima, ángulo máximo, potencial umbral), que suelen aparecer en los problemas más completos.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">T10</span><strong>Expresar resultados en función de datos faltantes.</strong></summary>
+            <p><strong>Procedimiento.</strong> Si falta una masa, una distancia o un radio, no inventarlo; dar la solución como expresión simbólica.</p>
+            <div class="formula-box">
+                \[
+                K_i=GM_Tm_s\left(\frac{1}{R_T}-\frac{1}{2r}\right).
+                \]
+            </div>
+            <p><strong>Objetivo.</strong> Evitar resultados numéricos falsos cuando el enunciado no aporta todos los datos.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">T11</span><strong>Análisis gráfico: pendientes, cortes con los ejes y áreas.</strong></summary>
+            <p><strong>Procedimiento.</strong> Extraer información cuantitativa de una gráfica mediante tres operaciones:</p>
+            <ul>
+                <li><strong>Pendiente:</strong> relaciona la variación de dos magnitudes. Ejemplo: en \(E_{c,\max}\) frente a \(f\), la pendiente es \(h\). En \(V\) frente a \(1/r\), la pendiente es \(Kq\).</li>
+                <li><strong>Corte con los ejes:</strong> fija umbrales. Ejemplo: el corte con el eje de frecuencias en \(E_{c,\max}(f)\) da \(f_0\).</li>
+                <li><strong>Área:</strong> representa una integral. Ejemplo: el área bajo \(F(x)\) es el trabajo.</li>
+            </ul>
+            <div class="formula-box">
+                \[
+                \text{pendiente}=\frac{\Delta y}{\Delta x},
+                \qquad
+                \text{área}=\int_{x_1}^{x_2}y(x)\,dx.
+                \]
+            </div>
+            <p><strong>Objetivo.</strong> Obtener parámetros (constantes, umbrales, energías) que no aparecen explícitamente en los datos numéricos.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">T12</span><strong>Composición de movimientos superpuestos.</strong></summary>
+            <p><strong>Procedimiento.</strong> Cuando una partícula está sometida a dos o más movimientos simultáneos e independientes, cada uno se analiza por separado y se componen al final (principio de independencia de Galileo).</p>
+            <div class="formula-box">
+                \[
+                \vec r(t)=\vec r_{\text{MRU}}(t)+\vec r_{\text{MCU}}(t)
+                \quad\text{(trayectoria helicoidal)}.
+                \]
+            </div>
+            <ul>
+                <li>Carga en \(\vec E\) y \(\vec B\) perpendiculares: selector de velocidades \(v=E/B\) si se compensan; si no, trayectoria cicloidal o helicoidal.</li>
+                <li>Partícula con \(\vec v\) oblicua a \(\vec B\): hélice con \(v_\parallel\) (MRU) y \(v_\perp\) (MCU).</li>
+                <li>Proyectil en campo gravitatorio uniforme: MRU horizontal + MRUA vertical.</li>
+                <li>Ondas estacionarias: superposición de dos ondas viajeras opuestas.</li>
+            </ul>
+            <p><strong>Objetivo.</strong> Resolver problemas con geometría compleja reduciéndolos a movimientos simples conocidos.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">T13</span><strong>Verificación por doble vía de cálculo.</strong></summary>
+            <p><strong>Procedimiento.</strong> Resolver el mismo problema por dos caminos independientes y comprobar que se obtiene el mismo resultado.</p>
+            <ul>
+                <li>Velocidad orbital por \(v=\sqrt{GM_T/r}\) y por \(v=2\pi r/T\) tras obtener \(T\) por Kepler.</li>
+                <li>Energía mecánica por \(-GMm/(2r)\) y por \(E_c+E_p\).</li>
+                <li>Campo resultante por componentes y por composición geométrica.</li>
+            </ul>
+            <p><strong>Objetivo.</strong> Detectar errores algebraicos o conceptuales antes de dar el resultado.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">T14</span><strong>Homogeneidad dimensional y estimación de orden de magnitud.</strong></summary>
+            <p><strong>Procedimiento.</strong> Comprobar unidades y orden de magnitud al final de cada cálculo.</p>
+            <div class="formula-box">
+                \[
+                [GMm/r]=(\text{N}\cdot\text{m}^2\cdot\text{kg}^{-2})(\text{kg})^2/\text{m}=\text{J}.
+                \]
+            </div>
+            <ul>
+                <li>Velocidad orbital terrestre: orden \(10^3\!-\!10^4\,\text{m/s}\).</li>
+                <li>Energía de escape de un satélite: orden \(10^{10}\,\text{J}\).</li>
+                <li>Constante de desintegración típica: \(10^{-4}\!-\!10^{-9}\,\text{s}^{-1}\).</li>
+            </ul>
+            <p><strong>Objetivo.</strong> Detectar errores antes de entregar y reforzar la confianza en el resultado.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">T15</span><strong>Distinción entre campo conservativo y no conservativo.</strong></summary>
+            <p><strong>Procedimiento.</strong> Identificar si el campo deriva de un potencial escalar para decidir qué método aplicar.</p>
+            <div class="formula-box">
+                \[
+                \text{Conservativo}\;\Longleftrightarrow\;\oint\vec F\cdot d\vec r=0\;\Longleftrightarrow\;\vec F=-\nabla U.
+                \]
+            </div>
+            <ul>
+                <li>Gravitatorio y electrostático: conservativos; se conserva \(E_m\).</li>
+                <li>Magnético estático: no realiza trabajo sobre cargas, pero no es conservativo en sentido estricto.</li>
+                <li>Eléctrico inducido (Faraday): no conservativo; \(\oint\vec E\cdot d\vec l\neq0\).</li>
+            </ul>
+            <p><strong>Objetivo.</strong> Saber cuándo aplicar conservación de \(E_m\) y cuándo usar el balance completo \(W_{\text{ext}}+W_{\text{no cons}}=\Delta E_m\).</p>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- BLOQUE 2: GRAVITACIÓN                                         -->
+    <!-- ============================================================ -->
+    <details class="section" open>
+        <summary><h2>🌍 B. Estrategias específicas de gravitación</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">G1</span><strong>Ley de gravitación y campo de una masa puntual.</strong></summary>
+            <div class="formula-box">
+                \[
+                \vec g=-\frac{GM}{r^2}\hat r,
+                \qquad
+                V=-\frac{GM}{r}.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">G2</span><strong>Órbita circular: igualar gravedad y centrípeta.</strong></summary>
+            <div class="formula-box">
+                \[
+                \frac{GMm}{r^2}=\frac{mv^2}{r}
+                \quad\Longrightarrow\quad
+                v=\sqrt{\frac{GM}{r}}.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">G3</span><strong>Tercera ley de Kepler.</strong></summary>
+            <div class="formula-box">
+                \[
+                T^2=\frac{4\pi^2}{GM}\,r^3.
+                \]
+            </div>
+            <p>Permite calcular \(M\) central, \(r\) orbital o \(T\) orbital a partir de los otros dos.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">G4</span><strong>Energía en una órbita circular (teorema del virial).</strong></summary>
+            <div class="formula-box">
+                \[
+                E_c=\frac{GMm}{2r},
+                \qquad
+                E_p=-\frac{GMm}{r},
+                \qquad
+                E_m=-\frac{GMm}{2r}.
+                \]
+            </div>
+            <p>Relación fundamental:</p>
+            <div class="formula-box">
+                \[
+                E_m=\frac{E_p}{2}=-E_c.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">G5</span><strong>Velocidad de escape.</strong></summary>
+            <div class="formula-box">
+                \[
+                \frac12 mv_e^2-\frac{GMm}{R}=0
+                \quad\Longrightarrow\quad
+                v_e=\sqrt{\frac{2GM}{R}}.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">G6</span><strong>Punto de campo gravitatorio nulo entre dos masas.</strong></summary>
+            <div class="formula-box">
+                \[
+                \frac{GM_1}{x^2}=\frac{GM_2}{(d-x)^2}.
+                \]
+            </div>
+            <p>Tomar raíz positiva y elegir la región donde los campos tienen sentidos opuestos. Resultado:</p>
+            <div class="formula-box">
+                \[
+                x=d\,\frac{\sqrt{M_1}}{\sqrt{M_1}+\sqrt{M_2}}.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">G7</span><strong>Aproximación \(mgh\) cerca de la superficie.</strong></summary>
+            <div class="formula-box">
+                \[
+                \Delta U\approx mgh,
+                \qquad
+                g=\frac{GM}{R^2}.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">G8</span><strong>Conservación del momento angular y ley de las áreas.</strong></summary>
+            <p>En un campo central, el momento angular se conserva:</p>
+            <div class="formula-box">
+                \[
+                \vec L=m(\vec r\times\vec v)=\text{cte}.
+                \]
+            </div>
+            <p>Consecuencias:</p>
+            <ul>
+                <li>La órbita es plana.</li>
+                <li>En los ápsides, \(r_pv_p=r_av_a\).</li>
+                <li>La velocidad areolar \(\frac{dA}{dt}=L/(2m)\) es constante (segunda ley de Kepler).</li>
+                <li>El cuerpo se mueve más rápido cerca del centro atractor.</li>
+            </ul>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">G9</span><strong>Teorema de la corteza y distribuciones esféricas.</strong></summary>
+            <p>Una distribución esférica de masa se comporta, en su exterior, como si toda su masa estuviera concentrada en su centro. En su interior:</p>
+            <ul>
+                <li>Esfera hueca: campo nulo.</li>
+                <li>Esfera maciza: campo proporcional a \(r\).</li>
+            </ul>
+            <p><strong>Objetivo.</strong> Aplicar la ley de gravitación con \(r\) igual a la distancia entre centros en problemas con planetas, estrellas y satélites.</p>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- BLOQUE 3: ELECTROMAGNETISMO                                   -->
+    <!-- ============================================================ -->
+    <details class="section" open>
+        <summary><h2>⚡ C. Estrategias específicas de electromagnetismo</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">E1</span><strong>Ley de Coulomb vectorial.</strong></summary>
+            <div class="formula-box">
+                \[
+                \vec F=K\frac{q_1q_2}{r^2}\hat r.
+                \]
+            </div>
+            <p>Se descompone en componentes y se suma vectorialmente.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">E2</span><strong>Campo y potencial de distribuciones discretas.</strong></summary>
+            <div class="formula-box">
+                \[
+                \vec E=K\sum_i\frac{q_i}{r_i^2}\hat r_i,
+                \qquad
+                V=K\sum_i\frac{q_i}{r_i}.
+                \]
+            </div>
+            <p>El campo es vectorial; el potencial es escalar.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">E3</span><strong>Ley de Gauss para el flujo eléctrico.</strong></summary>
+            <div class="formula-box">
+                \[
+                \Phi_E=\frac{Q_{\text{enc}}}{\varepsilon_0}.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">E4</span><strong>Trabajo eléctrico.</strong></summary>
+            <div class="formula-box">
+                \[
+                W_{\text{campo}}=q(V_i-V_f),
+                \qquad
+                W_{\text{ext}}=q(V_f-V_i).
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">E5</span><strong>Fuerza de Lorentz.</strong></summary>
+            <div class="formula-box">
+                \[
+                \vec F=q(\vec E+\vec v\times\vec B).
+                \]
+            </div>
+            <p>Casos típicos:</p>
+            <ul>
+                <li>\(\vec v\perp\vec B\): movimiento circular.</li>
+                <li>\(\vec v\parallel\vec B\): fuerza magnética nula.</li>
+                <li>Selector de velocidades: \(qE=qvB\Rightarrow v=E/B\).</li>
+            </ul>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">E6</span><strong>Movimiento circular en campo magnético.</strong></summary>
+            <div class="formula-box">
+                \[
+                |q|vB=\frac{mv^2}{R}
+                \quad\Longrightarrow\quad
+                R=\frac{mv}{|q|B},
+                \qquad
+                T=\frac{2\pi m}{|q|B}.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">E7</span><strong>Campo de un hilo recto y fuerza entre hilos paralelos.</strong></summary>
+            <div class="formula-box">
+                \[
+                B=\frac{\mu_0I}{2\pi r},
+                \qquad
+                \frac{F}{L}=\frac{\mu_0I_1I_2}{2\pi d}.
+                \]
+            </div>
+            <p>Corrientes paralelas del mismo sentido se atraen; antiparalelas se repelen.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">E8</span><strong>Inducción: Faraday–Lenz.</strong></summary>
+            <div class="formula-box">
+                \[
+                \Phi_B=BA\cos\theta,
+                \qquad
+                \varepsilon=-\frac{d\Phi_B}{dt}.
+                \]
+            </div>
+            <p>El sentido de la corriente inducida se opone a la variación de flujo (Lenz).</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">E9</span><strong>Transformador ideal.</strong></summary>
+            <div class="formula-box">
+                \[
+                \frac{V_p}{V_s}=\frac{N_p}{N_s},
+                \qquad
+                P_p=P_s.
+                \]
+            </div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- BLOQUE 4: ONDAS Y ÓPTICA                                      -->
+    <!-- ============================================================ -->
+    <details class="section" open>
+        <summary><h2>🌊 D. Estrategias específicas de ondas y óptica</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">O1</span><strong>Identificar parámetros de la ecuación de onda.</strong></summary>
+            <div class="formula-box">
+                \[
+                y(x,t)=A\operatorname{sen}(\omega t-kx+\varphi_0),
+                \]
+            </div>
+            <div class="formula-box">
+                \[
+                A,\quad \omega=2\pi f,\quad k=\frac{2\pi}{\lambda},\quad v=\frac{\omega}{k}=\lambda f.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">O2</span><strong>Derivadas para velocidad y aceleración de vibración.</strong></summary>
+            <div class="formula-box">
+                \[
+                v_y=\frac{\partial y}{\partial t},
+                \qquad
+                a_y=\frac{\partial^2 y}{\partial t^2}.
+                \]
+            </div>
+            <p>En un MAS:</p>
+            <div class="formula-box">
+                \[
+                v_{\max}=A\omega,
+                \qquad
+                a_{\max}=A\omega^2.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">O3</span><strong>Diferencia de fase.</strong></summary>
+            <div class="formula-box">
+                \[
+                \Delta\varphi=k\Delta x.
+                \]
+            </div>
+            <p>En fase: \(\Delta\varphi=2\pi n\). En oposición de fase: \(\Delta\varphi=(2n+1)\pi\).</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">O4</span><strong>Energía del MAS.</strong></summary>
+            <div class="formula-box">
+                \[
+                E=\frac12 kA^2,
+                \qquad
+                E_p=\frac12 kx^2,
+                \qquad
+                E_c=E-E_p.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">O5</span><strong>Intensidad y nivel sonoro.</strong></summary>
+            <div class="formula-box">
+                \[
+                I=\frac{P}{4\pi r^2},
+                \qquad
+                \beta=10\log_{10}\left(\frac{I}{I_0}\right).
+                \]
+            </div>
+            <p>Para varias fuentes incoherentes:</p>
+            <div class="formula-box">
+                \[
+                I_{\text{tot}}=\sum_i I_i.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">O6</span><strong>Efecto Doppler.</strong></summary>
+            <div class="formula-box">
+                \[
+                f'=f\frac{v\pm v_o}{v\mp v_s}.
+                \]
+            </div>
+            <p>Se eligen signos según se acerquen o alejen emisor y receptor.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">O7</span><strong>Refracción y reflexión total.</strong></summary>
+            <div class="formula-box">
+                \[
+                n_1\operatorname{sen}\theta_1=n_2\operatorname{sen}\theta_2.
+                \]
+            </div>
+            <p>Ángulo límite:</p>
+            <div class="formula-box">
+                \[
+                \operatorname{sen}\theta_c=\frac{n_2}{n_1},
+                \qquad n_1>n_2.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">O8</span><strong>Lentes y espejos.</strong></summary>
+            <p>Lentes delgadas:</p>
+            <div class="formula-box">
+                \[
+                \frac{1}{s'}-\frac{1}{s}=\frac{1}{f},
+                \qquad
+                m=\frac{s'}{s}.
+                \]
+            </div>
+            <p>Espejos:</p>
+            <div class="formula-box">
+                \[
+                \frac{1}{s'}+\frac{1}{s}=\frac{1}{f},
+                \qquad
+                f=\frac{R}{2},
+                \qquad
+                m=-\frac{s'}{s}.
+                \]
+            </div>
+            <p>Se complementa con trazado de rayos.</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">O9</span><strong>Ondas estacionarias en cuerdas y tubos.</strong></summary>
+            <p><strong>Cuerda fija por ambos extremos:</strong></p>
+            <div class="formula-box">
+                \[
+                L=n\frac{\lambda_n}{2}
+                \quad\Longrightarrow\quad
+                \lambda_n=\frac{2L}{n},
+                \qquad
+                f_n=\frac{nv}{2L},
+                \qquad n=1,2,3,\dots
+                \]
+            </div>
+            <p><strong>Tubo abierto por ambos extremos:</strong> mismas expresiones que la cuerda fija-fija.</p>
+            <p><strong>Tubo abierto por un extremo y cerrado por el otro:</strong></p>
+            <div class="formula-box">
+                \[
+                L=(2n-1)\frac{\lambda_n}{4}
+                \quad\Longrightarrow\quad
+                \lambda_n=\frac{4L}{2n-1},
+                \qquad
+                f_n=\frac{(2n-1)v}{4L},
+                \qquad n=1,2,3,\dots
+                \]
+            </div>
+            <p><strong>Objetivo.</strong> Determinar frecuencias posibles, armónicos, posiciones de nodos y vientres, y relacionar \(L\), \(\lambda\) y \(f\).</p>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- BLOQUE 5: CUÁNTICA, NUCLEAR Y RELATIVIDAD                     -->
+    <!-- ============================================================ -->
+    <details class="section" open>
+        <summary><h2>⚛️ E. Estrategias específicas de cuántica, nuclear y relatividad</h2></summary>
+
+        <details class="step">
+            <summary><span class="step-num">Q1</span><strong>Energía del fotón.</strong></summary>
+            <div class="formula-box">
+                \[
+                E=hf=\frac{hc}{\lambda}.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">Q2</span><strong>Efecto fotoeléctrico.</strong></summary>
+            <div class="formula-box">
+                \[
+                hf=W_0+E_{c,\max},
+                \qquad
+                eV_0=E_{c,\max}.
+                \]
+            </div>
+            <p>Frecuencia umbral:</p>
+            <div class="formula-box">
+                \[
+                f_0=\frac{W_0}{h}.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">Q3</span><strong>Dualidad onda-corpúsculo.</strong></summary>
+            <div class="formula-box">
+                \[
+                \lambda=\frac{h}{p}=\frac{h}{mv}.
+                \]
+            </div>
+            <p>Si la velocidad es relativista:</p>
+            <div class="formula-box">
+                \[
+                p=\gamma m_0v.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">Q4</span><strong>Relatividad especial.</strong></summary>
+            <div class="formula-box">
+                \[
+                \gamma=\frac{1}{\sqrt{1-v^2/c^2}}.
+                \]
+            </div>
+            <p>Dilatación temporal:</p>
+            <div class="formula-box">
+                \[
+                \Delta t=\gamma\Delta t_0.
+                \]
+            </div>
+            <p>Contracción de longitudes:</p>
+            <div class="formula-box">
+                \[
+                L=\frac{L_0}{\gamma}.
+                \]
+            </div>
+            <p>Energía relativista:</p>
+            <div class="formula-box">
+                \[
+                E=\gamma m_0c^2,
+                \qquad
+                E_c=(\gamma-1)m_0c^2.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">Q5</span><strong>Ley de desintegración radiactiva.</strong></summary>
+            <div class="formula-box">
+                \[
+                N=N_0e^{-\lambda t},
+                \qquad
+                A=\lambda N,
+                \qquad
+                T_{1/2}=\frac{\ln2}{\lambda}.
+                \]
+            </div>
+            <p>Relación entre masa y número de núcleos:</p>
+            <div class="formula-box">
+                \[
+                N=\frac{m}{M}N_A.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">Q6</span><strong>Conservación en reacciones nucleares.</strong></summary>
+            <p>Conservar número másico \(A\) y número atómico \(Z\):</p>
+            <div class="formula-box">
+                \[
+                ^{A}_{Z}X\rightarrow{}^{A'}_{Z'}Y+{}^{A''}_{Z''}Z.
+                \]
+            </div>
+            <p>Identificar emisión \(\alpha\), \(\beta^-\), \(\beta^+\), \(\gamma\).</p>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">Q7</span><strong>Defecto de masa y energía de enlace.</strong></summary>
+            <div class="formula-box">
+                \[
+                \Delta m=Zm_p+Nm_n-M_{\text{núcleo}},
+                \]
+            </div>
+            <div class="formula-box">
+                \[
+                E=\Delta m\,c^2,
+                \qquad
+                \frac{E}{A}\ \text{(energía de enlace por nucleón)}.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">Q8</span><strong>Niveles energéticos.</strong></summary>
+            <div class="formula-box">
+                \[
+                \Delta E=hf=\frac{hc}{\lambda}.
+                \]
+            </div>
+        </details>
+
+        <details class="step">
+            <summary><span class="step-num">Q9</span><strong>Incertidumbre de Heisenberg.</strong></summary>
+            <div class="formula-box">
+                \[
+                \Delta x\,\Delta p\ge\frac{\hbar}{2}.
+                \]
+            </div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- BLOQUE 6: TRES IGUALDADES DESARROLLADAS                       -->
+    <!-- ============================================================ -->
+    <details class="section" open>
+        <summary><h2>🔗 F. Desarrollo detallado de tres igualdades clave</h2></summary>
+
+        <div class="note">
+            <strong>Contexto.</strong> Las tres igualdades que aparecen a continuación son aplicaciones concretas del mismo principio transversal (T1): <strong>formar el cociente entre dos situaciones del mismo sistema físico</strong>. Conviene desarrollarlas con detalle, porque aparecen continuamente en el banco de problemas.
+        </div>
+
+        <!-- ────────── IGUALDAD 1 ────────── -->
+        <details class="step">
+            <summary><span class="step-num">F1</span><strong>Cociente de periodos orbitales: tercera ley de Kepler en forma de razón.</strong></summary>
+            <div class="formula-box">
+                \[
+                \frac{T_2}{T_1}
+                =
+                \left(\frac{r_2}{r_1}\right)^{3/2}.
+                \]
+            </div>
+            <p><strong>Deducción.</strong> Para una órbita circular alrededor de un cuerpo central de masa \(M\):</p>
+            <div class="formula-box">
+                \[
+                T^2=\frac{4\pi^2}{GM}r^3.
+                \]
+            </div>
+            <p>Para dos satélites \(1\) y \(2\) del mismo \(M\):</p>
+            <div class="formula-box">
+                \[
+                T_1^2=\frac{4\pi^2}{GM}r_1^3,
+                \qquad
+                T_2^2=\frac{4\pi^2}{GM}r_2^3.
+                \]
+            </div>
+            <p>Dividiendo miembro a miembro, la constante \(4\pi^2/(GM)\) se cancela:</p>
+            <div class="formula-box">
+                \[
+                \frac{T_2^2}{T_1^2}
+                =
+                \left(\frac{r_2}{r_1}\right)^3
+                \quad\Longrightarrow\quad
+                \frac{T_2}{T_1}
+                =
+                \left(\frac{r_2}{r_1}\right)^{3/2}.
+                \]
+            </div>
+            <p><strong>Objetivo.</strong> Calcular el periodo orbital de un cuerpo celeste a partir del periodo y del radio de otro cuerpo del mismo sistema, sin necesidad de conocer \(G\) ni la masa central \(M\).</p>
+            <p><strong>Ejemplo teórico: dos lunas de Júpiter.</strong> Ío orbita con \(r_I\approx421\,700\,\text{km}\) y \(T_I\approx1{,}769\,\text{días}\). Europa orbita con \(r_E\approx671\,034\,\text{km}\). Aplicando el cociente:</p>
+            <div class="formula-box">
+                \[
+                T_E
+                =
+                T_I\left(\frac{r_E}{r_I}\right)^{3/2}
+                =
+                1{,}769\cdot\left(\frac{671\,034}{421\,700}\right)^{3/2}
+                \approx
+                3{,}55\,\text{días}.
+                \]
+            </div>
+            <p>El valor experimental es \(T_E\approx3{,}551\,\text{días}\). Discrepancia inferior al \(0{,}03\%\), debida a la aproximación circular.</p>
+            <div class="note">
+                <strong>Ventaja:</strong> no requiere \(G\) ni \(M\). <strong>Limitación:</strong> solo aplicable a cuerpos que orbitan la misma masa central \(M\).
+            </div>
+        </details>
+
+        <!-- ────────── IGUALDAD 2 ────────── -->
+        <details class="step">
+            <summary><span class="step-num">F2</span><strong>Cociente de intensidades: ley del inverso del cuadrado.</strong></summary>
+            <div class="formula-box">
+                \[
+                \frac{I_2}{I_1}
+                =
+                \left(\frac{r_1}{r_2}\right)^2.
+                \]
+            </div>
+            <p><strong>Deducción.</strong> Un foco puntual que emite una potencia \(P\) uniformemente reparte esa potencia sobre superficies esféricas de área \(4\pi r^2\):</p>
+            <div class="formula-box">
+                \[
+                I(r)=\frac{P}{4\pi r^2}.
+                \]
+            </div>
+            <p>En dos distancias \(r_1\) y \(r_2\):</p>
+            <div class="formula-box">
+                \[
+                I_1=\frac{P}{4\pi r_1^2},
+                \qquad
+                I_2=\frac{P}{4\pi r_2^2}.
+                \]
+            </div>
+            <p>Dividiendo miembro a miembro, \(P/(4\pi)\) se cancela:</p>
+            <div class="formula-box">
+                \[
+                \frac{I_2}{I_1}
+                =
+                \frac{r_1^2}{r_2^2}
+                =
+                \left(\frac{r_1}{r_2}\right)^2.
+                \]
+            </div>
+            <p><strong>Objetivo.</strong> Calcular la intensidad de una onda esférica (sonora, luminosa, radiactiva, etc.) a una distancia \(r_2\), conociendo la intensidad \(I_1\) a otra distancia \(r_1\), sin necesidad de conocer la potencia \(P\) de la fuente.</p>
+            <p><strong>Ejemplo teórico: altavoz a dos distancias.</strong> Un altavoz isótropo produce a \(r_1=2\,\text{m}\) una intensidad \(I_1=4\cdot10^{-4}\,\text{W}\cdot\text{m}^{-2}\). ¿Cuál es la intensidad a \(r_2=8\,\text{m}\)?</p>
+            <div class="formula-box">
+                \[
+                I_2
+                =
+                I_1\left(\frac{r_1}{r_2}\right)^2
+                =
+                4\cdot10^{-4}\cdot\left(\frac{2}{8}\right)^2
+                =
+                4\cdot10^{-4}\cdot\frac{1}{16}
+                =
+                2{,}5\cdot10^{-5}\,\text{W}\cdot\text{m}^{-2}.
+                \]
+            </div>
+            <p>En términos de nivel sonoro, la diferencia es \(10\log_{10}(16)=12\,\text{dB}\).</p>
+            <div class="note">
+                <strong>Ventaja:</strong> evita el cálculo de \(P\). <strong>Limitación:</strong> exige propagación isótropa y ausencia de absorción apreciable.
+            </div>
+        </details>
+
+        <!-- ────────── IGUALDAD 3 ────────── -->
+        <details class="step">
+            <summary><span class="step-num">F3</span><strong>Cociente de velocidades orbitales: raíz del cociente inverso de radios.</strong></summary>
+            <div class="formula-box">
+                \[
+                \frac{v_2}{v_1}
+                =
+                \sqrt{\frac{r_1}{r_2}}.
+                \]
+            </div>
+            <p><strong>Deducción.</strong> En una órbita circular:</p>
+            <div class="formula-box">
+                \[
+                \frac{GMm}{r^2}=\frac{mv^2}{r}
+                \quad\Longrightarrow\quad
+                v^2=\frac{GM}{r}.
+                \]
+            </div>
+            <p>Para dos órbitas circulares alrededor del mismo \(M\):</p>
+            <div class="formula-box">
+                \[
+                v_1^2=\frac{GM}{r_1},
+                \qquad
+                v_2^2=\frac{GM}{r_2}.
+                \]
+            </div>
+            <p>Dividiendo:</p>
+            <div class="formula-box">
+                \[
+                \frac{v_2^2}{v_1^2}
+                =
+                \frac{r_1}{r_2}
+                \quad\Longrightarrow\quad
+                \frac{v_2}{v_1}
+                =
+                \sqrt{\frac{r_1}{r_2}}.
+                \]
+            </div>
+            <p><strong>Objetivo.</strong> Calcular la velocidad orbital de un satélite conociendo la de otro satélite del mismo sistema y el cociente entre sus radios orbitales, sin necesidad de calcular \(GM\) por separado.</p>
+            <p><strong>Ejemplo teórico: Tierra y Marte alrededor del Sol.</strong> La Tierra orbita a \(r_T=1{,}496\cdot10^{11}\,\text{m}\) con \(v_T=29{,}78\,\text{km}\cdot\text{s}^{-1}\). Marte orbita a \(r_M=2{,}279\cdot10^{11}\,\text{m}\). ¿Cuál es su velocidad orbital?</p>
+            <div class="formula-box">
+                \[
+                v_M
+                =
+                v_T\sqrt{\frac{r_T}{r_M}}
+                =
+                29{,}78\cdot\sqrt{\frac{1{,}496\cdot10^{11}}{2{,}279\cdot10^{11}}}
+                \approx
+                24{,}13\,\text{km}\cdot\text{s}^{-1}.
+                \]
+            </div>
+            <p>El valor experimental es \(v_M\approx24{,}07\,\text{km}\cdot\text{s}^{-1}\); discrepancia inferior al \(0{,}25\%\), atribuible al redondeo y a la excentricidad.</p>
+            <div class="note">
+                <strong>Ventaja:</strong> permite comparar velocidades orbitales sin calcular \(GM\). <strong>Limitación:</strong> solo válida para órbitas circulares alrededor del mismo cuerpo central.
+            </div>
+        </details>
+
+        <!-- ────────── SÍNTESIS ────────── -->
+        <details class="step">
+            <summary><span class="step-num">F4</span><strong>Síntesis: las tres igualdades como un mismo método.</strong></summary>
+            <p>Las tres igualdades responden al mismo patrón: <strong>dividir dos expresiones de la misma ley física aplicadas a dos situaciones del mismo sistema</strong>. Al hacerlo, las constantes comunes se cancelan y queda una relación geométrica simple entre las magnitudes de las dos situaciones.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Magnitud comparada</th>
+                        <th>Expresión del cociente</th>
+                        <th>Constante eliminada</th>
+                        <th>Ejemplo prototípico</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Periodo \(T\) frente a radio \(r\)</td>
+                        <td>\(\dfrac{T_2}{T_1}=\left(\dfrac{r_2}{r_1}\right)^{3/2}\)</td>
+                        <td>\(4\pi^2/(GM)\)</td>
+                        <td>Ío y Europa alrededor de Júpiter</td>
+                    </tr>
+                    <tr>
+                        <td>Intensidad \(I\) frente a distancia \(r\)</td>
+                        <td>\(\dfrac{I_2}{I_1}=\left(\dfrac{r_1}{r_2}\right)^2\)</td>
+                        <td>\(P/(4\pi)\)</td>
+                        <td>Altavoz isótropo a \(2\,\text{m}\) y a \(8\,\text{m}\)</td>
+                    </tr>
+                    <tr>
+                        <td>Velocidad orbital \(v\) frente a radio \(r\)</td>
+                        <td>\(\dfrac{v_2}{v_1}=\sqrt{\dfrac{r_1}{r_2}}\)</td>
+                        <td>\(GM\)</td>
+                        <td>Tierra y Marte alrededor del Sol</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="note">
+                <strong>Consejo práctico.</strong> Antes de aplicar cualquiera de estas tres igualdades, conviene comprobar tres condiciones: (i) las dos situaciones deben describirse con la <em>misma ley física</em>; (ii) las constantes que se cancelan deben ser <em>idénticas</em> en ambas situaciones; (iii) la relación entre las magnitudes debe ser <em>geométrica o de escala</em> y no involucrar nuevas variables. Si se cumplen, la igualdad es aplicable y simplifica enormemente el cálculo.
+            </div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- RECURSOS Y NAVEGACIÓN                                        -->
+    <!-- ============================================================ -->
+    <div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
+        <div class="recursos-tema" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    border-radius: 20px; padding: 30px 25px 32px 25px;
+                    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.35);">
+            <h2 style="margin: 0 0 8px 0; color: white; text-align: center;
+                       font-size: 1.5em; display: flex; align-items: center;
+                       justify-content: center; gap: 12px;">
+                <i class="fas fa-compass"></i>
+                Recursos relacionados
+            </h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.9);
+                      margin: 0 0 25px 0; font-size: 0.95em;">
+                Vuelve al tema A1 o al formulario correspondiente
+            </p>
+            <div class="recurso-grid" style="display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 18px;">
+                <a href="TemaA1.html" style="text-decoration: none; color: inherit;">
+                    <div class="recurso-card" style="background: white; border-radius: 16px;
+                                padding: 22px 18px; text-align: center; height: 100%;
+                                border: 3px solid #e2e8f0;
+                                box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                        <div class="recurso-icono" style="width: 62px; height: 62px;
+                                    margin: 4px auto 14px;
+                                    background: linear-gradient(135deg, #667eea, #764ba2);
+                                    border-radius: 50%; display: flex; align-items: center;
+                                    justify-content: center; color: white; font-size: 1.7em;">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                        <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                    margin-bottom: 6px;">
+                            Tema A1
+                        </div>
+                        <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                            Ley de gravitación universal y superposición vectorial
+                        </div>
+                    </div>
+                </a>
+                <a href="TemaA1-Formulario.html" style="text-decoration: none; color: inherit;">
+                    <div class="recurso-card" style="background: white; border-radius: 16px;
+                                padding: 22px 18px; text-align: center; height: 100%;
+                                border: 3px solid #fbbf24; position: relative;
+                                box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                        <div class="recurso-icono" style="width: 62px; height: 62px;
+                                    margin: 4px auto 14px;
+                                    background: linear-gradient(135deg, #10b981, #059669);
+                                    border-radius: 50%; display: flex; align-items: center;
+                                    justify-content: center; color: white; font-size: 1.7em;">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                    margin-bottom: 6px;">
+                            Formulario A1
+                        </div>
+                        <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                            Todas las fórmulas y relaciones clave del tema
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- fin container -->
+</body>
+</html>

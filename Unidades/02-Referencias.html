@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema A1. Cómo redactar en la EBAU — ❌ Mal vs ✅ Bien</title>
+
+    <script src="js/utils.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/unidades.css">
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== BLOQUE DE COMPARATIVAS ❌ / ✅ ===== */
+        .comparativa{
+            display:grid;
+            grid-template-columns:1fr;
+            gap:12px;
+            margin:16px 0 10px 0;
+        }
+        @media(min-width:900px){
+            .comparativa{grid-template-columns:1fr 1fr;}
+        }
+        .mal,.bien{
+            border-radius:12px;
+            padding:14px 18px;
+            position:relative;
+        }
+        .mal{
+            background:#fef2f2;
+            border-left:6px solid #ef4444;
+            box-shadow:0 3px 10px rgba(239,68,68,0.12);
+        }
+        .bien{
+            background:#f0fdf4;
+            border-left:6px solid #22c55e;
+            box-shadow:0 3px 10px rgba(34,197,94,0.12);
+        }
+        .mal-titulo{
+            color:#b91c1c;
+            font-weight:800;
+            font-size:0.92em;
+            letter-spacing:0.3px;
+            margin-bottom:8px;
+            text-transform:uppercase;
+        }
+        .bien-titulo{
+            color:#15803d;
+            font-weight:800;
+            font-size:0.92em;
+            letter-spacing:0.3px;
+            margin-bottom:8px;
+            text-transform:uppercase;
+        }
+        .porque{
+            background:#fffbeb;
+            border-left:6px solid #f59e0b;
+            border-radius:12px;
+            padding:12px 18px;
+            margin:8px 0 4px 0;
+            font-size:0.94em;
+            color:#78350f;
+        }
+        .porque strong{color:#92400e;}
+        .mal .formula-box,.bien .formula-box{
+            margin:8px 0;
+            background:rgba(255,255,255,0.75);
+        }
+        .num-pareja{
+            display:inline-block;
+            background:#1e3a8a;
+            color:white;
+            border-radius:50%;
+            width:28px;height:28px;
+            line-height:28px;
+            text-align:center;
+            font-weight:800;
+            font-size:0.85em;
+            margin-right:8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                <span class="codigo">#TEMA A1.- </span>
+                <span class="texto">Cómo redactar en la EBAU: ❌ lo que no se debe poner vs ✅ lo que sí</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- REGLA DE ORO                                                 -->
+    <!-- ============================================================ -->
+    <details class="section enunciado" open>
+        <summary><h2>💡 Regla de oro para redactar en la EBAU</h2></summary>
+
+        <p>En las soluciones oficiales, <strong>cada fórmula va precedida de la ley o el principio que la justifica</strong>. El corrector debe poder seguir tu razonamiento sin adivinar qué has hecho. Esta página recoge, concepto a concepto, la comparación entre lo que <span style="color:#b91c1c;font-weight:700;">NO se debe poner</span> y lo que <span style="color:#15803d;font-weight:700;">SÍ se debe poner</span>.</p>
+
+        <div class="comparativa">
+            <div class="mal">
+                <div class="mal-titulo">❌ Mal</div>
+                <div class="formula-box">
+                    \[
+                    v=\sqrt{GM/r}
+                    \]
+                </div>
+                <p style="margin:6px 0 0 0;font-size:0.92em;">Fórmula suelta, sin justificar de dónde sale.</p>
+            </div>
+            <div class="bien">
+                <div class="bien-titulo">✅ Bien</div>
+                <div class="formula-box">
+                    \[
+                    \frac{GMm}{r^{2}}=\frac{mv^{2}}{r}
+                    \;\Longrightarrow\;
+                    v=\sqrt{\frac{GM}{r}}
+                    \]
+                </div>
+                <p style="margin:6px 0 0 0;font-size:0.92em;">«Como la fuerza gravitatoria proporciona la aceleración centrípeta, \(GMm/r^{2}=mv^{2}/r\), de donde \(v=\sqrt{GM/r}\).»</p>
+            </div>
+        </div>
+
+        <div class="note">
+            <strong>Estructura recomendada de cada paso:</strong>
+            <ol style="margin-top:6px;">
+                <li><strong>Dibuja</strong> el esquema (masas, punto, vectores).</li>
+                <li><strong>Fija</strong> el sistema de referencia y el origen de potencial.</li>
+                <li><strong>Escribe la ley</strong> con su nombre y la condición de aplicación.</li>
+                <li><strong>Sustituye</strong> en S.I. y opera.</li>
+                <li><strong>Comprueba</strong> dimensiones y orden de magnitud.</li>
+                <li><strong>Interpreta</strong> el signo y cierra con unidades.</li>
+            </ol>
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- SECCIÓN 1: FRASES MARCO                                      -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🧭 1. Frases marco (abrir cualquier problema)</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">1</span><strong>Identificación del modelo físico</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Calculo el campo con la fórmula.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Nos encontramos ante un problema de campo gravitatorio con varias masas puntuales, en el que aplicaremos la ley de gravitación universal y el principio de superposición vectorial.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Identificar el modelo activa los criterios de corrección: el corrector ve que sabes qué leyes son aplicables y por qué.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">2</span><strong>Sistema de referencia</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Empezar a calcular componentes sin haber definido ejes ni sentido positivo.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Establecemos un sistema de referencia con origen en el punto donde calculamos el campo, eje \(X\) horizontal y sentido positivo hacia la derecha, y eje \(Y\) vertical con sentido positivo hacia arriba.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Sin ejes definidos, un signo negativo en una componente es ambiguo y el corrector no puede evaluar si el razonamiento es correcto.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">3</span><strong>Origen de potencial</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Escribir \(V=-GM/r\) sin decir dónde se toma el cero.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Tomamos el origen de potencial y de energía potencial en el infinito: \(V(\infty)=0\), \(E_p(\infty)=0\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El potencial solo tiene sentido con un origen fijado. Cambiar el origen cambia el valor numérico de \(V\), aunque no las diferencias de potencial.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">4</span><strong>Campo conservativo</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Calcular el trabajo del campo integrando \(\int\vec F\cdot d\vec r\) sin justificar que no depende del camino.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Como la fuerza gravitatoria es conservativa, el trabajo depende solo de las posiciones inicial y final, no del camino: \(W=-\Delta E_p=m(V_i-V_f)\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es la propiedad que permite usar el potencial en lugar de integrar la fuerza, y es precisamente lo que el corrector espera leer.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">5</span><strong>Cierre del problema</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Terminar con un número suelto: «\(8{,}3\cdot10^{-10}\)».</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Por tanto, la fuerza gravitatoria entre ambas masas es \(F\approx8{,}3\cdot10^{-10}\,\text{N}\), atractiva y dirigida de \(m_2\) hacia \(m_1\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Un resultado sin unidades ni interpretación física pierde puntuación aunque el número sea correcto.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- SECCIÓN 2: LEY DE GRAVITACIÓN                                -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🪐 2. Ley de gravitación universal</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">6</span><strong>La distancia \(r\) se mide entre centros</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«\(r=600\,\text{km}\)» → usar directamente la altura como distancia en la ley.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La ley de gravitación exige la distancia entre centros de masa; por tanto, \(r=R_T+h=6{,}37\cdot10^{6}+6{,}00\cdot10^{5}=6{,}97\cdot10^{6}\,\text{m}\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es el error más frecuente del tema. La ley no funciona con la altura sobre la superficie, sino con la distancia al centro de la distribución esférica.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">7</span><strong>Homogeneizar unidades antes de sustituir</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        F=6{,}67\cdot10^{-11}\cdot\frac{5\cdot10}{4}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Mezclando \(r\) en km con \(G\) en S.I.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Convertimos previamente todos los datos al S.I.: \(m_1=5\,\text{kg}\), \(m_2=10\,\text{kg}\), \(r=4\,\text{m}\), \(G=6{,}67\cdot10^{-11}\,\text{N}\cdot\text{m}^{2}\cdot\text{kg}^{-2}\).»</p>
+                    <div class="formula-box">
+                        \[
+                        F=6{,}67\cdot10^{-11}\,\frac{5\cdot10}{4^{2}}
+                        \]
+                    </div>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La fórmula es dimensionalmente coherente solo si todo está en S.I. Si no, el número es arbitrario y no se puede comparar con el resultado esperado.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">8</span><strong>Expresión escalar vs. vectorial</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        F=G\,\frac{m_1m_2}{r^{2}}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Y ya está. Sin indicar dirección ni sentido.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«El módulo de la fuerza es \(F=G\,m_1m_2/r^{2}\). Como la fuerza es atractiva y central, sobre \(m_2\) apunta hacia \(m_1\): \(\vec F_{1\to2}=-G\,m_1m_2\,\hat u_{12}/r^{2}\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La ley de gravitación es una ley vectorial. El módulo solo no dice hacia dónde va la fuerza, y en problemas con varias masas eso es imprescindible.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">9</span><strong>No confundir \(G\) con \(g\)</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«\(G=9{,}8\,\text{m/s}^{2}\)» o «\(g=6{,}67\cdot10^{-11}\,\text{N·m}^{2}\text{/kg}^{2}\)».</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«\(G=6{,}67\cdot10^{-11}\,\text{N}\cdot\text{m}^{2}\cdot\text{kg}^{-2}\) es la constante de gravitación universal; \(g=GM/r^{2}\) es el campo gravitatorio local (una aceleración, en \(\text{m/s}^{2}\)).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Son magnitudes distintas con unidades distintas. Confundirlas invalida cualquier cálculo numérico.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">10</span><strong>Masa puntual vs. masa extensa</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La Tierra no es puntual, así que no puedo usar la ley de gravitación.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Por el teorema de la corteza de Newton, una distribución esférica de masa se comporta en su exterior como una masa puntual concentrada en el centro; por eso usamos \(r\) = distancia entre centros.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es la justificación que exige el criterio para aceptar el uso de la ley con cuerpos esféricos extensos.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- SECCIÓN 3: CAMPO GRAVITATORIO                                -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🧲 3. Campo gravitatorio</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">11</span><strong>Campo: siempre atractivo</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        \vec g=+\,G\,\frac{M}{r^{2}}\,\hat u_r
+                        \]
+                    </div>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«El campo gravitatorio apunta siempre hacia la masa creadora: \(\vec g=-G\,M\,\hat u_r/r^{2}\). El signo negativo expresa el carácter atractivo de la gravedad.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El signo negativo no es una convención arbitraria: refleja que no existen masas negativas y que la interacción es atractiva.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">12</span><strong>Campo en el interior de una esfera</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Dentro de la Tierra, \(g=GM/R^{2}\), constante.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«En el interior de una esfera maciza homogénea, \(g(r)=\tfrac{4}{3}\pi G\rho\,r\), proporcional a la distancia al centro. En el interior de una corteza esférica hueca, \(g=0\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La ley del inverso del cuadrado solo vale en el exterior. En el interior, la masa encerrada depende de \(r\) y el resultado cambia por completo.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">13</span><strong>Variación de \(g\) con la altura</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Uso siempre \(g=9{,}8\,\text{m/s}^{2}\)» incluso a \(36\,000\,\text{km}\) de altura.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«El campo depende de la distancia al centro: \(g(h)=GM/(R+h)^{2}\). Solo si \(h\ll R\) puede aproximarse por \(g_{0}\).»</p>
+                    <div class="formula-box">
+                        \[
+                        g(h)=g_{0}\left(\frac{R}{R+h}\right)^{2}
+                        \]
+                    </div>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> A gran altura, \(g\) puede ser una fracción pequeña de \(g_0\); usar \(9{,}8\) daría un resultado erróneo por órdenes de magnitud.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">14</span><strong>Gravedad superficial</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«\(g_0=GM/r^{2}\)» con \(r\) genérico, sin especificar que es el radio del astro.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«En la superficie del astro, \(r=R\): \(g_{0}=GM/R^{2}\). Es la llamada gravedad superficial.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El subíndice \(0\) indica "en la superficie"; usar un \(r\) genérico puede confundir con el campo a cualquier distancia.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- SECCIÓN 4: SUPERPOSICIÓN                                     -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>➕ 4. Principio de superposición</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">15</span><strong>No sumar módulos de campos</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        g_{\text{total}}=g_{1}+g_{2}+\dots
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Sumando módulos, como si fueran escalares.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Como el campo es vectorial, descomponemos cada contribución en componentes cartesianas y sumamos componente a componente: \(g_{x}=\sum_i g_{ix}\), \(g_{y}=\sum_i g_{iy}\).»</p>
+                    <div class="formula-box">
+                        \[
+                        \vec g_{\text{total}}=\sum_i\vec g_i
+                        \]
+                    </div>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Sumar módulos solo es correcto si los vectores son paralelos. En general hay que descomponer.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">16</span><strong>Aprovechar la simetría</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Calcular las dos componentes de cada vector cuando la configuración es simétrica.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Por simetría respecto al eje \(Y\), las componentes horizontales de \(\vec g_1\) y \(\vec g_2\) se cancelan; las verticales se suman. Por tanto, el campo resultante es vertical.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Justificar la simetría ahorra cálculos y demuestra comprensión de la geometría del problema; los correctores lo valoran.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">17</span><strong>El potencial se suma distinto</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        V_{\text{total}}=\sqrt{V_{1}^{2}+V_{2}^{2}}
+                        \]
+                    </div>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«El potencial es una magnitud escalar, por lo que se suma algebraicamente con su signo: \(V_{\text{total}}=V_{1}+V_{2}=-G\left(\frac{M_1}{r_1}+\frac{M_2}{r_2}\right)\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El potencial no es un vector: no tiene componentes. Sumar "en cuadratura" es un error conceptual grave.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">18</span><strong>Procedimiento completo de superposición</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Pasar directamente de los módulos al resultado final sin esquema ni descomposición.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <ol style="margin:6px 0 0 0;font-size:0.94em;">
+                        <li>Esquema con masas y punto.</li>
+                        <li>Dibujar cada \(\vec g_i\) apuntando hacia su masa.</li>
+                        <li>Calcular \(g_i=GM_i/r_i^{2}\).</li>
+                        <li>Descomponer en componentes cartesianas.</li>
+                        <li>Sumar componente a componente.</li>
+                        <li>Módulo con Pitágoras y dirección con un ángulo o vector unitario.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es el procedimiento que aparece en todas las soluciones oficiales; seguirlo garantiza que no se pierden componentes ni signos.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- SECCIÓN 5: POTENCIAL Y ENERGÍA POTENCIAL                     -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>⛰️ 5. Potencial y energía potencial gravitatoria</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">19</span><strong>Signo del potencial</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        V=+\,G\,\frac{M}{r}
+                        \]
+                    </div>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Con el origen de potencial en el infinito, \(V(\infty)=0\), el potencial gravitatorio es siempre negativo: \(V=-GM/r\). El signo refleja el carácter atractivo del campo.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El potencial es negativo porque hay que aportar trabajo para separar la masa hasta el infinito. Cambiar el signo invalida el cálculo del trabajo.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">20</span><strong>Energía de un par vs. energía de un sistema</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        U=-G\,\frac{m_1m_2}{r_{12}}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Usada como energía total de un sistema de tres masas.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La energía potencial del sistema es la suma de las energías de todos los pares: \(U_{\text{sist}}=-G\sum_{i<j}\frac{m_im_j}{r_{ij}}\). Para tres masas:»</p>
+                    <div class="formula-box">
+                        \[
+                        U=-G\left(\frac{m_1m_2}{r_{12}}+\frac{m_1m_3}{r_{13}}+\frac{m_2m_3}{r_{23}}\right)
+                        \]
+                    </div>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Con \(N\) masas hay \(\binom{N}{2}\) pares; olvidar alguno es uno de los fallos más frecuentes en los problemas de configuraciones de cargas o masas.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">21</span><strong>Uso de \(mgh\)</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«\(E_p=mgh\)» para un satélite a \(36\,000\,\text{km}\) de altura.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La expresión \(E_p\approx mgh\) es una aproximación válida solo si \(h\ll R_T\). A gran altura hay que usar \(E_p=-GMm/r\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> \(mgh\) supone \(g\) constante y origen en la superficie; a gran altura \(g\) varía apreciablemente y el resultado difiere en varios órdenes de magnitud.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- SECCIÓN 6: RELACIÓN CAMPO-POTENCIAL                         -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🔗 6. Relación campo-potencial y punto de campo nulo</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">22</span><strong>Relación entre campo y potencial</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        g=\frac{V}{r}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Confundir la relación con la de un campo uniforme.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«En general, el campo es el gradiente cambiado de signo del potencial: \(\vec g=-\nabla V\). En un caso radial, \(g_{r}=-dV/dr\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> \(g=V/r\) solo vale (en módulo) para un campo uniforme tipo \(E=\Delta V/d\); en gravitación la derivada es la que relaciona ambas magnitudes.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">23</span><strong>Campo nulo ≠ potencial nulo</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«En el punto de campo nulo el potencial también es cero.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«En el punto de campo nulo los campos se cancelan vectorialmente, pero los potenciales se suman: \(V=-Gm/x-GM/(d-x)\), que es negativo y no nulo.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Campo y potencial son magnitudes distintas: una vectorial y otra escalar. Que un vector se anule no implica que la suma escalar se anule.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">24</span><strong>Posición del punto de campo nulo</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Igualo \(Gm/x^{2}=GM/(d-x)^{2}\) y tomo \(x=d/2\).»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Entre las masas los campos se oponen; se anulan si \(\sqrt{m}/x=\sqrt{M}/(d-x)\), de donde:»</p>
+                    <div class="formula-box">
+                        \[
+                        x=d\,\frac{\sqrt{m}}{\sqrt{m}+\sqrt{M}}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">El punto está más cerca de la masa menor.</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> \(x=d/2\) solo es válido si las masas son iguales; en general, la masa menor debe estar más cerca para compensar su menor contribución.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">25</span><strong>¿Dónde buscar el punto de campo nulo?</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Buscar el punto de campo nulo fuera del segmento que une las masas.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Fuera del segmento, los campos de ambas masas apuntan en el mismo sentido y se suman; solo pueden anularse entre ellas, donde tienen sentidos opuestos.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es la justificación que exige el criterio: no basta con resolver la ecuación, hay que razonar por qué el punto debe estar donde está.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- SECCIÓN 7: TRABAJO                                          -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🛠️ 7. Trabajo gravitatorio</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">26</span><strong>Trabajo del campo vs. trabajo externo</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        W=\Delta E_p
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Sin especificar si es el campo o el agente externo.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«El trabajo del campo es \(W_{\text{campo}}=-\Delta E_p=m(V_i-V_f)\). El trabajo del agente externo, en un desplazamiento cuasiestático, es el opuesto: \(W_{\text{ext}}=+\Delta E_p=m(V_f-V_i)\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Son trabajos opuestos y los dos aparecen en los enunciados. Confundirlos cambia el signo de la respuesta.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">27</span><strong>Interpretar el signo del trabajo</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«\(W=-3{,}5\cdot10^{-11}\,\text{J}\)» y pasar al siguiente apartado.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«El trabajo del campo es negativo: el campo se opone al alejamiento de la masa y hay que aportar trabajo externo positivo. La energía potencial gravitatoria aumenta (se hace menos negativa).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El signo tiene significado físico y los criterios EBAU lo piden explícitamente en los apartados de interpretación.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">28</span><strong>Trabajo entre dos puntos con varias masas</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Calcular el trabajo respecto de cada masa por separado y sumar los resultados sin justificar.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Como el potencial total es la suma escalar de los potenciales, el trabajo del campo entre \(A\) y \(B\) es \(W=m(V_A-V_B)\), con \(V_A\) y \(V_B\) los potenciales totales debidos a todas las masas.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El trabajo es lineal en el potencial, y el potencial total ya incluye todas las contribuciones. Calcular por separado y sumar funciona, pero hay que justificarlo.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- SECCIÓN 8: VERIFICACIÓN Y CIERRE                             -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>✅ 8. Verificación y cierre</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">29</span><strong>Comprobación dimensional</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>No comprobar nada y entregar el número.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Comprobamos la coherencia dimensional: \([GM/r^{2}]=(\text{N}\cdot\text{m}^{2}\cdot\text{kg}^{-2})(\text{kg})/\text{m}^{2}=\text{N}\cdot\text{kg}^{-1}=\text{m}\cdot\text{s}^{-2}\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Detecta errores de fórmula y de unidades; además demuestra madurez en el manejo de magnitudes.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">30</span><strong>Resultado con unidades y sentido</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«\(F=8{,}3\cdot10^{-10}\)» o «\(g=2{,}1\)».</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«\(F\approx8{,}3\cdot10^{-10}\,\text{N}\), atractiva, dirigida de \(m_2\) hacia \(m_1\)»; «\(\vec g\approx2{,}1\cdot10^{-11}\,\hat j\,\text{N}\cdot\text{kg}^{-1}\), vertical hacia abajo».</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Un resultado sin unidades ni dirección es incompleto en Física y suele penalizarse.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">31</span><strong>Uso de \(\approx\) frente a \(=\)</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«\(F=6{,}67\cdot10^{-11}\cdot5\cdot10/4=8{,}3\cdot10^{-10}\)» con todos los redondeos intermedios.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«\(F\approx8{,}3\cdot10^{-10}\,\text{N}\)», reservando \(=\) para igualdades exactas y \(\approx\) para resultados redondeados.</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es una cuestión de rigor matemático: un resultado redondeado no es una igualdad exacta.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- TABLA RESUMEN                                                -->
+    <!-- ============================================================ -->
+    <details class="section resultado" open>
+        <summary><h2>📋 9. Tabla resumen: ❌ error → ✅ corrección</h2></summary>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:38%;">❌ Error frecuente</th>
+                    <th style="width:30%;">Por qué está mal</th>
+                    <th style="width:32%;">✅ Cómo corregirlo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Usar la altura como \(r\) en la ley de gravitación</td>
+                    <td>La ley exige la distancia entre centros</td>
+                    <td>Usar \(r=R+h\) y decirlo explícitamente</td>
+                </tr>
+                <tr>
+                    <td>Mezclar km con m, g con kg</td>
+                    <td>La fórmula solo es coherente en S.I.</td>
+                    <td>Convertir antes de sustituir</td>
+                </tr>
+                <tr>
+                    <td>Escribir solo \(F=Gm_1m_2/r^{2}\)</td>
+                    <td>Falta dirección y sentido</td>
+                    <td>Añadir la forma vectorial y el carácter atractivo</td>
+                </tr>
+                <tr>
+                    <td>Confundir \(G\) con \(g\)</td>
+                    <td>Son magnitudes y unidades distintas</td>
+                    <td>Distinguir constante universal y campo local</td>
+                </tr>
+                <tr>
+                    <td>Usar \(g=9{,}8\) a gran altura</td>
+                    <td>\(g\) depende de \(r\)</td>
+                    <td>Usar \(g=GM/(R+h)^{2}\)</td>
+                </tr>
+                <tr>
+                    <td>Sumar módulos de campos</td>
+                    <td>El campo es vectorial</td>
+                    <td>Descomponer y sumar componentes</td>
+                </tr>
+                <tr>
+                    <td>Tratar el potencial como vector</td>
+                    <td>Es una magnitud escalar</td>
+                    <td>Sumar algebraicamente con signo</td>
+                </tr>
+                <tr>
+                    <td>Poner \(V=+GM/r\)</td>
+                    <td>El potencial gravitatorio es negativo</td>
+                    <td>Escribir \(V=-GM/r\) y justificar el convenio</td>
+                </tr>
+                <tr>
+                    <td>Usar la energía de un par para un sistema de N masas</td>
+                    <td>Hay que sumar todos los pares</td>
+                    <td>Usar \(U=-G\sum_{i<j}m_im_j/r_{ij}\)</td>
+                </tr>
+                <tr>
+                    <td>Usar \(mgh\) a gran altura</td>
+                    <td>Solo vale si \(h\ll R\)</td>
+                    <td>Usar \(E_p=-GMm/r\)</td>
+                </tr>
+                <tr>
+                    <td>Confundir campo nulo con potencial nulo</td>
+                    <td>Son conceptos distintos</td>
+                    <td>El campo se anula entre las masas; el potencial solo en el infinito</td>
+                </tr>
+                <tr>
+                    <td>Tomar \(x=d/2\) en el punto de campo nulo</td>
+                    <td>Solo vale si las masas son iguales</td>
+                    <td>Usar \(x=d\sqrt{m}/(\sqrt{m}+\sqrt{M})\)</td>
+                </tr>
+                <tr>
+                    <td>Confundir trabajo del campo y trabajo externo</td>
+                    <td>Son opuestos</td>
+                    <td>Especificar \(W_{\text{campo}}=-\Delta E_p\) y \(W_{\text{ext}}=+\Delta E_p\)</td>
+                </tr>
+                <tr>
+                    <td>Dejar el trabajo sin interpretar</td>
+                    <td>El signo tiene significado físico</td>
+                    <td>Indicar si el campo favorece o se opone</td>
+                </tr>
+                <tr>
+                    <td>Terminar con un número suelto</td>
+                    <td>Falta unidad y sentido</td>
+                    <td>Dar unidad, dirección y sentido</td>
+                </tr>
+            </tbody>
+        </table>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- ERRORES TRANSVERSALES                                        -->
+    <!-- ============================================================ -->
+    <details class="section resultado">
+        <summary><h2>⚠️ 10. Errores transversales que penalizan aunque el resultado sea correcto</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">A</span><strong>No dibujar el esquema</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Resolver el problema sin ningún dibujo de las masas, el punto y los vectores.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Esquema: \(m_1\) en el origen, \(m_2\) en \((d,0)\) y el punto \(P\) donde calculamos el campo; sobre \(P\) dibujamos \(\vec g_1\) y \(\vec g_2\) apuntando hacia sus masas.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El esquema es la herramienta que demuestra que entiendes la geometría del problema; sin él, los signos de las componentes son difíciles de justificar.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">B</span><strong>Saltarse pasos algebraicos</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Pasar del planteamiento al resultado numérico sin mostrar el despeje.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Despejando \(v\): \(v^{2}=GM/r\), de donde \(v=\sqrt{GM/r}\). Sustituyendo los datos: \(v=7{,}56\cdot10^{3}\,\text{m}\cdot\text{s}^{-1}\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El corrector evalúa el procedimiento; si no lo ve, no puede puntuarlo aunque el resultado sea correcto.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">C</span><strong>Mezclar "campo" con "fuerza"</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La fuerza gravitatoria en ese punto es \(g=GM/r^{2}\).»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«El campo gravitatorio en ese punto es \(g=GM/r^{2}\); la fuerza sobre una masa \(m\) colocada allí sería \(\vec F=m\vec g\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El campo es una propiedad del espacio (independiente de la masa de prueba); la fuerza depende de la masa que se coloque.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">D</span><strong>No justificar el convenio de signos</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Poner signos negativos o positivos sin decir qué eje es positivo.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Tomamos el eje \(X\) positivo hacia la derecha; entonces \(\vec g_1\) apunta hacia \(-x\) y \(\vec g_2\) hacia \(+x\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Sin convenio explícito, un signo negativo es ambiguo y el corrector no puede evaluar si el razonamiento es correcto.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">E</span><strong>Confundir "órbita" con "superficie"</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Calcular la gravedad en una órbita usando \(g_0=9{,}8\).</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«En la órbita, la distancia al centro es \(r=R_T+h\); la gravedad allí es \(g=GM/r^{2}\), no \(g_0\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> \(g_0\) solo es válido en la superficie; en órbita el campo es menor y hay que calcularlo con la distancia correcta.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- RECURSOS                                                     -->
+    <!-- ============================================================ -->
+    <div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
+        <div class="recursos-tema" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    border-radius: 20px; padding: 30px 25px 32px 25px;
+                    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.35);">
+            <h2 style="margin: 0 0 8px 0; color: white; text-align: center;
+                       font-size: 1.5em; display: flex; align-items: center;
+                       justify-content: center; gap: 12px;">
+                <i class="fas fa-compass"></i>
+                Recursos del Tema A1
+            </h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.9);
+                      margin: 0 0 25px 0; font-size: 0.95em;">
+                Accede directamente a los materiales y bancos de problemas
+            </p>
+
+            <div class="recurso-grid" style="display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 18px;">
+
+                <a href="TemaA1.html" style="text-decoration: none; color: inherit;">
+                    <div class="recurso-card" style="background: white; border-radius: 16px;
+                                padding: 22px 18px; text-align: center; height: 100%;
+                                border: 3px solid #e2e8f0;
+                                box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                        <div class="recurso-icono" style="width: 62px; height: 62px;
+                                    margin: 4px auto 14px;
+                                    background: linear-gradient(135deg, #667eea, #764ba2);
+                                    border-radius: 50%; display: flex; align-items: center;
+                                    justify-content: center; color: white; font-size: 1.7em;">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                    margin-bottom: 6px;">
+                            Tema A1 completo
+                        </div>
+                        <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                            Teoría, fórmulas y problemas resueltos
+                        </div>
+                    </div>
+                </a>
+
+                <a class="filtro-pau"
+                   href="../EBAU/problemas-inline_v04.html"
+                   data-q='"campo gravitatorio resultante" | "vector fuerza gravitatoria" | "dos masas" | "triángulo" | "diagrama de fuerzas" | "ley de gravitación universal" | "fuerza gravitatoria" | "superposición vectorial" | "masas puntuales" | "constante G"'
+                   data-comunidad="Castilla y León"
+                   data-bloque="A. Campo gravitatorio"
+                   data-tema="A1. Ley de la Gravitación Universal y superposición vectorial"
+                   style="text-decoration: none; color: inherit;">
+                    <div class="recurso-card" style="background: white; border-radius: 16px;
+                                padding: 22px 18px; text-align: center; height: 100%;
+                                border: 3px solid #e2e8f0;
+                                box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                        <div class="recurso-icono" style="width: 62px; height: 62px;
+                                    margin: 4px auto 14px;
+                                    background: linear-gradient(135deg, #10b981, #059669);
+                                    border-radius: 50%; display: flex; align-items: center;
+                                    justify-content: center; color: white; font-size: 1.7em;">
+                            <i class="fas fa-pen-to-square"></i>
+                        </div>
+                        <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                    margin-bottom: 6px;">
+                            Problemas EBAU · A1
+                        </div>
+                        <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                            Ejercicios filtrados del tema, resueltos y comentados
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOQUE "ES HORA DE" -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p>
+                <br> Domina la ley de gravitación universal y el principio de superposición vectorial redactando con rigor.<br>
+                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
+            </p>
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- fin container -->
+</body>
+</html>

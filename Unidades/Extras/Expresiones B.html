@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloque B. Campo electromagnético — ❌ Mal vs ✅ Bien</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../css/unidades.css">
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        .comparativa{
+            display:grid;
+            grid-template-columns:1fr;
+            gap:12px;
+            margin:16px 0 10px 0;
+        }
+        @media(min-width:900px){
+            .comparativa{grid-template-columns:1fr 1fr;}
+        }
+        .mal,.bien{
+            border-radius:12px;
+            padding:14px 18px;
+            position:relative;
+        }
+        .mal{
+            background:#fef2f2;
+            border-left:6px solid #ef4444;
+            box-shadow:0 3px 10px rgba(239,68,68,0.12);
+        }
+        .bien{
+            background:#f0fdf4;
+            border-left:6px solid #22c55e;
+            box-shadow:0 3px 10px rgba(34,197,94,0.12);
+        }
+        .mal-titulo{
+            color:#b91c1c;
+            font-weight:800;
+            font-size:0.92em;
+            letter-spacing:0.3px;
+            margin-bottom:8px;
+            text-transform:uppercase;
+        }
+        .bien-titulo{
+            color:#15803d;
+            font-weight:800;
+            font-size:0.92em;
+            letter-spacing:0.3px;
+            margin-bottom:8px;
+            text-transform:uppercase;
+        }
+        .porque{
+            background:#fffbeb;
+            border-left:6px solid #f59e0b;
+            border-radius:12px;
+            padding:12px 18px;
+            margin:8px 0 4px 0;
+            font-size:0.94em;
+            color:#78350f;
+        }
+        .porque strong{color:#92400e;}
+        .mal .formula-box,.bien .formula-box{
+            margin:8px 0;
+            background:rgba(255,255,255,0.75);
+        }
+        .num-pareja{
+            display:inline-block;
+            background:#1e3a8a;
+            color:white;
+            border-radius:50%;
+            width:28px;height:28px;
+            line-height:28px;
+            text-align:center;
+            font-weight:800;
+            font-size:0.85em;
+            margin-right:8px;
+        }
+        .tema-etiqueta{
+            display:inline-block;
+            background:#dbeafe;
+            color:#1e40af;
+            border:1px solid #93c5fd;
+            border-radius:6px;
+            padding:2px 10px;
+            font-size:0.78em;
+            font-weight:700;
+            margin-left:6px;
+            vertical-align:middle;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- CABECERA -->
+    <div class="header">
+        <div class="header-left">
+            <h1>IES Valle del Alberche</h1>
+            <div class="header-sub">
+                <img src="../img_comunes/Cápsula.png" width="40" height="auto">
+                <span class="codigo">#BLOQUE B.- </span>
+                <span class="texto">Campo electromagnético — Cómo redactar en la EBAU: ❌ vs ✅</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="../img_comunes/Valle del Alberche v2-Small.png" alt="Logo del centro">
+        </div>
+    </div>
+
+    <!-- REGLA DE ORO Y MAPA -->
+    <details class="section enunciado" open>
+        <summary><h2>💡 Regla de oro del bloque B y mapa de temas</h2></summary>
+
+        <p>En las soluciones oficiales del <strong>Bloque B (Campo electromagnético)</strong>, cada fórmula va precedida de la ley o el principio que la justifica. Esta página recoge, tema a tema (B1–B9), la comparación entre lo que <span style="color:#b91c1c;font-weight:700;">NO se debe poner</span> y lo que <span style="color:#15803d;font-weight:700;">SÍ se debe poner</span>.</p>
+
+        <div class="mapa-bloques">
+            <div class="bloque-card actual">
+                <div class="bloque-titulo">B. Campo electromagnético</div>
+                <div class="tema-lista">
+                    <span class="tema-chip actual">B1</span>
+                    <span class="tema-chip actual">B2</span>
+                    <span class="tema-chip actual">B3</span>
+                    <span class="tema-chip actual">B4</span>
+                    <span class="tema-chip actual">B5</span>
+                    <span class="tema-chip actual">B6</span>
+                    <span class="tema-chip actual">B7</span>
+                    <span class="tema-chip actual">B8</span>
+                    <span class="tema-chip actual">B9</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="comparativa">
+            <div class="mal">
+                <div class="mal-titulo">❌ Mal</div>
+                <div class="formula-box">
+                    \[
+                    \vec F=q\vec v\times\vec B
+                    \]
+                </div>
+                <p style="margin:6px 0 0 0;font-size:0.92em;">Fórmula suelta, sin decir qué es cada término ni en qué condiciones se aplica.</p>
+            </div>
+            <div class="bien">
+                <div class="bien-titulo">✅ Bien</div>
+                <div class="formula-box">
+                    \[
+                    \vec F_m=q\,\vec v\times\vec B,
+                    \qquad
+                    F_m=|q|\,v\,B\,\text{sen}\,\theta
+                    \]
+                </div>
+                <p style="margin:6px 0 0 0;font-size:0.92em;">«Sobre una carga \(q\) que se mueve con velocidad \(\vec v\) en un campo magnético \(\vec B\) actúa la fuerza de Lorentz. Su módulo es \(|q|vB\,\text{sen}\,\theta\), es perpendicular a \(\vec v\) y a \(\vec B\), y no realiza trabajo.»</p>
+            </div>
+        </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- B1. CAMPOS ELÉCTRICO Y MAGNÉTICO SOBRE CARGAS LIBRES         -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>⚡ B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">1</span><strong>Ley de Coulomb: dirección y carácter atractivo/repulsivo</strong><span class="tema-etiqueta">B1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        F=k\frac{q_1q_2}{r^2}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Con signos arbitrarios, sin indicar dirección.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        \vec F_{1\to2}
+                        =k\frac{q_1q_2}{r^2}\,\hat u_{12}
+                        \qquad
+                        |F|=k\frac{|q_1q_2|}{r^2}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«La fuerza es central, dirigida según la línea que une las cargas. Si \(q_1q_2>0\) es repulsiva; si \(q_1q_2<0\), atractiva.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La ley de Coulomb es vectorial. El módulo solo no dice hacia dónde va la fuerza, y el signo del producto \(q_1q_2\) determina si es atractiva o repulsiva.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">2</span><strong>Campo eléctrico: definición y sentido</strong><span class="tema-etiqueta">B1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        E=k\frac{q}{r^2}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Y ya está. Sin indicar el sentido para cargas positivas o negativas.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        \vec E
+                        =k\frac{q}{r^2}\,\hat u_r
+                        =k\frac{q}{r^3}\,\vec r
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«El campo eléctrico es radial: sale de las cargas positivas y entra en las negativas. Su módulo es \(E=k|q|/r^2\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El campo es vectorial y su sentido depende del signo de la carga. Escribir solo el módulo impide resolver problemas con varias cargas.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">3</span><strong>Fuerza eléctrica sobre una carga en un campo</strong><span class="tema-etiqueta">B1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La fuerza sobre la carga es \(F=qE\)» y se calcula como un número positivo.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La fuerza eléctrica es \(\vec F_e=q\vec E\). Si \(q>0\), tiene el mismo sentido que \(\vec E\); si \(q<0\), sentido opuesto.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El signo de la carga invierte el sentido de la fuerza. Un electrón en un campo \(\vec E\) se mueve en sentido contrario a \(\vec E\).</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">4</span><strong>Fuerza de Lorentz: módulo y condiciones</strong><span class="tema-etiqueta">B1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        F=qvB
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Aplicada aunque \(\vec v\) y \(\vec B\) formen un ángulo cualquiera.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        \vec F_m=q\,\vec v\times\vec B,
+                        \qquad
+                        F_m=|q|\,v\,B\,\text{sen}\,\theta
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«La fuerza magnética es máxima si \(\vec v\perp\vec B\) (\(\theta=90^\circ\)) y nula si \(\vec v\parallel\vec B\) o \(\vec v=0\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La expresión \(F=qvB\) solo vale si velocidad y campo son perpendiculares. En general hay que incluir el \(\text{sen}\,\theta\).</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">5</span><strong>La fuerza magnética no realiza trabajo</strong><span class="tema-etiqueta">B1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La fuerza magnética acelera la partícula y aumenta su energía cinética.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Como \(\vec F_m\perp\vec v\), la fuerza magnética no realiza trabajo: \(W=\int\vec F_m\cdot d\vec r=0\). Solo cambia la dirección de la velocidad, no su módulo.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es una propiedad esencial: en un campo magnético puro, la rapidez y la energía cinética se conservan. Confundirlo lleva a errores energéticos graves.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">6</span><strong>Movimiento circular en campo magnético uniforme</strong><span class="tema-etiqueta">B1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        r=\frac{mv}{qB}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Sin justificar de dónde sale ni con qué condición.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        |q|vB=\frac{mv^2}{r}
+                        \;\Longrightarrow\;
+                        r=\frac{mv}{|q|B},
+                        \qquad
+                        T=\frac{2\pi m}{|q|B}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«Si \(\vec v\perp\vec B\), la fuerza magnética actúa como fuerza centrípeta: la partícula describe una circunferencia de radio \(r\) y periodo \(T\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La igualdad entre fuerza magnética y centrípeta es el punto de partida obligatorio. El periodo es independiente de la velocidad en régimen no relativista.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">7</span><strong>Selector de velocidades</strong><span class="tema-etiqueta">B1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«En el selector de velocidades la partícula no se desvía porque no hay campo.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«En el selector de velocidades actúan simultáneamente \(\vec E\) y \(\vec B\), perpendiculares entre sí y a \(\vec v\). La partícula no se desvía si las fuerzas eléctrica y magnética se cancelan: \(qE=qvB\), de donde \(v=E/B\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El selector no elimina los campos: los compensa. Solo las partículas con \(v=E/B\) atraviesan sin desviarse.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">8</span><strong>Sentido de giro según el signo de la carga</strong><span class="tema-etiqueta">B1</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Todas las partículas giran en el mismo sentido en un campo magnético.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«El sentido de giro depende del signo de la carga. Con \(\vec B\) saliendo del papel y \(\vec v\) hacia la derecha, una carga positiva gira en sentido horario y una negativa en sentido antihorario.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El producto \(\vec v\times\vec B\) fija la dirección, pero el signo de \(q\) invierte el sentido de la fuerza. Es la base de la separación de isótopos en espectrometría de masas.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- B2. CAMPO ELÉCTRICO DE DISTRIBUCIONES                        -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🔵 B2. Campo eléctrico de distribuciones discretas y continuas, flujo eléctrico</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">9</span><strong>Superposición de campos: suma vectorial, no escalar</strong><span class="tema-etiqueta">B2</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        E_{\text{total}}=E_1+E_2+\dots
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Sumando módulos, como si fueran escalares.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Por el principio de superposición, el campo total es la suma vectorial \(\vec E=\sum_i\vec E_i\). Descomponemos en componentes cartesianas y sumamos componente a componente.»</p>
+                    <div class="formula-box">
+                        \[
+                        E_x=\sum_i E_{ix},
+                        \qquad
+                        E_y=\sum_i E_{iy}
+                        \]
+                    </div>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Sumar módulos solo es correcto si los vectores son paralelos. En general hay que descomponer y sumar componentes.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">10</span><strong>Aprovechar la simetría</strong><span class="tema-etiqueta">B2</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Calcular todas las componentes de todos los vectores cuando la configuración es simétrica.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Por simetría respecto al eje \(Y\), las componentes horizontales de \(\vec E_1\) y \(\vec E_2\) se cancelan; las verticales se suman. El campo resultante es vertical.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Justificar la simetría ahorra cálculos y demuestra comprensión de la geometría del problema.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">11</span><strong>Campo de una distribución continua</strong><span class="tema-etiqueta">B2</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Para un hilo cargado, \(E=kq/r^2\) usando la carga total y una distancia cualquiera.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Para una distribución continua, se integra la contribución de cada elemento de carga: \(d\vec E=k\,dq\,\hat r/r^2\), y \(\vec E=\int d\vec E\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La ley de Coulomb vale para cargas puntuales. Para distribuciones extensas hay que integrar o usar la ley de Gauss si hay simetría.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">12</span><strong>Teorema de Gauss: flujo y carga encerrada</strong><span class="tema-etiqueta">B2</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        \Phi_E=E\,S
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Sin justificar la simetría ni la superficie elegida.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        \Phi_E=\oint_S\vec E\cdot d\vec S
+                        =\frac{Q_{\text{enc}}}{\varepsilon_0}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«Por la simetría esférica, el campo es radial y de módulo constante sobre una superficie gaussiana esférica centrada en la carga: \(E\,4\pi r^2=Q/\varepsilon_0\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El teorema de Gauss solo es útil si se elige una superficie con simetría que permita sacar \(\vec E\) de la integral. Sin ese razonamiento, la fórmula no se justifica.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">13</span><strong>Flujo nulo no implica campo nulo</strong><span class="tema-etiqueta">B2</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Si el flujo a través de una superficie es cero, el campo es cero en todos sus puntos.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«El flujo nulo indica que la carga neta encerrada es cero, no que el campo se anule. Por ejemplo, en el interior de una corteza esférica cargada el campo es nulo, pero en el exterior no.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El flujo es una integral y puede anularse por cancelación de contribuciones positivas y negativas sin que el campo sea cero en cada punto.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- B3. TRABAJO ELÉCTRICO Y ENERGÍA                              -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🛠️ B3. Trabajo eléctrico, campo conservativo y energía de distribuciones de cargas</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">14</span><strong>Trabajo del campo vs. trabajo externo</strong><span class="tema-etiqueta">B3</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        W=q\Delta V
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Sin especificar si es el campo o el agente externo.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        W_{\text{campo}}
+                        =-\Delta U
+                        =q(V_i-V_f),
+                        \qquad
+                        W_{\text{ext}}
+                        =-W_{\text{campo}}
+                        =q(V_f-V_i)
+                        \]
+                    </div>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Son trabajos opuestos. Confundirlos cambia el signo de la respuesta y la interpretación energética.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">15</span><strong>Energía potencial de un sistema de cargas</strong><span class="tema-etiqueta">B3</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        U=k\frac{q_1q_2}{r}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Usada como energía total de un sistema de tres cargas.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        U_{\text{sistema}}
+                        =k\sum_{i<j}\frac{q_iq_j}{r_{ij}}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«Para tres cargas: \(U=k\left(\frac{q_1q_2}{r_{12}}+\frac{q_1q_3}{r_{13}}+\frac{q_2q_3}{r_{23}}\right)\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Con \(N\) cargas hay \(\binom{N}{2}\) pares; olvidar alguno es un error muy frecuente.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">16</span><strong>Interpretar el signo del trabajo</strong><span class="tema-etiqueta">B3</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«\(W=-3\cdot 10^{-3}\,\text{J}\)» y pasar al siguiente apartado.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«El trabajo del campo es negativo: el campo se opone al desplazamiento y hay que aportar trabajo externo. La energía potencial eléctrica aumenta.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El signo tiene significado físico y los criterios EBAU lo piden explícitamente en los apartados de interpretación.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">17</span><strong>Campo conservativo: el camino no importa</strong><span class="tema-etiqueta">B3</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«El trabajo depende del camino seguido entre \(A\) y \(B\).»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Como el campo electrostático es conservativo, el trabajo depende solo de las posiciones inicial y final: \(W_{A\to B}=q(V_A-V_B)\), independientemente del camino.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es la propiedad que permite usar el potencial en lugar de integrar la fuerza, y es lo que el corrector espera leer.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- B4. POTENCIAL ELÉCTRICO Y EQUIPOTENCIALES                    -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>⛰️ B4. Potencial eléctrico, equipotenciales y campo uniforme</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">18</span><strong>Potencial: escalar, se suma algebraicamente</strong><span class="tema-etiqueta">B4</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        V_{\text{total}}=\sqrt{V_1^2+V_2^2}
+                        \]
+                    </div>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        V_{\text{total}}
+                        =\sum_i V_i
+                        =k\sum_i\frac{q_i}{r_i}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«El potencial es una magnitud escalar: se suma algebraicamente con su signo.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El potencial no es un vector: no tiene componentes. Sumar «en cuadratura» es un error conceptual grave.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">19</span><strong>Signo del potencial de una carga puntual</strong><span class="tema-etiqueta">B4</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        V=+\,k\frac{q}{r}
+                        \]
+                    </div>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Con el origen de potencial en el infinito, \(V=kq/r\). Es positivo para cargas positivas y negativo para cargas negativas.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El signo del potencial coincide con el signo de la carga. Escribirlo siempre positivo invalida los cálculos de trabajo y energía.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">20</span><strong>Relación campo-potencial en un campo uniforme</strong><span class="tema-etiqueta">B4</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«En un condensador plano, \(E=V\cdot d\).»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        E=\frac{\Delta V}{d}
+                        \qquad
+                        \vec E=-\nabla V
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«En un campo uniforme, el módulo del campo es la diferencia de potencial dividida por la distancia entre las placas. El campo apunta de la placa positiva a la negativa.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La relación es \(E=\Delta V/d\), no \(V\cdot d\). Es un error dimensional que el corrector detecta de inmediato.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">21</span><strong>Equipotenciales perpendiculares a las líneas de campo</strong><span class="tema-etiqueta">B4</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Las superficies equipotenciales son tangentes a las líneas de campo.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Como \(\vec E=-\nabla V\), el campo es perpendicular a las superficies equipotenciales y apunta en el sentido de potencial decreciente. Para una carga puntual, las equipotenciales son esferas concéntricas y las líneas de campo son radiales.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Si fueran tangentes, el campo no realizaría trabajo sobre una equipotencial, lo que contradice \(\vec E=-\nabla V\).</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">22</span><strong>Campo nulo ≠ potencial nulo</strong><span class="tema-etiqueta">B4</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«En el punto de campo nulo el potencial también es cero.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«En el punto de campo nulo los campos se cancelan vectorialmente, pero los potenciales se suman algebraicamente. Para dos cargas positivas, el potencial en el punto de campo nulo es la suma de dos términos positivos y no es nulo.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Campo y potencial son magnitudes distintas: una vectorial y otra escalar. Que un vector se anule no implica que la suma escalar se anule.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- B5. MAGNETISMO Y CARÁCTER NO CONSERVATIVO                    -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🧲 B5. Magnetismo, experiencia de Oersted y carácter no conservativo</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">23</span><strong>Líneas de campo magnético: siempre cerradas</strong><span class="tema-etiqueta">B5</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Las líneas de campo magnético salen del polo norte y terminan en el polo sur.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Las líneas de campo magnético son siempre cerradas: salen del norte y entran por el sur por el exterior, y se cierran por el interior del imán. No existen monopolos magnéticos: \(\nabla\cdot\vec B=0\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> A diferencia de las líneas de campo eléctrico, las magnéticas no tienen principio ni fin. Es una diferencia esencial que los correctores valoran.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">24</span><strong>El campo magnético no es conservativo</strong><span class="tema-etiqueta">B5</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«El campo magnético es conservativo porque deriva de un potencial.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«El campo magnético no es conservativo: \(\oint\vec B\cdot d\vec l=\mu_0 I_{\text{enc}}\neq 0\). No existe un potencial escalar magnético global; la fuerza magnética no realiza trabajo, pero el campo no deriva de un potencial escalar.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La circulación no nula es la firma del carácter no conservativo. Confundir «fuerza que no realiza trabajo» con «campo conservativo» es un error conceptual.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">25</span><strong>Experiencia de Oersted</strong><span class="tema-etiqueta">B5</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Oersted demostró que un imán crea corriente en un hilo.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Oersted observó que una brújula se desvía al circular una corriente por un conductor próximo. Esto demostró que las cargas en movimiento generan un campo magnético, unificando electricidad y magnetismo.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La experiencia de Oersted muestra la relación corriente → campo magnético, no lo contrario. Es la base del electromagnetismo.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- B6. CAMPO MAGNÉTICO DE CORRIENTES                            -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🔁 B6. Campo magnético generado por corrientes: hilo recto, espira, solenoide y toro</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">26</span><strong>Hilo recto infinito: módulo y dirección</strong><span class="tema-etiqueta">B6</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        B=\frac{\mu_0I}{2\pi r}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Sin indicar que las líneas son circunferencias alrededor del hilo.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«El campo magnético de un hilo recto infinito tiene módulo \(B=\mu_0I/(2\pi r)\). Las líneas de campo son circunferencias concéntricas alrededor del hilo, y su sentido se determina con la regla de la mano derecha: pulgar en el sentido de la corriente, dedos en el sentido del campo.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La fórmula da el módulo, pero el campo es vectorial. Sin la regla de la mano derecha no se puede resolver un problema con varios hilos.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">27</span><strong>Espira y solenoide: no confundir fórmulas</strong><span class="tema-etiqueta">B6</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        B=\frac{\mu_0I}{2R}
+                        \qquad
+                        B=\mu_0nI
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Usadas indistintamente sin decir a qué configuración corresponden.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«En el centro de una espira circular de radio \(R\): \(B=\mu_0I/(2R)\). En el interior de un solenoide largo con \(n\) espiras por unidad de longitud: \(B=\mu_0nI\), uniforme y paralelo al eje.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Cada configuración tiene su expresión. Confundirlas es un error de modelo que invalida el resultado.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">28</span><strong>Campo nulo entre hilos paralelos</strong><span class="tema-etiqueta">B6</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«El campo se anula en el punto medio entre dos hilos, siempre.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Entre dos hilos con corrientes en el mismo sentido, los campos son opuestos. Se anulan si \(I_1/x^2=I_2/(d-x)^2\), lo que ocurre más cerca del hilo de menor corriente. Fuera de la región entre ellos, los campos tienen el mismo sentido y se suman.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El punto medio solo es válido si las corrientes son iguales. En general, el punto de campo nulo está más cerca de la corriente menor.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- B7. FUERZA MAGNÉTICA SOBRE CORRIENTES                        -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🧲 B7. Fuerza magnética sobre corrientes: Laplace e interacción entre hilos paralelos</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">29</span><strong>Fuerza sobre un conductor: módulo y sentido</strong><span class="tema-etiqueta">B7</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        F=I\,L\,B
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Sin indicar que el conductor debe ser perpendicular al campo.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        \vec F=I\,\vec L\times\vec B,
+                        \qquad
+                        F=I\,L\,B\,\text{sen}\,\theta
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«La fuerza es perpendicular al conductor y al campo; su sentido se obtiene con la regla de la mano derecha.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La expresión \(F=ILB\) solo vale si el conductor es perpendicular al campo. En general hay que incluir el \(\text{sen}\,\theta\).</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">30</span><strong>Atracción o repulsión entre hilos paralelos</strong><span class="tema-etiqueta">B7</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Dos hilos paralelos siempre se atraen.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Dos corrientes paralelas en el mismo sentido se atraen; si circulan en sentidos opuestos, se repelen. La fuerza por unidad de longitud es \(F/L=\mu_0I_1I_2/(2\pi d)\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El sentido relativo de las corrientes determina si la fuerza es atractiva o repulsiva. Es una confusión muy frecuente.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- B8. LÍNEAS DE CAMPO                                          -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento">
+        <summary><h2>📐 B8. Líneas de campo eléctrico y magnético en distribuciones sencillas</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">31</span><strong>Líneas de campo eléctrico: abiertas; magnético: cerradas</strong><span class="tema-etiqueta">B8</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Dibujar líneas de campo eléctrico cerradas o líneas magnéticas abiertas.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Las líneas de campo eléctrico nacen en las cargas positivas y mueren en las negativas (son abiertas). Las líneas de campo magnético son siempre cerradas, porque no existen monopolos magnéticos.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es una diferencia estructural entre ambos campos. Dibujarlas mal indica un error conceptual profundo.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">32</span><strong>Densidad de líneas y módulo del campo</strong><span class="tema-etiqueta">B8</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Dibujar muchas líneas donde el campo es débil y pocas donde es intenso.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La densidad de líneas de campo es proporcional al módulo del campo: donde las líneas están más juntas, el campo es más intenso; donde están más separadas, es más débil.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La representación gráfica debe ser coherente con el módulo del campo. Es un criterio de corrección habitual en los apartados de dibujo.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- B9. INDUCCIÓN ELECTROMAGNÉTICA                               -->
+    <!-- ============================================================ -->
+    <details class="section procedimiento" open>
+        <summary><h2>🔌 B9. Inducción electromagnética: flujo, Faraday-Henry y Lenz</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">33</span><strong>Flujo magnético: depende del ángulo</strong><span class="tema-etiqueta">B9</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        \Phi=B\,S
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Aplicada sin comprobar la orientación de la espira.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        \Phi=N\,B\,S\,\cos\theta
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«\(\theta\) es el ángulo entre \(\vec B\) y la normal a la superficie. El flujo es máximo si \(\vec B\parallel\vec n\) y nulo si \(\vec B\perp\vec n\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El flujo es un producto escalar. Ignorar el ángulo lleva a errores de factor \(\cos\theta\) que cambian el resultado.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">34</span><strong>Ley de Faraday: derivada del flujo</strong><span class="tema-etiqueta">B9</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        \varepsilon=-\frac{\Delta\Phi}{\Delta t}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Usada como si fuera siempre válida, sin indicar que es el valor medio.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        \varepsilon=-\frac{d\Phi}{dt}
+                        \qquad
+                        \langle\varepsilon\rangle=-\frac{\Delta\Phi}{\Delta t}
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«La fem instantánea es la derivada del flujo. Si la variación es lineal, la fem media coincide con la instantánea.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La ley de Faraday es una derivada. La forma incremental solo vale para variaciones lineales o para calcular el valor medio.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">35</span><strong>Ley de Lenz: el sentido se opone a la variación</strong><span class="tema-etiqueta">B9</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La corriente inducida tiene el sentido del campo externo.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La corriente inducida se opone a la variación del flujo: si el flujo aumenta, crea un campo que lo reduce; si disminuye, crea un campo que lo refuerza. El sentido se determina con la regla de la mano derecha.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La ley de Lenz es una consecuencia de la conservación de la energía. Invertir el sentido es uno de los errores más penalizados.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">36</span><strong>Fem de movimiento: barra deslizante</strong><span class="tema-etiqueta">B9</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <div class="formula-box">
+                        \[
+                        \varepsilon=B\,L\,v
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">Sin justificar que la barra, el campo y la velocidad son perpendiculares.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <div class="formula-box">
+                        \[
+                        \varepsilon
+                        =-\frac{d\Phi}{dt}
+                        =B\,L\,v
+                        \quad(\vec v\perp\vec B)
+                        \]
+                    </div>
+                    <p style="font-size:0.9em;">«El área barrida por la barra en un tiempo \(dt\) es \(L\,v\,dt\); el flujo varía \(d\Phi=BLv\,dt\), de donde \(\varepsilon=BLv\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> La expresión \(BLv\) es un caso particular de la ley de Faraday. Deducirla a partir del flujo demuestra comprensión y justifica el signo.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">37</span><strong>Fem nula no significa flujo nulo</strong><span class="tema-etiqueta">B9</span></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«Si la fem inducida es cero, el flujo magnético es cero.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La fem depende de la derivada del flujo, no de su valor. Una espira que gira en un campo uniforme tiene fem máxima cuando el flujo es cero y fem nula cuando el flujo es máximo.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es una confusión muy frecuente. La fem es máxima cuando el flujo cambia más rápido, lo que ocurre cuando el flujo pasa por cero.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- TABLA RESUMEN BLOQUE B                                       -->
+    <!-- ============================================================ -->
+    <details class="section resultado" open>
+        <summary><h2>📋 Tabla resumen Bloque B: ❌ error → ✅ corrección</h2></summary>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:38%;">❌ Error frecuente</th>
+                    <th style="width:30%;">Por qué está mal</th>
+                    <th style="width:32%;">✅ Cómo corregirlo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Escribir solo \(F=kq_1q_2/r^2\)</td>
+                    <td>Falta dirección y carácter atractivo/repulsivo</td>
+                    <td>Añadir la forma vectorial y el signo de \(q_1q_2\)</td>
+                </tr>
+                <tr>
+                    <td>Usar \(F=qvB\) sin seno</td>
+                    <td>Solo vale si \(\vec v\perp\vec B\)</td>
+                    <td>Usar \(F=|q|vB\,\text{sen}\,\theta\)</td>
+                </tr>
+                <tr>
+                    <td>Decir que la fuerza magnética realiza trabajo</td>
+                    <td>Es perpendicular a \(\vec v\)</td>
+                    <td>\(W_m=0\); solo cambia la dirección</td>
+                </tr>
+                <tr>
+                    <td>Sumar módulos de campos</td>
+                    <td>El campo es vectorial</td>
+                    <td>Descomponer y sumar componentes</td>
+                </tr>
+                <tr>
+                    <td>Tratar el potencial como vector</td>
+                    <td>Es una magnitud escalar</td>
+                    <td>Sumar algebraicamente con signo</td>
+                </tr>
+                <tr>
+                    <td>Poner \(V=+kq/r\) siempre</td>
+                    <td>El signo depende de la carga</td>
+                    <td>\(V=kq/r\) con el signo de \(q\)</td>
+                </tr>
+                <tr>
+                    <td>Usar \(E=V\cdot d\) en un condensador</td>
+                    <td>La relación correcta es \(E=\Delta V/d\)</td>
+                    <td>Escribir \(E=\Delta V/d\)</td>
+                </tr>
+                <tr>
+                    <td>«Equipotenciales tangentes a las líneas de campo»</td>
+                    <td>Son perpendiculares</td>
+                    <td>«Perpendiculares, porque \(\vec E=-\nabla V\)»</td>
+                </tr>
+                <tr>
+                    <td>«Campo nulo ⇒ potencial nulo»</td>
+                    <td>Son conceptos distintos</td>
+                    <td>Campo se anula vectorialmente; potencial se suma escalarmente</td>
+                </tr>
+                <tr>
+                    <td>Dibujar líneas de campo magnético abiertas</td>
+                    <td>No existen monopolos magnéticos</td>
+                    <td>Dibujarlas siempre cerradas</td>
+                </tr>
+                <tr>
+                    <td>Decir que el campo magnético es conservativo</td>
+                    <td>Su circulación no es nula</td>
+                    <td>\(\oint\vec B\cdot d\vec l=\mu_0I_{\text{enc}}\neq0\)</td>
+                </tr>
+                <tr>
+                    <td>Confundir las fórmulas de espira y solenoide</td>
+                    <td>Cada configuración tiene la suya</td>
+                    <td>Espira: \(\mu_0I/(2R)\); solenoide: \(\mu_0nI\)</td>
+                </tr>
+                <tr>
+                    <td>«Dos hilos paralelos siempre se atraen»</td>
+                    <td>Depende del sentido relativo</td>
+                    <td>Mismo sentido: atracción; opuesto: repulsión</td>
+                </tr>
+                <tr>
+                    <td>Usar \(\Phi=BS\) sin coseno</td>
+                    <td>El flujo es un producto escalar</td>
+                    <td>\(\Phi=NBS\cos\theta\)</td>
+                </tr>
+                <tr>
+                    <td>Confundir trabajo del campo y trabajo externo</td>
+                    <td>Son opuestos</td>
+                    <td>\(W_{\text{campo}}=-\Delta U\); \(W_{\text{ext}}=+\Delta U\)</td>
+                </tr>
+                <tr>
+                    <td>Usar la energía de un par para un sistema de N cargas</td>
+                    <td>Hay que sumar todos los pares</td>
+                    <td>\(U=k\sum_{i<j}q_iq_j/r_{ij}\)</td>
+                </tr>
+                <tr>
+                    <td>Invertir el sentido de la corriente inducida (Lenz)</td>
+                    <td>Debe oponerse a la variación del flujo</td>
+                    <td>Usar la regla de la mano derecha con la variación</td>
+                </tr>
+                <tr>
+                    <td>«Fem nula ⇒ flujo nulo»</td>
+                    <td>La fem depende de \(d\Phi/dt\)</td>
+                    <td>La fem es máxima cuando el flujo pasa por cero</td>
+                </tr>
+            </tbody>
+        </table>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- ERRORES TRANSVERSALES BLOQUE B                               -->
+    <!-- ============================================================ -->
+    <details class="section resultado">
+        <summary><h2>⚠️ Errores transversales que penalizan en todo el bloque B</h2></summary>
+
+        <details class="step">
+            <summary><span class="num-pareja">A</span><strong>No dibujar el esquema de cargas, campos o corrientes</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Resolver sin dibujo de las cargas, los vectores campo o las líneas de corriente.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Esquema: cargas en sus posiciones, punto de cálculo, vectores \(\vec E_i\) apuntando en el sentido correcto y resultante.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El esquema demuestra que entiendes la geometría; sin él, los signos de las componentes son difíciles de justificar.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">B</span><strong>No justificar el convenio de signos</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Poner signos negativos o positivos sin decir qué eje es positivo.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Tomamos el eje \(X\) positivo hacia la derecha y el \(Y\) hacia arriba; entonces \(\vec E_1\) apunta en \(-x\) y \(\vec E_2\) en \(+x\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Sin convenio explícito, un signo negativo es ambiguo y el corrector no puede evaluar si el razonamiento es correcto.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">C</span><strong>Mezclar campo y fuerza</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La fuerza eléctrica en ese punto es \(E=kq/r^2\).»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«El campo eléctrico en ese punto es \(E=kq/r^2\); la fuerza sobre una carga \(q_0\) colocada allí sería \(\vec F=q_0\vec E\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> El campo es una propiedad del espacio (independiente de la carga de prueba); la fuerza depende de la carga que se coloque.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">D</span><strong>No comprobar dimensiones</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>Entregar el número sin verificar unidades.</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«Comprobamos la coherencia dimensional: \([E]=[kq/r^2]=\text{N}\,\text{C}^{-1}=\text{V}\,\text{m}^{-1}\).»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Detecta errores de fórmula y de unidades; además demuestra madurez en el manejo de magnitudes.</div>
+        </details>
+
+        <details class="step">
+            <summary><span class="num-pareja">E</span><strong>Confundir trayectoria con línea de campo</strong></summary>
+            <div class="comparativa">
+                <div class="mal">
+                    <div class="mal-titulo">❌ Mal</div>
+                    <p>«La partícula sigue la línea de campo.»</p>
+                </div>
+                <div class="bien">
+                    <div class="bien-titulo">✅ Bien</div>
+                    <p>«La trayectoria de una partícula cargada no coincide en general con la línea de campo. En un campo magnético uniforme, la trayectoria es circular y perpendicular a \(\vec B\); la línea de campo es recta.»</p>
+                </div>
+            </div>
+            <div class="porque"><strong>¿Por qué?</strong> Es un error conceptual frecuente: las líneas de campo indican la dirección de la fuerza en cada punto, no el camino que sigue la partícula.</div>
+        </details>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- RECURSOS                                                     -->
+    <!-- ============================================================ -->
+    <div style="max-width:1100px; margin:30px auto; padding:0 15px 30px 15px;">
+        <div class="recursos-tema" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    border-radius: 20px; padding: 30px 25px 32px 25px;
+                    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.35);">
+            <h2 style="margin: 0 0 8px 0; color: white; text-align: center;
+                       font-size: 1.5em; display: flex; align-items: center;
+                       justify-content: center; gap: 12px;">
+                <i class="fas fa-compass"></i>
+                Recursos del Bloque B
+            </h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.9);
+                      margin: 0 0 25px 0; font-size: 0.95em;">
+                Accede directamente a los materiales y bancos de problemas
+            </p>
+
+            <div class="recurso-grid" style="display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 18px;">
+
+                <a href="TemaB1.html" style="text-decoration: none; color: inherit;">
+                    <div class="recurso-card" style="background: white; border-radius: 16px;
+                                padding: 22px 18px; text-align: center; height: 100%;
+                                border: 3px solid #e2e8f0;
+                                box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                        <div class="recurso-icono" style="width: 62px; height: 62px;
+                                    margin: 4px auto 14px;
+                                    background: linear-gradient(135deg, #667eea, #764ba2);
+                                    border-radius: 50%; display: flex; align-items: center;
+                                    justify-content: center; color: white; font-size: 1.7em;">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                    margin-bottom: 6px;">
+                            Tema B1 completo
+                        </div>
+                        <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                            Teoría, fórmulas y problemas resueltos
+                        </div>
+                    </div>
+                </a>
+
+                <a class="filtro-pau"
+                   href="../EBAU/problemas-inline_v04.html"
+                   data-q='"campo eléctrico" | "ley de Coulomb" | "fuerza de Lorentz" | "campo magnético" | "inducción electromagnética" | "ley de Faraday" | "ley de Lenz" | "flujo magnético" | "potencial eléctrico" | "equipotenciales"'
+                   data-comunidad="Castilla y León"
+                   data-bloque="B. Campo electromagnético"
+                   data-tema="B1. Campos eléctrico y magnético sobre cargas libres: Coulomb y Lorentz"
+                   style="text-decoration: none; color: inherit;">
+                    <div class="recurso-card" style="background: white; border-radius: 16px;
+                                padding: 22px 18px; text-align: center; height: 100%;
+                                border: 3px solid #e2e8f0;
+                                box-shadow: 0 6px 16px rgba(0,0,0,0.15);">
+                        <div class="recurso-icono" style="width: 62px; height: 62px;
+                                    margin: 4px auto 14px;
+                                    background: linear-gradient(135deg, #10b981, #059669);
+                                    border-radius: 50%; display: flex; align-items: center;
+                                    justify-content: center; color: white; font-size: 1.7em;">
+                            <i class="fas fa-pen-to-square"></i>
+                        </div>
+                        <div style="font-weight: 700; color: #1e3a8a; font-size: 1.1em;
+                                    margin-bottom: 6px;">
+                            Problemas EBAU · Bloque B
+                        </div>
+                        <div style="font-size: 0.85em; color: #64748b; line-height: 1.5;">
+                            Ejercicios filtrados del bloque, resueltos y comentados
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOQUE "ES HORA DE" -->
+    <div class="bloque-cta">
+        <div class="tarjeta-cta">
+            <p>
+                <br> Domina el Bloque B redactando con rigor: ley, principio, unidades y sentido.<br>
+                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
+            </p>
+            <div style="text-align:center;">
+                <a href="../index.html" target="_blank" class="boton-volver">
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- fin container -->
+</body>
+</html>

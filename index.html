@@ -394,6 +394,97 @@
         }
         .aviso-verificacion i { color: #d97706; margin-right: 4px; }
 
+        /* ───────── MATERIALES COMPLEMENTARIOS (EXTRAS) ───────── */
+        .extras {
+            padding: 22px 30px 30px;
+            border-top: 1px solid #e2e8f0;
+            background: #f8fafc;
+        }
+        .extras-titulo {
+            margin: 0 0 4px;
+            font-size: 1.15em;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .extras-intro {
+            margin: 0 0 16px;
+            font-size: 0.9em;
+            color: #64748b;
+            line-height: 1.5;
+        }
+        .extras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 12px;
+        }
+        .extra-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 16px;
+            background: white;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            text-decoration: none;
+            color: #1e293b;
+            transition: all 0.2s ease;
+        }
+        .extra-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        .extra-card > i {
+            font-size: 1.4em;
+            color: #6366f1;
+            flex-shrink: 0;
+            width: 38px;
+            text-align: center;
+        }
+        .extra-card h3 {
+            margin: 0 0 2px;
+            font-size: 0.95em;
+            font-weight: 700;
+        }
+        .extra-card p {
+            margin: 0;
+            font-size: 0.8em;
+            color: #64748b;
+            line-height: 1.3;
+        }
+        .extra-letra {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 800;
+            font-size: 1.1em;
+            flex-shrink: 0;
+        }
+
+        .extra-general { border-color: #c7d2fe; }
+        .extra-general:hover { border-color: #6366f1; }
+
+        .extra-A { border-color: #c7d2fe; }
+        .extra-A:hover { border-color: #6366f1; }
+        .extra-A .extra-letra { background: linear-gradient(135deg, #6366f1, #4338ca); }
+
+        .extra-B { border-color: #fde68a; }
+        .extra-B:hover { border-color: #f59e0b; }
+        .extra-B .extra-letra { background: linear-gradient(135deg, #f59e0b, #d97706); }
+
+        .extra-C { border-color: #a7f3d0; }
+        .extra-C:hover { border-color: #10b981; }
+        .extra-C .extra-letra { background: linear-gradient(135deg, #10b981, #047857); }
+
+        .extra-D { border-color: #fbcfe8; }
+        .extra-D:hover { border-color: #ec4899; }
+        .extra-D .extra-letra { background: linear-gradient(135deg, #ec4899, #be185d); }
+
         /* ───────── PIE ───────── */
         .footer {
             text-align: center;
@@ -427,6 +518,8 @@
                 width: 100%;
                 justify-content: center;
             }
+            .extras { padding: 18px 20px 24px; }
+            .extras-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -835,6 +928,73 @@
         </details>
 
     </div><!-- fin .bloques -->
+
+    <!-- ============================================================ -->
+    <!-- MATERIALES COMPLEMENTARIOS (EXTRAS)                          -->
+    <!-- Carpeta: Extras/  ·  Editar si cambian los nombres/rutas     -->
+    <!-- ============================================================ -->
+    <div class="extras">
+        <h2 class="extras-titulo">
+            <i class="fas fa-folder-open"></i> Materiales complementarios
+        </h2>
+        <p class="extras-intro">
+            Recursos de ampliación y repaso: estrategias de resolución de problemas y
+            hojas de expresiones matemáticas organizadas por bloque.
+        </p>
+        <div class="extras-grid">
+
+            <a class="extra-card extra-general"
+               href="Unidades/Extras/Estrategias%20mas%20desarrollado.html"
+               target="_blank" rel="noopener">
+                <i class="fas fa-lightbulb"></i>
+                <div>
+                    <h3>Estrategias más desarrollado</h3>
+                    <p>Métodos y estrategias de resolución de problemas</p>
+                </div>
+            </a>
+
+            <a class="extra-card extra-A"
+               href="Unidades/Extras/Expresiones%20A.html"
+               target="_blank" rel="noopener">
+                <span class="extra-letra">A</span>
+                <div>
+                    <h3>Expresiones · Bloque A</h3>
+                    <p>Campo gravitatorio</p>
+                </div>
+            </a>
+
+            <a class="extra-card extra-B"
+               href="Unidades/Extras/Expresiones%20B.html"
+               target="_blank" rel="noopener">
+                <span class="extra-letra">B</span>
+                <div>
+                    <h3>Expresiones · Bloque B</h3>
+                    <p>Campo electromagnético</p>
+                </div>
+            </a>
+
+            <a class="extra-card extra-C"
+               href="Unidades/Extras/Expresiones%20C.html"
+               target="_blank" rel="noopener">
+                <span class="extra-letra">C</span>
+                <div>
+                    <h3>Expresiones · Bloque C</h3>
+                    <p>Vibraciones y ondas</p>
+                </div>
+            </a>
+
+            <a class="extra-card extra-D"
+               href="Unidades/Extras/Expresiones%20D.html"
+               target="_blank" rel="noopener">
+                <span class="extra-letra">D</span>
+                <div>
+                    <h3>Expresiones · Bloque D</h3>
+                    <p>Física relativista, cuántica, nuclear y de partículas</p>
+                </div>
+            </a>
+
+        </div>
+    </div><!-- fin .extras -->
 
     <div class="footer">
         <p><i class="fas fa-graduation-cap"></i> IES Valle del Alberche · Departamento de Física y Química</p>
