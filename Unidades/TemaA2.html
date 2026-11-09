@@ -18,8 +18,36 @@
     <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    <style>
+    /* =========================================================
+       FOTOGRAFÍAS DE LABORATORIO (adaptadas al tamaño real)
+       ========================================================= */
+    .photo-figure {
+        background: white; border: 1px solid #e2e8f0; border-radius: 14px;
+        padding: 15px 15px 10px 15px; margin: 20px auto; text-align: center;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05); max-width: 520px;
+    }
+    .photo-figure img {
+        display: block; margin: 0 auto; max-width: 100%; max-height: 440px;
+        width: auto; height: auto; border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    }
+    .photo-pair {
+        display: flex; flex-wrap: wrap; justify-content: center;
+        align-items: stretch; gap: 16px; margin: 20px 0;
+    }
+    .photo-pair > .photo-figure {
+        flex: 1 1 240px; max-width: 320px; margin: 0;
+    }
+    .photo-pair > .photo-figure img {
+        max-height: 380px; object-fit: contain;
+    }
+    .figure-caption {
+        font-size: 0.9em; color: #4a5568; margin-top: 10px;
+        line-height: 1.5; text-align: left;
+    }
+    </style>
 
-    
 </head>
 <body>
 <div class="container">
@@ -175,6 +203,10 @@
                     \]
                 </div>
             </a>
+            <div class="photo-figure">
+                <img src="../imagenes/webp/ImagenF0309.webp" alt="Construcción geométrica de una elipse con dos focos y órbita elíptica con el Sol en un foco">
+                <div class="figure-caption"><strong>Construcción de una elipse.</strong> La suma de distancias de cualquier punto de la elipse a los dos focos es constante (2a). En una órbita planetaria, el Sol ocupa uno de los focos y el planeta describe la elipse, tal como establece la primera ley de Kepler.</div>
+            </div>
             <p>La primera ley rompió con la idea de la «perfección circular» de la física aristotélica. En el caso particular de órbitas circulares (\(e=0\)), los radios orbitales son constantes y las leyes de Kepler siguen aplicándose como caso límite.</p>
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"primera ley de Kepler" | "ley de las órbitas" | "órbita elíptica" | "foco" | "excentricidad" | "perihelio" | "afelio" | "semieje mayor" | "perigeo" | "apogeo"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Primera ley de Kepler (CyL · A2)</a>
@@ -205,6 +237,10 @@
                 \]</li>
                 <li>Como \( r_{\text{perihelio}} < r_{\text{afelio}} \), necesariamente \( v_{\text{perihelio}} > v_{\text{afelio}} \).</li>
             </ul>
+            <div class="photo-figure">
+                <img src="../imagenes/webp/ImagenF0313.webp" alt="Ley de las áreas de Kepler: regiones barridas iguales en tiempos iguales">
+                <div class="figure-caption"><strong>Ley de las áreas.</strong> Las regiones sombreadas, barridas por el radio vector en el mismo intervalo de tiempo, tienen áreas iguales. Esto implica que el planeta se mueve más rápido cerca del Sol (perihelio) y más despacio lejos de él (afelio), conservándose el momento angular.</div>
+            </div>
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"segunda ley de Kepler" | "ley de las áreas" | "velocidad areolar" | "momento angular" | "fuerza central" | "perihelio" | "afelio" | "conservación del momento angular" | "radio vector"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Ley de las áreas (CyL · A2)</a>
             </div>
@@ -248,6 +284,10 @@
                     \]
                 </div>
             </a>
+            <div class="photo-figure">
+                <img src="../imagenes/webp/ImagenF0305.webp" alt="Satélite orbitando la Tierra: la fuerza gravitatoria proporciona la aceleración centrípeta">
+                <div class="figure-caption"><strong>Fuerza gravitatoria como fuerza centrípeta.</strong> En una órbita circular, la fuerza gravitatoria proporciona la aceleración centrípeta necesaria para mantener el satélite en su trayectoria. Igualando \(GMm/r^2 = mv^2/r\) y usando \(v = 2\pi r/T\) se deduce la tercera ley de Kepler \(T^2 = (4\pi^2/GM)\,a^3\).</div>
+            </div>
             <p>Como la velocidad orbital se relaciona con el periodo por \( v = \frac{2\pi r}{T} \), elevando al cuadrado:</p>
             <a href="TemaA2-Formulario.html#formula-6" style="text-decoration:none; color:inherit; display:block;">
                 <div class="formula-box" id="formula-6">
@@ -360,6 +400,10 @@
                     \]
                 </div>
             </a>
+            <div class="photo-figure">
+                <img src="../imagenes/webp/ImagenF0310.webp" alt="Planeta en órbita elíptica alrededor del Sol con distancia r y ángulo θ">
+                <div class="figure-caption"><strong>Distancia y ángulo en la órbita elíptica.</strong> La distancia \(r\) entre el planeta y el Sol, junto con el ángulo \(\theta\) medido desde el eje mayor de la elipse, permite describir la posición del planeta en cada punto de su órbita. En los ápsides, \(r\) alcanza sus valores extremos (perihelio y afelio).</div>
+            </div>
             <p>La energía mecánica total de una órbita elíptica (o circular) depende solo del semieje mayor \( a \):</p>
             <a href="TemaA2-Formulario.html#formula-15" style="text-decoration:none; color:inherit; display:block;">
                 <div class="formula-box" id="formula-15">
@@ -394,6 +438,10 @@
                     \]
                 </div>
             </a>
+            <div class="photo-figure">
+                <img src="../imagenes/webp/ImagenF0312.webp" alt="Elipse de transferencia de Hohmann entre las órbitas de la Tierra y Marte">
+                <div class="figure-caption"><strong>Órbita de transferencia de Hohmann.</strong> La elipse de transferencia tiene su perihelio en la órbita de la Tierra y su afelio en la órbita de Marte. Esta maniobra, basada en las leyes de Kepler, es la forma más eficiente de enviar una sonda de un planeta a otro.</div>
+            </div>
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"satélites artificiales" | "órbita LEO" | "órbita GEO" | "exoplanetas" | "agujeros negros" | "Sagitario A*" | "materia oscura" | "transferencia orbital" | "leyes de Kepler"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Aplicaciones de Kepler (CyL · A2)</a>
             </div>
@@ -931,7 +979,6 @@
     <!-- ===================FIN DE ES HORA DE ==================== -->
 
 </div> <!-- fin container -->
-
 
 
 

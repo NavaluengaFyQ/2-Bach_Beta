@@ -18,8 +18,36 @@
     <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    <style>
+    /* =========================================================
+       FOTOGRAFÍAS DE LABORATORIO (adaptadas al tamaño real)
+       ========================================================= */
+    .photo-figure {
+        background: white; border: 1px solid #e2e8f0; border-radius: 14px;
+        padding: 15px 15px 10px 15px; margin: 20px auto; text-align: center;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05); max-width: 520px;
+    }
+    .photo-figure img {
+        display: block; margin: 0 auto; max-width: 100%; max-height: 440px;
+        width: auto; height: auto; border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    }
+    .photo-pair {
+        display: flex; flex-wrap: wrap; justify-content: center;
+        align-items: stretch; gap: 16px; margin: 20px 0;
+    }
+    .photo-pair > .photo-figure {
+        flex: 1 1 240px; max-width: 320px; margin: 0;
+    }
+    .photo-pair > .photo-figure img {
+        max-height: 380px; object-fit: contain;
+    }
+    .figure-caption {
+        font-size: 0.9em; color: #4a5568; margin-top: 10px;
+        line-height: 1.5; text-align: left;
+    }
+    </style>
 
-    
 </head>
 <body> 
 <div class="container">
@@ -137,6 +165,10 @@
                 <strong>Ley de la Gravitación Universal.</strong>
             </summary>
             <p>Formulada por Isaac Newton en 1687 en sus <em>Philosophiæ Naturalis Principia Mathematica</em>, la ley de gravitación universal establece que <strong>dos masas puntuales cualesquiera se atraen mutuamente</strong> con una fuerza cuya dirección pasa por la línea que une sus centros y cuyo módulo es directamente proporcional al producto de las masas e inversamente proporcional al cuadrado de la distancia que las separa:</p>
+            <div class="photo-figure">
+                <img src="../imagenes/webp/ImagenF0068.webp" alt="Retrato de Isaac Newton">
+                <div class="figure-caption"><strong>Isaac Newton (1642-1727).</strong> En sus <em>Principia Mathematica</em> (1687) formuló la ley de gravitación universal, que describe la atracción entre dos masas cualesquiera y sigue siendo la base de la mecánica celeste.</div>
+            </div>
             <a href="TemaA1-Formulario.html#formula-1" style="text-decoration:none; color:inherit; display:block;">
             <div class="formula-box" id="formula-1">
                 \[
@@ -175,6 +207,10 @@
                 <strong>Masa puntual y distribuciones esféricas.</strong>
             </summary>
             <p>La ley de gravitación se enuncia para <strong>masas puntuales</strong>, es decir, para partículas sin extensión espacial. Sin embargo, el <strong>teorema de la corteza de Newton</strong> demuestra que una distribución esférica de masa con densidad que solo dependa del radio se comporta, en su <strong>exterior</strong>, como si toda su masa estuviera concentrada en su centro. Por eso podemos aplicar la ley con \(r\) igual a la distancia entre los centros de dos cuerpos esféricos, como planetas, estrellas o satélites.</p>
+            <div class="photo-figure">
+                <img src="../imagenes/webp/ImagenF0300.webp" alt="Distancia entre los centros de masa de la Tierra y un objeto en su superficie">
+                <div class="figure-caption"><strong>La distancia se mide entre centros.</strong> Para aplicar \(F = G m_1 m_2 / r^2\), la distancia \(r\) se toma entre los centros de masa de los cuerpos esféricos, no desde sus superficies. En la superficie terrestre, \(r \approx R_T\).</div>
+            </div>
             <div class="note">
                 <strong>Importante:</strong> en el interior de una esfera hueca, la fuerza gravitatoria neta es cero; en el interior de una esfera maciza, la fuerza es proporcional a la distancia al centro.
             </div>
@@ -208,6 +244,10 @@
                 \]
             </div>
             </a>
+            <div class="photo-figure">
+                <img src="../imagenes/webp/ImagenF0295.webp" alt="Fuerza gravitatoria a lo largo de la línea que une los centros de dos masas">
+                <div class="figure-caption"><strong>Fuerza central.</strong> La fuerza gravitatoria entre dos masas actúa siempre a lo largo de la línea que une sus centros de masa. Esta es una de las propiedades esenciales de la ley: es una fuerza central y atractiva.</div>
+            </div>
             <p>El signo negativo indica el carácter atractivo: la fuerza sobre \(m_2\) apunta en sentido opuesto a \(\vec r\), es decir, hacia \(m_1\). Por la tercera ley de Newton, \(\vec F_{2\to 1} = -\vec F_{1\to 2}\).</p>
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html"
@@ -253,6 +293,10 @@
                 \]
             </div>
             </a>
+            <div class="photo-figure">
+                <img src="../imagenes/webp/ImagenF0301.webp" alt="Representación tridimensional del campo gravitatorio creado por una masa">
+                <div class="figure-caption"><strong>Campo gravitatorio.</strong> Las líneas de campo creadas por una masa puntual apuntan radialmente hacia ella. A mayor distancia, menor densidad de líneas y menor intensidad de campo, de acuerdo con \(g = GM/r^2\).</div>
+            </div>
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html"
                    data-q='"campo gravitatorio" | "intensidad del campo" | "gravedad superficial" | "campo gravitatorio terrestre" | "aceleración de la gravedad"'
@@ -378,6 +422,10 @@
                 \]
             </div>
             </a>
+            <div class="photo-figure">
+                <img src="../imagenes/webp/ImagenF0304.webp" alt="Integral de trabajo para determinar el cambio de energía potencial">
+                <div class="figure-caption"><strong>Trabajo gravitatorio.</strong> El trabajo realizado por el campo gravitatorio al desplazar una masa entre dos puntos no depende del camino seguido, sino solo de las posiciones inicial y final, porque la gravedad es una fuerza conservativa.</div>
+            </div>
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html"
                    data-q='"energía potencial gravitatoria" | "trabajo gravitatorio" | "trabajo del campo" | "fuerza conservativa" | "energía mecánica" | "velocidad de escape"'
@@ -1147,7 +1195,6 @@
 
 
 
-
 <!-- ===================PARA PONER UN MARCO TEMPORAL EN LA FÓRMULA CUANDO VENGA DEL FORMULARIO ==================== -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -1174,6 +1221,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 2600);
 });
 </script>
+
+
+
+
 
 
 
