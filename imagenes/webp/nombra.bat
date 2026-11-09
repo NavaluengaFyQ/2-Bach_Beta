@@ -4,24 +4,24 @@ cd /d "%~dp0"
 
 echo ============================================
 echo   Renombrador secuencial de imagenes
-echo   (excluye archivos .txt)
+echo   (prefijo ImagenF, 4 digitos, excluye .txt)
 echo ============================================
 echo.
 
 REM ============================================================
-REM 1. Buscar el mayor numero existente en archivos ImagenXXX
+REM 1. Buscar el mayor numero existente en archivos ImagenF####
 REM    (ignorando los .txt)
 REM ============================================================
 set "maxnum=0"
-for /f "delims=" %%f in ('dir /b /a-d "Imagen*" 2^>nul') do (
+for /f "delims=" %%f in ('dir /b /a-d "ImagenF*" 2^>nul') do (
     set "file=%%f"
     set "ext=%%~xf"
     set "base=%%~nf"
 
     REM Ignorar .txt
     if /i not "!ext!"==".txt" (
-        if /i "!base:~0,6!"=="Imagen" (
-            set "num=!base:Imagen=!"
+        if /i "!base:~0,7!"=="ImagenF" (
+            set "num=!base:ImagenF=!"
             echo !num!| findstr /r "^[0-9][0-9]*$" >nul
             if !errorlevel! equ 0 (
                 REM Quitar ceros a la izquierda para comparar correctamente
@@ -38,8 +38,14 @@ for /f "delims=" %%f in ('dir /b /a-d "Imagen*" 2^>nul') do (
     )
 )
 
-echo Numero maximo existente : Imagen!maxnum!
-echo Los nuevos comenzaran en: Imagen (maxnum+1)
+REM Mostrar maxnum con 4 digitos (para la salida por pantalla)
+set "maxdisp=!maxnum!"
+if !maxnum! lss 10                       set "maxdisp=000!maxnum!"
+if !maxnum! geq 10 if !maxnum! lss 100   set "maxdisp=00!maxnum!"
+if !maxnum! geq 100 if !maxnum! lss 1000 set "maxdisp=0!maxnum!"
+
+echo Numero maximo existente : ImagenF!maxdisp!
+echo Los nuevos comenzaran en: ImagenF (maxnum+1)
 echo Los archivos .txt NO se renombran.
 echo.
 
@@ -74,9 +80,9 @@ for /f "delims=" %%f in ('dir /b /a-d-h-s /t:c /o:d 2^>nul') do (
         set /a "skipped_txt+=1"
     )
 
-    REM Saltar archivos que ya siguen el patron ImagenXXX
-    if /i "!base:~0,6!"=="Imagen" (
-        set "num=!base:Imagen=!"
+    REM Saltar archivos que ya siguen el patron ImagenF####
+    if /i "!base:~0,7!"=="ImagenF" (
+        set "num=!base:ImagenF=!"
         echo !num!| findstr /r "^[0-9][0-9]*$" >nul
         if !errorlevel! equ 0 set "skip=1"
     )
@@ -84,14 +90,15 @@ for /f "delims=" %%f in ('dir /b /a-d-h-s /t:c /o:d 2^>nul') do (
     if not defined skip (
         set /a "nextnum=counter+1"
 
-        REM Rellenar con ceros a la izquierda (minimo 3 digitos)
-        if !nextnum! lss 10  (set "newnum=00!nextnum!")
-        if !nextnum! geq 10 if !nextnum! lss 100 (set "newnum=0!nextnum!")
-        if !nextnum! geq 100 (set "newnum=!nextnum!")
+        REM Rellenar con ceros a la izquierda (minimo 4 digitos)
+        if !nextnum! lss 10                       (set "newnum=000!nextnum!")
+        if !nextnum! geq 10 if !nextnum! lss 100   (set "newnum=00!nextnum!")
+        if !nextnum! geq 100 if !nextnum! lss 1000 (set "newnum=0!nextnum!")
+        if !nextnum! geq 1000                      (set "newnum=!nextnum!")
 
-        echo Renombrando: "!file!"  -^>  "Imagen!newnum!!ext!"
+        echo Renombrando: "!file!"  -^>  "ImagenF!newnum!!ext!"
 
-        ren "!file!" "Imagen!newnum!!ext!"
+        ren "!file!" "ImagenF!newnum!!ext!"
         if not errorlevel 1 (
             set "counter=!nextnum!"
             set /a "renamed+=1"
@@ -106,6 +113,13 @@ echo ============================================
 echo   Proceso completado.
 echo   Archivos renombrados    : !renamed!
 echo   Archivos .txt ignorados : !skipped_txt!
-echo   Ultimo numero asignado  : Imagen!counter!
+
+REM Ultimo numero con 4 digitos
+set "lastdisp=!counter!"
+if !counter! lss 10                       set "lastdisp=000!counter!"
+if !counter! geq 10 if !counter! lss 100   set "lastdisp=00!counter!"
+if !counter! geq 100 if !counter! lss 1000 set "lastdisp=0!counter!"
+
+echo   Ultimo numero asignado  : ImagenF!lastdisp!
 echo ============================================
 pause
