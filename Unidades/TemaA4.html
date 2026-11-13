@@ -7,7 +7,7 @@
 
 
     <!-- Para crear las consultas puntuales en la base de datos) -->
-    <script src="js/utils.js" defer></script>
+    <script src="../js/utils.js" defer></script>
 
     <!-- FontAwesome CDN (versión 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -18,8 +18,36 @@
     <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    <style>
+    /* =========================================================
+       FOTOGRAFÍAS DE LABORATORIO (adaptadas al tamaño real)
+       ========================================================= */
+    .photo-figure {
+        background: white; border: 1px solid #e2e8f0; border-radius: 14px;
+        padding: 15px 15px 10px 15px; margin: 20px auto; text-align: center;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05); max-width: 520px;
+    }
+    .photo-figure img {
+        display: block; margin: 0 auto; max-width: 100%; max-height: 440px;
+        width: auto; height: auto; border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    }
+    .photo-pair {
+        display: flex; flex-wrap: wrap; justify-content: center;
+        align-items: stretch; gap: 16px; margin: 20px 0;
+    }
+    .photo-pair > .photo-figure {
+        flex: 1 1 240px; max-width: 320px; margin: 0;
+    }
+    .photo-pair > .photo-figure img {
+        max-height: 380px; object-fit: contain;
+    }
+    .figure-caption {
+        font-size: 0.9em; color: #4a5568; margin-top: 10px;
+        line-height: 1.5; text-align: left;
+    }
+    </style>
 
-    
 </head>
 <body>
 <div class="container">
@@ -146,6 +174,22 @@
                 </div>
             </a>
             <p>Es una magnitud <strong>vectorial</strong> que depende de la posición y de la masa o masas que crean el campo, pero no de la masa de prueba. Su unidad en el S.I. es el \(\text{N}\cdot\text{kg}^{-1}\), que es equivalente al \(\text{m}\cdot\text{s}^{-2}\) (es una aceleración).</p>
+
+            <div class="photo-pair">
+                <div class="photo-figure">
+                    <a class="lightbox-link" href="../imagenes/webp/ImagenF0294.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: La gravedad a escala cósmica">
+                        <img src="../imagenes/webp/ImagenF0294.webp" alt="Miles de millones de galaxias visibles en el universo, unidas por la fuerza de la gravedad" loading="lazy" decoding="async">
+                    </a>
+                    <div class="figure-caption"><strong>La gravedad a escala cósmica.</strong> La misma ley que describe el campo gravitatorio de un cuerpo pequeño gobierna la dinámica de galaxias enteras. La interacción gravitatoria es universal: todo cuerpo con masa crea un campo gravitatorio a su alrededor.</div>
+                </div>
+                <div class="photo-figure">
+                    <a class="lightbox-link" href="../imagenes/webp/ImagenF0296.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Experimento de Cavendish">
+                        <img src="../imagenes/webp/ImagenF0296.webp" alt="Aparato tipo balanza de torsión de Cavendish para medir la atracción gravitatoria entre dos esferas" loading="lazy" decoding="async">
+                    </a>
+                    <div class="figure-caption"><strong>La medida de \(G\): el experimento de Cavendish.</strong> La determinación experimental de la constante de gravitación universal \(G\), que aparece en la expresión del campo \(g = GM/r^{2}\), fue posible gracias a la delicada balanza de torsión de Cavendish (1798).</div>
+                </div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;intensidad de campo gravitatorio&quot; | &quot;fuerza por unidad de masa&quot; | &quot;masa de prueba&quot; | &quot;vector g&quot; | &quot;N/kg&quot; | &quot;magnitud vectorial&quot; | &quot;aceleración gravitatoria&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A4. Intensidad de campo gravitatorio y líneas de campo" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Intensidad de campo gravitatorio (CyL · A4)</a>
             </div>
@@ -168,6 +212,14 @@
                 </div>
             </a>
             <p>donde \(\hat u_r\) es el vector unitario que va desde la masa hasta el punto. Esta expresión muestra la <strong>dependencia inversa con el cuadrado de la distancia</strong> (\(1/r^2\)): el campo se debilita rápidamente al alejarse de la masa.</p>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0300.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: La distancia r se mide desde el centro">
+                    <img src="../imagenes/webp/ImagenF0300.webp" alt="Distancia entre los centros de masa de la Tierra y un objeto en su superficie" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>La distancia \(r\) se mide desde el centro.</strong> Para aplicar \(g = GM/r^{2}\), la distancia \(r\) es la que va desde el centro de la masa creadora hasta el punto donde calculamos el campo, no desde su superficie. En la superficie terrestre, \(r = R_T\).</div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;campo de una masa puntual&quot; | &quot;campo radial&quot; | &quot;1/r2&quot; | &quot;vector unitario radial&quot; | &quot;campo atractivo&quot; | &quot;dependencia con la distancia&quot; | &quot;expresión vectorial del campo&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A4. Intensidad de campo gravitatorio y líneas de campo" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Campo de una masa puntual (CyL · A4)</a>
             </div>
@@ -194,6 +246,14 @@
                 <li>El campo es <strong>central</strong>: todas las líneas convergen en el centro de la masa.</li>
                 <li>Las líneas de campo son perpendiculares a las superficies equipotenciales.</li>
             </ul>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0301.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Líneas de campo gravitatorio">
+                    <img src="../imagenes/webp/ImagenF0301.webp" alt="Representación tridimensional del campo gravitatorio creado por una masa, con líneas radiales apuntando hacia ella" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Líneas de campo gravitatorio.</strong> La representación tridimensional del campo creado por una masa muestra cómo las líneas de campo son radiales, entrantes (apuntan hacia la masa) y su densidad disminuye con la distancia, reflejando que el módulo del campo decae como \(1/r^{2}\).</div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;líneas de campo&quot; | &quot;líneas radiales&quot; | &quot;densidad de líneas&quot; | &quot;no se cruzan&quot; | &quot;superficies equipotenciales&quot; | &quot;representación gráfica del campo&quot; | &quot;campo central&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A4. Intensidad de campo gravitatorio y líneas de campo" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Líneas de campo gravitatorio (CyL · A4)</a>
             </div>
@@ -213,6 +273,14 @@
                 </div>
             </a>
             <p>Este valor determina el peso de los cuerpos en la superficie (\(P = m\,g_0\)) y es una constante característica de cada planeta o estrella.</p>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0303.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Variación de la gravedad en la Tierra">
+                    <img src="../imagenes/webp/ImagenF0303.webp" alt="Variación de la gravedad g con la distancia al centro de la Tierra, mostrando un máximo en la superficie" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Gravedad en el interior y en la superficie terrestre.</strong> La gráfica muestra cómo varía \(g\) con la distancia al centro de la Tierra. En la superficie (\(r = R\)) el campo alcanza su valor máximo; en el interior, decrece linealmente con \(r\) (para una densidad uniforme); en el exterior, decae como \(1/r^{2}\).</div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;gravedad superficial&quot; | &quot;g0&quot; | &quot;superficie de un astro&quot; | &quot;peso&quot; | &quot;GM/R2&quot; | &quot;radio del planeta&quot; | &quot;campo en la superficie&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A4. Intensidad de campo gravitatorio y líneas de campo" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Gravedad superficial (CyL · A4)</a>
             </div>
@@ -235,6 +303,14 @@
                 </div>
             </a>
             <p>En una órbita circular de radio \(r\), la fuerza gravitatoria proporciona la aceleración centrípeta necesaria para mantener el movimiento circular. Por tanto, la aceleración centrípeta en la órbita coincide con la intensidad del campo gravitatorio en ese punto: \(g_{\text{orb}} = G\,M/r^{2}\).</p>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0305.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Campo gravitatorio en una órbita">
+                    <img src="../imagenes/webp/ImagenF0305.webp" alt="Un satélite de masa m orbita a un radio r del centro de la Tierra; la fuerza gravitatoria proporciona la aceleración centrípeta" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Campo gravitatorio en una órbita circular.</strong> En una órbita de radio \(r\), la fuerza gravitatoria proporciona la aceleración centrípeta necesaria para mantener el movimiento circular. Por tanto, \(g_{\text{orb}} = GM/r^{2} = v^{2}/r\): el módulo del campo coincide con la aceleración centrípeta del satélite.</div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;campo a altura&quot; | &quot;R+h&quot; | &quot;órbita circular&quot; | &quot;aceleración centrípeta&quot; | &quot;g orbital&quot; | &quot;v2/r&quot; | &quot;campo en órbita&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A4. Intensidad de campo gravitatorio y líneas de campo" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Campo a altura y en órbitas (CyL · A4)</a>
             </div>
@@ -254,6 +330,22 @@
                 </div>
             </a>
             <p>Cada \(\vec g_i\) se calcula con la expresión vectorial \(-\,G\,M_i\,\vec r_i / r_i^{3}\) y se suman componente a componente. Es fundamental dibujar un esquema con los vectores para no equivocarse en los signos y direcciones.</p>
+
+            <div class="photo-pair">
+                <div class="photo-figure">
+                    <a class="lightbox-link" href="../imagenes/webp/ImagenF0020.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Regla del paralelogramo">
+                        <img src="../imagenes/webp/ImagenF0020.webp" alt="Regla del paralelogramo para sumar dos vectores y obtener la resultante" loading="lazy" decoding="async">
+                    </a>
+                    <div class="figure-caption"><strong>Regla del paralelogramo.</strong> Para sumar dos campos gravitatorios, se dibujan sus vectores con el mismo origen y la resultante es la diagonal del paralelogramo. La longitud \(R\) de la resultante no es la suma de los módulos de los campos.</div>
+                </div>
+                <div class="photo-figure">
+                    <a class="lightbox-link" href="../imagenes/webp/ImagenF0022.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Método cola-cabeza">
+                        <img src="../imagenes/webp/ImagenF0022.webp" alt="Método cola a cabeza para dibujar el vector resultante de sumar varios vectores" loading="lazy" decoding="async">
+                    </a>
+                    <div class="figure-caption"><strong>Método cola-cabeza.</strong> Alternativamente, la suma vectorial de campos puede hacerse colocando el origen de cada vector en el extremo del anterior. Ambos métodos son equivalentes y constituyen la base del principio de superposición.</div>
+                </div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;superposición vectorial&quot; | &quot;suma de campos&quot; | &quot;varias masas&quot; | &quot;campo resultante&quot; | &quot;componentes del campo&quot; | &quot;principio de superposición&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A4. Intensidad de campo gravitatorio y líneas de campo" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Superposición de campos (CyL · A4)</a>
             </div>
@@ -273,6 +365,14 @@
                 </div>
             </a>
             <p>Este punto está siempre entre ambas masas y más cerca de la masa menor.</p>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0295.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Geometría de dos masas y campo nulo">
+                    <img src="../imagenes/webp/ImagenF0295.webp" alt="Fuerza gravitatoria actuando a lo largo de la línea que une los centros de dos masas" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Geometría del punto de campo nulo.</strong> Entre dos masas puntuales, el campo total se anula en el punto donde los campos individuales tienen igual módulo y sentidos opuestos. La fuerza gravitatoria actúa siempre a lo largo de la línea que une los centros de las masas, y la posición del punto nulo depende de la raíz cuadrada del cociente de las masas.</div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;campo nulo&quot; | &quot;punto de campo nulo&quot; | &quot;dos masas&quot; | &quot;igual módulo sentidos opuestos&quot; | &quot;más cerca de la masa menor&quot; | &quot;anulación del campo&quot; | &quot;energía potencial en el punto nulo&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A4. Intensidad de campo gravitatorio y líneas de campo" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Punto de campo gravitatorio nulo (CyL · A4)</a>
             </div>
@@ -669,6 +769,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 2600);
 });
 </script>
+
+<!-- =================== VISOR DE IMÁGENES (LIGHTBOX) ==================== -->
+<script src="../js/lightbox.js" defer></script>
 
 </body>
 </html>

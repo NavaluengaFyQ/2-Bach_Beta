@@ -911,3 +911,231 @@ body { word-wrap: break-word; overflow-wrap: break-word; }
         box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.35);
     }
 }
+
+/* ============================================================
+   22. FOTOGRAFÍAS DE LABORATORIO
+   ------------------------------------------------------------
+   Contenedores para las imágenes del banco de recursos que se
+   insertan en los HTML de las unidades: una foto suelta
+   (.photo-figure) o un par de fotos complementarias
+   (.photo-pair). Las imágenes se adaptan a su tamaño real
+   (no se deforman), con un tope de altura para no dominar la
+   página. En móvil, .photo-pair apila automáticamente.
+   Uso en HTML:
+       <div class="photo-figure"> … </div>
+       <div class="photo-pair">
+           <div class="photo-figure"> … </div>
+           <div class="photo-figure"> … </div>
+       </div>
+   ============================================================ */
+
+.photo-figure {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 15px 15px 10px 15px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    max-width: 520px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.photo-figure a {
+    display: block;
+    text-decoration: none;
+    line-height: 0;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 10px;
+}
+
+.photo-figure img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 440px;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.photo-pair {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.photo-pair > .photo-figure {
+    flex: 1 1 240px;
+    max-width: 320px;
+    margin: 0;
+}
+
+.photo-pair > .photo-figure img {
+    max-height: 380px;
+    object-fit: contain;
+}
+
+.figure-caption {
+    font-size: 0.9em;
+    color: #4a5568;
+    margin-top: 10px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Hover solo en dispositivos con puntero fino (evita hover pegajoso en táctil) */
+@media (hover: hover) and (pointer: fine) {
+    .photo-figure a.lightbox-link { cursor: zoom-in; }
+    .photo-figure a:hover img,
+    .photo-figure a:focus-visible img {
+        transform: scale(1.02);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+    }
+}
+
+/* Móvil / pantallas estrechas */
+@media (max-width: 600px) {
+    .photo-figure {
+        padding: 10px 10px 8px 10px;
+        border-radius: 10px;
+        margin: 16px 0;
+    }
+    .photo-figure img { max-height: 70vh; }
+    .photo-pair {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        margin: 16px 0;
+    }
+    .photo-pair > .photo-figure {
+        flex: 1 1 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+    .photo-pair > .photo-figure img { max-height: 60vh; }
+    .figure-caption { font-size: 0.95em; }
+}
+
+/* Accesibilidad: respeta la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .photo-figure img { transition: none; }
+    .photo-figure a:hover img,
+    .photo-figure a:focus-visible img { transform: none; }
+}
+
+
+/* ============================================================
+   23. VISOR AMPLIADO (LIGHTBOX)
+      ESTE EFECTO LO QUE HACE ES ABRIR LA IMAGEN A PANTALLA COMPLETA SIN NAVEGAR.
+
+   ------------------------------------------------------------
+   Un clic (o toque) sobre una imagen nueva abre la imagen a
+   pantalla completa en un overlay modal SIN navegar; otro clic
+   (o Escape, o el botón de cerrar, o pulsar el fondo oscuro)
+   cierra el visor y devuelve al usuario EXACTAMENTE al mismo
+   punto de scroll. La lógica está en ../js/lightbox.js.
+
+   El overlay y sus elementos internos los crea el propio JS;
+   aquí solo definimos su apariencia. El bloqueo del scroll del
+   fondo se hace con la clase .lightbox-lock sobre <body>
+   (position: fixed + top: -Ypx, el método fiable en iOS).
+   ============================================================ */
+
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    background: rgba(15, 23, 42, 0.93);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    overflow: auto;
+    overscroll-behavior: contain;
+    cursor: zoom-out;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+}
+
+.lightbox-overlay.is-open {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-overlay:focus { outline: none; }
+
+.lightbox-overlay img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: calc(100vh - 32px);
+    max-height: calc(100dvh - 32px);
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    cursor: zoom-out;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    top: calc(10px + env(safe-area-inset-top));
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: 26px;
+    line-height: 1;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.55);
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.lightbox-close:focus-visible {
+    outline: 3px solid #63b3ed;
+    outline-offset: 2px;
+}
+
+.lightbox-caption {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 14px 18px calc(14px + env(safe-area-inset-bottom));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    color: #f7fafc;
+    font-size: 0.92em;
+    line-height: 1.45;
+    text-align: center;
+    pointer-events: none;
+}
+
+body.lightbox-lock { overflow: hidden; }
+
+@media (max-width: 600px) {
+    .lightbox-overlay { padding: 8px; }
+    .lightbox-overlay img { max-height: calc(100dvh - 16px); }
+    .lightbox-caption { font-size: 0.95em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lightbox-overlay { transition: none; }
+}

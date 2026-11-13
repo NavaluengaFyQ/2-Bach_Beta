@@ -7,7 +7,7 @@
 
 
     <!-- Para crear las consultas puntuales en la base de datos) -->
-    <script src="js/utils.js" defer></script>
+    <script src="../js/utils.js" defer></script>
 
     <!-- FontAwesome CDN (versión 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -204,9 +204,19 @@
                 </div>
             </a>
             <div class="photo-figure">
-                <img src="../imagenes/webp/ImagenF0309.webp" alt="Construcción geométrica de una elipse con dos focos y órbita elíptica con el Sol en un foco">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0309.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Construcción geométrica de una elipse">
+                    <img src="../imagenes/webp/ImagenF0309.webp" alt="Construcción geométrica de una elipse con dos focos y órbita elíptica con el Sol en un foco" loading="lazy" decoding="async">
+                </a>
                 <div class="figure-caption"><strong>Construcción de una elipse.</strong> La suma de distancias de cualquier punto de la elipse a los dos focos es constante (2a). En una órbita planetaria, el Sol ocupa uno de los focos y el planeta describe la elipse, tal como establece la primera ley de Kepler.</div>
             </div>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0311.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Secciones cónicas y fuerza inversa al cuadrado">
+                    <img src="../imagenes/webp/ImagenF0311.webp" alt="Las cuatro secciones cónicas: círculo, elipse, parábola e hipérbola, que describen las trayectorias bajo una fuerza inversa al cuadrado" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Las cuatro cónicas de una fuerza inversa al cuadrado.</strong> Bajo una fuerza gravitatoria newtoniana, todo movimiento posible corresponde a una de las cuatro secciones cónicas: círculo, elipse, parábola o hipérbola. La energía y la dirección inicial del cuerpo determinan cuál de ellas describe. La elipse (órbita ligada) es el caso que estudió Kepler para los planetas.</div>
+            </div>
+
             <p>La primera ley rompió con la idea de la «perfección circular» de la física aristotélica. En el caso particular de órbitas circulares (\(e=0\)), los radios orbitales son constantes y las leyes de Kepler siguen aplicándose como caso límite.</p>
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"primera ley de Kepler" | "ley de las órbitas" | "órbita elíptica" | "foco" | "excentricidad" | "perihelio" | "afelio" | "semieje mayor" | "perigeo" | "apogeo"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Primera ley de Kepler (CyL · A2)</a>
@@ -237,10 +247,22 @@
                 \]</li>
                 <li>Como \( r_{\text{perihelio}} < r_{\text{afelio}} \), necesariamente \( v_{\text{perihelio}} > v_{\text{afelio}} \).</li>
             </ul>
-            <div class="photo-figure">
-                <img src="../imagenes/webp/ImagenF0313.webp" alt="Ley de las áreas de Kepler: regiones barridas iguales en tiempos iguales">
-                <div class="figure-caption"><strong>Ley de las áreas.</strong> Las regiones sombreadas, barridas por el radio vector en el mismo intervalo de tiempo, tienen áreas iguales. Esto implica que el planeta se mueve más rápido cerca del Sol (perihelio) y más despacio lejos de él (afelio), conservándose el momento angular.</div>
+
+            <div class="photo-pair">
+                <div class="photo-figure">
+                    <a class="lightbox-link" href="../imagenes/webp/ImagenF0313.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Ley de las áreas de Kepler">
+                        <img src="../imagenes/webp/ImagenF0313.webp" alt="Ley de las áreas de Kepler: regiones barridas iguales en tiempos iguales" loading="lazy" decoding="async">
+                    </a>
+                    <div class="figure-caption"><strong>Ley de las áreas.</strong> Las regiones sombreadas, barridas por el radio vector en el mismo intervalo de tiempo, tienen áreas iguales. Esto implica que el planeta se mueve más rápido cerca del Sol (perihelio) y más despacio lejos de él (afelio).</div>
+                </div>
+                <div class="photo-figure">
+                    <a class="lightbox-link" href="../imagenes/webp/ImagenF0314.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Elemento de área barrido en la órbita">
+                        <img src="../imagenes/webp/ImagenF0314.webp" alt="Elemento diferencial de área dA barrido por el radio vector al girar un ángulo dφ" loading="lazy" decoding="async">
+                    </a>
+                    <div class="figure-caption"><strong>Elemento de área barrido.</strong> El área diferencial \( dA = \tfrac{1}{2} r^2\,d\varphi \) que barre el radio vector permite demostrar analíticamente que \( dA/dt = L/(2m) \) es constante. Es la base del enunciado preciso de la segunda ley.</div>
+                </div>
             </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"segunda ley de Kepler" | "ley de las áreas" | "velocidad areolar" | "momento angular" | "fuerza central" | "perihelio" | "afelio" | "conservación del momento angular" | "radio vector"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Ley de las áreas (CyL · A2)</a>
             </div>
@@ -266,6 +288,14 @@
                 <li>\( k \): constante de Kepler del sistema, con unidades \( \text{s}^2\,\text{m}^{-3} \).</li>
             </ul>
             <p>Esta ley permite <strong>predecir</strong> periodos o radios de órbitas desconocidas a partir de otras conocidas del mismo sistema. Es la más útil de las tres desde el punto de vista práctico y la que con mayor frecuencia aparece en los exámenes de EBAU.</p>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0308.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: La Soyuz en su encuentro con la ISS">
+                    <img src="../imagenes/webp/ImagenF0308.webp" alt="La nave Soyuz aproximándose a la Estación Espacial Internacional tras una maniobra orbital" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>La tercera ley en acción: satélites artificiales.</strong> La Soyuz, en su encuentro con la Estación Espacial Internacional, es un ejemplo real de la 3.ª ley de Kepler: la órbita LEO de la ISS (a unos 400 km de altura) tiene un periodo de unos 90 minutos, mientras que la órbita de la Luna alrededor de la Tierra dura 27,3 días. La misma constante de Kepler vincula ambos periodos y radios orbitales.</div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"tercera ley de Kepler" | "ley de los periodos" | "periodo orbital" | "semieje mayor" | "constante de Kepler" | "T^2/a^3" | "sistema solar" | "órbita elíptica" | "radio orbital"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Ley de los periodos (CyL · A2)</a>
             </div>
@@ -285,7 +315,9 @@
                 </div>
             </a>
             <div class="photo-figure">
-                <img src="../imagenes/webp/ImagenF0305.webp" alt="Satélite orbitando la Tierra: la fuerza gravitatoria proporciona la aceleración centrípeta">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0305.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Fuerza gravitatoria como fuerza centrípeta">
+                    <img src="../imagenes/webp/ImagenF0305.webp" alt="Satélite orbitando la Tierra: la fuerza gravitatoria proporciona la aceleración centrípeta" loading="lazy" decoding="async">
+                </a>
                 <div class="figure-caption"><strong>Fuerza gravitatoria como fuerza centrípeta.</strong> En una órbita circular, la fuerza gravitatoria proporciona la aceleración centrípeta necesaria para mantener el satélite en su trayectoria. Igualando \(GMm/r^2 = mv^2/r\) y usando \(v = 2\pi r/T\) se deduce la tercera ley de Kepler \(T^2 = (4\pi^2/GM)\,a^3\).</div>
             </div>
             <p>Como la velocidad orbital se relaciona con el periodo por \( v = \frac{2\pi r}{T} \), elevando al cuadrado:</p>
@@ -304,6 +336,14 @@
                     \]
                 </div>
             </a>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0306.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: El cañón de Newton y las órbitas">
+                    <img src="../imagenes/webp/ImagenF0306.webp" alt="Experimento mental del cañón de Newton: al aumentar la velocidad inicial de un proyectil, su trayectoria pasa de parabólica a elíptica y finalmente se convierte en una órbita" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>El cañón de Newton: de proyectil a satélite.</strong> El experimento mental de Newton muestra que, al aumentar la velocidad horizontal inicial de un proyectil, la Tierra se va curvando bajo su trayectoria hasta que el proyectil "cae" rodeando el planeta: se ha convertido en un satélite en órbita. Fue la clave conceptual que permitió entender que una órbita es, simplemente, una caída libre con suficiente velocidad tangencial.</div>
+            </div>
+
             <p>Por tanto, la constante de Kepler depende <strong>únicamente de la masa central</strong> \( M \) y de constantes universales. Esto explica por qué todos los planetas del Sistema Solar comparten el mismo valor de \( k \), mientras que los satélites de Júpiter tendrían otro. Esta es la primera ley de Kepler que Newton pudo demostrar a partir de su teoría, y con ello se cerró el vínculo entre cinemática (Kepler) y dinámica (Newton).</p>
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"deducción tercera ley Kepler" | "ley de gravitación universal" | "fuerza centrípeta" | "velocidad orbital" | "periodo orbital" | "constante de Kepler" | "masa central" | "órbita circular" | "Newton"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Deducción de la 3.ª ley (CyL · A2)</a>
@@ -359,6 +399,14 @@
                 </div>
             </a>
             <p>Este procedimiento se ha empleado históricamente para medir la masa del Sol (a partir del movimiento de los planetas), la masa de la Tierra (a partir de la Luna o de satélites artificiales), la masa de Júpiter (a partir de sus lunas galileanas), la de Saturno (a partir de Titán), etc. Es también el método que se utiliza actualmente para determinar la masa de <strong>exoplanetas</strong> y de <strong>agujeros negros</strong> (a partir del movimiento de estrellas compañeras).</p>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0307.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Sistemas binarios y la tercera ley de Kepler">
+                    <img src="../imagenes/webp/ImagenF0307.webp" alt="Dos galaxias orbitando alrededor de su centro de masas común, ilustrando la forma general de la tercera ley de Kepler" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>La 3.ª ley en sistemas binarios.</strong> Cuando las dos masas son comparables, ambas orbitan alrededor del centro de masas común. En ese caso, la distancia \(r\) que aparece en la ley de gravitación es la separación entre las dos masas, no el radio orbital de cada una respecto al centro. Para masas iguales, el radio orbital de cada cuerpo es \(r/2\). La generalización de la 3.ª ley usa la masa total \(M+m\) en lugar de solo \(M\).</div>
+            </div>
+
             <p><strong>Procedimiento de resolución:</strong></p>
             <ol>
                 <li>Identificar el cuerpo central de masa \( M \) y el cuerpo orbitante de masa \( m \ll M \).</li>
@@ -401,7 +449,9 @@
                 </div>
             </a>
             <div class="photo-figure">
-                <img src="../imagenes/webp/ImagenF0310.webp" alt="Planeta en órbita elíptica alrededor del Sol con distancia r y ángulo θ">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0310.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Distancia y ángulo en la órbita elíptica">
+                    <img src="../imagenes/webp/ImagenF0310.webp" alt="Planeta en órbita elíptica alrededor del Sol con distancia r y ángulo θ" loading="lazy" decoding="async">
+                </a>
                 <div class="figure-caption"><strong>Distancia y ángulo en la órbita elíptica.</strong> La distancia \(r\) entre el planeta y el Sol, junto con el ángulo \(\theta\) medido desde el eje mayor de la elipse, permite describir la posición del planeta en cada punto de su órbita. En los ápsides, \(r\) alcanza sus valores extremos (perihelio y afelio).</div>
             </div>
             <p>La energía mecánica total de una órbita elíptica (o circular) depende solo del semieje mayor \( a \):</p>
@@ -438,10 +488,28 @@
                     \]
                 </div>
             </a>
+
             <div class="photo-figure">
-                <img src="../imagenes/webp/ImagenF0312.webp" alt="Elipse de transferencia de Hohmann entre las órbitas de la Tierra y Marte">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0312.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Órbita de transferencia de Hohmann">
+                    <img src="../imagenes/webp/ImagenF0312.webp" alt="Elipse de transferencia de Hohmann entre las órbitas de la Tierra y Marte" loading="lazy" decoding="async">
+                </a>
                 <div class="figure-caption"><strong>Órbita de transferencia de Hohmann.</strong> La elipse de transferencia tiene su perihelio en la órbita de la Tierra y su afelio en la órbita de Marte. Esta maniobra, basada en las leyes de Kepler, es la forma más eficiente de enviar una sonda de un planeta a otro.</div>
             </div>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0324.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Estrellas orbitando el agujero negro del centro galáctico">
+                    <img src="../imagenes/webp/ImagenF0324.webp" alt="Trayectorias de las estrellas que orbitan el agujero negro supermasivo del centro de la Vía Láctea" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Kepler en el centro galáctico.</strong> Las trayectorias de las estrellas que orbitan alrededor del centro de la Vía Láctea han permitido estimar que allí reside un agujero negro supermasivo de unos 4 millones de masas solares. Aplicando la 3.ª ley de Kepler al movimiento de la estrella S2 se obtuvo una de las primeras determinaciones precisas de su masa.</div>
+            </div>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0325.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Curvas de rotación galáctica y materia oscura">
+                    <img src="../imagenes/webp/ImagenF0325.webp" alt="Curvas de rotación galáctica: la velocidad orbital observada es mayor que la esperada según la predicción kepleriana, lo que sugiere materia oscura" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>El límite de la ley de Kepler: la materia oscura.</strong> La curva azul muestra la velocidad orbital que cabría esperar según la ley de Kepler a partir de la materia visible de la Vía Láctea; la curva verde muestra la velocidad real observada, bastante mayor. Este desajuste, observado también en otras galaxias, es una de las principales evidencias de la existencia de materia oscura.</div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"satélites artificiales" | "órbita LEO" | "órbita GEO" | "exoplanetas" | "agujeros negros" | "Sagitario A*" | "materia oscura" | "transferencia orbital" | "leyes de Kepler"' data-comunidad="Castilla y León" data-bloque="A. Campo gravitatorio" data-tema="A2. Leyes de Kepler y relación con la gravitación" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Aplicaciones de Kepler (CyL · A2)</a>
             </div>
@@ -1017,7 +1085,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-
+<!-- =================== VISOR DE IMÁGENES (LIGHTBOX) ==================== -->
+<script src="../js/lightbox.js" defer></script>
 
 </body>
 </html>

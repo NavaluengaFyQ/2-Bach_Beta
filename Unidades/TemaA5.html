@@ -7,7 +7,7 @@
 
 
     <!-- Para crear las consultas puntuales en la base de datos) -->
-    <script src="js/utils.js" defer></script>
+    <script src="../js/utils.js" defer></script>
 
     <!-- FontAwesome CDN (versión 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -18,8 +18,36 @@
     <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    <style>
+    /* =========================================================
+       FOTOGRAFÍAS DE LABORATORIO (adaptadas al tamaño real)
+       ========================================================= */
+    .photo-figure {
+        background: white; border: 1px solid #e2e8f0; border-radius: 14px;
+        padding: 15px 15px 10px 15px; margin: 20px auto; text-align: center;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05); max-width: 520px;
+    }
+    .photo-figure img {
+        display: block; margin: 0 auto; max-width: 100%; max-height: 440px;
+        width: auto; height: auto; border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    }
+    .photo-pair {
+        display: flex; flex-wrap: wrap; justify-content: center;
+        align-items: stretch; gap: 16px; margin: 20px 0;
+    }
+    .photo-pair > .photo-figure {
+        flex: 1 1 240px; max-width: 320px; margin: 0;
+    }
+    .photo-pair > .photo-figure img {
+        max-height: 380px; object-fit: contain;
+    }
+    .figure-caption {
+        font-size: 0.9em; color: #4a5568; margin-top: 10px;
+        line-height: 1.5; text-align: left;
+    }
+    </style>
 
-    
 </head>
 <body>
 <div class="container">
@@ -155,6 +183,22 @@
                 <li>Depende solo de la distancia \(r\) al centro de la masa y de su valor \(M\), no de la masa de prueba.</li>
                 <li>Es <strong>aditivo</strong>: el potencial total debido a varias masas es la suma algebraica de los potenciales individuales.</li>
             </ul>
+
+            <div class="photo-pair">
+                <div class="photo-figure">
+                    <a class="lightbox-link" href="../imagenes/webp/ImagenF0294.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: La gravedad a escala cósmica">
+                        <img src="../imagenes/webp/ImagenF0294.webp" alt="Miles de millones de galaxias visibles en el universo, unidas por la fuerza de la gravedad" loading="lazy" decoding="async">
+                    </a>
+                    <div class="figure-caption"><strong>La gravitación universal.</strong> La misma expresión del potencial \(V = -GM/r\) que describe el potencial de un cuerpo pequeño gobierna la dinámica de galaxias enteras. El potencial gravitatorio, como la fuerza, es universal.</div>
+                </div>
+                <div class="photo-figure">
+                    <a class="lightbox-link" href="../imagenes/webp/ImagenF0304.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Integral de trabajo y energía potencial">
+                        <img src="../imagenes/webp/ImagenF0304.webp" alt="Integral de trabajo que determina el cambio de energía potencial al desplazar una masa en un campo gravitatorio" loading="lazy" decoding="async">
+                    </a>
+                    <div class="figure-caption"><strong>Trabajo que define el potencial.</strong> El potencial gravitatorio \(V\) en un punto puede interpretarse como el trabajo (cambiado de signo) que realiza el campo gravitatorio para traer la unidad de masa desde el infinito hasta ese punto. La integral de trabajo \(W = \int \vec F \cdot d\vec r\) es la base de la definición.</div>
+                </div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;potencial gravitatorio&quot; | &quot;energía potencial por unidad de masa&quot; | &quot;V=-GM/r&quot; | &quot;convenio infinito&quot; | &quot;magnitud escalar&quot; | &quot;potencial negativo&quot; | &quot;superposición&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A5. Potencial gravitatorio y equipotenciales" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Potencial gravitatorio (CyL · A5)</a>
             </div>
@@ -187,6 +231,22 @@
                 <li>Para un <strong>campo gravitatorio uniforme</strong> (como el que existe en las proximidades de la superficie terrestre), las equipotenciales son <strong>planos paralelos</strong> perpendiculares a la dirección del campo.</li>
                 <li>Para un <strong>dipolo gravitatorio</strong> (dos masas iguales), las equipotenciales son superficies curvas que rodean a ambas masas; la equipotencial \(V=0\) se sitúa en el plano mediador (si las masas son iguales).</li>
             </ul>
+
+            <div class="photo-pair">
+                <div class="photo-figure">
+                    <a class="lightbox-link" href="../imagenes/webp/ImagenF0301.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Campo gravitatorio tridimensional">
+                        <img src="../imagenes/webp/ImagenF0301.webp" alt="Representación tridimensional del campo gravitatorio creado por una masa puntual con líneas radiales" loading="lazy" decoding="async">
+                    </a>
+                    <div class="figure-caption"><strong>Campo gravitatorio de una masa puntual.</strong> Las líneas de campo son radiales y apuntan hacia la masa. En una masa puntual, las superficies equipotenciales son esferas concéntricas perpendiculares a estas líneas de campo.</div>
+                </div>
+                <div class="photo-figure">
+                    <a class="lightbox-link" href="../imagenes/webp/ImagenF0662.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Superficies equipotenciales">
+                        <img src="../imagenes/webp/ImagenF0662.webp" alt="Líneas de campo y superficies equipotenciales (en negro) alrededor de una fuente puntual" loading="lazy" decoding="async">
+                    </a>
+                    <div class="figure-caption"><strong>Equipotenciales y líneas de campo.</strong> Las líneas de campo (en rojo) son radiales y las equipotenciales (en negro) son esferas concéntricas, siempre perpendiculares entre sí. Aunque la imagen muestra el caso electrostático (matemáticamente idéntico al gravitatorio), la geometría es la misma que para una masa puntual: esferas concéntricas centradas en la masa.</div>
+                </div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;superficies equipotenciales&quot; | &quot;potencial constante&quot; | &quot;perpendiculares a las líneas de campo&quot; | &quot;potencial decreciente&quot; | &quot;trabajo nulo&quot; | &quot;esferas concéntricas&quot; | &quot;planos paralelos&quot; | &quot;dipolo gravitatorio&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A5. Potencial gravitatorio y equipotenciales" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Superficies equipotenciales (CyL · A5)</a>
             </div>
@@ -215,6 +275,14 @@
                 <li>En un caso unidimensional (por ejemplo, campo uniforme paralelo al eje \(x\)): \(g_x=-\dfrac{dV}{dx}\).</li>
                 <li>Si el potencial es constante en una región (por ejemplo, en el interior de una esfera hueca), el campo es nulo en esa región: \(\vec g=0\).</li>
             </ul>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0659.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Relación campo-potencial mediante el gradiente">
+                    <img src="../imagenes/webp/ImagenF0659.webp" alt="La componente del campo eléctrico a lo largo del desplazamiento Δs es E=−ΔV/Δs, base del gradiente" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>El gradiente del potencial.</strong> La relación \(g = -\Delta V/\Delta s\) entre la componente del campo y la derivada del potencial pone de manifiesto que el campo apunta en la dirección de máximo decrecimiento del potencial. Esta relación, ilustrada aquí en el caso electrostático (matemáticamente idéntica a la gravitatoria), es la base de \(\vec g = -\nabla V\) y explica que las líneas de campo sean perpendiculares a las superficies equipotenciales.</div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;gradiente del potencial&quot; | &quot;g=-nabla V&quot; | &quot;potencial decreciente&quot; | &quot;perpendicular a equipotenciales&quot; | &quot;derivada direccional&quot; | &quot;campo nulo potencial constante&quot; | &quot;relación campo-potencial&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A5. Potencial gravitatorio y equipotenciales" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Gradiente campo-potencial (CyL · A5)</a>
             </div>
@@ -239,6 +307,14 @@
                 <li>El potencial total <strong>no tiene por qué ser negativo</strong>: si algunas masas son distancias muy distintas, la suma puede ser más o menos negativa, pero siempre será negativa para masas positivas.</li>
                 <li>El punto de campo nulo (donde \(\vec g_{\text{total}}=0\)) <strong>no coincide</strong> en general con el punto de potencial nulo; de hecho, con masas positivas el potencial no se anula en ningún punto finito.</li>
             </ul>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0255.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Varias partículas y superposición">
+                    <img src="../imagenes/webp/ImagenF0255.webp" alt="Tres partículas en el plano xy con diferentes vectores de posición y momento, ilustrando la superposición" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Superposición de contribuciones.</strong> Cuando varias masas (o partículas) crean un potencial en un punto, la contribución de cada una se calcula de forma independiente. Para el potencial gravitatorio (magnitud escalar), la suma de las contribuciones es algebraica, no vectorial, a diferencia del campo gravitatorio.</div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;superposición escalar&quot; | &quot;suma algebraica de potenciales&quot; | &quot;varias masas&quot; | &quot;potencial total&quot; | &quot;V total&quot; | &quot;potencial no vectorial&quot; | &quot;suma de potenciales&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A5. Potencial gravitatorio y equipotenciales" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Superposición de potenciales (CyL · A5)</a>
             </div>
@@ -267,6 +343,14 @@
                 <li>Si hay varias masas, \(E_{p,\text{total}}=m\,V_{\text{total}}\), es decir, la masa de prueba multiplica al potencial total.</li>
                 <li>La energía potencial gravitatoria <strong>no depende del camino</strong>: es una función de estado porque el campo gravitatorio es conservativo.</li>
             </ul>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0300.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: La distancia r se mide desde el centro">
+                    <img src="../imagenes/webp/ImagenF0300.webp" alt="Distancia entre los centros de masa de la Tierra y un objeto en su superficie" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>La distancia \(r\) se mide desde el centro.</strong> En la expresión \(E_p = -GMm/r\), la distancia \(r\) es la que va desde el centro de la masa creadora hasta el punto donde está la masa de prueba. En la superficie terrestre, \(r = R_T\).</div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;energía potencial gravitatoria&quot; | &quot;Ep=mV&quot; | &quot;Ep=-GMm/r&quot; | &quot;sistema ligado&quot; | &quot;energía negativa&quot; | &quot;función de estado&quot; | &quot;campo conservativo&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A5. Potencial gravitatorio y equipotenciales" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Energía potencial gravitatoria (CyL · A5)</a>
             </div>
@@ -295,6 +379,14 @@
                 <li>El trabajo del agente externo (sin variación de energía cinética) es \(W_{\text{ext}}=-W_{A\to B}^{\text{campo}}=m(V_B-V_A)\).</li>
                 <li>En un desplazamiento sobre una misma superficie equipotencial, \(V_A=V_B\), el trabajo del campo es nulo.</li>
             </ul>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0140.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Trabajo gravitatorio al mover un libro">
+                    <img src="../imagenes/webp/ImagenF0140.webp" alt="Ejemplo de trabajo gravitatorio: mover un libro entre una estantería y una mesa" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Trabajo gravitatorio.</strong> La gravedad realiza trabajo cuando el libro cambia de altura: positivo al bajarlo y negativo al subirlo. Como el campo es conservativo, el trabajo solo depende de las alturas inicial y final, no del camino seguido. La diferencia de potencial entre dos puntos está directamente relacionada con este trabajo: \(W_{A\to B}=m(V_A-V_B)\).</div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;trabajo gravitatorio&quot; | &quot;diferencia de potencial&quot; | &quot;W=m(VA-VB)&quot; | &quot;campo conservativo&quot; | &quot;trabajo positivo y negativo&quot; | &quot;energía potencial&quot; | &quot;desplazamiento equipotencial&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A5. Potencial gravitatorio y equipotenciales" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Trabajo y diferencia de potencial (CyL · A5)</a>
             </div>
@@ -322,6 +414,14 @@
                 <li><strong>Interior</strong> (\(r&lt;R\)): el potencial <strong>no es nulo</strong>; su expresión es la indicada arriba. En el centro (\(r=0\)): \(V(0)=-\dfrac{3GM}{2R}\). El campo en el interior es \(g(r)=\dfrac{GM}{R^{3}}r\), nulo en el centro.</li>
             </ul>
             <p>Para una <strong>corteza esférica</strong> (esfera hueca), en el interior el campo es nulo y el potencial es constante e igual al de la superficie: \(V(r)=-\dfrac{GM}{R}\) para \(r\le R\).</p>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0303.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Variación de la gravedad en la Tierra">
+                    <img src="../imagenes/webp/ImagenF0303.webp" alt="Variación de la gravedad g con la distancia al centro de la Tierra, mostrando comportamiento distinto en el interior y en el exterior" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Interior y exterior de la Tierra.</strong> La gráfica muestra cómo varía \(g\) con la distancia al centro de la Tierra: en el interior crece linealmente (para densidad uniforme), alcanza su máximo en la superficie y decae como \(1/r^{2}\) en el exterior. El potencial, aunque no se representa aquí, presenta un comportamiento análogo: distinto en el interior y en el exterior de la esfera.</div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;potencial interior esfera&quot; | &quot;potencial exterior esfera&quot; | &quot;esfera maciza&quot; | &quot;corteza esférica&quot; | &quot;potencial en el centro&quot; | &quot;potencial constante interior&quot; | &quot;GM/R&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A5. Potencial gravitatorio y equipotenciales" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Potencial en esfera (CyL · A5)</a>
             </div>
@@ -360,6 +460,14 @@
                 </div>
             </a>
             <p>Esta aproximación es válida para alturas pequeñas comparadas con el radio terrestre (\(h\ll R_T\approx 6400\,\text{km}\)). Para alturas de cientos de kilómetros o más, hay que usar la expresión general \(E_p=-GMm/r\).</p>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0300.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: La distancia r es R+h">
+                    <img src="../imagenes/webp/ImagenF0300.webp" alt="Distancia desde el centro de la Tierra hasta un objeto en su superficie, que es R+h" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>De \(r\) a \(h\): la aproximación \(E_p = mgh\).</strong> Para un objeto a altura \(h\) sobre la superficie, la distancia al centro es \(r = R_T + h\). Cuando \(h \ll R_T\), la expresión general \(E_p = -GMm/r\) se reduce a \(E_p \approx mgh\) (eligiendo el cero de energía potencial en la superficie).</div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;Ep=mgh&quot; | &quot;aproximación superficie&quot; | &quot;alturas pequeñas&quot; | &quot;g constante&quot; | &quot;energía potencial cerca de la superficie&quot; | &quot;desarrollo&quot; | &quot;h<<R&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A5. Potencial gravitatorio y equipotenciales" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Aproximación Ep=mgh (CyL · A5)</a>
             </div>
@@ -383,6 +491,14 @@
                 </div>
             </a>
             <p>En el punto de campo nulo, el potencial gravitatorio total es negativo (no nulo), porque los potenciales individuales se suman algebraicamente sin cancelarse.</p>
+
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF0295.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Geometría de dos masas y campo nulo">
+                    <img src="../imagenes/webp/ImagenF0295.webp" alt="Fuerza gravitatoria actuando a lo largo de la línea que une los centros de dos masas" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Geometría del punto de campo nulo.</strong> Entre dos masas puntuales, el campo total se anula en el punto donde los campos individuales tienen igual módulo y sentidos opuestos. En ese punto, sin embargo, el potencial gravitatorio total NO es nulo: los potenciales de ambas masas (negativos) se suman algebraicamente. Es la diferencia clave entre punto de campo nulo y punto de potencial nulo.</div>
+            </div>
+
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q="&quot;campo nulo&quot; | &quot;potencial nulo&quot; | &quot;dos masas&quot; | &quot;punto entre masas&quot; | &quot;potencial negativo&quot; | &quot;no coinciden&quot; | &quot;x=d sqrt(m)/(sqrt(m)+sqrt(M))&quot;" data-comunidad="Castilla y León" data-bloque="Bloque A. Campo gravitatorio" data-tema="Tema A5. Potencial gravitatorio y equipotenciales" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Campo nulo vs potencial nulo (CyL · A5)</a>
             </div>
@@ -814,6 +930,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 2600);
 });
 </script>
+
+<!-- =================== VISOR DE IMÁGENES (LIGHTBOX) ==================== -->
+<script src="../js/lightbox.js" defer></script>
 
 </body>
 </html>
