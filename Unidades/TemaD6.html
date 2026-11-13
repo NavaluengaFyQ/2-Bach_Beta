@@ -33,7 +33,6 @@
         .formula-box .MathJax { max-width:100%; }
 
         /* ===== VINCULACIÓN CON EL FORMULARIO ===== */
-        /* Cada formula-box enlazado muestra cursor y un realce al pasar el ratón */
         a.formula-link { text-decoration:none; color:inherit; display:block; }
         a.formula-link > .formula-box {
             cursor: pointer;
@@ -43,7 +42,6 @@
             box-shadow: 0 4px 18px rgba(102,126,234,.20);
             transform: translateY(-1px);
         }
-        /* Destino al navegar con hash: dejar margen superior y animación de aviso */
         div.formula-box[id^="formula-"] { scroll-margin-top: 24px; }
 
         @keyframes highlightFormula {
@@ -53,7 +51,6 @@
         }
         .formula-resaltada { animation: highlightFormula 2.6s ease-out; }
 
-        /* Aviso al lector de que las fórmulas son interactivas */
         .aviso-interactivo {
             background:#eef2ff; border-left:4px solid #6366f1;
             padding:10px 14px; border-radius:8px; color:#3730a3;
@@ -134,7 +131,6 @@
     <details class="section procedimiento" open>
         <summary><h2>📚 Contenido teórico</h2></summary>
 
-        <!-- ▼ CAMBIO: aviso al lector -->
         <div class="aviso-interactivo">
             <i class="fas fa-link"></i>
             <strong>Fórmulas interactivas:</strong> al pulsar cualquiera de las fórmulas destacadas de este tema accederás a la <em>ficha correspondiente del formulario</em>. Desde esa ficha, al pulsar de nuevo sobre la fórmula, volverás a esta sección. La vinculación es <strong>bidireccional</strong>.
@@ -145,12 +141,17 @@
             <p>Un núcleo radiactivo puede transformarse espontáneamente en otro núcleo, emitiendo partículas o radiación. No es posible predecir el instante en que se desintegrará un núcleo individual, pero sí describir con precisión el comportamiento estadístico de una muestra con muchísimos núcleos.</p>
             <p>La probabilidad de desintegración por unidad de tiempo se caracteriza mediante la <strong>constante de desintegración</strong> \(\lambda\). Para un intervalo de tiempo muy pequeño \(dt\), la fracción esperada de núcleos que se desintegra es proporcional a \(\lambda dt\).</p>
             <p>Si \(N(t)\) es el número de núcleos padre que permanecen sin desintegrar:</p>
-            <!-- ▼ CAMBIO: enlace a ficha 1 del formulario -->
             <a href="TemaD6-Formulario.html#formula-1" class="formula-link" title="Ver ficha 1 · Modelo estadístico y ecuación diferencial">
                 <div class="formula-box" id="formula-1">\[dN=-\lambda N\,dt\qquad\Longrightarrow\qquad \frac{dN}{dt}=-\lambda N\]</div>
             </a>
             <p>El signo negativo indica que el número de núcleos radiactivos disminuye con el tiempo. La constante \(\lambda\) es positiva y su unidad en el S.I. es \(\text{s}^{-1}\).</p>
             <div class="note"><strong>Interpretación:</strong> una constante \(\lambda\) grande corresponde a una desintegración más rápida y, por tanto, a una semivida menor. No significa que todos los núcleos se desintegren a la vez.</div>
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenQ461.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Comparación de ritmos de desintegración del U-238 y del Tc-99m">
+                    <img src="../imagenes/webp/ImagenQ461.webp" alt="Gráfico que compara el decaimiento radiactivo del U-238 (muy lento) con el del Tc-99m (muy rápido) en el transcurso de una semana" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Ritmos de desintegración muy distintos.</strong> En una semana, prácticamente toda una muestra de \(^{99m}\mathrm{Tc}\) se ha desintegrado, mientras que la del \(^{238}\mathrm{U}\) apenas ha cambiado. La diferencia refleja valores de \(\lambda\) y de \(T_{1/2}\) que difieren en decenas de órdenes de magnitud, y es la base del carácter estadístico de la ley de decaimiento.</div>
+            </div>
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"desintegración radiactiva" | "modelo estadístico" | "constante de desintegración" | "probabilidad de desintegración" | "núcleos radiactivos" | "dN/dt = -lambda N"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D6. Leyes de desintegración radiactiva y actividad" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Modelo estadístico de desintegración (CyL · D6)</a>
             </div>
@@ -159,7 +160,6 @@
         <details class="step">
             <summary><span class="step-num">2</span><strong>Ley de desintegración radiactiva.</strong></summary>
             <p>Separando variables e integrando desde \(N_0\) en \(t=0\) hasta \(N\) en el instante \(t\), se obtiene la ley exponencial:</p>
-            <!-- ▼ CAMBIO: enlace a ficha 2 del formulario -->
             <a href="TemaD6-Formulario.html#formula-2" class="formula-link" title="Ver ficha 2 · Ley de desintegración radiactiva">
                 <div class="formula-box" id="formula-2">\[\boxed{N(t)=N_0e^{-\lambda t}}\]</div>
             </a>
@@ -174,11 +174,16 @@
             <div class="formula-box">\[\frac{N(t)}{N_0}=e^{-\lambda t}\]</div>
             <p>El número que se ha desintegrado es \(N_0-N(t)\). Por tanto, la fracción desintegrada es \(1-e^{-\lambda t}\).</p>
             <p>La misma ley puede escribirse usando el periodo de semidesintegración:</p>
-            <!-- ▼ CAMBIO: enlace a ficha 3 del formulario -->
             <a href="TemaD6-Formulario.html#formula-3" class="formula-link" title="Ver ficha 3 · Ley en función de la semivida">
                 <div class="formula-box" id="formula-3">\[\boxed{N(t)=N_0\left(\frac12\right)^{t/T_{1/2}}}\]</div>
             </a>
             <p>Esta segunda forma es especialmente cómoda cuando el tiempo se expresa como múltiplo de la semivida.</p>
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF1212.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Curva exponencial de decaimiento radiactivo">
+                    <img src="../imagenes/webp/ImagenF1212.webp" alt="Curva exponencial del número de núcleos sin desintegrar frente al tiempo" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Curva de decaimiento.</strong> El número de núcleos sin desintegrar disminuye exponencialmente con el tiempo. Cada semivida reduce la población a la mitad del valor que tenía al comienzo de ese intervalo, no de la inicial. La actividad sigue exactamente la misma ley.</div>
+            </div>
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"ley de desintegración" | "N=N0 e^-lambda t" | "fracción restante" | "ley exponencial" | "núcleos sin desintegrar" | "semivida"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D6. Leyes de desintegración radiactiva y actividad" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Ley exponencial de desintegración (CyL · D6)</a>
             </div>
@@ -189,7 +194,6 @@
             <p>El <strong>periodo de semidesintegración</strong> \(T_{1/2}\) es el tiempo necesario para que el número de núcleos radiactivos sin desintegrar se reduzca a la mitad de su valor inicial:</p>
             <div class="formula-box">\[N(T_{1/2})=\frac{N_0}{2}\]</div>
             <p>Sustituyendo en la ley de desintegración:</p>
-            <!-- ▼ CAMBIO: enlace a ficha 4 del formulario -->
             <a href="TemaD6-Formulario.html#formula-4" class="formula-link" title="Ver ficha 4 · Periodo de semidesintegración">
                 <div class="formula-box" id="formula-4">\[\frac12=e^{-\lambda T_{1/2}}\qquad\Longrightarrow\qquad\boxed{T_{1/2}=\frac{\ln2}{\lambda}}\]</div>
             </a>
@@ -208,6 +212,12 @@
                 </tbody>
             </table>
             <div class="note"><strong>Importante:</strong> cada semivida reduce a la mitad lo que queda, no la cantidad inicial. En cada intervalo posterior se desintegra la mitad de los núcleos que permanecían al comienzo de ese intervalo.</div>
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenQ634.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Semivida del cobalto-60">
+                    <img src="../imagenes/webp/ImagenQ634.webp" alt="Gráfico del decaimiento del cobalto-60 mostrando que la mitad de los núcleos permanecen tras una semivida" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Semivida del <sup>60</sup>Co.</strong> Tras 5,27 años queda el 50 %; a los 10,54 años, el 25 %; a los 15,81 años, el 12,5 %… Esta proporción geométrica es la firma de la ley exponencial y permite calcular la fracción restante a partir del número de semividas transcurridas.</div>
+            </div>
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"periodo de semidesintegración" | "semivida" | "T1/2" | "lambda = ln2/T" | "fracción restante" | "mitad de núcleos"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D6. Leyes de desintegración radiactiva y actividad" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Periodo de semidesintegración (CyL · D6)</a>
             </div>
@@ -216,7 +226,6 @@
         <details class="step">
             <summary><span class="step-num">4</span><strong>Vida media o tiempo de vida medio.</strong></summary>
             <p>La <strong>vida media</strong> \(\tau\) es el tiempo medio de permanencia de un núcleo radiactivo antes de desintegrarse. Se relaciona con la constante radiactiva mediante:</p>
-            <!-- ▼ CAMBIO: enlace a ficha 5 del formulario -->
             <a href="TemaD6-Formulario.html#formula-5" class="formula-link" title="Ver ficha 5 · Vida media">
                 <div class="formula-box" id="formula-5">\[\boxed{\tau=\frac{1}{\lambda}}\]</div>
             </a>
@@ -231,7 +240,6 @@
         <details class="step">
             <summary><span class="step-num">5</span><strong>Actividad radiactiva y becquerel.</strong></summary>
             <p>La <strong>actividad</strong> \(A\) mide el número de desintegraciones que se producen por unidad de tiempo. Se define como el valor absoluto de la rapidez con la que disminuye el número de núcleos padre:</p>
-            <!-- ▼ CAMBIO: enlace a ficha 6 del formulario -->
             <a href="TemaD6-Formulario.html#formula-6" class="formula-link" title="Ver ficha 6 · Actividad radiactiva y becquerel">
                 <div class="formula-box" id="formula-6">\[A=-\frac{dN}{dt}=\lambda N\]</div>
             </a>
@@ -243,6 +251,24 @@
             <div class="formula-box">\[1\,\text{Bq}=1\,\text{desintegración}\cdot\text{s}^{-1}=1\,\text{s}^{-1}\]</div>
             <p>También se utilizan múltiplos como el kBq (\(10^3\) Bq) y el MBq (\(10^6\) Bq).</p>
             <div class="note"><strong>No confundir:</strong> la actividad no es el número total de núcleos. Una muestra puede contener muchos núcleos y tener una actividad relativamente pequeña si su constante \(\lambda\) es reducida.</div>
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenF1213.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Actividad frente al tiempo y linealización logarítmica">
+                    <img src="../imagenes/webp/ImagenF1213.webp" alt="Dos gráficos: actividad en función del tiempo (exponencial decreciente) y logaritmo de la actividad frente al tiempo (línea recta)" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Actividad frente al tiempo.</strong> La actividad \(\mathcal{A}\) decae exponencialmente. La representación de \(\ln\mathcal{A}\) frente a \(t\) es una recta de pendiente \(-\lambda\), lo que permite determinar experimentalmente la constante de desintegración a partir de datos de actividad.</div>
+            </div>
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenQ661.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Instrumentos de detección de radiación">
+                    <img src="../imagenes/webp/ImagenQ661.webp" alt="Tres instrumentos de detección de radiación: contador Geiger, centelleador y dosímetro" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Cómo se mide la radiación.</strong> Los contadores Geiger registran cada ionización que produce la radiación; los centelleadores transforman la energía depositada en destellos de luz; los dosímetros acumulan la dosis recibida por una persona. Aunque miden magnitudes distintas (actividad, tasa de dosis o dosis acumulada), todos se calibran a partir de la ley de decaimiento y de la eficiencia del detector para expresar los resultados en Bq, Gy o Sv.</div>
+            </div>
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenQ651.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Generador de tecnecio-99m y gammagrafía">
+                    <img src="../imagenes/webp/ImagenQ651.webp" alt="Generador de Tc-99m y gammagrafía de tiroides que muestra zonas de mayor concentración del radiofármaco" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Aplicación médica de la actividad.</strong> El generador de \(^{99m}\mathrm{Tc}\) permite obtener un radiofármaco cuya actividad inicial se ajusta al estudio diagnóstico. La gammagrafía registra la distribución del isótopo en el organismo, por lo que la actividad inyectada debe calcularse con precisión a partir de \(A_0=\lambda N_0\).</div>
+            </div>
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"actividad radiactiva" | "becquerel" | "Bq" | "A = lambda N" | "desintegraciones por segundo" | "actividad inicial"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D6. Leyes de desintegración radiactiva y actividad" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Actividad y becquerel (CyL · D6)</a>
             </div>
@@ -251,7 +277,6 @@
         <details class="step">
             <summary><span class="step-num">6</span><strong>Número de núcleos y masa de una muestra.</strong></summary>
             <p>Si se conoce la masa \(m\) de una muestra pura de un isótopo y su masa molar \(M\), el número de núcleos es:</p>
-            <!-- ▼ CAMBIO: enlace a ficha 7 del formulario -->
             <a href="TemaD6-Formulario.html#formula-7" class="formula-link" title="Ver ficha 7 · Número de núcleos y masa">
                 <div class="formula-box" id="formula-7">\[\boxed{N=\frac{m}{M}N_A}\]</div>
             </a>
@@ -263,6 +288,12 @@
             <p>La masa del isótopo padre que queda sin desintegrar es proporcional al número de núcleos restantes:</p>
             <div class="formula-box">\[\boxed{m(t)=m_0e^{-\lambda t}=m_0\left(\frac12\right)^{t/T_{1/2}}}\]</div>
             <p>La masa del isótopo padre que se ha transformado es \(m_0-m(t)\), dentro de la aproximación habitual de los problemas de EBAU. No debe interpretarse como una desaparición de masa del conjunto cerrado: los productos de desintegración también forman parte del sistema.</p>
+            <div class="photo-figure">
+                <a class="lightbox-link" href="../imagenes/webp/ImagenQ655.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Detector de humo con americio-241">
+                    <img src="../imagenes/webp/ImagenQ655.webp" alt="Esquema del interior de un detector de humo con americio-241, que ioniza el aire y genera una pequeña corriente" loading="lazy" decoding="async">
+                </a>
+                <div class="figure-caption"><strong>Masa y actividad en un dispositivo real.</strong> Un detector de humo contiene una cantidad minúscula de \(^{241}\mathrm{Am}\) (del orden de \(10^{-4}\,\mathrm{g}\)). Conociendo esa masa, la relación \(N=(m/M)N_A\) da el número de núcleos y, con \(A=\lambda N\), su actividad (≈37 kBq). Ese valor es el que garantiza la ionización del aire necesaria para detectar el humo: la cadena \(m\to N\to A\) es la que permite diseñar y certificar este tipo de fuentes.</div>
+            </div>
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"número de núcleos" | "masa de la muestra" | "número de Avogadro" | "N = m/M NA" | "masa molar" | "masa restante"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D6. Leyes de desintegración radiactiva y actividad" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Número de núcleos y masa (CyL · D6)</a>
             </div>
@@ -274,18 +305,30 @@
             <p>Si se conoce la fracción de núcleos padre que permanece:</p>
             <div class="formula-box">\[\boxed{t=\frac{1}{\lambda}\ln\left(\frac{N_0}{N}\right)}=\frac{T_{1/2}}{\ln2}\ln\left(\frac{N_0}{N}\right)\]</div>
             <p>Como la actividad es proporcional al número de núcleos del mismo isótopo:</p>
-            <!-- ▼ CAMBIO: enlace a ficha 9 del formulario -->
             <a href="TemaD6-Formulario.html#formula-9" class="formula-link" title="Ver ficha 9 · Datación con actividad: tiempo a partir de A">
                 <div class="formula-box" id="formula-9">\[\boxed{t=\frac{1}{\lambda}\ln\left(\frac{A_0}{A}\right)}\]</div>
             </a>
             <p><strong>Datación padre-hijo:</strong> si inicialmente no había isótopo hijo, cada desintegración produce un núcleo hijo y el sistema permanece cerrado, entonces:</p>
             <div class="formula-box">\[N_0=N_{\text{padre}}+N_{\text{hijo}}\]</div>
             <p>Por tanto:</p>
-            <!-- ▼ CAMBIO: enlace a ficha 8 del formulario -->
             <a href="TemaD6-Formulario.html#formula-8" class="formula-link" title="Ver ficha 8 · Datación radiactiva padre-hijo">
                 <div class="formula-box" id="formula-8">\[\boxed{t=\frac{1}{\lambda}\ln\left(\frac{N_{\text{padre}}+N_{\text{hijo}}}{N_{\text{padre}}}\right)}\]</div>
             </a>
             <p>En problemas como la datación potasio-argón, puede utilizarse la relación entre masas para obtener la relación entre números de núcleos cuando las masas molares se conocen o pueden aproximarse. En la datación por carbono-14 se compara la actividad actual de la muestra con la actividad característica del material vivo de referencia.</p>
+            <div class="photo-pair">
+                <div class="photo-figure">
+                    <a class="lightbox-link" href="../imagenes/webp/ImagenQ635.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Diagrama del método de datación por carbono-14">
+                        <img src="../imagenes/webp/ImagenQ635.webp" alt="Esquema del método de datación por carbono-14: el C-14 se incorpora a los organismos vivos y decae tras su muerte" loading="lazy" decoding="async">
+                    </a>
+                    <div class="figure-caption"><strong>Método del <sup>14</sup>C.</strong> Mientras un ser vivo intercambia carbono con su entorno, la proporción \(^{14}\mathrm{C}/^{12}\mathrm{C}\) se mantiene constante. Al morir, el \(^{14}\mathrm{C}\) deja de reponerse y decae con su semivida característica, lo que permite datar restos orgánicos.</div>
+                </div>
+                <div class="photo-figure">
+                    <a class="lightbox-link" href="../imagenes/webp/ImagenQ636.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Datación por C-14 de los Manuscritos del Mar Muerto">
+                        <img src="../imagenes/webp/ImagenQ636.webp" alt="Páginas de los Manuscritos del Mar Muerto datadas mediante carbono-14 entre el año 100 a.C. y el 50 d.C." loading="lazy" decoding="async">
+                    </a>
+                    <div class="figure-caption"><strong>Aplicación real.</strong> La datación por \(^{14}\mathrm{C}\) permitió fechar los Manuscritos del Mar Muerto entre el 100 a.C. y el 50 d.C., mostrando el poder de la ley de decaimiento cuando se combina con una cuidadosa calibración experimental.</div>
+                </div>
+            </div>
             <div class="note"><strong>Hipótesis que hay que comprobar:</strong> cantidad inicial del isótopo hijo, ausencia de pérdidas o incorporaciones posteriores, sistema cerrado y conservación de la relación entre la cantidad medida y el número de núcleos.</div>
             <div style="text-align:right; margin-top:10px;">
                 <a class="filtro-pau" href="../EBAU/problemas-inline_v04.html" data-q='"datación radiactiva" | "datación padre-hijo" | "carbono-14" | "potasio-argón" | "tiempo transcurrido" | "relación A0/A"' data-comunidad="Castilla y León" data-bloque="D. Física relativista, cuántica, nuclear y de partículas" data-tema="D6. Leyes de desintegración radiactiva y actividad" style="display: inline-block; padding: 2px 8px; font-size: 0.65em; line-height: 1.2; border-radius: 6px; background: #e0f2fe; color: #0369a1; text-decoration: none; border: 1px solid #7dd3fc; font-weight: 600; white-space: nowrap; vertical-align: middle;">EBAU: Datación radiactiva (CyL · D6)</a>
@@ -295,7 +338,6 @@
         <details class="step">
             <summary><span class="step-num">8</span><strong>Lectura de gráficas de desintegración.</strong></summary>
             <p>La gráfica de \(N(t)\) o de \(A(t)\) frente al tiempo es una curva exponencial decreciente. Para hallar gráficamente la semivida, se localiza el instante en que la magnitud alcanza la mitad de su valor inicial.</p>
-            <!-- ▼ CAMBIO: nuevo formula-box enlazado a ficha 10 del formulario -->
             <a href="TemaD6-Formulario.html#formula-10" class="formula-link" title="Ver ficha 10 · Lectura de gráficas de decaimiento">
                 <div class="formula-box" id="formula-10">\[N(t)=N_0e^{-\lambda t}\qquad\Longrightarrow\qquad N(T_{1/2})=\frac{N_0}{2}\]</div>
             </a>
@@ -335,6 +377,12 @@
         </table>
         <p><strong>Conversiones temporales:</strong> \(1\,\text{día}=86400\,\text{s}\); \(1\,\text{h}=3600\,\text{s}\); para años, utiliza el factor que indique el enunciado o, si no se especifica, deja claro el convenio adoptado (habitualmente \(365\) días por año).</p>
         <div class="note"><strong>Regla de oro:</strong> antes de sustituir en una exponencial, comprueba que el producto \(\lambda t\) es adimensional. Si \(\lambda\) está en \(\text{s}^{-1}\), el tiempo debe estar en segundos.</div>
+        <div class="photo-figure">
+            <a class="lightbox-link" href="../imagenes/webp/ImagenQ662.webp" target="_blank" rel="noopener noreferrer" title="Ampliar imagen" aria-label="Ampliar imagen: Unidades de actividad, dosis absorbida y dosis equivalente">
+                <img src="../imagenes/webp/ImagenQ662.webp" alt="Tabla que compara las unidades de actividad (Bq), dosis absorbida (Gy) y dosis equivalente (Sv)" loading="lazy" decoding="async">
+            </a>
+            <div class="figure-caption"><strong>No todas las magnitudes se miden en Bq.</strong> El <em>becquerel</em> (Bq) mide la <strong>actividad</strong> de una fuente (desintegraciones por segundo). El <em>gray</em> (Gy) mide la <strong>dosis absorbida</strong> por un material. El <em>sievert</em> (Sv) mide la <strong>dosis equivalente</strong>, que pondera el daño biológico según el tipo de radiación. En los ejercicios de D6 solo se emplea el Bq; el Gy y el Sv aparecen al estudiar protección radiológica.</div>
+        </div>
     </details>
 
     <!-- PROBLEMAS TIPO RESUELTOS -->
@@ -623,118 +671,4 @@ m=m_0\left(\frac{1}{2}\right)^{\frac{t}{T_{1/2}}}.
 \frac{t}{T_{1/2}}=\frac{5\cdot10^{4}}{2{,}5\cdot10^{5}}=0{,}2.
 \]</div></div><div class="paso-resolucion"><h4>Cálculo numérico</h4><p>Sustituyendo:</p>
 <div class="formula-box">\[
-m=10\left(\frac{1}{2}\right)^{0{,}2}\approx10\cdot0{,}8706\approx8{,}71\,\text{g}.
-\]</div></div><div class="resultado-ej"><strong>Resultado del banco:</strong> <p>\(m\approx8{,}71\,\text{g}\).</p></div>
-                </div>
-            </details>
-            <details class="tarjeta-ejercicio">
-                <summary class="cabecera-ej">
-                    <span class="num-ej">Ejercicio 9</span>
-                    <span class="titulo-ej">Actividad inicial de \(1\,\mu\text{g}\) de \(^{131}I\)</span>
-                    <span class="meta-ej">Castilla y León · 2021 · Extraordinaria · Problema 11</span>
-                </summary>
-                <div class="enunciado-ej">
-                    <p class="origen-ej">Castilla y León · 2021 · Extraordinaria · Problema 11 · 1 punto</p>
-                    <p>El yodo radiactivo, \(^{131}I\), tiene un período de semidesintegración de \(8{,}02\,\text{días}\). Calcule la actividad inicial de \(1\,\mu\text{g}\) de dicho isótopo. Exprese el resultado en unidades del SI. Nota: constante de Avogadro \(N_A=6{,}022\cdot10^{23}\,\text{mol}^{-1}\).</p>
-                    
-                </div>
-                <div class="resolucion-ej">
-                    <div class="paso-resolucion"><h4>Número de núcleos en \(1\,\mu\text{g}\) de \(^{131}I\)</h4><div class="formula-box">\[
-N=\frac{m}{M}N_A=\frac{1{,}00\cdot10^{-6}}{131}\cdot6{,}022\cdot10^{23}\approx4{,}60\cdot10^{15}.
-\]</div></div><div class="paso-resolucion"><h4>Constante de desintegración</h4><div class="formula-box">\[
-T_{1/2}=8{,}02\,\text{días}=8{,}02\cdot86400\,\text{s}\approx6{,}93\cdot10^{5}\,\text{s}.
-\]</div>
-<div class="formula-box">\[
-\lambda=\frac{\ln2}{T_{1/2}}\approx1{,}00\cdot10^{-6}\,\text{s}^{-1}.
-\]</div></div><div class="paso-resolucion"><h4>Actividad inicial</h4><div class="formula-box">\[
-A_0=\lambda N\approx1{,}00\cdot10^{-6}\cdot4{,}60\cdot10^{15}\approx4{,}60\cdot10^{9}\,\text{Bq}.
-\]</div></div><div class="resultado-ej"><strong>Resultado del banco:</strong> <p>\(A_0\approx4{,}60\cdot10^{9}\,\text{Bq}\).</p></div>
-                </div>
-            </details>
-            <details class="tarjeta-ejercicio">
-                <summary class="cabecera-ej">
-                    <span class="num-ej">Ejercicio 10</span>
-                    <span class="titulo-ej">A.10 — Tiempo para desintegrar el 25% del Co-60</span>
-                    <span class="meta-ej">Castilla y León · 2021 · Ordinaria · Problema 10</span>
-                </summary>
-                <div class="enunciado-ej">
-                    <p class="origen-ej">Castilla y León · 2021 · Ordinaria · Problema 10 · 1 punto</p>
-                    <p>Un dispositivo usado en radioterapia contiene \(0{,}20\,\text{g}\) de \(^{60}\text{Co}\), emisor gamma de semivida (período de semidesintegración) \(5{,}27\) años. ¿Cuánto tiempo debe pasar para que se desintegre el 25% del cobalto inicial?</p>
-                    
-                </div>
-                <div class="resolucion-ej">
-                    <div class="paso-resolucion"><h4>Ley de desintegración y constante</h4><p>«Que se desintegre el 25%» significa que queda el 75%: \(N/N_0=0{,}75\).</p>
-<p>Constante de desintegración:</p>
-<div class="formula-box">\[
-\lambda=\frac{\ln 2}{T_{1/2}}=\frac{0{,}693}{5{,}27}\approx0{,}1315\,\text{año}^{-1}.
-\]</div>
-<p>Ley exponencial:</p>
-<div class="formula-box">\[
-\frac{N}{N_0}=e^{-\lambda t}\Rightarrow t=-\frac{\ln 0{,}75}{\lambda}\approx\frac{0{,}2877}{0{,}1315}\approx2{,}19\,\text{años}.
-\]</div></div><div class="resultado-ej"><strong>Resultado del banco:</strong> <p>\(t\approx2{,}19\,\text{años}\).</p></div>
-                </div>
-            </details>
-            <div class="pie-clave"><i class="fas fa-lightbulb"></i><span><strong>Observaciones clave:</strong> las preguntas de Castilla y León combinan con frecuencia varios pasos: hallar \(\lambda\), relacionar actividad y número de núcleos, convertir una masa en átomos, obtener el tiempo a partir de una fracción restante o interpretar una gráfica. Conviene escribir primero la ley general y aclarar siempre qué porcentaje permanece, en lugar de qué porcentaje se ha desintegrado.</span></div>
-        </div>
-    </details>
-
-    <!-- CTA -->
-    <div class="bloque-cta">
-        <div class="tarjeta-cta">
-            <p><br>Domina la ley exponencial de desintegración, la actividad y las aplicaciones a la datación radiactiva.<br>
-                <i>(Los detalles sobre lo que entra en las pruebas escritas se publicarán periódicamente en M.Teams).</i>
-            </p>
-            <div style="text-align:center;">
-                <a href="../index.html" target="_blank" class="boton-volver">Volver al inicio</a>
-            </div>
-            <!-- ▼ CAMBIO: acceso directo al formulario del tema -->
-            <div style="text-align:center; margin-top:12px;">
-                <a href="TemaD6-Formulario.html" class="boton-volver" style="background:#6366f1; color:#fff;">
-                    <i class="fas fa-clipboard-list" style="margin-right:6px;"></i>Ir al formulario del tema D6
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- ============================================================ -->
-<!-- Script: resalta y centra la fórmula cuando se llega por hash  -->
-<!-- (mismo comportamiento que el formulario)                      -->
-<!-- ============================================================ -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var hash = window.location.hash;
-    if (!hash || !hash.startsWith('#formula-')) return;
-
-    var el = document.querySelector(hash);
-    if (!el) return;
-
-    el.scrollIntoView({ behavior: 'auto', block: 'center' });
-
-    // Reinicia la animación aunque el :target ya se hubiera consumido
-    el.classList.remove('formula-resaltada');
-    void el.offsetWidth;
-    el.classList.add('formula-resaltada');
-    setTimeout(function () {
-        el.classList.remove('formula-resaltada');
-    }, 2600);
-});
-
-/* Filtro EBAU: convierte los data-* del enlace en query params
-   para que problemas-inline_v04.html pueda aplicar el filtro. */
-document.addEventListener('click', function (e) {
-    var link = e.target.closest('a.filtro-pau');
-    if (!link) return;
-    e.preventDefault();
-    var params = new URLSearchParams();
-    if (link.dataset.q)         params.set('q',         link.dataset.q);
-    if (link.dataset.comunidad) params.set('comunidad', link.dataset.comunidad);
-    if (link.dataset.bloque)    params.set('bloque',    link.dataset.bloque);
-    if (link.dataset.tema)      params.set('tema',      link.dataset.tema);
-    var base = link.getAttribute('href').split('?')[0];
-    window.location.href = base + '?' + params.toString();
-});
-</script>
-
-</body>
-</html>
+m=10\left(\frac{1}{2}\right)^{
